@@ -1,0 +1,48 @@
+name: Backfill star history
+
+# Manual only. A full backfill is roughly nine requests per five-year-old repo
+# and is needed once per repository — it is not a recurring job.
+on:
+  workflow_dispatch:
+    inputs:
+      repo:
+        description: "A single owner/name (blank = every repo still missing history)"
+        required: false
+        type: string
+      limit:
+        description: "Stop after this many repos"
+        required: false
+        default: "500"
+        type: string
+
+concurrency:
+  group: airadar-backfill
+  cancel-in-progress: false
+
+jobs:
+  backfill:
+    runs-on: ubuntu-latest
+    timeout-minutes: 350
+    env:
+      GH_PAT: ${{ secrets.GH_PAT }}
+      DATABASE_URL: ${{ secrets.DATABASE_URL }}
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+          cache: pip
+      - name: Install
+        working-directory: pipeline
+        run: pip install -e .
+      - name: Backfill
+        working-directory: pipeline
+        run: |
+          if [ -n "${{ inputs.repo }}" ]; then
+            airadar backfill --repo "${{ inputs.repo }}"
+          else
+            airadar backfill --limit "${{ inputs.limit || '500' }}"
+          fi
+      - name: Re-score (Fresh Power gates on a complete backfill)
+        working-directory: pipeline
+        run: airadar score

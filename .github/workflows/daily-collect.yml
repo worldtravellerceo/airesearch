@@ -1,0 +1,56 @@
+name: Daily collect
+
+on:
+  schedule:
+    # 06:10 UTC. Not on the hour: scheduled runs cluster at :00 and get queued.
+    - cron: "10 6 * * *"
+  workflow_dispatch:
+    inputs:
+      limit:
+        description: "Stop after this many repos (blank = all that are due)"
+        required: false
+        type: string
+
+# A second collect while one is still running would double-spend the API quota
+# on the same repos.
+concurrency:
+  group: airadar-collect
+  cancel-in-progress: false
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    # Well inside the 6h job ceiling, and long enough for a full tier-1 sweep
+    # at 5,000 requests/hour.
+    timeout-minutes: 300
+    env:
+      GH_PAT: ${{ secrets.GH_PAT }}
+      DATABASE_URL: ${{ secrets.DATABASE_URL }}
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+          cache: pip
+      - name: Install
+        working-directory: pipeline
+        run: pip install -e .
+      - name: Check credentials and the star-history endpoint
+        working-directory: pipeline
+        run: airadar doctor
+      - name: Collect
+        working-directory: pipeline
+        run: airadar collect ${{ inputs.limit && format('--limit {0}', inputs.limit) || '' }}
+      - name: Score
+        working-directory: pipeline
+        run: airadar score
+      - name: Summary
+        if: always()
+        working-directory: pipeline
+        run: |
+          {
+            echo "### Fresh Power — top 20"
+            echo '```'
+            COLUMNS=120 airadar board fresh --limit 20 || true
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"

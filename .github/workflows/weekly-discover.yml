@@ -1,0 +1,52 @@
+name: Weekly discover
+
+on:
+  schedule:
+    # Sunday 03:20 UTC, well clear of the daily collect window.
+    - cron: "20 3 * * 0"
+  workflow_dispatch:
+    inputs:
+      channels:
+        description: "topics,keywords,snowball,awesome,ecosystems,huggingface,resolve — or all"
+        required: false
+        default: all
+        type: string
+      max_llm:
+        description: "Cap how many repos go to the classifier (cost control)"
+        required: false
+        default: "6000"
+        type: string
+
+concurrency:
+  group: airadar-discover
+  cancel-in-progress: false
+
+jobs:
+  discover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 350
+    env:
+      GH_PAT: ${{ secrets.GH_PAT }}
+      DATABASE_URL: ${{ secrets.DATABASE_URL }}
+      ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+          cache: pip
+      - name: Install
+        working-directory: pipeline
+        run: pip install -e .
+      - name: Discover
+        working-directory: pipeline
+        run: airadar discover --channels "${{ inputs.channels || 'all' }}"
+      - name: Report what classification would cost
+        working-directory: pipeline
+        run: airadar classify --dry-run
+      - name: Classify
+        working-directory: pipeline
+        run: airadar classify --max-llm "${{ inputs.max_llm || '6000' }}"
+      - name: Re-score with the new classifications
+        working-directory: pipeline
+        run: airadar score

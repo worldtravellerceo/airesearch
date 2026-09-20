@@ -1,0 +1,66 @@
+name: CI
+
+on:
+  push:
+    branches: ["**"]
+  pull_request:
+
+jobs:
+  pipeline:
+    name: pipeline (pytest + ruff)
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:16
+        env:
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: airadar_test
+        options: >-
+          --health-cmd "pg_isready -U postgres"
+          --health-interval 5s
+          --health-timeout 5s
+          --health-retries 10
+        ports: ["5432:5432"]
+    env:
+      # The database tests skip themselves when nothing is reachable, so CI
+      # points them at the service container to make sure they actually run.
+      AIRADAR_TEST_DSN: postgresql://postgres:postgres@localhost:5432/airadar_test
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+          cache: pip
+      - name: Install
+        working-directory: pipeline
+        run: |
+          python -m pip install --upgrade pip
+          pip install -e ".[dev]" fastapi
+      - name: Lint
+        working-directory: pipeline
+        run: |
+          ruff check airadar tests
+          ruff format --check airadar tests
+      - name: Test
+        working-directory: pipeline
+        run: pytest tests -q
+
+  web:
+    name: web (typecheck + build)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: "22"
+          cache: npm
+          cache-dependency-path: web/package-lock.json
+      - name: Install
+        working-directory: web
+        run: npm ci
+      - name: Typecheck
+        working-directory: web
+        run: npx tsc --noEmit
+      - name: Build
+        working-directory: web
+        run: npx next build
