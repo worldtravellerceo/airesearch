@@ -16,8 +16,14 @@ export const dynamicParams = false;
 
 export async function generateStaticParams() {
   const manifest = await getManifest();
-  return manifest.repos.map((fullName) => repoSlug(fullName));
+  const params = manifest.repos.map((fullName) => repoSlug(fullName));
+  // A static export refuses to build a dynamic route that generates no routes
+  // at all, and the very first deploy happens before any data exists. One
+  // placeholder keeps the build honest instead of failing it.
+  return params.length ? params : [PLACEHOLDER];
 }
+
+const PLACEHOLDER = { owner: "_", name: "_" };
 
 export default async function RepoPage({
   params,
@@ -26,7 +32,10 @@ export default async function RepoPage({
 }) {
   const { owner, name } = await params;
   const detail = await getRepo(owner, name);
-  if (!detail) notFound();
+  if (!detail) {
+    if (owner === PLACEHOLDER.owner && name === PLACEHOLDER.name) return <NoData />;
+    notFound();
+  }
 
   return (
     <div className="space-y-6">
@@ -163,6 +172,20 @@ export default async function RepoPage({
           </div>
         </section>
       ) : null}
+    </div>
+  );
+}
+
+function NoData() {
+  return (
+    <div className="border-border rounded-lg border border-dashed p-12 text-center">
+      <h1 className="text-ink text-lg font-semibold">Henüz veri yok</h1>
+      <p className="text-ink-muted mt-2 text-sm">
+        İlk toplama turu çalıştığında proje sayfaları burada görünecek.
+      </p>
+      <Link href="/" className="text-accent mt-4 inline-block text-sm hover:underline">
+        Board&apos;lara dön
+      </Link>
     </div>
   );
 }
