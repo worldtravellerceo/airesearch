@@ -377,76 +377,76 @@ def prune_star_history(
     retain_days: int = RETAIN_DAYS,
     half_life_days: float,
 ) -> int:
-    """Drop day rows older than the retention window, folding their decayed
-    weight into each repo's carried tail first.
+    """Drop day rows older than the retention window, keeping what they mean.
 
-    Deleting them outright would silently shrink every long-lived project's
-    `fresh_power`; folding them in keeps the number exact.
+    Two things happen before the delete, and both are done in SQL rather than by
+    reading the rows into Python. The first prune after a full backfill spans
+    every tracked repo's entire history — millions of rows — and adding those up
+    in memory would exhaust the runner.
+
+    1. Their decayed weight is folded into each repo's carried tail. Deleting
+       them outright would silently shrink every long-lived project's
+       `fresh_power`, which is the opposite of what the metric is for: it would
+       make old projects look newer.
+    2. They are rolled up into Sunday-aligned weekly buckets, so the lifetime
+       star curve on a detail page still reaches back to the beginning.
     """
     import math
 
     cutoff = today - dt.timedelta(days=retain_days)
     decay = math.log(2) / half_life_days
+    # Registered rather than relying on SQLite's math functions, which are only
+    # present when the library was compiled with them.
+    conn.create_function("airadar_decay", 1, lambda age: math.exp(-decay * (age or 0.0)))
 
     doomed = conn.execute(
-        "SELECT repo_id, date, stars_gained FROM repo_star_daily WHERE date < :cutoff",
+        "SELECT count(*) AS n FROM repo_star_daily WHERE date < :cutoff",
         {"cutoff": cutoff},
-    ).fetchall()
+    ).fetchone()["n"]
     if not doomed:
         return 0
 
-    # Everything is restated as of `today`, so a later run only has to decay the
-    # single carried number forward.
-    additions: dict[int, float] = {}
-    for row in doomed:
-        age = (today - row["date"]).days
-        additions[row["repo_id"]] = additions.get(row["repo_id"], 0.0) + row[
-            "stars_gained"
-        ] * math.exp(-decay * age)
-
-    for repo_id, added in additions.items():
-        current = conn.execute(
-            "SELECT fresh_power_tail, fresh_power_tail_asof FROM repos WHERE id = ?",
-            (repo_id,),
-        ).fetchone()
-        existing = _tail_at(current, today, decay) if current else 0.0
-        conn.execute(
-            "UPDATE repos SET fresh_power_tail = ?, fresh_power_tail_asof = ? WHERE id = ?",
-            (existing + added, today, repo_id),
-        )
-
-    _roll_up_weekly(conn, doomed)
-    conn.execute("DELETE FROM repo_star_daily WHERE date < :cutoff", {"cutoff": cutoff})
-    conn.commit()
-    return len(doomed)
-
-
-def _roll_up_weekly(conn: sqlite3.Connection, doomed: Sequence[dict]) -> None:
-    """Aggregate day rows into Sunday-aligned weeks before they are deleted.
-
-    Weeks are keyed by their start date and written with `INSERT OR REPLACE`
-    semantics on the summed value, so re-running a prune cannot double a week.
-    Each pruned day belongs to exactly one week and is deleted immediately
-    after, so a week is only ever written once per its days.
-    """
-    buckets: dict[tuple[int, dt.date], int] = {}
-    for row in doomed:
-        day: dt.date = row["date"]
-        week_start = day - dt.timedelta(days=(day.weekday() + 1) % 7)  # back to Sunday
-        key = (row["repo_id"], week_start)
-        buckets[key] = buckets.get(key, 0) + row["stars_gained"]
-
-    if not buckets:
-        return
-    conn.executemany(
+    # The roll-up reads the same rows the tail calculation needs, and both have
+    # to happen before the delete.
+    conn.execute(
         """
         INSERT INTO repo_star_weekly (repo_id, week_start, stars_gained)
-        VALUES (?, ?, ?)
+        SELECT repo_id,
+               date(date, '-' || strftime('%w', date) || ' days') AS week_start,
+               sum(stars_gained)
+        FROM repo_star_daily
+        WHERE date < :cutoff
+        GROUP BY repo_id, week_start
         ON CONFLICT (repo_id, week_start)
         DO UPDATE SET stars_gained = stars_gained + excluded.stars_gained
         """,
-        [(repo_id, week, total) for (repo_id, week), total in buckets.items()],
+        {"cutoff": cutoff},
     )
+
+    # Everything is restated as of `today`, so a later run only has to decay the
+    # single carried number forward.
+    conn.execute(
+        """
+        UPDATE repos SET
+            fresh_power_tail =
+                COALESCE(fresh_power_tail, 0) * airadar_decay(
+                    julianday(:today) - julianday(COALESCE(fresh_power_tail_asof, :today))
+                )
+                + COALESCE((
+                    SELECT sum(d.stars_gained
+                               * airadar_decay(julianday(:today) - julianday(d.date)))
+                    FROM repo_star_daily d
+                    WHERE d.repo_id = repos.id AND d.date < :cutoff
+                ), 0),
+            fresh_power_tail_asof = :today
+        WHERE id IN (SELECT DISTINCT repo_id FROM repo_star_daily WHERE date < :cutoff)
+        """,
+        {"today": today, "cutoff": cutoff},
+    )
+
+    conn.execute("DELETE FROM repo_star_daily WHERE date < :cutoff", {"cutoff": cutoff})
+    conn.commit()
+    return doomed
 
 
 def load_weekly_series(conn: sqlite3.Connection, repo_id: int) -> list[tuple[dt.date, int]]:
