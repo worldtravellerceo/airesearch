@@ -26,9 +26,23 @@ from airadar.config import GITHUB_API_ROOT, GITHUB_API_VERSION, get_settings
 
 log = logging.getLogger(__name__)
 
-# Below this many remaining requests in a bucket we stop and wait for the reset.
-RATE_LIMIT_FLOOR = 25
+# We stop and wait for the reset once a bucket drops below a reserve. The
+# reserve has to scale with the bucket, not be a constant: "leave 25 in hand" is
+# prudent against the 5,000-per-hour core bucket and ruinous against the
+# 30-per-minute search bucket, where it would cap us at five requests a minute
+# and make a discovery sweep six times longer than it needs to be.
+RATE_LIMIT_RESERVE_FRACTION = 0.1
+MAX_RATE_LIMIT_FLOOR = 25
+MIN_RATE_LIMIT_FLOOR = 2
 MAX_ATTEMPTS = 5
+
+
+def rate_limit_floor(limit: int | None) -> int:
+    """How many requests to keep in reserve for a bucket of this size."""
+    if not limit or limit <= 0:
+        return MAX_RATE_LIMIT_FLOOR
+    scaled = int(limit * RATE_LIMIT_RESERVE_FRACTION)
+    return max(MIN_RATE_LIMIT_FLOOR, min(MAX_RATE_LIMIT_FLOOR, scaled))
 
 
 class GitHubError(RuntimeError):
@@ -79,8 +93,13 @@ class _Bucket:
     """Mirrors GitHub's view of one rate-limit resource."""
 
     remaining: int = 5000
+    limit: int | None = None
     reset_at: float = 0.0
     lock: asyncio.Lock = field(default_factory=asyncio.Lock)
+
+    @property
+    def floor(self) -> int:
+        return rate_limit_floor(self.limit)
 
 
 class GitHubClient:
@@ -135,29 +154,32 @@ class GitHubClient:
     async def _await_capacity(self, resource: str) -> None:
         bucket = self._bucket(resource)
         async with bucket.lock:
-            if bucket.remaining > RATE_LIMIT_FLOOR:
+            floor = bucket.floor
+            if bucket.remaining > floor:
                 return
             wait = bucket.reset_at - time.time()
             if wait <= 0:
                 # Reset has passed; assume the bucket refilled and let the next
                 # response tell us the truth.
-                bucket.remaining = RATE_LIMIT_FLOOR + 1
+                bucket.remaining = floor + 1
                 return
             wait += 1.0
-            log.warning(
-                "rate limit: %s bucket down to %d, sleeping %.0fs",
+            log.info(
+                "rate limit: %s bucket down to %d of %s, sleeping %.0fs",
                 resource,
                 bucket.remaining,
+                bucket.limit or "?",
                 wait,
             )
             self.counters.rate_limit_waits += 1
             self.counters.seconds_waiting += wait
             await self._sleep(wait)
-            bucket.remaining = RATE_LIMIT_FLOOR + 1
+            bucket.remaining = floor + 1
 
     def _record_limits(self, resource: str, headers: httpx.Headers) -> None:
         remaining = headers.get("x-ratelimit-remaining")
         reset = headers.get("x-ratelimit-reset")
+        limit = headers.get("x-ratelimit-limit")
         if remaining is None:
             return
         bucket = self._bucket(resource)
@@ -165,6 +187,8 @@ class GitHubClient:
             bucket.remaining = int(remaining)
             if reset is not None:
                 bucket.reset_at = float(reset)
+            if limit is not None:
+                bucket.limit = int(limit)
         except ValueError:
             pass
 

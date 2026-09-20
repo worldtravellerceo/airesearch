@@ -3,12 +3,18 @@ import time
 import httpx
 import pytest
 
-from airadar.gh.client import RATE_LIMIT_FLOOR, GitHubClient, GitHubError
+from airadar.gh.client import GitHubClient, GitHubError, rate_limit_floor
 
 
-def _headers(remaining: int = 4999, reset: float | None = None, **extra: str) -> dict[str, str]:
+def _headers(
+    remaining: int = 4999,
+    reset: float | None = None,
+    limit: int = 5000,
+    **extra: str,
+) -> dict[str, str]:
     headers = {
         "x-ratelimit-remaining": str(remaining),
+        "x-ratelimit-limit": str(limit),
         "x-ratelimit-reset": str(int(reset if reset is not None else time.time() + 3600)),
     }
     headers.update(extra)
@@ -94,6 +100,43 @@ async def test_real_403_is_not_retried(recorded_sleeps):
     assert sleeps == []
 
 
+def test_the_reserve_scales_with_the_bucket():
+    """A fixed reserve is wrong at one end or the other. Keeping 25 requests in
+    hand is prudent against the 5,000-per-hour core bucket and ruinous against
+    the 30-per-minute search bucket — it would cap a sweep at five requests a
+    minute."""
+    assert rate_limit_floor(5000) == 25
+    assert rate_limit_floor(30) == 3
+    assert rate_limit_floor(10) == 2  # never so small that a 403 is likely
+    assert rate_limit_floor(None) == 25  # unknown bucket: be careful
+
+
+async def test_search_sweeps_are_not_throttled_by_a_core_sized_reserve(recorded_sleeps):
+    """Regression: with a fixed reserve of 25, five requests drained the
+    30-per-minute search bucket below the floor and every sixth request waited a
+    full minute."""
+    sleeps, fake_sleep = recorded_sleeps
+
+    def handler(request: httpx.Request) -> httpx.Response:
+        # A realistic search bucket: 30 per minute, counting down.
+        handler.remaining -= 1
+        return httpx.Response(
+            200,
+            json={"items": []},
+            headers=_headers(remaining=handler.remaining, limit=30, reset=time.time() + 60),
+        )
+
+    handler.remaining = 30
+
+    async with GitHubClient(
+        token="t", transport=httpx.MockTransport(handler), sleep=fake_sleep
+    ) as client:
+        for _ in range(25):
+            await client.search_repositories("topic:llm", page=1)
+
+    assert sleeps == [], "25 of 30 search requests should not need to wait"
+
+
 async def test_governor_waits_before_draining_a_bucket(recorded_sleeps):
     """When a bucket is nearly empty we pause proactively rather than eat a 403."""
     sleeps, fake_sleep = recorded_sleeps
@@ -101,7 +144,9 @@ async def test_governor_waits_before_draining_a_bucket(recorded_sleeps):
 
     def handler(request: httpx.Request) -> httpx.Response:
         return httpx.Response(
-            200, json={"ok": True}, headers=_headers(remaining=RATE_LIMIT_FLOOR - 1, reset=reset_at)
+            200,
+            json={"ok": True},
+            headers=_headers(remaining=rate_limit_floor(5000) - 1, reset=reset_at),
         )
 
     async with GitHubClient(
@@ -124,7 +169,7 @@ async def test_search_and_core_buckets_are_independent(recorded_sleeps):
             return httpx.Response(
                 200,
                 json={"items": []},
-                headers=_headers(remaining=0, reset=time.time() + 60),
+                headers=_headers(remaining=0, limit=30, reset=time.time() + 60),
             )
         return httpx.Response(200, json={"ok": True}, headers=_headers(remaining=4000))
 
