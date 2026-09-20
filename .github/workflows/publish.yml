@@ -21,6 +21,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
+        with:
+          # The branch tip, not the commit the calling run started from. Called
+          # through workflow_call, checkout defaults to the caller's github.sha,
+          # so a run that takes hours rebuilds the site from code that old and
+          # silently reverts anything merged since — a census run did exactly
+          # that, republishing a three-hour-old site over a newer one. The
+          # database comes from the release asset and is always current; the
+          # only thing that goes stale here is the site code.
+          ref: ${{ github.ref_name }}
       - uses: ./.github/actions/pipeline
         with:
           token: ${{ github.token }}
