@@ -87,6 +87,10 @@ jobs:
             echo '```'
             COLUMNS=140 airadar stats || true
             echo '```'
+            echo "### Kapsama kontrolü"
+            echo '```'
+            COLUMNS=140 airadar coverage || true
+            echo '```'
             echo "### Fresh Power — ilk 20"
             echo '```'
             COLUMNS=140 airadar board fresh --limit 20 || true

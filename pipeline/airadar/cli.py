@@ -11,7 +11,7 @@ import typer
 from rich.console import Console
 from rich.table import Table
 
-from airadar import classify_run, export_site
+from airadar import audit, classify_run, export_site
 from airadar import collect as collect_mod
 from airadar import discover as discover_mod
 from airadar.config import GITHUB_API_VERSION, get_settings
@@ -428,6 +428,35 @@ def export_site_cmd(
     with db.connect(settings.db_path) as conn:
         report = export_site.export(conn, Path(out), date=_parse_date(date))
     console.print(f"[green]export-site[/green]: {report.summary()}")
+
+
+@app.command()
+def coverage(
+    min_stars: int = typer.Option(
+        3000, "--min-stars", help="Ignore a name match below this many stars"
+    ),
+) -> None:
+    """Check the database against a hand-written list of projects it must hold.
+
+    Counting repos is not coverage: the first real corpus held 64,373 and was
+    still missing `karpathy/nanoGPT` and `facebookresearch/faiss`. This is the
+    check that would have caught it.
+    """
+    settings = _require_database()
+    with db.connect(settings.db_path) as conn:
+        report = audit.audit_coverage(conn, min_stars=min_stars)
+
+    if report.missing:
+        table = Table(title=f"eksik ({len(report.missing)})")
+        table.add_column("proje")
+        for name in report.missing:
+            table.add_row(name)
+        console.print(table)
+
+    colour = "green" if not report.missing else "red"
+    console.print(f"[{colour}]coverage[/{colour}]: {report.summary()}")
+    if report.missing:
+        raise typer.Exit(1)
 
 
 @app.command()
