@@ -1,0 +1,4631 @@
+{
+ "repos": [
+  {
+   "full_name": "public-apis/public-apis",
+   "content_hash": "891162ceadc7e952136b80b39740ccaa",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "openclaw/openclaw",
+   "content_hash": "5006347a607a7fc3ddba2b4ed34f5b40",
+   "is_ai": true,
+   "category": "agent-framework",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "n8n-io/n8n",
+   "content_hash": "c1577573eef945532d53ff955d0b9999",
+   "is_ai": true,
+   "category": "llm-app",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "farion1231/cc-switch",
+   "content_hash": "b433aee0ef2f262badbd75a517325f21",
+   "is_ai": true,
+   "category": "ai-devtools",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "punkpeye/awesome-mcp-servers",
+   "content_hash": "8257f72ec3df00167a639f6951e134cd",
+   "is_ai": true,
+   "category": "awesome-list",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "Egonex-AI/Understand-Anything",
+   "content_hash": "330f0c4c89cf4720c51132d44bf52968",
+   "is_ai": true,
+   "category": "ai-devtools",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "D4Vinci/Scrapling",
+   "content_hash": "1fc5ffd85d6e3b21b5c1b86069682044",
+   "is_ai": true,
+   "category": "data-tooling",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "awesomedata/awesome-public-datasets",
+   "content_hash": "8c82e0b3a75b35e66a2751dfe91f0b13",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "tensorflow/models",
+   "content_hash": "70cc78973f21adff154f083f52cb13e9",
+   "is_ai": true,
+   "category": "classic-ml",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "redis/redis",
+   "content_hash": "e36c06f1a3573b84a7445dabc4547dad",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "Asabeneh/30-Days-Of-Python",
+   "content_hash": "fdb893f4189cdba56593c19f222f4b3d",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "Fission-AI/OpenSpec",
+   "content_hash": "55ca924385c8b6a99e4d656b66b60837",
+   "is_ai": true,
+   "category": "ai-devtools",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "docling-project/docling",
+   "content_hash": "c5d9ac8a15e3d30e1666b84032fa579e",
+   "is_ai": true,
+   "category": "data-tooling",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "prometheus/prometheus",
+   "content_hash": "63ef047d54ccea6d447eca4ee4aa77f8",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "commaai/openpilot",
+   "content_hash": "bf8bd9747abeb3d015832e737e7b6f3c",
+   "is_ai": true,
+   "category": "robotics-embodied",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "karpathy/nanochat",
+   "content_hash": "8c1012b6952f96b4fb69d42b13d87508",
+   "is_ai": true,
+   "category": "training-finetuning",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "jamiepine/voicebox",
+   "content_hash": "340b74d2169b45e37e074c7abf6cc614",
+   "is_ai": true,
+   "category": "audio-speech",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "bmad-code-org/BMAD-METHOD",
+   "content_hash": "0695765980955d9a54a222ad1341c291",
+   "is_ai": true,
+   "category": "ai-devtools",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "ChromeDevTools/chrome-devtools-mcp",
+   "content_hash": "b397300b996a87d00df5eb6d7957f59e",
+   "is_ai": true,
+   "category": "mcp",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "dbeaver/dbeaver",
+   "content_hash": "db9bd0f265b55e53878f81af8023a26c",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "heygen-com/hyperframes",
+   "content_hash": "1483597b56221042a05ef9a97198efcf",
+   "is_ai": true,
+   "category": "ai-devtools",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "huginn/huginn",
+   "content_hash": "c7416d37afd001af60f0b2e73e1de3d6",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "ClickHouse/ClickHouse",
+   "content_hash": "9748ed5480ea9d3bcef75b1c74d5d305",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "upscayl/upscayl",
+   "content_hash": "7975c18bf08c8163215f471d021a4f7f",
+   "is_ai": true,
+   "category": "multimodal-vision",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "GitHubDaily/GitHubDaily",
+   "content_hash": "eb78a1f1d7e0dcd23511cd48449bf4de",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "NaiboWang/EasySpider",
+   "content_hash": "366ed848e595485e509bdb4e67da1126",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "danielmiessler/Fabric",
+   "content_hash": "b7be40a79e911af2323dee4234791810",
+   "is_ai": true,
+   "category": "prompt-eval-observability",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "reactive-resume/reactive-resume",
+   "content_hash": "84d8c5a3265127e2c005133a060624fa",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "Hmbown/Codewhale",
+   "content_hash": "bc76ee21833b8eb53de80fadf6cd21a1",
+   "is_ai": true,
+   "category": "ai-devtools",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "novuhq/novu",
+   "content_hash": "eaa1d91192d11834ff0a692bfa90ffdc",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "drawdb-io/drawdb",
+   "content_hash": "7fbd8a7e904e07f671910c19e0bfb1de",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "suno-ai/bark",
+   "content_hash": "4c426fa84e839d7de983e34299e71d7b",
+   "is_ai": true,
+   "category": "audio-speech",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "RSSNext/Folo",
+   "content_hash": "11872deb200a32b5245aa4869bd0ac34",
+   "is_ai": true,
+   "category": "llm-app",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "TriliumNext/Trilium",
+   "content_hash": "b2c42c0078905f58d66d5a3a2146044d",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "alibaba/arthas",
+   "content_hash": "9df086c12f81c18efa676134032d28fa",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "Dokploy/dokploy",
+   "content_hash": "13e913b1b2033d61667733f122092f9d",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "microsoft/playwright-mcp",
+   "content_hash": "6087c287742eea8952cdd71e2f39bda8",
+   "is_ai": true,
+   "category": "mcp",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "DayuanJiang/next-ai-draw-io",
+   "content_hash": "1ae3d98aa3561d7ad1f9bd875cf82d10",
+   "is_ai": true,
+   "category": "llm-app",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "continuedev/continue",
+   "content_hash": "3d719b53a6f8ce9b3bc216cfa4c6dadc",
+   "is_ai": true,
+   "category": "ai-devtools",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "Pythagora-io/gpt-pilot",
+   "content_hash": "7d8bc5996a501ba49f7c10d3c60696be",
+   "is_ai": true,
+   "category": "ai-devtools",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "Gitlawb/openclaude",
+   "content_hash": "1b9bf4cddf5ba96bc677d03bc976f6d0",
+   "is_ai": true,
+   "category": "ai-devtools",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "alibaba/nacos",
+   "content_hash": "f53497b602380567ebd4778006485e27",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "mckaywrigley/chatbot-ui",
+   "content_hash": "0f7e2eb6f49bb3859523c2d3ad497225",
+   "is_ai": true,
+   "category": "llm-app",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "github/github-mcp-server",
+   "content_hash": "c71a0cfadc70394193d9d4ea9d153c2f",
+   "is_ai": true,
+   "category": "mcp",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "influxdata/influxdb",
+   "content_hash": "539b873016c449ecdd885b86fe46c329",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "jumpserver/jumpserver",
+   "content_hash": "83e97cda90bac34b19e17c09f8b86060",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "AtsushiSakai/PythonRobotics",
+   "content_hash": "bb00abc729e5e9d173fa3b5a74872d4f",
+   "is_ai": true,
+   "category": "robotics-embodied",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "facefusion/facefusion",
+   "content_hash": "cdfdcb21c60d61877258d89701d14b38",
+   "is_ai": true,
+   "category": "multimodal-vision",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "ml-explore/mlx",
+   "content_hash": "4bde806050354119ed4ee9034a80f993",
+   "is_ai": true,
+   "category": "classic-ml",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "eyaltoledano/claude-task-master",
+   "content_hash": "3f12c5214fdd695b3f828fe1b358698c",
+   "is_ai": true,
+   "category": "ai-devtools",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "gastownhall/beads",
+   "content_hash": "5d452e0fc6861b8637bb23926e446efe",
+   "is_ai": true,
+   "category": "ai-devtools",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "onlook-dev/onlook",
+   "content_hash": "f3f5026b716af18bb956445dc0059726",
+   "is_ai": true,
+   "category": "ai-devtools",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "zai-org/Open-AutoGLM",
+   "content_hash": "06d3ad13c2a59379f389d0978482695a",
+   "is_ai": true,
+   "category": "agent-framework",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "go-kratos/kratos",
+   "content_hash": "4085070e84adb55f1b9b3aab7ff0bae4",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "cilium/cilium",
+   "content_hash": "257c260fcdd322ed6acb16aa07ad5c5e",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "taosdata/TDengine",
+   "content_hash": "8ab9b0e29156f41b93b660fc42f0b68d",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "flipped-aurora/gin-vue-admin",
+   "content_hash": "b227032cd080ba1aeec160e646c7bd94",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "apache/skywalking",
+   "content_hash": "407268fdf21f6fb343b07a331fd378ee",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "trycua/cua",
+   "content_hash": "05a51cce970825cf6380f8fef586656f",
+   "is_ai": true,
+   "category": "agent-framework",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "Max-Eee/NeoPass",
+   "content_hash": "b1ae48a2a2abf7e8a2d6fc4236c45e44",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "plotly/dash",
+   "content_hash": "f7db0b4d9260ffe6b13338fbe09227a9",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "PrefectHQ/prefect",
+   "content_hash": "9ed2b36df1328aa922236235ef5e4d9b",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "slopus/happy",
+   "content_hash": "b9ec46b802e415180af1d5afb90a4ce4",
+   "is_ai": true,
+   "category": "ai-devtools",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "PicoTrex/Awesome-Nano-Banana-images",
+   "content_hash": "7cf6dab76b61b6f330db4698154a73b9",
+   "is_ai": true,
+   "category": "awesome-list",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "timescale/timescaledb",
+   "content_hash": "071405aced4f10a0f5f920d124688202",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "conwnet/github1s",
+   "content_hash": "4ea09c464f3869747a8c740f9f4a059b",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "jaegertracing/jaeger",
+   "content_hash": "49f01d2f8d2a8403b847a61334479ea8",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "czlonkowski/n8n-mcp",
+   "content_hash": "78833d465a0364e150526aeacf24bb9a",
+   "is_ai": true,
+   "category": "mcp",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "akfamily/akshare",
+   "content_hash": "333e7e71f67f4db7b8f261aacfc330ac",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "vectordotdev/vector",
+   "content_hash": "cecdaf845b22ab8949d806427164b14e",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "pranshuparmar/witr",
+   "content_hash": "c44aad10f462d84897baeda6ac34bafa",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "BuilderIO/gpt-crawler",
+   "content_hash": "3889a612ac5d811e039476b58f3ee86e",
+   "is_ai": true,
+   "category": "data-tooling",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "PromtEngineer/localGPT",
+   "content_hash": "9d67a82526e0dea46a60e4d64013bf50",
+   "is_ai": true,
+   "category": "rag-vectordb",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "hasaneyldrm/exercises-dataset",
+   "content_hash": "07eadec0f399f0877b041eb2cccd2f55",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "steipete/CodexBar",
+   "content_hash": "6fdeb3967c2a6c07d2ceaea10cf1318a",
+   "is_ai": true,
+   "category": "ai-devtools",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "elastic/kibana",
+   "content_hash": "12006765aec092011186ff4d0cbd871c",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "cube-js/cube",
+   "content_hash": "13958e482b00f765c43f26aa1be04986",
+   "is_ai": true,
+   "category": "data-tooling",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "t8y2/dbx",
+   "content_hash": "fabc8a6d2e8d501bdcd5e6461dd9162b",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "dailydotdev/daily",
+   "content_hash": "9309f6ded51628804e76d3405c870060",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "tanweai/pua",
+   "content_hash": "7bc5d24518d676ff78dfe0ee8a8d576a",
+   "is_ai": true,
+   "category": "ai-devtools",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "every-app/open-seo",
+   "content_hash": "1ae20fc0f5268ec66afeaf6b7af3eb7d",
+   "is_ai": true,
+   "category": "llm-app",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "joke2k/faker",
+   "content_hash": "0f68deaf138b3fd271413181cfd408b6",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "danielmiessler/LifeOS",
+   "content_hash": "83b9ab77f3cb45090e9be7d610e225a8",
+   "is_ai": true,
+   "category": "llm-app",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "teambit/bit",
+   "content_hash": "27b612df0182085cda09bf8d56174c06",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "jlcodes99/cockpit-tools",
+   "content_hash": "14b7fb6114cdc05e719f865db6c11eaf",
+   "is_ai": true,
+   "category": "ai-devtools",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "Infrasys-AI/AISystem",
+   "content_hash": "e41994565a54b11db10c79e4190bac8b",
+   "is_ai": true,
+   "category": "classic-ml",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "influxdata/telegraf",
+   "content_hash": "c8058d7f8b90509f6716c7a67d7bc3fa",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "VictoriaMetrics/VictoriaMetrics",
+   "content_hash": "42088049994784e8204acd6477ce3689",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "getmaxun/maxun",
+   "content_hash": "1fb08fe9efeabc3ecae8fdaf6e635f88",
+   "is_ai": true,
+   "category": "data-tooling",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "openzipkin/zipkin",
+   "content_hash": "f6d17568d2eb5d62b7ba5dcad38bdb03",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "eriklindernoren/PyTorch-GAN",
+   "content_hash": "c9fa2f45fcfd7079f4b8be75599abba0",
+   "is_ai": true,
+   "category": "classic-ml",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "questdb/questdb",
+   "content_hash": "ba24cf2dcad26e64afd7a2bcf1bb6801",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "AgriciDaniel/claude-seo",
+   "content_hash": "1242c8b9ce06e2a4aa973449d427589a",
+   "is_ai": true,
+   "category": "ai-devtools",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "richards199999/Thinking-Claude",
+   "content_hash": "c5642e321063a3cef3b1f1ae127b3282",
+   "is_ai": true,
+   "category": "prompt-eval-observability",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "ahmedkhaleel2004/gitdiagram",
+   "content_hash": "8fa199c4c93263915eb2e7cef02a29e5",
+   "is_ai": true,
+   "category": "ai-devtools",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "udecode/plate",
+   "content_hash": "7b4b3820c557dac38599b5301955e7a6",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "dagger/dagger",
+   "content_hash": "8bb5763fb00d927e89ab5a2a882e58ae",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "zauberzeug/nicegui",
+   "content_hash": "2fb9966a203d195a4bcd758fe0cc3085",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "Effect-TS/effect",
+   "content_hash": "37e1e29142f931c104f29894f92870aa",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "TianxingChen/Embodied-AI-Guide",
+   "content_hash": "94deed035c1d76b89957c3eaa4e82885",
+   "is_ai": true,
+   "category": "awesome-list",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "microsoft/Swin-Transformer",
+   "content_hash": "06a894c03979c9ecab241627d7248cef",
+   "is_ai": true,
+   "category": "multimodal-vision",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "ArduPilot/ardupilot",
+   "content_hash": "6df08bcf8455f026e761f998f499bf62",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "xpzouying/xiaohongshu-mcp",
+   "content_hash": "c0af7c1f618f8a33436a6a276c873912",
+   "is_ai": true,
+   "category": "mcp",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "GLips/Figma-Context-MCP",
+   "content_hash": "ebac4eae71ac4366898c0c1bb411b738",
+   "is_ai": true,
+   "category": "mcp",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "coder/coder",
+   "content_hash": "f3d3b80bff1b5ea8f448faaa449c1bfd",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "pipecat-ai/pipecat",
+   "content_hash": "f552e25edb4325d98d7dfc39d640f429",
+   "is_ai": true,
+   "category": "audio-speech",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "chenhg5/cc-connect",
+   "content_hash": "ece57a62da761b19dd74e19d72658a51",
+   "is_ai": true,
+   "category": "ai-devtools",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "coderamp-labs/gitingest",
+   "content_hash": "26ff7d77192968342a9bd9ff947f4d9d",
+   "is_ai": true,
+   "category": "data-tooling",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "open-metadata/OpenMetadata",
+   "content_hash": "f796b6671d1f32f50c056e8632356be9",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "theonedev/onedev",
+   "content_hash": "6511a2c8c1728220c517c299135ae7c2",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "yc-software/qm",
+   "content_hash": "d31a03e8170712090968e47ce056c882",
+   "is_ai": true,
+   "category": "agent-framework",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "gvergnaud/ts-pattern",
+   "content_hash": "75a89d7fa3cbd8e8d939784dbf9525e1",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "electerm/electerm",
+   "content_hash": "57a51c60b28c5ba1ff4ab13edef7ad33",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "millionco/react-doctor",
+   "content_hash": "28fa3bcf754aa5df4afb858aeb6d8969",
+   "is_ai": true,
+   "category": "ai-devtools",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "T8RIN/ImageToolbox",
+   "content_hash": "a94309eb353aeba243258da8e5c21e30",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "SakanaAI/AI-Scientist",
+   "content_hash": "79726ac62b697f4fb9f7240105dcc3d6",
+   "is_ai": true,
+   "category": "agent-framework",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "NevaMind-AI/memU",
+   "content_hash": "fe5c1054baa7d502031dac27383b4d13",
+   "is_ai": true,
+   "category": "agent-framework",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "thanos-io/thanos",
+   "content_hash": "384a681ecc9b5967c00a189860b9d477",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "pinpoint-apm/pinpoint",
+   "content_hash": "68c26964b0592a33c4cbb5fdd55bf36a",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "xszyou/Fay",
+   "content_hash": "2d7f18f0278149902fc67b25b2647330",
+   "is_ai": true,
+   "category": "agent-framework",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "BasedHardware/omi",
+   "content_hash": "b2a2630b2c29abb973ab4a51cee220aa",
+   "is_ai": true,
+   "category": "llm-app",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "plasma-umass/scalene",
+   "content_hash": "12a6ab3f6d79222391439c69d6769d4e",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "rwaldron/johnny-five",
+   "content_hash": "c4e1ef48147148889400d92f12256dac",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "puckeditor/puck",
+   "content_hash": "10b261fd73ef92513e8ececde5565030",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "ccfos/nightingale",
+   "content_hash": "1a2a87135df3cae1aa21ec0f7f7b0452",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "Jiayi-Pan/TinyZero",
+   "content_hash": "8928d28de9792bff58be66611e1085a5",
+   "is_ai": true,
+   "category": "training-finetuning",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "fuergaosi233/wechat-chatgpt",
+   "content_hash": "040ce73430ea8d72c786e99cfeec2e27",
+   "is_ai": true,
+   "category": "llm-app",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "YaoFANGUK/video-subtitle-remover",
+   "content_hash": "a4b6f9a8ddc571ea4be14ef41a2f5656",
+   "is_ai": true,
+   "category": "multimodal-vision",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "NoFxAiOS/nofx",
+   "content_hash": "b203fc1de37f57a7fdcfe12c2c525a70",
+   "is_ai": true,
+   "category": "llm-app",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "oblien/openship",
+   "content_hash": "b0d1b436f8b73454282d3ad8f48e41bf",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "smol-ai/developer",
+   "content_hash": "6e5ffe4a909498278b494b6819b3a4ec",
+   "is_ai": true,
+   "category": "ai-devtools",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "OpenByteInc/QuantDinger",
+   "content_hash": "770119db7039c8486bdd561acaa93f4a",
+   "is_ai": true,
+   "category": "llm-app",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "calesthio/Crucix",
+   "content_hash": "65bbc90a5bf9aa365a96d169bd7658b9",
+   "is_ai": true,
+   "category": "agent-framework",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "grafana/pyroscope",
+   "content_hash": "879c93d85399f2e5501afc9367c71a03",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "altic-dev/FluidVoice",
+   "content_hash": "214b1ca9986d6308307ca95420bdbb14",
+   "is_ai": true,
+   "category": "audio-speech",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "yizhiyanhua-ai/fireworks-tech-graph",
+   "content_hash": "87ac888bb70d0f13b366fd9142fee11e",
+   "is_ai": true,
+   "category": "ai-devtools",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "simonw/datasette",
+   "content_hash": "8b011aca6d6a6107d020291d5996e708",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "Doriandarko/claude-engineer",
+   "content_hash": "0d6a3f25751e29c11863f9fd9738b28f",
+   "is_ai": true,
+   "category": "ai-devtools",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "Tracer-Cloud/opensre",
+   "content_hash": "8042c2fdefe696ad272ed9ceb8220fa4",
+   "is_ai": true,
+   "category": "agent-framework",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "getagentseal/codeburn",
+   "content_hash": "94dcc388435f523bc513399f955d6e18",
+   "is_ai": true,
+   "category": "ai-devtools",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "modelcontextprotocol/inspector",
+   "content_hash": "8c41d7d006d6e4bd9274671436065aa9",
+   "is_ai": true,
+   "category": "mcp",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "mrgloom/awesome-semantic-segmentation",
+   "content_hash": "afef919c0df749da2bf16373d8fd7001",
+   "is_ai": true,
+   "category": "awesome-list",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "x-hw/amazing-qr",
+   "content_hash": "a360183a539c7c04b1042da85526ac8a",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "go-vgo/robotgo",
+   "content_hash": "ec6dd1322c9d1f5eec2fa687c07cfbe6",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "Mail-0/Zero",
+   "content_hash": "9edbd87b41e0313a8ef370743d5cfb81",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "leeoniya/uPlot",
+   "content_hash": "848d3603df1108cb6ad1c286bd547934",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "electric-sql/electric",
+   "content_hash": "ebd98fea74e7b1658a3b569dd3fc5e1a",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "google/adk-recipes",
+   "content_hash": "2cf88be06dda0d0fdf44fa825a1f82d0",
+   "is_ai": true,
+   "category": "agent-framework",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "BehiSecc/awesome-claude-skills",
+   "content_hash": "0c31825aed3cbce4806fa38ed0556b90",
+   "is_ai": true,
+   "category": "awesome-list",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "hyperdxio/hyperdx",
+   "content_hash": "33723ad09bc5e6cfaf28f68f9347e918",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "upgundecha/howtheysre",
+   "content_hash": "cd7183235b17734e7e2505c248dbf7fd",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "awslabs/mcp",
+   "content_hash": "c73af899313921e5f6278e8630fe6b55",
+   "is_ai": true,
+   "category": "mcp",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "mshumer/gpt-prompt-engineer",
+   "content_hash": "d2b664e83a38110b9b8f4e5ee05770b4",
+   "is_ai": true,
+   "category": "prompt-eval-observability",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "nasa-jpl/open-source-rover",
+   "content_hash": "e80aae6b1ddb9859978b4474fab67b6e",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "margelo/react-native-vision-camera",
+   "content_hash": "6e339c3d479745e4c93864680be84750",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "funstory-ai/BabelDOC",
+   "content_hash": "02ece1a7167ac80fccc5c4917aaafd91",
+   "is_ai": true,
+   "category": "llm-app",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "Agents365-ai/drawio-skill",
+   "content_hash": "08f0500bede80e2fe433dc70dd810d49",
+   "is_ai": true,
+   "category": "ai-devtools",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "hybridgroup/gobot",
+   "content_hash": "beef3d77a2644f8410c06399bff4e3be",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "AgriciDaniel/claude-ads",
+   "content_hash": "1871c0cbe547d8fbd4cf335545f87368",
+   "is_ai": true,
+   "category": "ai-devtools",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "blue-yonder/tsfresh",
+   "content_hash": "ac2efdb1c00d81feb96d16c2d000454e",
+   "is_ai": true,
+   "category": "classic-ml",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "highlight/highlight",
+   "content_hash": "19b476ea8fc03edf236dfdb0a3afb822",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "pipipi-pikachu/PPTist",
+   "content_hash": "47de1862f20b4f2e01eaf4b7ade2a97b",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "pytorch/tutorials",
+   "content_hash": "4f53afa7ba7cf5f9b55c2883e9d3740b",
+   "is_ai": true,
+   "category": "classic-ml",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "crynta/terax-ai",
+   "content_hash": "f0f255b4a061a38bd2b52191b950f4a8",
+   "is_ai": true,
+   "category": "ai-devtools",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "usekaneo/kaneo",
+   "content_hash": "26ec84c0ac25f353d411084524957e55",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "openstatusHQ/openstatus",
+   "content_hash": "f5984f10cfac23367ac32b082dda8cbb",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "We5ter/Scanners-Box",
+   "content_hash": "8c7d8800fb0a5a301beeb0ae175a26b7",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "jzhang38/TinyLlama",
+   "content_hash": "3f3376c7dc2c899ce13d93132a1debaf",
+   "is_ai": true,
+   "category": "model-weights",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "NVIDIA/apex",
+   "content_hash": "48bfd2eee1bcd5ebdc4ea2ddeed3f137",
+   "is_ai": true,
+   "category": "training-finetuning",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "backnotprop/plannotator",
+   "content_hash": "1894ff7d184fcd7c14e5fcee3382a1de",
+   "is_ai": true,
+   "category": "ai-devtools",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "NVIDIA/vid2vid",
+   "content_hash": "e8f8817d11fe001b8a140b2b695e7cb3",
+   "is_ai": true,
+   "category": "multimodal-vision",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "dair-ai/ML-Papers-Explained",
+   "content_hash": "47c14ebefd50d4abe013d1468660da2f",
+   "is_ai": true,
+   "category": "awesome-list",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "jeecgboot/jimureport",
+   "content_hash": "32a527e4f219514e928a8de686e7f95f",
+   "is_ai": true,
+   "category": "llm-app",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "bytedance/flowgram.ai",
+   "content_hash": "fcb712bc06d4843eaf522ff7ea42142d",
+   "is_ai": true,
+   "category": "agent-framework",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "MiroMindAI/MiroThinker",
+   "content_hash": "90b0dea197d613921ae06ce076d9f2f8",
+   "is_ai": true,
+   "category": "agent-framework",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "open-pencil/open-pencil",
+   "content_hash": "907c6f7972e27dcbb1b43e353b523697",
+   "is_ai": true,
+   "category": "ai-devtools",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "superradcompany/microsandbox",
+   "content_hash": "5e35ace38e60488658187c7279fc6ff4",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "lukemelas/EfficientNet-PyTorch",
+   "content_hash": "489d971a04ca2a62d70dc5800a9b0066",
+   "is_ai": true,
+   "category": "multimodal-vision",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "isaac-sim/IsaacLab",
+   "content_hash": "5d171a72638d369cc3438ed56230b8c1",
+   "is_ai": true,
+   "category": "robotics-embodied",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "nullclaw/nullclaw",
+   "content_hash": "7916bc92f46295d34e9ab690384423b6",
+   "is_ai": true,
+   "category": "agent-framework",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "webiny/webiny-js",
+   "content_hash": "4e86d2845a25d51717026f8b196df490",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "cartographer-project/cartographer",
+   "content_hash": "1974943066365ad7dac897b32b568496",
+   "is_ai": true,
+   "category": "robotics-embodied",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "recastnavigation/recastnavigation",
+   "content_hash": "b39fbcad25494cd9f7ce3a99f7ae2115",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "coroot/coroot",
+   "content_hash": "65da01defcb78a247921e390c0170e52",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "sweepai/sweep",
+   "content_hash": "a196b69baf6eff8640ab538495f1b557",
+   "is_ai": true,
+   "category": "ai-devtools",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "aidenybai/react-grab",
+   "content_hash": "89866299afdb34a753c429497c2c16d0",
+   "is_ai": true,
+   "category": "ai-devtools",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "OneUptime/oneuptime",
+   "content_hash": "715f5412b9cdf6511367915079c4ab0a",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "1weiho/open-slide",
+   "content_hash": "b8d9447369593ea66ce4d8d0621ae8b2",
+   "is_ai": true,
+   "category": "ai-devtools",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "imaNNeo/fl_chart",
+   "content_hash": "4d1af1f94d2e7470bd9f158e37221028",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "open-telemetry/opentelemetry-collector",
+   "content_hash": "cad0e874cc2e64df764abd7509c2dc7e",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "GoogleCloudPlatform/kubectl-ai",
+   "content_hash": "c67645c0da12ba022c8858f22477bb48",
+   "is_ai": true,
+   "category": "ai-devtools",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "Linzaer/Ultra-Light-Fast-Generic-Face-Detector-1MB",
+   "content_hash": "e03a38383c03a0febf209fa57f6a1232",
+   "is_ai": true,
+   "category": "multimodal-vision",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "openlm-research/open_llama",
+   "content_hash": "e06d25476fb4692caa90e0f0058d94ec",
+   "is_ai": true,
+   "category": "model-weights",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "gkamradt/langchain-tutorials",
+   "content_hash": "b1ee2ac5a7e79d080cbebb258d996f8a",
+   "is_ai": true,
+   "category": "agent-framework",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "Col-E/Recaf",
+   "content_hash": "f1bb02091f89c368addb321266a529a9",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "projectcalico/calico",
+   "content_hash": "f083caf3f3e288f393be732500cf49eb",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "open-falcon/falcon-plus",
+   "content_hash": "e2df3408d12c533e829ad8d5e0a0da2e",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "tensorflow/tensorboard",
+   "content_hash": "ea8734b4a13f571c3d4ab5be78be8261",
+   "is_ai": true,
+   "category": "classic-ml",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "kiloreux/awesome-robotics",
+   "content_hash": "9a62cb5892ac48a8c52da4f4fd0a279d",
+   "is_ai": true,
+   "category": "awesome-list",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "CarterPerez-dev/Cybersecurity-Projects",
+   "content_hash": "096a678d55fdd9b165bc5db112062450",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "CursorTouch/Windows-MCP",
+   "content_hash": "561e3d32c23d1f3a4f41ca09366b9343",
+   "is_ai": true,
+   "category": "mcp",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "joshpxyne/gpt-migrate",
+   "content_hash": "e4dbda55ab43f615a568e24578b5ed11",
+   "is_ai": true,
+   "category": "ai-devtools",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "gcanti/io-ts",
+   "content_hash": "79afde4232f5e6b20b0d7f04cc2727ac",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "googlecreativelab/quickdraw-dataset",
+   "content_hash": "5d38b1168178e96fbc012e23785a995c",
+   "is_ai": true,
+   "category": "data-tooling",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "rcourtman/Pulse",
+   "content_hash": "9f1d47ca23e38fa0110115967413a42d",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "ClemensElflein/OpenMower",
+   "content_hash": "cc062b1734cb84471330a81219705344",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "Moonvy/OpenPromptStudio",
+   "content_hash": "747ca8eeff2f541c17188f5e32c10eaf",
+   "is_ai": true,
+   "category": "prompt-eval-observability",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "repowise-dev/repowise",
+   "content_hash": "92c417512cfaf747225f6c7cd713b201",
+   "is_ai": true,
+   "category": "ai-devtools",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "nraiden/cofounder",
+   "content_hash": "55235a78e3922bef5dc460a9de574d6a",
+   "is_ai": true,
+   "category": "ai-devtools",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "steipete/summarize",
+   "content_hash": "b16f1e5fedcd8b887f54151533fbfa5a",
+   "is_ai": true,
+   "category": "llm-app",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "punkpeye/awesome-mcp-clients",
+   "content_hash": "1737f0422d85650d1040869a9afe02ad",
+   "is_ai": true,
+   "category": "awesome-list",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "google-research/text-to-text-transfer-transformer",
+   "content_hash": "107474ebf3b59bd459accf892722b2cd",
+   "is_ai": true,
+   "category": "training-finetuning",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "Forget-C/Jellyfish",
+   "content_hash": "c8060019e4737445bd5f5406a34d57b4",
+   "is_ai": true,
+   "category": "multimodal-vision",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "tconbeer/harlequin",
+   "content_hash": "8554d9d634bdebac2c45baae9543b496",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "kingoflolz/mesh-transformer-jax",
+   "content_hash": "2cb79d3a7ba161708c753d85063e2c46",
+   "is_ai": true,
+   "category": "training-finetuning",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "apache/camel",
+   "content_hash": "54ed1b18fcad03a2a2eb9f937e0e4108",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "github/CopilotForXcode",
+   "content_hash": "ef10c1711b2128bf48ec2a4a72bbaf20",
+   "is_ai": true,
+   "category": "ai-devtools",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "lharries/whatsapp-mcp",
+   "content_hash": "a84819546b9845008f296a2933fd464a",
+   "is_ai": true,
+   "category": "mcp",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "kubernetes/kube-state-metrics",
+   "content_hash": "9375a621c196b85596c2a1c1916de6bb",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "PlotJuggler/PlotJuggler",
+   "content_hash": "59e052269f745b37919536e69546b184",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "elder-plinius/T3MP3ST",
+   "content_hash": "dae0b97164b683740394571a417b33f5",
+   "is_ai": true,
+   "category": "agent-framework",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "microsoft/fara",
+   "content_hash": "ea1bc49020b5e8afdc338ef9edb6f4eb",
+   "is_ai": true,
+   "category": "model-weights",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "open-edge-platform/anomalib",
+   "content_hash": "acb7f991e0306b5146661a6a2a85dddd",
+   "is_ai": true,
+   "category": "classic-ml",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "graphite-project/graphite-web",
+   "content_hash": "e161747c07378d918350b849c9f377b1",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "creativetimofficial/david-ai",
+   "content_hash": "a451800f52b996d1dfab2c7faafb105c",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "nlintz/TensorFlow-Tutorials",
+   "content_hash": "6bc86abe3317b8cf7363325f48d337ec",
+   "is_ai": true,
+   "category": "classic-ml",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "btraceio/btrace",
+   "content_hash": "ae51061f8290f5864bff0312514e1b83",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "sooperset/mcp-atlassian",
+   "content_hash": "b903f563ec57aadaec2de4c91a6ff97b",
+   "is_ai": true,
+   "category": "mcp",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "Countly/countly-server",
+   "content_hash": "fb03b9b1f063f2ad3d74d0c6d965e537",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "ghuntley/how-to-build-a-coding-agent",
+   "content_hash": "574edf7c52b7b3a93a7a617f82be8236",
+   "is_ai": true,
+   "category": "ai-devtools",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "meta-pytorch/torchtune",
+   "content_hash": "3d472ce59731f96b50d05947d750436d",
+   "is_ai": true,
+   "category": "training-finetuning",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "memovai/mimiclaw",
+   "content_hash": "df14a48eb542bbdc5f345d5d683f96ac",
+   "is_ai": true,
+   "category": "agent-framework",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "mdn/browser-compat-data",
+   "content_hash": "831c4d3eae54b4e966bbea8baa1154d1",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "Coding-Solo/godot-mcp",
+   "content_hash": "52da8d61bc16fab90538404c8f78d7bc",
+   "is_ai": true,
+   "category": "mcp",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "meta-pytorch/captum",
+   "content_hash": "3d6512770083fbeb0df91c521e9886e3",
+   "is_ai": true,
+   "category": "classic-ml",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "pkmital/tensorflow_tutorials",
+   "content_hash": "c69807f4a4dd2568da4bd0c22f8810d6",
+   "is_ai": true,
+   "category": "classic-ml",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "newton-physics/newton",
+   "content_hash": "33005a0101d6e511e6910853a9074634",
+   "is_ai": true,
+   "category": "robotics-embodied",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "qodo-ai/qodo-cover",
+   "content_hash": "8a8568d558338d4b31440c6b7531dcb1",
+   "is_ai": true,
+   "category": "ai-devtools",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "vercel/streamdown",
+   "content_hash": "1075f38d7de07f95f6e1313c21886354",
+   "is_ai": true,
+   "category": "ai-devtools",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "Ne0nd0g/merlin",
+   "content_hash": "e221dc925c29e62acc0f241eda1a69c8",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "modstart-lib/aigcpanel",
+   "content_hash": "387091a1ff99941a396aeb2522114d52",
+   "is_ai": true,
+   "category": "multimodal-vision",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "anishathalye/neural-style",
+   "content_hash": "1cf9a022cbf5366c712b10fb90b5b59c",
+   "is_ai": true,
+   "category": "multimodal-vision",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "karpathy/build-nanogpt",
+   "content_hash": "8b3c4b5943c8ac6017f265f32f447524",
+   "is_ai": true,
+   "category": "training-finetuning",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "YILS-LIN/short-video-factory",
+   "content_hash": "eaffc4ca96588e79f9cd8167e028adc2",
+   "is_ai": true,
+   "category": "multimodal-vision",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "ibab/tensorflow-wavenet",
+   "content_hash": "733091532e28b43dd23a067ea2b64603",
+   "is_ai": true,
+   "category": "audio-speech",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "tkipf/pygcn",
+   "content_hash": "b6a9996fa643ccc44e14d8f3125aa259",
+   "is_ai": true,
+   "category": "classic-ml",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "asciimoo/hister",
+   "content_hash": "042199c050f25478630a4a3aaa7b0a17",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "cloudflare/vibesdk",
+   "content_hash": "f614822140e39d1295a211d779e97424",
+   "is_ai": true,
+   "category": "ai-devtools",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "deepfence/ThreatMapper",
+   "content_hash": "881995707f70f5ef02f32ee697ba4302",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "CreditTone/hooker",
+   "content_hash": "3f730b2ec2b84a129bea547767003477",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "BuilderIO/ai-shell",
+   "content_hash": "ef42fee35b78eab835d40dc4ac67dd87",
+   "is_ai": true,
+   "category": "ai-devtools",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "NVIDIA/tacotron2",
+   "content_hash": "5256617e1319e9fdd02ccdced62d1500",
+   "is_ai": true,
+   "category": "audio-speech",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "CCOSTAN/Home-AssistantConfig",
+   "content_hash": "af831999e20bd453a52d03ca9725623b",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "vercel/eve",
+   "content_hash": "a20baff9b3bae2bb3d8676ff1023b596",
+   "is_ai": true,
+   "category": "agent-framework",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "mithi/robotics-coursework",
+   "content_hash": "792960e22c93838be9fbfae7e10792e6",
+   "is_ai": true,
+   "category": "awesome-list",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "grafana/mimir",
+   "content_hash": "9a0f2e1cc5526ad99137d3a22a8982f9",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "zhkl0228/unidbg",
+   "content_hash": "afc3adce6fdb702f79ad5163c488110a",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "Hufe921/canvas-editor",
+   "content_hash": "8e5c19cfed484854f0918de4f7364641",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "tianshiyeben/wgcloud",
+   "content_hash": "78529d470bca56407dc09c9f82b279a7",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "rajnandan1/kener",
+   "content_hash": "543b087c16c73c5f7bc59f9d63ebb27b",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "taubyte/tau",
+   "content_hash": "61cd1fe7765cc5ad513c875880b42f80",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "libukai/awesome-agent-skills",
+   "content_hash": "953752cc6a1acc08ac5c5b67261ca57c",
+   "is_ai": true,
+   "category": "awesome-list",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "jacobeisenstein/gt-nlp-class",
+   "content_hash": "74b82984bb69869474b4caf7db4ae9d6",
+   "is_ai": true,
+   "category": "classic-ml",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "Lyken17/pytorch-OpCounter",
+   "content_hash": "38c2cad6fd17c9f9d31be19162f5cdf6",
+   "is_ai": true,
+   "category": "classic-ml",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "openclaw/mcporter",
+   "content_hash": "617381282b80b2c424a01456dc95c2f9",
+   "is_ai": true,
+   "category": "mcp",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "TabularisDB/tabularis",
+   "content_hash": "2519e6871d1290d752f709693a75284b",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "parca-dev/parca",
+   "content_hash": "37c40b1369958907dc6d1dd1cc695f1c",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "WuKongIM/WuKongIM",
+   "content_hash": "03b50c7352d0b82ed6fa2f9e35a94506",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "OpenGVLab/DragGAN",
+   "content_hash": "7deed7309f8f1c3a24a22aa9b1bd9255",
+   "is_ai": true,
+   "category": "multimodal-vision",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "fspecii/ace-step-ui",
+   "content_hash": "0f9893f264afba8122f85a3aea4cdccd",
+   "is_ai": true,
+   "category": "audio-speech",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "flipt-io/flipt",
+   "content_hash": "9f065b76d25d319f85965e94ddc96ff3",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "micrometer-metrics/micrometer",
+   "content_hash": "2ee028a26a4a2921a1592e261801a29a",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "palxiao/poster-design",
+   "content_hash": "2b715bb02de3d1b521bce04eab6bb24a",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "vinta/pangu.js",
+   "content_hash": "d1f3ee895cecf51ffee21ced61b86317",
+   "is_ai": true,
+   "category": "llm-app",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "aya-rs/aya",
+   "content_hash": "b6cd3dd6b6a7eea58dde59e389b2f9d2",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "aipoch/open-science",
+   "content_hash": "7c597039e3defa837efb161a478530d6",
+   "is_ai": true,
+   "category": "agent-framework",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "formkit/formkit",
+   "content_hash": "1125ba2f414c8d2a8cbcfc4549f8785f",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "pacifio/atlas",
+   "content_hash": "17b0fedd0ec7d1e9496e01af51e70c31",
+   "is_ai": true,
+   "category": "ai-devtools",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "ros-navigation/navigation2",
+   "content_hash": "dd8c90d3eeca9dfe2c0125464487dc0d",
+   "is_ai": true,
+   "category": "robotics-embodied",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "benjitaylor/agentation",
+   "content_hash": "7321d4ba88b68755887be9a6c141be86",
+   "is_ai": true,
+   "category": "ai-devtools",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "SPLWare/esProc",
+   "content_hash": "d79f846911b81172302e4e3a1a8ec2a8",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "vastsa/PI-Desktop",
+   "content_hash": "75a8c5f45ec20b8cb05e63c6967c729b",
+   "is_ai": true,
+   "category": "ai-devtools",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "TencentCloudADP/youtu-agent",
+   "content_hash": "a458d564824d04a3bd07e6b5ea395e2b",
+   "is_ai": true,
+   "category": "agent-framework",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "real-stanford/diffusion_policy",
+   "content_hash": "acbaf5655cf44bf717de890d2e7dfbe1",
+   "is_ai": true,
+   "category": "robotics-embodied",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "kungfu-systems/kungfu",
+   "content_hash": "9bb027ce8b85677e39c2d71c59461198",
+   "is_ai": true,
+   "category": "agent-framework",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "elyase/awesome-gpt3",
+   "content_hash": "d5434e10a2166343c5fe776178e3b8b2",
+   "is_ai": true,
+   "category": "awesome-list",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "MarkFzp/mobile-aloha",
+   "content_hash": "11584f27bc4edc8e458d0fcc4ad49db6",
+   "is_ai": true,
+   "category": "robotics-embodied",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "typedb/typedb",
+   "content_hash": "8184689429eb10771a269e1c3dbbbab3",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "dorianborian/sesame-robot",
+   "content_hash": "039d4a196310e7c0d6951c4e3db713bc",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "Astrosp/Awesome-OSINT-List",
+   "content_hash": "6e763a80def83ab70a04adebc2f402fd",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "varunshenoy/GraphGPT",
+   "content_hash": "2af5d6957696e952cf619361c5b1532e",
+   "is_ai": true,
+   "category": "llm-app",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "Anakin-Inc/anakin",
+   "content_hash": "38595baa19d83517974a32fa84df974a",
+   "is_ai": true,
+   "category": "data-tooling",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "open-webui/mcpo",
+   "content_hash": "e87c57ebb78689ac36c4dc750374f162",
+   "is_ai": true,
+   "category": "mcp",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "Doriandarko/maestro",
+   "content_hash": "9768778a7bcc9d650f222b7bf0b7eb69",
+   "is_ai": true,
+   "category": "agent-framework",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "cilium/hubble",
+   "content_hash": "5e94fa1b73292515f40caf0ed8ac3055",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "Threekiii/Awesome-Redteam",
+   "content_hash": "29171473cc3526b7814b0c7e586e5f9e",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "wainshine/Chinese-Names-Corpus",
+   "content_hash": "50e8cbbc37938ba92c6bb61fa54536f6",
+   "is_ai": true,
+   "category": "data-tooling",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "Dimillian/CodexMonitor",
+   "content_hash": "df405d21e634fea26013a4fb5faae47b",
+   "is_ai": true,
+   "category": "ai-devtools",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "MichaelGrupp/evo",
+   "content_hash": "a4e7dd64928d1ac3889b5d43c8782668",
+   "is_ai": true,
+   "category": "robotics-embodied",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "uptrace/uptrace",
+   "content_hash": "a9d96ab1b791b3be6f1659aa02379598",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "fudan-generative-vision/champ",
+   "content_hash": "7d6b6c49400d165ab47a4845ec62f206",
+   "is_ai": true,
+   "category": "multimodal-vision",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "zhukunpenglinyutong/desktop-cc-gui",
+   "content_hash": "faa9a7219c3ac075c410585777f502c5",
+   "is_ai": true,
+   "category": "ai-devtools",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "tmoroney/auto-subs",
+   "content_hash": "be00905531b1ffde9d903f69e389f7d3",
+   "is_ai": true,
+   "category": "audio-speech",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "BehaviorTree/BehaviorTree.CPP",
+   "content_hash": "59df9e5db0da6da120d2f12a84fcf1d8",
+   "is_ai": true,
+   "category": "robotics-embodied",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "hybridgroup/cylon",
+   "content_hash": "c03a8dbc6aa33cf0ef32735c0b90ff10",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "RobotLocomotion/drake",
+   "content_hash": "5c4f719deaaa98d103ef5215805de324",
+   "is_ai": true,
+   "category": "robotics-embodied",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "stumpy-dev/stumpy",
+   "content_hash": "c11d1c23f06e9cd33573fc7759e0c057",
+   "is_ai": true,
+   "category": "classic-ml",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "magnitudedev/browser-agent",
+   "content_hash": "90a90832b24831f2746e6e873f31697a",
+   "is_ai": true,
+   "category": "agent-framework",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "Manavarya09/design-extract",
+   "content_hash": "d0d2b82844852fabf12a62c87f106549",
+   "is_ai": true,
+   "category": "ai-devtools",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "groupultra/telegram-search",
+   "content_hash": "f44cea4785aef249d81a397427998c99",
+   "is_ai": true,
+   "category": "rag-vectordb",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "hzwer/WritingAIPaper",
+   "content_hash": "13b6e7c126262081e27b25a88bdf132d",
+   "is_ai": true,
+   "category": "awesome-list",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "qunarcorp/bistoury",
+   "content_hash": "832b8d57c1c1bf772b5239b61994deac",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "zml/zml",
+   "content_hash": "1080ae522123aa32e099d28a382c45d3",
+   "is_ai": true,
+   "category": "inference-serving",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "fake-useragent/fake-useragent",
+   "content_hash": "12216a204f71e7225195307551ab40ce",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "google/mtail",
+   "content_hash": "a73d9658cf1bdc7b2f2c137281652749",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "ginobefun/BestBlogs",
+   "content_hash": "d69d466571c2904f822ddd2f55148474",
+   "is_ai": true,
+   "category": "llm-app",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "introlab/rtabmap",
+   "content_hash": "78fd19f8611a3e510a759e7c79a2ca0d",
+   "is_ai": true,
+   "category": "robotics-embodied",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "ravendb/ravendb",
+   "content_hash": "aba389b197ad14c57cc0e828194369ab",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "dora-rs/dora",
+   "content_hash": "1692fe9f440c006f7c20383ef993d27c",
+   "is_ai": true,
+   "category": "robotics-embodied",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "origin-brain/deepops",
+   "content_hash": "b80e2caed97997be1e654143def8d6e3",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "nraiden/openv0",
+   "content_hash": "3062d6a8b6a0d9dc2b088e6bec1c06ef",
+   "is_ai": true,
+   "category": "ai-devtools",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "OpenHealthForAll/open-health",
+   "content_hash": "10fd788714b6c7eaad306315600e407e",
+   "is_ai": true,
+   "category": "llm-app",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "Paper2Poster/Paper2Poster",
+   "content_hash": "0c2cd4088c1f4986b6e121b4a68578be",
+   "is_ai": true,
+   "category": "agent-framework",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "parcadei/Continuous-Claude-v3",
+   "content_hash": "8fca9addea9546ee0b2f39eec3576efe",
+   "is_ai": true,
+   "category": "ai-devtools",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "Knetic/govaluate",
+   "content_hash": "1948401c3488adc9a24f32e05f0a77e3",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "atopile/atopile",
+   "content_hash": "60b59fedfbbd50caed523ecc59294666",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "evalstate/fast-agent",
+   "content_hash": "66ed2cee23b0d8882b4f8b46745cef0a",
+   "is_ai": true,
+   "category": "agent-framework",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "CherryHQ/cherry-studio-app",
+   "content_hash": "e4a3f8866dae2ec79eb56a1f31f35c93",
+   "is_ai": true,
+   "category": "llm-app",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "remorses/playwriter",
+   "content_hash": "467f4d61c9247cd6b4787c1ec2316ed1",
+   "is_ai": true,
+   "category": "ai-devtools",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "hkust-nlp/simpleRL-reason",
+   "content_hash": "583eb2fff1724e48c4fb7cc81c93ef2e",
+   "is_ai": true,
+   "category": "training-finetuning",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "Jon-Becker/prediction-market-analysis",
+   "content_hash": "84ee26fdd13a9cae967f1474c012c753",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "ailyProject/aily-blockly",
+   "content_hash": "1623db79197f9b51662bf1f706f8dfcd",
+   "is_ai": true,
+   "category": "ai-devtools",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "sourcegraph/cody-public-snapshot",
+   "content_hash": "f3e8c8f215b75e931004685ab0e85475",
+   "is_ai": true,
+   "category": "ai-devtools",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "dotdc/grafana-dashboards-kubernetes",
+   "content_hash": "97340213916d31118b714bcb51d74981",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "dathere/qsv",
+   "content_hash": "9970fd59c156fa445cb32e1503066e23",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "stack-of-tasks/pinocchio",
+   "content_hash": "69807b5e69de9389d2b011e97fa4b2bc",
+   "is_ai": true,
+   "category": "robotics-embodied",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "DataDog/datadog-agent",
+   "content_hash": "601505ccea617a89be7099a887e7d458",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "kimiyoung/transformer-xl",
+   "content_hash": "30f3e755ff495de482af55d0b3dc2856",
+   "is_ai": true,
+   "category": "training-finetuning",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "starVLA/starVLA",
+   "content_hash": "b7a6206e3a3998143afb7bde278ba6d2",
+   "is_ai": true,
+   "category": "robotics-embodied",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "borglab/gtsam",
+   "content_hash": "65500da8ccc4cd04566c6a10b356e783",
+   "is_ai": true,
+   "category": "robotics-embodied",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "odigos-io/odigos",
+   "content_hash": "6325c6d3a58e300f8d80074b1b3df252",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "MarkFzp/act-plus-plus",
+   "content_hash": "273e103ffb2f7eefd7b0b7909fc2a70c",
+   "is_ai": true,
+   "category": "robotics-embodied",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "echo-loop/Echo-Loop",
+   "content_hash": "43d82c8e4dc7f890ccc4eec5510096f0",
+   "is_ai": true,
+   "category": "llm-app",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "kiali/kiali",
+   "content_hash": "06fedc03e822591282665e2f8fd4797c",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "laravel/boost",
+   "content_hash": "60c8f504ee6dd75eb6f3204028eee430",
+   "is_ai": true,
+   "category": "mcp",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "linhandev/dataset",
+   "content_hash": "f265b37d9b6766a7b5714cec61e3824e",
+   "is_ai": true,
+   "category": "data-tooling",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "jdorfman/awesome-json-datasets",
+   "content_hash": "2bf00493c6ecd4264c0ae8fd35c3b012",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "RafalWilinski/express-status-monitor",
+   "content_hash": "cb34ab9480e7e1bc79b752c280c05d86",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "butterbase-ai/butterbase",
+   "content_hash": "c0da161a97fe873e8b144707590768a8",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "meta-pytorch/botorch",
+   "content_hash": "6b4d4241cde85d25870a9d481ef5eec4",
+   "is_ai": true,
+   "category": "classic-ml",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "ai-winter/ros_motion_planning",
+   "content_hash": "320a6e751b4c8cf6d6dd320c4d89df94",
+   "is_ai": true,
+   "category": "robotics-embodied",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "xintaofei/codeg",
+   "content_hash": "8c008f275c580303b9f8d23b55671703",
+   "is_ai": true,
+   "category": "ai-devtools",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "AmintaCCCP/GithubStarsManager",
+   "content_hash": "8d100313ddef278336805f8d59df423b",
+   "is_ai": true,
+   "category": "llm-app",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "LinShunKang/MyPerf4J",
+   "content_hash": "dfe08019574b80143901d5e5f4f2ad8f",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "ashvardanian/StringZilla",
+   "content_hash": "6190ae256c0ed5f3284ac43485139b7f",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "millionco/expect",
+   "content_hash": "48c2f1bc07b6cd818df70bfe6c8f5430",
+   "is_ai": true,
+   "category": "ai-devtools",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "grafana/alloy",
+   "content_hash": "7f15962bc4037cef8eb5b6495db9e328",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "liujuntao123/smart-excalidraw-next",
+   "content_hash": "a15b649e964ff02c919a8d1440bf6f49",
+   "is_ai": true,
+   "category": "llm-app",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "Introduction-to-Autonomous-Robots/Introduction-to-Autonomous-Robots",
+   "content_hash": "062d158e1b1eca79deeb985f7541033a",
+   "is_ai": true,
+   "category": "robotics-embodied",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "dembrandt/dembrandt",
+   "content_hash": "99c37e2caafb22f999432d7b8d6d5494",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "szagoruyko/pytorchviz",
+   "content_hash": "5964ad840102fe598941c4ae0276647a",
+   "is_ai": true,
+   "category": "classic-ml",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "ob-f/OpenBot",
+   "content_hash": "1488224ebbeb00c37446e2664538b036",
+   "is_ai": true,
+   "category": "robotics-embodied",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "petercorke/robotics-toolbox-python",
+   "content_hash": "995ec1a8f4427fdc5aa23c9a91e9e74f",
+   "is_ai": true,
+   "category": "robotics-embodied",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "swarmpit/swarmpit",
+   "content_hash": "3c94a80094e1df972493543d2696939f",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "sdiehl/write-you-a-haskell",
+   "content_hash": "3ded2cc9fd625b2ca949fd8da2d5ce53",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "huangjunsen0406/py-xiaozhi",
+   "content_hash": "5670bef41117950446ec256ae35d93cf",
+   "is_ai": true,
+   "category": "llm-app",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "superagent-ai/grok-cli",
+   "content_hash": "ed0a05381346697b21a64cb3bebd17ed",
+   "is_ai": true,
+   "category": "ai-devtools",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "jordan-gibbs/hyperresearch",
+   "content_hash": "bb5060a33a9dc0f42bb544806f7b0c1a",
+   "is_ai": true,
+   "category": "agent-framework",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "srcbookdev/srcbook",
+   "content_hash": "627f45a56608cf6566576591ee30e9fc",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "roapi/roapi",
+   "content_hash": "a88b1319fd4fce7fb522a63838dc5e5a",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "adamcohenhillel/ADeus",
+   "content_hash": "aa2835d3ce449ba05100b125a5c7d74d",
+   "is_ai": true,
+   "category": "llm-app",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "joreilly/PeopleInSpace",
+   "content_hash": "f0a9705c8b0de85ccd2647f1bd4d88fb",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "tursodatabase/agentfs",
+   "content_hash": "b5c12436ab7c1f4c24da5b52b7b9c7d7",
+   "is_ai": true,
+   "category": "ai-devtools",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "waymo-research/waymo-open-dataset",
+   "content_hash": "41633c13b0b72a18c9eaa7be6c214641",
+   "is_ai": true,
+   "category": "data-tooling",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "fantastic-admin/basic",
+   "content_hash": "3132424883c9ed17f923417e1a08273b",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "Lagrange-Labs/deep-prove",
+   "content_hash": "2d3864b5d1a25e311f8b4f07e2b27a70",
+   "is_ai": true,
+   "category": "inference-serving",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "NVIDIA/flownet2-pytorch",
+   "content_hash": "232acab97117419063e48e79d02227d9",
+   "is_ai": true,
+   "category": "multimodal-vision",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "haydenbleasel/ultracite",
+   "content_hash": "3628163cf9929fc40b0f0d3194a72a71",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "kizniche/Mycodo",
+   "content_hash": "1f6b54d9780b58553476e2b7a69161ce",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "bitbrain/beehave",
+   "content_hash": "e0c855727c670f89e113bfcbb7762458",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "thomasahle/sunfish",
+   "content_hash": "08107aa9a1f7e7d423f3c935dfc2bd35",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "pydata/pandas-datareader",
+   "content_hash": "adb99fa770ad828e3602f598596871a0",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "punkpeye/fastmcp",
+   "content_hash": "b41c77935f9c01a08d26dea05d498a4c",
+   "is_ai": true,
+   "category": "mcp",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "TestSprite/testsprite-cli",
+   "content_hash": "91b18eacbca4400d6029422061859ecf",
+   "is_ai": true,
+   "category": "ai-devtools",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "Source-Robotics/PAROL6-Desktop-robot-arm",
+   "content_hash": "433cfb79cca8198e9d82bfd039aebcba",
+   "is_ai": true,
+   "category": "robotics-embodied",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "xpf0000/FlyEnv",
+   "content_hash": "fd577675c9d16fc513694aade5add68b",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "Mayandev/notion-avatar",
+   "content_hash": "0fb7c4fc33fdff68cb4b0570616c7bfe",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "gcui-art/suno-api",
+   "content_hash": "53973f0c2fe3d1faaf1fbf370920b1c7",
+   "is_ai": true,
+   "category": "audio-speech",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "signerlabs/ShipSwift",
+   "content_hash": "ed804c316e4b0efc0cad39cba12bf0ef",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "eclipse-zenoh/zenoh",
+   "content_hash": "84d8dd65aad73ff60764b2377ce0ad40",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "liyown/ai-trend-publish",
+   "content_hash": "1fa81f6d69e4ada242b9c264a8ead288",
+   "is_ai": true,
+   "category": "llm-app",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "stepfun-ai/Step-Video-T2V",
+   "content_hash": "9c028a72638a95e814e43eed30b7edd1",
+   "is_ai": true,
+   "category": "model-weights",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "smartloli/EFAK",
+   "content_hash": "dcf07287f01daa3a955195667863592b",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "higgsfield/RL-Adventure",
+   "content_hash": "86623aa28fd9ea4cca4da10f5e70e654",
+   "is_ai": true,
+   "category": "classic-ml",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "punitarani/fli",
+   "content_hash": "00aea099eac4e60cb94fa3bd73968cf3",
+   "is_ai": true,
+   "category": "mcp",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "microsoft/retina",
+   "content_hash": "d772d85d219532f5f217804d747db451",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "viebel/klipse",
+   "content_hash": "8b1106f5780bedb10a41cd040eee7a80",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "rpng/open_vins",
+   "content_hash": "8c16f6fe79d8fece7a691b2cc0f2c565",
+   "is_ai": true,
+   "category": "robotics-embodied",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "automagica/automagica",
+   "content_hash": "b0edf06a875991d4d5439b34fbdc9fda",
+   "is_ai": true,
+   "category": "agent-framework",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "robusta-dev/robusta",
+   "content_hash": "357fa89cad7437a15ee013225125e1ff",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "subtrace/subtrace",
+   "content_hash": "2b8e5c285d4b4e7c2ca25174003fc901",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "daveshap/OpenAI_Agent_Swarm",
+   "content_hash": "448fb2c0ef006f0ca12dfe2d38c13cac",
+   "is_ai": true,
+   "category": "agent-framework",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "rpamis/comet",
+   "content_hash": "052555849ec4dc6b4cbd0e82b270736b",
+   "is_ai": true,
+   "category": "ai-devtools",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "tusen-ai/simpledet",
+   "content_hash": "fc9f30a4db6a89434161b7bf18289b3e",
+   "is_ai": true,
+   "category": "multimodal-vision",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "ibelick/prompt-kit",
+   "content_hash": "94d7c2a2710670d689e750c038cfefcd",
+   "is_ai": true,
+   "category": "ai-devtools",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "rishikanthc/Scriberr",
+   "content_hash": "7e382619c80efde67f24773158945c36",
+   "is_ai": true,
+   "category": "audio-speech",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "viperrcrypto/Siftly",
+   "content_hash": "16cdb99ccb50afd3ff352870197efa85",
+   "is_ai": true,
+   "category": "llm-app",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "projectchrono/chrono",
+   "content_hash": "d481d84639e1f09199f220b1474d7113",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "microsoft/skills",
+   "content_hash": "932fa80443d658cfd4edcc6e40187919",
+   "is_ai": true,
+   "category": "ai-devtools",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "odygrd/quill",
+   "content_hash": "ed6226a83cd7eb0aa7c2f8e4011c06be",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "RKiding/Awesome-finance-skills",
+   "content_hash": "16cec9692ea56ea1b3d7379a0bc8a336",
+   "is_ai": true,
+   "category": "awesome-list",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "ascending-llc/jarvis-registry",
+   "content_hash": "4217550331fc4b9c068c0d45a609b244",
+   "is_ai": true,
+   "category": "mcp",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "meodai/color-names",
+   "content_hash": "f036613b84b3e8086a9d6e8ef2593b63",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "samuelgursky/davinci-resolve-mcp",
+   "content_hash": "914ce5f30e5ab7caf9ce0444ab8adce5",
+   "is_ai": true,
+   "category": "mcp",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "mazzzystar/Queryable",
+   "content_hash": "e4e7585dc04911fc5e93090f59aabe13",
+   "is_ai": true,
+   "category": "multimodal-vision",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "silexlabs/Silex",
+   "content_hash": "ec9c94d85d61f4cc9bbd44d2948ed911",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "deedy5/ddgs",
+   "content_hash": "37d0605092ca8db2476de80ad97d37df",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "yunionio/cloudpods",
+   "content_hash": "b4430ad76bd36cb909cbe382db963f09",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "turboderp/exllama",
+   "content_hash": "e7fe6f4ce720946f1feae86e2003df8b",
+   "is_ai": true,
+   "category": "inference-serving",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "collabs-inc/collab-public",
+   "content_hash": "2d57dbc12b25e286b7cd98f8406032b2",
+   "is_ai": true,
+   "category": "ai-devtools",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "zhulf0804/3D-PointCloud",
+   "content_hash": "5359f7cba89882055b061b06e9b8aed8",
+   "is_ai": true,
+   "category": "awesome-list",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "intellectronica/ruler",
+   "content_hash": "d708a6a452ea4c9b6aacddbfbeb682bc",
+   "is_ai": true,
+   "category": "ai-devtools",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "TriliumNext/Notes",
+   "content_hash": "8c3917fea7f56f23d18dbda8052a6a3f",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "bytewax/awesome-public-real-time-datasets",
+   "content_hash": "8b09e27239b71e1cde4d739b7061cde2",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "DLLXW/baby-llama2-chinese",
+   "content_hash": "cf89f04a86f7bf0e94df5e02496f4328",
+   "is_ai": true,
+   "category": "training-finetuning",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "rilldata/rill",
+   "content_hash": "73ebf9416a3fcc9e375f701ec7b20871",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "eProsima/Fast-DDS",
+   "content_hash": "b5318bb3f56a034d5db002016cc4802a",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "ShawnPana/phone-harness",
+   "content_hash": "95d34df278de8be9f9931301465ef660",
+   "is_ai": true,
+   "category": "agent-framework",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "spring-ai-alibaba/examples",
+   "content_hash": "e841bec3f7f8725e3842be59e12cdc33",
+   "is_ai": true,
+   "category": "agent-framework",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "RoboTwin-Platform/RoboTwin",
+   "content_hash": "22b9c9f54edfaf8b4789d4aa66c96247",
+   "is_ai": true,
+   "category": "robotics-embodied",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "WebBreacher/WhatsMyName",
+   "content_hash": "1c59727e3a546328b0d2faaeb589f308",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "explorerhq/sql-explorer",
+   "content_hash": "e20e6d05b9cf8cebbea2b1ca11340e95",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "cloudflare/skills",
+   "content_hash": "b38019d17a535d44013c3e43e0a94e76",
+   "is_ai": true,
+   "category": "ai-devtools",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "numz/ComfyUI-SeedVR2_VideoUpscaler",
+   "content_hash": "339492bc405936f2fe7992c41a94ae2e",
+   "is_ai": true,
+   "category": "multimodal-vision",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "logpai/loghub",
+   "content_hash": "2e77b1e79625f5ca2617a63ceb5b2981",
+   "is_ai": true,
+   "category": "data-tooling",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "skills/secure-code-game",
+   "content_hash": "03bbb380135969c4bdc59b9263edb3d6",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "EvanBacon/serve-sim",
+   "content_hash": "7b8f705e7c7ca9eddf2286389ccc10b7",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "chthollyphile/folia-major",
+   "content_hash": "eb36b43acb8934d752f3637133a448fe",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "rlaope/oh-my-hermes",
+   "content_hash": "80f0135a251223847d8187541d958431",
+   "is_ai": true,
+   "category": "ai-devtools",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "OpenDCAI/Paper2Any",
+   "content_hash": "7ff8de986b53fb1520ada6b9c1a23cc3",
+   "is_ai": true,
+   "category": "llm-app",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "huangwb8/ChineseResearchLaTeX",
+   "content_hash": "36e96304a8e5c5ba11a7a5f8840d5809",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "ethereon/caffe-tensorflow",
+   "content_hash": "50209aa9a9e690bc2f114ebb5a5652f1",
+   "is_ai": true,
+   "category": "classic-ml",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "Mininglamp-AI/Mano-P",
+   "content_hash": "4a589c7c4468c3c81da013707476c10a",
+   "is_ai": true,
+   "category": "agent-framework",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "sparfenyuk/mcp-proxy",
+   "content_hash": "b5efa5037f3891bb76f57b045ab7bc5b",
+   "is_ai": true,
+   "category": "mcp",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "git-ai-project/git-ai",
+   "content_hash": "22b79173f88b65cb401c175cb0577ba0",
+   "is_ai": true,
+   "category": "ai-devtools",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "taichi-dev/difftaichi",
+   "content_hash": "a5968322e81718503fc03497cb25f8d6",
+   "is_ai": true,
+   "category": "classic-ml",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "cyfyifanchen/one-person-company",
+   "content_hash": "8ab41cc1b0c0c5e25404bf3c84fddb62",
+   "is_ai": true,
+   "category": "awesome-list",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "tum-vision/lsd_slam",
+   "content_hash": "22ee6813375932e26ebea53da72896f4",
+   "is_ai": true,
+   "category": "robotics-embodied",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "Card-Forge/forge",
+   "content_hash": "7bc9bb430eb9d5f624d6e262832096fc",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "cocoindex-io/cocoindex-code",
+   "content_hash": "af8641bb171343a6fc2ccac6a2d864da",
+   "is_ai": true,
+   "category": "ai-devtools",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "snapotter-hq/SnapOtter",
+   "content_hash": "9d3c66e0526a7faea6401302ce71667e",
+   "is_ai": true,
+   "category": "data-tooling",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "nteract/semiotic",
+   "content_hash": "b9cdd82c8cedfa5cd0d76ac7db7cf3f5",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "puaclaw/PUAClaw",
+   "content_hash": "fcb7d691432318ac093bcb27eee35e48",
+   "is_ai": true,
+   "category": "ai-devtools",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "heshengtao/super-agent-party",
+   "content_hash": "fc58c19a9c6fd535c368ffbe5a617f06",
+   "is_ai": true,
+   "category": "llm-app",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "hello245m/free-stockdb",
+   "content_hash": "c2f0dc7a37bc97ff3f0b6806bdbb816a",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "openags/paper-search-mcp",
+   "content_hash": "2db296e0f2eb706d40ef57ca1071e708",
+   "is_ai": true,
+   "category": "mcp",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "pipelinedb/pipelinedb",
+   "content_hash": "f2ae17bf66286c519a3480dab501f431",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "ros-planning/navigation",
+   "content_hash": "1a965deca05703b000eaf3efdc69258a",
+   "is_ai": true,
+   "category": "robotics-embodied",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "detectRecog/CCPD",
+   "content_hash": "af71cf8b1aa6688d0577e920803ef0c6",
+   "is_ai": true,
+   "category": "data-tooling",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "Tencent-Hunyuan/HY-World-2.0",
+   "content_hash": "d426d548fe7535b128d0e02bbd754a39",
+   "is_ai": true,
+   "category": "model-weights",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "colour-science/colour",
+   "content_hash": "4007d3b085ac86eb826580b0cb4d14ab",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "mito-ds/mito",
+   "content_hash": "006b0d3ac1b012f5fc100bdc51ecf4fe",
+   "is_ai": true,
+   "category": "ai-devtools",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "gridaco/grida",
+   "content_hash": "cf34af6bafe05081ba788f702ee6badd",
+   "is_ai": true,
+   "category": "ai-devtools",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "GuDong2003/xianyu-auto-reply-fix",
+   "content_hash": "fdf491aa5d05301ed6d7c51506c95033",
+   "is_ai": true,
+   "category": "llm-app",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "Helvesec/rmux",
+   "content_hash": "c54317ff10c0432fe348f24e3e471415",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "sbousseaden/EVTX-ATTACK-SAMPLES",
+   "content_hash": "67f2c7b36f81373ea611ce19175cb3d1",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "spotify/scio",
+   "content_hash": "ceb67f45f99e7ef3070922b51db6ccb0",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "sanghyun-son/EDSR-PyTorch",
+   "content_hash": "a36679def2861bf1e2a7b3c8a03b0508",
+   "is_ai": true,
+   "category": "multimodal-vision",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "go-nunu/nunu",
+   "content_hash": "aeb1f3cd43ee9e3d6cb724cefc0880fb",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "sjchoi86/Tensorflow-101",
+   "content_hash": "82ffe398ca96b38a92d186ad79139137",
+   "is_ai": true,
+   "category": "classic-ml",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "ahmedeltaher/Android-MVVM-Architecture-Android-Voice-AI-SDK",
+   "content_hash": "e2abbc97ae6f86009683ba1e5d67cb81",
+   "is_ai": true,
+   "category": "audio-speech",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "miantiao-me/hacker-podcast",
+   "content_hash": "40bea0cdceb298175e44cffd3841268a",
+   "is_ai": true,
+   "category": "llm-app",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "pythops/oryx",
+   "content_hash": "37133098c9d7d6574f77476eab839d7b",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "Octoday-Hub/Embodied-AI",
+   "content_hash": "159c359819524e9fee2c05552da6eb88",
+   "is_ai": true,
+   "category": "awesome-list",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "YeQing17-2026/OmniAgent",
+   "content_hash": "999b286f4c5db484cf8678890d32df0d",
+   "is_ai": true,
+   "category": "agent-framework",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "HughYau/AcademicForge",
+   "content_hash": "b58383a12b1fa98a7807c0bf32832d74",
+   "is_ai": true,
+   "category": "ai-devtools",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "DevXDojo/MrRSS",
+   "content_hash": "d44e8138ae1dea574ffc5b3daf863c55",
+   "is_ai": true,
+   "category": "llm-app",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "simbody/simbody",
+   "content_hash": "dcf306eda57c57ea247906682486b041",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "SeldonIO/alibi-detect",
+   "content_hash": "f8241633c65123dbc68d7c3267b0476f",
+   "is_ai": true,
+   "category": "classic-ml",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "slok/sloth",
+   "content_hash": "032361fb8ed20f16f4a09f51c2a571a3",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "justinzm/gopup",
+   "content_hash": "05fcc203576417f0c047f5045d60423c",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "cisco-ai-defense/skill-scanner",
+   "content_hash": "dc91ddd872d83881747a85cf2626372f",
+   "is_ai": true,
+   "category": "ai-devtools",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "AprilRobotics/apriltag",
+   "content_hash": "7fd04281dce080c993e2f7509689d3e5",
+   "is_ai": true,
+   "category": "robotics-embodied",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "felinics/Memoh",
+   "content_hash": "db82b759afd558fa6f0eff08abac622b",
+   "is_ai": true,
+   "category": "agent-framework",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "hi-godot/godot-ai",
+   "content_hash": "a1c72a56d24a572b0ed07ace023a6149",
+   "is_ai": true,
+   "category": "mcp",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "ZenNotes/zennotes",
+   "content_hash": "e20446ffc62078fce2ebb4c3ca424bda",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "opencog/opencog",
+   "content_hash": "17296a832b4935cf72f59af4c369651f",
+   "is_ai": true,
+   "category": "classic-ml",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "griddb/griddb",
+   "content_hash": "c15fd8db9b6a300e939e6b23b9830540",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "lukes/ISO-3166-Countries-with-Regional-Codes",
+   "content_hash": "cbc7cbede3acad62a750d53f63aa98f8",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "sanderland/katrain",
+   "content_hash": "5f5766922a243fb544a82c93cb68c39f",
+   "is_ai": true,
+   "category": "classic-ml",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "docmd-io/docmd",
+   "content_hash": "3989549d76f6d0447ac35abdc40f04ab",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "parseablehq/parseable",
+   "content_hash": "ead56fca90e247c5b7b971ac3f2c89b8",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "samanhappy/mcphub",
+   "content_hash": "92c2fa5552d45646b2796a1e8d0b6f93",
+   "is_ai": true,
+   "category": "mcp",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "dexmal/dexbotic",
+   "content_hash": "fdac21406cb28fec1cbbdb4b131e0d45",
+   "is_ai": true,
+   "category": "robotics-embodied",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "vercel/ai-elements",
+   "content_hash": "5491177b0c25e2807e399c84019b9558",
+   "is_ai": true,
+   "category": "ai-devtools",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "sk3pp3r/cheat-sheet-pdf",
+   "content_hash": "c45ae5b5c1b076e0e659a501afba7c93",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "techa03/goodsKill",
+   "content_hash": "6fd1d0ed6339d8115ae4d74b325e53d4",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "perses/perses",
+   "content_hash": "e96fce9c18c9984a00797b15db0e2166",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "zai-org/CogVLM2",
+   "content_hash": "192c4ad30d9f2ead71021da29f521861",
+   "is_ai": true,
+   "category": "model-weights",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "Ph055a/OSINT_Collection",
+   "content_hash": "d3a5384c63a4061e0cb908873f882465",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "pixpark/gpupixel",
+   "content_hash": "865d858a74d79862050227d574c54134",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "liangdabiao/Seedance2-Storyboard-Generator",
+   "content_hash": "fa48f9782e973bc8ac185fb7ca7b7daf",
+   "is_ai": true,
+   "category": "multimodal-vision",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "knowsuchagency/mcp2cli",
+   "content_hash": "255c7fc594844b96d58709ca5f41f6d6",
+   "is_ai": true,
+   "category": "mcp",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "TNT-Likely/BeeCount",
+   "content_hash": "dbf9808982fcb1bf298dee8811b947df",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "fal-ai-community/video-starter-kit",
+   "content_hash": "833a4c190b50a87ef8fcd5ded0a2d013",
+   "is_ai": true,
+   "category": "multimodal-vision",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "elevenlabs/ui",
+   "content_hash": "76d12d1ab19beb1f1ccfc1b459984d70",
+   "is_ai": true,
+   "category": "ai-devtools",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "tracel-ai/cubecl",
+   "content_hash": "f618eeb0b1ea5911767a5d1ab57af152",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "influxdata/kapacitor",
+   "content_hash": "9f263c5fda68967b3b16caa0514bf910",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "vercel/chat",
+   "content_hash": "163bcc69525b1fa720ff031da4f7c2ae",
+   "is_ai": true,
+   "category": "llm-app",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "magefree/mage",
+   "content_hash": "43a035929b1827013d5690c6580aadee",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "xaboy/form-create-designer",
+   "content_hash": "c7d41b663b4bec57956819ba9a4959cc",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "Comfy-Org/desktop",
+   "content_hash": "aa56d6d65271e1c5df4de61b9f1a38a7",
+   "is_ai": true,
+   "category": "multimodal-vision",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "1backend/1backend",
+   "content_hash": "8f555b0c1650562cc2642fa17465778d",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "MIT-SPARK/TEASER-plusplus",
+   "content_hash": "56c2421b4328ffc8fdc7eb5fe3634e9f",
+   "is_ai": true,
+   "category": "robotics-embodied",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "southleft/figma-console-mcp",
+   "content_hash": "11dd89e4f877e443894141755e9d538c",
+   "is_ai": true,
+   "category": "mcp",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "PRBonn/kiss-icp",
+   "content_hash": "2764766d6ce09e0973ea2223f200bf9e",
+   "is_ai": true,
+   "category": "robotics-embodied",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "chvmp/champ",
+   "content_hash": "748d0aa5e814ca3cbe4393e41a5dc4fc",
+   "is_ai": true,
+   "category": "robotics-embodied",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "OpenHelix-Team/VLA-Adapter",
+   "content_hash": "e5b78ba540131b8504cb2e98f3a03043",
+   "is_ai": true,
+   "category": "robotics-embodied",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "jenkinsci/kubernetes-plugin",
+   "content_hash": "c03b87a40eb90405f487e6a13221f8b3",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "VictoriaMetrics/VictoriaLogs",
+   "content_hash": "6772299311b455d3387d2fbc7a2e035e",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "learnhouse/learnhouse",
+   "content_hash": "13aead37ea99baa568350e457b6a19ae",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "stepfun-ai/gelab-zero",
+   "content_hash": "ad8abfca49f8ccdcdbe4fec93f7613ca",
+   "is_ai": true,
+   "category": "agent-framework",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "oh-my-mermaid/oh-my-mermaid",
+   "content_hash": "d55777984a4246719842f7b84cde84f4",
+   "is_ai": true,
+   "category": "ai-devtools",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "latentcat/latentbox",
+   "content_hash": "c68bc5a927bf5e9387ae51a0b585fede",
+   "is_ai": true,
+   "category": "awesome-list",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "Kocoro-lab/Shannon",
+   "content_hash": "2dc51470306c84818027fe4ee4cfa126",
+   "is_ai": true,
+   "category": "agent-framework",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "YFGaia/dify-plus",
+   "content_hash": "fe90e867ca840c6769372df12cd40aaf",
+   "is_ai": true,
+   "category": "llm-app",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "LiveHelperChat/livehelperchat",
+   "content_hash": "63e97db41864806bcf0033a29fea5ca9",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "onlytailei/CppRobotics",
+   "content_hash": "6120ac2d619f55191eb9f058148cd188",
+   "is_ai": true,
+   "category": "robotics-embodied",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "AmoyLab/Unla",
+   "content_hash": "086c92508478918832eb84526cf6a196",
+   "is_ai": true,
+   "category": "mcp",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "jim-schwoebel/voice_datasets",
+   "content_hash": "5d48066ae7688b0293ffed732faec471",
+   "is_ai": true,
+   "category": "data-tooling",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "Jieyab89/OSINT-Cheat-sheet",
+   "content_hash": "1c7390e72258509e9e0f22b4201a42b3",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "ai-christianson/RA.Aid",
+   "content_hash": "164e124fb06aaf92ee6df8084673928e",
+   "is_ai": true,
+   "category": "agent-framework",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "nvkelso/natural-earth-vector",
+   "content_hash": "d25f6c872080a33ef0f1d8d1ebbf0ed0",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "AgriciDaniel/claude-blog",
+   "content_hash": "7dc29da50914490e0e93610189ae5a4e",
+   "is_ai": true,
+   "category": "ai-devtools",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "shadcn-ui/lint",
+   "content_hash": "75a68e4229e06366636f0599d85d9ee0",
+   "is_ai": true,
+   "category": "ai-devtools",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "alibaba/loongcollector",
+   "content_hash": "e8a26889b709ad17514c9b7a34c2ae69",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "alibaba/clusterdata",
+   "content_hash": "a6ddeaca2463f47acd1bd4cf6adfdaf3",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "Fabsqrt/BitTiger",
+   "content_hash": "836381146a56c2f1e12932ff5081501e",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "tinyfish-io/tinyfish-cookbook",
+   "content_hash": "d599098e54a608a68efb43743105d3fc",
+   "is_ai": true,
+   "category": "agent-framework",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "scouter-project/scouter",
+   "content_hash": "bce822bd1298decba9e3130bdbf33247",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "HCPLab-SYSU/Embodied_AI_Paper_List",
+   "content_hash": "712fb4f669a17a844c3801a3062912c9",
+   "is_ai": true,
+   "category": "awesome-list",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "MiniMax-AI/cli",
+   "content_hash": "6f6182e4b7e329640ce81886f832f249",
+   "is_ai": true,
+   "category": "llm-app",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "ompl/ompl",
+   "content_hash": "bd5829abe1e867ad13e0e8b5f8084da8",
+   "is_ai": true,
+   "category": "robotics-embodied",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "RJT1990/pyflux",
+   "content_hash": "51519a921e6e38a7e56e40327305afca",
+   "is_ai": true,
+   "category": "classic-ml",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "grafana/beyla",
+   "content_hash": "35215b38030be3dc489ca32dd91dbaf2",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "3D-Vision-World/awesome-NeRF-and-3DGS-SLAM",
+   "content_hash": "0e044de884b302e9d0e85e74c5fdfe02",
+   "is_ai": true,
+   "category": "awesome-list",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "handtracking-io/yoha",
+   "content_hash": "3ba22d7da14db7311e31eb7a4d61e0e5",
+   "is_ai": true,
+   "category": "multimodal-vision",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "LC1332/Chat-Haruhi-Suzumiya",
+   "content_hash": "7df4270ad9da3e4e6c2d425d9a5ba5e5",
+   "is_ai": true,
+   "category": "llm-app",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "tigerless-labs/cost-xray",
+   "content_hash": "05afccb86dc128851abb45df1058acb8",
+   "is_ai": true,
+   "category": "prompt-eval-observability",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "chatmcp/mcpso",
+   "content_hash": "c2ebf7adfeca1d073b451daec6ba978d",
+   "is_ai": true,
+   "category": "mcp",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "storytold/artcraft",
+   "content_hash": "24d9202efafcd955eeba33c623f98a09",
+   "is_ai": true,
+   "category": "multimodal-vision",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "blackholll/loonflow",
+   "content_hash": "c620490d052dbd4345c02cf46e909764",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "shramos/Awesome-Cybersecurity-Datasets",
+   "content_hash": "0ee57c0142ee2d01105250437cff1338",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "ai-for-developers/awesome-ai-coding-tools",
+   "content_hash": "368166c042751a8f9056d4b5d1f97725",
+   "is_ai": true,
+   "category": "awesome-list",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "GoogleCloudPlatform/khi",
+   "content_hash": "a89541c846cf88b4c53920a9dfda97a4",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "BetaStreetOmnis/xhs_ai_publisher",
+   "content_hash": "4f62bda68bbf1ad6f38c121c3f710649",
+   "is_ai": true,
+   "category": "llm-app",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "microsoft/AI-Red-Teaming-Playground-Labs",
+   "content_hash": "e04a35feee1776a22b41b3127057c349",
+   "is_ai": true,
+   "category": "prompt-eval-observability",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "sherifabdlnaby/elastdocker",
+   "content_hash": "36aca699cc9e32483bee651ee817f44b",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "zalando/logbook",
+   "content_hash": "2a4e5f31081d14724b6aff377759fbae",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "groundcover-com/caretta",
+   "content_hash": "fc6706359ce7cbb2f975fb3bd878f77d",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "CYB3RMX/Qu1cksc0pe",
+   "content_hash": "5334c626d6490c950eb3b6f431a35b4d",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "gocrane/crane",
+   "content_hash": "4e299ee51a7710fe986ef6e502eb0d85",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "Intellindust-AI-Lab/DEIMv2",
+   "content_hash": "9b4e4b4e3e262152a259a781bb7efc2e",
+   "is_ai": true,
+   "category": "multimodal-vision",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "0Chencc/clawgod",
+   "content_hash": "66701c528de03b4f022e1f33779995e8",
+   "is_ai": true,
+   "category": "ai-devtools",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "NxcoreAI/EverRoom",
+   "content_hash": "6771d3a085941f61c23a1654e4be061b",
+   "is_ai": true,
+   "category": "llm-app",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "Octane0411/open-vibe-island",
+   "content_hash": "503d45accc6900eb82c094bbd3a26fb6",
+   "is_ai": true,
+   "category": "ai-devtools",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "nitrictech/nitric",
+   "content_hash": "5bfd7f2ab57b6228e347b6430f4b2b2d",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "vmoranv/jshookmcp",
+   "content_hash": "8f3712f4c3cb6c8dd04ab19e7c224365",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "GAIR-NLP/O1-Journey",
+   "content_hash": "1e45d6e5f49d7443dc79207e19431b82",
+   "is_ai": true,
+   "category": "training-finetuning",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "GordenSun/GordenSuperPPTSkills",
+   "content_hash": "6bb501795e936405ae5e98e068a29aec",
+   "is_ai": true,
+   "category": "ai-devtools",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "forloopcodes/contextplus",
+   "content_hash": "9c1a3b1f990744c49e3fa3e9a38d2cdc",
+   "is_ai": true,
+   "category": "mcp",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "openclaw/clawsweeper",
+   "content_hash": "0c367e8fcc833e386508c1eac644d131",
+   "is_ai": true,
+   "category": "ai-devtools",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "openakita/openakita",
+   "content_hash": "492de11e4a8118d53029d282b30d50cc",
+   "is_ai": true,
+   "category": "agent-framework",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "merveenoyan/smol-vision",
+   "content_hash": "f54697133d68301a6ec064a016019e17",
+   "is_ai": true,
+   "category": "multimodal-vision",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "LingyiChen-AI/JadeAI",
+   "content_hash": "a67a9e34ed92b81d7803bde2562ec8fd",
+   "is_ai": true,
+   "category": "llm-app",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "trycompai/comp",
+   "content_hash": "476d52bf560a03d72463b78c3811bbb0",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "HuTianQi/SmartOpenCV",
+   "content_hash": "24e8b325ca5ccd580293be97cd1f738b",
+   "is_ai": true,
+   "category": "multimodal-vision",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "ranuts/document",
+   "content_hash": "1759cec837573e3bc2e5e97199d4ba68",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "chengzuopeng/stock-sdk",
+   "content_hash": "6443db83efd18da2d21af59bf7c67716",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "AutoArk/EVA-OS",
+   "content_hash": "a5409bfd0be7ab2ec4e1ac36380f28bb",
+   "is_ai": true,
+   "category": "llm-app",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "deepfence/PacketStreamer",
+   "content_hash": "a9ce6e07176a792c6e0d0f604b9cccda",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "aeonfun/opendia",
+   "content_hash": "4149a0f3b416b3dcd86ded2a02df637a",
+   "is_ai": true,
+   "category": "ai-devtools",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "MIT-SPARK/Kimera-VIO",
+   "content_hash": "eab4dc484b790d4865a5755999e1dff1",
+   "is_ai": true,
+   "category": "robotics-embodied",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "karlkurzer/path_planner",
+   "content_hash": "21e8a19d508d903bb9a551e36634f4ea",
+   "is_ai": true,
+   "category": "robotics-embodied",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "RedPlanetHQ/tegon",
+   "content_hash": "3f54c15b5971191750ec35830c3d8693",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "policy-gradient/GRPO-Zero",
+   "content_hash": "0d41522ad4120fa389b4aa17717758e0",
+   "is_ai": true,
+   "category": "training-finetuning",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "aipoch/medical-research-skills",
+   "content_hash": "899d0a481915b07ff1bb8f2f9400285b",
+   "is_ai": true,
+   "category": "ai-devtools",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "chinesehuazhou/python-weekly",
+   "content_hash": "b6a9d14d797c668e369f04f611f3294b",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "ContextLab/hypertools",
+   "content_hash": "7dfa174af3955fd404d2423d74bea54d",
+   "is_ai": true,
+   "category": "classic-ml",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "corollari/linusrants",
+   "content_hash": "c74b4cd6e4efe2db7b5203bc0978c85e",
+   "is_ai": true,
+   "category": "data-tooling",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "coder-hxl/x-crawl",
+   "content_hash": "04cfb74c4b339b6409491852ab23144c",
+   "is_ai": true,
+   "category": "data-tooling",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "INESCTEC/yake",
+   "content_hash": "bc4cac36098c64bd203e02615aa6fcd9",
+   "is_ai": true,
+   "category": "classic-ml",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "libukai/Awesome-ChatTTS",
+   "content_hash": "4c268b494886ee44725b5e8d3bfa2a35",
+   "is_ai": true,
+   "category": "awesome-list",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "LingyiChen-AI/AIComicBuilder",
+   "content_hash": "659cc51990756b30e75ceb7a4874f79e",
+   "is_ai": true,
+   "category": "multimodal-vision",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "ANYbotics/elevation_mapping",
+   "content_hash": "083a2a17c4c96d5ba3bb72d116d1ba33",
+   "is_ai": true,
+   "category": "robotics-embodied",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "karolpiczak/ESC-50",
+   "content_hash": "1832ff7d95ba31add81e35e953dba56b",
+   "is_ai": true,
+   "category": "data-tooling",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "qqfly/how-to-learn-robotics",
+   "content_hash": "f9544841cde5bab455d80cfd75f80afd",
+   "is_ai": true,
+   "category": "awesome-list",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "sourcery-ai/sourcery",
+   "content_hash": "084431dafbb69b28b392fc8cd74b3c5e",
+   "is_ai": true,
+   "category": "ai-devtools",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "zhangxiangliang/stock-api",
+   "content_hash": "9b155b2e41e2cc243d92959854054af0",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "jina-ai/dev-gpt",
+   "content_hash": "2e8ca88740442b5ad3efc9bbf207693d",
+   "is_ai": true,
+   "category": "agent-framework",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "evloghq/evlog",
+   "content_hash": "f5623051f89349671d5b99042ca65721",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "anysearch-ai/anysearch-mcp-server",
+   "content_hash": "b14b2d0cdc473ef953c5610b23a680b3",
+   "is_ai": true,
+   "category": "mcp",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "tddworks/baguette",
+   "content_hash": "fd4554c501aa8b7d72f22c935c9e1fa2",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "questflowai/investorskills",
+   "content_hash": "dc9a49159bb2d9ac3be67c4655a4ef76",
+   "is_ai": true,
+   "category": "ai-devtools",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "MobilityData/awesome-transit",
+   "content_hash": "6d13fd04a67d2171bf2eba51e8b6e9e8",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "ai-hero-dev/ai-hero",
+   "content_hash": "a0230f8100481bba1e795761b09c3c88",
+   "is_ai": true,
+   "category": "awesome-list",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "chrisryugj/kordoc",
+   "content_hash": "dac5a420f8c5ea1d3cdba183b6c7f676",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "AgibotTech/agibot_x1_infer",
+   "content_hash": "d6519fd1d2c325f9a4f9cbe112be84ab",
+   "is_ai": true,
+   "category": "robotics-embodied",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "norlab-ulaval/libpointmatcher",
+   "content_hash": "335032b20849baa08f3ab00363a69eb0",
+   "is_ai": true,
+   "category": "robotics-embodied",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "JuliaData/DataFrames.jl",
+   "content_hash": "ad1676baecb58f5170f6871859ff2cb1",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "Daisy-Zhang/Awesome-Deepfakes-Detection",
+   "content_hash": "e66eef5069227a3ba251e27d560e28f1",
+   "is_ai": true,
+   "category": "awesome-list",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "root-gg/plik",
+   "content_hash": "382f441d30a687b861223089349d6786",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "GestaltCogTeam/BasicTS",
+   "content_hash": "dc62f242064d30c9973e0334fdee4d7b",
+   "is_ai": true,
+   "category": "classic-ml",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "tanelpoder/0xtools",
+   "content_hash": "31b56e825363b854824c59738e2b0bfd",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "robustmq/robustmq",
+   "content_hash": "e800c64c2a56dee5b340d3b47612b8ca",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "ruotianluo/pytorch-faster-rcnn",
+   "content_hash": "4f23929594683b50f49e19a9443ba90d",
+   "is_ai": true,
+   "category": "multimodal-vision",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "lihongxun945/gobang",
+   "content_hash": "f94e3074e09b6deed72dc3c64a282d6f",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "all-in-aigc/aicover",
+   "content_hash": "4b2c2aa16d890aa05571afc6014051e2",
+   "is_ai": true,
+   "category": "multimodal-vision",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "uber-common/jvm-profiler",
+   "content_hash": "89b4fb00848513f26ef3ddd4ecbf9d00",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "Tencent/TSW",
+   "content_hash": "c684ad0c731f3175370f74ebc6f5ab3a",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "thanglequoc/vietnamese-provinces-database",
+   "content_hash": "06d2445cf46127541db36d14117b3ec0",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "VAST-AI-Research/TripoSG",
+   "content_hash": "84227bcfb2dd48a3843538b5f506ddab",
+   "is_ai": true,
+   "category": "multimodal-vision",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "TypeWhisper/typewhisper-mac",
+   "content_hash": "cf3ffb296500c9d46c1b256e82031039",
+   "is_ai": true,
+   "category": "audio-speech",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "minecraft-dev/MinecraftDev",
+   "content_hash": "c56f0f5562637ff21c9189311fc315b0",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "wm94i/Work-Review",
+   "content_hash": "b61e32a04a181e31dc30d4dd9416fc85",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "mjyc/awesome-robotics-projects",
+   "content_hash": "843ecf996ce7c8b96dc0233bb5f34dfe",
+   "is_ai": true,
+   "category": "awesome-list",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "siglens/siglens",
+   "content_hash": "c56599f2d2002af65c35f45cc8b6c3d9",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "traveller59/second.pytorch",
+   "content_hash": "9347ef2a4e3a52e322883ca5edbbfd86",
+   "is_ai": true,
+   "category": "multimodal-vision",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "xuanyustudio/LocalMiniDrama",
+   "content_hash": "1a5fbd0a5ccbc42e2427707be6dc89b3",
+   "is_ai": true,
+   "category": "multimodal-vision",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "AmbroseX/Awesome-AISourceHub",
+   "content_hash": "a9eb201397e2ec7f54cea2a55ca887e7",
+   "is_ai": true,
+   "category": "awesome-list",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "zeronsh/zeron",
+   "content_hash": "8bd1b8c5d026d27e6adff47a10318bf7",
+   "is_ai": true,
+   "category": "ai-devtools",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "kubetail-org/kubetail",
+   "content_hash": "3fd73aee5997341bf64640b905dd47d8",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "AidanPark/openclaw-android",
+   "content_hash": "ec1ea8aec2f67da22327a073929e197f",
+   "is_ai": true,
+   "category": "ai-devtools",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "cnosdb/cnosdb",
+   "content_hash": "976d109ccfad9d1d115ea4098f0fee10",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "domeccleston/sharegpt",
+   "content_hash": "3101a9daace7534ff32b662be8d393c3",
+   "is_ai": true,
+   "category": "llm-app",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "photon-hq/spectrum-ts",
+   "content_hash": "2104ac32cc6830c7e5ded402873daebe",
+   "is_ai": true,
+   "category": "agent-framework",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "Zaneham/Booth",
+   "content_hash": "a3c900250a9d3fea03fd5fcd99d8964d",
+   "is_ai": true,
+   "category": "inference-serving",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "kunchenguid/treehouse",
+   "content_hash": "6a56922f36bcc50cc3cda2b659a3eed0",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "Litlyx/litlyx",
+   "content_hash": "122ae1cb87aea1dfff7eda1b628ac1c0",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "grafana-cold-storage/agent",
+   "content_hash": "d47092bdc915b34dfcccf5c07c1b687f",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "robocasa/robocasa",
+   "content_hash": "a5b9860d8a38045a5bb9329762510931",
+   "is_ai": true,
+   "category": "robotics-embodied",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "wdhdev/free-for-life",
+   "content_hash": "600aded427ede31ad96cc944025e7ba9",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "jesselau76/ebook-GPT-translator",
+   "content_hash": "55c11991fef8f12ce44174617d39b965",
+   "is_ai": true,
+   "category": "llm-app",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "14790897/paper-ai",
+   "content_hash": "ea928fda1e158c233be9feaa7ca997c9",
+   "is_ai": true,
+   "category": "llm-app",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "KusionStack/karpor",
+   "content_hash": "882981b219a6c07a74960ae5f4192da9",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "njvisionpower/Safety-Helmet-Wearing-Dataset",
+   "content_hash": "54a182e4a967efb2a19af7f4124c810d",
+   "is_ai": true,
+   "category": "data-tooling",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "pawurb/hotpath-rs",
+   "content_hash": "f8df1749b1aa51fce59dcbe7d155652d",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "101dotxyz/GPTeam",
+   "content_hash": "00ce4bb637957e4adab79dddd394bcca",
+   "is_ai": true,
+   "category": "agent-framework",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "sambecker/exif-photo-blog",
+   "content_hash": "c49b0f2a0f7f903077a60e481d31b1b8",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "superdesigndev/treg",
+   "content_hash": "b3ef7dbaf1628fcc0abd7f7ca82232ec",
+   "is_ai": true,
+   "category": "ai-devtools",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "mathworks-robotics/awesome-matlab-robotics",
+   "content_hash": "d402dec3355e20ed61532b8929e3c332",
+   "is_ai": true,
+   "category": "awesome-list",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "ethz-adrl/control-toolbox",
+   "content_hash": "b8a71763202336194eb2e09f460f4965",
+   "is_ai": true,
+   "category": "robotics-embodied",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "gliese581gg/YOLO_tensorflow",
+   "content_hash": "8b128a7b0cd8d1260ad77aa014ad9b98",
+   "is_ai": true,
+   "category": "multimodal-vision",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "StanfordVL/BEHAVIOR-1K",
+   "content_hash": "1a9a7aceba620ada2015079f11d6144c",
+   "is_ai": true,
+   "category": "robotics-embodied",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "metrico/gigapipe",
+   "content_hash": "ab94793ae839782b303a1da35deb4840",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "m2n037/awesome-mecheng",
+   "content_hash": "1e51015fd480d16580cf13ab6eacfeac",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "durable-streams/durable-streams",
+   "content_hash": "7ca5d48d389df4b17ccd699f3c516cfc",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "PageAI-Pro/page-ui",
+   "content_hash": "d24064dd6fd4c111b67c76de7f7feab5",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  },
+  {
+   "full_name": "py-why/causal-learn",
+   "content_hash": "e1edfd178779a41dfbdec06fa949d153",
+   "is_ai": true,
+   "category": "classic-ml",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "nextify-limited/libra",
+   "content_hash": "aa49b612a76bf6bc4660d2c6e5e8b182",
+   "is_ai": true,
+   "category": "ai-devtools",
+   "confidence": 0.92
+  },
+  {
+   "full_name": "bwapi/bwapi",
+   "content_hash": "2f9c948f22a91c02b589a3578cd64871",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92
+  }
+ ]
+}

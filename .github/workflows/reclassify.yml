@@ -1,0 +1,65 @@
+name: Reclassify
+
+# Re-judges the whole universe without a discovery sweep. Worth its own
+# workflow because a change to the rule engine invalidates every cached
+# verdict, and waiting for Sunday's discover run — 50 minutes of search
+# requests that would find nothing new — is not a reason to leave the boards
+# wrong for a week.
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: airadar-pipeline
+  cancel-in-progress: false
+
+jobs:
+  reclassify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    env:
+      GH_PAT: ${{ secrets.GH_PAT }}
+    steps:
+      - uses: actions/checkout@v5
+      - uses: ./.github/actions/pipeline
+        with:
+          token: ${{ github.token }}
+
+      - name: Classify
+        run: airadar classify --no-llm
+
+      - name: Apply reviewed verdicts
+        run: airadar classify --import-verdicts verdicts
+
+      - name: Score
+        run: airadar score
+
+      - uses: ./.github/actions/publish-db
+        if: always()
+        with:
+          token: ${{ github.token }}
+
+      - name: Summary
+        if: always()
+        run: |
+          {
+            echo "### Veri durumu"
+            echo '```'
+            COLUMNS=140 airadar stats || true
+            echo '```'
+            echo "### Fresh Power — ilk 20"
+            echo '```'
+            COLUMNS=140 airadar board fresh --limit 20 || true
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
+
+  publish:
+    needs: reclassify
+    uses: ./.github/workflows/publish.yml
+    permissions:
+      contents: read
+      pages: write
+      id-token: write

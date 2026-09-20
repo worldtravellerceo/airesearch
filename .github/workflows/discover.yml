@@ -57,6 +57,12 @@ jobs:
       - name: Classify
         run: airadar classify --no-llm
 
+      # Replayed every run: the verdicts live in the repository, not only in a
+      # database that is a release asset. Repos whose description or topics
+      # changed since a verdict was made are skipped, not relabelled.
+      - name: Apply reviewed verdicts
+        run: airadar classify --import-verdicts verdicts
+
       - name: Score
         run: airadar score
 

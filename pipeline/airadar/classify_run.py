@@ -277,14 +277,26 @@ async def export_pending(
 
 
 def import_verdicts(conn: sqlite3.Connection, path: Path) -> ClassifyReport:
-    """Read judged repos back in.
+    """Read judged repos back in, from one file or a directory of them.
 
     Anything whose inputs have changed since the export is skipped rather than
     applied: the verdict was made about a different description, and a stale
     label is worse than no label.
     """
+    path = Path(path)
+    if path.is_dir():
+        # Replayed on every classification run, so the judgement lives in the
+        # repository rather than only in a database that is a release asset.
+        total = ClassifyReport()
+        for child in sorted(path.glob("*.json")):
+            part = import_verdicts(conn, child)
+            total.imported += part.imported
+            total.unmatched.extend(part.unmatched)
+            total.ai_repos = part.ai_repos
+        return total
+
     report = ClassifyReport()
-    payload = json.loads(Path(path).read_text(encoding="utf-8"))
+    payload = json.loads(path.read_text(encoding="utf-8"))
 
     facts, ids_by_name = load_facts(conn)
     hashes = {f.full_name: f.content_hash() for f in facts}

@@ -340,3 +340,83 @@ async def test_max_llm_caps_spend(conn, monkeypatch):
     # One request per 15 repos, so five escalations is a single request.
     assert len(batches.submitted_messages) == 1
     assert report.escalated == 40  # reported honestly, even though only 5 were sent
+
+
+# --- reviewed verdicts -----------------------------------------------------
+
+
+def _verdict_file(path, conn, full_name, *, is_ai, category, stale=False):
+    facts, _ = classify_run.load_facts(conn)
+    content_hash = next(f.content_hash() for f in facts if f.full_name == full_name)
+    path.write_text(
+        json.dumps(
+            {
+                "repos": [
+                    {
+                        "full_name": full_name,
+                        "content_hash": "0" * 32 if stale else content_hash,
+                        "is_ai": is_ai,
+                        "category": category,
+                        "confidence": 0.92,
+                    }
+                ]
+            }
+        ),
+        encoding="utf-8",
+    )
+
+
+def test_verdicts_import_from_a_directory_of_files(conn, tmp_path):
+    """The verdicts live in the repository as a directory, so that a judgement
+    made once survives the database — which is a release asset, not a file."""
+    add_repo(conn, 1, "acme/one", "A tool", ["agent"])
+    add_repo(conn, 2, "acme/two", "Another tool", ["mcp"])
+    conn.commit()
+
+    folder = tmp_path / "verdicts"
+    folder.mkdir()
+    _verdict_file(folder / "a.json", conn, "acme/one", is_ai=True, category="agent-framework")
+    _verdict_file(folder / "b.json", conn, "acme/two", is_ai=False, category=None)
+
+    report = classify_run.import_verdicts(conn, folder)
+
+    assert report.imported == 2
+    rows = {
+        row["full_name"]: row
+        for row in conn.execute(
+            """SELECT r.full_name, c.is_ai, c.category
+                 FROM repos r JOIN repo_classification c ON c.repo_id = r.id"""
+        )
+    }
+    assert rows["acme/one"]["is_ai"] == 1
+    assert rows["acme/one"]["category"] == "agent-framework"
+    assert rows["acme/two"]["is_ai"] == 0
+
+
+def test_a_verdict_about_a_changed_repo_is_skipped_not_applied(conn, tmp_path):
+    """A stale label is worse than no label: no label gets looked at again."""
+    add_repo(conn, 1, "acme/one", "A tool", ["agent"])
+    conn.commit()
+
+    folder = tmp_path / "verdicts"
+    folder.mkdir()
+    _verdict_file(
+        folder / "a.json", conn, "acme/one", is_ai=True, category="agent-framework", stale=True
+    )
+
+    report = classify_run.import_verdicts(conn, folder)
+
+    assert report.imported == 0
+    assert report.unmatched == ["acme/one"]
+    assert conn.execute("SELECT count(*) AS n FROM repo_classification").fetchone()["n"] == 0
+
+
+def test_an_empty_verdict_directory_is_not_an_error(conn, tmp_path):
+    """The step runs on every classification run, including before anything
+    has been judged."""
+    folder = tmp_path / "verdicts"
+    folder.mkdir()
+
+    report = classify_run.import_verdicts(conn, folder)
+
+    assert report.imported == 0
