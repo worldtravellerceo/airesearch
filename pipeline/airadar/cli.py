@@ -10,6 +10,7 @@ import typer
 from rich.console import Console
 from rich.table import Table
 
+from airadar import classify_run
 from airadar import collect as collect_mod
 from airadar import discover as discover_mod
 from airadar.config import GITHUB_API_VERSION, get_settings
@@ -254,6 +255,92 @@ async def _run_backfill(repo: str | None, limit: int | None) -> None:
             db.finish_run(conn, run_id, ok=True, notes=f"{written} day-rows", **_spend(client))
         console.print(f"[green]backfill[/green]: {written:,} day-rows written")
         _print_spend(client)
+
+
+@app.command()
+def classify(
+    limit: int = typer.Option(None, "--limit", help="Only consider this many repos"),
+    max_llm: int = typer.Option(
+        None, "--max-llm", help="Cap how many repos are sent to the model this run"
+    ),
+    no_llm: bool = typer.Option(False, "--no-llm", help="Rule engine only, spend nothing"),
+    dry_run: bool = typer.Option(
+        False, "--dry-run", help="Report what a run would cost without spending anything"
+    ),
+) -> None:
+    """Decide which repos are AI-related and what kind, rules first.
+
+    Most repos are settled for free. Only the ambiguous band costs money, and
+    results are cached against the hash of their inputs, so a weekly run pays
+    only for what actually changed.
+    """
+    asyncio.run(_run_classify(limit, max_llm, no_llm, dry_run))
+
+
+async def _run_classify(
+    limit: int | None, max_llm: int | None, no_llm: bool, dry_run: bool
+) -> None:
+    settings = _require_database()
+    if not no_llm and not dry_run and not settings.anthropic_api_key:
+        console.print(
+            "[red]ANTHROPIC_API_KEY is not set.[/red] "
+            "Use --no-llm for the free rule engine, or --dry-run to see the cost."
+        )
+        raise typer.Exit(1)
+
+    with db.connect(settings.database_url) as conn:
+        run_id = db.start_run(conn, "classify")
+        async with GitHubClient() as client:
+            try:
+                report = await classify_run.classify_all(
+                    conn,
+                    client,
+                    use_llm=not no_llm,
+                    limit=limit,
+                    max_llm_repos=max_llm,
+                    dry_run=dry_run,
+                )
+            except Exception as exc:
+                db.finish_run(conn, run_id, ok=False, notes=str(exc)[:500], **_spend(client))
+                raise
+            db.finish_run(
+                conn,
+                run_id,
+                ok=True,
+                notes=report.summary()[:500],
+                llm_in_tok=report.llm_input_tokens,
+                llm_out_tok=report.llm_output_tokens,
+                llm_cost_usd=report.llm_cost_usd,
+                **_spend(client),
+            )
+
+    table = Table(title="classify" + (" (dry run)" if dry_run else ""))
+    table.add_column("")
+    table.add_column("", justify="right")
+    table.add_row("değerlendirilen", f"{report.considered:,}")
+    table.add_row("önbellekten (değişmemiş)", f"{report.cached:,}")
+    table.add_row("kuralla karara bağlanan", f"{report.settled_by_rules:,}")
+    table.add_row("LLM'e giden", f"{report.escalated:,}")
+    if dry_run:
+        table.add_row(
+            "[bold]tahmini maliyet[/bold]", f"[bold]${report.estimated_cost_usd:.2f}[/bold]"
+        )
+    else:
+        table.add_row("LLM ile sınıflanan", f"{report.classified_by_llm:,}")
+        if report.unmatched:
+            table.add_row("[yellow]eşleşmeyen[/yellow]", f"{len(report.unmatched):,}")
+        table.add_row("AI olarak işaretli", f"{report.ai_repos:,}")
+        table.add_row(
+            "[bold]gerçek maliyet[/bold]",
+            f"[bold]${report.llm_cost_usd:.2f}[/bold] "
+            f"[dim](tahmin ${report.estimated_cost_usd:.2f})[/dim]",
+        )
+    console.print(table)
+    if report.unmatched and not dry_run:
+        console.print(
+            "[dim]Eşleşmeyen repolar bir sonraki çalıştırmada yeniden denenecek "
+            "(önbelleğe yazılmadılar).[/dim]"
+        )
 
 
 @app.command()
