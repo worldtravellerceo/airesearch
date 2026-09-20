@@ -26,14 +26,23 @@ export function BoardView({
   board,
   initialEntries,
   categories,
+  boardCounts,
 }: {
   board: Board;
   initialEntries: BoardEntry[];
   categories: CategoryRow[];
+  /** Entry count per board, so an empty one can point at a populated one. */
+  boardCounts: Record<string, number>;
 }) {
   const [category, setCategory] = useState(ALL_CATEGORIES);
   const [entries, setEntries] = useState(initialEntries);
   const [state, setState] = useState<"ready" | "loading" | "error">("ready");
+
+  // A board that has nothing yet should say where the data is, not just that
+  // it is missing.
+  const populatedElsewhere = BOARDS.filter(
+    (value) => value !== board && (boardCounts[value] ?? 0) > 0,
+  );
 
   // A new board arrives as a fresh navigation, so the inlined rows replace
   // whatever the previous board had left in state.
@@ -71,18 +80,23 @@ export function BoardView({
         <nav className="border-border flex flex-wrap gap-1 border-b" aria-label="Board seçimi">
           {BOARDS.map((value) => {
             const active = value === board;
+            const count = boardCounts[value] ?? 0;
             return (
               <Link
                 key={value}
                 href={value === "fresh" ? "/" : `/board/${value}/`}
                 aria-current={active ? "page" : undefined}
-                className={`-mb-px border-b-2 px-3 py-2 text-sm transition ${
+                title={count ? `${count} proje` : "Bu board henüz boş"}
+                className={`-mb-px flex items-center gap-1.5 border-b-2 px-3 py-2 text-sm transition ${
                   active
                     ? "border-accent text-ink font-medium"
                     : "text-ink-secondary hover:text-ink border-transparent"
-                }`}
+                } ${count ? "" : "opacity-50"}`}
               >
                 {BOARD_COPY[value].title}
+                {count ? (
+                  <span className="tabular text-ink-muted text-xs">{count}</span>
+                ) : null}
               </Link>
             );
           })}
@@ -92,7 +106,10 @@ export function BoardView({
         </p>
       </section>
 
-      {categories.length ? (
+      {/* Filtering an empty board narrows nothing, and the counts on the chips
+          are of the universe rather than of this board, which would read as a
+          contradiction next to "bu board henüz boş". */}
+      {categories.length && initialEntries.length ? (
         <section className="flex flex-wrap gap-1.5" aria-label="Kategori filtresi">
           <Chip active={category === ALL_CATEGORIES} onSelect={() => select(ALL_CATEGORIES)}>
             Tümü
@@ -116,7 +133,11 @@ export function BoardView({
         </p>
       ) : (
         <div className={state === "loading" ? "opacity-50 transition" : "transition"}>
-          <BoardTable board={board} entries={entries} />
+          <BoardTable
+            board={board}
+            entries={entries}
+            populated={populatedElsewhere}
+          />
         </div>
       )}
     </>

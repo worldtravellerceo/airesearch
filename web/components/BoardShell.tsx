@@ -1,7 +1,13 @@
 import { BoardView } from "@/components/BoardView";
 import { SearchBox } from "@/components/SearchBox";
 import { StatTile } from "@/components/StatTile";
-import { getBoard, getCategories, getOverview, getSearchIndex } from "@/lib/data";
+import {
+  getBoard,
+  getBoardCounts,
+  getCategories,
+  getOverview,
+  getSearchIndex,
+} from "@/lib/data";
 import { compact, count, shortDate } from "@/lib/format";
 import { ALL_CATEGORIES, type Board } from "@/lib/types";
 
@@ -11,11 +17,12 @@ import { ALL_CATEGORIES, type Board } from "@/lib/types";
  *  search reach for another file, and both are static assets.
  */
 export async function BoardShell({ board }: { board: Board }) {
-  const [overview, categories, file, index] = await Promise.all([
+  const [overview, categories, file, index, boardCounts] = await Promise.all([
     getOverview(),
     getCategories(),
     getBoard(board, ALL_CATEGORIES),
     getSearchIndex(),
+    getBoardCounts(),
   ]);
 
   const entries = file?.entries ?? [];
@@ -64,16 +71,15 @@ export async function BoardShell({ board }: { board: Board }) {
         </section>
       ) : null}
 
-      {entries.length === 0 ? (
-        <section className="border-border rounded-lg border border-dashed p-10 text-center">
-          <p className="text-ink font-medium">Henüz veri yok.</p>
-          <p className="text-ink-muted mt-2 text-sm">
-            İlk toplama turu çalıştığında board&apos;lar burada görünecek.
-          </p>
-        </section>
-      ) : (
-        <BoardView board={board} initialEntries={entries} categories={categories} />
-      )}
+      {/* Always rendered, even when this board is empty: the tabs live inside
+          it, and hiding them strands a visitor on the one board that has
+          nothing to show. */}
+      <BoardView
+        board={board}
+        initialEntries={entries}
+        categories={categories}
+        boardCounts={boardCounts}
+      />
     </div>
   );
 }

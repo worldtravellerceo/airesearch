@@ -9,6 +9,7 @@
 import { readFile } from "node:fs/promises";
 import path from "node:path";
 
+import { ALL_CATEGORIES, BOARDS } from "@/lib/types";
 import type {
   BoardFile,
   CategoryRow,
@@ -54,6 +55,20 @@ export async function getSearchIndex(): Promise<IndexEntry[]> {
 
 export function getBoard(board: string, category: string): Promise<BoardFile | null> {
   return readJson<BoardFile | null>(`boards/${board}/${category}.json`, null);
+}
+
+/** How many entries each board holds.
+ *
+ *  The tabs need this: a board can be legitimately empty for a while — Fresh
+ *  Power ranks nothing until repos have been backfilled — and a visitor who
+ *  lands on it has to be able to see that the others are not.
+ */
+export async function getBoardCounts(): Promise<Record<string, number>> {
+  const counts: Record<string, number> = {};
+  for (const board of BOARDS) {
+    counts[board] = (await getBoard(board, ALL_CATEGORIES))?.entries.length ?? 0;
+  }
+  return counts;
 }
 
 export function getRepo(owner: string, name: string): Promise<RepoDetail | null> {

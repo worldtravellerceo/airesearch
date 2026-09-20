@@ -11,13 +11,50 @@ import { Sparkline } from "@/components/Sparkline";
  *  The score column changes with the board, because the number a board ranks by
  *  is the one thing a reader must be able to see — a Fresh Power list that only
  *  shows raw stars is unfalsifiable. */
-export function BoardTable({ board, entries }: { board: Board; entries: BoardEntry[] }) {
+const WAITING_ON: Record<Board, string> = {
+  fresh:
+    "Fresh Power bir projenin tüm ömrünü hesaba katıyor, o yüzden sadece geçmişi tamamen çıkarılmış repoları sıralıyor. Geçmiş çıkarma turu sürüyor.",
+  momentum:
+    "Momentum son 14 günün yıldız hızını ölçüyor; bunun için günlük geçmiş verisi gerekiyor. Toplama turu sürüyor.",
+  breakout:
+    "Breakout bir projenin kendi 90 günlük temposuyla karşılaştırma yapıyor; bunun için geçmiş verisi gerekiyor.",
+  popular: "Henüz hiç proje toplanmadı.",
+};
+
+export function BoardTable({
+  board,
+  entries,
+  populated = [],
+}: {
+  board: Board;
+  entries: BoardEntry[];
+  /** Boards that do have data, so an empty one can point at them. */
+  populated?: Board[];
+}) {
   if (!entries.length) {
     return (
-      <p className="text-ink-muted border-border rounded-lg border border-dashed p-8 text-center text-sm">
-        Bu board henüz boş. Veri toplandıktan sonra{" "}
-        <code className="text-ink-secondary">airadar score</code> çalıştırın.
-      </p>
+      <div className="border-border rounded-lg border border-dashed p-10 text-center">
+        <p className="text-ink font-medium">Bu board henüz boş</p>
+        <p className="text-ink-muted mx-auto mt-2 max-w-xl text-sm">
+          {WAITING_ON[board]}
+        </p>
+        {populated.length ? (
+          <p className="text-ink-secondary mt-4 text-sm">
+            Şimdilik bakabileceklerin:{" "}
+            {populated.map((value, index) => (
+              <span key={value}>
+                {index > 0 ? ", " : ""}
+                <Link
+                  href={value === "fresh" ? "/" : `/board/${value}/`}
+                  className="text-accent hover:underline"
+                >
+                  {BOARD_LABELS[value]}
+                </Link>
+              </span>
+            ))}
+          </p>
+        ) : null}
+      </div>
     );
   }
 
@@ -115,6 +152,14 @@ export function BoardTable({ board, entries }: { board: Board; entries: BoardEnt
     </div>
   );
 }
+
+const BOARD_LABELS: Record<Board, string> = {
+  fresh: "Fresh Power",
+  momentum: "Momentum",
+  breakout: "Breakout",
+  popular: "Popüler",
+};
+
 
 function scoreHeading(board: Board): string {
   return {
