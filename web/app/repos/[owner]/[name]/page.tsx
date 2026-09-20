@@ -2,12 +2,16 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 
 import { MilestoneStrip } from "@/components/BoardTable";
-import { StarHistoryChart } from "@/components/StarHistoryChart";
+import { RepoHistory, type Milestone } from "@/components/RepoHistory";
 import { StatTile } from "@/components/StatTile";
 import { getManifest, getRepo } from "@/lib/data";
 import { categoryLabel, count, multiple, percent, rate, shortDate } from "@/lib/format";
 import { repoSlug } from "@/lib/paths";
-import { BOARD_COPY, type Board, type RepoDetail } from "@/lib/types";
+import {
+  BOARD_COPY,
+  type Board,
+  type RepoDetail,
+} from "@/lib/types";
 
 export const dynamic = "force-static";
 // A repo that was exported yesterday but not today would otherwise 404 the whole
@@ -104,9 +108,11 @@ export default async function RepoPage({
           Toplam yıldız, kilometre taşlarıyla. Eski dönem haftalık, son{" "}
           {count(detail.coverage_days)} gün günlük çözünürlükte.
         </p>
-        <StarHistoryChart
-          points={detail.history}
-          milestones={buildMilestones(detail)}
+        <RepoHistory
+          owner={detail.owner}
+          name={detail.name}
+          expectedPoints={detail.history_points ?? 0}
+          milestones={milestoneDates(detail)}
         />
       </section>
 
@@ -190,10 +196,13 @@ function NoData() {
   );
 }
 
-function buildMilestones(detail: RepoDetail) {
-  if (!detail.created_at || !detail.history.length) return [];
+/** Where each milestone falls on the calendar, from the repo's creation date
+ *  and the persisted days-to-1k/10k/50k figures. Plain data, because a server
+ *  component cannot hand a function to a client one — and the chart is the
+ *  side that knows which dates were actually drawn. */
+function milestoneDates(detail: RepoDetail): Milestone[] {
+  if (!detail.created_at) return [];
   const created = new Date(detail.created_at);
-  const available = new Set(detail.history.map((point) => point.date));
 
   return (
     [
@@ -207,32 +216,5 @@ function buildMilestones(detail: RepoDetail) {
       const date = new Date(created);
       date.setDate(date.getDate() + (value as number));
       return { label, date: date.toISOString().slice(0, 10) };
-    })
-    // The old part of the curve is weekly, so a milestone rarely lands on a
-    // point that exists. Snap it to the nearest one we actually drew.
-    .map((milestone) => ({
-      ...milestone,
-      date: available.has(milestone.date)
-        ? milestone.date
-        : nearest(detail.history.map((p) => p.date), milestone.date),
-    }))
-    .filter((milestone) => milestone.date !== null) as Array<{
-    label: string;
-    date: string;
-  }>;
-}
-
-function nearest(dates: string[], target: string): string | null {
-  const wanted = new Date(target).getTime();
-  let best: string | null = null;
-  let bestGap = Infinity;
-  for (const date of dates) {
-    const gap = Math.abs(new Date(date).getTime() - wanted);
-    if (gap < bestGap) {
-      bestGap = gap;
-      best = date;
-    }
-  }
-  // More than a fortnight away means the milestone predates what we drew.
-  return bestGap <= 14 * 86_400_000 ? best : null;
+    });
 }

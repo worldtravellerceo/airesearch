@@ -115,7 +115,9 @@ export type RepoDetail = {
   coverage_days: number | null;
   topics: string[];
   ranks: Partial<Record<Board, number>>;
-  history: HistoryPoint[];
+  /** How many points the separate history file holds. The curve itself is
+   *  fetched by the browser, not inlined into the page. */
+  history_points: number;
 };
 
 export type IndexEntry = {

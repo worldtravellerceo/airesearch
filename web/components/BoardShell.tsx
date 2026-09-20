@@ -32,7 +32,7 @@ export async function BoardShell({ board }: { board: Board }) {
             farklı çıkması bir tutarsızlık değil — bütün mesele o.
           </p>
         </div>
-        {index.length ? <SearchBox index={index} /> : null}
+        {index.length ? <SearchBox total={index.length} /> : null}
       </section>
 
       {overview ? (

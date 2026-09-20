@@ -4,6 +4,7 @@ import { useCallback, useEffect, useState } from "react";
 
 import { CompareChart } from "@/components/CompareChart";
 import { loadSeries, type CompareSeries } from "@/lib/compare";
+import { dataUrl } from "@/lib/paths";
 import type { IndexEntry } from "@/lib/types";
 
 const MAX_SERIES = 4;
@@ -14,12 +15,29 @@ const MAX_SERIES = 4;
  *  file, so there is nothing to ask a server for. The selection lives in the
  *  URL so a comparison can be linked to.
  */
-export function CompareBoard({ index }: { index: IndexEntry[] }) {
+export function CompareBoard() {
+  const [index, setIndex] = useState<IndexEntry[]>([]);
   const [selected, setSelected] = useState<string[]>([]);
   const [series, setSeries] = useState<CompareSeries[]>([]);
   const [missing, setMissing] = useState<string[]>([]);
   const [loading, setLoading] = useState(false);
   const [query, setQuery] = useState("");
+
+  // The index is fetched, not inlined: a static build bakes whatever a page
+  // reads into its HTML and its client payload, and a few thousand rows is a
+  // megabyte of page weight for a box nobody has typed into yet.
+  useEffect(() => {
+    let cancelled = false;
+    fetch(dataUrl("index.json"))
+      .then((response) => (response.ok ? response.json() : { repos: [] }))
+      .then((data) => {
+        if (!cancelled) setIndex(data.repos ?? []);
+      })
+      .catch(() => undefined);
+    return () => {
+      cancelled = true;
+    };
+  }, []);
 
   // Seed from ?repos= so a comparison survives being shared or bookmarked.
   useEffect(() => {

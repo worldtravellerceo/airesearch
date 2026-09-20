@@ -233,9 +233,18 @@ def _details(
         row["breakout"] = bool(row["breakout"])
         row["topics"] = topics.get(repo_id, [])
         row["ranks"] = ranks.get(repo_id, {})
-        row["history"] = _history(conn, repo_id, row["stars"])
 
-        _write(out_dir / "repos" / row["owner"] / f"{row['name']}.json", row, report)
+        # The star curve is written separately and fetched by the browser. A
+        # lifetime history is by far the largest field on a repo, and a static
+        # build inlines whatever a page reads into both its HTML and its
+        # client payload — so inlining it here cost about 125 KB per page,
+        # twice over, for a chart most visitors never scroll to.
+        history = _history(conn, repo_id, row["stars"])
+        row["history_points"] = len(history)
+
+        folder = out_dir / "repos" / row["owner"]
+        _write(folder / f"{row['name']}.json", row, report)
+        _write(folder / f"{row['name']}.history.json", {"points": history}, report)
         slugs.append(row["full_name"])
         report.repos += 1
 

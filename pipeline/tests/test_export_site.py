@@ -136,7 +136,28 @@ def test_detail_pages_carry_a_curve_that_ends_at_the_star_count(conn, tmp_path):
     assert detail["full_name"] == "newcomer/agent-os"
     assert detail["topics"] == ["agent-framework", "llm"]
     assert detail["ranks"]["fresh"] == 1
-    assert detail["history"][-1]["cumulative"] == pytest.approx(detail["stars"], rel=0.02)
+
+    history = read(out, "repos", "newcomer", "agent-os.history.json")["points"]
+    assert history[-1]["cumulative"] == pytest.approx(detail["stars"], rel=0.02)
+    assert detail["history_points"] == len(history)
+
+
+def test_the_curve_is_published_separately_from_the_page(conn, tmp_path):
+    """A lifetime history is the largest thing about a repo, and a static build
+    inlines whatever a page reads into both its HTML and its client payload.
+    Keeping it in its own file is what stops a detail page weighing 125 KB."""
+    seed(conn)
+    out = tmp_path / "data"
+    export_site.export(conn, out, date=TODAY)
+
+    detail_file = out / "repos" / "legacy" / "ml-toolkit.json"
+    history_file = out / "repos" / "legacy" / "ml-toolkit.history.json"
+
+    assert history_file.exists()
+    assert "history" not in read(out, "repos", "legacy", "ml-toolkit.json")
+    # The page itself must stay small enough to inline without thought.
+    assert detail_file.stat().st_size < 4_000
+    assert history_file.stat().st_size > detail_file.stat().st_size
 
 
 def test_history_spans_the_full_life_even_after_pruning(conn, tmp_path):
@@ -147,7 +168,7 @@ def test_history_spans_the_full_life_even_after_pruning(conn, tmp_path):
     out = tmp_path / "data"
     export_site.export(conn, out, date=TODAY)
 
-    history = read(out, "repos", "legacy", "ml-toolkit.json")["history"]
+    history = read(out, "repos", "legacy", "ml-toolkit.history.json")["points"]
     first = dt.date.fromisoformat(history[0]["date"])
 
     assert (TODAY - first).days > 1_700
