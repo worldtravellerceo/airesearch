@@ -255,3 +255,22 @@ def test_run_log_records_cost(conn):
     assert row["api_calls"] == 4_812
     assert row["llm_cost_usd"] == pytest.approx(1.62)
     assert row["finished_at"] is not None
+
+
+def test_topics_lookup_works_beyond_the_sql_variable_limit(conn):
+    """SQLite caps bound variables per statement — 999 on older builds. The
+    site export asks for topics for well over a thousand repos at once."""
+    count = 2_500
+    db.upsert_repos(
+        conn,
+        [
+            db.RepoRecord(id=i, full_name=f"o/r{i}", owner="o", name=f"r{i}", topics=("llm",))
+            for i in range(1, count + 1)
+        ],
+    )
+
+    topics = db.repo_topics_map(conn, list(range(1, count + 1)))
+
+    assert len(topics) == count
+    assert topics[1] == ["llm"]
+    assert topics[count] == ["llm"]
