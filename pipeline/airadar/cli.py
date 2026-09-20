@@ -460,6 +460,28 @@ def coverage(
 
 
 @app.command()
+def freshness() -> None:
+    """Report how much of the tracked universe actually got refreshed.
+
+    The companion to `coverage`, for the same class of failure: a collect run
+    that cannot finish does not fail, it just stops part-way down the star
+    order and reports the part it managed as though it were the whole.
+    """
+    settings = _require_database()
+    with db.connect(settings.db_path) as conn:
+        report = audit.audit_freshness(
+            conn,
+            tier1_size=settings.tier1_size,
+            track_limit=settings.track_limit,
+            now=dt.datetime.now(dt.UTC),
+        )
+    colour = (
+        "green" if report.stale == 0 else ("yellow" if report.stale < report.total // 10 else "red")
+    )
+    console.print(f"[{colour}]freshness[/{colour}]: {report.summary()}")
+
+
+@app.command()
 def stats() -> None:
     """Print what the database contains. Cheap, no API calls."""
     settings = _require_database()

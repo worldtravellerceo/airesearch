@@ -53,6 +53,7 @@ jobs:
             echo "### Kapsama kontrolü"
             echo '```'
             COLUMNS=140 airadar coverage || true
+            COLUMNS=140 airadar freshness || true
             echo '```'
             echo "### Fresh Power — ilk 20"
             echo '```'

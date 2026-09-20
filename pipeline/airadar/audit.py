@@ -169,3 +169,78 @@ def audit_coverage(
             else:
                 report.found.append((name, row["full_name"], row["stars"]))
     return report
+
+
+@dataclass
+class FreshnessReport:
+    """How much of the tracked universe actually got refreshed."""
+
+    tier1_total: int = 0
+    tier1_stale: int = 0
+    tier2_total: int = 0
+    tier2_stale: int = 0
+    never_checked: int = 0
+
+    @property
+    def stale(self) -> int:
+        return self.tier1_stale + self.tier2_stale
+
+    @property
+    def total(self) -> int:
+        return self.tier1_total + self.tier2_total
+
+    def summary(self) -> str:
+        fresh = self.total - self.stale
+        rate = fresh / self.total if self.total else 0.0
+        return (
+            f"{fresh}/{self.total} tracked repos fresh ({rate:.0%}); "
+            f"tier1 {self.tier1_stale} stale, tier2 {self.tier2_stale} stale, "
+            f"{self.never_checked} never checked"
+        )
+
+
+def audit_freshness(
+    conn: sqlite3.Connection, *, tier1_size: int, track_limit: int, now
+) -> FreshnessReport:
+    """Count tracked repos whose metrics are older than their tier allows.
+
+    The companion to the coverage canary, for the same class of failure. A
+    collect run that cannot finish does not fail — it walks the star order
+    until the job is killed and reports the part it managed as though it were
+    the whole. The tail simply stops being refreshed, and nothing says so.
+    Stale counts make that visible in one number.
+    """
+    import datetime as _dt
+
+    row = conn.execute(
+        """
+        WITH ranked AS (
+            SELECT id, last_checked_at,
+                   ROW_NUMBER() OVER (ORDER BY stars DESC, id) AS star_rank
+            FROM repos WHERE is_fork = 0
+        )
+        SELECT
+          sum(star_rank <= :tier1) AS t1,
+          sum(star_rank <= :tier1 AND (last_checked_at IS NULL
+              OR last_checked_at < :daily_cutoff)) AS t1_stale,
+          sum(star_rank >  :tier1) AS t2,
+          sum(star_rank >  :tier1 AND (last_checked_at IS NULL
+              OR last_checked_at < :weekly_cutoff)) AS t2_stale,
+          sum(last_checked_at IS NULL) AS never
+        FROM ranked WHERE star_rank <= :track_limit
+        """,
+        {
+            "tier1": tier1_size,
+            "track_limit": track_limit,
+            "daily_cutoff": now - _dt.timedelta(hours=28),
+            "weekly_cutoff": now - _dt.timedelta(days=8),
+        },
+    ).fetchone()
+
+    return FreshnessReport(
+        tier1_total=row["t1"] or 0,
+        tier1_stale=row["t1_stale"] or 0,
+        tier2_total=row["t2"] or 0,
+        tier2_stale=row["t2_stale"] or 0,
+        never_checked=row["never"] or 0,
+    )
