@@ -27,6 +27,10 @@ log = logging.getLogger(__name__)
 GONE_STATUSES = {404, 451}
 
 
+class CensusError(RuntimeError):
+    """The census came back empty, which cannot be true of GitHub."""
+
+
 @dataclass
 class DiscoverReport:
     repos_upserted: int = 0
@@ -94,6 +98,7 @@ async def discover(
     # popular project, so it must never be the one the query budget runs out
     # on. The topic sweep below is breadth; this is the guarantee.
     if census:
+        errors_before = report.search.errors
         await discovery.search_partitioned(
             client,
             "fork:false",
@@ -102,7 +107,18 @@ async def discover(
             min_stars=settings.census_min_stars,
             stats=report.search,
         )
-        report.notes.append(f"census: >={settings.census_min_stars} stars")
+        seen = report.search.channels.get("census", 0)
+        report.notes.append(f"census: >={settings.census_min_stars} stars, {seen} sightings")
+        # A census that sees nothing is a broken query, not an empty GitHub:
+        # there are tens of thousands of repos above a thousand stars. Without
+        # this the failure is a logged warning inside `_drain` and the run goes
+        # green having quietly stopped guaranteeing anything.
+        if seen == 0 and not report.search.exhausted:
+            raise CensusError(
+                f"census found no repos above {settings.census_min_stars} stars "
+                f"({report.search.errors - errors_before} search errors). "
+                "The query shape is almost certainly rejected, not the population empty."
+            )
 
     if topics:
         already = db.queried_topics(conn)

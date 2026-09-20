@@ -4,9 +4,10 @@ import base64
 import datetime as dt
 
 import httpx
+import pytest
 
 from airadar.db import repo as db
-from airadar.discover import discover, discovery_overview, resolve_pending
+from airadar.discover import CensusError, discover, discovery_overview, resolve_pending
 from airadar.gh.client import GitHubClient
 
 HEADERS = {
@@ -294,8 +295,18 @@ async def test_the_census_runs_before_the_topic_sweep_can_spend_the_budget(conn)
     def handler(request: httpx.Request) -> httpx.Response:
         if request.url.path == "/search/repositories":
             query = request.url.params.get("q", "")
-            order.append("topic" if "topic:" in query else "census")
-            return httpx.Response(200, json={"total_count": 0, "items": []}, headers=HEADERS)
+            is_topic = "topic:" in query
+            order.append("topic" if is_topic else "census")
+            if is_topic:
+                return httpx.Response(200, json={"total_count": 0, "items": []}, headers=HEADERS)
+            return httpx.Response(
+                200,
+                json={
+                    "total_count": 1,
+                    "items": [repo_json(1, "karpathy/nanoGPT", stars=44_000, topics=())],
+                },
+                headers=HEADERS,
+            )
         return httpx.Response(404, json={}, headers=HEADERS)
 
     async with GitHubClient(
@@ -315,3 +326,31 @@ async def test_the_census_runs_before_the_topic_sweep_can_spend_the_budget(conn)
     assert order, "no searches were issued"
     assert order[0] == "census"
     assert "topic" in order
+
+
+async def test_a_census_that_finds_nothing_fails_loudly(conn):
+    """There are tens of thousands of repos above a thousand stars, so an empty
+    census means the query was rejected. `_drain` turns a rejected query into a
+    logged warning, which would let the run go green having quietly stopped
+    guaranteeing anything."""
+
+    def handler(request: httpx.Request) -> httpx.Response:
+        if request.url.path == "/search/repositories":
+            return httpx.Response(422, json={"message": "Validation Failed"}, headers=HEADERS)
+        return httpx.Response(404, json={}, headers=HEADERS)
+
+    async with GitHubClient(
+        token="t", transport=httpx.MockTransport(handler), sleep=_no_sleep
+    ) as client:
+        with pytest.raises(CensusError, match="no repos above"):
+            await discover(
+                conn,
+                client,
+                topics=False,
+                keywords=False,
+                awesome=False,
+                ecosystems=False,
+                huggingface=False,
+                snowball=False,
+                resolve=False,
+            )
