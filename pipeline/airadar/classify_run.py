@@ -1,27 +1,48 @@
 """Classification orchestration.
 
 The rule engine settles most repos for nothing. The rest get a README fetched
-(one request each) and go to the LLM in batches. Results are cached against the
-hash of their inputs, so a weekly run only pays for repos that are new or whose
+(one request each) and are judged by a model. Results are cached against the
+hash of their inputs, so a weekly run only revisits repos that are new or whose
 description, topics or language actually changed.
+
+There are two ways to judge the borderline cases. `classify_all` sends them to
+the Batch API, which costs money. `export_pending` / `import_verdicts` hand the
+same repos to a Claude Code session instead — identical judgement, paid for by
+a subscription rather than per token, which is why the automation defaults to
+the free rule engine and leaves this as a manual step.
 """
 
 from __future__ import annotations
 
+import datetime as dt
 import json
 import logging
 import sqlite3
 from dataclasses import dataclass, field
+from pathlib import Path
 
 from airadar.classify import rules
 from airadar.classify.llm import LLMClassifier, LLMInput, estimate_cost_usd
-from airadar.classify.taxonomy import DEFAULT_CATEGORY
+from airadar.classify.taxonomy import DEFAULT_CATEGORY, is_valid
 from airadar.config import get_settings
 from airadar.db import repo as db
 from airadar.gh.client import GitHubClient
 from airadar.gh.content import fetch_readme_excerpt
 
 log = logging.getLogger(__name__)
+
+
+@dataclass
+class HandoffItem:
+    """One borderline repo, packaged for a human or an assistant to judge."""
+
+    full_name: str
+    description: str | None
+    topics: list[str]
+    language: str | None
+    readme_excerpt: str
+    content_hash: str
+    rule_confidence: float
 
 
 @dataclass
@@ -37,6 +58,8 @@ class ClassifyReport:
     llm_input_tokens: int = 0
     llm_output_tokens: int = 0
     estimated_cost_usd: float = 0.0
+    exported: int = 0
+    imported: int = 0
 
     def summary(self) -> str:
         return (
@@ -194,3 +217,107 @@ async def _run_llm(
     report.llm_input_tokens = usage.input_tokens
     report.llm_output_tokens = usage.output_tokens
     log.info("classify: llm — %s", usage.summary())
+
+
+# --- handing the borderline cases to someone else --------------------------
+
+
+async def export_pending(
+    conn: sqlite3.Connection,
+    client: GitHubClient,
+    path: Path,
+    *,
+    limit: int | None = None,
+) -> ClassifyReport:
+    """Write the repos the rule engine could not settle, with their READMEs.
+
+    This is the free alternative to the Batch API: the same judgement, made in a
+    Claude Code session on a subscription rather than billed per token. The file
+    is self-contained, so whoever fills it in needs nothing else.
+    """
+    settings = get_settings()
+    report = ClassifyReport()
+
+    facts, ids_by_name = load_facts(conn)
+    report.considered = len(facts)
+    cached = db.cached_classification_hashes(conn)
+    fresh = [f for f in facts if cached.get(ids_by_name[f.full_name]) != f.content_hash()]
+
+    _, escalate = rules.partition(fresh, low=settings.llm_band_low, high=settings.llm_band_high)
+    report.escalated = len(escalate)
+    if limit is not None:
+        escalate = escalate[:limit]
+
+    items = []
+    for item, verdict in escalate:
+        items.append(
+            HandoffItem(
+                full_name=item.full_name,
+                description=item.description,
+                topics=list(item.topics),
+                language=item.language,
+                readme_excerpt=await fetch_readme_excerpt(client, item.full_name),
+                content_hash=item.content_hash(),
+                rule_confidence=verdict.confidence,
+            ).__dict__
+        )
+
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(
+        json.dumps(
+            {"generated_at": dt.datetime.now(dt.UTC).isoformat(), "repos": items},
+            ensure_ascii=False,
+            indent=1,
+        ),
+        encoding="utf-8",
+    )
+    report.exported = len(items)
+    log.info("classify: exported %d borderline repos to %s", len(items), path)
+    return report
+
+
+def import_verdicts(conn: sqlite3.Connection, path: Path) -> ClassifyReport:
+    """Read judged repos back in.
+
+    Anything whose inputs have changed since the export is skipped rather than
+    applied: the verdict was made about a different description, and a stale
+    label is worse than no label.
+    """
+    report = ClassifyReport()
+    payload = json.loads(Path(path).read_text(encoding="utf-8"))
+
+    facts, ids_by_name = load_facts(conn)
+    hashes = {f.full_name: f.content_hash() for f in facts}
+
+    for entry in payload.get("repos", []):
+        full_name = entry.get("full_name")
+        repo_id = ids_by_name.get(full_name)
+        if repo_id is None:
+            report.unmatched.append(full_name or "?")
+            continue
+        if entry.get("content_hash") and entry["content_hash"] != hashes.get(full_name):
+            log.info("classify: %s changed since export, skipping", full_name)
+            report.unmatched.append(full_name)
+            continue
+
+        category = entry.get("category")
+        is_ai = bool(entry.get("is_ai"))
+        db.save_classification(
+            conn,
+            repo_id,
+            is_ai=is_ai,
+            category=(category if is_valid(category) else DEFAULT_CATEGORY) if is_ai else None,
+            subcategory=entry.get("subcategory"),
+            confidence=float(entry.get("confidence", 0.9)),
+            method="llm",
+            content_hash=hashes[full_name],
+            one_liner=entry.get("one_liner"),
+        )
+        report.imported += 1
+
+    conn.commit()
+    report.ai_repos = conn.execute(
+        "SELECT count(*) AS n FROM repo_classification WHERE is_ai = 1"
+    ).fetchone()["n"]
+    log.info("classify: imported %d verdicts", report.imported)
+    return report

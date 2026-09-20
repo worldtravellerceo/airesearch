@@ -274,6 +274,14 @@ def classify(
     dry_run: bool = typer.Option(
         False, "--dry-run", help="Report what a run would cost without spending anything"
     ),
+    export_pending: str = typer.Option(
+        None,
+        "--export-pending",
+        help="Write the borderline repos to a file for someone else to judge",
+    ),
+    import_verdicts: str = typer.Option(
+        None, "--import-verdicts", help="Read judged repos back in"
+    ),
 ) -> None:
     """Decide which repos are AI-related and what kind, rules first.
 
@@ -281,13 +289,43 @@ def classify(
     results are cached against the hash of their inputs, so a weekly run pays
     only for what actually changed.
     """
-    asyncio.run(_run_classify(limit, max_llm, no_llm, dry_run))
+    asyncio.run(_run_classify(limit, max_llm, no_llm, dry_run, export_pending, import_verdicts))
 
 
 async def _run_classify(
-    limit: int | None, max_llm: int | None, no_llm: bool, dry_run: bool
+    limit: int | None,
+    max_llm: int | None,
+    no_llm: bool,
+    dry_run: bool,
+    export_pending: str | None = None,
+    import_verdicts: str | None = None,
 ) -> None:
     settings = _require_database()
+
+    # Handing the borderline cases off is the free alternative to the Batch API:
+    # the same judgement, made on a subscription rather than billed per token.
+    if import_verdicts:
+        with db.connect(settings.db_path) as conn:
+            report = classify_run.import_verdicts(conn, Path(import_verdicts))
+        console.print(
+            f"[green]classify[/green]: {report.imported:,} karar içeri alındı, "
+            f"{len(report.unmatched):,} atlandı · toplam AI: {report.ai_repos:,}"
+        )
+        return
+
+    if export_pending:
+        with db.connect(settings.db_path) as conn:
+            async with GitHubClient() as client:
+                report = await classify_run.export_pending(
+                    conn, client, Path(export_pending), limit=max_llm
+                )
+        console.print(
+            f"[green]classify[/green]: {report.exported:,} sınırdaki repo "
+            f"{export_pending} dosyasına yazıldı ({report.escalated:,} toplam)"
+        )
+        _print_spend(client)
+        return
+
     if not no_llm and not dry_run and not settings.anthropic_api_key:
         console.print(
             "[red]ANTHROPIC_API_KEY is not set.[/red] "
