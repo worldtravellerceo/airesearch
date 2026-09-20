@@ -28,7 +28,12 @@ BASELINE_WINDOW = 90
 MIN_BASELINE_DAYS = 21
 PEAK_WINDOW = 7
 BREAKOUT_ACCELERATION = 3.0
-BREAKOUT_PERCENTILE = 0.95
+# A breakout has to be moving fast enough to matter, but "fast enough" cannot be
+# a high percentile of the whole universe: that bar is set by PyTorch and
+# friends, and no genuinely breaking-out small project would ever clear it. An
+# absolute floor plus the cohort median is the honest reading of "something is
+# actually happening here".
+BREAKOUT_MIN_VELOCITY = 10.0
 MILESTONES = (1_000, 10_000, 50_000)
 DEFAULT_HALF_LIFE_DAYS = 180.0
 
@@ -222,7 +227,9 @@ def score_cohort(metrics: list[RepoMetrics]) -> list[RepoMetrics]:
         "relative_growth": _percentiles([m.relative_growth_14d for m in metrics]),
     }
 
-    velocity_cutoff = _quantile([m.velocity_14d for m in metrics], BREAKOUT_PERCENTILE)
+    velocity_cutoff = max(
+        BREAKOUT_MIN_VELOCITY, _quantile([m.velocity_14d for m in metrics], 0.5)
+    )
 
     for index, repo in enumerate(metrics):
         repo.momentum_score = 100.0 * sum(
@@ -232,7 +239,6 @@ def score_cohort(metrics: list[RepoMetrics]) -> list[RepoMetrics]:
         # popularity board, and acceleration alone promotes noise off tiny bases.
         repo.breakout = (
             repo.velocity_14d >= velocity_cutoff
-            and repo.velocity_14d > 0
             and repo.acceleration >= BREAKOUT_ACCELERATION
         )
 

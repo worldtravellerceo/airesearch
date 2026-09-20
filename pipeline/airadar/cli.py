@@ -10,7 +10,9 @@ import typer
 from rich.console import Console
 from rich.table import Table
 
+from airadar import collect as collect_mod
 from airadar.config import GITHUB_API_VERSION, get_settings
+from airadar.db import repo as db
 from airadar.gh.client import GitHubClient, GitHubError
 from airadar.gh.metrics import (
     HISTORY_PATH,
@@ -106,6 +108,158 @@ async def _doctor(repo: str) -> None:
 
         table.add_row("api calls spent", str(client.counters.calls))
         console.print(table)
+
+
+@app.command("init-db")
+def init_db() -> None:
+    """Create or update the database schema. Safe to re-run."""
+    settings = _require_database()
+    with db.connect(settings.database_url) as conn:
+        db.apply_schema(conn)
+    console.print("[green]schema applied[/green]")
+
+
+@app.command()
+def collect(
+    limit: int = typer.Option(None, "--limit", help="Stop after this many repos"),
+    date: str = typer.Option(None, "--date", help="Override the collection date (YYYY-MM-DD)"),
+) -> None:
+    """Refresh metadata and recent star history for every repo that is due.
+
+    Two requests per repo. One page of history covers ~210 days, which is enough
+    for every bounded window (7/14/28/90d) without a backfill.
+    """
+    asyncio.run(_run_collect(limit, _parse_date(date)))
+
+
+async def _run_collect(limit: int | None, date: dt.date | None) -> None:
+    settings = _require_database()
+    with db.connect(settings.database_url) as conn:
+        run_id = db.start_run(conn, "collect")
+        async with GitHubClient() as client:
+            try:
+                report = await collect_mod.collect(conn, client, today=date, limit=limit)
+            except Exception as exc:
+                db.finish_run(conn, run_id, ok=False, notes=str(exc)[:500], **_spend(client))
+                raise
+            db.finish_run(conn, run_id, ok=True, notes=report.summary(), **_spend(client))
+        console.print(f"[green]collect[/green]: {report.summary()}")
+        _print_spend(client)
+
+
+@app.command()
+def backfill(
+    repo: str = typer.Option(None, "--repo", help="Backfill a single owner/name"),
+    limit: int = typer.Option(None, "--limit", help="Stop after this many repos"),
+) -> None:
+    """Walk star history back to each repo's creation date.
+
+    Required before a repo can appear on the Fresh Power board: fresh_power
+    integrates a repo's whole life, and one page recovers only ~55% of it.
+    """
+    asyncio.run(_run_backfill(repo, limit))
+
+
+async def _run_backfill(repo: str | None, limit: int | None) -> None:
+    settings = _require_database()
+    with db.connect(settings.database_url) as conn:
+        run_id = db.start_run(conn, "backfill")
+        async with GitHubClient() as client:
+            try:
+                written = await collect_mod.backfill(conn, client, full_name=repo, limit=limit)
+            except Exception as exc:
+                db.finish_run(conn, run_id, ok=False, notes=str(exc)[:500], **_spend(client))
+                raise
+            db.finish_run(conn, run_id, ok=True, notes=f"{written} day-rows", **_spend(client))
+        console.print(f"[green]backfill[/green]: {written:,} day-rows written")
+        _print_spend(client)
+
+
+@app.command()
+def score(
+    date: str = typer.Option(None, "--date", help="Scoring date (YYYY-MM-DD), default today"),
+) -> None:
+    """Recompute every metric and rebuild all boards. No API calls."""
+    settings = _require_database()
+    with db.connect(settings.database_url) as conn:
+        run_id = db.start_run(conn, "score")
+        try:
+            scored, rows = collect_mod.score(conn, today=_parse_date(date))
+        except Exception as exc:
+            db.finish_run(conn, run_id, ok=False, notes=str(exc)[:500])
+            raise
+        db.finish_run(conn, run_id, ok=True, notes=f"{scored} repos, {rows} board rows")
+    console.print(f"[green]score[/green]: {scored:,} repos scored, {rows:,} board rows")
+
+
+@app.command()
+def board(
+    name: str = typer.Argument("fresh", help="popular | momentum | breakout | fresh"),
+    category: str = typer.Option("_all", "--category"),
+    limit: int = typer.Option(20, "--limit"),
+    date: str = typer.Option(None, "--date"),
+) -> None:
+    """Print a leaderboard in the terminal."""
+    settings = _require_database()
+    on = _parse_date(date) or dt.date.today()
+    with db.connect(settings.database_url) as conn:
+        rows = db.load_leaderboard(conn, date=on, board=name, category=category, limit=limit)
+        previous = db.previous_board_ranks(conn, before=on, board=name, category=category)
+
+    if not rows:
+        console.print(f"[yellow]no {name} board for {on}[/yellow] — run `airadar score` first")
+        raise typer.Exit(1)
+
+    table = Table(title=f"{name} — {category} — {on}")
+    for column in ("#", "Δ7g", "repo", "kategori", "stars", "14g hız", "ivme", "fresh"):
+        table.add_column(column)
+
+    for row in rows:
+        old = previous.get(row["repo_id"])
+        delta = "[dim]yeni[/dim]" if old is None else _delta(old - row["rank"])
+        table.add_row(
+            str(row["rank"]),
+            delta,
+            row["full_name"] + (" 🔥" if row["breakout"] else ""),
+            row["category"] or "-",
+            f"{row['stars']:,}",
+            f"{row['velocity_14d'] or 0:,.0f}/g",
+            f"{row['acceleration'] or 0:.1f}x",
+            f"{row['fresh_power'] or 0:,.0f}",
+        )
+    console.print(table)
+
+
+def _delta(value: int) -> str:
+    if value > 0:
+        return f"[green]+{value}[/green]"
+    if value < 0:
+        return f"[red]{value}[/red]"
+    return "[dim]0[/dim]"
+
+
+def _parse_date(value: str | None) -> dt.date | None:
+    return dt.date.fromisoformat(value) if value else None
+
+
+def _require_database():
+    settings = get_settings()
+    if not settings.database_url:
+        console.print("[red]DATABASE_URL is not set.[/red]")
+        raise typer.Exit(1)
+    return settings
+
+
+def _spend(client: GitHubClient) -> dict:
+    return {"api_calls": client.counters.calls, "api_304s": client.counters.not_modified}
+
+
+def _print_spend(client: GitHubClient) -> None:
+    counters = client.counters
+    console.print(
+        f"[dim]API: {counters.calls:,} istek, {counters.not_modified:,} 304 (bedava), "
+        f"{counters.retries} retry, {counters.seconds_waiting:.0f}s bekleme[/dim]"
+    )
 
 
 if __name__ == "__main__":

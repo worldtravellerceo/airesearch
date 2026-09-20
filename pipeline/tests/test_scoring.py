@@ -271,6 +271,61 @@ def test_breakout_needs_both_absolute_speed_and_acceleration():
 
     assert by_id[id(surging)].breakout is True
     assert by_id[id(steady)].breakout is False
+    assert all(not q.breakout for q in quiet)
+
+
+def test_a_giant_in_the_cohort_cannot_suppress_a_real_breakout():
+    """Regression: gating on a high percentile of the whole universe means the
+    bar is set by the largest projects in existence, and nothing small ever
+    qualifies however hard it is breaking out."""
+    giant = compute_repo_metrics(
+        days=series(TODAY - dt.timedelta(days=200), TODAY, 4_000),
+        stars_total=900_000,
+        created_at=TODAY - dt.timedelta(days=200),
+        today=TODAY,
+    )
+    breaking_out = compute_repo_metrics(
+        days=(
+            series(TODAY - dt.timedelta(days=200), TODAY - dt.timedelta(days=15), 2)
+            + series(TODAY - dt.timedelta(days=14), TODAY, 120)
+        ),
+        stars_total=2_100,
+        created_at=TODAY - dt.timedelta(days=200),
+        today=TODAY,
+    )
+    quiet = [
+        compute_repo_metrics(
+            days=series(TODAY - dt.timedelta(days=200), TODAY, 1),
+            stars_total=200,
+            created_at=TODAY - dt.timedelta(days=200),
+            today=TODAY,
+        )
+        for _ in range(50)
+    ]
+
+    scored = score_cohort([giant, breaking_out, *quiet])
+    by_id = {id(s): s for s in scored}
+
+    assert by_id[id(breaking_out)].breakout is True
+    assert by_id[id(giant)].breakout is False  # huge, but not accelerating
+
+
+def test_micro_repos_do_not_count_as_breakouts():
+    """Three stars a day off a base of zero is noise, not a breakout."""
+    noise = compute_repo_metrics(
+        days=(
+            series(TODAY - dt.timedelta(days=200), TODAY - dt.timedelta(days=15), 0)
+            + series(TODAY - dt.timedelta(days=14), TODAY, 3)
+        ),
+        stars_total=60,
+        created_at=TODAY - dt.timedelta(days=200),
+        today=TODAY,
+    )
+
+    scored = score_cohort([noise])
+
+    assert scored[0].acceleration > 3          # technically accelerating
+    assert scored[0].breakout is False         # but below the absolute floor
 
 
 def test_score_cohort_on_a_single_repo_does_not_crash():

@@ -64,12 +64,26 @@ başına saatte 1.000 istekle sınırlı; bu iş yükü için yetersiz.
 Kimlik doğrulama, rate limit kotaları ve star-history endpoint'ini doğrular.
 Projenin geri kalanı bu kontrolün geçmesine bağlı.
 
+## Kullanım
+
+```bash
+airadar init-db                     # şemayı kur (tekrar çalıştırılabilir)
+airadar collect                     # sırası gelen repoların metriklerini tazele
+airadar backfill --repo owner/name  # star geçmişini doğuma kadar geri yürü
+airadar score                       # metrikleri hesapla, board'ları kur
+airadar board fresh --limit 20      # sonucu terminalde gör
+```
+
 ## Test
 
 ```bash
 .venv/bin/python -m pytest tests/ -q
 .venv/bin/ruff check airadar tests
 ```
+
+Veritabanı testleri gerçek bir PostgreSQL'e karşı çalışır; `AIRADAR_TEST_DSN`
+ile adres verilebilir. Erişilebilir bir sunucu yoksa o testler atlanır, geri
+kalan süit yine çalışır.
 
 ## Yapı
 
