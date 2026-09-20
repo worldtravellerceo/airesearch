@@ -8,10 +8,10 @@ description, topics or language actually changed.
 
 from __future__ import annotations
 
+import json
 import logging
+import sqlite3
 from dataclasses import dataclass, field
-
-import psycopg
 
 from airadar.classify import rules
 from airadar.classify.llm import LLMClassifier, LLMInput, estimate_cost_usd
@@ -48,7 +48,7 @@ class ClassifyReport:
 
 
 def load_facts(
-    conn: psycopg.Connection, *, limit: int | None = None
+    conn: sqlite3.Connection, *, limit: int | None = None
 ) -> tuple[list[rules.RepoFacts], dict[str, int]]:
     """Every tracked repo with its topics, plus a name -> id map.
 
@@ -57,24 +57,26 @@ def load_facts(
     """
     sql = """
         SELECT r.id, r.full_name, r.description, r.language, r.homepage,
-               COALESCE(array_agg(t.topic) FILTER (WHERE t.topic IS NOT NULL), '{}') AS topics
+               (SELECT json_group_array(topic)
+                  FROM (SELECT topic FROM repo_topics
+                        WHERE repo_id = r.id ORDER BY topic)) AS topics_json
         FROM repos r
-        LEFT JOIN repo_topics t ON t.repo_id = r.id
-        WHERE NOT r.is_fork
-        GROUP BY r.id
+        WHERE r.is_fork = 0
         ORDER BY r.stars DESC
     """
-    params: tuple = ()
+    params: dict = {}
     if limit is not None:
-        sql += " LIMIT %s"
-        params = (limit,)
+        sql += " LIMIT :limit"
+        params["limit"] = limit
     rows = conn.execute(sql, params).fetchall()
+    for row in rows:
+        row["topics"] = json.loads(row.pop("topics_json") or "[]")
     facts = [rules.RepoFacts.from_row(row) for row in rows]
     return facts, {row["full_name"]: row["id"] for row in rows}
 
 
 async def classify_all(
-    conn: psycopg.Connection,
+    conn: sqlite3.Connection,
     client: GitHubClient,
     *,
     use_llm: bool = True,
@@ -141,13 +143,13 @@ async def classify_all(
         await _run_llm(conn, client, escalate, ids_by_name, report, settings)
 
     report.ai_repos = conn.execute(
-        "SELECT count(*) AS n FROM repo_classification WHERE is_ai"
+        "SELECT count(*) AS n FROM repo_classification WHERE is_ai = 1"
     ).fetchone()["n"]
     return report
 
 
 async def _run_llm(
-    conn: psycopg.Connection,
+    conn: sqlite3.Connection,
     client: GitHubClient,
     escalate: list[tuple[rules.RepoFacts, rules.Verdict]],
     ids_by_name: dict[str, int],

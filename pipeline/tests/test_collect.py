@@ -1,45 +1,16 @@
-"""End-to-end collection tests: mocked GitHub transport, real PostgreSQL."""
+"""End-to-end collection tests: mocked GitHub transport, real database."""
 
 import datetime as dt
-import os
 
 import httpx
-import psycopg
 import pytest
 
 from airadar.collect import backfill, collect, score
 from airadar.db import repo as db
 from airadar.gh.client import GitHubClient
 
-TEST_DSN = os.environ.get(
-    "AIRADAR_TEST_DSN", "postgresql://postgres@/airadar_test?host=/tmp&port=55432"
-)
 TODAY = dt.date(2026, 9, 20)
 SUNDAY = dt.datetime(2026, 9, 13, tzinfo=dt.UTC)
-
-
-def _reachable() -> bool:
-    try:
-        with psycopg.connect(TEST_DSN, connect_timeout=2):
-            return True
-    except Exception:
-        return False
-
-
-pytestmark = pytest.mark.skipif(not _reachable(), reason="no test PostgreSQL available")
-
-
-@pytest.fixture
-def conn():
-    with db.connect(TEST_DSN) as connection:
-        connection.execute(
-            "DROP TABLE IF EXISTS leaderboard_snapshots, repo_scores, "
-            "repo_classification, repo_star_daily, repo_snapshots, repo_topics, "
-            "run_log, repos CASCADE"
-        )
-        connection.commit()
-        db.apply_schema(connection)
-        yield connection
 
 
 def repo_json(repo_id=1, full_name="acme/agent", stars=1_000, created="2026-09-01T00:00:00Z"):

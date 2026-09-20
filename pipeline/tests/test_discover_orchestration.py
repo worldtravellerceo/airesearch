@@ -2,47 +2,17 @@
 
 import base64
 import datetime as dt
-import os
 
 import httpx
-import psycopg
-import pytest
 
 from airadar.db import repo as db
 from airadar.discover import discover, discovery_overview, resolve_pending
 from airadar.gh.client import GitHubClient
 
-TEST_DSN = os.environ.get(
-    "AIRADAR_TEST_DSN", "postgresql://postgres@/airadar_test?host=/tmp&port=55432"
-)
 HEADERS = {
     "x-ratelimit-remaining": "4999",
     "x-ratelimit-reset": str(int(dt.datetime.now().timestamp()) + 3600),
 }
-
-
-def _reachable() -> bool:
-    try:
-        with psycopg.connect(TEST_DSN, connect_timeout=2):
-            return True
-    except Exception:
-        return False
-
-
-pytestmark = pytest.mark.skipif(not _reachable(), reason="no test PostgreSQL available")
-
-
-@pytest.fixture
-def conn():
-    with db.connect(TEST_DSN) as connection:
-        connection.execute(
-            "DROP TABLE IF EXISTS leaderboard_snapshots, repo_scores, "
-            "repo_classification, repo_star_daily, repo_snapshots, repo_topics, "
-            "queried_topics, pending_repos, run_log, repos CASCADE"
-        )
-        connection.commit()
-        db.apply_schema(connection)
-        yield connection
 
 
 async def _no_sleep(_seconds):

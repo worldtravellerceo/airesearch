@@ -1,13 +1,12 @@
-"""Database layer tests against a real PostgreSQL instance.
+"""Data access layer tests.
 
-Skipped automatically when no test database is reachable, so the suite still
-runs in environments without one.
+The store is a SQLite file, so every one of these runs everywhere — there is
+no "skipped because no database was reachable" hole for a regression to hide
+in.
 """
 
 import datetime as dt
-import os
 
-import psycopg
 import pytest
 
 from airadar.db import repo as db
@@ -15,35 +14,8 @@ from airadar.gh.metrics import DailyStars
 from airadar.scoring.leaderboards import Entry
 from airadar.scoring.metrics import RepoMetrics
 
-TEST_DSN = os.environ.get(
-    "AIRADAR_TEST_DSN", "postgresql://postgres@/airadar_test?host=/tmp&port=55432"
-)
 TODAY = dt.date(2026, 9, 20)
 NOW = dt.datetime(2026, 9, 20, 6, 0, tzinfo=dt.UTC)
-
-
-def _reachable() -> bool:
-    try:
-        with psycopg.connect(TEST_DSN, connect_timeout=2):
-            return True
-    except Exception:
-        return False
-
-
-pytestmark = pytest.mark.skipif(not _reachable(), reason="no test PostgreSQL available")
-
-
-@pytest.fixture
-def conn():
-    with db.connect(TEST_DSN) as connection:
-        connection.execute(
-            "DROP TABLE IF EXISTS leaderboard_snapshots, repo_scores, "
-            "repo_classification, repo_star_daily, repo_snapshots, repo_topics, "
-            "run_log, repos CASCADE"
-        )
-        connection.commit()
-        db.apply_schema(connection)
-        yield connection
 
 
 def api_payload(repo_id: int, full_name: str, stars: int = 100, **overrides) -> dict:
@@ -209,7 +181,7 @@ def test_saving_leaderboards_replaces_the_day_wholesale(conn):
     # A re-run that finds only one eligible repo must not leave the other behind.
     db.save_leaderboards(conn, TODAY, [Entry("momentum", "_all", 1, 2, 7.0)])
 
-    rows = conn.execute("SELECT * FROM leaderboard_snapshots WHERE date = %s", (TODAY,)).fetchall()
+    rows = conn.execute("SELECT * FROM leaderboard_snapshots WHERE date = ?", (TODAY,)).fetchall()
     assert [(r["rank"], r["repo_id"]) for r in rows] == [(1, 2)]
 
 
@@ -278,7 +250,7 @@ def test_run_log_records_cost(conn):
     run_id = db.start_run(conn, "collect")
     db.finish_run(conn, run_id, ok=True, api_calls=4_812, api_304s=901, llm_cost_usd=1.62)
 
-    row = conn.execute("SELECT * FROM run_log WHERE id = %s", (run_id,)).fetchone()
+    row = conn.execute("SELECT * FROM run_log WHERE id = ?", (run_id,)).fetchone()
     assert row["ok"] is True
     assert row["api_calls"] == 4_812
     assert row["llm_cost_usd"] == pytest.approx(1.62)

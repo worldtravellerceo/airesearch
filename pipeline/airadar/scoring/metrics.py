@@ -82,19 +82,43 @@ def compute_repo_metrics(
     half_life_days: float = DEFAULT_HALF_LIFE_DAYS,
     repo_id: int | None = None,
     category: str | None = None,
+    carried_tail: float = 0.0,
+    backfilled_through: dt.date | None = None,
+    milestones: tuple[int | None, int | None, int | None] | None = None,
 ) -> RepoMetrics:
-    """Compute every self-contained metric for one repository."""
+    """Compute every self-contained metric for one repository.
+
+    Only a rolling window of per-day rows is retained, so three arguments carry
+    what pruning would otherwise destroy:
+
+    - `carried_tail` — the decayed weight of the dropped days, already stated as
+      of `today`. Because the decay is multiplicative, collapsing them into one
+      number is lossless.
+    - `backfilled_through` — the oldest day ever pulled. Without it a pruned
+      repo would look like one we know nothing about and would fall off the
+      Fresh Power board the day after it was backfilled.
+    - `milestones` — the days-to-1k/10k/50k figures computed while the full
+      history was in hand.
+    """
     metrics = RepoMetrics(repo_id=repo_id, stars_total=stars_total, category=category)
+    # Week buckets start on a Sunday, so a complete history begins on or before
+    # the creation date. The tolerance absorbs that alignment.
+    horizon = backfilled_through if backfilled_through is not None else None
+
     if not days:
+        metrics.fresh_power = max(carried_tail, 0.0)
+        if horizon is not None:
+            metrics.history_complete = horizon <= created_at + dt.timedelta(days=7)
+        if milestones is not None:
+            metrics.days_to_1k, metrics.days_to_10k, metrics.days_to_50k = milestones
         return metrics
 
     ordered = sorted(days, key=lambda d: d.date)
     by_date = {d.date: d.stars_gained for d in ordered}
 
     metrics.coverage_days = (ordered[-1].date - ordered[0].date).days + 1
-    # Week buckets start on a Sunday, so a complete history begins on or before
-    # the creation date. The tolerance absorbs that alignment.
-    metrics.history_complete = ordered[0].date <= created_at + dt.timedelta(days=7)
+    reach = horizon if horizon is not None else ordered[0].date
+    metrics.history_complete = reach <= created_at + dt.timedelta(days=7)
 
     for window in VELOCITY_WINDOWS:
         setattr(metrics, f"velocity_{window}d", _window_velocity(by_date, today, window))
@@ -112,12 +136,15 @@ def compute_repo_metrics(
     stars_before = max(stars_total - stars_14d, 1)
     metrics.relative_growth_14d = stars_14d / stars_before if stars_14d else 0.0
 
-    metrics.fresh_power = _fresh_power(ordered, today, half_life_days)
+    metrics.fresh_power = _fresh_power(ordered, today, half_life_days) + max(carried_tail, 0.0)
     metrics.peak_velocity, metrics.days_since_peak = _peak(ordered, today)
 
-    if metrics.history_complete:
-        milestones = _milestone_days(ordered, created_at)
+    if milestones is not None:
         metrics.days_to_1k, metrics.days_to_10k, metrics.days_to_50k = milestones
+    elif metrics.history_complete:
+        metrics.days_to_1k, metrics.days_to_10k, metrics.days_to_50k = milestone_days(
+            ordered, created_at
+        )
 
     return metrics
 
@@ -194,7 +221,7 @@ def _peak(days: list[DailyStars], today: dt.date) -> tuple[float | None, int | N
     return best, (today - days[best_end].date).days
 
 
-def _milestone_days(
+def milestone_days(
     days: list[DailyStars], created_at: dt.date
 ) -> tuple[int | None, int | None, int | None]:
     """Days from creation to each star milestone — the "five years vs two weeks"

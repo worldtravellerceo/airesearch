@@ -10,9 +10,8 @@ from __future__ import annotations
 
 import datetime as dt
 import logging
+import sqlite3
 from dataclasses import dataclass
-
-import psycopg
 
 from airadar.config import get_settings
 from airadar.db import repo as db
@@ -25,7 +24,11 @@ from airadar.gh.metrics import (
     parse_star_history,
 )
 from airadar.scoring.leaderboards import build_all
-from airadar.scoring.metrics import compute_repo_metrics, score_cohort
+from airadar.scoring.metrics import (
+    compute_repo_metrics,
+    milestone_days,
+    score_cohort,
+)
 
 log = logging.getLogger(__name__)
 
@@ -51,7 +54,7 @@ class CollectReport:
 
 
 async def collect(
-    conn: psycopg.Connection,
+    conn: sqlite3.Connection,
     client: GitHubClient,
     *,
     today: dt.date | None = None,
@@ -78,7 +81,7 @@ async def collect(
         except GitHubError as exc:
             if exc.status in GONE_STATUSES:
                 log.info("collect: %s is gone (%s), removing", row["full_name"], exc.status)
-                conn.execute("DELETE FROM repos WHERE id = %s", (row["id"],))
+                conn.execute("DELETE FROM repos WHERE id = ?", (row["id"],))
                 conn.commit()
                 report.gone += 1
                 continue
@@ -94,7 +97,7 @@ async def collect(
 
 
 async def _collect_one(
-    conn: psycopg.Connection,
+    conn: sqlite3.Connection,
     client: GitHubClient,
     row: dict,
     today: dt.date,
@@ -139,7 +142,7 @@ async def _collect_one(
 
 
 async def backfill(
-    conn: psycopg.Connection,
+    conn: sqlite3.Connection,
     client: GitHubClient,
     *,
     full_name: str | None = None,
@@ -154,22 +157,24 @@ async def backfill(
     if full_name:
         rows = conn.execute(
             "SELECT id, full_name, created_at, history_backfilled_through "
-            "FROM repos WHERE full_name = %s",
+            "FROM repos WHERE lower(full_name) = lower(?)",
             (full_name,),
         ).fetchall()
     else:
+        # A backfill is complete once its history reaches the creation date. The
+        # week of slack absorbs the API's Sunday-aligned week buckets.
         sql = """
             SELECT id, full_name, created_at, history_backfilled_through
             FROM repos
-            WHERE NOT is_fork
+            WHERE is_fork = 0
               AND (history_backfilled_through IS NULL
-                   OR history_backfilled_through > created_at::date + 7)
+                   OR history_backfilled_through > date(created_at, '+7 days'))
             ORDER BY stars DESC
         """
-        params: tuple = ()
+        params: dict = {}
         if limit is not None:
-            sql += " LIMIT %s"
-            params = (limit,)
+            sql += " LIMIT :limit"
+            params["limit"] = limit
         rows = conn.execute(sql, params).fetchall()
 
     total = 0
@@ -178,7 +183,7 @@ async def backfill(
     return total
 
 
-async def _backfill_one(conn: psycopg.Connection, client: GitHubClient, row: dict) -> int:
+async def _backfill_one(conn: sqlite3.Connection, client: GitHubClient, row: dict) -> int:
     """Page backwards until the series reaches the repo's creation date.
 
     The stop conditions are data-driven rather than Link-header-driven: this
@@ -214,12 +219,18 @@ async def _backfill_one(conn: psycopg.Connection, client: GitHubClient, row: dic
 
     if oldest_seen:
         db.set_backfill_watermark(conn, row["id"], oldest_seen)
+        # The milestones can only be read off a complete series, and that series
+        # is about to be pruned down to a rolling window — so they are computed
+        # and stored now, while the days are still here.
+        if created and oldest_seen <= created + dt.timedelta(days=7):
+            series = db.load_daily_series(conn, row["id"])
+            db.set_milestones(conn, row["id"], milestone_days(series, created))
         conn.commit()
     log.info("backfill: %s -> %d day-rows", row["full_name"], written)
     return written
 
 
-def score(conn: psycopg.Connection, *, today: dt.date | None = None) -> tuple[int, int]:
+def score(conn: sqlite3.Connection, *, today: dt.date | None = None) -> tuple[int, int]:
     """Recompute every metric and rebuild all boards for `today`.
 
     Pure database work — no API calls — so it is cheap to re-run after a
@@ -228,19 +239,15 @@ def score(conn: psycopg.Connection, *, today: dt.date | None = None) -> tuple[in
     settings = get_settings()
     today = today or dt.date.today()
 
-    rows = conn.execute(
-        """
-        SELECT r.id, r.created_at, r.stars, c.category
-        FROM repos r
-        JOIN repo_classification c ON c.repo_id = r.id AND c.is_ai
-        WHERE NOT r.is_fork
-        """
-    ).fetchall()
+    rows = db.load_scoring_rows(
+        conn, today=today, half_life_days=settings.fresh_power_half_life_days
+    )
 
     metrics = []
     for row in rows:
         series = db.load_daily_series(conn, row["id"])
         created = row["created_at"].date() if row["created_at"] else today
+        stored = (row["days_to_1k"], row["days_to_10k"], row["days_to_50k"])
         metrics.append(
             compute_repo_metrics(
                 days=series,
@@ -250,6 +257,11 @@ def score(conn: psycopg.Connection, *, today: dt.date | None = None) -> tuple[in
                 half_life_days=settings.fresh_power_half_life_days,
                 repo_id=row["id"],
                 category=row["category"],
+                carried_tail=row["carried_tail"],
+                backfilled_through=row["history_backfilled_through"],
+                # Milestones are computed once, during backfill, and persisted —
+                # the days they were derived from are long pruned by now.
+                milestones=stored if any(v is not None for v in stored) else None,
             )
         )
 
@@ -257,5 +269,19 @@ def score(conn: psycopg.Connection, *, today: dt.date | None = None) -> tuple[in
     saved = db.save_scores(conn, today, metrics)
     entries = build_all(metrics)
     db.save_leaderboards(conn, today, entries)
-    log.info("score: %d repos scored, %d board rows", saved, len(entries))
+
+    # Pruning happens after scoring, not before: today's numbers are computed
+    # from the full retained window, and only then does the window slide.
+    pruned = db.prune_star_history(
+        conn,
+        today=today,
+        retain_days=settings.retain_days,
+        half_life_days=settings.fresh_power_half_life_days,
+    )
+    log.info(
+        "score: %d repos scored, %d board rows, %d day-rows pruned",
+        saved,
+        len(entries),
+        pruned,
+    )
     return saved, len(entries)

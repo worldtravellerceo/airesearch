@@ -20,8 +20,12 @@ class Settings(BaseSettings):
     # A personal access token, NOT the Actions GITHUB_TOKEN: the latter is capped
     # at 1,000 requests/hour per repository, which is far too low for this workload.
     github_token: str = Field(default="", alias="GH_PAT")
-    database_url: str = Field(default="", alias="DATABASE_URL")
     anthropic_api_key: str = Field(default="", alias="ANTHROPIC_API_KEY")
+
+    # --- storage -----------------------------------------------------------
+    # A SQLite file that lives in the repository. Keeping the data here rather
+    # than in a hosted database is what removes the last account from the setup.
+    db_path: str = Field(default="data/airadar.db", alias="AIRADAR_DB")
 
     # --- discovery ---------------------------------------------------------
     min_stars: int = Field(default=50, alias="AIRADAR_MIN_STARS")
@@ -33,6 +37,13 @@ class Settings(BaseSettings):
     # --- collection --------------------------------------------------------
     # Repos ranked inside the top N by stars are refreshed daily; the rest weekly.
     tier1_size: int = Field(default=3000, alias="AIRADAR_TIER1_SIZE")
+    # How many repos we collect metrics for at all. Discovery finds far more;
+    # this is what keeps the database small enough to live in the repository.
+    # A riser below the cut enters the tracked set at the next weekly discovery,
+    # which re-reads everyone's star counts.
+    track_limit: int = Field(default=6000, alias="AIRADAR_TRACK_LIMIT")
+    # Days of per-day detail retained; older rows fold into fresh_power_tail.
+    retain_days: int = Field(default=120, alias="AIRADAR_RETAIN_DAYS")
     user_agent: str = "airadar/0.1 (+https://github.com/worldtravellerceo/airesearch)"
 
     # --- scoring -----------------------------------------------------------

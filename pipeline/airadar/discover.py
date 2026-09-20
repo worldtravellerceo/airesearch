@@ -11,9 +11,8 @@ from __future__ import annotations
 
 import datetime as dt
 import logging
+import sqlite3
 from dataclasses import dataclass, field
-
-import psycopg
 
 from airadar.config import get_settings
 from airadar.db import repo as db
@@ -52,7 +51,7 @@ class DiscoverReport:
         return "; ".join(parts)
 
 
-def _make_sink(conn: psycopg.Connection, report: DiscoverReport, min_stars: int):
+def _make_sink(conn: sqlite3.Connection, report: DiscoverReport, min_stars: int):
     """Persist search hits as they arrive, so an interrupted sweep keeps its work."""
 
     def sink(items: list[dict], channel: str) -> None:
@@ -68,7 +67,7 @@ def _make_sink(conn: psycopg.Connection, report: DiscoverReport, min_stars: int)
 
 
 async def discover(
-    conn: psycopg.Connection,
+    conn: sqlite3.Connection,
     client: GitHubClient,
     *,
     topics: bool = True,
@@ -163,7 +162,7 @@ async def discover(
 
 
 async def resolve_pending(
-    conn: psycopg.Connection, client: GitHubClient, *, limit: int | None = None
+    conn: sqlite3.Connection, client: GitHubClient, *, limit: int | None = None
 ) -> tuple[int, int]:
     """Look up queued `owner/name` entries and promote them into `repos`.
 
@@ -202,7 +201,7 @@ async def resolve_pending(
     return resolved, failed
 
 
-def seed_topic_log(conn: psycopg.Connection) -> int:
+def seed_topic_log(conn: sqlite3.Connection) -> int:
     """Record the seed vocabulary as queried without sweeping it (for tests and
     for resuming a run that already covered the seeds)."""
     for topic in SEED_TOPICS:
@@ -210,14 +209,14 @@ def seed_topic_log(conn: psycopg.Connection) -> int:
     return len(SEED_TOPICS)
 
 
-def discovery_overview(conn: psycopg.Connection) -> dict:
+def discovery_overview(conn: sqlite3.Connection) -> dict:
     """Where the tracked universe came from — useful for judging recall."""
     rows = conn.execute(
         "SELECT COALESCE(discovered_via, 'unknown') AS channel, count(*) AS n "
         "FROM repos GROUP BY 1 ORDER BY n DESC"
     ).fetchall()
     pending = conn.execute(
-        "SELECT count(*) AS n FROM pending_repos WHERE resolved_at IS NULL AND NOT failed"
+        "SELECT count(*) AS n FROM pending_repos WHERE resolved_at IS NULL AND failed = 0"
     ).fetchone()
     return {
         "by_channel": {r["channel"]: r["n"] for r in rows},

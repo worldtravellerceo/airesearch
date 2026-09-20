@@ -5,6 +5,7 @@ from __future__ import annotations
 import asyncio
 import datetime as dt
 import logging
+from pathlib import Path
 
 import typer
 from rich.console import Console
@@ -116,7 +117,7 @@ async def _doctor(repo: str) -> None:
 def init_db() -> None:
     """Create or update the database schema. Safe to re-run."""
     settings = _require_database()
-    with db.connect(settings.database_url) as conn:
+    with db.connect(settings.db_path) as conn:
         db.apply_schema(conn)
     console.print("[green]schema applied[/green]")
 
@@ -148,7 +149,7 @@ async def _run_discover(channels: str, resolve_limit: int | None) -> None:
     settings = _require_database()
     selected = _parse_channels(channels)
 
-    with db.connect(settings.database_url) as conn:
+    with db.connect(settings.db_path) as conn:
         run_id = db.start_run(conn, "discover")
         async with GitHubClient() as client:
             try:
@@ -216,7 +217,7 @@ def collect(
 
 async def _run_collect(limit: int | None, date: dt.date | None) -> None:
     settings = _require_database()
-    with db.connect(settings.database_url) as conn:
+    with db.connect(settings.db_path) as conn:
         run_id = db.start_run(conn, "collect")
         async with GitHubClient() as client:
             try:
@@ -244,7 +245,7 @@ def backfill(
 
 async def _run_backfill(repo: str | None, limit: int | None) -> None:
     settings = _require_database()
-    with db.connect(settings.database_url) as conn:
+    with db.connect(settings.db_path) as conn:
         run_id = db.start_run(conn, "backfill")
         async with GitHubClient() as client:
             try:
@@ -288,7 +289,7 @@ async def _run_classify(
         )
         raise typer.Exit(1)
 
-    with db.connect(settings.database_url) as conn:
+    with db.connect(settings.db_path) as conn:
         run_id = db.start_run(conn, "classify")
         async with GitHubClient() as client:
             try:
@@ -349,7 +350,7 @@ def score(
 ) -> None:
     """Recompute every metric and rebuild all boards. No API calls."""
     settings = _require_database()
-    with db.connect(settings.database_url) as conn:
+    with db.connect(settings.db_path) as conn:
         run_id = db.start_run(conn, "score")
         try:
             scored, rows = collect_mod.score(conn, today=_parse_date(date))
@@ -370,7 +371,7 @@ def board(
     """Print a leaderboard in the terminal."""
     settings = _require_database()
     on = _parse_date(date) or dt.date.today()
-    with db.connect(settings.database_url) as conn:
+    with db.connect(settings.db_path) as conn:
         rows = db.load_leaderboard(conn, date=on, board=name, category=category, limit=limit)
         previous = db.previous_board_ranks(conn, before=on, board=name, category=category)
 
@@ -411,10 +412,16 @@ def _parse_date(value: str | None) -> dt.date | None:
 
 
 def _require_database():
+    """The database is a file, so there is nothing to configure — but a missing
+    one usually means the `data` branch was not checked out, and saying so is
+    more useful than an empty board."""
     settings = get_settings()
-    if not settings.database_url:
-        console.print("[red]DATABASE_URL is not set.[/red]")
-        raise typer.Exit(1)
+    path = Path(settings.db_path)
+    if not path.exists():
+        console.print(
+            f"[yellow]{path} yok.[/yellow] `airadar init-db` ile oluşturun, "
+            "ya da CI'da `data` dalının çekildiğinden emin olun."
+        )
     return settings
 
 
