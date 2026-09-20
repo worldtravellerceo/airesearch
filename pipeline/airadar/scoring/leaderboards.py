@@ -65,14 +65,22 @@ SCORERS: dict[Board, Callable[[RepoMetrics], float]] = {
 
 
 def eligible(board: Board, metrics: RepoMetrics) -> bool:
-    """Whether a repo may appear on a board at all."""
+    """Whether a repo may appear on a board at all.
+
+    A board must not list repos whose score is zero. Before any star history has
+    been collected every velocity is 0, and without this the momentum board
+    falls back to its tie-breaker and silently becomes a copy of the popularity
+    board — which looks like an answer and is not one.
+    """
     if board == "fresh":
         # Comparing an integral over a full lifetime against one over seven
         # months is not a comparison. Backfill first.
-        return metrics.history_complete
+        return metrics.history_complete and metrics.fresh_power > 0
     if board == "breakout":
         return metrics.breakout
-    return True
+    if board == "momentum":
+        return metrics.velocity_14d > 0
+    return metrics.stars_total > 0
 
 
 def rank_board(

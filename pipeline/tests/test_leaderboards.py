@@ -121,3 +121,26 @@ def test_rank_deltas_distinguish_new_entries_from_static_ones():
     assert deltas[("momentum", ALL_CATEGORIES, 200)] == 1
     assert deltas[("momentum", ALL_CATEGORIES, 100)] == -1
     assert deltas[("momentum", ALL_CATEGORIES, 300)] is None
+
+
+def test_a_board_never_lists_repos_whose_score_is_zero():
+    """Caught live: before any star history had been collected, every velocity
+    was 0, the momentum board fell back to its tie-breaker and became a copy of
+    the popularity board — which looks like an answer and is not one."""
+    no_history = [
+        compute_repo_metrics(
+            days=[],
+            stars_total=stars,
+            created_at=TODAY - dt.timedelta(days=500),
+            today=TODAY,
+            repo_id=i,
+        )
+        for i, stars in enumerate([200_000, 100_000, 50_000], start=1)
+    ]
+    cohort = score_cohort(no_history)
+
+    assert rank_board(cohort, "momentum") == []
+    assert rank_board(cohort, "fresh") == []
+    assert rank_board(cohort, "breakout") == []
+    # Stars are known even without history, so this board is still answerable.
+    assert [e.repo_id for e in rank_board(cohort, "popular")] == [1, 2, 3]
