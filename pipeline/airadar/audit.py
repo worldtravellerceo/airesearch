@@ -212,13 +212,11 @@ def audit_freshness(
     """
     import datetime as _dt
 
+    from airadar.db.repo import TRACKED_UNIVERSE_SQL
+
     row = conn.execute(
-        """
-        WITH ranked AS (
-            SELECT id, last_checked_at,
-                   ROW_NUMBER() OVER (ORDER BY stars DESC, id) AS star_rank
-            FROM repos WHERE is_fork = 0
-        )
+        f"""
+        WITH ranked AS ({TRACKED_UNIVERSE_SQL})
         SELECT
           sum(star_rank <= :tier1) AS t1,
           sum(star_rank <= :tier1 AND (last_checked_at IS NULL
@@ -232,6 +230,10 @@ def audit_freshness(
         {
             "tier1": tier1_size,
             "track_limit": track_limit,
+            # Deliberately looser than the collect queue's 20 hours and 7 days.
+            # A repo becomes *due* before it becomes *stale*; without the grace
+            # period every repo waiting its turn in a run that is still going
+            # would be counted as a failure.
             "daily_cutoff": now - _dt.timedelta(hours=28),
             "weekly_cutoff": now - _dt.timedelta(days=8),
         },

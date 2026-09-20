@@ -212,6 +212,30 @@ def mark_checked(conn: sqlite3.Connection, repo_id: int, when: dt.datetime) -> N
     conn.execute("UPDATE repos SET last_checked_at = ? WHERE id = ?", (when, repo_id))
 
 
+# The tracked universe, ranked by stars. One definition, used both by the
+# collect queue and by the freshness audit that checks the collect queue did its
+# job. Writing the ranking twice is how the two came to measure different
+# populations: the queue was narrowed to AI repos and the audit was not, so it
+# reported 24% against a universe that was in fact entirely fresh — the audit
+# failing in exactly the way it exists to catch.
+#
+# Confirmed non-AI repos are excluded because they never reach a board, so
+# collecting their metrics spends quota on rows nothing reads — and worse, it
+# pushes the star rank of the ones that do matter past `track_limit`. The census
+# put 56,105 repos above a thousand stars into the corpus and the tracked floor
+# jumped from 1,674 stars to 9,392, cutting off exactly the fast-rising projects
+# the Breakout board exists for. Repos not yet judged stay in: they are new, and
+# might be AI.
+TRACKED_UNIVERSE_SQL = """
+    SELECT r.id, r.full_name, r.created_at, r.stars, r.etag_repo, r.etag_history,
+           r.last_checked_at, r.history_backfilled_through,
+           ROW_NUMBER() OVER (ORDER BY r.stars DESC, r.id) AS star_rank
+    FROM repos r
+    LEFT JOIN repo_classification c ON c.repo_id = r.id
+    WHERE r.is_fork = 0 AND (c.is_ai IS NULL OR c.is_ai = 1)
+"""
+
+
 def repos_due_for_refresh(
     conn: sqlite3.Connection,
     *,
@@ -233,22 +257,8 @@ def repos_due_for_refresh(
         "weekly_cutoff": now - dt.timedelta(days=7),
         "track_limit": track_limit if track_limit is not None else -1,
     }
-    sql = """
-        WITH ranked AS (
-            SELECT r.id, r.full_name, r.created_at, r.stars, r.etag_repo, r.etag_history,
-                   r.last_checked_at, r.history_backfilled_through,
-                   ROW_NUMBER() OVER (ORDER BY r.stars DESC, r.id) AS star_rank
-            FROM repos r
-            LEFT JOIN repo_classification c ON c.repo_id = r.id
-            -- Confirmed non-AI repos never reach a board, so collecting their
-            -- metrics spends quota on rows nothing reads — and worse, it pushes
-            -- the star rank of the ones that do matter past `track_limit`. The
-            -- census put 56,105 repos above a thousand stars into the corpus and
-            -- the tracked floor jumped from 1,674 stars to 9,392, cutting off
-            -- exactly the fast-rising projects the Breakout board exists for.
-            -- Repos not yet judged stay in: they are new, and might be AI.
-            WHERE r.is_fork = 0 AND (c.is_ai IS NULL OR c.is_ai = 1)
-        )
+    sql = f"""
+        WITH ranked AS ({TRACKED_UNIVERSE_SQL})
         SELECT * FROM ranked
         WHERE (:track_limit < 0 OR star_rank <= :track_limit)
           AND (last_checked_at IS NULL
