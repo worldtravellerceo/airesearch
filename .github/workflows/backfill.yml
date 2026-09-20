@@ -52,6 +52,16 @@ jobs:
         with:
           token: ${{ github.token }}
 
+      - name: Summary
+        if: always()
+        run: |
+          {
+            echo "### Veri durumu"
+            echo '```'
+            COLUMNS=140 airadar stats || true
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
+
   publish:
     needs: backfill
     uses: ./.github/workflows/publish.yml

@@ -236,3 +236,53 @@ def discovery_overview(conn: sqlite3.Connection) -> dict:
         "pending": pending["n"],
         "as_of": dt.date.today().isoformat(),
     }
+
+
+def health(conn: sqlite3.Connection) -> dict:
+    """A compact readout of what the database actually contains.
+
+    Printed into every workflow summary. A run's logs are tens of megabytes and
+    have to be downloaded to read; this is the thing that says whether the run
+    did what it was supposed to, at a glance.
+    """
+    row = conn.execute(
+        """
+        SELECT
+            (SELECT count(*) FROM repos) AS tracked,
+            (SELECT count(*) FROM repos WHERE is_fork = 0) AS not_forks,
+            (SELECT count(*) FROM repo_classification) AS classified,
+            (SELECT count(*) FROM repo_classification WHERE is_ai = 1) AS ai_repos,
+            (SELECT count(*) FROM repos WHERE history_backfilled_through IS NOT NULL)
+                AS backfilled,
+            (SELECT count(*) FROM repos WHERE last_checked_at IS NOT NULL) AS collected,
+            (SELECT count(*) FROM repo_star_daily) AS day_rows,
+            (SELECT count(*) FROM repo_star_weekly) AS week_rows,
+            (SELECT count(*) FROM pending_repos
+              WHERE resolved_at IS NULL AND failed = 0) AS pending,
+            (SELECT count(*) FROM queried_topics) AS topics_swept
+        """
+    ).fetchone()
+
+    # The gap between "classified" and "tracked" is the band the rule engine
+    # could not settle — those repos are on no board until they are judged.
+    row["unjudged"] = row["not_forks"] - row["classified"]
+    row["boards_as_of"] = db.latest_board_date(conn)
+    row["by_channel"] = {
+        r["channel"]: r["n"]
+        for r in conn.execute(
+            "SELECT COALESCE(discovered_via, 'unknown') AS channel, count(*) AS n "
+            "FROM repos GROUP BY 1 ORDER BY n DESC"
+        )
+    }
+    row["by_category"] = {
+        r["category"]: r["n"]
+        for r in conn.execute(
+            "SELECT COALESCE(category, 'yok') AS category, count(*) AS n "
+            "FROM repo_classification WHERE is_ai = 1 GROUP BY 1 ORDER BY n DESC"
+        )
+    }
+    row["recent_runs"] = conn.execute(
+        "SELECT command, ok, api_calls, api_304s, notes, finished_at "
+        "FROM run_log WHERE finished_at IS NOT NULL ORDER BY id DESC LIMIT 5"
+    ).fetchall()
+    return row

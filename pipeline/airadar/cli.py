@@ -418,6 +418,64 @@ def export_site_cmd(
 
 
 @app.command()
+def stats() -> None:
+    """Print what the database contains. Cheap, no API calls."""
+    settings = _require_database()
+    with db.connect(settings.db_path) as conn:
+        report = discover_mod.health(conn)
+
+    table = Table(title="airadar — veri durumu")
+    table.add_column("")
+    table.add_column("", justify="right")
+    table.add_row("izlenen repo", f"{report['tracked']:,}")
+    table.add_row("sınıflandırılmış", f"{report['classified']:,}")
+    table.add_row("AI olarak işaretli", f"{report['ai_repos']:,}")
+    if report["unjudged"] > 0:
+        table.add_row(
+            "[yellow]kararsız (hiçbir board'da değil)[/yellow]",
+            f"[yellow]{report['unjudged']:,}[/yellow]",
+        )
+    table.add_row("metrikleri toplanmış", f"{report['collected']:,}")
+    table.add_row("tam geçmişi çıkarılmış", f"{report['backfilled']:,}")
+    table.add_row("günlük veri satırı", f"{report['day_rows']:,}")
+    table.add_row("haftalık veri satırı", f"{report['week_rows']:,}")
+    table.add_row("bekleyen isim", f"{report['pending']:,}")
+    table.add_row("taranmış topic", f"{report['topics_swept']:,}")
+    table.add_row("board tarihi", str(report["boards_as_of"] or "—"))
+    console.print(table)
+
+    if report["by_channel"]:
+        channels = Table(title="keşif kanalı")
+        channels.add_column("kanal")
+        channels.add_column("repo", justify="right")
+        for channel, count_ in report["by_channel"].items():
+            channels.add_row(channel, f"{count_:,}")
+        console.print(channels)
+
+    if report["by_category"]:
+        categories = Table(title="kategori")
+        categories.add_column("kategori")
+        categories.add_column("repo", justify="right")
+        for category, count_ in list(report["by_category"].items())[:20]:
+            categories.add_row(category, f"{count_:,}")
+        console.print(categories)
+
+    if report["recent_runs"]:
+        runs = Table(title="son çalıştırmalar")
+        for column in ("komut", "ok", "API", "304", "not"):
+            runs.add_column(column)
+        for run in report["recent_runs"]:
+            runs.add_row(
+                run["command"],
+                "[green]✓[/green]" if run["ok"] else "[red]✗[/red]",
+                f"{run['api_calls']:,}",
+                f"{run['api_304s']:,}",
+                (run["notes"] or "")[:70],
+            )
+        console.print(runs)
+
+
+@app.command()
 def board(
     name: str = typer.Argument("fresh", help="popular | momentum | breakout | fresh"),
     category: str = typer.Option("_all", "--category"),
