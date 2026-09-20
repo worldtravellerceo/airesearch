@@ -7,6 +7,7 @@ pollutes every board. The band in between is what we pay the LLM to read.
 
 import pytest
 
+from airadar.classify import rules as rules_module
 from airadar.classify.rules import RepoFacts, classify, escalation_rate, partition
 
 
@@ -85,16 +86,27 @@ def test_ambiguous_repos_are_escalated_rather_than_guessed():
 
 
 def test_weak_signals_alone_never_reach_certainty():
-    """Several suggestive hints should escalate, not settle: that is what the
-    soft ceiling is for."""
-    verdict = classify(facts("acme/gpt-bot", "A bot using openai", ["gpt", "openai", "chatbot"]))
-    assert verdict.confidence <= 0.78
-    assert verdict.needs_llm is True
+    """Suggestive hints may add up to a decision, but never to the certainty a
+    decisive topic buys — that is what the soft ceiling is for."""
+    verdict = classify(facts("acme/thing", "A tool", ["agent", "dataset", "observability"]))
+    assert verdict.confidence <= rules_module.SOFT_CEILING
+    assert verdict.confidence < classify(facts("a/b", None, ["llm"])).confidence
+
+
+def test_the_soft_ceiling_is_a_ceiling_and_not_a_bar():
+    """The first version set the ceiling at 0.78 against a threshold of 0.80,
+    so no amount of weak evidence could ever settle anything. 17,849 repos —
+    `openai/codex` and `meta-llama/llama` among them — escalated forever."""
+    assert rules_module.SOFT_CEILING > 0.8
+
+    piled_up = classify(facts("acme/thing", "A tool", ["ai", "agent", "mcp"]))
+    assert piled_up.is_ai is True
+    assert piled_up.needs_llm is False
 
 
 def test_a_single_decisive_topic_beats_a_pile_of_weak_ones():
     decisive = classify(facts("a/b", None, ["llm"]))
-    weak = classify(facts("c/d", None, ["ai", "ml", "gpt", "openai"]))
+    weak = classify(facts("c/d", None, ["ai", "ml"]))
 
     assert decisive.is_ai is True
     assert weak.needs_llm is True
@@ -226,3 +238,52 @@ def test_changing_the_rules_invalidates_cached_verdicts():
         rules_module.RULES_VERSION = original
 
     assert before != after
+
+
+def test_a_framework_topic_is_not_merely_suggestive():
+    """A repo topiced `pytorch` is a machine-learning repo; there is no second
+    reading. Filing these with `ai` and `agent` as equally ambiguous stranded
+    2,744 paper implementations in the escalation band."""
+    for topic in ("pytorch", "tensorflow", "keras", "nlp", "ocr"):
+        verdict = classify(facts("someone/impl", "An implementation", [topic]))
+        assert verdict.is_ai is True, topic
+        assert verdict.needs_llm is False, topic
+
+
+def test_an_ai_lab_owner_decides_a_repo_with_no_other_evidence():
+    """`deepseek-ai/DeepSeek-V3`: no topics, no description, 104k stars, and
+    so no evidence at all until you read the owner."""
+    verdict = classify(facts("deepseek-ai/DeepSeek-V3", None, []))
+    assert verdict.is_ai is True
+    assert verdict.needs_llm is False
+
+    # The signal is the owner, not the word appearing anywhere in the name.
+    assert classify(facts("someone/openai-is-not-the-owner", "A tool", [])).is_ai is False
+
+
+def test_the_same_word_twice_is_one_piece_of_evidence():
+    """Noisy-OR assumes independent signals. `pytorch` as a topic and "PyTorch"
+    in the description are one fact seen twice, and counting both inflated
+    routine repos toward the ceiling."""
+    once = classify(facts("a/b", "An implementation", ["pytorch"]))
+    twice = classify(facts("c/d", "A PyTorch implementation", ["pytorch"]))
+
+    assert once.confidence == twice.confidence
+
+
+def test_generic_lists_are_still_rejected():
+    """From real data: `public-apis/public-apis` and `awesome-public-datasets`
+    carry `dataset`/`datasets` and are not AI projects."""
+    for repo in (
+        facts("public-apis/public-apis", "A collective list of free APIs", ["api", "dataset"]),
+        facts(
+            "awesomedata/awesome-public-datasets",
+            "A topic-centric list of HQ open datasets",
+            ["datasets"],
+        ),
+        facts("redis/redis", "The preferred in-memory data store", ["cache", "database"]),
+        facts(
+            "prometheus/prometheus", "The Prometheus monitoring system", ["monitoring", "metrics"]
+        ),
+    ):
+        assert classify(repo).is_ai is False, repo.full_name

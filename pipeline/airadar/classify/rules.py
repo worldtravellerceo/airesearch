@@ -60,15 +60,26 @@ DECISIVE_TOPICS: frozenset[str] = frozenset(
     }
 )
 
-# Topics that point at AI but also have entirely unrelated uses. "agent" is a
-# monitoring daemon as often as an LLM agent; "ai" appears on joke repos.
-SUGGESTIVE_TOPICS: frozenset[str] = frozenset(
+# Topics that name a specific AI framework, model family or technique. A repo
+# topiced `pytorch` is a machine-learning repo; there is no second reading of
+# it. These are not decisive on their own the way `llm` is — a `pytorch` repo
+# might be a tutorial or a plotting helper — but they are far stronger than the
+# genuinely ambiguous words below, and lumping the two together is what used to
+# strand thousands of plain ML projects in the escalation band.
+STRONG_TOPICS: frozenset[str] = frozenset(
     {
-        "ai",
-        "ml",
-        "agent",
-        "agents",
-        "mcp",
+        # frameworks and runtimes
+        "pytorch",
+        "tensorflow",
+        "keras",
+        "scikit-learn",
+        "jax",
+        "huggingface",
+        "langchain",
+        "llamaindex",
+        "vllm",
+        "ollama",
+        # model families and vendors
         "gpt",
         "chatgpt",
         "openai",
@@ -77,34 +88,75 @@ SUGGESTIVE_TOPICS: frozenset[str] = frozenset(
         "gemini",
         "llama",
         "mistral",
+        "qwen",
+        "deepseek",
+        # techniques that have no non-AI reading
+        "nlp",
         "transformer",
+        "diffusion",
+        "quantization",
+        "ocr",
+        "tts",
+        "asr",
         "chatbot",
+        "copilot",
+    }
+)
+
+# Topics that point at AI but also have entirely unrelated uses. "agent" is a
+# monitoring daemon as often as an LLM agent; "ai" appears on joke repos;
+# `dataset` sits on lists of public APIs.
+SUGGESTIVE_TOPICS: frozenset[str] = frozenset(
+    {
+        "ai",
+        "ml",
+        "agent",
+        "agents",
+        "mcp",
         "inference",
         "embeddings",
         "dataset",
         "datasets",
-        "nlp",
-        "pytorch",
-        "tensorflow",
-        "jax",
-        "keras",
-        "scikit-learn",
-        "huggingface",
-        "langchain",
-        "llamaindex",
-        "quantization",
-        "vllm",
-        "ocr",
-        "tts",
-        "asr",
         "evaluation",
         "observability",
         "robotics",
         "time-series",
         "recommendation-system",
         "anomaly-detection",
-        "copilot",
-        "diffusion",
+    }
+)
+
+# Owners whose entire output is AI. The repo that made this necessary is
+# `deepseek-ai/DeepSeek-V3`: no topics, no description, 104k stars, and
+# therefore no evidence at all until you read the owner.
+AI_LAB_OWNERS: frozenset[str] = frozenset(
+    {
+        "openai",
+        "anthropics",
+        "deepseek-ai",
+        "meta-llama",
+        "facebookresearch",
+        "huggingface",
+        "google-deepmind",
+        "mistralai",
+        "stability-ai",
+        "qwenlm",
+        "thudm",
+        "openbmb",
+        "vllm-project",
+        "langchain-ai",
+        "run-llama",
+        "ggml-org",
+        "ollama",
+        "xai-org",
+        "allenai",
+        "eleutherai",
+        "nvidia-nemo",
+        "modelscope",
+        "internlm",
+        "01-ai",
+        "baai-agents",
+        "microsoft-deberta",
     }
 )
 
@@ -205,16 +257,22 @@ NAME_TOKENS: frozenset[str] = frozenset(
 # Bumped whenever the rules or the taxonomy change. It is folded into the
 # content hash, so a change here re-classifies everything instead of leaving
 # old verdicts cached under rules that no longer exist.
-RULES_VERSION = "2"
+RULES_VERSION = "3"
 
 WEIGHT_DECISIVE_TOPIC = 0.90
+WEIGHT_AI_LAB_OWNER = 0.90
+WEIGHT_STRONG_TOPIC = 0.80
 WEIGHT_SUGGESTIVE_TOPIC = 0.45
 WEIGHT_DECISIVE_PHRASE = 0.85
 WEIGHT_SUGGESTIVE_PHRASE = 0.30
 WEIGHT_NAME_TOKEN = 0.25
 # Several weak signals should be able to add up to a decision, but never to the
-# certainty that a decisive topic buys.
-SOFT_CEILING = 0.78
+# certainty that a decisive topic buys. This has to sit *above* the `high`
+# threshold or it stops being a ceiling and becomes a bar: the first version
+# capped weak evidence at 0.78 against a threshold of 0.80, which meant no pile
+# of weak signals could ever settle anything, and 17,849 repos — `openai/codex`
+# and `meta-llama/llama` among them — were escalated forever.
+SOFT_CEILING = 0.88
 
 _WORD = re.compile(r"[a-z0-9]+")
 
@@ -290,23 +348,39 @@ def classify(facts: RepoFacts, *, low: float = 0.2, high: float = 0.8) -> Verdic
     )
     name_tokens = tokenise(facts.full_name.replace("/", " ").replace("-", " ").replace("_", " "))
 
-    signals: list[tuple[str, float]] = []
+    owner = facts.full_name.split("/", 1)[0].lower()
 
+    # Keyed by the *term*, not the signal, so a repo that carries `pytorch` as a
+    # topic and says "PyTorch" in its description counts it once. Noisy-OR
+    # assumes independent evidence; the same word seen twice is one fact, and
+    # double-counting it was inflating routine repos toward the ceiling.
+    evidence: dict[str, tuple[str, float]] = {}
+
+    def observe(term: str, key: str, weight: float) -> None:
+        if weight > evidence.get(term, ("", 0.0))[1]:
+            evidence[term] = (key, weight)
+
+    if owner in AI_LAB_OWNERS:
+        observe(f"owner/{owner}", f"owner:{owner}", WEIGHT_AI_LAB_OWNER)
     for topic in sorted(topics & DECISIVE_TOPICS):
-        signals.append((f"topic:{topic}", WEIGHT_DECISIVE_TOPIC))
+        observe(topic, f"topic:{topic}", WEIGHT_DECISIVE_TOPIC)
+    for topic in sorted(topics & STRONG_TOPICS):
+        observe(topic, f"topic+:{topic}", WEIGHT_STRONG_TOPIC)
     for topic in sorted(topics & SUGGESTIVE_TOPICS):
-        signals.append((f"topic?:{topic}", WEIGHT_SUGGESTIVE_TOPIC))
+        observe(topic, f"topic?:{topic}", WEIGHT_SUGGESTIVE_TOPIC)
     for phrase in DECISIVE_PHRASES:
         if phrase in haystack:
-            signals.append((f"phrase:{phrase}", WEIGHT_DECISIVE_PHRASE))
+            observe(phrase, f"phrase:{phrase}", WEIGHT_DECISIVE_PHRASE)
     for phrase in SUGGESTIVE_PHRASES:
         if phrase in haystack:
-            signals.append((f"phrase?:{phrase}", WEIGHT_SUGGESTIVE_PHRASE))
+            observe(phrase, f"phrase?:{phrase}", WEIGHT_SUGGESTIVE_PHRASE)
     for token in sorted(name_tokens & NAME_TOKENS):
-        signals.append((f"name:{token}", WEIGHT_NAME_TOKEN))
+        observe(token, f"name:{token}", WEIGHT_NAME_TOKEN)
+
+    signals = sorted(evidence.values(), key=lambda pair: -pair[1])
 
     confidence = _noisy_or(weight for _, weight in signals)
-    has_decisive = any(key.startswith("topic:") or key.startswith("phrase:") for key, _ in signals)
+    has_decisive = any(key.startswith(("topic:", "phrase:", "owner:")) for key, _ in signals)
     if not has_decisive:
         # Weak evidence only. Cap it below certainty so these still get read.
         confidence = min(confidence, SOFT_CEILING)
