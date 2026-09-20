@@ -274,3 +274,55 @@ def test_topics_lookup_works_beyond_the_sql_variable_limit(conn):
     assert len(topics) == count
     assert topics[1] == ["llm"]
     assert topics[count] == ["llm"]
+
+
+def test_confirmed_non_ai_repos_are_not_collected(conn):
+    """The census put 56,105 repos above a thousand stars into the corpus and
+    the tracked floor jumped from 1,674 stars to 9,392 — because the star rank
+    was taken over every repo, including the ones no board will ever show. A
+    non-AI repo crowding out a rising AI one is quota spent to make the product
+    worse."""
+    db.upsert_repos(
+        conn,
+        [
+            db.RepoRecord.from_api(api_payload(1, "acme/big-not-ai", stars=900)),
+            db.RepoRecord.from_api(api_payload(2, "acme/small-ai", stars=100)),
+        ],
+    )
+    db.save_classification(
+        conn,
+        1,
+        is_ai=False,
+        category=None,
+        subcategory=None,
+        confidence=0.99,
+        method="rules",
+        content_hash="a",
+    )
+    db.save_classification(
+        conn,
+        2,
+        is_ai=True,
+        category="llm-app",
+        subcategory=None,
+        confidence=0.99,
+        method="rules",
+        content_hash="b",
+    )
+    conn.commit()
+
+    due = {r["full_name"] for r in db.repos_due_for_refresh(conn, tier1_size=10, now=NOW)}
+
+    assert due == {"acme/small-ai"}
+
+
+def test_repos_not_yet_judged_are_still_collected(conn):
+    """A repo discovered this run has no verdict yet. Dropping it would mean a
+    new project waits a full classification cycle before anyone measures it —
+    and new projects are the ones this index exists to catch."""
+    db.upsert_repos(conn, [db.RepoRecord.from_api(api_payload(1, "acme/brand-new", stars=500))])
+    conn.commit()
+
+    due = {r["full_name"] for r in db.repos_due_for_refresh(conn, tier1_size=10, now=NOW)}
+
+    assert due == {"acme/brand-new"}

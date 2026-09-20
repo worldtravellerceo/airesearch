@@ -235,11 +235,19 @@ def repos_due_for_refresh(
     }
     sql = """
         WITH ranked AS (
-            SELECT id, full_name, created_at, stars, etag_repo, etag_history,
-                   last_checked_at, history_backfilled_through,
-                   ROW_NUMBER() OVER (ORDER BY stars DESC, id) AS star_rank
-            FROM repos
-            WHERE is_fork = 0
+            SELECT r.id, r.full_name, r.created_at, r.stars, r.etag_repo, r.etag_history,
+                   r.last_checked_at, r.history_backfilled_through,
+                   ROW_NUMBER() OVER (ORDER BY r.stars DESC, r.id) AS star_rank
+            FROM repos r
+            LEFT JOIN repo_classification c ON c.repo_id = r.id
+            -- Confirmed non-AI repos never reach a board, so collecting their
+            -- metrics spends quota on rows nothing reads — and worse, it pushes
+            -- the star rank of the ones that do matter past `track_limit`. The
+            -- census put 56,105 repos above a thousand stars into the corpus and
+            -- the tracked floor jumped from 1,674 stars to 9,392, cutting off
+            -- exactly the fast-rising projects the Breakout board exists for.
+            -- Repos not yet judged stay in: they are new, and might be AI.
+            WHERE r.is_fork = 0 AND (c.is_ai IS NULL OR c.is_ai = 1)
         )
         SELECT * FROM ranked
         WHERE (:track_limit < 0 OR star_rank <= :track_limit)

@@ -50,7 +50,7 @@ class Settings(BaseSettings):
     # this is what keeps the database small enough to live in the repository.
     # A riser below the cut enters the tracked set at the next weekly discovery,
     # which re-reads everyone's star counts.
-    track_limit: int = Field(default=6000, alias="AIRADAR_TRACK_LIMIT")
+    track_limit: int = Field(default=12000, alias="AIRADAR_TRACK_LIMIT")
     # Days of per-day detail retained; older rows fold into fresh_power_tail.
     retain_days: int = Field(default=120, alias="AIRADAR_RETAIN_DAYS")
     user_agent: str = "airadar/0.1 (+https://github.com/worldtravellerceo/airesearch)"

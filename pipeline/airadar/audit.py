@@ -52,7 +52,7 @@ CANARIES: dict[str, tuple[str, ...]] = {
         "minGPT",
         "llm.c",
         "micrograd",
-        "LLaMA-Factory",
+        "LlamaFactory",
         "unsloth",
         "peft",
         "trl",
@@ -104,7 +104,7 @@ CANARIES: dict[str, tuple[str, ...]] = {
         "ray",
         "pytorch-lightning",
         "litellm",
-        "text-generation-webui",
+        "textgen",
     ),
 }
 
