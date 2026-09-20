@@ -340,3 +340,27 @@ async def test_no_budget_means_no_limit():
         )
 
     assert stats.exhausted is False
+
+
+def test_snowball_is_empty_until_something_has_been_classified():
+    """The ordering bug this pins, found in the field.
+
+    `discover.yml` ran discovery before classification, and snowball reads the
+    classification table to find topics the seed vocabulary never had. On the
+    first run that table was empty, so snowball returned nothing — no error, no
+    warning — and the entire Agent Skills ecosystem went unswept. `claude-code`
+    alone had 3,199 repos in the corpus, every one of them found incidentally
+    through some other topic.
+
+    Snowball needs a previous generation to learn from. That is inherent; what
+    is not inherent is running it when no generation exists yet.
+    """
+    assert snowball_topics([], already_queried=["llm"]) == []
+
+    fed = snowball_topics(
+        ["claude-code", "claude-code", "agent-skills", "llm"],
+        already_queried=["llm"],
+    )
+    assert fed[0] == "claude-code"  # ranked by how often it co-occurs with AI repos
+    assert "agent-skills" in fed
+    assert "llm" not in fed  # already swept

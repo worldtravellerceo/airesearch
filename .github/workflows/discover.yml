@@ -44,6 +44,14 @@ jobs:
       - name: Check credentials
         run: airadar doctor
 
+      # Before discovery, not only after: the snowball channel reads
+      # `repo_classification` to find topics that the seed vocabulary never had
+      # (the next `mcp`). On the first run that table was empty, so snowball
+      # silently returned nothing and the entire Agent Skills ecosystem —
+      # `claude-code`, `agent-skills`, `openclaw` — was never swept.
+      - name: Classify what is already known
+        run: airadar classify --no-llm
+
       # The search endpoint allows 30 requests a minute, so a full sweep is far
       # longer than one job. The budget stops it cleanly and the next run
       # resumes — swept topics are recorded, so nothing is redone.

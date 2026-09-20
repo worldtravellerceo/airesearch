@@ -127,7 +127,10 @@ def discover(
     channels: str = typer.Option(
         "all",
         "--channels",
-        help="Comma-separated: topics,keywords,snowball,awesome,ecosystems,huggingface,resolve",
+        help=(
+            "Comma-separated: census,topics,keywords,snowball,"
+            "awesome,ecosystems,huggingface,resolve"
+        ),
     ),
     resolve_limit: int = typer.Option(
         None, "--resolve-limit", help="Cap how many pending names to look up this run"
@@ -145,7 +148,16 @@ def discover(
     asyncio.run(_run_discover(channels, resolve_limit, max_queries))
 
 
-_CHANNELS = ("topics", "keywords", "snowball", "awesome", "ecosystems", "huggingface", "resolve")
+_CHANNELS = (
+    "census",
+    "topics",
+    "keywords",
+    "snowball",
+    "awesome",
+    "ecosystems",
+    "huggingface",
+    "resolve",
+)
 
 
 async def _run_discover(
@@ -161,6 +173,7 @@ async def _run_discover(
                 report = await discover_mod.discover(
                     conn,
                     client,
+                    census=selected["census"],
                     topics=selected["topics"],
                     keywords=selected["keywords"],
                     snowball=selected["snowball"],

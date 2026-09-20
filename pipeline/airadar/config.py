@@ -29,6 +29,15 @@ class Settings(BaseSettings):
 
     # --- discovery ---------------------------------------------------------
     min_stars: int = Field(default=50, alias="AIRADAR_MIN_STARS")
+    # The census enumerates GitHub outright above this many stars, with no topic
+    # or keyword filter. Every other channel is a heuristic that can miss a
+    # project; 98% of the corpus arrived through the topic sweep, which cannot
+    # see a repo that has no topics — and `karpathy/nanoGPT`,
+    # `facebookresearch/faiss` and `deepseek-ai/DeepSeek-R1` have none. This is
+    # the channel that makes a gap like that impossible rather than unlikely.
+    # It only has to reach below `track_limit`'s star cutoff to guarantee the
+    # boards, which is why it is not simply set to `min_stars`.
+    census_min_stars: int = Field(default=1000, alias="AIRADAR_CENSUS_MIN_STARS")
     # Search returns at most 1,000 results per query, so any star bucket that fills
     # up has to be split. Leave headroom under the cap.
     search_page_cap: int = 1000

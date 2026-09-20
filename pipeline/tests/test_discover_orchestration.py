@@ -54,6 +54,7 @@ async def test_topic_sweep_persists_repos_and_records_the_topic(conn):
         report = await discover(
             conn,
             client,
+            census=False,
             keywords=False,
             awesome=False,
             ecosystems=False,
@@ -90,6 +91,7 @@ async def test_search_results_below_the_star_floor_are_not_tracked(conn):
         await discover(
             conn,
             client,
+            census=False,
             keywords=False,
             awesome=False,
             ecosystems=False,
@@ -126,6 +128,7 @@ async def test_awesome_list_names_queue_as_pending_then_resolve(conn):
             conn,
             client,
             topics=False,
+            census=False,
             keywords=False,
             ecosystems=False,
             huggingface=False,
@@ -199,6 +202,7 @@ async def test_snowball_queries_topics_learned_from_confirmed_ai_repos(conn):
             conn,
             client,
             topics=False,
+            census=False,
             keywords=False,
             awesome=False,
             ecosystems=False,
@@ -228,3 +232,86 @@ async def test_discovery_overview_reports_provenance(conn):
     assert overview["total"] == 2
     assert overview["by_channel"] == {"topic": 1, "awesome": 1}
     assert overview["pending"] == 1
+
+
+# --- the census ------------------------------------------------------------
+
+
+async def test_the_census_finds_a_repo_that_has_no_topics_at_all(conn):
+    """The gap this channel exists to close.
+
+    98% of the first real corpus arrived through the topic sweep, which cannot
+    see a repo that carries no topics — and `karpathy/nanoGPT`,
+    `facebookresearch/faiss` and `deepseek-ai/DeepSeek-R1` carry none. Every
+    topic-less repo that was found came in because a third party happened to
+    list it in an awesome list. That is luck, not coverage.
+    """
+    queries: list[str] = []
+
+    def handler(request: httpx.Request) -> httpx.Response:
+        if request.url.path == "/search/repositories":
+            queries.append(request.url.params.get("q", ""))
+            return httpx.Response(
+                200,
+                json={
+                    "total_count": 1,
+                    "items": [repo_json(1, "karpathy/nanoGPT", stars=44_000, topics=())],
+                },
+                headers=HEADERS,
+            )
+        return httpx.Response(404, json={}, headers=HEADERS)
+
+    async with GitHubClient(
+        token="t", transport=httpx.MockTransport(handler), sleep=_no_sleep
+    ) as client:
+        report = await discover(
+            conn,
+            client,
+            topics=False,
+            keywords=False,
+            awesome=False,
+            ecosystems=False,
+            huggingface=False,
+            snowball=False,
+            resolve=False,
+        )
+
+    assert report.repos_upserted == 1
+    row = conn.execute("SELECT full_name, discovered_via FROM repos").fetchone()
+    assert row["full_name"] == "karpathy/nanoGPT"
+    assert row["discovered_via"] == "census"
+    # No topic and no keyword: the query is a bare star range over all of GitHub.
+    assert all("topic:" not in q for q in queries)
+    assert any("stars:" in q for q in queries)
+
+
+async def test_the_census_runs_before_the_topic_sweep_can_spend_the_budget(conn):
+    """Ordering is the whole point. The topic sweep is breadth and is allowed to
+    run out of budget; the census is the guarantee and must not be the channel
+    that the budget runs out on."""
+    order: list[str] = []
+
+    def handler(request: httpx.Request) -> httpx.Response:
+        if request.url.path == "/search/repositories":
+            query = request.url.params.get("q", "")
+            order.append("topic" if "topic:" in query else "census")
+            return httpx.Response(200, json={"total_count": 0, "items": []}, headers=HEADERS)
+        return httpx.Response(404, json={}, headers=HEADERS)
+
+    async with GitHubClient(
+        token="t", transport=httpx.MockTransport(handler), sleep=_no_sleep
+    ) as client:
+        await discover(
+            conn,
+            client,
+            keywords=False,
+            awesome=False,
+            ecosystems=False,
+            huggingface=False,
+            snowball=False,
+            resolve=False,
+        )
+
+    assert order, "no searches were issued"
+    assert order[0] == "census"
+    assert "topic" in order

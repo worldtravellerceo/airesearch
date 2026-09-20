@@ -70,6 +70,7 @@ async def discover(
     conn: sqlite3.Connection,
     client: GitHubClient,
     *,
+    census: bool = True,
     topics: bool = True,
     keywords: bool = True,
     awesome: bool = True,
@@ -88,6 +89,20 @@ async def discover(
     report = DiscoverReport()
     report.search.budget = query_budget
     sink = _make_sink(conn, report, min_stars)
+
+    # First, and deliberately: this is the only channel that cannot miss a
+    # popular project, so it must never be the one the query budget runs out
+    # on. The topic sweep below is breadth; this is the guarantee.
+    if census:
+        await discovery.search_partitioned(
+            client,
+            "fork:false",
+            channel="census",
+            sink=sink,
+            min_stars=settings.census_min_stars,
+            stats=report.search,
+        )
+        report.notes.append(f"census: >={settings.census_min_stars} stars")
 
     if topics:
         already = db.queried_topics(conn)
