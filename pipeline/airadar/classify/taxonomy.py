@@ -229,12 +229,23 @@ DEFAULT_CATEGORY: Final[str] = "llm-app"
 
 
 def categorise(topics: set[str]) -> str | None:
-    """First category in priority order whose topic set the repo touches."""
+    """The category the repo's topics point at most strongly.
+
+    Weight of evidence, not first match. Real repositories carry a dozen topics
+    and a first-match rule lets one stray tag decide: `huggingface/transformers`
+    lists `speech-recognition` among its topics and landed in `audio-speech`,
+    while seven of its other topics say classic ML. Counting fixes that, and
+    priority order still breaks ties — which is what it was really for.
+    """
     lowered = {t.lower() for t in topics}
+    best: str | None = None
+    best_score = 0
     for category in CATEGORIES:
-        if lowered & CATEGORY_TOPICS[category]:
-            return category
-    return None
+        score = len(lowered & CATEGORY_TOPICS[category])
+        # Strictly greater, so the earlier (more specific) category wins a tie.
+        if score > best_score:
+            best, best_score = category, score
+    return best
 
 
 def is_valid(category: str | None) -> bool:

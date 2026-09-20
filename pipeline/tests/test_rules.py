@@ -162,3 +162,67 @@ def test_partition_splits_settled_from_escalated():
     assert {f.full_name for f, _ in escalate} == {"c/agent"}
     assert escalation_rate(batch) == pytest.approx(1 / 3)
     assert escalation_rate([]) == 0.0
+
+
+# --- regressions from real data -------------------------------------------
+
+
+def test_a_stray_topic_does_not_decide_the_category():
+    """From the first real run: huggingface/transformers lists
+    `speech-recognition` among two dozen topics and was filed under
+    audio-speech, while seven of its other topics say classic ML."""
+    transformers = facts(
+        "huggingface/transformers",
+        "State-of-the-art Machine Learning for PyTorch, TensorFlow and JAX",
+        [
+            "nlp",
+            "natural-language-processing",
+            "pytorch",
+            "tensorflow",
+            "jax",
+            "machine-learning",
+            "deep-learning",
+            "speech-recognition",
+            "transformer",
+            "pretrained-models",
+            "llm",
+            "python",
+        ],
+    )
+
+    assert classify(transformers).category == "classic-ml"
+
+
+def test_a_single_topic_still_decides_when_it_is_the_only_evidence():
+    assert classify(facts("a/b", "x", ["speech-recognition"])).category == "audio-speech"
+    assert classify(facts("c/d", "x", ["model-context-protocol"])).category == "mcp"
+
+
+def test_no_category_is_asserted_for_a_repo_we_have_not_judged():
+    """`mcp` on its own is suggestive, not decisive — a monitoring agent and an
+    MCP server can both carry it. Labelling it anyway would be a guess."""
+    verdict = classify(facts("c/d", "x", ["mcp"]))
+    assert verdict.needs_llm is True
+    assert verdict.category is None
+
+
+def test_ties_fall_to_the_more_specific_category():
+    """Two categories matching equally is what the priority order is for."""
+    both = facts("a/b", "an llm agent", ["agent", "agentic-ai", "llm", "gpt"])
+    assert classify(both).category == "agent-framework"
+
+
+def test_changing_the_rules_invalidates_cached_verdicts():
+    """A verdict cached under rules that no longer exist is worse than no
+    verdict, so the rules version is part of the hash."""
+    from airadar.classify import rules as rules_module
+
+    before = facts("a/b", "x", ["llm"]).content_hash()
+    original = rules_module.RULES_VERSION
+    try:
+        rules_module.RULES_VERSION = "999"
+        after = facts("a/b", "x", ["llm"]).content_hash()
+    finally:
+        rules_module.RULES_VERSION = original
+
+    assert before != after

@@ -202,6 +202,11 @@ NAME_TOKENS: frozenset[str] = frozenset(
     }
 )
 
+# Bumped whenever the rules or the taxonomy change. It is folded into the
+# content hash, so a change here re-classifies everything instead of leaving
+# old verdicts cached under rules that no longer exist.
+RULES_VERSION = "2"
+
 WEIGHT_DECISIVE_TOPIC = 0.90
 WEIGHT_SUGGESTIVE_TOPIC = 0.45
 WEIGHT_DECISIVE_PHRASE = 0.85
@@ -253,6 +258,7 @@ class RepoFacts:
         something that could change the answer actually changed."""
         payload = "\x1f".join(
             [
+                RULES_VERSION,
                 self.full_name.lower(),
                 (self.description or "").strip().lower(),
                 ",".join(sorted(t.lower() for t in self.topics)),
