@@ -222,3 +222,39 @@ async def test_score_builds_boards_and_only_includes_ai_repos(conn):
     board = db.load_leaderboard(conn, date=TODAY, board="momentum")
     assert [r["full_name"] for r in board] == ["acme/agent"]
     assert board[0]["velocity_14d"] == pytest.approx(100.0)
+
+
+async def test_collect_bounds_itself_to_the_tracked_universe(conn, monkeypatch):
+    """The bug this pins, found in the field: `track_limit` was supported by the
+    query, documented in the settings, and never passed by the caller.
+
+    The corpus was 64,373 repos at two requests each — 25 hours of quota
+    against a job killed after five and a half. The run could not finish, so it
+    was cut off part-way down the star order and the tail was never refreshed.
+    Nothing failed; the run just quietly did a fraction of its job.
+    """
+    from airadar import collect as collect_mod
+
+    captured: dict = {}
+    real = collect_mod.db.repos_due_for_refresh
+
+    def spy(conn_, **kwargs):
+        captured.update(kwargs)
+        return real(conn_, **kwargs)
+
+    monkeypatch.setattr(collect_mod.db, "repos_due_for_refresh", spy)
+
+    async def _sleep(_seconds):
+        return None
+
+    def handler(request: httpx.Request) -> httpx.Response:
+        return httpx.Response(404, json={}, headers=_headers())
+
+    async with GitHubClient(
+        token="t", transport=httpx.MockTransport(handler), sleep=_sleep
+    ) as client:
+        await collect_mod.collect(conn, client, today=TODAY)
+
+    settings = collect_mod.get_settings()
+    assert captured["track_limit"] == settings.track_limit
+    assert captured["track_limit"] is not None

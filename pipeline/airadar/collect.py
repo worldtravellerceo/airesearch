@@ -71,7 +71,18 @@ async def collect(
     now = dt.datetime.now(dt.UTC)
     report = CollectReport()
 
-    queue = db.repos_due_for_refresh(conn, tier1_size=settings.tier1_size, now=now, limit=limit)
+    # `track_limit` bounds the universe we collect at all. Leaving it off is not
+    # a bigger index, it is a run that cannot finish: the corpus is 64,373 repos
+    # and two requests each is 25 hours of quota against a job that is killed at
+    # five and a half. Every daily run was being truncated part-way through the
+    # star-rank order, so the tail was never refreshed at all.
+    queue = db.repos_due_for_refresh(
+        conn,
+        tier1_size=settings.tier1_size,
+        now=now,
+        limit=limit,
+        track_limit=settings.track_limit,
+    )
     report.considered = len(queue)
     log.info("collect: %d repos due", len(queue))
 
