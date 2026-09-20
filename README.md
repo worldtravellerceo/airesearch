@@ -18,6 +18,17 @@ piyasayı ezdiği bilgisi tamamen kaybolur. AI Radar bu iki şeyi ayırır:
 
 `fresh_power` bayrak metriktir: eski birikmiş star'lar sıralamayı domine edemez.
 
+### Kapsama (coverage) kuralı
+
+Tek bir API sayfası ~210 gün veri döndürür. Bu, **sınırlı pencereli** metriklerin
+(7/14/28/90 günlük hız, ivme, göreli büyüme) hiçbir backfill olmadan **tam doğru**
+hesaplanması demektir — günlük tazeleme repo başına tek istek.
+
+`fresh_power` ise reponun tüm ömrünü integre eder. 180 günlük yarılanmada 210
+günlük geçmiş gerçek değerin ancak **%55**'ini yakalar. Bu yüzden Fresh Power
+board'u yalnızca **backfill'i tamamlanmış** repoları sıralar (`history_complete`);
+aksi halde hakkında daha az şey bildiğimiz repo haksız yere öne çıkardı.
+
 ## Veri kaynağı
 
 Bu alandaki alışıldık yöntemlerin çoğu 2025-2026'da bozuldu:
