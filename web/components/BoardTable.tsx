@@ -1,6 +1,7 @@
 import Link from "next/link";
 
-import type { Board, LeaderboardEntry } from "@/lib/api";
+import { repoSlug } from "@/lib/paths";
+import type { Board, BoardEntry } from "@/lib/types";
 import { categoryLabel, compact, count, days, multiple, rate } from "@/lib/format";
 import { RankDelta } from "@/components/RankDelta";
 import { Sparkline } from "@/components/Sparkline";
@@ -10,7 +11,7 @@ import { Sparkline } from "@/components/Sparkline";
  *  The score column changes with the board, because the number a board ranks by
  *  is the one thing a reader must be able to see — a Fresh Power list that only
  *  shows raw stars is unfalsifiable. */
-export function BoardTable({ board, entries }: { board: Board; entries: LeaderboardEntry[] }) {
+export function BoardTable({ board, entries }: { board: Board; entries: BoardEntry[] }) {
   if (!entries.length) {
     return (
       <p className="text-ink-muted border-border rounded-lg border border-dashed p-8 text-center text-sm">
@@ -69,7 +70,7 @@ export function BoardTable({ board, entries }: { board: Board; entries: Leaderbo
               </td>
               <td className="py-2.5 pr-4">
                 <Link
-                  href={`/repos/${entry.full_name}`}
+                  href={`/repos/${repoSlug(entry.full_name).owner}/${repoSlug(entry.full_name).name}/`}
                   className="text-ink hover:text-accent font-medium"
                 >
                   {entry.full_name}
@@ -124,7 +125,7 @@ function scoreHeading(board: Board): string {
   }[board];
 }
 
-function scoreValue(board: Board, entry: LeaderboardEntry): string {
+function scoreValue(board: Board, entry: BoardEntry): string {
   switch (board) {
     case "fresh":
       return compact(entry.fresh_power);
@@ -139,7 +140,11 @@ function scoreValue(board: Board, entry: LeaderboardEntry): string {
 
 /** Milestones are the most direct answer to "five years or two weeks?", so they
  *  get their own strip on the detail page. */
-export function MilestoneStrip({ entry }: { entry: LeaderboardEntry }) {
+export function MilestoneStrip({
+  entry,
+}: {
+  entry: Pick<BoardEntry, "days_to_1k" | "days_to_10k" | "days_to_50k">;
+}) {
   const milestones: Array<[string, number | null]> = [
     ["1.000 yıldıza", entry.days_to_1k],
     ["10.000 yıldıza", entry.days_to_10k],

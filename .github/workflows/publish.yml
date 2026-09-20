@@ -1,0 +1,62 @@
+name: Publish site
+
+# Rebuilds the static site from the published database and deploys it to Pages.
+# Called at the end of every pipeline workflow, and runnable on its own when
+# only the site code has changed.
+on:
+  workflow_call:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: airadar-pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: ./.github/actions/pipeline
+        with:
+          token: ${{ github.token }}
+
+      - name: Export the site data
+        run: airadar export-site --out web/public/data
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version: "22"
+          cache: npm
+          cache-dependency-path: web/package-lock.json
+
+      - name: Build
+        working-directory: web
+        env:
+          # A project site is served from /<repo>, so every link and asset needs
+          # that prefix baked in at build time.
+          NEXT_PUBLIC_BASE_PATH: /${{ github.event.repository.name }}
+        run: |
+          npm ci
+          npx next build
+
+      - name: Stop Pages from running Jekyll over the output
+        run: touch web/out/.nojekyll
+
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: web/out
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

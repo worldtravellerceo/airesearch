@@ -360,3 +360,84 @@ def test_a_week_of_daily_runs_does_not_erode_fresh_power(conn):
     # should barely move across the week — certainly not drift downwards.
     assert min(readings) > 0
     assert max(readings) / min(readings) < 1.02, readings
+
+
+def test_pruned_days_survive_as_weekly_buckets(conn):
+    """The lifetime star curve is the most useful chart on the site, so the days
+    that age out are rolled up rather than thrown away."""
+    created = TODAY - dt.timedelta(days=400)
+    db.upsert_repos(
+        conn,
+        [
+            db.RepoRecord(
+                id=1,
+                full_name="a/b",
+                owner="a",
+                name="b",
+                created_at=dt.datetime.combine(created, dt.time(), dt.UTC),
+            )
+        ],
+    )
+    full = series(created, TODAY, 10)
+    db.record_star_daily(conn, 1, full)
+    conn.commit()
+
+    db.prune_star_history(
+        conn, today=TODAY, retain_days=RETAIN, half_life_days=DEFAULT_HALF_LIFE_DAYS
+    )
+
+    weekly = db.load_weekly_series(conn, 1)
+    daily = db.load_daily_series(conn, 1)
+
+    assert weekly, "the old part of the curve must still be drawable"
+    # Nothing is lost and nothing is invented: weekly + daily accounts for every star.
+    assert sum(v for _, v in weekly) + sum(d.stars_gained for d in daily) == sum(
+        d.stars_gained for d in full
+    )
+    assert all(start.weekday() == 6 for start, _ in weekly)  # Sunday-aligned
+
+
+def test_re_pruning_does_not_double_a_week(conn):
+    created = TODAY - dt.timedelta(days=400)
+    db.upsert_repos(
+        conn,
+        [
+            db.RepoRecord(
+                id=1,
+                full_name="a/b",
+                owner="a",
+                name="b",
+                created_at=dt.datetime.combine(created, dt.time(), dt.UTC),
+            )
+        ],
+    )
+    db.record_star_daily(conn, 1, series(created, TODAY, 10))
+    conn.commit()
+
+    db.prune_star_history(
+        conn, today=TODAY, retain_days=RETAIN, half_life_days=DEFAULT_HALF_LIFE_DAYS
+    )
+    first = sum(v for _, v in db.load_weekly_series(conn, 1))
+    db.prune_star_history(
+        conn, today=TODAY, retain_days=RETAIN, half_life_days=DEFAULT_HALF_LIFE_DAYS
+    )
+    second = sum(v for _, v in db.load_weekly_series(conn, 1))
+
+    assert first == second
+
+
+def test_derived_tables_are_pruned_to_the_recent_window(conn):
+    from airadar.scoring.leaderboards import Entry
+
+    db.upsert_repos(conn, [db.RepoRecord(id=1, full_name="a/b", owner="a", name="b")])
+    old_day = TODAY - dt.timedelta(days=200)
+    db.save_leaderboards(conn, old_day, [Entry("fresh", "_all", 1, 1, 5.0)])
+    db.save_leaderboards(conn, TODAY, [Entry("fresh", "_all", 1, 1, 9.0)])
+    db.record_snapshot(conn, 1, old_day, stars=10)
+    conn.commit()
+
+    removed = db.prune_derived_tables(conn, today=TODAY, keep_days=90)
+
+    assert removed["leaderboard_snapshots"] == 1
+    assert removed["repo_snapshots"] == 1
+    assert db.latest_board_date(conn) == TODAY

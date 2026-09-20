@@ -12,8 +12,8 @@ import {
   YAxis,
 } from "recharts";
 
-import type { HistoryPoint } from "@/lib/api";
-import { dateTickFormatter } from "@/lib/axis";
+import type { HistoryPoint } from "@/lib/types";
+import { dateTickFormatter, dateTicks } from "@/lib/axis";
 import { compact, count, shortDate } from "@/lib/format";
 
 type Milestone = { label: string; date: string };
@@ -36,6 +36,7 @@ export function StarHistoryChart({
   }
 
   const formatTick = dateTickFormatter(points);
+  const ticks = dateTicks(points);
 
   return (
     <div className="h-72 w-full">
@@ -49,7 +50,8 @@ export function StarHistoryChart({
             tick={{ fill: "var(--text-muted)", fontSize: 11 }}
             tickLine={false}
             axisLine={{ stroke: "var(--border)" }}
-            minTickGap={56}
+            minTickGap={40}
+            ticks={ticks}
             tickFormatter={formatTick}
           />
           <YAxis

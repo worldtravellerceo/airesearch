@@ -415,9 +415,66 @@ def prune_star_history(
             (existing + added, today, repo_id),
         )
 
+    _roll_up_weekly(conn, doomed)
     conn.execute("DELETE FROM repo_star_daily WHERE date < :cutoff", {"cutoff": cutoff})
     conn.commit()
     return len(doomed)
+
+
+def _roll_up_weekly(conn: sqlite3.Connection, doomed: Sequence[dict]) -> None:
+    """Aggregate day rows into Sunday-aligned weeks before they are deleted.
+
+    Weeks are keyed by their start date and written with `INSERT OR REPLACE`
+    semantics on the summed value, so re-running a prune cannot double a week.
+    Each pruned day belongs to exactly one week and is deleted immediately
+    after, so a week is only ever written once per its days.
+    """
+    buckets: dict[tuple[int, dt.date], int] = {}
+    for row in doomed:
+        day: dt.date = row["date"]
+        week_start = day - dt.timedelta(days=(day.weekday() + 1) % 7)  # back to Sunday
+        key = (row["repo_id"], week_start)
+        buckets[key] = buckets.get(key, 0) + row["stars_gained"]
+
+    if not buckets:
+        return
+    conn.executemany(
+        """
+        INSERT INTO repo_star_weekly (repo_id, week_start, stars_gained)
+        VALUES (?, ?, ?)
+        ON CONFLICT (repo_id, week_start)
+        DO UPDATE SET stars_gained = stars_gained + excluded.stars_gained
+        """,
+        [(repo_id, week, total) for (repo_id, week), total in buckets.items()],
+    )
+
+
+def load_weekly_series(conn: sqlite3.Connection, repo_id: int) -> list[tuple[dt.date, int]]:
+    return [
+        (row["week_start"], row["stars_gained"])
+        for row in conn.execute(
+            "SELECT week_start, stars_gained FROM repo_star_weekly "
+            "WHERE repo_id = ? ORDER BY week_start",
+            (repo_id,),
+        )
+    ]
+
+
+def prune_derived_tables(
+    conn: sqlite3.Connection, *, today: dt.date, keep_days: int = 90
+) -> dict[str, int]:
+    """Drop derived rows the site no longer shows.
+
+    Scores and board snapshots accumulate a full set of rows every single day;
+    left alone they would outgrow the star history they are derived from.
+    """
+    cutoff = today - dt.timedelta(days=keep_days)
+    removed = {}
+    for table in ("repo_scores", "leaderboard_snapshots", "repo_snapshots"):
+        cursor = conn.execute(f"DELETE FROM {table} WHERE date < ?", (cutoff,))
+        removed[table] = cursor.rowcount
+    conn.commit()
+    return removed
 
 
 def _tail_at(row: dict, today: dt.date, decay: float) -> float:

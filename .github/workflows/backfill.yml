@@ -1,48 +1,61 @@
-name: Backfill star history
+name: Backfill
 
 # Manual only. A full backfill is roughly nine requests per five-year-old repo
-# and is needed once per repository — it is not a recurring job.
+# and is needed once per repository, not on a schedule. It is what puts a repo
+# on the Fresh Power board: that metric integrates a project's whole life, and
+# one page of history recovers only about 55% of it.
 on:
   workflow_dispatch:
     inputs:
       repo:
-        description: "A single owner/name (blank = every repo still missing history)"
+        description: "A single owner/name (blank = everything still missing history)"
         required: false
         type: string
       limit:
         description: "Stop after this many repos"
         required: false
-        default: "500"
+        default: "400"
         type: string
 
+permissions:
+  contents: write
+
 concurrency:
-  group: airadar-backfill
+  group: airadar-pipeline
   cancel-in-progress: false
 
 jobs:
   backfill:
     runs-on: ubuntu-latest
-    timeout-minutes: 350
+    timeout-minutes: 330
     env:
       GH_PAT: ${{ secrets.GH_PAT }}
-      DATABASE_URL: ${{ secrets.DATABASE_URL }}
     steps:
       - uses: actions/checkout@v5
-      - uses: actions/setup-python@v6
+      - uses: ./.github/actions/pipeline
         with:
-          python-version: "3.12"
-          cache: pip
-      - name: Install
-        working-directory: pipeline
-        run: pip install -e .
+          token: ${{ github.token }}
+
       - name: Backfill
-        working-directory: pipeline
         run: |
           if [ -n "${{ inputs.repo }}" ]; then
             airadar backfill --repo "${{ inputs.repo }}"
           else
-            airadar backfill --limit "${{ inputs.limit || '500' }}"
+            airadar backfill --limit "${{ inputs.limit || '400' }}"
           fi
-      - name: Re-score (Fresh Power gates on a complete backfill)
-        working-directory: pipeline
+
+      - name: Score
         run: airadar score
+
+      - uses: ./.github/actions/publish-db
+        if: always()
+        with:
+          token: ${{ github.token }}
+
+  publish:
+    needs: backfill
+    uses: ./.github/workflows/publish.yml
+    permissions:
+      contents: read
+      pages: write
+      id-token: write

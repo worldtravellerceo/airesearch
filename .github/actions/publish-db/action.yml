@@ -1,0 +1,30 @@
+name: Publish the database
+description: Compress the database and replace the release asset.
+
+inputs:
+  token:
+    description: Token used to write the data release
+    required: true
+
+runs:
+  using: composite
+  steps:
+    - name: Upload
+      shell: bash
+      env:
+        GH_TOKEN: ${{ inputs.token }}
+      run: |
+        set -euo pipefail
+        if [ ! -f data/airadar.db ]; then
+          echo "::warning::no database to publish"
+          exit 0
+        fi
+        # Checkpoint the write-ahead log so the published file is self-contained.
+        python -c "import sqlite3; c=sqlite3.connect('data/airadar.db'); c.execute('PRAGMA wal_checkpoint(TRUNCATE)'); c.close()"
+        gzip -9 -c data/airadar.db > airadar.db.gz
+        ls -lh airadar.db.gz
+        gh release view data >/dev/null 2>&1 || gh release create data \
+          --title "Veri deposu" \
+          --notes "AI Radar'ın SQLite veritabanı. Her çalıştırmada değiştirilir; git geçmişinde tutulmaz." \
+          --latest=false
+        gh release upload data airadar.db.gz --clobber

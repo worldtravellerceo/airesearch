@@ -1,0 +1,84 @@
+name: Discover
+
+on:
+  schedule:
+    # Sunday 03:20 UTC, well clear of the daily collect window.
+    - cron: "20 3 * * 0"
+  workflow_dispatch:
+    inputs:
+      channels:
+        description: "topics,keywords,snowball,awesome,ecosystems,huggingface,resolve — or all"
+        required: false
+        default: all
+        type: string
+      max_queries:
+        description: "Search-request budget for this run"
+        required: false
+        default: "4000"
+        type: string
+      resolve_limit:
+        description: "Cap how many pending names to look up"
+        required: false
+        default: "2000"
+        type: string
+
+permissions:
+  contents: write
+
+concurrency:
+  group: airadar-pipeline
+  cancel-in-progress: false
+
+jobs:
+  discover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 330
+    env:
+      GH_PAT: ${{ secrets.GH_PAT }}
+    steps:
+      - uses: actions/checkout@v5
+      - uses: ./.github/actions/pipeline
+        with:
+          token: ${{ github.token }}
+
+      - name: Check credentials
+        run: airadar doctor
+
+      # The search endpoint allows 30 requests a minute, so a full sweep is far
+      # longer than one job. The budget stops it cleanly and the next run
+      # resumes — swept topics are recorded, so nothing is redone.
+      - name: Discover
+        run: |
+          airadar discover \
+            --channels "${{ inputs.channels || 'all' }}" \
+            --max-queries "${{ inputs.max_queries || '4000' }}" \
+            --resolve-limit "${{ inputs.resolve_limit || '2000' }}"
+
+      - name: Classify
+        run: airadar classify --no-llm
+
+      - name: Score
+        run: airadar score
+
+      - uses: ./.github/actions/publish-db
+        if: always()
+        with:
+          token: ${{ github.token }}
+
+      - name: Summary
+        if: always()
+        run: |
+          {
+            echo "### Keşif sonucu"
+            echo '```'
+            COLUMNS=140 airadar board fresh --limit 20 || true
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
+
+  publish:
+    needs: discover
+    uses: ./.github/workflows/publish.yml
+    permissions:
+      contents: read
+      pages: write
+      id-token: write

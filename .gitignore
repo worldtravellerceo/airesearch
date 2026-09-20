@@ -21,3 +21,6 @@ out/
 *.db
 *.sqlite
 /data/
+
+# The database is a release asset, not a committed file.
+data/

@@ -4,35 +4,29 @@ import { notFound } from "next/navigation";
 import { MilestoneStrip } from "@/components/BoardTable";
 import { StarHistoryChart } from "@/components/StarHistoryChart";
 import { StatTile } from "@/components/StatTile";
-import {
-  api,
-  ApiError,
-  BOARD_COPY,
-  type Board,
-  type HistoryPoint,
-  type RepoDetail,
-} from "@/lib/api";
+import { getManifest, getRepo } from "@/lib/data";
 import { categoryLabel, count, multiple, percent, rate, shortDate } from "@/lib/format";
+import { repoSlug } from "@/lib/paths";
+import { BOARD_COPY, type Board, type RepoDetail } from "@/lib/types";
 
-export const revalidate = 900;
+export const dynamic = "force-static";
+// A repo that was exported yesterday but not today would otherwise 404 the whole
+// build; the manifest is the list of pages that actually have data.
+export const dynamicParams = false;
 
-type Params = Promise<{ owner: string; name: string }>;
+export async function generateStaticParams() {
+  const manifest = await getManifest();
+  return manifest.repos.map((fullName) => repoSlug(fullName));
+}
 
-export default async function RepoPage({ params }: { params: Params }) {
+export default async function RepoPage({
+  params,
+}: {
+  params: Promise<{ owner: string; name: string }>;
+}) {
   const { owner, name } = await params;
-  const fullName = `${owner}/${name}`;
-
-  let detail: RepoDetail;
-  let points: HistoryPoint[] = [];
-  try {
-    detail = await api.repo(fullName);
-    points = (await api.history(fullName, "all")).points;
-  } catch (cause) {
-    if (cause instanceof ApiError && cause.status === 404) notFound();
-    throw cause;
-  }
-
-  const milestones = buildMilestones(detail, points);
+  const detail = await getRepo(owner, name);
+  if (!detail) notFound();
 
   return (
     <div className="space-y-6">
@@ -60,6 +54,12 @@ export default async function RepoPage({ params }: { params: Params }) {
           >
             GitHub&apos;da aç
           </a>
+          <Link
+            href={`/compare/?repos=${encodeURIComponent(detail.full_name)}`}
+            className="text-accent hover:underline"
+          >
+            Karşılaştır
+          </Link>
         </div>
       </div>
 
@@ -92,19 +92,18 @@ export default async function RepoPage({ params }: { params: Params }) {
       <section className="bg-surface-1 border-border rounded-lg border p-4">
         <h2 className="text-ink mb-1 text-sm font-medium">Yıldız geçmişi</h2>
         <p className="text-ink-muted mb-3 text-xs">
-          Toplam yıldız, kilometre taşlarıyla.
-          {detail.coverage_days
-            ? ` ${count(detail.coverage_days)} günlük veri.`
-            : ""}
+          Toplam yıldız, kilometre taşlarıyla. Eski dönem haftalık, son{" "}
+          {count(detail.coverage_days)} gün günlük çözünürlükte.
         </p>
-        <StarHistoryChart points={points} milestones={milestones} />
+        <StarHistoryChart
+          points={detail.history}
+          milestones={buildMilestones(detail)}
+        />
       </section>
 
       <section className="grid gap-4 md:grid-cols-2">
         <div className="bg-surface-1 border-border rounded-lg border p-4">
-          <h2 className="text-ink mb-3 text-sm font-medium">
-            Kaç günde ulaştı
-          </h2>
+          <h2 className="text-ink mb-3 text-sm font-medium">Kaç günde ulaştı</h2>
           <MilestoneStrip entry={detail} />
         </div>
         <div className="bg-surface-1 border-border rounded-lg border p-4">
@@ -121,7 +120,9 @@ export default async function RepoPage({ params }: { params: Params }) {
               ))}
             </dl>
           ) : (
-            <p className="text-ink-muted text-sm">Hiçbir board&apos;un ilk 200&apos;ünde değil.</p>
+            <p className="text-ink-muted text-sm">
+              Hiçbir board&apos;un ilk 200&apos;ünde değil.
+            </p>
           )}
           <dl className="text-ink-secondary mt-4 space-y-1 text-xs">
             <div className="flex gap-2">
@@ -166,13 +167,10 @@ export default async function RepoPage({ params }: { params: Params }) {
   );
 }
 
-function buildMilestones(
-  detail: { created_at: string | null; days_to_1k: number | null; days_to_10k: number | null; days_to_50k: number | null },
-  points: Array<{ date: string }>,
-) {
-  if (!detail.created_at || !points.length) return [];
+function buildMilestones(detail: RepoDetail) {
+  if (!detail.created_at || !detail.history.length) return [];
   const created = new Date(detail.created_at);
-  const available = new Set(points.map((p) => p.date));
+  const available = new Set(detail.history.map((point) => point.date));
 
   return (
     [
@@ -187,6 +185,31 @@ function buildMilestones(
       date.setDate(date.getDate() + (value as number));
       return { label, date: date.toISOString().slice(0, 10) };
     })
-    // A reference line on a date the series does not contain renders nowhere.
-    .filter((milestone) => available.has(milestone.date));
+    // The old part of the curve is weekly, so a milestone rarely lands on a
+    // point that exists. Snap it to the nearest one we actually drew.
+    .map((milestone) => ({
+      ...milestone,
+      date: available.has(milestone.date)
+        ? milestone.date
+        : nearest(detail.history.map((p) => p.date), milestone.date),
+    }))
+    .filter((milestone) => milestone.date !== null) as Array<{
+    label: string;
+    date: string;
+  }>;
+}
+
+function nearest(dates: string[], target: string): string | null {
+  const wanted = new Date(target).getTime();
+  let best: string | null = null;
+  let bestGap = Infinity;
+  for (const date of dates) {
+    const gap = Math.abs(new Date(date).getTime() - wanted);
+    if (gap < bestGap) {
+      bestGap = gap;
+      best = date;
+    }
+  }
+  // More than a fortnight away means the milestone predates what we drew.
+  return bestGap <= 14 * 86_400_000 ? best : null;
 }

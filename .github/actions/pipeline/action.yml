@@ -1,0 +1,55 @@
+name: Set up the pipeline
+description: >
+  Installs the airadar package and fetches the current database.
+
+  The database is a GitHub release asset rather than a committed file: it is
+  replaced wholesale every day, and putting a multi-megabyte binary through git
+  history would add its full size to the repository on each run.
+
+inputs:
+  token:
+    description: Token used to read the data release
+    required: true
+  skip-download:
+    description: Start from an empty database instead of the published one
+    required: false
+    default: "false"
+
+runs:
+  using: composite
+  steps:
+    - uses: actions/setup-python@v6
+      with:
+        python-version: "3.12"
+        cache: pip
+        cache-dependency-path: pipeline/pyproject.toml
+
+    - name: Install
+      shell: bash
+      run: pip install -e ./pipeline
+
+    - name: Fetch the database
+      shell: bash
+      env:
+        GH_TOKEN: ${{ inputs.token }}
+      run: |
+        set -euo pipefail
+        mkdir -p data
+        if [ "${{ inputs.skip-download }}" = "true" ]; then
+          echo "::notice::starting from an empty database on request"
+          exit 0
+        fi
+        if ! gh release view data >/dev/null 2>&1; then
+          echo "::notice::no data release yet — the first run creates it"
+          exit 0
+        fi
+        if gh release download data --pattern 'airadar.db.gz' --dir /tmp --clobber; then
+          gunzip -c /tmp/airadar.db.gz > data/airadar.db
+          echo "database: $(du -h data/airadar.db | cut -f1)"
+        else
+          echo "::notice::data release exists but carries no database yet"
+        fi
+
+    - name: Create the schema if this is a fresh start
+      shell: bash
+      run: airadar init-db

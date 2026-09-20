@@ -76,6 +76,18 @@ CREATE TABLE IF NOT EXISTS repo_star_daily (
 
 CREATE INDEX IF NOT EXISTS repo_star_daily_date_idx ON repo_star_daily (date);
 
+-- Weekly roll-up of days that have aged out of `repo_star_daily`. Without it a
+-- detail page could only ever draw the retention window, and the lifetime star
+-- curve — the thing that shows a five-year climb against a two-week spike — is
+-- the most useful chart on the site. A week of resolution is plenty that far
+-- back, and it costs a seventh of the rows.
+CREATE TABLE IF NOT EXISTS repo_star_weekly (
+    repo_id      INTEGER NOT NULL REFERENCES repos(id) ON DELETE CASCADE,
+    week_start   DATE NOT NULL,
+    stars_gained INTEGER NOT NULL,
+    PRIMARY KEY (repo_id, week_start)
+);
+
 CREATE TABLE IF NOT EXISTS repo_classification (
     repo_id       INTEGER PRIMARY KEY REFERENCES repos(id) ON DELETE CASCADE,
     is_ai         BOOLEAN NOT NULL,

@@ -3,12 +3,14 @@
 GitHub'daki yapay zeka ekosistemini keşfeden, günlük metrik toplayan ve
 **mutlak popülerlik ile momentum'u ayrı ayrı** sıralayan bir sistem.
 
+Site: GitHub Pages · Veri: günde bir, otomatik · Aylık maliyet: **$0**
+
 ## Neden
 
-`sort:stars` yanıltıcıdır. 5 yılda 50.000 star toplamış bir proje ile son iki
-haftada 50.000 star almış bir proje aynı listede yan yana durduğunda, ikincisinin
-piyasayı ezdiği bilgisi tamamen kaybolur. AI Radar aynı repoları dört ayrı soruya
-göre sıralar:
+`sort:stars` yanıltıcıdır. 5 yılda 50.000 yıldız toplamış bir proje ile son iki
+haftada 50.000 yıldız almış bir proje aynı listede yan yana durduğunda,
+ikincisinin piyasayı ezdiği bilgisi tamamen kaybolur. AI Radar aynı repoları
+dört ayrı soruya göre sıralar:
 
 | Board | Soru | Sıralama |
 |---|---|---|
@@ -18,21 +20,18 @@ göre sıralar:
 | **Popüler** | Ham toplam kim büyük? | toplam yıldız |
 
 `fresh_power` bayrak metriktir: her yıldızın ağırlığı 180 günde yarılanır, yani
-beş yılda birikmiş yıldızlar sıralamayı domine edemez.
+beş yılda birikmiş yıldızlar sıralamayı domine edemez. Listelerin birbirinden
+farklı çıkması bir tutarsızlık değil — bütün mesele o.
 
-Demo veriyle doğrulanmış davranış: 2 haftada 50.000 yıldız almış bir proje,
-Fresh Power'da 128.000 ve 118.000 yıldızlı projeleri geçer; Popüler board'unda
-ise onların arkasındadır. İki liste de doğrudur — farklı soruları cevaplıyorlar.
-
-## Veri kaynağı — ve neden bu
+## Veri kaynağı
 
 Bu alandaki alışıldık yöntemlerin çoğu 2025-2026'da bozuldu:
 
 | Kaynak | Durum |
 |---|---|
-| GH Archive / BigQuery `WatchEvent` | 2025 ortasından beri feed neredeyse sadece `PushEvent` döndürüyor; star olayları ağır eksik |
-| OSS Insight | Aynı sebeple star bazlı sıralamalarını askıya aldı |
-| `GET /repos/.../stargazers` | Temmuz 2026'da admin/collaborator'a kısıtlandı (ayrıca 40k tavanı vardı) |
+| GH Archive / BigQuery `WatchEvent` | 2025 ortasından beri feed neredeyse sadece `PushEvent` döndürüyor; yıldız olayları ağır eksik |
+| OSS Insight | Aynı sebeple yıldız bazlı sıralamalarını askıya aldı |
+| `GET /repos/.../stargazers` | Temmuz 2026'da admin/collaborator'a kısıtlandı |
 
 Kullanılan kaynak, GitHub'ın 4 Eylül 2026'da yayınladığı gizlilik-güvenli resmî
 endpoint'i: **`GET /repos/{owner}/{repo}/stargazers/history`** (REST API sürümü
@@ -44,151 +43,122 @@ Tek bir API sayfası ~210 gün veri döndürür:
 
 - **Sınırlı pencereli metrikler** (7/14/28/90 günlük hız, ivme, göreli büyüme)
   hiçbir backfill olmadan **tam doğru** hesaplanır. Günlük tazeleme repo başına
-  iki istek: repo nesnesi + geçmişin ilk sayfası.
+  iki istek.
 - **`fresh_power`** reponun tüm ömrünü integre eder. 180 günlük yarılanmada 210
   günlük geçmiş gerçek değerin ancak **%55**'ini yakalar. Bu yüzden Fresh Power
-  board'u yalnızca backfill'i tamamlanmış repoları sıralar (`history_complete`);
-  aksi halde hakkında daha az şey bildiğimiz repo haksız yere öne çıkardı.
+  board'u yalnızca backfill'i tamamlanmış repoları sıralar.
 
 ## Mimari
 
 ```
 pipeline/   Python — keşif, toplama, sınıflandırma, skorlama (CLI: airadar)
-api/        FastAPI — salt-okunur JSON API (Vercel Python Function)
-web/        Next.js 16 + Recharts dashboard (Vercel)
+web/        Next.js 16 + Recharts, statik export → GitHub Pages
 .github/    Actions — günlük toplama, haftalık keşif, manuel backfill, CI
 ```
 
-Veri PostgreSQL'de (Neon). Boru hattı yazar, API okur.
+Sunucu yok, veritabanı hesabı yok. Veri tek bir SQLite dosyası; **GitHub release
+dosyası** olarak saklanıyor (git geçmişinde değil — her gün değişen çok megabaytlık
+bir ikili dosya depoyu her çalıştırmada kendi boyutu kadar şişirirdi). Site
+statik: günde bir üretilen JSON'dan besleniyor.
 
 ### Keşif
 
-GitHub search her sorguyu **1.000 sonuçta** keser ve bunu sessizce yapar, yani
-tek sorguyla bu büyüklükte bir popülasyon sayılamaz. Çözüm bölümleme: her sorgu
-yıldız aralığına göre dilimlenir, tavana çarpan her dilim **geometrik** ortadan
-ikiye bölünür (yıldız dağılımı üstel; aritmetik orta neredeyse her şeyi alt
-yarıda bırakırdı). Yıldızın ayıramadığı dilimler oluşturma tarihine göre bölünür.
+GitHub search her sorguyu **1.000 sonuçta** keser ve bunu sessizce yapar. Çözüm
+bölümleme: her sorgu yıldız aralığına göre dilimlenir, tavana çarpan her dilim
+**geometrik** ortadan ikiye bölünür (yıldız dağılımı üstel; aritmetik orta
+neredeyse her şeyi alt yarıda bırakırdı). Yıldızın ayıramadığı dilimler
+oluşturma tarihine göre bölünür.
 
-Dört kanal besliyor: topic × yıldız kovası, serbest metin anahtar kelimeleri,
-topic kartopu (doğrulanmış AI repolarında görülen yeni topic'ler bir sonraki
-turda sorgulanır), ve küratörlü `awesome-*` listeleri. Buna ek olarak
-[ecosyste.ms](https://ecosyste.ms) bağımlılık grafiği ("torch'u import eden
-repolar" — GitHub search'ün cevaplayamadığı soru) ve Hugging Face Hub model/space
-kartlarındaki GitHub linkleri.
+Dört kanal: topic × yıldız kovası, serbest metin anahtar kelimeleri, topic
+kartopu (doğrulanmış AI repolarında görülen yeni topic'ler bir sonraki turda
+sorgulanır), küratörlü `awesome-*` listeleri. Ek olarak
+[ecosyste.ms](https://ecosyste.ms) bağımlılık grafiği ve Hugging Face Hub
+model/space kartlarındaki GitHub linkleri.
+
+Arama 30 istek/dakika ile sınırlı olduğu için tam bir tarama tek bir CI işinden
+uzun sürer. `--max-queries` turu temiz biçimde durdurur; taranan topic'ler
+kaydedildiği için bir sonraki tur kaldığı yerden devam eder.
 
 ### Sınıflandırma
 
-Kural motoru (ücretsiz) repoların çoğunu karara bağlar; sadece belirsiz banttaki
-repolar README'si okunarak Claude Haiku 4.5'e gider — **Batch API** ile (%50
-indirim) ve istek başına 15 repo gruplanarak (Haiku 4.5'in minimum cache prefix'i
-4096 token; sistem prompt'u oraya ulaşmadığı için prompt caching sessizce
-çalışmaz, gruplama aynı tasarrufu sağlar).
+Kural motoru (ücretsiz) repoların çoğunu karara bağlar. Sınırdaki repolar için
+LLM yolu (`classify/llm.py`, Claude Haiku 4.5 + Batch API) hazır ama varsayılan
+olarak kapalı: otomasyon `--no-llm` ile çalışır ve hiç para harcamaz.
 
-Sonuçlar girdilerinin hash'ine karşı önbelleklenir: haftalık tur yalnızca yeni
-veya açıklaması/topic'i/dili gerçekten değişmiş repolar için para harcar.
+### Budama
 
-5.000 belirsiz repo için tahmini maliyet **≈ $1.63**. `airadar classify --dry-run`
-bunu harcamadan raporlar, çalıştırma sonrası tahmin ile gerçek yan yana gösterilir.
+Veri depoda durduğu için sınırsız büyüyemez. Günlük satırların son **120 günü**
+tam çözünürlükte tutulur; daha eskisi haftalık kovalara katlanır (detay
+grafiğinin tüm ömrü göstermeye devam etmesi için) ve `fresh_power` katkısı tek
+bir taşınan sayıya çöker.
 
-## Maliyet
-
-| Kalem | Maliyet |
-|---|---|
-| GitHub API (PAT, 5.000 istek/saat) | $0 |
-| GitHub Actions (public repo) | $0 |
-| Neon Postgres (free tier) | $0 |
-| Vercel (web + api, hobby) | $0 |
-| LLM sınıflandırma — ilk tam tarama | ≈ $1.6 |
-| LLM sınıflandırma — haftalık | birkaç sent |
+Bu çöküş **kayıpsız**: üstel sönüm çarpımsal olduğu için budanmış geçmiş +
+taşınan kuyruk, tam geçmişle aynı sonucu verir. Test bunu 1e-9 hassasiyetinde
+doğruluyor, ve ayrı bir test yedi günlük çalıştırma zincirinde skorun
+aşınmadığını kontrol ediyor.
 
 ## Kurulum
 
-### 1. Boru hattı
+Tek bir kimlik bilgisi gerekiyor.
+
+1. **Depo herkese açık olmalı** — Actions dakikaları ve Pages bu sayede ücretsiz.
+2. **`GH_PAT` secret'ı**: bir personal access token
+   ([üret](https://github.com/settings/personal-access-tokens/new), "Public
+   Repositories (read-only)" yeter) → Settings → Secrets and variables →
+   Actions → New repository secret.
+   Actions'ın kendi `GITHUB_TOKEN`'ı repo başına saatte 1.000 istekle sınırlı;
+   bu iş yükü için yetersiz.
+3. **Settings → Pages → Source: GitHub Actions**
+
+## Otomasyon
+
+| Workflow | Ne zaman | Ne yapar |
+|---|---|---|
+| `daily` | Her gün 06:10 UTC | `doctor` → `collect` → `score` → siteyi yayınla |
+| `discover` | Pazar 03:20 UTC | `discover` (bütçeli) → `classify --no-llm` → `score` → yayınla |
+| `backfill` | Manuel | Tam geçmişi geri yürür; repo başına bir kez gerekir |
+| `publish` | Manuel / çağrılır | Veriyi değiştirmeden siteyi yeniden kurar |
+| `ci` | Her push | pytest + ruff + web typecheck/build |
+
+## Yerel geliştirme
 
 ```bash
 cd pipeline
 python3 -m venv .venv
 .venv/bin/pip install -e ".[dev]"
-cp ../.env.example ../.env     # GH_PAT, DATABASE_URL, ANTHROPIC_API_KEY
+cp ../.env.example ../.env     # GH_PAT
+
+.venv/bin/airadar doctor              # kimlik + endpoint kontrolü
+.venv/bin/airadar init-db
+.venv/bin/airadar discover --channels topics --max-queries 500
+.venv/bin/airadar classify --no-llm
+.venv/bin/airadar collect
+.venv/bin/airadar backfill --limit 50
+.venv/bin/airadar score
+.venv/bin/airadar board fresh --limit 20
+.venv/bin/airadar export-site --out ../web/public/data
+
+cd ../web && npm install && npm run dev
 ```
-
-`GH_PAT` bir **personal access token** olmalı. Actions'ın `GITHUB_TOKEN`'ı repo
-başına saatte 1.000 istekle sınırlı; bu iş yükü için yetersiz.
-
-### 2. İlk kontrol
-
-```bash
-airadar doctor
-```
-
-Kimlik doğrulama, kotalar ve star-history endpoint'ini doğrular. **Geri kalan her
-şey bu kontrolün geçmesine bağlı** — endpoint iki haftalık olduğu için sahada
-teyit edilmesi şart. Beklenmedik bir davranışta `doctor` yedek planı da söyler.
-
-### 3. Çalıştırma
-
-```bash
-airadar init-db                          # şema (tekrar çalıştırılabilir)
-airadar discover --channels topics       # evreni kur (uzun sürer, bölünebilir)
-airadar classify --dry-run               # ne kadara mal olacak?
-airadar classify                         # kural + LLM
-airadar collect                          # metrikleri tazele
-airadar backfill --limit 500             # Fresh Power için tam geçmiş
-airadar score                            # metrikler + board'lar
-airadar board fresh --limit 20           # sonucu terminalde gör
-```
-
-### 4. API ve dashboard
-
-```bash
-# API (Vercel Python runtime; app.py içindeki `app` entrypoint)
-cd api && DATABASE_URL=... uvicorn app:app --port 8000
-
-# Dashboard
-cd web && npm install && API_BASE=http://127.0.0.1:8000 npm run dev
-```
-
-Vercel'de: `api/` ve `web/` ayrı proje olarak deploy edilir. `DATABASE_URL`
-Neon'un **pooled** endpoint'ini (`-pooler` host) göstermeli — serverless her
-çağrıda yeni bağlantı açar.
-
-### 5. Otomasyon
-
-Actions secret'ları: `GH_PAT`, `DATABASE_URL`, `ANTHROPIC_API_KEY`.
-
-| Workflow | Ne zaman | Ne yapar |
-|---|---|---|
-| `daily-collect` | Her gün 06:10 UTC | `doctor` → `collect` → `score`, özet olarak Fresh Power ilk 20 |
-| `weekly-discover` | Pazar 03:20 UTC | `discover` → `classify` (önce dry-run maliyeti) → `score` |
-| `backfill` | Manuel | Tam geçmişi geri yürür; repo başına bir kez gerekir |
-| `ci` | Her push | pytest + ruff + web typecheck/build |
 
 ## Test
 
 ```bash
-cd pipeline
-.venv/bin/python -m pytest tests -q
-.venv/bin/ruff check airadar tests
-
-cd ../web
-npx tsc --noEmit && npx next build
+cd pipeline && .venv/bin/python -m pytest tests -q && .venv/bin/ruff check airadar tests
+cd ../web && npx tsc --noEmit && npx next build
 ```
 
-Veritabanı testleri gerçek bir PostgreSQL'e karşı çalışır; `AIRADAR_TEST_DSN` ile
-adres verilir. Erişilebilir sunucu yoksa o testler atlanır, süitin kalanı çalışır.
-CI'da bir servis container'ı bağlandığı için orada her zaman koşarlar.
+Veritabanı SQLite olduğu için bütün testler her yerde koşar — "erişilebilir bir
+veritabanı yoktu, atlandı" diye bir delik yok.
 
 ## Tasarım notları
 
-- **Toplama yeniden başlatılabilir.** Rate limit, Actions timeout'u veya ağ
-  hatası turu yarıda kesebilir; her yazma idempotent ve kuyruk `last_checked_at`
-  sırasına göre, yani tekrar çalıştırmak kaldığı yerden devam eder.
-- **ETag'ler saklanıyor.** `304 Not Modified` GitHub'ın kotasından düşmüyor;
-  değişmeyen repo bedava.
+- **Toplama yeniden başlatılabilir.** Her yazma idempotent, kuyruk
+  `last_checked_at` sırasına göre; yarıda kesilen tur kaldığı yerden devam eder.
+- **ETag'ler saklanıyor.** `304 Not Modified` GitHub'ın kotasından düşmüyor.
 - **Repo kimliği sayısal `id`.** Yeniden adlandırılan repolar ikizlenmiyor.
-- **Hiçbir şey sessizce kaybolmuyor.** LLM yanıtında eşleşmeyen bir repo
-  önbelleğe yazılmaz ve bir sonraki tur yeniden denenir; keşifte tavana çarpan
-  dilim ikinci bir boyuta göre bölünür; göremediğimiz bir kilometre taşı `None`
-  döner, uydurulmaz.
+- **Hiçbir şey sessizce kaybolmuyor.** Keşifte tavana çarpan dilim ikinci bir
+  boyuta göre bölünür; LLM yanıtında eşleşmeyen repo önbelleğe yazılmaz ve
+  yeniden denenir; göremediğimiz bir kilometre taşı `None` döner, uydurulmaz.
 - **Her çalıştırma maliyetini raporluyor** (`run_log`): API isteği, 304 sayısı,
   LLM token'ı ve dolar.

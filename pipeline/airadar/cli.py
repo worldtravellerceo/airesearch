@@ -11,7 +11,7 @@ import typer
 from rich.console import Console
 from rich.table import Table
 
-from airadar import classify_run
+from airadar import classify_run, export_site
 from airadar import collect as collect_mod
 from airadar import discover as discover_mod
 from airadar.config import GITHUB_API_VERSION, get_settings
@@ -132,6 +132,9 @@ def discover(
     resolve_limit: int = typer.Option(
         None, "--resolve-limit", help="Cap how many pending names to look up this run"
     ),
+    max_queries: int = typer.Option(
+        None, "--max-queries", help="Stop after this many search requests"
+    ),
 ) -> None:
     """Sweep every discovery channel and persist what it finds.
 
@@ -139,13 +142,15 @@ def discover(
     several jobs — a full topic sweep is thousands of search requests at 30 per
     minute, which is more than one Actions run should hold.
     """
-    asyncio.run(_run_discover(channels, resolve_limit))
+    asyncio.run(_run_discover(channels, resolve_limit, max_queries))
 
 
 _CHANNELS = ("topics", "keywords", "snowball", "awesome", "ecosystems", "huggingface", "resolve")
 
 
-async def _run_discover(channels: str, resolve_limit: int | None) -> None:
+async def _run_discover(
+    channels: str, resolve_limit: int | None, max_queries: int | None = None
+) -> None:
     settings = _require_database()
     selected = _parse_channels(channels)
 
@@ -164,6 +169,7 @@ async def _run_discover(channels: str, resolve_limit: int | None) -> None:
                     huggingface=selected["huggingface"],
                     resolve=selected["resolve"],
                     resolve_limit=resolve_limit,
+                    query_budget=max_queries,
                 )
             except Exception as exc:
                 db.finish_run(conn, run_id, ok=False, notes=str(exc)[:500], **_spend(client))
@@ -359,6 +365,18 @@ def score(
             raise
         db.finish_run(conn, run_id, ok=True, notes=f"{scored} repos, {rows} board rows")
     console.print(f"[green]score[/green]: {scored:,} repos scored, {rows:,} board rows")
+
+
+@app.command("export-site")
+def export_site_cmd(
+    out: str = typer.Option("web/public/data", "--out", help="Where the site reads its JSON from"),
+    date: str = typer.Option(None, "--date", help="Export this scoring date"),
+) -> None:
+    """Write the static JSON the dashboard is built from."""
+    settings = _require_database()
+    with db.connect(settings.db_path) as conn:
+        report = export_site.export(conn, Path(out), date=_parse_date(date))
+    console.print(f"[green]export-site[/green]: {report.summary()}")
 
 
 @app.command()

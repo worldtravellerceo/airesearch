@@ -14,6 +14,7 @@ import pytest
 from airadar.gh.client import GitHubClient
 from airadar.gh.discovery import (
     SEARCH_RESULT_CAP,
+    DiscoveryStats,
     _geometric_midpoint,
     discover_by_topics,
     extract_repo_links,
@@ -287,3 +288,55 @@ def test_snowball_ranks_new_topics_by_how_often_they_co_occur():
 def test_snowball_respects_the_limit_and_normalises_case():
     seen = ["MCP", "mcp", "RAG"]
     assert snowball_topics(seen, already_queried=[], limit=1) == ["mcp"]
+
+
+async def test_a_search_budget_stops_a_sweep_cleanly():
+    """A full topic sweep is thousands of requests at 30 a minute — more than
+    one CI job holds. The run has to be able to stop and be resumed."""
+    population = power_law_population(3_000)
+    fake = FakeGitHub(population)
+    stats = DiscoveryStats(budget=12)
+
+    async def sink(items, channel):
+        pass
+
+    async with GitHubClient(
+        token="t", transport=httpx.MockTransport(fake.handler), sleep=_no_sleep
+    ) as client:
+        await search_partitioned(
+            client,
+            "topic:llm fork:false",
+            channel="topic",
+            sink=sink,
+            min_stars=50,
+            stats=stats,
+        )
+
+    assert stats.exhausted is True
+    # The budget counts pages, because every page is one request against the
+    # 30-per-minute search limit. It is checked between requests rather than
+    # enforced mid-flight, so a single-page overshoot is expected.
+    assert 12 <= stats.pages <= 14
+    assert stats.repos_seen < len(population)  # genuinely stopped early
+
+
+async def test_no_budget_means_no_limit():
+    fake = FakeGitHub(power_law_population(150))
+    stats = DiscoveryStats()
+
+    async def sink(items, channel):
+        pass
+
+    async with GitHubClient(
+        token="t", transport=httpx.MockTransport(fake.handler), sleep=_no_sleep
+    ) as client:
+        await search_partitioned(
+            client,
+            "topic:llm fork:false",
+            channel="topic",
+            sink=sink,
+            min_stars=50,
+            stats=stats,
+        )
+
+    assert stats.exhausted is False

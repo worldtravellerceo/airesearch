@@ -76,13 +76,28 @@ _RESERVED_OWNERS = {
 
 @dataclass
 class DiscoveryStats:
+    """Counters, plus the search budget for this run.
+
+    A full topic sweep is thousands of search requests at 30 per minute, which
+    is more than one Actions job should hold. The budget lets a run stop
+    cleanly and the next one pick up where it left off — `queried_topics`
+    records what has already been swept, so nothing is redone.
+    """
+
     queries: int = 0
     splits: int = 0
     pages: int = 0
     repos_seen: int = 0
     capped_queries: int = 0
     errors: int = 0
+    budget: int | None = None
     channels: dict[str, int] = field(default_factory=dict)
+
+    @property
+    def exhausted(self) -> bool:
+        # Pages, not queries: every page is one request against the 30-per-minute
+        # search limit, and a single wide query can be ten of them.
+        return self.budget is not None and self.pages >= self.budget
 
     def note(self, channel: str, count: int) -> None:
         self.channels[channel] = self.channels.get(channel, 0) + count
@@ -120,6 +135,8 @@ async def search_partitioned(
     sampled from the top.
     """
     stats = stats or DiscoveryStats()
+    if stats.exhausted:
+        return stats
     await _partition_by_stars(
         client, base_query, min_stars, MAX_STARS, channel, sink, stats, depth=0
     )
@@ -137,6 +154,8 @@ async def _partition_by_stars(
     *,
     depth: int,
 ) -> None:
+    if stats.exhausted:
+        return
     query = f"{base_query} stars:{low}..{high}"
     total = await _drain(client, query, channel, sink, stats)
     if total is None or total <= SEARCH_RESULT_CAP:
@@ -173,6 +192,8 @@ async def _partition_by_date(
     depth: int,
 ) -> None:
     """Secondary split dimension for slices stars cannot separate."""
+    if stats.exhausted:
+        return
     query = f"{base_query} created:{start.isoformat()}..{end.isoformat()}"
     total = await _drain(client, query, channel, sink, stats)
     if total is None or total <= SEARCH_RESULT_CAP:
@@ -229,6 +250,10 @@ async def _drain(
 
     last_page = math.ceil(min(total, SEARCH_RESULT_CAP) / SEARCH_PAGE_SIZE)
     for page in range(2, last_page + 1):
+        if stats.exhausted:
+            # Stop mid-query rather than finishing a ten-page drain we cannot
+            # afford; the topic is left unrecorded so the next run redoes it.
+            break
         try:
             response = await client.search_repositories(query, page=page)
         except GitHubError as exc:

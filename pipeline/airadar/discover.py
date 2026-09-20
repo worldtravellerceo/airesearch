@@ -79,12 +79,14 @@ async def discover(
     snowball_limit: int = 40,
     resolve: bool = True,
     resolve_limit: int | None = None,
+    query_budget: int | None = None,
 ) -> DiscoverReport:
     """Sweep every channel. Each is independently skippable so a long run can be
     split across several Actions jobs."""
     settings = get_settings()
     min_stars = settings.min_stars
     report = DiscoverReport()
+    report.search.budget = query_budget
     sink = _make_sink(conn, report, min_stars)
 
     if topics:
@@ -92,6 +94,9 @@ async def discover(
         todo = [t for t in SEED_TOPICS if t.lower() not in already] or list(SEED_TOPICS)
         log.info("discover: %d topics to sweep", len(todo))
         for topic in todo:
+            if report.search.exhausted:
+                log.info("discover: search budget spent, stopping the topic sweep")
+                break
             before = report.repos_upserted
             await discovery.search_partitioned(
                 client,
@@ -101,12 +106,17 @@ async def discover(
                 min_stars=min_stars,
                 stats=report.search,
             )
-            db.record_topic_query(
-                conn, topic, source="seed", repos_found=report.repos_upserted - before
-            )
+            # Only record it as swept if the budget did not cut it short —
+            # otherwise the next run would skip a topic it never finished.
+            if not report.search.exhausted:
+                db.record_topic_query(
+                    conn, topic, source="seed", repos_found=report.repos_upserted - before
+                )
 
     if keywords:
         for keyword in SEED_KEYWORDS:
+            if report.search.exhausted:
+                break
             quoted = f'"{keyword}"' if " " in keyword else keyword
             await discovery.search_partitioned(
                 client,
@@ -125,6 +135,8 @@ async def discover(
         )
         report.snowballed_topics = fresh
         for topic in fresh:
+            if report.search.exhausted:
+                break
             before = report.repos_upserted
             await discovery.search_partitioned(
                 client,

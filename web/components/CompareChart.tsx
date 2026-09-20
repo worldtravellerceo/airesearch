@@ -13,7 +13,7 @@ import {
   YAxis,
 } from "recharts";
 
-import type { CompareSeries } from "@/lib/api";
+import type { CompareSeries } from "@/lib/compare";
 import { compact, count, shortDate } from "@/lib/format";
 
 const SERIES_COLORS = [
