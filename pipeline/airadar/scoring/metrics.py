@@ -227,9 +227,7 @@ def score_cohort(metrics: list[RepoMetrics]) -> list[RepoMetrics]:
         "relative_growth": _percentiles([m.relative_growth_14d for m in metrics]),
     }
 
-    velocity_cutoff = max(
-        BREAKOUT_MIN_VELOCITY, _quantile([m.velocity_14d for m in metrics], 0.5)
-    )
+    velocity_cutoff = max(BREAKOUT_MIN_VELOCITY, _quantile([m.velocity_14d for m in metrics], 0.5))
 
     for index, repo in enumerate(metrics):
         repo.momentum_score = 100.0 * sum(
@@ -238,8 +236,7 @@ def score_cohort(metrics: list[RepoMetrics]) -> list[RepoMetrics]:
         # Both conditions matter: absolute speed alone just re-describes the
         # popularity board, and acceleration alone promotes noise off tiny bases.
         repo.breakout = (
-            repo.velocity_14d >= velocity_cutoff
-            and repo.acceleration >= BREAKOUT_ACCELERATION
+            repo.velocity_14d >= velocity_cutoff and repo.acceleration >= BREAKOUT_ACCELERATION
         )
 
     return metrics

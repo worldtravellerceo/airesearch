@@ -324,8 +324,8 @@ def test_micro_repos_do_not_count_as_breakouts():
 
     scored = score_cohort([noise])
 
-    assert scored[0].acceleration > 3          # technically accelerating
-    assert scored[0].breakout is False         # but below the absolute floor
+    assert scored[0].acceleration > 3  # technically accelerating
+    assert scored[0].breakout is False  # but below the absolute floor
 
 
 def test_score_cohort_on_a_single_repo_does_not_crash():

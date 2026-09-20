@@ -403,3 +403,85 @@ def finish_run(
         (ok, api_calls, api_304s, llm_in_tok, llm_out_tok, llm_cost_usd, notes, run_id),
     )
     conn.commit()
+
+
+# --- discovery bookkeeping -------------------------------------------------
+
+
+def add_pending(conn: psycopg.Connection, names: Iterable[str], *, source: str) -> int:
+    """Queue repos known only by `owner/name` for later resolution."""
+    rows = [(name, source) for name in {n for n in names if n and "/" in n}]
+    if not rows:
+        return 0
+    with conn.cursor() as cur:
+        cur.executemany(
+            "INSERT INTO pending_repos (full_name, source) VALUES (%s, %s) "
+            "ON CONFLICT (full_name) DO NOTHING",
+            rows,
+        )
+    conn.commit()
+    return len(rows)
+
+
+def unresolved_pending(conn: psycopg.Connection, *, limit: int | None = None) -> list[dict]:
+    sql = """
+        SELECT p.full_name, p.source
+        FROM pending_repos p
+        LEFT JOIN repos r ON lower(r.full_name) = lower(p.full_name)
+        WHERE p.resolved_at IS NULL AND NOT p.failed AND r.id IS NULL
+        ORDER BY p.added_at
+    """
+    params: tuple = ()
+    if limit is not None:
+        sql += " LIMIT %s"
+        params = (limit,)
+    return conn.execute(sql, params).fetchall()
+
+
+def mark_pending_resolved(conn: psycopg.Connection, full_name: str) -> None:
+    conn.execute("UPDATE pending_repos SET resolved_at = now() WHERE full_name = %s", (full_name,))
+
+
+def mark_pending_failed(conn: psycopg.Connection, full_name: str, note: str) -> None:
+    conn.execute(
+        "UPDATE pending_repos SET failed = TRUE, note = %s WHERE full_name = %s",
+        (note[:500], full_name),
+    )
+
+
+def record_topic_query(
+    conn: psycopg.Connection, topic: str, *, source: str, repos_found: int
+) -> None:
+    conn.execute(
+        """
+        INSERT INTO queried_topics (topic, source, repos_found)
+        VALUES (%s, %s, %s)
+        ON CONFLICT (topic) DO UPDATE SET
+            last_queried_at = now(),
+            repos_found = EXCLUDED.repos_found
+        """,
+        (topic.lower(), source, repos_found),
+    )
+    conn.commit()
+
+
+def queried_topics(conn: psycopg.Connection) -> set[str]:
+    return {r["topic"] for r in conn.execute("SELECT topic FROM queried_topics")}
+
+
+def topics_of_ai_repos(conn: psycopg.Connection) -> list[str]:
+    """Every topic appearing on a repo the classifier confirmed as AI.
+
+    Feeding these back into discovery is what keeps the seed vocabulary from
+    going stale — the next `mcp` arrives on its own.
+    """
+    return [
+        row["topic"]
+        for row in conn.execute(
+            """
+            SELECT t.topic
+            FROM repo_topics t
+            JOIN repo_classification c ON c.repo_id = t.repo_id AND c.is_ai
+            """
+        )
+    ]

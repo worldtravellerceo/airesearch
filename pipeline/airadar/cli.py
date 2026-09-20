@@ -11,6 +11,7 @@ from rich.console import Console
 from rich.table import Table
 
 from airadar import collect as collect_mod
+from airadar import discover as discover_mod
 from airadar.config import GITHUB_API_VERSION, get_settings
 from airadar.db import repo as db
 from airadar.gh.client import GitHubClient, GitHubError
@@ -117,6 +118,86 @@ def init_db() -> None:
     with db.connect(settings.database_url) as conn:
         db.apply_schema(conn)
     console.print("[green]schema applied[/green]")
+
+
+@app.command()
+def discover(
+    channels: str = typer.Option(
+        "all",
+        "--channels",
+        help="Comma-separated: topics,keywords,snowball,awesome,ecosystems,huggingface,resolve",
+    ),
+    resolve_limit: int = typer.Option(
+        None, "--resolve-limit", help="Cap how many pending names to look up this run"
+    ),
+) -> None:
+    """Sweep every discovery channel and persist what it finds.
+
+    Channels are individually selectable so a long sweep can be split across
+    several jobs — a full topic sweep is thousands of search requests at 30 per
+    minute, which is more than one Actions run should hold.
+    """
+    asyncio.run(_run_discover(channels, resolve_limit))
+
+
+_CHANNELS = ("topics", "keywords", "snowball", "awesome", "ecosystems", "huggingface", "resolve")
+
+
+async def _run_discover(channels: str, resolve_limit: int | None) -> None:
+    settings = _require_database()
+    selected = _parse_channels(channels)
+
+    with db.connect(settings.database_url) as conn:
+        run_id = db.start_run(conn, "discover")
+        async with GitHubClient() as client:
+            try:
+                report = await discover_mod.discover(
+                    conn,
+                    client,
+                    topics=selected["topics"],
+                    keywords=selected["keywords"],
+                    snowball=selected["snowball"],
+                    awesome=selected["awesome"],
+                    ecosystems=selected["ecosystems"],
+                    huggingface=selected["huggingface"],
+                    resolve=selected["resolve"],
+                    resolve_limit=resolve_limit,
+                )
+            except Exception as exc:
+                db.finish_run(conn, run_id, ok=False, notes=str(exc)[:500], **_spend(client))
+                raise
+            db.finish_run(conn, run_id, ok=True, notes=report.summary()[:500], **_spend(client))
+
+        console.print(f"[green]discover[/green]: {report.summary()}")
+        console.print(f"[dim]search: {report.search.summary()}[/dim]")
+        _print_spend(client)
+        _print_overview(discover_mod.discovery_overview(conn))
+
+
+def _parse_channels(value: str) -> dict[str, bool]:
+    if value.strip().lower() == "all":
+        return dict.fromkeys(_CHANNELS, True)
+    wanted = {c.strip().lower() for c in value.split(",") if c.strip()}
+    unknown = wanted - set(_CHANNELS)
+    if unknown:
+        console.print(
+            f"[red]unknown channel(s): {', '.join(sorted(unknown))}[/red]\n"
+            f"known: {', '.join(_CHANNELS)}"
+        )
+        raise typer.Exit(1)
+    return {channel: channel in wanted for channel in _CHANNELS}
+
+
+def _print_overview(overview: dict) -> None:
+    table = Table(title=f"izlenen evren — {overview['as_of']}")
+    table.add_column("kanal")
+    table.add_column("repo", justify="right")
+    for channel, count in overview["by_channel"].items():
+        table.add_row(channel, f"{count:,}")
+    table.add_row("[bold]toplam[/bold]", f"[bold]{overview['total']:,}[/bold]")
+    if overview["pending"]:
+        table.add_row("[dim]bekleyen[/dim]", f"[dim]{overview['pending']:,}[/dim]")
+    console.print(table)
 
 
 @app.command()

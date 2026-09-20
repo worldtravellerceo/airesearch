@@ -285,11 +285,23 @@ class GitHubClient:
             page += 1
 
     async def search_repositories(
-        self, query: str, *, sort: str = "stars", order: str = "desc", per_page: int = 100
+        self,
+        query: str,
+        *,
+        sort: str = "stars",
+        order: str = "desc",
+        per_page: int = 100,
+        page: int = 1,
     ) -> Response:
         """Repository search. Separate 30 req/min bucket, 1,000 results per query."""
         return await self.get(
             "/search/repositories",
-            params={"q": query, "sort": sort, "order": order, "per_page": per_page},
+            params={
+                "q": query,
+                "sort": sort,
+                "order": order,
+                "per_page": per_page,
+                "page": page,
+            },
             resource="search",
         )

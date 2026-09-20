@@ -127,3 +127,28 @@ CREATE TABLE IF NOT EXISTS run_log (
     llm_cost_usd REAL NOT NULL DEFAULT 0,
     notes        TEXT
 );
+
+-- Repositories discovered by name only (curated lists, dependency graphs, the
+-- Hugging Face Hub). They carry no numeric id yet, and `repos.id` is that id,
+-- so they wait here until a resolve pass looks them up.
+CREATE TABLE IF NOT EXISTS pending_repos (
+    full_name   TEXT PRIMARY KEY,
+    source      TEXT,
+    added_at    TIMESTAMPTZ NOT NULL DEFAULT now(),
+    resolved_at TIMESTAMPTZ,
+    failed      BOOLEAN NOT NULL DEFAULT FALSE,
+    note        TEXT
+);
+
+CREATE INDEX IF NOT EXISTS pending_repos_open_idx
+    ON pending_repos (added_at) WHERE resolved_at IS NULL AND NOT failed;
+
+-- Which topics discovery has already swept, so snowballed topics are queried
+-- once rather than every run.
+CREATE TABLE IF NOT EXISTS queried_topics (
+    topic            TEXT PRIMARY KEY,
+    source           TEXT NOT NULL DEFAULT 'seed',   -- seed | snowball
+    first_queried_at TIMESTAMPTZ NOT NULL DEFAULT now(),
+    last_queried_at  TIMESTAMPTZ NOT NULL DEFAULT now(),
+    repos_found      INTEGER NOT NULL DEFAULT 0
+);
