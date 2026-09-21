@@ -14,6 +14,7 @@ from rich.table import Table
 from airadar import audit, classify_run, export_site
 from airadar import collect as collect_mod
 from airadar import discover as discover_mod
+from airadar.companies import domains as company_domains
 from airadar.config import GITHUB_API_VERSION, get_settings
 from airadar.db import repo as db
 from airadar.gh.client import GitHubClient, GitHubError
@@ -457,6 +458,38 @@ def coverage(
     console.print(f"[{colour}]coverage[/{colour}]: {report.summary()}")
     if report.missing:
         raise typer.Exit(1)
+
+
+@app.command("company-seeds")
+def company_seeds(
+    limit: int = typer.Option(40, "--limit", help="How many to show"),
+    min_stars: int = typer.Option(
+        0, "--min-stars", help="Ignore repos below this when building a seed"
+    ),
+) -> None:
+    """List the company domains the repository corpus already points at.
+
+    The corpus holds tens of thousands of owners with an AI repository, and
+    their homepages point somewhere. That is a seed list nobody else builds the
+    same way: AI companies that ship open source, for nothing.
+    """
+    settings = _require_database()
+    with db.connect(settings.db_path) as conn:
+        seeds = company_domains.seeds_from_corpus(conn, min_stars=min_stars)
+
+    table = Table(title=f"şirket tohumları — {len(seeds):,} alan adı")
+    table.add_column("yıldız", justify="right")
+    table.add_column("alan adı")
+    table.add_column("repo", justify="right")
+    table.add_column("owner")
+    for seed in seeds[:limit]:
+        owners = ", ".join(sorted(seed.owners)[:2])
+        table.add_row(f"{seed.stars:,}", seed.domain, str(seed.repos), owners)
+    console.print(table)
+
+    for cut in (100_000, 10_000, 1_000):
+        n = sum(1 for s in seeds if s.stars >= cut)
+        console.print(f"  arkasında >= {cut:,} yıldız olan: {n:,}")
 
 
 @app.command("review-queue")
