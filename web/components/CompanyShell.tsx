@@ -3,7 +3,6 @@ import Link from "next/link";
 import { CompanyTable } from "@/components/CompanyTable";
 import { getCompanyBoard, getCompanyBoards } from "@/lib/data";
 import { count, shortDate } from "@/lib/format";
-import { BASE_PATH } from "@/lib/paths";
 
 /** The company side of the index.
  *
@@ -36,7 +35,11 @@ export async function CompanyShell({ slug }: { slug: string }) {
               return (
                 <Link
                   key={board.slug}
-                  href={`${BASE_PATH}/companies/${board.slug}/`}
+                  // Bare, not prefixed: Next's `basePath` already adds
+                  // /airesearch to every <Link>. Writing it again produced
+                  // /airesearch/airesearch/... and 404'd every link on every
+                  // company page — the whole section was unnavigable.
+                  href={`/companies/${board.slug}/`}
                   aria-current={active ? "page" : undefined}
                   className={
                     active

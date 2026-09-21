@@ -1,7 +1,6 @@
 import Link from "next/link";
 
 import { compact, count, percent, roundLabel, shortDate, usd } from "@/lib/format";
-import { BASE_PATH } from "@/lib/paths";
 import type { CompanyEntry } from "@/lib/types";
 
 type Column = {
@@ -39,7 +38,7 @@ function Company({ entry }: { entry: CompanyEntry }) {
         ) : null}
         {entry.top_repo ? (
           <Link
-            href={`${BASE_PATH}/repos/${entry.top_repo}/`}
+            href={`/repos/${entry.top_repo}/`}
             className="hover:text-ink-secondary"
           >
             {entry.top_repo}
