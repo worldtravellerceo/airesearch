@@ -457,3 +457,41 @@ def test_a_worse_source_does_not_replace_a_better_one(conn):
     conn.commit()
 
     assert conn.execute("SELECT name FROM companies").fetchone()["name"] == "Mistral AI"
+
+
+def test_an_acquisition_with_no_date_is_not_inserted_again_every_run(conn):
+    """SQLite treats two NULLs as distinct, so a UNIQUE constraint over the
+    columns did not deduplicate the common case — an acquisition whose date
+    was never announced. Three identical inserts produced three rows."""
+    row = {
+        "acquirer": "LangChain",
+        "target": "Tiny Startup",
+        "domain": "langchain.com",
+        "announced_on": None,
+        "amount_usd": None,
+        "source": "crunchbase",
+        "collected_at": NOW,
+    }
+    for _ in range(3):
+        company_db.record_acquisitions(conn, [row])
+
+    assert conn.execute("SELECT count(*) AS n FROM acquisition").fetchone()["n"] == 1
+
+
+def test_the_last_round_is_read_whichever_way_the_actor_spells_it(conn):
+    """Round rows in rounds mode use `investmentType`; the nested rounds inside
+    a company profile use `investment_type`. Reading one of them is why
+    `last_round` was NULL for all 96 matched companies."""
+    profile = {
+        **PROFILE,
+        "funding": {
+            "totalUsd": None,
+            "numFundingRounds": 3,
+            "rounds": [{"investment_type": "series_b", "announced_on": "2026-02-14"}],
+        },
+    }
+
+    row = funding.company_row(profile, asked_domain="langchain.com", collected_at=NOW)
+
+    assert row["last_round"] == "series_b"
+    assert row["last_round_on"] == dt.date(2026, 2, 14)

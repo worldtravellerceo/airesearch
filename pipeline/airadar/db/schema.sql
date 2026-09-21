@@ -374,9 +374,15 @@ CREATE TABLE IF NOT EXISTS acquisition (
     announced_on  DATE,
     amount_usd    INTEGER,
     source        TEXT NOT NULL,
-    collected_at  TIMESTAMP NOT NULL,
-    UNIQUE (acquirer, target, announced_on)
+    collected_at  TIMESTAMP NOT NULL
 );
+
+-- Not a UNIQUE constraint on the columns, because SQLite treats two NULLs as
+-- distinct: an acquisition with no announced date inserted a fresh row on
+-- every single run, and an acquisition with no announced date is the common
+-- case. COALESCE gives the three of them one identity.
+CREATE UNIQUE INDEX IF NOT EXISTS acquisition_identity_idx
+    ON acquisition (acquirer, target, COALESCE(announced_on, ''));
 
 -- How a company in our universe maps onto Crunchbase. Separate from
 -- `companies` so that a failed match is a recorded state rather than a missing

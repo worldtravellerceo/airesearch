@@ -185,8 +185,12 @@ def company_row(item: dict, *, asked_domain: str, collected_at: dt.datetime) -> 
         "total_usd": _usd(funding.get("totalUsd")),
         "rounds": funding.get("numFundingRounds"),
         "investors": funding.get("numInvestors"),
-        "last_round": (last or {}).get("investmentType"),
-        "last_round_on": _date((last or {}).get("announcedOn")),
+        # Both spellings, because the actor is not consistent: round rows in
+        # rounds mode use `investmentType`, the nested rounds inside a company
+        # profile use `investment_type`. Reading only one of them is why
+        # `last_round` was NULL for all 96 matched companies.
+        "last_round": (last or {}).get("investmentType") or (last or {}).get("investment_type"),
+        "last_round_on": _date((last or {}).get("announcedOn") or (last or {}).get("announced_on")),
         "employee_range": people.get("employeeRange"),
         "country": item.get("country"),
         "ipo_status": item.get("ipoStatus"),

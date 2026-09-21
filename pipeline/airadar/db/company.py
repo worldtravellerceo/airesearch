@@ -238,7 +238,7 @@ def record_acquisitions(conn: sqlite3.Connection, rows: Sequence[dict]) -> int:
                                  source, collected_at)
         VALUES (:acquirer, :target, :domain, :announced_on, :amount_usd, :source,
                 :collected_at)
-        ON CONFLICT(acquirer, target, announced_on) DO UPDATE SET
+        ON CONFLICT(acquirer, target, COALESCE(announced_on, '')) DO UPDATE SET
             amount_usd   = COALESCE(excluded.amount_usd, acquisition.amount_usd),
             domain       = COALESCE(excluded.domain, acquisition.domain),
             collected_at = excluded.collected_at
