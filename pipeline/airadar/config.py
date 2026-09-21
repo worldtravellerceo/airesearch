@@ -28,6 +28,8 @@ class Settings(BaseSettings):
     github_token_2: str = Field(default="", alias="GH_PAT_2")
     github_token_3: str = Field(default="", alias="GH_PAT_3")
     anthropic_api_key: str = Field(default="", alias="ANTHROPIC_API_KEY")
+    # Apify runs the scrapers behind the company universe and bills per result.
+    apify_token: str = Field(default="", alias="APIFY_TOKEN")
 
     @property
     def github_tokens(self) -> list[str]:
@@ -82,6 +84,16 @@ class Settings(BaseSettings):
     # concurrent requests; a dozen is far inside that and already enough to keep
     # three tokens' worth of quota saturated.
     concurrency: int = Field(default=12, alias="AIRADAR_CONCURRENCY")
+
+    # --- companies ---------------------------------------------------------
+    # The month's ceiling on Apify spend. Every run is started with a share of
+    # what is left as Apify's own `maxTotalChargeUsd`, so this holds even if the
+    # code asking for the run is wrong. The Starter plan includes $19 of usage;
+    # the rest is overage the account is willing to pay.
+    apify_monthly_cap_usd: float = Field(default=25.0, alias="AIRADAR_APIFY_CAP")
+    # Companies below this many repository stars are not worth paying to look
+    # up yet. 9,682 seeds come out of the corpus; 2,961 clear a thousand stars.
+    company_min_stars: int = Field(default=1000, alias="AIRADAR_COMPANY_MIN_STARS")
 
     # --- scoring -----------------------------------------------------------
     # Half-life in days for `fresh_power`: a star contributes half as much after

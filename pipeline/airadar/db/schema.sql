@@ -182,3 +182,62 @@ CREATE TABLE IF NOT EXISTS run_log (
     llm_cost_usd REAL NOT NULL DEFAULT 0,
     notes        TEXT
 );
+
+-- ---------------------------------------------------------------------------
+-- The company universe.
+--
+-- A second universe alongside the repositories, keyed on the registrable
+-- domain. The domain is the primary key on purpose: a company is called
+-- something different in every source — "OpenAI" on Wikidata, "OpenAI, Inc."
+-- in a SEC filing, `openai` on GitHub, `openai.com` everywhere that matters —
+-- and the domain is the only one of those that is unambiguous and that every
+-- source can be joined on.
+-- ---------------------------------------------------------------------------
+
+CREATE TABLE IF NOT EXISTS companies (
+    domain        TEXT PRIMARY KEY,          -- registrable domain, eTLD+1
+    name          TEXT,                      -- best-known name, once a source gives one
+    first_seen_at TIMESTAMP NOT NULL,
+    seed_source   TEXT NOT NULL,             -- where it first arrived: corpus, wikidata, ...
+    -- What the repository corpus knows, carried over so the boards can rank on
+    -- it before any paid source has run.
+    repo_stars    INTEGER NOT NULL DEFAULT 0,
+    repo_count    INTEGER NOT NULL DEFAULT 0,
+    top_repo      TEXT,
+    gh_owners     TEXT                       -- comma-separated GitHub owners
+);
+
+CREATE INDEX IF NOT EXISTS companies_stars_idx ON companies(repo_stars DESC);
+
+-- One row per company per month of Similarweb data. Monthly, not daily: the
+-- source is a monthly estimate, and storing it per day would invent precision
+-- that is not there.
+CREATE TABLE IF NOT EXISTS company_traffic (
+    domain         TEXT NOT NULL REFERENCES companies(domain) ON DELETE CASCADE,
+    month          DATE NOT NULL,            -- first day of the month it describes
+    visits         INTEGER,
+    global_rank    INTEGER,
+    category       TEXT,
+    category_rank  INTEGER,
+    bounce_rate    REAL,
+    traffic_genai  REAL,                     -- share of visits arriving from AI assistants
+    collected_at   TIMESTAMP NOT NULL,
+    PRIMARY KEY (domain, month)
+);
+
+-- Every paid call, with what it cost. A budget that is not written down after
+-- the fact is not a budget: this table is what `companies spend` reads, and
+-- what stops a run that would take the month over its cap.
+CREATE TABLE IF NOT EXISTS apify_run (
+    id          INTEGER PRIMARY KEY AUTOINCREMENT,
+    actor       TEXT NOT NULL,
+    run_id      TEXT,
+    started_at  TIMESTAMP NOT NULL,
+    finished_at TIMESTAMP,
+    status      TEXT,
+    items       INTEGER NOT NULL DEFAULT 0,
+    cost_usd    REAL NOT NULL DEFAULT 0,
+    notes       TEXT
+);
+
+CREATE INDEX IF NOT EXISTS apify_run_started_idx ON apify_run(started_at);

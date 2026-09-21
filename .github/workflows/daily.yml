@@ -60,6 +60,12 @@ jobs:
       - name: Score
         run: airadar score
 
+      # Free: it only reads homepages already in the corpus. It runs daily so
+      # that a company which shipped its first repository this morning is in
+      # the universe before anything paid is asked to look it up.
+      - name: Rebuild the company universe
+        run: airadar companies-sync
+
       - uses: ./.github/actions/publish-db
         if: always()
         with:

@@ -14,8 +14,12 @@ from rich.table import Table
 from airadar import audit, classify_run, export_site
 from airadar import collect as collect_mod
 from airadar import discover as discover_mod
+from airadar.companies import apify
 from airadar.companies import domains as company_domains
+from airadar.companies import enrich as company_enrich
+from airadar.companies import traffic as company_traffic_mod
 from airadar.config import GITHUB_API_VERSION, get_settings
+from airadar.db import company as company_db
 from airadar.db import repo as db
 from airadar.gh.client import GitHubClient, GitHubError
 from airadar.gh.metrics import (
@@ -503,6 +507,77 @@ def company_seeds(
     for cut in (100_000, 10_000, 1_000):
         n = sum(1 for s in seeds if s.stars >= cut)
         console.print(f"  arkasında >= {cut:,} yıldız olan: {n:,}")
+
+
+@app.command("companies-sync")
+def companies_sync(
+    min_stars: int = typer.Option(
+        None, "--min-stars", help="Ignore repos below this when building a seed"
+    ),
+) -> None:
+    """Rebuild the company table from the repository corpus.
+
+    Free, and the only step that has to happen before anything paid: it is what
+    decides which domains are worth spending money on.
+    """
+    settings = _require_database()
+    floor = settings.company_min_stars if min_stars is None else min_stars
+    with db.connect(settings.db_path) as conn:
+        seeds = company_domains.seeds_from_corpus(conn)
+        stored = company_db.upsert_seeds(conn, seeds)
+        payable = sum(1 for seed in seeds if seed.stars >= floor)
+    console.print(
+        f"[green]companies-sync[/green]: {stored:,} şirket kaydedildi, "
+        f"{payable:,} tanesi >= {floor:,} yıldız ile ücretli aramaya değer "
+        f"(tahmini ${company_enrich.estimate_usd(payable):.2f})"
+    )
+
+
+@app.command("companies-traffic")
+def companies_traffic(
+    limit: int = typer.Option(1000, "--limit", help="How many companies to look up"),
+    min_stars: int = typer.Option(None, "--min-stars", help="Ignore companies below this"),
+    dry_run: bool = typer.Option(
+        False, "--dry-run", help="Print the queue and the price, spend nothing"
+    ),
+) -> None:
+    """Buy Similarweb traffic for the companies that have waited longest.
+
+    This spends money. The month's cap is enforced by Apify itself, not only by
+    this process, and every run is written to `apify_run` with what it cost.
+    """
+    settings = _require_database()
+    floor = settings.company_min_stars if min_stars is None else min_stars
+
+    with db.connect(settings.db_path) as conn:
+        queue = company_db.companies_to_enrich(conn, limit=limit, min_stars=floor)
+        spent = apify.spend_this_month(conn)
+
+    console.print(
+        f"kuyrukta {len(queue):,} şirket, tahmini "
+        f"${company_enrich.estimate_usd(len(queue)):.2f} — bu ay şu ana dek "
+        f"${spent:.2f} / ${settings.apify_monthly_cap_usd:.2f} harcandı"
+    )
+    if dry_run:
+        for domain in queue[:20]:
+            console.print(f"  {domain}")
+        return
+
+    if not settings.apify_token:
+        console.print("[red]APIFY_TOKEN ayarlı değil.[/red]")
+        raise typer.Exit(1)
+
+    async def run() -> company_traffic_mod.TrafficReport:
+        with db.connect(settings.db_path) as conn:
+            async with apify.ApifyClient(
+                settings.apify_token, monthly_cap_usd=settings.apify_monthly_cap_usd
+            ) as client:
+                return await company_enrich.refresh_traffic(
+                    conn, client, limit=limit, min_stars=floor
+                )
+
+    report = asyncio.run(run())
+    console.print(f"[green]companies-traffic[/green]: {report.summary()}")
 
 
 @app.command("review-queue")

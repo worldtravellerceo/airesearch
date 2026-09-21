@@ -1,0 +1,70 @@
+name: Companies
+
+# The only workflow that spends money, which is why it is its own — a paid run
+# should be a decision, not a side effect of the daily one. The ceiling is
+# enforced by Apify itself via `maxTotalChargeUsd` on every run, and the
+# month's total is read back out of `apify_run` before each one starts.
+
+on:
+  workflow_dispatch:
+    inputs:
+      limit:
+        description: "How many companies to look up"
+        required: false
+        default: "1000"
+      dry_run:
+        description: "Print the queue and the price, spend nothing"
+        type: boolean
+        default: true
+  schedule:
+    # Mondays, after the weekly discover run has refreshed the corpus the seed
+    # list is built from.
+    - cron: "0 6 * * 1"
+
+concurrency:
+  group: airadar-data
+  cancel-in-progress: false
+
+jobs:
+  companies:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    env:
+      GH_PAT: ${{ secrets.GH_PAT }}
+      APIFY_TOKEN: ${{ secrets.APIFY_TOKEN }}
+    steps:
+      - uses: actions/checkout@v5
+      - uses: ./.github/actions/pipeline
+        with:
+          token: ${{ github.token }}
+
+      - name: Rebuild the company universe
+        run: airadar companies-sync
+
+      # The scheduled run is deliberately not a dry run: a weekly refresh that
+      # prints a price and buys nothing is a weekly reminder, not a pipeline.
+      - name: Traffic
+        run: |
+          airadar companies-traffic \
+            --limit ${{ inputs.limit || 1000 }} \
+            ${{ inputs.dry_run == true && '--dry-run' || '' }}
+
+      - uses: ./.github/actions/publish-db
+        if: always()
+        with:
+          token: ${{ github.token }}
+
+      - name: Summary
+        if: always()
+        run: |
+          {
+            echo "### Apify harcaması"
+            echo '```'
+            sqlite3 -header -column data/airadar.db \
+              "SELECT date(started_at) AS gun, actor, items, round(cost_usd, 4) AS usd, status
+               FROM apify_run ORDER BY id DESC LIMIT 20;" || true
+            sqlite3 data/airadar.db \
+              "SELECT 'bu ay toplam: $' || round(COALESCE(sum(cost_usd), 0), 2)
+               FROM apify_run WHERE started_at >= date('now', 'start of month');" || true
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
