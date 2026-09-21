@@ -284,3 +284,96 @@ def test_every_repo_on_a_board_gets_a_page(conn, tmp_path):
     assert on_a_board <= set(manifest["repos"])
     for name in on_a_board:
         assert (tmp_path / "repos" / f"{name}.json").exists(), name
+
+
+def test_the_star_curve_stops_at_the_export_date(conn, tmp_path):
+    """GitHub's star-history endpoint returns whole weeks, including the days
+    of the current week that have not happened yet, each with a gain of zero.
+    Every chart on the live site ran five days past the site's own "last
+    updated" stamp as a flat line into the future."""
+    today = dt.date(2026, 9, 21)
+    db.upsert_repos(
+        conn,
+        [
+            db.RepoRecord(
+                id=1,
+                full_name="a/b",
+                owner="a",
+                name="b",
+                stars=1_000,
+                description="an llm agent",
+                created_at=dt.datetime(2026, 1, 1, tzinfo=dt.UTC),
+            )
+        ],
+    )
+    db.save_classification(
+        conn,
+        1,
+        is_ai=True,
+        category="llm-app",
+        subcategory=None,
+        confidence=1.0,
+        method="rules",
+        content_hash="h",
+    )
+    db.record_star_daily(
+        conn,
+        1,
+        [DailyStars(date=today + dt.timedelta(days=n - 3), stars_gained=10) for n in range(7)],
+    )
+    conn.commit()
+    from airadar.collect import score
+
+    score(conn, today=today)
+    export_site.export(conn, tmp_path, date=today)
+
+    points = json.loads((tmp_path / "repos" / "a" / "b.history.json").read_text())["points"]
+    assert points, "the fixture should produce a curve"
+    assert max(p["date"] for p in points) <= today.isoformat()
+
+
+def test_the_star_curve_ends_at_the_number_printed_beside_it(conn, tmp_path):
+    """The running total used to start from max(stars - sum(gains), 0), which
+    anchors correctly only while the recorded history is smaller than the star
+    count. `openclaw/openclaw` ended at 390,203 against a tile reading
+    390,187."""
+    today = dt.date(2026, 9, 21)
+    db.upsert_repos(
+        conn,
+        [
+            db.RepoRecord(
+                id=1,
+                full_name="a/b",
+                owner="a",
+                name="b",
+                stars=500,
+                description="an llm agent",
+                created_at=dt.datetime(2026, 1, 1, tzinfo=dt.UTC),
+            )
+        ],
+    )
+    db.save_classification(
+        conn,
+        1,
+        is_ai=True,
+        category="llm-app",
+        subcategory=None,
+        confidence=1.0,
+        method="rules",
+        content_hash="h",
+    )
+    # More history than the repo has stars — the state that broke the anchor.
+    db.record_star_daily(
+        conn,
+        1,
+        [DailyStars(date=today - dt.timedelta(days=n), stars_gained=100) for n in range(10)],
+    )
+    conn.commit()
+    from airadar.collect import score
+
+    score(conn, today=today)
+    export_site.export(conn, tmp_path, date=today)
+
+    points = json.loads((tmp_path / "repos" / "a" / "b.history.json").read_text())["points"]
+    assert points[-1]["cumulative"] == 500
+    assert all(p["cumulative"] >= 0 for p in points)

@@ -256,7 +256,7 @@ def _details(
         # build inlines whatever a page reads into both its HTML and its
         # client payload — so inlining it here cost about 125 KB per page,
         # twice over, for a chart most visitors never scroll to.
-        history = _history(conn, repo_id, row["stars"])
+        history = _history(conn, repo_id, row["stars"], until=date)
         row["history_points"] = len(history)
 
         folder = out_dir / "repos" / row["owner"]
@@ -279,27 +279,47 @@ def _ranks_by_repo(conn: sqlite3.Connection, date: dt.date) -> dict[int, dict[st
     return out
 
 
-def _history(conn: sqlite3.Connection, repo_id: int, stars_total: int) -> list[dict]:
+def _history(
+    conn: sqlite3.Connection, repo_id: int, stars_total: int, *, until: dt.date
+) -> list[dict]:
     """The full star curve: weekly buckets for the aged-out part, daily for the
     retention window.
 
-    The running total is anchored to the repo's current star count rather than
-    started at zero, so a partially-backfilled repo's curve still ends where the
-    headline number says it should.
+    Two things it has to get right, and the first version got neither.
+
+    It stops at `until`. GitHub's star-history endpoint returns whole weeks,
+    including the days of the current week that have not happened yet, each
+    with a gain of zero — so every chart ran five days past the site's own
+    "last updated" stamp as a flat line into the future.
+
+    And it ends at the headline number. The running total used to start from
+    `max(stars_total - sum(gains), 0)`, which anchors correctly only while the
+    recorded history is smaller than the star count. When it is larger — 35
+    repositories still are, left over from a roll-up that double-counted — the
+    clamp fires and the curve finishes *above* the total printed beside it.
+    `openclaw/openclaw` ended at 390,203 against a tile reading 390,187. So the
+    curve is built backwards from the star count instead, which makes the last
+    point right by construction rather than by arithmetic that can be wrong.
     """
     points: list[tuple[dt.date, int]] = list(db.load_weekly_series(conn, repo_id))
     points += [(d.date, d.stars_gained) for d in db.load_daily_series(conn, repo_id)]
-    points.sort(key=lambda item: item[0])
+    points = sorted((day, gained) for day, gained in points if day <= until)
     if not points:
         return []
 
-    base = max(stars_total - sum(value for _, value in points), 0)
-    out = []
-    running = base
-    for day, gained in points:
-        running += gained
-        out.append({"date": day, "stars_gained": gained, "cumulative": running})
-    return out
+    # Walk back from the known total, then emit forwards. A history longer than
+    # the star count flattens at zero early on rather than overshooting at the
+    # end, because the end is what a reader checks against the tile.
+    cumulative = [0] * len(points)
+    running = stars_total
+    for index in range(len(points) - 1, -1, -1):
+        cumulative[index] = max(running, 0)
+        running -= points[index][1]
+
+    return [
+        {"date": day, "stars_gained": gained, "cumulative": cumulative[index]}
+        for index, (day, gained) in enumerate(points)
+    ]
 
 
 def _company_boards(
