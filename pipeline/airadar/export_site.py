@@ -207,6 +207,17 @@ def _sparklines(conn: sqlite3.Connection, date: dt.date) -> dict[int, list[int]]
 def _details(
     conn: sqlite3.Connection, out_dir: Path, date: dt.date, report: ExportReport
 ) -> list[str]:
+    """Write a page for every repo the site can link to.
+
+    The selection used to be the top `DETAIL_LIMIT` by stars, which quietly
+    broke the board this project exists for. Breakout ranks repos that are
+    exploding *now*, and a repo exploding now has not had time to accumulate
+    stars — so 114 of its 132 rows pointed at a page that was never written,
+    and Momentum lost 64 of 200. The two boards whose whole subject is
+    rising interest were the two with the broken links.
+
+    So: the top N by stars, plus everyone on a board, whatever their rank.
+    """
     rows = conn.execute(
         """
         SELECT r.id, r.full_name, r.owner, r.name, r.description, r.homepage,
@@ -220,8 +231,11 @@ def _details(
         FROM repos r
         JOIN repo_classification c ON c.repo_id = r.id AND c.is_ai = 1
         LEFT JOIN repo_scores s ON s.repo_id = r.id AND s.date = :date
+        WHERE r.id IN (
+                SELECT id FROM repos WHERE is_fork = 0 ORDER BY stars DESC LIMIT :limit
+              )
+           OR r.id IN (SELECT repo_id FROM leaderboard_snapshots WHERE date = :date)
         ORDER BY r.stars DESC
-        LIMIT :limit
         """,
         {"date": date, "limit": DETAIL_LIMIT},
     ).fetchall()

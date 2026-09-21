@@ -219,3 +219,68 @@ def test_export_is_destructive_so_stale_files_cannot_linger(conn, tmp_path):
     export_site.export(conn, out, date=TODAY)
 
     assert not (out / "boards" / "fresh" / "gone-category.json").exists()
+
+
+def test_every_repo_on_a_board_gets_a_page(conn, tmp_path):
+    """The selection used to be the top 1,200 by stars, which broke the two
+    boards this project exists for. Breakout ranks repos exploding *now*, and
+    a repo exploding now has not had time to accumulate stars: 114 of its 132
+    live rows pointed at a page that was never written, and Momentum lost 64
+    of 200."""
+    from airadar.collect import score
+
+    # A giant nobody would miss, and a newcomer that only a board would surface.
+    for repo_id, name, stars, created in [
+        (1, "giant/model", 200_000, dt.datetime(2020, 1, 1, tzinfo=dt.UTC)),
+        (2, "tiny/breakout", 900, dt.datetime(2026, 9, 1, tzinfo=dt.UTC)),
+    ]:
+        db.upsert_repos(
+            conn,
+            [
+                db.RepoRecord(
+                    id=repo_id,
+                    full_name=name,
+                    owner=name.split("/")[0],
+                    name=name.split("/")[1],
+                    created_at=created,
+                    description="an llm agent framework",
+                    stars=stars,
+                )
+            ],
+        )
+        db.save_classification(
+            conn,
+            repo_id,
+            is_ai=True,
+            category="agent-framework",
+            subcategory=None,
+            confidence=1.0,
+            method="rules",
+            content_hash=f"h{repo_id}",
+        )
+    db.record_star_daily(
+        conn,
+        2,
+        [
+            DailyStars(date=dt.date(2026, 9, 20) - dt.timedelta(days=n), stars_gained=60)
+            for n in range(14)
+        ],
+    )
+    conn.commit()
+    score(conn, today=dt.date(2026, 9, 20))
+
+    export_site.export(conn, tmp_path, date=dt.date(2026, 9, 20))
+
+    manifest = json.loads((tmp_path / "manifest.json").read_text())
+    on_a_board = {
+        row["full_name"]
+        for row in conn.execute(
+            "SELECT DISTINCT r.full_name FROM leaderboard_snapshots l "
+            "JOIN repos r ON r.id = l.repo_id WHERE l.date = ?",
+            (dt.date(2026, 9, 20),),
+        )
+    }
+    assert on_a_board, "the fixture should put something on a board"
+    assert on_a_board <= set(manifest["repos"])
+    for name in on_a_board:
+        assert (tmp_path / "repos" / f"{name}.json").exists(), name
