@@ -143,7 +143,15 @@ async def _collect_one(
     )
     written = 0
     if not history.not_modified:
-        days = parse_star_history(history.data)
+        # One page is thirty weeks, but only `retain_days` of it is kept as day
+        # rows — the rest already lives in the weekly buckets, folded there by a
+        # previous prune. Writing those days back would hand the next prune the
+        # same days a second time, and it adds rather than replaces: the weekly
+        # total and `fresh_power_tail` both grow on every cycle. That is how
+        # `openclaw/openclaw` came to show 527k stars of history against 390k
+        # actual, and `karpathy/autoresearch` 1.85x its real count.
+        cutoff = today - dt.timedelta(days=get_settings().retain_days)
+        days = [day for day in parse_star_history(history.data) if day.date >= cutoff]
         written = db.record_star_daily(conn, row["id"], days)
         db.set_etag(conn, row["id"], column="etag_history", etag=history.etag)
 

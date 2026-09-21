@@ -487,6 +487,26 @@ def review_queue(
     )
 
 
+@app.command("reset-history")
+def reset_history_cmd(
+    all_repos: bool = typer.Option(
+        False, "--all", help="Reset every backfilled repo, not only the inflated ones"
+    ),
+) -> None:
+    """Clear derived star history so the next backfill rebuilds it.
+
+    For repairing totals that a prune inflated. The weekly buckets are one-way —
+    the day rows they came from are gone — so re-fetching is the only repair.
+    """
+    settings = _require_database()
+    with db.connect(settings.db_path) as conn:
+        count = db.reset_history(conn, only_inflated=not all_repos)
+    console.print(
+        f"[green]reset-history[/green]: {count:,} reponun geçmişi temizlendi, "
+        "backfill yeniden çıkaracak"
+    )
+
+
 @app.command()
 def completeness() -> None:
     """Compare the corpus against GitHub's own count, bucket by bucket.

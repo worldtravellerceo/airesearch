@@ -848,3 +848,51 @@ def load_scoring_rows(
     for row in rows:
         row["carried_tail"] = _tail_at(row, today, decay)
     return rows
+
+
+def reset_history(conn: sqlite3.Connection, *, only_inflated: bool = True) -> int:
+    """Clear the derived star history so a backfill can rebuild it.
+
+    The weekly buckets and `fresh_power_tail` are one-way: the day rows they
+    were folded from are deleted, so a wrong total cannot be recomputed from
+    what is left. Re-fetching is the only repair.
+
+    `only_inflated` limits the work to repos whose recorded history already
+    exceeds their actual star count, which cannot happen legitimately — a repo
+    cannot have gained more stars than it has.
+    """
+    condition = ""
+    if only_inflated:
+        condition = """
+            AND (
+                COALESCE((SELECT sum(stars_gained) FROM repo_star_daily
+                          WHERE repo_id = repos.id), 0)
+              + COALESCE((SELECT sum(stars_gained) FROM repo_star_weekly
+                          WHERE repo_id = repos.id), 0)
+            ) > repos.stars
+        """
+
+    targets = [
+        row["id"]
+        for row in conn.execute(
+            f"SELECT id FROM repos WHERE history_backfilled_through IS NOT NULL {condition}"
+        )
+    ]
+    if not targets:
+        return 0
+
+    marks = ",".join("?" * len(targets))
+    conn.execute(f"DELETE FROM repo_star_weekly WHERE repo_id IN ({marks})", targets)
+    conn.execute(f"DELETE FROM repo_star_daily WHERE repo_id IN ({marks})", targets)
+    conn.execute(
+        f"""
+        UPDATE repos SET history_backfilled_through = NULL,
+                         fresh_power_tail = 0,
+                         fresh_power_tail_asof = NULL,
+                         etag_history = NULL
+        WHERE id IN ({marks})
+        """,
+        targets,
+    )
+    conn.commit()
+    return len(targets)

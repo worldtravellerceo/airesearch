@@ -258,3 +258,54 @@ async def test_collect_bounds_itself_to_the_tracked_universe(conn, monkeypatch):
     settings = collect_mod.get_settings()
     assert captured["track_limit"] == settings.track_limit
     assert captured["track_limit"] is not None
+
+
+async def test_repeated_collects_do_not_inflate_the_lifetime_history(conn):
+    """The bug a reader found on the site: `openclaw/openclaw` showed a star
+    curve topping out near 527k against 390k actual stars, and
+    `karpathy/autoresearch` 1.85x its real count. 518 of 1,200 backfilled repos
+    were inflated, none were short.
+
+    One history page is thirty weeks but only `retain_days` of it is kept as day
+    rows; the rest has already been folded into the weekly buckets. Writing
+    those days back handed the next prune the same days again, and the roll-up
+    adds rather than replaces — so the weekly total and `fresh_power_tail` both
+    grew on every cycle. Two collects over the same unchanged history must come
+    to the same total as one.
+    """
+    seed(conn)
+    weeks = [week_json(SUNDAY - dt.timedelta(days=7 * i), 10) for i in range(30)]
+
+    def handler(request: httpx.Request) -> httpx.Response:
+        if request.url.path.endswith("/stargazers/history"):
+            return httpx.Response(200, json=weeks, headers=_headers())
+        return httpx.Response(200, json=repo_json(stars=2_100), headers=_headers())
+
+    async def _sleep(_seconds):
+        return None
+
+    def total() -> int:
+        daily = conn.execute(
+            "SELECT COALESCE(sum(stars_gained), 0) AS n FROM repo_star_daily"
+        ).fetchone()["n"]
+        weekly = conn.execute(
+            "SELECT COALESCE(sum(stars_gained), 0) AS n FROM repo_star_weekly"
+        ).fetchone()["n"]
+        return daily + weekly
+
+    async with GitHubClient(
+        token="t", transport=httpx.MockTransport(handler), sleep=_sleep
+    ) as client:
+        await collect(conn, client, today=TODAY)
+        db.prune_star_history(conn, today=TODAY, retain_days=120, half_life_days=180)
+        after_first = total()
+        tail_first = conn.execute("SELECT fresh_power_tail AS t FROM repos").fetchone()["t"]
+
+        # The same history again — nothing about the repo changed.
+        conn.execute("UPDATE repos SET etag_history = NULL, last_checked_at = NULL")
+        conn.commit()
+        await collect(conn, client, today=TODAY)
+        db.prune_star_history(conn, today=TODAY, retain_days=120, half_life_days=180)
+
+    assert total() == after_first, "the lifetime history grew on a repeat collect"
+    assert conn.execute("SELECT fresh_power_tail AS t FROM repos").fetchone()["t"] == tail_first
