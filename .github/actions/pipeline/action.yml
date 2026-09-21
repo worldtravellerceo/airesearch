@@ -43,12 +43,25 @@ runs:
           echo "::notice::no data release yet — the first run creates it"
           exit 0
         fi
-        if gh release download data --pattern 'airadar.db.gz' --dir /tmp --clobber; then
-          gunzip -c /tmp/airadar.db.gz > data/airadar.db
-          echo "database: $(du -h data/airadar.db | cut -f1)"
-        else
-          echo "::notice::data release exists but carries no database yet"
+        # An empty database is a legitimate starting point exactly once: before
+        # the first run has published anything. After that, continuing without
+        # the download is not a degraded run, it is a run that rebuilds the
+        # corpus from nothing and then publishes it over the real one. So the
+        # question is not "did the download work" but "is there something we
+        # should have downloaded" — and if there is, a failure has to stop the
+        # job rather than print a notice.
+        # Not piped into grep: `grep -q` exits at the first match, `gh` takes
+        # SIGPIPE, and `pipefail` turns that into a failed command — which this
+        # very check would then read as "there is no database", and start from
+        # an empty one. Exactly the failure being guarded against.
+        assets=$(gh release view data --json assets --jq '.assets[].name')
+        if ! printf '%s\n' "$assets" | grep -qx 'airadar.db.gz'; then
+          echo "::notice::the data release carries no database yet"
+          exit 0
         fi
+        gh release download data --pattern 'airadar.db.gz' --dir /tmp --clobber
+        gunzip -c /tmp/airadar.db.gz > data/airadar.db
+        echo "database: $(du -h data/airadar.db | cut -f1)"
 
     - name: Create the schema if this is a fresh start
       shell: bash

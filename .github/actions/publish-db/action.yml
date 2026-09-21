@@ -5,6 +5,12 @@ inputs:
   token:
     description: Token used to write the data release
     required: true
+  allow-shrink:
+    description: >
+      Publish even if the database is drastically smaller than the one it
+      replaces. Only for a deliberate rebuild.
+    required: false
+    default: "false"
 
 runs:
   using: composite
@@ -29,8 +35,36 @@ runs:
         echo "veritabanı: ${before} MB -> ${after} MB (vacuum sonrası)"
         gzip -9 -c data/airadar.db > airadar.db.gz
         ls -lh airadar.db.gz
-        gh release view data >/dev/null 2>&1 || gh release create data \
-          --title "Veri deposu" \
-          --notes "AI Radar'ın SQLite veritabanı. Her çalıştırmada değiştirilir; git geçmişinde tutulmaz." \
-          --latest=false
+
+        if ! gh release view data >/dev/null 2>&1; then
+          gh release create data \
+            --title "Veri deposu" \
+            --notes "AI Radar'ın SQLite veritabanı. Her çalıştırmada değiştirilir; git geçmişinde tutulmaz." \
+            --latest=false
+        fi
+
+        # This step runs on `if: always()`, which is right — a run that died
+        # half way through still has work worth keeping. But it also means it
+        # runs after a cancelled or broken setup, and the file sitting there
+        # might be a freshly initialised empty schema rather than the corpus.
+        # Publishing that erases every repository we have ever found, silently,
+        # and the only copy is the asset being overwritten.
+        new=$(stat -c %s airadar.db.gz)
+        old=$(gh release view data --json assets \
+              --jq '.assets[] | select(.name == "airadar.db.gz") | .size' || echo 0)
+        old=${old:-0}
+        if [ "$old" -gt 0 ] && [ "${{ inputs.allow-shrink }}" != "true" ]; then
+          # Half is far below any honest day-to-day movement: pruning moves the
+          # file by a few percent, and a vacuum after a big backfill moves it
+          # the other way. Losing half means losing the corpus.
+          floor=$(( old / 2 ))
+          if [ "$new" -lt "$floor" ]; then
+            echo "::error::refusing to publish: ${new} bytes against ${old} already" \
+                 "published. That is not a day's change — it is a database that" \
+                 "was rebuilt from nothing. Re-run with allow-shrink if this is" \
+                 "deliberate."
+            exit 1
+          fi
+        fi
+
         gh release upload data airadar.db.gz --clobber
