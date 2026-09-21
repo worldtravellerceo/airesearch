@@ -13,6 +13,8 @@ import { ALL_CATEGORIES, BOARDS } from "@/lib/types";
 import type {
   BoardFile,
   CategoryRow,
+  CompanyBoardFile,
+  CompanyBoardSummary,
   IndexEntry,
   Manifest,
   Overview,
@@ -73,4 +75,12 @@ export async function getBoardCounts(): Promise<Record<string, number>> {
 
 export function getRepo(owner: string, name: string): Promise<RepoDetail | null> {
   return readJson<RepoDetail | null>(`repos/${owner}/${name}.json`, null);
+}
+
+export async function getCompanyBoards(): Promise<CompanyBoardSummary[]> {
+  return (await getManifest()).companies ?? [];
+}
+
+export function getCompanyBoard(slug: string): Promise<CompanyBoardFile | null> {
+  return readJson<CompanyBoardFile | null>(`companies/${slug}.json`, null);
 }

@@ -134,4 +134,95 @@ export type Manifest = {
   boards: string[];
   categories: string[];
   repos: string[];
+  /** Absent on a site built before the company universe existed, and empty
+   *  until a source has actually run. Both mean the same thing to the reader:
+   *  no company tabs. */
+  companies?: CompanyBoardSummary[];
 };
+
+/** One row of a company board.
+ *
+ *  Deliberately loose: the eight boards answer different questions and share
+ *  only the company they are about, so a single strict shape would be a lie in
+ *  seven of the eight cases. The column spec for each board names the fields
+ *  it actually reads.
+ */
+export type CompanyEntry = {
+  domain?: string | null;
+  name?: string | null;
+  top_repo?: string | null;
+  repo_stars?: number | null;
+
+  // funded
+  company_name?: string | null;
+  company_domain?: string | null;
+  round_type?: string | null;
+  amount_usd?: number | null;
+  announced_on?: string | null;
+  investors?: string | null;
+  source?: string | null;
+  source_url?: string | null;
+
+  // raised / valuation
+  total_usd?: number | null;
+  rounds?: number | null;
+  last_round?: string | null;
+  last_round_on?: string | null;
+  employee_range?: string | null;
+  country?: string | null;
+  valuation_usd?: number | null;
+  valuation_src?: string | null;
+  valuation_on?: string | null;
+
+  // acquisitions
+  acquirer?: string | null;
+  target?: string | null;
+
+  // traffic
+  month?: string | null;
+  visits?: number | null;
+  prev_visits?: number | null;
+  growth?: number | null;
+  global_rank?: number | null;
+  category?: string | null;
+  traffic_genai?: number | null;
+
+  // g2
+  product_slug?: string | null;
+  reviews?: number | null;
+  avg_rating?: number | null;
+};
+
+export type CompanyBoardSummary = {
+  slug: string;
+  title: string;
+  blurb: string;
+  count: number;
+};
+
+export type CompanyBoardFile = {
+  slug: string;
+  title: string;
+  blurb: string;
+  as_of: string | null;
+  entries: CompanyEntry[];
+};
+
+/** Every company board the exporter knows how to write.
+ *
+ *  The tabs still come from the manifest — only the boards that have rows are
+ *  offered — but the routes are built from this list. A static export refuses
+ *  to build a dynamic segment with nothing in it, and a page that exists
+ *  without being linked claims nothing: it is there so a bookmarked URL keeps
+ *  working through a run where that source happened to return no rows.
+ */
+export const COMPANY_BOARD_SLUGS = [
+  "funded",
+  "valuation",
+  "raised",
+  "acquired",
+  "traffic",
+  "rising",
+  "ai-traffic",
+  "rated",
+] as const;
