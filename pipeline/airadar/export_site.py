@@ -16,6 +16,7 @@ import sqlite3
 from dataclasses import dataclass
 from pathlib import Path
 
+from airadar.companies import boards as company_boards
 from airadar.db import repo as db
 from airadar.scoring.leaderboards import ALL_CATEGORIES, BOARDS
 
@@ -72,6 +73,7 @@ def export(conn: sqlite3.Connection, out_dir: Path, *, date: dt.date | None = No
 
     slugs = _boards(conn, out_dir, date, categories, report)
     detail_slugs = _details(conn, out_dir, date, report)
+    company_slugs = _company_boards(conn, out_dir, date, report)
 
     _write(
         out_dir / "manifest.json",
@@ -80,6 +82,7 @@ def export(conn: sqlite3.Connection, out_dir: Path, *, date: dt.date | None = No
             "boards": slugs,
             "categories": [c["category"] for c in categories],
             "repos": detail_slugs,
+            "companies": company_slugs,
         },
         report,
     )
@@ -283,3 +286,34 @@ def _history(conn: sqlite3.Connection, repo_id: int, stars_total: int) -> list[d
         running += gained
         out.append({"date": day, "stars_gained": gained, "cumulative": running})
     return out
+
+
+def _company_boards(
+    conn: sqlite3.Connection, out_dir: Path, date: dt.date, report: ExportReport
+) -> list[dict]:
+    """Write the boards for the second universe, skipping the ones with no rows.
+
+    A board that writes itself empty claims the question was asked and came
+    back blank. Until a source has run, the truthful thing is for the tab not
+    to be there — so an empty board is left out of the manifest and the site
+    never offers it.
+    """
+    written: list[dict] = []
+    for slug, (build, title, blurb) in company_boards.BOARDS.items():
+        try:
+            rows = build(conn, today=date) if slug == "funded" else build(conn)
+        except sqlite3.OperationalError as exc:
+            # An older database on the data branch has none of these tables yet.
+            log.warning("export: company board %s unavailable (%s)", slug, exc)
+            continue
+        if not rows:
+            continue
+        _write(
+            out_dir / "companies" / f"{slug}.json",
+            {"slug": slug, "title": title, "blurb": blurb, "as_of": date, "entries": rows},
+            report,
+        )
+        written.append({"slug": slug, "title": title, "blurb": blurb, "count": len(rows)})
+    if written:
+        log.info("export: %d company boards", len(written))
+    return written
