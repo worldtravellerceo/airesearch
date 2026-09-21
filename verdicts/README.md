@@ -25,3 +25,32 @@ Judging a repo is optional. A repo left out of these files stays in the
 escalation band, which is the honest outcome when the evidence does not
 support a call: `nikivdev/code` has no description and the topics
 `agents, autonomy, moonbit`, and is not in here for that reason.
+
+## The weekly review
+
+The rule engine gives 53,475 repos above a thousand stars a confidence of
+exactly zero — it found no signal at all — and records that as "not AI". Zero
+is the one reading the score does not support: it means no evidence was found,
+not that evidence of absence was. `anomalyco/opencode` sat in that pile at
+208,847 stars, described as "The open source coding agent."
+
+Teaching the engine new words fixes the words we already know are missing. It
+cannot fix the ones that do not exist yet — the 2026 agent vocabulary was
+invisible until someone read the repositories. So a slice gets read every week.
+
+```
+airadar review-queue --limit 1200 --out review-queue.json
+```
+
+Biggest first, because that is the order in which a miss costs something. Repos
+named in any file here are skipped, so the queue does not hand back the same
+projects; `remaining_after_this_slice` says how much is left.
+
+Judge each one, write the verdicts as a new file here, and the next
+classification run picks them up. Measured against a hand-read sample of 100,
+about 7% of this pile is AI — call it 3,700 repos across the whole queue, and
+the yield is highest in the 2,500–10,000 star band rather than at the very top.
+
+Leaving a repo out of the verdicts is a valid answer. It stays in the queue and
+comes back, which is the right outcome when the description genuinely does not
+support a call.

@@ -459,6 +459,34 @@ def coverage(
         raise typer.Exit(1)
 
 
+@app.command("review-queue")
+def review_queue(
+    out: str = typer.Option("review-queue.json", "--out", help="Where to write the slice"),
+    limit: int = typer.Option(1200, "--limit", help="How many repos in this slice"),
+    min_stars: int = typer.Option(1000, "--min-stars", help="Ignore repos below this"),
+    verdicts: str = typer.Option("verdicts", "--verdicts", help="Directory of past verdicts"),
+) -> None:
+    """Export the repos the rule engine had no opinion about, biggest first.
+
+    Not the escalation band — these scored zero, meaning no signal was found at
+    all, which the engine recorded as "not AI". That is the one reading a zero
+    does not support. `anomalyco/opencode` sat here at 208,847 stars.
+    """
+    settings = _require_database()
+    with db.connect(settings.db_path) as conn:
+        report = classify_run.export_review_queue(
+            conn,
+            Path(out),
+            limit=limit,
+            min_stars=min_stars,
+            verdicts_dir=Path(verdicts),
+        )
+    console.print(
+        f"[green]review-queue[/green]: {report.exported:,} repo {out} dosyasına yazıldı "
+        f"({report.considered:,} aday)"
+    )
+
+
 @app.command()
 def completeness() -> None:
     """Compare the corpus against GitHub's own count, bucket by bucket.

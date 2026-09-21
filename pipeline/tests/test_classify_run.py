@@ -451,3 +451,74 @@ def test_a_rules_change_does_not_throw_away_a_hand_made_verdict(conn, monkeypatc
 
     assert report.imported == 1
     assert report.unmatched == []
+
+
+# --- the weekly review queue -----------------------------------------------
+
+
+def test_the_review_queue_holds_what_the_engine_had_no_opinion_about(conn, tmp_path):
+    """Not the escalation band. These scored zero — no signal at all — which the
+    engine recorded as "not AI". `anomalyco/opencode` sat here at 208,847 stars
+    with the description "The open source coding agent."
+    """
+    add_repo(conn, 1, "acme/silent", "A tool for teams", [], stars=9_000)
+    add_repo(conn, 2, "acme/obvious", "An LLM agent framework", ["llm"], stars=8_000)
+    add_repo(conn, 3, "acme/ambiguous", "A lightweight agent", ["agent"], stars=7_000)
+    conn.commit()
+
+    out = tmp_path / "queue.json"
+    classify_run.export_review_queue(conn, out, limit=10, min_stars=1_000)
+    names = [r["full_name"] for r in json.loads(out.read_text())["repos"]]
+
+    assert names == ["acme/silent"]
+
+
+def test_the_queue_is_ordered_by_stars_and_reports_what_is_left(conn, tmp_path):
+    """Biggest first, because that is the order in which a miss costs
+    something, and capped because this is worked through a slice at a time."""
+    for repo_id, stars in enumerate([500, 5_000, 90_000, 20_000], start=1):
+        add_repo(conn, repo_id, f"acme/r{repo_id}", "A tool for teams", [], stars=stars)
+    conn.commit()
+
+    out = tmp_path / "queue.json"
+    classify_run.export_review_queue(conn, out, limit=2, min_stars=1_000)
+    payload = json.loads(out.read_text())
+
+    assert [r["full_name"] for r in payload["repos"]] == ["acme/r3", "acme/r4"]
+    assert payload["remaining_after_this_slice"] == 1  # r2; r1 is under the floor
+
+
+def test_repos_already_judged_are_not_handed_back_next_week(conn, tmp_path):
+    """The verdict files are the record of what has been looked at, not the
+    database: a rules re-run rewrites the stored method, so the database
+    forgets and the same repos come round again every week."""
+    add_repo(conn, 1, "acme/seen", "A tool for teams", [], stars=9_000)
+    add_repo(conn, 2, "acme/unseen", "Another tool for teams", [], stars=8_000)
+    conn.commit()
+
+    verdicts = tmp_path / "verdicts"
+    verdicts.mkdir()
+    (verdicts / "old.json").write_text(
+        json.dumps({"repos": [{"full_name": "acme/seen", "is_ai": False}]}),
+        encoding="utf-8",
+    )
+
+    out = tmp_path / "queue.json"
+    classify_run.export_review_queue(conn, out, limit=10, min_stars=1_000, verdicts_dir=verdicts)
+    names = [r["full_name"] for r in json.loads(out.read_text())["repos"]]
+
+    assert names == ["acme/unseen"]
+
+
+def test_the_queue_carries_the_hash_a_verdict_is_validated_against(conn, tmp_path):
+    """So a slice round-trips: export, judge, import, without a second lookup."""
+    add_repo(conn, 1, "acme/silent", "A tool for teams", [], stars=9_000)
+    conn.commit()
+
+    out = tmp_path / "queue.json"
+    classify_run.export_review_queue(conn, out, limit=10, min_stars=1_000)
+    entry = json.loads(out.read_text())["repos"][0]
+
+    facts, _ = classify_run.load_facts(conn)
+    expected = next(f.inputs_hash() for f in facts if f.full_name == "acme/silent")
+    assert entry["inputs_hash"] == expected

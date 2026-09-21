@@ -338,3 +338,101 @@ def import_verdicts(conn: sqlite3.Connection, path: Path) -> ClassifyReport:
     ).fetchone()["n"]
     log.info("classify: imported %d verdicts", report.imported)
     return report
+
+
+# --- the weekly review queue -----------------------------------------------
+
+
+def reviewed_names(verdicts_dir: Path) -> set[str]:
+    """Every repo a person has already judged, across all verdict files.
+
+    The verdict files are the record of what has been looked at, not the
+    database: a rules re-run rewrites `repo_classification.method`, so the
+    database forgets. Reading the files keeps the queue from handing back the
+    same repos every week.
+    """
+    seen: set[str] = set()
+    if not verdicts_dir.is_dir():
+        return seen
+    for child in sorted(verdicts_dir.glob("*.json")):
+        payload = json.loads(child.read_text(encoding="utf-8"))
+        for entry in payload.get("repos", []):
+            if entry.get("full_name"):
+                seen.add(entry["full_name"])
+    return seen
+
+
+def export_review_queue(
+    conn: sqlite3.Connection,
+    path: Path,
+    *,
+    limit: int,
+    min_stars: int = 1_000,
+    verdicts_dir: Path | None = None,
+) -> ClassifyReport:
+    """Write the repos the rule engine had no opinion about, biggest first.
+
+    These are not the escalation band. They scored zero — the engine found no
+    signal at all and recorded "not AI", which is the one reading the score does
+    not support: absence of evidence. `anomalyco/opencode` sat here at 208,847
+    stars with the description "The open source coding agent.", and only a
+    hand-written probe found it.
+
+    Sorted by stars because that is the order in which a miss costs something,
+    and capped because this is meant to be worked through a slice at a time.
+    """
+    report = ClassifyReport()
+    facts, _ = load_facts(conn)
+    already = reviewed_names(verdicts_dir) if verdicts_dir else set()
+
+    stars = {
+        row["full_name"]: row["stars"]
+        for row in conn.execute("SELECT full_name, stars FROM repos WHERE is_fork = 0")
+    }
+
+    candidates: list[tuple[int, rules.RepoFacts]] = []
+    for item in facts:
+        if item.full_name in already:
+            continue
+        count = stars.get(item.full_name, 0)
+        if count < min_stars:
+            continue
+        if rules.classify(item).confidence > 0.0:
+            continue
+        candidates.append((count, item))
+
+    report.considered = len(candidates)
+    candidates.sort(key=lambda pair: -pair[0])
+
+    items = [
+        {
+            "full_name": item.full_name,
+            "stars": count,
+            "description": item.description,
+            "topics": list(item.topics),
+            "language": item.language,
+            "inputs_hash": item.inputs_hash(),
+        }
+        for count, item in candidates[:limit]
+    ]
+
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(
+        json.dumps(
+            {
+                "generated_at": dt.datetime.now(dt.UTC).isoformat(),
+                "remaining_after_this_slice": max(0, len(candidates) - len(items)),
+                "repos": items,
+            },
+            ensure_ascii=False,
+            indent=1,
+        ),
+        encoding="utf-8",
+    )
+    report.exported = len(items)
+    log.info(
+        "classify: %d repos queued for review, %d left after this slice",
+        len(items),
+        max(0, len(candidates) - len(items)),
+    )
+    return report
