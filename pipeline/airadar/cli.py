@@ -84,8 +84,27 @@ async def _doctor(repo: str) -> None:
                 f"core {lane['core']}/{lane['core_limit']} per hour, "
                 f"search {lane['search']}/{lane['search_limit']} per minute",
             )
-        core_ceiling = sum(lane.get("core_limit", 0) for lane in lanes if lane["ok"])
-        table.add_row("ceiling", f"{core_ceiling:,} core requests per hour")
+        # The sum is only the ceiling if the lanes are separate allowances.
+        # GitHub applies the limit to the account, so three tokens belonging to
+        # one user are three views of one bucket — and adding them up would
+        # predict a run three times faster than it can possibly be.
+        shared = any(lane.get("shared_quota") for lane in lanes)
+        live = [lane for lane in lanes if lane["ok"]]
+        limits = [lane.get("core_limit", 0) for lane in live]
+        if shared or len(live) < 2:
+            table.add_row("ceiling", f"{max(limits or [0]):,} core requests per hour")
+            if shared:
+                table.add_row(
+                    "[yellow]note[/yellow]",
+                    "the tokens share one allowance — GitHub applies the rate "
+                    "limit per account, not per token, so extra tokens from the "
+                    "same user add nothing. Only tokens from different accounts do.",
+                )
+        else:
+            table.add_row(
+                "ceiling",
+                f"{sum(limits):,} core requests per hour across {len(live)} separate allowances",
+            )
         if any(lane.get("core_limit", 5000) < 5000 for lane in lanes):
             table.add_row(
                 "[yellow]warning[/yellow]",

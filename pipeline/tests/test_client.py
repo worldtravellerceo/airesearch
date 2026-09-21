@@ -325,3 +325,68 @@ async def test_a_single_token_behaves_exactly_as_before(recorded_sleeps):
 
     assert len(sleeps) == 1
     assert 55 <= sleeps[0] <= 62
+
+
+async def test_two_tokens_from_one_account_are_reported_as_one_allowance(recorded_sleeps):
+    """GitHub: "All of these requests count towards your personal rate limit of
+    5,000 requests per hour." A client that summed the lanes would predict a
+    run three times faster than it can be, and then blame the network."""
+    _, fake_sleep = recorded_sleeps
+    state = {"remaining": 5000}
+
+    def handler(request: httpx.Request) -> httpx.Response:
+        if request.url.path == "/rate_limit":
+            return httpx.Response(
+                200,
+                json={
+                    "resources": {
+                        "core": {
+                            "remaining": state["remaining"],
+                            "limit": 5000,
+                            "reset": time.time() + 3600,
+                        },
+                        "search": {"remaining": 30, "limit": 30, "reset": time.time() + 60},
+                    }
+                },
+            )
+        # One shared bucket: spending on either token moves the same counter.
+        state["remaining"] -= 1
+        return httpx.Response(200, json={}, headers=_headers())
+
+    async with GitHubClient(
+        tokens=["a", "b"], transport=httpx.MockTransport(handler), sleep=fake_sleep
+    ) as client:
+        report = await client.check_lanes()
+
+    assert all(lane["shared_quota"] for lane in report)
+
+
+async def test_tokens_from_different_accounts_are_reported_as_separate(recorded_sleeps):
+    _, fake_sleep = recorded_sleeps
+    spent = {"Bearer a": 0, "Bearer b": 0}
+
+    def handler(request: httpx.Request) -> httpx.Response:
+        token = request.headers["authorization"]
+        if request.url.path == "/rate_limit":
+            return httpx.Response(
+                200,
+                json={
+                    "resources": {
+                        "core": {
+                            "remaining": 5000 - spent[token],
+                            "limit": 5000,
+                            "reset": time.time() + 3600,
+                        },
+                        "search": {"remaining": 30, "limit": 30, "reset": time.time() + 60},
+                    }
+                },
+            )
+        spent[token] += 1
+        return httpx.Response(200, json={}, headers=_headers())
+
+    async with GitHubClient(
+        tokens=["a", "b"], transport=httpx.MockTransport(handler), sleep=fake_sleep
+    ) as client:
+        report = await client.check_lanes()
+
+    assert not any(lane["shared_quota"] for lane in report)

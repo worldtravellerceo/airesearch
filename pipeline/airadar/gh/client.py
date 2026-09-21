@@ -9,10 +9,15 @@ Three things matter here and nothing else does:
    instead of burning retries on 403s.
 3. **Honest counters.** Every run reports how many calls it actually spent so the
    cost estimates in the plan can be checked against reality.
-4. **Throughput.** The primary rate limit is per token, so the client drives one
-   lane per token and sends each request down the lane with the most quota
-   left. Requests are not serialised, so several are in flight at once; the
-   limiter, not the round-trip time, decides the pace.
+4. **Throughput.** Requests are not serialised — several are in flight at once,
+   because a sequential client is bounded by the round trip rather than by
+   quota. Several tokens can be driven at once too, each in its own lane with
+   its own buckets, but note what GitHub actually says about that: "All of
+   these requests count towards your personal rate limit of 5,000 requests per
+   hour." The limit belongs to the **account**, not the token, so a second
+   token from the same account raises nothing. Lanes only multiply the ceiling
+   when the tokens belong to different accounts. `check_lanes` measures which
+   of the two is true rather than assuming.
 """
 
 from __future__ import annotations
@@ -184,11 +189,15 @@ class GitHubClient:
         return len(self._lanes)
 
     async def check_lanes(self) -> list[dict[str, Any]]:
-        """Read every lane's quota. `/rate_limit` is free and does not count.
+        """Read every lane's quota, and find out whether the lanes are real.
 
-        The ceiling this run is working against is the sum of these, and it is
-        worth printing: the difference between one token and three is the
-        difference between a two-hour backfill and a forty-minute one.
+        `/rate_limit` is free and does not count against anything, so reading
+        each lane costs nothing. What is not free is believing the sum of them.
+        GitHub applies the primary limit to the **account**, not the token, so
+        three tokens belonging to one user are three views of one allowance —
+        and a client that added them up would think it had 45,000 requests an
+        hour when it had 15,000, then wonder why the run took three times as
+        long as predicted. `shared_quota` below is that question, measured.
         """
         report = []
         for lane in list(self._lanes):
@@ -230,7 +239,43 @@ class GitHubClient:
             )
         if not self._lanes:
             raise GitHubError(401, "/rate_limit", "every configured token was rejected")
+        if len(self._lanes) > 1:
+            shared = await self._lanes_share_a_bucket()
+            for entry in report:
+                entry["shared_quota"] = shared
         return report
+
+    async def _lanes_share_a_bucket(self) -> bool:
+        """Spend one request on the first lane and see whether the second paid.
+
+        Two tokens from one account share a bucket; two from different accounts
+        do not. Nothing in a token says which, and the difference is the whole
+        value of having more than one — so it is measured, once, at the start
+        of a run, for the price of a single request.
+        """
+        first, second = self._lanes[0], self._lanes[1]
+        before = await self._core_remaining(second)
+        if before is None:
+            return False
+        # `/user` is the cheapest endpoint that actually counts.
+        await first.client.get("/user")
+        after = await self._core_remaining(second)
+        if after is None:
+            return False
+        shared = after < before
+        log.info(
+            "rate limit: the lanes %s a bucket (%s -> %s on the second while the first spent one)",
+            "share" if shared else "do not share",
+            before,
+            after,
+        )
+        return shared
+
+    async def _core_remaining(self, lane: _Lane) -> int | None:
+        response = await lane.client.get("/rate_limit")
+        if response.status_code >= 300:
+            return None
+        return int(response.json()["resources"]["core"]["remaining"])
 
     async def __aenter__(self) -> GitHubClient:
         return self
