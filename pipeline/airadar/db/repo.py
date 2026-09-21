@@ -276,6 +276,29 @@ def set_readme(
     )
 
 
+def record_packages(
+    conn: sqlite3.Connection,
+    by_repo: dict[str, set[tuple[str, str]]],
+    *,
+    now: dt.datetime | None = None,
+) -> int:
+    """Store which bellwether packages each repository depends on."""
+    rows = [
+        (full_name, ecosystem, package, now or dt.datetime.now(dt.UTC))
+        for full_name, pairs in by_repo.items()
+        for ecosystem, package in pairs
+    ]
+    if not rows:
+        return 0
+    conn.executemany(
+        "INSERT OR REPLACE INTO repo_packages (full_name, ecosystem, package, seen_at) "
+        "VALUES (?, ?, ?, ?)",
+        rows,
+    )
+    conn.commit()
+    return len(rows)
+
+
 def mark_readme_checked(
     conn: sqlite3.Connection, repo_id: int, now: dt.datetime | None = None
 ) -> None:

@@ -108,7 +108,12 @@ class EcosystemsClient:
     async def dependent_repos(
         self, ecosystem: str, package: str, *, max_pages: int = 10
     ) -> set[str]:
-        """GitHub repos of packages that depend on `package`."""
+        """GitHub repos of packages that depend on `package`.
+
+        The caller gets a bare set, which is all discovery needs. Which package
+        produced each sighting is the interesting part for classification, and
+        `discover_via_dependencies` keeps it.
+        """
         registry = REGISTRY_FOR_ECOSYSTEM.get(ecosystem)
         if registry is None:
             raise ValueError(f"unknown ecosystem {ecosystem!r}")
@@ -139,16 +144,24 @@ async def discover_via_dependencies(
     packages: dict[str, tuple[str, ...]] | None = None,
     max_pages: int = 10,
     client: EcosystemsClient | None = None,
-) -> tuple[set[str], EcosystemsStats]:
-    """Repos depending on any bellwether AI package."""
+) -> tuple[dict[str, set[tuple[str, str]]], EcosystemsStats]:
+    """Repos depending on any bellwether AI package, and which ones.
+
+    Returns `{repo_full_name: {(ecosystem, package), ...}}` rather than a bare
+    set. The package is the whole value of this channel for classification — a
+    repository that imports `torch` is a machine-learning project whatever its
+    description says — and it used to be discarded here, with all 29 bellwethers
+    collapsing into the single string "ecosystems" as the discovery source.
+    """
     packages = packages or BELLWETHER_PACKAGES
     owned = client is None
     client = client or EcosystemsClient()
-    found: set[str] = set()
+    found: dict[str, set[tuple[str, str]]] = {}
     try:
         for ecosystem, names in packages.items():
             for name in names:
-                found |= await client.dependent_repos(ecosystem, name, max_pages=max_pages)
+                for repo in await client.dependent_repos(ecosystem, name, max_pages=max_pages):
+                    found.setdefault(repo, set()).add((ecosystem, name))
                 log.info("ecosystems: %s:%s -> %d repos so far", ecosystem, name, len(found))
     finally:
         if owned:

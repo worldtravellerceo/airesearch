@@ -361,6 +361,14 @@ AI_TOKENS: frozenset[str] = frozenset(
 # paragraph is describing itself. Measured against the repos this tier exists
 # to rescue, three is where the two cases separate.
 README_TOKEN_TIERS: tuple[tuple[int, float], ...] = ((3, 0.72), (2, 0.40), (1, 0.18))
+
+# A dependency is the one piece of evidence that does not care what language the
+# project is written about, or whether anybody bothered to describe it. A
+# repository that imports `torch` is a machine-learning project; a repository
+# that imports `@anthropic-ai/sdk` is an LLM application. This is as strong as a
+# decisive topic and rather harder to fake, since it is what the code actually
+# does rather than what the README claims.
+WEIGHT_BELLWETHER_PACKAGE = 0.85
 # Several weak signals should be able to add up to a decision, but never to the
 # certainty that a decisive topic buys. This has to sit *above* the `high`
 # threshold or it stops being a ceiling and becomes a bar: the first version
@@ -399,6 +407,8 @@ class RepoFacts:
     # request, which is why it is not in the sentence above — and why it is
     # fetched for the repositories that scored zero on everything else.
     readme_excerpt: str = ""
+    # Bellwether packages this repository depends on, from ecosyste.ms.
+    packages: tuple[str, ...] = ()
 
     @classmethod
     def from_row(cls, row: dict) -> RepoFacts:
@@ -409,6 +419,7 @@ class RepoFacts:
             language=row.get("language"),
             homepage=row.get("homepage"),
             readme_excerpt=row.get("readme_excerpt") or "",
+            packages=tuple(row.get("packages") or ()),
         )
 
     def inputs_hash(self) -> str:
@@ -450,6 +461,7 @@ class RepoFacts:
                 RULES_VERSION,
                 self.inputs_hash(),
                 hashlib.sha256(self.readme_excerpt.encode("utf-8")).hexdigest()[:16],
+                ",".join(sorted(self.packages)),
             ]
         )
         return hashlib.sha256(payload.encode("utf-8")).hexdigest()[:32]
@@ -506,6 +518,9 @@ def classify(facts: RepoFacts, *, low: float = 0.2, high: float = 0.8) -> Verdic
     for token in sorted(name_tokens & NAME_TOKENS):
         observe(token, f"name:{token}", WEIGHT_NAME_TOKEN)
 
+    for package in sorted({p.lower() for p in facts.packages}):
+        observe(f"pkg/{package}", f"pkg:{package}", WEIGHT_BELLWETHER_PACKAGE)
+
     # The README last, and only for terms nothing else has already found: a
     # phrase seen in both the description and the README is one fact, and
     # `observe` keeps the higher weight, so the description's tier wins.
@@ -531,7 +546,7 @@ def classify(facts: RepoFacts, *, low: float = 0.2, high: float = 0.8) -> Verdic
 
     confidence = _noisy_or(weight for _, weight in signals)
     has_decisive = any(
-        key.startswith(("topic:", "phrase:", "owner:", "readme:")) for key, _ in signals
+        key.startswith(("topic:", "phrase:", "owner:", "readme:", "pkg:")) for key, _ in signals
     )
     if not has_decisive:
         # Weak evidence only. Cap it below certainty so these still get read.

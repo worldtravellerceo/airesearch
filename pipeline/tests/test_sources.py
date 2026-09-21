@@ -58,7 +58,7 @@ async def test_ecosystems_survives_an_unavailable_service():
     async with EcosystemsClient(transport=httpx.MockTransport(handler), sleep=_no_sleep) as client:
         found, stats = await discover_via_dependencies(packages={"pypi": ("torch",)}, client=client)
 
-    assert found == set()
+    assert found == {}
     assert stats.errors == 1
 
 
@@ -114,3 +114,31 @@ async def test_huggingface_rejects_unknown_kind():
     ) as client:
         with pytest.raises(ValueError, match="unknown Hub kind"):
             await client.linked_repos("datasets")
+
+
+async def test_which_package_produced_a_sighting_is_kept():
+    """It used to be dropped here, and every one of the 29 bellwethers collapsed
+    into the single string "ecosystems" as the discovery source. The package is
+    the whole value of this channel for classification: a repository that
+    imports `torch` is a machine-learning project whatever its description
+    says, and in whatever language it does not say it."""
+
+    def handler(request: httpx.Request) -> httpx.Response:
+        if request.url.params.get("page") != "1":
+            return httpx.Response(200, json=[])
+        package = request.url.path.rsplit("/", 2)[-2]
+        return httpx.Response(
+            200,
+            json=[
+                {"repository_url": "https://github.com/acme/both"},
+                {"repository_url": f"https://github.com/acme/only-{package}"},
+            ],
+        )
+
+    async with EcosystemsClient(transport=httpx.MockTransport(handler), sleep=_no_sleep) as client:
+        found, _ = await discover_via_dependencies(
+            packages={"pypi": ("torch", "transformers")}, client=client
+        )
+
+    assert found["acme/both"] == {("pypi", "torch"), ("pypi", "transformers")}
+    assert found["acme/only-torch"] == {("pypi", "torch")}

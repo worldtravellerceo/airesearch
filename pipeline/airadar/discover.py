@@ -187,9 +187,14 @@ async def discover(
         report.notes.append(f"awesome: {len(names)} names")
 
     if ecosystems:
-        names, stats = await discover_via_dependencies()
-        report.pending_queued += db.add_pending(conn, names, source="ecosystems")
-        report.notes.append(f"ecosystems: {stats.summary()}")
+        by_repo, stats = await discover_via_dependencies()
+        report.pending_queued += db.add_pending(conn, set(by_repo), source="ecosystems")
+        # The packages are kept as classification evidence. A repository that
+        # imports `torch` is a machine-learning project whatever its
+        # description says — which is exactly the case the description-based
+        # engine cannot see, and the case that is not in English.
+        stored = db.record_packages(conn, by_repo)
+        report.notes.append(f"ecosystems: {stats.summary()}, {stored} package links")
 
     if huggingface:
         names, stats = await discover_via_huggingface()

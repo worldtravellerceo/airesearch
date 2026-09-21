@@ -83,7 +83,10 @@ def load_facts(
                r.readme_excerpt,
                (SELECT json_group_array(topic)
                   FROM (SELECT topic FROM repo_topics
-                        WHERE repo_id = r.id ORDER BY topic)) AS topics_json
+                        WHERE repo_id = r.id ORDER BY topic)) AS topics_json,
+               (SELECT json_group_array(package)
+                  FROM (SELECT DISTINCT package FROM repo_packages
+                        WHERE full_name = r.full_name ORDER BY package)) AS packages_json
         FROM repos r
         WHERE r.is_fork = 0
         ORDER BY r.stars DESC
@@ -95,6 +98,7 @@ def load_facts(
     rows = conn.execute(sql, params).fetchall()
     for row in rows:
         row["topics"] = json.loads(row.pop("topics_json") or "[]")
+        row["packages"] = json.loads(row.pop("packages_json") or "[]")
     facts = [rules.RepoFacts.from_row(row) for row in rows]
     return facts, {row["full_name"]: row["id"] for row in rows}
 

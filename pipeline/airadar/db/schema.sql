@@ -221,6 +221,27 @@ CREATE TABLE IF NOT EXISTS companies (
 
 CREATE INDEX IF NOT EXISTS companies_stars_idx ON companies(repo_stars DESC);
 
+-- Which bellwether packages a repository depends on.
+--
+-- Keyed on `full_name` rather than `repo_id` on purpose: dependency evidence
+-- arrives during discovery, before the repo has been resolved and given an id,
+-- and the package that produced the sighting was previously dropped at exactly
+-- that boundary — every one of the 29 bellwethers collapsed into the single
+-- string 'ecosystems' in `pending_repos.source`.
+--
+-- This is the evidence a README cannot give. A repository that imports `torch`
+-- is a machine-learning project whatever its description says, in whatever
+-- language it says it.
+CREATE TABLE IF NOT EXISTS repo_packages (
+    full_name  TEXT NOT NULL,
+    ecosystem  TEXT NOT NULL,
+    package    TEXT NOT NULL,
+    seen_at    TIMESTAMP NOT NULL,
+    PRIMARY KEY (full_name, ecosystem, package)
+);
+
+CREATE INDEX IF NOT EXISTS repo_packages_name_idx ON repo_packages(full_name);
+
 -- One row per company per month of Similarweb data. Monthly, not daily: the
 -- source is a monthly estimate, and storing it per day would invent precision
 -- that is not there.

@@ -240,3 +240,62 @@ def test_the_readme_etag_column_is_writable(conn):
 
     with pytest.raises(ValueError):
         db.set_etag(conn, 1, column="stars", etag="nope")
+
+
+# --- dependency evidence ---------------------------------------------------
+
+
+def test_a_repo_that_imports_torch_is_a_machine_learning_project():
+    """The one signal that does not care what the description says, or whether
+    there is one, or what language it is in."""
+    bare = classify(RepoFacts(full_name="acme/fastthing"))
+    assert bare.confidence == 0.0
+
+    with_dep = classify(RepoFacts(full_name="acme/fastthing", packages=("torch",)))
+    assert with_dep.is_ai is True
+
+
+def test_dependency_evidence_works_through_a_language_barrier():
+    """Our vocabulary is English. A Chinese project describing itself perfectly
+    well scores zero on every phrase list, and its imports do not."""
+    facts = RepoFacts(full_name="acme/mox", description="一个快速的推理工具")
+
+    assert classify(facts).confidence == 0.0
+    assert (
+        classify(
+            RepoFacts(
+                full_name="acme/mox", description="一个快速的推理工具", packages=("transformers",)
+            )
+        ).is_ai
+        is True
+    )
+
+
+def test_the_same_package_seen_twice_is_counted_once():
+    once = classify(RepoFacts(full_name="a/b", packages=("torch",)))
+    twice = classify(RepoFacts(full_name="a/b", packages=("torch", "TORCH")))
+
+    assert once.confidence == twice.confidence
+
+
+def test_packages_re_run_the_engine_without_invalidating_a_hand_verdict():
+    plain = RepoFacts(full_name="a/b", description="x")
+    with_pkg = RepoFacts(full_name="a/b", description="x", packages=("torch",))
+
+    assert plain.inputs_hash() == with_pkg.inputs_hash()
+    assert plain.content_hash() != with_pkg.content_hash()
+
+
+def test_package_links_round_trip_through_the_database(conn):
+    from airadar.classify_run import load_facts
+
+    db.upsert_repos(
+        conn, [db.RepoRecord(id=1, full_name="acme/mox", owner="acme", name="mox", stars=4_000)]
+    )
+    db.record_packages(conn, {"acme/mox": {("pypi", "torch"), ("npm", "openai")}})
+    conn.commit()
+
+    facts, _ = load_facts(conn)
+
+    assert sorted(facts[0].packages) == ["openai", "torch"]
+    assert classify(facts[0]).is_ai is True
