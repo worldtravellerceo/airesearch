@@ -26,6 +26,7 @@ import re
 from collections.abc import Awaitable, Callable, Iterable
 from dataclasses import dataclass, field
 
+from airadar.config import get_settings
 from airadar.gh.client import GitHubClient, GitHubError
 from airadar.gh.vocabulary import AWESOME_LISTS, SEED_KEYWORDS, SEED_TOPICS
 
@@ -249,19 +250,42 @@ async def _drain(
         return total
 
     last_page = math.ceil(min(total, SEARCH_RESULT_CAP) / SEARCH_PAGE_SIZE)
-    for page in range(2, last_page + 1):
-        if stats.exhausted:
-            # Stop mid-query rather than finishing a ten-page drain we cannot
-            # afford; the topic is left unrecorded so the next run redoes it.
-            break
-        try:
-            response = await client.search_repositories(query, page=page)
-        except GitHubError as exc:
-            log.warning("discovery: page %d failed (%s): %s", page, query, exc)
+    if last_page < 2:
+        return total
+
+    # Pages of one query are independent, so they are fetched together rather
+    # than one round trip at a time. With several tokens the search limit is no
+    # longer what governs a sweep — latency is, and a search response is slow.
+    # A ten-page drain was ten waits in a row; it is now one.
+    remaining = last_page - 1
+    if stats.budget is not None:
+        # Never overshoot the budget: the whole point of it is that the run
+        # stops cleanly rather than being killed part-way.
+        remaining = min(remaining, max(0, stats.budget - stats.pages))
+    if remaining <= 0:
+        return total
+
+    pages = range(2, 2 + remaining)
+    semaphore = asyncio.Semaphore(get_settings().concurrency)
+
+    async def fetch(page: int):
+        async with semaphore:
+            try:
+                return page, await client.search_repositories(query, page=page)
+            except GitHubError as exc:
+                log.warning("discovery: page %d failed (%s): %s", page, query, exc)
+                return page, exc
+
+    results = await asyncio.gather(*(fetch(page) for page in pages))
+
+    # Applied in page order so a short page still means the end of the results,
+    # the way it did when they arrived one at a time.
+    for _, outcome in sorted(results, key=lambda pair: pair[0]):
+        if isinstance(outcome, GitHubError):
             stats.errors += 1
-            break
+            continue
         stats.pages += 1
-        page_items = (response.data or {}).get("items") or []
+        page_items = (outcome.data or {}).get("items") or []
         if not page_items:
             break
         await _emit(sink, page_items, channel)

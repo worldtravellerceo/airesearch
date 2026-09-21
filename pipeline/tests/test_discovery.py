@@ -11,6 +11,7 @@ import datetime as dt
 import httpx
 import pytest
 
+from airadar.gh import discovery
 from airadar.gh.client import GitHubClient
 from airadar.gh.discovery import (
     SEARCH_RESULT_CAP,
@@ -364,3 +365,73 @@ def test_snowball_is_empty_until_something_has_been_classified():
     assert fed[0] == "claude-code"  # ranked by how often it co-occurs with AI repos
     assert "agent-skills" in fed
     assert "llm" not in fed  # already swept
+
+
+async def test_the_pages_of_one_query_are_fetched_together():
+    """A sweep is bounded by latency once there is more than one token: the
+    search limit is 30 a minute per token, and a search response is slow. A
+    ten-page drain used to be ten waits in a row."""
+    import asyncio
+
+    in_flight = 0
+    peak = 0
+
+    async def handler(request: httpx.Request) -> httpx.Response:
+        nonlocal in_flight, peak
+        in_flight += 1
+        peak = max(peak, in_flight)
+        await asyncio.sleep(0)
+        in_flight -= 1
+        page = int(request.url.params.get("page", 1))
+        return httpx.Response(
+            200,
+            json={"total_count": 900, "items": [_item(page * 100 + i) for i in range(100)]},
+            headers=HEADERS,
+        )
+
+    seen: list[dict] = []
+
+    async def sink(items, channel):
+        seen.extend(items)
+
+    async with GitHubClient(
+        token="t", transport=httpx.MockTransport(handler), sleep=_no_sleep
+    ) as client:
+        stats = await discovery.search_partitioned(
+            client, "fork:false", channel="census", sink=sink, min_stars=1000
+        )
+
+    assert stats.pages == 9
+    assert peak > 1
+
+
+async def test_a_page_budget_is_never_overshot_by_the_parallel_drain():
+    """The budget is what lets a run stop cleanly instead of being killed
+    part-way. Firing every page at once and counting afterwards would spend
+    past it before noticing."""
+
+    async def handler(request: httpx.Request) -> httpx.Response:
+        page = int(request.url.params.get("page", 1))
+        return httpx.Response(
+            200,
+            json={"total_count": 1000, "items": [_item(page * 100 + i) for i in range(100)]},
+            headers=HEADERS,
+        )
+
+    async def sink(items, channel):
+        return None
+
+    stats = discovery.DiscoveryStats(budget=4)
+    async with GitHubClient(
+        token="t", transport=httpx.MockTransport(handler), sleep=_no_sleep
+    ) as client:
+        await discovery.search_partitioned(
+            client, "fork:false", channel="census", sink=sink, min_stars=1000, stats=stats
+        )
+
+    assert stats.pages <= 4
+
+
+def _item(n: int) -> dict:
+    """The minimum a search hit needs to pass through the sink."""
+    return {"id": n, "full_name": f"acme/repo{n}", "stargazers_count": 2_000}
