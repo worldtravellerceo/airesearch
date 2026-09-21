@@ -316,3 +316,14 @@ async def test_the_domain_that_lost_the_slug_is_asked_about_next_time(conn):
         await enrich.refresh_company_funding(conn, client, limit=10, now=NOW)
 
     assert company_db.companies_to_match(conn, limit=10) == ["langchain.dev"]
+
+
+def test_the_round_size_is_not_read_as_the_valuation():
+    """Crunchbase News writes both figures into one headline. From the actor's
+    own sample: "Mistral AI Raises $3.5B At $24B Valuation" — and the first
+    version of this pattern returned $3.5bn, the round rather than the
+    valuation, wrong by a factor of seven on a public board. The gap between
+    the figure and the word may not contain another dollar sign."""
+    headline = "Mistral AI Raises $3.5B At $24B Valuation In Another Record European Round"
+
+    assert funding.valuation_from_headline(headline) == 24_000_000_000

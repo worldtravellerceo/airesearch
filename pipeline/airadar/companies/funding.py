@@ -236,9 +236,14 @@ def acquisition_rows(item: dict, *, domain: str, collected_at: dt.datetime) -> l
 
 # A headline is the only place any of these sources states a valuation, so it
 # is read from one — and stored as what it is, a press report with a link.
+# The gap between the figure and the word "valuation" must not contain another
+# dollar sign. Without that, "Mistral AI Raises $3.5B At $24B Valuation" reads
+# as a $3.5bn valuation — the round, not the valuation, and wrong by a factor
+# of seven on a public board. Exactly the confusion this function was written
+# to avoid, in the function written to avoid it.
 _VALUATION = re.compile(
-    r"\$\s?([0-9]+(?:\.[0-9]+)?)\s?([BMT])(?:illion)?\b[^.]{0,40}?valuation"
-    r"|valuation[^.]{0,40}?\$\s?([0-9]+(?:\.[0-9]+)?)\s?([BMT])(?:illion)?\b",
+    r"\$\s?([0-9]+(?:\.[0-9]+)?)\s?([BMT])(?:illion)?\b[^.$]{0,40}?valuation"
+    r"|valuation[^.$]{0,40}?\$\s?([0-9]+(?:\.[0-9]+)?)\s?([BMT])(?:illion)?\b",
     re.IGNORECASE,
 )
 _SCALE = {"M": 1_000_000, "B": 1_000_000_000, "T": 1_000_000_000_000}

@@ -176,7 +176,53 @@ _REPOS_MIGRATIONS: tuple[tuple[str, str], ...] = (
 def apply_schema(conn: sqlite3.Connection) -> None:
     conn.executescript(SCHEMA_PATH.read_text())
     _migrate_repos(conn)
+    _migrate_classification_nullable(conn)
     conn.commit()
+
+
+def _migrate_classification_nullable(conn: sqlite3.Connection) -> bool:
+    """Let `repo_classification.is_ai` hold NULL for an unsettled repository.
+
+    SQLite cannot drop a NOT NULL in place, so the table is rebuilt — the
+    standard create-copy-drop-rename. It runs once: the second time round the
+    column is already nullable and this returns immediately.
+
+    Worth the rebuild because the alternative is worse. Without a third state,
+    "we could not decide" has to be written as 0, which reads everywhere else
+    as "decided against" and takes the repository off the boards, out of the
+    counts and out of the review queue at the same time.
+    """
+    info = {row["name"]: row for row in conn.execute("PRAGMA table_info(repo_classification)")}
+    if not info or not info.get("is_ai", {})["notnull"]:
+        return False
+
+    conn.executescript(
+        """
+        PRAGMA foreign_keys = OFF;
+        CREATE TABLE repo_classification_new (
+            repo_id       INTEGER PRIMARY KEY REFERENCES repos(id) ON DELETE CASCADE,
+            is_ai         BOOLEAN,
+            category      TEXT,
+            subcategory   TEXT,
+            confidence    REAL NOT NULL,
+            method        TEXT NOT NULL,
+            one_liner     TEXT,
+            content_hash  TEXT NOT NULL,
+            classified_at TIMESTAMP NOT NULL
+        );
+        INSERT INTO repo_classification_new
+            SELECT repo_id, is_ai, category, subcategory, confidence, method,
+                   one_liner, content_hash, classified_at
+              FROM repo_classification;
+        DROP TABLE repo_classification;
+        ALTER TABLE repo_classification_new RENAME TO repo_classification;
+        CREATE INDEX IF NOT EXISTS repo_classification_cat_idx
+            ON repo_classification (category) WHERE is_ai = 1;
+        PRAGMA foreign_keys = ON;
+        """
+    )
+    log.info("schema: repo_classification.is_ai can now hold NULL")
+    return True
 
 
 def _migrate_repos(conn: sqlite3.Connection) -> list[str]:
@@ -613,7 +659,7 @@ def save_classification(
     conn: sqlite3.Connection,
     repo_id: int,
     *,
-    is_ai: bool,
+    is_ai: bool | None,
     category: str | None,
     subcategory: str | None,
     confidence: float,
@@ -636,7 +682,10 @@ def save_classification(
         """,
         {
             "repo_id": repo_id,
-            "is_ai": int(is_ai),
+            # NULL, not 0: a repo the engine could not settle is not a repo it
+            # decided against. The tracked universe keeps NULL rows, the boards
+            # take only 1, and the review queue takes everything else.
+            "is_ai": None if is_ai is None else int(is_ai),
             "category": category,
             "subcategory": subcategory,
             "confidence": confidence,

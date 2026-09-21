@@ -304,7 +304,20 @@ async def test_dry_run_reports_the_cost_without_spending_it(conn, monkeypatch):
     assert conn.execute("SELECT count(*) AS n FROM repo_classification").fetchone()["n"] == 0
 
 
-async def test_no_llm_mode_writes_only_what_rules_decided(conn, monkeypatch):
+async def test_no_llm_mode_records_what_it_could_not_settle(conn, monkeypatch):
+    """This test used to assert the opposite, and the opposite was the largest
+    hole in the index.
+
+    With the LLM pass off — which is how the daily run works — an escalated
+    repository got no row at all. Not on the boards, not in the counts, and not
+    in the review queue either, which is the worst of the three: nobody could
+    find it to decide. 1,842 repositories above a thousand stars were in that
+    state, including `karpathy/nanoGPT` at 63,285 stars and
+    `msitarzewski/agency-agents` at 153,893.
+
+    An unsettled repo now gets a row with is_ai NULL — a third state, not a
+    synonym for "no" — and the score that escalated it.
+    """
     add_repo(conn, 1, "langchain-ai/langchain", "Build LLM applications", ["llm"])
     add_repo(conn, 2, "acme/agent", "A lightweight agent", ["agent"])
     batches = FakeBatches({})
@@ -318,13 +331,36 @@ async def test_no_llm_mode_writes_only_what_rules_decided(conn, monkeypatch):
     assert report.settled_by_rules == 1
     assert report.escalated == 1
     assert report.classified_by_llm == 0
-    names = {
-        r["full_name"]
+
+    rows = {
+        r["full_name"]: r
         for r in conn.execute(
-            "SELECT r.full_name FROM repos r JOIN repo_classification c ON c.repo_id = r.id"
+            "SELECT r.full_name, c.is_ai, c.method, c.confidence FROM repos r "
+            "JOIN repo_classification c ON c.repo_id = r.id"
         )
     }
-    assert names == {"langchain-ai/langchain"}
+    assert set(rows) == {"langchain-ai/langchain", "acme/agent"}
+    assert rows["langchain-ai/langchain"]["is_ai"] == 1
+    assert rows["acme/agent"]["is_ai"] is None
+    assert rows["acme/agent"]["method"] == "rules-unsettled"
+    assert 0 < rows["acme/agent"]["confidence"] < 0.8
+
+
+async def test_an_unsettled_repo_is_still_collected_and_still_reviewable(conn, monkeypatch):
+    """A NULL verdict must keep the repo inside the tracked universe — the
+    point of recording it is that it stays findable."""
+    add_repo(conn, 1, "acme/agent", "A lightweight agent", ["agent"], stars=9_000)
+    patch_classifier(monkeypatch, FakeBatches({}))
+
+    async with GitHubClient(
+        token="t", transport=httpx.MockTransport(readme_handler()), sleep=_no_sleep
+    ) as client:
+        await classify_run.classify_all(conn, client, use_llm=False)
+
+    tracked = db.repos_due_for_refresh(
+        conn, tier1_size=10, now=dt.datetime.now(dt.UTC), track_limit=100
+    )
+    assert "acme/agent" in {row["full_name"] for row in tracked}
 
 
 async def test_max_llm_caps_spend(conn, monkeypatch):

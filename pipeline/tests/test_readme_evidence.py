@@ -299,3 +299,71 @@ def test_package_links_round_trip_through_the_database(conn):
 
     assert sorted(facts[0].packages) == ["openai", "torch"]
     assert classify(facts[0]).is_ai is True
+
+
+# --- the vocabulary that had to be split -----------------------------------
+
+
+def test_the_agent_ecosystem_is_recognised():
+    """A 160-repository sample, labelled by hand across four star bands and
+    three age cohorts, said the engine caught 66% of the AI projects in it.
+    Eighteen of the thirty-four misses — 53% — were one category: the words
+    this ecosystem started using after the vocabulary was written."""
+    for name, description in [
+        ("msitarzewski/agency-agents", "A complete AI agency at your fingertips"),
+        ("karpathy/nanoGPT", "The simplest, fastest repository for training/finetuning GPT"),
+        ("mattpocock/skills", "A collection of agent skills"),
+        ("anysphere/priompt", "Prompt design library"),
+    ]:
+        assert classify(RepoFacts(full_name=name, description=description)).is_ai, name
+
+
+def test_a_monitoring_daemon_is_not_an_ai_agent():
+    """The measurement that produced the tier above said putting `agent` at
+    decisive weight cost no precision. The measurement was wrong — the sample
+    simply contained no monitoring daemon. Checked afterwards against ten
+    well-known non-AI projects, `DataDog/datadog-agent` and
+    `newrelic/newrelic-java-agent` both came back as AI.
+
+    The genuinely ambiguous words now settle nothing on their own and land in
+    review, while any corroborating signal still carries a real one over."""
+    for name, description in [
+        ("DataDog/datadog-agent", "Main repository for Datadog Agent"),
+        ("newrelic/newrelic-java-agent", "The New Relic Java agent"),
+        ("harness/harness", "An end-to-end developer platform with CI/CD"),
+    ]:
+        verdict = classify(RepoFacts(full_name=name, description=description))
+        assert verdict.is_ai is False, name
+        assert verdict.needs_llm is True, name  # a person decides, not silence
+
+
+def test_short_vendor_names_are_matched_whole():
+    """Measured: as a substring, `grok` matches `ngrok`, and a tunnelling tool
+    became an AI project."""
+    assert (
+        classify(RepoFacts(full_name="outray/outray", description="ngrok alternative")).is_ai
+        is False
+    )
+    assert classify(RepoFacts(full_name="acme/tool", description="A Grok client")).is_ai is True
+
+
+def test_a_project_that_describes_itself_in_chinese_is_not_invisible():
+    """Our phrase lists are English. Tokenising on [a-z0-9] deletes these
+    characters entirely, so they are matched against the raw description."""
+    assert (
+        classify(RepoFacts(full_name="acme/tool", description="一个基于大模型的智能体框架")).is_ai
+        is True
+    )
+
+
+def test_the_field_had_a_vocabulary_before_it_was_called_ai():
+    """The second-largest category of misses: projects whose subject is
+    unmistakable to a reader and invisible to a keyword list."""
+    for description in [
+        "Open-source vector similarity search for Postgres",
+        "A world model trained on driving footage",
+        "Knowledge distillation toolkit",
+    ]:
+        assert classify(RepoFacts(full_name="acme/thing", description=description)).is_ai, (
+            description
+        )

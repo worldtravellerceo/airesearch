@@ -165,6 +165,33 @@ async def classify_all(
             method="rules",
             content_hash=item.content_hash(),
         )
+
+    # The escalated repos, recorded as unsettled rather than left with no row
+    # at all. This was the largest single hole in the index: with the LLM pass
+    # off — which is how the daily run works — nothing was written for them, so
+    # 1,842 repositories above a thousand stars had no classification row of
+    # any kind. `karpathy/nanoGPT` was one of them, at 63,285 stars, and
+    # `msitarzewski/agency-agents` at 153,893. They were absent from the
+    # boards, absent from the counts, and absent from the review queue, which
+    # is the worst of the three: nobody could even find them to decide.
+    #
+    # The row is written with is_ai NULL and the score that produced the
+    # escalation. `content_hash` goes in too, so the same undecidable repo is
+    # not re-derived every run — and because that hash carries the rules
+    # version, the README excerpt and the package list, new evidence or a new
+    # vocabulary brings it straight back for another look.
+    if not use_llm:
+        for item, verdict in escalate:
+            db.save_classification(
+                conn,
+                ids_by_name[item.full_name],
+                is_ai=None,
+                category=None,
+                subcategory=None,
+                confidence=verdict.confidence,
+                method="rules-unsettled",
+                content_hash=item.content_hash(),
+            )
     conn.commit()
 
     if use_llm and escalate:

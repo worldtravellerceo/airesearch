@@ -102,7 +102,12 @@ CREATE TABLE IF NOT EXISTS repo_star_weekly (
 
 CREATE TABLE IF NOT EXISTS repo_classification (
     repo_id       INTEGER PRIMARY KEY REFERENCES repos(id) ON DELETE CASCADE,
-    is_ai         BOOLEAN NOT NULL,
+    -- NULL means the engine could not settle it. A third state, not a synonym
+    -- for 0: a repository nobody could decide about has to stay
+    -- distinguishable from one decided against, or it leaves the index in
+    -- silence. 1,842 repos above a thousand stars — `karpathy/nanoGPT` among
+    -- them — had no row here at all for exactly this reason.
+    is_ai         BOOLEAN,
     category      TEXT,
     subcategory   TEXT,
     confidence    REAL NOT NULL,
@@ -113,7 +118,7 @@ CREATE TABLE IF NOT EXISTS repo_classification (
 );
 
 CREATE INDEX IF NOT EXISTS repo_classification_cat_idx
-    ON repo_classification (category) WHERE is_ai;
+    ON repo_classification (category) WHERE is_ai = 1;
 
 CREATE TABLE IF NOT EXISTS repo_scores (
     repo_id             INTEGER NOT NULL REFERENCES repos(id) ON DELETE CASCADE,

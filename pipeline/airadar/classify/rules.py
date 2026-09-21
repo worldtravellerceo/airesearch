@@ -293,7 +293,7 @@ NAME_TOKENS: frozenset[str] = frozenset(
 # Bumped whenever the rules or the taxonomy change. It is folded into the
 # content hash, so a change here re-classifies everything instead of leaving
 # old verdicts cached under rules that no longer exist.
-RULES_VERSION = "5"
+RULES_VERSION = "6"
 
 WEIGHT_DECISIVE_TOPIC = 0.90
 WEIGHT_AI_LAB_OWNER = 0.90
@@ -302,6 +302,11 @@ WEIGHT_SUGGESTIVE_TOPIC = 0.45
 WEIGHT_DECISIVE_PHRASE = 0.85
 WEIGHT_SUGGESTIVE_PHRASE = 0.30
 WEIGHT_NAME_TOKEN = 0.25
+# A word from this ecosystem's own vocabulary, in the name or the description,
+# matched whole. See DECISIVE_TOKENS for the measurement that set it.
+WEIGHT_DECISIVE_TOKEN = 0.85
+# Enough to reach review on its own, enough to settle with any corroboration.
+WEIGHT_AMBIGUOUS_TOKEN = 0.55
 # The README, scored in its own tier rather than thrown in with the description.
 # It is by far the best evidence there is — of the forty highest-star
 # repositories created since July, fourteen said nothing about AI in their name,
@@ -369,6 +374,122 @@ README_TOKEN_TIERS: tuple[tuple[int, float], ...] = ((3, 0.72), (2, 0.40), (1, 0
 # decisive topic and rather harder to fake, since it is what the code actually
 # does rather than what the README claims.
 WEIGHT_BELLWETHER_PACKAGE = 0.85
+
+#: Words that name this ecosystem, matched as whole tokens in the name and
+#: description. Whole tokens and not substrings, measured: as a substring
+#: "grok" matches "ngrok" and turned a tunnelling tool into an AI project.
+#:
+#: This tier exists because of a measurement, not a hunch. A 160-repository
+#: stratified sample across four star bands and three age cohorts was labelled
+#: by hand; the engine caught 66% of the AI projects in it. Eighteen of the
+#: thirty-four misses — 53% — were one category: the agent and skills
+#: vocabulary that did not exist in 2024 and is most of what is being built in
+#: 2026. `msitarzewski/agency-agents` has 153,893 stars. `karpathy/nanoGPT` has
+#: 63,285 and says "training/finetuning GPT". Adding this tier took recall to
+#: 82% and added no false positives at all.
+#:
+#: Several of these already sit in NAME_TOKENS at a quarter of this weight.
+#: That is not a duplicate: `observe` keys on the term and keeps the stronger
+#: reading, and a word in the description is a deliberate self-description
+#: where the same word in a long README might be incidental.
+DECISIVE_TOKENS: frozenset[str] = frozenset(
+    {
+        "agentic",
+        "subagent",
+        "subagents",
+        "claude",
+        "codex",
+        "opencode",
+        "copilot",
+        "grok",
+        "kimi",
+        "mcp",
+        "llm",
+        "llms",
+        "rag",
+        "moe",
+        "aigc",
+        "chatbot",
+        "tokenizer",
+        "multimodal",
+        "ai",
+        "gpt",
+        "gpts",
+        "finetune",
+        "finetuning",
+        "embeddings",
+    }
+)
+
+#: The same vocabulary, for the words that genuinely mean something else too.
+#: Weighted so that one of them alone settles nothing and lands in review,
+#: while any corroborating signal carries it over the line.
+#:
+#: This tier exists because the first version did not have it. The 160-repo
+#: sample said putting `agent` at 0.85 cost no precision, and the sample was
+#: wrong — it simply contained no monitoring daemon. Checked against ten
+#: well-known non-AI projects afterwards, `DataDog/datadog-agent` and
+#: `newrelic/newrelic-java-agent` both came out as AI. `harness` is a CI/CD
+#: company and a test harness before it is an agent harness; `prompt` is a
+#: command prompt; `inference` is a statistical term older than the field.
+AMBIGUOUS_TOKENS: frozenset[str] = frozenset(
+    {
+        "agent",
+        "agents",
+        "skill",
+        "skills",
+        "harness",
+        "harnesses",
+        "prompt",
+        "prompts",
+        "inference",
+        "ml",
+        # An electrical transformer and a physical diffusion process are both
+        # older than the field and both still written about.
+        "transformer",
+        "transformers",
+        "diffusion",
+    }
+)
+
+#: The vocabulary of the field before the field was called AI. These misses
+#: were the second-largest category: eleven of thirty-four, all projects whose
+#: subject is unmistakable to a reader and invisible to a keyword list —
+#: `pgvector`, `wilson1yan/VideoGPT`, `OpenDriveLab/AgiBot-World`. Long enough
+#: to match as substrings without the collisions that short words bring.
+DOMAIN_PHRASES: tuple[str, ...] = (
+    "vector similarity",
+    "nearest neighbor",
+    "world model",
+    "mixture of experts",
+    "prompt design",
+    "knowledge distillation",
+    "avatar generation",
+    "dance generation",
+    "embodied ai",
+    "vision-language",
+    "vision language",
+    "speech synthesis",
+    "voice cloning",
+    "talking video",
+)
+
+#: Our vocabulary is English, and a project that describes itself perfectly
+#: well in Chinese or Korean scored zero for it. Matched against the raw
+#: description rather than the tokenised haystack, because tokenising on
+#: [a-z0-9] deletes these entirely.
+CJK_TERMS: tuple[str, ...] = (
+    "深度学习",
+    "机器学习",
+    "人工智能",
+    "神经网络",
+    "多模态",
+    "智能体",
+    "大模型",
+    "스킬",
+    "에이전트",
+    "인공지능",
+)
 # Several weak signals should be able to add up to a decision, but never to the
 # certainty that a decisive topic buys. This has to sit *above* the `high`
 # threshold or it stops being a ceiling and becomes a bar: the first version
@@ -521,6 +642,18 @@ def classify(facts: RepoFacts, *, low: float = 0.2, high: float = 0.8) -> Verdic
     for package in sorted({p.lower() for p in facts.packages}):
         observe(f"pkg/{package}", f"pkg:{package}", WEIGHT_BELLWETHER_PACKAGE)
 
+    haystack_tokens = tokenise(haystack)
+    for token in sorted(haystack_tokens & DECISIVE_TOKENS):
+        observe(token, f"token:{token}", WEIGHT_DECISIVE_TOKEN)
+    for token in sorted(haystack_tokens & AMBIGUOUS_TOKENS):
+        observe(token, f"token?:{token}", WEIGHT_AMBIGUOUS_TOKEN)
+    for phrase in DOMAIN_PHRASES:
+        if phrase in haystack:
+            observe(phrase, f"domain:{phrase}", WEIGHT_DECISIVE_PHRASE)
+    for term in CJK_TERMS:
+        if term in (facts.description or "") or term in facts.full_name:
+            observe(term, f"cjk:{term}", WEIGHT_DECISIVE_PHRASE)
+
     # The README last, and only for terms nothing else has already found: a
     # phrase seen in both the description and the README is one fact, and
     # `observe` keeps the higher weight, so the description's tier wins.
@@ -546,7 +679,10 @@ def classify(facts: RepoFacts, *, low: float = 0.2, high: float = 0.8) -> Verdic
 
     confidence = _noisy_or(weight for _, weight in signals)
     has_decisive = any(
-        key.startswith(("topic:", "phrase:", "owner:", "readme:", "pkg:")) for key, _ in signals
+        key.startswith(
+            ("topic:", "phrase:", "owner:", "readme:", "pkg:", "token:", "domain:", "cjk:")
+        )
+        for key, _ in signals
     )
     if not has_decisive:
         # Weak evidence only. Cap it below certainty so these still get read.
