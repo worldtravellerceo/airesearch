@@ -21,8 +21,12 @@ on:
     # list is built from.
     - cron: "0 6 * * 1"
 
+# The same group as every other workflow that writes the database. They each
+# check the file out, change it and publish the whole thing back, so two of
+# them running at once does not merge — the second publish simply erases the
+# first one's work.
 concurrency:
-  group: airadar-data
+  group: airadar-pipeline
   cancel-in-progress: false
 
 jobs:
