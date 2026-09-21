@@ -93,3 +93,14 @@ jobs:
                FROM apify_run WHERE started_at >= date('now', 'start of month');" || true
             echo '```'
           } >> "$GITHUB_STEP_SUMMARY"
+
+  # Without this the paid data sits in the database and never reaches the site.
+  # Every other pipeline workflow ends the same way; this one was the exception
+  # because it was written before the company boards existed.
+  publish:
+    needs: companies
+    uses: ./.github/workflows/publish.yml
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
