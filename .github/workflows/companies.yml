@@ -151,10 +151,12 @@ jobs:
         with:
           token: ${{ github.token }}
 
+      # Free: Crunchbase News runs on WordPress and its REST API is public.
+      # The Apify actor sells the same headlines at $0.008 each. Runs after the
+      # directory because the company a headline is about has to be recovered
+      # from its own text, against names we bought rather than guessed.
       - name: Valuations
-        run: |
-          airadar companies-valuations --limit 500 \
-            ${{ inputs.dry_run == true && '--dry-run' || '' }}
+        run: airadar companies-valuations --limit 400
 
       - uses: ./.github/actions/publish-db
         if: always()

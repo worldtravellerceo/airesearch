@@ -176,6 +176,7 @@ _REPOS_MIGRATIONS: tuple[tuple[str, str], ...] = (
 def apply_schema(conn: sqlite3.Connection) -> None:
     conn.executescript(SCHEMA_PATH.read_text())
     _migrate_repos(conn)
+    _migrate_companies(conn)
     _migrate_classification_nullable(conn)
     conn.commit()
 
@@ -223,6 +224,27 @@ def _migrate_classification_nullable(conn: sqlite3.Connection) -> bool:
     )
     log.info("schema: repo_classification.is_ai can now hold NULL")
     return True
+
+
+def _migrate_companies(conn: sqlite3.Connection) -> list[str]:
+    """Add `name_source`, and drop the names that should never have been set.
+
+    Similarweb returns the scraped HTML page title under `title`, which is not
+    a company name and was stored as one for 874 companies — 366 of them over
+    forty characters long. Those are cleared rather than kept: a name nobody
+    can vouch for is worse than none, because `set_name` only ever wrote into
+    an empty field, so a page title permanently blocked the real name.
+    """
+    have = {row["name"] for row in conn.execute("PRAGMA table_info(companies)")}
+    if not have:
+        return []
+    added = []
+    if "name_source" not in have:
+        conn.execute("ALTER TABLE companies ADD COLUMN name_source TEXT")
+        conn.execute("UPDATE companies SET name = NULL WHERE name IS NOT NULL")
+        added.append("name_source")
+        log.info("schema: added name_source to companies and cleared unattributed names")
+    return added
 
 
 def _migrate_repos(conn: sqlite3.Connection) -> list[str]:

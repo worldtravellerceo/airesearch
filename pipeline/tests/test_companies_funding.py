@@ -424,100 +424,36 @@ async def test_a_profile_with_no_website_is_stored_without_a_domain(conn):
     assert conn.execute("SELECT domain FROM crunchbase_directory").fetchone()["domain"] is None
 
 
-# --- valuations from headlines ---------------------------------------------
+# --- names --------------------------------------------------------------
 
 
-def _article(title, permalink="mistral-ai", url="https://news.crunchbase.com/x"):
-    return {
-        "title": title,
-        "url": url,
-        "publishedAt": "2026-09-08T13:02:11Z",
-        "companies": [{"name": "Mistral AI", "permalink": permalink}],
-    }
+def test_a_page_title_cannot_be_passed_off_as_a_company_name(conn):
+    """874 companies were named from Similarweb's `title`, which is the scraped
+    HTML page title: `openclaw.ai` became "The ClawCast Episode 1",
+    `claude.com` "Kundensupport | Claude", `opencode.ai` "References". 366 of
+    them ran past forty characters. There is no string that source can pass."""
+    seed(conn, "openclaw.ai")
+
+    with pytest.raises(ValueError, match="unknown name source"):
+        company_db.set_name(conn, "openclaw.ai", "The ClawCast Episode 1", source="similarweb")
 
 
-async def _with_directory(conn):
-    seed(conn, "mistral.ai", stars=340_000)
-    company_db.record_directory(
-        conn,
-        [
-            {
-                "permalink": "mistral-ai",
-                "name": "Mistral AI",
-                "website": "https://mistral.ai",
-                "domain": "mistral.ai",
-                "categories": None,
-                "country": "France",
-                "fetched_at": NOW,
-            }
-        ],
-    )
+def test_a_better_source_replaces_a_worse_one(conn):
+    """The first writer used to win outright, so a page title written by an
+    early run permanently blocked the real name from a later one."""
+    seed(conn, "mistral.ai")
+    company_db.set_name(conn, "mistral.ai", "mistral-ai", source="corpus")
+    company_db.set_name(conn, "mistral.ai", "Mistral AI", source="crunchbase")
+    conn.commit()
+
+    row = conn.execute("SELECT name, name_source FROM companies").fetchone()
+    assert (row["name"], row["name_source"]) == ("Mistral AI", "crunchbase")
 
 
-async def test_a_headline_valuation_reaches_the_company_it_is_about(conn):
-    await _with_directory(conn)
-    article = _article("Mistral AI Raises $3.5B At $24B Valuation In Another Record Round")
+def test_a_worse_source_does_not_replace_a_better_one(conn):
+    seed(conn, "mistral.ai")
+    company_db.set_name(conn, "mistral.ai", "Mistral AI", source="crunchbase")
+    company_db.set_name(conn, "mistral.ai", "mistral", source="corpus")
+    conn.commit()
 
-    async with ApifyClient("t", transport=fake_apify([article]), sleep=_no_sleep) as client:
-        report = await enrich.refresh_valuations(conn, client, limit=10, now=NOW)
-
-    assert report["attached"] == 1
-    row = conn.execute("SELECT * FROM company_funding").fetchone()
-    assert row["valuation_usd"] == 24_000_000_000
-    assert row["valuation_src"] == "https://news.crunchbase.com/x"
-
-
-async def test_an_article_with_no_valuation_in_it_attaches_nothing(conn):
-    await _with_directory(conn)
-
-    async with ApifyClient(
-        "t", transport=fake_apify([_article("Mistral AI hires a new CFO")]), sleep=_no_sleep
-    ) as client:
-        report = await enrich.refresh_valuations(conn, client, limit=10, now=NOW)
-
-    assert report["articles"] == 1
-    assert report["valuations"] == 0
-    assert conn.execute("SELECT count(*) AS n FROM company_funding").fetchone()["n"] == 0
-
-
-async def test_only_the_company_the_article_is_about_gets_the_figure(conn):
-    """A Crunchbase News article names the company that raised, its investors
-    and often a competitor. Attaching $24bn to all of them would put a
-    valuation on whoever else got a mention."""
-    await _with_directory(conn)
-    article = _article("Mistral AI Raises At $24B Valuation")
-    article["companies"].append({"name": "ASML", "permalink": "asml"})
-    company_db.record_directory(
-        conn,
-        [
-            {
-                "permalink": "asml",
-                "name": "ASML",
-                "website": "https://asml.com",
-                "domain": "asml.com",
-                "categories": None,
-                "country": "Netherlands",
-                "fetched_at": NOW,
-            }
-        ],
-    )
-    seed(conn, "asml.com", stars=10)
-
-    async with ApifyClient("t", transport=fake_apify([article]), sleep=_no_sleep) as client:
-        await enrich.refresh_valuations(conn, client, limit=10, now=NOW)
-
-    rows = {r["domain"]: r["valuation_usd"] for r in conn.execute("SELECT * FROM company_funding")}
-    assert rows == {"mistral.ai": 24_000_000_000}
-
-
-async def test_a_valuation_for_a_company_we_do_not_track_is_not_stored(conn):
-    """The board is about the companies in this index, not about venture news."""
-    async with ApifyClient(
-        "t",
-        transport=fake_apify([_article("Acme Raises At $9B Valuation", permalink="acme")]),
-        sleep=_no_sleep,
-    ) as client:
-        report = await enrich.refresh_valuations(conn, client, limit=10, now=NOW)
-
-    assert report["valuations"] == 1
-    assert report["attached"] == 0
+    assert conn.execute("SELECT name FROM companies").fetchone()["name"] == "Mistral AI"

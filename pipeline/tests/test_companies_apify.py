@@ -256,7 +256,11 @@ async def test_a_refresh_stores_what_it_bought(conn):
     assert report.domains_with_data == 1
     assert report.months_written == 3
     assert report.cost_usd == 0.03
-    assert conn.execute("SELECT name FROM companies").fetchone()["name"] == "OpenAI"
+    # Deliberately unnamed. Similarweb's `title` is the scraped HTML page
+    # title, not a company name: it called `openclaw.ai` "The ClawCast Episode
+    # 1" and `claude.com` "Kundensupport | Claude" across 874 companies, and
+    # those titles then blocked the real names from ever being written.
+    assert conn.execute("SELECT name FROM companies").fetchone()["name"] is None
     assert conn.execute("SELECT count(*) AS n FROM company_traffic").fetchone()["n"] == 3
 
 

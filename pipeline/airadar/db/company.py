@@ -104,13 +104,36 @@ def record_traffic(conn: sqlite3.Connection, rows: Sequence[dict]) -> int:
     return len(rows)
 
 
-def set_name(conn: sqlite3.Connection, domain: str, name: str | None) -> None:
-    """Record a company's own name for the first source that supplies one."""
+#: How much a source's idea of a company's name is worth. First writer used to
+#: win, which handed every name to whichever paid run happened to go first.
+NAME_SOURCES: tuple[str, ...] = ("corpus", "crunchbase")
+
+
+def set_name(
+    conn: sqlite3.Connection, domain: str, name: str | None, *, source: str = "corpus"
+) -> None:
+    """Record a company's name, letting a better source replace a worse one.
+
+    `source` has to be one this function knows about. That is deliberate:
+    Similarweb returns the scraped HTML page title under `title`, and passing
+    it here named `openclaw.ai` "The ClawCast Episode 1" and `claude.com`
+    "Kundensupport | Claude" — 874 companies, 366 of them over forty characters
+    long. It is not a source of names and there is no string it can pass.
+    """
+    if source not in NAME_SOURCES:
+        raise ValueError(f"unknown name source {source!r}")
     if not name:
         return
+    rank = NAME_SOURCES.index(source)
     conn.execute(
-        "UPDATE companies SET name = ? WHERE domain = ? AND (name IS NULL OR name = '')",
-        (name, domain),
+        """
+        UPDATE companies SET name = :name, name_source = :source
+         WHERE domain = :domain
+           AND (name IS NULL OR name = '' OR :rank > COALESCE(
+                 (SELECT CASE name_source
+                         WHEN 'corpus' THEN 0 WHEN 'crunchbase' THEN 1 ELSE -1 END), -1))
+        """,
+        {"name": name, "source": source, "domain": domain, "rank": rank},
     )
 
 
@@ -409,6 +432,6 @@ def match_from_directory(conn: sqlite3.Connection, *, now: dt.datetime | None = 
             website=row["website"],
             checked_at=now,
         )
-        set_name(conn, row["domain"], row["name"])
+        set_name(conn, row["domain"], row["name"], source="crunchbase")
     conn.commit()
     return len(rows)

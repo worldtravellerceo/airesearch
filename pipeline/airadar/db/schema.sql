@@ -214,6 +214,12 @@ CREATE TABLE IF NOT EXISTS run_log (
 CREATE TABLE IF NOT EXISTS companies (
     domain        TEXT PRIMARY KEY,          -- registrable domain, eTLD+1
     name          TEXT,                      -- best-known name, once a source gives one
+    -- Which source supplied it. Needed because they are not equally good and
+    -- the first writer used to win: Similarweb's `title` is the scraped HTML
+    -- page title, so `openclaw.ai` was named "The ClawCast Episode 1",
+    -- `claude.com` "Kundensupport | Claude" and `opencode.ai` "References" —
+    -- and those names then blocked Crunchbase's real ones.
+    name_source   TEXT,
     first_seen_at TIMESTAMP NOT NULL,
     seed_source   TEXT NOT NULL,             -- where it first arrived: corpus, wikidata, ...
     -- What the repository corpus knows, carried over so the boards can rank on

@@ -100,7 +100,12 @@ async def refresh_traffic(
                 continue
             report.domains_with_data += 1
             rows.extend(item_rows)
-            db.set_name(conn, item_rows[0]["domain"], item.get("title"))
+            # Deliberately not naming the company from this run. Similarweb's
+            # `title` is the scraped HTML page title: it named `openclaw.ai`
+            # "The ClawCast Episode 1", `claude.com` "Kundensupport | Claude"
+            # and `opencode.ai` "References" — and because a name was only ever
+            # written into an empty field, those page titles then blocked the
+            # real names from Crunchbase.
         report.months_written += db.record_traffic(conn, rows)
         conn.commit()
 
@@ -275,7 +280,7 @@ async def refresh_company_funding(
                 website=item.get("website"),
                 checked_at=now,
             )
-            db.set_name(conn, domain, item.get("name"))
+            db.set_name(conn, domain, item.get("name"), source="crunchbase")
             report.acquisitions += db.record_acquisitions(
                 conn, funding.acquisition_rows(item, domain=domain, collected_at=now)
             )
@@ -510,112 +515,6 @@ async def refresh_directory(
         report["with_domain"],
         report["matched"],
         report["rounds_attached"],
-        report["cost_usd"],
-    )
-    return report
-
-
-# --- valuations ------------------------------------------------------------
-
-# The only place any of these sources states a valuation is a headline. The
-# actor's news mode returns them with the companies each article is about, so
-# a figure arrives already attached to a permalink — which the directory turns
-# into one of our domains.
-NEWS_PER_RUN = 500
-
-
-async def refresh_valuations(
-    conn: sqlite3.Connection,
-    client: ApifyClient,
-    *,
-    limit: int = 500,
-    since: dt.date | None = None,
-    now: dt.datetime | None = None,
-) -> dict:
-    """Read press-reported valuations out of Crunchbase News.
-
-    Every figure here was written by a journalist rather than measured, so it
-    is stored with the article that said it and shown as such. A headline with
-    no valuation in it is the common case and costs nothing extra — the article
-    was bought either way.
-    """
-    now = now or dt.datetime.now(dt.UTC)
-    since = since or (now.date() - dt.timedelta(days=180))
-    report = {"articles": 0, "valuations": 0, "attached": 0, "cost_usd": 0.0}
-
-    for start in range(0, limit, NEWS_PER_RUN):
-        batch = min(NEWS_PER_RUN, limit - start)
-        try:
-            run = await client.run_actor(
-                conn,
-                CRUNCHBASE_ACTOR,
-                {
-                    "newsMode": True,
-                    "newsCategory": "ai,venture,startups",
-                    "newsQuery": "valuation",
-                    "newsDateFrom": since.isoformat(),
-                    "maxItems": batch,
-                },
-                max_charge_usd=round(rounds_estimate_usd(batch) * RUN_CAP_MARGIN, 2),
-                notes=f"valuation headlines since {since}",
-            )
-        except BudgetExceeded as exc:
-            log.warning("valuations: stopping early — %s", exc)
-            break
-
-        report["cost_usd"] += run.cost_usd
-        report["articles"] += len(run.items)
-
-        for item in run.items:
-            usd = funding.valuation_from_headline(item.get("title") or "")
-            if usd is None:
-                continue
-            report["valuations"] += 1
-            published = item.get("publishedAt")
-            on = dt.date.fromisoformat(published[:10]) if isinstance(published, str) else None
-
-            # An article names several companies — the one that raised, its
-            # investors, sometimes a competitor. Only the first is the subject,
-            # and attaching the figure to the rest would put a $24bn valuation
-            # on whoever else got a mention.
-            companies = item.get("companies")
-            first = companies[0] if isinstance(companies, list) and companies else None
-            permalink = (first or {}).get("permalink") if isinstance(first, dict) else None
-            if not permalink:
-                continue
-
-            row = conn.execute(
-                "SELECT domain FROM crunchbase_directory "
-                "WHERE permalink = ? AND domain IS NOT NULL",
-                (permalink,),
-            ).fetchone()
-            if row is None:
-                continue
-            known = conn.execute(
-                "SELECT 1 FROM companies WHERE domain = ?", (row["domain"],)
-            ).fetchone()
-            if known is None:
-                continue
-
-            db.record_valuation(
-                conn,
-                row["domain"],
-                usd=usd,
-                source_url=item.get("url") or "",
-                on=on,
-                collected_at=now,
-            )
-            report["attached"] += 1
-        conn.commit()
-
-        if not run.ok:
-            break
-
-    log.info(
-        "valuations: %d articles, %d carried a figure, %d attached to a company we track, $%.2f",
-        report["articles"],
-        report["valuations"],
-        report["attached"],
         report["cost_usd"],
     )
     return report

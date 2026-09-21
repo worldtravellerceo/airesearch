@@ -17,6 +17,7 @@ from airadar import discover as discover_mod
 from airadar.companies import apify
 from airadar.companies import domains as company_domains
 from airadar.companies import enrich as company_enrich
+from airadar.companies import news as company_news
 from airadar.companies import traffic as company_traffic_mod
 from airadar.config import GITHUB_API_VERSION, get_settings
 from airadar.db import company as company_db
@@ -709,30 +710,23 @@ def companies_valuations(
 ) -> None:
     """Read press-reported valuations out of Crunchbase News headlines.
 
-    The only place any of these sources states a valuation. Every figure is
-    stored with the article that said it, and shown as a press report rather
-    than a measurement.
+    The only place any of these sources states a valuation — and free: the site
+    runs on WordPress and its REST API is public. The Apify actor sells the
+    same headlines at $0.008 each.
+
+    Every figure is stored with the article that said it, and shown as a press
+    report rather than a measurement.
     """
     settings = _require_database()
-    with db.connect(settings.db_path) as conn:
-        spent = apify.spend_this_month(conn)
     console.print(
-        f"haberler: {limit:,} makale, tahmini "
-        f"${company_enrich.rounds_estimate_usd(limit):.2f} — bu ay ${spent:.2f} / "
-        f"${settings.apify_monthly_cap_usd:.2f}"
+        f"haberler: en fazla {limit:,} makale, Crunchbase News'in halka açık API'si — ücretsiz"
     )
     if dry_run:
         return
-    if not settings.apify_token:
-        console.print("[red]APIFY_TOKEN ayarlı değil.[/red]")
-        raise typer.Exit(1)
 
     async def run() -> dict:
         with db.connect(settings.db_path) as conn:
-            async with apify.ApifyClient(
-                settings.apify_token, monthly_cap_usd=settings.apify_monthly_cap_usd
-            ) as client:
-                return await company_enrich.refresh_valuations(conn, client, limit=limit)
+            return await company_news.refresh_valuations(conn, limit=limit)
 
     report = asyncio.run(run())
     console.print(
