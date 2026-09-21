@@ -456,10 +456,18 @@ def test_a_rules_change_does_not_throw_away_a_hand_made_verdict(conn, monkeypatc
 # --- the weekly review queue -----------------------------------------------
 
 
-def test_the_review_queue_holds_what_the_engine_had_no_opinion_about(conn, tmp_path):
-    """Not the escalation band. These scored zero — no signal at all — which the
-    engine recorded as "not AI". `anomalyco/opencode` sat here at 208,847 stars
+def test_the_review_queue_holds_everything_the_engine_did_not_settle(conn, tmp_path):
+    """Both kinds, and this test used to assert only one of them.
+
+    A repo that scored zero was recorded as "not AI" — absence of evidence read
+    as evidence of absence. `anomalyco/opencode` sat there at 208,847 stars
     with the description "The open source coding agent."
+
+    A repo in the escalation band was worse off: with the LLM pass disabled,
+    which is how the daily run works, nothing is written for it at all, and it
+    was filtered out of this queue for scoring above zero. That made partial
+    evidence strictly worse than none — a README that moved a repo from 0.00 to
+    0.40 hid it from both the boards and the humans.
     """
     add_repo(conn, 1, "acme/silent", "A tool for teams", [], stars=9_000)
     add_repo(conn, 2, "acme/obvious", "An LLM agent framework", ["llm"], stars=8_000)
@@ -470,7 +478,7 @@ def test_the_review_queue_holds_what_the_engine_had_no_opinion_about(conn, tmp_p
     classify_run.export_review_queue(conn, out, limit=10, min_stars=1_000)
     names = [r["full_name"] for r in json.loads(out.read_text())["repos"]]
 
-    assert names == ["acme/silent"]
+    assert names == ["acme/silent", "acme/ambiguous"]  # settled AI stays out
 
 
 def test_the_queue_is_ordered_by_stars_and_reports_what_is_left(conn, tmp_path):
@@ -522,3 +530,71 @@ def test_the_queue_carries_the_hash_a_verdict_is_validated_against(conn, tmp_pat
     facts, _ = classify_run.load_facts(conn)
     expected = next(f.inputs_hash() for f in facts if f.full_name == "acme/silent")
     assert entry["inputs_hash"] == expected
+
+
+def test_the_escalation_band_reaches_the_review_queue(conn, tmp_path):
+    """Partial evidence must not be worse than none. With the LLM pass off —
+    which is how the daily run works — nothing is written for an escalated
+    repo: it is on no board, and it used to be filtered out of this queue for
+    scoring above zero. So a README that moved a repo from 0.00 to 0.40 hid it
+    completely."""
+    from airadar.classify import rules
+    from airadar.classify_run import export_review_queue
+
+    db.upsert_repos(
+        conn,
+        [
+            db.RepoRecord(
+                id=1,
+                full_name="andrewyng/openworker",
+                owner="andrewyng",
+                name="openworker",
+                stars=18_090,
+            ),
+            db.RepoRecord(
+                id=2, full_name="acme/nothing", owner="acme", name="nothing", stars=9_000
+            ),
+        ],
+    )
+    conn.execute(
+        "UPDATE repos SET readme_excerpt = ? WHERE id = 1",
+        ("OpenWorker. AI that gets your everyday tasks done, an open-source AI coworker.",),
+    )
+    conn.commit()
+
+    facts, _ = __import__("airadar.classify_run", fromlist=["load_facts"]).load_facts(conn)
+    scored = {f.full_name: rules.classify(f) for f in facts}
+    assert 0 < scored["andrewyng/openworker"].confidence < 0.8  # the escalation band
+    assert scored["acme/nothing"].confidence == 0.0
+
+    out = tmp_path / "queue.json"
+    report = export_review_queue(conn, out, limit=10, min_stars=1_000)
+
+    names = [row["full_name"] for row in json.loads(out.read_text())["repos"]]
+    assert "andrewyng/openworker" in names
+    assert "acme/nothing" in names
+    assert report.considered == 2
+
+
+def test_a_settled_ai_repo_is_not_queued_for_review(conn, tmp_path):
+    from airadar.classify_run import export_review_queue
+
+    db.upsert_repos(
+        conn,
+        [
+            db.RepoRecord(
+                id=1,
+                full_name="acme/agent",
+                owner="acme",
+                name="agent",
+                description="an agent framework for llm applications",
+                stars=9_000,
+            )
+        ],
+    )
+    conn.commit()
+
+    out = tmp_path / "queue.json"
+    export_review_queue(conn, out, limit=10, min_stars=1_000)
+
+    assert json.loads(out.read_text())["repos"] == []

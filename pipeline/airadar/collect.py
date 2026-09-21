@@ -18,6 +18,7 @@ from dataclasses import dataclass
 from airadar.config import get_settings
 from airadar.db import repo as db
 from airadar.gh.client import GitHubClient, GitHubError
+from airadar.gh.content import fetch_readme
 from airadar.gh.metrics import (
     HISTORY_PATH,
     MAX_HISTORY_PAGES,
@@ -361,3 +362,91 @@ def score(conn: sqlite3.Connection, *, today: dt.date | None = None) -> tuple[in
         pruned,
     )
     return saved, len(entries)
+
+
+@dataclass
+class ReadmeReport:
+    considered: int = 0
+    fetched: int = 0
+    unchanged: int = 0
+    missing: int = 0
+    failed: int = 0
+
+    def summary(self) -> str:
+        return (
+            f"{self.fetched} fetched, {self.unchanged} unchanged, "
+            f"{self.missing} have none, {self.failed} failed "
+            f"(of {self.considered} considered)"
+        )
+
+
+async def fetch_readmes(
+    conn: sqlite3.Connection,
+    client: GitHubClient,
+    *,
+    limit: int | None = None,
+    min_stars: int = 1000,
+    refetch: bool = False,
+) -> ReadmeReport:
+    """Read the README of every repository the metadata could not place.
+
+    This is the recall fix. A repository is invisible to the index when its
+    name, description and topics say nothing about AI — and the engine records
+    that as "not AI", which is the one reading a zero score does not support.
+    Fourteen of the forty highest-star repositories created since July are in
+    exactly that state.
+
+    Ordered biggest first and bounded by `limit`, so an interrupted run has
+    spent its requests on the repositories it would have hurt most to miss, and
+    the next run carries on from where it stopped.
+    """
+    report = ReadmeReport()
+    sql = """
+        SELECT r.id, r.full_name, r.etag_readme
+        FROM repos r
+        LEFT JOIN repo_classification c ON c.repo_id = r.id
+        WHERE r.is_fork = 0
+          AND r.stars >= :min_stars
+          AND COALESCE(c.confidence, 0) = 0
+    """
+    if not refetch:
+        # A README we have already read, or established does not exist, is not
+        # worth another request until the repo itself changes.
+        sql += " AND r.readme_fetched_at IS NULL"
+    sql += " ORDER BY r.stars DESC"
+    params: dict = {"min_stars": min_stars}
+    if limit is not None:
+        sql += " LIMIT :limit"
+        params["limit"] = limit
+
+    queue = conn.execute(sql, params).fetchall()
+    report.considered = len(queue)
+    settings = get_settings()
+    log.info(
+        "readme: %d repos with no signal, %d in flight",
+        len(queue),
+        settings.concurrency,
+    )
+
+    async def one(row: dict) -> None:
+        try:
+            result = await fetch_readme(client, row["full_name"], etag=row["etag_readme"])
+        except GitHubError as exc:
+            log.warning("readme: %s failed: %s", row["full_name"], exc)
+            report.failed += 1
+            return
+
+        if result.unchanged:
+            report.unchanged += 1
+            db.mark_readme_checked(conn, row["id"])
+        elif result.missing:
+            report.missing += 1
+            db.set_readme(conn, row["id"], excerpt="", etag=None)
+        else:
+            report.fetched += 1
+            db.set_readme(conn, row["id"], excerpt=result.excerpt, etag=result.etag)
+        conn.commit()
+
+    await _for_each(queue, one, concurrency=settings.concurrency)
+    log.info("readme: %s", report.summary())
+    return report

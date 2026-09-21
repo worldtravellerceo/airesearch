@@ -703,6 +703,33 @@ def companies_ratings(
     console.print(f"[green]companies-ratings[/green]: {report.summary()}")
 
 
+@app.command("readmes")
+def readmes(
+    limit: int = typer.Option(None, "--limit", help="How many repos this run"),
+    min_stars: int = typer.Option(1000, "--min-stars", help="Ignore repos below this"),
+    refetch: bool = typer.Option(False, "--refetch", help="Re-read READMEs already fetched"),
+) -> None:
+    """Read the README of every repo the metadata could not place.
+
+    A repo whose name, description and topics say nothing about AI is recorded
+    as "not AI" — which is the one reading a zero score does not support.
+    Fourteen of the forty highest-star repos created since July are in that
+    state, `andrewyng/openworker` and `browser-use/jev-ultrafast` among them.
+    Their READMEs say plainly what they are.
+    """
+    settings = _require_database()
+
+    async def run() -> collect_mod.ReadmeReport:
+        with db.connect(settings.db_path) as conn:
+            async with GitHubClient() as client:
+                return await collect_mod.fetch_readmes(
+                    conn, client, limit=limit, min_stars=min_stars, refetch=refetch
+                )
+
+    report = asyncio.run(run())
+    console.print(f"[green]readmes[/green]: {report.summary()}")
+
+
 @app.command("review-queue")
 def review_queue(
     out: str = typer.Option("review-queue.json", "--out", help="Where to write the slice"),

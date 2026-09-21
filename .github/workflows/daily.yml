@@ -54,6 +54,18 @@ jobs:
       - name: Apply reviewed verdicts
         run: airadar classify --import-verdicts verdicts
 
+      # Read what the repos the metadata could not place say about themselves.
+      # Bounded per run rather than done in one sweep: there are 53,475 of them
+      # and the whole backlog is about three and a half hours of quota, which
+      # would crowd out the collection this run exists for. Biggest first, so
+      # the slice that does run is the one it would have cost most to miss, and
+      # ETags make everything already read free on the next pass.
+      - name: Read the READMEs of repos with no signal
+        run: airadar readmes --limit 4000
+
+      - name: Classify again, now with the READMEs
+        run: airadar classify --no-llm
+
       - name: Collect
         run: airadar collect ${{ inputs.limit && format('--limit {0}', inputs.limit) || '' }}
 

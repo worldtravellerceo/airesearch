@@ -1,0 +1,85 @@
+name: READMEs
+
+# The recall backlog, worked through in bulk.
+#
+# A repository whose name, description and topics say nothing about AI is
+# recorded as "not AI" — and of the forty highest-star repositories created
+# since July, fourteen are in exactly that state. Their READMEs say plainly
+# what they are. There are 53,475 such repositories above a thousand stars,
+# which is about three and a half hours of quota once; after that ETags make a
+# re-read free and the daily run keeps up on its own.
+
+on:
+  workflow_dispatch:
+    inputs:
+      limit:
+        description: "How many repositories this run"
+        required: false
+        default: "20000"
+      min_stars:
+        description: "Ignore repositories below this"
+        required: false
+        default: "1000"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: airadar-pipeline
+  cancel-in-progress: false
+
+jobs:
+  readmes:
+    runs-on: ubuntu-latest
+    timeout-minutes: 330
+    env:
+      GH_PAT: ${{ secrets.GH_PAT }}
+      GH_PAT_2: ${{ secrets.GH_PAT_2 }}
+      GH_PAT_3: ${{ secrets.GH_PAT_3 }}
+    steps:
+      - uses: actions/checkout@v5
+      - uses: ./.github/actions/pipeline
+        with:
+          token: ${{ github.token }}
+
+      - name: Read
+        run: |
+          airadar readmes --limit ${{ inputs.limit || 20000 }} \
+            --min-stars ${{ inputs.min_stars || 1000 }}
+
+      # Published before the reclassify, so a run that dies in scoring still
+      # keeps the READMEs it paid quota for.
+      - uses: ./.github/actions/publish-db
+        if: always()
+        with:
+          token: ${{ github.token }}
+
+      - name: Classify what they say
+        run: airadar classify --no-llm
+
+      - name: Score
+        run: airadar score
+
+      - uses: ./.github/actions/publish-db
+        if: always()
+        with:
+          token: ${{ github.token }}
+
+      - name: Summary
+        if: always()
+        run: |
+          {
+            echo "### README okuma"
+            echo '```'
+            COLUMNS=140 airadar stats || true
+            COLUMNS=140 airadar coverage || true
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
+
+  publish:
+    needs: readmes
+    uses: ./.github/workflows/publish.yml
+    permissions:
+      contents: read
+      pages: write
+      id-token: write

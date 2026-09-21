@@ -293,7 +293,7 @@ NAME_TOKENS: frozenset[str] = frozenset(
 # Bumped whenever the rules or the taxonomy change. It is folded into the
 # content hash, so a change here re-classifies everything instead of leaving
 # old verdicts cached under rules that no longer exist.
-RULES_VERSION = "4"
+RULES_VERSION = "5"
 
 WEIGHT_DECISIVE_TOPIC = 0.90
 WEIGHT_AI_LAB_OWNER = 0.90
@@ -302,6 +302,65 @@ WEIGHT_SUGGESTIVE_TOPIC = 0.45
 WEIGHT_DECISIVE_PHRASE = 0.85
 WEIGHT_SUGGESTIVE_PHRASE = 0.30
 WEIGHT_NAME_TOKEN = 0.25
+# The README, scored in its own tier rather than thrown in with the description.
+# It is by far the best evidence there is — of the forty highest-star
+# repositories created since July, fourteen said nothing about AI in their name,
+# description or topics, and `browser-use/jev-ultrafast` went from 0.00 to 0.98
+# on its README alone. But it is also the loosest: a README is long, and a tool
+# that merely says it "works with ChatGPT" is not an AI project. So one phrase
+# found only in the README does not settle anything by itself — it lands in the
+# band a person reads. Two independent ones do.
+#
+# Measured, against a deliberately built trap: a plain release-notes CLI whose
+# README says it "can optionally summarise your changelog using an LLM if you
+# set OPENAI_API_KEY". At 0.82 that single mention scored it 0.94 and would have
+# put a templating tool on an AI board. At 0.62 it lands in review, where a
+# person would put it, while `jev-ultrafast` — "a browser agent" and "a small
+# LLM", two independent phrases — still settles at 0.98.
+WEIGHT_README_DECISIVE = 0.62
+WEIGHT_README_SUGGESTIVE = 0.20
+
+#: Words that, standing alone, say a README is about AI. They are matched as
+#: whole tokens and never as substrings, which is the whole reason they cannot
+#: live in `DECISIVE_PHRASES`: "ai" as a substring matches email, domain,
+#: training, explain and chain, and "agent" matches user-agent and build agent.
+#:
+#: `andrewyng/openworker` has 18,090 stars, no description at all, and a README
+#: opening with "AI that gets your everyday tasks done... an open-source AI
+#: coworker". `unicity-aos/aos-ce` says "the open agent operating system... an
+#: inspectable, composable environment for agents". Neither carries a phrase
+#: from any list; both say what they are, repeatedly, in words too short to
+#: match safely any other way.
+AI_TOKENS: frozenset[str] = frozenset(
+    {
+        "ai",
+        "llm",
+        "llms",
+        "gpt",
+        "agent",
+        "agents",
+        "agentic",
+        "rag",
+        "embedding",
+        "embeddings",
+        "transformer",
+        "transformers",
+        "inference",
+        "multimodal",
+        "chatbot",
+        "finetune",
+        "finetuning",
+        "tokenizer",
+        "diffusion",
+        "neural",
+    }
+)
+
+# Repetition is the signal, not presence. A README that mentions AI once is
+# usually listing an integration; one that says it three times in its opening
+# paragraph is describing itself. Measured against the repos this tier exists
+# to rescue, three is where the two cases separate.
+README_TOKEN_TIERS: tuple[tuple[int, float], ...] = ((3, 0.72), (2, 0.40), (1, 0.18))
 # Several weak signals should be able to add up to a decision, but never to the
 # certainty that a decisive topic buys. This has to sit *above* the `high`
 # threshold or it stops being a ceiling and becomes a bar: the first version
@@ -336,6 +395,10 @@ class RepoFacts:
     topics: tuple[str, ...] = ()
     language: str | None = None
     homepage: str | None = None
+    # The cleaned opening of the README, when one has been fetched. Costs a
+    # request, which is why it is not in the sentence above — and why it is
+    # fetched for the repositories that scored zero on everything else.
+    readme_excerpt: str = ""
 
     @classmethod
     def from_row(cls, row: dict) -> RepoFacts:
@@ -345,6 +408,7 @@ class RepoFacts:
             topics=tuple(row.get("topics") or ()),
             language=row.get("language"),
             homepage=row.get("homepage"),
+            readme_excerpt=row.get("readme_excerpt") or "",
         )
 
     def inputs_hash(self) -> str:
@@ -356,6 +420,11 @@ class RepoFacts:
         their verdict is validated against this rather than `content_hash`.
         Folding the rules version in here threw away all 661 hand-made verdicts
         the moment the vocabulary changed.
+
+        The README is deliberately *not* part of this either, for the same
+        reason: a person who read a repository and called it an agent framework
+        did not become wrong when we later fetched its README. It belongs to
+        `content_hash`, which is what decides whether the rule engine re-runs.
         """
         payload = "\x1f".join(
             [
@@ -370,8 +439,19 @@ class RepoFacts:
     def content_hash(self) -> str:
         """Identity of the inputs *and* the rules, so a rule-engine verdict is
         redone when either changes. A cached verdict made under rules that no
-        longer exist is worse than no verdict."""
-        payload = "\x1f".join([RULES_VERSION, self.inputs_hash()])
+        longer exist is worse than no verdict.
+
+        The README is in here rather than in `inputs_hash`: a repository whose
+        README has just been fetched has new evidence and must be re-scored,
+        but nobody's hand-made judgement about it has been invalidated.
+        """
+        payload = "\x1f".join(
+            [
+                RULES_VERSION,
+                self.inputs_hash(),
+                hashlib.sha256(self.readme_excerpt.encode("utf-8")).hexdigest()[:16],
+            ]
+        )
         return hashlib.sha256(payload.encode("utf-8")).hexdigest()[:32]
 
 
@@ -426,17 +506,44 @@ def classify(facts: RepoFacts, *, low: float = 0.2, high: float = 0.8) -> Verdic
     for token in sorted(name_tokens & NAME_TOKENS):
         observe(token, f"name:{token}", WEIGHT_NAME_TOKEN)
 
+    # The README last, and only for terms nothing else has already found: a
+    # phrase seen in both the description and the README is one fact, and
+    # `observe` keeps the higher weight, so the description's tier wins.
+    readme = facts.readme_excerpt.lower()
+    if readme:
+        for phrase in DECISIVE_PHRASES:
+            if phrase in readme:
+                observe(phrase, f"readme:{phrase}", WEIGHT_README_DECISIVE)
+        for phrase in SUGGESTIVE_PHRASES:
+            if phrase in readme:
+                observe(phrase, f"readme?:{phrase}", WEIGHT_README_SUGGESTIVE)
+
+        # One term for the whole tier, so a README saying "agent" six times is
+        # one piece of evidence rather than six. Noisy-OR assumes independence,
+        # and a word repeated by one author is not six independent witnesses.
+        hits = [word for word in _WORD.findall(readme) if word in AI_TOKENS]
+        for threshold, weight in README_TOKEN_TIERS:
+            if len(hits) >= threshold:
+                observe("readme-tokens", f"readme*:{sorted(set(hits))[0]}x{len(hits)}", weight)
+                break
+
     signals = sorted(evidence.values(), key=lambda pair: -pair[1])
 
     confidence = _noisy_or(weight for _, weight in signals)
-    has_decisive = any(key.startswith(("topic:", "phrase:", "owner:")) for key, _ in signals)
+    has_decisive = any(
+        key.startswith(("topic:", "phrase:", "owner:", "readme:")) for key, _ in signals
+    )
     if not has_decisive:
         # Weak evidence only. Cap it below certainty so these still get read.
         confidence = min(confidence, SOFT_CEILING)
 
     category = categorise(topics)
     if category is None and confidence >= high:
-        category = _category_from_text(haystack) or DEFAULT_CATEGORY
+        # The README joins the text a category is read off, since for the repos
+        # it rescues it is the only text there is: `jev-ultrafast` says nothing
+        # but "i. am. speed." in its description and would otherwise land in
+        # the default bucket.
+        category = _category_from_text(f"{haystack} {readme}") or DEFAULT_CATEGORY
 
     return Verdict(
         is_ai=confidence >= high,

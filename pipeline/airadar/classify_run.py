@@ -80,6 +80,7 @@ def load_facts(
     """
     sql = """
         SELECT r.id, r.full_name, r.description, r.language, r.homepage,
+               r.readme_excerpt,
                (SELECT json_group_array(topic)
                   FROM (SELECT topic FROM repo_topics
                         WHERE repo_id = r.id ORDER BY topic)) AS topics_json
@@ -370,13 +371,21 @@ def export_review_queue(
     min_stars: int = 1_000,
     verdicts_dir: Path | None = None,
 ) -> ClassifyReport:
-    """Write the repos the rule engine had no opinion about, biggest first.
+    """Write the repos the rule engine did not settle, biggest first.
 
-    These are not the escalation band. They scored zero — the engine found no
-    signal at all and recorded "not AI", which is the one reading the score does
-    not support: absence of evidence. `anomalyco/opencode` sat here at 208,847
-    stars with the description "The open source coding agent.", and only a
-    hand-written probe found it.
+    Two kinds, and both are invisible until somebody reads them.
+
+    A repo that scored zero was recorded as "not AI", which is the one reading
+    the score does not support: absence of evidence. `anomalyco/opencode` sat
+    here at 208,847 stars with the description "The open source coding agent.",
+    and only a hand-written probe found it.
+
+    A repo in the escalation band is worse off still. With the LLM pass
+    disabled — which is how the daily run works — nothing is written for it at
+    all: it is on no board, and it used to be filtered out of this queue for
+    having a score above zero. That made partial evidence strictly worse than
+    none, so a README that moved a repo from 0.00 to 0.40 would hide it.
+    Everything the engine did not settle now comes here.
 
     Sorted by stars because that is the order in which a miss costs something,
     and capped because this is meant to be worked through a slice at a time.
@@ -397,7 +406,7 @@ def export_review_queue(
         count = stars.get(item.full_name, 0)
         if count < min_stars:
             continue
-        if rules.classify(item).confidence > 0.0:
+        if rules.classify(item).is_ai:
             continue
         candidates.append((count, item))
 

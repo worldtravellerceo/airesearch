@@ -14,7 +14,9 @@ than the strings and integers SQLite stores.
 from __future__ import annotations
 
 import datetime as dt
+import hashlib
 import json
+import logging
 import sqlite3
 from collections.abc import Iterable, Iterator, Sequence
 from contextlib import contextmanager
@@ -24,6 +26,8 @@ from pathlib import Path
 from airadar.gh.metrics import DailyStars
 from airadar.scoring.leaderboards import Entry
 from airadar.scoring.metrics import RepoMetrics
+
+log = logging.getLogger(__name__)
 
 SCHEMA_PATH = Path(__file__).with_name("schema.sql")
 
@@ -156,9 +160,36 @@ def connect(path: str | Path) -> Iterator[sqlite3.Connection]:
         conn.close()
 
 
+# Columns added to `repos` after the first database was published. The schema
+# file is `CREATE TABLE IF NOT EXISTS` throughout, which is right for a fresh
+# start and does nothing at all for the database that already exists — and the
+# only copy of ours is a release asset that every run downloads. Without this,
+# a new column is silently absent in production and present in every test.
+_REPOS_MIGRATIONS: tuple[tuple[str, str], ...] = (
+    ("etag_readme", "TEXT"),
+    ("readme_excerpt", "TEXT"),
+    ("readme_hash", "TEXT"),
+    ("readme_fetched_at", "TIMESTAMP"),
+)
+
+
 def apply_schema(conn: sqlite3.Connection) -> None:
     conn.executescript(SCHEMA_PATH.read_text())
+    _migrate_repos(conn)
     conn.commit()
+
+
+def _migrate_repos(conn: sqlite3.Connection) -> list[str]:
+    """Add any missing `repos` column. Idempotent, like the schema itself."""
+    have = {row["name"] for row in conn.execute("PRAGMA table_info(repos)")}
+    added = []
+    for column, decl in _REPOS_MIGRATIONS:
+        if column not in have:
+            conn.execute(f"ALTER TABLE repos ADD COLUMN {column} {decl}")
+            added.append(column)
+    if added:
+        log.info("schema: added %s to repos", ", ".join(added))
+    return added
 
 
 # --- repositories ----------------------------------------------------------
@@ -203,13 +234,56 @@ def upsert_repos(conn: sqlite3.Connection, repos: Sequence[RepoRecord]) -> int:
 
 
 def set_etag(conn: sqlite3.Connection, repo_id: int, *, column: str, etag: str | None) -> None:
-    if column not in {"etag_repo", "etag_history"}:
+    if column not in {"etag_repo", "etag_history", "etag_readme"}:
         raise ValueError(f"refusing to write unknown column {column!r}")
     conn.execute(f"UPDATE repos SET {column} = ? WHERE id = ?", (etag, repo_id))
 
 
 def mark_checked(conn: sqlite3.Connection, repo_id: int, when: dt.datetime) -> None:
     conn.execute("UPDATE repos SET last_checked_at = ? WHERE id = ?", (when, repo_id))
+
+
+def set_readme(
+    conn: sqlite3.Connection,
+    repo_id: int,
+    *,
+    excerpt: str,
+    etag: str | None,
+    now: dt.datetime | None = None,
+) -> None:
+    """Store a README excerpt, or the fact that there is none.
+
+    An empty excerpt is written deliberately: `readme_fetched_at` is what says
+    the question has been asked, and without it a repository with no README
+    would be requested again on every run, forever.
+    """
+    conn.execute(
+        """
+        UPDATE repos
+           SET readme_excerpt = :excerpt,
+               readme_hash = :hash,
+               etag_readme = :etag,
+               readme_fetched_at = :now
+         WHERE id = :id
+        """,
+        {
+            "id": repo_id,
+            "excerpt": excerpt or None,
+            "hash": hashlib.sha256(excerpt.encode("utf-8")).hexdigest()[:16] if excerpt else None,
+            "etag": etag,
+            "now": now or dt.datetime.now(dt.UTC),
+        },
+    )
+
+
+def mark_readme_checked(
+    conn: sqlite3.Connection, repo_id: int, now: dt.datetime | None = None
+) -> None:
+    """A 304: the text we hold is current, and it cost no quota to find out."""
+    conn.execute(
+        "UPDATE repos SET readme_fetched_at = ? WHERE id = ?",
+        (now or dt.datetime.now(dt.UTC), repo_id),
+    )
 
 
 # The tracked universe, ranked by stars. One definition, used both by the

@@ -26,6 +26,18 @@ CREATE TABLE IF NOT EXISTS repos (
     last_checked_at TIMESTAMP,
     etag_repo       TEXT,                          -- 304s cost no quota
     etag_history    TEXT,
+    etag_readme     TEXT,
+
+    -- The opening of the README, cleaned and truncated. Not decoration: it is
+    -- classification evidence, and often the only evidence there is. Measured
+    -- on the forty highest-star repositories created since July, fourteen
+    -- scored zero on name, description and topics alone — among them
+    -- `andrewyng/openworker` with no description at all and
+    -- `browser-use/jev-ultrafast`, whose README's second line reads "A browser
+    -- agent with a dynamic, indexed action space".
+    readme_excerpt  TEXT,
+    readme_hash     TEXT,                          -- changes when the text does
+    readme_fetched_at TIMESTAMP,
 
     -- Backfill bookkeeping. `history_backfilled_through` is the oldest day ever
     -- pulled; `first_star_date` is the oldest day currently retained. They
