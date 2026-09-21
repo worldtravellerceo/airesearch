@@ -73,9 +73,11 @@ def add_traffic(conn, domain, month, visits, *, genai=None):
 
 
 def test_the_funded_board_is_the_last_quarter_by_size(conn):
-    add_round(conn, "Big AI", amount=500_000_000, days_ago=10)
-    add_round(conn, "Small AI", amount=5_000_000, days_ago=40)
-    add_round(conn, "Old News", amount=900_000_000, days_ago=200)
+    for domain in ("big.ai", "small.ai", "old.ai"):
+        seed(conn, domain)
+    add_round(conn, "Big AI", amount=500_000_000, days_ago=10, domain="big.ai")
+    add_round(conn, "Small AI", amount=5_000_000, days_ago=40, domain="small.ai")
+    add_round(conn, "Old News", amount=900_000_000, days_ago=200, domain="old.ai")
 
     rows = boards.funded(conn, today=TODAY)
 
@@ -85,8 +87,10 @@ def test_the_funded_board_is_the_last_quarter_by_size(conn):
 def test_an_undisclosed_round_is_shown_last_rather_than_hidden(conn):
     """That a company raised is the news. An undisclosed amount is a fact about
     the round, not a reason to leave it off the board."""
-    add_round(conn, "Quiet AI", amount=None, days_ago=5)
-    add_round(conn, "Loud AI", amount=1_000_000, days_ago=5)
+    seed(conn, "quiet.ai")
+    seed(conn, "loud.ai")
+    add_round(conn, "Quiet AI", amount=None, days_ago=5, domain="quiet.ai")
+    add_round(conn, "Loud AI", amount=1_000_000, days_ago=5, domain="loud.ai")
 
     rows = boards.funded(conn, today=TODAY)
 
@@ -288,3 +292,54 @@ def test_a_board_with_rows_is_written_and_listed(tmp_path, conn):
     board = json.loads((tmp_path / "companies" / "funded.json").read_text())
     assert board["entries"][0]["company_name"] == "Mistral AI"
     assert board["title"] == "Yatırım alanlar"
+
+
+def test_a_round_that_belongs_to_nobody_we_track_stays_off_the_board(conn):
+    """The first paid run returned 400 rounds led by a music publisher, a
+    satellite company and a defence manufacturer — Crunchbase's rounds query
+    has no industry filter. None of the 400 could be tied to a company we
+    track. This board sits under a heading that says these are AI companies,
+    so the tie is the claim, not a decoration."""
+    add_round(conn, "BMG Music Publishing", amount=1_250_000_000, days_ago=4)
+
+    assert boards.funded(conn, today=TODAY) == []
+
+
+def test_a_round_reaches_the_board_through_the_crunchbase_match(conn):
+    """A round carries a Crunchbase permalink but no website. When we have
+    already matched that permalink to one of our domains — and verified it by
+    reading the profile's own website back — the round is attributable."""
+    seed(conn, "mistral.ai", stars=340_000, name="Mistral AI")
+    company_db.record_match(
+        conn,
+        "mistral.ai",
+        state="matched",
+        asked_as="mistral",
+        permalink="mistral-ai",
+        website="https://mistral.ai",
+        checked_at=NOW,
+    )
+    company_db.record_rounds(
+        conn,
+        [
+            {
+                "round_key": "k1",
+                "company_name": "Mistral AI",
+                "company_domain": None,
+                "cb_permalink": "mistral-ai",
+                "round_type": "series_c",
+                "amount_usd": 2_000_000_000,
+                "announced_on": TODAY - dt.timedelta(days=13),
+                "investors": None,
+                "source": "crunchbase",
+                "source_url": None,
+                "collected_at": NOW,
+            }
+        ],
+    )
+    conn.commit()
+
+    rows = boards.funded(conn, today=TODAY)
+
+    assert [row["company_name"] for row in rows] == ["Mistral AI"]
+    assert rows[0]["repo_stars"] == 340_000

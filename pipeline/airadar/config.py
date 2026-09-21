@@ -90,7 +90,7 @@ class Settings(BaseSettings):
     # what is left as Apify's own `maxTotalChargeUsd`, so this holds even if the
     # code asking for the run is wrong. The Starter plan includes $19 of usage;
     # the rest is overage the account is willing to pay.
-    apify_monthly_cap_usd: float = Field(default=25.0, alias="AIRADAR_APIFY_CAP")
+    apify_monthly_cap_usd: float = Field(default=80.0, alias="AIRADAR_APIFY_CAP")
     # Companies below this many repository stars are not worth paying to look
     # up yet. 9,682 seeds come out of the corpus; 2,961 clear a thousand stars.
     company_min_stars: int = Field(default=1000, alias="AIRADAR_COMPANY_MIN_STARS")

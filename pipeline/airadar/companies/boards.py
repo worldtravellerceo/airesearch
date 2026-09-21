@@ -23,20 +23,37 @@ BOARD_LIMIT = 100
 
 
 def funded(conn: sqlite3.Connection, *, today: dt.date, limit: int = BOARD_LIMIT) -> list[dict]:
-    """Who raised in the last quarter, largest first.
+    """Who in *this index* raised in the last quarter, largest first.
 
-    Rounds with no disclosed amount are kept and sort last rather than being
-    dropped: that a company raised at all is the news, and the amount being
-    undisclosed is a fact about the round, not a reason to hide it.
+    The join is not a nicety, it is the whole claim. This board sits under a
+    heading that says these are AI companies, and the first run proved that a
+    round on its own carries no such guarantee: Crunchbase's rounds query
+    filters by type, amount and date and has no industry filter, so 400 rounds
+    came back led by a music publisher, a satellite company and a defence
+    manufacturer. None of the 400 could be tied to a company we track, by
+    domain or by name.
+
+    So a round appears only when it belongs to a company in our universe. That
+    is a strict bar and it empties the board until the rounds are sourced with
+    something that identifies the company — which is correct. A board that is
+    absent says the question has not been answered; a board full of venture
+    news says it has, wrongly.
+
+    Rounds with no disclosed amount are kept and sort last: that a company
+    raised at all is the news, and an undisclosed amount is a fact about the
+    round rather than a reason to hide it.
     """
     since = today - dt.timedelta(days=FUNDED_WINDOW_DAYS)
     rows = conn.execute(
         """
         SELECT r.company_name, r.company_domain, r.round_type, r.amount_usd,
                r.announced_on, r.investors, r.source, r.source_url,
-               c.repo_stars, c.top_repo
+               c.repo_stars, c.top_repo, c.name
         FROM funding_round r
-        LEFT JOIN companies c ON c.domain = r.company_domain
+        JOIN companies c
+          ON c.domain = r.company_domain
+          OR c.domain = (SELECT m.domain FROM company_crunchbase m
+                          WHERE m.permalink = r.cb_permalink AND m.match_state = 'matched')
         WHERE r.announced_on >= :since
         ORDER BY r.amount_usd IS NULL, r.amount_usd DESC, r.announced_on DESC
         LIMIT :limit
