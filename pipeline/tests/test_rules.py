@@ -287,3 +287,32 @@ def test_generic_lists_are_still_rejected():
         ),
     ):
         assert classify(repo).is_ai is False, repo.full_name
+
+
+def test_the_2026_agent_vocabulary_is_recognised():
+    """From the live corpus: `anomalyco/opencode` (208k stars, "The open source
+    coding agent.") and `cline/cline` (68k, "Autonomous coding agent") scored
+    0.00 and were filed as not-AI. No topics to fall back on, and 0.00 is below
+    the escalation band, so they were not even flagged as uncertain — the
+    engine was confidently wrong about two of the best-known coding agents."""
+    for description in (
+        "The open source coding agent.",
+        "Autonomous coding agent as an SDK, IDE extension, or CLI assistant.",
+        "The open agent skills tool",
+        "An autonomous agent for deep financial research",
+        "On-device computer use agent that runs fully in the background",
+        "Open Multi-Agent Interactive Classroom",
+    ):
+        verdict = classify(facts("someone/thing", description, []))
+        assert verdict.is_ai is True, description
+        assert verdict.needs_llm is False, description
+
+
+def test_a_passing_mention_of_a_harness_is_not_a_decision():
+    """`getumbrel/umbrel` is a home server OS whose description happens to say
+    you can run OpenClaw on it. Naming a harness is weaker evidence than being
+    one, so it escalates rather than settling."""
+    verdict = classify(
+        facts("getumbrel/umbrel", "An elegant home server OS. Run OpenClaw, store your files", [])
+    )
+    assert verdict.is_ai is False

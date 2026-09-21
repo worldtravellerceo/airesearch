@@ -219,3 +219,80 @@ def test_the_queue_and_the_audit_agree_on_which_repos_are_tracked(conn):
     assert queued == {"acme/ai-stale", "acme/ai-never"}
     assert report.stale == 2
     assert report.never_checked == 1
+
+
+# --- completeness against ground truth -------------------------------------
+
+
+async def test_completeness_compares_the_corpus_against_githubs_own_count(conn):
+    """The only check that asks something outside the pipeline.
+
+    `coverage` says the famous names are present and the census says it swept
+    the star range, but both are the pipeline grading its own homework. GitHub's
+    `total_count` is ground truth.
+    """
+    import httpx
+
+    from airadar.gh.client import GitHubClient
+
+    add(conn, 1, "acme/one", stars=1_200)
+    add(conn, 2, "acme/two", stars=1_300)
+    conn.commit()
+
+    def handler(request: httpx.Request) -> httpx.Response:
+        # GitHub says there are four repos in the first bucket; we hold two.
+        total = 4 if "1000..1500" in request.url.params.get("q", "") else 0
+        return httpx.Response(
+            200,
+            json={"total_count": total, "items": []},
+            headers={
+                "x-ratelimit-remaining": "4999",
+                "x-ratelimit-reset": str(int(dt.datetime.now().timestamp()) + 3600),
+            },
+        )
+
+    async def _sleep(_seconds):
+        return None
+
+    async with GitHubClient(
+        token="t", transport=httpx.MockTransport(handler), sleep=_sleep
+    ) as client:
+        report = await audit.audit_completeness(
+            conn, client, buckets=((1_000, 1_500), (1_500, 2_500))
+        )
+
+    first = report.buckets[0]
+    assert first.on_github == 4
+    assert first.in_corpus == 2
+    assert first.missing == 2
+    assert first.rate == 0.5
+    assert "2 missing" in report.summary()
+
+
+async def test_an_empty_bucket_is_not_counted_as_a_failure(conn):
+    """A star range GitHub has nothing in is 100% covered, not 0%. Reporting it
+    as a gap would train everyone to ignore the number."""
+    import httpx
+
+    from airadar.gh.client import GitHubClient
+
+    def handler(request: httpx.Request) -> httpx.Response:
+        return httpx.Response(
+            200,
+            json={"total_count": 0, "items": []},
+            headers={
+                "x-ratelimit-remaining": "4999",
+                "x-ratelimit-reset": str(int(dt.datetime.now().timestamp()) + 3600),
+            },
+        )
+
+    async def _sleep(_seconds):
+        return None
+
+    async with GitHubClient(
+        token="t", transport=httpx.MockTransport(handler), sleep=_sleep
+    ) as client:
+        report = await audit.audit_completeness(conn, client, buckets=((1_000, 1_500),))
+
+    assert report.rate == 1.0
+    assert report.buckets[0].missing == 0

@@ -194,6 +194,31 @@ DECISIVE_PHRASES: tuple[str, ...] = (
     "reinforcement learning",
     "computer vision",
     "natural language processing",
+    # The 2026 agent vocabulary. These arrived after the first version of this
+    # list and nothing here has a second reading — a "coding agent" is not a
+    # monitoring daemon. Their absence is why `anomalyco/opencode` (208k stars,
+    # "The open source coding agent.") and `cline/cline` (68k, "Autonomous
+    # coding agent") scored 0.00 and were filed as not-AI, with no topics to
+    # fall back on and no escalation because 0.00 is below the band.
+    "coding agent",
+    "agent skill",
+    "agent framework",
+    "autonomous agent",
+    "multi-agent",
+    "multi agent",
+    "subagent",
+    "sub-agent",
+    "browser agent",
+    "research agent",
+    "voice agent",
+    "computer use",
+    "context engineering",
+    "vibe coding",
+    "prompt injection",
+    "text-to-video",
+    "text to video",
+    "image generation",
+    "video generation",
 )
 
 SUGGESTIVE_PHRASES: tuple[str, ...] = (
@@ -225,6 +250,14 @@ SUGGESTIVE_PHRASES: tuple[str, ...] = (
     "ollama",
     "langchain",
     "embeddings",
+    # Named agent harnesses. Weaker than the phrases above because a repo can
+    # mention one in passing ("run OpenClaw on your home server") without being
+    # an AI project itself.
+    "claude code",
+    "openclaw",
+    "agent skills",
+    "skills for",
+    ".agents",
 )
 
 # Words that, standing alone in a name, mean nothing. Matching "ai" inside
@@ -251,13 +284,16 @@ NAME_TOKENS: frozenset[str] = frozenset(
         "bot",
         "copilot",
         "assistant",
+        "skill",
+        "skills",
+        "harness",
     }
 )
 
 # Bumped whenever the rules or the taxonomy change. It is folded into the
 # content hash, so a change here re-classifies everything instead of leaving
 # old verdicts cached under rules that no longer exist.
-RULES_VERSION = "3"
+RULES_VERSION = "4"
 
 WEIGHT_DECISIVE_TOPIC = 0.90
 WEIGHT_AI_LAB_OWNER = 0.90

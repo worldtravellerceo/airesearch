@@ -246,3 +246,87 @@ def audit_freshness(
         tier2_stale=row["t2_stale"] or 0,
         never_checked=row["never"] or 0,
     )
+
+
+# --- completeness against ground truth -------------------------------------
+
+
+@dataclass
+class BucketCoverage:
+    low: int
+    high: int
+    on_github: int
+    in_corpus: int
+
+    @property
+    def rate(self) -> float:
+        return self.in_corpus / self.on_github if self.on_github else 1.0
+
+    @property
+    def missing(self) -> int:
+        return max(0, self.on_github - self.in_corpus)
+
+
+@dataclass
+class CompletenessReport:
+    buckets: list[BucketCoverage] = field(default_factory=list)
+
+    @property
+    def on_github(self) -> int:
+        return sum(b.on_github for b in self.buckets)
+
+    @property
+    def in_corpus(self) -> int:
+        return sum(b.in_corpus for b in self.buckets)
+
+    @property
+    def rate(self) -> float:
+        return self.in_corpus / self.on_github if self.on_github else 1.0
+
+    def summary(self) -> str:
+        return (
+            f"{self.in_corpus:,}/{self.on_github:,} of GitHub above the census "
+            f"floor ({self.rate:.1%}), {self.on_github - self.in_corpus:,} missing"
+        )
+
+
+# Star ranges to check. Chosen so each is small enough that a miss shows up as a
+# visible percentage rather than being diluted by the size of the band.
+COMPLETENESS_BUCKETS: tuple[tuple[int, int], ...] = (
+    (1_000, 1_500),
+    (1_500, 2_500),
+    (2_500, 5_000),
+    (5_000, 10_000),
+    (10_000, 25_000),
+    (25_000, 100_000),
+    (100_000, 100_000_000),
+)
+
+
+async def audit_completeness(
+    conn: sqlite3.Connection, client, *, buckets=COMPLETENESS_BUCKETS
+) -> CompletenessReport:
+    """Compare the corpus against GitHub's own count, bucket by bucket.
+
+    This is the only check that can answer "is anything missing", because it is
+    the only one that asks something outside the pipeline. The canary list says
+    the famous projects are present and the census says it enumerated the star
+    range, but both are the pipeline grading its own homework. GitHub's search
+    endpoint returns `total_count` for any query, which is ground truth for how
+    many public non-fork repos exist in a star range — one request per bucket.
+
+    It only covers the range the census guarantees. Below that floor discovery
+    is heuristic and this would report a gap that is expected rather than a
+    fault, which would train everyone to ignore the number.
+    """
+    report = CompletenessReport()
+    for low, high in buckets:
+        query = f"fork:false stars:{low}..{high}"
+        response = await client.search_repositories(query, page=1, per_page=1)
+        on_github = int((response.data or {}).get("total_count", 0))
+        in_corpus = conn.execute(
+            "SELECT count(*) AS n FROM repos WHERE is_fork = 0 AND stars >= ? AND stars <= ?",
+            (low, high),
+        ).fetchone()["n"]
+        report.buckets.append(BucketCoverage(low, high, on_github, in_corpus))
+    return report

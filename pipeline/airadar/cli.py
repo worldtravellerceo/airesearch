@@ -460,6 +460,43 @@ def coverage(
 
 
 @app.command()
+def completeness() -> None:
+    """Compare the corpus against GitHub's own count, bucket by bucket.
+
+    The only check that asks something outside the pipeline. `coverage` and
+    `census` are both the pipeline grading its own homework; this is ground
+    truth, at one search request per star bucket.
+    """
+    settings = _require_database()
+    asyncio.run(_run_completeness(settings))
+
+
+async def _run_completeness(settings) -> None:
+    with db.connect(settings.db_path) as conn:
+        async with GitHubClient() as client:
+            report = await audit.audit_completeness(conn, client)
+
+    table = Table(title=f"kapsama — GitHub'a karşı (census tabanı {settings.census_min_stars})")
+    table.add_column("yıldız")
+    table.add_column("GitHub'da", justify="right")
+    table.add_column("bizde", justify="right")
+    table.add_column("eksik", justify="right")
+    table.add_column("oran", justify="right")
+    for bucket in report.buckets:
+        high = "∞" if bucket.high >= 100_000_000 else f"{bucket.high:,}"
+        table.add_row(
+            f"{bucket.low:,}–{high}",
+            f"{bucket.on_github:,}",
+            f"{bucket.in_corpus:,}",
+            f"{bucket.missing:,}",
+            f"{bucket.rate:.1%}",
+        )
+    console.print(table)
+    colour = "green" if report.rate >= 0.99 else ("yellow" if report.rate >= 0.95 else "red")
+    console.print(f"[{colour}]completeness[/{colour}]: {report.summary()}")
+
+
+@app.command()
 def freshness() -> None:
     """Report how much of the tracked universe actually got refreshed.
 

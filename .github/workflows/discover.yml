@@ -91,6 +91,7 @@ jobs:
             echo '```'
             COLUMNS=140 airadar coverage || true
             COLUMNS=140 airadar freshness || true
+            COLUMNS=140 airadar completeness || true
             echo '```'
             echo "### Fresh Power — ilk 20"
             echo '```'
