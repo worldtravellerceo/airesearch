@@ -112,3 +112,212 @@ def set_name(conn: sqlite3.Connection, domain: str, name: str | None) -> None:
         "UPDATE companies SET name = ? WHERE domain = ? AND (name IS NULL OR name = '')",
         (name, domain),
     )
+
+
+# --- money -----------------------------------------------------------------
+
+
+def record_rounds(conn: sqlite3.Connection, rows: Sequence[dict]) -> int:
+    """Store funding rounds. The source's own round id keeps a re-run idempotent."""
+    if not rows:
+        return 0
+    conn.executemany(
+        """
+        INSERT INTO funding_round
+            (round_key, company_name, company_domain, cb_permalink, round_type,
+             amount_usd, announced_on, investors, source, source_url, collected_at)
+        VALUES (:round_key, :company_name, :company_domain, :cb_permalink, :round_type,
+                :amount_usd, :announced_on, :investors, :source, :source_url, :collected_at)
+        ON CONFLICT(round_key) DO UPDATE SET
+            company_domain = COALESCE(excluded.company_domain, funding_round.company_domain),
+            amount_usd     = COALESCE(excluded.amount_usd, funding_round.amount_usd),
+            announced_on   = COALESCE(excluded.announced_on, funding_round.announced_on),
+            investors      = COALESCE(excluded.investors, funding_round.investors),
+            collected_at   = excluded.collected_at
+        """,
+        rows,
+    )
+    conn.commit()
+    return len(rows)
+
+
+def record_company_funding(conn: sqlite3.Connection, row: dict) -> None:
+    """Replace a company's funding profile, keeping any valuation already found.
+
+    The valuation comes from a headline, on its own schedule; a funding refresh
+    must not wipe it just because this source has no field for it.
+    """
+    conn.execute(
+        """
+        INSERT INTO company_funding
+            (domain, cb_permalink, total_usd, rounds, investors, last_round,
+             last_round_on, employee_range, country, ipo_status,
+             valuation_usd, valuation_src, valuation_on, collected_at)
+        VALUES (:domain, :cb_permalink, :total_usd, :rounds, :investors, :last_round,
+                :last_round_on, :employee_range, :country, :ipo_status,
+                :valuation_usd, :valuation_src, :valuation_on, :collected_at)
+        ON CONFLICT(domain) DO UPDATE SET
+            cb_permalink   = excluded.cb_permalink,
+            total_usd      = excluded.total_usd,
+            rounds         = excluded.rounds,
+            investors      = excluded.investors,
+            last_round     = excluded.last_round,
+            last_round_on  = excluded.last_round_on,
+            employee_range = excluded.employee_range,
+            country        = excluded.country,
+            ipo_status     = excluded.ipo_status,
+            valuation_usd  = COALESCE(excluded.valuation_usd, company_funding.valuation_usd),
+            valuation_src  = COALESCE(excluded.valuation_src, company_funding.valuation_src),
+            valuation_on   = COALESCE(excluded.valuation_on, company_funding.valuation_on),
+            collected_at   = excluded.collected_at
+        """,
+        row,
+    )
+
+
+def record_valuation(
+    conn: sqlite3.Connection,
+    domain: str,
+    *,
+    usd: int,
+    source_url: str,
+    on: dt.date | None,
+    collected_at: dt.datetime,
+) -> None:
+    """Store a press-reported valuation, newest wins.
+
+    Kept only with the article that stated it: a valuation with no source is
+    indistinguishable from one we made up.
+    """
+    conn.execute(
+        """
+        INSERT INTO company_funding (domain, valuation_usd, valuation_src, valuation_on,
+                                     collected_at)
+        VALUES (:domain, :usd, :src, :on, :collected_at)
+        ON CONFLICT(domain) DO UPDATE SET
+            valuation_usd = excluded.valuation_usd,
+            valuation_src = excluded.valuation_src,
+            valuation_on  = excluded.valuation_on
+        WHERE company_funding.valuation_on IS NULL
+           OR excluded.valuation_on IS NULL
+           OR excluded.valuation_on >= company_funding.valuation_on
+        """,
+        {"domain": domain, "usd": usd, "src": source_url, "on": on, "collected_at": collected_at},
+    )
+
+
+def record_acquisitions(conn: sqlite3.Connection, rows: Sequence[dict]) -> int:
+    if not rows:
+        return 0
+    conn.executemany(
+        """
+        INSERT INTO acquisition (acquirer, target, domain, announced_on, amount_usd,
+                                 source, collected_at)
+        VALUES (:acquirer, :target, :domain, :announced_on, :amount_usd, :source,
+                :collected_at)
+        ON CONFLICT(acquirer, target, announced_on) DO UPDATE SET
+            amount_usd   = COALESCE(excluded.amount_usd, acquisition.amount_usd),
+            domain       = COALESCE(excluded.domain, acquisition.domain),
+            collected_at = excluded.collected_at
+        """,
+        rows,
+    )
+    conn.commit()
+    return len(rows)
+
+
+def record_match(
+    conn: sqlite3.Connection,
+    domain: str,
+    *,
+    state: str,
+    asked_as: str,
+    permalink: str | None = None,
+    name: str | None = None,
+    website: str | None = None,
+    checked_at: dt.datetime | None = None,
+) -> None:
+    """Record how a domain mapped onto Crunchbase, including when it did not.
+
+    A failed match has to be a stored state rather than a missing row. Without
+    it the same wrong guess is made, and paid for, every month.
+    """
+    conn.execute(
+        """
+        INSERT INTO company_crunchbase (domain, permalink, name, website, match_state,
+                                        asked_as, checked_at)
+        VALUES (:domain, :permalink, :name, :website, :state, :asked_as, :checked_at)
+        ON CONFLICT(domain) DO UPDATE SET
+            permalink   = excluded.permalink,
+            name        = excluded.name,
+            website     = excluded.website,
+            match_state = excluded.match_state,
+            asked_as    = excluded.asked_as,
+            checked_at  = excluded.checked_at
+        """,
+        {
+            "domain": domain,
+            "permalink": permalink,
+            "name": name,
+            "website": website,
+            "state": state,
+            "asked_as": asked_as,
+            "checked_at": checked_at or dt.datetime.now(dt.UTC),
+        },
+    )
+
+
+def companies_to_match(conn: sqlite3.Connection, *, limit: int, min_stars: int = 0) -> list[str]:
+    """Domains never looked up on Crunchbase, biggest first.
+
+    Unlike the traffic queue this one does not come round again: a company's
+    profile is asked for once, and a mismatch or a miss is remembered so the
+    same money is not spent on the same wrong answer.
+    """
+    rows = conn.execute(
+        """
+        SELECT c.domain FROM companies c
+        LEFT JOIN company_crunchbase m ON m.domain = c.domain
+        WHERE c.repo_stars >= :min_stars AND m.domain IS NULL
+        ORDER BY c.repo_stars DESC
+        LIMIT :limit
+        """,
+        {"limit": limit, "min_stars": min_stars},
+    ).fetchall()
+    return [row["domain"] for row in rows]
+
+
+def companies_to_rate(conn: sqlite3.Connection, *, limit: int, min_stars: int = 0) -> list[str]:
+    """Domains never asked about on G2, biggest first."""
+    rows = conn.execute(
+        """
+        SELECT c.domain FROM companies c
+        LEFT JOIN company_g2 g ON g.domain = c.domain
+        WHERE c.repo_stars >= :min_stars AND g.domain IS NULL
+        ORDER BY c.repo_stars DESC
+        LIMIT :limit
+        """,
+        {"limit": limit, "min_stars": min_stars},
+    ).fetchall()
+    return [row["domain"] for row in rows]
+
+
+def record_g2(conn: sqlite3.Connection, row: dict) -> None:
+    conn.execute(
+        """
+        INSERT INTO company_g2 (domain, product_slug, collected_on, reviews, avg_rating,
+                                rating_1, rating_2, rating_3, rating_4, rating_5,
+                                collected_at)
+        VALUES (:domain, :product_slug, :collected_on, :reviews, :avg_rating,
+                :rating_1, :rating_2, :rating_3, :rating_4, :rating_5, :collected_at)
+        ON CONFLICT(domain, product_slug, collected_on) DO UPDATE SET
+            reviews    = excluded.reviews,
+            avg_rating = excluded.avg_rating,
+            rating_1   = excluded.rating_1,
+            rating_2   = excluded.rating_2,
+            rating_3   = excluded.rating_3,
+            rating_4   = excluded.rating_4,
+            rating_5   = excluded.rating_5
+        """,
+        row,
+    )

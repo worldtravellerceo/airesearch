@@ -241,3 +241,104 @@ CREATE TABLE IF NOT EXISTS apify_run (
 );
 
 CREATE INDEX IF NOT EXISTS apify_run_started_idx ON apify_run(started_at);
+
+-- ---------------------------------------------------------------------------
+-- Money: rounds, what a company has raised, who bought whom.
+--
+-- Kept in tables of its own rather than as columns on `companies`, because a
+-- company can exist here with no funding record at all and that is not a gap
+-- to be filled — most open-source AI projects are not venture-funded, and a
+-- NULL that means "never raised" must not look like a NULL that means "not
+-- looked up yet".
+-- ---------------------------------------------------------------------------
+
+-- One row per announced funding round. `round_key` is the source's own id, so
+-- re-running a search replaces rather than duplicates.
+CREATE TABLE IF NOT EXISTS funding_round (
+    round_key      TEXT PRIMARY KEY,
+    company_name   TEXT NOT NULL,
+    company_domain TEXT,                     -- resolved where possible; NULL is honest
+    cb_permalink   TEXT,
+    round_type     TEXT,                     -- seed, series_a, grant, ...
+    amount_usd     INTEGER,                  -- NULL when undisclosed, never guessed
+    announced_on   DATE,
+    investors      TEXT,
+    source         TEXT NOT NULL,            -- crunchbase | sec-form-d
+    source_url     TEXT,
+    collected_at   TIMESTAMP NOT NULL
+);
+
+CREATE INDEX IF NOT EXISTS funding_round_date_idx ON funding_round(announced_on DESC);
+CREATE INDEX IF NOT EXISTS funding_round_domain_idx ON funding_round(company_domain);
+
+-- What a company has raised in total, as its profile states it. One row per
+-- company, replaced on each refresh.
+CREATE TABLE IF NOT EXISTS company_funding (
+    domain         TEXT PRIMARY KEY REFERENCES companies(domain) ON DELETE CASCADE,
+    cb_permalink   TEXT,
+    total_usd      INTEGER,
+    rounds         INTEGER,
+    investors      INTEGER,
+    last_round     TEXT,
+    last_round_on  DATE,
+    employee_range TEXT,
+    country        TEXT,
+    ipo_status     TEXT,
+    -- Valuation is press-reported, not a field any of these sources exposes.
+    -- It is stored with the article that said it so the site can show the
+    -- source, and left NULL rather than inferred from the money raised.
+    valuation_usd  INTEGER,
+    valuation_src  TEXT,
+    valuation_on   DATE,
+    collected_at   TIMESTAMP NOT NULL
+);
+
+-- Acquisitions, in both directions: a company that was bought and companies it
+-- bought. `acquirer` and `target` are names because the other side is often
+-- not in our universe at all.
+CREATE TABLE IF NOT EXISTS acquisition (
+    id            INTEGER PRIMARY KEY AUTOINCREMENT,
+    acquirer      TEXT NOT NULL,
+    target        TEXT NOT NULL,
+    domain        TEXT,                      -- whichever side is ours
+    announced_on  DATE,
+    amount_usd    INTEGER,
+    source        TEXT NOT NULL,
+    collected_at  TIMESTAMP NOT NULL,
+    UNIQUE (acquirer, target, announced_on)
+);
+
+-- How a company in our universe maps onto Crunchbase. Separate from
+-- `companies` so that a failed match is a recorded state rather than a missing
+-- row: we asked, and the answer was no.
+CREATE TABLE IF NOT EXISTS company_crunchbase (
+    domain       TEXT PRIMARY KEY REFERENCES companies(domain) ON DELETE CASCADE,
+    permalink    TEXT,
+    name         TEXT,
+    website      TEXT,
+    -- matched: the profile's own website is this domain.
+    -- mismatched: a profile came back pointing somewhere else — kept, because
+    --   knowing the guess was wrong is what stops it being guessed again.
+    -- missing: Crunchbase has nothing under that name.
+    match_state  TEXT NOT NULL,
+    asked_as     TEXT,
+    checked_at   TIMESTAMP NOT NULL
+);
+
+-- G2 ratings. One row per company per snapshot; G2 covers a minority of this
+-- universe by design (it indexes software buyers review, not model weights),
+-- so absence here is the normal case and not a coverage failure.
+CREATE TABLE IF NOT EXISTS company_g2 (
+    domain        TEXT NOT NULL REFERENCES companies(domain) ON DELETE CASCADE,
+    product_slug  TEXT NOT NULL,
+    collected_on  DATE NOT NULL,
+    reviews       INTEGER,
+    avg_rating    REAL,
+    rating_1      INTEGER NOT NULL DEFAULT 0,
+    rating_2      INTEGER NOT NULL DEFAULT 0,
+    rating_3      INTEGER NOT NULL DEFAULT 0,
+    rating_4      INTEGER NOT NULL DEFAULT 0,
+    rating_5      INTEGER NOT NULL DEFAULT 0,
+    collected_at  TIMESTAMP NOT NULL,
+    PRIMARY KEY (domain, product_slug, collected_on)
+);

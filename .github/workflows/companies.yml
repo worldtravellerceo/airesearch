@@ -49,6 +49,27 @@ jobs:
             --limit ${{ inputs.limit || 1000 }} \
             ${{ inputs.dry_run == true && '--dry-run' || '' }}
 
+      # Rounds need no company list at all — they are selected by type, amount
+      # and date — so this is the one paid query that finds companies the
+      # corpus has never heard of. `fundingMonitor` means a monthly top-up is
+      # charged only for rounds it has not already returned.
+      - name: Funding rounds
+        run: |
+          airadar companies-funding --what rounds --limit 400 \
+            ${{ inputs.dry_run == true && '--dry-run' || '' }}
+
+      - name: Funding profiles
+        run: |
+          airadar companies-funding --what profiles --limit 500 \
+            ${{ inputs.dry_run == true && '--dry-run' || '' }}
+
+      # G2 covers a minority of this universe by design and the run is billed
+      # per review found, so the companies with no page cost almost nothing.
+      - name: G2 ratings
+        run: |
+          airadar companies-ratings --limit 200 \
+            ${{ inputs.dry_run == true && '--dry-run' || '' }}
+
       - uses: ./.github/actions/publish-db
         if: always()
         with:

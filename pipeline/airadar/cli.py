@@ -580,6 +580,103 @@ def companies_traffic(
     console.print(f"[green]companies-traffic[/green]: {report.summary()}")
 
 
+@app.command("companies-funding")
+def companies_funding(
+    what: str = typer.Option(
+        "rounds", "--what", help="rounds (who just raised) or profiles (totals and M&A)"
+    ),
+    limit: int = typer.Option(500, "--limit", help="How many rounds or companies"),
+    min_stars: int = typer.Option(None, "--min-stars", help="Ignore companies below this"),
+    dry_run: bool = typer.Option(False, "--dry-run", help="Print the price, spend nothing"),
+) -> None:
+    """Announced rounds, or a company's total raised and who bought whom.
+
+    `rounds` needs no company list: it selects by type, amount and date, so it
+    finds companies we have never heard of. `profiles` looks up companies we
+    already hold, and stores nothing until the profile's own website confirms
+    it is the company we asked about.
+    """
+    settings = _require_database()
+    floor = settings.company_min_stars if min_stars is None else min_stars
+
+    with db.connect(settings.db_path) as conn:
+        spent = apify.spend_this_month(conn)
+        if what == "rounds":
+            price = company_enrich.rounds_estimate_usd(limit)
+            queued = limit
+        else:
+            queued = len(company_db.companies_to_match(conn, limit=limit, min_stars=floor))
+            price = company_enrich.rounds_estimate_usd(queued)
+
+    console.print(
+        f"{what}: en fazla {queued:,} kayıt, tahmini ${price:.2f} — bu ay "
+        f"${spent:.2f} / ${settings.apify_monthly_cap_usd:.2f}"
+    )
+    if dry_run:
+        return
+    if not settings.apify_token:
+        console.print("[red]APIFY_TOKEN ayarlı değil.[/red]")
+        raise typer.Exit(1)
+
+    async def run():
+        with db.connect(settings.db_path) as conn:
+            async with apify.ApifyClient(
+                settings.apify_token, monthly_cap_usd=settings.apify_monthly_cap_usd
+            ) as client:
+                if what == "rounds":
+                    return await company_enrich.refresh_rounds(conn, client, max_rounds=limit)
+                return await company_enrich.refresh_company_funding(
+                    conn, client, limit=limit, min_stars=floor
+                )
+
+    report = asyncio.run(run())
+    console.print(f"[green]companies-funding[/green]: {report.summary()}")
+
+
+@app.command("companies-ratings")
+def companies_ratings(
+    limit: int = typer.Option(100, "--limit", help="How many companies to ask G2 about"),
+    min_stars: int = typer.Option(None, "--min-stars", help="Ignore companies below this"),
+    dry_run: bool = typer.Option(False, "--dry-run", help="Print the price, spend nothing"),
+) -> None:
+    """Ask G2 what buyers think of a company's product.
+
+    Most of this universe has no G2 page — it indexes software buyers review,
+    not model weights — and that answer is stored so the same empty lookup is
+    not paid for again. The run is billed per review found, which is what makes
+    a broad sweep affordable despite the miss rate.
+    """
+    settings = _require_database()
+    floor = settings.company_min_stars if min_stars is None else min_stars
+
+    with db.connect(settings.db_path) as conn:
+        queued = len(company_db.companies_to_rate(conn, limit=limit, min_stars=floor))
+        spent = apify.spend_this_month(conn)
+
+    console.print(
+        f"G2: {queued:,} şirket, en kötü durumda "
+        f"${company_enrich.g2_estimate_usd(queued):.2f} — bu ay ${spent:.2f} / "
+        f"${settings.apify_monthly_cap_usd:.2f}"
+    )
+    if dry_run:
+        return
+    if not settings.apify_token:
+        console.print("[red]APIFY_TOKEN ayarlı değil.[/red]")
+        raise typer.Exit(1)
+
+    async def run():
+        with db.connect(settings.db_path) as conn:
+            async with apify.ApifyClient(
+                settings.apify_token, monthly_cap_usd=settings.apify_monthly_cap_usd
+            ) as client:
+                return await company_enrich.refresh_ratings(
+                    conn, client, limit=limit, min_stars=floor
+                )
+
+    report = asyncio.run(run())
+    console.print(f"[green]companies-ratings[/green]: {report.summary()}")
+
+
 @app.command("review-queue")
 def review_queue(
     out: str = typer.Option("review-queue.json", "--out", help="Where to write the slice"),
