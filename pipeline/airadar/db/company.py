@@ -273,12 +273,18 @@ def companies_to_match(conn: sqlite3.Connection, *, limit: int, min_stars: int =
     Unlike the traffic queue this one does not come round again: a company's
     profile is asked for once, and a mismatch or a miss is remembered so the
     same money is not spent on the same wrong answer.
+
+    `ambiguous` is the exception, and the reason the state exists. It means
+    another domain guessed the same slug first, so this one was never actually
+    asked about — treating that as an answer would drop it from every future
+    run for a question nobody put.
     """
     rows = conn.execute(
         """
         SELECT c.domain FROM companies c
         LEFT JOIN company_crunchbase m ON m.domain = c.domain
-        WHERE c.repo_stars >= :min_stars AND m.domain IS NULL
+        WHERE c.repo_stars >= :min_stars
+          AND (m.domain IS NULL OR m.match_state = 'ambiguous')
         ORDER BY c.repo_stars DESC
         LIMIT :limit
         """,

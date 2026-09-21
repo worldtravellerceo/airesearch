@@ -208,21 +208,31 @@ async def refresh_company_funding(
 
     for start in range(0, len(domains), COMPANIES_PER_RUN):
         batch = domains[start : start + COMPANIES_PER_RUN]
-        asked = {funding.slug_candidate(domain): domain for domain in batch}
-        cap = round(rounds_estimate_usd(len(batch)) * RUN_CAP_MARGIN, 2)
+        # Several domains can guess the same slug — `langchain.com` and
+        # `langchain.dev` both give `langchain`. Only one of them can be the
+        # company that comes back, and the others were never really asked
+        # about, so they must not be filed as "Crunchbase has nothing" and
+        # thereby excluded from every future run.
+        by_slug: dict[str, list[str]] = {}
+        for domain in batch:
+            by_slug.setdefault(funding.slug_candidate(domain), []).append(domain)
+        asked = {slug: domains_for[0] for slug, domains_for in by_slug.items()}
+        ambiguous = [d for domains_for in by_slug.values() for d in domains_for[1:]]
+
+        cap = round(rounds_estimate_usd(len(asked)) * RUN_CAP_MARGIN, 2)
         try:
             run = await client.run_actor(
                 conn,
                 CRUNCHBASE_ACTOR,
-                {"startUrls": sorted(asked), "maxItems": len(batch)},
+                {"startUrls": sorted(asked), "maxItems": len(asked)},
                 max_charge_usd=cap,
-                notes=f"funding profiles for {len(batch)} companies",
+                notes=f"funding profiles for {len(asked)} companies",
             )
         except BudgetExceeded as exc:
             log.warning("funding: stopping early — %s", exc)
             break
 
-        report.companies_asked += len(batch)
+        report.companies_asked += len(asked)
         report.cost_usd += run.cost_usd
         seen: set[str] = set()
 
@@ -270,7 +280,7 @@ async def refresh_company_funding(
                 conn, funding.acquisition_rows(item, domain=domain, collected_at=now)
             )
 
-        for domain in batch:
+        for domain in asked.values():
             if domain in seen:
                 continue
             report.missing += 1
@@ -278,6 +288,17 @@ async def refresh_company_funding(
                 conn,
                 domain,
                 state="missing",
+                asked_as=funding.slug_candidate(domain),
+                checked_at=now,
+            )
+        for domain in ambiguous:
+            # A state, not a verdict: the slug went to somebody else this time,
+            # and this one is still waiting to be looked up by another route.
+            report.ambiguous += 1
+            db.record_match(
+                conn,
+                domain,
+                state="ambiguous",
                 asked_as=funding.slug_candidate(domain),
                 checked_at=now,
             )

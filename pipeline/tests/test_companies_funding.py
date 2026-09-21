@@ -283,3 +283,36 @@ def test_the_prices_are_arithmetic_we_can_check():
     assert enrich.rounds_estimate_usd(3_000) == pytest.approx(24.05, abs=0.01)
     assert enrich.rounds_estimate_usd(400) == pytest.approx(3.25, abs=0.01)
     assert enrich.g2_estimate_usd(100) == pytest.approx(2.505, abs=0.01)
+
+
+async def test_two_domains_guessing_the_same_slug_do_not_both_count_as_asked(conn):
+    """`langchain.com` and `langchain.dev` both guess `langchain`. Only one of
+    them can be the company that comes back, and filing the other as "Crunchbase
+    has nothing" would drop it from every future run for a question nobody put."""
+    seed(conn, "langchain.com", stars=100_000)
+    seed(conn, "langchain.dev", stars=90_000)
+
+    async with ApifyClient("t", transport=fake_apify([PROFILE]), sleep=_no_sleep) as client:
+        report = await enrich.refresh_company_funding(conn, client, limit=10, now=NOW)
+
+    assert report.companies_asked == 1
+    assert report.matched == 1
+    assert report.ambiguous == 1
+
+    states = {
+        row["domain"]: row["match_state"]
+        for row in conn.execute("SELECT domain, match_state FROM company_crunchbase")
+    }
+    assert states == {"langchain.com": "matched", "langchain.dev": "ambiguous"}
+
+
+async def test_the_domain_that_lost_the_slug_is_asked_about_next_time(conn):
+    """It converges: the winner is answered and leaves the queue, so the loser
+    gets the slug to itself on the next run."""
+    seed(conn, "langchain.com", stars=100_000)
+    seed(conn, "langchain.dev", stars=90_000)
+
+    async with ApifyClient("t", transport=fake_apify([PROFILE]), sleep=_no_sleep) as client:
+        await enrich.refresh_company_funding(conn, client, limit=10, now=NOW)
+
+    assert company_db.companies_to_match(conn, limit=10) == ["langchain.dev"]

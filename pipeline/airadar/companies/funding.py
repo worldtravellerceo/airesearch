@@ -74,6 +74,10 @@ class FundingReport:
     matched: int = 0
     mismatched: int = 0
     missing: int = 0
+    # Two domains guessed the same slug, so only one of them was really asked
+    # about. Counted apart from `missing`, which means Crunchbase answered and
+    # had nothing.
+    ambiguous: int = 0
     acquisitions: int = 0
     cost_usd: float = 0.0
 
@@ -81,7 +85,8 @@ class FundingReport:
         return (
             f"{self.rounds_written}/{self.rounds_seen} rounds, "
             f"{self.matched} matched of {self.companies_asked} asked "
-            f"({self.mismatched} wrong company, {self.missing} unknown), "
+            f"({self.mismatched} wrong company, {self.missing} unknown, "
+            f"{self.ambiguous} slug taken), "
             f"{self.acquisitions} acquisitions, ${self.cost_usd:.2f}"
         )
 
