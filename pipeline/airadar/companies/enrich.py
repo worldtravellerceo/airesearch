@@ -415,3 +415,207 @@ def _slug_for_name(name: str | None, by_slug: dict[str, list[dict]]) -> str | No
         if g2_mod.names_agree(slug, name or ""):
             return slug
     return None
+
+
+# --- the dictionary --------------------------------------------------------
+
+# Crunchbase's instant database serves the same clean company row as a live
+# scrape, which means it carries `website` — and that single field is what
+# ends the guessing. Ordered by Crunchbase rank, so a bounded purchase buys the
+# most prominent companies rather than an arbitrary slice.
+DIRECTORY_PER_RUN = 1000
+
+
+async def refresh_directory(
+    conn: sqlite3.Connection,
+    client: ApifyClient,
+    *,
+    limit: int = 5000,
+    query: str = "ai",
+    now: dt.datetime | None = None,
+) -> dict:
+    """Buy Crunchbase's company list and use it to stop guessing.
+
+    Three things follow from having `permalink -> website` in hand:
+
+    Our companies match by domain, with nothing guessed. The slug guess was
+    right 19% of the time; 140 of 498 lookups returned a real company that was
+    not ours, and the only reason none of them was believed is that the profile
+    had to name our domain before anything was stored.
+
+    The funding rounds reach the companies they belong to. A round row is flat
+    — `companyPermalink` and no website, which is the actor's shape and not a
+    parsing failure — so all 400 rounds from the first run had a NULL domain
+    and not one could be tied to anything we track.
+
+    And `dbQuery` is a substring match over name and description, so "ai" also
+    matches Airbnb and Raiffeisen. That is fine here: this table is a
+    dictionary, not a claim. Nothing is called an AI company for being in it.
+    """
+    now = now or dt.datetime.now(dt.UTC)
+    report = {"rows": 0, "with_domain": 0, "cost_usd": 0.0, "matched": 0, "rounds_attached": 0}
+
+    for start in range(0, limit, DIRECTORY_PER_RUN):
+        batch = min(DIRECTORY_PER_RUN, limit - start)
+        cap = round(rounds_estimate_usd(batch) * RUN_CAP_MARGIN, 2)
+        try:
+            run = await client.run_actor(
+                conn,
+                CRUNCHBASE_ACTOR,
+                {"instantDatabase": True, "dbQuery": query, "maxItems": batch},
+                max_charge_usd=cap,
+                notes=f"directory: {batch} rows of '{query}'",
+            )
+        except BudgetExceeded as exc:
+            log.warning("directory: stopping early — %s", exc)
+            break
+
+        report["cost_usd"] += run.cost_usd
+        rows = []
+        for item in run.items:
+            permalink = (item.get("permalink") or "").strip()
+            if not permalink:
+                continue
+            categories = item.get("categories")
+            if isinstance(categories, list):
+                categories = ",".join(
+                    str(c.get("name") if isinstance(c, dict) else c) for c in categories[:8]
+                )
+            domain = domains_mod.registrable_domain(item.get("website"))
+            rows.append(
+                {
+                    "permalink": permalink,
+                    "name": item.get("name"),
+                    "website": item.get("website"),
+                    "domain": domain,
+                    "categories": categories or None,
+                    "country": item.get("country"),
+                    "fetched_at": now,
+                }
+            )
+            report["with_domain"] += domain is not None
+        report["rows"] += db.record_directory(conn, rows)
+
+        if not run.ok:
+            log.error("directory: %s ended %s, stopping", CRUNCHBASE_ACTOR, run.status)
+            break
+
+    # The point of the purchase: match without guessing, and give the rounds
+    # somewhere to land.
+    report["matched"] = db.match_from_directory(conn, now=now)
+    report["rounds_attached"] = db.attach_rounds_to_domains(conn)
+    log.info(
+        "directory: %d rows (%d with a domain), %d companies matched, %d rounds attached, $%.2f",
+        report["rows"],
+        report["with_domain"],
+        report["matched"],
+        report["rounds_attached"],
+        report["cost_usd"],
+    )
+    return report
+
+
+# --- valuations ------------------------------------------------------------
+
+# The only place any of these sources states a valuation is a headline. The
+# actor's news mode returns them with the companies each article is about, so
+# a figure arrives already attached to a permalink — which the directory turns
+# into one of our domains.
+NEWS_PER_RUN = 500
+
+
+async def refresh_valuations(
+    conn: sqlite3.Connection,
+    client: ApifyClient,
+    *,
+    limit: int = 500,
+    since: dt.date | None = None,
+    now: dt.datetime | None = None,
+) -> dict:
+    """Read press-reported valuations out of Crunchbase News.
+
+    Every figure here was written by a journalist rather than measured, so it
+    is stored with the article that said it and shown as such. A headline with
+    no valuation in it is the common case and costs nothing extra — the article
+    was bought either way.
+    """
+    now = now or dt.datetime.now(dt.UTC)
+    since = since or (now.date() - dt.timedelta(days=180))
+    report = {"articles": 0, "valuations": 0, "attached": 0, "cost_usd": 0.0}
+
+    for start in range(0, limit, NEWS_PER_RUN):
+        batch = min(NEWS_PER_RUN, limit - start)
+        try:
+            run = await client.run_actor(
+                conn,
+                CRUNCHBASE_ACTOR,
+                {
+                    "newsMode": True,
+                    "newsCategory": "ai,venture,startups",
+                    "newsQuery": "valuation",
+                    "newsDateFrom": since.isoformat(),
+                    "maxItems": batch,
+                },
+                max_charge_usd=round(rounds_estimate_usd(batch) * RUN_CAP_MARGIN, 2),
+                notes=f"valuation headlines since {since}",
+            )
+        except BudgetExceeded as exc:
+            log.warning("valuations: stopping early — %s", exc)
+            break
+
+        report["cost_usd"] += run.cost_usd
+        report["articles"] += len(run.items)
+
+        for item in run.items:
+            usd = funding.valuation_from_headline(item.get("title") or "")
+            if usd is None:
+                continue
+            report["valuations"] += 1
+            published = item.get("publishedAt")
+            on = dt.date.fromisoformat(published[:10]) if isinstance(published, str) else None
+
+            # An article names several companies — the one that raised, its
+            # investors, sometimes a competitor. Only the first is the subject,
+            # and attaching the figure to the rest would put a $24bn valuation
+            # on whoever else got a mention.
+            companies = item.get("companies")
+            first = companies[0] if isinstance(companies, list) and companies else None
+            permalink = (first or {}).get("permalink") if isinstance(first, dict) else None
+            if not permalink:
+                continue
+
+            row = conn.execute(
+                "SELECT domain FROM crunchbase_directory "
+                "WHERE permalink = ? AND domain IS NOT NULL",
+                (permalink,),
+            ).fetchone()
+            if row is None:
+                continue
+            known = conn.execute(
+                "SELECT 1 FROM companies WHERE domain = ?", (row["domain"],)
+            ).fetchone()
+            if known is None:
+                continue
+
+            db.record_valuation(
+                conn,
+                row["domain"],
+                usd=usd,
+                source_url=item.get("url") or "",
+                on=on,
+                collected_at=now,
+            )
+            report["attached"] += 1
+        conn.commit()
+
+        if not run.ok:
+            break
+
+    log.info(
+        "valuations: %d articles, %d carried a figure, %d attached to a company we track, $%.2f",
+        report["articles"],
+        report["valuations"],
+        report["attached"],
+        report["cost_usd"],
+    )
+    return report

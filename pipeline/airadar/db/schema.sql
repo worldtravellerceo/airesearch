@@ -247,6 +247,32 @@ CREATE TABLE IF NOT EXISTS repo_packages (
 
 CREATE INDEX IF NOT EXISTS repo_packages_name_idx ON repo_packages(full_name);
 
+-- Crunchbase's own company list, as a dictionary.
+--
+-- The point is the `domain` column. Everything else in this universe had to
+-- guess: we hold `langchain.com` and Crunchbase wants `langchain`, and the
+-- guess was right 19% of the time — 140 of 498 lookups came back as a real
+-- company that was not ours. This table is bought rather than guessed, from
+-- the actor's instant database, which serves the same clean company row and
+-- therefore carries `website`.
+--
+-- It also rescues the funding rounds. A round row is flat: it carries
+-- `companyPermalink` and no website at all, which is why all 400 of the first
+-- run's rounds had a NULL domain and none could be tied to a company we track.
+-- With this dictionary the permalink resolves.
+CREATE TABLE IF NOT EXISTS crunchbase_directory (
+    permalink   TEXT PRIMARY KEY,
+    name        TEXT,
+    website     TEXT,
+    domain      TEXT,                    -- registrable domain of `website`
+    categories  TEXT,
+    country     TEXT,
+    fetched_at  TIMESTAMP NOT NULL
+);
+
+CREATE INDEX IF NOT EXISTS crunchbase_directory_domain_idx
+    ON crunchbase_directory(domain);
+
 -- One row per company per month of Similarweb data. Monthly, not daily: the
 -- source is a monthly estimate, and storing it per day would invent precision
 -- that is not there.

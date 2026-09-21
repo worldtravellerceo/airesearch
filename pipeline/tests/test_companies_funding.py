@@ -327,3 +327,197 @@ def test_the_round_size_is_not_read_as_the_valuation():
     headline = "Mistral AI Raises $3.5B At $24B Valuation In Another Record European Round"
 
     assert funding.valuation_from_headline(headline) == 24_000_000_000
+
+
+# --- the bought dictionary -------------------------------------------------
+
+
+DIRECTORY_ROW = {
+    "permalink": "mistral-ai",
+    "name": "Mistral AI",
+    "website": "https://mistral.ai",
+    "categories": [{"name": "Artificial Intelligence"}],
+    "country": "France",
+}
+
+
+async def test_the_directory_matches_a_company_without_guessing_anything(conn):
+    """The slug guess was right 19% of the time. This is the opposite: the
+    company's own Crunchbase profile names the domain we hold."""
+    seed(conn, "mistral.ai", stars=340_000)
+
+    async with ApifyClient(
+        "t", transport=fake_apify([DIRECTORY_ROW], cost=0.02), sleep=_no_sleep
+    ) as client:
+        report = await enrich.refresh_directory(conn, client, limit=10, now=NOW)
+
+    assert report["matched"] == 1
+    row = conn.execute("SELECT * FROM company_crunchbase").fetchone()
+    assert row["match_state"] == "matched"
+    assert row["asked_as"] == "directory"
+    assert conn.execute("SELECT name FROM companies").fetchone()["name"] == "Mistral AI"
+
+
+async def test_the_directory_gives_a_round_somewhere_to_land(conn):
+    """A round row is flat — a permalink and no website — which is why all 400
+    rounds from the first paid run had a NULL domain and not one could be tied
+    to a company we track."""
+    seed(conn, "mistral.ai", stars=340_000)
+    company_db.record_rounds(
+        conn,
+        [
+            {
+                "round_key": "k1",
+                "company_name": "Mistral AI",
+                "company_domain": None,
+                "cb_permalink": "mistral-ai",
+                "round_type": "series_c",
+                "amount_usd": 2_000_000_000,
+                "announced_on": TODAY - dt.timedelta(days=10),
+                "investors": None,
+                "source": "crunchbase",
+                "source_url": None,
+                "collected_at": NOW,
+            }
+        ],
+    )
+
+    async with ApifyClient("t", transport=fake_apify([DIRECTORY_ROW]), sleep=_no_sleep) as client:
+        report = await enrich.refresh_directory(conn, client, limit=10, now=NOW)
+
+    assert report["rounds_attached"] == 1
+    assert (
+        conn.execute("SELECT company_domain FROM funding_round").fetchone()["company_domain"]
+        == "mistral.ai"
+    )
+
+
+async def test_a_directory_row_is_a_dictionary_entry_not_a_claim(conn):
+    """`dbQuery` is a substring match over name and description, so asking for
+    "ai" also returns Airbnb and Raiffeisen. Being in the table must not make
+    a company part of this index."""
+    async with ApifyClient(
+        "t",
+        transport=fake_apify(
+            [{"permalink": "airbnb", "name": "Airbnb", "website": "https://airbnb.com"}]
+        ),
+        sleep=_no_sleep,
+    ) as client:
+        await enrich.refresh_directory(conn, client, limit=10, now=NOW)
+
+    assert conn.execute("SELECT count(*) AS n FROM crunchbase_directory").fetchone()["n"] == 1
+    assert conn.execute("SELECT count(*) AS n FROM companies").fetchone()["n"] == 0
+
+
+async def test_a_profile_with_no_website_is_stored_without_a_domain(conn):
+    """Half the point of the row is the website. One without it is still worth
+    keeping as a name for a permalink, and must not become a match."""
+    async with ApifyClient(
+        "t",
+        transport=fake_apify([{"permalink": "stealth", "name": "Stealth Co"}]),
+        sleep=_no_sleep,
+    ) as client:
+        report = await enrich.refresh_directory(conn, client, limit=10, now=NOW)
+
+    assert report["rows"] == 1
+    assert report["with_domain"] == 0
+    assert conn.execute("SELECT domain FROM crunchbase_directory").fetchone()["domain"] is None
+
+
+# --- valuations from headlines ---------------------------------------------
+
+
+def _article(title, permalink="mistral-ai", url="https://news.crunchbase.com/x"):
+    return {
+        "title": title,
+        "url": url,
+        "publishedAt": "2026-09-08T13:02:11Z",
+        "companies": [{"name": "Mistral AI", "permalink": permalink}],
+    }
+
+
+async def _with_directory(conn):
+    seed(conn, "mistral.ai", stars=340_000)
+    company_db.record_directory(
+        conn,
+        [
+            {
+                "permalink": "mistral-ai",
+                "name": "Mistral AI",
+                "website": "https://mistral.ai",
+                "domain": "mistral.ai",
+                "categories": None,
+                "country": "France",
+                "fetched_at": NOW,
+            }
+        ],
+    )
+
+
+async def test_a_headline_valuation_reaches_the_company_it_is_about(conn):
+    await _with_directory(conn)
+    article = _article("Mistral AI Raises $3.5B At $24B Valuation In Another Record Round")
+
+    async with ApifyClient("t", transport=fake_apify([article]), sleep=_no_sleep) as client:
+        report = await enrich.refresh_valuations(conn, client, limit=10, now=NOW)
+
+    assert report["attached"] == 1
+    row = conn.execute("SELECT * FROM company_funding").fetchone()
+    assert row["valuation_usd"] == 24_000_000_000
+    assert row["valuation_src"] == "https://news.crunchbase.com/x"
+
+
+async def test_an_article_with_no_valuation_in_it_attaches_nothing(conn):
+    await _with_directory(conn)
+
+    async with ApifyClient(
+        "t", transport=fake_apify([_article("Mistral AI hires a new CFO")]), sleep=_no_sleep
+    ) as client:
+        report = await enrich.refresh_valuations(conn, client, limit=10, now=NOW)
+
+    assert report["articles"] == 1
+    assert report["valuations"] == 0
+    assert conn.execute("SELECT count(*) AS n FROM company_funding").fetchone()["n"] == 0
+
+
+async def test_only_the_company_the_article_is_about_gets_the_figure(conn):
+    """A Crunchbase News article names the company that raised, its investors
+    and often a competitor. Attaching $24bn to all of them would put a
+    valuation on whoever else got a mention."""
+    await _with_directory(conn)
+    article = _article("Mistral AI Raises At $24B Valuation")
+    article["companies"].append({"name": "ASML", "permalink": "asml"})
+    company_db.record_directory(
+        conn,
+        [
+            {
+                "permalink": "asml",
+                "name": "ASML",
+                "website": "https://asml.com",
+                "domain": "asml.com",
+                "categories": None,
+                "country": "Netherlands",
+                "fetched_at": NOW,
+            }
+        ],
+    )
+    seed(conn, "asml.com", stars=10)
+
+    async with ApifyClient("t", transport=fake_apify([article]), sleep=_no_sleep) as client:
+        await enrich.refresh_valuations(conn, client, limit=10, now=NOW)
+
+    rows = {r["domain"]: r["valuation_usd"] for r in conn.execute("SELECT * FROM company_funding")}
+    assert rows == {"mistral.ai": 24_000_000_000}
+
+
+async def test_a_valuation_for_a_company_we_do_not_track_is_not_stored(conn):
+    """The board is about the companies in this index, not about venture news."""
+    async with ApifyClient(
+        "t",
+        transport=fake_apify([_article("Acme Raises At $9B Valuation", permalink="acme")]),
+        sleep=_no_sleep,
+    ) as client:
+        report = await enrich.refresh_valuations(conn, client, limit=10, now=NOW)
+
+    assert report["valuations"] == 1
+    assert report["attached"] == 0

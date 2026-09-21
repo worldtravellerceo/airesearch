@@ -16,6 +16,10 @@ on:
         description: "Print the queue and the price, spend nothing"
         type: boolean
         default: true
+      directory:
+        description: "How many Crunchbase directory rows to buy (the identity key)"
+        required: false
+        default: "5000"
       monitor:
         description: >
           Ask Crunchbase only for rounds it has not returned before. Cheap, and
@@ -99,6 +103,21 @@ jobs:
         with:
           token: ${{ github.token }}
 
+      # First, and before anything that needs an identity: Crunchbase's own
+      # company list, which carries each profile's website. That single field
+      # is what ends the guessing — the slug guess was right 19% of the time —
+      # and it is the only way a funding round, whose row carries a permalink
+      # and no website, reaches the company it belongs to.
+      - name: Company directory
+        run: |
+          airadar companies-directory --limit ${{ inputs.directory || 5000 }} \
+            ${{ inputs.dry_run == true && '--dry-run' || '' }}
+
+      - uses: ./.github/actions/publish-db
+        if: always()
+        with:
+          token: ${{ github.token }}
+
       - name: Funding rounds
         run: |
           airadar companies-funding --what rounds --limit 400 \
@@ -127,6 +146,16 @@ jobs:
       # half — a run that dies at minute 90 has already banked what the first
       # 89 bought. Ninety seconds of gzip and upload against fourteen dollars
       # of data is not a close call.
+      - uses: ./.github/actions/publish-db
+        if: always()
+        with:
+          token: ${{ github.token }}
+
+      - name: Valuations
+        run: |
+          airadar companies-valuations --limit 500 \
+            ${{ inputs.dry_run == true && '--dry-run' || '' }}
+
       - uses: ./.github/actions/publish-db
         if: always()
         with:

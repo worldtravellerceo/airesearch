@@ -85,7 +85,20 @@ def valuations(conn: sqlite3.Connection, *, limit: int = BOARD_LIMIT) -> list[di
 
 
 def raised(conn: sqlite3.Connection, *, limit: int = BOARD_LIMIT) -> list[dict]:
-    """Total raised to date, largest first."""
+    """Total raised to date, largest first.
+
+    Not offered as a board, because the figure cannot be had. Crunchbase moved
+    the total funding amount behind a secondary request that the actor
+    deliberately does not make — the readme's own flagship sample prints
+    `"totalUsd": null` — and our first run confirmed it: 0 of 96 matched
+    profiles carried a total, while round counts and investor counts came
+    through for about half. Unlocking it needs a logged-in Crunchbase Pro
+    session whose token expires every few minutes, which is not something a
+    scheduled job can hold.
+
+    The query is kept because the column is real and the day the source
+    changes, this fills. Until then `funded` carries the money.
+    """
     rows = conn.execute(
         """
         SELECT f.domain, c.name, f.total_usd, f.rounds, f.investors, f.last_round,
@@ -232,7 +245,6 @@ BOARDS = {
         "Basında geçen son değerleme. Her satırda haberin linki var — ölçülmüş değil, "
         "bildirilmiş bir rakam.",
     ),
-    "raised": (raised, "Toplam yatırım", "Bugüne dek toplanan para."),
     "acquired": (acquired, "Satın almalar", "Kim kimi aldı, en yenisi önce."),
     "traffic": (traffic, "En çok ziyaret", "Aylık tahmini ziyaret. Ölçüm değil, tahmin."),
     "rising": (

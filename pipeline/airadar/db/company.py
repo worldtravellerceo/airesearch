@@ -327,3 +327,88 @@ def record_g2(conn: sqlite3.Connection, row: dict) -> None:
         """,
         row,
     )
+
+
+# --- the bought dictionary -------------------------------------------------
+
+
+def record_directory(conn: sqlite3.Connection, rows: Sequence[dict]) -> int:
+    """Store Crunchbase's own company list, keyed on permalink.
+
+    Bought rather than guessed. The slug guess was right 19% of the time, and a
+    wrong guess is not a failure — it is a different real company filed under
+    our domain.
+    """
+    if not rows:
+        return 0
+    conn.executemany(
+        """
+        INSERT INTO crunchbase_directory
+            (permalink, name, website, domain, categories, country, fetched_at)
+        VALUES (:permalink, :name, :website, :domain, :categories, :country, :fetched_at)
+        ON CONFLICT(permalink) DO UPDATE SET
+            name = excluded.name, website = excluded.website,
+            domain = COALESCE(excluded.domain, crunchbase_directory.domain),
+            categories = excluded.categories, country = excluded.country,
+            fetched_at = excluded.fetched_at
+        """,
+        rows,
+    )
+    conn.commit()
+    return len(rows)
+
+
+def attach_rounds_to_domains(conn: sqlite3.Connection) -> int:
+    """Resolve each round's Crunchbase permalink to a domain, where we know it.
+
+    A round row carries no website — that is the actor's shape, not a parsing
+    failure — so this is the only way a round reaches the company it belongs
+    to. Run after the directory is refreshed.
+    """
+    cursor = conn.execute(
+        """
+        UPDATE funding_round
+           SET company_domain = (
+                 SELECT d.domain FROM crunchbase_directory d
+                  WHERE d.permalink = funding_round.cb_permalink AND d.domain IS NOT NULL)
+         WHERE company_domain IS NULL
+           AND cb_permalink IS NOT NULL
+           AND EXISTS (SELECT 1 FROM crunchbase_directory d
+                        WHERE d.permalink = funding_round.cb_permalink
+                          AND d.domain IS NOT NULL)
+        """
+    )
+    conn.commit()
+    return cursor.rowcount
+
+
+def match_from_directory(conn: sqlite3.Connection, *, now: dt.datetime | None = None) -> int:
+    """Match our companies to Crunchbase by domain, with nothing guessed.
+
+    A row here is the strongest identity this universe has: the company's own
+    Crunchbase profile lists this exact domain as its website.
+    """
+    now = now or dt.datetime.now(dt.UTC)
+    rows = conn.execute(
+        """
+        SELECT c.domain, d.permalink, d.name, d.website
+          FROM companies c
+          JOIN crunchbase_directory d ON d.domain = c.domain
+         WHERE NOT EXISTS (SELECT 1 FROM company_crunchbase m
+                            WHERE m.domain = c.domain AND m.match_state = 'matched')
+        """
+    ).fetchall()
+    for row in rows:
+        record_match(
+            conn,
+            row["domain"],
+            state="matched",
+            asked_as="directory",
+            permalink=row["permalink"],
+            name=row["name"],
+            website=row["website"],
+            checked_at=now,
+        )
+        set_name(conn, row["domain"], row["name"])
+    conn.commit()
+    return len(rows)

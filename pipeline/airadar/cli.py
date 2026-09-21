@@ -659,6 +659,89 @@ def companies_funding(
     console.print(f"[green]companies-funding[/green]: {report.summary()}")
 
 
+@app.command("companies-directory")
+def companies_directory(
+    limit: int = typer.Option(5000, "--limit", help="How many Crunchbase rows to buy"),
+    query: str = typer.Option("ai", "--query", help="Substring matched on name or description"),
+    dry_run: bool = typer.Option(False, "--dry-run", help="Print the price, spend nothing"),
+) -> None:
+    """Buy Crunchbase's company list so we can stop guessing identities.
+
+    The rows carry the company's own website, which is the only field that ties
+    a Crunchbase profile to a domain we hold. Without it the slug guess was
+    right 19% of the time, and every funding round came back unattributable.
+    """
+    settings = _require_database()
+    with db.connect(settings.db_path) as conn:
+        spent = apify.spend_this_month(conn)
+    console.print(
+        f"dizin: {limit:,} satır, tahmini "
+        f"${company_enrich.rounds_estimate_usd(limit):.2f} — bu ay ${spent:.2f} / "
+        f"${settings.apify_monthly_cap_usd:.2f}"
+    )
+    if dry_run:
+        return
+    if not settings.apify_token:
+        console.print("[red]APIFY_TOKEN ayarlı değil.[/red]")
+        raise typer.Exit(1)
+
+    async def run() -> dict:
+        with db.connect(settings.db_path) as conn:
+            async with apify.ApifyClient(
+                settings.apify_token, monthly_cap_usd=settings.apify_monthly_cap_usd
+            ) as client:
+                return await company_enrich.refresh_directory(
+                    conn, client, limit=limit, query=query
+                )
+
+    report = asyncio.run(run())
+    console.print(
+        f"[green]companies-directory[/green]: {report['rows']:,} satır "
+        f"({report['with_domain']:,} alan adıyla), {report['matched']:,} şirket eşleşti, "
+        f"{report['rounds_attached']:,} tur bağlandı, ${report['cost_usd']:.2f}"
+    )
+
+
+@app.command("companies-valuations")
+def companies_valuations(
+    limit: int = typer.Option(500, "--limit", help="How many articles to read"),
+    dry_run: bool = typer.Option(False, "--dry-run", help="Print the price, spend nothing"),
+) -> None:
+    """Read press-reported valuations out of Crunchbase News headlines.
+
+    The only place any of these sources states a valuation. Every figure is
+    stored with the article that said it, and shown as a press report rather
+    than a measurement.
+    """
+    settings = _require_database()
+    with db.connect(settings.db_path) as conn:
+        spent = apify.spend_this_month(conn)
+    console.print(
+        f"haberler: {limit:,} makale, tahmini "
+        f"${company_enrich.rounds_estimate_usd(limit):.2f} — bu ay ${spent:.2f} / "
+        f"${settings.apify_monthly_cap_usd:.2f}"
+    )
+    if dry_run:
+        return
+    if not settings.apify_token:
+        console.print("[red]APIFY_TOKEN ayarlı değil.[/red]")
+        raise typer.Exit(1)
+
+    async def run() -> dict:
+        with db.connect(settings.db_path) as conn:
+            async with apify.ApifyClient(
+                settings.apify_token, monthly_cap_usd=settings.apify_monthly_cap_usd
+            ) as client:
+                return await company_enrich.refresh_valuations(conn, client, limit=limit)
+
+    report = asyncio.run(run())
+    console.print(
+        f"[green]companies-valuations[/green]: {report['articles']:,} makale, "
+        f"{report['valuations']:,} tanesinde rakam, {report['attached']:,} şirkete bağlandı, "
+        f"${report['cost_usd']:.2f}"
+    )
+
+
 @app.command("companies-ratings")
 def companies_ratings(
     limit: int = typer.Option(100, "--limit", help="How many companies to ask G2 about"),
