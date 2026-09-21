@@ -16,10 +16,23 @@ on:
         description: "Print the queue and the price, spend nothing"
         type: boolean
         default: true
+      monitor:
+        description: >
+          Ask Crunchbase only for rounds it has not returned before. Cheap, and
+          wrong after a run whose results were lost — the rounds were delivered
+          as far as it is concerned, so it would return nothing.
+        type: boolean
+        default: true
   schedule:
     # Mondays, after the weekly discover run has refreshed the corpus the seed
     # list is built from.
     - cron: "0 6 * * 1"
+
+# Writing the database means replacing the release asset, which the default
+# token cannot do. Its absence is what lost the first paid run: every actor
+# finished, and the upload at the end returned 403.
+permissions:
+  contents: write
 
 # The same group as every other workflow that writes the database. They each
 # check the file out, change it and publish the whole thing back, so two of
@@ -42,6 +55,25 @@ jobs:
         with:
           token: ${{ github.token }}
 
+      # Before any of it is spent. The first paid run finished every actor and
+      # then failed to publish, because this job had no write permission — so
+      # the money was gone and the data with it. A permission is easy to fix
+      # once; "something makes the publish fail after the spending" is the
+      # shape of the problem, and the answer is to find out first, for the
+      # price of uploading nine bytes.
+      - name: Check that the database can actually be published
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          echo preflight > preflight.txt
+          gh release view data >/dev/null 2>&1 || gh release create data \
+            --title "Veri deposu" --notes "AI Radar veritabanı." --latest=false
+          gh release upload data preflight.txt --clobber
+          gh release delete-asset data preflight.txt --yes
+          rm preflight.txt
+          echo "publishing works; safe to spend"
+
       - name: Rebuild the company universe
         run: airadar companies-sync
 
@@ -60,6 +92,7 @@ jobs:
       - name: Funding rounds
         run: |
           airadar companies-funding --what rounds --limit 400 \
+            ${{ inputs.monitor == false && '--no-monitor' || '' }} \
             ${{ inputs.dry_run == true && '--dry-run' || '' }}
 
       - name: Funding profiles

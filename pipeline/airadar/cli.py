@@ -606,6 +606,11 @@ def companies_funding(
     ),
     limit: int = typer.Option(500, "--limit", help="How many rounds or companies"),
     min_stars: int = typer.Option(None, "--min-stars", help="Ignore companies below this"),
+    monitor: bool = typer.Option(
+        True,
+        "--monitor/--no-monitor",
+        help="Only rounds not returned by a previous identical run (cheaper)",
+    ),
     dry_run: bool = typer.Option(False, "--dry-run", help="Print the price, spend nothing"),
 ) -> None:
     """Announced rounds, or a company's total raised and who bought whom.
@@ -643,7 +648,9 @@ def companies_funding(
                 settings.apify_token, monthly_cap_usd=settings.apify_monthly_cap_usd
             ) as client:
                 if what == "rounds":
-                    return await company_enrich.refresh_rounds(conn, client, max_rounds=limit)
+                    return await company_enrich.refresh_rounds(
+                        conn, client, max_rounds=limit, monitor=monitor
+                    )
                 return await company_enrich.refresh_company_funding(
                     conn, client, limit=limit, min_stars=floor
                 )
