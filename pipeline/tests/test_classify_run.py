@@ -3,6 +3,7 @@
 import datetime as dt
 import json
 from dataclasses import dataclass, field
+from pathlib import Path
 
 import httpx
 
@@ -347,14 +348,14 @@ async def test_max_llm_caps_spend(conn, monkeypatch):
 
 def _verdict_file(path, conn, full_name, *, is_ai, category, stale=False):
     facts, _ = classify_run.load_facts(conn)
-    content_hash = next(f.content_hash() for f in facts if f.full_name == full_name)
+    inputs_hash = next(f.inputs_hash() for f in facts if f.full_name == full_name)
     path.write_text(
         json.dumps(
             {
                 "repos": [
                     {
                         "full_name": full_name,
-                        "content_hash": "0" * 32 if stale else content_hash,
+                        "inputs_hash": "0" * 32 if stale else inputs_hash,
                         "is_ai": is_ai,
                         "category": category,
                         "confidence": 0.92,
@@ -420,3 +421,33 @@ def test_an_empty_verdict_directory_is_not_an_error(conn, tmp_path):
     report = classify_run.import_verdicts(conn, folder)
 
     assert report.imported == 0
+
+
+def test_a_rules_change_does_not_throw_away_a_hand_made_verdict(conn, monkeypatch):
+    """Found in the field, the hard way. `RULES_VERSION` was folded into the
+    hash a verdict is checked against, so adding one phrase to a list discarded
+    all 661 verdicts that had been made by reading the repositories.
+
+    A rule-engine verdict does expire when the rules change. A judgement made by
+    reading a description does not: the repository did not move.
+    """
+    from airadar.classify import rules as rules_module
+
+    add_repo(conn, 1, "acme/one", "A tool", ["agent"])
+    conn.commit()
+
+    path = tmp = conn  # placeholder to keep the name obvious below
+    del path, tmp
+
+    folder = Path(__import__("tempfile").mkdtemp())
+    _verdict_file(folder / "a.json", conn, "acme/one", is_ai=True, category="agent-framework")
+
+    original = rules_module.RULES_VERSION
+    try:
+        rules_module.RULES_VERSION = "999"
+        report = classify_run.import_verdicts(conn, folder)
+    finally:
+        rules_module.RULES_VERSION = original
+
+    assert report.imported == 1
+    assert report.unmatched == []

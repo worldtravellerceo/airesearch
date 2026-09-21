@@ -347,18 +347,31 @@ class RepoFacts:
             homepage=row.get("homepage"),
         )
 
-    def content_hash(self) -> str:
-        """Identity of the *inputs*, so classification is only ever redone when
-        something that could change the answer actually changed."""
+    def inputs_hash(self) -> str:
+        """Identity of the repository's own inputs, with no rules version.
+
+        This is what a judgement made by reading the repo is about. A person who
+        read this description and these topics and decided the repo is an agent
+        framework did not become wrong because a phrase was added to a list, so
+        their verdict is validated against this rather than `content_hash`.
+        Folding the rules version in here threw away all 661 hand-made verdicts
+        the moment the vocabulary changed.
+        """
         payload = "\x1f".join(
             [
-                RULES_VERSION,
                 self.full_name.lower(),
                 (self.description or "").strip().lower(),
                 ",".join(sorted(t.lower() for t in self.topics)),
                 (self.language or "").lower(),
             ]
         )
+        return hashlib.sha256(payload.encode("utf-8")).hexdigest()[:32]
+
+    def content_hash(self) -> str:
+        """Identity of the inputs *and* the rules, so a rule-engine verdict is
+        redone when either changes. A cached verdict made under rules that no
+        longer exist is worse than no verdict."""
+        payload = "\x1f".join([RULES_VERSION, self.inputs_hash()])
         return hashlib.sha256(payload.encode("utf-8")).hexdigest()[:32]
 
 

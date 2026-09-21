@@ -41,7 +41,7 @@ class HandoffItem:
     topics: list[str]
     language: str | None
     readme_excerpt: str
-    content_hash: str
+    inputs_hash: str
     rule_confidence: float
 
 
@@ -257,7 +257,7 @@ async def export_pending(
                 topics=list(item.topics),
                 language=item.language,
                 readme_excerpt=await fetch_readme_excerpt(client, item.full_name),
-                content_hash=item.content_hash(),
+                inputs_hash=item.inputs_hash(),
                 rule_confidence=verdict.confidence,
             ).__dict__
         )
@@ -299,6 +299,11 @@ def import_verdicts(conn: sqlite3.Connection, path: Path) -> ClassifyReport:
     payload = json.loads(path.read_text(encoding="utf-8"))
 
     facts, ids_by_name = load_facts(conn)
+    # Validated against the repo's own inputs, not against the rules version: a
+    # judgement made by reading a description does not expire because a phrase
+    # was added to a list. Stored under `content_hash` so the rule engine still
+    # treats it as cached.
+    inputs = {f.full_name: f.inputs_hash() for f in facts}
     hashes = {f.full_name: f.content_hash() for f in facts}
 
     for entry in payload.get("repos", []):
@@ -307,7 +312,7 @@ def import_verdicts(conn: sqlite3.Connection, path: Path) -> ClassifyReport:
         if repo_id is None:
             report.unmatched.append(full_name or "?")
             continue
-        if entry.get("content_hash") and entry["content_hash"] != hashes.get(full_name):
+        if entry.get("inputs_hash") and entry["inputs_hash"] != inputs.get(full_name):
             log.info("classify: %s changed since export, skipping", full_name)
             report.unmatched.append(full_name)
             continue
