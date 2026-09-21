@@ -81,8 +81,17 @@ export function BoardTable({
             <th scope="col" className="py-2.5 pr-4 text-right font-medium">
               Yıldız
             </th>
-            <th scope="col" className="py-2.5 pr-4 font-medium">
-              90 gün
+            {/* "90 gün" alone read as a cumulative curve, which is what the
+                project page's lifetime chart shows. This one is a rate: stars
+                gained per day. A falling line here means the project is
+                growing more slowly, not that it lost stars — and the two
+                shapes disagreeing is normal. */}
+            <th
+              scope="col"
+              className="py-2.5 pr-4 font-medium"
+              title="Günde kazanılan yıldız — toplam değil. Çizginin düşmesi yavaşlama demek, yıldız kaybı değil."
+            >
+              90g günlük hız
             </th>
             <th scope="col" className="py-2.5 pr-4 text-right font-medium">
               14g hız
@@ -136,7 +145,7 @@ export function BoardTable({
               <td className="py-2.5 pr-4">
                 <Sparkline
                   values={entry.sparkline}
-                  label={`${entry.full_name} son 90 günün yıldız hızı`}
+                  label={`${entry.full_name} son 90 günün günlük yıldız hızı`}
                 />
               </td>
               <td className="tabular py-2.5 pr-4 text-right">{rate(entry.velocity_14d)}</td>
