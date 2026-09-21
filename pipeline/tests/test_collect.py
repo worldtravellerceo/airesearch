@@ -1,5 +1,6 @@
 """End-to-end collection tests: mocked GitHub transport, real database."""
 
+import asyncio
 import datetime as dt
 
 import httpx
@@ -309,3 +310,103 @@ async def test_repeated_collects_do_not_inflate_the_lifetime_history(conn):
 
     assert total() == after_first, "the lifetime history grew on a repeat collect"
     assert conn.execute("SELECT fresh_power_tail AS t FROM repos").fetchone()["t"] == tail_first
+
+
+# --- concurrency -----------------------------------------------------------
+
+
+async def test_collect_keeps_several_requests_in_flight(conn, monkeypatch):
+    """Sequential collection is bounded by the round trip, not by quota: at
+    ~250ms a request that is four a second no matter how much allowance is
+    left, which is how a 17,799-request backfill took 148 minutes."""
+    from airadar.config import get_settings
+
+    monkeypatch.setattr(get_settings(), "concurrency", 6)
+    for repo_id in range(1, 31):
+        seed(conn, repo_id=repo_id, full_name=f"acme/repo{repo_id}")
+
+    in_flight = 0
+    peak = 0
+
+    async def handler(request: httpx.Request) -> httpx.Response:
+        nonlocal in_flight, peak
+        in_flight += 1
+        peak = max(peak, in_flight)
+        # Yield to the loop so the other workers get a chance to pile up; a
+        # sequential collect cannot produce a second one no matter how long
+        # this takes.
+        await asyncio.sleep(0)
+        in_flight -= 1
+        if request.url.path.endswith("/stargazers/history"):
+            return httpx.Response(200, json=[week_json(SUNDAY, 1)], headers=_headers())
+        name = request.url.path.removeprefix("/repos/")
+        number = int(name.removeprefix("acme/repo"))
+        return httpx.Response(
+            200, json=repo_json(repo_id=number, full_name=name), headers=_headers()
+        )
+
+    async with GitHubClient(
+        token="t", transport=httpx.MockTransport(handler), sleep=_noop_sleep
+    ) as client:
+        report = await collect(conn, client, today=TODAY)
+
+    assert peak == 6
+    assert report.refreshed == 30
+
+
+async def test_every_repo_is_collected_exactly_once(conn, monkeypatch):
+    """Workers share one queue. Handing each a slice would be simpler and would
+    silently drop or repeat rows at the seams."""
+    from airadar.config import get_settings
+
+    monkeypatch.setattr(get_settings(), "concurrency", 8)
+    for repo_id in range(1, 26):
+        seed(conn, repo_id=repo_id, full_name=f"acme/repo{repo_id}")
+
+    seen: list[str] = []
+
+    async def handler(request: httpx.Request) -> httpx.Response:
+        await asyncio.sleep(0)
+        if request.url.path.endswith("/stargazers/history"):
+            return httpx.Response(200, json=[week_json(SUNDAY, 1)], headers=_headers())
+        name = request.url.path.removeprefix("/repos/")
+        seen.append(name)
+        number = int(name.removeprefix("acme/repo"))
+        return httpx.Response(
+            200, json=repo_json(repo_id=number, full_name=name), headers=_headers()
+        )
+
+    async with GitHubClient(
+        token="t", transport=httpx.MockTransport(handler), sleep=_noop_sleep
+    ) as client:
+        await collect(conn, client, today=TODAY)
+
+    assert sorted(seen) == sorted(f"acme/repo{n}" for n in range(1, 26))
+    assert len(seen) == len(set(seen))
+
+
+async def test_one_repo_failing_does_not_abandon_the_backfill(conn):
+    """In flight, a raised error cancels its siblings. A single deleted repo
+    must not cost the other 17,798 their history."""
+    for repo_id in (1, 2, 3):
+        seed(conn, repo_id=repo_id, full_name=f"acme/repo{repo_id}")
+
+    def handler(request: httpx.Request) -> httpx.Response:
+        if request.url.path.startswith("/repos/acme/repo2/"):
+            return httpx.Response(404, json={"message": "Not Found"}, headers=_headers())
+        return httpx.Response(200, json=[week_json(SUNDAY, 3)], headers=_headers())
+
+    async with GitHubClient(
+        token="t", transport=httpx.MockTransport(handler), sleep=_noop_sleep
+    ) as client:
+        written = await backfill(conn, client)
+
+    assert written > 0
+    assert (
+        conn.execute("SELECT count(*) AS n FROM repo_star_daily WHERE repo_id = 2").fetchone()["n"]
+        == 0
+    )
+    backfilled = conn.execute(
+        "SELECT count(*) AS n FROM repos WHERE history_backfilled_through IS NOT NULL"
+    ).fetchone()["n"]
+    assert backfilled == 2

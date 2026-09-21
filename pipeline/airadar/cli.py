@@ -63,16 +63,29 @@ async def _doctor(repo: str) -> None:
         table.add_column("check")
         table.add_column("result")
 
-        limits = await client.get("/rate_limit")
-        core = limits.data["resources"]["core"]
-        search = limits.data["resources"]["search"]
-        table.add_row("auth", "[green]ok[/green]")
-        table.add_row("core quota", f"{core['remaining']}/{core['limit']} per hour")
-        table.add_row("search quota", f"{search['remaining']}/{search['limit']} per minute")
-        if core["limit"] < 5000:
+        # Per lane, because the ceiling a run works against is the sum. One
+        # token is 5,000 an hour; three are 15,000, and that is the difference
+        # between a backfill that fits in the job's timeout and one that does not.
+        lanes = await client.check_lanes()
+        table.add_row("auth", f"[green]ok[/green] — {client.lanes} token(s)")
+        for lane in lanes:
+            if not lane["ok"]:
+                table.add_row(lane["lane"], "[red]rejected (401), dropped[/red]")
+                continue
+            if lane.get("unknown"):
+                table.add_row(lane["lane"], "[yellow]quota unreadable[/yellow]")
+                continue
+            table.add_row(
+                lane["lane"],
+                f"core {lane['core']}/{lane['core_limit']} per hour, "
+                f"search {lane['search']}/{lane['search_limit']} per minute",
+            )
+        core_ceiling = sum(lane.get("core_limit", 0) for lane in lanes if lane["ok"])
+        table.add_row("ceiling", f"{core_ceiling:,} core requests per hour")
+        if any(lane.get("core_limit", 5000) < 5000 for lane in lanes):
             table.add_row(
                 "[yellow]warning[/yellow]",
-                f"core limit is {core['limit']}/h — this looks like an Actions "
+                "a lane is under 5,000/h — that looks like an Actions "
                 "GITHUB_TOKEN (1,000/h per repo). Use a PAT instead.",
             )
 

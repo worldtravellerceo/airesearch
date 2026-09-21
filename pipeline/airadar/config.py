@@ -20,7 +20,28 @@ class Settings(BaseSettings):
     # A personal access token, NOT the Actions GITHUB_TOKEN: the latter is capped
     # at 1,000 requests/hour per repository, which is far too low for this workload.
     github_token: str = Field(default="", alias="GH_PAT")
+    # Extra tokens are optional and purely about throughput. The primary rate
+    # limit is per token, so a second and third one triple the ceiling: the
+    # backfill that took 148 minutes spent almost all of it waiting for quota,
+    # with the CPU idle. Adding tokens is the only lever that moves that wall,
+    # since no amount of hardware buys a higher limit.
+    github_token_2: str = Field(default="", alias="GH_PAT_2")
+    github_token_3: str = Field(default="", alias="GH_PAT_3")
     anthropic_api_key: str = Field(default="", alias="ANTHROPIC_API_KEY")
+
+    @property
+    def github_tokens(self) -> list[str]:
+        """Every configured token, in order, without blanks or duplicates.
+
+        A duplicate would be worse than useless: two lanes sharing one bucket
+        would each believe they had the full allowance and run it dry together.
+        """
+        seen: list[str] = []
+        for token in (self.github_token, self.github_token_2, self.github_token_3):
+            token = token.strip()
+            if token and token not in seen:
+                seen.append(token)
+        return seen
 
     # --- storage -----------------------------------------------------------
     # A SQLite file that lives in the repository. Keeping the data here rather
@@ -54,6 +75,13 @@ class Settings(BaseSettings):
     # Days of per-day detail retained; older rows fold into fresh_power_tail.
     retain_days: int = Field(default=120, alias="AIRADAR_RETAIN_DAYS")
     user_agent: str = "airadar/0.1 (+https://github.com/worldtravellerceo/airesearch)"
+    # How many requests are in flight at once. Every run so far was sequential:
+    # one request, wait for the round trip, next request. At ~250ms that is four
+    # requests a second no matter how much quota is left, which is why a
+    # 17,799-request backfill took 148 minutes. GitHub asks for no more than 100
+    # concurrent requests; a dozen is far inside that and already enough to keep
+    # three tokens' worth of quota saturated.
+    concurrency: int = Field(default=12, alias="AIRADAR_CONCURRENCY")
 
     # --- scoring -----------------------------------------------------------
     # Half-life in days for `fresh_power`: a star contributes half as much after

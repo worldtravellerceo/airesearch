@@ -35,6 +35,10 @@ jobs:
     timeout-minutes: 330
     env:
       GH_PAT: ${{ secrets.GH_PAT }}
+      # Optional. The primary rate limit is per token, so each extra one
+      # raises the ceiling; absent, the run simply uses the single lane.
+      GH_PAT_2: ${{ secrets.GH_PAT_2 }}
+      GH_PAT_3: ${{ secrets.GH_PAT_3 }}
     steps:
       - uses: actions/checkout@v5
       - uses: ./.github/actions/pipeline

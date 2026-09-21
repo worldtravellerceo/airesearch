@@ -9,6 +9,10 @@ Three things matter here and nothing else does:
    instead of burning retries on 403s.
 3. **Honest counters.** Every run reports how many calls it actually spent so the
    cost estimates in the plan can be checked against reality.
+4. **Throughput.** The primary rate limit is per token, so the client drives one
+   lane per token and sends each request down the lane with the most quota
+   left. Requests are not serialised, so several are in flight at once; the
+   limiter, not the round-trip time, decides the pace.
 """
 
 from __future__ import annotations
@@ -90,7 +94,7 @@ class Counters:
 
 @dataclass
 class _Bucket:
-    """Mirrors GitHub's view of one rate-limit resource."""
+    """Mirrors GitHub's view of one rate-limit resource, for one token."""
 
     remaining: int = 5000
     limit: int | None = None
@@ -101,6 +105,35 @@ class _Bucket:
     def floor(self) -> int:
         return rate_limit_floor(self.limit)
 
+    @property
+    def spare(self) -> int:
+        """Requests available above the reserve, treating a passed reset as refilled."""
+        if self.remaining > self.floor:
+            return self.remaining - self.floor
+        if self.reset_at <= time.time():
+            return self.limit or 5000
+        return 0
+
+
+class _Lane:
+    """One token: its own HTTP client, its own rate-limit buckets.
+
+    Buckets belong to the token rather than the process. Sharing one set across
+    tokens would mean the client believed it had spent quota it had not, and
+    would idle waiting for a reset that had already happened on the other lane.
+    """
+
+    def __init__(self, name: str, client: httpx.AsyncClient) -> None:
+        self.name = name
+        self.client = client
+        self.issued = 0
+        self.buckets: dict[str, _Bucket] = {}
+
+    def bucket(self, resource: str) -> _Bucket:
+        if resource not in self.buckets:
+            self.buckets[resource] = _Bucket()
+        return self.buckets[resource]
+
 
 class GitHubClient:
     """Async GitHub REST client. Use as an async context manager."""
@@ -109,31 +142,95 @@ class GitHubClient:
         self,
         token: str | None = None,
         *,
+        tokens: list[str] | None = None,
         transport: httpx.AsyncBaseTransport | None = None,
         sleep=asyncio.sleep,
     ) -> None:
         settings = get_settings()
-        self._token = token if token is not None else settings.github_token
-        if not self._token:
+        if tokens is None:
+            tokens = [token] if token is not None else settings.github_tokens
+        tokens = [t for t in tokens if t]
+        if not tokens:
             raise ValueError(
                 "No GitHub token. Set GH_PAT — the Actions GITHUB_TOKEN is capped at "
                 "1,000 req/hour per repository and is not usable for this workload."
             )
         self._sleep = sleep
         self.counters = Counters()
-        self._buckets: dict[str, _Bucket] = {}
-        self._client = httpx.AsyncClient(
-            base_url=GITHUB_API_ROOT,
-            transport=transport,
-            timeout=httpx.Timeout(30.0, connect=10.0),
-            headers={
-                "Accept": "application/vnd.github+json",
-                "X-GitHub-Api-Version": GITHUB_API_VERSION,
-                "Authorization": f"Bearer {self._token}",
-                "User-Agent": settings.user_agent,
-            },
-            follow_redirects=True,
-        )
+        self._lanes = [
+            _Lane(
+                # The name is an ordinal, never the token: this string reaches
+                # the log, and the log reaches a public Actions run.
+                name=f"token-{index + 1}",
+                client=httpx.AsyncClient(
+                    base_url=GITHUB_API_ROOT,
+                    transport=transport,
+                    timeout=httpx.Timeout(30.0, connect=10.0),
+                    headers={
+                        "Accept": "application/vnd.github+json",
+                        "X-GitHub-Api-Version": GITHUB_API_VERSION,
+                        "Authorization": f"Bearer {value}",
+                        "User-Agent": settings.user_agent,
+                    },
+                    follow_redirects=True,
+                ),
+            )
+            for index, value in enumerate(tokens)
+        ]
+
+    @property
+    def lanes(self) -> int:
+        """How many tokens this client is driving."""
+        return len(self._lanes)
+
+    async def check_lanes(self) -> list[dict[str, Any]]:
+        """Read every lane's quota. `/rate_limit` is free and does not count.
+
+        The ceiling this run is working against is the sum of these, and it is
+        worth printing: the difference between one token and three is the
+        difference between a two-hour backfill and a forty-minute one.
+        """
+        report = []
+        for lane in list(self._lanes):
+            response = await lane.client.get("/rate_limit")
+            if response.status_code == 401:
+                log.error("%s was rejected (401) and is being dropped", lane.name)
+                self._lanes.remove(lane)
+                await lane.client.aclose()
+                report.append({"lane": lane.name, "ok": False})
+                continue
+            if response.status_code >= 300:
+                # Anything else is not evidence the token is bad. Saying so
+                # would fail a run over a blip on a call that is only here to
+                # print a number.
+                log.warning(
+                    "%s: /rate_limit returned %d, assuming the lane is fine",
+                    lane.name,
+                    response.status_code,
+                )
+                report.append({"lane": lane.name, "ok": True, "unknown": True})
+                continue
+            resources = response.json()["resources"]
+            core, search = resources["core"], resources["search"]
+            lane.bucket("core").remaining = core["remaining"]
+            lane.bucket("core").limit = core["limit"]
+            lane.bucket("core").reset_at = float(core["reset"])
+            lane.bucket("search").remaining = search["remaining"]
+            lane.bucket("search").limit = search["limit"]
+            lane.bucket("search").reset_at = float(search["reset"])
+            report.append(
+                {
+                    "lane": lane.name,
+                    "ok": True,
+                    "core": core["remaining"],
+                    "core_limit": core["limit"],
+                    "search": search["remaining"],
+                    "search_limit": search["limit"],
+                }
+            )
+        if not self._lanes:
+            raise GitHubError(401, "/rate_limit", "every configured token was rejected")
+        return report
 
     async def __aenter__(self) -> GitHubClient:
         return self
@@ -142,47 +239,64 @@ class GitHubClient:
         await self.aclose()
 
     async def aclose(self) -> None:
-        await self._client.aclose()
+        for lane in self._lanes:
+            await lane.client.aclose()
 
     # -- rate limiting ------------------------------------------------------
 
-    def _bucket(self, name: str) -> _Bucket:
-        if name not in self._buckets:
-            self._buckets[name] = _Bucket()
-        return self._buckets[name]
+    async def _claim_lane(self, resource: str) -> _Lane:
+        """Pick the lane with the most quota left for `resource`, waiting if none has any.
 
-    async def _await_capacity(self, resource: str) -> None:
-        bucket = self._bucket(resource)
-        async with bucket.lock:
-            floor = bucket.floor
-            if bucket.remaining > floor:
-                return
-            wait = bucket.reset_at - time.time()
-            if wait <= 0:
-                # Reset has passed; assume the bucket refilled and let the next
-                # response tell us the truth.
-                bucket.remaining = floor + 1
-                return
-            wait += 1.0
-            log.info(
-                "rate limit: %s bucket down to %d of %s, sleeping %.0fs",
-                resource,
-                bucket.remaining,
-                bucket.limit or "?",
-                wait,
-            )
-            self.counters.rate_limit_waits += 1
-            self.counters.seconds_waiting += wait
-            await self._sleep(wait)
-            bucket.remaining = floor + 1
+        With one token this is the old behaviour exactly: the single lane is
+        always the best one, and running it dry means sleeping to its reset.
+        With three, a lane that has run out costs nothing — the work moves to
+        another token instead of the run stopping for up to an hour.
+        """
+        while True:
+            # Most quota first, and between lanes that look alike, whichever has
+            # been asked to do least. The tie-break is not cosmetic: fresh lanes
+            # report identical counters, so without it every request goes down
+            # lane one until its allowance visibly falls behind — and the
+            # secondary rate limit, which is also per token, would see a single
+            # token carrying the whole run.
+            best = max(self._lanes, key=lambda lane: (lane.bucket(resource).spare, -lane.issued))
+            if best.bucket(resource).spare > 0:
+                # Spend the request against the lane now rather than when its
+                # response lands, so a burst of requests issued back to back
+                # cannot all read the same untouched counter.
+                best.bucket(resource).remaining -= 1
+                best.issued += 1
+                return best
 
-    def _record_limits(self, resource: str, headers: httpx.Headers) -> None:
+            soonest = min(self._lanes, key=lambda lane: lane.bucket(resource).reset_at)
+            bucket = soonest.bucket(resource)
+            async with bucket.lock:
+                wait = bucket.reset_at - time.time()
+                if wait <= 0:
+                    # Reset has passed; assume it refilled and let the next
+                    # response tell us the truth.
+                    bucket.remaining = bucket.floor + 1
+                    return soonest
+                wait += 1.0
+                log.info(
+                    "rate limit: every lane is out of %s quota, sleeping %.0fs for %s",
+                    resource,
+                    wait,
+                    soonest.name,
+                )
+                self.counters.rate_limit_waits += 1
+                self.counters.seconds_waiting += wait
+                await self._sleep(wait)
+                bucket.remaining = bucket.floor + 1
+                return soonest
+
+    def _record_limits(self, lane: _Lane, resource: str, headers: httpx.Headers) -> None:
         remaining = headers.get("x-ratelimit-remaining")
         reset = headers.get("x-ratelimit-reset")
         limit = headers.get("x-ratelimit-limit")
         if remaining is None:
             return
-        bucket = self._bucket(resource)
+        bucket = lane.bucket(resource)
         try:
             bucket.remaining = int(remaining)
             if reset is not None:
@@ -228,9 +342,9 @@ class GitHubClient:
         headers = {"If-None-Match": etag} if etag else None
 
         for attempt in range(MAX_ATTEMPTS):
-            await self._await_capacity(resource)
+            lane = await self._claim_lane(resource)
             try:
-                response = await self._client.get(path, params=params, headers=headers)
+                response = await lane.client.get(path, params=params, headers=headers)
             except (httpx.TransportError, httpx.TimeoutException) as exc:
                 if attempt == MAX_ATTEMPTS - 1:
                     raise
@@ -240,7 +354,7 @@ class GitHubClient:
                 await self._sleep(delay)
                 continue
 
-            self._record_limits(resource, response.headers)
+            self._record_limits(lane, resource, response.headers)
 
             if response.status_code == 304:
                 self.counters.not_modified += 1
@@ -256,6 +370,19 @@ class GitHubClient:
                     False,
                     response.headers.get("link"),
                 )
+
+            if response.status_code == 401 and len(self._lanes) > 1:
+                # A revoked or expired extra token would otherwise fail a third
+                # of every run's repos, quietly and forever. Drop the lane and
+                # carry on with the tokens that work.
+                log.error(
+                    "%s was rejected (401) and is being dropped; %d lane(s) left",
+                    lane.name,
+                    len(self._lanes) - 1,
+                )
+                self._lanes.remove(lane)
+                await lane.client.aclose()
+                continue
 
             if self._is_throttled(response) or response.status_code >= 500:
                 if attempt == MAX_ATTEMPTS - 1:

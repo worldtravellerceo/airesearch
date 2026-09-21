@@ -8,9 +8,11 @@ by `last_checked_at`.
 
 from __future__ import annotations
 
+import asyncio
 import datetime as dt
 import logging
 import sqlite3
+from collections.abc import Awaitable, Callable, Sequence
 from dataclasses import dataclass
 
 from airadar.config import get_settings
@@ -35,6 +37,41 @@ log = logging.getLogger(__name__)
 # Repos that 404 or 451 are gone (deleted, renamed away, DMCA'd). Drop them from
 # the queue rather than retrying every run.
 GONE_STATUSES = {404, 451}
+
+
+async def _for_each(
+    rows: Sequence[dict],
+    worker: Callable[[dict], Awaitable[None]],
+    *,
+    concurrency: int,
+) -> None:
+    """Run `worker` over every row with `concurrency` requests in flight.
+
+    Sequential collection is bounded by the round trip, not by quota: one
+    request at ~250ms is four a second however much allowance is left. The
+    workers share one queue rather than taking a slice each, so a repo with
+    eight pages of history does not leave a worker idle at the end.
+
+    This is safe against the SQLite connection because nothing here is
+    threaded. Coroutines only interleave at an `await`, and every write in the
+    workers below is separated from its neighbours by none — so no worker can
+    observe another's half-written repo.
+    """
+    if not rows:
+        return
+    queue: asyncio.Queue[dict] = asyncio.Queue()
+    for row in rows:
+        queue.put_nowait(row)
+
+    async def drain() -> None:
+        while True:
+            try:
+                row = queue.get_nowait()
+            except asyncio.QueueEmpty:
+                return
+            await worker(row)
+
+    await asyncio.gather(*(drain() for _ in range(min(concurrency, len(rows)))))
 
 
 @dataclass
@@ -84,9 +121,14 @@ async def collect(
         track_limit=settings.track_limit,
     )
     report.considered = len(queue)
-    log.info("collect: %d repos due", len(queue))
+    log.info(
+        "collect: %d repos due, %d in flight across %d token(s)",
+        len(queue),
+        settings.concurrency,
+        client.lanes,
+    )
 
-    for row in queue:
+    async def one(row: dict) -> None:
         try:
             report.days_written += await _collect_one(conn, client, row, today, report)
         except GitHubError as exc:
@@ -95,7 +137,7 @@ async def collect(
                 conn.execute("DELETE FROM repos WHERE id = ?", (row["id"],))
                 conn.commit()
                 report.gone += 1
-                continue
+                return
             log.warning("collect: %s failed: %s", row["full_name"], exc)
             report.failed += 1
         except StarHistoryFormatError as exc:
@@ -104,6 +146,7 @@ async def collect(
             log.error("collect: unexpected history shape for %s: %s", row["full_name"], exc)
             report.failed += 1
 
+    await _for_each(queue, one, concurrency=settings.concurrency)
     return report
 
 
@@ -197,8 +240,22 @@ async def backfill(
         rows = conn.execute(sql, params).fetchall()
 
     total = 0
-    for row in rows:
-        total += await _backfill_one(conn, client, row)
+
+    async def one(row: dict) -> None:
+        nonlocal total
+        try:
+            total += await _backfill_one(conn, client, row)
+        except GitHubError as exc:
+            if exc.status in GONE_STATUSES:
+                log.info("backfill: %s is gone (%s)", row["full_name"], exc.status)
+                return
+            # One repo failing must not abandon the other 17,798. The watermark
+            # is not moved, so the next run picks this one up again.
+            log.warning("backfill: %s failed: %s", row["full_name"], exc)
+        except StarHistoryFormatError as exc:
+            log.error("backfill: unexpected history shape for %s: %s", row["full_name"], exc)
+
+    await _for_each(rows, one, concurrency=get_settings().concurrency)
     return total
 
 

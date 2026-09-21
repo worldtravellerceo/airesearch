@@ -205,3 +205,123 @@ async def test_paginate_follows_link_header(recorded_sleeps):
 async def test_missing_token_fails_loudly():
     with pytest.raises(ValueError, match="GH_PAT"):
         GitHubClient(token="")
+
+
+# --- the token pool --------------------------------------------------------
+
+
+def test_blank_and_duplicate_tokens_do_not_become_lanes():
+    """Two lanes sharing one token would each believe they had the whole
+    allowance, and would run it dry together."""
+    from airadar.config import Settings
+
+    settings = Settings(GH_PAT="a", GH_PAT_2="", GH_PAT_3="a")
+
+    assert settings.github_tokens == ["a"]
+
+
+async def test_each_token_gets_its_own_lane(recorded_sleeps):
+    _, fake_sleep = recorded_sleeps
+    seen: list[str] = []
+
+    def handler(request: httpx.Request) -> httpx.Response:
+        seen.append(request.headers["authorization"])
+        return httpx.Response(200, json={"ok": True}, headers=_headers())
+
+    async with GitHubClient(
+        tokens=["one", "two", "three"],
+        transport=httpx.MockTransport(handler),
+        sleep=fake_sleep,
+    ) as client:
+        assert client.lanes == 3
+        for _ in range(6):
+            await client.get("/repos/a/b")
+
+    assert sorted(set(seen)) == ["Bearer one", "Bearer three", "Bearer two"]
+
+
+async def test_the_work_spreads_evenly_while_every_lane_has_quota(recorded_sleeps):
+    """The point of a second token is a second allowance. If every request went
+    down lane one until its counter moved, the extra tokens would buy nothing."""
+    _, fake_sleep = recorded_sleeps
+    seen: list[str] = []
+
+    def handler(request: httpx.Request) -> httpx.Response:
+        seen.append(request.headers["authorization"])
+        return httpx.Response(200, json={"ok": True}, headers=_headers())
+
+    async with GitHubClient(
+        tokens=["one", "two"], transport=httpx.MockTransport(handler), sleep=fake_sleep
+    ) as client:
+        for _ in range(10):
+            await client.get("/repos/a/b")
+
+    assert seen.count("Bearer one") == 5
+    assert seen.count("Bearer two") == 5
+
+
+async def test_an_exhausted_token_moves_the_work_instead_of_stopping_the_run(
+    recorded_sleeps,
+):
+    """This is the whole reason for a second token. On one token, a spent
+    allowance means sleeping until the reset — up to an hour of a job that is
+    killed at five and a half."""
+    sleeps, fake_sleep = recorded_sleeps
+    seen: list[str] = []
+
+    def handler(request: httpx.Request) -> httpx.Response:
+        token = request.headers["authorization"]
+        seen.append(token)
+        if token == "Bearer spent":
+            # An hour away: sleeping for it would end the run.
+            return httpx.Response(
+                200, json={}, headers=_headers(remaining=0, reset=time.time() + 3600)
+            )
+        return httpx.Response(200, json={}, headers=_headers(remaining=4000))
+
+    async with GitHubClient(
+        tokens=["spent", "fresh"], transport=httpx.MockTransport(handler), sleep=fake_sleep
+    ) as client:
+        for _ in range(8):
+            await client.get("/repos/a/b")
+
+    assert sleeps == []
+    assert seen.count("Bearer spent") == 1
+    assert seen.count("Bearer fresh") == 7
+
+
+async def test_one_lane_running_dry_does_not_move_another_lanes_counter(recorded_sleeps):
+    """Buckets belong to the token. A shared bucket would have the client wait
+    out a reset that had already happened on the other token."""
+    sleeps, fake_sleep = recorded_sleeps
+    reset = time.time() + 1800
+
+    def handler(request: httpx.Request) -> httpx.Response:
+        return httpx.Response(200, json={}, headers=_headers(remaining=0, reset=reset))
+
+    async with GitHubClient(
+        tokens=["one", "two"], transport=httpx.MockTransport(handler), sleep=fake_sleep
+    ) as client:
+        for _ in range(3):
+            await client.get("/repos/a/b")
+
+    # Two requests spend the two lanes; only the third has nowhere to go.
+    assert len(sleeps) == 1
+
+
+async def test_a_single_token_behaves_exactly_as_before(recorded_sleeps):
+    """The pool must not change what one token does: run it to the reserve,
+    then sleep to the reset."""
+    sleeps, fake_sleep = recorded_sleeps
+
+    def handler(request: httpx.Request) -> httpx.Response:
+        return httpx.Response(200, json={}, headers=_headers(remaining=0, reset=time.time() + 60))
+
+    async with GitHubClient(
+        token="solo", transport=httpx.MockTransport(handler), sleep=fake_sleep
+    ) as client:
+        await client.get("/repos/a/b")
+        await client.get("/repos/a/b")
+
+    assert len(sleeps) == 1
+    assert 55 <= sleeps[0] <= 62
