@@ -16,6 +16,11 @@ on:
         required: false
         default: "400"
         type: string
+      reset_inflated:
+        description: "First clear derived history for repos whose history exceeds their stars"
+        required: false
+        default: false
+        type: boolean
 
 permissions:
   contents: write
@@ -35,6 +40,13 @@ jobs:
       - uses: ./.github/actions/pipeline
         with:
           token: ${{ github.token }}
+
+      # A repo cannot have gained more stars than it has, so a history total
+      # above the star count is corruption. The weekly buckets are one-way, so
+      # the repair is to clear and re-fetch.
+      - name: Reset inflated history
+        if: ${{ inputs.reset_inflated }}
+        run: airadar reset-history
 
       - name: Backfill
         run: |
