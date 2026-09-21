@@ -34,6 +34,22 @@ jobs:
       - name: Check credentials and the star-history endpoint
         run: airadar doctor
 
+      # The census, every day rather than only on Sunday. It is 785 search
+      # requests — about 26 minutes — and it is the only channel that sees a
+      # repository which did not exist last week. Leaving it on the weekly
+      # discover run meant a project that went viral on Monday stayed invisible
+      # until the following Sunday: the whole corpus shared a single
+      # `first_seen_at` day, and an index whose subject is fast risers cannot
+      # afford to learn about them six days late.
+      - name: Census
+        run: airadar discover --channels census --max-queries 2000 --resolve-limit 0
+
+      - name: Classify what the census found
+        run: airadar classify --no-llm
+
+      - name: Apply reviewed verdicts
+        run: airadar classify --import-verdicts verdicts
+
       - name: Collect
         run: airadar collect ${{ inputs.limit && format('--limit {0}', inputs.limit) || '' }}
 

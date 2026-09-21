@@ -21,6 +21,7 @@ is the part that fails loudly when discovery has a blind spot.
 
 from __future__ import annotations
 
+import datetime as _dt
 import sqlite3
 from dataclasses import dataclass, field
 
@@ -270,6 +271,12 @@ class BucketCoverage:
 @dataclass
 class CompletenessReport:
     buckets: list[BucketCoverage] = field(default_factory=list)
+    #: Days since the most recent repository entered the corpus. Completeness
+    #: against GitHub is a snapshot; this says how old the snapshot is. The
+    #: whole corpus once shared a single `first_seen_at` day because discovery
+    #: had run exactly once, and a weekly sweep meant a project that went viral
+    #: on Monday stayed invisible until Sunday.
+    discovery_age_days: float | None = None
 
     @property
     def on_github(self) -> int:
@@ -284,9 +291,14 @@ class CompletenessReport:
         return self.in_corpus / self.on_github if self.on_github else 1.0
 
     def summary(self) -> str:
+        age = (
+            "discovery age unknown"
+            if self.discovery_age_days is None
+            else f"newest repo seen {self.discovery_age_days:.1f} days ago"
+        )
         return (
             f"{self.in_corpus:,}/{self.on_github:,} of GitHub above the census "
-            f"floor ({self.rate:.1%}), {self.on_github - self.in_corpus:,} missing"
+            f"floor ({self.rate:.1%}), {self.on_github - self.in_corpus:,} missing; {age}"
         )
 
 
@@ -320,6 +332,14 @@ async def audit_completeness(
     fault, which would train everyone to ignore the number.
     """
     report = CompletenessReport()
+
+    newest = conn.execute("SELECT max(first_seen_at) AS seen FROM repos").fetchone()["seen"]
+    if newest is not None:
+        seen = newest if isinstance(newest, _dt.datetime) else _dt.datetime.fromisoformat(newest)
+        if seen.tzinfo is None:
+            seen = seen.replace(tzinfo=_dt.UTC)
+        report.discovery_age_days = (_dt.datetime.now(_dt.UTC) - seen).total_seconds() / 86400
+
     for low, high in buckets:
         query = f"fork:false stars:{low}..{high}"
         response = await client.search_repositories(query, page=1, per_page=1)

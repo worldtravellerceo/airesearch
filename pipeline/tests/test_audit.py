@@ -296,3 +296,44 @@ async def test_an_empty_bucket_is_not_counted_as_a_failure(conn):
 
     assert report.rate == 1.0
     assert report.buckets[0].missing == 0
+
+
+async def test_completeness_reports_how_old_the_snapshot_is(conn):
+    """Completeness against GitHub is a snapshot. Without its age it reads 100%
+    on a corpus that has not been refreshed in a week — which is what happened:
+    every repo shared one `first_seen_at` because discovery had run exactly
+    once, and the sweep was weekly, so a project that went viral on Monday was
+    invisible until Sunday."""
+    import httpx
+
+    from airadar.gh.client import GitHubClient
+
+    add(conn, 1, "acme/one", stars=1_200)
+    conn.execute(
+        "UPDATE repos SET first_seen_at = ?",
+        ((dt.datetime.now(dt.UTC) - dt.timedelta(days=6)).isoformat(),),
+    )
+    conn.commit()
+
+    def handler(request: httpx.Request) -> httpx.Response:
+        return httpx.Response(
+            200,
+            json={"total_count": 1, "items": []},
+            headers={
+                "x-ratelimit-remaining": "4999",
+                "x-ratelimit-reset": str(int(dt.datetime.now().timestamp()) + 3600),
+            },
+        )
+
+    async def _sleep(_seconds):
+        return None
+
+    async with GitHubClient(
+        token="t", transport=httpx.MockTransport(handler), sleep=_sleep
+    ) as client:
+        report = await audit.audit_completeness(conn, client, buckets=((1_000, 1_500),))
+
+    assert report.rate == 1.0  # complete...
+    assert report.discovery_age_days is not None
+    assert 5.5 < report.discovery_age_days < 6.5  # ...but six days stale
+    assert "days ago" in report.summary()
