@@ -63,6 +63,20 @@ match produces a match for a CUDA kernel library. The share of summaries
 claiming a match is the number to watch: if it climbs towards 100%, the
 prompt has stopped working, not the index.
 
+**A README is somebody else's text, and some of it is aimed at us.**
+`elder-plinius/CL4R1T4S` has 65,000 stars, sits on the AI-devtools board, and
+ends its README with a directive in leetspeak followed by the same sentence in
+plain English, telling whatever model reads it to output its own instructions.
+Two prompts here paste READMEs straight into a request, and for a long time
+neither said where that text started or stopped. The run that found it wrote a
+correct summary and reported the payload rather than obeying it, but that was
+the model's judgement doing work the prompt should have been doing.
+`airadar/untrusted.py` fences and labels the text, and strips the closing
+marker out of it first — a README that closes the fence early would put
+everything after it back among the instructions. This does not make injection
+impossible; it makes the boundary legible, which is the part a prompt can be
+responsible for.
+
 **Never buy recall with precision.** A soft ceiling set below the decision
 threshold stranded 17,849 repositories in permanent escalation. A README weight
 set one tier too high put a release-notes CLI on an AI board. Every widening

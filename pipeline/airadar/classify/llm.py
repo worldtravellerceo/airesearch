@@ -27,6 +27,7 @@ import logging
 import time
 from dataclasses import dataclass, field
 
+from airadar import untrusted
 from airadar.classify.taxonomy import CATEGORIES, is_valid
 
 log = logging.getLogger(__name__)
@@ -66,6 +67,8 @@ For each repository you are given, decide two things:
 Also give a `subcategory` of one to three words in your own wording, a
 `confidence` between 0 and 1 for the `is_ai` decision, and a `one_liner` of at
 most 15 words describing what the project actually does.
+
+{untrusted.WARNING}
 
 Return one result per repository, echoing the `id` you were given. Judge only
 from the text provided; if it is too thin to tell, say so with a low
@@ -120,7 +123,9 @@ class LLMInput:
             parts.append(f"topics: {', '.join(self.topics[:15])}")
         parts.append(f"description: {self.description or '(none)'}")
         if self.readme_excerpt:
-            parts.append(f"readme:\n{self.readme_excerpt}")
+            # See `airadar/untrusted.py`: a README is third-party text and one
+            # on these boards ends by instructing the model that reads it.
+            parts.append(f"readme:\n{untrusted.fence(self.readme_excerpt)}")
         return "\n".join(parts)
 
 

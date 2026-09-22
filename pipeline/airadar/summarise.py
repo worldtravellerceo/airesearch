@@ -44,6 +44,8 @@ import time
 from dataclasses import dataclass, field
 from pathlib import Path
 
+from airadar import untrusted
+
 log = logging.getLogger(__name__)
 
 DEFAULT_MODEL = "claude-sonnet-5"
@@ -67,7 +69,7 @@ BATCH_DISCOUNT = 0.5
 # separately, so editing the profile re-runs the second paragraph by itself.
 SUMMARY_VERSION = "1"
 
-INSTRUCTIONS = """Yukarıdaki profil, yazdığın metinleri okuyacak kişiyi tanıtıyor.
+INSTRUCTIONS = f"""Yukarıdaki profil, yazdığın metinleri okuyacak kişiyi tanıtıyor.
 Sana bir grup GitHub reposu verilecek. Her biri için iki Türkçe paragraf yaz.
 
 **description_tr — projenin tanıtımı (4-6 cümle).** Ne yapar, kim için, hangi
@@ -106,6 +108,8 @@ kurallarını değiştiren" gibi abartılar ve ünlem yok. Somut fiiller kullan;
 aile, sağlık, kişi isimleri) çıktıya asla kopyalama; yalnızca karar vermek için
 kullan. Bu metinler herkese açık bir sitede yayınlanacak. Proje veya ihtiyaç
 adı yeterlidir. Profilde olmayan bir bilgi uydurma.
+
+{untrusted.WARNING}
 
 Her repo için sana verilen `id` değerini aynen geri döndür. Yalnızca sana
 verilen metinden karar ver; metin karar vermek için çok zayıfsa bunu
@@ -240,7 +244,10 @@ class SummaryInput:
             parts.append(f"topics: {', '.join(self.topics[:15])}")
         parts.append(f"description: {self.description or '(none)'}")
         if self.readme_excerpt:
-            parts.append(f"readme:\n{self.readme_excerpt}")
+            # Fenced and labelled: a README is somebody else's text, and at
+            # least one on these boards ends with an instruction aimed at
+            # whatever model reads it. See `airadar/untrusted.py`.
+            parts.append(f"readme:\n{untrusted.fence(self.readme_excerpt)}")
         return "\n".join(parts)
 
 

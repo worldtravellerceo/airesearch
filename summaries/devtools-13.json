@@ -1,0 +1,175 @@
+{
+ "repos": [
+  {
+   "full_name": "kruzovic7/ai-data-extractor",
+   "inputs_hash": "75d4579e7b8a8c864441906764938cf3",
+   "description_tr": "AI kodlama asistanlarının makinede tuttuğu sohbet geçmişini tek bir normalize JSONL biçimine çıkaran açık kaynak bir Python aracı. Claude Code, Codex CLI, Cursor, Windsurf, Trae, Continue, Gemini CLI, OpenCode, Cline/Roo Code ve Aider'ın birbirinden farklı depolama biçimlerini (oturum başına JSONL, SQLite veritabanı, JSON ağaçları, proje içinde duran Markdown transkript) okuyup kullanıcı mesajlarını, asistan yanıtlarını, dosya bağlamını, kod diff'lerini, tool çağrılarını ve zaman damgalarını aynı şemada topluyor. macOS, Linux ve Windows dizin düzenlerini kendisi tarıyor; hangi işletim sisteminde olduğunu söylemek gerekmiyor. Harici bağımlılığı yok, Python 3.9+ ve standart kütüphane yeterli; numaralı bir menüden ya da doğrudan komut satırından çalıştırılıyor. MIT lisanslı; Eylül 2026'da açılmış, kısa sürede 842 yıldıza ulaşmış yeni bir depo.",
+   "usage_tr": "Kişisel bilgi tabanı projesinin \"ikinci beyin\" tarafına hazır bir girdi kaynağı olarak bağlayabilirsin: Claude Code ve OpenCode oturumlarında biriken karar geçmişi şu an sadece ilgili uygulamaların yerel klasörlerinde duruyor ve bir temizlikte gidiyor. Ofisteki M4 Pro Mac'te tek komutla çalıştırıp JSONL çıktısını Supabase'e ya da yerel bir arama indeksine aktarırsan, \"Lyricdrop v2'de hizalama için neyi neden denemiştim\" sorusunu sesli notlarınla aynı yerden sorabilir hale gelirsin. Tamamen yerel çalışıyor, bağımlılık kurmuyor ve API maliyeti getirmiyor; n8n ile haftalık bir job'a bağlamak da birkaç satırlık iş. Çıktı normalize olduğu için üstüne kendi sınıflandırma ve özetleme adımını koyman kolay, yani araç bir ürün değil bir bileşen olarak duruyor. Uyarı: dosyalar kendi oturum geçmişin, yani asistanına devredilecek bir iş değil; makinede kalmalı. İkinci uyarı: Cursor, Windsurf ve Trae çıkarıcıları belgelenmemiş şemalar üzerinde sezgisel çalışıyor, bu yüzden senin kullandığın Claude Code ve OpenCode kaynaklarıyla başlayıp ötekileri doğrulayarak eklemen daha güvenli.",
+   "matched_project": "Kişisel bilgi tabanı",
+   "relevance": 6,
+   "investment_note": null
+  },
+  {
+   "full_name": "huiliyi37/Tianshu-harness",
+   "inputs_hash": "2e7bcc2897501d7fa46f960b536e5354",
+   "description_tr": "TypeScript ile yazılmış, terminal TUI'si ile Tauri tabanlı masaüstü GUI'sini aynı agent çekirdeği üzerinde çalıştıran bir kodlama ajanı runtime'ı. Modelin \"bitti\" demesini yeterli saymayan bir bilişsel çalışma zamanı katmanı (CVM) kuruyor: görev sözleşmesi hedefi sabitliyor, teslim kapısı tamamlanma iddiası için test, diff veya doğrulama komutu gibi çalışma zamanı kanıtı istiyor, ayrı bir yakınsama denetimi ilerleme olup olmadığına bakıyor; 72 hook beş aşamaya yayılmış. Prefix cache motoru dondurulmuş önek, artımlı ek ve sınır sıkıştırması ile uzun oturumlarda %98-99 isabet bildiriyor ve DeepSeek V4 için ayrıca optimize edilmiş; DeepSeek, GLM, Claude, Codex, Grok ve MiniMax gibi modelleri destekliyor. Belgeler ve arayüz öncelikli olarak Çince, yanında İngilizce, Japonca ve Korece README'ler var. Apache-2.0 lisanslı, Haziran 2026'da açılmış, 793 yıldız.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, açık kaynak istemciyi fork'layıp kendi sürümünü yazma refleksinle OpenCode'un yanında bakılabilecek alternatif bir harness olması. Pratikte ayrışma noktası maliyet modeli: bu runtime kendi API anahtarlarınla model sağlayıcıya bağlanıyor, yani abonelik üzerinden çalıştığın mevcut düzenin dışına çıkıyor ve prefix cache kazanımının asıl hedefi de DeepSeek tarafı. Belgelerin ve arayüzün ağırlıkla Çince olması, günlük kullanımda ve asistanına devretmede ek bir sürtünme. Kanıt zorunlu teslim kapısı fikri yine de izlemeye değer; aynı disiplini Claude Code tarafında hâlihazırda denediğin plugin'lerle kurabiliyorsun.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "HKUSTDial/awesome-data-agents",
+   "inputs_hash": "f83ec87c2f7660af907ab6601886a59b",
+   "description_tr": "Veri ajanları (data agents) alanındaki akademik çalışmaları derleyen, sürekli güncellenen bir kaynak listesi. HKUST tarafından yayımlanan \"A Survey of Data Agents\" derlemesinin eşlik eden deposu; makaleleri L0'dan yukarıya doğru bir olgunluk merdiveni üzerinde sınıflandırıyor: elle yapılan işten ön yardıma, çevreyi algılayan ajanlara ve daha ötesine. Kapsanan konular veri yönetimi, veri hazırlama, veri analizi, text-to-SQL, nl2vis, tablo soru-cevabı ve rapor üretimi başlıklarını içeriyor. Depo ayrıca SIGMOD 2026'da verilen üç saatlik eğitimin slaytlarını ve bir KDD Cup 2026 yarışma izini barındırıyor. Kod değil, kürasyon deposu; lisans dosyası yok, 752 yıldız, Ağustos 2025'te açılmış ve düzenli güncelleniyor.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, Arslan Holding'in AI deal flow taramasında bu kategoriyi okurken kullanacağın arka plan haritası olması. İçindeki seviye sınıflandırması, \"veri ajanı\" diyen bir startup'ın gerçekte hangi olgunluk basamağında olduğunu sormak için işe yarayan bir çerçeve veriyor. Buna karşılık liste şirketleri değil makaleleri takip ediyor, yani rakip analizi ya da pazar haritası yerine literatür taraması yerine geçiyor. Araç olarak kurulacak bir tarafı yok; okunacak bir kaynak, o yüzden asistanına özet çıkarttırman en makul kullanım biçimi.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "3641397194-wq/gpt6-Astra",
+   "inputs_hash": "6ade2d002abcfea74d289ab1f142fcef",
+   "description_tr": "Çince bir masaüstü \"çalışma tezgâhı\" uygulaması: altı model koltuğu tanımlayan görev şablonları, yerel görev sözleşmesi kurma, oturum sürümlerini karşılaştırma ve çıktı üzerinde JSON, kod bloğu ve zorunlu kelime kontrolleri yapma gibi işlevler sunuyor. Asıl konumlandırması model kısıtlarını aşmaya yönelik prompt paketleri (\"break/open\") ve bunları otomatik uygulayan, kullanım başına ücretlendirilen bir OpenAI uyumlu ara sunucu hizmetine giriş noktası olması. Deponun kendisi sürümü 3.1.0-preview olarak işaretliyor ve README açıkça gerçek model üzerinde etkinin doğrulanmadığını, metin kontrollerinden geçmenin model kısıtının aşıldığı anlamına gelmediğini yazıyor. Dosya dağıtımında SHA-256 karşılaştırma ve yazma öncesi yedekleme gibi ayrıntılar var. Lisans standart bir açık kaynak lisansı olarak tanınmıyor (NOASSERTION); 693 yıldız, Ağustos 2026.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam prompt dayanıklılığı konusuna genel ilgi olabilir, o da bu depoda araç biçiminde değil. Ürünün merkezinde ücretli bir ara sunucu var; yani hem yerel çalışma tercihinin hem de mevcut abonelik düzeninin dışına çıkıyor ve model trafiğini üçüncü bir tarafın üzerinden geçiriyor. Sağlayıcı kullanım şartlarını aşmayı hedefleyen bir katmanı yayına giren bir ürüne yaklaştırmak ayrıca hesap riski demek. Arayüz ve belgeler tamamen Çince; asistanına devredilebilecek bir tarafı da yok.",
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "myccarl/ai-shortVideo-pipeline",
+   "inputs_hash": "04b90e2247ba47b9fac146201df83e54",
+   "description_tr": "Konu bulmadan yayına kadar kısa video üretimini uçtan uca otomatikleştiren açık kaynak bir pipeline. Yedi katmana ayrılmış: konu, kreatif, görsel, ses, post prodüksiyon, dağıtım ve optimizasyon; katmanlar birbirinden bağımsız değiştirilebiliyor. Orkestrasyon FastAPI, asyncio, SQLAlchemy ve ARQ ile Python tarafında; önünde JWT, yönlendirme, Resilience4j devre kesici, ölçümleme ve Prometheus taşıyan bir Spring Boot ağ geçidi var; veri katmanı PostgreSQL, Redis ve MinIO, gözlemlenebilirlik Langfuse. Kalite kapıları projenin ayırt edici yanı: karakter görünümünü sahneler arasında sabitleyen prompt çıpalama, prompt'a uymayan kare anahtarlarını erkenden eleyen CLIP tutarlılık kontrolü ve dört kademeli ses-görüntü senkron kurtarma. Model tarafında DeepSeek, GLM-4V, Kling v2.5, MiniMax/Volcengine TTS ve faster-whisper kullanılıyor; Docker Compose ile kuruluyor, MIT lisanslı, 656 yıldız, Haziran 2026.",
+   "usage_tr": "Folio'nun günlük içerik pipeline'ında alınacak şey deponun tamamı değil, kalite kapısı katmanı. Her profilin aynı yazara ait görünmesi gerektiği için prompt çıpalama ve CLIP tutarlılık kontrolü tam senin problemine oturuyor: üretilen post ve story görselleri gün geçtikçe birbirinden kopmasın diye üretim ile Supabase'e yazma arasına bir geçiş kapısı koyabilirsin. Yedi katmanlı yapı ayrıca beğeni/beğenmeme sinyalinden beslenen günlük üretim döngüsünü kurarken izlenecek net bir iskelet veriyor. Uyarı: yığının tamamı ağır — Java ağ geçidi, Postgres, Redis, MinIO ve Docker Compose evdeki Mac mini için gereğinden büyük, ve görsel/video modelleri ücretli API'ler, yerel çalışmıyor. Yalnızca faster-whisper tarafı Mac'te yerel dönebilir. Pratik yol, repoyu kurmak yerine kalite kapılarını okuyup Expo + Supabase + n8n düzenine tek bir kontrol adımı olarak taşımak; içerik şablonları Çince kısa video formatına göre ayarlanmış, onları olduğu gibi almanın anlamı yok.",
+   "matched_project": "Folio",
+   "relevance": 6,
+   "investment_note": null
+  },
+  {
+   "full_name": "TexasBedouin/vibe-check",
+   "inputs_hash": "47029267ec2f3d52605a92297fcdf9bb",
+   "description_tr": "Hiç kod yazmamış birini belirsiz bir uygulama fikrinden inşa edilebilir bir plana götürmeyi hedefleyen, AI kodlama araçları için yazılmış bir skill. Akış ürün yönetimi pratiğini taklit ediyor: fikrin altındaki gerçek problemi çıkarma, Reddit üzerinden şikâyet madenciliği ve rakip boşluk analiziyle problemi sınama, kullanıcı akışlarını ve hata yollarını haritalama, auth, veritabanı, ödeme ve hosting gibi kararları yüzeye çıkarma, sonunda hem ajanın izleyeceği bir plan dosyası hem tarayıcıda açılan etkileşimli bir PRD üretme. Üç ayrı giriş noktası var (tam yolculuk, sadece doğrulama, sadece planlama), ayrıca büyümüş ve dağılmış bir kod tabanını toparlamaya çalışan bir Checkup modu bulunuyor. Claude Code, Codex ve Antigravity için paketlenmiş, MIT lisanslı, 605 yıldız, Haziran 2026'da açılmış. README aynı zamanda yazarın ücretli danışmanlık hizmetlerine yönlendirme yapıyor.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, yayınlamayı planladığın to-do uygulamasının ve düşündüğün uygulama stüdyosu fikrinin inşaat öncesi doğrulama adımı olabilir. Ne var ki skill açıkça \"hiç kod yazmamış\" kullanıcıyı hedefliyor ve zamanının büyük kısmını stack seçimi, commit/push ve secret saklama gibi temelleri anlatmaya ayırıyor; bunlar zaten senin rutinin. Geriye kalan ve gerçekten işe yarayabilecek parça, ürünün kendi kullanıcısını getiren büyüme döngüsünü inşaattan önce tasarlatan bölüm. Onu da tek bir prompt olarak alıp kendi planlama akışına koyman, 25 adımlık bir mentorluk sürecini kurmaktan daha hızlı olur.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "sharpdeveye/maestro",
+   "inputs_hash": "67c7d7970a8001c01c7aeb585aa06207",
+   "description_tr": "AI kodlama ajanlarının çalışma akışını düzenlemeyi hedefleyen bir skill ve komut seti. Merkezinde prompt kurgusu, bağlam yönetimi, tool orkestrasyonu, ajan mimarisi, geri besleme döngüleri, bilgi sistemleri ve guardrail başlıklarında yedi referans dosyası taşıyan tek bir agent-workflow skill'i var; etrafında denetim, sadeleştirme, hata işleme ekleme ve son kalite geçişi gibi işleri yapan 25 komut duruyor. Kalıcı bir hafıza katmanı kararları, denetim izini ve oturum geçmişini oturumlar arasında saklıyor; `.maestro.md` dosyası üzerinden proje bağlamı toplanıyor ve modele neyi yapmaması gerektiğini söyleyen bir anti-pattern listesi tutuluyor. Claude Code, Cursor, Gemini CLI ve Copilot dahil on sağlayıcıyla çalışıyor; npm üzerinden MCP sunucusu ve bir VS Code eklentisi olarak dağıtılıyor. MIT lisanslı, v2.0, 592 yıldız, Nisan 2026.",
+   "usage_tr": "Lyricdrop v2'yi ofis Mac'inde Superpowers ile yazarken buradan alınabilecek parça komut listesi değil, kalıcı hafıza ve denetim izi katmanı. Admin panelden mobil tarafa geçiş haftalara yayıldığı için kararların oturumlar arasında yazılı kalması, iPhone'dan Remote Control ile bağlandığında aynı gerekçeleri baştan anlatmanı önler. `.maestro.md` dosyasını Lyricdrop deposunun köküne koyup şarkı onayı ve playtest kapısı gibi proje kurallarını oraya yazmak, bu kuralların her komutta bağlama girmesini sağlar. Tamamen yerel kuruluyor, kendi model çağrısı yok, yani abonelik düzenini bozmuyor. Uyarı: Superpowers ile aynı işi yapan ikinci bir iş akışı katmanı, ikisini birlikte kurarsan çakışan talimatlar ve şişmiş bir bağlam penceresi elde edersin — birini seçip bir hafta ölç, ikisini üst üste bindirme.",
+   "matched_project": "Lyricdrop",
+   "relevance": 6,
+   "investment_note": null
+  },
+  {
+   "full_name": "dacnay816y62-hub/photo-revival",
+   "inputs_hash": "85e4172b5b640eb8f12ce6c97ca0e8cc",
+   "description_tr": "Gündelik fotoğrafları beyaz kâğıt üzerine çizilmiş küçük, şiirsel el çizimi illüstrasyonlara çeviren bir Codex skill'i. Kural seti çok net bir görsel ölçü dayatıyor: 3:4 dikey kompozisyon, beyaz veya beyaza yakın kâğıt zemin, sayfanın %80-88'i boşluk, ana öğe sayfanın yalnızca %10-16'sını kaplıyor ve %18'i hiç geçmiyor; kalem, suluboya, kuru fırça ve hafif risograph dokusu gibi fırça izleri ve küçük el yazısı notlar ekleniyor. Depo bir görsel üretim motoru içermiyor; prompt şablonları, karar kuralları ve yeniden üretim kontrol listesi sağlıyor, görselleri ortamda hazır bulunan görüntü aracı üretiyor. Belgeler ağırlıkla Çince ve kurulum Codex'in skill dizinini hedefliyor. MIT lisanslı, 569 yıldız, Ağustos 2026.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam Folio'nun görsel üretim tarafı, orada da uyuşmuyor. Folio'nun tasarımı Instagram ekran görüntülerinden birebir kopyalanmış bir fotoğraf akışı; bu skill ise tek bir sabit estetiğe, bol boşluklu kâğıt hissine ve küçük Çince notlara kilitli. Tek bir görsel dilin kurallarını ne kadar sıkı yazabileceğine dair iyi bir örnek olarak okunabilir, Folio için kendi stil kural setini yazarken şablon işlevi görür. Kendisi bir görsel üretim aracı olmadığı için yerel çalışma ya da API maliyeti sorusu da burada anlamını yitiriyor.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "helloianneo/ian-xiaohei-scenes",
+   "inputs_hash": "1fb091d163bcab0981089e5009757328",
+   "description_tr": "Çince makale, gönderi ve proje anlatıları için gövde görselleri üretmeyi yönlendiren bir Codex skill'i. Formülü sabit: \"Xiaohei\" adlı küçük bir karakter, gerçek bir nesne, fiziksel bir eylem, iki-dört kısa Çince etiket ve bol boşluk; amaç soyut bir yargıyı görülebilir küçük bir sahneye çevirmek. İki mod sunuyor: beyaz zeminli 16:9 gövde görseli ve kişisel deneyim ile proje geriye dönüşleri için beş-sekiz düğümlü, el çizimi bir eğri üzerinde ilerleyen çok geniş \"uzun tomar\" hikâye görseli. Depo yedi örnek görseli stil ölçüsü olarak veriyor ve neye uygun olmadığını da açıkça listeliyor (marka afişi, akış şeması, arayüz ekran görüntüsü, yoğun bilgi grafiği). Sürüm 2.0 olarak aynı yazarın 1.0 beyaz tahta açıklama görselleri skill'inin devamı; MIT lisanslı, 528 yıldız, Haziran 2026.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam içerik üretimi tarafı, ancak skill baştan sona Çince yazı ekosistemi ve kendi karakter IP'si üzerine kurulu. Etiketler, örnekler ve sahne repertuvarı Çince ofis hayatı temalarından geliyor; Folio'nun yazar profilleri ya da Lyricdrop'un tanıtım görselleri için başka bir dile taşınması pratikte skill'i baştan yazmak demek. Alınabilecek tek fikir, bir görsel dili \"karakter + gerçek nesne + fiziksel eylem\" gibi üç değişkenli bir formüle indirgemenin tutarlılığı ne kadar artırdığı. Kurulum Codex skill dizinine yapılıyor, yani günlük kullandığın araç zincirine de doğrudan oturmuyor.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "michael-denyer/pstack-claude",
+   "inputs_hash": "714600994695bd29867a99834bda2626",
+   "description_tr": "Cursor için yazılmış pstack skill yığınının Claude Code, Codex, OpenCode, Gemini CLI ve Prime Agent için yapılmış bir portu. Kullanıcı hedefini `poteto-mode`'a söylüyor, o da işi doğru playbook'a yönlendiriyor: hata ayıklama, planlama, özellik geliştirme, refactor, performans, araştırma, prototip, PR bakımı ve uzun projeler için ayrı akışlar var. Hata akışında önce başarısızlık yeniden üretiliyor, `how` ve `why` skill'leriyle inceleniyor, düzeltme delege ediliyor ve başarısız senaryo yeniden çalıştırılıyor; çıktı olarak düzeltmeyle birlikte başarısız ve başarılı koşu kanıtı veriliyor. Fonksiyon sınırını aşan değişikliklerde uygulamadan önce `architect` devreye giriyor; destekleyici skill'ler arasında `arena`, `swarm`, `interrogate`, `tests` ve `unslop` bulunuyor. Plugin marketplace üzerinden kuruluyor ve bir yönlendirme hook'u ile model varsayılanları ayarlanabiliyor; MIT lisanslı, 504 yıldız, Mayıs 2026.",
+   "usage_tr": "Lyricdrop v2'nin inşasında Superpowers'a en yakın alternatif bu; asıl değeri her düzeltmenin yanında başarısız ve başarılı koşu kanıtı getirmesi, yani \"düzelttim\" cümlesini tek başına kabul etmemesi. Kelime hizalama hatalarında bu tam istediğin döngü: kayan şarkıyı önce test senaryosu olarak sabitler, düzeltmeden sonra aynı senaryoyu yeniden koşar. Hem Claude Code hem OpenCode için kurulumu olduğu için ofis ve ev makinelerindeki iki farklı düzenine de oturuyor, kurulum yerel ve ek API maliyeti yok. Her değişikliğin iki ayrı açıdan review edilmesi isteğine de `interrogate` ve `architect` ayrımıyla kısmen cevap veriyor — ürün/eğitim mantığı tarafını yine kendi skill'inle eklemen gerekir. Uyarı: kurulum bir yönlendirme hook'u ile model varsayılanlarını değiştiriyor; `setup-pstack` çalıştırıp bu varsayılanları gözden geçir, yoksa abonelik dışında ayrıca faturalanan bir modele yönlendirilebilir. İkinci uyarı: Superpowers ile üst üste kurma, önce tek bir projede yan yana ölç.",
+   "matched_project": "Lyricdrop",
+   "relevance": 7,
+   "investment_note": null
+  },
+  {
+   "full_name": "JayPokale/Chisle",
+   "inputs_hash": "7d500c9fcc7c009e988d73d1bf701c61",
+   "description_tr": "Kodlama ajanlarının token tüketimini üç eksende azaltmayı hedefleyen bir kural seti. Birinci eksen çıktı metni: oturum başına enjekte edilen kural setiyle dolgu cümleleri, çekingen ifadeler ve uydurma başlık yapıları kesiliyor. İkinci eksen kod: istenmemiş soyutlama ve boilerplate yerine sorulan soruyu cevaplayan en küçük değişikliği üreten bir YAGNI merdiveni uygulanıyor. Üçüncü eksen girdi: `PostToolUse` kancasıyla tool çıktıları temizlenip kısaltılıyor ve tekilleştiriliyor, ama `Read`, `Edit` ve `Write` çıktılarına kasıtlı olarak dokunulmuyor. npm üzerinden tek komutla kuruluyor, hiç bağımlılığı yok, 11 ajanı destekliyor ve depo kendi kaybettiği koşuları da dahil ederek ölçüm sonuçlarını yayımlıyor. MIT lisanslı, 498 yıldız, Haziran 2026.",
+   "usage_tr": "Lyricdrop v2'yi yazarken buradaki asıl kazanç fatura değil, YAGNI ekseni: abonelik üzerinden çalıştığın için token maliyeti argümanı sana geçmiyor, ama ajanın istemediğin üç seçenekli çözümler ve gereksiz soyutlamalar üretmemesi doğrudan review yükünü azaltır. v1'i hızla yazıp sonra pişman olduğun yerin panzehiri tam olarak bu: daha az dosya, daha az erken soyutlama, mevcut bağımlılığı yeniden icat etmek yerine adıyla anma. Tool çıktısı sıkıştırma ekseni de uzun admin panel oturumlarında bağlam penceresini açık tutar. Kurulumu tek komut, yerel, ek servis gerektirmiyor; Superpowers ya da pstack gibi bir iş akışı katmanının yanında sorun çıkarmadan durabilir çünkü akışı değil üslubu değiştiriyor. Uyarı: kısalık kuralı review adımlarında istediğin gerekçelendirmeyi de kırpabilir ve tool çıktısı sıkıştırma kanıt olarak okumak istediğin log satırlarını eleyebilir — hizalama testleri gibi kanıt okuduğun akışlarda kapalı tutmayı dene.",
+   "matched_project": "Lyricdrop",
+   "relevance": 5,
+   "investment_note": null
+  },
+  {
+   "full_name": "SadilKhan/Text2CAD",
+   "inputs_hash": "ff22d4ad93733c80dfec8c2dfb3a47cd",
+   "description_tr": "Doğal dil komutlarından sıralı, parametrik CAD tasarımları üreten akademik bir model ve veri seti. Girdi olarak yeni başlayan seviyesinden uzman seviyesine kadar farklı ayrıntıda metin istemleri alıyor ve CAD yapım adımlarını bir dizi olarak üretiyor; bu dizi B-rep katı modele çevrilebiliyor. Eğitim DeepCAD veri seti üzerine kurulu, metin tarafında BERT tabanlı bir kodlayıcı ve transformer mimarisi kullanılıyor; veri hazırlama, eğitim ve çıkarım kodları ile metin açıklamaları ve önişlenmiş veri Hugging Face üzerinden yayımlanmış. NeurIPS 2024'te spotlight olarak sunulmuş; kurulum conda ortamıyla ve Linux hedefli, Python 3.9+ isteniyor. Lisans standart bir açık kaynak lisansı olarak tanınmıyor (NOASSERTION); 477 yıldız, Eylül 2024.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, frontier teknoloji yatırım merceğinden bakarken üretim ve tasarım yazılımı tarafında neyin mümkün olduğunu gösteren bir referans olması. Araç olarak kullanılacak bir tarafı yok: kurulum Linux ve conda hedefliyor, Mac'te yerel çalıştırmak için ayrı bir uğraş gerekir ve lisans ticari kullanım için net değil. Mobil uygulamalarına ya da içerik pipeline'larına gömülebilecek bir bileşen de değil; tek başına bir araştırma çıktısı. Kısa bakmak istersen proje sayfasındaki örnekler, metinden parametrik geometriye geçişin bugünkü doğruluk seviyesini görmek için yeterli.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": "Metinden parametrik CAD üretimi, çıktısı doğrulanabilir olduğu için ticarileşmesi görece net bir kategori; Arslan Holding'in frontier tech taramasında bu alandaki ekipleri izleme listesine almak mantıklı olabilir."
+  },
+  {
+   "full_name": "baskduf/FableCodex",
+   "inputs_hash": "a66bef728d13205b734869ec7d7135c1",
+   "description_tr": "Codex için yazılmış, kanıta dayalı iş akışı kapıları ekleyen bir plugin. Bir görev verildiğinde önce sınıflandırma, sonra çalışma alanını ve kaynakları inceleme, çok adımlı işlerde kanıt kontrol noktalarıyla bir hedef defteri tutma, review'a duyarlı işlerde bulguları kaydedip kapatma ve tamamlandı demeden önce testleri çalıştırma adımlarını dayatıyor. Depo ne yapmadığını da açıkça yazıyor: model ağırlıklarını, bağlam uzunluğunu ya da gizli güvenlik sistemlerini değiştirmiyor, yalnızca Codex'e özgü iş akışı rehberliği, yerel defterler ve kapsam muhasebesi sağlıyor. Daha hafif bir geçiş için defter tutmadan hızlı review modu da var. İngilizce, Korece, Japonca ve Çince README'leri bulunuyor; AGPL-3.0 lisanslı, CI kurulu, 439 yıldız, Haziran 2026.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, aynı kanıt ve kapı disiplinini zaten Claude Code tarafında Superpowers ile kurmaya çalışıyor olman. Bu plugin Codex marketplace üzerinden kuruluyor ve Codex'e özgü tool kullanımına yaslanıyor; senin günlük zincirinde Codex yok, dolayısıyla taşımak için skill'i yeniden yazmak gerekir. AGPL-3.0 lisansı, kendi uygulamana gömmeyi düşündüğün bir bileşen olarak ayrıca dikkat gerektirir. İçindeki hedef defteri ve bulgu kapatma fikri yine de not almaya değer; Lyricdrop v2'nin review akışında aynı iki adımı kendi CLAUDE.md kurallarına yazabilirsin.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "Prysai/Prysai-LLM-Playbook",
+   "inputs_hash": "4957a6ac188e2bfa294e06e853d4d460",
+   "description_tr": "Dil modelleriyle çalışmayı en baştan öğretmeyi amaçlayan bir müfredat deposu. Beş üniteli bir temel rota sunuyor: modelin bağlamı nasıl kullandığı, akıcı bir cevabın neden yanlış olabileceği, sınırları belirlenmiş tek bir istek yazma, cevabı denetleme ve yöntemi yeni bir göreve taşıma. Codex için ayrı bir iz, ChatGPT, Claude Code, Gemini, DeepSeek ve Grok için adaptörler içeriyor; başlamak için terminal, Git ya da herhangi bir kurulum gerekmiyor ve okuma için ayrı bir rehber site yayımlanmış. Sekiz dil girişi kayıtlı (İngilizce, Çince, İspanyolca, Japonca, Korece, Almanca, Fransızca, geleneksel Çince); Türkçe yok. Depo kendi durumunu \"candidate\" olarak işaretliyor ve öğrenci koşularının, tekrarlı değerlendirmelerin ve bağımsız incelemenin henüz yapılmadığını yazıyor. Müfredat metni CC BY 4.0, kod Apache-2.0; 438 yıldız, Ağustos 2026.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, asistan tarafındaki araştırma işlerini devrederken kullanılabilecek bir eğitim materyali olması. Bunun için bile içerik bir kat aşağıdan başlıyor: senin kendi kullanımın bu rotanın anlattığı yerin çok ötesinde ve Türkçe yerelleştirme yok. Depo ayrıca kendi ölçümlerinin henüz yapılmadığını söylüyor, yani şu an denenmemiş bir müfredat. Aynı işi, kendi projelerinden alınmış gerçek görevlerle yazacağın kısa bir kılavuz daha hızlı çözer.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "jnMetaCode/ai-shortfilm-prompts",
+   "inputs_hash": "a48f8bc951a472710d2aa211e2a41718",
+   "description_tr": "Bir fikri sinematik, modele hazır video prompt'larına çeviren bir Claude Code skill'i ve prompt kütüphanesi. 21 tür şablonu ve beş aşamalı bir yapı sunuyor; çıktı olarak çok planlı prompt ve negatif prompt üretiyor, hedef modeller Sora, Kling, Veo ve Seedance. Kurulum istemeyen bir web arayüzü de var: şablonlar tarayıcıdan görülebiliyor, tür seçip birkaç alan doldurarak tam prompt üretilebiliyor. Şablonların değerlendirme testlerinden geçirildiği belirtiliyor ve depo örnek vakalarla birlikte geliyor. Materyalin önemli bölümü Çince; README aynı zamanda yazarın ücretsiz kurslarına ve plan başına ücretlendirilen bir video üretim ürününe yönlendirme yapıyor. MIT lisanslı, 432 yıldız, Mayıs 2026.",
+   "usage_tr": "Folio'nun günlük içerik üretiminde eksik olan ara katman tam olarak bu: \"bu yazarın şu fikri\" ile video modeline gidecek çok planlı prompt arasındaki dönüşüm. Bir yazar profilinin story'lerini üretirken tür şablonlarından birini sabitleyip aynı yapıyı her gün tekrar kullanabilirsin, böylece akıştaki görsel dil gün geçtikçe dağılmaz. Lyricdrop lansmanı için hazırlanacak tanıtım kreatiflerinde de aynı şablonlar işe yarar. Skill Claude Code içinde yerel çalışıyor ve kendi başına maliyet getirmiyor, ama ürettiği prompt'ları çalıştıracak video modelleri ücretli ve Mac'te yerel değil — maliyeti üreten adım orası. Uyarı: şablonlar kısa film kurgusuna göre yazılmış, dikey akışta duran 15 saniyelik post için sadeleştirmen gerekir; ayrıca prompt metinlerinin çoğu Çince, İngilizceye çevirmeden model çıktısında sapma görebilirsin.",
+   "matched_project": "Folio",
+   "relevance": 5,
+   "investment_note": null
+  },
+  {
+   "full_name": "Devinterview-io/sql-interview-questions",
+   "inputs_hash": "1be2f24a18250486565e6905d3bf5353",
+   "description_tr": "İş görüşmelerine hazırlık için derlenmiş 100 SQL sorusu ve cevabı. İçerik DDL, DML, DCL, TCL ve DQL ayrımı, ACID, normalizasyon, indeks türleri, pencere fonksiyonları ve CTE gibi klasik başlıkları kapsıyor; 2026 güncellemesiyle JSONB, pgvector üzerinden vektör araması ve RAG akışlarına değinen modern bölümler eklenmiş. Cevaplar markdown içinde doğrudan okunabiliyor, ancak README tam listeyi yayıncının kendi sitesine yönlendiriyor. Lisans dosyası yok; depo 2021'de açılmış, uzun süredir güncellenen bir içerik koleksiyonu ve 412 yıldıza ulaşmış. Kod değil, eğitim içeriği deposu.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam Supabase üzerindeki Postgres sorgularını yazarken aradaki kavramları tazelemek olabilir. Pratikte o soruları zaten Claude Code'a doğrudan sorup kendi şemanla cevap alıyorsun, genel bir soru listesi araya bir adım ekliyor. Depo iş görüşmesi hazırlığı için kurgulanmış; ne kendi uygulamana gömülebilecek bir bileşen ne de asistanına devredilecek bir iş içeriyor. İçindeki pgvector ve RAG bölümü sadece kişisel bilgi tabanı tarafında semantik arama kurarken yüzeysel bir başlangıç noktası sayılabilir.",
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "KKKKhazix/sun-style-writing",
+   "inputs_hash": "e4b4ac2e8ee27b46bc04122f65068ce2",
+   "description_tr": "Çince bir anlatı metninden damıtılmış on yazım tekniğini bir skill dosyasına çeviren depo. Teknikler arasında duyguyu açıklamak yerine eylemi yazmak, iki uç ölçeği yan yana koyarak karşılaştırma kurmak, tekrar ve varyasyon, nesne üzerinden anlatım, montaj, boşluk bırakma, antiklimaks ve açılışa dönen kapanış var; ayrıca hitap değişimi \"yarım teknik\" olarak ekleniyor. Üç temel kural koyuyor: bir eylem konuşabiliyorsa ruh hali açıklanmıyor, bir nesne konuşabiliyorsa duygu özetlenmiyor, kurgu dışı metinde sayı uydurulmuyor. Skill destekleyen ajanlara tek komutla ya da Releases üzerinden paket indirilerek kuruluyor. Tamamen Çince yazılmış ve Çince yazım için tasarlanmış; MIT lisanslı, 386 yıldız, Ağustos 2026.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam stand-up tarafındaki yazım ve teknik çözümleme ilgisi, o da dil engeline takılıyor. Skill'in tamamı Çince kaynak metne ve Çince cümle ritmine bağlı; Türkçe ya da İngilizce yazıda aynı kuralları uygulamak skill'i kullanmak değil, baştan yazmak olur. Aktarılabilir tek şey \"sayı uydurma, hatırlamıyorsan hatırlamıyorum yaz\" kuralı; onu kendi CLAUDE.md dosyana tek satır olarak koyman yeterli. Kurulum Codex ve benzeri skill dizinlerini hedefliyor, günlük araç zincirine ek bir katkısı yok.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "DataTalksClub/datatalksclub.github.io",
+   "inputs_hash": "b16dc5d96de80dcc1a101c17e9fa693a",
+   "description_tr": "Veri bilimi, makine öğrenmesi ve veri mühendisliği alanındaki bir topluluğun web sitesinin kaynak deposu. Site Rustkyll adlı statik site üreticisiyle kuruluyor ve içerik odaklı bir yapıya sahip: yazılar, podcast bölümleri, kitaplar ve kişiler ayrı koleksiyonlar olarak modellenmiş, navigasyon, etkinlikler, duyurular ve sponsorlar `_data` altındaki YAML dosyalarından yönetiliyor. Ana sayfa yaklaşan etkinlikleri, son podcast bölümlerini, yazıları ve aktif kitapları Liquid döngüleriyle bir araya getiriyor; ayrıca ücretsiz kurs programlarının indeks sayfaları burada tutuluyor. Depo bir kütüphane ya da şablon değil, çalışan tek bir sitenin içeriği ve şablonları. Lisans dosyası yok; 2020'den beri açık, 381 yıldız.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam Arslan Holding'in web varlığını AI araçlarıyla üretiyor olman, ancak bu depo yeniden kullanılabilir bir şablon değil tek bir topluluğun kendi içeriği. Kurumsal site için Vercel üzerindeki mevcut düzenin zaten daha hızlı ve tanıdık. Geriye kalan değer teknik değil sosyal: veri ve ML tarafında insan bulmaya ya da içerik biçimlerine bakmak istersen sitenin kendisine göz atmak, depoyu kurmaktan daha anlamlı. Depoda ayrıca lisans dosyası yok, yani içeriği kopyalamak da güvenli değil.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "devcxl/mattpocock-skills-zh",
+   "inputs_hash": "fa9f32223a1641edac8077b3f57b1ef0",
+   "description_tr": "Matt Pocock'un ajan skill setinin Çince çevirisi. Orijinal set, süreci devralan büyük metodolojiler yerine küçük, özelleştirilebilir ve birleştirilebilir skill'ler savunuyor; kurulumda hangi issue takipçisinin kullanılacağı, triage etiketleri ve üretilen dokümanların nereye yazılacağı bir kurulum komutuyla sorulup projeye yazılıyor. İki dağıtım yolu var: yönetilen ve otomatik güncellenen salt okunur bir Claude Code plugin'i ya da dosyaları projeye kopyalayıp düzenlemeye açan bir yükleyici. Bu depo çeviri katmanını ekliyor: terimler İngilizce bırakılarak metinler Çinceleştiriliyor ve her gün öğlen üst kaynakla senkronize ediliyor. Shell ağırlıklı, MIT lisanslı, 374 yıldız, Haziran 2026.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; bu depo yalnızca bir çeviri katmanı ve çevirdiği dil senin okuduğun diller arasında değil. En yakın bağlam üst kaynağın kendisi: orijinal mattpocock/skills seti, Claude Code plugin'i olarak kurulup Superpowers'ın yanında denenmeye değer, çünkü tam olarak senin aradığın ölçekte — süreci devralmayan, küçük ve düzenlenebilir skill'ler. Kurulum komutunun issue takipçisi ve doküman konumu sorması, Lyricdrop deposunda tekrar eden kurulum işlerinin bir kısmını da tek seferde çözer. Bu fork'u kurarsan aynı skill'leri Çince talimatlarla almış olursun; üst kaynağa gitmek doğru adres.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  }
+ ]
+}

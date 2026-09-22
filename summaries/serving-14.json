@@ -1,0 +1,175 @@
+{
+ "repos": [
+  {
+   "full_name": "microsoft/Mage",
+   "inputs_hash": "eaa1a000621f8e3c7ddcaf527edf9669",
+   "description_tr": "Mage, 4B parametrelik sabit bir bütçede tutulan çok modlu bir model ailesi. İki parçadan oluşuyor: görüntü ve video anlama ile proaktif akış için Qwen3-4B çözücüsüne bağlanan Mage-VL, metinden görsel üretimi ve talimatla görsel düzenleme için Mage-Flow. Mage-VL'nin görsel kodlayıcısı Mage-ViT tamamen sıfırdan eğitilmiş; I/P tahminli yama mekanizmasının görsel token kullanımını %75'in üzerinde azalttığı ve çıkarımda 3,5 kata kadar hızlanma sağladığı bildiriliyor. Ağırlıklar Hugging Face üzerinde yayınlanmış; Mage-Flow ve Mage-ViT MIT, Mage-VL Apache-2.0 lisanslı ve depo ~1,7K star toplamış. Ekip modelleri \"mütevazı donanımda eğitilip ince ayarlanabilir\" ölçekte konumlandırıyor, ancak depoda Apple Silicon için ayrı bir kurulum yolu tarif edilmiyor.",
+   "usage_tr": "Folio'nun günlük içerik pipeline'ında Mage-Flow'u yazar profillerinin post ve story görsellerini üretmek için deneyebilirsin; talimatla düzenleme desteği, aynı görseli farklı başlıklara uyarlamayı ikinci bir modele ihtiyaç duymadan çözer. Mage-VL tarafını da üretilen görseli feed'e girmeden önce etiketleyip eleyen bir kontrol adımı olarak kullanabilirsin, böylece beğen/beğenme sinyallerinin yanında makine tarafı bir filtre de olur. 4B ölçek ve açık ağırlıklar, kapalı bir görsel üretim API'sine abone olmadan Supabase + DigitalOcean kurgunun içinde kalmanı sağlar. Uyarı: depodaki kurulum ve örnekler CUDA tarafına göre yazılmış, ofisteki M4 Pro Mac'te çalışıp çalışmadığı belgelenmemiş; pipeline'a bağlamadan önce 20-30 görsellik bir test partisi üretip süreyi ölçmen gerekir. İki alt modelin lisansları farklı olduğu için üretim ve anlama adımlarını ayrı ayrı değerlendir.",
+   "matched_project": "Folio",
+   "relevance": 6,
+   "investment_note": null
+  },
+  {
+   "full_name": "syv-ai/HyperQwen",
+   "inputs_hash": "ce62a81a27c59caace4702b099514748",
+   "description_tr": "HyperQwen, büyük Qwen modellerini tek bir 24 GB tüketici GPU'sunda vLLM ile servis etmeye odaklanan bir depo. Servis kurulumunun altında aslında pinlenmiş bir vLLM sürümüne uygulanan yama serisi, yeniden kuantize edilmiş head'ler, kalibre edilmiş bir draft sözlüğü ve prompt'un kendisinden spekülasyon yapan decoding var. RTX 3090 üzerinde 250 W'ta tek kullanıcı modunda 127 tok/s, 64 eşzamanlı istekte ~1.035 tok/s toplam decode ve 150k-262k bağlam ölçümleri bildiriliyor. Docker compose ile iki hazır profil (single ve batch), API anahtarı doğrulamalı OpenAI uyumlu bir uç nokta ve ilk açılışta çalışan bir requantize adımı sunuluyor. Apache-2.0 lisanslı, ~1,6K star; CI'da imaj derlemesi ve yama bütünlüğü ayrı ayrı kontrol ediliyor.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, ücretli API yerine model çalıştırmayı kendi donanımında tutma tercihin olabilir. Ancak depo baştan sona NVIDIA CUDA ve tüketici GPU'su varsayıyor: ne ofisteki Mac'te ne de evdeki Mac mini'de çalışır, Mac tarafındaki karşılığı MLX veya llama.cpp tabanlı yığınlar. Donanım değiştirmeden faydalanmanın tek yolu kiralık bir GPU sunucusu olurdu, o da \"yerelde çalışsın, sabit maliyet olmasın\" kuralını bozar. Okumaya değer tarafı ölçüm disiplini: aynı kart ve aynı prompt'larla stok vLLM karşılaştırması yapılıp sonuçlar yayınlanmış. Şimdilik izleme listesinde kalması yeterli.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "WeiboAI/VibeThinker",
+   "inputs_hash": "d5ecedbb6a970de641310b139316214d",
+   "description_tr": "VibeThinker, küçük ölçekte doğrulanabilir akıl yürütmenin sınırlarını araştıran bir model serisi; 1,5B ve 3B yoğun (dense) sürümleri yayınlanmış. 3B sürüm Qwen2.5-Coder-3B üzerine kuruluyor ve müfredat tabanlı denetimli ince ayar, çok alanlı pekiştirmeli öğrenme, çevrimdışı öz-damıtma ve talimat odaklı RL'den oluşan bir \"Spectrum-to-Signal\" hattıyla sonradan eğitiliyor. Hedef alanlar matematik, yarışma programlama, STEM akıl yürütmesi ve açık kısıtlı talimat takibi gibi doğrulama sinyali güvenilir olan görevler; teknik raporda AIME, HMMT ve LiveCodeBench sonuçları paylaşılıyor. Ağırlıklar Hugging Face ve ModelScope üzerinden dağıtılıyor, lisans MIT, depo ~1,6K star. Yayınlar 2025 sonundan 2026 ortasına kadar düzenli aralıklarla sürmüş.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, Mac'te yerel model çalıştırma ilgin olabilir — 1,5B-3B ölçek M4 Pro'da rahatça döner. Ama bu modeller matematik ve yarışma programlama gibi cevabı otomatik doğrulanabilen görevler için ayarlanmış; senin işlerinde asıl yük Türkçe/İngilizce metin, içerik üretimi ve ajan orkestrasyonu tarafında ve orada Claude Code aboneliğin zaten karşılığını veriyor. Lyricdrop'un soru üretimi ya da Folio'nun metinleri için böyle bir modeli devreye almak kalite kaybı getirir. Ağırlıkların MIT olması ve boyutun küçüklüğü, ileride yerel bir \"ucuz ön eleme\" katmanı düşünürsen bunu aday listesinde tutmayı mantıklı kılıyor. Şimdilik denemeye değecek bir ihtiyaç yok.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "huggingface/pytorch-openai-transformer-lm",
+   "inputs_hash": "840030fe254fcc977dd79b5003549958",
+   "description_tr": "Bu depo, OpenAI'ın 2018 tarihli \"Improving Language Understanding by Generative Pre-Training\" makalesiyle yayınlanan TensorFlow kodunun PyTorch'a taşınmış hali. İçinde model sınıfları, OpenAI'ın önceden eğitilmiş ağırlıklarını PyTorch modeline yükleyen bir betik ve makaledeki ağırlık azaltması düzeltilmiş Adam varyantı yer alıyor. Dil modeli olarak kullanılabildiği gibi üzerine sınıflandırıcı başlığı eklenip ROCStories gibi görevlerde ince ayar yapılabiliyor; README tek GPU'da 85,84% test doğruluğu raporluyor. Gereksinimler PyTorch 0.4 dönemine ait ve orijinal ağırlıklar ayrı bir depodan indiriliyor. MIT lisanslı, ~1,5K star; bugün için güncel bir araçtan çok transformer dil modellerinin ilk kuşağına ait bir arşiv kaydı.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, transformer mimarisinin nereden geldiğini kod üzerinden görmek isteyen biri için tarihsel bir okuma olması. Modelin kendisi bugünün küçük açık modellerinin bile gerisinde kaldığı için ne Lyricdrop'ta ne Folio'da bir adıma oturur. Yatırımcı tarafında da bilgi değeri sınırlı: alanın 2018'deki durumunu gösteriyor, bugünkü rekabeti değil. Kendi kodunu yazma refleksine hitap eden tek yanı, çalışan bir dil modelinin birkaç yüz satıra sığabildiğini göstermesi. Vakit ayırmaya değmez.",
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "turboderp-org/exllamav3",
+   "inputs_hash": "44af6b751de4f5b79e58106ea88afdd1",
+   "description_tr": "ExLlamaV3, yerel LLM'leri modern tüketici GPU'larında çalıştırmak için yazılmış bir çıkarım ve kuantizasyon kütüphanesi. QTIP temelli EXL3 kuantizasyon formatını, 2-8 bit KV cache kuantizasyonunu, tensör ve uzman paralelliğini, AVX2/AVX512 destekli CPU offload'u ve sürekli dinamik batch'leme ile spekülatif decoding'i bir araya getiriyor. Hugging Face model ailelerinin büyük bölümünü destekliyor, Transformers eklentisi var ve OpenAI uyumlu API'yi TabbyAPI adlı ayrı sunucu üzerinden sağlıyor. Kurulum için CUDA 12.4 ve üzeri gerekiyor; hazır wheel'ler ya da kaynaktan derleme seçenekleri sunuluyor. MIT lisanslı, ~1,5K star, sürüm akışı aktif.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, ücretli API yerine yerel model çalıştırma tercihin. Ne var ki ExLlamaV3 CUDA'ya bağlı: M4 Pro Mac'te de Mac mini'de de kurulmaz, Apple Silicon tarafındaki dengi MLX ve llama.cpp. Lyricdrop'un STT ve hizalama işleri zaten farklı bir model sınıfı, orada da bu depo devreye girmez. Bir gün Windows/Linux bir GPU makinesi kurarsan mevcut açık modelleri düşük bit oranlarında aynı karta sığdırmak için ilk bakacağın yerlerden biri olur. Şimdilik yalnızca not düşmek yeterli.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "elicit/machine-learning-list",
+   "inputs_hash": "bf80a7e2074c9fc6f6fc31904fae53d5",
+   "description_tr": "Bu depo, temel modelleri sıfırdan öğrenmek için hazırlanmış katmanlı bir okuma listesi; Elicit ekibinin yeni çalışanları için yazılmış ve herkese açık bırakılmış. İçerik temel makine öğrenmesi, transformer'lar, başlıca temel model mimarileri, eğitim ve ince ayar, akıl yürütme ve çalışma zamanı stratejileri, üretim dağıtımı, benchmark'lar, yorumlanabilirlik, pekiştirmeli öğrenme ve ölçekleme-güvenlik başlıklarını kapsıyor. Kaynaklar \"Tier 1, Tier 2...\" şeklinde derecelendirilmiş ve önce tüm konuların Tier 1'inin okunması öneriliyor; yeni eklenenler ayrıca işaretlenmiş. Kod içermiyor, makale, blog yazısı ve video bağlantılarından oluşan bir derleme. ~1,5K star; depoda lisans belirtilmemiş.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, Arslan Holding tarafında teknik ekipleri ve tezleri değerlendirirken ortak bir kelime dağarcığına sahip olmak olabilir. Ama bu bir araç değil müfredat, üstelik ML mühendisi olmaya giden bir müfredat; senin çalışma modelin her şeyi kendin öğrenmek yerine öğrenenleri yönetmek. Daha verimli kullanımı, teknik bir danışmana veya asistanına \"bu listeden şu üç başlığı özetle\" şeklinde devretmek ve çıkan özeti due diligence notlarına eklemek olur. Tier yapısı bu tür bir parçalamayı kolaylaştırıyor, çünkü her konunun giriş seviyesi ayrı işaretlenmiş. Kendi başına oturup baştan sona okumak ise büyük olasılıkla getirisi düşük bir zaman yatırımı.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "Yuliang-Liu/MonkeyOCRv2",
+   "inputs_hash": "982562c6883f5fc22fdeb2ae3652b180",
+   "description_tr": "MonkeyOCRv2, doküman görüntüleri için eğitilmiş bir görsel kodlayıcı ve onun üzerine kurulu doküman ayrıştırma ile anlama modellerinden oluşuyor. Kodlayıcı 21M-113M parametre aralığında üç boyutta yayınlanmış ve transformers üzerinden doğrudan yüklenebiliyor; ayrıştırma modeli 17 dili kapsayan MDPBench değerlendirmesinde açık kaynak modeller arasında ilk sırada gösteriliyor. Hem dijital doğmuş hem fotoğraflanmış belgeler, formül tanıma, metin tespiti, tablo ve grafik ağırlıklı içerik hedefleniyor. CPU üzerinde çalıştırma desteği eklenmiş, vLLM ile hızlandırılmış bir sürüm var ve RAGFlow tarafından PDF ayrıştırıcı olarak destekleniyor. Yanında 113 milyon doküman görüntüsü içeren MonkeyDoc v2 veri seti açılıyor; depo ~1,4K star, lisans standart bir SPDX kimliğine oturmuyor (NOASSERTION).",
+   "usage_tr": "Arslan Holding'in deal screening adımında en somut karşılığı var: gelen pitch deck'leri, finansal modelleri ve veri odası PDF'lerini tablolarıyla birlikte yapılandırılmış metne çevirip karşılaştırılabilir hale getirir. Ayrıştırma servisini bir n8n akışının arkasına koyup asistanının bir klasöre attığı her dosyayı otomatik işleyen bir adım kurabilirsin; çıktının üstüne özetleme ve eleme için Claude Code'u koyarsın, yani iş gerçekten devredilebilir hale gelir. CPU desteği sayesinde ofisteki Mac'te ya da evdeki Mac mini'de yerel çalışır, sayfa başına API maliyeti çıkarmaz; hız beklentini düşük tutman gerekir, toplu işleri gece kuyruğa almak daha mantıklı. İkinci bir kullanım, ikinci beyin tarafında taranmış belgeleri aranabilir metne çevirmek olabilir. Uyarı: lisans dosyası standart bir açık kaynak kimliğine eşlenmemiş, ticari bir akışa bağlamadan önce metnin kendisini okut; ayrıca veri setini indirme adımını atla, terabaytlarca yer istiyor.",
+   "matched_project": "Arslan Holding",
+   "relevance": 5,
+   "investment_note": null
+  },
+  {
+   "full_name": "bupticybee/ChineseAiDungeonChatGPT",
+   "inputs_hash": "808288c1b84abfefbf2760758a4951e5",
+   "description_tr": "Bu depo, metin tabanlı macera oyunu AI Dungeon'ın Çince bir kopyası; hikâye anlatıcısı olarak doğrudan ChatGPT kullanılıyor. Komut satırından ve basit bir masaüstü arayüzünden çalışıyor, otomatik kayıt ve yükleme desteği var. Yazarın notuna göre çekirdek yaklaşık 40 satır ve daha önce aylarca eğitilmiş kendi modelinden belirgin biçimde iyi sonuç veriyor; ince ayar yapılmamış. Erişim önce revChatGPT üzerinden hesap oturumuyla, sonra resmi OpenAI API anahtarıyla sağlanmış. README'deki son güncellemeler 2023 Mart'a ait ve o dönemin erişim yöntemlerine bağlı; depoda lisans belirtilmemiş, ~1,4K star.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, Folio'da içeriğin kullanıcı tepkisine göre ilerlemesi fikriyle yüzeysel bir benzerlik taşıması olabilir. Ama burada devralınacak bir mühendislik yok: bağlam yönetimi, kalıcı durum ve değerlendirme katmanı bulunmuyor, kod bir dönemin API erişim yöntemlerine bağlı. Aynı işi bugün Claude Code ile birkaç saatte ve daha sağlam biçimde yazarsın. Deponun bıraktığı tek kalıcı gözlem, iyi bir temel modelin aylarca süren özel eğitimi gereksiz kılabilmesi — bu da yatırım tarafında zaten bildiğin bir örüntü. Vakit ayırmaya değmez.",
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "ClaudioDrews/memory-os",
+   "inputs_hash": "6a89da1b2f0999d87343ca3a64d645e2",
+   "description_tr": "Memory OS, Hermes Agent için yazılmış yedi katmanlı bir kalıcı bellek altyapısı. Katmanlar her turda sistem prompt'una enjekte edilen çalışma alanı dosyalarından, SQLite ve FTS5 ile tam metin aranabilir oturum geçmişinden, güven skoru taşıyan yapılandırılmış olgulardan, Qdrant üzerindeki semantik geri çağırmadan ve kendi kendini düzenleyen bir wiki hattından oluşuyor. Ajanın enjekte edilen belleği gerçekten kullanmasını sağlamak için açık bir \"Ground Truth\" hiyerarşisi tanımlanmış. Bellek altyapısı tamamen yerelde çalışıyor (Docker ile Qdrant, Redis ve bir ARQ worker, Python 3.11+), LLM sağlayıcısından bağımsız: OpenRouter, OpenAI, Anthropic ve Ollama dahil Hermes'in desteklediği her sağlayıcıyla kullanılabiliyor. v0.2.0 ile tek komutluk kurulum betiği, katkı şablonları ve topluluk denetiminden çıkan 20'den fazla düzeltme geldi; MIT lisanslı, ~1,4K star.",
+   "usage_tr": "Bu, kişisel bilgi tabanı fikrinin ajan tarafındaki karşılığı: sesli notlardan çıkan olguların, proje kararlarının ve stack tercihlerinin kalıcı bir yerde durup doğru anda geri gelmesi. Hermes Agent'ı öğrenme planın varsa depo o yığının bellek katmanını hazır veriyor; yedi katmanı tek tek okuyup hangisini kendi kurgunda tutacağına karar edebilirsin — yapılandırılmış olgular ve güven skorlaması, tüm projelerini bilen orkestratör ajan isteğine en yakın parça. Docker servisleri evdeki 7/24 açık Mac mini'de durabilir ve ofis Mac'inden Tailscale üzerinden erişilir; bellek verisi yerelde kalır, ek maliyet yalnızca kullandığın çıkarım sağlayıcısından gelir. Uyarı: kod Hermes Agent'a sıkı bağlı, Claude Code tarafına taşımak kurulum değil şema ve mantık ödünç alma işi olur. İkinci uyarı senin kendi kuralın: kişisel not sistemiyle iş/asistan sistemini karıştırma kararını ayrı koleksiyon ve ayrı veritabanı olarak daha kurulum aşamasında uygula, sonradan ayırmak zor.",
+   "matched_project": "Kişisel bilgi tabanı",
+   "relevance": 8,
+   "investment_note": null
+  },
+  {
+   "full_name": "JonasGeiping/cramming",
+   "inputs_hash": "53c717a11f8e2ac04b13c378a355f254",
+   "description_tr": "Cramming, \"tek bir GPU'da tek bir günde bir dil modeli nereye kadar eğitilebilir?\" sorusunu araştıran bir makalenin kod deposu. BERT tipi bir modeli maskelenmiş dil modellemesiyle tamamen sıfırdan, önceden eğitilmiş hiçbir bileşen kullanmadan eğitmeyi şart koşan açık kurallar tanımlıyor ve sonuçları GLUE üzerinde ölçüyor. Çalışma, ön eğitim hattının neredeyse tüm bileşenlerini bu kısıt altında yeniden analiz ediyor ve ölçeklendirme yasalarının küçük bütçede de geçerli kaldığına dair bulgular paylaşıyor. Kod PyTorch 2.x, transformers, hydra ve safetensors üzerine kurulu; eğitilmiş kontrol noktaları Hugging Face'te yayınlanmış. MIT lisanslı, ~1,4K star; 2022 sonunda açılmış bir araştırma deposu.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, sınırlı bütçeyle ne kadar model elde edilebileceğine dair genel merakın olabilir. Kendi başına bir model eğitmen gereken bir iş yok: Lyricdrop'un ihtiyacı STT ve hizalama, Folio'nunki görsel üretim, ikisinde de hazır modeller kullanıyorsun. Deponun kuralları ayrıca tek NVIDIA GPU varsayıyor, Mac tarafında karşılığı yok. Yatırımcı şapkasıyla bakarsan sonuçları değil metodu ilginç: bir ekibin \"küçük bütçede eğittik\" iddiasını nasıl doğrulaman gerektiğine dair iyi bir kontrol listesi sunuyor. Bunun dışında pratik bir karşılığı yok.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "zjunlp/KnowledgeEditingPapers",
+   "inputs_hash": "b954e7d6dc9d3329264a1c87a889d26b",
+   "description_tr": "Bu depo, büyük dil modellerinde bilgi düzenleme (knowledge editing) üzerine okunması önerilen makalelerin derlemesi. Model içindeki belirli bir olgunun yeniden eğitim yapmadan değiştirilmesi, silinmesi ya da eklenmesiyle ilgili yöntemleri, ölçütleri ve anket çalışmalarını bir arada topluyor. Liste akademik konferans yayınlarının yanı sıra tutorial sunumlarını ve KnowEdit gibi kıyaslama veri setlerini de içeriyor. Kod barındırmıyor; aynı grubun EasyEdit gibi araçlarına bağlantı veren bir kaynak listesi niteliğinde. MIT lisanslı, ~1,2K star; 2022'den bu yana düzenli olarak güncellenmiş.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, modellerin bilgisini güncel tutma probleminin genel olarak ilgini çekebilecek olması. Pratikte senin kurgunda bu problem başka bir katmanda çözülüyor: kişisel bilgi tabanında ve ajan belleğinde bilgi modelin ağırlıklarında değil, senin kontrolündeki bir veritabanında duruyor ve oradan bağlama enjekte ediliyor. Bu yaklaşım hem daha denetlenebilir hem de model değiştirdiğinde taşınabilir. Makale listesi bir araç değil, kendi modelini eğiten ekipler için bir literatür haritası. Okuma listesine eklemek dışında bir işlevi olmaz.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "datawhalechina/zero-to-sglang",
+   "inputs_hash": "5572e35dd7bec35c83dd28c4d9aab58c",
+   "description_tr": "zero-to-sglang, LLM çıkarımını temelden anlatan ve okuyucuya sıfırdan küçük bir çıkarım motoru yazdıran bir kurs deposu. İlk bölüm KV Cache'in neden var olduğu, prefill ile decode farkı, compute-bound ve memory-bound kavramları gibi temelleri ele alıyor; orta bölümde forward pass, üretim, KV Cache, HTTP servisi, continuous batching, paged KV cache ve RadixAttention adım adım kodlanıyor. Son bölüm gerçek SGLang kaynak koduna dönüp optimizasyonların nasıl uygulandığını inceliyor ve projeye ilk PR'ı göndermeye kadar götürüyor. Datawhale ile SGLang ekibinin kurduğu şirket tarafından ortak yürütülüyor; İngilizce ve Çince yayınlanıyor. ~1,2K star; Part 0 ve Part I İngilizce hazır, II-IV bölümleri geliştirme aşamasında.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, yerel model altyapısına duyduğun ilgi olabilir. Ama bu bir kütüphane değil, çıkarım motoru yazmayı öğreten bir kurs; sen model servis eden değil, model kullanan taraftasın ve SGLang senin Mac merkezli kurgunda sunucu tarafı bir bileşen olarak da görünmüyor. Kurs ayrıca CUDA ve GPU kümesi varsayımıyla ilerliyor. Yatırımcı tarafında tek değeri, çıkarım maliyeti ve gecikmenin neden asıl darboğaz olduğunu anlatan giriş bölümlerinin, bu alandaki şirketleri değerlendirirken okunaklı bir çerçeve vermesi. Gerekirse sadece o ilk bölümü okumak yeterli.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "qingsongedu/Awesome-TimeSeries-SpatioTemporal-LM-LLM",
+   "inputs_hash": "4157e58c69ecc467dd4efe2cce15bdda",
+   "description_tr": "Bu depo, zaman serisi, uzamsal-zamansal veri ve olay verisi için büyük dil modelleri ile temel modelleri konu alan makalelerin derlenmiş bir listesi. Tahminleme, anomali tespiti, kök neden analizi ve genel zaman serisi analizi başlıkları altında konferans yayınlarını, kod bağlantılarını ve veri setlerini bir araya getiriyor. Listeye eşlik eden bir survey makalesi alanın genel görünümünü özetliyor ve depo o makalenin referans koleksiyonu gibi çalışıyor. Kod içermiyor, düzenli olarak yeni yayınlarla güncelleniyor. ~1,2K star; depoda lisans belirtilmemiş.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, Kanarya'daki fizyolojik ölçümlerin zaman serisi olarak özetlenmesi ve giyilebilir cihaz tezin olabilir. Ancak bu bir makale listesi, kurup çalıştırabileceğin bir model ya da kütüphane değil; listedeki çalışmaların çoğu araştırma ölçeğinde ve üretime hazır değil. Kanarya'nın ihtiyacı olan günlük/haftalık özetler için bugün elindeki LLM zaten yeterli, özel bir zaman serisi temel modeline gerek yok. Listenin tek işlevi, ileride giyilebilir veri üzerine bir yatırım tezi yazarken hangi yöntemlerin gerçekten çalıştığını taramak için başlangıç noktası olması. Bu işi de asistanına ya da bir araştırma ajanına devredebilirsin.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "cosmo-wander-ai/cosmo-edge",
+   "inputs_hash": "156c7cc6f98757819dc7ec0605716d9d",
+   "description_tr": "CosmoEdge, video analitiği ve cihaz üstü VLM uygulamaları için yazılmış C++17 tabanlı bir uç (edge) yapay zekâ motoru. Sophon BM1688/CV186X, Rockchip RK3576/RV1126B ve x86 platformlarını aynı video alma, orkestrasyon, olay ve gözlemlenebilirlik akışıyla destekliyor; her platform kendi çalışma zamanını ve model dosyalarını kullanıyor. Model servisinin ötesinde model içe aktarma, görsel akış tasarımı, gerçek zamanlı OSD, alarm ve olay dağıtımını içeren bir uygulama katmanı sunuyor. Çok platformlu bir kıyaslama paketi, 72 saatlik kontrollü bir profil ve doğrulanmış VLM performans ölçümleri yayınlanmış. Çekirdek motor ve konsol Apache-2.0; sertifikalı donanım, ticari hazır modeller ve Model Guard dağıtım koruması ayrı ticari sınırlarda tutuluyor. ~1,2K star.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, cihaz üstü çalışan görüntü modellerine ve giyilebilir/gömülü donanıma duyduğun ilgi olabilir. Ama bu motor NPU'lu endüstriyel kartlar için yazılmış: kamera akışı, alarm ve olay dağıtımı gibi güvenlik-operasyon senaryolarına oturuyor, senin Expo + Supabase yığınına girecek bir bileşen değil. Mac tarafında yalnızca bir Docker önizlemesi var, o da geliştirme amaçlı. Kendi uygulamana gömülebilecek açık kaynak parça arayışına uymuyor; burada satın alınan şey donanıma bağlı bir çalışma zamanı. İlgilenirsen ürün olarak değil, sektör olarak takip etmek daha doğru.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": "Açık çekirdek + sertifikalı donanım ve şifreli model dağıtımı şeklindeki ticari sınırı net çizilmiş bir uç AI yığını; Körfez'deki kamera ve video analitiği talebi düşünülürse bu modeli izlemeye değer, ancak donanım tedarikçisine bağımlılık değerlendirmenin merkezinde olmalı."
+  },
+  {
+   "full_name": "thu-ml/SpargeAttn",
+   "inputs_hash": "8d9ce91195e954333d657479c54e323d",
+   "description_tr": "SpargeAttn, eğitim gerektirmeyen bir seyrek dikkat (sparse attention) yöntemi ve onun CUDA çekirdeği. Dil, görüntü ve video modellerinin çıkarımını, dikkat matrisinin yalnızca anlamlı bloklarını hesaplayarak hızlandırmayı hedefliyor; topk parametresiyle doğruluk ve seyreklik arasında denge kuruluyor. Önerilen API'ler mevcut dikkat çağrısının yerine doğrudan geçecek şekilde tasarlanmış, ayrıca dikkat başlığı başına özel blok maskesi verilebiliyor. SageAttention2 üzerine kurulu, Ampere'dan Blackwell'e kadar farklı NVIDIA nesillerini ve fp8 desteğini hedefliyor. ICML 2025'te kabul edilmiş, Apache-2.0 lisanslı, ~1,2K star.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, Folio için görsel ve video üretim maliyetini düşürme ihtiyacı olabilir. Fakat bu bir CUDA çekirdeği: kazanç ancak kendi GPU'nda kendi çıkarım hattını çalıştırdığında ortaya çıkar, kapalı bir API'den içerik ürettiğinde ya da Mac'te çalıştığında hiçbir karşılığı olmaz. Kendi model kodunu yazmadığın sürece bu katmana hiç dokunmazsın. Yatırımcı tarafında ilginç yanı, çıkarım maliyetini model değiştirmeden düşüren çekirdek seviyesi çalışmaların ayrı bir rekabet alanı haline gelmesi. Ürün olarak senin masanda bir yeri yok.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "helicalinsight/helicalinsight",
+   "inputs_hash": "9e4443d9df005ccfc9703c347ae7e5ae",
+   "description_tr": "Helical Insight, gömülebilir olmayı öne çıkaran açık kaynak bir iş zekâsı platformu. Doğal dille soru sorulup SQL üretilen sohbet tabanlı analiz, kendi LLM'ini bağlama seçeneği, sayfalanmış ve baskıya uygun raporlar ile detaya inilebilen etkileşimli panolar sunuyor. Çok kiracılı kullanım, satır bazlı veri güvenliği, JWT/Okta/Keycloak/OAuth ile SSO, beyaz etiketleme, rapor zamanlama ve PDF/Excel/CSV gibi çok sayıda dışa aktarma biçimi destekleniyor. Java ve JavaScript tarafında çalışan, Docker ile kurulan bir sunucu uygulaması; tüm özellikler ücretsiz topluluk sürümünde yer alıyor. AGPL-3.0 lisanslı, ~1,1K star; 2016'dan beri sürdürülen olgun bir kod tabanı.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, asistanının çalıştırabileceği düzenli raporlama ihtiyacı olabilir. Ancak bu, kurulup yönetilmesi gereken ağır bir kurumsal ürün ve senin refleksin tam aksi yönde: kendi uygulamana gömebileceğin parçaları tam ürünlere tercih ediyorsun. Lyricdrop'un admin paneli zaten Supabase üzerinde kendi kodunla yürüyor; aynı sayıları görmek için ayrı bir BI sunucusu işletmek bakım yükü getirir. AGPL-3.0 lisansı ayrıca kendi ürünlerine gömme senaryosunu pratikte kapatıyor, bu yüzden Folio ya da Lyricdrop içinde düşünmek doğru olmaz. Kurumsal tarafta gerçekten çok kiracılı, satır bazlı güvenlikli bir raporlama ihtiyacı doğarsa yeniden bakılabilir.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "EthanYoQ/AI-Novel-Writer",
+   "inputs_hash": "c8b393ab831f0a409d814cc1c38e2b26",
+   "description_tr": "AI Novel Writer, uzun soluklu roman yazımını aşamalara bölen bir masaüstü çalışma tezgâhı: önerme, karakterler, dünya kurgusu, bölüm planı, taslak, redaksiyon raporu ve düzeltme adımları izlenebilir bir akış olarak bağlanıyor. Yazılım model servisi sağlamıyor; kullanıcı yerel (Ollama) ya da çevrim içi bir model bağlıyor ve proje verisi kendi bilgisayarında kalıyor. Üretim sırasında tüm roman tek bir sohbete yığılmak yerine güncel bölüm planı, ilgili karakter bilgileri, dünya kurgusu ve geçmiş özetler etrafında bağlam kuruluyor; son sürümlerde bilginin kaynağı (yazarın yazdığı, modelin çıkardığı, eski projeden gelen) ayrı ayrı izleniyor. Electron tabanlı, Windows ve macOS için paketler yayınlanıyor, arayüz ve dokümantasyon ağırlıklı olarak Çince; GPL-3.0 lisanslı, ~1,1K star, sürüm akışı aktif.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, Folio'nun günlük içerik pipeline'ında uzun metinlerin bölüm bölüm ve tutarlılığı korunarak üretilmesi problemi olabilir. Ürünün kendisi roman yazarları için tasarlanmış bir masaüstü uygulaması ve Folio'nun ihtiyacı kısa, görsel ağırlıklı, günlük üretilen içerik — akışlar örtüşmüyor. Devralınabilir olan şey kod değil tasarım kararı: bilginin kaynağının (yazarın verdiği, modelin çıkardığı) ayrı tutulması ve doğrulanmamış olanın onaylanmış gibi kullanılmaması, senin içerik onayı kurgunda da işe yarayacak bir ilke. GPL-3.0 olduğu için kodu kendi uygulamana almak zaten uygun değil. Yarım saat arayüzü ve akış diyagramını incelemek, kod okumaktan daha verimli olur.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "opencv/opencv_zoo",
+   "inputs_hash": "ed53d5c72652c67775a8faa533f841b1",
+   "description_tr": "OpenCV Zoo, OpenCV'nin DNN modülüyle çalışacak şekilde ayarlanmış hafif modellerin toplandığı bir depo. İçinde yüz tespiti (YuNet), yüz tanıma (SFace), yüz ifadesi tanıma, insan segmentasyonu, EfficientSAM ile görüntü segmentasyonu, NanoDet ve YOLOX ile nesne tespiti, nesne takibi ve avuç içi tespiti gibi modeller bulunuyor. Her model için demo betikleri ve farklı donanımlarda ölçülmüş çıkarım süreleri veriliyor; kıyaslamalar x86, çeşitli ARM kartları ve RISC-V cihazları kapsıyor. Modeller git-lfs ile dağıtılıyor, ayrıca deponun başında artık Hugging Face üzerinde de barındırıldığı belirtiliyor. Apache-2.0 lisanslı, ~1,1K star.",
+   "usage_tr": "Model ajansı fikrinde portföy fotoğraflarını işleyen adımın altyapısı olarak kullanabilirsin: YuNet ile yüz tespiti, SFace ile aynı kişinin farklı çekimlerini eşleştirme, segmentasyon modelleriyle otomatik kırpma ve kalite elemesi. Bunlar tam ürün değil, kendi uygulamana gömülebilecek parçalar; CPU üzerinde çalıştıkları için ofisteki Mac'te yerel döner, fotoğraf başına API maliyeti çıkarmaz ve hiçbir görsel dışarıya gitmez — kişi fotoğrafları söz konusu olduğunda bu tek başına belirleyici olabilir. Python tarafında bir toplu işleme betiği olarak yazılır ve asistanına \"klasörü şuraya at\" seviyesinde devredilebilir. Uyarı: modeller yüz tanımanın hassas bir alan olduğu ölçüde izin ve saklama kurallarını gerektirir; ayrıca bu zoo mobil uygulamaya doğrudan gömülecek bir SDK değil, sunucu ya da masaüstü tarafında çalışan bir bileşen. Doğruluk beklentini ölçerek kur: modeller hız için küçük tutulmuş.",
+   "matched_project": "Model ajansı",
+   "relevance": 4,
+   "investment_note": null
+  },
+  {
+   "full_name": "datawhalechina/base-llm",
+   "inputs_hash": "c1995ba091dfd574109ed388596b961c",
+   "description_tr": "base-llm, geleneksel doğal dil işlemeden büyük dil modellerine uzanan Çince bir tam yığın eğitim serisi. Tokenizasyon, kelime vektörleri ve Word2Vec, RNN/LSTM, dikkat mekanizması ve Transformer, ardından BERT, GPT ve T5 gibi ön eğitimli modeller sırayla işleniyor. İleri bölümlerde Llama2'nin sıfırdan yazılması, LoRA/PEFT ile parametre verimli ince ayar, RLHF, nicemleme ve çıkarım hızlandırma, Docker ve FastAPI ile servis etme anlatılıyor. İçerik Jupyter defterleri ve Markdown bölümlerinden oluşuyor; metin tasnifi, varlık ismi tanıma ve özel veriyle Qwen2.5 ince ayarı gibi uçtan uca projeler içeriyor. Ön koşul olarak Python, PyTorch ve temel derin öğrenme bilgisi isteniyor; ~1K star, depoda lisans belirtilmemiş.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, modellerin içini anlama merakın olabilir. İçerik AI mühendisi olmak isteyenler için yazılmış: kendi Llama2'ni yazmak, LoRA ile ince ayar yapmak ve model servis etmek senin yaptığın işlerin hiçbirinde gerekmiyor — ürün tarafında hazır modelleri kullanıp uygulama katmanını inşa ediyorsun. Ayrıca materyalin tamamı Çince, bu da Türkçe kaynaklardan öğrenme alışkanlığınla uyuşmuyor. Nicemleme ve çıkarım hızlandırma bölümleri, bir ekibin \"modeli biz optimize ettik\" iddiasını değerlendirirken arka plan olarak işine yarayabilir. Bunun dışında bir kullanım noktası yok.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  }
+ ]
+}
