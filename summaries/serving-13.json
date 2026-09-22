@@ -1,0 +1,175 @@
+{
+ "repos": [
+  {
+   "full_name": "Neroued/ninfer",
+   "inputs_hash": "cea85df7e2ae831189baf7b6b6d0dd81",
+   "description_tr": "NInfer, Qwen3.5 Dense ve MoE mimarilerini tek bir NVIDIA RTX 5090 üzerinde çalıştırmak için sıfırdan yazılmış bir C++/CUDA çıkarım motoru. Metin, görüntü ve video istemlerini yerel bir CLI ya da OpenAI/Anthropic uyumlu HTTP API üzerinden alıyor. Çalışma zamanı bilerek dar tutulmuş: tek GPU, bellekte tek model ve başlangıçta sabitlenen bir ile sekiz arası eşzamanlı istek kapasitesi. Ağırlıklar model konfigürasyonunu ve frontend kaynaklarını da taşıyan tek bir .ninfer dosyasında paketleniyor; NVFP4 ve groupwise-int biçimlerinde resmi artefaktlar var, kendi ağırlıklarını dönüştürme yolu belgelenmiş. Apache-2.0 lisanslı, 2026 ortasında açılmış ve ~2.3K star toplamış.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, yerel model altyapısına duyduğun ilgi olurdu. Ancak motor tek bir RTX 5090 için yazılmış ve tüm hesaplama varsayımları CUDA üzerine kurulu; senin geliştirme merkezin M4 Pro Mac ile evdeki Mac mini. Apple Silicon için bir yol sunulmadığı için pipeline'larına bağlanacak bir parça yok. Bir gün ofise NVIDIA'lı bir kutu koyarsan yeniden bakılabilir, o zamana kadar Mac tarafında llama.cpp/MLX hattı senin için geçerli seçenek olmayı sürdürüyor.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "microsoft/DeBERTa",
+   "inputs_hash": "3bb3da9473f32147f000bc169e96a1a3",
+   "description_tr": "DeBERTa, BERT mimarisini ayrıştırılmış (disentangled) dikkat mekanizmasıyla genişleten encoder model ailesinin resmi uygulaması. V3 sürümü ELECTRA tarzı ön eğitim ve gradient-disentangled embedding paylaşımı ekleyerek aynı boyutta daha yüksek doğruluk hedefliyor; 22M parametreli XSmall sürümü RoBERTa-Base'in dörtte biri boyutunda. Depo ön eğitim, fine-tune ve SuperGLUE/SQuAD deney betiklerini içeriyor, ağırlıklar Hugging Face model hub'ında yayınlanmış. Doğal dil anlama görevleri (sınıflandırma, soru-cevap, benzerlik) için tasarlanmış; üretici bir model değil. MIT lisanslı, ~2.2K star; son önemli güncellemeler 2023'te yapılmış, depo bakım moduna geçmiş görünüyor.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, kişisel bilgi tabanındaki sesli notların kategoriye ayrılması gibi bir metin sınıflandırma adımı olabilir. Ancak DeBERTa'yı o işe koşmak etiketli veri toplayıp fine-tune etmeyi gerektirir; bu paketteki GLiNER2 gibi şema tabanlı ve hazır checkpoint'li araçlar aynı işi eğitim döngüsü olmadan yapıyor. Encoder ailesi olarak sağlam bir temel ama senin için bitmiş bir bileşen değil, bir araştırma tabanı. Sınıflandırma başarımını kendi verinle ölçmek istediğin bir gün gelirse karşılaştırma taban çizgisi olarak akılda tutulabilir.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "sun-guannan/VectCutAPI",
+   "inputs_hash": "de71950fee85fe00f7eda2cd837d5231",
+   "description_tr": "VectCutAPI, video kurgusunu ajanlardan çağrılabilir hale getiren bir API ve MCP sunucusu. Altyazı ekleme, picture-in-picture, AI seslendirme, filtreler, sticker, keyframe animasyonu ve çoklu track düzenleme gibi işlemleri HTTP çağrılarıyla yaptırıyor; sonucu bulutta render edebiliyor ya da CapCut/Jianying draft dosyası olarak dışa aktarıp masaüstünde elle rötuşlamaya bırakıyor. Coze, Dify, n8n gibi akış platformları ve Claude Code gibi otonom ajanlarla kullanılmak üzere konumlandırılmış. Python 3.10+, FFmpeg ve draft yolu için CapCut/Jianying kurulumu gerekiyor. Apache-2.0 lisanslı arayüz kodu, ~2.2K star; arkasında vectcut.com adlı ticari bir hizmet var, yani depo istemci tarafını açıyor, render motorunu değil.",
+   "usage_tr": "Folio'nun günlük içerik pipeline'ında oturabilecek somut bir parça: AI ile ürettiğin görsel ve video klipleri altyazı, seslendirme ve geçişlerle birleştirip dikey feed ile story formatına getirme adımı. n8n akışına HTTP düğümü olarak ya da Claude Code'a MCP sunucusu olarak bağlayabilir, her gün üretilecek post setini tek bir betikten render ettirebilirsin. İkinci bağlam Lyricdrop lansmanı için planladığın içerik otomasyonu; aynı şablonla şarkı başına kısa tanıtım klipleri çıkarılabilir. Uyarı: render bulutta çalışıyor, yani Mac'te yerel değil ve kullanım başına bir maliyet getiriyor — ElevenLabs ve Apify'ı maliyet nedeniyle bıraktığın düşünülürse fiyatlandırmayı en baştan ölçmen gerekir. İkinci uyarı: draft yolu CapCut/Jianying'e bağımlı olduğu için tam otomasyon istiyorsan bulut render'a mahkûmsun. Önce tek bir Folio gönderisini uçtan uca ürettirip elle kurguya kıyasla ne kadar zaman ve para tuttuğunu ölçmek doğru ilk adım.",
+   "matched_project": "Folio",
+   "relevance": 5,
+   "investment_note": null
+  },
+  {
+   "full_name": "ProsusAI/finBERT",
+   "inputs_hash": "c7d9e2491a1fce3947c86c523e4dee22",
+   "description_tr": "FinBERT, finansal metinlerin duygu analizi için BERT'in finans alanında ek eğitimle uzmanlaştırılmış hali. Dil modeli Reuters TRC2 alt kümesiyle sürdürülmüş, duygu sınıflandırıcı ise Financial PhraseBank veri setiyle fine-tune edilmiş; çıktı olumlu/olumsuz/nötr etiketleri üretiyor. Model Hugging Face hub'ında hazır olarak yayınlanmış, depo eğitim ve değerlendirme betiklerini içeriyor. Kod hâlâ transformers'ın öncülü olan pytorch_pretrained_bert kütüphanesine dayanıyor; README bunun taşınacağını yıllardır not ediyor. Apache-2.0 lisanslı, ~2.2K star; 2019 kökenli ve aktif geliştirme görünmüyor.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam Arslan Holding tarafında portföy ve sektör haberlerinin taranması olurdu. Fakat üç sınıflı bir duygu etiketi bir yatırım kararını taşıyacak bilgi değil; deal screening'de ihtiyacın olan şey gerekçe, sayı ve karşılaştırma. Aynı haber metninden Claude Code ile gerekçeli bir özet çıkarmak hem daha kullanışlı hem de zaten sahip olduğun akışın içinde. Model İngilizce finansal basın diline göre eğitildiği için Türkçe ve Körfez kaynaklarında ayrıca zayıf kalır.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "KaiyangZhou/CoOp",
+   "inputs_hash": "2e9778af1231bceb65f18a1abf3a348a",
+   "description_tr": "CoOp deposu, CLIP gibi görsel-dil modellerini az örnekle downstream veri setlerine uyarlamak için prompt learning yöntemlerinin (CoOp ve CoCoOp) resmi kod tabanı. Elle yazılan metin istemleri yerine öğrenilebilir bağlam vektörleri eğitiliyor; CoCoOp bu vektörleri görüntüye koşullayarak görülmemiş sınıflara genellemeyi iyileştiriyor. IJCV 2022 ve CVPR 2022 yayınlarına eşlik ediyor, Dassl.pytorch çatısını ve birkaç standart sınıflandırma veri setini kullanıyor. ImageNet üzerinde önceden eğitilmiş ağırlıklar ve performans eğrisi çizim betikleri paylaşılmış. MIT lisanslı, ~2.2K star; akademik bir referans uygulaması olarak duruyor, ürünleşmiş bir kütüphane değil.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, model scouting fikrindeki görüntü değerlendirme ya da Folio'da üretilen görsellerin otomatik elenmesi olabilir. Ancak yöntem etiketli bir veri seti, GPU'da eğitim döngüsü ve hiperparametre ayarı istiyor; senin çalışma şeklin hazır bileşeni fork'layıp gömmek. Bugün aynı işi tarif ettiğin kriterleri doğrudan bir görsel-dil modeline sorarak eğitimsiz denemek mümkün. Elinde yüzlerce etiketli örnek biriktiği gün az örnekli uyarlama fikri tekrar gündeme gelebilir.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "RightNow-AI/picolm",
+   "inputs_hash": "4c7d7022774d259fa757c06c709a9049",
+   "description_tr": "PicoLM, 1 milyar parametreli dil modellerini çok kısıtlı donanımda çalıştırmak için saf C11 ile yazılmış bağımlılıksız bir çıkarım motoru. Tek bir ikili dosya olarak derleniyor, yaklaşık 80KB boyutunda ve çalışırken 45MB RAM kullandığı belirtiliyor; hedef donanım 10 dolarlık ARM/RISC-V kartlar ve Raspberry Pi sınıfı cihazlar. Girdi stdin'den alınıyor, çıktı stdout'a yazılıyor; --json grammar modu küçük modellerden bile geçerli JSON üretmeyi garanti etmek için var. Aynı ekibin PicoClaw adlı Go tabanlı hafif ajanının yerel beyni olarak konumlandırılmış, tamamen çevrimdışı bir ajan döngüsü hedefleniyor. MIT lisanslı, ~2.2K star, 2026 başında açılmış.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam evdeki 7/24 açık Mac mini ve self-hosting ilgin olurdu. Ama oradaki kısıt RAM değil: 24GB'lık bir Mac'te llama.cpp veya MLX ile çok daha yetenekli modeller zaten yerel çalışıyor, dolayısıyla 45MB'a sıkışmanın getirisi yok. PicoLM'in değeri internetsiz, pilli, gömülü bir cihaz senaryosunda ortaya çıkıyor; senin cihaz tarafın iPhone ve Android TV. Gömülü bir donanım fikri gündeme gelirse bağımlılıksız tek ikili olması ciddi bir avantaj olarak hatırlanabilir.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "fastino-ai/GLiNER2",
+   "inputs_hash": "3c50f37f5bfe95fa106af21045cd6951",
+   "description_tr": "GLiNER2, tek bir şema tanımıyla varlık çıkarımı (NER), metin sınıflandırma, yapılandırılmış kayıt çıkarma, ilişki çıkarımı ve span özniteliklerini aynı ileri geçişte üreten bir encoder ailesi. İki mimari tek bir API'nin arkasında duruyor: sabit genişlikli span ızgarası ve GLiNER2.5 ile gelen sparse başlangıç/bitiş eşleme yaklaşımı; checkpoint'ler AutoExtractor ile mimarilerine göre otomatik yükleniyor. Kısıtlı çözümleme (constrained decoding) ile etiketler arası kurallar ve tipli varlık-ilişki grafikleri tanımlanabiliyor, regex doğrulayıcı ve JSONL eğitim verisi araçları pakete dahil. GPU gerektirmeden CPU üzerinde yerel çalışacak şekilde tasarlanmış ve tüm işlem cihazda kalıyor; LoRA ile yerel fine-tune destekleniyor, bulut üzerinden fine-tune ise geliştiricisi Fastino'nun ticari tarafı. Apache-2.0 lisanslı, ~2.1K star, 2025'te açılmış ve aktif geliştiriliyor.",
+   "usage_tr": "Bu, kişisel bilgi tabanı projendeki \"form doldurma yok, kategoriyi AI çıkarsın\" adımına doğrudan oturuyor. Sesli notu STT'den geçirdikten sonra metni GLiNER2'ye bir şemayla verip kategori etiketini, geçen kişi/proje/yer alanlarını ve tarih gibi öznitelikleri tek çağrıda çıkarabilir, sonucu doğrudan Supabase tablosuna yazabilirsin. CPU'da çalıştığı için ofis Mac'inde yerel kalıyor, API maliyeti getirmiyor ve şema sabit olduğu için çıktı her seferinde aynı alanlara düşüyor — bu, LLM'e serbest metin sordurmaya göre pipeline'da çok daha az sürpriz üretir. İkinci bağlam asistan tarafı: HubSpot'a düşecek iletişim notlarından kişi ve şirket adlarının çıkarılması aynı şemayla otomatikleştirilebilir ve bu iş asistana devredilebilir bir düğmeye indirgenebilir. Uyarı: şemayı sen tanımlıyorsun ve model Türkçe metinde İngilizceye göre zayıf kalabilir; pipeline'a koymadan önce kendi notlarından 20-30 örnekle doğruluğunu ölçmen gerekir. Küçük bir ek fayda: paketin torch'suz kurulum profili var, yani şema doğrulama ve veri hazırlama tarafını ağır bağımlılık kurmadan denemeye başlayabilirsin.",
+   "matched_project": "Kişisel bilgi tabanı",
+   "relevance": 7,
+   "investment_note": null
+  },
+  {
+   "full_name": "qubvel/efficientnet",
+   "inputs_hash": "48ae7d64dc4a3b9ff73b9fe7d03d0acf",
+   "description_tr": "Bu depo, EfficientNet görüntü sınıflandırma mimarisinin Keras ve TensorFlow Keras için yeniden uygulaması. B0'dan B7'ye kadar ölçeklenen model varyantlarını ve ImageNet üzerinde önceden eğitilmiş ağırlıkları sunuyor; mimarinin iddiası aynı doğruluğu belirgin biçimde daha az parametre ve FLOP ile elde etmek. Kod TensorFlow'un resmi uygulamasından esinlenmiş, pip üzerinden kurulabiliyor ve transfer öğrenme örnekleri içeriyor. Apache-2.0 lisanslı ve ~2.1K star toplamış. 2019 kökenli; ekosistemin ağırlık merkezi o günden bu yana PyTorch ve timm tarafına kaydığı için depo tarihsel bir referans konumunda.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam görüntü sınıflandırma gerektiren bir adım, örneğin model scouting fikrindeki portföy görsellerinin elenmesi olabilir. Ancak senin stack'in Expo, Supabase ve Python tarafında güncel modeller; Keras/TensorFlow bağımlılığı getirmek bakım yükü olur. Bugün aynı işi hazır görsel-dil modelleriyle eğitimsiz yapmak mümkün. Cihaz üstünde çok hafif bir sınıflandırıcıya ihtiyaç doğarsa bile daha güncel mobil mimariler tercih edilir.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "ai-forever/ru-gpts",
+   "inputs_hash": "8bb02c404b4a60172e409ed62a248751",
+   "description_tr": "ru-gpts, Rusça için eğitilmiş otoregresif dil modellerinin (ruGPT3XL, Large, Medium, Small ve ruGPT2Large) kod ve ağırlıklarını toplayan depo. En büyük modeller 2048 token bağlamla, seyrek ve yoğun dikkat bloklarıyla eğitilmiş; kurulum DeepSpeed'in sparse attention derlemesine ve apex'e dayanıyor. Depo üretim, fine-tune ve ön eğitim ayrıntılarının yanı sıra Colab örnek defterleri içeriyor. Apache-2.0 lisanslı, ~2.1K star. 2020-2021 döneminin GPT-3 klonu dalgasından kalma bir çalışma; kurulum talimatları o dönemin kütüphane sürümlerine bağlı ve güncel bakım görünmüyor.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam Lyricdrop'un ileride yeni dillere açılması olurdu. Fakat orada ihtiyacın olan şey bir metin üretici değil, o dile ait şarkı sözü ve kelime hizalama hattı; ayrıca bu nesil modeller bugünkü açık çok dilli modellerin gerisinde kaldı. Kurulum NVIDIA'ya ve eski DeepSpeed sürümlerine bağlı olduğu için Mac tarafında pratikte çalıştırılamaz. Rusça özelinde bir ihtiyaç doğmadığı sürece bakılacak bir yanı yok.",
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "NVIDIA-NeMo/Nemotron",
+   "inputs_hash": "74784bb3608e13f4c437c4165340335c",
+   "description_tr": "Bu depo, NVIDIA'nın Nemotron model ailesi için geliştirici kaynaklarını tek yerde toplayan bir merkez: eğitim reçeteleri, kullanım cookbook'ları, veri setleri ve uçtan uca referans örnekler. Aile, ajan iş yükleri için konumlandırılmış hibrit Mamba-Transformer MoE modellerinden oluşuyor; metin, görüntü, video ve ses girdisini destekleyen çok modlu sürümler ve 550B'ye kadar çıkan büyük varyantlar var. Ağırlıklar Hugging Face üzerinde açık, dağıtım tarafında TensorRT-LLM ve NIM mikroservisleri öneriliyor. Depo ayrıca adım kataloğunu rehberli bir pipeline kurucuya çeviren nemotron-customize adlı bir Claude Code plugin'i içeriyor. Apache-2.0 lisanslı, ~2.1K star; 2025 sonunda açılmış ve model duyurularıyla birlikte sık güncelleniyor.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, yerel model altyapısına ve Claude Code plugin ekosistemine olan ilgin. Deponun ağırlık merkezi model eğitmek ve çok GPU'lu NVIDIA kümelerinde dağıtım yapmak; senin ihtiyacın model kullanmak, üstelik Mac üzerinde. İçindeki Claude Code plugin'i de reçeteleri kurmaya yarıyor, senin akışına taşınabilir genel bir parça değil. Nemotron ailesinden küçük bir modeli bir gün yerel çalıştırmak istersen bu depo değil, doğrudan Hugging Face ağırlıkları ve Mac uyumlu bir çalışma zamanı doğru giriş noktası olur.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "sapientinc/HRM-Text",
+   "inputs_hash": "62d59e88535024f79c9f436c78edc95d",
+   "description_tr": "HRM-Text, hiyerarşik yinelemeli (HRM) mimari üzerine kurulmuş 1B parametreli bir metin üretim modeli ve buna eşlik eden tam bir ön eğitim çerçevesi. İddiası, bir temel modeli sıfırdan eğitmeyi bilinen yaklaşımlara göre çok daha az hesap ve veriyle mümkün kılmak; referans koşular 0.6B için 8 H100'de yaklaşık 50 saat, 1B için 16 H100'de yaklaşık 46 saat olarak veriliyor. Çerçeve PrefixLM dizi paketleme, FlashAttention 3 çekirdekleri, PyTorch FSDP2 eğitimi, değerlendirme ve checkpoint dönüştürme araçlarını içeriyor. GSM8k, MATH, MMLU gibi ölçütlerde sonuç tabloları paylaşılmış; dikkat yolu FlashAttention 3'e bağlı olduğu için Hopper sınıfı GPU bekleniyor. Apache-2.0 lisanslı, ~2.1K star, 2026'da açılmış ve etrafında büyük bir geliştirici topluluğu oluşmuş.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam yatırımcı şapkan, ürün tarafı değil. Sıfırdan model eğitmek senin çalışma şeklinin dışında: modelleri kullanıyor, uygulamayı sen yazıyorsun. Eğitim yolu çok düğümlü H100 kümesi istediği için ofis Mac'inde denenecek bir tarafı da yok. Çıkan 1B modelin kendisi ileride Mac'te yerel çalıştırılabilir boyutta olabilir, asıl takip edilecek nokta bu.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": "Temel model ön eğitimini birkaç bin dolarlık GPU saatine indirdiği iddiası bağımsız olarak doğrulanırsa, dikeyine veya dile özel küçük model kuran erken aşama şirketlerin maliyet tabanı değişir; ekibi ve tekrar üretilen sonuçları izleme listesine almaya değer."
+  },
+  {
+   "full_name": "horseee/Awesome-Efficient-LLM",
+   "inputs_hash": "5d3e26fb8937f3c6ea3593987ea7fe15",
+   "description_tr": "Awesome-Efficient-LLM, büyük dil modellerini verimli hale getiren çalışmaları derleyen kürasyonlu bir kaynak listesi. Başlıklar ağ budama ve seyreklik, bilgi damıtma, nicemleme, çıkarım hızlandırma, verimli MoE, KV cache sıkıştırma, düşük ranklı ayrıştırma, donanım/servis katmanı ve verimli fine-tune olarak ayrılmış. Ana sayfada yalnızca son 90 günün makaleleri gösteriliyor, tam liste alt dosyalarda tutuluyor ve her konu için yıldız ya da atıf sayısına göre öne çıkan makaleler işaretleniyor. Katkılar makale bilgilerinden markdown üreten bir betik üzerinden pull request ile alınıyor. Depoda lisans belirtilmemiş; ~2K star, 2023'ten beri düzenli güncellenen bir okuma listesi, çalıştırılabilir bir araç değil.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, Mac'te yerel model çalıştırırken hangi nicemleme ve KV cache yaklaşımını seçeceğine dair okuma ihtiyacı. Ancak burada pipeline'a bağlanacak bir bileşen yok, akademik makale bağlantıları var. Senin çalışma tarzın bir yöntemi okumaktan çok çalışan bir ikiliyi kurup ölçmek; o iş için doğrudan çalışma zamanlarının kendi belgeleri daha hızlı yol alır. Belirli bir konuda derinleşmek istediğin gün, örneğin KV cache sıkıştırmanın uzun bağlam maliyetine etkisi, iyi bir giriş noktası olarak kalabilir.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "salesforce/awd-lstm-lm",
+   "inputs_hash": "8bd0af47c7ddb8ffa70afe6301468221",
+   "description_tr": "awd-lstm-lm, Salesforce Research'ün LSTM ve QRNN tabanlı dil modeli çalışmalarının kod tabanı. Penn Treebank, WikiText-2 ve WikiText-103 üzerinde kelime düzeyinde, PTB ve enwik8 üzerinde karakter düzeyinde dil modelleri eğitmek için betikler ve hiperparametre setleri içeriyor. Ana katkısı ağırlık düşürme (DropConnect) ve NT-ASGD gibi düzenlileştirme ile optimizasyon teknikleri; QRNN varyantı cuDNN LSTM'e göre daha hızlı eğitim sunuyor. Kod PyTorch 0.4 dönemine ait ve daha yeni sürümlerde hiperparametre ayarı gerekebileceği not edilmiş. BSD-3-Clause lisanslı, ~2K star; transformer öncesi dönemin standart referanslarından biri, aktif bakım görmüyor.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam dil modellemenin transformer öncesi tarihine duyulan merak olabilir. Ürünlerinin hiçbirinde kendi dil modelini eğitmek gibi bir adım yok ve olsaydı bile bugün bu mimari seçilmezdi. Kod tabanı PyTorch'un çok eski bir sürümüne bağlı, çalıştırmak başlı başına bir uğraş. Pratik bir bağlantı kurmaya çalışmak zorlama olur.",
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "flybirdxx/ComfyUI-Qwen-TTS",
+   "inputs_hash": "b5706e830c79ea33723f217f24e8d332",
+   "description_tr": "ComfyUI-Qwen-TTS, Alibaba Qwen ekibinin açık kaynak Qwen3-TTS modelini ComfyUI içinde kullanılabilir hale getiren bir custom node paketi. Konuşma sentezi, kısa referans sesten zero-shot ses klonlama, doğal dil tarifiyle ses tasarımı ve çok rollü diyalog üretimi sunuyor; üretilen sesler SaveVoice/LoadSpeaker düğümleriyle kalıcı hale getirilebiliyor. Çince, İngilizce, Japonca, Korece, Almanca, Fransızca, Rusça, Portekizce, İspanyolca ve İtalyanca olmak üzere on dili destekliyor; 12Hz ve 25Hz konuşma tokenizer mimarileri ile düşük gecikmeli akış mümkün. Mac tarafında MPS desteği ve üretim sonrası modeli bellekten boşaltma seçeneği eklenmiş, dikkat mekanizması (sage_attn, flash_attn, sdpa, eager) seçilebiliyor; transformers sürümü konusunda katı bir kısıt var. Depoda lisans dosyası belirtilmemiş; ~1.9K star, 2026 başında açılmış ve sık güncelleniyor.",
+   "usage_tr": "Folio'nun günlük içerik pipeline'ında seslendirme adımı için kullanabilirsin: her yazar profiline zero-shot klonlamayla sabit bir ses verip story ve post videolarının anlatımını ofis Mac'inde yerel üretmek mümkün. ElevenLabs'ı maliyet nedeniyle bıraktığın düşünülürse buradaki asıl kazanç, ses üretiminin API faturası olmadan MPS üzerinde çalışması ve üretilen sesin SaveVoice ile günler arasında tutarlı kalması. Uyarı: desteklenen on dil arasında Türkçe yok, dolayısıyla Türkçe anlatım planlıyorsan bu paket doğrudan cevap vermiyor. İkinci uyarı: paket bir ComfyUI node'u olduğu için otomatik pipeline'a bağlamak ya ComfyUI'nin API modunu çalıştırmayı ya da altındaki Qwen3-TTS'i doğrudan çağırmayı gerektirir; n8n'den tetiklenecek bir servis haline getirmek ek iştir. MPS yolu yeni eklenmiş ve README'de düzeltilen MPS hassasiyet hatalarından bahsediliyor, bu yüzden önce birkaç dakikalık gerçek üretimle sesin bozulmadığını doğrulamalısın. Lisans belirtilmemiş olması da yayına çıkacak bir işte ayrıca kontrol etmen gereken bir nokta.",
+   "matched_project": "Folio",
+   "relevance": 6,
+   "investment_note": null
+  },
+  {
+   "full_name": "microsoft/mattergen",
+   "inputs_hash": "f96c2458d8dec0bfbf957107c6b9dd70",
+   "description_tr": "MatterGen, periyodik tablo genelinde inorganik malzeme tasarımı için eğitilmiş üretici bir model. Koşulsuz temel modelin yanı sıra kimyasal sistem, uzay grubu, manyetik yoğunluk, bant aralığı ve bulk modulus gibi özelliklere göre yönlendirilmiş fine-tune edilmiş checkpoint'ler sunuyor; kendi özellik verinle yeni koşullar için eğitmek de mümkün. Depo veri setlerini ve ağırlıkları Git LFS ile taşıyor, kurulum uv ile yapılıyor ve CUDA'lı bir Linux makine varsayıyor; Apple Silicon desteği deneysel olarak işaretlenmiş. Çalışma Nature'da yayımlanmış ve sorumlu yapay zeka şeffaflık dokümantasyonu ile birlikte geliyor. MIT lisanslı, ~1.8K star.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam frontier tech yatırım merceğin, bir araç ihtiyacın değil. Malzeme keşfi ne yazılım projelerinden birine ne de güneş enerjisi tarafındaki proje finansmanı ve verim modelleme ihtiyacına bağlanıyor — oradaki mesele hücre kimyası değil, hazır projenin üretim ve nakit akışı modeli. Kurulum da CUDA'lı Linux varsayıyor. Bu satırı bir ürün fırsatı olarak değil, alanın nereye gittiğini gösteren bir işaret olarak okumak doğru olur.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": "Üretici malzeme tasarımı, Arslan Holding'in frontier tech tezi altında izlenebilecek bir dikey; ancak ticarileşme ufku uzun, sermaye yoğun ve deal flow'u MENA-Türkiye koridorunun dışında olduğu için doğrudan bilet değil, okuma konusu."
+  },
+  {
+   "full_name": "baaivision/Emu",
+   "inputs_hash": "cc9c49b1e62c5ecc6cfbe34ad50c2044",
+   "description_tr": "Emu, BAAI Vision ekibinin üretici çok modlu model serisini (Emu1 ve Emu2) toplayan depo. Modeller görüntü ve metni aynı bağlamda hem anlayıp hem üretebilen \"çok modlu generalist\" olarak tanımlanıyor ve bağlam içi öğrenme yetenekleri öne çıkarılıyor; Emu1 ICLR 2024, Emu2 CVPR 2024 yayınlarına karşılık geliyor. Depo esas olarak alt klasörlere, çıkarım koduna ve demo bağlantılarına yönlendiren bir çatı; serinin devamı Emu3 ayrı bir depoda sürdürülüyor. README kısa ve büyük ölçüde duyuru ile ekip ilanlarından oluşuyor, teknik ayrıntı alt dizinlerde. Apache-2.0 lisanslı, ~1.8K star; son güncellemeler 2024'e ait.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam Folio'nun görsel ve video üretim adımı olurdu. Ancak bu nesil modeller bugün hem kalite hem kullanım kolaylığı bakımından geride kaldı ve ağırlıkları çalıştırmak çok GPU'lu bir kurulum istiyor, Mac'te yerel bir yol yok. Serinin devamı da başka bir depoda sürdüğü için burası pratikte bir arşiv. Folio için üretim tarafında hazır servisler ya da Mac'te çalışabilen güncel açık modeller daha doğru adres.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "charent/ChatLM-mini-Chinese",
+   "inputs_hash": "1c3a56673b188cc5185546f090766c47",
+   "description_tr": "ChatLM-mini-Chinese, 0.2B parametreli bir Çince sohbet modelini sıfırdan eğitmenin tüm adımlarını açan bir eğitim projesi. Veri temizleme ve tekilleştirme, tokenizer eğitimi, uçtan uca Text-to-Text ön eğitim, SFT talimat ince ayarı ve DPO ile tercih optimizasyonu aşamalarının kodu ve veri kaynakları paylaşılmış. Kendi trainer'ı ile tek kart ve çok kart eğitimi, istenen noktada durup devam edebilme ve GB ölçeğindeki veri setleri için akışlı yükleme destekleniyor; asgari donanım olarak 4GB VRAM, çıkarım için 512MB belirtiliyor. Ayrıca üçlü bilgi çıkarımı görevinde downstream fine-tune örneği veriliyor. Apache-2.0 lisanslı, ~1.7K star; ağırlıklar Hugging Face ve ModelScope üzerinden indirilebiliyor.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, küçük bir modelin veri temizlemeden DPO'ya kadar uçtan uca nasıl eğitildiğini okumak olabilir. Ürünlerinde ne Çince bir model ne de kendi modelini eğitme ihtiyacı var; senin katma değerin uygulama ve pipeline tarafında. Depo bir kütüphane değil, referans bir eğitim hattı; gömülebilecek bir bileşen çıkmıyor. Bir gün çok dar bir görev için küçük model fine-tune etmek istersen bile başlangıç noktası güncel bir açık model ve LoRA olurdu.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "elizabetht/100-days-of-inference",
+   "inputs_hash": "c0fa990ffb7aa807c39ba81e078d13fc",
+   "description_tr": "100 Days of LLM Inference, çıkarım mühendisliğini günlük ve çalıştırılabilir örneklerle işleyen bir öğrenme günlüğü. İçerik üç katmana ayrılmış: tek GPU üzerinde çalışma zamanı optimizasyonu (KV cache, aritmetik yoğunluk, CUDA çekirdekleri, nicemleme, spekülatif çözümleme), kümeler arası altyapı (GPU mimarileri, MIG, otomatik ölçekleme, çok bulutlu kapasite) ve gözlemlenebilirlik araçları. vLLM, SGLang, TensorRT-LLM ve NVIDIA Dynamo gibi çalışma zamanları ayrı günlerde ele alınıyor. Her gün için betik ve görselleştirme paylaşılıyor; deneyler iki NVIDIA DGX Spark'tan oluşan bir ev laboratuvarında koşturulmuş ve yapı bir çıkarım mühendisliği kitabının bölümlerini takip ediyor. Depoda lisans belirtilmemiş; ~1.7K star, 2026 başında açılmış ve hızla ilgi toplamış.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam yerel model altyapısını öğrenme ilgin. Ama örneklerin neredeyse tamamı NVIDIA donanımı ve sunucu tarafı ölçeklendirme üzerine kurulu; senin sorunun tek bir Mac'te bir modeli makul hızda çalıştırmak ve uygulamaya gömmek. Buradaki nicemleme ve KV cache bölümleri kavramsal olarak işine yarar, ancak betikleri olduğu gibi çalıştırabileceğin bir donanımın yok. Oyuncu tarafını Supabase ve DigitalOcean üzerinde tutan mimarinde kendi çıkarım kümeni işletmek gibi bir adım da bulunmuyor.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "HKUDS/OpenOPC",
+   "inputs_hash": "1fd1b37d4e7777338622c68619026165",
+   "description_tr": "OpenOPC, rol bazlı yapay zeka \"çalışanlar\" oluşturup bunları bir organizasyon şeması altında çalıştıran açık kaynak bir çok ajanlı çerçeve. Görevleri kendi dağıtıyor, ajanlar arası devirleri yürütüyor ve her görevden çıkardığı bilgiyi kurumsal hafızaya yazarak sonraki koşularda kullanıyor. Task ve Company olmak üzere iki çalışma modu var; JiuwenSwarm entegrasyonuyla bir ajan sürüsü tek bir takım gibi yapıya bağlanabiliyor. CLI'nin yanında React ve Phaser ile yazılmış bir Office UI, ajanları ve akışı görsel olarak izlemeye yarıyor; oturum bazlı onay izinleri, düşük riskli eylemlerin otomatik akması ve uzun koşuların kesintiden sonra kimlik ve bağlam koruyarak devam etmesi gibi işletim ayrıntıları var. Python 3.10+ gerektiriyor, MIT lisanslı, ~1.7K star; 2026 ortasında açılmış ve neredeyse aylık güncelleniyor.",
+   "usage_tr": "Uzun süredir tarif ettiğin \"projelerin arasında köprü kuran, ayak işlerini devralan orkestratör ajan\" fikrinin hazır bir uygulaması; Hermes Agent'ı öğrenmeye başlamadan önce karşılaştırma noktası olarak kurabilirsin. Somut ilk iş olarak asistanın yaptığı tekrarlı araştırma görevlerini (tedarikçi ve eğitmen karşılaştırma gibi) bir rol tanımına çevirip Task modunda koşturmak, çıktıyı Trello'daki mevcut akışa taslak olarak düşürmek mantıklı. Kurumsal hafıza tarafı, Arslan Holding'in deal screening notlarının ajanlar arasında kaybolmadan taşınması açısından çerçevenin en ilgi çekici parçası. Uyarı: çerçeve kendi model sağlayıcısını çağırıyor, yani Max aboneliğinin dışında API maliyeti ve anahtar yönetimi getiriyor; ajan sayısı arttıkça bu maliyet doğrusal büyür. İkinci uyarı: Office UI gösterişli ama asıl değer devir ve hafıza mantığında, o yüzden önce tek bir dar görevde ölçüp Claude Code ile bugün yaptığın işe gerçekten zaman kazandırıyor mu diye bakmalısın. Ayrıca bu ölçekte bir çerçeveyi kendi uygulamana gömmek yerine ayrı bir servis olarak çalıştırman gerekir; ev Mac mini'si bunun için uygun bir yer olabilir.",
+   "matched_project": "Hayat orkestrasyonu",
+   "relevance": 5,
+   "investment_note": null
+  }
+ ]
+}
