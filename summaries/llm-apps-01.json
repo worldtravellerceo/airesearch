@@ -1,0 +1,175 @@
+{
+  "repos": [
+    {
+      "full_name": "mattpocock/skills",
+      "inputs_hash": "82c898bc92697500e85940c49e80b181",
+      "description_tr": "mattpocock/skills, bir yazılım mühendisinin günlük işinde kullandığı agent skill'lerini tek bir repoda toplayan açık kaynak bir set. GSD, BMAD veya Spec-Kit gibi süreci baştan sona devralan yaklaşımların aksine skill'ler küçük, uyarlanabilir ve birleştirilebilir tutulmuş; herhangi bir modelle çalışacak şekilde yazılmışlar. İki kurulum yolu sunuluyor: Claude Code plugin marketplace'i üzerinden güncellenen salt okunur bir paket, ya da skills.sh ile proje içine kopyalanan ve düzenlenebilen dosyalar. Depo Shell ağırlıklı ve MIT lisanslı; Şubat 2026'da açılmış ve 267 binin üzerinde star toplamış. İçerik çalıştırılabilir kod değil talimat dosyaları olduğu için ek bir servis veya bağımlılık gerektirmiyor.",
+      "usage_tr": "Lyricdrop v2'yi Superpowers plugin'iyle yazıyorsun; bu set aynı katmanda duruyor ama süreci devralmak yerine tek tek skill'ler verdiği için yanına koyup karşılaştırman kolay. skills.sh yolunu seçip dosyaları repoya kopyalayabilir, yalnızca test ve review akışını bırakıp gerisini silebilirsin. Talimat dosyası oldukları için ofisteki M4 Pro Mac'te fazladan bir şey çalıştırmıyor ve Max aboneliğinin dışına taşan bir API maliyeti getirmiyor. Her değişikliği iki ayrı açıdan review etme isteğinin geliştirici tarafına review ve test skill'leri oturuyor; ürün ve eğitim mantığı tarafını kendi CLAUDE.md'inle tamamlaman gerekir. Uyarı: plugin ve skills.sh kurulumunu birlikte yaparsan her skill iki kez yüklenir, Superpowers ile de çakışan talimatlar çıkabilir — tek yolu seçip bir hafta gerçek bir Lyricdrop görevinde ölçmek daha sağlıklı.",
+      "matched_project": "Lyricdrop",
+      "relevance": 7,
+      "investment_note": null
+    },
+    {
+      "full_name": "NousResearch/hermes-agent",
+      "inputs_hash": "e00e3dceb77f99e2164123f7ad4ed62f",
+      "description_tr": "Hermes Agent, Nous Research'ün geliştirdiği, kendi deneyiminden skill üretip bunları kullanım sırasında iyileştiren bir kişisel ajan. Kapalı bir öğrenme döngüsü kuruyor: geçmiş konuşmalarında arama yapıyor, bilgiyi kalıcılaştırmak için kendini uyarıyor ve oturumlar boyunca kullanıcısına dair bir model biriktiriyor. Tek bir gateway süreci üzerinden Telegram, Discord, Slack, WhatsApp, Signal ve CLI'dan erişilebiliyor; sesli mesaj transkripsiyonu ve platformlar arası konuşma sürekliliği var. Model bağımsız çalışıyor — Nous Portal, OpenRouter, OpenAI veya kendi endpoint'in `hermes model` ile değiştirilebiliyor. Python ile yazılmış, MIT lisanslı; küçük bir VPS'ten GPU kümesine kadar farklı yerlerde koşacak şekilde tasarlanmış ve 247 binin üzerinde star toplamış.",
+      "usage_tr": "Bu, hayat orkestrasyonu tarafında tarif ettiğin \"tüm projelerini bilen, aralarında köprü kuran\" ajan fikrinin en yakın hazır karşılığı ve zaten öğrenmeyi planladığın proje. Evdeki 7/24 açık Mac mini'ye kurup Tailscale üzerinden erişebilir, WhatsApp ve Telegram gateway'lerini asistanınla ortak kullandığın kanallara bağlayabilirsin. Sesli not akışın için de doğal bir giriş noktası: tek dokunuşla bıraktığın sesi transkribe edip kategorisini çıkarma işi ajanın içinde kalır, ayrı bir uygulama yazmana gerek kalmaz. Kendi endpoint'ini tanımlayabildiği için modeli Mac'teki yerel bir servise bağlayıp API maliyetini sıfıra yakın tutmak mümkün; hazır sağlayıcılara bağlarsan maliyet kullanımla doğru orantılı artar. Uyarı: ajanın en güçlü tarafı biriktirdiği kalıcı hafıza ve bu, iş/asistan sistemi ile kişisel sistemi ayrı tutma isteğinle çelişebilir — baştan iki ayrı kurulum, iki ayrı hafıza deposu ile başlamak daha temiz olur.",
+      "matched_project": "Hayat orkestrasyonu",
+      "relevance": 9,
+      "investment_note": null
+    },
+    {
+      "full_name": "multica-ai/andrej-karpathy-skills",
+      "inputs_hash": "9ec07f5cec1c4dd6eae4f31b1893f07d",
+      "description_tr": "Bu depo, Claude Code'un davranışını düzeltmeyi amaçlayan tek bir CLAUDE.md dosyasından oluşuyor. İçerik, Andrej Karpathy'nin LLM'lerin kodlama sırasındaki tipik hatalarına dair gözlemlerinden türetilmiş: sessizce varsayım yapma, kafa karışıklığını yönetmeme, kodu ve API'ları gereğinden karmaşık kurma, anlamadığı kodu yan etki olarak değiştirme. Dört ilkeye indirgenmiş bir çerçeve sunuyor — Think Before Coding, Simplicity First, Surgical Changes, Goal-Driven Execution — ve her ilkeyi madde madde davranış kurallarına çeviriyor. README İngilizce ve basitleştirilmiş Çince olarak iki dilde; depoda dosya dışında çalıştırılacak bir kod yok ve GitHub üzerinde ilan edilmiş bir lisans görünmüyor. 214 binin üzerinde star almış; bakımı, aynı ekibin Multica adlı ajan platformu projesiyle birlikte yürüyor.",
+      "usage_tr": "Lyricdrop v2'yi sıfırdan yazarken repo kökündeki CLAUDE.md'ye referans olarak okunabilecek en ucuz malzeme bu: tek dosya, kopyalaması ve kesip biçmesi dakikalar sürüyor. Özellikle \"Surgical Changes\" ilkesi, admin panel gibi çalışan bir yüzeyin üstünde ilerlerken ajanın alakasız yerlere dokunmasını azaltmaya dönük ve senin v1'deki hızlı yazma pişmanlığına doğrudan cevap veriyor. Hiçbir servis çalıştırmadığı için Mac'te yerel çalışma ve API maliyeti soruları burada geçersiz; Max aboneliğiyle tamamen uyumlu. Superpowers ile birlikte kullanacaksan ilkelerin çoğunun orada da bulunduğunu hesaba kat — tamamını yapıştırmak yerine kendi CLAUDE.md'inde eksik olan iki üç maddeyi almak daha iyi sonuç verir. Uyarı: lisans bilgisi belirtilmemiş, bu yüzden metni olduğu gibi herkese açık bir repoya koymadan önce kendi cümlelerinle yeniden yazmak daha güvenli.",
+      "matched_project": "Lyricdrop",
+      "relevance": 6,
+      "investment_note": null
+    },
+    {
+      "full_name": "anomalyco/opencode",
+      "inputs_hash": "98f9a647f4b8636dddb93fdd26d6913c",
+      "description_tr": "OpenCode, terminalde çalışan açık kaynak bir kodlama ajanı. TypeScript ile yazılmış, MIT lisanslı ve npm, Homebrew, scoop, pacman, nix gibi çok sayıda paket yöneticisiyle kurulabiliyor. Terminal arayüzü üzerinden oturum yönetimi sunuyor ve projenin kendi web sitesi ile console paketi depoda yer alıyor. README yirmiden fazla dile çevrilmiş durumda, aralarında Türkçe de var; bu, kullanıcı tabanının coğrafi genişliğine dair bir gösterge. Nisan 2025'te açılmış ve 209 binin üzerinde star toplamış; yayın akışı GitHub Actions ile sürüyor ve npm üzerinde düzenli sürüm çıkıyor.",
+      "usage_tr": "Bunu zaten ofiste Desktop uygulaması olarak kullanıyorsun; asıl değeri, planladığın Expo/EAS ile iOS istemcisi işinde depo tarafında ne olduğunu görebilmen. Kaynak MIT olduğu için fork'layıp kendi istemcini yazma refleksinin önünde lisans engeli yok ve console paketi, kendi arayüzünün hangi uçlara bağlanacağını okumak için başlangıç noktası. iPhone'dan ofis Mac'ine Claude Code Remote Control ile bağlanırken yaşadığın kopmalara alternatif bir yol da burada: kendi istemcin, oturumu kendi sunucuna karşı yönetir. Tamamen yerel çalışıyor ve kendi model sağlayıcını tanımlıyorsun, yani maliyet seçtiğin modele bağlı; Max aboneliğinin yerine geçmez, yanında durur. Uyarı: depo hızlı hareket ediyor, fork'u ayırırsan upstream'i takip etmek ayrı bir bakım yükü — önce yalnızca istemci katmanını yazıp çekirdeği upstream'den almayı dene.",
+      "matched_project": "OpenCode iOS istemcisi",
+      "relevance": 8,
+      "investment_note": null
+    },
+    {
+      "full_name": "n8n-io/n8n",
+      "inputs_hash": "1600129a468761823fe42a11c2ed1949",
+      "description_tr": "n8n, görsel bir akış tuvali ile kod yazmayı birleştiren bir otomasyon ve AI ajan platformu. 1500'ün üzerinde entegrasyon, 9000'den fazla hazır workflow şablonu, JavaScript ve Python kod düğümleri ile npm paketi kullanımı destekleniyor; MCP client ve server tarafı da mevcut. OpenAI, Anthropic, Google veya açık kaynak modeller arasında mimariyi değiştirmeden geçiş yapılabiliyor; çok adımlı ajanlar, insan onayı adımları ve gözlemlenebilirlik akışın içinde kuruluyor. Docker ile tek komutta self-host edilebiliyor ya da bulut sürümü kullanılabiliyor; rol bazlı erişim ve denetim izleri kurumsal tarafta sunuluyor. TypeScript ile yazılmış; lisansı fair-code — Sustainable Use License ve ayrı bir Enterprise lisansı geçerli, yani kaynağı görünür ama klasik anlamda açık kaynak değil. 2019'dan beri geliştiriliyor ve 205 binin üzerinde star toplamış.",
+      "usage_tr": "n8n zaten standart stack'inin içinde, dolayısıyla buradaki soru \"kullanır mıyım\" değil, nereye kadar yükleneceği. Folio'nun günlük içerik pipeline'ı için doğal yer burası: her yazar profili için içerik üretimini, onay adımını ve Supabase'e yazmayı tek bir akışta zincirleyip beğeni/beğenmeme sinyallerini geri besleyebilirsin. Kanarya tarafında zaten kurulu olan akışların yanına, Mac mini üzerinde yerel bir model endpoint'ine bağlanan bir HTTP düğümü koyarsan üretim maliyetini abonelik dışına taşımadan tutabilirsin. İnsan onayı adımı, Lyricdrop'un 20-30 şarkılık onay kapısını asistanına devretmek istediğin senaryoya da uyuyor: akış durur, onay gelir, devam eder. Uyarı: Sustainable Use License, n8n'i bir müşteriye hizmet olarak yeniden satmanı kısıtlar — Dubai'de uygulama stüdyosu fikrini araştırırken bunu baştan hesaba kat. İkinci uyarı: self-host ettiğin örnekte kimlik bilgileri tek yerde toplanır; asistanın erişeceği akışları ayrı bir örnekte tutmak erişim kapsamlarını izole etme ilkenle uyumlu olur.",
+      "matched_project": "Folio",
+      "relevance": 7,
+      "investment_note": null
+    },
+    {
+      "full_name": "ultraworkers/claw-code",
+      "inputs_hash": "7f5cee62c19126939c6415bf0bb3d7c6",
+      "description_tr": "Claw Code, README'sinde kendisini \"ciddi bir üretim projesi değil\" diye tanımlayan, ürün tanıtımından çok bir müze sergisine benzediğini açıkça yazan bir depo. Rust ile yazılmış ve MIT lisanslı; iddiasına göre insan müdahalesi olmadan, LazyCodex ve Gajae-Code adlı iki ajan harness'ı tarafından geliştirilip bakımı yapılıyor. README'nin görünen kısmı neredeyse tamamen rozetlerden, bu iki harness'a ve iki Discord sunucusuna yönlendiren bağlantılardan oluşuyor. Aracın ne yaptığına, nasıl kurulduğuna veya hangi problemi çözdüğüne dair kamuya açık metin, bir değerlendirme yapmaya yetecek kadar ayrıntı içermiyor. Mart 2026'da açılmış ve 195 binin üzerinde star toplamış; bu sayı ile mevcut teknik içeriğin azlığı arasındaki fark, deponun kendisini nasıl konumlandırdığıyla birlikte okunmalı.",
+      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor. En yakın bağlam, Claude Code ve OpenCode yanında değerlendirdiğin ajan harness'ları olurdu; fakat depo kendi metninde üretimde kullanılacak bir araç olmadığını söylüyor. Yönlendirdiği LazyCodex ve Gajae-Code projeleri ayrı depolar ve bu pakette değerlendirilmedi, dolayısıyla onlar hakkında bir şey söylemek doğru olmaz. Yıldız sayısı yüksek olduğu için listelerde karşına çıkacaktır; zaman ayırmadan önce README'nin ilk uyarı kutusunu okuman yeterli olur.",
+      "matched_project": null,
+      "relevance": 1,
+      "investment_note": null
+    },
+    {
+      "full_name": "microsoft/markitdown",
+      "inputs_hash": "a9049e2c69274cc15b62db8f90fb1d91",
+      "description_tr": "MarkItDown, çeşitli dosya biçimlerini LLM pipeline'larında kullanılmak üzere Markdown'a çeviren hafif bir Python aracı. PDF, Word, PowerPoint, Excel, görseller (EXIF ve OCR), ses (EXIF ve konuşma transkripsiyonu), HTML, CSV/JSON/XML, ZIP, EPub ve YouTube bağlantıları destekleniyor. Amacı yüksek sadakatli bir belge dönüşümü değil; başlık, liste, tablo ve bağlantı gibi yapıyı koruyarak token açısından ekonomik bir metin üretmek. Python 3.10-3.14 ile çalışıyor, hem kütüphane hem CLI olarak kullanılabiliyor ve MIT lisanslı. README, aracın çalıştığı sürecin yetkileriyle I/O yaptığını ve güvenilmeyen girdilerde en dar convert fonksiyonunun seçilmesi gerektiğini ayrıca uyarıyor. Kasım 2024'te açılmış, 186 binin üzerinde star ve düzenli PyPI sürümleri var.",
+      "usage_tr": "Arslan Holding'in deal screening adımında bunu bir ön işleme katmanı olarak kullanabilirsin: gelen pitch deck'ler ve finansal modeller PDF, PPTX ve XLSX olarak geliyor, Claude Code'a vermeden önce hepsi tek komutla Markdown'a iniyor. Ofisteki M4 Pro Mac'te tamamen yerel çalışıyor, API maliyeti getirmiyor ve CLI olduğu için dosya klasörünü izleyen bir n8n akışına bağlanması kolay. Aynı aracı kişisel bilgi tabanındaki ses ve YouTube kaynakları için de kullanabilirsin; çıktıyı Supabase'e yazıp semantik arama katmanının girdisi yaparsın. Asistanına devredilebilir bir iş: tek bir komut ve çıktı klasörü, dönüşümün doğru olup olmadığını gözle kontrol etmek yeterli. Uyarı: tarama ile üretilmiş PDF'lerde ve karmaşık Excel modellerinde yapı kaybı oluyor — finansal model okuyacaksan sayıları Markdown çıktısından değil, kaynak dosyadan doğrulat.",
+      "matched_project": "Arslan Holding",
+      "relevance": 6,
+      "investment_note": null
+    },
+    {
+      "full_name": "ollama/ollama",
+      "inputs_hash": "f56a9eb65c95c5b91fdb4d65587da405",
+      "description_tr": "Ollama, açık ağırlıklı dil modellerini yerel makinede indirip çalıştırmayı tek komuta indiren bir çalışma zamanı. macOS, Windows, Linux ve Docker için kurulum sunuyor; Gemma, Qwen, DeepSeek, GLM, MiniMax, gpt-oss gibi modellerin bulunduğu bir kütüphaneden model çekiliyor. 11434 portunda bir REST API açıyor ve resmi Python ile JavaScript istemcileri var, yani kendi uygulamandan çağırmak için ek bir katman gerekmiyor. `ollama launch` komutlarıyla Claude Code, Codex, OpenCode, Copilot CLI gibi ajanları yerel modele bağlayan entegrasyonlar da sunuluyor. Go ile yazılmış ve MIT lisanslı; 2023'ten beri geliştiriliyor ve 181 binin üzerinde star toplamış.",
+      "usage_tr": "Kişisel bilgi tabanı uygulamanda sesli notun kategorisini çıkarma ve günlük/haftalık özet üretme işini buraya taşıyabilirsin; iş tamamen Mac'te kalır, not sayısı arttıkça maliyet artmaz. REST API'si n8n'in HTTP düğümünden doğrudan çağrılabildiği için mevcut akışlarına eklemek yeni bir altyapı kurmayı gerektirmiyor; Supabase'e yazma adımı aynı kalır. Evdeki 7/24 açık Mac mini'yi bu iş için ayırırsan ofis makinesini geliştirmeye bırakmış olursun ve iki makine arasında zaten Tailscale var. \"Ücretli API yerine Mac'te yerel model\" tercihinin en düşük sürtünmeli uygulaması bu; Max aboneliğinin yerine geçmez, ondan bağımsız ikinci bir yol açar. Uyarı: 24 GB RAM, çalıştırabileceğin modelin boyutunu ciddi biçimde sınırlar — sınıflandırma kalitesini ölçmeden ücretli yolu kapatma, önce elli kadar gerçek not üzerinde iki yolu yan yana koy.",
+      "matched_project": "Kişisel bilgi tabanı",
+      "relevance": 8,
+      "investment_note": null
+    },
+    {
+      "full_name": "anthropics/skills",
+      "inputs_hash": "68b7f6d87903ae71382aa5f3b269800c",
+      "description_tr": "Bu depo, Anthropic'in Claude için hazırladığı skill'lerin kamuya açık koleksiyonu. Skill'ler, Claude'un özel görevlerde tekrarlanabilir biçimde çalışması için dinamik olarak yüklediği talimat, script ve kaynak klasörleri; her biri kendi SKILL.md dosyasıyla bağımsız duruyor. Kapsam yaratıcı işlerden (sanat, müzik, tasarım) teknik görevlere (web uygulaması testi, MCP server üretimi) ve kurumsal akışlara kadar uzanıyor. Çoğu skill Apache 2.0 ile açık kaynak; Claude'un belge yeteneklerini çalıştıran docx, pdf, pptx ve xlsx skill'leri ise kaynağı görünür ama açık kaynak değil. README, koleksiyonun gösterim ve eğitim amaçlı olduğunu ayrıca belirtiyor. Eylül 2025'te açılmış ve 177 binin üzerinde star toplamış.",
+      "usage_tr": "Arslan Holding tarafında en somut faydası docx, pptx ve xlsx skill'leri: marka dokümanları, yatırımcı sunumları ve portföy tabloları için ajans harcaması yapmadan tutarlı çıktı üretmenin hazır bir referansı. Aynı klasörler, kendi skill'lerini yazarken bakılacak örnek olarak da işe yarıyor — asistanının tekrar eden araştırma ve karşılaştırma işlerini bir SKILL.md'ye sabitleyip her seferinde aynı biçimde çalıştırabilirsin. Talimat dosyalarından oluştuğu için Mac'te yerel çalışıyor ve Max aboneliğinin dışına çıkan bir maliyet getirmiyor. Kendi uygulamalarına gömülecek bir bileşen değil; Claude Code iş akışının etrafında duran bir katman olarak düşün. Uyarı: belge skill'lerinin lisansı diğerlerinden farklı ve README bunların gösterim amaçlı olduğunu söylüyor — holding adına yayınlanacak bir çıktının üretim yolunu buna bağlamadan önce lisans metnini okut.",
+      "matched_project": "Arslan Holding",
+      "relevance": 6,
+      "investment_note": null
+    },
+    {
+      "full_name": "f/prompts.chat",
+      "inputs_hash": "8f8a999f2bde0e468124ee09f4d56aa0",
+      "description_tr": "prompts.chat, eskiden Awesome ChatGPT Prompts adıyla bilinen, topluluk katkısıyla büyüyen açık kaynak bir prompt kütüphanesi. Prompt'lar hem GitHub'daki PROMPTS.md dosyasından hem de Next.js ile yazılmış bir web arayüzünden taranabiliyor; koleksiyon Hugging Face'te veri seti olarak da yayınlanıyor. ChatGPT, Claude, Gemini, Llama ve Mistral dahil farklı modellerle kullanılmak üzere model bağımsız yazılmış. Kurumlar için gizlilik gerekçesiyle self-host edilebilir bir sürüm sunuluyor. Aralık 2022'den beri var, 170 binin üzerinde star toplamış; lisansı standart bir SPDX kimliğine oturmuyor, depodaki lisans dosyasına bakılması gerekiyor.",
+      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor. En yakın bağlam, Folio'nun içerik üretimi veya asistanının araştırma istekleri için hazır prompt şablonları aramak olurdu. Ancak kendi prompt'larını zaten Claude Code içinde, projenin bağlamıyla birlikte yazıyorsun; genel amaçlı rol prompt'ları bu bağlamın yanında değer üretmiyor. Kütüphaneyi kendi sistemine gömülebilecek bir bileşen olarak da göremezsin — çıktısı veri değil, insan okuması için yazılmış metin. Yatırımcı şapkasıyla bakarsan da burada bir ürün değil, bir dağıtım kanalı var.",
+      "matched_project": null,
+      "relevance": 2,
+      "investment_note": null
+    },
+    {
+      "full_name": "ggml-org/llama.cpp",
+      "inputs_hash": "8839e36acf40649508b0270130ea7720",
+      "description_tr": "llama.cpp, dil modeli çıkarımını C/C++ ile, minimum bağımlılıkla çalıştıran bir kütüphane ve araç seti. Altında ggml tensör kütüphanesi var; Apple Silicon'da Metal, ayrıca CUDA, Vulkan ve CPU arka uçları destekleniyor ve modeller farklı seviyelerde nicemlenerek belleğe sığdırılıyor. Depo yalnızca bir kütüphane değil: OpenAI uyumlu bir HTTP arayüzü sunan llama-server, komut satırı araçları ve nicemleme yardımcıları birlikte geliyor. MIT lisanslı, 2023'ten beri geliştiriliyor ve 129 binin üzerinde star ile yerel çıkarım tarafının altyapı katmanlarından biri haline gelmiş. Sürüm akışı çok hızlı: etiketli sürümlerin yanında gecelik build'ler yayınlanıyor ve geniş bir bakımcı grubu PR akışını yürütüyor.",
+      "usage_tr": "Lyricdrop'ta şarkı başına maliyeti belirleyen kalemlerden biri, her boşluk için üretilen dört şıkkın hazırlanması; bu üretimi llama-server üzerinden ofisteki M4 Pro Mac'te yerel bir modele yaptırabilirsin. OpenAI uyumlu arayüz sunduğu için admin panelindeki mevcut çağrıları değiştirmek yerine yalnızca endpoint adresini çevirmen yeterli olur. Ollama'ya göre daha fazla elle ayar isteyen bir yol; karşılığında nicemleme seviyesini ve bellek kullanımını kendin seçersin, bu da 24 GB sınırında fark yaratır. API maliyeti getirmiyor ve tamamen yerel çalışıyor, yani şarkı katalogunu büyütürken maliyet eğrisi düzleşir. Uyarı: çeldiricilerin kalitesi oyunun zorluk dengesini doğrudan belirliyor — yerel modele geçmeden önce mevcut 20-30 şarkılık test setinde üretilen şıkları ücretli yolla yan yana koyup bir kalite ölçütü sabitle. İkinci uyarı: gecelik sürüm temposu yüksek, üretim için bir etiketli sürüme sabitlenip güncellemeyi bilinçli yapman gerekir.",
+      "matched_project": "Lyricdrop",
+      "relevance": 8,
+      "investment_note": null
+    },
+    {
+      "full_name": "openai/codex",
+      "inputs_hash": "b14b31b17ac5111fb056f770668a271c",
+      "description_tr": "Codex CLI, OpenAI'nin terminalde yerel olarak çalışan kodlama ajanı. macOS, Linux ve Windows için kurulum script'leri, npm paketi ve Homebrew cask'ı bulunuyor; her sürümde platforma göre hazır ikili dosyalar yayınlanıyor. Aynı ajan VS Code, Cursor ve Windsurf içine eklenti olarak kurulabiliyor, `codex app` ile masaüstü sürümü açılıyor; bulut tarafı Codex Web ise ayrı bir ürün. Rust ile yazılmış ve Apache-2.0 lisanslı. Nisan 2025'te açılmış ve 125 binin üzerinde star toplamış.",
+      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor. En yakın bağlam, ofiste Claude Code'un yanında zaten OpenCode kullandığın ajan katmanı olurdu. Ancak Codex, kendi model erişimini gerektiriyor; Max aboneliğiyle çalışmak yerine ayrı bir hesap ve ayrı bir maliyet kalemi açar — API key yerine abonelik tercihinle ters düşer. Kendi uygulamalarına gömülebilecek bir bileşen de değil, kapalı bir model servisine bağlı bir istemci. İzlemeye değer tek nokta, ajan istemcilerinin yerel çalışma ve sandbox tarafında nereye gittiği; bunu ayrıca bir araç kararı vermeden okuyabilirsin.",
+      "matched_project": null,
+      "relevance": 2,
+      "investment_note": null
+    },
+    {
+      "full_name": "microsoft/generative-ai-for-beginners",
+      "inputs_hash": "aeb0e87026a116b11636f10b68ea2a50",
+      "description_tr": "Microsoft'un yayınladığı, üretken yapay zeka uygulamaları geliştirmeye giriş niteliğinde 21 derslik açık bir müfredat. Dersler Jupyter notebook'ları ve metin bölümleri halinde ilerliyor; prompt mühendisliği, metin üretimi, görsel üretimi, arama ve temel uygulama kalıpları gibi konuları kapsıyor. Örnekler ağırlıklı olarak Azure ve OpenAI servisleri üzerinden veriliyor. Co-op Translator ile otuzdan fazla dile çevrilmiş ve topluluk desteği bir Discord sunucusu üzerinden yürüyor. MIT lisanslı, 2023'ten beri güncelleniyor ve 120 binin üzerinde star toplamış.",
+      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor. En yakın bağlam, öğrenme tarafındaki ilgin olurdu; fakat müfredat yeni başlayanlar için yazılmış ve sen zaten Claude Code ile uçtan uca uygulama, pipeline ve bot çıkarmış durumdasın. Kendi sistemine gömülecek bir bileşen içermiyor; çıktısı ders metni ve örnek notebook. Asistanına devredilebilecek bir iş de değil — onun yaptığı araştırma ve takip işleri bu müfredatın kapsamıyla örtüşmüyor. Tek işe yarayabilecek kısım, bir konuyu Türkçe anlatan hazır ders yapısını kendi eğitici içerik denemelerin için biçim örneği olarak okumak olabilir.",
+      "matched_project": null,
+      "relevance": 2,
+      "investment_note": null
+    },
+    {
+      "full_name": "deepseek-ai/DeepSeek-V3",
+      "inputs_hash": "381b9455ce53a4fb0c644167867007b2",
+      "description_tr": "DeepSeek-V3, 671 milyar toplam parametreli, her token için 37 milyar parametresi etkinleşen bir Mixture-of-Experts dil modeli. Depo modelin kendisini değil; teknik raporu, model kartlarını, değerlendirme sonuçlarını ve yerel çalıştırma yönergelerini barındırıyor, ağırlıklar Hugging Face üzerinden dağıtılıyor. Yerel çalıştırma bölümü SGLang, LMDeploy, vLLM gibi sunum yığınlarına yönlendiriyor; bu ölçek tek bir kişisel makinede değil, çok GPU'lu kurulumlarda çalışıyor. Kod MIT lisanslı, model ağırlıkları ise ayrı bir model anlaşmasına tabi. GitHub açıklaması boş bırakılmış; deponun ne olduğu yalnızca README'den anlaşılıyor. Aralık 2024'te yayınlanmış ve 104 binin üzerinde star toplamış.",
+      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor. En yakın bağlam, yerel model altyapın olurdu; ancak bu ölçekteki bir model 24 GB bellekli bir Mac'te çalışmaz, yani \"Mac'te yerel çalışır mı\" sorusunun cevabı burada hayır. Pratikte ona ancak ücretli bir API üzerinden erişirsin ve bu da maliyet tercihinle ters düşer. Kendi uygulamana gömülebilecek bir bileşen de yok; depo bir yayın ve dokümantasyon deposu. Yerel tarafta işine yarayacak olan, aynı ekosistemdeki daha küçük açık ağırlıklı modelleri Ollama veya llama.cpp üzerinden çekmek.",
+      "matched_project": null,
+      "relevance": 2,
+      "investment_note": "Yatırım merceğiyle okunmaya değer: açık ağırlıklı ve MIT kodlu bir sınır modelinin bu ölçekte yayınlanması, model katmanındaki marjın nereye gittiğine dair bir sinyal — portföyde model eğiten değil, model üstüne uygulama kuran şirketleri değerlendirirken karşılaştırma noktası olur."
+    },
+    {
+      "full_name": "addyosmani/agent-skills",
+      "inputs_hash": "d64cf3cbe75471f141639a961568a093",
+      "description_tr": "addyosmani/agent-skills, AI kodlama ajanları için yazılım geliştirme yaşam döngüsünü kapsayan bir skill ve slash komut seti. Dokuz komut, süreci tanımlama, planlama, geliştirme, test, kalite eşiği, review, web performansı denetimi, sadeleştirme ve yayına alma adımlarına bölüyor; skill'ler ayrıca yapılan işe göre kendiliğinden devreye giriyor. `/build auto` modunda plan bir kez onaylandıktan sonra görevler tek tek, test odaklı ve ayrı commit'ler halinde otomatik yürütülüyor; hata veya riskli adımlarda duruyor. Claude Code'un yanında Codex, Cursor ve Antigravity gibi ajanlar için de paketlenmiş. JavaScript ağırlıklı ve MIT lisanslı; Şubat 2026'da açılmış ve 98 binin üzerinde star toplamış.",
+      "usage_tr": "Lyricdrop v2'de önce admin panel ve test paneli, sonra mobil şeklinde ilerleyen planın bu komut sırasıyla birebir eşleşiyor: `/spec` ile kapsamı sabitler, `/plan` ile küçük görevlere bölersin. Her değişikliğin iki açıdan review edilmesi isteğinin geliştirici doğruluğu tarafını `/review` ve `/test` karşılar; ürün ve eğitim mantığı review'ını `/constraints` ile kendi kurallarını yazarak eklemen gerekir. Talimat dosyalarından oluştuğu için ofisteki Mac'te yerel çalışıyor ve Max aboneliğinin dışına çıkan bir maliyet getirmiyor. `/build auto`, v1'i tek oturumda yazmaktan duyduğun pişmanlığın tersi değil — görevler yine test odaklı ilerliyor — ama araya girme noktalarını azalttığı için kalite kapılarını önce elle bir kez geçirmeden açmamak daha doğru olur. Uyarı: Superpowers ile birlikte kurarsan iki set birbirinin üstüne yazar; bir hafta yalnızca birini kullanıp panel üzerinde çıkan hata sayısını karşılaştırmak, hangisini tutacağını ölçüyle söyler.",
+      "matched_project": "Lyricdrop",
+      "relevance": 7,
+      "investment_note": null
+    },
+    {
+      "full_name": "nexu-io/open-design",
+      "inputs_hash": "778d63c3a810ccd88b32d0e71028dc18",
+      "description_tr": "OpenDesign, kodlama ajanını bir tasarım motoruna çeviren, yerelde çalışan açık kaynak bir masaüstü uygulaması. Prototip, landing page, dashboard, sunum, görsel ve video üretip bunları gerçek dosyalar olarak — HTML, PDF, PPTX, MP4 — dışa aktarıyor. Claude Code, Codex, Cursor ve DeepSeek'in kendi harness'ı gibi ajanları çalışma zamanı olarak bağlayabiliyor; üretilen dosyalar uygulamanın içinde canlı önizlemede kalıyor. Model erişimi kendi anahtarını getirme (BYOK) mantığıyla çalışıyor, ayrıca projenin ücretli bir bulut servisi var ve README'nin önemli bir kısmı bu servisin tanıtımına ayrılmış. TypeScript ile yazılmış, Apache-2.0 lisanslı; Nisan 2026'da açılmış ve 97 binin üzerinde star toplamış.",
+      "usage_tr": "Arslan Holding'in marka ve website üretimini büyük ajans harcaması yapmadan yürütüyorsun; bu uygulama aynı işin sunum ve doküman tarafını da aynı yere toplayabilir, çünkü çıktıyı PPTX ve PDF olarak veriyor. Folio'da tasarımı Instagram ekran görüntülerinden birebir çıkarma yaklaşımın için de uygun bir yüzey: prototipi burada üretip Expo tarafına aktarırsın. Masaüstü uygulaması olarak ofisteki Mac'te yerel çalışıyor ve mevcut Claude Code kurulumunu çalışma zamanı olarak bağlayabiliyorsun, yani ayrı bir ajan öğrenmen gerekmiyor. Görsel ve video üretimi tarafı ise yerel değil: o modeller kendi anahtarınla ücretli servislerden geliyor, maliyet üretilen kare sayısıyla artar. Sunum hazırlama gibi tekrar eden işler asistanına devredilebilir; şablon bir kez kurulduktan sonra arayüz üzerinden yürüyor. Uyarı: README ağır biçimde kendi bulut servisini pazarlıyor — Apache-2.0 uygulamanın kendi anahtarlarınla, bulut aboneliği olmadan tam çalıştığını kurulumun ilk gününde doğrula.",
+      "matched_project": "Arslan Holding",
+      "relevance": 7,
+      "investment_note": null
+    },
+    {
+      "full_name": "hacksider/Deep-Live-Cam",
+      "inputs_hash": "2b9002365915905f5bb4af8a8007509f",
+      "description_tr": "Deep-Live-Cam, tek bir fotoğraftan gerçek zamanlı yüz değiştirme ve video deepfake üreten bir Python uygulaması. Webcam akışı üzerinde canlı çalışabiliyor ve hazır derlenmiş bir masaüstü sürümü de dağıtılıyor. Proje, uygunsuz içeriğin (çıplaklık, şiddet, hassas materyal) işlenmesini engelleyen yerleşik bir kontrol taşıdığını ve gerçek bir kişinin yüzü kullanılırken rıza alınması ile çıktının deepfake olarak etiketlenmesi gerektiğini README'sinde uzun bir bölümle belirtiyor. AGPL-3.0 lisanslı; bu lisans, üzerine kurulan ve ağ üzerinden sunulan türev işlerin kaynağının da açılmasını gerektiriyor. 2023'ten beri geliştiriliyor ve 96 binin üzerinde star toplamış.",
+      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor. En yakın bağlam, Folio'nun günlük görsel ve video içerik ihtiyacı olurdu; fakat orada gereken şey yazar profilleri için üretilmiş özgün görsel, gerçek bir kişinin yüzünün başka bir videoya taşınması değil. Yüz değiştirme, gerçek kişilerin rızası ve etiketleme yükümlülüğü getirdiği için yayınlanmayacak kişisel bir feed'de bile taşımak istemeyeceğin bir risk ekler. AGPL-3.0 lisansı ayrıca bir bileşen olarak kendi uygulamana gömme yolunu pratikte kapatıyor. Görsel üretim ihtiyacın için doğru kategori, yüz değiştirme değil, metinden görsel ve video üreten modeller.",
+      "matched_project": null,
+      "relevance": 1,
+      "investment_note": null
+    },
+    {
+      "full_name": "deepseek-ai/DeepSeek-R1",
+      "inputs_hash": "79e52bb6656a0635006ac8a37fc6efb9",
+      "description_tr": "DeepSeek-R1 deposu, DeepSeek'in ilk nesil muhakeme modellerini ve bunların teknik raporunu yayınlıyor. R1-Zero, denetimli ince ayar olmadan yalnızca büyük ölçekli pekiştirmeli öğrenme ile eğitilmiş ve muhakeme davranışlarının kendiliğinden ortaya çıktığı bir ilk aşama; ancak tekrar, okunabilirlik ve dil karışması sorunları taşıyor. R1 bu sorunları gidermek için eğitim akışına ek aşamalar ekleyen sürüm. Depo ayrıca Qwen ve Llama tabanlı, daha küçük damıtılmış model varyantlarını da listeliyor. MIT lisanslı; GitHub açıklaması boş ve içerik tamamen README ile PDF rapordan okunuyor. Ocak 2025'te yayınlanmış ve 91 binin üzerinde star toplamış.",
+      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor. En yakın bağlam, yerel model altyapın: burada listelenen küçük damıtılmış varyantlar Ollama veya llama.cpp üzerinden ofisteki Mac'e çekilebilir ve orada değerlendirilebilir. Ancak o iş, bu depo değil, çalıştırdığın runtime üzerinden yürür; deponun kendisi bir yayın ve ağırlık dağıtım noktası. Ana modelin ölçeği kişisel bir makinede çalışmaya uygun değil, yani \"Mac'te yerel çalışır mı\" sorusunun cevabı ana sürüm için hayır. Muhakeme ağırlıklı modellerin token tüketimi yüksek olduğu için, sınıflandırma gibi kısa işlerde küçük genel amaçlı bir model çoğu zaman daha uygun kalır.",
+      "matched_project": null,
+      "relevance": 2,
+      "investment_note": null
+    },
+    {
+      "full_name": "OpenHands/OpenHands",
+      "inputs_hash": "033dee3588bff1cb2c2d941baeacb972",
+      "description_tr": "OpenHands Agent Canvas, kodlama ajanlarını ve otomasyonları tek bir yerden yöneten, kendi sunucunda barındırılan bir kontrol merkezi. OpenHands'in kendi ajanının yanında Claude Code, Codex, Gemini ve ACP uyumlu diğer ajanları yerel, uzak veya bulut arka uçlarında çalıştırabiliyor. Hazır otomasyonlar sunuyor — örneğin rapor üretip Slack'e yayınlamak ya da GitHub issue'larını görevlere bölmek — ve bunlar arayüzden kurulabiliyor. TypeScript ile yazılmış, MIT lisanslı ve npm üzerinden @openhands/agent-canvas paketi olarak dağıtılıyor; sürüm durumu beta olarak işaretlenmiş. 2024'ten beri geliştiriliyor ve 88 binin üzerinde star toplamış.",
+      "usage_tr": "Lyricdrop v2'de şarkı işleme ve panel build'i gibi uzun süren işleri başlatıp durumunu takip etmek için bunu evdeki 7/24 açık Mac mini'ye kurup Tailscale üzerinden telefondan açabilirsin. iPhone'dan ofis Mac'ine Claude Code Remote Control ile bağlanırken yaşadığın kopmalara karşı, tarayıcıdan erişilen kendi barındırdığın bir kontrol yüzeyi daha dayanıklı bir yol sunar. Mevcut Claude Code kurulumunu arka uç olarak bağlayabildiği için ayrı bir ajan öğrenmen gerekmiyor; Max aboneliğin aynı şekilde kullanılır. Otomasyon tarafı, tüm projelerini bilen bir orkestratör isteğinin küçük ama çalışan bir versiyonu: tekrar eden işleri tanımlayıp sonucu Slack'e düşürebilirsin. Uyarı: proje beta olarak işaretlenmiş ve kendi makinende ajanlara geniş yetki veren bir yüzey açıyorsun — Tailscale dışına açmadan, önce tek bir projede dene.",
+      "matched_project": "Lyricdrop",
+      "relevance": 7,
+      "investment_note": null
+    }
+  ]
+}

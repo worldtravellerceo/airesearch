@@ -1,0 +1,175 @@
+{
+ "repos": [
+  {
+   "full_name": "scutan90/DeepLearning-500-questions",
+   "inputs_hash": "2f39d9d7134688c4fe9f4e9c2ab78335",
+   "description_tr": "《深度学习500问》, derin öğrenme konularını soru-cevap biçiminde toplayan Çince bir çalışma derlemesidir. Olasılık, lineer cebir, makine öğrenmesi, CNN/RNN/GAN gibi klasik ağlar, nesne tespiti, görüntü bölütleme, transfer öğrenme ve model sıkıştırma gibi başlıkları 18 bölümde ele alıyor. İçerik bir mülakat hazırlığı ve ders çalışma kaynağı olarak kurgulanmış; depo aynı zamanda basılı kitabın tanıtım sayfası işlevi görüyor. Metin tamamen Çince, lisans GPL-3.0 ve depo 2018'de açılmış; README içeriğin tamamlanmadığını kendi ifadesiyle söylüyor. 57 binin üzerinde yıldızla listenin en çok ilgi gören kaynaklarından biri, ancak çalıştırılabilir bir yazılım değil, bir metin koleksiyonu.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor. En yakın bağlam kendi öğrenme akışın olabilirdi, ama burada anlatılan şey klasik derin öğrenme teorisi ve mülakat hazırlığı; senin çizgin model eğitmek değil, hazır modelleri Expo ve Supabase üstündeki ürünlere bağlamak. İçeriğin tamamı Çince olduğu için asistanına devredilebilir bir kaynak da değil. Yıldız sayısı yüksek, ama bu ilgi teknik bir bileşenden değil, bir kitabın kendisinden geliyor.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "appwrite/appwrite",
+   "inputs_hash": "f801111743e004df9352ab2539948421",
+   "description_tr": "Appwrite, web, mobil ve AI uygulamaları için kimlik doğrulama, veritabanı, depolama, fonksiyonlar, mesajlaşma, realtime ve site barındırmayı tek bir arka uçta toplayan açık kaynak bir geliştirme platformudur. Firebase ve Supabase ile aynı kategoride çalışıyor; yönetilen bulut sürümü olduğu gibi Docker ile kendi altyapında self-host edilebiliyor. Web, Flutter, React Native, Swift, Android ve sunucu tarafı için resmi SDK'lar sunuyor. PHP ile yazılmış, BSD-3-Clause lisanslı ve 57 binin üzerinde yıldıza sahip. 2019'dan beri sürdürülen, arkasında ticari bir şirket bulunan olgun bir proje.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam Supabase'in stack'inde tuttuğu yer olurdu. Lyricdrop v2'nin paneli ve oyuncu tarafı zaten Supabase ile DigitalOcean üzerinde çalışıyor, Folio ve Kanarya da aynı kalıbı tekrar ediyor; çalışan bir arka ucu eşdeğer bir başkasıyla değiştirmenin görünür bir kazancı yok. Appwrite ancak yeni bir projede, her şeyi tamamen kendi kontrolündeki bir makinede (örneğin evdeki Mac mini'de) tutmak istediğinde gündeme gelir. O senaryoda bile auth ve storage göçü, kazandığın kontrolden daha fazla vakit götürür. Yatırımcı gözüyle de erken aşama değil; kategorisinde uzun süredir kurulu bir oyuncu.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "twentyhq/twenty",
+   "inputs_hash": "ce4710438039c3b75a3dff52e4c72c53",
+   "description_tr": "Twenty, Salesforce'a açık kaynak bir alternatif olarak geliştirilen bir CRM'dir. Nesneleri, alanları ve görünümleri kod olarak tanımlamaya izin veriyor; kendi CLI'ı ile uygulama iskeleti üretiliyor ve şema değişiklikleri kod tabanının geri kalanı gibi sürümlenebiliyor. TypeScript, NestJS, React ve PostgreSQL üzerine kurulu, monorepo olarak geliştiriliyor; barındırılan bulut sürümü ve self-host seçeneği birlikte sunuluyor. 57 bini aşan yıldız, yoğun issue akışı ve açık bir yol haritasıyla kalabalık bir katkıcı topluluğu var. GitHub'daki lisans alanı standart bir OSI lisansı olarak tanımlanmamış; ticari kullanımda depodaki lisans metnini okumak gerekir.",
+   "usage_tr": "Arslan Holding'in yatırım akışında deal flow ve ilişki geçmişini tutacak bir CRM arıyorsan Twenty değerlendirmeye değer. Nesneleri kod olarak tanımlayabildiğin için startup, tur, kurucu, co-invest gibi kendi varlıklarını hazır bir şemaya sıkışmadan modelleyebilirsin; self-host ettiğinde veriler ve hesaplar holdingin kontrolünde kalır, asistan değiştiğinde ilişki geçmişi yerinde durur. Ofisteki Mac yerine DigitalOcean'da Docker ile çalıştırmak, asistanın her yerden erişebilmesi açısından daha uygun olur. Günlük kayıt girişi ve takip işleri tamamen asistan tarafında kalabilir, yani devredilebilir bir araç. Uyarı: işleyen HubSpot ve Trello düzenini yatırım akışı daha oturmadan taşımak kazandırdığından fazlasını götürür; önce yalnızca deal flow için ikinci bir örnek olarak kurup birkaç hafta yan yana kullanmak daha güvenli.",
+   "matched_project": "Arslan Holding",
+   "relevance": 5,
+   "investment_note": null
+  },
+  {
+   "full_name": "hugohe3/ppt-master",
+   "inputs_hash": "4821b8132686b9fd80c336a9e66d861b",
+   "description_tr": "PPT Master, bir doküman veya konu başlığından yerel PowerPoint sunumu üreten açık kaynak bir araçtır. Çıktı görüntü değil gerçek .pptx: yerel şekiller, geçişler ve animasyonlar, istendiğinde veriye dayalı grafik ve tablolar üretiyor, konuşmacı notlarından seslendirme ekleyebiliyor ve kullanıcının kendi .pptx şablonlarını kabul ediyor. PDF, DOCX ve web sayfalarını kaynak olarak okuyup ana noktaları çıkarma ve anlatıyı kurma işini bir LLM'e yaptırıyor; model erişimi kullanıcının kendi anahtarı veya bir aracı servis üzerinden sağlanıyor. Python ile yazılmış, MIT lisanslı ve Aralık 2025'te açılmasına rağmen 55 binin üzerinde yıldız toplamış. README'nin önemli bir bölümü sponsor API aracı servislerine ayrılmış; bu da projenin finansman modelini gösteriyor.",
+   "usage_tr": "Arslan Holding tarafında konferans hazırlığı ve tanıtım materyali üretirken kullanabilirsin: 90 günlük yol haritasını ya da bir pazar araştırması notunu girdi verip düzenlenebilir bir .pptx alır, üzerinde kendin rötuş yaparsın. Kendi şablonunu kabul ettiği için holdingin kurumsal kimliğini bir kez şablona gömüp sonraki bütün destelerde aynı görünümü koruyabilirsin. Kaynak dokümanı ve şablonu verip ilk taslağı ürettirmek tam olarak asistana devredilebilir bir iş. Asıl uyarı maliyet tarafında: araç kendi başına çalışmıyor, bir model API'ı istiyor; Max aboneliğin bunu karşılamaz, ayrı bir anahtar ve sunum başına değişken bir gider demek. Yatırım destesi okuma ve analiz ihtiyacın bunun ters yönü; o işi bu araç çözmüyor.",
+   "matched_project": "Arslan Holding",
+   "relevance": 4,
+   "investment_note": null
+  },
+  {
+   "full_name": "Lordog/dive-into-llms",
+   "inputs_hash": "2fb87d4de8437fe6e552d6b7c378936d",
+   "description_tr": "《动手学大模型》, Shanghai Jiao Tong Üniversitesi'nin doğal dil işleme ve yapay zeka güvenliği derslerinden türetilmiş Çince bir uygulamalı eğitim serisidir. Jupyter notebook'lar, ders sunumları ve laboratuvar kılavuzlarıyla ince ayar ve dağıtım, prompt öğrenme ve düşünce zinciri, matematiksel akıl yürütme, GUI agent, model hizalama ve steganografi gibi başlıkları kapsıyor. Tamamen ücretsiz ve kamu yararına bir kaynak olarak sunuluyor; 2025 güncellemesiyle Huawei Ascend destekli uçtan uca bir model geliştirme modülü eklenmiş. Depo 2024'te açılmış, 55 bin civarında yıldızı var ve güncellenmeye devam ediyor. GitHub'da tanımlı bir lisansı yok; bu, materyalin yeniden kullanımında belirsizlik yaratır.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor. En yakın bağlam öğrenme tarafın olurdu, ama bu seri model eğitip ince ayar yapmak isteyen lisansüstü öğrencilere yazılmış; senin ihtiyacın hazır modelleri ürünlerine bağlamak, model eğitmek değil. Materyalin tamamı Çince olduğu için asistana devredilebilir bir kaynak da değil. GUI agent ve model hizalama bölümleri yatırım tarafındaki terminolojiye aşinalık için hızlıca taranabilir; ötesinde bir karşılığı yok.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "facebookresearch/segment-anything",
+   "inputs_hash": "30713aa9d9c33bb8bb9d6052b5c48cb7",
+   "description_tr": "Segment Anything Model (SAM), Meta AI tarafından yayımlanan, görüntüdeki nesneleri maskelere ayıran bir temel modeldir. Nokta veya kutu gibi işaretlerle yönlendirilebiliyor, istenirse görüntüdeki tüm nesneler için otomatik maske üretebiliyor; 11 milyon görüntü ve 1,1 milyar maske üzerinde eğitildiği için daha önce görmediği alanlarda da çalışıyor. Depo çıkarım kodunu, eğitilmiş ağırlık bağlantılarını ve örnek notebook'ları içeriyor; Apache-2.0 lisanslı ve 54 binin üzerinde yıldızı var. Ekip o zamandan beri videoyu ve akış belleğini ekleyen SAM 2'yi ayrı bir depoda yayımladı, yani burası serinin ilk sürümünü temsil ediyor.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor. En yakın bağlam Folio'nun görsel üretim hattı olurdu, ama orada ihtiyacın maske çıkarmak değil, sıfırdan foto ve video üretmek; segmentasyon ancak üretilen bir görselde nesneyi ayırıp yeniden yerleştirmek gibi ileri bir düzenleme adımında gerekir ve şu an öyle bir adım yok. Model ajansı fikrindeki görüntü analizi ihtiyacına da tam oturmuyor; orada aranan şey maske değil, değerlendirme ve eşleştirme. Teknik olarak M4 Pro Mac'te yerel çalışabilir ve API maliyeti getirmez; ileride bir görsel düzenleme adımı eklersen not edilecek bir bileşen olarak kalsın.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "lencx/ChatGPT",
+   "inputs_hash": "8580bb464efe1df7d95aa790dab82ef3",
+   "description_tr": "Bu depo, ChatGPT'nin web arayüzünü Mac, Windows ve Linux'ta masaüstü uygulaması olarak paketleyen resmi olmayan bir Tauri projesidir. Rust ve webview üzerine kurulu; kısayollar, not alma, dışa aktarma ve \"continue generating\" düğmesine otomatik basma gibi sarmalayıcı özellikler ekliyor. 2022 sonunda açılmış ve 54 binin üzerinde yıldız toplamış. README, isim ve ikon nedeniyle marka ihlali riskini ve projenin izinsiz yeniden paketlenip satılması sorununu açıkça anlatıyor, geliştiricisi devam projesi olarak Noi'yi işaret ediyor. GitHub'da tanımlı bir lisansı yok; bu da fork'layıp türev üretmeyi hukuken belirsiz kılıyor.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor. En yakın bağlam, açık kaynak bir istemciyi fork'layıp kendi sürümünü yazma alışkanlığın; OpenCode için planladığın Expo/EAS iOS istemcisi bunun somut örneği. Ancak bu depo bir web arayüzünü saran kabuk, kendi akışına gömebileceğin bir bileşen değil; üstelik geliştiricisi devamını başka bir projeye taşımış ve lisans tanımsız. Tauri ile masaüstü paketleme mimarisine bakmak istersen okunabilir bir örnek, ama üzerine bir şey kurmak için sağlam bir temel değil.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "anthropics/claude-cookbooks",
+   "inputs_hash": "d4aa16f3e11e98f0b2574af5cf91f14a",
+   "description_tr": "Claude Cookbooks, Anthropic'in Claude ile geliştirme yapanlar için yayımladığı notebook ve tarif koleksiyonudur. Sınıflandırma, retrieval augmented generation, özetleme, tool use ve müşteri hizmetleri ajanı gibi başlıkları kopyalanabilir kod parçalarıyla gösteriyor; örnekler ağırlıklı olarak Python ama kalıplar dile bağlı değil. Tarifleri çalıştırmak için bir Claude API anahtarı gerekiyor. MIT lisanslı, 52 binin üzerinde yıldızı var ve Anthropic tarafından sürdürülüyor. İçerik bir kütüphane değil, referans uygulama derlemesi; projene bağımlılık olarak ekleyeceğin bir paket sunmuyor.",
+   "usage_tr": "Sesli not tabanlı kişisel bilgi tabanı projende en çok işine yarayacak iki tarif burada duruyor: kategoriyi modele çıkarttığın sınıflandırma akışı ve notların üzerinde semantik arama kuracağın RAG bölümü. Kalıpları okuyup kendi n8n ve Supabase hattına Claude Code ile uygulayabilirsin; sınıflandırmada hangi eşiği hangi değerlendirme setiyle doğrulayacağını da buradaki örnekler üzerinden kurabilirsin. Aynı özetleme tarifleri haftalık ve aylık rapor adımında karşılık buluyor. Uyarı: tariflerin hepsi API anahtarıyla çalışacak şekilde yazılmış, Max aboneliğinle doğrudan çalıştırılamaz; notebook'ları çalıştırmak yerine kalıpları okuyup kendi akışına uyarlaman daha doğru olur. Bu bir bileşen değil referans; bağımlılık eklemez ama yazdığın kodun bakımı tamamen sende kalır.",
+   "matched_project": "Kişisel bilgi tabanı",
+   "relevance": 4,
+   "investment_note": null
+  },
+  {
+   "full_name": "router-for-me/CLIProxyAPI",
+   "inputs_hash": "1dc3d3efdb65da8efe3712a788e475ba",
+   "description_tr": "CLI Proxy API, Claude Code, Codex, Gemini CLI, Grok ve Kimi gibi abonelik tabanlı CLI araçlarının erişimini OpenAI, Gemini, Claude ve Codex uyumlu yerel bir API servisi olarak sunan bir proxy sunucusudur. Birden çok hesabı tek uç noktada toplayıp herhangi bir uyumlu istemci veya SDK'nın bu modelleri çağırmasına izin veriyor. Go ile yazılmış, MIT lisanslı ve Temmuz 2025'te açılmasına rağmen 52 binin üzerinde yıldıza ulaşmış. Grafik yapılandırma arayüzü, otomatik güncelleme ve sistem tepsisi entegrasyonu sunan ayrı bir masaüstü istemcisi (EasyCLIProxyAPI) da var. Desteklenen sağlayıcılar README'de tablo halinde tutuluyor ve her biri için OAuth veya uyumlu API anahtarı yolu tanımlanmış.",
+   "usage_tr": "Tekrar eden kısıtın burada karşılık buluyor: Claude Code'u Max aboneliğiyle kullanıyorsun ama pipeline'ların bir API uç noktası istiyor. Bu proxy'yi ofisteki M4 Pro Mac'te ya da evdeki Mac mini'de çalıştırıp Lyricdrop'un şarkı başına içerik üretim adımını ve Folio'nun günlük içerik hattını ayrı bir anahtar almadan yerel uç noktaya bağlayabilirsin; n8n tarafında yapman gereken tek şey base URL'i değiştirmek. Buradaki uyarı küçük değil: abonelik erişimini API'a çevirmek sağlayıcıların kullanım koşullarıyla çakışabilir ve hesabın askıya alınmasına yol açabilir. Lyricdrop'un üretim hattını bu katmanın arkasına almak, kataloğun tamamını tek bir hesap kararına bağlamak demektir. Denemek istersen yan projelerde dene; üretimde kalan adımları gerçek bir API anahtarı veya Mac'te çalışan yerel bir model üzerinde tut.",
+   "matched_project": "Lyricdrop",
+   "relevance": 5,
+   "investment_note": null
+  },
+  {
+   "full_name": "xai-org/grok-1",
+   "inputs_hash": "d4ac5a24b525d5a89ccef96818a94453",
+   "description_tr": "Grok-1, xAI'ın 314 milyar parametreli Mixture-of-Experts modelinin açık ağırlıklarını yükleyip çalıştırmak için JAX örnek kodu içeren deposudur. Model token başına 8 uzmandan 2'sini kullanıyor, 64 katmana ve 8.192 token bağlam uzunluğuna sahip; ağırlıklar torrent veya Hugging Face üzerinden indiriliyor. Depodaki MoE katmanı uygulaması bilinçli olarak verimsiz yazılmış, amaç hız değil modelin doğruluğunu göstermek. Kod ve ağırlıklar Apache-2.0 ile yayımlanmış, 52 binin üzerinde yıldızı var. Modeli denemek için büyük miktarda GPU belleği gerekiyor; depo bir ürün değil, tek seferlik bir ağırlık yayını niteliğinde.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor. 314 milyar parametreli bir model 24 GB bellekli bir MacBook Pro'da çalışmaz, dolayısıyla \"Mac'te yerel çalışsın\" kriterin burada hiç karşılanamıyor. En yakın bağlam yatırımcı tarafındaki genel takip olurdu: hangi laboratuvarın hangi ağırlığı hangi lisansla açtığı, açık model ekosistemini okumak için bir veri noktası. Yerel model tarafında senin için anlamlı olan şey bu ölçek değil, Apple Silicon'da çalışan küçük modeller ve MLX / llama.cpp hattı.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "justjavac/wechat-miniapp-radar",
+   "inputs_hash": "0fba3e89c16b7c5af6f6bf4b244b203c",
+   "description_tr": "小程序雷达, WeChat mini-program ekosistemindeki kaynakları filtrelenebilir bir teknoloji radarına dönüştüren bir araçtır. Taro, uni-app, yerel mini program, bileşen kütüphaneleri ve bulut geliştirme SDK'larını öneri durumu, risk seviyesi, kaynak tipi ve kullanım senaryosuna göre karşılaştırıyor. Ayrıca proje yapılandırmasını yapıştırıp bağımlılık ve göç riski çıkaran bir teşhis sayfası, bir seçim danışmanı ve haftalık ekosistem bülteni sunuyor. Veri setinde şu an 236 kaynak bulunuyor. TypeScript ile yazılmış, GPL-3.0 lisanslı; depo 2016'da açılmış, 51 bin civarında yıldızı var, arayüz ve içerik Çince.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor. WeChat mini program ekosistemi senin Expo / React Native ve Android TV hattının tamamen dışında kalıyor ve Çin pazarına dağıtım şu an gündeminde değil. En yakın bağlam biçimsel: bir ekosistemi taranabilir, karşılaştırılabilir bir radara çevirme kurgusu, yatırım tarafındaki deal flow taraması için bir arayüz örneği olarak bakılabilir. Ürün olarak değil, yalnızca bu kurgu açısından kısa bir inceleme değeri var.",
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "Aider-AI/aider",
+   "inputs_hash": "50b6998f8fde07bf1739eb430794bf8d",
+   "description_tr": "Aider, terminalden çalışan bir AI eşli programlama aracıdır. Kod tabanının haritasını çıkarıp ilgili dosyaları modele bağlam olarak veriyor, değişiklikleri doğrudan dosyalara uyguluyor ve her adımı ayrı bir git commit'i olarak kaydediyor. Claude, GPT, Gemini ve DeepSeek dahil pek çok bulut modeliyle, ayrıca yerel modellerle çalışabiliyor. Python ile yazılmış, Apache-2.0 lisanslı ve 49 binin üzerinde yıldızı var; son sürümündeki yeni kodun büyük bölümü aracın kendisiyle yazılmış. Model erişimi kullanıcıdan bekleniyor; araç kendi başına bir model sağlamıyor.",
+   "usage_tr": "Lyricdrop v2'yi Claude Code ve Superpowers ile yazarken Aider'ı ikinci bir görüş olarak yanına koyabilirsin; özellikle her değişikliği ayrı commit'e bağlaması, v1'deki \"tek oturumda hepsini yaz\" hatasına karşı doğal bir fren. Kod tabanı haritası, admin panelinin ve hizalama servisinin ayrı ayrı büyüdüğü bir repoda hangi dosyaların bağlama girdiğini görünür kılıyor. İstediğin iki ayrı review'dan geliştirici doğruluğu tarafını burada farklı bir modelle tekrarlayıp Claude Code'un çıktısıyla karşılaştırabilirsin. Uyarı: Aider Max aboneliğini kullanamaz, kendi API anahtarını ister; Mac'te yerel bir model bağlayarak maliyetsiz de deneyebilirsin ama kod kalitesi belirgin şekilde düşer. Günlük ana araç olarak Claude Code'un yerini almasını beklemek yerine, ikinci gözlük olarak değerlendirmek daha gerçekçi.",
+   "matched_project": "Lyricdrop",
+   "relevance": 6,
+   "investment_note": null
+  },
+  {
+   "full_name": "QuantumNous/new-api",
+   "inputs_hash": "33fa4d5970680429d25a644e2c4bd3ed",
+   "description_tr": "New API, farklı model sağlayıcılarını tek bir uç noktada toplayan, self-host edilen bir AI gateway'dir. Yukarı akıştaki servisleri bağlayıp istemcilere OpenAI, Claude veya Gemini uyumlu tek bir arayüz sunuyor; yönlendirme, erişim yetkileri, kullanım ve maliyet takibi tek yerden yönetiliyor. Ekip içinde model erişimini paylaşmak, sağlayıcıyı her istemciyi yeniden yapılandırmadan değiştirmek veya özel bir dağıtım servisi işletmek için tasarlanmış. Model biçimleri arasında çapraz dönüşüm ve rerank desteği de var. Go ile yazılmış, AGPL-3.0 lisanslı, Docker imajı hazır ve 48 binin üzerinde yıldızı var.",
+   "usage_tr": "Lyricdrop'un şarkı başına maliyet hedefi net olduğu için hangi adımın ne harcadığını ölçmeden kataloğu büyütmek riskli; New API'yi evdeki Mac mini'de Docker ile çalıştırıp her proje için ayrı anahtar ve harcama limiti tanımlayabilirsin. Böylece Lyricdrop'un içerik üretimi, Folio'nun günlük hattı ve Kanarya'nın sınıflandırma adımı aynı gateway'in arkasında ayrı ayrı raporlanır; sağlayıcı değiştirdiğinde n8n akışlarına dokunmana gerek kalmaz. Asıl kazanç limit koyabilmek: hatalı bir döngü faturayı büyütmeden kesilir. Uyarı: bu, bakımını üstleneceğin ek bir altyapı bileşeni ve tek sağlayıcı ile tek projede getirisi yok; en az iki sağlayıcı veya iki proje aynı anda üretimdeyken kurmak mantıklı. AGPL lisansı gateway'i kendi uygulamanın içine gömmeni pratikte engeller, ayrı bir servis olarak çalıştırman gerekir.",
+   "matched_project": "Lyricdrop",
+   "relevance": 5,
+   "investment_note": null
+  },
+  {
+   "full_name": "Wei-Shaw/sub2api",
+   "inputs_hash": "4da1596b82311782a740553615ec7861",
+   "description_tr": "Sub2API, Claude, OpenAI, Gemini ve Grok aboneliklerini tek bir arayüzde toplayıp birden çok kullanıcı arasında paylaştırmak için yazılmış bir API gateway platformudur. Odağı kota dağıtımı ve ortak kullanım senaryosu: bir abonelik havuzunu kullanıcılara bölüştürüp maliyeti paylaştırmayı hedefliyor. Go ve Vue ile yazılmış, PostgreSQL ve Redis kullanıyor, Docker ile kuruluyor ve LGPL-3.0 lisanslı; Aralık 2025'te açılmasına rağmen 42 bini aşan yıldız toplamış. README, projenin sağlayıcıların kullanım koşullarını ihlal edebileceğini, hesap kapatma dahil tüm riskin kullanıcıya ait olduğunu ve hiçbir ticari kullanıma izin verilmediğini açıkça yazıyor. Yani proje kendi sınırlarını baştan bildiren, gri alanda duran bir araç.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor. Çözdüğü problem bir aboneliği birden çok kişiye bölüştürmek; senin durumun tek kullanıcı ve tek hesap, dolayısıyla paylaşım katmanı sana bir şey kazandırmıyor. En yakın bağlam projelerin arasında model erişimini tek yerden yönetme ihtiyacın, ama bunun için kota paylaştırmaya değil ölçüm ve limit koymaya odaklanan bir gateway daha doğru bir seçim olur. Deponun kendi uyarı metni sağlayıcı koşullarını ihlal etme ve hesap kaybı riskini açıkça kabul ediyor; Lyricdrop'un üretim hattını böyle bir katmanın arkasına almak taşınmaya değmeyecek bir risk.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "cathrynlavery/diagram-design",
+   "inputs_hash": "36eaea53d2f064c81998c75686a58f8e",
+   "description_tr": "Diagram Design, Claude Code, Codex ve Agent Skills uyumlu ortamlar için yazılmış, editoryal kalitede diyagram üreten bir skill paketidir. Mimari şeması, akış şeması, sequence, state machine, ER, timeline, swimlane, quadrant, radar, piramit, Sankey ve Wardley haritası gibi çok sayıda düzen dilbilgisi sunuyor. Çıktı bağımsız HTML ve SVG; build adımı, JavaScript veya dış görsel bağımlılığı yok ve her tip açık tema, koyu tema ve tam editoryal olmak üzere üç varyantla geliyor. Bir siteyi okuyarak marka renklerine uyarlanabiliyor, ayrıca draw.io, Mermaid veya Excalidraw kaynaklarını seçilen formatta yeniden çizebiliyor. HTML olarak yazılmış, MIT lisanslı ve Nisan 2026'da açılmasına rağmen 41 binin üzerinde yıldız toplamış.",
+   "usage_tr": "Arslan Holding'in kurumsal materyallerini AI araçlarıyla üretiyorsun; bu skill tam o hatta oturuyor. Markanın renklerini bir kez tanımlayıp yatırım tezini, 90 günlük yol haritasını veya portföy yapısını konferans materyaline girecek kalitede tek bir HTML dosyası olarak çıkarabilirsin. Claude Code içinde skill olarak çalıştığı için Max aboneliğinle uyumlu, ek API maliyeti getirmiyor ve ofisteki Mac'ten dışarı veri çıkmıyor. İkinci bir kullanım Lyricdrop tarafında: v2'nin hizalama hattını ve panel mimarisini bir sequence veya architecture diyagramına çevirmek, işi ileride devrettiğinde dokümantasyon borcunu azaltır. Uyarı: çıktı statik HTML ve SVG olduğu için sunuma veya siteye gömerken dışa aktarma adımını kendin kurman gerekir.",
+   "matched_project": "Arslan Holding",
+   "relevance": 6,
+   "investment_note": null
+  },
+  {
+   "full_name": "AstrBotDevs/AstrBot",
+   "inputs_hash": "36a98deef6ecb7cad7d7e7dcd3c851cd",
+   "description_tr": "AstrBot, yaygın anlık mesajlaşma platformlarına bağlanan açık kaynak bir agent chatbot platformudur. QQ, WeChat Work, Feishu, DingTalk, WeChat resmi hesapları, Telegram ve Slack gibi kanalları destekliyor; LLM sohbeti, çok modluluk, MCP, bilgi tabanı, persona ayarları ve otomatik bağlam sıkıştırma sunuyor. Kod çalıştırma ve shell çağrılarını izole eden bir agent sandbox'ı, bir WebUI'ı ve bini aşkın eklentiden oluşan bir pazar yeri var. Dify, Coze ve Alibaba Cloud Bailian gibi ajan platformlarıyla entegrasyon da mümkün. Python 3.12+ ile yazılmış, AGPL-3.0 lisanslı, Docker ve uv ile kuruluyor; 40 binin üzerinde yıldızla aktif geliştiriliyor.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor. En yakın bağlam, Beeper üzerinden mesaj toplayıp skorlayan mevcut pipeline'ın ve asistan tarafındaki mesajlaşma otomasyonu olurdu; ancak desteklenen kanallar ağırlıklı olarak Çin merkezli uygulamalar ve senin gerçekten kullandığın iki kanal, WhatsApp ile Instagram, listede yok. Bu haliyle sana bir kanal köprüsü değil, kurup bakımını üstleneceğin ikinci bir platform gelir. Sandbox ve eklenti mimarisi, kendi orkestratör ajanını tasarlarken bakılacak bir referans olabilir; ürün olarak ise çabuk sıkıldığın \"bir uygulama daha\" tarafında kalıyor.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "emilkowalski/skills",
+   "inputs_hash": "443d414d6f733f797956a14eb5a215d4",
+   "description_tr": "Bu depo, arayüz ve animasyon kalitesi üzerine yazılmış bir Claude Code skill koleksiyonudur. İçinde animasyonu sıfırdan kuran, mevcut animasyonları katı kurallarla gözden geçiren ve iyileştiren skill'lerin yanı sıra React Native ve Expo'ya özel bir sürüm de var; jestler, sheet'ler, haptics, ekran geçişleri ve hareketin JS thread'i dışında tutulması gibi konuları kapsıyor. Kurallar Vercel ve Linear'da çalışmış bir tasarım mühendisinin deneyiminden çıkarılmış; giriş animasyonunda yanlış easing seçimi gibi ajanların sık yaptığı hatalar tek tek yazılmış. Markdown olarak yazılmış, MIT lisanslı ve `npx skills add` ile kuruluyor. Mart 2026'da açılmış, 40 bini aşan yıldızı var.",
+   "usage_tr": "Folio'nun tamamı Instagram'ın hissine birebir yakın olmasına bağlı ve o his büyük ölçüde animasyon ayrıntısında saklı: sheet'in açılış eğrisi, feed'in atalet davranışı, beğeni animasyonunun süresi. animate-expo skill'i doğrudan senin stack'ine, Expo ve React Native'e yazılmış; Claude Design'dan çıkan 1:1 ekranları koda dökerken Claude Code'un yanına koyabilirsin. Lyricdrop tarafında da karşılığı var: boşluk seçimi ile doğru/yanlış geri bildiriminin zamanlaması oyunun ritmini belirliyor, review-animations skill'iyle mevcut ekranları kurallara karşı geçirtebilirsin. Skill olarak çalıştığı için Max aboneliğinle uyumlu, ek API maliyeti yok ve ofisteki Mac'ten çıkmıyor. İstediğin iki ayrı review'dan ürün tarafına en yakın duran parça bu; geliştirici doğruluğu review'ının yerine geçmez.",
+   "matched_project": "Folio",
+   "relevance": 7,
+   "investment_note": null
+  },
+  {
+   "full_name": "tinyhumansai/openhuman",
+   "inputs_hash": "28df1dc4a4faf69358e659db93a427c9",
+   "description_tr": "OpenHuman, yerel-öncelikli bir hafıza katmanını, ajan orkestrasyonunu ve derin araştırmayı bir arada sunan açık kaynak bir masaüstü agent harness'ıdır. Verileri kullanıcının kendi makinesinde SQLite içinde puanlanmış Markdown ağaçlarına sıkıştırıyor ve bunu açıp düzenlenebilen bir Obsidian vault'u olarak aynalıyor; vektör tabanlı kapalı bir kutu yerine okunabilir dosyalar bırakıyor. 100'ü aşkın OAuth entegrasyonu, MCP sunucuları ve skill desteğiyle Gmail, Notion, GitHub ve Slack gibi kaynakları düzenli aralıklarla çekip hafızayı besliyor; uzun vadeli hedefler ve todo yönetimi de sistemin parçası. Rust ve Tauri ile yazılmış, GPL-3.0 lisanslı ve masaüstü kurulumları mevcut. Şubat 2026'da açılmış, 40 bini aşan yıldıza ulaşmış; geliştiricileri projeyi açıkça erken beta olarak tanımlıyor.",
+   "usage_tr": "Tarif ettiğin \"tüm projelerini bilen, aralarında köprü kuran orkestratör ajan\" fikrine bu pakette en çok yaklaşan proje bu. Sesli not tabanlı kişisel bilgi tabanı için hafıza ağacı doğrudan işine yarar: notların ve kaynakların makinede kalır, Obsidian aynası sayesinde sistemin ne hatırladığını gözle görüp düzeltebilirsin — \"kategoriyi AI çıkarsın, form doldurmak yok\" isteğinin denetlenebilir hali. Evdeki 7/24 açık Mac mini bunun için doğru yer; Tailscale üzerinden ofis Mac'inden de erişirsin. Kişisel sistemin iş ve asistan tarafıyla karışmasın kuralını korumak için ayrı bir kurulumla başlaman gerekir, çünkü entegrasyonlar varsayılan olarak her şeyi aynı hafızaya akıtır. İki uyarı: proje kendi ifadesiyle erken beta, günlük rutinini üstüne kurmadan önce bir süre izlemek doğru olur; GPL-3.0 lisansı da parçalarını kendi uygulamana gömmeni engeller, ancak yanında çalışan ayrı bir sistem olarak kullanabilirsin.",
+   "matched_project": "Kişisel bilgi tabanı",
+   "relevance": 8,
+   "investment_note": "Yerel-öncelikli kişisel AI harness kategorisinde bir yıldan kısa sürede 40 bini aşan ilgi toplamış bir ekip; Arslan Holding'in erken aşama AI merceğiyle en azından tanışmaya değer, ticarileşme modeli ise henüz görünmüyor."
+  },
+  {
+   "full_name": "shiyu-coder/Kronos",
+   "inputs_hash": "b6587ac6e18edc28924d195748624951",
+   "description_tr": "Kronos, finansal piyasaların K-line (OHLCV) serileri üzerine önceden eğitilmiş, yalnızca çözücüden oluşan bir temel model ailesidir. İki aşamalı bir yapı kullanıyor: özel bir tokenizer sürekli ve çok boyutlu mum verisini hiyerarşik ayrık token'lara çeviriyor, ardından otoregresif bir Transformer bu token'lar üzerinde eğitiliyor. 4,1 milyondan 499 milyon parametreye kadar dört boyut yayımlanmış, üçü Hugging Face'te açık; bağlam uzunluğu modele göre 512 ile 2048 token arasında değişiyor. Python ile yazılmış, MIT lisanslı; ince ayar betikleri mevcut ve BTC/USDT üzerinde canlı bir tahmin demosu sunuluyor. Çalışma AAAI 2026'ya kabul edilmiş; depo 39 binin üzerinde yıldıza sahip akademik kökenli bir yayın.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor. Modelin girdisi işlem gören bir varlığın mum verisi; senin yatırım tarafın erken aşama şirketler, yani fiyat serisi olmayan bir alan, dolayısıyla deal screening veya due diligence adımına bağlanacak bir yanı yok. En yakın bağlam güneş enerjisi tarafındaki elektrik piyasası fiyat serileri olabilir, ama orada asıl ihtiyacın üretim simülasyonu ve proje finansmanı modeli; üstelik bu model enerji piyasası için değil finansal mum verisi için eğitilmiş. Küçük boyutları M4 Pro Mac'te yerel çalışır, yani merak edersen maliyetsiz denenebilir; bir ihtiyaca oturmadığı için vakit ayırmaya değmez.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  }
+ ]
+}
