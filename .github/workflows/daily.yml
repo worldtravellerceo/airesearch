@@ -48,6 +48,12 @@ jobs:
       - name: Census
         run: airadar discover --channels census --max-queries 2000 --resolve-limit 0
 
+      # Below the census floor, and only at repositories young enough to still
+      # be climbing towards it. 138 pages of search against the 1,551 that
+      # lowering the census floor to 300 stars would cost.
+      - name: Nursery
+        run: airadar discover --channels nursery --max-queries 400 --resolve-limit 0
+
       - name: Classify what the census found
         run: airadar classify --no-llm
 

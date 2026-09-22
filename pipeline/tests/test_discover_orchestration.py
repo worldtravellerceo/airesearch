@@ -268,6 +268,7 @@ async def test_the_census_finds_a_repo_that_has_no_topics_at_all(conn):
         report = await discover(
             conn,
             client,
+            nursery=False,
             topics=False,
             keywords=False,
             awesome=False,
@@ -354,3 +355,61 @@ async def test_a_census_that_finds_nothing_fails_loudly(conn):
                 snowball=False,
                 resolve=False,
             )
+
+
+# --- the nursery -----------------------------------------------------------
+
+
+async def test_the_nursery_looks_below_the_census_floor_but_only_at_new_repos(conn):
+    """The census floor is a thousand stars, so a repository on its way there
+    is invisible to it, and below the floor the only channel that runs is the
+    topic sweep — which measured half of the 300-1,000 band as carrying no
+    topics at all. The band is 31% AI and its median member reaches 300 stars
+    in twelve days, faster than a weekly sweep notices.
+
+    Recency is what makes it affordable: dropping the census to 300 stars costs
+    1,551 pages of search, and ninety days at fifty stars costs 138.
+    """
+    queries: list[str] = []
+
+    def handler(request: httpx.Request) -> httpx.Response:
+        if request.url.path == "/search/repositories":
+            query = request.url.params.get("q", "")
+            queries.append(query)
+            if "created:>=" not in query:
+                return httpx.Response(200, json={"total_count": 0, "items": []}, headers=HEADERS)
+            return httpx.Response(
+                200,
+                json={
+                    "total_count": 1,
+                    "items": [repo_json(7, "someone/brand-new", stars=420, topics=())],
+                },
+                headers=HEADERS,
+            )
+        return httpx.Response(404, json={}, headers=HEADERS)
+
+    async with GitHubClient(
+        token="t", transport=httpx.MockTransport(handler), sleep=_no_sleep
+    ) as client:
+        report = await discover(
+            conn,
+            client,
+            census=False,
+            topics=False,
+            keywords=False,
+            awesome=False,
+            ecosystems=False,
+            huggingface=False,
+            snowball=False,
+            resolve=False,
+        )
+
+    assert report.repos_upserted == 1
+    row = conn.execute("SELECT full_name, discovered_via, stars FROM repos").fetchone()
+    assert row["full_name"] == "someone/brand-new"
+    assert row["discovered_via"] == "nursery"
+    # Below the census floor, which is the whole point.
+    assert row["stars"] < 1_000
+    # Bounded by age rather than by a lower star floor.
+    assert all("created:>=" in query for query in queries)
+    assert any("stars:50.." in query for query in queries)

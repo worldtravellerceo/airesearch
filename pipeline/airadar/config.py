@@ -61,6 +61,12 @@ class Settings(BaseSettings):
     # It only has to reach below `track_limit`'s star cutoff to guarantee the
     # boards, which is why it is not simply set to `min_stars`.
     census_min_stars: int = Field(default=1000, alias="AIRADAR_CENSUS_MIN_STARS")
+    # How far back the nursery channel looks. The census floor is a thousand
+    # stars, and below it the only channel that runs is the topic sweep —
+    # which measured half of the 300-1,000 band as carrying no topics at all.
+    # Ninety days is where a repository that will cross the floor has usually
+    # started: the band's median takes twelve days to reach 300.
+    nursery_days: int = Field(default=90, alias="AIRADAR_NURSERY_DAYS")
     # Search returns at most 1,000 results per query, so any star bucket that fills
     # up has to be split. Leave headroom under the cap.
     search_page_cap: int = 1000

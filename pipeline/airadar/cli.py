@@ -166,7 +166,7 @@ def discover(
         "all",
         "--channels",
         help=(
-            "Comma-separated: census,topics,keywords,snowball,"
+            "Comma-separated: census,nursery,topics,keywords,snowball,"
             "awesome,ecosystems,huggingface,resolve"
         ),
     ),
@@ -188,6 +188,7 @@ def discover(
 
 _CHANNELS = (
     "census",
+    "nursery",
     "topics",
     "keywords",
     "snowball",
@@ -212,6 +213,7 @@ async def _run_discover(
                     conn,
                     client,
                     census=selected["census"],
+                    nursery=selected["nursery"],
                     topics=selected["topics"],
                     keywords=selected["keywords"],
                     snowball=selected["snowball"],

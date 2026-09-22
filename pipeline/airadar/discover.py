@@ -75,6 +75,7 @@ async def discover(
     client: GitHubClient,
     *,
     census: bool = True,
+    nursery: bool = True,
     topics: bool = True,
     keywords: bool = True,
     awesome: bool = True,
@@ -119,6 +120,30 @@ async def discover(
                 f"({report.search.errors - errors_before} search errors). "
                 "The query shape is almost certainly rejected, not the population empty."
             )
+
+    # Second, and for the same reason: the census floor is a thousand stars, so
+    # a repository on its way there is invisible to it. Below that floor the
+    # only channel that runs is the topic sweep, and half of the 300-1,000 band
+    # carries no topics at all — measured. The band is 31% AI, and its median
+    # member crosses 300 stars in twelve days, which is faster than a weekly
+    # sweep notices.
+    #
+    # Recency rather than a lower floor is what makes this affordable. Dropping
+    # the census to 300 stars costs 1,551 pages of search; asking for the last
+    # ninety days at fifty stars costs 138 and finds the same repositories,
+    # because a project that is going to matter here is young.
+    if nursery:
+        since = (dt.date.today() - dt.timedelta(days=settings.nursery_days)).isoformat()
+        await discovery.search_partitioned(
+            client,
+            f"created:>={since} fork:false",
+            channel="nursery",
+            sink=sink,
+            min_stars=min_stars,
+            stats=report.search,
+        )
+        seen = report.search.channels.get("nursery", 0)
+        report.notes.append(f"nursery: created>={since}, >={min_stars} stars, {seen} sightings")
 
     if topics:
         already = db.queried_topics(conn)
