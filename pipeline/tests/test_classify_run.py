@@ -654,3 +654,44 @@ def test_a_settled_ai_repo_is_not_queued_for_review(conn, tmp_path):
     export_review_queue(conn, out, limit=10, min_stars=1_000)
 
     assert json.loads(out.read_text())["repos"] == []
+
+
+def test_neither_kind_of_unsettled_starves_the_other(conn, tmp_path):
+    """Strict precedence is the failure the ordering fix would have introduced.
+    Measured on the live database: 1,930 repositories above a thousand stars
+    carry unresolved evidence against 52,475 that carry none, so a slice of
+    2,000 taken unsettled-first reads 70 zeroes this week and none at all the
+    day the escalation band passes two thousand — which is the direction it is
+    moving. A zero is absence of evidence, and that reading is what hid
+    `anomalyco/opencode` at 208,847 stars."""
+    for repo_id in range(1, 21):
+        add_repo(conn, repo_id, f"open/q{repo_id}", "A lightweight agent", ["agent"], stars=50_000)
+    for repo_id in range(21, 41):
+        add_repo(conn, repo_id, f"silent/s{repo_id}", "A tool for teams", [], stars=9_000)
+    conn.commit()
+
+    out = tmp_path / "queue.json"
+    classify_run.export_review_queue(conn, out, limit=10, min_stars=1_000)
+    rows = json.loads(out.read_text())["repos"]
+
+    kinds = [row["basis"] for row in rows]
+    assert kinds.count("no-signal") == 4  # the reserved share of ten
+    assert kinds.count("unsettled") == 6
+    # Ordered by stars inside each group, biggest first.
+    assert rows[0]["stars"] >= rows[1]["stars"]
+
+
+def test_a_group_that_runs_out_gives_its_share_back(conn, tmp_path):
+    """The reservation is a floor for the smaller group, not a quota that
+    wastes slots when there is nothing to put in them."""
+    for repo_id in range(1, 11):
+        add_repo(conn, repo_id, f"open/q{repo_id}", "A lightweight agent", ["agent"], stars=50_000)
+    add_repo(conn, 99, "silent/only", "A tool for teams", [], stars=9_000)
+    conn.commit()
+
+    out = tmp_path / "queue.json"
+    classify_run.export_review_queue(conn, out, limit=10, min_stars=1_000)
+    kinds = [row["basis"] for row in json.loads(out.read_text())["repos"]]
+
+    assert kinds.count("no-signal") == 1
+    assert kinds.count("unsettled") == 9  # the unused reservation came back

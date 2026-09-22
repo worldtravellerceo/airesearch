@@ -394,6 +394,14 @@ def reviewed_names(verdicts_dir: Path) -> set[str]:
     return seen
 
 
+#: How much of a review slice is reserved for repositories that scored zero.
+#: The rest goes to the escalation band. Neither group may starve the other:
+#: a zero is absence of evidence, which is the reading that hid
+#: `anomalyco/opencode` at 208,847 stars, and the band is where the evidence
+#: exists and did not resolve.
+NO_SIGNAL_SHARE = 0.4
+
+
 def export_review_queue(
     conn: sqlite3.Connection,
     path: Path,
@@ -443,13 +451,27 @@ def export_review_queue(
         candidates.append((count, item, verdict))
 
     report.considered = len(candidates)
-    # Unsettled first, and by stars within each group. Both kinds belong here,
-    # but they are not the same question and sorting them together buries the
-    # smaller one: 6,823 repositories carry evidence the engine could not
-    # resolve, against 53,427 that carry none at all, so a slice ordered purely
-    # by stars opens with `freeCodeCamp/freeCodeCamp` and never reaches an
-    # actual open question.
-    candidates.sort(key=lambda row: (not row[2].needs_llm, -row[0]))
+    # Both kinds belong here and they are not the same question. Sorting them
+    # together by stars buries the smaller one: 1,930 repositories above a
+    # thousand stars carry evidence the engine could not resolve against 52,475
+    # that carry none, so a purely star-ordered slice opens with
+    # `freeCodeCamp/freeCodeCamp` and never reaches an open question.
+    #
+    # Strict precedence is the other failure, and it is worse. The unsettled
+    # group is 1,930 today against a slice of 2,000 — so 70 no-signal
+    # repositories get read this week, and none at all the day the escalation
+    # band passes two thousand, which is the direction it is moving. The slice
+    # is split instead: most of it to open questions, a reserved share to the
+    # zeroes, and whichever group runs out gives its remainder to the other.
+    unsettled = sorted((row for row in candidates if row[2].needs_llm), key=lambda row: -row[0])
+    no_signal = sorted((row for row in candidates if not row[2].needs_llm), key=lambda row: -row[0])
+    reserved = max(1, round(limit * NO_SIGNAL_SHARE))
+    take_unsettled = min(len(unsettled), limit - reserved)
+    take_no_signal = min(len(no_signal), limit - take_unsettled)
+    # Whatever the other group could not fill comes back.
+    take_unsettled = min(len(unsettled), limit - take_no_signal)
+    total = len(candidates)
+    candidates = unsettled[:take_unsettled] + no_signal[:take_no_signal]
 
     items = [
         {
@@ -475,7 +497,7 @@ def export_review_queue(
         json.dumps(
             {
                 "generated_at": dt.datetime.now(dt.UTC).isoformat(),
-                "remaining_after_this_slice": max(0, len(candidates) - len(items)),
+                "remaining_after_this_slice": max(0, total - len(items)),
                 "repos": items,
             },
             ensure_ascii=False,
@@ -487,6 +509,6 @@ def export_review_queue(
     log.info(
         "classify: %d repos queued for review, %d left after this slice",
         len(items),
-        max(0, len(candidates) - len(items)),
+        max(0, total - len(items)),
     )
     return report

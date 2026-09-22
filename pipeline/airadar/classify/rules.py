@@ -203,6 +203,22 @@ DECISIVE_PHRASES: tuple[str, ...] = (
     "coding agent",
     "agent skill",
     "agent framework",
+    # 2026's phrasing for a runtime that hosts agents. Unambiguous in a way the
+    # bare token is not — a monitoring daemon is an agent, and nothing is an
+    # agent operating system by accident. Added after the hostname fix took
+    # `unicity-aos/aos-ce`, "the open agent operating system", off the boards:
+    # it had been held over the line by `unicity.ai` in its README tokenising
+    # to a bare `ai`, which is exactly the accident being removed.
+    "agent operating system",
+    "agent runtime",
+    # `microsoft/GLIP` is "Grounded Language-Image Pre-training" and had no
+    # topics, no packages and a README whose only AI evidence was the word
+    # `eval.ai` in a link. The field's own word for what it does was simply
+    # missing from the vocabulary.
+    "pre-training",
+    "pretraining",
+    "pre-trained",
+    "pretrained",
     "autonomous agent",
     "multi-agent",
     "multi agent",
@@ -539,6 +555,9 @@ PRODUCT_TOPICS: frozenset[str] = frozenset(
     }
 )
 
+#: Every topic that counts as evidence *for* AI, at any weight.
+AI_TOPIC_VOCABULARY: frozenset[str] = DECISIVE_TOPICS | STRONG_TOPICS | SUGGESTIVE_TOPICS
+
 #: Evidence that says what a repository *is* rather than what it works with:
 #: an AI lab published it, it imports `torch`, its own name carries the field's
 #: vocabulary, it describes itself in Chinese, or it uses a term from before
@@ -658,12 +677,15 @@ def classify(facts: RepoFacts, *, low: float = 0.2, high: float = 0.8) -> Verdic
         filter(
             None,
             [
+                # The repository's own name is left alone: `fossasia/susi.ai`
+                # is a chatbot claiming that name, not an address it happens to
+                # cite. A description is the opposite case — `comma.ai` there
+                # is where the author works, not what the project is.
                 facts.full_name.replace("/", " ").replace("-", " ").lower(),
-                (facts.description or "").lower(),
+                _HOSTNAME.sub(r"\1", (facts.description or "").lower()),
             ],
         )
     )
-    haystack = _HOSTNAME.sub(r"\1", haystack)
     name_tokens = tokenise(facts.full_name.replace("/", " ").replace("-", " ").replace("_", " "))
 
     owner = facts.full_name.split("/", 1)[0].lower()
@@ -713,7 +735,10 @@ def classify(facts: RepoFacts, *, low: float = 0.2, high: float = 0.8) -> Verdic
     # The README last, and only for terms nothing else has already found: a
     # phrase seen in both the description and the README is one fact, and
     # `observe` keeps the higher weight, so the description's tier wins.
-    readme = facts.readme_excerpt.lower()
+    # The same reading as the haystack: `comma.ai` in a README is an address,
+    # not three witnesses. Stripping it only from the description left the
+    # token tier free to put a key-value store back on an AI board at 0.85.
+    readme = _HOSTNAME.sub(r"\1", facts.readme_excerpt.lower())
     if readme:
         # A README opens by saying what the project is and continues by listing
         # what it works with. Measured on `metabase/metabase`: a business
@@ -780,8 +805,13 @@ def classify(facts: RepoFacts, *, low: float = 0.2, high: float = 0.8) -> Verdic
     # On the labelled sample precision goes 88% to 94% with recall unchanged at
     # 95%, and the eleven-project non-AI control group drops from four false
     # positives to one.
-    product = topics & PRODUCT_TOPICS
-    declared_ai = topics & (DECISIVE_TOPICS | STRONG_TOPICS | SUGGESTIVE_TOPICS)
+    # A topic that names a product class *and* counts as AI evidence — today
+    # only `observability`, which is both a monitoring category and what an
+    # LLM tracing tool calls itself — would otherwise be counted on both sides
+    # of the comparison and cancel itself out, which is the one thing it must
+    # not do. It says nothing here; the repo's other topics decide.
+    product = topics & PRODUCT_TOPICS - AI_TOPIC_VOCABULARY
+    declared_ai = topics & AI_TOPIC_VOCABULARY - PRODUCT_TOPICS
     named_ai = bool(name_tokens & (DECISIVE_TOKENS | AMBIGUOUS_TOKENS))
     if (
         product

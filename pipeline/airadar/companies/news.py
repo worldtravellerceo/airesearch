@@ -221,10 +221,30 @@ def known_names(conn: sqlite3.Connection) -> dict[str, str]:
     # 9,634. Generic labels are excluded and the result is anchored on the
     # funding verb, because "scale" and "intelligence" are words before they
     # are anyone's name.
-    for row in conn.execute("SELECT domain FROM companies"):
+    # 85 labels here are claimed by more than one domain, and `setdefault`
+    # resolved them by whatever order SQLite happened to return — a coin toss
+    # with a real company on the other end of it.
+    #
+    # Dropping every contested label was the first answer and it is too blunt:
+    # almost all of them are one company holding several domains
+    # (`openai.com` and `openai.fm`, `claude.com` and `claude.ai`,
+    # `pytorch.org` and `pytorch.kr`), and refusing them loses OpenAI. Two
+    # checks were tried and neither separates the cases: a star ratio leaves
+    # `apifox.cn` against `apifox.com`, and shared GitHub owners calls
+    # `tensorflow.org` and `tensorflow.blog` different companies.
+    #
+    # So the label goes to the domain with the following, ordered last so it
+    # wins the insert. This dictionary exists to name the subject of a funding
+    # headline, and the press writes about the domain people have heard of —
+    # `openai.fm` will never be the subject of a round that `openai.com` is
+    # not. What it cannot survive is two genuinely different companies of
+    # comparable size sharing a name, which is ambiguous to a reader too.
+    for row in conn.execute(
+        "SELECT domain FROM companies WHERE repo_stars > 0 ORDER BY repo_stars ASC"
+    ):
         label = row["domain"].split(".")[0].replace("-", " ").strip().lower()
         if len(label) >= DERIVED_MIN_CHARS and label not in GENERIC_LABELS:
-            names.setdefault(label, row["domain"])
+            names[label] = row["domain"]
 
     # The bought name wins where we have one: it is the company's own, not a
     # label that happens to be in front of a dot.

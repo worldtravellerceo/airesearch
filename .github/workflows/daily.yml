@@ -87,7 +87,12 @@ jobs:
       # Also free, and unmetered: Crunchbase News is WordPress and its REST API
       # is public. It is the only place any source here states a valuation, so
       # it runs daily rather than only with the paid pull it used to sit beside.
+      # Loud, but not fatal. A refusal now raises rather than pretending to be
+      # an empty result — and this job's failure would take `publish` with it,
+      # so a bad afternoon at news.crunchbase.com would cost the whole site a
+      # rebuild. The step goes red, the run carries on.
       - name: Read the valuations off the press
+        continue-on-error: true
         run: airadar companies-valuations --limit 400
 
       # The queue of repositories the engine did not settle. It has existed as

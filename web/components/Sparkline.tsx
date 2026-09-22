@@ -36,7 +36,10 @@ export function Sparkline({
   label?: string;
 }) {
   const points = values?.filter((v): v is number => v !== null && v !== undefined) ?? [];
-  if (!values || points.length < MIN_POINTS) {
+  // Not only how many points there are, but whether any two are adjacent:
+  // [1, null, 2, null, 3] has three values and no line to draw, and rendered
+  // as an empty box with a single floating dot.
+  if (!values || points.length < MIN_POINTS || longestRun(values) < 2) {
     return (
       <span
         className="text-ink-muted text-xs"
@@ -64,17 +67,17 @@ export function Sparkline({
 
   // A gap inside the series is a day with no row, not a day with no stars, so
   // the line breaks rather than dipping to zero through it.
-  const segments: string[] = [];
-  let current: string[] = [];
+  const segments: Array<Array<[number, number]>> = [];
+  let current: Array<[number, number]> = [];
   drawn.forEach((value, i) => {
     if (value === null || value === undefined) {
-      if (current.length > 1) segments.push(current.join(" "));
+      if (current.length > 1) segments.push(current);
       current = [];
       return;
     }
-    current.push(`${x(i)},${y(value)}`);
+    current.push([x(i), y(value)]);
   });
-  if (current.length > 1) segments.push(current.join(" "));
+  if (current.length > 1) segments.push(current);
 
   let lastIndex = -1;
   for (let i = 0; i < drawn.length; i += 1) {
@@ -82,11 +85,19 @@ export function Sparkline({
     if (value !== null && value !== undefined) lastIndex = i;
   }
   const last = lastIndex >= 0 ? (drawn[lastIndex] ?? 0) : 0;
-  // Only the final unbroken run is filled: shading across a gap would draw an
-  // area over days nobody measured.
-  const tail = segments.length ? segments[segments.length - 1] : "";
-  const tailStart = tail ? tail.split(" ")[0].split(",")[0] : "0";
-  const area = tail ? `${tailStart},${height} ${tail} ${x(lastIndex)},${height}` : "";
+
+  // Only the final unbroken run is filled, and it closes at its *own* last
+  // point. Closing at the last value anywhere in the series dragged the shading
+  // across the gap in front of it — over days nobody measured, which is the
+  // thing the broken line exists to show.
+  const tail = segments.length ? segments[segments.length - 1] : null;
+  const area = tail
+    ? [
+        `${tail[0][0]},${height}`,
+        ...tail.map(([px, py]) => `${px},${py}`),
+        `${tail[tail.length - 1][0]},${height}`,
+      ].join(" ")
+    : "";
 
   return (
     <svg
@@ -101,7 +112,7 @@ export function Sparkline({
       {segments.map((segment, i) => (
         <polyline
           key={i}
-          points={segment}
+          points={segment.map(([px, py]) => `${px},${py}`).join(" ")}
           fill="none"
           stroke="var(--series-1)"
           strokeWidth={1.75}
@@ -121,6 +132,17 @@ export function Sparkline({
       />
     </svg>
   );
+}
+
+/** The longest stretch of consecutive measured days in the series. */
+function longestRun(values: Array<number | null>): number {
+  let best = 0;
+  let run = 0;
+  for (const value of values) {
+    run = value === null || value === undefined ? 0 : run + 1;
+    if (run > best) best = run;
+  }
+  return best;
 }
 
 function daysBetween(from: string, until: string): number {

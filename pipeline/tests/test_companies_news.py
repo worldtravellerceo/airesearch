@@ -224,3 +224,25 @@ def test_the_dictionary_is_every_domain_we_hold_not_the_47_we_bought(conn):
     assert names.get("anthropic") == "anthropic.com"
     assert "intelligence" not in names  # generic
     assert "ab" not in names  # under the floor
+
+
+def test_a_contested_label_goes_to_the_domain_with_the_following(conn):
+    """85 labels here are claimed by more than one domain, and almost every one
+    is a single company holding several (`openai.com` and `openai.fm`). Dropping
+    them all loses OpenAI; resolving them by SQLite's row order is a coin toss.
+    The press writes about the domain people have heard of."""
+    company_db.upsert_seeds(
+        conn,
+        [
+            CompanySeed(domain="openai.fm", stars=2_894, repos=1),
+            CompanySeed(domain="openai.com", stars=215_345, repos=37),
+            CompanySeed(domain="distinctive.io", stars=10, repos=1),
+        ],
+        now=NOW,
+    )
+    conn.commit()
+
+    names = news.known_names(conn)
+
+    assert names["openai"] == "openai.com"
+    assert names["distinctive"] == "distinctive.io"

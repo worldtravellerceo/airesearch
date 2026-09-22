@@ -415,3 +415,56 @@ def test_identity_evidence_overrides_the_product_reading():
         ).is_ai
         is True
     )
+
+
+def test_a_hostname_in_a_readme_is_an_address_too():
+    """The TLD strip was applied to the description and not to the README, so
+    the token tier went on reading `comma.ai` as a witness. Measured: a
+    key-value store whose README names the domain three times came back AI at
+    0.85 with the fix in place and the README left out of it."""
+    verdict = classify(
+        RepoFacts(
+            full_name="acme/store",
+            description="A distributed key value store in under 1000 lines",
+            readme_excerpt=(
+                "# store\n\nA small distributed key value store. Used in production at "
+                "comma.ai. Install from install.sh; see comma.ai for the deployment "
+                "notes and comma.ai for benchmarks."
+            ),
+        )
+    )
+
+    assert verdict.is_ai is False
+
+
+def test_a_topic_on_both_sides_of_the_product_test_counts_for_neither():
+    """`observability` is a monitoring category and also what an LLM tracing
+    tool calls itself, so it appears in `PRODUCT_TOPICS` and in the AI
+    vocabulary at once.
+
+    Counting it on both sides of `len(product) > len(declared_ai)` happens to
+    be harmless — adding one to each side of a strict inequality cannot change
+    it, and every verdict is identical either way. It is subtracted from both
+    anyway, so the code says what it means and a second overlapping topic
+    cannot quietly start mattering. This test pins the arithmetic, not a
+    behaviour change."""
+    import airadar.classify.rules as module
+
+    assert module.PRODUCT_TOPICS & module.AI_TOPIC_VOCABULARY == {"observability"}
+
+    plain = classify(facts("acme/watcher", "A metrics platform", ["monitoring", "database"]))
+    with_overlap = classify(
+        facts("acme/watcher", "A metrics platform", ["monitoring", "database", "observability"])
+    )
+
+    # It is still weak AI evidence in its own right, so the score moves.
+    assert with_overlap.confidence > plain.confidence
+    # What it must not do is tip the product reading either way.
+    assert with_overlap.is_ai is plain.is_ai
+
+
+def test_a_repository_named_after_its_own_domain_keeps_it():
+    """`fossasia/susi.ai` is a chatbot claiming that name, not an address it
+    cites. The strip applies to what a description mentions, not to what the
+    repository calls itself."""
+    assert classify(facts("fossasia/susi.ai", "SUSI.AI Web Client")).confidence > 0.0
