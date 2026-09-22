@@ -367,3 +367,42 @@ def test_the_field_had_a_vocabulary_before_it_was_called_ai():
         assert classify(RepoFacts(full_name="acme/thing", description=description)).is_ai, (
             description
         )
+
+
+async def test_a_long_pass_stops_itself_before_the_job_does(conn):
+    """53,475 repositories took 322 minutes against a 330-minute job limit and
+    were killed mid-flight. The work survived only because the publish step
+    runs on `always()` — luck, not design. A pass bounded by time lands on
+    purpose, and says how much it left behind."""
+
+    from airadar import collect as collect_mod
+
+    for repo_id in range(1, 30):
+        db.upsert_repos(
+            conn,
+            [
+                db.RepoRecord(
+                    id=repo_id,
+                    full_name=f"acme/r{repo_id}",
+                    owner="acme",
+                    name=f"r{repo_id}",
+                    stars=5_000,
+                )
+            ],
+        )
+    conn.commit()
+
+    def handler(request: httpx.Request) -> httpx.Response:
+        return httpx.Response(404, json={"message": "Not Found"})
+
+    async with GitHubClient(
+        token="t", transport=httpx.MockTransport(handler), sleep=_no_sleep
+    ) as client:
+        # A deadline already past: nothing should be attempted, and every row
+        # should be reported as still waiting.
+        report = await collect_mod.fetch_readmes(conn, client, max_minutes=-1)
+
+    assert report.considered == 29
+    assert report.fetched + report.missing + report.failed == 0
+    assert report.left == 29
+    assert "left for the next run" in report.summary()

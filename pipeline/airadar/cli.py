@@ -785,6 +785,9 @@ def readmes(
     limit: int = typer.Option(None, "--limit", help="How many repos this run"),
     min_stars: int = typer.Option(1000, "--min-stars", help="Ignore repos below this"),
     refetch: bool = typer.Option(False, "--refetch", help="Re-read READMEs already fetched"),
+    max_minutes: float = typer.Option(
+        None, "--max-minutes", help="Stop cleanly after this long, leaving the rest for next time"
+    ),
 ) -> None:
     """Read the README of every repo the metadata could not place.
 
@@ -800,7 +803,12 @@ def readmes(
         with db.connect(settings.db_path) as conn:
             async with GitHubClient() as client:
                 return await collect_mod.fetch_readmes(
-                    conn, client, limit=limit, min_stars=min_stars, refetch=refetch
+                    conn,
+                    client,
+                    limit=limit,
+                    min_stars=min_stars,
+                    refetch=refetch,
+                    max_minutes=max_minutes,
                 )
 
     report = asyncio.run(run())

@@ -45,7 +45,8 @@ async def _for_each(
     worker: Callable[[dict], Awaitable[None]],
     *,
     concurrency: int,
-) -> None:
+    deadline: dt.datetime | None = None,
+) -> int:
     """Run `worker` over every row with `concurrency` requests in flight.
 
     Sequential collection is bounded by the round trip, not by quota: one
@@ -57,15 +58,24 @@ async def _for_each(
     threaded. Coroutines only interleave at an `await`, and every write in the
     workers below is separated from its neighbours by none — so no worker can
     observe another's half-written repo.
+
+    `deadline` stops the workers cleanly, which is what makes a long job land.
+    A README pass over the 53,475 repositories with no signal ran 322 minutes
+    against a 330-minute job limit and was killed mid-flight — the work it had
+    done survived only because the publish step runs on `always()`. A job that
+    stops itself with time to spare publishes on purpose rather than by luck.
+    Returns how many rows went unprocessed.
     """
     if not rows:
-        return
+        return 0
     queue: asyncio.Queue[dict] = asyncio.Queue()
     for row in rows:
         queue.put_nowait(row)
 
     async def drain() -> None:
         while True:
+            if deadline is not None and dt.datetime.now(dt.UTC) >= deadline:
+                return
             try:
                 row = queue.get_nowait()
             except asyncio.QueueEmpty:
@@ -73,6 +83,7 @@ async def _for_each(
             await worker(row)
 
     await asyncio.gather(*(drain() for _ in range(min(concurrency, len(rows)))))
+    return queue.qsize()
 
 
 @dataclass
@@ -371,12 +382,14 @@ class ReadmeReport:
     unchanged: int = 0
     missing: int = 0
     failed: int = 0
+    left: int = 0
 
     def summary(self) -> str:
+        tail = f", {self.left} left for the next run" if self.left else ""
         return (
             f"{self.fetched} fetched, {self.unchanged} unchanged, "
             f"{self.missing} have none, {self.failed} failed "
-            f"(of {self.considered} considered)"
+            f"(of {self.considered} considered){tail}"
         )
 
 
@@ -387,6 +400,7 @@ async def fetch_readmes(
     limit: int | None = None,
     min_stars: int = 1000,
     refetch: bool = False,
+    max_minutes: float | None = None,
 ) -> ReadmeReport:
     """Read the README of every repository the metadata could not place.
 
@@ -447,6 +461,11 @@ async def fetch_readmes(
             db.set_readme(conn, row["id"], excerpt=result.excerpt, etag=result.etag)
         conn.commit()
 
-    await _for_each(queue, one, concurrency=settings.concurrency)
+    deadline = (
+        dt.datetime.now(dt.UTC) + dt.timedelta(minutes=max_minutes)
+        if max_minutes is not None
+        else None
+    )
+    report.left = await _for_each(queue, one, concurrency=settings.concurrency, deadline=deadline)
     log.info("readme: %s", report.summary())
     return report

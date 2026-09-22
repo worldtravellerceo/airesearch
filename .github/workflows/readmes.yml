@@ -12,10 +12,14 @@ name: READMEs
 on:
   workflow_dispatch:
     inputs:
-      limit:
-        description: "How many repositories this run"
+      max_minutes:
+        description: "Stop reading after this many minutes, leaving the rest for the next run"
         required: false
-        default: "20000"
+        default: "240"
+      limit:
+        description: "Upper bound on repositories considered"
+        required: false
+        default: "60000"
       min_stars:
         description: "Ignore repositories below this"
         required: false
@@ -42,9 +46,17 @@ jobs:
         with:
           token: ${{ github.token }}
 
+      # Bounded by time, not by a count. The first bulk pass asked for all
+      # 53,475 repositories with no signal, ran 322 minutes against the
+      # 330-minute job limit and was killed mid-flight; what it had done
+      # survived only because the publish step runs on `always()`. Stopping
+      # with an hour to spare means the run lands on purpose, says how many
+      # are left, and the next one picks them up — `readme_fetched_at` is the
+      # bookmark.
       - name: Read
         run: |
-          airadar readmes --limit ${{ inputs.limit || 20000 }} \
+          airadar readmes --max-minutes ${{ inputs.max_minutes || 240 }} \
+            --limit ${{ inputs.limit || 60000 }} \
             --min-stars ${{ inputs.min_stars || 1000 }}
 
       # Published before the reclassify, so a run that dies in scoring still
