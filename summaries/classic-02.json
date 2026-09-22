@@ -1,0 +1,175 @@
+{
+ "repos": [
+  {
+   "full_name": "keras-team/keras",
+   "inputs_hash": "5e40c0d0b9b68ff1037d743899c0a376",
+   "description_tr": "Keras 3, JAX, TensorFlow, PyTorch ve yalnızca çıkarım için OpenVINO backend'leri üzerinde çalışan çok backend'li bir derin öğrenme framework'üdür. Yüksek seviyeli bir API ile görüntü işleme, doğal dil işleme, ses, zaman serisi ve öneri sistemi modelleri tanımlanır ve eğitilir; model kodu backend'den bağımsız yazılır. Aynı kod dizüstü bilgisayardan GPU ve TPU kümelerine kadar ölçeklenebilir, backend seçimi performansı doğrudan etkiler. Apache-2.0 lisanslı, yaklaşık 64K star; Linux ve macOS destekleniyor, Windows için WSL2 öneriliyor. Keras 2 ayrı bir paket olarak (tf-keras) sürdürülüyor, Keras 3 pip üzerinden kuruluyor ve backend paketi ayrıca yükleniyor.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam Kanarya'da toplanan fizyolojik veriden küçük bir sınıflandırma modeli eğitmek olabilir, ki bu bugün gündeminde olan bir adım değil. Senin tarafındaki iş model eğitmek değil, hazır modelleri (STT, LLM, görüntü) Mac'te yerel çalıştırıp uygulamalara bağlamak; Keras bu zincirin hiçbir adımına girmiyor. Expo veya Supabase tarafına gömülebilecek bir bileşen de değil, çünkü ürettiği şey Python tarafında kalan bir eğitim ve çıkarım grafiği. Gerçekten kendi modelini eğitmen gereken bir ihtiyaç çıkarsa framework seçimini o noktada yapmak daha doğru olur. Şimdilik bunu bir araç olarak listeye almanın karşılığı yok.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "ultralytics/ultralytics",
+   "inputs_hash": "3e86a3f65bbe61c032b82f24414f8bc7",
+   "description_tr": "Ultralytics, YOLO ailesinin (YOLOv8'den YOLO27'ye) eğitim ve çıkarım arayüzünü tek bir Python paketinde toplayan bir bilgisayarlı görü kütüphanesidir. Nesne tespiti, örnek ve anlamsal segmentasyon, görüntü sınıflandırma, poz tahmini, döndürülmüş kutu tespiti ve nesne takibi aynı API üzerinden çalışır. PyTorch tabanlıdır, önceden eğitilmiş ağırlıklarla gelir ve hem komut satırından hem Python'dan kullanılabilir. AGPL-3.0 lisanslıdır; kapalı kaynak ürünlerde kullanım için ayrı ticari lisans gerekir. Yaklaşık 62K star, geniş dokümantasyon ve çok aktif bir geliştirme temposu var.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam neuroteknoloji tezinin altındaki görüntü skorlamalı uygulama konsepti ve scouting fikrindeki görsel analiz, ikisi de henüz kod yazılacak aşamada değil. Lyricdrop'un ihtiyacı görüntüde nesne bulmak değil ses ile metni hizalamak, Folio'nunki ise içerik üretmek; ikisi de bu kütüphanenin çözdüğü problem değil. Poz tahmini modelleri antrenman takibi gibi kişisel bir denemede ofisteki Mac'te yerel çalışır ve API maliyeti getirmez, ama bu bir proje değil hobi denemesi olur. Pratik uyarı: AGPL-3.0, yayınlamayı düşündüğün kapalı bir uygulamaya gömmeni engeller, ticari lisans ayrıca alınır. Somut bir görü ihtiyacı netleşmeden başlamaya değmez.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "CorentinJ/Real-Time-Voice-Cloning",
+   "inputs_hash": "95746696971829a3ad5033bdae91de4c",
+   "description_tr": "Bu depo, SV2TTS makalesinin açık kaynak bir uygulamasıdır: birkaç saniyelik kayıttan bir sesin dijital temsilini çıkarır ve o sesle verilen metni okutur. Üç aşamalı bir zincir kullanır — konuşmacı doğrulamasından gelen encoder, Tacotron sentezleyici ve WaveRNN vocoder. GUI'li bir toolbox ve komut satırı arayüzü vardır; NVIDIA GPU ile veya yalnızca CPU ile çalıştırılabilir, önceden eğitilmiş modeller otomatik indirilir. Yaklaşık 60K star toplamış olsa da README'nin kendisi projenin eskidiğini belirtiyor ve güncel alternatif olarak Chatterbox'ı işaret ediyor. Lisans alanı standart bir SPDX etiketine oturmuyor, bu da kullanım koşullarını ayrıca kontrol etmeyi gerektirir.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam Folio'nun günlük içerik pipeline'ında seslendirme üretmek olabilir. Ancak buradaki yöntem sıfırdan ses üretmek değil belirli bir kişinin sesini taklit etmek; bir yazarın sesiyle içerik üretmek kişisel bir uygulamada bile taşımaya değmeyecek bir risk getirir. Lyricdrop tarafında ihtiyacın olan şey metinden ses değil, sesten kelime zamanı çıkarmak; yani STT, TTS değil. Deponun kendi uyarısı da belirleyici: proje bakımda değil ve daha yeni alternatiflere yönlendiriyor, o yüzden bunun üzerine zaman koymak yanlış başlangıç olur. Seslendirme gerçekten gerekirse güncel ve lisansı net bir TTS projesiyle karşılaştırmalı bakman daha doğru.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "FoundationAgents/OpenManus",
+   "inputs_hash": "83ea7dd1162e01c7358e06a62ec558bf",
+   "description_tr": "OpenManus, Manus benzeri genel amaçlı bir AI ajanının açık kaynak uygulamasıdır; çekirdek geliştiriciler MetaGPT ekibinden geliyor. Ajan, araç kullanan bir döngü olarak çalışır: varsayılan olarak Browser Use CLI'yi MCP sunucusu olarak başlatır, tarayıcıda gezinip ekran görüntüsü alabilir, dosya ve kod araçlarını kullanır. Yapılandırma config.toml üzerinden yapılır; OpenAI uyumlu bir LLM endpoint'i, ayrıca isteğe bağlı bir vision modeli tanımlanır. Python 3.12 ile conda veya uv kullanılarak kurulur; tarayıcı yerel modda Chrome/Chromium'a API anahtarı olmadan bağlanır. MIT lisanslı, yaklaşık 58K star; RL ile ajan eğitimi için OpenManus-RL adlı ayrı bir proje yürütülüyor.",
+   "usage_tr": "Asistan ve holding operasyon araçları tarafındaki tekrarlayan araştırma işleri — tedarikçi ve hizmet sağlayıcı karşılaştırma, bir listeyi tarayıp tabloya çevirme — OpenManus'un tarayıcı ajanına devredilebilecek işlerin tam tanımı. Kurulum ofisteki Mac'te yerel kalır ve tarayıcı tarafı yerel modda anahtar istemez, ancak ajanın beyni için OpenAI uyumlu bir endpoint tanımlaman gerekir; bu da Max aboneliğinin dışında ayrı bir kullanım maliyeti demektir. Bu maliyeti istemiyorsan aynı config'e Mac'te çalışan yerel bir modeli OpenAI uyumlu endpoint olarak verip önce düşük riskli işlerde ölçebilirsin. Arslan Holding'in ilk eleme araştırmalarında da aynı kalıp kullanılabilir; çıktıyı n8n ile Trello'ya veya HubSpot'a düşürmek doğal devam olur. Uyarı: proje hâlâ prototip olgunluğunda ve tarayıcıyı senin oturumlarınla kullanır, bu yüzden ayrı ve izole bir tarayıcı profiliyle çalıştırmak gerekir. Fayda net: bir araştırma işini baştan sona bırakıp sonucu kontrol etmek, adım adım yönlendirmekten hızlıdır.",
+   "matched_project": "Asistan ve holding operasyon araçları",
+   "relevance": 6,
+   "investment_note": "Çekirdek ekibin MetaGPT'den gelmesi ve genel amaçlı ajan katmanının hâlâ oturmamış bir pazar olması, bu ekibi ve çevresindeki topluluğu erken aşama ajan yatırımları için tanışmaya değer bir referans yapıyor."
+  },
+  {
+   "full_name": "deepfakes/faceswap",
+   "inputs_hash": "c62bbf8df0c785d5f3b17ad0ff8797d9",
+   "description_tr": "FaceSwap, fotoğraf ve videolarda yüzleri derin öğrenmeyle tanıyıp değiştiren bir masaüstü aracıdır. Çalışma akışı üç adımdır: yüzleri çıkarma (extract), model eğitme (train) ve dönüştürme (convert); komut satırının yanında bir GUI de sunar. Birden fazla model mimarisi içerir ve eğitim ciddi GPU kaynağı ister. GPL-3.0 lisanslı, yaklaşık 58K star; forum ve dokümantasyonla birlikte uzun süredir sürdürülüyor. README'de aracın etik kullanımına ayrılmış bir manifesto bölümü bulunuyor.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam Folio'nun AI üretimi görsel ve video içeriği olabilir. Ama Folio'nun ihtiyacı sıfırdan içerik üretmek, var olan bir videodaki yüzü başkasıyla değiştirmek değil; üstelik gerçek kişilerin yüzleri üzerinde çalıştığı için yayınlanmayan kişisel bir uygulamada bile getirdiği risk faydasından büyük. GPL-3.0 lisansı, ileride ticarileştirmeyi düşündüğün hiçbir uygulamaya gömülmesine izin vermez. Teknik tarafta da uymuyor: model eğitimi GPU'ya dayalı ve ofisteki Mac'te pratik bir süre içinde sonuç vermez. Kısacası bu, senin iş akışında karşılığı olmayan bir araç.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "ageitgey/face_recognition",
+   "inputs_hash": "793a0fe210fe3b512cd9931ebad6b940",
+   "description_tr": "face_recognition, dlib'in yüz tanıma modelleri üzerine kurulmuş, Python ve komut satırından kullanılabilen basit bir yüz tespiti ve tanıma kütüphanesidir. Bir görüntüdeki yüzleri bulur, göz, burun, ağız ve çene hatlarını çıkarır ve yüzleri karşılaştırarak kimlik eşleştirmesi yapar. Arkasındaki modelin Labeled Faces in the Wild ölçütünde %99.38 doğruluk bildirdiği belirtiliyor. API birkaç fonksiyondan ibaret; bir klasördeki fotoğraflar üzerinde komut satırından toplu çalıştırma da mümkün. MIT lisanslı ve yaklaşık 57K star; kod tabanı uzun süredir büyük bir değişiklik görmeyen, olgun ama eski nesil bir çözüm.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, scouting fikrinde biriken fotoğraf arşivini kişiye göre otomatik gruplamak olabilir, ama o taraf henüz bir yazılım ihtiyacı üretmiş değil. Lyricdrop, Folio ve kişisel bilgi tabanı projelerinin hiçbirinde yüz kimliği çıkarmayı gerektiren bir adım yok. Teknik kriterlerin açısından sorun yok — Mac'te yerel çalışır, API maliyeti getirmez, MIT lisansıyla kendi uygulamana gömülebilir — ama çözdüğü problem bugün senin listende değil. Ayrıca yüz verisi işlemek, kişisel veri tarafında ayrı bir yük ve saklama kararı getirir. Gerçek bir ihtiyaç doğmadan kurmaya değmez.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "rohitg00/ai-engineering-from-scratch",
+   "inputs_hash": "3318af1aaadaf11466e10fe84046e7ff",
+   "description_tr": "Bu depo, AI mühendisliğini sıfırdan implementasyonlarla öğretmeyi hedefleyen 20 fazlık ve 523 derslik bir müfredattır. Kapsam transformer'lardan ajanlara, MCP'ye, RAG'e, bilgisayarlı görüye ve pekiştirmeli öğrenmeye kadar uzanıyor; örnekler Python'un yanında Rust ve TypeScript içeriyor. Landing sayfaları on iki dile çevrilmiş, ders sayfaları ayrı bir branch'te makine çevirisiyle sunuluyor; İngilizce kanonik kabul ediliyor. MIT lisanslı ve eşlik eden bir web sitesi var. Mart 2026'da açılmış olmasına rağmen yaklaşık 55K star toplamış, yani çok hızlı büyümüş ve henüz olgunlaşmamış bir kaynak.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, birlikte çalışacağın veya işe alacağın birine verilecek bir müfredat olabilir. Senin çalışma şeklin modelleri sıfırdan yazmak değil, hazır parçaları Claude Code ile birleştirip ürüne çevirmek; 523 dersin büyük kısmı bu işe girmiyor. MCP ve ajan bölümleri tek tek okunabilir, ama aynı bilgiyi zaten kendi projelerinde uygulayarak ediniyorsun. Depo çok yeni olduğu için bölümler arasında kalite farkı olması beklenir; tamamını bir plan gibi benimsemek yerine tek bir konuya ihtiyacın olduğunda başvurmak daha mantıklı. Maliyet riski yok, tamamen ücretsiz ve yerel okunabilir bir kaynak.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "hesreallyhim/awesome-claude-code",
+   "inputs_hash": "567a07ecac0efc4ca1f81ad021c239a5",
+   "description_tr": "Bu depo, Claude Code çevresindeki kaynakların elle seçilmiş bir dizinidir: skill'ler, agent'lar, status line'lar, plugin'ler, geliştirici araçları, dokümantasyon ve topluluk projeleri. Liste yakın zamanda yenilenmiş; eski kayıtlar README_ALTERNATIVES dizininde korunuyor ve kademeli olarak yeni formata taşınıyor. Seçimlerde kod kalitesi, güvenlik ve özgünlüğün öne alındığı belirtiliyor; içerik hem yeni başlayanlara hem deneyimli kullanıcılara hitap edecek şekilde bölümlenmiş. Yaklaşık 54K star; lisans alanı standart bir etikete oturmuyor. Depo bir yazılım değil, bakımı süren bir kaynak listesidir.",
+   "usage_tr": "Claude Code günlük ana aracın olduğu için bu liste doğrudan senin tarafında duruyor: Superpowers'ın yanına koyacağın reviewer agent'ları, hook'ları, skill'leri ve CLAUDE.md örneklerini tek yerden tarayabilirsin. Özellikle istediğin çift review düzeni — geliştirici doğruluğu için bir agent, ürün ve eğitim mantığı için ayrı bir agent — listedeki agent ve skill başlıklarında örnekleri olan bir kalıp; ilk denemeyi Lyricdrop v2'nin admin paneli ve hizalama kodu üzerinde yapabilirsin. Kurulum maliyeti yok; bunlar Max aboneliğinle çalışan yerel yapılandırmalar, ayrı bir API faturası çıkarmıyor. Bu, asistanına devredilecek bir iş değil; hangi plugin'in senin akışına gireceğine kendin karar vermelisin. Uyarı: üçüncü parti plugin ve hook'lar repo'nda tam yetkiyle çalışır ve listede yer almak denetlenmiş olmak anlamına gelmez, kurmadan önce kaynağını okumak gerekir. Listenin yeniden düzenleniyor olması da bazı iyi kaynakların şu an görünmediği anlamına geliyor, eski bölüme de bakmakta fayda var.",
+   "matched_project": "Claude Code",
+   "relevance": 9,
+   "investment_note": null
+  },
+  {
+   "full_name": "Avik-Jain/100-Days-Of-ML-Code",
+   "inputs_hash": "672188d8d129468e62011c7df0cfae57",
+   "description_tr": "100 Days of ML Code, klasik makine öğrenmesi konularını gün gün ilerleyen kısa derslere bölen bir öğrenme deposudur. Veri ön işleme, lineer ve lojistik regresyon, KNN, destek vektör makineleri ve naive Bayes gibi konular scikit-learn örnekleriyle ve her gün için hazırlanmış infografiklerle anlatılıyor. İçerik ağırlıklı olarak markdown, kod parçacıkları ve görsellerden oluşuyor; baskın bir programlama dili etiketi yok. 2018'de başlatılmış bir challenge'ı izliyor ve o dönemden bu yana kapsamı genişlemiş değil. MIT lisanslı, yaklaşık 52K star; modern derin öğrenme veya LLM konularına girmiyor.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, temel istatistik ve model sezgisini tazelemek isteyen birine verilecek bir başlangıç kaynağı olabilir. Ürünlerinde kullandığın yapay zeka hazır modeller ve API'ler üzerinden geliyor, regresyon ya da SVM eğitmen gereken bir adım yok. İçerik 2018 dönemine ait olduğu için bugünkü araçlarla da örtüşmüyor. Bir kod bileşeni olmadığı için Lyricdrop veya Folio'ya gömülebilecek bir tarafı da yok. Kısacası bu, senin akışında yeri olmayan bir eğitim arşivi.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "roboflow/supervision",
+   "inputs_hash": "728b4c434498c1c7564d67dff71ce2fb",
+   "description_tr": "supervision, bilgisayarlı görü projelerinde tekrar eden yardımcı işleri toplayan model-agnostik bir Python kütüphanesidir. Veri setlerini COCO, Pascal VOC ve YOLO formatlarında yükleyip dönüştürür, tespitleri görüntü ve video üzerine çizer, belirli bir bölgedeki nesneleri sayar, takip yapar ve tespit metriklerini hesaplar. Farklı tespit modellerinin çıktısını ortak bir veri yapısına indirger, böylece model değiştirmek çevre kodunu bozmaz. MIT lisanslı, yaklaşık 51K star; dokümantasyonu ve Colab örnekleri güncel tutuluyor. Kendi başına bir model değil, bir model etrafındaki iskelettir.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam daha önce bir stand-up özelini çözümlerken yaptığın türde bir video analizi tekrarlarsa, sahne ve hareket sayımını düzenli hale getirmek olabilir. Bu kütüphanenin değeri, hâlihazırda çalışan bir tespit modeliniz olduğunda ortaya çıkıyor; senin aktif projelerinin hiçbirinde öyle bir model yok. Lyricdrop'ta problem ses tarafında, Folio'da ise üretim tarafında; ikisi de tespit çıktısı işlemiyor. MIT lisansı ve yerel çalışabilmesi kriterlerine uyuyor, yani ileride bir görü adımı doğarsa ilk bakılacak yerlerden biri olur. Bugün için kurup denemenin somut bir karşılığı yok.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "jakevdp/PythonDataScienceHandbook",
+   "inputs_hash": "a7837b9f551471f66271660e30d34716",
+   "description_tr": "Bu depo, Python Data Science Handbook kitabının tamamını çalıştırılabilir Jupyter notebook'ları olarak barındırır. IPython, NumPy, pandas, matplotlib ve scikit-learn'ü temel kullanım kalıplarıyla anlatır; notebook'lar Colab veya Binder üzerinden doğrudan açılabilir. Kitap Python 3.5 döneminde yazılmış ve dil seviyesinde temel bilgi varsaymış, dile giriş için ayrı bir eşlik projesine yönlendiriyor. MIT lisanslı ve yaklaşık 50K star toplamış; içerik yıllardır büyük ölçüde sabit kalmış bir referans. Bir kütüphane değil, öğrenme ve başvuru materyalidir.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam kişisel bilgi tabanında biriken notların ya da Kanarya verisinin pandas ile incelenmesi olabilir. Ama o analizleri şu anda Claude Code'a yazdırıyorsun ve kitabın kendisi bir araç değil, bir ders kaynağı. Veri bilimi temellerini kendin öğrenmek yerine sonuç üretmeye odaklandığın için bu kaynağın sana kazandıracağı zaman sınırlı. Notebook'lar yerel Mac'te sorunsuz çalışır, maliyet ya da lisans riski yok. Merak ettiğin belirli bir konu çıktığında tek bölüm olarak bakmak, baştan sona okumaktan daha mantıklı olur.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "GokuMohandas/Made-With-ML",
+   "inputs_hash": "e93137dc28a75c66b747504a20b9f2b8",
+   "description_tr": "Made With ML, makine öğrenmesi uygulamalarını deneyden üretime taşıma sürecini anlatan bir ders serisi ve kod deposudur. Tasarım, geliştirme, dağıtım ve iterasyon aşamalarını sırayla ele alır; veri kalitesi, dağıtık eğitim, test ve MLOps pratikleri konularını kapsar. Kod örnekleri Jupyter notebook'ları halinde ve PyTorch ile Ray üzerine kurulu. MIT lisanslı, yaklaşık 50K star; eşlik eden bir web sitesi ve geniş bir okuyucu kitlesi var. Ürün odaklı değil, üretim disiplinini öğretmeyi hedefleyen bir müfredattır.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, kendi ürünlerinde kurmak istediğin kalite ve süreç disiplini olabilir. Fakat buradaki disiplin kendi modelini eğitip servis eden ekipler için tasarlanmış; senin yığınında eğitim, model versiyonlama veya model servis etme katmanı yok. Lyricdrop ve Folio'da yapay zeka hazır modeller ve API'ler üzerinden geliyor, bu yüzden dersin merkezindeki adımların çoğu karşılıksız kalıyor. İhtiyacın olan review ve kalite kapıları daha çok kod ajanları ve test süreçleri tarafında, bu müfredatın kapsamında değil. Bir kod bileşeni olarak da projelerine gömülebilecek bir yanı bulunmuyor.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "JuliaLang/julia",
+   "inputs_hash": "5c602fb6cfc4f67effb2d513f604993d",
+   "description_tr": "Julia, teknik ve bilimsel hesaplama için tasarlanmış yüksek performanslı, dinamik bir programlama dilidir. Dinamik dillerin yazım kolaylığını JIT derlemeyle birleştirerek sayısal iş yüklerinde derlenmiş dillere yakın hız hedefler. Paralel hesaplama, HPC ve sayısal analiz ekosistemi güçlüdür; geniş bir paket kütüphanesi, forum ve dokümantasyon altyapısı vardır. MIT lisanslı, 2011'den beri geliştiriliyor ve yaklaşık 49K star ile olgun bir topluluğa sahip. Bir uygulama ya da kütüphane değil, dilin kendisinin kaynak deposudur.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam güneş enerjisi yatırımındaki üretim simülasyonu ve finansman modellemesi gibi sayısal işler olabilir. Ancak o tarafta hazır sektör araçları ve elektronik tablo modelleri yeterli; yeni bir dil öğrenmek karar hızını artırmaz, yavaşlatır. Ürün tarafındaki yığının TypeScript ve Python üzerine kurulu, Julia bu ikisinin arasına doğal olarak girmiyor. Mac'te yerel çalışır ve maliyeti yoktur, yani engel teknik değil, ihtiyacın olmaması. Bilimsel hesaplama gerektiren bir iş çıkarsa o zaman değerlendirmek doğru olur.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "microsoft/qlib",
+   "inputs_hash": "f84b6cedebe865bc9917203a673b8370",
+   "description_tr": "Qlib, kantitatif yatırım araştırmasını uçtan uca destekleyen, yapay zeka odaklı bir platformdur. Hisse senedi verisi altyapısı, özellik mühendisliği, model eğitimi ve backtest adımlarını tek bir çerçevede birleştirir; denetimli öğrenme, piyasa dinamikleri modelleme ve pekiştirmeli öğrenme gibi farklı paradigmaları destekler. Son dönemde faktör madenciliği ve model iyileştirmeyi LLM tabanlı ajanlarla otomatikleştiren RD-Agent projesiyle birlikte kullanılıyor. Python paketi olarak dağıtılıyor ve Linux, Windows ile macOS üzerinde çalışıyor. MIT lisanslı, yaklaşık 49K star; Microsoft tarafından sürdürülüyor ve dokümantasyonu geniş.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam Arslan Holding'in yatırım tarafı olabilir. Ama Qlib likit piyasalarda fiyat serileri üzerinden faktör ve strateji araştırması için tasarlanmış; senin odağın erken aşama özel şirketler ve orada karar verdiren veri fiyat serisi değil. Deal sourcing, screening ve due diligence tarafında ihtiyacın olan şey araştırma ajanları ve doküman analizi, bu platformun kapsamı değil. Kurulum ve veri seti hazırlığı ciddi bir zaman yatırımı ister; karşılığında alacağın çıktı bugünkü yatırım akışına girmiyor. Kamu piyasalarında sistematik bir strateji kurmak gündemine girerse o zaman bakılacak yer burası olur.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "streamlit/streamlit",
+   "inputs_hash": "9af3d9f447408a2875e78a572e095d0f",
+   "description_tr": "Streamlit, Python betiklerini birkaç satır kodla paylaşılabilir web uygulamalarına çeviren açık kaynak bir framework'tür. Slider, tablo, grafik gibi bileşenleri doğrudan Python'dan çağırır; frontend kodu yazmayı gerektirmez ve betik her etkileşimde yeniden çalıştırılarak arayüz güncellenir. pip ile kurulur, yerelde çalışır ve isteğe bağlı olarak sağlayıcının Community Cloud servisiyle yayınlanabilir. Veri panoları, iç araçlar ve model demoları için yaygın olarak kullanılıyor. Apache-2.0 lisanslı, yaklaşık 46K star ve aktif geliştirme sürüyor.",
+   "usage_tr": "Kişisel bilgi tabanı projesinde günlük ve haftalık raporları görmenin en ucuz yolu bu: Supabase'deki notları ve çıkarılan kategorileri okuyan tek dosyalık bir Python betiği ofisteki Mac'te yerel çalışır ve ayrı bir API maliyeti getirmez. Aynı kalıbı Lyricdrop v2'nin şarkı onay ekranında da kullanabilirsin; hızlı bir onay aracını mevcut Next.js panelinden ayrı tutmak, paneli bozmadan denemene izin verir. Kimlik doğrulama ve çok kullanıcılı yapı tarafı zayıf olduğu için dışarı açacağın oyuncu deneyimine uygun değil; orası Expo ve Supabase'de kalmalı. Asistanına ya da bir test kullanıcısına devretmek istersen Tailscale üzerinden Mac'teki uygulamayı paylaşabilirsin, ama buna kalıcı bir ürün değil iç araç gibi davranmak gerekir. Fayda açık: bir panoyu yazmak saatler değil dakikalar alır. Risk ise iç araçların birikip bakımı olmayan bir yığına dönüşmesi, bu yüzden her biri tek bir soruyu cevaplasın.",
+   "matched_project": "Kişisel bilgi tabanı",
+   "relevance": 5,
+   "investment_note": null
+  },
+  {
+   "full_name": "ray-project/ray",
+   "inputs_hash": "0669f237cfbe6e9cae3f80b9c848a3f6",
+   "description_tr": "Ray, Python ve yapay zeka iş yüklerini birden çok makineye dağıtmak için kullanılan bir hesaplama motorudur. Çekirdeğinde durumsuz task'lar ve durumlu actor'lardan oluşan dağıtık bir çalışma zamanı, üzerinde ise Data, Train, Tune, RLlib ve Serve kütüphaneleri bulunur. Bu kütüphaneler sırasıyla ölçeklenebilir veri işleme, dağıtık eğitim, hiperparametre arama, pekiştirmeli öğrenme ve model servis etme işlerini kapsar. Büyük dil modeli çıkarımı ve servis edilmesi de desteklenen senaryolar arasında. Apache-2.0 lisanslı, yaklaşık 44K star; arkasında ticari bir şirket ve geniş bir kurumsal kullanıcı tabanı var.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam Lyricdrop için çok sayıda şarkıyı toplu işlemek olabilir, ama o iş tek bir Mac'te sıraya alınarak da yürüyor. Ray'in çözdüğü problem hesabı birden çok makineye yaymak; senin altyapın tek bir güçlü dizüstü bilgisayar ve yönetilen servisler üzerine kurulu. Küme kurmak, kendi başına bakımı olan yeni bir sistem getirir ve bunu istemediğini biliyoruz. Yerel modelleri Mac'te çalıştırmak için de bu katmana ihtiyaç yok, doğrudan çalıştırmak yeterli. İçerik hacmi tek makinenin sınırını gerçekten zorlarsa yeniden bakmak anlamlı olur.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "aymericdamien/TensorFlow-Examples",
+   "inputs_hash": "c76b92a980c627cfb28b2bfcf26d26ee",
+   "description_tr": "Bu depo, TensorFlow'u örnekler üzerinden öğretmeyi amaçlayan bir eğitim koleksiyonudur. Lineer ve lojistik regresyondan word2vec, evrişimli ve yinelemeli ağlara kadar temel modelleri hem notebook hem düz kaynak kod olarak sunar. Hem TensorFlow v1 hem v2 sürümleri için örnekler barındırıyor; varsayılan örnekler 2020'de TF2'ye taşınmış, v1 içeriği ayrı bir dizinde bırakılmış. Yaklaşık 44K star toplamış ancak o tarihten sonra kapsamlı bir güncelleme almamış. Lisans alanı standart bir etikete oturmuyor; pratikte bir referans ve başlangıç arşivi olarak kullanılıyor.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam sinir ağlarının nasıl çalıştığına dair temel bir sezgi edinmek olabilir. Ürünlerinde model eğitmiyorsun, hazır modelleri yerel veya servis üzerinden çağırıyorsun; bu örneklerin hiçbiri o akışa girmiyor. İçerik ayrıca güncelliğini yitirmiş, bugünün araçlarıyla ve TensorFlow'un güncel sürümleriyle birebir örtüşmüyor. Gömülebilecek bir kütüphane de değil, örnek dosyalardan oluşan bir arşiv. Temel kavramlara bakmak istersen daha güncel bir kaynak seçmek daha verimli olur.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "gradio-app/gradio",
+   "inputs_hash": "75809eeac67b202ea929dc10641e4bae",
+   "description_tr": "Gradio, bir Python fonksiyonu, modeli veya API'si etrafında birkaç satır kodla web arayüzü üreten açık kaynak bir kütüphanedir. Ses, görüntü, video, metin ve dosya için hazır giriş-çıkış bileşenleri sunar; arayüz yerelde çalışır, geçici bir paylaşım linkiyle dışarı açılabilir veya bir barındırma servisine yüklenebilir. Notebook içinden de kullanılabildiği için model denemelerini görselleştirmek yaygın bir kullanım biçimi. Apache-2.0 lisanslı, yaklaşık 44K star; sürüm 5 ile arayüz katmanı yenilenmiş ve geliştirme aktif olarak sürüyor. Üretim uygulaması değil, demo ve iç araç katmanı olarak konumlanıyor.",
+   "usage_tr": "Lyricdrop v2'de denemeyi planladığın iki-üç STT sistemini karşılaştırmak için Gradio doğrudan kullanılabilir: aynı şarkı için her sistemin ürettiği kelime zamanlarını yan yana gösteren, sesi oynatıp hizalamayı kulakla ve gözle kontrol ettiğin küçük bir arayüz. Bu arayüz ofisteki Mac'te yerel modellerle çalışır, ek API maliyeti çıkarmaz ve sonucu Supabase'e yazan mevcut Python tarafına bağlanabilir. Yirmi-otuz şarkılık onay ve playtest kapısını dışarı vermek istediğinde, geçici paylaşım linkiyle test eden kişiye tek bir ekran verip cevaplarını toplayabilirsin; bu işi asistanın da yürütebilir. Fayda, hizalama hatalarını tablodan değil sesten yakalaman; hangi sistemin nerede kaydığını çok daha hızlı görürsün. Uyarı: Gradio bir iç araç katmanı, mobil tarafa gömülemez, oyuncu deneyimi Expo'da kalmalı. Paylaşım linkleri geçici ve linke sahip herkese açık olduğu için lisanslı ses dosyalarını bu yolla dağıtmamaya dikkat et.",
+   "matched_project": "Lyricdrop",
+   "relevance": 6,
+   "investment_note": null
+  },
+  {
+   "full_name": "deepspeedai/DeepSpeed",
+   "inputs_hash": "db19be7a6d86ae99e8f74a1f5c40e014",
+   "description_tr": "DeepSpeed, çok büyük derin öğrenme modellerinin eğitimini ve çıkarımını hızlandırmak için geliştirilmiş bir optimizasyon kütüphanesidir. ZeRO bellek optimizasyonları, veri, model ve pipeline paralelliği, mixture-of-experts desteği ve model sıkıştırma gibi teknikleri PyTorch üzerine ekler. Hedef donanım çok GPU'lu kümeler; son notlarda AMD GPU'larda kolektif işlemlerin hesaplamadan ayrılması ve yeni optimizer desteği gibi geliştirmeler yer alıyor. Apache-2.0 lisanslı ve yaklaşık 43K star; aylık açık ofis saatleriyle sürdürülen aktif bir proje. Milyar ve trilyon parametre ölçeğindeki iş yükleri için tasarlanmıştır.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam yerel model çalıştırma ilgin olabilir, ama bu kütüphane çıkarımı küçültmek değil eğitimi kümeye yaymak için var. Model eğitmiyorsun ve elindeki donanım GPU kümesi değil, tek bir Mac; DeepSpeed'in çözdüğü darboğazların hiçbirine girmiyorsun. Mac'te yerel model çalıştırmak istediğinde bakman gereken yer Apple Silicon'a göre yazılmış çıkarım projeleri. Projelerine gömülebilecek bir bileşen de değil, eğitim altyapısının bir parçası. Bu nedenle izleme listesine almanın bile pratik bir karşılığı yok.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  }
+ ]
+}

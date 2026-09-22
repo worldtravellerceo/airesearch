@@ -1,0 +1,175 @@
+{
+ "repos": [
+  {
+   "full_name": "qazbnm456/awesome-web-security",
+   "inputs_hash": "08e75b6774db51d22c6aba3d7e72d628",
+   "description_tr": "Web güvenliği alanında öğrenme materyallerini, araçları ve saldırı tekniklerini derleyen bir bağlantı listesi. XSS, SQL injection, SSRF, JWT, OAuth, recon ve WAF atlatma gibi başlıkları makale, yazı ve araç bağlantılarıyla gruplandırıyor; hedef kitlesi penetrasyon testi ve güvenlik araştırması yapanlar. Son dönemde liste ayrıca bir Claude Code Skill ve plugin marketplace girdisi olarak da paketlenmiş; ajan çalışma anında depodaki index dosyasını okuyor, böylece içerik modelin eğitim anlık görüntüsüne bağlı kalmıyor. 2017'de açılmış, 13.814 star toplamış; depoda açık bir lisans dosyası belirtilmemiş. İçerik kod değil, referans bağlantılarından oluşuyor.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam Supabase ve DigitalOcean üzerinde duran panellerin temel güvenlik hijyeni olabilir, ama bu liste öğrenme ve pentest odaklı, uygulama sertleştirme rehberi değil. Asıl dikkat çeken kısmı konusu değil, paketlenme biçimi: bir awesome listesinin Claude Code skill'i olarak yayınlanıp ajanın çalışma anında güncel veriyi okuması, kendi bilgi birikimini Claude Code'a bağlarken örnek alabileceğin bir kalıp. Aynı yapıyı Lyricdrop'un kendi kurallarını veya asistanının araştırma notlarını skill haline getirirken kullanabilirsin. Güvenlik tarafını gerçekten ele alacaksan, genel bir okuma listesi yerine kullandığın stack'e özel bir denetim daha hızlı sonuç verir. Liste tamamen metin olduğu için Mac'te maliyetsiz çalışır, tek maliyeti okuma zamanı.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "YouMind-OpenLab/awesome-nano-banana-pro-prompts",
+   "inputs_hash": "143c6961b4b81b69e982315d51595486",
+   "description_tr": "Google'ın Nano Banana Pro görsel üretim modeli için topluluktan derlenmiş prompt koleksiyonu. 10.000'in üzerinde prompt'u önizleme görselleriyle birlikte kategorilere ayırıyor ve README 16 dilde tutuluyor; güncellemeler bir GitHub Actions iş akışıyla otomatik işleniyor. İçerik kod değil, kopyalanıp doğrudan modele verilebilecek metin; lisans CC BY 4.0 olarak işaretlenmiş. Depoyu YouMind adlı bir ürün ekibi yürütüyor ve liste kendi web sitelerindeki prompt galerisine bağlanıyor. Kasım 2025'te açılmış ve 13.468 star toplamış; prompt'ların telif durumu için README'de kaldırma talebi kanalı belirtilmiş.",
+   "usage_tr": "Folio'nun günlük içerik pipeline'ında işine yarar: her yazar profili için post ve story görsellerini üretirken sıfırdan prompt yazmak yerine buradaki kategorilerden kendi görsel diline en yakın olanları seçip şablona çevirebilirsin. Önizleme görselleri sayesinde hangi prompt'un ne ürettiğini denemeden görüyorsun; bu, günlük üretim döngüsünde eleme süresini kısaltır. Liste yalnızca metin olduğu için Mac'te maliyet yaratmaz, ama prompt'ları çalıştırmak Gemini tarafında API maliyeti demek — Folio yalnızca kendi telefonunda çalışacağı için günlük üretim hacmini baştan sınırlaman mantıklı. Seçilen prompt setini n8n akışına parametre olarak koyup üretimi asistanına ya da zamanlanmış bir işe devredebilirsin. Uyarı: prompt'lar topluluktan toplanmış ve telif durumu net değil, bu yüzden yayınlanmayacak kişisel bir uygulama için uygun, ticari bir işte aynı rahatlıkla kullanılmamalı.",
+   "matched_project": "Folio",
+   "relevance": 6,
+   "investment_note": "Listeyi yürüten ekip aynı kalıbı birden çok model için tekrarlıyor ve depoları kendi ürün sitesine trafik kanalı olarak kullanıyor; açık kaynak içerik kütüphanesiyle dağıtım kuran bir ürün ekibi olarak izlenmeye değer."
+  },
+  {
+   "full_name": "steven2358/awesome-generative-ai",
+   "inputs_hash": "2fe4dd2bd0cc910d212cd471188e4d6d",
+   "description_tr": "Üretken yapay zeka alanındaki proje ve servisleri derleyen bir dizin. Metin, kod, ajanlar, görsel, video ve ses başlıklarına ayrılmış; her başlıkta ticari servisler ve açık kaynak projeler bir arada listeleniyor. Ayrıca önerilen okuma bölümü ve henüz olgunlaşmamış projeler için ayrı bir 'Discoveries' listesi tutuluyor. 2022'de açılmış, 12.665 star toplamış ve katkılar pull request ile kabul ediliyor; CC0-1.0 lisanslı. İçerik bağlantı ve kısa açıklamalardan oluşuyor, çalıştırılabilir bir bileşen değil.",
+   "usage_tr": "Arslan Holding'in pazar ve rakip araştırması adımında hafif bir başlangıç haritası olarak kullanabilirsin: bir alt segmente bakarken (örneğin ses veya video üretimi) o başlıktaki ticari servisleri ve açık kaynak alternatifleri yan yana görmek, görüşmeye gitmeden önce manzarayı çıkarmaya yarıyor. Discoveries listesi erken aşama isimler için daha kullanışlı, çünkü ana listedeki çoğu ad zaten bilinen oyuncular. Sınırını da net söylemek gerekir: burada ekip, finansman turu veya coğrafya bilgisi yok, yani deal flow kaynağı değil — MENA ve Türkiye tarafını bu listeden çıkaramazsın. Tamamen metin olduğu için maliyeti yok ve asistanına 'şu başlıktaki isimleri çıkar ve karşılaştır' şeklinde devredilebilir bir iş. Fayda: sektör sözlüğünü ve kategori sınırlarını hızlı oturtur; risk: güncelliği katkıcılara bağlı, tek kaynak olarak alınmamalı.",
+   "matched_project": "Arslan Holding",
+   "relevance": 4,
+   "investment_note": null
+  },
+  {
+   "full_name": "EmbraceAGI/awesome-chatgpt-zh",
+   "inputs_hash": "70657820f867c7d9968dc16909487aa6",
+   "description_tr": "Çince konuşan kullanıcılar için hazırlanmış, ChatGPT ve genel olarak büyük dil modeli ekosistemini tanıtan bir rehber deposu. Erişim yöntemleri, prompt mühendisliği, GPTs, MCP, Claude Skills, coding agent'lar, RAG ve tarayıcı otomasyonu gibi başlıkları ayrı Markdown dosyalarına bölerek topluyor. İçeriğin neredeyse tamamı Çince; ayrıca erişim kolaylığı için bir GitLab aynası tutuluyor. 2023'te açılmış, 11.712 star toplamış, MIT lisanslı ve güncel model kuşağını takip edecek şekilde yenileniyor. Araç değil, bağlantı ve açıklama derlemesi.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam Claude Skills ve MCP bölümlerinin senin ilgilendiğin ajan altyapısıyla örtüşmesi, ama aynı içeriği İngilizce kaynaklardan dil engeli olmadan daha güncel biçimde bulabilirsin. Bu liste esas olarak Çin pazarındaki araç ve servis tercihlerini yansıtıyor, senin kullandığın Claude Code, n8n ve Supabase hattına karşılık gelmiyor. Değerlendirilecek tek yön, bir bölgenin AI araç ekosistemini görmek istersen kesit vermesi olabilir. Tamamen metin olduğu için maliyeti yok, ancak dil nedeniyle asistanına devretmek de pratik değil.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "mehdihadeli/awesome-software-architecture",
+   "inputs_hash": "34965909369e3531ce758ab306d05585",
+   "description_tr": "Yazılım mimarisi desenlerini, stillerini ve pratiklerini konu başlıklarına ayrılmış Markdown dosyalarında toplayan bir katalog. Clean architecture, DDD, event-driven mimari, mikroservisler, modüler monolit ve sistem tasarımı gibi klasik başlıkların yanına AI mühendisliği için ayrı bir koleksiyon eklenmiş; her başlık makale, video ve araç bağlantılarından oluşuyor. Depo kaynak katalog görevi görüyor, üzerine kurulu bir web uygulaması aynı hiyerarşiyi aranabilir hale getiriyor. 2021'de açılmış, 11.690 star toplamış, CC0-1.0 lisanslı. Kod içermiyor, tamamen referans malzemesi.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam Lyricdrop v2'yi sıfırdan yazarken kalite süreçlerine verdiğin önem olabilir, ama buradaki içerik ağırlıklı olarak kurumsal .NET ve mikroservis dünyasına ait ve Expo + Supabase ölçeğindeki bir uygulamanın kararlarına karşılık gelmiyor. Bu tür bir kataloğu baştan sona okumak, senin çalışma tarzındaki 'önce çalışan basit sürüm' yaklaşımıyla da ters düşer. Gerçekten ihtiyaç duyduğunda tek bir başlığı (örneğin evaluation ve test) hedefli biçimde açmak daha verimli. Metin olduğu için maliyeti yok, ama zaman maliyeti gerçek.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "hackstoic/golang-open-source-projects",
+   "inputs_hash": "5f68ad36e3a863239df6ced3d83a4f50",
+   "description_tr": "Go ekosistemindeki açık kaynak projeleri Çince okuyucular için derleyen bir dizin. Son sürümde kapsam bilinçli olarak daraltılmış: 77 proje 10 temaya ayrılmış, arşivlenmiş veya uzun süredir güncellenmeyen projeler çıkarılmış ve LLM uygulama çatıları, MCP, yerel model çalışma zamanları ile vektör veritabanlarını kapsayan bir AI/Agent kategorisi eklenmiş. Her proje tek bir kategoride, tek satırlık açıklamayla yer alıyor ve listenin son bakım tarihi README'de yazılı. 2016'da açılmış, 11.563 star toplamış; ayrı bir İngilizce sürümü var, lisans belirtilmemiş. İçerik kod değil, seçilmiş bağlantılardan oluşuyor.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam AI/Agent kategorisinde geçen yerel model çalışma zamanlarının Mac'te model çalıştırma ilgini kesmesi, ama o araçları bu liste üzerinden değil doğrudan kendi depolarından değerlendirmek daha doğru olur. Senin standart stack'in TypeScript, Expo ve Supabase üzerinde duruyor; Go tarafı bu hatta girmiyor. Listenin dikkat çeken yanı içeriği değil yöntemi: bakım durumu doğrulanmayan projeleri listeden çıkarma kuralı, kendi araç seçimlerinde de uygulanabilir bir eleme mantığı. Maliyeti yok, ama Çince ağırlıklı olması asistanına devretmeyi zorlaştırır.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "mrgloom/awesome-semantic-segmentation",
+   "inputs_hash": "e480b4799fabcac10e434dc8234be2ed",
+   "description_tr": "Semantik segmentasyon alanındaki ağ mimarilerini, makaleleri ve uygulamaları derleyen bir liste. U-Net, FCN ve benzeri mimariler yıl yıl sıralanmış, her makale için Keras, TensorFlow ve PyTorch uygulamalarının depo bağlantıları verilmiş; ayrıca veri setleri ve değerlendirme ölçütleri için bölümler var. İçerik ağırlıklı olarak 2015-2019 dönemine ait akademik çalışmalara dayanıyor ve güncel transformer tabanlı segmentasyon literatürünü kapsamıyor. 2015'te açılmış ve 10.845 star toplamış; lisans belirtilmemiş. Çalıştırılabilir bir kod değil, bağlantı koleksiyonu.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam görüntü analizi ihtiyacı geçen scouting fikri olabilir, ama orada aranan şey piksel düzeyinde segmentasyon değil, görsel değerlendirme ve eşleştirme. Lyricdrop, Folio ve Kanarya tarafında segmentasyon modeline ihtiyaç duyan bir adım yok. Listenin kendisi de güncelliğini yitirmiş durumda, yani ileride görüntü tarafına girsen bile başlangıç noktası olarak zayıf kalır. Maliyet açısından nötr: tamamen metin, ama okumaya değecek bir bağlam oluşmuyor.",
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "BehiSecc/awesome-claude-skills",
+   "inputs_hash": "5b765f810c2a6f043d762ca4c252b49f",
+   "description_tr": "Claude Skills için hazırlanmış skill'leri kategorilere ayıran bir dizin. Doküman işleme, geliştirme ve kod araçları, veri analizi, araştırma, medya, güvenlik testi ve otomasyon gibi başlıklar altında topluluk tarafından yazılmış skill depolarını topluyor ve kısa açıklamalarla bağlıyor. Ekim 2025'te açılmış ve 10.165 star toplamış; depoda lisans belirtilmemiş. README'nin başında sponsorlu bölümler yer alıyor, yani listede editoryal seçim dışında ticari yerleşim de var. İçerik skill'lerin kendisini barındırmıyor, onlara işaret ediyor.",
+   "usage_tr": "Claude Code kurulumunu geliştirirken doğrudan işine yarar: aradığın orkestratör ajan yapısına giden yolda skill'ler en ucuz parça, çünkü Max aboneliğiyle çalışıyor ve ek API maliyeti getirmiyor. Listeden doküman işleme ve otomasyon başlıklarını tarayıp asistanının tekrar eden araştırma işlerini (tedarikçi karşılaştırma, aday eleme) skill haline getirebilir, Lyricdrop v2'nin admin paneli etrafındaki kontrolleri de aynı yolla standartlaştırabilirsin. Her skill'i kendi deposundan okuyup fork'lamak, kapalı üçüncü parti araçlara güvenmeme tercihine uyuyor. Uyarı: liste denetlenmiş bir kalite kaynağı değil, sponsorlu girdiler içeriyor ve yabancı bir skill Claude Code'a verdiğin bağlamı ve izinleri etkiler; kurmadan önce skill dosyasını okumak gerekir. Küçük bir alt küme seçip ofisteki Mac'te tek tek denemek, listeyi toptan kurmaktan daha sağlıklı.",
+   "matched_project": "Claude Code",
+   "relevance": 7,
+   "investment_note": "Claude Skills etrafında kalite denetimi ve dağıtım yapan kurumsal bir katman henüz yok; bu listenin sponsor satarak büyümesi o boşluğun erken işareti olarak izlenebilir."
+  },
+  {
+   "full_name": "YouMind-OpenLab/awesome-gpt-image-2",
+   "inputs_hash": "f538b5e464e4cb28bc84618e3959910b",
+   "description_tr": "OpenAI'ın GPT Image 2 modeli için topluluktan derlenmiş prompt koleksiyonu. 2000'in üzerinde prompt önizleme görselleriyle birlikte kategorilere ayrılmış; metin yerleştirme, çoklu görsel tutarlılığı ve ticari illüstrasyon gibi kullanım başlıkları öne çıkarılıyor ve README 16 dilde tutuluyor. Depo, aynı ekibin Nano Banana Pro ve video modeli koleksiyonlarıyla aynı şablonu paylaşıyor ve günlük olarak güncelleniyor; lisans CC BY 4.0 olarak işaretlenmiş. Nisan 2026'da açılmış ve 9.933 star toplamış. İçerik kod değil, doğrudan modele verilebilecek metin.",
+   "usage_tr": "Folio'nun içerik üretiminde, özellikle görsel üstünde okunaklı metin gereken kartlarda (kitap kapağı, alıntı görseli, story başlığı) buradaki prompt'lar işine yarar; GPT Image 2'nin metin yerleştirme tarafı bu listede ayrı bir başlık olarak toplanmış. Seçtiğin prompt'ları şablona çevirip yazar profilinin görsel diline sabitleyebilir, günlük üretimi n8n üzerinden çalıştırabilirsin. Aynı ekibin Nano Banana Pro listesiyle büyük ölçüde örtüştüğü için ikisini birden takip etmek yerine hangi modelde kalacağına karar verip tek liste izlemek daha az iş çıkarır. Maliyet tarafı net: liste bedava, üretim OpenAI API'si üzerinden ücretli, dolayısıyla yalnızca kendi telefonunda duracak bir uygulamada günlük görsel sayısını baştan sınırla. Uyarı: prompt'lar topluluktan toplanmış, telif durumu belirsiz; kişisel kullanım için uygun, ticari işlerde aynı şey söylenemez.",
+   "matched_project": "Folio",
+   "relevance": 5,
+   "investment_note": null
+  },
+  {
+   "full_name": "kyrolabs/awesome-langchain",
+   "inputs_hash": "f9d5412ec20cf903fa40d5278e5b04ae",
+   "description_tr": "LangChain çatısı etrafında gelişen araç ve projeleri derleyen bir liste. LangChain'in kendi bileşenleri, diğer dillere portları, low-code araçlar, ajan şablonları, platformlar ve LangChain üzerine kurulmuş açık kaynak projeler ayrı başlıklarda toplanıyor; ayrıca öğrenme kaynakları ve alternatif LLM çatıları için bölümler var. Her girdi bağlantı ve star rozetiyle veriliyor, liste ayrıca bir bülten üzerinden duyuruluyor. 2023'te açılmış, 9.542 star toplamış, CC0-1.0 lisanslı. Kod içermiyor, dizin niteliğinde.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam Kanarya ve sesli not fikrinde geçen RAG ihtiyacı, ama senin pipeline'ların Claude Code, n8n ve Supabase üzerinde kuruluyor ve araya LangChain katmanı koymak bu yapıya ek bağımlılık getirir. Listedeki bazı bileşenler (vektör depoları, döküman yükleyiciler) LangChain'den bağımsız olarak da kullanılabilir, dolayısıyla ihtiyaç doğduğunda buradan araç adı toplamak yine de mümkün. Çatı seçimini bu listeye bakarak yapmak yerine, çözmek istediğin tek adımı (örneğin sesli notlarda semantik arama) tarif edip en kısa yolu aramak daha hızlı sonuç verir. Liste metin olduğu için maliyeti yok, gerçek maliyet seçilen çatının uzun vadeli bakımı olur.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "jivoi/awesome-ml-for-cybersecurity",
+   "inputs_hash": "13766d4899dc08695757e4b27a14f1c1",
+   "description_tr": "Siber güvenlikte makine öğrenmesi kullanımına dair kaynakları derleyen bir liste. Saldırı tespiti ve kötü amaçlı yazılım analizi için kullanılan veri setleri, akademik makaleler, kitaplar, konuşmalar, dersler ve eğitim materyalleri ayrı başlıklarda toplanıyor. Veri seti bölümü alanın klasik referanslarına (DARPA, NSL-KDD ve benzerleri) dayanıyor, yani içerik büyük ölçüde yerleşik literatürü yansıtıyor. 2016'da açılmış ve 9.393 star toplamış; standart bir açık kaynak lisansı belirtilmemiş. Çalıştırılabilir araç değil, referans derlemesi.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam yatırım tarafında bir güvenlik şirketini değerlendirirken alanın sözlüğüne hakim olmak olabilir, ama bunun için akademik bir okuma listesi ağır kalır. Ne Lyricdrop, ne Folio, ne de asistan otomasyonu tarafında saldırı tespiti modeline ihtiyaç duyan bir adım var. Listedeki veri setleri ve makaleler ağırlıklı olarak kurumsal ağ güvenliği bağlamına ait; senin kullandığın Supabase ve DigitalOcean kurulumunun günlük güvenlik ihtiyaçlarıyla örtüşmüyor. Maliyeti yok, ama zaman ayırmanın karşılığı da yok.",
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "yzhao062/anomaly-detection-resources",
+   "inputs_hash": "c454af08112ef126ea9440b7d1a0c0a5",
+   "description_tr": "Anomali ve aykırı değer tespiti alanındaki kaynakları toplayan bir derleme. Kitaplar ve akademik makaleler, çevrimiçi dersler, veri setleri, açık kaynak ve ticari kütüphaneler ile alanın konferans ve dergileri ayrı başlıklarda listeleniyor. Son güncellemeyle birlikte büyük dil modeli ve görsel-dil modeli tabanlı anomali tespiti çalışmaları da eklenmiş; depoyu bu alanda kütüphane geliştiren bir akademik ekip yürütüyor. 2018'de açılmış, 9.393 star toplamış ve AGPL-3.0 lisanslı. İçerik reStructuredText biçiminde referans listesi, çalıştırılabilir kod değil.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam Kanarya'daki fizyolojik zaman serilerinde sıra dışı günleri işaretleme fikri olabilir, ama orada asıl ihtiyacın istatistiksel aykırı değer tespiti değil, düzenli özet ve eğilim raporlaması. Listedeki toolkit bölümünden bir Python kütüphanesi almak mümkün olsa da, bunun için akademik bir kaynak derlemesine girmek gereksiz bir dolambaç. Böyle bir adımı gerçekten kurarsan ölçüt net olmalı: kaç günde bir yanlış alarm ürettiğini görmeden bu tür bir modül kişisel takip uygulamasına gürültü ekler. Metin olduğu için maliyeti yok; AGPL lisansı ise yalnızca listeyi kapsıyor, işaret ettiği kütüphanelerin lisansı ayrı ayrı kontrol edilmeli.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "ai-collection/ai-collection",
+   "inputs_hash": "e10c1d4a176251b4fd1f9745eb620ebd",
+   "description_tr": "Üretken yapay zeka uygulamalarını kategorilere ayırarak toplayan büyük bir dizin. README'deki sayaçlara göre 80 kategoride 3.400'ün üzerinde uygulama listeleniyor; her girdi kısa bir açıklama ve ürün bağlantısıyla veriliyor ve aynı veri bir web sitesi üzerinden de yayınlanıyor. Kategori yelpazesi metin, görsel, müzik, tasarım, test ve yazılım geliştirme gibi başlıkları kapsıyor. 2023'te açılmış, 9.169 star toplamış ve MIT lisanslı; katkılar pull request ile alınıyor. Ürünlerin kendisini değil, yalnızca künyelerini barındırıyor.",
+   "usage_tr": "Dubai'de kurmayı düşündüğün AI uygulama stüdyosu fikrinde rakip ve boşluk taraması için kullanılabilir: bir kategoriyi açıp kaç ürünün aynı işi yaptığını, hangi nişlerin ince kaldığını görmek, ürün fikri elemesinde ilk filtre işini görür. Aynı tarama Folio gibi kişisel uygulamalarda da 'bu zaten var mı' sorusunu hızlı cevaplar. Liste tamamen metin olduğu için maliyet getirmez ve 'şu kategoriyi çıkar, fiyatlandırma modellerini tabloya dök' şeklinde asistanına devredilebilir. Sınırı şu: girdiler kullanıcı katkısıyla geliyor, kapanmış ürünler listede kalabiliyor ve indirme, gelir veya kullanıcı sayısı gibi büyüklük verisi yok — yani sıralama değil, yalnızca kapsam gösteriyor. Karar öncesi seçtiğin birkaç ürünü tek tek doğrulaman gerekir.",
+   "matched_project": "Dubai app stüdyosu",
+   "relevance": 4,
+   "investment_note": null
+  },
+  {
+   "full_name": "nhivp/Awesome-Embedded",
+   "inputs_hash": "a2129d96cb03f38cb8a5f0174d1af194",
+   "description_tr": "Gömülü sistem programlama kaynaklarını derleyen bir liste. MSP430, STM32, ESP8266 gibi mikrodenetleyici aileleri, bare-metal programlama, RTOS, bootloader, Linux çekirdeği ve sürücü geliştirme, gömülü GUI ve mikrodenetleyici üzerinde makine öğrenmesi başlıklarında bağlantılar topluyor. İçerik eğitim materyali, kitap, blog ve araç bağlantılarından oluşuyor; ayrıca mülakat soruları için bir bölüm var. 2017'de açılmış, 9.135 star toplamış ve Unlicense ile yayınlanmış. Kod barındırmıyor, referans niteliğinde.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam giyilebilir cihaz ve neuroteknoloji ilgin olabilir, ama oradaki ihtiyacın cihaz firmware'i yazmak değil, hazır cihazlardan gelen biyosinyali işlemek ve görselleştirmek. Kanarya tarafında veri toplama ve panel katmanı Expo ile Supabase üzerinde duruyor; mikrodenetleyici programlama bu hattın altına girmiyor. Listeyi ancak kendi donanımını üretme fikri gündeme gelirse açmak anlamlı olur, o da bugünkü projelerinde yok. Maliyeti yok, karşılığı da sınırlı.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "davidsonfellipe/awesome-wpo",
+   "inputs_hash": "6074a322e906b0e140b403d4ed1b7544",
+   "description_tr": "Web performans optimizasyonu kaynaklarını derleyen uzun soluklu bir liste. Analiz araçları, uygulama performans izleme, bundle analizi, CDN, Core Web Vitals, görsel optimizasyonu, lazy loading ve minifikasyon gibi başlıklarda araç ve makale bağlantıları topluyor; ayrıca kitap, konferans ve konuşma bölümleri var. Aynı içerik bir web sitesi üzerinden de yayınlanıyor ve listeye yeni bir ajan skill'leri başlığı eklenmiş. 2014'te açılmış, 9.087 star toplamış, MIT lisanslı ve çok sayıda katkıcısı var. Araç değil, kaynak dizini.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam Vercel üzerinde yayınladığın web varlıkları ve Lyricdrop'un tarayıcıda çalışan admin paneli olabilir, ama bu araçların hedefi geniş kitleye açık üretim siteleri ve senin panelin dar bir ekip tarafından kullanılıyor. Görsel optimizasyonu başlığı Folio'nun ürettiği görselleri sıkıştırmak gerektiğinde bir kaynak olabilir, ancak bunun için liste taramaya gerek kalmadan tek bir araç seçmek yeterli. Kurumsal site tarafında ölçülebilir bir yavaşlık şikayeti çıkarsa Core Web Vitals bölümü işe yarar; öncesinde ölçüm yapmadan buradan araç seçmek boşa iş olur. Metin olduğu için maliyet getirmez.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "ai-boost/awesome-prompts",
+   "inputs_hash": "7afea59bbea467a743928461cd9f0fb2",
+   "description_tr": "Prompt'ları iki ayrı yaklaşımla ele alan bir derleme. Bir yanda GPT mağazasındaki yüksek puanlı asistanlardan toplanmış hazır sistem prompt'ları ve persona şablonları, diğer yanda prompt'u mühendislik nesnesi gibi ele alan araçlar bulunuyor: program derleyen, prompt'ları test edip regresyon kontrolü yapan ve otomatik optimize eden kütüphaneler ile bunların dayandığı makaleler. Depo ayrıca prompt sızdırma ve korunma konusuna da yer ayırıyor. 2024'te açılmış, 8.924 star toplamış ve GPL-3.0 lisanslı; README çok dilli sürümlerle yayınlanıyor. İçerik metin ve bağlantı, çalıştırılabilir kod değil.",
+   "usage_tr": "Lyricdrop v2'nin içerik üretim tarafında işine yarayabilecek kısmı hazır prompt koleksiyonu değil, mühendislik bölümü: şarkı başına boşluk ve çeldirici üreten prompt'u sürüm sürüm değiştirirken, test paneline bağlı bir regresyon kontrolü kurmak için buradaki araçlardan başlayabilirsin. Bugün 20-30 şarkılık onay ve playtest kapısını elle yürütüyorsun; prompt çıktısını otomatik değerlendiren bir katman bu kapının bir kısmını ölçülebilir hale getirir ve geri kalanını devretmeyi kolaylaştırır. Araçların çoğu Python tabanlı ve ofisteki Mac'te yerel çalışır, ama değerlendirme koşuları model çağrısı demek — Max aboneliğiyle değil API ile ücretlendirilir, bu yüzden test setini küçük ve sabit tutmak gerekir. Persona prompt'ları bölümünü ise atlayabilirsin, senin ihtiyacın hazır karakter değil tekrarlanabilir çıktı. Uyarı: GPL-3.0 lisansı listenin kendisine ait, işaret ettiği kütüphanelerin lisansları ayrı kontrol edilmeli.",
+   "matched_project": "Lyricdrop",
+   "relevance": 4,
+   "investment_note": null
+  },
+  {
+   "full_name": "dair-ai/ML-Papers-Explained",
+   "inputs_hash": "5b539b8917ca126ab1116f3e6c1aac42",
+   "description_tr": "Makine öğrenmesi literatüründeki temel makaleleri tablo halinde toplayıp her biri için bir açıklama yazısına bağlayan bir derleme. Dil modelleri başlığı altında Transformer'dan başlayarak BERT, GPT ve sonrasındaki mimariler tarih sırasıyla listeleniyor; her satırda makalenin tarihi ve bir cümlelik özeti yer alıyor. Açıklamalar depo içinde değil, harici blog yazıları olarak tutuluyor. 2023'te açılmış ve 8.599 star toplamış; lisans belirtilmemiş. Kod veya çalıştırılabilir örnek içermiyor, tamamen okuma malzemesi.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam yeni bir alanı hızlı öğrenme alışkanlığın, ama bu derleme model mimarilerinin iç işleyişine giriyor ve senin karar verdiğin sorular (hangi STT daha doğru, hangi model daha ucuz) bu düzeyde cevaplanmıyor. Yatırım tarafında bir ekibin teknik iddiasını tartarken terimleri yerine oturtmak için tek tek yazılara bakılabilir, ama tümünü okumanın karşılığı yok. Pratik faydası, bir makale adı karşına çıktığında ne olduğunu tek cümlede görmek. Maliyeti yok, zaman dışında bir yükümlülük getirmiyor.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "mnfst/awesome-free-llm-apis",
+   "inputs_hash": "9bbd6d0952a0574fd9f617fa9097a6eb",
+   "description_tr": "Kalıcı ücretsiz katmanı olan metin çıkarımı API'lerini derleyen bir liste. Her sağlayıcı için temel URL, model adları, bağlam uzunluğu, çıktı sınırı ve dakika başına istek ile günlük token kotaları tablo halinde veriliyor; girdiler modeli kendi eğiten sağlayıcılar ve çıkarım sağlayıcıları olarak ikiye ayrılmış. Uç noktaların büyük bölümü OpenAI SDK ile uyumlu olarak işaretlenmiş. Mart 2026'da açılmış, 8.066 star toplamış ve CC0-1.0 lisanslı; liste bir ajan altyapısı şirketi tarafından destekleniyor. İçerik kod değil, sağlayıcı künyeleri.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam Lyricdrop'un şarkı başına maliyet hesabı, ama oradaki plan zaten ücretli API'den uzaklaşıp Mac'te yerel modellere ve Max aboneliğine dayanmak üzerine kurulu. Bu listedeki kotalar dakikada birkaç istek ve günlük birkaç bin token düzeyinde; binlerce şarkılık bir katalog üretimini taşımaz ve üretim hattını dış sağlayıcının ücretsiz katmanına bağlamak kırılganlık getirir. Tek gerçekçi kullanım, atmalık bir prototipte veya tek seferlik bir denemede model karşılaştırması yapmak olabilir. Kalıcı bir parça olarak kurarsan, sağlayıcı kotayı değiştirdiğinde sessizce duran bir pipeline'la kalırsın.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "JoseDeFreitas/awesome-youtubers",
+   "inputs_hash": "3ab0d4d48bcc8d102a2930b1c5bef0da",
+   "description_tr": "Teknoloji anlatan YouTube kanallarını konu başlıklarına göre derleyen bir liste. Genel programlama, web geliştirme, bilgisayar bilimi, makine öğrenmesi, DevOps, oyun geliştirme, mobil geliştirme ve siber güvenlik gibi başlıklarda kanallar kısa açıklamalarla veriliyor. Liste yalnızca İngilizce yayın yapan kanalları kapsıyor; başka diller için topluluk üyelerinin açtığı ayrı depolara yönlendiriyor. 2020'de açılmış, 7.814 star toplamış ve CC0-1.0 lisanslı. Markdown dışında bir içerik barındırmıyor.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam YouTube üzerinden öğrenme alışkanlığın ve İngilizce dinleme pratiği, ama buradaki kanallar teknoloji eğitimi üzerine ve senin öğrenmek istediğin psikoloji, sosyoloji, felsefe başlıkları listede yok. Dinleme pratiği açısından İngilizce teknik içerik zaten düzenli izlediğin bir tür, dolayısıyla liste yeni bir kapı açmıyor. Lyricdrop için içerik kaynağı da değil: burada şarkı veya söz verisi yok, yalnızca kanal künyeleri var. Maliyeti yok; karşılığı da kanal keşfiyle sınırlı.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  }
+ ]
+}

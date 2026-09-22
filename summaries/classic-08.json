@@ -1,0 +1,175 @@
+{
+ "repos": [
+  {
+   "full_name": "urchade/GLiNER",
+   "inputs_hash": "7209e50bfbf19caa241aacf4769c236a",
+   "description_tr": "GLiNER, sıfır-atış (zero-shot) adlandırılmış varlık tanıma için küçük modeller eğitip çalıştırmaya yönelik açık kaynak bir Python kütüphanesidir. Metni ve serbestçe yazılmış bir etiket listesini alır, önceden etiketlenmiş veri gerektirmeden bu türlerdeki varlıkları çıkarır; ayrıca akış halinde NER, ortak varlık-ilişki çıkarımı ve çok görevli token sınıflandırma destekler. Bi-encoder mimarisi etiket gömmelerini önceden hesapladığı için yüzden fazla etiket türüne bozulmadan ölçeklenir; INT8 nicemleme, torch.compile ve ONNX dışa aktarımıyla CPU ve tüketici donanımında çalışacak şekilde optimize edilmiştir. Yüzden fazla dili kapsayan çok dilli PII tespit modelleri ve küçük veri kümeleriyle ince ayar akışı da sunuluyor. Apache-2.0 lisanslı, yaklaşık 3.900 yıldızlı; 2023 sonunda açılmış, Hugging Face üzerinde bir model ailesi ve çevresinde ayrı projelerden oluşan bir ekosistem var.",
+   "usage_tr": "Kişisel bilgi tabanı (sesli not) projende, transkript çıktıktan sonraki sınıflandırma adımında kullanabilirsin: \"antrenman\", \"yatırım fikri\", \"proje notu\" gibi etiketleri doğrudan istem olarak verip hem kategoriyi hem notta geçen kişi, yer ve şirket adlarını çıkarabilirsin — böylece form doldurma adımı tamamen kalkar. Model küçük ve CPU'da çalışacak şekilde optimize edildiği için ofisteki M4 Pro Mac'te yerel koşar; API maliyeti getirmez ve Max aboneliğindeki bağlamı tüketmez. Çıktısı yapılandırılmış olduğundan n8n akışına ya da Supabase'e yazan küçük bir Python servisi olarak gömülebilir; bir kere kurulduktan sonra bakımı asistanına devredilebilecek kadar sade kalır. Lyricdrop tarafında bir karşılığı yok: bu bir hizalama aracı değil, metinden çıkarım aracı. Uyarı: sıfır-atış doğruluğu etiket adlandırmasına çok duyarlı; kendi notlarından 50-100 örneklik bir doğrulama kümesi kurup etiket isimlerini ona göre sabitlemen gerekir.",
+   "matched_project": "Kişisel bilgi tabanı",
+   "relevance": 6,
+   "investment_note": null
+  },
+  {
+   "full_name": "enactic/openarm",
+   "inputs_hash": "2cd17d1ddab135d60cef0fe206951f8b",
+   "description_tr": "OpenArm, temas yoğun ortamlarda fiziksel yapay zeka araştırması için tasarlanmış, 7 serbestlik dereceli açık kaynak bir insansı robot koludur. Yüksek geri sürülebilirlik ve uyumluluk hedefleyen tasarımı insan-robot etkileşiminde güvenliği öne çıkarıyor; tam çift kollu sistem için bildirilen maliyet 6.500 USD. Depo bir meta-proje olarak çalışıyor: CAD verileri, URDF/xacro tanımları, CAN kontrol kütüphanesi, ROS2 paketleri ve teleoperasyon yazılımı ayrı depolara bölünmüş, donanım CERN-OHL-S, yazılım Apache-2.0 lisanslı. Teleoperasyon, taklit öğrenme, MuJoCo/Genesis simülasyonu ve gerçek dünya veri toplama senaryoları hedefleniyor. Standart arka plan, aydınlatma ve kamera yerleşimi olan OpenArm Cell ortamıyla deneylerin başka laboratuvarlarda aynı koşullarda tekrarlanması amaçlanıyor. 2024 sonunda açılmış, yaklaşık 3.500 yıldıza ulaşmış; montajlı ya da DIY satın alma için doğrulanmış üretici ağı kurulmuş durumda.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, Arslan Holding'in frontier tech merceğinde fiziksel yapay zekanın nereye geldiğini somut bir donanım üzerinden görmek olabilir. Robotik ne Lyricdrop, ne Folio, ne de kişisel bilgi tabanı tarafında bir adıma oturuyor. Bu bir yazılım bileşeni de değil: kendi uygulamana gömebileceğin bir parçası yok, Mac'te çalışan kısmı yalnızca simülasyon tarafı. Gerçek bir değerlendirme fiziksel donanım, atölye ve kurulum emeği ister; asistanına devredilebilecek bir iş çıkmıyor. Yine de kol başına fiyatın ve üretici ağının açıkça yayınlanması, alanın ticarileşme hızını ölçmek için okunabilir bir sinyal.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": "Açık donanım insansı kolda fiyatın çift kollu sistem için 6.500 USD seviyesine inmesi ve sertifikalı üretici ağının kurulmuş olması, fiziksel yapay zeka donanımının araştırma aşamasından tedarik aşamasına geçtiğine dair izlenmeye değer bir işaret."
+  },
+  {
+   "full_name": "ombharatiya/ai-system-design-guide",
+   "inputs_hash": "1c1bffc375aa65d0b558c71ba9cb9c1e",
+   "description_tr": "Üretim ortamındaki yapay zeka sistemlerinin tasarımını anlatan, Markdown dosyalarından oluşan bir başvuru kılavuzu. RAG mimarileri (chunking, vektör veritabanları, reranking, geç etkileşimli ColBERT, çok modlu RAG), model seçimi ve fiyatlandırma, ajan sistemleri, MCP ve A2A protokolleri, değerlendirme (eval) ile erişim kontrolü gibi başlıkları bölümler halinde kapsıyor. İçeriğin bir kısmı mülakat hazırlığına ayrılmış: 128 soruluk bir soru bankası ve cevap çerçeveleri var. Kod değil metin barındırıyor; vaka çalışmaları ve üretim örüntüleri üzerinden ilerliyor, ayrıca çerçeve sürüm karmaşasıyla baş etme gibi pratik bölümler içeriyor. MIT lisanslı, yaklaşık 3.400 yıldız; 2025 sonunda açılmış ve sürekli güncellendiğini belirtiyor.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, kişisel bilgi tabanının arama katmanını kurarken chunking ve reranking bölümlerini bir kontrol listesi olarak okumak olabilir. Bu bir araç değil okuma malzemesi: ne Mac'te çalışır ne bir uygulamaya gömülür, tek maliyeti zamanın. İçeriğin ağırlık merkezi kurumsal ölçek ve mülakat hazırlığı; tek kullanıcılı, Supabase üzerinde duran kurgun için çoğu bölüm fazla geliyor. Asistanına devredilebilecek somut bir iş de üretmiyor. Bir soru doğduğunda ilgili bölüme bakmak, baştan sona okumaktan daha mantıklı.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "radixark/miles",
+   "inputs_hash": "088e680fede5d19c38d14218910a057c",
+   "description_tr": "Miles, büyük dil ve görme-dil modellerinin post-training aşaması için geliştirilen, kurumsal ölçeğe odaklanmış bir pekiştirmeli öğrenme çerçevesidir; slime projesinden çatallanmış ve onunla birlikte geliştiriliyor. Rollout tarafında SGLang'i, eğitim tarafında Megatron-LM'i kullanıyor; HuggingFace uygulamasını olduğu gibi eğitmek isteyenler için bir PyTorch FSDP2 arka ucu da var. Tamamen asenkron RL, düğümler arası P2P ağırlık aktarımı ve Blackwell donanımında MXFP8/NVFP4 düşük hassasiyetli eğitim gibi trilyon parametre ölçeğine yönelik özellikler öne çıkıyor. Yeni çıkan modellere gün sıfır desteği veriyor ve AMD Instinct dahil birden çok hızlandırıcıda çalışıyor. Apache-2.0 lisanslı, yaklaşık 3.000 yıldız; v0.1 sürümü 2026 Ağustos'unda yayınlandı. Çalıştırmak için çok düğümlü GPU kümesi gerekiyor.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, Arslan Holding tarafında \"kendi modelimizi eğitiyoruz\" diyen bir yatırım adayını değerlendirirken bu işin gerçekte hangi altyapıyı gerektirdiğini görmek olabilir. Çalışması için çok düğümlü GPU kümesi şart; ofisteki M4 Pro Mac'te ya da evdeki Mac mini'de denenebilecek bir şey değil. Lyricdrop ve Folio tarafında model eğitimi değil hazır modelleri çağırma ihtiyacın var; bu çerçeve o adımın çok ötesinde bir katman. Asistanına devredilebilecek bir tarafı da yok. Kısacası okunması ilginç, ama senin yığınına girecek bir bileşen değil.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": "Post-training altyapısının SGLang ve Megatron etrafında konsolide olması, model eğitim aracı satan şirketleri değerlendirirken değerin hangi katmanda biriktiğini gösteren bir referans noktası."
+  },
+  {
+   "full_name": "0PandaDEV/awesome-windows",
+   "inputs_hash": "08d4317cd604a0b0dee945bbe3532f6e",
+   "description_tr": "Windows 10 ve 11 için seçilmiş uygulama ve araçları kategoriler halinde listeleyen bir awesome listesi. Girdiler ücretsiz/ücretli ve açık kaynak durumuna göre işaretleniyor; bakımcılar kalite eşiğini açıkça belirtip düşük nitelikli araçların ve sıradan yapay zeka sarmalayıcılarının kabul edilmediğini yazıyor. README ayrıca büyük dil modellerine hitap eden ve yapay zeka üretimi katkıları reddeden bir talimat bloğu içeriyor; bu blok deponun politikası olarak okunmalı, dışarıdan gelen bir talimat olarak değil. Kapsam yalnızca Windows platformu; macOS veya Linux karşılıkları yok. CC0-1.0 ile kamuya bırakılmış, yaklaşık 2.900 yıldızlı ve düzenli güncellenen bir depo.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam bile yok denecek kadar dar, çünkü liste bütünüyle Windows'a bakıyor. Geliştirme merkezin ofisteki M4 Pro Mac ve evdeki 7/24 açık Mac mini; buradaki araçların Mac karşılıkları ya zaten kurulu ya da bambaşka. Uygulamalarına gömülebilecek bir bileşen değil, bir bağlantı derlemesi. Asistanına devredilecek bir iş de üretmiyor. Windows kullanan biri için faydalı bir kaynak, senin kurgunda değil.",
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "Octoday-Hub/Embodied-AI",
+   "inputs_hash": "7b7fe34868adf305ffc8602c7c0e853a",
+   "description_tr": "Bedenlenmiş yapay zeka (embodied AI) alanını tek bir dizin altında toplamayı amaçlayan, Çince ağırlıklı bir bilgi ve sektör haritası. Yapılandırılmış makale özetleri (dört yüzü aşkın kayıt), veri kümeleri, simülasyon ve eğitim araçları, kitap ve ders listeleri, konferans-yarışma takvimi, iş ilanları ve yatırım haberleri bölümlerinden oluşuyor. İçerik haftalık turlarla güncelleniyor ve her turda eklenen makale ile veri kümesi sayısı README'de duyuruluyor; sayfaların İngilizce karşılıkları da tutuluyor. Kod değil, Markdown sayfalarından oluşan bir dizin. Lisans belirtilmemiş; 2026 Mayıs'ında açılmış ve yaklaşık 2.600 yıldıza ulaşmış.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, Arslan Holding'in frontier tech merceğinde embodied AI'ın nereye gittiğini takip etmek için hazır bir okuma listesi olarak kullanmak olabilir. Ne var ki içerik ağırlıklı olarak Çin ekosistemine bakıyor ve MENA-Türkiye-Körfez koridorundaki deal flow'unla örtüşmüyor. Bir araç değil, dolayısıyla Mac'te yerel çalışma ya da uygulamana gömülme soruları geçerli değil. Asistanına \"şu bölümden aylık bir özet çıkar\" diye devredilebilir, ama bunun için önce alanın yatırım tezine girmesi gerekir. Şimdilik izleme listesinde tutulacak bir kaynak.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "study8677/awesome-architecture",
+   "inputs_hash": "77e38d96faf220f70e4760a31d02009b",
+   "description_tr": "Kod yerine mimariye odaklanan, Çince-İngilizce iki dilli bir açık kaynak bilgi tabanı. Üç bölümden oluşuyor: mimari düşünme yöntemini anlatan 26 bölümlük bir eğitim seti, gerçek sistemlerin mimari şablonları ve uçtan uca vaka çalışmaları. Dağıtık sistemlerin temelleri, veri tutarlılığı, C4 modeliyle diyagram çizimi, mimari karar kayıtları (ADR), RAG ve kodlama ajanları gibi AI-native başlıklar kapsanıyor. İçerik Vue tabanlı bir statik siteyle de yayınlanıyor, topluluk tarafından üretilmiş bir EPUB sürümü ve Claude Code/Cursor içinde çalışan eşlik eden bir skill deposu var. MIT lisanslı, yaklaşık 2.350 yıldız; 2026 Mayıs'ında açılmış ve hızla büyümüş. README'de yönlendirme bağlantısı taşıyan ürün tavsiyeleri de bulunuyor.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, Lyricdrop v2'yi sıfırdan yazarken admin panel, iş kuyruğu ve CDN katmanlarının nasıl ayrılacağına dair kararları ADR bölümündeki şablonla kayıt altına almak olabilir. Bu bir araç değil okuma malzemesi; Mac'te çalışma, API maliyeti ya da uygulamaya gömme soruları geçerli değil. İçeriğin önemli bölümü senin ölçeğinin çok üstündeki dağıtık sistem problemlerine ayrılmış, tek panel ve Supabase için karşılığı sınırlı. Kalite süreçlerine ağırlık vermeye başladığın nokta düşünülürse okunacak bölüm birkaç tane, bütünü değil. README'deki yönlendirme bağlantılarını tavsiye olarak değil reklam olarak okumakta fayda var.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "vercel-labs/vgpu",
+   "inputs_hash": "ef08f6b3b350003991561eadc234f6df",
+   "description_tr": "vgpu, WebGPU'yu TypeScript'ten kullanmak için yazılmış modüler bir kütüphanedir. WGSL shader dosyalarını TypeScript modülü gibi içe aktarır ve yansıma (reflection) ile bağlama adlarını, tiplerini ve yerleşimlerini elle tanımlama ihtiyacını ortadan kaldırır. Tek bir Gpu bağlamı üzerinden çalışır; aynı API tarayıcıda, Dawn destekli başsız Node'da ve testler için deterministik bir mock üzerinde koşar. Shader'lar, 3B sahneler, GPU tensörleri, küçük sinir ağları ve matematik görselleştirmesi hedeflenen kullanım alanları; tam ekran bir efektin gzip'li boyutu 25 KB ile sınırlandırılmış ve bu sınır CI'da denetleniyor. Dokümantasyon, örnek galerisi ve shader doğrulaması CLI'dan çalıştırılabiliyor, ayrıca agents.md ve llms.txt yayınlanıyor. MIT lisanslı, Vercel Labs çatısı altında, yaklaşık 2.270 yıldız ve 2026 Mayıs'ında açılmış.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, jeneratif görsel işlerin ilgini çekmesi ve web tarafında zaten Vercel kullanman düşünülürse bir demo ya da portfolyo projesi olabilir. Lyricdrop hem mobilde hem Android TV'de Expo/React Native üzerinde duruyor; WebGPU oradaki oynatıcı ve highlight katmanına girmiyor. Admin panelde kelime hizalamasını göstermek için bir zaman çizelgesi gerekiyor, ama o iş için sade bir canvas çizimi yeterli, GPU katmanı fazla gelir. Folio tarafındaki ihtiyaç görüntü ve video üretimi; bu kütüphane üretim değil çizim tarafında duruyor. Mac'te tamamen yerel çalışır ve API maliyeti getirmez, yani deneme maliyeti düşük — ama önce onu gerektiren bir iş lazım.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "tphakala/birdnet-go",
+   "inputs_hash": "e7106c617b61978fe5a042f590a50e32",
+   "description_tr": "BirdNET-Go, ses kartı girişini veya ağ ses akışlarını sürekli dinleyip kuş, yarasa ve diğer yaban hayatı seslerini sınıflandıran, kendi sunucunda barındırılan bir analiz uygulamasıdır. BirdNET v2.4, Google Perch v2 ve bölgesel BattyBirdNET yarasa modelleri uygulama içinden kurulabiliyor; birden fazla model ayrı ses kaynaklarına paralel bağlanıp ortak tespitlerde çapraz mutabakatla güven skoru yükseltilebiliyor. Tespitler tarayıcıda canlı spektrogram ve ısı haritası olarak gösteriliyor; kural motoru bunları Discord, Telegram, MQTT/Home Assistant, webhook ve kabuk betiklerine yönlendirebiliyor. Go ile yazılmış, çıkarım tamamen yerel çalışıyor ve Raspberry Pi'de 7/24 koşacak şekilde tasarlanmış; Linux, Windows ve macOS için hazır ikili dosyalar ile amd64/arm64 Docker imajları yayınlanıyor. Kurulum sihirbazı, OIDC/SSO, TLS yönetimi, sistem sağlık sayfası ve PWA desteği gibi işletme özellikleri var. Yaklaşık 2.170 yıldız; lisansı standart bir SPDX kimliğine oturmuyor.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, evdeki 7/24 açık Mac mini'yi home server olarak kullanma fikrine çalışan bir örnek olması olabilir. Kuş ya da yaban hayatı tarafında bir ihtiyacın görünmediği için uygulamanın kendisi boşta kalıyor. Yine de mimarisi Lyricdrop'un yerel STT planına yakın bir şeyi gösteriyor: sürekli çalışan bir servis, uygulama içinden kurulan bir model galerisi ve birden çok modelin aynı girdi üzerinde çapraz doğrulanması. O çapraz mutabakat deseni, 2-3 STT sistemini karşılaştırıp en iyisini seçme planında okumaya değer. Tamamen yerel çalıştığı ve API maliyeti getirmediği için kurup bakması ucuz, ama bir fikir kaynağı olmanın ötesine geçmez.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "andyrewlee/awesome-agent-orchestrators",
+   "inputs_hash": "201058f3a38006aa234cb1d47d4aef74",
+   "description_tr": "Ajanları koordine etmeye yarayan açık kaynak ve kaynağı görünür araçları kategorilere ayıran bir liste. Bölümler somut ihtiyaçlara göre kurulmuş: terminalde yan yana çalışan paralel kodlama ajanları, masaüstü ve web arayüzleri, çoklu ajan sürüleri, bir hedefi doğrulanana kadar süren otonom döngü koşucuları, issue takipçisinden veya zamanlayıcıdan iş çeken görev koşucuları, kendi orkestratörünü yazmak için altyapı primitifleri ve sohbet üzerinden iş alan kalıcı kişisel asistanlar. Girdiler Claude Code, Codex, Gemini CLI, OpenCode gibi harness'lara göre etiketlenmiş ve her biri tek cümlede ne yaptığını söylüyor; tmux, git worktree ve diff gözden geçirme gibi ayrımlar açıkça belirtiliyor. Listenin her araç için ayrıntı veren bir web sürümü de var. CC0-1.0 ile yayınlanmış, yaklaşık 1.990 yıldız; 2026 Ocak'ında açılmış ve hızla büyümüş.",
+   "usage_tr": "Uzun süredir istediğin \"tüm projelerini bilen, aralarında köprü kuran orkestratör ajan\" fikrine en yakın araç kümesi burada tek tek toplanmış; Personal Assistants ve Agent Infrastructure bölümleri tam olarak o işi tarif ediyor. Lyricdrop v2'yi Superpowers ile ofis Mac'inde yazarken Parallel Coding Agents bölümündeki tmux/worktree tabanlı TUI'ler, aynı anda birden çok Claude Code oturumunu sürdürüp her diff'i ayrı ayrı gözden geçirmeni sağlar — iki açıdan review isteğinle doğrudan örtüşüyor. Autonomous Task Runners bölümü ise asistanına devretmek istediğin işlerin bir kısmını, Trello ya da issue üzerinden iş çekip sonucu geri yazacak şekilde otomatikleştirmeye aday. Araçların çoğu yerel çalışan CLI/TUI katmanları olduğu için Max aboneliğinin üstüne oturur ve ek API maliyeti çıkarmaz; bazılarında OpenCode desteği de var. Uyarı: liste çoğunlukla birkaç aylık projelerden oluşuyor; hepsini kurmak yerine iki tanesini seçip mevcut Claude Code, Tailscale ve Remote Control kurgunda deneyip ölçmek daha doğru. İkinci uyarı: bu araçlar ajanlara depo üzerinde geniş yetki verir, hangi işin gözetimsiz koşacağını baştan sınırlaman gerekir.",
+   "matched_project": "Orkestratör ajan",
+   "relevance": 8,
+   "investment_note": null
+  },
+  {
+   "full_name": "scadastrangelove/awesome-ai-security-tools",
+   "inputs_hash": "095f1a05607ec49234af6fd80d05e8f0",
+   "description_tr": "Yapay zeka güvenliği ve yapay zeka destekli siber güvenlik araçlarını tek listede toplayan bir derleme. Kapsam geniş: güvenlik bulgularının otomatik tasnifi, kodlama ajanlarının güvenliği, model tedarik zinciri, sızma testi ajanları, AI destekli SAST, LLM güdümlü fuzzing, tehdit istihbaratı, SOC/SIEM tasnifi, tersine mühendislik ve LLM red-teaming. Her girdi açık kaynak, araştırma, açık bileşenli ticari veya lisansı belirsiz olarak işaretleniyor; GitHub yıldız ve son commit anlık görüntüleri bir betikle tazeleniyor. Listeye alınmanın bir kalite ya da güvenlik onayı anlamına gelmediği README'de açıkça belirtiliyor. Yaklaşık 1.520 yıldız, 2026 Mayıs'ında açılmış; lisansı standart bir SPDX kimliğine oturmuyor.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, kodlama ajanlarının güvenliği bölümünün Claude Code ve OpenCode'u geniş yetkiyle çalıştırdığın kurulumda neyin denetlenebileceğini göstermesi olabilir. İkinci bir bağlam, Arslan Holding tarafında AI güvenliği segmentine bakarken kimin ne yaptığını hızlıca taramak için bir pazar haritası olarak kullanmak. Bir araç değil dizin olduğu için Mac'te yerel çalışma ya da uygulamana gömme soruları geçerli değil. Listenin ağırlık merkezi kurumsal güvenlik ekipleri; tek kullanıcılı projelerinde karşılığı olan bölüm çok dar. Asistanına \"şu bölümdeki açık kaynak araçları karşılaştır\" diye devredilebilir, ama önce somut bir güvenlik sorusunun oluşması gerekir.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "Tencent-Hunyuan/AuK",
+   "inputs_hash": "3e47ab998e16d38d92cac63553b7723f",
+   "description_tr": "AuK, konuşma üretimi ve düzenlemesi için eğitilmiş 1.5B parametreli açık kaynak bir temel modeldir. Tek bir doğal dil talimat arayüzü üzerinden sıfır-atış ve talimat tabanlı TTS, içerik ve akustik düzenleme, paralinguistik düzenleme, konuşma iyileştirme (speech enhancement) ve kaynak ayrıştırma (source separation) görevlerini yürütüyor. İki sürümü var: yüksek kalite için temel model ve dört adımda çıkarım yapan damıtılmış AuK-Flash. Komut satırı, Python API, Gradio arayüzü ve ComfyUI üzerinden çalıştırılabiliyor; ince ayar akışı da belgelenmiş. Encoder bellek kullanımı yakın zamanda yaklaşık 7,5 GiB düşürülmüş, CUDA tarafına CPU offload eklenmiş ve Apple Silicon'da MLX ile çıkarım ayrı bir dalda destekleniyor. 2026 Ağustos'unda açılmış, yaklaşık 1.210 yıldız; lisansı standart bir SPDX kimliğine oturmuyor.",
+   "usage_tr": "Lyricdrop v2'nin kelime zamanlama hattında ses ön işleme adımına oturabilir: kaynak ayrıştırmayla vokali enstrümandan ayırıp STT'ye temiz bir giriş verirsen, hizalama hatalarının bir kısmı daha modele gitmeden düşer. Bunu mevcut 20-30 şarkılık test setinde ölçmek kolay — aynı STT'yi ham karışım ve ayrıştırılmış vokal üzerinde koşturup kelime hizalama hatasını yan yana koyabilirsin. Apple Silicon için MLX çıkarımı geldiği ve encoder belleği düşürüldüğü için ofisteki M4 Pro Mac'te yerel çalışma ihtimali gerçek; bu da ElevenLabs ve Apify'ı bırakıp yerele dönme planına uyuyor. İkinci bir kullanım hobi tarafında: afro house kütüphaneni hazırlarken stem ayırma denemelerinde aynı model işe yarayabilir. Uyarı: model konuşma verisiyle eğitilmiş, müzik üzerinde ayrıştırma kalitesi ilan edilmiş bir yetenek değil — beklentiyi buna göre kur ve müzik için eğitilmiş ayrıştırıcılarla karşılaştırarak seç. İkinci uyarı: MLX desteği henüz ana dalda değil ve lisans metni standart değil; Lyricdrop ticari bir ürün olacağı için lisansı kullanmadan önce okuman gerekiyor.",
+   "matched_project": "Lyricdrop",
+   "relevance": 8,
+   "investment_note": null
+  },
+  {
+   "full_name": "yibie/awesome-jev",
+   "inputs_hash": "b7888a2330e1c0cc3602d3eef92aab9f",
+   "description_tr": "Jev adlı modelin üzerine kurulmuş kamuya açık projeleri ve kullanım örüntülerini derleyen bir awesome listesi. Jev, TypeSafe AI tarafından \"tipli karar\" için sunulan ve sohbet üretmek yerine yapılandırılmamış girdi ile tipli bir soruyu alıp güven skoru taşıyan bir seçim, puan veya boolean döndüren bir model olarak tanımlanıyor; sınıflandırma, yönlendirme, rubrik puanlama, doğrulama ve ajan guardrail'leri hedeflenen kullanım alanları. Liste kategori dosyalarına bölünmüş ve README bir betikle bu dosyalardan üretiliyor. README, listeye alınmanın bir onay olmadığını ve aynı gün toplu gönderilen, ortak iskelet paylaşan depolara temkinli yaklaşılması gerektiğini açıkça yazıyor. Lisans belirtilmemiş; 2026 Eylül'ünün ortasında açılmış, yani birkaç günlük ve buna rağmen yaklaşık 1.210 yıldıza ulaşmış.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, kişisel bilgi tabanında sesli notun kategorisini çıkaran adımın \"tipli karar\" olarak modellenmesi, yani serbest metin yerine sabit bir seçim kümesi döndürmesi olabilir. Ama bu depo bir kütüphane değil, üçüncü parti barındırılan bir modelin etrafındaki bağlantı listesi; Mac'te yerel çalışmıyor ve her çağrı API maliyeti demek, bu da yerel modelleri tercih etme tutumunla çelişiyor. Aynı işi yerel çalışan küçük sınıflandırma modelleriyle ya da Claude Code üzerinden şemalı çıktıyla yapman mümkün. Depo birkaç günlük ve README'nin kendisi girdilerin doğrulanmadığını söylüyor; şu an bir karar dayanağı sayılmaz. Alan ilgini çekiyorsa izleme listesine alıp birkaç ay sonra tekrar bakmak yeterli.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "yashab-cyber/HackGpt",
+   "inputs_hash": "3c3e49c5401d7de73c8e59c36866fde2",
+   "description_tr": "HackGPT Enterprise, sızma testi süreçlerini yapay zekayla otomatikleştirmeyi hedefleyen bir platform olarak tanıtılıyor. README'ye göre yedi model sağlayıcısını (OpenAI, Anthropic, Google, DeepSeek, GLM, Ollama üzerinden yerel modeller, OpenRouter) çalışma anında değiştirilebilir şekilde destekliyor; SOC tarafında log normalizasyonu, IOC çıkarımı, MITRE ATT&CK eşlemesi ve Splunk, QRadar, Elasticsearch bağlayıcıları sıralanıyor. RBAC, LDAP entegrasyonu, denetim günlükleri ve OWASP/NIST/ISO27001/SOC2 uyum çerçeveleri de özellik listesinde yer alıyor. Python ile yazılmış, mikroservis mimarisi ve bulut-yerel kurulum anlatılıyor; depoda bağış bağlantıları bulunuyor. Yaklaşık 1.200 yıldız, 2025 Ağustos'unda açılmış; lisansı standart bir SPDX kimliğine oturmuyor. Sıralanan kurumsal özelliklerin genişliği ile deponun tek bir bakımcı tarafından yürütülmesi arasındaki fark, kullanmadan önce doğrulanması gereken bir nokta.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, Supabase, DigitalOcean ve Vercel üzerindeki kurulumunu dışarıdan test ettirme ihtiyacı doğarsa güvenlik tarafına bakmak olabilir, ama o iş için doğru başlangıç bu depo değil. Sızma testi araçları ne Lyricdrop'un, ne Folio'nun, ne de holding tarafının bir adımına giriyor. Ollama ile yerel modelleri desteklediği söyleniyor, ancak platform bulut-yerel bir kurulum varsayıyor; Mac'te tek başına çalıştırmak hedeflenen senaryo değil. Asistanına devredilebilecek bir iş de üretmiyor, aksine uzmanlık gerektiriyor. Güvenlik gündeme geldiğinde olgunluğu ve lisansı net araçlarla ilerlemek daha doğru olur.",
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "pierpaolo28/Awesome-FDE-Roadmap",
+   "inputs_hash": "b87d3b7ca35f4fec7be3f2bf1f80b742",
+   "description_tr": "Forward Deployed Engineer (FDE) rolüne hazırlanmak isteyenler için derlenmiş bir yol haritası ve okuma listesi. İçerik üç fazlı bir müfredat halinde kurulmuş: veri mühendisliği, GCP ağırlıklı bulut mimarisi ve danışmanlık zihniyeti; üzerine çoklu ajan orkestrasyonu (Google ADK), LLM sistemlerinin değerlendirilmesi ve kurumsal RAG şablonu geliyor. Ayrıca hava boşluklu (air-gapped) ve uç konuşlanma senaryoları, mülakat vaka çalışmaları, kopyalanabilir doküman şablonları ve bir terimler sözlüğü var. Rol, Palantir, OpenAI ve Scale AI'daki benzer pozisyonlardan yola çıkılarak tarif ediliyor. Kod değil metin barındıran bir depo; MIT lisanslı, yaklaşık 1.180 yıldız, 2026 Ocak'ında açılmış.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, Arslan Holding tarafında kurumsal müşteriye AI satan bir girişimi değerlendirirken sahadaki işin gerçekte neye benzediğini anlatan bir çerçeve sunması olabilir. Bu bir kariyer yol haritası ve müfredatın büyük kısmı senin rolünün dışında kalıyor. Araç değil, dolayısıyla Mac'te yerel çalışma, API maliyeti ya da gömülebilirlik soruları geçerli değil. Asistanına devredilebilecek somut bir iş de çıkmıyor. İlgini çekebilecek yerler değerlendirme (eval) ve kurumsal RAG bölümleri; onlar da bağımsız olarak okunabilir.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "brycewang-stanford/Awesome-Journal-Skills",
+   "inputs_hash": "ba6ed9c5deecc7004f2a6281f752815c",
+   "description_tr": "Akademik yayın süreci için hazırlanmış, dergiye özgü Claude Code ve Codex skill paketlerini toplayan bir depo. Tanıtımına göre AER, QJE, Nature, Cell ve Çince sosyal bilim dergileri dahil 200'den fazla dergiyi kapsıyor; konu seçiminden tanımlama stratejisine, tablo biçim kurallarından hakem yanıtlarına kadar süreci adımlara bölüyor. Ekonometri ve ampirik araştırma ağırlıklı olduğu, deponun baskın dilinin Stata görünmesinden de anlaşılıyor. README büyük ölçüde görsel ve bağlantı tablolarından oluşuyor; bu nedenle paketlerin içeriği hakkında depo metninden çıkarılabilecek ayrıntı sınırlı. MIT lisanslı, yaklaşık 1.150 yıldız; 2026 Mayıs'ında açılmış ve bir üniversite metodoloji ekibi ile ticari bir ürün ortaklığıyla yürütüldüğü belirtiliyor.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; akademik dergi yayını senin gündeminde olan bir iş değil. En yakın bağlam, bir alanın kurallarını tek tek skill dosyalarına dökme biçiminin, Claude Code kurulumunda kendi skill'lerini yazarken örnek alınabilecek bir paketleme deseni olması. Paketler yerel dosyalar olduğu için Mac'te çalışır ve Max aboneliğinin üstüne oturur, ek maliyet getirmez. Ev neurofeedback araştırma çerçeven literatür okumaya dönerse ampirik yöntem tarafındaki bazı paketler işe yarayabilir, ama bu bugünkü bir ihtiyaç değil. Şimdilik paketleme desenini incelemek, depoyu kurmaktan daha faydalı.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "gamedev-skills/awesome-gamedev-agent-skills",
+   "inputs_hash": "a1baf80dbd273d94c9f85208a1231745",
+   "description_tr": "AI kodlama ajanları için hazırlanmış 73 oyun geliştirme skill'i ve aralarından doğru olanı seçen bir router içeren depo. Godot, Unity, Unreal, Phaser, PixiJS, three.js, Bevy, pygame, LÖVE ve Roblox kapsanıyor; kullanıcı ne yaptığını anlatıyor, router motoru ve görevi tespit edip yalnızca eşleşen skill'leri yüklüyor. Skill'ler taşınabilir SKILL.md biçiminde yazılmış, birincil dokümantasyondan üretilmiş, belirli bir motor sürümüne sabitlenmiş ve bir doğrulama betiğiyle denetleniyor. Tek komutla Claude Code, Cursor, Codex, Gemini CLI, Copilot ve benzeri araçlara kuruluyor; depo aynı zamanda bir Claude Code plugin marketplace'i olarak da çalışıyor. Varlık üretimi tarafında tek seferlik görsel üretmek yerine görsel hedefi sabitleyip aile halinde üretim ve oyun içinde doğrulama akışı tanımlanmış. Apache-2.0 lisanslı, yaklaşık 1.100 yıldız; 2026 Haziran'ında açılmış.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; Lyricdrop bir oyun mantığı taşısa da Expo/React Native üzerinde duruyor ve buradaki skill'lerin kapsadığı on motorun hiçbiri o yığına girmiyor. En yakın bağlam router ve SKILL.md yapısının kendisi: kendi alan bilgini (şarkı seçim kuralları, hizalama kabul kriterleri) sürüme sabitlenmiş skill'lere bölmek için okunabilir bir örnek. Skill dosyaları yerelde durduğu için Mac'te çalışır, Max aboneliğinin üstüne oturur ve ek API maliyeti getirmez. İleride panelde tarayıcı içi bir mini oyun katmanı yazarsan Phaser, PixiJS ve three.js skill'leri o zaman devreye girebilir. Şimdilik kurmak değil, paketleme ve doğrulama desenini incelemek daha doğru.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "0xsline/awesome-deepseek-harness",
+   "inputs_hash": "9844b8684f0f556e4b8185ac1f8ec3ba",
+   "description_tr": "DeepSeek Harness (DSH) ekosistemindeki eklentileri, araçları ve altyapı projelerini kategorilere ayıran bir liste. Ajanlar ve orkestrasyon, bağlam ve arama, bellek ve bilgi, arayüz ve temalar, oturum panoları, IDE istemcileri, tarayıcı ve uzaktan erişim, modeller ve çıkarım, git ve mühendislik, güvenlik ve yönetişim gibi başlıklar altında girdiler toplanıyor. Kurulum akışı belgelenmiş: resmi çalışma zamanı npx ile kuruluyor, profil paketleri pnpm üzerinden ekleniyor ve yalnızca dsh.bundle.patch bildiren paketler etkin katman haline geliyor. Kaynaklar dsh-external/hub kataloğu ile herkese açık dsh-plugin etiketi; bazı bağlantıların org erişimi gerektirebileceği not düşülmüş. CC0-1.0 ile yayınlanmış, yaklaşık 1.090 yıldız; 2026 Ağustos'unda açılmış.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; kodlama kurgun Claude Code Max aboneliği ve yanında OpenCode üzerine kurulu, DSH ise ayrı bir harness ve ayrı bir hesap demek. En yakın bağlam, eklenti kategorilerinin (bellek, bağlam, oturum panoları, bildirim kanalları) kendi Claude Code kurulumunda hangi boşlukları doldurabileceğini görmek için bir kontrol listesi gibi okunması. Aynı işlevleri Claude Code plugin ve skill tarafında aramak, yeni bir harness öğrenmekten hem daha hızlı hem daha ucuz olur. Listenin bir kısmı org erişimi gerektiren depolara işaret ediyor, yani her girdi dışarıdan doğrulanabilir değil. Fiyat karşılaştırması yapmak istersen not al, ama şimdilik yığın değiştirmeni gerektiren bir sebep görünmüyor.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "hashgraph-online/awesome-codex-plugins",
+   "inputs_hash": "3fe5d053b7b8e15c7bdaeed39e9af3d2",
+   "description_tr": "OpenAI Codex ve ChatGPT için eklenti, skill ve kaynakları derleyen bir liste; aynı zamanda kurulabilir bir marketplace olarak çalışıyor. Depo bir marketplace tanım dosyası yayınlıyor, eklenti paketlerini kendi altında aynalıyor ve Codex'e doğrudan kaynak olarak eklenebiliyor. Listeye kabul için merkezi bir tarayıcıdan (plugin-scanner) 130 üzerinden en az 80 puan alma şartı konmuş; kaynak deponun bir GitHub Action ile taranması ayrıca öneriliyor ama zorunlu değil. Resmi eklentiler, topluluk eklentileri, geliştirme rehberleri, güven skorları ve kalite ölçütleri ayrı bölümlerde tutuluyor. Apache-2.0 lisanslı, yaklaşık 1.070 yıldız; 2026 Mart'ında açılmış ve bir kuruluş tarafından yürütülüyor.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; buradaki eklentiler Codex'e bağlı, senin günlük kurgun ise Claude Code ile OpenCode üzerinde duruyor. En yakın bağlam, listeye kabul için konan tarayıcı eşiği: üçüncü parti istemcilere temkinli yaklaştığın düşünülürse, kendi kurulumuna aldığın plugin'ler için benzer bir asgari denetim kuralı koymak okunmaya değer bir fikir. Bu depoyu kullanmak ayrı bir Codex aboneliği ve ayrı bir alışkanlık demek; kazancı belirsiz, maliyeti somut. Uygulamana gömülebilecek bir bileşen de içermiyor, bir katalog. Eklenti ekosistemlerini karşılaştırmak istersen bunu Claude tarafındaki karşılığıyla yan yana koymak yeterli.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  }
+ ]
+}

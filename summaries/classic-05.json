@@ -1,0 +1,175 @@
+{
+  "repos": [
+    {
+      "full_name": "ml-explore/mlx",
+      "inputs_hash": "447c07dc140c59733fd31542f155982d",
+      "description_tr": "MLX, Apple'ın makine öğrenmesi araştırma ekibi tarafından geliştirilen, Apple silicon için tasarlanmış bir dizi (array) çatısıdır. Python API'si NumPy'a, `mlx.nn` ve `mlx.optimizers` paketleri ise PyTorch'a yakın durur; ayrıca C++, C ve Swift API'leri bulunur. Otomatik türev alma, otomatik vektörleştirme ve hesap grafiği optimizasyonu gibi birleştirilebilir fonksiyon dönüşümleri, tembel değerlendirme ve dinamik grafik kurulumu destekler. En ayırt edici yanı birleşik bellek modeli: diziler paylaşılan bellekte durur, işlemler CPU veya GPU üzerinde veri kopyalamadan çalıştırılabilir. MIT lisanslı ve 28.500'ün üzerinde yıldızı var; Apple tarafından aktif olarak sürdürülüyor.",
+      "usage_tr": "Bu, ofisteki M4 Pro Mac'i tüm pipeline'ların tek merkezi yapma planının altyapı katmanı. Lyricdrop v2'nin kelime zamanlama adımında karşılaştıracağın STT sistemlerinin Apple silicon sürümleri (Whisper ve benzerleri) MLX üzerine kuruluyor; modeli yerelde çalıştırmak şarkı başına API maliyetini sıfıra indirir ve katalog büyütme planının maliyet tarafını rahatlatır. Folio'nun günlük içerik üretiminde sınıflandırma ve etiketleme gibi küçük işleri de yerel bir modele devredip Claude Code'u asıl üretim adımına saklayabilirsin. Kütüphane Python servisi olarak admin paneline eklenebilir, Max aboneliğinden bağımsız çalışır ve hiçbir veri dışarı çıkmaz. Uyarı: MLX bir çatı, hazır ürün değil; kazancı doğrudan değil, üstüne kurulu araçlar (mlx-whisper, mlx-lm gibi) üzerinden alırsın. Mac'teki birleşik bellek orta boy modeller için yeterli ama büyük modellerde kuantizasyon şart olur; test setindeki 20-30 şarkıda hız ve doğruluğu ölçüp karar ver.",
+      "matched_project": "Lyricdrop",
+      "relevance": 9,
+      "investment_note": null
+    },
+    {
+      "full_name": "srbhr/Resume-Matcher",
+      "inputs_hash": "50ce8dd574d7ba52f2fea0db5962212d",
+      "description_tr": "Resume-Matcher, iş ilanıyla özgeçmiş arasındaki uyumu ölçüp özgeçmişi o ilana göre yeniden yazmaya yarayan açık kaynak bir araçtır. Metin benzerliği, kelime gömmeleri ve vektör arama kullanarak ATS (aday takip sistemi) taramalarında öne çıkacak anahtar kelimeleri tespit eder. Backend Python, arayüz Next.js/TypeScript; yerel ve uzak olmak üzere 100'den fazla LLM ile çalışabildiğini belirtiyor. Apache-2.0 lisanslı, 28.500'ün üzerinde yıldızı olan ve Discord topluluğu bulunan olgun bir proje. Hedef kitlesi iş arayan bireyler ve özgeçmiş hazırlayan kariyer danışmanları.",
+      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın olası bağlam, aile şirketindeki üst ekip ve işe alım tarafında gelen özgeçmişlerin ön elemesi olabilir, ki bu da araç iş arayanın tarafında durduğu için ters yönde bir eşleşme. Manuel test ve playtest gibi işleri Upwork tarzı platformlara devretme fikrinde aday elemeye benzer bir ihtiyaç var, ama orada değerlendirilen şey özgeçmiş değil teslim edilen iş. Kurmak istersen tamamen yerel çalıştırılabilir ve API maliyeti getirmez. Yatırım tarafında da kariyer teknolojisi odağın olmadığı için portföy merceğine girmiyor.",
+      "matched_project": null,
+      "relevance": 1,
+      "investment_note": null
+    },
+    {
+      "full_name": "Anjok07/ultimatevocalremovergui",
+      "inputs_hash": "dc7b872bdf5fd08c7f91d33af55096da",
+      "description_tr": "Ultimate Vocal Remover, ses dosyalarını vokal ve enstrümantal gibi katmanlara ayıran derin öğrenme modellerini masaüstü arayüzüyle sunan bir uygulamadır. MDX-Net, VR Architecture ve Demucs v3/v4 model ailelerini bir arada barındırır; modellerin çoğu proje ekibi tarafından eğitilmiştir. PyTorch tabanlıdır ve Windows, Linux ile macOS için paketler sunar; Apple silicon'da MPS hızlandırması Demucs v4 ve tüm MDX-Net modellerinde çalışır. Zaman esnetme ve perde değiştirme gibi ek araçlar için FFmpeg ve Rubber Band kullanır. MIT lisanslı, 26.000'in üzerinde yıldızlı; sürümler GitHub releases üzerinden dağıtılıyor.",
+      "usage_tr": "Lyricdrop v2'nin kelime hizalama adımında bunu bir ön işleme katmanı olarak kullanabilirsin: şarkıdan enstrümantali ayırıp STT'ye yalnız vokal kanalını vermek, yoğun prodüksiyonlu parçalarda transkript hatalarını belirgin biçimde düşürür ve lyrics DB metniyle karşılıklı düzeltme mantığını kolaylaştırır. Ofisteki M4 Pro Mac'te MPS ile yerel çalışır, API maliyeti yok ve ElevenLabs/Apify'ı bıraktığın maliyet planına uyar. GUI bir uygulama olduğu için pipeline'a gömmek istersen altındaki Demucs/MDX-Net modellerini komut satırından çağırmak daha pratik olur; toplu işleme adımı asistanına da devredilebilir. İkinci kullanım alanı hobi tarafında: afro house kütüphaneni hazırlarken stem ayırma, set geçişleri ve acapella çıkarma için aynı araç işini görür. Uyarı: ayrıştırma şarkı başına dakikalar sürebilir ve artifact bırakır; test setindeki 20-30 şarkıda hizalama hatasına net katkısını ölçmeden pipeline'a kalıcı olarak koyma.",
+      "matched_project": "Lyricdrop",
+      "relevance": 8,
+      "investment_note": null
+    },
+    {
+      "full_name": "enescingoz/awesome-n8n-templates",
+      "inputs_hash": "cbb6cbc4e37fbbbe9f69eaff3ac3d895",
+      "description_tr": "Bu repo, n8n için hazır iş akışı şablonlarından oluşan derli toplu bir koleksiyondur; 280'den fazla workflow dosyası içerdiğini belirtiyor. Şablonlar Gmail, Telegram, Slack, Discord, WhatsApp, Google Drive, Notion, WordPress, Google Sheets ve OpenAI gibi servisleri kapsıyor; AI ajanları, RAG sohbet botları, e-posta otomasyonu, sosyal medya, DevOps ve doküman işleme başlıkları altında gruplanmış. Dosyalar doğrudan n8n'e import edilip yapılandırılacak JSON'lar halinde; README her akışın kullanımdan önce gözden geçirilmesini ve test edilmesini söylüyor. Kod değil içerik barındıran bir liste projesi; CC-BY-4.0 ile dağıtılıyor, 25.000'in üzerinde yıldızı var ve düzenli güncelleniyor. Türkçe dahil çok dilli README'leri bulunuyor.",
+      "usage_tr": "n8n zaten standart stack'inde olduğu için bu koleksiyon asistan ve holding operasyon tarafında doğrudan işine yarar: WhatsApp, e-posta ve takvim akışlarını sıfırdan kurmak yerine hazır şablonu import edip HubSpot ve TimelinesAI kurulumuna bağlayabilirsin. Kanarya'nın günlük veri toplama ve raporlama adımlarında da benzer şablonlar başlangıç noktası olur. Self-hosted n8n ev Mac mini'sinde ya da DigitalOcean'da çalışır; maliyet yalnızca akışın çağırdığı LLM API'lerinden gelir, yerel bir modele yönlendirerek bunu da kısabilirsin. Bu iş asistanına devredilebilecek türden: şablonu kurmak, kimlik bilgilerini bağlamak ve test etmek kod yazmayı gerektirmiyor. Uyarı: şablonların kalitesi değişken ve çoğu üçüncü parti hesaplara geniş erişim ister; hesapların holdingin kontrolünde kalması ve erişim kapsamlarının izole olması ilkesine göre her akışın izinlerini tek tek daraltman gerekir.",
+      "matched_project": "Asistan / holding operasyonu",
+      "relevance": 6,
+      "investment_note": null
+    },
+    {
+      "full_name": "VoltAgent/awesome-claude-code-subagents",
+      "inputs_hash": "9e55171ad5782f672d8d2253cb375b2e",
+      "description_tr": "Bu repo, Claude Code için hazırlanmış 160'ın üzerinde özelleşmiş subagent tanımını on kategori altında toplayan bir koleksiyondur. Her subagent, belirli bir geliştirme görevi (kod inceleme, test yazımı, altyapı, veri işleri gibi) için rol, talimat ve araç kapsamı tanımlayan bir dosyadır ve projenin agent dizinine kopyalanarak kullanılır. İçerik kod değil, yapılandırılmış prompt tanımlarından oluşur; katkı kuralları ürün tanıtımı yapan girdileri kabul etmiyor. MIT lisanslı, 25.000'in üzerinde yıldızlı ve VoltAgent tarafından aktif olarak sürdürülüyor; repoda sponsor listesi bulunuyor. Temmuz 2025'te açılmış, hızlı büyüyen bir liste projesi.",
+      "usage_tr": "Bu, Claude Code kurulumunu iyileştirme tarafına doğrudan oturuyor ve Superpowers plugin'iyle yan yana durur. Her değişikliğin iki ayrı açıdan review edilmesi isteğin — geliştirici doğruluğu ve ürün/eğitim mantığı — tam olarak iki ayrı subagent'la kurulabilecek bir yapı; buradaki code reviewer tanımlarını temel alıp ikincisini Lyricdrop'un oyun mantığına göre kendin yazabilirsin. Tanımlar düz metin olduğu için Mac'te yerelde durur, ek API maliyeti getirmez ve Max aboneliğiyle çalışır. Hepsini birden kurmak yerine iki üç tanesini seçmen daha iyi sonuç verir: geniş bir agent koleksiyonu bağlamı şişirir ve hangi agent'ın ne zaman devreye girdiğini takip etmeyi zorlaştırır. Seçtiklerini v2'nin admin panel işlerinde bir hafta deneyip fark yaratmayanları silmek en hızlı eleme yöntemi olur.",
+      "matched_project": "Claude Code kurulumu",
+      "relevance": 7,
+      "investment_note": "Repo, VoltAgent'ın ticari agent çatısı için bir dağıtım kanalı olarak çalışıyor; MENA'da ajan altyapısı arayan ekipler açısından takip listesine alınabilecek bir topluluk konumu var."
+    },
+    {
+      "full_name": "karpathy/nn-zero-to-hero",
+      "inputs_hash": "6b4070679e136373a2e6ce35925947f2",
+      "description_tr": "Neural Networks: Zero to Hero, sinir ağlarını en temelden anlatan bir ders serisidir. Her ders bir YouTube videosu olarak işleniyor ve videoda birlikte yazılan Jupyter notebook'ları bu repoda `lectures` dizininde toplanıyor. Seri backpropagation ve micrograd ile başlıyor, karakter düzeyinde dil modellerinden (makemore) modern Transformer ve GPT uygulamasına kadar ilerliyor; tokenizer yazımı gibi konuları da kapsıyor. Ön koşul olarak temel Python bilgisi ve lise düzeyinde kalkülüs yeterli sayılıyor. MIT lisanslı ve 24.000'in üzerinde yıldızı var; eğitim amaçlı, üretimde kullanılacak bir kütüphane değil.",
+      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın olası bağlam, model eğitmek yerine hazır modelleri birleştirerek ürün kuran çalışma biçiminin altındaki kavramları (embedding, loss, tokenizer) merak ettiğinde başvurulacak bir kaynak olması. Yatırım tarafında bir pitch'teki teknik iddiaları okurken işe yarayabilecek bir temel verir, ama bunun için seriyi baştan sona izlemek gerekir. Tamamen yerel ve ücretsiz çalışır; yükü zaman, para değil. Pratik karşılığı olan tek bölüm tokenizer dersi; metin uzunluğunun maliyete nasıl döndüğünü anlamak Lyricdrop'un şarkı başına maliyet hesabında dolaylı olarak işine yarar.",
+      "matched_project": null,
+      "relevance": 2,
+      "investment_note": null
+    },
+    {
+      "full_name": "AccumulateMore/CV",
+      "inputs_hash": "ff6c9c63684fa6d2bb2a8b303014b360",
+      "description_tr": "Bu repo, Çince derin öğrenme video derslerine eşlik eden kapsamlı bir not koleksiyonudur. PyTorch, klasik derin öğrenme, bilgisayarlı görü, doğal dil işleme ve büyük model ajanları başlıklarını numaralandırılmış Jupyter notebook'ları halinde topluyor ve her not seti belirli bir video serisine referans veriyor. İçerik tamamen Çince; notların yanında veri seti bağlantıları ve çalışma grubu davetleri de bulunuyor. Çalıştırılabilir bir kütüphane değil, ders notu arşivi. Lisans belirtilmemiş; 23.000'in üzerinde yıldızı var ve seri tamamlanmış olarak işaretlenmiş.",
+      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın olası bağlam derin öğrenme temellerini öğrenmek, ama içerik Çince olduğu için senin için pratik bir kaynak değil. Öğrenme ilgin daha çok Türkçe kaynaklardan psikoloji, sosyoloji ve felsefe yönünde; bu repo o ihtiyaca da hitap etmiyor. Yıldız sayısı yüksek olsa da bu, Çince konuşan öğrenci kitlesinin büyüklüğünü yansıtıyor. Materyaller tamamen ücretsiz ve yerel açılıyor, ancak dil engeli nedeniyle asistanına devredilebilecek bir iş de çıkmıyor.",
+      "matched_project": null,
+      "relevance": 0,
+      "investment_note": null
+    },
+    {
+      "full_name": "PicoTrex/Awesome-Nano-Banana-images",
+      "inputs_hash": "9ce2c82d0414c9faf2c6fe1755a5e694",
+      "description_tr": "Bu repo, Google'ın Gemini tabanlı görüntü modeli Nano Banana ve Nano Banana Pro ile üretilmiş örnekleri, her biri kendi prompt'uyla birlikte toplayan bir galeri. Örnekler çok görselli birleştirme, karakter tutarlılığı, stil aktarımı ve serbest düzenleme gibi görevlere göre gruplanmış ve büyük ölçüde sosyal medyada paylaşılan çalışmalardan derlenmiş. Ekip ayrıca aynı kişinin kimliğini farklı düzenleme görevlerinde koruyan 150 bin örneklik Nano-consistent-150k veri setini açık olarak yayımlamış. Kod değil, prompt ve örnek arşivi; Apache-2.0 ile dağıtılıyor, README'si Türkçe dahil yedi dilde. Ağustos 2025'te açılmış ve 23.700'ün üzerinde yıldıza ulaşmış, düzenli güncellenen bir liste.",
+      "usage_tr": "Folio'nun günlük içerik pipeline'ında en çok eksik olan şey prompt disiplini; burası tam olarak o boşluğu dolduran bir referans. Her profilin aynı yazar karakterini gün be gün aynı yüzle taşıması gerekiyor ve koleksiyonun kimlik tutarlılığı örnekleri bu problemin denenmiş çözümlerini prompt düzeyinde gösteriyor. Prompt'ları n8n üzerinden çağıracağın görüntü üretim adımına şablon olarak koyabilir, çıkanları Supabase'e yazıp beğeni sinyalleriyle eleyebilirsin. Arslan Holding'in marka ve website görselleri için de aynı arşiv işe yarar. Uyarı: model Google tarafında çalışıyor, yani bu yol Mac'te yerel değil ve görüntü başına API maliyeti getirir; günlük feed hacmini belirlemeden maliyeti hesaplama. Repo bir galeri olduğu için içerik de yayına hazır değil, örneklerin kendi ihtiyacına göre yeniden yazılması gerekir.",
+      "matched_project": "Folio",
+      "relevance": 5,
+      "investment_note": null
+    },
+    {
+      "full_name": "k4yt3x/video2x",
+      "inputs_hash": "ff1f38adeb8392ddfa89c5c71d22e881",
+      "description_tr": "Video2X, makine öğrenmesi tabanlı video büyütme (super resolution) ve kare aradeğerleme (frame interpolation) yapan bir çatıdır. Anime4K v4, Real-ESRGAN, Real-CUGAN ve RIFE modellerini ncnn ve Vulkan üzerinden çalıştırır; hem filtreleme hem kare aradeğerleme modlarını destekler. 6.0.0 sürümüyle proje tamamen C/C++'a yeniden yazıldı ve Windows için GUI ile kurulum paketi sunuluyor. Çalışması Vulkan destekli bir GPU gerektirir ve resmi paketler Windows ile Linux için dağıtılıyor; macOS listelenmemiş. AGPL-3.0 lisanslı, 21.000'in üzerinde yıldızlı ve 2018'den beri sürdürülüyor.",
+      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın olası bağlam Folio'nun AI üretimi video içeriklerini büyütmek olurdu, ancak proje Vulkan GPU ve Windows/Linux gerektirdiği için ofisteki Mac'te çalışmıyor ve tek merkez planına oturmuyor. Aynı iş için Apple silicon'da çalışan Core ML veya MLX tabanlı büyütme araçlarına bakmak daha isabetli olur. Ayrıca AGPL lisansı, çıktıyı kendi uygulamasına gömme refleksin açısından dikkat gerektiren bir kısıt. Bir gün ev Mac mini'si dışında Linux bir kutu kurarsan tekrar bakılabilir, bugünkü kurulumunda çalıştıracak donanım yok.",
+      "matched_project": null,
+      "relevance": 2,
+      "investment_note": null
+    },
+    {
+      "full_name": "LiLittleCat/awesome-free-chatgpt",
+      "inputs_hash": "0edc16082345246d3330b085dccccbe0",
+      "description_tr": "Bu repo, ChatGPT'ye giriş yapmadan erişim sunduğunu söyleyen ücretsiz ayna sitelerinin listesini tutuyor; 300'ün üzerinde site kayıtlı. Listeye ek olarak başka ücretsiz AI kaynakları ve sponsor bağlantıları da bulunuyor, kırık siteler issue'lar üzerinden bildirilip çıkarılıyor. README büyük ölçüde Çince ve sitelerin internetten derlendiğini, buralara kişisel veri girilmemesi gerektiğini açıkça uyarıyor. Projede küçük bir Python bakım betiği dışında kod yok. MIT lisanslı ve 21.000'in üzerinde yıldızı var; içeriği sık değişen bir bağlantı listesi.",
+      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın olası bağlam model erişim maliyetini düşürmek, ki bunu zaten Claude Max aboneliği ve Mac'te çalışan yerel modellerle çözüyorsun. Listedeki siteler üçüncü parti ve doğrulanmamış aracılar; kapalı kaynak istemcilere güvenmeme ilkenle ve holding verisinin kontrolde kalması kuralıyla ters düşüyor. Ayna sitelerin ömrü kısa olduğu için herhangi bir pipeline'a bağlanacak güvenilir bir kaynak da sayılmaz. Kısacası buradan alınacak bir şey yok; mevcut model erişimin hem daha ucuz hem daha denetlenebilir.",
+      "matched_project": null,
+      "relevance": 0,
+      "investment_note": null
+    },
+    {
+      "full_name": "EthicalML/awesome-production-machine-learning",
+      "inputs_hash": "b3b8386146a085ed31c8e761ca4b24ad",
+      "description_tr": "Bu repo, makine öğrenmesi modellerini üretime almak, izlemek, sürümlemek ve ölçeklemek için kullanılan açık kaynak kütüphaneleri kategorilere ayırarak listeliyor. AutoML, veri pipeline'ları, özellik deposu (feature store), dağıtım ve servis etme, değerlendirme ve izleme, açıklanabilirlik ve adillik, gizlilik koruyucu ML gibi otuzdan fazla başlık var. Yeni eklenen kütüphaneler aylık release notlarıyla duyuruluyor ve listede gezinmek için ayrı bir arama arayüzü sunuluyor. Kod içermeyen, küratörlü bir başvuru listesi. MIT lisanslı, 20.000'in üzerinde yıldızlı ve 2018'den beri düzenli güncelleniyor.",
+      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; liste, kendi eğittiğin modelleri üretimde işleten ekipler için yazılmış, senin kurduğun yapılar ise hazır modelleri Supabase ve DigitalOcean üzerinde birleştiriyor. En yakın olası bağlam Arslan Holding'in AI yatırımlarını incelerken bir ekibin hangi katmanda gerçekten iş yaptığını anlamak için kategorilere bir harita olarak bakmak olabilir. Okuma maliyeti dışında bir maliyeti yok ve asistanına belirli bir kategoriyi taratmak için devredilebilir. Yine de bu, bir araç ihtiyacına değil bir okuma ihtiyacına karşılık geliyor; pipeline'larına girecek somut bir bileşen sunmuyor.",
+      "matched_project": null,
+      "relevance": 2,
+      "investment_note": null
+    },
+    {
+      "full_name": "ujjwalkarn/Machine-Learning-Tutorials",
+      "inputs_hash": "ba77d958c32d03268727cde15e442f3e",
+      "description_tr": "Bu repo, makine öğrenmesi ve derin öğrenme üzerine öğretici yazıları, blog gönderilerini ve akademik kaynakları konu başlıklarına göre derleyen bir bağlantı listesidir. Sınıflandırma, regresyon, çapraz doğrulama, derin öğrenme mimarileri, doğal dil işleme, bilgisayarlı görü, pekiştirmeli öğrenme ve topluluk yöntemleri gibi klasik başlıkları kapsıyor; mülakat hazırlığı ve kopya kağıtları bölümleri de var. Aynı yazarın R ve Python odaklı benzer listeleri de bağlanmış. İçerik dış bağlantılardan oluşuyor, repoda kod yok. CC0-1.0 ile kamuya açık, 18.000'in üzerinde yıldızlı; 2015'ten kalma ve ağırlığı büyük model öncesi döneme ait kaynaklarda.",
+      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; liste klasik makine öğrenmesi dönemine ait ve senin çalıştığın büyük model, ajan ve ses işleme konularını kapsamıyor. En yakın olası bağlam genel bir temel okuma listesi olması, ki bu alanda daha güncel kaynaklar mevcut. Ücretsiz ve tamamen tarayıcıda okunabilir, ama içerik yaşı dikkate alınmalı. Bir konuyu hızlıca taratmak istersen asistanına devredilebilir, ama sonuçların güncelliğini ayrıca doğrulaman gerekir.",
+      "matched_project": null,
+      "relevance": 1,
+      "investment_note": null
+    },
+    {
+      "full_name": "karpathy/micrograd",
+      "inputs_hash": "52bec818f54dbba56b2ae31fc7145c9f",
+      "description_tr": "micrograd, skaler değerler üzerinde çalışan çok küçük bir otomatik türev (autograd) motoru ve üstüne kurulmuş minik bir sinir ağı kütüphanesidir. Dinamik olarak kurulan bir DAG üzerinde geri yayılımı uygular; motor yaklaşık 100, sinir ağı katmanı yaklaşık 50 satır Python kodudur ve API'si PyTorch'a benzer. Depodaki demo notebook'u iki gizli katmanlı bir MLP ile ikili sınıflandırma eğitimini baştan sona gösteriyor. Amaç üretimde kullanılmak değil, geri yayılımın nasıl çalıştığını okunabilir biçimde göstermek; pip ile kurulabiliyor. MIT lisanslı ve 17.000'in üzerinde yıldızı var.",
+      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; kütüphane skaler işlemler üzerinde çalıştığı için gerçek bir iş yükünü taşıyamaz, tek amacı öğretmektir. En yakın olası bağlam, bir akşamda sinir ağlarının içini okuyup bitirmek isteyen biri için kısa bir kaynak olması. Mac'te yerel ve ücretsiz çalışır, ek bir bağımlılığı yok. Yatırım merceğine de girmiyor: arkasında ticarileşecek bir ürün ya da ekip yok, eğitim amaçlı bir referans uygulama.",
+      "matched_project": null,
+      "relevance": 1,
+      "investment_note": null
+    },
+    {
+      "full_name": "composio-community/awesome-codex-skills",
+      "inputs_hash": "b9d16b0b251331529991700ce7d6f825",
+      "description_tr": "Bu repo, Codex CLI ve API'si için yazılmış skill'leri derleyen bir koleksiyondur. Her skill, ajana belirli bir işi nasıl yapacağını anlatan talimat, betik ve kaynak dosyalarından oluşan bir klasördür; toplantı notu çıkarma gibi örnekler içeriyor. Repoda skill'leri GitHub'dan çekip `$CODEX_HOME/skills` altına kuran bir Python installer betiği bulunuyor. Liste Composio tarafından sürdürülüyor ve şirketin MCP Gateway ürünü entegrasyon katmanı olarak öne çıkarılıyor. Lisans belirtilmemiş; 16.500'ün üzerinde yıldızı var ve görece yeni bir koleksiyon.",
+      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; koleksiyon Codex CLI'ye göre yazılmış, senin günlük araçların ise Claude Code ve OpenCode. En yakın olası bağlam, skill'lerin büyük ölçüde düz talimat metni olması sayesinde bir iki tanesini Claude Code tarafına elle taşımak olabilir, ama kurulum betiği ve dizin yapısı doğrudan uymaz. Aynı işi Claude Code için hazırlanmış koleksiyonlardan almak daha az sürtünme yaratır. Skill dosyaları yerelde durduğu için denemenin maliyeti yalnızca zaman, ama iki farklı ajan formatını paralel sürdürmek bakım yükü yaratır.",
+      "matched_project": null,
+      "relevance": 2,
+      "investment_note": "Liste, Composio'nun MCP Gateway ürününe giden bir dağıtım kanalı olarak konumlanmış; ajan entegrasyon katmanında ticarileşen ekipleri izliyorsan takip edilecek bir isim."
+    },
+    {
+      "full_name": "owainlewis/awesome-artificial-intelligence",
+      "inputs_hash": "12d252b2004e72088415e5e4835bc677",
+      "description_tr": "Bu repo, yapay zeka öğrenmek ve üretime almak isteyen yazılımcılar için kitap, kurs, video ders ve makale derleyen küratörlü bir listedir. Başlıklar modern sistemlerin temelleri, dil modelleri, retrieval, araçlar ve ajanlarla uygulama geliştirme, değerlendirme ve üretimde izleme ile kodlama ajanlarının yazılım işinde kullanımı etrafında gruplanmış. Liste ürün dizini olmak yerine her girdiyi teknik derinlik ve kanıt ölçütüyle eliyor ve haftalık olarak otomatik bir süreçle gözden geçiriliyor. Repoda kod yok, içerik dış bağlantılardan oluşuyor. MIT lisanslı, 16.500'ün üzerinde yıldızlı ve 2015'ten beri sürdürülüyor.",
+      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; liste giriş seviyesinde bir okuma yol haritası ve senin çalıştığın somut adımlara (kelime hizalama, içerik pipeline'ı, asistan otomasyonu) bir araç sunmuyor. En yakın olası bağlam, yatırım tarafında bir alanın kelime dağarcığını hızlıca kurmak için başvurulacak bir kaynak olması. Okuması ücretsiz, belirli bir başlığı taratmak asistanına devredilebilir. Kendi kurduğun sistemlere ekleyeceğin bir bileşen içermiyor; değeri tamamen yönlendirme düzeyinde kalıyor.",
+      "matched_project": null,
+      "relevance": 2,
+      "investment_note": null
+    },
+    {
+      "full_name": "TianxingChen/Embodied-AI-Guide",
+      "inputs_hash": "b68ce7d3f45255e7ae895911a699c920",
+      "description_tr": "Embodied-AI-Guide, bedenlenmiş yapay zeka (embodied AI) alanını ansiklopedi mantığıyla toplayan Çince bir teknik kılavuzdur. Alana yeni girenlerin önce RoboTwin 2.0 platformu üzerinde bir manipülasyon politikasının tüm yaşam döngüsünü uçtan uca çalışmasını öneren bir uygulamalı bölümle başlıyor, ardından veri kaynakları, politika mimarileri ve değerlendirme yöntemlerini başlık başlık açıklıyor. Gerçek robot verisi, insan videosu, simülasyon ve dünya modeli verisi gibi seçeneklerin artı ve eksilerini karşılaştırıyor. Tutorial'ın tamamlanabilmesi için en az 16 GB VRAM'li bir ekran kartı gerekiyor. Kod deposu değil, kaynak indeksi; 16.000'in üzerinde yıldızı var ve bir topluluk tarafından aktif olarak güncelleniyor.",
+      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; robotik manipülasyon, ne geliştirdiğin uygulamalarla ne de neuroteknoloji ve giyilebilir cihaz tezinle kesişiyor. En yakın olası bağlam, frontier tech yatırım merceğinin bir komşu alanı hakkında genel bir fikir edinmek olabilir, ama içeriğin Çince olması ve önerilen tutorial'ın NVIDIA GPU istemesi bunu pratikte zorlaştırıyor. Ofisteki Mac bu tür bir çalışma için uygun donanım değil. Alana dair bir görüş oluşturmak istersen İngilizce kaynaklardan ilerlemek daha verimli olur.",
+      "matched_project": null,
+      "relevance": 1,
+      "investment_note": null
+    },
+    {
+      "full_name": "GeeeekExplorer/nano-vllm",
+      "inputs_hash": "41364ed3230eb1f9bf764746c54abfc9",
+      "description_tr": "Nano-vLLM, vLLM çıkarım motorunun sıfırdan yazılmış hafif bir uygulamasıdır. Yaklaşık 1.200 satır Python koduyla okunabilir bir kod tabanı hedefliyor ama prefix caching, tensor parallelism, torch derlemesi ve CUDA graph gibi optimizasyonları içeriyor. API'si vLLM'in arayüzünü birebire yakın taklit ediyor, böylece mevcut kod küçük değişikliklerle taşınabiliyor. README'deki karşılaştırma, RTX 4070 Laptop üzerinde Qwen3-0.6B ile vLLM'e yakın, hatta biraz daha yüksek üretim hızı gösteriyor. MIT lisanslı, Haziran 2025'te açılmış ve 15.500'ün üzerinde yıldıza ulaşmış.",
+      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; motor CUDA ve NVIDIA GPU üzerine kurulu, senin yerel model ihtiyacın ise Apple silicon'da çalışıyor ve orada MLX tabanlı araçlar daha doğru adres. En yakın olası bağlam, ileride bir DigitalOcean GPU sunucusunda kendi model servisini kurmaya karar verirsen batching ve caching mantığını okunabilir bir kod üzerinden anlamak olabilir. Bu haliyle üretim yükü için değil, öğrenmek için yazılmış bir proje. Bugünkü ihtiyacın için Mac üzerinde çalışan MLX tabanlı bir çıkarım katmanı hem daha hızlı kurulur hem de ek donanım maliyeti getirmez.",
+      "matched_project": null,
+      "relevance": 2,
+      "investment_note": null
+    },
+    {
+      "full_name": "travisvn/awesome-claude-skills",
+      "inputs_hash": "8635c642327607595beb19fcc0d91113",
+      "description_tr": "Bu repo, Claude Skills için hazırlanmış skill'leri, kaynakları ve araçları derleyen küratörlü bir listedir. Skill, Claude'un bir işi tekrarlanabilir biçimde yapmasını sağlayan talimat, betik ve kaynak dosyalarından oluşan bir klasördür; sistem kademeli yükleme mantığıyla önce yalnızca metadata'yı, ilgili olduğunda tam talimatı ve gerektiğinde ek dosyaları okur. Liste Claude.ai arayüzü, Claude Code CLI ve API üzerinden kurulum adımlarını gösteriyor, resmi doküman skill'lerini ve topluluk katkılarını ayrı ayrı sıralıyor. Kod değil, referans koleksiyonu; lisans belirtilmemiş. Ekim 2025'te açılmış ve 15.000'in üzerinde yıldıza ulaşmış, düzenli güncellenen bir liste.",
+      "usage_tr": "Claude Code kurulumunu geliştirme tarafında bu, Superpowers plugin'inin yanına koyacağın türden bir kaynak. Lyricdrop v2'de tekrar eden işler — şarkı onay akışı, admin panelde veri girişi kontrolleri, sürüm notu çıkarma — birer skill'e dönüştürülmeye uygun ve buradaki örnekler yapıyı kopyalamak için iyi bir başlangıç. Skill'ler düz dosya olduğu için ofis Mac'inde yerelde durur, ek API maliyeti getirmez ve Max aboneliğiyle çalışır. Bir skill yazıldıktan sonra asistanına da devredilebilir: iş akışını o çalıştırır, sen yalnızca çıktıyı onaylarsın. Uyarı: liste topluluk katkılarını da içeriyor ve bunların kalitesi değişken; kurduğun her skill'in betiklerini okumadan projeye almamak gerekir.",
+      "matched_project": "Claude Code kurulumu",
+      "relevance": 6,
+      "investment_note": null
+    },
+    {
+      "full_name": "DataTalksClub/machine-learning-zoomcamp",
+      "inputs_hash": "89bc8b8d660faf639be7e33f227d63f9",
+      "description_tr": "Machine Learning Zoomcamp, makine öğrenmesi mühendisliğini dört ay süren ücretsiz ve uygulamalı bir kurs olarak veren bir programdır. Müfredat model kurmaktan değerlendirmeye ve dağıtıma uzanıyor; Docker, FastAPI, Kubernetes, PyTorch ve TensorFlow gibi araçları kapsıyor. Ders materyalleri Jupyter notebook'ları halinde bu repoda duruyor, videolar YouTube'da yayınlanıyor ve her yıl yeni bir kohort açılıyor. Ödev teslimi ve topluluk desteği Slack ile Telegram üzerinden yürüyor. Lisans belirtilmemiş; 14.500'ün üzerinde yıldızlı ve DataTalks.Club tarafından aktif olarak sürdürülüyor.",
+      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; kurs kendi modelini eğitip servis edecek ML mühendisleri için tasarlanmış, senin kurduğun ürünler ise hazır modelleri birleştiriyor. En yakın olası bağlam, Docker ve FastAPI ile servis dağıtma bölümlerinin DigitalOcean üzerinde çalıştırdığın servislerle örtüşmesi, ama bunun için dört aylık bir kursa girmek gerekmez. Materyaller ücretsiz ve Mac'te yerel çalışır; maliyet yalnızca zaman. Yatırım merceğinde de bir şirket değil, topluluk yürüten ücretsiz bir eğitim programı olarak duruyor.",
+      "matched_project": null,
+      "relevance": 1,
+      "investment_note": null
+    }
+  ]
+}

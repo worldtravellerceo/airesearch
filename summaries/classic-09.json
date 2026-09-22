@@ -1,0 +1,121 @@
+{
+ "repos": [
+  {
+   "full_name": "ace-trump-tech/DeltaForce-OBS-Locker",
+   "inputs_hash": "cf799b2637f0799793c6f88f0aac74b5",
+   "description_tr": "Depoda README yok ve açıklama kendi içinde çelişiyor. Açıklamanın ilk yarısı, bir nişancı oyunu için OBS render enjeksiyonuna dayalı otomatik nişan alma, geri tepme bastırma ve iskelet tanıma vaat ediyor; hemen ardından gelen base64 kodlu not ise bunların uydurma olduğunu, projenin yalnızca bir anti-cheat kurulumu yaptığını söylüyor. Python olarak etiketlenmiş, lisans belirtilmemiş; konu etiketleri cv, deep-learning ve obs. Yıldız sayısı 1.000'in üzerinde, ancak kamuya açık metin projenin gerçekte ne yaptığına karar vermek için yeterli değil. İki iddiadan hangisinin doğru olduğu dışarıdan doğrulanamıyor.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam oyun ekranı üzerinde görüntü analizi başlığı olurdu, o da çalıştığın alanlardan biri değil. Lyricdrop'ın TV ve araç ekranı testleri ekran yakalamayla ilgilenir, ama orada ihtiyacın oynatma ve zamanlama doğruluğu; burada anlatılan iş bir oyuna müdahale. Teknik olarak da mevcut yığınına (Expo, Supabase, n8n) bağlanan bir tarafı yok. Lisansı ve README'si olmayan, ne yaptığını kendi metninde bile tutarlı anlatmayan bir kodu ofisteki Mac'te çalıştırmanın karşılığı yok. Bu satırı bilgi olarak geçmek yeterli.",
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "TuragaLab/flybody",
+   "inputs_hash": "9569529c5f0b37895ac0fc14131ede2b",
+   "description_tr": "flybody, meyve sineğinin (Drosophila melanogaster) anatomik ayrıntılı gövde modelini MuJoCo fizik motoruna taşıyan bir Python paketi. Google DeepMind ile HHMI Janelia'nın ortak çalışması olarak geliştirildi ve yürüme taklidi, uçuş ile görüşle yönlendirilmiş uçuş gibi hazır pekiştirmeli öğrenme görev ortamları içeriyor. Kurulum üç kademeli: yalnızca model, TensorFlow/Acme ile politika çalıştırma, ve Ray ile dağıtık DMPO eğitimi. Amaç, sinirsel kontrolün bedenlenmiş bir bağlamda modellenmesi için ortak bir platform sunmak. Apache-2.0 lisanslı, 900'ün üzerinde yıldızı var; Nature'da yayımlanmış bir makalesi ve çalışan CI test akışları mevcut.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam nöroteknoloji ve biyosinyal ilgin olurdu. Ama oradaki ihtiyacın insan EEG'si ve giyilebilir cihaz verisini işlemek; flybody ise simüle edilmiş bir böcek gövdesinin motor kontrolünü öğreniyor, ikisi ortak bir kütüphane ya da veri formatı paylaşmıyor. Model dosyalarını MuJoCo viewer'ında Mac'te açıp gezebilirsin, fakat eğitim tarafı GPU ve conda/CUDA kurulumu bekliyor, yani yerel çalıştırma kriterini kısmen karşılıyor. Yatırım merceğinden de ticarileşecek bir ürün değil, akademik bir referans uygulaması. Bu satırı okuma listesinde bırakmak yeterli.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "benchflow-ai/awesome-evals",
+   "inputs_hash": "27b97796c4ae781f205ac8967736c684",
+   "description_tr": "Awesome Agent Evals, yapay zeka ajanlarının kurulması ve değerlendirilmesi üzerine seçilmiş kaynakları toplayan, BenchFlow tarafından sürdürülen bir liste. Her girdi ne olduğunu ve neden listede olduğunu yazıyor; bağlantılar denetleniyor ve terk edilmiş araçlar sessizce bırakılmak yerine listeden çıkarılıyor. İçerik 443'ün üzerinde bağlantı ve 143 derin okuma notundan oluşuyor; bölümler gözlemlenebilirlik, eval altyapısı, benchmark bütünlüğü, LLM-as-judge, ajana özgü değerlendirme ve güvenlik testleri şeklinde ayrılmış. PATTERNS.md dosyası çalıştırılabilir örnekler veriyor: insan etiketlerine hizalanmış LLM-as-judge, pass@k/pass^k, hata analizi, yörünge ve dünya-durumu puanlama, CI kapısı. Bir kod kütüphanesi değil metodoloji derlemesi; lisansı standart dışı, yıldız sayısı 900 civarında.",
+   "usage_tr": "Lyricdrop v2'de eksik olan şey bir ölçü: kelime hizalamasının ne zaman yeterince iyi olduğuna şu anda gözle karar veriyorsun. PATTERNS.md'deki hata analizi ve LLM-as-judge hizalama bölümü, 20-30 şarkılık test setin için insan etiketiyle uyumu ölçülen bir puanlayıcı kurmanın adımlarını veriyor; bunu admin paneline bir kontrol adımı olarak bağlayabilirsin. CI kapısı bölümü, tarayıcı playtest gate'ini dışarıya devretmeden önce kabul kriterini yazılı hale getirmeni sağlar — devretmek istediğin işin şartnamesi zaten bu. Metin olduğu için Mac'te yerel çalışma ya da API maliyeti sorusu geçersiz; okuma ve uygulama işi sana kalıyor. Depoyu Claude Code'a kaynak klasörü olarak verip inceleme ajanına kendi kabul kurallarını çıkarttırabilirsin. Uyarı: bu bir araç değil; buradan bir akşamda çalışan bir kapı çıkmaz, iki üç tur ister.",
+   "matched_project": "Lyricdrop",
+   "relevance": 6,
+   "investment_note": "Listenin şirket ve pazar bölümü eval ile RL-environment segmentini oyuncularıyla birlikte haritalıyor; erken aşama AI taramasında bu alanı gözden geçirmek için hazır bir başlangıç noktası."
+  },
+  {
+   "full_name": "LLMQuant/awesome-trading-agents",
+   "inputs_hash": "8a9d0f2797e961c59c0e9860af66fe5b",
+   "description_tr": "Awesome Trading Agents, büyük dil modellerinin piyasa araştırmasında, karar vermede veya emir yürütmede rol aldığı açık kaynak projeleri topluyor. Liste üç yapı taşına odaklanıyor: ajanlar (çok ajanlı analist ekipleri, tek ajanlı traderlar, araştırma yardımcıları, tahmin piyasası uzmanları), MCP sunucuları (piyasa verisi, aracı kurum ve borsa bağlantıları, backtest platformları) ve agent skill'leri. Klasik quant kütüphanelerini, zaman serisi modellerini ve RL trading botlarını bilinçli olarak kapsam dışı bırakıp başka listelere yönlendiriyor. Girdi ölçütleri açık yazılmış: kamuya açık kod, belirgin LLM davranışı, güncel aktivite, kullanılabilir dokümantasyon. CC0 lisanslı, İngilizce ve Çince sürümleri var, LLMQuant topluluğu tarafından sürdürülüyor ve 800'ün üzerinde yıldızı bulunuyor.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam Arslan Holding'in yatırım tarafı olurdu. Ama oradaki ihtiyacın erken aşama şirketleri bulmak, elemek ve durum tespiti yapmak; buradaki araçlar halka açık piyasalarda araştırma ve emir yürütme için yazılmış, şirket taramasına oturmuyor. MCP sunucuları ve skill dosyaları Claude Code'a takılabilir yapıda olduğu için denemesi teknik olarak kolay, fakat denemek bir aracı kurum hesabı ve piyasa veri aboneliği gerektiriyor. Yerel çalışma tarafı da zayıf: ajanların çoğu barındırılan model API'lerine bağlı, yani her koşu maliyet demek. Bu satırı araç olarak değil sektör okuması olarak değerlendirmek daha doğru.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": "FinTech ilgin açısından liste, LLM tabanlı trading ajanları segmentinde kimin ne yaptığını tek sayfada gösterdiği için hızlı bir deal flow çerçevesi sunuyor."
+  },
+  {
+   "full_name": "v-modal/awesome-jev-tools",
+   "inputs_hash": "313832d2f681ae35ba99cff5c27df684",
+   "description_tr": "Bu liste, TypeSafe AI'ın System One modeli Jev üzerine kurulmuş kamuya açık projeleri ve geliştirici kalıplarını topluyor. Jev bir sohbet modeli değil: yapılandırılmamış durumu tipli bir soruyla birlikte alıp seçim, puan veya boolean gibi tipli bir kararı güven değeriyle döndürüyor; token token üretim olmadığı için düşük gecikmeli bir karar katmanı olarak konumlanıyor. Kullanım alanları sınıflandırma, altyapı yönlendirme, rubrik puanlama, doğrulama kapıları ve ajan guardrail'leri olarak sıralanmış. Girdiler kategori dosyalarına bölünmüş (sınıflandırma ve yönlendirme, guardrail, puanlama, ajan kararları, değerlendirme, SDK'lar ve diğerleri) ve toplamları 200'ü geçiyor. README küratörlüğün onay anlamına gelmediğini açıkça yazıp toplu yayımlanan, kodundan çok metni olan projelere karşı uyarıyor; lisans alanı boş, yıldız sayısı 600 civarında.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, sesli not uygulamasındaki kategori çıkarma adımı gibi tek bir tipli karara indirgenen yerler olurdu. Ama orada kararı verecek olan barındırılan bir API; Mac'te yerel çalışmıyor ve her not için dışarıya çağrı anlamına geliyor, bu da yerel-önce tercihinin tersi. Ayrıca bu depo bir araç değil dizin: kendi metni bile girdilerin çoğunun kanıtlanmamış olduğunu ve kullanmadan önce kodun gerçekten API'yi çağırıp çağırmadığını kontrol etmen gerektiğini söylüyor. Kendi uygulamana gömme kriterini de karşılamıyor, çünkü gömülecek olan şey üçüncü parti bir servise bağımlılık. Konsepti bilmek yeterli; bir adım atmayı gerektirmiyor.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "cobanov/awesome-fly",
+   "inputs_hash": "39fedbe9a4ef4790c591c3ff34b729d8",
+   "description_tr": "Awesome Fly, meyve sineği konnektomu etrafında yapılmış projeleri derleyen bir liste. MaleCNS (erkek merkezi sinir sistemi) ile FlyWire (dişi beyin) veri kümelerinin farkını anlatarak başlıyor; sonra oyunlar ve kontrol deneyleri, masaüstü sinek uygulamaları, beyin modelleri ve bedenlenmiş simülasyon, veri kümeleri, analiz kütüphaneleri ve makaleler şeklinde ilerliyor. Her girdi kendi dokümantasyonuna dayanarak özetlenmiş ve prototip, devre alt kümesi ya da sürüm beklemede gibi sınırlamalarla işaretlenmiş. Liste açıkça uyarıyor: hareket eden bir sinek ya da oynanabilir bir demo tek başına biyolojik doğruluk kanıtı değil. CC0 lisanslı ve 580 civarı yıldızı var; liste sahibi ayrıca kendi başlangıç şablonunu da tanıtıyor.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam nöroteknoloji ilgin olurdu. Oradaki tezin insan EEG'si, neurofeedback ve giyilebilir cihazlar üzerine; buradaki işler bir böceğin bağlantı haritasını oyunlara ve simüle gövdelere bağlıyor, aralarında ortak bir araç ya da veri yolu yok. Projelerin çoğu tarayıcıda çalışan demolar olduğu için Mac'te açmak kolay ve maliyetsiz, ama bu bir kullanım değil merak. Hackathon'lara götürdüğün türden görsel bir demo fikri arıyorsan bu tür işler ilham verebilir; yine de senin gerçek bir şey yaptım ölçütünün altında kalır. Yatırım tarafında da ticarileşecek bir ürün görünmüyor.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "Zhiyuan-Fan/Awesome-DeepSeek-Harness-Plugins",
+   "inputs_hash": "b8583007719acf11de8de6a6c4201d4f",
+   "description_tr": "Bu depo, açık kaynak ajan harness'ı DeepSeek Harness (DSH) için kamuya açık eklenti ve uzantıları günlük güncellenen bir dizin halinde topluyor. Girdiler tablolar halinde veriliyor; her satırda depo bağlantısı, canlı yıldız rozeti ve bağımsız doğrulanmış referanslar (ya da referans bulunmadığı notu) yer alıyor. Taksonomi harness'ın yetenek sınırlarını izliyor: modeller ve sağlayıcılar, araçlar ve skill'ler, oturum ve depolama, döngü ve zamanlama, runtime ve sandbox, arayüzler ve istemciler, entegrasyonlar, geliştirici araçları. Sağlayıcı bölümünde mevcut abonelikleri OAuth ile modele bağlayan, yerel MLX üzerinden model sunan veya masaüstü uygulamalardan model taşıyan eklentiler öne çıkıyor. MIT lisanslı, İngilizce ve Çince, 560 civarı yıldız; liste kurmadan önce eklentinin kodunu ve izinlerini okumayı öneriyor.",
+   "usage_tr": "Claude Code ve OpenCode ile çalışırken ikinci bir harness'ın eklenti yüzeyini görmek, kendi kurulumunda neyin eksik olduğunu göstermesi bakımından işine yarar. İki bölüm doğrudan senin kriterlerine denk düşüyor: abonelikleri API anahtarı yerine OAuth ile bağlayan sağlayıcı eklentileri ve yerel MLX üzerinden model sunan girdiler — ikisi de API maliyeti getirmesin, Mac'te yerel çalışsın tercihinin karşılığı. Oturum/depolama ile döngü/zamanlama kategorileri, istediğin orkestratör ajanın hangi parçalardan kurulduğuna dair hazır bir parça listesi veriyor; aynı desenleri kendi Claude Code kurulumunda hook ve skill olarak kurabilirsin. Fork'layıp kendi istemcisini yazma refleksin için de örnek: bir harness'ın eklenti sınırlarını nasıl çizdiğini okumak, OpenCode için planladığın iOS istemci işinde işe yarar. Uyarı: girdilerin çoğunun doğrulanmış referansı yok ve dizin bir denetim değil; harness değiştirmek burada amaç değil, desenleri almak yeterli.",
+   "matched_project": "Claude Code / ajan altyapısı",
+   "relevance": 5,
+   "investment_note": null
+  },
+  {
+   "full_name": "kevinzakka/mjbatch",
+   "inputs_hash": "f814721812d063f662f18d60bd691a20",
+   "description_tr": "mjbatch, binlerce MuJoCo simülasyonunu CPU üzerinde paralel çalıştırmak için yazılmış bir Python kütüphanesi. Yürütme C++ thread pool ile yapılıyor ve GIL bırakılıyor; simülasyon durumuna ve kontrol girdilerine toplu halde canlı dizi erişimi var, bind ile MjData alanları, expand ile simülasyon başına MjModel parametreleri ayarlanabiliyor. Örnekler pekiştirmeli öğrenme, model öngörülü kontrol, sistem tanımlama ve donanım ko-tasarımını kapsıyor; belgelerde bir dört ayaklı robot kontrolcüsünün beş yaşındaki bir M1 dizüstünde bir dakikanın altında yürümeyi öğrendiği belirtiliyor. Apache-2.0 lisanslı, PyPI'da yayımlanmış, CI'sı çalışır durumda ve 560 civarı yıldızı var. Kapsamı dar ve net: robotik ve kontrol çalışanlar için bir hızlandırma katmanı.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, ağır hesabı Mac'te yerel çalıştırma tercihin olurdu. Kütüphane bu tercihin ders kitabı örneği — GPU istemiyor, dizüstü CPU'sunda çalışıyor, API maliyeti yok — ama çözdüğü problem robot kontrolü ve listendeki projelerin hiçbirinde optimize edilecek bir dinamik sistem yok. Lyricdrop, Folio ve sesli not uygulamasının ihtiyaç listeleriyle hiçbir kesişimi bulunmuyor. Giyilebilir cihaz tarafında donanım tasarımına girersen hatırlanabilir, bugün için bir adım gerektirmiyor. Örnek dosyalar tek komutla çalıştığı için merak edersen yarım saatlik bir deneme olur, ötesi yok.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "Calix-L/DanKS",
+   "inputs_hash": "42d0abaf2330b79c22e2c07c89307840",
+   "description_tr": "DanKS, dört oyunculu ve ortaklı bir kart oyunu olan Guandan için geliştirilmiş bir yapay zeka ajanı; Kingsoft AI Product Center tarafından başlatılmış. Tek depoda üç kuşak kod bulunuyor: yapısal aday getirimi ve NumPy seçici, daha geniş aksiyon üretimi ve ONNX seçici, son olarak PPO ile eğitilmiş bellek farkındalıklı politika. Mimari dört adımda anlatılıyor: bilgi durumunu kodlama, bütçeli ayrıştırma aramasıyla yapısal aday üretme, ortak kodlayıcıyla sınırlı bir Top-K kümesini aktör-kritik olarak puanlama, self-play ile klipli PPO güncellemeleri. Depo 108 kartlık kural motorunu, legal aksiyon üretimini, eğitim ve çıkarım örneklerini içeriyor; hızlı başlangıç CPU üzerinde çalışıyor ve tarayıcıda oynanabilir bir demo var. Apache-2.0 lisanslı, Python 3.10+, 550 civarı yıldız.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam Lyricdrop'ın oyun tarafı olurdu. Ama oradaki zorluk ayarı boşluk sayısıyla ölçeklenen tek bir parametre; burada çözülen problem devasa bir aksiyon uzayında ortaklı kart oyunu stratejisi ve ikisi arasında taşınabilir bir bileşen yok. Kod Mac'te CPU ile çalışıyor ve API maliyeti getirmiyor, yani denemesi ucuz; fakat denemenin sonunda eline geçecek bir parça yok. Kurumsal bir araştırma yayını olduğu için yatırım tarafında da bir giriş noktası sunmuyor. Kart oyunu AI'ına merakın varsa tarayıcı demosu yeterli.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "haoruilee/awesome-agent-native-services",
+   "inputs_hash": "f93507a8d407c35d509f0feddb1f27da",
+   "description_tr": "Bu liste, insanların ajan kurmak için kullandığı genel platformları değil, ajanların doğrudan tükettiği servisleri kataloglamayı amaçlıyor. On altı kategoride 236 servis var: ajanlara internet kimliği veren e-posta servisleri, uzak tarayıcılar, MCP araç sunucuları, insan onayı katmanları, ajan cüzdanları ve ödeme protokolleri, sandbox ve runtime'lar, uzun süreli bellek, arama, gözlemlenebilirlik, dayanıklı yürütme ve zamanlama, toplantı ve telefon servisleri, LLM gateway'leri. Depo yalnızca okunacak bir Markdown indeksi değil; bir servisi bulmak, kurmak ve aday bir servisi ölçütlere göre değerlendirmek için skill'ler taşıyor ve Claude Code eklenti pazarı üzerinden kurulabiliyor. Katalogun makine okunur bir web sürümü de yayımlanıyor. Lisans alanı boş görünüyor; yıldız sayısı 470 civarında.",
+   "usage_tr": "Bu katalog, proje kurulumunun uçtan uca otomasyonu isteğinin parça listesi gibi okunuyor: hesap açma, ödeme, secret yönetimi ve deploy adımlarının her biri burada bir kategoriye karşılık geliyor. find-agent-service ve install-agent-service skill'lerini Claude Code kurulumuna ekleyip bir iş için ajan-native servis bulmasını ve bağlantı adımlarını getirmesini isteyebilirsin; çıktı adım adım yönerge olduğu için asistanına devredilebilir biçimde geliyor. İnsan-döngüde onay kategorisi, manuel test ve içerik onayını dışarı verme planında aradığın ara katmanı tarif ediyor. Kurulum tarafı hafif: depo klonlanıp skill klasörü kopyalanıyor, Mac'te yerel çalışıyor ve kendi başına maliyet getirmiyor. Asıl uyarı seçilecek serviste: katalogdakilerin büyük kısmı barındırılan, hesap ve ödeme isteyen servisler, yani her seçim yeni bir bağımlılık ve abonelik demek; liste de kendi deyimiyle bir dizin, denetim değil.",
+   "matched_project": "Claude Code / ajan altyapısı",
+   "relevance": 7,
+   "investment_note": "236 servisin kategori kırılımı, ajan altyapısı yığınında hangi katmanların kalabalıklaştığını ve hangilerinin ince kaldığını gösterdiği için erken aşama taramada mercek olarak kullanılabilir."
+  },
+  {
+   "full_name": "AbdelStark/awesome-typesafe-jev",
+   "inputs_hash": "39d40ef07048a8f89cacef5772326b45",
+   "description_tr": "Bu depo, TypeSafe AI'ın Jev modeli için bir topluluk saha rehberi olarak kurgulanmış. Merkezinde tek bir dokümante edilmiş çağrı örneği var: bir destek mesajı girdisine karşılık kategori seçimi, 0-2'lik bir rubrik üzerinden puan ve bir aciliyet olasılığı dönüyor; örnek canlı bir çağrı değil, resmi dokümandan alınmış kayıtlı bir yanıt olarak işaretlenmiş. Rehber canlı demolara, SDK'lara, başlangıç şablonlarına ve bağımsız değerlendirmelere (çapraz model sonuçları içeren JevBench gibi) ayrı bölümler ayırıyor. İçerik GitHub Pages üzerinde yayımlanıyor; makine okunur bir resources.json dizini ve kodlama ajanları için bir SKILL.md sunuluyor. MIT lisanslı, 70'in üzerinde katkıcı ve 440 civarı yıldız; listeleme onay anlamına gelmiyor ve girdilerin sınırlamaları yazılı.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, sesli not uygulamasında kategori çıkarma ya da Lyricdrop'ta bir şarkıyı onaylama gibi tek bir tipli karar verilen adımlar olurdu. Bu adımların ikisinde de şu an bir sorun yaşamıyorsun ve önerilen çözüm barındırılan bir model API'sine bağlanmayı gerektiriyor; Mac'te yerel çalışmıyor ve çağrı başına maliyet ekliyor. Depo zaten bir araç değil, rehber ve dizin; kendi uygulamana gömeceğin bir bileşen sunmuyor. Bağımsız değerlendirme bölümü, bir satıcı iddiasının nasıl sınandığına dair okunabilir bir örnek — bu kadarıyla değerli. Bir adım atmayı gerektirmiyor.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": "TypeSafe AI, metin üretmek yerine tipli karar döndüren bir model kategorisi kurmaya çalışıyor ve etrafında bağımsız benchmark'lar oluşmuş; erken aşama AI taramanda izlenecek bir kategori olarak not edilebilir."
+  },
+  {
+   "full_name": "anuj0456/OpenArch",
+   "inputs_hash": "c49d1d3259a7a4dbb6846b07d336c2fe",
+   "description_tr": "OpenArch, modern açık kaynak LLM mimarilerinin PyTorch'ta sıfırdan yazılmış uygulamalarını topluyor. Amaç üretim değil okunabilirlik: her mimari tek bir klasörde model.py ve kısa bir README olarak duruyor; dikkat türü, normalizasyon, pozisyon kodlaması ve MoE yönlendirmesi gibi yapısal tercihler yan yana karşılaştırılabilecek biçimde açık bırakılıyor. GPT-2 XL, Llama 2/3, OLMo 2, DeepSeek R1, Gemma 3, Mistral 3, Llama 4, Qwen 3, Kimi K2, GLM 4.5, GPT-OSS ve Grok-2.5 ileri geçiş için kullanılabilir durumda; Qwen3 Next, Qwen3-VL ve görüntü tarafı hâlâ yapım aşamasında. Referans olarak Sebastian Raschka'nın mimari galerisi alınmış ve hedef, oradaki 103 mimarinin tamamı. MIT lisanslı, 400 civarı yıldız ve katkıya açık.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, Mac'te çalıştırmayı tercih ettiğin yerel modellerin neden farklı davrandığını anlamak olurdu. Bir modelin MoE mi yoğun mu olduğu, kayan pencereli dikkat kullanıp kullanmadığı bellek ve hız davranışını belirliyor ve bu depo o farkları okunabilir biçimde yan yana koyuyor. Ama bu bir araç değil ders materyali: buradan çıkan kod Lyricdrop'ın STT hattına ya da Folio'nun içerik pipeline'ına takılmıyor, model eğitmiyorsun. Çalıştırmak için PyTorch kurulumu ve büyük modellerde ciddi bellek gerekiyor; Mac'te ancak küçük mimarilerle ileri geçiş denenir. Zaman ayırırsan okuma olarak değerli, kurulum olarak değil.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "cclank/lanshu-awesome-ai-video-kit",
+   "inputs_hash": "c47c6459717639ad12ba6f288412df92",
+   "description_tr": "Bu depo, kurumsal AI video projelerinden çıkmış bir prompt mühendisliği kiti. İçinde 543 test edilmiş prompt (433 tek model en iyi pratiği, 110 modeller arası karşılaştırma matrisi), 15 model kapsaması, 21 metodoloji dokümanı ve 29 senaryo kategorisi var; her prompt hangi kaynağa dayandığını gösteren bir source alanı taşıyor. Modeller kendi resmi formüllerine göre ayrı ayrı ele alınmış (Sora'nın shot list yaklaşımı, Veo'nun sekiz öğesi, Kling'in beş katmanı gibi) ve ticari modellerin yanında açık kaynak olanlar da listelenmiş. Bir GitHub Action haftada bir 32 resmi uç noktayı denetleyip sürüm değiştiğinde issue açıyor; ayrıca model seçimi ve prompt çevirisi için yedi Claude Skill ile bağımlılıksız tek dosya HTML araçları geliyor. MIT lisanslı, 400 civarı yıldız; içeriğin ana dili Çince, İngilizce bir README sürümü de var.",
+   "usage_tr": "Folio'nun günlük içerik pipeline'ında en çok zaman alan iş, her post ve story için hangi video modelinin kullanılacağına karar verip prompt'u o modelin formülüne göre yazmak; bu kit tam o iki adımı hazır getiriyor. model-selector ve prompt-translator skill'lerini Claude Code kurulumuna ekleyip n8n akışının prompt üretme adımına bağlayabilirsin, böylece günlük içerik üretimi asistanına devredilebilir hale gelir. Prompt'lar kaynak bağlantılı olduğu için hangi kalıbın hangi model sürümünde denendiğini görürsün; haftalık uç nokta denetimi de bir model sürüm değiştirdiğinde pipeline'ın sessizce bozulmasını erken yakalamana yardım eder. İkinci bağlam uygulama stüdyosu fikrindeki reklam kreatifi üretimi — aynı prompt kütüphanesi oraya da uyar. Uyarı: listelenen modellerin çoğu ticari API, Mac'te yerel çalışmıyor ve saniye başına maliyet çıkarıyor; Folio yalnızca kendi telefonunda çalışacağı için günlük üretim hacmini baştan sınırlamak gerekir. Ayrıca içeriğin çoğu Çince yazılmış, prompt'ları kendi diline taşımak ek bir adım.",
+   "matched_project": "Folio",
+   "relevance": 7,
+   "investment_note": null
+  }
+ ]
+}

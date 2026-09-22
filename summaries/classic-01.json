@@ -1,0 +1,175 @@
+{
+ "repos": [
+  {
+   "full_name": "nilbuild/developer-roadmap",
+   "inputs_hash": "86777469e26508eb854438cab68cdecc",
+   "description_tr": "developer-roadmap, roadmap.sh sitesinin arkasındaki açık kaynak depodur ve yazılım alanlarına göre etkileşimli öğrenme yol haritaları barındırır. Frontend, backend, DevOps, bilgisayar bilimi, veri bilimi gibi klasik başlıkların yanına README'ye göre Claude Code, AI Engineer ve vibe coding gibi yeni başlıklar da eklenmiş. Yol haritaları tıklanabilir düğümlerden oluşuyor; bir düğüm açıldığında konunun kısa açıklaması ve kaynakları geliyor. Depo TypeScript ile yazılmış, içerik topluluk katkısıyla güncelleniyor; ayrıca best practice listeleri ve mülakat soruları bölümleri var. 2017'de açılmış ve 367 bin yıldıza ulaşmış; lisans alanı standart bir SPDX kimliğine oturmuyor (NOASSERTION).",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, yeni bir alana girerken ya da bir freelancer'a iş tarif ederken konu haritası olarak bakman olabilir. Bu bir kütüphane değil, içerik; Expo/Supabase tarafına gömebileceğin ya da Claude Code'un iş akışına takabileceğin bir parçası yok. Öğrenme tarafında da senin önceliğin yazılım müfredatı değil, ürünü bitirmek ve yönetmek. Yıldız sayısı yüksek olduğu için listelerde sık görünür, ama senin için bir araç olarak değil, ara sıra açılan bir referans sitesi olarak kalır.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "vinta/awesome-python",
+   "inputs_hash": "ae7426fec5abc13f4f02ebaf5d2a0137",
+   "description_tr": "awesome-python, \"Python'da şu işi yapacağım, hangi aracı kullanmalıyım?\" sorusuna kategori kategori cevap veren küratörlü bir bağlantı listesidir. Web çatılarından veri işlemeye, ses/görüntü kütüphanelerinden test araçlarına kadar geniş bir yelpazeyi başlıklar altında toplar. İçerik tamamen markdown; çalışan kod, paket ya da API sunmaz. 2014'te açılmış, 322 bin yıldızla türünün en bilinen listelerinden biri ve topluluk katkısıyla güncelleniyor. Lisansı standart bir SPDX kimliğine oturmuyor (NOASSERTION).",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, Lyricdrop'un Mac'te çalışan Python tarafında bir STT ya da ses işleme kütüphanesi ararken göz gezdirmek olabilir. Ancak bu tür seçimleri pratikte Claude Code ile yapıyorsun ve liste kalite değil kapsam sıralıyor; bakımsız kalmış projeler de aynı satırda duruyor. Kendi uygulamana gömülecek bir bileşen ya da asistanına devredilecek bir iş akışı içermiyor. Ara sıra açılan bir referans olarak değeri var, projelerinden birine giren bir parça olarak yok.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "tensorflow/tensorflow",
+   "inputs_hash": "76dca08fe13f5a45908ac2602fc07bab",
+   "description_tr": "TensorFlow, Google tarafından geliştirilen, makine öğrenmesi modellerini tanımlamak, eğitmek ve dağıtmak için kullanılan açık kaynak bir çatıdır. Çekirdeği C++ ile yazılmış, birincil arayüzü Python; CPU, GPU ve dağıtık eğitim senaryolarını destekler, mobil ve tarayıcı tarafı için ayrı çalışma zamanları vardır. Apache-2.0 lisanslı ve 2015'ten beri açık; 200 bin yıldızla alanının en büyük depolarından biri. Derin öğrenme araştırmasında ve üretim sistemlerinde uzun süredir kullanılıyor, geniş bir model ve araç ekosistemi taşıyor. Son yıllarda yeni araştırma kodunun önemli kısmı PyTorch'a kaysa da TensorFlow kurumsal dağıtımlarda yaygın olarak korunuyor.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, Mac'te yerel çalıştırmayı planladığın modellerin altında yatan çalışma zamanı olması. Ama sen model eğitmiyorsun, hazır modelleri yerelde koşturuyorsun ve bu ihtiyacı pratikte PyTorch, MLX ya da llama.cpp tabanlı hazır araçlar karşılıyor. TensorFlow'u kurmak, uyumlu sürüm bulmak ve Apple Silicon'da hızlandırmayı ayarlamak başlı başına bir iş; karşılığında Lyricdrop veya Kanarya tarafında bugün kazanacağın bir şey yok. Kütüphaneyi seçmek yerine, ihtiyacın olduğunda onu zaten kullanan bir üst seviye aracı seçmek daha doğru olur.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "huggingface/transformers",
+   "inputs_hash": "0ba9d5ab453f82ef55c2de0ec0e8f3c8",
+   "description_tr": "Transformers, metin, görüntü, ses ve çok modlu modelleri tek bir Python API'si altında tanımlayan ve çalıştıran bir kütüphanedir. Model ağırlıklarını Hugging Face Hub'dan indirip yerelde çıkarım yapmayı, isteğe bağlı olarak da ince ayar yapmayı sağlar; Whisper gibi konuşma tanıma modelleri, LLM'ler ve görsel-dil modelleri aynı arayüzden kullanılır. PyTorch üzerinde çalışır ve Apple Silicon'da MPS hızlandırmasıyla kullanılabilir; yüksek seviye `pipeline` sarmalayıcısı birkaç satırda çalışan bir çıkarım hattı kurar. Apache-2.0 lisanslı, 2018'den beri geliştiriliyor ve 166 bin yıldızla ekosistemin fiilî standardı durumunda. Model listesi ve API yüzeyi geniştir; bunun bedeli büyük bir bağımlılık ağırlığı ve sürümler arası kırılmalardır.",
+   "usage_tr": "Bu, Lyricdrop v2'nin kelime zamanlama adımında doğrudan işine yarayabilir: ElevenLabs ve Apify'ı bıraktığın için STT tarafını ofisteki M4 Pro Mac'te yerel koşturman gerekiyor ve Whisper ailesi modelleri bu kütüphaneyle indirilip çalıştırılabiliyor. Deneyeceğini söylediğin 2-3 STT sistemini aynı Python servisi içinde arka arkaya koşup 20-30 şarkılık test setinde yan yana ölçmenin en kısa yolu bu; servis, admin panelinin yanına ayrı bir işlem olarak oturur. Aynı kurulum sesli not uygulamandaki transkripsiyon ve sınıflandırma adımını da besler, yani iki projede tek yerel STT yığını kullanırsın. API maliyeti getirmez ve Max aboneliğinle çakışmaz; buna karşılık 24 GB RAM büyük model boyutlarında sınır koyar, model indirme ve ilk kurulum disk ister. Uyarı: bu bir hizalama aracı değil, kütüphane katmanı; kelime düzeyinde zaman damgası ve sözlerle karşılıklı düzeltme mantığını yine senin kurman gerekir, o yüzden önce hazır bir forced alignment aracıyla karşılaştırıp hangisinin daha az işle çalıştığını ölç.",
+   "matched_project": "Lyricdrop",
+   "relevance": 7,
+   "investment_note": null
+  },
+  {
+   "full_name": "VoltAgent/awesome-design-md",
+   "inputs_hash": "495dffcfa35812a04daeeee87e5a8353",
+   "description_tr": "awesome-design-md, bilinen markaların sitelerinden çıkarılmış DESIGN.md dosyalarını toplayan küratörlü bir depodur. DESIGN.md, Google Stitch'in ortaya attığı bir fikir: renk, tipografi, boşluk ve bileşen kurallarını düz metin olarak anlatan, kodlama ajanlarının okuyup tutarlı arayüz üretmesi için proje köküne konan bir markdown dosyası. README'ye göre depoda 73 hazır DESIGN.md var; dosyalar sadece renk listesi değil, örüntü ve token analizi içeriyor. MIT lisanslı ve içeriği tamamen metin olduğu için herhangi bir araç zinciri gerektirmiyor. Mart 2026'da açılmış ve 117 bin yıldıza ulaşmış; README'de belirgin sponsor yerleşimleri ve depoya bağlı ticari ürün bağlantıları bulunuyor.",
+   "usage_tr": "Folio'nun arayüz üretiminde işine yarar: ekranları Claude Design ile birebir Instagram görünümünde kurduğun için, o görünümün kurallarını bir DESIGN.md olarak repo köküne koyup Claude Code'un ürettiği her yeni ekranın aynı dilde kalmasını sağlayabilirsin. Aynı dosya mantığı Arslan Holding'in AI ile üretilen web sitesi ve Lyricdrop admin panelinde de işler; ajans harcaması olmadan tutarlılık sağlamanın ucuz yolu bu. Tamamen yerel çalışır, ek API maliyeti yoktur ve dosya repoda durduğu için asistanına ya da bir freelancer'a \"bu dosyaya uy\" diye devredilebilir. Fayda, her yeni ekranda tasarım tartışmasını sıfırdan yapmamak; hazır dosyaları kendi kurallarınla birleştirip tek bir DESIGN.md'de toplaman yeterli. Uyarı: dosyalar başka markaların sitelerinden çıkarılmış analizler, yani birini olduğu gibi yayınlanan bir kurumsal kimlikte kullanmak marka benzerliği riski taşır; Folio yayınlanmadığı için orada sorun değil, Arslan Holding tarafında referans alıp kendi tokenlarına dönüştürmek daha doğru. Dosyaların derinliği de eşit değil, seçtiğini bir kez okuyup budamadan kullanma.",
+   "matched_project": "Folio",
+   "relevance": 6,
+   "investment_note": null
+  },
+  {
+   "full_name": "rasbt/LLMs-from-scratch",
+   "inputs_hash": "10afe3b8fcc4bb998b572ef3ae7ee376",
+   "description_tr": "LLMs-from-scratch, GPT benzeri bir dil modelini PyTorch ile sıfırdan yazmayı adım adım anlatan bir eğitim deposudur ve aynı adlı kitabın resmî kod deposu olarak yayımlanıyor. Tokenizer, dikkat mekanizması, ön eğitim, ince ayar ve talimat ayarı aşamalarının her biri ayrı Jupyter defterlerinde kodlanmış. Amaç üretimde kullanılacak bir kütüphane sunmak değil, modelin içini anlaşılır hale getirmek; eğitilen model küçük ve öğretim amaçlı. Depo ayrıca büyük önceden eğitilmiş ağırlıkları yükleyip ince ayar yapma örnekleri içeriyor. 2023'te açılmış, 105 bin yıldıza ulaşmış; lisansı standart bir SPDX kimliğine oturmuyor (NOASSERTION).",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, yatırım tarafında model eğiten ekipleri değerlendirirken ne konuştuklarını anlamak olmak zorunda. Kendi modelini eğitmiyorsun ve eğitmen için bir sebep de yok; Lyricdrop'ta da Folio'da da hazır modelleri çağırıyorsun. Buradaki kodun kendi uygulamana gömülecek bir parçası yok, defterler öğretim için yazılmış. Vaktin sınırlıyken bu, ürün ilerletmeyen bir öğrenme yatırımı olarak kalır.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "pytorch/pytorch",
+   "inputs_hash": "547f7432d63ad272658d4994482ad3f5",
+   "description_tr": "PyTorch, tensör işlemleri ve otomatik türev üzerine kurulu, derin öğrenme modellerinin tanımlanıp eğitildiği açık kaynak bir çatıdır. Python arayüzü ile dinamik hesap grafiği sunar; NVIDIA GPU'larda CUDA, Apple Silicon'da MPS arka ucuyla hızlandırma yapar. Bugün açık kaynak model ekosisteminin büyük kısmı, ağırlıkları ve çıkarım kodu bu çatı üzerine yazılır. 2016'da açılmış, 103 bin yıldızlı ve kurumsal destekli; lisansı standart bir SPDX kimliğine oturmuyor (NOASSERTION). Araştırma kodundan üretim servislerine kadar geniş bir yelpazede kullanılıyor ve sürüm döngüsü hızlı.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, Mac'te yerel koşturmayı planladığın STT ve LLM araçlarının zaten altında çalışıyor olması. Yani PyTorch senin seçeceğin bir araç değil, seçtiğin aracın bağımlılığı; kendi başına kurup kod yazman gereken bir durum yok. Ilgilenmen gereken tek pratik nokta, bir aracın Apple Silicon'da MPS ile çalışıp çalışmadığı ve 24 GB RAM'e sığıp sığmadığı. Bu soruyu da aracın kendi dokümanı cevaplar, bu depo değil.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "punkpeye/awesome-mcp-servers",
+   "inputs_hash": "e37e8cd70ef3883ac6e97e36ab2a137b",
+   "description_tr": "awesome-mcp-servers, Model Context Protocol sunucularını kategori kategori toplayan küratörlü bir listedir. MCP, dil modellerinin dosya sistemi, veritabanı ve dış API'lere standart bir arayüzden bağlanmasını sağlayan açık bir protokol; liste hem resmî hem topluluk yapımı sunucuları, istemcileri ve çatıları kapsıyor. Her satır dil, yerel mi bulut mu çalıştığı ve hangi işletim sistemini desteklediği gibi bilgileri simgelerle işaretliyor; içerik birkaç dile çevrilmiş ve web tabanlı bir dizinle eşleniyor. MIT lisanslı, Kasım 2024'te açılmış ve 95 bin yıldıza ulaşmış. Liste bir hizmetin pazarlama kanalı olarak da işliyor; README'de reklam yerleşimi var ve girdiler kalite denetiminden geçmiyor.",
+   "usage_tr": "Asistan ve holding operasyon araçları tarafında işine yarayacak yer burası: HubSpot, Trello, Slack, Google Calendar ve WhatsApp gibi hâlihazırda kullandığın sistemlerin çoğunun bir MCP sunucusu var ve bunları Claude Code'a bağladığında istediğin orkestratör davranışının ilk katmanını kurmuş olursun. Pratik ilk adım küçük olsun: asistanın Trello akışını okuyup özetleyen tek bir sunucuyla başla, n8n'de zaten kurduğun otomasyonları oraya taşımadan yan yana çalıştır. Supabase ve DigitalOcean sunucuları da Lyricdrop ve Kanarya'nın kurulum işlerini (secrets, migration, deploy) Claude Code'dan yapılabilir hale getirir, yani otomasyon isteğine doğrudan oturur. Çoğu sunucu yerelde çalışır ve ek API maliyeti getirmez; maliyet, bağlandıkları servislerin kendi ücretlerinden gelir. Uyarı: bu bir liste, denetlenmiş bir kayıt defteri değil; kapalı kaynak üçüncü parti istemcilere güvenmeme refleksini burada da koru, hesap tokenı verdiğin her sunucunun kodunu okuyup fork'lamak en güvenli yol. Erişim kapsamlarını izole tutma ilkeni sunucu bazında uygulaman gerekir, çünkü çoğu varsayılan olarak geniş yetki ister.",
+   "matched_project": "Asistan ve holding operasyon araçları",
+   "relevance": 7,
+   "investment_note": null
+  },
+  {
+   "full_name": "ruvnet/RuView",
+   "inputs_hash": "836bcdfd160e2263cb7a890f30c88008",
+   "description_tr": "RuView, sıradan WiFi sinyallerindeki bozulmaları (Channel State Information) okuyup mekândaki insanları ve hareketlerini çıkarmayı amaçlayan bir algılama platformudur. README'ye göre ucuz ESP32 sensörlerinden toplanan veriyle varlık ve doluluk tespiti, nefes ve kalp atış hızı ölçümü, aktivite ve düşme tanıma, oda bazlı RF haritalama ve uyku kalitesi sınıflandırması yapılıyor; kamera ya da giyilebilir cihaz kullanılmıyor. Home Assistant'a MQTT ile, Apple Home'a HAP köprüsü olarak, Google Home ve Alexa'ya Matter üzerinden bağlanıyor ve düğüm başına 21 varlık yayınlıyor. Rust ile yazılmış, MIT lisanslı. Haziran 2025'te açılmış olmasına rağmen 94 bin yıldıza ulaşmış; iddiaların çoğu deponun kendi belgelerine dayanıyor, bağımsız doğrulama README'de yok.",
+   "usage_tr": "Kanarya'nın fizyolojik öz-izleme tarafına ilginç bir veri kaynağı olabilir: nabız ve nefes gibi ölçümleri bileklikten değil odadan almak, uyku ve dinlenme verisini cihaz takmadan toplamak demek. Evdeki 7/24 açık Mac mini bu işin doğal toplayıcısı; ESP32 düğümleri veriyi MQTT ile oraya basar, Kanarya'nın Supabase tarafına aktarım n8n ile kurulur ve her şey yerelde kalır, API maliyeti olmaz. Nörofeedback ve giyilebilir cihaz tezinle de aynı hatta duruyor; temassız biyosinyal, o tezin donanım almadan denenebilecek ucu. Uyarı: bu bir yazılım kurulumu değil, donanım projesi; ESP32 düğümlerini alıp yerleştirmen ve kalibre etmen gerekir, kalp atışı gibi ölçümlerin doğruluğu oda ve yerleşim düzenine göre değişir. Sağlık kararı verecek bir ölçüm gibi değil, desen arayacağın bir sinyal gibi davran; kurulumun kendisi asistanına devredilebilecek türden bir iş değil, ilk düğümü kendin kurman gerekir.",
+   "matched_project": "Kanarya",
+   "relevance": 7,
+   "investment_note": "Temassız yaşamsal bulgu algılama, giyilebilir cihaz tezinin donanımsız kolu; on beş ayda 94 bin yıldıza ulaşan bir ekip ve henüz oturmamış bir kategori olduğu için tanışmaya ve izlemeye değer, ancak iddiaların bağımsız doğrulaması yapılmadan pozisyon alınmamalı."
+  },
+  {
+   "full_name": "microsoft/ML-For-Beginners",
+   "inputs_hash": "29fb1d503cfebca0e466f0b8f262423d",
+   "description_tr": "ML-For-Beginners, Microsoft'un yayımladığı, 12 haftaya yayılmış 26 derslik klasik makine öğrenmesi müfredatıdır. Regresyon, sınıflandırma, kümeleme ve doğal dil işleme gibi temel konuları Jupyter defterleri, alıştırmalar ve 52 kısa sınavla anlatıyor; derin öğrenme değil, scikit-learn düzeyindeki klasik yöntemler kapsanıyor. Python ağırlıklı, bir kısmı R ile de veriliyor ve dersler kendi kendine ilerlemeye uygun düzenlenmiş. MIT lisanslı, 2021'de açılmış ve 90 bin yıldıza ulaşmış; içerik birçok dile çevrilmiş. Bir kütüphane değil, tamamen eğitim materyali.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, Folio'da düşündüğün öneri sisteminin arkasındaki temel kavramları öğrenmek olabilir. Ama oradaki ihtiyacın klasik ML eğitimi değil, çalışan bir bandit ya da basit skorlama mantığı ve onu Claude Code ile kurabiliyorsun. Depoda kendi uygulamana gömülebilecek bir bileşen ya da asistanına devredilebilecek bir iş yok. Bu materyal ürün geliştiren birinden çok, alana yeni giren bir öğrenciye göre kurgulanmış.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "Developer-Y/cs-video-courses",
+   "inputs_hash": "497796b6a25d7e5a528694e94de341ba",
+   "description_tr": "cs-video-courses, üniversitelerin ve araştırma kurumlarının açık erişimli bilgisayar bilimi ders videolarını konu başlıklarına göre toplayan bir listedir. Algoritmalar, sistemler, veritabanları, bilgisayarla görme, pekiştirmeli öğrenme, kuantum hesaplama ve robotik gibi alanlarda ders serilerine bağlantı veriyor. İçerik tamamen markdown bağlantılardan oluşuyor; kod, araç veya arama arayüzü yok. 2016'da açılmış, 83 bin yıldızlı ve topluluk katkısıyla büyüyor. Depoda lisans dosyası belirtilmemiş; bağlantıların bir kısmının zamanla ölmesi bu tür listelerde beklenen bir sorun.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, öğrenme ilgin ama senin öğrenmek istediğin psikoloji, sosyoloji ve felsefe tarafı ve bu liste yalnızca bilgisayar bilimi kapsıyor. Bir bileşen ya da otomasyon içermiyor; sonuç olarak bağlantı listesi. Ders videosu izleyerek ilerlemek senin çalışma ritmine de uymuyor, projeyi Claude Code ile kurup yol boyunca öğreniyorsun. Listeyi yer imi olarak tutmanın ötesinde bir karşılığı yok.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "d2l-ai/d2l-zh",
+   "inputs_hash": "3ac55daccdb71a454180062cd1a21b4b",
+   "description_tr": "d2l-zh, \"Dive into Deep Learning\" kitabının Çince sürümüdür; derin öğrenmeyi kavram, matematik ve çalışan kod birlikte anlatarak öğretmeyi amaçlar. Bölümler çalıştırılabilir defterler halinde hazırlanmış, böylece formüller doğrudan koda karşılık gelir ve okuyucu kodu değiştirip sonucu görebilir. İçerik ücretsiz erişilebilir ve README'ye göre 70'ten fazla ülkede 500'den fazla üniversitede ders materyali olarak kullanılıyor. Python ağırlıklı, Apache-2.0 lisanslı, 2017'de açılmış ve 81 bin yıldıza ulaşmış. Depo bir kütüphane değil, ders kitabı ve alıştırma koleksiyonudur; ana dili bu sürümde Çincedir.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam derin öğrenme temellerini öğrenmek olurdu ama metin Çince ve sen model eğitmiyorsun. Projelerinin hiçbiri kendi ağını kurmayı gerektirmiyor; Lyricdrop da Folio da hazır modelleri çağırıyor. Gömülebilecek bir bileşen ya da asistanına devredilebilecek bir iş içermiyor. Bu satır indekste bir olgunluk göstergesi olarak durur, senin için bir araç olarak değil.",
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "tensorflow/models",
+   "inputs_hash": "44625ed3a4b4030680058c43000a8058",
+   "description_tr": "tensorflow/models, TensorFlow ekibinin ve topluluğun sürdürdüğü model uygulamaları koleksiyonudur (Model Garden). Görüntü sınıflandırma, nesne tespiti, doğal dil işleme gibi alanlarda referans model kodları, eğitim betikleri ve örnek yapılandırmalar içerir; `official` dizini resmî olarak bakımı yapılan sürümleri barındırır, diğer dizinlerde araştırma kodu bulunur. Amaç TensorFlow kullanıcılarına modelleme pratiklerini göstermek ve sonuçları yeniden üretilebilir kılmak. Python ağırlıklı; 2016'da açılmış, 77 bin yıldızlı, lisansı standart bir SPDX kimliğine oturmuyor (NOASSERTION). Dizinler arasında bakım kalitesi eşit değildir ve araştırma kodunun bir kısmı eskimiştir.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, hazır bir görüntü modeli arayacağın senaryolar olurdu ama o ihtiyaçta bugün Hugging Face tarafındaki modeller daha kolay indirilip çalıştırılıyor. Burada model almak, TensorFlow kurulumunu ve eğitim betiklerini üstlenmek demek; Mac'te yerel çalıştırma hedefine göre gereksiz bir yük. Kendi uygulamana gömebileceğin paketlenmiş bir bileşen sunmuyor, kod tabanı örnek ve eğitim amaçlı. Bu depoyu bir araç değil, TensorFlow ekosisteminin arşivi olarak görmek daha doğru.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "josephmisiti/awesome-machine-learning",
+   "inputs_hash": "4e5f32503408db6451cee9af92260886",
+   "description_tr": "awesome-machine-learning, makine öğrenmesi çatılarını, kütüphanelerini ve araçlarını programlama diline göre gruplayan küratörlü bir listedir. Python, R, C++, Julia ve daha birçok dil için modelleme, veri işleme ve görselleştirme paketlerine bağlantı verir; ayrıca ders ve kitap bölümleri içerir. İçerik markdown bağlantılardan oluşur, çalışan kod ya da paket sunmaz. 2014'te açılmış, 74 bin yıldızlı ve uzun süredir topluluk katkısıyla güncelleniyor; lisansı standart bir SPDX kimliğine oturmuyor (NOASSERTION). Kapsamı geniş olduğu için güncelliği girdiden girdiye değişir.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, bir kütüphane ararken göz gezdirmek olabilir ama bu işi zaten Claude Code'a soruyorsun ve cevabı daha hızlı geliyor. Liste kalite ya da bakım durumu sıralamıyor, yıllar içinde terk edilmiş projeler de aynı satırda duruyor. Gömülebilecek bir bileşen ya da asistanına devredilebilecek bir iş akışı içermiyor. Yıldız sayısı yüksek olduğu için görünür, ama senin ihtiyacın araç listesi değil, seçtiğin aracın Mac'te çalışıp çalışmadığı.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "thedaviddias/Front-End-Checklist",
+   "inputs_hash": "e984c4d0dec4b5a63f4a21563d88448b",
+   "description_tr": "Front-End Checklist, web ön yüz kalitesini maddeler halinde denetlemeye yarayan açık kaynak bir kontrol listesidir. README'ye göre 11 kategoriye dağılmış 385 kural içeriyor; HTML yapısı, meta etiketler, erişilebilirlik, performans ve SEO gibi başlıkları kapsıyor. Liste üç şekilde kullanılabiliyor: web sitesinden filtreleyerek, README üzerinden tek dosya olarak, ya da barındırılan bir MCP sunucusu üzerinden kodlama ajanlarına araç olarak. İçerik MDX ile yazılmış, 2017'de açılmış ve 74 bin yıldıza ulaşmış; depoda lisans dosyası belirtilmemiş. Kurallar web tarafına özgüdür, mobil uygulama arayüzlerini kapsamaz.",
+   "usage_tr": "Arslan Holding'in AI araçlarıyla ürettiğin web sitesinde ve Lyricdrop admin panelinde ikinci bir gözden geçirme katmanı olarak kullanabilirsin: her değişikliğin iki ayrı açıdan review edilmesini istiyorsun, bu liste bunun \"geliştirici doğruluğu\" ucundaki mekanik kısmı kapatıyor. MCP sunucusu olarak sunulduğu için Claude Code'a bağlanıp Vercel'e deploy etmeden önce çalıştırılabilir; ajan kuralları okuyup eksikleri madde madde çıkarır, yani kontrolü asistanına ya da bir freelancer'a devretmen de mümkün. Ek API maliyeti getirmez, kurallar metin olarak repoda da tutulabilir. Fayda, meta etiket, erişilebilirlik ve performans gibi AI'ın üretirken atladığı ayrıntıların lansman öncesi yakalanması. Uyarı: kapsam web ile sınırlı, yani Expo ile yazdığın mobil ekranlar bunun dışında kalıyor; ayrıca 385 kuralın tamamını her projede uygulamak anlamsız, önce kendi projelerine uygun bir alt küme seç.",
+   "matched_project": "Arslan Holding",
+   "relevance": 4,
+   "investment_note": null
+  },
+  {
+   "full_name": "binhnguyennus/awesome-scalability",
+   "inputs_hash": "987d62f36b924e2e7da313b491b8e3c4",
+   "description_tr": "awesome-scalability, ölçeklenebilir ve güvenilir büyük sistemlerin tasarım örüntülerini anlatan makalelerden derlenmiş bir okuma listesidir. Ölçeklenebilirlik, performans, erişilebilirlik ve kararlılık başlıkları altında mühendislik blog yazılarına ve milyonlarca kullanıcıya hizmet veren sistemlerin vaka çalışmalarına bağlantı verir. Ayrıca sistem tasarımı mülakatlarına hazırlananlar için ayrı bir bölüm içerir. İçerik tamamen bağlantılardan oluşur; kod ya da araç sunmaz. MIT lisanslı, 2017'de açılmış ve 74 bin yıldıza ulaşmış.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, Lyricdrop dünyaya açıldığında oyuncu tarafının Supabase ve DigitalOcean üzerinde nasıl büyüyeceğini düşünmek olabilir. Ama buradaki içerik milyonlarca kullanıcılı sistemlerin vakaları ve mülakat notları; senin ölçeğinde okunacak bir şey değil, üstelik kararları Claude Code ile ihtiyaç anında verebiliyorsun. Gömülebilecek bir bileşen, ölçülebilir bir çıktı ya da asistanına devredilebilecek bir iş içermiyor. Erken ölçek endişesi ürünü yavaşlatır; şimdilik bu satırı geçmek doğru olur.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "OpenBB-finance/OpenBB",
+   "inputs_hash": "3c5b7665b88a2fc2afceaa3951bdd5be",
+   "description_tr": "OpenBB, finansal veriyi tek bir Python arayüzü altında toplayan açık kaynak bir veri platformudur. Hisse senedi, kripto, opsiyon, sabit getirili ürün ve makroekonomi verilerini farklı sağlayıcılardan standart bir şemayla çeker; çıktıyı defterlerde, kendi uygulamanda ya da bir ajanın aracı olarak kullanabilirsin. Kurumsal bir ürünü de olan açık çekirdek bir projedir; veri sağlayıcılarının çoğu kendi API anahtarını ister ve ücretsiz katmanlar sınırlıdır. Python ile yazılmış, 2020'de açılmış ve 73 bin yıldıza ulaşmış; lisansı standart bir SPDX kimliğine oturmuyor (NOASSERTION). Kod yerelde çalışır, veri erişimi ise seçtiğin sağlayıcıya bağlıdır.",
+   "usage_tr": "Arslan Holding tarafında portföy takibi ve pazar araştırması adımında işine yarar: halka açık karşılaştırılabilir şirketlerin ve sektör göstergelerinin verisini tek arayüzden çekip kendi tablona basabilirsin, asistanının elle topladığı sayıların yerini alır. Kod olarak sunulduğu için Claude Code ile bir araştırma betiğine sarılabilir ve düzenli çalıştırılabilir; ofisteki Mac'te yerel koşar, maliyet kullandığın veri sağlayıcılarının kendi ücretlendirmesinden gelir. Güneş enerjisi tarafındaki enerji piyasası ve emtia verisi ihtiyacına da kısmen dokunur, ama oradaki asıl ihtiyacın üretim simülasyonu ve proje finansmanı modeli, onları kapsamaz. En önemli sınır şu: erken aşama startup deal flow'u burada yok, platform halka açık piyasalara bakıyor; screening ve due diligence akışını bu araçla kuramazsın. Küçük başla; tek bir gösterge setini otomatikleştirip asistanın raporuna bağla, işe yarıyorsa genişlet.",
+   "matched_project": "Arslan Holding",
+   "relevance": 5,
+   "investment_note": null
+  },
+  {
+   "full_name": "microsoft/AI-For-Beginners",
+   "inputs_hash": "d8c17856b56b7b26a2a0ca253ca5c5f5",
+   "description_tr": "AI-For-Beginners, Microsoft'un 12 haftaya yayılmış 24 derslik yapay zeka müfredatıdır. Sinir ağları, bilgisayarla görme (CNN, GAN), doğal dil işleme ve tekrarlayan ağlar gibi konuları Jupyter defterleri ve alıştırmalarla anlatıyor; sembolik AI gibi klasik başlıklara da yer veriyor. Dersler kendi kendine ilerlemeye uygun düzenlenmiş ve çoğu bölümde hem TensorFlow hem PyTorch sürümü sunuluyor. MIT lisanslı, 2021'de açılmış ve 68 bin yıldıza ulaşmış. Bir kütüphane değil, tamamen eğitim materyalidir ve içerik büyük dil modelleri çağından önceki temellere odaklanır.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, yatırım tarafında teknik terimleri daha rahat takip etmek olabilir. Projelerinin hiçbiri kendi ağını kurmayı gerektirmiyor ve müfredatın ağırlık merkezi bugün kullandığın hazır model dünyasının bir adım gerisinde. Gömülebilecek bir bileşen ya da asistanına devredilebilecek bir iş içermiyor. Zaman ayıracaksan, temel dersler yerine doğrudan çalıştırmak istediğin modelin dokümanı daha hızlı sonuç verir.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "labmlai/annotated_deep_learning_paper_implementations",
+   "inputs_hash": "5f919d9ce72087020d7707f9ea22f9e7",
+   "description_tr": "Bu depo, derin öğrenme makalelerinin 60'tan fazlasının PyTorch ile sade uygulamalarını, kodun yanında açıklama notlarıyla birlikte sunar. Transformer varyantları, optimizasyon algoritmaları, GAN'lar, LoRA, pekiştirmeli öğrenme yöntemleri ve damıtma gibi konular kapsanıyor; kodlar bir web sitesinde yan yana not-kod düzeninde yayımlanıyor. Amaç üretimde kullanılacak bir kütüphane değil, algoritmaların nasıl çalıştığını okunabilir kılmak. README'ye göre depo aktif olarak sürdürülüyor ve neredeyse her hafta yeni uygulama ekleniyor. MIT lisanslı, 2020'de açılmış ve 67 bin yıldıza ulaşmış.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, Folio'da düşündüğün öneri/bandit mantığının arkasındaki yöntemleri okumak olabilir. Ama oradaki ihtiyacın çalışan basit bir skorlama döngüsü, makale uygulaması değil; bu koddan uygulamana taşınacak bir parça çıkmaz. Uygulamalar öğretim amacıyla sadeleştirilmiş, üretim için ölçeklendirilmemiş. Merak ettiğin bir yöntemi anlamak istediğinde açılacak bir referans olarak kalır, projelerinden birine giren bir bileşen olarak değil.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  }
+ ]
+}

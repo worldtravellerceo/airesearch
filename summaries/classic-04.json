@@ -1,0 +1,175 @@
+{
+ "repos": [
+  {
+   "full_name": "BVLC/caffe",
+   "inputs_hash": "ed921bd02365dd6740dd6ab9576f2a80",
+   "description_tr": "Caffe, Berkeley Vision and Learning Center (BVLC) tarafından geliştirilmiş, C++ ile yazılmış bir derin öğrenme framework'üdür. Modeller ve eğitim ayarları kod yerine prototxt yapılandırma dosyalarıyla tanımlanır; CPU ve GPU üzerinde çalışır, Python ve MATLAB arayüzleri sunar. Ağırlıklı olarak görüntü işleme ve evrişimli ağlar için tasarlandı ve Model Zoo üzerinden hazır ağırlıklar dağıtıldı. Intel CPU, OpenCL ve Windows için ayrı dağıtımları bulunuyor; lisans BSD 2-Clause. Depo 2013'te açıldı ve 34,5 bin yıldıza ulaştı, ancak geliştirme uzun süredir durmuş durumda ve ekosistem PyTorch ile TensorFlow tarafına kaydı.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, OpenPose gibi eski görüntü işleme projelerinin hâlâ Caffe'ye bağımlı olması ve o projeleri kurmaya kalkarsan bu bağımlılığı derlemek zorunda kalman. Kendin model eğitmiyorsun; Lyricdrop'ta STT, Folio'da görsel üretim tarafında hazır modelleri kullanıyorsun, bu da Caffe'nin çözdüğü problemin dışında kalıyor. Mac'te derlenebilir ama kurulumu zahmetlidir ve M4 Pro üzerinde Apple Silicon hızlandırması için modern bir yolu yok. Yerel model çalıştırmak istediğinde PyTorch (MPS), CoreML ya da MLX tarafı hem daha hızlı hem de bakımlı. Bu depoyu bir araç olarak değil, alanın tarihine ait bir referans olarak görmek daha doğru.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "CMU-Perceptual-Computing-Lab/openpose",
+   "inputs_hash": "16b7dd995fd04fada1b6607e4a9554fb",
+   "description_tr": "OpenPose, tek bir görüntüde birden çok kişinin vücut, el, yüz ve ayak anahtar noktalarını (toplam 135 nokta) gerçek zamanlı çıkaran bir kütüphanedir. CMU Perceptual Computing Lab tarafından geliştirildi; C++ ile yazılmış, arka planda Caffe kullanıyor ve Linux, Windows ile macOS üzerinde derleniyor. Girdi olarak görüntü, video, webcam veya IP kamera alıyor; çıktı olarak JSON/XML biçiminde koordinat dosyaları ve görselleştirilmiş kareler üretiyor. Python ve C++ API'leri, ayrıca komut satırı demo'su var; performans pratikte NVIDIA GPU ve CUDA'ya bağlı, CPU modu belirgin şekilde yavaş. 34,5 bin yıldızlı ve akademide çok atıf almış bir proje, ancak lisansı ticari kullanım için ayrı izin gerektiriyor ve geliştirme hızı yıllar içinde düştü.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, stand-up özelini çok modlu analiz ederken sahne hareketi ve jest verisini çıkarmak ya da kendi antrenman videolarında hareket takibi denemek olabilir. İkisi de hobi tarafında kalıyor ve şu an sırada olan Lyricdrop v2 ile Folio'nun adımlarından hiçbirine oturmuyor. Pratik engel de var: ofisteki M4 Pro Mac'te CUDA yok, OpenPose'un Mac derlemesi CPU moduna düşüyor ve video analizinde bu süre kabul edilemez hale geliyor. Bir gün poz verisi gerekirse MediaPipe gibi Apple Silicon'da çalışan ve kurulumu tek satır olan seçenekler bu iş için daha makul bir başlangıç. Ayrıca lisans, ticari bir üründe kullanmayı ayrı bir konuşma haline getiriyor.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "xitu/gold-miner",
+   "inputs_hash": "d0f01f50dd9db09b8e3a89ffdbef4a63",
+   "description_tr": "gold-miner, İngilizce teknik makaleleri Çinceye çeviren gönüllü bir çeviri topluluğunun deposudur. Juejin platformu etrafında örgütlenmiş; frontend, Android, iOS, backend, yapay zeka, tasarım ve ürün başlıklarında dört binden fazla çevrilmiş makale ve resmi doküman çevirileri barındırıyor. Depo esas olarak bağlantı listeleri, çeviri rehberleri ve katkı süreçlerinden oluşuyor; çalıştırılabilir bir kod tabanı yok. Çevirmen puan tablosu, redaksiyon kuralları ve makale önerme akışı wiki üzerinden yürütülüyor. 34,3 bin yıldızlı ve uzun süredir var olan bir topluluk projesi; lisans bilgisi depo meta verisinde belirtilmemiş.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, teknik içeriği başka bir dile çevirme fikri, ki senin ilgin İngilizceden Türkçeye öğrenme içeriği tarafında. Buradaki içeriğin tamamı Çince olduğu için okuma listesi olarak da işlevi yok. Kod, kütüphane ya da API içermiyor; Expo/Supabase yığınına gömebileceğin veya n8n akışına takabileceğin bir parçası bulunmuyor. Çeviri iş akışını otomatikleştirmek istersen ilham verecek tek şey süreç tarifi olabilir, onu da zaten Claude Code ile doğrudan kurarsın. Listelerde yıldız sayısı yüzünden sık görünen, ama senin için sessizce geçilecek bir depo.",
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "openai/CLIP",
+   "inputs_hash": "92d5bc504e47a1e278db74070b600ddf",
+   "description_tr": "CLIP, görüntü ve metni aynı vektör uzayına gömerek bir görüntüye en uygun metni seçebilen bir model ailesidir. Etiketli eğitim verisi olmadan sınıflandırma yapabildiği için sıfır-atış (zero-shot) etiketleme, görsel arama ve görüntü-metin uyum skorlaması gibi işlerde kullanılıyor. Depo küçük bir Python paketi ve ViT-B/32'den ViT-L/14'e kadar birkaç hazır ağırlık sunuyor; PyTorch üzerinde CPU veya GPU ile çalışıyor. MIT lisanslı ve 34,3 bin yıldızlı; kod tabanı 2021'den sonra büyük ölçüde donduruldu, topluluk geliştirmesi OpenCLIP gibi türevler üzerinden sürüyor. Girdi metin uzunluğu 77 token ile sınırlı ve model ince ayrıntılı ayrımlarda zayıf kalabiliyor.",
+   "usage_tr": "Folio'nun günlük içerik pipeline'ında iki yerde işe yarar: üretilen görselin gerçekten anlatılan kitaba ve post metnine uyup uymadığını otomatik kontrol etmek, ve feed'i kişiselleştirmek. Birincisi için her üretilen görseli post metniyle skorlayıp eşiğin altında kalanları yeniden ürettirebilirsin; böylece onay adımını kendin yapmaktan kurtulursun. İkincisi için like/dislike tepkilerini görsel embedding'leri üzerinde basit bir skorlayıcıya bağlayıp ertesi günün içeriğini o yönde seçtirebilirsin; embedding'leri Supabase tarafında pgvector ile tutmak yeterli. Ofisteki M4 Pro Mac'te yerel çalışır, API maliyeti getirmez ve günlük üretimi n8n'den tetikleyebilirsin. Uyarı: CLIP skoru mutlak bir kalite ölçüsü değil, yalnızca metinle uyum ölçüsüdür; eşiği 20-30 örnekte elle kalibre etmeden pipeline'a koyma. Model artık eski olduğu için aynı arayüzle daha yeni ağırlık sunan OpenCLIP'i de yan yana denemeye değer.",
+   "matched_project": "Folio",
+   "relevance": 6,
+   "investment_note": null
+  },
+  {
+   "full_name": "explosion/spaCy",
+   "inputs_hash": "b513ec2ed408467fe8186b169c8c8cde",
+   "description_tr": "spaCy, Python ve Cython ile yazılmış, üretim kullanımı için tasarlanmış bir doğal dil işleme kütüphanesidir. Tokenizasyon, sözcük türü etiketleme, bağımlılık ayrıştırma, adlandırılmış varlık tanıma, metin sınıflandırma ve lemmatizasyon gibi işleri tek bir pipeline üzerinde yürütüyor; 70'ten fazla dil için hazır model sunuyor. Transformer tabanlı modelleri (BERT vb.) aynı pipeline'a takmayı, kendi modelini eğitmeyi ve paketleyip dağıtmayı destekliyor. Hız ve bellek kullanımı açısından araştırma odaklı kütüphanelere göre daha ekonomik; MIT lisanslı ve arkasında ticari bir şirket (Explosion) var. 33,9 bin yıldızlı, düzenli sürüm çıkaran olgun bir proje.",
+   "usage_tr": "Lyricdrop v2'de boşluk seçimi adımına doğrudan oturuyor: hangi kelimenin boşluğa çevrileceğine kelime türü ve sıklık üzerinden karar verebilirsin. Edat ve bağlaçları eleyip isim, fiil ve sıfatları tercih ederek, zorluk seviyelerini (kolay, orta, zor) kural tabanlı ve tekrarlanabilir biçimde üretebilirsin; şu an bu kararı her şarkıda elle gözden geçirmek zorunda kalıyorsun. Dört şıklı çeldirici üretiminde de aynı sözcük türünden ve yakın uzunluktan aday seçmek için lemma ve POS bilgisi işini kolaylaştırır. Admin panelinin yanına küçük bir Python servisi olarak eklenir; Mac'te yerel çalışır, API maliyeti getirmez ve Max aboneliğinden bağımsızdır. Uyarı: şarkı sözleri noktalamasız, argo ve tekrar dolu metinlerdir, standart modellerin doğruluğu düşer; küçük modelle başlayıp mevcut 20-30 şarkılık test setinde hata oranını ölç. Anlamca yakın çeldirici gerekiyorsa spaCy tek başına yetmez, embedding tarafıyla birlikte kullanman gerekir.",
+   "matched_project": "Lyricdrop",
+   "relevance": 7,
+   "investment_note": null
+  },
+  {
+   "full_name": "mli/paper-reading",
+   "inputs_hash": "3b2c1e720b1cb2ea707aba8e69bd960a",
+   "description_tr": "paper-reading, derin öğrenme alanındaki klasik ve yeni makalelerin satır satır okunduğu video serisinin dizin deposudur. Her satırda makale adı, video süresi ve Bilibili ile YouTube bağlantıları bulunuyor; Transformer, ResNet, GAN, AlphaFold, Llama 3.1 ve Sora gibi başlıklar kapsanıyor. Anlatım dili Çince; depoda kod değil, tablo halinde bir okuma ve izleme listesi var. Apache-2.0 lisanslı ve 33,8 bin yıldızlı, ancak güncelleme temposu videoların çekim sıklığına bağlı. İçeriğin değeri makalelerin kendisinde değil, tek tek açıklanmış olmasında.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, alanın temel makalelerini anlamak istediğinde başvurulacak bir izleme listesi olması. Anlatım Çince olduğu için pratikte senin için erişilebilir değil ve öğrenme tarafındaki ilgin zaten Türkçe kaynaklar üzerinden ilerliyor. İçerik model eğitimi ve mimari ayrıntısına odaklanıyor; sen model eğitmiyor, hazır modelleri ürüne bağlıyorsun. Çalıştırılabilir kod olmadığı için Lyricdrop ya da Folio tarafına gömebileceğin bir parçası yok. Yatırımcı şapkasıyla da bir sinyal taşımıyor; bir kişiye bağlı içerik projesi.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "lutzroeder/netron",
+   "inputs_hash": "eb8aa8093ab05dfd0c91334619bde6b8",
+   "description_tr": "Netron, sinir ağı model dosyalarını açıp katman katman görselleştiren bir görüntüleyicidir. ONNX, TensorFlow Lite, PyTorch, TorchScript, ExecuTorch, Core ML, Keras, Caffe, Darknet, Safetensors ve NumPy biçimlerini destekliyor; MLIR, JAX, GGUF ve ncnn için deneysel desteği var. Tarayıcıdan, macOS/Linux/Windows masaüstü uygulaması olarak veya pip paketi üzerinden yerel bir sunucu şeklinde çalışıyor. Model dosyası cihazdan dışarı çıkmıyor, giriş/çıkış tensörleri, katman parametreleri ve ağırlık boyutları arayüzde inceleniyor. MIT lisanslı, 33,5 bin yıldızlı; tek kişi tarafından uzun süredir düzenli olarak bakılıyor.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, Lyricdrop için yerel STT ya da Folio için görüntü modeli denerken elindeki ONNX veya Core ML dosyasının girdi/çıktı biçimini hızlıca doğrulamak olabilir. Bu bir teşhis aracı: bir model beklediğin çıktıyı vermediğinde açılır, günlük pipeline'ın parçası olmaz. Mac'te brew ile kurulur, tamamen yerel çalışır ve API maliyeti getirmez; bu tarafı sorun değil. Ancak sen model mimarisiyle uğraşmıyorsun, hazır modelleri servis olarak çağırıyorsun; bu da aracın asıl faydasını büyük ölçüde boşa çıkarıyor. Kurulum maliyeti sıfıra yakın olduğu için ihtiyaç doğduğu gün kurmak yeterli, şimdiden yer ayırmaya gerek yok.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "eriklindernoren/ML-From-Scratch",
+   "inputs_hash": "45840886fad4d0bc89f2573ed787c78f",
+   "description_tr": "ML-From-Scratch, temel makine öğrenmesi algoritmalarının yalnızca NumPy ile, sıfırdan yazılmış uygulamalarını barındırır. Doğrusal ve polinom regresyondan karar ağaçlarına, k-means'ten evrişimli ağlara ve pekiştirmeli öğrenmeye kadar geniş bir liste kapsanıyor. Amaç hız ya da üretim kullanımı değil, algoritmaların iç işleyişini okunabilir kodla göstermek; her algoritmanın çalıştırılabilir bir örnek dosyası var. MIT lisanslı ve 32,9 bin yıldızlı; eğitim amaçlı bir referans olarak yaygın biçimde kullanılıyor. Depo uzun süredir büyük bir değişiklik almıyor, zaten kapsamı gereği buna ihtiyacı da yok.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, Folio'da öneri/bandit mantığını kurarken temel algoritmaların nasıl çalıştığını okumak olabilir. Ancak burada üretimde kullanılacak bir kütüphane yok: kod bilerek yavaş ve sade yazılmış, eğitim amaçlı. Senin ihtiyacın algoritmayı yeniden yazmak değil, hazır bir bileşeni Supabase ve Expo tarafına bağlamak. Öğrenme isteği doğarsa bile bu depo değil, doğrudan Claude Code ile kendi verin üzerinde küçük bir deney daha hızlı sonuç verir. Bir araç olarak değil, meraklanınca açılacak bir okuma kaynağı olarak kalır.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "iperov/DeepFaceLive",
+   "inputs_hash": "f5a9f30a73e346fbead70c121182d9b2",
+   "description_tr": "DeepFaceLive, webcam görüntüsünde veya bir videoda gerçek zamanlı yüz değiştirme yapan bir masaüstü uygulamasıdır. Önceden eğitilmiş DFM yüz modelleriyle çalışıyor; hazır kamu modelleri sunuluyor ve DeepFaceLab ile kendi modelini eğitip buraya takmak mümkün. Python ile yazılmış, çıkarımı ONNX ve DirectX üzerinden yapıyor; dağıtım pratikte Windows ve GPU odaklı. Canlı yayın ve görüntülü görüşme senaryoları için tasarlandı, sanal kamera çıkışı veriyor. GPL-3.0 lisanslı ve 31 bin yıldızlı; kimlik taklidi riski nedeniyle kullanımı etik ve hukuki sınırlarla çevrili bir alan.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, Folio'daki AI üretimi içerik pipeline'ının da görsel üretimle ilgilenmesi, ama orada ihtiyacın metinden görsel üretmek, canlı yüz değiştirmek değil. Uygulama Windows ve GPU'ya dayanıyor; ofisteki Mac'te ya da ev sunucusu olarak kullandığın Mac mini'de pratik bir çalıştırma yolu yok. GPL-3.0 lisansı, kendi uygulamana gömmeyi düşünürsen ayrıca dikkat gerektirir. Gerçek kişilerin yüzünü kullanan bir üründe itibar ve hukuk riski de teknik faydanın önüne geçer. Bu depoyu yalnızca alanın nereye gittiğini görmek için not etmek yeterli.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "eugeneyan/applied-ml",
+   "inputs_hash": "4d6a384e848eb3235c37d1200f5b703e",
+   "description_tr": "applied-ml, şirketlerin üretimdeki makine öğrenmesi çalışmalarını anlattığı makale ve mühendislik bloglarının derlenmiş bir listesidir. Veri kalitesi, veri mühendisliği, feature store, sınıflandırma, tahminleme, öneri sistemleri, arama ve sıralama, embedding, NLP, bilgisayarlı görü, A/B testi gibi başlıklar altında gruplanmış. Her satır bir şirketin kendi sisteminde neyi nasıl kurduğunu anlatan bir kaynağa bağlanıyor; problem kurgusu ve gerçek sonuçlar vurgulanıyor. Depoda kod yok, yalnızca düzenlenmiş bağlantılar var. MIT lisanslı, 30,4 bin yıldızlı ve topluluk katkısıyla büyüyen bir liste.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, Folio'nun öneri/feed mantığını kurarken benzer sistemlerin nasıl tasarlandığını okumak olabilir. Yine de burada çalıştırılabilir bir bileşen yok; listedeki yazıların çoğu senin ölçeğinden çok daha büyük ekiplerin altyapı kararlarını anlatıyor. Senin akışında bu tür bir kararı okuyarak değil, küçük bir sürümü kurup ölçerek vermek daha hızlı sonuç veriyor. İstersen belirli bir başlığı (öneri sistemleri gibi) asistanına özetletebilirsin, ama bu tek seferlik bir araştırma işi olur. Araç değil, arada başvurulan bir kaynak listesi.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "google-research/tuning_playbook",
+   "inputs_hash": "01e145a3a6c4f56de58852c0bb4aa220",
+   "description_tr": "tuning_playbook, derin öğrenme modellerinin eğitiminde hiperparametre ayarını sistematik yapmak için yazılmış bir rehberdir. Google Research'ten dört yazar ve bir akademik ortak tarafından hazırlandı; model mimarisi, optimizasyon algoritması, batch boyutu ve başlangıç yapılandırması seçimini adım adım ele alıyor. Deneme turlarının nasıl tasarlanacağı, keşif ile sömürü dengesi, bir değişikliğin benimsenip benimsenmeyeceğine nasıl karar verileceği gibi konularda somut yöntem öneriyor. İçerik tamamen metin; depoda kod veya çalıştırılabilir örnek yok ve resmi bir Google ürünü değil. 30,3 bin yıldızlı ve birkaç dile çevrilmiş durumda.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, kendi modelini eğitmeye başladığın gün bu metnin bir çalışma disiplini vermesi. Bugün böyle bir adımın yok: Lyricdrop'ta hazır STT sistemlerini karşılaştırıyorsun, Folio'da hazır üretim modelleri çağırıyorsun. Buradaki yöntem fikri (önce ölç, tek değişken değiştir, sonucu karşılaştır) senin zaten uyguladığın test paneli mantığına benziyor, ama metnin kendisi eğitim döngüsüne özgü. Çalıştırılabilir bir parça olmadığı için Mac'te yerel çalışma ya da API maliyeti soruları da geçerli değil. Model eğitimi gündeme gelmedikçe okunmadan kalabilir.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "academic/awesome-datascience",
+   "inputs_hash": "acc920c3d0fc4d5a9743a7feea307b70",
+   "description_tr": "awesome-datascience, veri bilimine başlamak ve alanı takip etmek için derlenmiş bir bağlantı listesidir. Eğitim kaynakları, ücretsiz kurslar, MOOC'lar, üniversite programları, algoritma başlıkları, araçlar, kitaplar, podcast'ler ve topluluklar başlıklar halinde gruplanmış. Depoda kod yok; içerik README ve yardımcı markdown dosyalarından oluşuyor ve katkılarla güncelleniyor. Son dönemde listeye ajanlar gibi yeni başlıklar da eklenmiş, ayrıca sponsor bölümü bulunuyor. MIT lisanslı ve 30 bin yıldızlı, uzun süredir sürdürülen bir derleme.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, bir konuyu sıfırdan öğrenmek istediğinde başlangıç noktası araması. Senin öğrenme ihtiyacın veri bilimi müfredatı değil; ürün tarafında ilerlemek ve alanı yatırım merceğiyle takip etmek. Bu tür listeler hızla eskiyor ve aynı soruyu Claude Code'a sorduğunda daha güncel ve sana özel bir cevap alıyorsun. Gömülebilir bir bileşen, API ya da otomasyona takılabilir bir parçası yok. Yıldız sayısı yüksek olduğu için sıralamalarda görünür, ama senin için bir araç değil.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "JaidedAI/EasyOCR",
+   "inputs_hash": "a99b5ccb9e9276f4f71413d9640a6732",
+   "description_tr": "EasyOCR, görüntüdeki yazıyı çıkaran, kullanıma hazır bir OCR kütüphanesidir. 80'in üzerinde dili ve Latin, Çince, Arapça, Devanagari, Kiril gibi yazı sistemlerini destekliyor; metin tespiti için CRAFT, tanıma için CRNN tabanlı modeller kullanıyor. PyTorch üzerinde çalışıyor, GPU'suz CPU modunda da kullanılabiliyor ve pip ile tek satırda kuruluyor. Kendi tanıma modelini eğitip takmak, Docker imajıyla servis etmek mümkün; el yazısı desteği yol haritasında. Apache-2.0 lisanslı ve 30 bin yıldızlı; sürüm temposu son dönemde yavaşlamış durumda.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, asistanın ve holding tarafının taranmış belgeleri (fatura, sözleşme, görsel formatta gelen sunumlar) metne çevirip aranabilir hale getirmesi olabilir. Ancak bu iş akışında belgelerin çoğu zaten dijital PDF olarak geliyor ve metin katmanı içeriyor; OCR'a ihtiyaç istisna durumlarda doğuyor. Lyricdrop'un söz ve zamanlama problemi ses tarafında, Folio'nun ihtiyacı görsel üretim tarafında; ikisi de OCR gerektirmiyor. Teknik kriterlerin açısından sorun yok: Mac'te yerel çalışır, API maliyeti getirmez ve tek uç noktalı bir servis olarak asistanına devredilebilir. Gerçek bir belge yığını biriktiği gün hatırlanacak bir araç, bugün için değil.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "modular/modular",
+   "inputs_hash": "9830836d3f3ea7b4de0ceea89af37d0e",
+   "description_tr": "modular deposu, Modular Platform'un açık kaynak bileşenlerini barındırıyor: MAX çıkarım framework'ü ve Mojo programlama dili. MAX, OpenAI uyumlu bir çıkarım sunucusu, hızlandırıcı kernel kütüphanesi ve Python tabanlı model pipeline'ları sunuyor; hedef donanım olarak NVIDIA ve AMD GPU'ları öne çıkıyor. Mojo, Python'a yakın sözdizimine sahip, derlenen ve sistem seviyesinde performans hedefleyen bir dil; derleyici henüz dış katkıya kapalı, standart kütüphane ve kernel tarafı açık. Depo 2023'te açıldı, 29,8 bin yıldızda ve ticari bir şirket tarafından aktif geliştiriliyor. Lisans standart bir SPDX kimliğine oturmuyor (NOASSERTION), bileşenlere göre değişiyor.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, yerel model çalıştırma altyapısına olan ilgin, ama MAX'in ağırlık verdiği donanım veri merkezi GPU'ları, ofisteki M4 Pro değil. Mac'te model servis etmek istediğinde llama.cpp ve MLX tarafı hem kurulumu hem Apple Silicon desteği bakımından senin için doğru yol olmaya devam ediyor. Mojo'yu öğrenmek de senin çalışma şeklinle örtüşmüyor; ürünlerini TypeScript/Expo ve Python ile Claude Code üzerinden kuruyorsun. Kendi uygulamana gömülebilecek bir bileşen değil, bir platform; bu da onu senin için tam ürün kategorisine sokuyor. Araç olarak değil, alanın altyapı katmanını izlemek için not edilecek bir depo.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": "Yapay zekâ altyapısında derleyici ve çıkarım katmanını tek bir şirket çatısında toplamaya çalışan, dil ve runtime'ı birlikte sunan az sayıdaki oyuncudan biri; frontier tech merceğiyle bakılan bir izleme listesine girmeye değer."
+  },
+  {
+   "full_name": "deepinsight/insightface",
+   "inputs_hash": "db843b751c11249333676096db6a0bb9",
+   "description_tr": "InsightFace, yüz tespiti, hizalama, tanıma ve yaş/cinsiyet tahmini gibi işleri bir arada sunan bir yüz analizi projesidir. RetinaFace ve ArcFace gibi yaygın kullanılan modellerin referans uygulamalarını içeriyor; Python paketi ONNX Runtime üzerinden CoreML, CUDA veya CPU sağlayıcısını otomatik seçiyor. Yeni sürümle birlikte yerel videoda yüz bulanıklaştırma aracı ve kendi sunucunda çalışan bir REST API ile Web arayüzü geliyor; sunucu tarafı SQLite ile kimlik kaydı ve arama yapıyor. Kodun kendisi MIT lisanslı, ancak eğitim verisi ve hazır modeller yalnızca ticari olmayan araştırma kullanımına açık; ticari kullanım için ayrı lisans gerekiyor. 29,8 bin yıldızlı ve aktif geliştirilen bir proje.",
+   "usage_tr": "Model ajansı fikrinde gerçek bir yeri var: gelen portföy fotoğraflarını yüz embedding'i üzerinden kişiye göre gruplayıp mükerrer kayıtları temizleyebilir, bir casting brief'ine göre mevcut havuzda arama yapabilirsin. Kendi sunucusu ve Web arayüzü olduğu için bu adımı asistanına devretmek mümkün; günlük kullanımda terminale girmesi gerekmez. ONNX Runtime CoreML sağlayıcısıyla ofisteki Mac'te yerel çalışır, API maliyeti getirmez ve fotoğraflar dışarı çıkmaz. Uyarı iki başlıkta: hazır modellerin lisansı ticari kullanıma kapalı olduğundan ajans ticarileşirse lisans konuşulması gerekir, ve yüz verisi biyometrik veri sayıldığı için saklama ve rıza tarafını en baştan kurmak şart. Bu ikisi çözülmeden ötesini bir prototipten öteye taşımamak daha doğru.",
+   "matched_project": "Model ajansı",
+   "relevance": 4,
+   "investment_note": null
+  },
+  {
+   "full_name": "d2l-ai/d2l-en",
+   "inputs_hash": "1ee54b1e94721915b13899a32bdeaa65",
+   "description_tr": "d2l-en, derin öğrenmeyi kavram, matematik ve çalıştırılabilir kodla birlikte anlatan açık kaynak bir kitaptır. Tüm bölümler Jupyter notebook olarak yazılmış; aynı örnekler PyTorch, TensorFlow, JAX ve MXNet ile paralel olarak veriliyor. Kapsam doğrusal modellerden evrişimli ve tekrarlayan ağlara, dikkat mekanizmasına, öneri sistemlerine, pekiştirmeli öğrenmeye ve hiperparametre optimizasyonuna kadar uzanıyor. Kitap Cambridge University Press tarafından basıldı ve 70 ülkede 500'den fazla üniversitede ders materyali olarak kullanılıyor. 29,7 bin yıldızlı, düzenli güncellenen bir proje; lisans alanı standart bir SPDX kimliğine oturmuyor (NOASSERTION).",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, öğrenme merakın ve Folio'daki öneri sistemi bölümünün burada da bir başlık olarak yer alması. Buradaki içerik model eğitmeyi öğretiyor; senin akışın hazır modelleri ürüne bağlamak üzerine kurulu ve bu ayrım kitabın büyük kısmını senin için konu dışı bırakıyor. Kitap İngilizce ve notebook temelli, yani tüketimi de düzenli oturma süresi gerektiriyor. Ürüne gömülebilecek bir kütüphane ya da otomasyona takılabilecek bir parça sunmuyor. Bir konuyu derinleştirmek istediğin gün tek bölümünü açmak yeterli olur.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "aishwaryanr/awesome-generative-ai-guide",
+   "inputs_hash": "8be15becfde595acbae01dbcf1fe917f",
+   "description_tr": "awesome-generative-ai-guide, üretken yapay zekâ alanında kurs, makale, not defteri ve mülakat materyallerini tek yerde toplayan bir derlemedir. İçerik okuyucunun amacına göre düzenlenmiş: AI'ı işinde kullanmak, sistem geliştirmek, araştırmayı anlamak veya mülakata hazırlanmak gibi yollar ve her yol için 101'den 301'e seviyeler tanımlanmış. RAG, ajan mimarileri, ince ayar ve değerlendirme gibi başlıklarda ücretsiz kurs ve video bağlantıları listeleniyor. Depoda çalıştırılabilir örnekler sınırlı; ağırlık bağlantı ve özet metinlerde. MIT lisanslı ve 29,5 bin yıldızlı, güncel tutulmaya çalışılan bir liste.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, alanı yatırım merceğiyle takip ederken hangi başlıkların olgunlaştığını hızlıca görmek olabilir. Ancak bu tür listeler senin bilgi kaynağın değil: sen aynı soruları doğrudan Claude Code'a soruyor ve deneyerek öğreniyorsun. Mülakat hazırlığı ve kurs bölümleri senin rolüne hiç uymuyor. Asistanına belirli bir başlıkta kaynak taraması yaptırmak istersen başlangıç noktası olabilir, ama bu tek seferlik bir iş olur. Gömülebilir bir bileşen ya da otomasyona takılacak bir parça içermiyor.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "The-Art-of-Hacking/h4cker",
+   "inputs_hash": "e62fb42eb0746fe74ab9bd9b9254739d",
+   "description_tr": "h4cker, siber güvenlik alanında derlenmiş kapsamlı bir kaynak, betik ve laboratuvar deposudur. Saldırgan ve savunmacı güvenlik, uygulama güvenliği, bulut ve konteyner güvenliği, kriptografi, adli bilişim, zafiyet araştırması ve son dönemde yapay zekâ güvenliği başlıklarını kapsıyor. İçerik kitap ve video eğitimlerinin destekleyici materyali olarak düzenlenmiş; sertifikasyon yol haritaları ve kendi laboratuvarını kurma rehberleri ayrı bölümlerde. Depoda bazı not defterleri ve betikler var, ancak ağırlık düzenlenmiş referans listelerinde. MIT lisanslı ve 29,5 bin yıldızlı, tek bir yazar tarafından uzun süredir bakılıyor.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, kendi altyapının güvenlik hijyeni: Supabase anahtarları, DigitalOcean erişimleri, Tailscale ağı ve sürekli açık duran ev makinesi. Bu depo ise sızma testi ve zafiyet araştırması yapanlar için bir müfredat; senin ihtiyacın olan şey erişim kapsamlarını izole etmek ve gizli anahtar yönetimini düzene sokmak gibi birkaç somut alışkanlık. Bunları bu listeden çıkarmak yerine, mevcut projelerinde Claude Code ile doğrudan bir gözden geçirme yaptırmak daha hızlı sonuç verir. Çalıştırılabilir bir bileşen sunmadığı için Expo/Supabase tarafına gömülebilecek bir parçası da yok. Güvenlik başlığı senin için gerçek, ama bu depo o ihtiyacın karşılığı değil.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "nautechsystems/nautilus_trader",
+   "inputs_hash": "f220ad69967f268ab4808316c025b012",
+   "description_tr": "NautilusTrader, algoritmik ticaret stratejilerini geriye dönük test edip aynı kodla canlıya alabilmek için yazılmış, olay güdümlü bir ticaret motorudur. Çekirdek Rust ile yazılmış, Python API'si üzerinden kullanılıyor; nanosaniye çözünürlüklü, deterministik bir olay döngüsü ve backtest ile canlı çalıştırma arasında kod değişikliği gerektirmeyen bir tasarım hedefleniyor. Kripto borsaları, vadeli işlemler, hisse senedi, forex ve opsiyon gibi farklı varlık sınıfları için adaptörler içeriyor. LGPL-3.0 lisanslı, 29,3 bin yıldızlı ve sık sürüm çıkaran aktif bir proje; kurulumu ve veri bağlantıları ciddi bir öğrenme eğrisi getiriyor. 2018'de açılmış, arkasında bir şirket ve Discord topluluğu var.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, yatırım tarafında portföy takibi ihtiyacın, ama o ihtiyaç erken aşama şirketlerde pozisyon izlemek, saniyelik piyasa emirleri göndermek değil. Bu motor günlük alım satım yapan bir ekip için tasarlandı; senin yatırım yaklaşımın uzun vadeli ve özel pazarlarda. Mac'te yerel kurulabilir ve API maliyeti getirmez, ancak asıl maliyet öğrenme ve veri aboneliği tarafında çıkar. Ürünlerinden hiçbirine gömülebilecek bir parçası da yok. Araç olarak değil, en fazla sektör takibi için not edilecek bir proje.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": "Açık kaynak bir çekirdek etrafında kurumsal ticaret altyapısı geliştiren, uzun soluklu ve teknik derinliği yüksek bir ekip; FinTech tarafında altyapı yatırımlarını izlerken kategorinin örneklerinden biri olarak bakılabilir."
+  }
+ ]
+}

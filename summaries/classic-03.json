@@ -1,0 +1,175 @@
+{
+ "repos": [
+  {
+   "full_name": "apachecn/ailearning",
+   "inputs_hash": "789932a18e3cc5f9a6774512a6939445",
+   "description_tr": "ApacheCN topluluğunun derlediği Çince makine öğrenmesi ve derin öğrenme çalışma koleksiyonu. İçerik ağırlıklı olarak \"Machine Learning in Action\" kitabının not ve kod uyarlamalarından oluşuyor; üzerine lineer cebir, PyTorch, NLTK ve TensorFlow 2 bölümleri ile veri analizi materyalleri ekleniyor. Kod örneklerinin önemli kısmı Python 2.7 dönemine ait ve README bunu açıkça belirtiyor; öğrenme malzemesi olarak konumlanıyor, kütüphane olarak değil. CC BY-NC-SA 4.0 ile dağıtılıyor, 2017'de açılmış ve 42.500'ün üzerinde yıldızı var. Metinlerin tamamı Çince; online okuma sitesi ve eşlik eden video kaynakları repoya bağlı.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor. En yakın bağlam, öğrenme alışkanlığın olabilir; ancak burada anlatılan klasik ML müfredatı (SVM, kNN, PCA gibi) senin uygulama üretme biçiminle örtüşmüyor ve materyalin tamamı Çince. Senin tarafındaki ihtiyaçlar hazır modelleri çağırmak ve pipeline kurmak; bu repo ise algoritmayı elle yazmayı öğretiyor.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "PatrickJS/awesome-cursorrules",
+   "inputs_hash": "d95a65aacbde33e0c207a7a08f4019ff",
+   "description_tr": "Cursor editörü için hazırlanmış proje kuralı dosyalarının (.cursor/rules altındaki .mdc dosyaları) derlendiği bir liste reposu. Kurallar stack'e göre gruplanmış: Next.js, React, TypeScript, Angular, Astro, Tailwind gibi ağırlıklı olarak web tarafı başlıklar; her giriş tek bir Markdown dosyasına bağlanıyor. Amaç, editörün kod üretirken uyacağı mimari ve stil kurallarını projeye özel olarak sabitlemek. CC0-1.0 ile yayınlanıyor, Eylül 2024'te açılmış ve 40.800'ün üzerinde yıldıza ulaşmış; katkılar topluluktan geliyor ve README sponsor blokları içeriyor. Kod içermiyor, yalnızca metin dosyalarından oluşan bir dizin.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor. En yakın bağlam CLAUDE.md pratiğin: buradaki kural dosyaları düz Markdown olduğu için örnek olarak okunabilir, ama sen Cursor değil Claude Code ve OpenCode kullanıyorsun ve listedeki kapsam Expo/React Native tarafında neredeyse boş. Aynı fikrin sana uyan hali, agent skill'leri ve Claude Code odaklı derlemelerde daha güçlü karşılığını buluyor.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "photoprism/photoprism",
+   "inputs_hash": "b4642fe7bbcd64084291e4a3164d0c11",
+   "description_tr": "PhotoPrism, kendi sunucunda çalıştırılan bir fotoğraf ve video kütüphanesi uygulaması. Yüklenen medyayı TensorFlow tabanlı modellerle etiketliyor, yüz tanıma, yer ve tarih çıkarımı yapıyor; RAW dosyaları ve çeşitli video formatlarını destekliyor. Go ile yazılmış, arayüz PWA olarak sunuluyor ve telefona ana ekran uygulaması gibi kurulabiliyor; tipik kurulum Docker üzerinden yapılıyor. AGPL 3.0 lisanslı; ticari tarafta üyelik modeli ve barındırılan sürüm var. 2018'de açılmış, 40.000'in üzerinde yıldızı olan ve düzenli sürüm çıkaran olgun bir proje.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor. En yakın bağlam evdeki 7/24 açık Mac mini ve self-hosting ilgin; kişisel fotoğraf arşivini buluta vermeden Tailscale üzerinden erişilebilir hale getirmek istersen bu sınıfın en olgun seçeneği. Bir ürün olarak tamamlanmış olduğu için kendi uygulamalarına gömülecek bir bileşen değil; bütün olarak çalıştırılır.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "google-research/bert",
+   "inputs_hash": "0411eb1c4be3b0b038ede63b9dd839ef",
+   "description_tr": "BERT'in Google Research tarafından yayımlanan orijinal TensorFlow kodu ve önceden eğitilmiş model ağırlıkları. Repo, maskeli dil modeli ile ön eğitim ve GLUE, SQuAD gibi görevlerde fine-tuning için betikler, ayrıca çok dilli ve Çince modelleri içeriyor. 2020'de 24 küçük boyutlu BERT modeli (BERT-Tiny'den BERT-Base'e) sınırlı donanımlı ortamlar ve knowledge distillation için ek olarak yayımlandı. Apache-2.0 lisanslı; 40.000'in üzerinde yıldızı var ama kod 2020'den beri fiilen dondurulmuş durumda ve TensorFlow 1.x dönemine ait. Bugün pratikte referans ve tarihsel kaynak olarak, güncel uygulamalarda ise Hugging Face üzerinden taşınmış sürümleriyle kullanılıyor.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor. En yakın bağlam sesli not uygulamasındaki kategori çıkarımı olabilir; ancak orada sınıflandırmayı zaten bir LLM yapıyor ve kendi BERT'ini fine-tune etmek hem eğitim verisi hem bakım yükü getirir. Kavramsal olarak okunmaya değer, araç olarak değil.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "floodsung/Deep-Learning-Papers-Reading-Roadmap",
+   "inputs_hash": "62d3f16c45bbcd17cc74490f0b84a39a",
+   "description_tr": "Derin öğrenmeye yeni başlayanlar için hazırlanmış, makaleleri okuma sırasına dizen bir yol haritası. Liste genelden özele ve eskiden yeniye ilerliyor: temel survey'ler, DBN ve ImageNet dönemi, ardından görüntü, NLP, pekiştirmeli öğrenme gibi alt alanlar. Her makale PDF bağlantısı ve yıldızla verilmiş bir önem notuyla listeleniyor. Kod veya çalıştırılabilir içerik yok; tamamen bir okuma listesi. 39.500'ün üzerinde yıldızı var ancak kapsam büyük ölçüde 2017 öncesinde duruyor ve lisans belirtilmemiş.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor. En yakın bağlam öğrenme ilgin; fakat senin öğrenme hattın uygulama üretmek ve Türkçe kaynaklardan kavram öğrenmek üzerine, akademik makale sırası değil. Liste ayrıca transformer sonrası dönemi kapsamadığı için bugünün araçlarını açıklamıyor.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "github/awesome-copilot",
+   "inputs_hash": "de6f95ad3cf14f723969c6b71533b174",
+   "description_tr": "GitHub'ın sahiplendiği, Copilot'u özelleştirmek için topluluk katkısıyla oluşan bir yapılandırma koleksiyonu. İçerikte dosya desenine göre otomatik uygulanan instruction dosyaları, MCP sunucularıyla çalışan agent tanımları, skill klasörleri, hook'lar ve workflow'lar yer alıyor. Tam metin arama ve filtreleme sunan bir web sitesi ile ajanların okuyabileceği yapılandırılmış bir llms.txt dosyası da yayınlanıyor. MIT lisanslı, Haziran 2025'te açılmış ve 39.000'in üzerinde yıldıza ulaşmış; katkı sayısı yüksek ve düzenli güncelleniyor. Tanımların biçimi Copilot ekosistemine özgü, dosyaların kendisi ise düz Markdown.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor. En yakın bağlam kendi Claude Code kurulumun: \"kuralı dosya desenine bağla\" fikri ve buradaki instruction dosyalarının yapısı okunup CLAUDE.md tarafına taşınabilir. Ancak agent ve hook tanımları Copilot'a bağlı olduğu için doğrudan çalıştırılamaz; sende karşılığı olan derlemeler Claude Code uyumlu skill listeleri.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "deepseek-ai/awesome-deepseek-integration",
+   "inputs_hash": "9cdd2c8aa5e600c9fd47761d7264143c",
+   "description_tr": "DeepSeek API'sini kullanan yazılımların DeepSeek ekibi tarafından tutulan dizini. Başlıklar uygulamalar, ajan çerçeveleri, RAG çerçeveleri, mesajlaşma uygulaması eklentileri, ofis eklentileri, tarayıcı ve IDE eklentileri şeklinde gruplanmış. Her giriş kısa bir açıklama ve bağlantıdan oluşuyor; repo kod barındırmıyor, kurulum için DeepSeek Open Platform'dan API anahtarı alınması gerekiyor. README İngilizce, Çince, Japonca ve İspanyolca sürümleriyle yayınlanıyor. CC0-1.0 lisanslı, Ocak 2024'te açılmış ve 39.000'in üzerinde yıldızı var.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor. En yakın bağlam maliyet tarafı olabilir: ucuz bir API'yi hangi araçların hazır desteklediğini görmek için bir dizin, ama sen kodlama tarafında Max aboneliğiyle, içerik tarafında ise Mac'te yerel modellerle ilerliyorsun. Yeni bir API bağımlılığı eklemek bu tercihin tersi yönde olur.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "google-research/google-research",
+   "inputs_hash": "040c1094b3c877d4e7450113f03eaf37",
+   "description_tr": "Google Research'ün yayımladığı makalelere eşlik eden kodun tek bir depoda toplandığı monorepo. Binlerce alt dizin içeriyor ve her biri ayrı bir çalışmaya ait; ortak bir API, paket ya da kurulum yolu yok. README deponun büyüklüğü nedeniyle yalnızca ilgilenilen alt dizinin indirilmesini veya sığ klonlama yapılmasını öneriyor. Kaynak dosyalar Apache-2.0, veri kümeleri CC BY 4.0 ile lisanslı; resmî bir Google ürünü olmadığı açıkça belirtiliyor. 38.800'ün üzerinde yıldızı var; güncellenme temposu tek tek çalışmalara bağlı.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor. En yakın bağlam, belirli bir makalenin referans uygulamasını aradığında tek seferlik bir kaynak olması; böyle bir arama dışında deponun bütünü bir araç sunmuyor. Alt dizinlerin çoğu bakımsız araştırma kodu olduğu için üretim hattına bağlanacak bir bileşen beklememek gerekir.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "fengdu78/Coursera-ML-AndrewNg-Notes",
+   "inputs_hash": "d2ad220057fa54b986da96aeeb707451",
+   "description_tr": "Andrew Ng'in 2014 tarihli Coursera makine öğrenmesi dersinin Çince ders notları ve altyazı arşivi. Repo notların Word, Markdown ve HTML sürümlerini, dersin orijinal sunumlarını, Çince-İngilizce altyazı dosyalarını ve Python kod örneklerini barındırıyor. İçerik denetimli ve denetimsiz öğrenme, SVM, sinir ağları, öneri sistemleri gibi klasik başlıkları kapsıyor. Bir kütüphane değil, tamamen eğitim materyali; online okunabilen bir not sitesine de bağlı. 37.800'ün üzerinde yıldızı var, 2017'de açılmış ve lisans belirtilmemiş.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor. En yakın bağlam genel öğrenme ilgin; ancak materyal Çince ve on yıl öncesinin klasik ML müfredatını anlatıyor, senin kullandığın hazır model ve ajan katmanıyla ilgisi yok.",
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "TencentARC/GFPGAN",
+   "inputs_hash": "1fb8a1b6a70865670de28d4aee29800b",
+   "description_tr": "GFPGAN, bozulmuş veya düşük kaliteli fotoğraflardaki yüzleri önceden eğitilmiş bir GAN önselini kullanarak onaran bir modeldir. PyTorch ile yazılmış; çıkarım betiği, PyPI paketi ve çevrimiçi demolar sunuluyor, arka plan iyileştirmesi için genellikle Real-ESRGAN ile birlikte çalıştırılıyor. v1.3 ve v1.4 gibi farklı ağırlıklar doğallık ve detay arasında farklı dengeler veriyor. Depo Tencent ARC laboratuvarına ait; lisans alanı standart dışı işaretlenmiş, README Apache-2.0 rozeti taşıyor. 37.600'ün üzerinde yıldızı var ancak geliştirme 2022'den sonra büyük ölçüde durmuş durumda.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor. En yakın bağlam Folio'nun görsel üretim hattı olabilir, fakat GFPGAN gerçek ve bozulmuş fotoğrafları onarmak için tasarlandı; güncel üreteçlerin çıktısında çözmesi gereken bir problem genelde kalmıyor. Bakımı durmuş olması da üretim hattına bağlamak için zayıf bir gerekçe.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "exacity/deeplearningbook-chinese",
+   "inputs_hash": "8ca9056dc3d19a845dd1eca68a7297bc",
+   "description_tr": "Goodfellow, Bengio ve Courville'in Deep Learning kitabının topluluk tarafından yapılmış Çince çevirisi. Depo TeX kaynaklarını ve indirilebilir PDF sürümlerini barındırıyor; bölümler farklı çevirmenler arasında paylaştırılmış ve okuyucu önerileriyle düzeltiliyor. Kitap basılı olarak da yayımlandığı için telif nedeniyle PDF sürümü dondurulmuş, kaynak dosyalar güncellenmeye devam ediyor. İçerik matematiksel temellerden derin öğrenme araştırma konularına uzanan klasik bir ders kitabı. 37.500'ün üzerinde yıldızı var; açık bir yazılım lisansı belirtilmemiş.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor. En yakın bağlam teorik merakın olabilir, ama metin Çince ve kitap model eğitimi yapanlara yönelik; senin çalışman hazır modelleri birleştirmek üzerine kurulu.",
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "openai/gym",
+   "inputs_hash": "02f5fe03bad7be516182569852c230c1",
+   "description_tr": "Gym, pekiştirmeli öğrenme algoritmalarını geliştirmek ve karşılaştırmak için standart bir ortam arayüzü sunan Python kütüphanesi. Algoritma ile ortam arasındaki iletişimi tek bir API'ye indiriyor ve klasik kontrol, Atari, MuJoCo gibi hazır ortam aileleriyle geliyor. API uzun süre alanın fiili standardı oldu ve pek çok araştırma kodu onun üzerine yazıldı. README, 2021'den beri bakımı yapan ekibin geliştirmeyi Gymnasium'a taşıdığını ve bu deponun yeni güncelleme almayacağını açıkça yazıyor. 37.200'ün üzerinde yıldızı var; kod arşiv değerinde ve yeni projelerde Gymnasium öneriliyor.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor. En yakın bağlam Folio'daki öneri/bandit ihtiyacı gibi duruyor, ama Gym simülasyon ortamı tanımlamak için var; bir feed'de beğen/beğenme sinyalinden öğrenmek için basit bir bandit yeterli ve bu kütüphaneye gerek kalmıyor. Ayrıca proje dondurulmuş durumda, yeni bir işe başlangıç noktası olarak uygun değil.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "google-ai-edge/mediapipe",
+   "inputs_hash": "b786fb4a92d512d039be601bf34ce076",
+   "description_tr": "MediaPipe, canlı ve akan medya üzerinde cihaz üstünde çalışan makine öğrenmesi çözümleri sunan bir çerçeve. Görüntü tarafında poz, el ve yüz landmark'ları, nesne algılama ve segmentasyon; ses tarafında ses sınıflandırma; metin tarafında sınıflandırma ve gömme görevleri hazır \"task\" olarak geliyor. Altta grafik tabanlı bir pipeline mimarisi var; C++ çekirdeği Android, iOS, web ve Python'dan çağrılabiliyor ve veri işleme tamamen cihazda kalıyor. Apache-2.0 lisanslı, Google tarafından geliştiriliyor ve 37.000'in üzerinde yıldızı var. Geliştirici dokümantasyonu 2023'te developers.google.com altına taşındı; depo hâlâ kaynak kod ve örnekleri barındırıyor.",
+   "usage_tr": "Kanarya tarafında işine yarayabilecek somut bir parça var: kamera görüntüsünden poz landmark'ları çıkarıp boks ve yoga seanslarını tekrar sayısı veya duruş açısı gibi ölçülebilir sinyallere çevirmek, üstelik veri cihazdan çıkmadan. Aynı kütüphanenin ses sınıflandırma görevi, stand-up analizi çalışmanda kayıttaki kahkaha anlarını işaretleyip transkriptle hizalamak için ilk geçiş olarak kullanılabilir. Python tarafı ofisteki M4 Pro Mac'te yerel çalışır, API maliyeti getirmez ve çıktıyı Supabase'e yazıp mevcut n8n akışına bağlayabilirsin. Expo tarafında ise doğrudan gömülemez: iOS/Android görevleri için native modül ve config plugin yazmak gerekir, bu da Kanarya'da EAS build tarafında ek iş demek. Önce Mac'te Python ile bir kayıt üzerinde deneyip sinyalin işe yaradığını ölçmek, mobil entegrasyona girmeden önce doğru sıra.",
+   "matched_project": "Kanarya",
+   "relevance": 5,
+   "investment_note": null
+  },
+  {
+   "full_name": "ashishpatel26/500-AI-Machine-learning-Deep-learning-Computer-vision-NLP-Projects-with-code",
+   "inputs_hash": "93e286f5318881bcb60d5ee7108b239d",
+   "description_tr": "Makine öğrenmesi, derin öğrenme, bilgisayarlı görü ve NLP alanlarında 500'den fazla örnek projeyi bağlantılarıyla listeleyen bir derleme. İçerik tek bir büyük Markdown tablosundan oluşuyor; girişler GitHub depolarına, Medium yazılarına ve blog serilerine yönlendiriyor. Liste tek bir kişi tarafından tutuluyor ve sürekli güncellendiği belirtiliyor; katkılar pull request ile alınıyor. Kod barındırmıyor, bağlantıların kapsamı ve kalitesi kaynaktan kaynağa değişiyor. 36.900'ün üzerinde yıldızı var ve lisans belirtilmemiş.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor. En yakın bağlam bir fikir taraması yapmak olabilir, ama liste ağırlıklı olarak eğitim amaçlı notebook'lara işaret ediyor; senin hattına bağlanacak bakımlı bir bileşen sunmuyor.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "xinntao/Real-ESRGAN",
+   "inputs_hash": "f28b5ccedc3beb09eae254c1da0e3273",
+   "description_tr": "Real-ESRGAN, gerçek dünya görüntü ve videolarında çözünürlük artırma ve bozulma temizleme için eğitilmiş bir model ailesi. Genel amaçlı x4plus modelinin yanında anime görsel ve anime video için küçük özel modeller, ayrıca yüz iyileştirme için GFPGAN ile birlikte çalışma seçeneği sunuluyor. PyTorch tabanlı çıkarım betiği ve PyPI paketinin yanında, GPU gerektirmeyen taşınabilir ncnn-vulkan ikilileri de yayımlanıyor. BSD-3-Clause lisanslı, 2021'de açılmış ve 36.800'ün üzerinde yıldıza ulaşmış. Son dönemde geliştirme temposu düşük; model zoo ve dokümantasyon ise derli toplu.",
+   "usage_tr": "Folio'nun günlük içerik pipeline'ında üretilen görselleri dikey feed'de tam ekran göstermeden önce büyütme adımı için kullanabilirsin. Ofisteki M4 Pro Mac'te yerel çalışır, API maliyeti getirmez ve tek bir Python komutu olduğu için n8n akışına bir adım olarak eklenmesi kolay; ürettiğin görselleri DigitalOcean'a yazmadan önce bu adımdan geçirebilirsin. Faydası, üreteçten 1024 piksel çıkan bir kareyi telefon ekranında yumuşak görünmeden kullanabilmen. Uyarı: Apple Silicon'da CPU/MPS ile çalışma süresi kare başına saniyeler mertebesinde olabilir, bu yüzden günlük parti işinde toplu çalıştırıp önbelleğe almak gerekir. Ayrıca güncel üreteçlerin çözünürlüğü çoğu zaman yeterli olduğundan, önce bu adımın gerçekten görünür bir fark yaratıp yaratmadığını birkaç örnekle ölç.",
+   "matched_project": "Folio",
+   "relevance": 4,
+   "investment_note": null
+  },
+  {
+   "full_name": "hankcs/HanLP",
+   "inputs_hash": "817f3b0d498091119d0e9c66c98a5732",
+   "description_tr": "HanLP, PyTorch ve TensorFlow 2 üzerine kurulu çok dilli bir doğal dil işleme kütüphanesi. Tokenizasyon, lemmatizasyon, sözcük türü etiketleme, bağımlılık ve bileşen ayrıştırma, adlandırılmış varlık tanıma, anlamsal rol etiketleme gibi görevleri tek bir çok görevli model içinde birlikte çözüyor. 2.1 sürümü Universal Dependencies ve OntoNotes derlemleri sayesinde 130 dilde on ortak görev sunduğunu belirtiyor; en güçlü olduğu alan Çince metin işleme. Kod Apache-2.0 ile dağıtılıyor, önceden eğitilmiş modeller ise README'de CC BY-NC-SA 4.0 olarak belirtiliyor; bu ticari kullanımda dikkat gerektirir. 2014'ten beri sürüyor, 36.500'ün üzerinde yıldızı var ve aktif olarak bakılıyor.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor. En yakın bağlam sesli not uygulamasındaki Türkçe metin işleme adımı olabilir, ama oradaki kategori çıkarımı ve özetleme işini zaten bir LLM yapıyor; klasik etiketleme çıktıları sana ek bir karar vermiyor. Model lisansının ticari olmayan kullanımla sınırlanması da yayınlanacak bir üründe ayrıca engel.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "jax-ml/jax",
+   "inputs_hash": "989529391930de1090900f272cd3d50e",
+   "description_tr": "JAX, NumPy arayüzüne yakın bir API ile hızlandırıcı odaklı sayısal hesaplama yapan bir Python kütüphanesi. Otomatik türev alma (grad), JIT derleme (jit), vektörleştirme (vmap) ve paralelleştirme gibi dönüşümleri birbirleriyle serbestçe birleştirilebilir biçimde sunuyor. Altta XLA kullanıyor; aynı kod CPU, GPU ve TPU üzerinde çalışabiliyor ve büyük ölçekli eğitim için parçalama araçları içeriyor. Apache-2.0 lisanslı, resmî bir Google ürünü olmadığı ve \"keskin kenarları\" olduğu README'de belirtiliyor; Flax gibi kütüphanelerle geniş bir ekosistemi var. 36.300'ün üzerinde yıldızı olan, yoğun geliştirilen bir araştırma altyapısı.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor. En yakın bağlam, kullandığın bazı açık kaynak modellerin altında yatan çerçeve olması; ama sen model eğitmiyorsun, hazır modelleri çağırıyorsun. Bu katmana inmek ancak kendi modelini eğitmeye karar verirsen anlamlı olur.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "VoltAgent/awesome-agent-skills",
+   "inputs_hash": "db4c4cd60fd6dc034b4e641a24210118",
+   "description_tr": "Kod ajanları için yazılmış agent skill'lerini tek bir dizinde toplayan derleme reposu. Koleksiyon 1000'in üzerinde skill içeriyor ve bunların bir kısmı doğrudan ürün ekiplerinden geliyor: Claude, Expo, Supabase, Stripe, Better Auth, Tinybird gibi başlıklar altında gruplanmış. Skill'ler Claude Code, Codex, Gemini CLI, Cursor, GitHub Copilot, OpenCode ve Windsurf ile uyumlu; README her araç için dosyaların hangi dizine konacağını tablo halinde veriyor. MIT lisanslı, Ekim 2025'te açılmış ve kısa sürede 34.700'ün üzerinde yıldıza ulaşmış; VoltAgent tarafından topluluğa açık biçimde sürdürülüyor ve ayrı bir arama sitesi var. Derlemenin ayırt edici iddiası, toplu üretilmiş içerik yerine gerçekten kullanılan skill'leri seçmesi.",
+   "usage_tr": "Lyricdrop v2'yi ofis Mac'inde Claude Code ve Superpowers ile yazdığın için buradaki skill'ler doğrudan mevcut kurulumuna girer; Expo ve Supabase ekiplerinin resmî skill'leri senin standart stack'inin tam ortasına oturuyor. Pratik yol, admin panel ve mobil tarafta tekrar eden işleri (EAS build ayarları, Supabase şema ve RLS değişiklikleri) skill haline getirip depodaki örnekleri şablon olarak kullanmak. OpenCode uyumlu olması, ofiste Desktop app ile çalışırken aynı dosyaları ikinci bir araçta kullanabilmen anlamına geliyor. Max aboneliğiyle çalıştığı için ek API maliyeti getirmez; kurulum yalnızca dosya kopyalamaktan ibaret ve asistanına devredilecek bir iş değil, senin kendi kurulumunda duruyor. Uyarı: topluluk katkılı bir dizinde skill kalitesi değişkendir ve her skill ajanın davranışını kalıcı olarak değiştirir; etkinleştirmeden önce içeriğini okumak ve aynı anda az sayıda skill açık tutmak daha güvenli.",
+   "matched_project": "Lyricdrop",
+   "relevance": 7,
+   "investment_note": "Listeyi VoltAgent'ın bir ajan çerçevesi satıcısı olarak sürdürmesi, açık kaynak derlemenin dağıtım kanalı gibi kullanılmasına iyi bir örnek; ekosistem takibi açısından izlemeye değer."
+  },
+  {
+   "full_name": "TheAlgorithms/C-Plus-Plus",
+   "inputs_hash": "a7f66842740e1d977638258cc1b3d20b",
+   "description_tr": "TheAlgorithms topluluğunun C++ ile yazdığı algoritma uygulamalarının derlendiği eğitim amaçlı depo. Kapsam matematik, veri yapıları, arama ve sıralama, grafik algoritmaları ile makine öğrenmesi ve fizik başlıklarındaki temel yöntemlere uzanıyor. Uygulamalar Doxygen yorumlarıyla belgeleniyor ve otomatik üretilen bir dokümantasyon sitesi yayımlanıyor; CI kontrolleri katkıları denetliyor. Amaç öğrenme ve mülakat hazırlığı; üretimde kullanılacak bir kütüphane olarak konumlanmıyor. MIT lisanslı, 2016'da açılmış ve 34.600'ün üzerinde yıldızı olan, topluluk tarafından sürekli katkı alan bir proje.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor. En yakın bağlam algoritma öğrenme ilgisi olabilir, ama sen TypeScript ve Python tarafında çalışıyorsun ve bu depo üretimde kullanılacak bir kütüphane olmadığını kendisi belirtiyor.",
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  }
+ ]
+}
