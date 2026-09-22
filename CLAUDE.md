@@ -44,6 +44,16 @@ to the default `python-httpx` user agent, so it fetched nothing for its whole
 life and logged a clean finish every time. Distinguish "the source said no"
 from "the source said nothing", and make the first one loud.
 
+**Some ambiguity is not resolvable, and saying so is the answer.** An owner
+account ending in `-ai` yields a decisive token, so `yuaahu87-ai`, a Red Dead
+Redemption trainer, scores 0.85 — and so does `suno-ai/bark`, a generative
+audio model with 39,271 stars and no other vocabulary in its description. Every
+fix tried cost more than it bought: reading tokens off the description alone
+moved 332 repositories above 300 stars and took `bark` with them, and buying
+them back needed phrases chosen to match the repositories we had just looked
+at. When a change fails its own acceptance bar, write down what was measured
+and leave the code alone.
+
 **Never buy recall with precision.** A soft ceiling set below the decision
 threshold stranded 17,849 repositories in permanent escalation. A README weight
 set one tier too high put a release-notes CLI on an AI board. Every widening

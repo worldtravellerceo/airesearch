@@ -686,6 +686,29 @@ def classify(facts: RepoFacts, *, low: float = 0.2, high: float = 0.8) -> Verdic
             ],
         )
     )
+    # The repository's name stays in the haystack, and that is a decision with
+    # a measurement behind it rather than an oversight.
+    #
+    # It means an owner whose account ends in `-ai` gets a decisive `ai` token:
+    # `yuaahu87-ai/rogue-outlaw-armory` is a Red Dead Redemption trainer and
+    # scored 0.85 on nothing else. Two of six false positives in a hand-read of
+    # forty newly-classified repositories came from exactly this.
+    #
+    # Every fix tried costs more than it buys, because the suffix cannot tell
+    # `suno-ai` from `midday-ai`. Reading tokens off the description alone
+    # dropped 332 repositories above 300 stars, among them `suno-ai/bark`, a
+    # generative audio model with 39,271 stars whose description — "Text-
+    # Prompted Generative Audio Model" — carries no other vocabulary we hold.
+    # Demoting a name-borne token to the ambiguous tier cost the same
+    # repositories, and buying them back needed phrases picked to match the
+    # ones we happened to look at, which is fitting the sample rather than
+    # measuring it. Both variants: recall 95% to 94%, precision unchanged.
+    #
+    # So it stands, and the residue is a known cost: ~85% precision on the
+    # marginal slice of newly-classified repositories against 94% on the
+    # stratified sample. The real fix is upstream — these repositories never
+    # have their README read, because the README pass takes only repos scoring
+    # exactly zero and a single accidental token puts them at 0.85.
     name_tokens = tokenise(facts.full_name.replace("/", " ").replace("-", " ").replace("_", " "))
 
     owner = facts.full_name.split("/", 1)[0].lower()
