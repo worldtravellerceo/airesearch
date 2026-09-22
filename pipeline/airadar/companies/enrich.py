@@ -456,6 +456,15 @@ async def refresh_directory(
     And `dbQuery` is a substring match over name and description, so "ai" also
     matches Airbnb and Raiffeisen. That is fine here: this table is a
     dictionary, not a claim. Nothing is called an AI company for being in it.
+
+    MEASURED, and the reason this is not bought in bulk: a 1,000-row probe cost
+    $6.03 and overlapped our universe in **51 companies**, 5.1%. Not one of the
+    400 funding rounds attached. The cause is structural rather than a bad
+    query — the database is ordered by Crunchbase rank, which is global
+    prominence, while this index is made of open-source projects whose
+    companies are small or do not exist. Scaling to 5,000 rows would have cost
+    $40 for perhaps 250 more matches and, on the evidence, still no rounds.
+    Buy a slice, measure the overlap, and only then decide.
     """
     now = now or dt.datetime.now(dt.UTC)
     report = {"rows": 0, "with_domain": 0, "cost_usd": 0.0, "matched": 0, "rounds_attached": 0}

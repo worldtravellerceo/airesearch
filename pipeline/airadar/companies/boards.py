@@ -42,6 +42,15 @@ def funded(conn: sqlite3.Connection, *, today: dt.date, limit: int = BOARD_LIMIT
     Rounds with no disclosed amount are kept and sort last: that a company
     raised at all is the news, and an undisclosed amount is a fact about the
     round rather than a reason to hide it.
+
+    Still empty after the second run, and the measurement says why. Buying
+    Crunchbase's own company directory was meant to resolve each round's
+    permalink to a domain; a 1,000-row probe overlapped this universe in 51
+    companies and attached none of the 400 rounds. The two populations barely
+    intersect: Crunchbase ranks by global prominence, and an index of
+    open-source AI projects is made of companies that are small, young or
+    absent. Filling this board needs rounds sourced *from* our companies rather
+    than resolved *into* them — a different query, not more of this one.
     """
     since = today - dt.timedelta(days=FUNDED_WINDOW_DAYS)
     rows = conn.execute(
