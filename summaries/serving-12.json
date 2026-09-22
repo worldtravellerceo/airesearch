@@ -1,0 +1,175 @@
+{
+ "repos": [
+  {
+   "full_name": "NVlabs/SoL-Pi",
+   "inputs_hash": "b326695586e95e898d6e4e8c6bf168df",
+   "description_tr": "SoL-Pi, NVlabs tarafından yayımlanan ve Pi adlı kodlama ajanı harness'inin üzerine takılan bağımsız bir verimlilik eklentisi. Ölçeklenmiş otomatik araştırma döngülerinde bulunan dört mekanizmayı paketliyor: bir düzenleme veya yazma işleminin ardından gelen doğrulama komutunu aynı adımda çalıştıran Action Fusion, bağlam tekrarını azaltma, aşırı büyük araç çıktılarını kısaltma ve uzun logların gereksiz yere okunmasını engelleme. Amaç, ajanın işi erken bırakmasına veya kanıtı gizlemesine yol açmadan model turu, token trafiği ve çıkarım yükünü düşürmek. Değiştirilmemiş bir Pi sürümünün üzerine kuruluyor, Pi'nin genel eklenti API'lerini kullanıyor ve her mekanizma varsayılan olarak kapalı. TypeScript, MIT lisanslı; Eylül 2026'da açılmış, ~2.9K yıldıza ulaşmış ve bir arXiv makalesi eşlik ediyor.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, Claude Code ve OpenCode ile çalıştığın kodlama ajanı kurulumunun maliyet ve bağlam yönetimi tarafı olabilir. Ancak SoL-Pi'nin kodu Pi'nin eklenti API'lerine bağlı; Claude Code veya OpenCode'a taşınabilir bir plugin değil, harness'i değiştirmen gerekir. Buradan alınabilecek şey kod değil fikir: doğrulama komutunu düzenlemeyle birleştirmek ve tamamlanmış alt görevleri aktif bağlamdan çıkarmak, kendi CLAUDE.md ve hook düzeninde de karşılığı olan pratikler. Max aboneliğiyle çalıştığın için token tasarrufunun sana doğrudan bir fatura karşılığı da yok; kazanç yalnızca hız ve bağlam temizliği tarafında olur. Şimdilik okuyup not almak, kurmaktan daha mantıklı.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "physical-superintelligence-lab/Psi0",
+   "inputs_hash": "8ec25326bc0ff36aa0693e0bc3ac4e97",
+   "description_tr": "Ψ₀ (Psi-Zero), insansı robotlarda hareket ve manipülasyonu birlikte ele alan açık bir vision-language-action (VLA) temel modeli. Model önce büyük ölçekli birinci şahıs insan videolarından görev semantiği ve görsel temsil öğreniyor, ardından daha küçük miktarda gerçek teleoperasyon verisiyle post-training yapılıyor. Mimari, Qwen3-VL-2B-Instruct tabanlı bir dil-görü omurgası ile yaklaşık 500M parametreli akış tabanlı difüzyon transformer aksiyon uzmanından oluşuyor; en altta RL ile eğitilmiş bir takip kontrolcüsü alt gövdeyi sürüyor. Yaklaşık 80 trajektorilik ince ayarla yeni uzun ufuklu beceriler kazanabildiği bildiriliyor; model ve veri Hugging Face üzerinde yayınlanmış. RSS'26 kabulü olan akademik bir çalışma; depo lisansı standart bir lisansa eşlenmemiş.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, frontier teknolojiyi bir yatırım merceğiyle takip etmen olabilir. Robot donanımı, teleoperasyon verisi ve küme ölçeğinde eğitim gerektiren bir araştırma çıktısı; Mac'te yerel çalışacak ya da Expo/Supabase yığınına gömülecek bir parça yok. Kanarya veya Folio gibi projelerinde kullanabileceğin bir bileşen de içermiyor. Okuma değeri, insansı robotik tarafında açık modellerin nereye geldiğini görmek; bunun için depo yerine makale ve proje sayfası yeterli. Bu satırı bir araç değil, alan takibi olarak değerlendir.",
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "ideogram-oss/ideogram4",
+   "inputs_hash": "5e5f95559c165df0a550887433473cc1",
+   "description_tr": "Ideogram 4, Ideogram'ın ilk açık ağırlıklı metinden görsele modeli; sıfırdan eğitilmiş 9.3B parametreli bir temel model olarak tanıtılıyor. Yapılandırılmış bir JSON prompt arayüzü getiriyor; çok dilli metin render etme, bounding-box ile yerleşim kontrolü, renk paleti belirleme ve 2k çözünürlükte üretim öne çıkan özellikleri. Ağırlıklar Hugging Face üzerinde nf4 (yalnızca CUDA, Diffusers destekli) ve fp8 (tüm donanım, Diffusers desteği yok) biçimlerinde dağıtılıyor. Çıkarım kodu Apache-2.0, ancak model ağırlıkları ayrı bir ticari olmayan lisansa tabi. Tasarım odaklı Elo tablolarında açık ağırlıklı modeller arasında ilk sırada, kapalı GPT ve Gemini modellerinin gerisinde konumlanıyor; Haziran 2026'da yayınlanmış.",
+   "usage_tr": "Folio'nun günlük içerik pipeline'ında post ve story görsellerini üretmek için kullanabilirsin; tipografi ve poster düzeni bu modelin güçlü olduğu yer, yazar alıntısı kartları ve kapak görselleri tam bu tarife oturuyor. JSON prompt arayüzü ile bounding-box ve renk paleti vermek, Instagram formatını her gün aynı şablonda tutmanı sağlar — bu, serbest metin prompt'una göre tekrar üretilebilirliği ciddi biçimde artırır. Folio yalnızca kendi telefonunda kalacağı için ağırlıkların ticari olmayan lisansı burada engel değil; aynı ağırlıkları Arslan Holding'in marka veya web görsellerinde kullanamazsın, o iş için lisansı ayrıca çözmen gerekir. Donanım tarafında dikkatli ol: nf4 sürümü CUDA'ya bağlı, fp8 sürümü genel donanım diyor ama 9.3B'lik bir difüzyon modelinin 24 GB M4 Pro'da kaç saniyede bir kare ürettiğini ölçmeden plan yapma; alternatif, geceleri kiralık GPU'da batch üretip DigitalOcean'a yazmak. Üretimi n8n ile zamanlayıp Supabase'e kuyruklarsan günlük içerik akışı sana hiç dokunmadan dönebilir.",
+   "matched_project": "Folio",
+   "relevance": 6,
+   "investment_note": null
+  },
+  {
+   "full_name": "isl-org/ZoeDepth",
+   "inputs_hash": "9d5d91f2c64ce0d1f1e387b1a1750d42",
+   "description_tr": "ZoeDepth, tek bir görüntüden metrik derinlik tahmini yapan bir araştırma uygulaması; göreli derinlik öğrenen bir omurgayı metrik derinlik başlıklarıyla birleştirerek farklı veri kümelerine sıfır-atış aktarım hedefliyor. Depo, önceden eğitilmiş modelleri torch hub üzerinden ya da yerel kopyayla yükleme, değerlendirme, eğitim ve Gradio demosu için kod içeriyor. Jupyter Notebook ağırlıklı, MIT lisanslı ve Hugging Face Spaces ile Colab demoları mevcut. README'nin en başında Intel'in projeyi artık yönetmediği, bakım, hata düzeltme ve yeni sürüm sağlamadığı açıkça yazıyor. 2022 sonunda açılmış, ~2.8K yıldızlı ve bugün pratikte arşiv durumunda.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, görüntü üzerinden otomatik skorlama denediğin fikirler olabilir, ama derinlik tahmini o ihtiyaçların hiçbirine karşılık gelmiyor. Lyricdrop, Folio veya Kanarya tarafında tek kareden metrik mesafe bilgisine ihtiyaç duyan bir adım yok. Proje ayrıca bakımsız ilan edilmiş durumda; bugün üzerine bir şey kurarsan bakımını tamamen kendin üstlenirsin. Görsel analiz gerektiren bir iş çıkarsa daha güncel ve Apple Silicon'da çalıştığı doğrulanmış modellere bakmak daha doğru olur. Bu satırı geçmen makul.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "OpenDCAI/DataFlex",
+   "inputs_hash": "7f0547b423abda759dfcb3d3cd3e13c5",
+   "description_tr": "DataFlex, LLaMA-Factory üzerine kurulmuş, veri merkezli bir LLM eğitim çerçevesi. Eğitim döngüsünün içinde dinamik örnek seçimi, alan karışımı optimizasyonu ve örnek yeniden ağırlıklandırma yapıyor; literatürde yeniden üretilmesi zor birkaç yöntemi tek çatı altında toplayıp karşılaştırılabilir hale getiriyor. DeepSpeed ZeRO-3 altında gradyan hesaplamayı destekleyerek daha büyük modellerde de çalışabiliyor. Apache-2.0 lisanslı, ayrı bir dokümantasyon sitesi ve teknik raporu var; Ağustos 2025'te açılmış, ~2.8K yıldıza ulaşmış ve 2026 boyunca güncellenmiş. Hedef kitlesi model eğiten araştırmacılar ve ML mühendisleri.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, ileride kendi verinle küçük bir model ince ayarlamaya karar vermen olabilir. Bugünkü akışında modelleri sen eğitmiyorsun — Lyricdrop'ta da Kanarya'da da hazır modelleri çağırıyorsun, dolayısıyla eğitim döngüsü içi veri seçimi çözdüğün bir problem değil. Çok GPU'lu bir eğitim ortamı da gerektiriyor; M4 Pro Mac bu iş için uygun değil. Asistanına devredilebilecek ya da uygulamana gömülebilecek bir parça da içermiyor. Bir gün fine-tune gündeme gelirse hatırlanacak bir isim, şimdilik değil.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "rednote-machine-learning/RedKnot",
+   "inputs_hash": "5a0ec48fb5bddfc29eb55046d2889dfc",
+   "description_tr": "RedKnot, uzun bağlamlı LLM sunumunu hızlandırmaya odaklanan bir çıkarım sistemi; başlık farkındalıklı KV yeniden kullanımı ve SegPagedAttention ile tekrar eden hesabı azaltıyor. SGLang üzerine inşa edilmiş, ayrıca bağımsız bir vLLM eklentisine taşınmış durumda; DeepSeek V4 Flash için TP8 dağıtımı ve Ascend NPU uyarlaması üzerinde çalışılıyor. Nitelikli uzun bağlam profillerinde kalite kaybını bir puan içinde tutarak 2–5 kat sıcak durum TTFT hızlanması ve aritmetik hesapta %70–90 tasarruf hedefliyor; ölçüm iddialarının kapsamı ve dışarıda bıraktıkları README'de açıkça yazılmış. Apache-2.0 lisanslı, Haziran 2026'da açılmış ve topluluk katkısına açık bir yönetişim diliyle sunuluyor. Hedef kitlesi model sunan altyapı ekipleri.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, yerel modelleri Mac'te çalıştırma ilgin olabilir, ama bu proje çok GPU'lu sunucu kümeleri için yazılmış. Lyricdrop ve Kanarya tarafında model sunumunu sen yapmıyorsun; hazır API'ler ve Mac'teki yerel motorlar üzerinden gidiyorsun, dolayısıyla TTFT ve KV önbelleği optimizasyonu senin kontrol ettiğin bir katman değil. Apple Silicon desteği de gündeminde görünmüyor. Bir gün kendi modelini kendi sunucunda ölçekli biçimde sunarsan anlamlı olurdu; bugünkü mimarinde böyle bir adım yok. Geçmek doğru.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "antirez/h3.c",
+   "inputs_hash": "3eb455c7c4282c85c6b35639bad961fe",
+   "description_tr": "h3.c, MiniMax-H3 modelini Apple Silicon üzerinde yerel çalıştıran, C ve Metal ile yazılmış bağımsız bir çıkarım motoru. Prompt'tan video ve ses üretimi, ilk/son kare koşullama ve sıralı referans görsellerle (Ref2VA) yönlendirme uçtan uca çalışıyor; ayrıca modeli bellekte tutan etkileşimli bir oturum modu sunuyor, böylece aynı prompt'u başka bir tohumla tekrarlamak yeniden yükleme maliyeti ödemiyor. DiT bloklarının yalnızca ikisini bellekte tutup sonrakini SSD'den okuyarak bellek ayak izini düşürüyor; denoising adım sayısı, katman sayısı ve hız/kalite dengesi komut satırından ayarlanabiliyor. Ölçümler M5 Max üzerinde veriliyor: 512 kare boyutunda 22 karelik bir video için dört adımlı üretim yaklaşık 3.5 saniye, 29 adımlık referansa karşı 0.55 civarı SSIM. MIT lisanslı, FFmpeg gerektiriyor; Ağustos 2026'da açılmış ve aktif olarak H3'e özgü Metal performans çalışması sürüyor.",
+   "usage_tr": "Folio'nun günlük içerik pipeline'ında story ve kısa video üretimi için kullanabilirsin; ilk/son kare koşullama, aynı yazar profilinin görsel kimliğini klipler arasında sabit tutmanın pratik yolu. Ev veya ofisteki Mac'te yerel çalıştığı için üretim başına API maliyeti yok — bu, her gün yeni içerik üreten bir feed için tek tek çağrı ücreti ödemekten yapısal olarak farklı. Çıktıyı doğrudan DigitalOcean'a yazıp Supabase'de kuyruklarsan, günlük üretimi n8n'den tetikleyip kendi elini hiç sokmadan döndürebilirsin. Uyarı: yayınlanan ölçümler M3 Max ve M5 Max üzerinde ve önizleme modu tek başına birkaç GiB ek bellek istiyor; 24 GB'lık M4 Pro'da önce tek bir kısa klibi ölçüp kare başına süreyi görmeden gece planı kurma. İkinci uyarı: üretilen klipler saniye mertebesinde, yani story'ye uygun ama uzun video için birleştirme katmanını sen yazarsın.",
+   "matched_project": "Folio",
+   "relevance": 6,
+   "investment_note": null
+  },
+  {
+   "full_name": "baaivision/EVA",
+   "inputs_hash": "310b184f27fe93c52fb02ce62e323115",
+   "description_tr": "EVA, BAAI görü ekibinin görsel temsil öğrenme serisini toplayan bir şemsiye depo; EVA-01 ve EVA-02 görsel temsil modelleri ile EVA-CLIP ve 18 milyar parametreye ölçeklenen EVA-CLIP-18B alt projelerini içeriyor. Odak, maskeli görsel temsil öğrenmenin ve CLIP eğitiminin ölçekte nasıl davrandığını göstermek; her alt proje kendi klasöründe kod ve makale bağlantılarıyla duruyor. Modeller timm ve open_clip üzerinden de erişilebilir durumda, bu da pratikte çoğu kullanıcının depoya hiç uğramadan modelleri kullanabilmesi anlamına geliyor. README oldukça kısa: temelde alt projelere, Hugging Face bağlantılarına ve ekibin işe alım notuna yönlendiriyor. MIT lisanslı, 2022 sonunda açılmış ve ~2.7K yıldızlı bir araştırma deposu.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, Folio'nun öneri tarafında görsel gömme ihtiyacı olabilir. Ama bu depo bir araç değil, başka kütüphanelerin içine giren bir araştırma omurgası; böyle bir ihtiyaç doğarsa EVA-CLIP'i bu depodan değil, timm veya open_clip üzerinden birkaç satırla kullanırsın. Kendi uygulamana gömülebilecek hazır bir bileşen ya da Mac'te tek komutla çalışan bir ikili sunmuyor. README de karar vermeye yetecek teknik ayrıntıyı vermiyor, bilgi alt klasörlerde ve makalelerde duruyor. Bu satırı altyapı notu olarak geçebilirsin.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "Tencent-Hunyuan/HY-World-2.0",
+   "inputs_hash": "1f07d407a7108c88f8fe240911cb0427",
+   "description_tr": "HY-World 2.0, Tencent Hunyuan'ın 3D dünyaları üretme, yeniden kurma ve simüle etme üzerine çok modlu dünya modeli çerçevesi. Çatı altında birkaç ayrı model bulunuyor: panorama üretimi için HY-Pano 2.0, sahne rekonstrüksiyonu için WorldMirror 2.0 ve WorldStereo 2.0; çıkarım kodları ve ağırlıkların bir bölümü Hugging Face ile ModelScope üzerinde açılmış. Girdi olarak görüntü ya da panoramadan gezilebilir 3D sahne üretmeyi hedefliyor ve Tencent'in kendi ticari sahne-3D ürünüyle de bağlantılı. Depo lisansı standart bir açık lisansa eşlenmemiş, kendi koşullarına tabi. Nisan 2026'da açılmış, teknik rapor ve topluluk kaynaklarıyla birlikte ~2.7K yıldıza ulaşmış; açık kaynak planı aşamalı ilerliyor.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, gayrimenkul ve holiday home tarafında mekân görselleştirme fikri olabilir, ama bu bir ürün değil araştırma kodu ve ciddi GPU gerektiriyor. Folio'nun içerik üretimi düz görsel ve kısa video üzerine kurulu; 3D sahne çıktısı bu akışa girmiyor. Mac'te yerel çalışacak bir yol sunulmuyor ve lisans koşulları standart değil, ticari bir kullanımda ayrıca incelemen gerekir. Bu alanda bir ihtiyacın doğarsa uçtan uca hizmet veren hazır ürünlerle karşılaştırman daha hızlı sonuç verir. Şimdilik takip listesi malzemesi.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "dreamzero0/dreamzero",
+   "inputs_hash": "0bfe2602b7ee6fb32f2cf863bb50eba4",
+   "description_tr": "DreamZero, NVIDIA GEAR Lab'in World Action Model çalışması; aksiyonları ve videoyu birlikte tahmin ederek görülmemiş görevlerde sıfır-atış robot politikası olmayı hedefliyor. Depo, önceden eğitilmiş DROID ve AgiBot kontrol noktalarını, dağıtık WebSocket çıkarım sunucusunu, DROID simülasyon değerlendirmesini, LoRA ve tam ince ayar eğitim betiklerini ve yeni bir robot gövdesi eklemek için adım adım rehberi içeriyor. DROID checkpoint'i yalnızca DROID verisiyle sıfırdan eğitilmiş; RoboArena ve MolmoSpaces sıralamalarında birinci olduğu bildiriliyor. Çıkarım GB200 ve H100 sınıfı donanımda ölçülüyor; DiT önbellekleme ile adım süresi GB200'de ~0.6 saniye, H100'de ~3 saniye. Apache-2.0 lisanslı, Ocak 2026'da açılmış ve düzenli sürümlerle güncelleniyor.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, frontier teknoloji tarafındaki yatırım ilgin olabilir. Çalıştırmak için robot verisi ve veri merkezi sınıfı GPU gerekiyor; Mac'te yerel bir karşılığı yok, uygulamalarına gömülebilecek bir parça da yok. Lyricdrop, Folio veya Kanarya ile kesişen tek bir adım bile bulunmuyor. Bu tür depolar senin için ürün değil, alanın hangi hızda ilerlediğini gösteren işaretler. Okuyup geçmek doğru karar.",
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "codedogQBY/ReadAny",
+   "inputs_hash": "a2aab840aed1f74eaf62b9e37eea9482",
+   "description_tr": "ReadAny, masaüstü ve mobilde çalışan, yerel öncelikli bir AI e-kitap okuyucu. Okunan kitap üzerinde RAG sohbeti, vektör ve BM25'i birleştiren hibrit semantik arama, vurgular ve notlar, TTS seslendirme ve WebDAV ile senkron sunuyor. Masaüstü tarafı Tauri ile macOS, Windows ve Linux'ta; mobil tarafı React Native ile iOS ve Android'de çalışıyor, tamamı TypeScript. Gömme ve vektör deposu yerelde SQLite üzerinde tutulabiliyor, böylece kitaplar ve notlar çevrim dışı kalabiliyor; model tarafında OpenAI, Claude, Gemini, Ollama, DeepSeek ve uyumlu sağlayıcılar bağlanabiliyor. Şubat 2026'da açılmış, v2.0 ile mobil uygulamalar eklenmiş ve ~2.6K yıldıza ulaşmış; depo lisansı standart bir açık lisansa eşlenmemiş.",
+   "usage_tr": "Kişisel bilgi tabanı projen için asıl değeri bir okuyucu olarak değil, fork'layıp söküleceğin bir referans uygulama olarak taşıyor: yerel gömme, SQLite üzerinde vektör deposu ve hibrit arama katmanı, senin zaten kullandığın Expo/React Native yığınında yazılmış. Sesli notların transkriptlerini kitap bölümleri yerine kısa kayıtlar olarak beslersen, aynı arama katmanı haftalık ve aylık gidişat sorularına kaynak gösteren cevaplar üretebilir. Ollama sağlayıcısını seçtiğinde Mac'te tamamen yerel dönüyor, API maliyeti eklemiyor ve veriler dışarı çıkmıyor — iş/asistan sisteminden ayrı tutma isteğinle de uyumlu. Hobileri tarafında ayrıca kitapla sohbet ve TTS özellikleri, psikoloji-sosyoloji okumalarını sesli tüketmen için olduğu gibi kullanılabilir. İki uyarı: parçalama mantığı kitap bölümleri için ayarlanmış, kısa notlarda yeniden ölçmen gerekir; ve lisans standart olarak tanınmadığı için fork etmeden önce LICENSE dosyasını okumadan ilerleme.",
+   "matched_project": "Kişisel bilgi tabanı",
+   "relevance": 5,
+   "investment_note": null
+  },
+  {
+   "full_name": "Liquid4All/cookbook",
+   "inputs_hash": "8e7e00669cfb133fee3f359ea16df9b1",
+   "description_tr": "Liquid AI'ın açık ağırlıklı LFM modelleri ve LEAP SDK'sı için hazırlanmış örnek, öğretici ve uygulama deposu. İçerik dizüstü, tarayıcı (WebGPU ve ONNX Runtime Web ile), Android ve iOS hedeflerine göre ayrılmış; llama.cpp ile gerçek zamanlı ses transkripsiyonu yapan bir CLI, Apple Silicon Mac'ler için cihaz üstü sesli asistan, araç çağırmalı küçük modellerle ev asistanı ve fatura görsellerinden yapılandırılmış veri çıkaran bir örnek öne çıkanlar arasında. Fine-tuning örnekleri, rehberler ve teknik derinlik yazıları da bulunuyor. Jupyter Notebook ağırlıklı; depoda ayrı bir lisans dosyası görünmüyor, modeller ve SDK Liquid AI'ın kendi koşullarına tabi. Ekim 2025'te açılmış, ~2.5K yıldızlı ve topluluk projeleriyle birlikte güncelleniyor.",
+   "usage_tr": "Kişisel bilgi tabanı projendeki sesli not akışı için buradaki örnekler doğrudan başlangıç noktası olabilir: cihaz üstü transkripsiyon ve küçük bir modelle kategori çıkarımı, tam da \"form doldurmadan kaydet, sınıflandırmayı AI yapsın\" tarifine karşılık geliyor. llama.cpp tabanlı ses transkripsiyon CLI'ını ofis Mac'inde ya da 7/24 açık Mac mini'de bir arka plan servisi olarak kurup n8n'den tetikleyebilirsin; API maliyeti getirmez ve kayıtlar makineden çıkmaz. iOS örnekleri, notu telefonda alıp sınıflandırmayı da orada yapma seçeneğini açıyor, bu da Expo tarafında bir köprü yazmanı gerektirir. Uyarı: LEAP SDK bir satıcı SDK'sı ve depoda lisans dosyası yok — kapalı istemcilere mesafeli duruşunla çelişebilir, bu yüzden llama.cpp üzerinden giden örnekler daha güvenli bir zemin. İkinci uyarı: burada ses modelleri transkript üretiyor, Lyricdrop'un ihtiyaç duyduğu kelime düzeyi zaman damgası vaat edilmiyor; o iş için ayrı bir hizalama aracı gerekir.",
+   "matched_project": "Kişisel bilgi tabanı",
+   "relevance": 5,
+   "investment_note": "Cihaz üstü küçük model tarafında ürünleşmiş bir SDK ve model ailesi bulunduran bir şirketin ekosistem deposu; uç çıkarım temasını yatırım merceğinden izlemek için iyi bir gösterge."
+  },
+  {
+   "full_name": "sqliteai/warp",
+   "inputs_hash": "21d1c70e2c88005c15b0a2a3e400353a",
+   "description_tr": "WARP, C ile yazılmış, üçüncü parti çalışma zamanı bağımlılığı olmayan gömülebilir bir çıkarım motoru. Mixture-of-experts modellerinin paylaşılan gövdesini bellekte tutuyor, her token için seçilen uzmanları doğrudan NVMe diskten okuyor ve kalan RAM'i sınırlı bir uzman önbelleği olarak kullanıyor; bir ileri-bakış yönlendiricisi sonraki katmanın uzmanlarını önceden okumaya başlıyor, kararı yine gerçek yönlendirici veriyor. Uzman ağırlıkları 3-bit artık vektör nicelemesi, daha hassas paylaşılan ağırlıklar 4 veya 8 bit ile saklanıyor. Bildirilen ölçümler 64 GB'lık bir MacBook Pro üzerinde: 2.78 trilyon parametreli Kimi K3 için ~0.6 token/s, 552B DeepSeek-V4.1-Flash için ~3.8, 313B GLM-5.3-Flash için ~3.9; K3'ün dönüştürülmüş kabı 982 GB disk kaplıyor. Apache-2.0 lisanslı, Temmuz 2026'da açılmış; kararlar insanlarda, kodun kendisi LLM'lerle yazılıyor.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, ücretli API yerine Mac'te yerel model çalıştırma tercihin — ama bu proje o tercihi bugün senin donanımında karşılamıyor. Ölçümler 64 GB RAM ve yaklaşık bir terabayt hızlı disk üzerinde veriliyor; ofis Mac'in 24 GB ve saniyede birkaç token, ne Claude Code oturumu ne de Lyricdrop içerik üretimi için kullanılabilir bir hız. Gömülebilir olması ilginç, fakat gömeceğin bir yer için önce donanımı değiştirmen gerekir. Yerel çalıştırma iştahını bugün karşılayacak araçlar için Apple Silicon'a özel, küçük model odaklı motorlara bakmak daha verimli. Bunu bir ürün değil, yerel çıkarımın sınırını yoklayan bir deney olarak takip etmek yeterli.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": "Diskten uzman akıtarak bellek sınırını aşan, bağımsız ve gömülebilir bir C motoru; cihaz üstü çıkarımın lisanslanabilir bir katmanı olarak ticarileşme ihtimali ve arkasındaki ekip izlemeye değer."
+  },
+  {
+   "full_name": "zai-org/CogVLM2",
+   "inputs_hash": "d68a988a2fd0771ec4a58c73dbd29c5e",
+   "description_tr": "CogVLM2, Meta-Llama-3-8B-Instruct üzerine kurulmuş açık kaynak çok modlu model ailesi; görüntü anlama yanında CogVLM2-Video ile anahtar kare çıkararak bir dakikaya kadar videoyu yorumlayabiliyor. Yayınlandığı dönemde çoğu görevde GPT-4V seviyesinde olduğu iddia edilmiş, aynı veri ve tarifle eğitilen GLM-4V-9B sürümü de paylaşılmış. Int4 sürümü 16 GB video belleğiyle çalışabiliyor, TGI üzerinde çıkarım için ayrı ağırlıklar da var; çevrim içi demolar yayınlanmış. Apache-2.0 lisanslı, Mayıs 2024'te açılmış ve ~2.4K yıldızlı; son güncellemeleri 2024 yılına ait. Hedef kitlesi çok modlu model üzerinde çalışan araştırmacı ve geliştiriciler.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, görüntü ve video üzerinden otomatik skorlama fikirlerin olabilir. Ancak bu model CUDA video belleği üzerinden konumlanıyor; Mac'te yerel çalıştırma yolu sunulmuyor, yani \"Mac'te döner mi\" sorusuna cevabı hayır. Model 2024 tarihli ve depo o tarihten beri hareketsiz; benzer işler için bugün Apple Silicon'da çalıştığı doğrulanmış daha yeni görsel-dil modelleri var. Bir video anlama ihtiyacı çıkarsa karşılaştırma listesine koyabilirsin, ama başlangıç noktası olarak değil. Bu satırı geçmen makul.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "CyberZHG/keras-bert",
+   "inputs_hash": "9abe467dbe2e639c034958636f04b5ef",
+   "description_tr": "keras-bert, BERT'in Keras ile yazılmış bir uygulaması; resmi önceden eğitilmiş kontrol noktalarını yükleyip öznitelik çıkarma ve maskelenmiş kelime tahmini yapmayı sağlıyor. Tokenizer sınıfı, warmup ile eğitim, TPU üzerinde çıkarım ve sınıflandırma için Colab demoları içeriyor. PyPI üzerinden tek komutla kurulabiliyor ve MIT lisanslı. 2018 sonunda açılmış, ~2.4K yıldızlı; Hugging Face transformers ekosisteminin yaygınlaşmasından önceki döneme ait bir proje. Bugün esas olarak eski TensorFlow/Keras tabanlı kodları ayakta tutmak için anlamlı.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, metin sınıflandırma ihtiyacın olabilir, ama onu bugün Claude Code'la ya da küçük yerel modellerle çok daha az işle çözüyorsun. Sekiz yıllık bir Keras uygulamasını kurup eski kontrol noktalarını yüklemek, senin akışında hiçbir adımı hızlandırmaz. Ne Expo/Supabase yığınına gömülebilir ne de asistanına devredilebilir bir iş üretir. Yıldız sayısı yılların birikimi; bugünkü hareketliliğin göstergesi değil. Bu satırı geçebilirsin.",
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "youssofal/MTPLX",
+   "inputs_hash": "814aa71ba13da7d04c52f9742ccd725c",
+   "description_tr": "MTPLX, Apple Silicon'da yerel dil modellerini modelin kendi çok-token tahmini (MTP) başlıklarıyla çalıştıran bir Mac uygulaması ve komut satırı aracı. Model birkaç token ileriyi taslak olarak üretiyor, tek bir toplu ileri geçiş taslağı doğruluyor ve tokenlar artık düzeltmeli tam reddetme örneklemesiyle kabul ediliyor; böylece çıktı dağılımı her sıcaklıkta modelin kendi dağılımı kalırken çözme hızı yaklaşık ikiye katlanıyor. Yayınlanan ölçümler 16 GB M4 Mac mini'de 1.6 kat, M5 Max'te 2.24 kat hızlanma ve M5 Max üzerinde Qwen 3.8 Flash Next ile OpenCode isteğinde 125 token/s civarı. Qwen 3.8 Flash Next ve 27B, Qwen 3.6, Qwen 3.5 ve Gemma 4 destekleniyor; araç OpenAI ve Anthropic uyumlu yerel bir sunucu açıyor. Python ve MLX/Metal üzerine kurulu, Apache-2.0 lisanslı; Mayıs 2026'da açılmış ve sürüm sürüm ölçüm kayıtlarıyla ilerliyor.",
+   "usage_tr": "Kişisel bilgi tabanı projendeki sesli notların kategori çıkarımı, etiketlenmesi ve günlük/haftalık özetleri için buradan yerel bir model sunucusu açıp tüm sınıflandırmayı Mac'te döndürebilirsin; OpenAI uyumlu uç nokta sayesinde n8n akışlarından ve Supabase tarafındaki servislerinden tek satırla çağrılır. Anthropic uyumlu sunucu da ikinci bir kapı açıyor: OpenCode'u internetin zayıf olduğu ya da hızlı bir yerel tur atmak istediğin durumlarda küçük bir modele bağlayabilirsin — bu Max aboneliğinin yerine geçmez, yanına oturur ve API maliyeti eklemez. Donanım beklentini gerçekçi tut: 24 GB M4 Pro'da 125B'lik Flash Next çalışmaz, hedefin Qwen 3.5 4B ve Gemma 4 sınıfı modeller olur; deponun 16 GB M4 Mac mini ölçümü bu sınıfın evde de döndüğünü gösteriyor. MTP'nin kazancı hız tarafında, kalite tarafında değil; sınıflandırma ve etiketleme gibi dar işler için uygun, okuyucuya gidecek metin üretimi için değil. Kurulumu bir kez yapıp asistan tarafındaki tekrar eden işleri oraya yönlendirmek, ölçmeye değer bir deneme.",
+   "matched_project": "Kişisel bilgi tabanı",
+   "relevance": 8,
+   "investment_note": null
+  },
+  {
+   "full_name": "natolambert/rlhf-book",
+   "inputs_hash": "404bb02c7284408ff4cda235d028381b",
+   "description_tr": "RLHF Book, insan geri bildirimiyle pekiştirmeli öğrenme ve genel olarak dil modeli post-training'i üzerine açık bir ders kitabı; çevrim içi okunabiliyor ve basılı sürümü de yayımlanmış. Depo kitabın Markdown kaynaklarını, Pandoc şablonlarını ve diyagram üretim betiklerini barındırmanın yanında referans implementasyonlar içeriyor: talimat ince ayarı, policy gradient yöntemleri (PPO, REINFORCE, GRPO, RLOO), ödül modelleri, DPO ve türevleri, rejection sampling ve damıtma. Ayrıca ders slaytları ve öğretim materyalleri için ayrı bir bölüm var. Lisans standart bir açık lisansa eşlenmemiş; 2024 ortasında açılmış ve düzenli güncelleniyor, ~2.4K yıldızlı. Hedef kitlesi konuyu temelden öğrenmek isteyen araştırmacı ve mühendisler.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, Arslan Holding tarafında AI girişimlerinin teknik iddialarını değerlendirirken okuma kaynağı olması olabilir. Yine de bu bir araç değil bir kitap: kurulup bir adımı hızlandırmıyor, uygulamalarına gömülecek bir bileşen sunmuyor. Post-training terimlerini (ödül modeli, DPO, damıtma) bir due diligence görüşmesinde yerine oturtmak istiyorsan çevrim içi sürümü deponun kendisinden daha pratik. Kod tarafı ancak kendi modelini eğitmeye karar verirsen anlam kazanır ki bugünkü planında böyle bir adım yok. Okuma listesi malzemesi olarak değerlendir.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "context-labs/autodoc",
+   "inputs_hash": "5148a851c34f31edb42b316efc2f92fa",
+   "description_tr": "Autodoc, git depoları için LLM kullanarak dokümantasyon üreten deneysel bir TypeScript aracı. Depoyu derinlemesine gezip her dosya ve klasör için doküman yazıyor, üretilen dokümanlar kodun içinde kalıyor ve `doc` komutuyla kod tabanına soru sorulup kaynak dosyalara bağlantılı cevaplar alınabiliyor. GPT-4 gibi API modelleri ya da llama.cpp üzerinden yerel modellerle çalışabildiği belirtiliyor. MIT lisanslı ve npm üzerinden kurulabiliyor; README projenin kendisini \"erken aşama, çalışıyor ama üretime hazır değil\" diye tanımlıyor. Mart 2023'te açılmış, ~2.4K yıldızlı ve o dönemin kod-asistanı dalgasından kalma bir proje.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, birden fazla depoda dokümantasyon ve CLAUDE.md düzenini ayakta tutma ihtiyacın olabilir. Ancak bu işi bugün zaten Claude Code ile yapıyorsun; depoyu gezip doküman üretmek ve sonra o dokümana soru sormak, mevcut kurulumunun dışına çıkmanı gerektirmiyor. Autodoc ayrı bir API anahtarı ister, bu da maliyet nedeniyle Max aboneliğinde kalma tercihine ters düşer. Proje 2023'ten beri deneysel etiketini koruyor, yani bakım riskini de üstlenirsin. Kod tabanı araması için daha güncel ve yerel çalışan seçenekler var; bu satırı geçebilirsin.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "xerj-org/xerj",
+   "inputs_hash": "5757e0ba220cd04f5cb9539733e6d2e1",
+   "description_tr": "XERJ, Rust ile yazılmış ve tek statik ikili olarak dağıtılan yerel bir arama motoru; bir klasörü otomatik indeksleyerek kod, doküman, log ve PDF'ler üzerinde BM25, kNN ve hibrit arama sunuyor. Elasticsearch uyumlu bir API konuşuyor, böylece mevcut istemciler değişmeden çalışıyor; ayrıca MCP desteği ve bir `/_memory` ad alanıyla ajan belleği olarak kullanılabiliyor. Varsayılan gömücü sözlüksel ve tamamen çevrim dışı çalışıyor, sinirsel gömücü isteğe bağlı ve yaklaşık 90 MB'lık bir indirme gerektiriyor. Ana iddiası, kodlama ajanının dosyaları tek tek okumak yerine ihtiyaç duyduğu parçayı çekmesi; bir vaka çalışmasında aynı çözüm oranında ajan çıktı tokenlarının 2.7 kat azaldığı bildiriliyor. Apache-2.0 lisanslı, Haziran 2026'da açılmış; tek kullanıcılık geliştirme makinesi için tasarlanmış, yeni bir düğüm yalnızca 127.0.0.1'e bağlanıyor.",
+   "usage_tr": "İki yerde işine yarar. Birincisi kodlama tarafı: Lyricdrop v2, Kanarya ve diğer depoları tek bir indekste toplayıp MCP üzerinden Claude Code ve OpenCode'a bağlarsan, ajan doğru dosyayı aramak için tüm ağacı okumak zorunda kalmaz — projeler arasında köprü kuran bir asistan isteğinin en ucuz parçası tam olarak bu. İkincisi kişisel bilgi tabanı projesi: sesli not transkriptlerini, haftalık raporları ve PDF'leri aynı ikiliye indeksleyip semantik aramayı Supabase'in pgvector tarafına hiç dokunmadan denersin. Tek statik ikili olduğu için ofis Mac'ine ve 7/24 açık Mac mini'ye kurulumu birkaç dakika, çevrim dışı gömücüyle API maliyeti de sıfır. Uyarı: yalnızca yerel arayüze bağlanıyor ve indekse erişen herkes her şeyi okuyabiliyor, yani Tailscale ağının dışına açma. İkinci uyarı: sinirsel gömücüyü açmazsan arama sözlüksel kalır — anlam araması beklentisini ölçmeden kabul etme.",
+   "matched_project": "Kişisel bilgi tabanı",
+   "relevance": 7,
+   "investment_note": "Elasticsearch uyumlu, tek ikili bir yerel arama katmanı ve ajan belleği; kodlama ajanlarının bağlam maliyetini düşürme pazarı yeni açıldığı için ekibiyle tanışmaya değer bir izleme adayı."
+  }
+ ]
+}

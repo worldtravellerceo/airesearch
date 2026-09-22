@@ -1,0 +1,175 @@
+{
+  "repos": [
+    {
+      "full_name": "BuilderIO/agent-native",
+      "inputs_hash": "abc8e253ec70e3a7200e3581623acaa4",
+      "description_tr": "Agent-Native, ajanla arayüzü aynı eylem katmanında buluşturan açık kaynak bir TypeScript framework'ü. Her yetenek bir kez action olarak tanımlanıyor; ajan bunu bir tool gibi çağırıyor, React arayüzü aynı fonksiyonu koddan çağırıyor, böylece doğrulama, izin ve uygulama tek yerde kalıyor. Ajan ve arayüz aynı veriyi ve uygulama durumunu paylaşıyor; ajan arayüzde tıklamak yerine aynı action katmanından geçiyor. Paket içinde sohbet yüzeyi, kimlik doğrulama ve izinler, skill ve hafıza, zamanlanmış otomasyonlar ve ajan ekipleri var; üretimde PostgreSQL, yerel geliştirmede PGlite kullanılıyor ve Nitro uyumlu host'larda çalışıyor. Aynı action HTTP, MCP, A2A ve CLI üzerinden de açılıyor. Mart 2026'da açılmış, ~6,3K yıldıza ulaşmış; depoda belirgin bir lisans beyanı görünmüyor.",
+      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor. En yakın bağlam, hayat orkestrasyonu uygulaması ve tüm projelerini bilen bir asistan ajan isteği; ancak framework kendi PostgreSQL/Nitro web yığınını getiriyor ve Expo + Supabase hattına oturmuyor, ajanı mevcut uygulamana gömmek yerine uygulamayı onun etrafında kurmanı istiyor. Lisans beyanının net olmaması da kendi ürününe parça taşıma ihtimalini şimdilik belirsiz bırakıyor.",
+      "matched_project": null,
+      "relevance": 2,
+      "investment_note": null
+    },
+    {
+      "full_name": "jihe520/MathModelAgent",
+      "inputs_hash": "cb0c9f63b261d61c73c2da6817b1d5fa",
+      "description_tr": "MathModelAgent, matematiksel modelleme yarışmaları için uçtan uca bir otomasyon seti. Problemi analiz eden, model kuran, kod yazan, hataları düzelten ve teslim edilebilir bir makale üreten çok ajanlı bir akış sunuyor; kod yürütme yerel Jupyter ya da E2B/Daytona gibi bulut yorumlayıcıları üzerinde yapılabiliyor. Proje son sürümde kendi harness katmanını bırakıp tamamen Claude Code ve Codex üzerinde çalışan SKILL'lere taşınmış; 17 Typst makale şablonu, model seçim karar ağaçları ve dokuz adımlı otomatik kabul kontrolü içeriyor. macOS ve Windows için masaüstü kurulumları var, litellm üzerinden herhangi bir model bağlanabiliyor. ~6K yıldız topladı; README projenin deneysel demo aşamasında olduğunu ve yol haritasındaki RAG, human-in-the-loop ve feedback maddelerinin henüz uygulanmadığını açıkça yazıyor.",
+      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; çıktısı akademik yarışma makalesi, hedef kitlesi yarışmaya giren öğrenciler. En yakın bağlam, bir işin tamamının Claude Code skill'lerine bölünüp tek komutla zincirlenmesinin nasıl kurgulandığını görmek olabilir; kendi skill setini tasarlarken yapı olarak incelenebilir ama içeriği senin alanlarına değmiyor.",
+      "matched_project": null,
+      "relevance": 1,
+      "investment_note": null
+    },
+    {
+      "full_name": "XiaoDuoYa/codex-with-chatgpt",
+      "inputs_hash": "609c756bd64b0d0ef331315a2510b3be",
+      "description_tr": "Codex with ChatGPT, planlama ve review işini ChatGPT'nin web arayüzüne, yürütmeyi Codex'e bırakan bir köprü. Depo karşıya yüklenmiyor; ChatGPT, OAuth korumalı ve salt okunur bir MCP bağlantısı üzerinden çalışma alanındaki yalnızca ihtiyaç duyduğu satırları okuyor. Kurulum bir Codex skill'i olarak geliyor, cloudflared ile geçici bir tünel açıyor, isteğe bağlı olarak Cloudflare hesabıyla kalıcı bir hostname kurulabiliyor; kimlik bilgileri proje dizininde değil işletim sisteminin uygulama durumu dizininde tutuluyor. Amacı, atıl duran ChatGPT abonelik kotasını kullanıp API ve Codex token tüketimini düşürmek. MIT lisanslı, Ağustos 2026'da açılmış ve ~5,9K yıldıza ulaşmış; skill kendini günlük olarak güncelliyor.",
+      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; araç tamamen ChatGPT ve Codex ikilisine bağlı, senin günlük hattın ise Claude Code ve OpenCode. En yakın bağlam, API yerine zaten ödenen aboneliği kullanma ilkesinin nasıl uygulandığı; aynı sonucu Claude tarafında Max aboneliğiyle zaten elde ediyorsun.",
+      "matched_project": null,
+      "relevance": 2,
+      "investment_note": null
+    },
+    {
+      "full_name": "oomol-lab/open-connector",
+      "inputs_hash": "91260dc26ac6f47aeaf7c04f28eee2bd",
+      "description_tr": "OpenConnector, AI ajanlarının kullanıcı hesaplarına erişimini tek yerden yöneten açık kaynak bir bağlayıcı ağ geçidi; Pipedream ve Composio'ya alternatif olarak konumlanıyor. GitHub, Gmail, Notion, Slack, Supabase, Airtable ve BigQuery gibi binden fazla sağlayıcıyı ve hazır Action'ları ortak bir katalogda sunuyor. API anahtarı, OAuth2 ve özel kimlik bilgileri ajan sürecine verilmeden, denetlenebilir bir çalışma zamanında tutuluyor; scope'lar, izin ve engel politikaları, geçici dosya transferi ve maskelenmiş çalışma kayıtları aynı yerde toplanıyor. SDK, CLI, MCP, HTTP/OpenAPI ve web konsolu üzerinden kullanılabiliyor. Docker veya Node.js ile SQLite/PostgreSQL durum deposu üzerinde kendi sunucunda, Cloudflare ve Fly.io gibi platformlarda ya da sağlayıcının barındırdığı çalışma zamanında koşuyor. Apache-2.0 lisanslı, Haziran 2026'da açılmış, ~5,9K yıldız.",
+      "usage_tr": "Asistan ve holding operasyon araçlarında en çok sürtünme yaratan yer her entegrasyonun kendi OAuth'unu ve token'ını taşıması; OpenConnector bunu tek bir kapıya indiriyor. HubSpot, Slack, Notion, Google Drive/Calendar ve Gmail erişimlerini burada toplayıp n8n akışlarının ve Claude Code ajanlarının yanına MCP olarak bağlayabilirsin. Hesapların ve verilerin sende kalması, erişim kapsamlarının izole olması ilkene doğrudan karşılık geliyor: self-hosted kurulumda scope ve action politikalarını sen tanımlıyorsun, asistan değiştiğinde bağlantıları değil yalnızca yetkileri döndürüyorsun. Mac mini ya da DigitalOcean üzerinde Docker veya Node ile tek başına çalışır ve kendisi model çağırmadığı için ek API maliyeti getirmez. Uyarı: self-hosted tarafta her sağlayıcı için OAuth uygulamasını kendin açman gerekiyor, ilk kurulum uzun sürer; katalog iddiası büyük olduğu için önce gerçekten kullandığın beş servisin Action'larını doğrula.",
+      "matched_project": "Asistan ve holding operasyon araçları",
+      "relevance": 6,
+      "investment_note": "Composio ve Pipedream'in açık kaynak alternatifi olarak konumlanan, self-host ve barındırılan sürümü aynı sözleşmeleri paylaşan bir altyapı; ajan ekosisteminde ticarileşmesi net bir katman ve B2B yazılım tezi için izlemeye değer."
+    },
+    {
+      "full_name": "CopilotKit/OpenBot",
+      "inputs_hash": "96b6f0ccf0eacc45b78814e456bd8336",
+      "description_tr": "OpenBot, kendi altyapında çalışan bir ajan platformu; ChatGPT benzeri bir arayüzün arkasında her ajan kendi konteynerini, kendi Chromium tarayıcısını, dosyalarını ve oturumlarını alıyor. Bir ajan, AG-UI protokolünü konuşan herhangi bir uç nokta olabildiği için LangGraph, Mastra, CrewAI, Pydantic AI ya da elle yazılmış ajanlar aynı şekilde bağlanıyor. Ajanın dosyaya, tarayıcıya, MCP sunucusuna veya bileşene dokunan her eylemi; kararı önce veren, sonra denetim kaydı yazan tek bir gateway'den geçiyor. Docker Compose ile ayağa kalkıyor, veriler kendi PostgreSQL'inde duruyor, model anahtarını yönetici sağlıyor; ayrıca bir CopilotKit Intelligence projesi ve lisansı gerekiyor. MIT lisanslı ve alpha olarak işaretli, ~5,3K yıldız; depo bunun bir ürün değil klonlanıp kendine uyarlanacak bir şablon olduğunu açıkça söylüyor.",
+      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor. En yakın bağlam, manuel test ve araştırma gibi işleri ajanlara devretme isteğin: her ajanın kendi tarayıcısı ve kendi oturumlarıyla çalışması, denetim kaydının eylemden önce ve sonra tutulması bu devir için doğru şekil. Bugünkü hali ise alpha; Docker, PostgreSQL ve Bun kurulumunun yanında ayrı bir Intelligence lisansı ve bir model anahtarı istiyor, yani hem kurulum hem sürekli API maliyeti demek. Tek kişilik bir kurulumda kazandırdığından fazlasını götürür; birkaç sürüm sonra tekrar bakmak daha doğru.",
+      "matched_project": null,
+      "relevance": 2,
+      "investment_note": "CopilotKit'in AG-UI protokolü etrafında kurduğu yönetişim katmanı ve kurumun sahip olduğu asistan konumlandırması, kurumsal AI alımlarında net bir boşluğa oturuyor; şirket olarak izlemeye değer."
+    },
+    {
+      "full_name": "spinabot/brigade",
+      "inputs_hash": "832df11d1addef3135bd09036a57abdb",
+      "description_tr": "Brigade, tek bir sahibin yönettiği ve gerçek bir organizasyon şemasına oturan çok ajanlı bir kişisel sistem; ajanlar Tideline adlı ortak uzun süreli hafızayı paylaşıyor, birbirine iş devrediyor ve görev ortasında model değiştirebiliyor. Kurulum varsayılan olarak ~/.brigade/ altında dosya sistemi tabanlı; isteğe bağlı olarak kendi barındırdığın Convex veritabanına geçiliyor ve aynı kurulum Raspberry Pi'den sunucuya kadar çalışıyor. API anahtarı zorunlu değil: Claude, ChatGPT veya Copilot aboneliğiyle giriş yapılabiliyor, hatta Claude Code ya da Codex CLI'da açık olan oturum yeniden kullanılabiliyor; anahtarlar makineden çıkmıyor ve telemetri yok. Terminal TUI'nin yanında WhatsApp, Telegram, Slack, Discord ve iMessage kanalları, cron zamanlayıcı, skill sistemi, alt ajan dağıtımı, MCP hafıza sunucusu ve binden fazla uygulama bağlayıcısı geliyor; ayrıcalıklı işlemler onay bekliyor. MIT lisanslı, Haziran 2026'da açılmış, ~5,1K yıldız; README'nin dili iddialı ve sürüm ritmi hızlı.",
+      "usage_tr": "Bu, tüm projelerini bilen, aralarında köprü kuran ve ayak işlerini yapan bir orkestratör ajan isteğine bu listedeki en yakın şey; doğrudan hayat orkestrasyonu tarafına oturuyor. Evdeki 7/24 açık Mac mini'de kurup Tailscale ile ofis Mac'iyle aynı ağda tutabilir, cron ile günlük işleri (Trello özeti, takvim, e-posta triyajı) ajanlara dağıtabilirsin. Maliyet kriterine de uyuyor: Claude Code CLI oturumunu yeniden kullanabildiği için Max aboneliğinin dışına çıkmadan denenebilir ve anahtarlar makinede kalır. WhatsApp ve Telegram kanalları sayesinde asistanına devredilebilir bir yüzeyi var; mobilden Remote Control'e bağlanıp kopma sorunuyla uğraşma ihtiyacını azaltır. Uyarı: ayrıcalıklı işlemlerde onay istese de ortak hafızayla çalışan çok ajanlı bir sistemi önce ayrı bir kullanıcı ve ayrı kimlik bilgileriyle dene; proje genç ve sürüm hızı yüksek, üretim işlerini bağlamadan önce birkaç hafta izlemekte fayda var.",
+      "matched_project": "Hayat orkestrasyonu",
+      "relevance": 8,
+      "investment_note": null
+    },
+    {
+      "full_name": "aipoch/open-science",
+      "inputs_hash": "75a5e2e828fee839972b34871b222454",
+      "description_tr": "AIPOCH Open-Science, bilimsel araştırma için yerel öncelikli ve model bağımsız bir masaüstü araştırma tezgâhı. Proje açılıp hedef düz metinle anlatıldığında ajanlar dosyaları okuyor, web'de arıyor, Python ve R çalıştırıyor, bilimsel veri kaynaklarını sorguluyor ve izlenebilir kaynak zinciriyle rapor, tablo ve figür üretiyor. Skill'ler, MCP araçları ve bağlayıcılarla genişletiliyor; makine öğrenmesi, istatistik, yaşam bilimleri, kimya, malzeme ve çevre bilimleri gibi hesaplama ağırlıklı alanlar hedefleniyor. macOS, Windows ve Linux sürümleri var; son sürümde PDF üzerinde kalıcı açıklama ve işaretleme, dosya sürümüne bağlı not defteri ve açıklamalı PDF, Markdown veya CSV dışa aktarımı eklenmiş. Apache-2.0 lisanslı, Temmuz 2026'da açılmış, ~4,9K yıldız; sürümler aylık ritimde ilerliyor.",
+      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; tezgâh biyoinformatik, kimya ve malzeme gibi disiplinler ve yayına giden tekrarlanabilirlik zinciri için kurgulanmış. En yakın bağlam Kanarya'daki fizyolojik veri analizleri olabilir — yerel çalışması ve Python/R yürütmesi uygun — ama aynı işi bugün Claude Code ile doğrudan yapıyorsun ve bu uygulama araya ayrı bir masaüstü katman koyuyor.",
+      "matched_project": null,
+      "relevance": 2,
+      "investment_note": null
+    },
+    {
+      "full_name": "TencentCloud/Octop",
+      "inputs_hash": "1155f4b75bb4f0ec60328f3260ca1429",
+      "description_tr": "Octop, Tencent Cloud tarafından açık kaynak olarak yayımlanan, kendi makinende çalışan çok kullanıcılı ve çok ajanlı bir asistan. Tek süreçte web konsolunu, CLI'ı ve mesajlaşma entegrasyonlarını (Feishu, DingTalk, QQ, Discord, WeCom) ayağa kaldırıyor; HTTP, SSE ve WebSocket ile programatik erişim de var. Uzman kütüphanesi, MBTI tabanlı kişilik şablonları, taşınabilir hafıza, belgeler üzerinde RAG yapan bir bilgi tabanı, OAuth ve MCP bağlayıcıları ile eklenti sistemi içeriyor. Güvenlik tarafında JWT ile kullanıcı izolasyonu, araç onayı, shell komut koruması ve PII maskeleme sayılıyor; depolama yerel disk, Docker, PostgreSQL veya S3/COS olabiliyor. ACP ile çift yönlü çalışıp işi izin kapılarıyla OpenCode veya Claude Code'a devredebiliyor. Python 3.12+, MIT lisanslı, ~4,6K yıldız.",
+      "usage_tr": "Kişisel bilgi tabanı tarafında işine yarayacak parça, belgeler üzerinde RAG yapan bilgi tabanı ve çalışma alanıyla birlikte taşınan hafıza: notlarını ve raporlarını tek bir yerel kurulumda toplayıp üzerine soru sorabilirsin. ACP köprüsü pratik bir ayrıntı; işi izin kapılarıyla OpenCode veya Claude Code'a devredebildiği için mevcut hattının yerine geçmek yerine yanına oturuyor. Mac'te tek süreç olarak kalkıyor, model anahtarını sen veriyorsun; yerel bir model bağlamazsan API maliyeti getirir. Eksik taraf senin asıl istediğin akış: tek dokunuşla sesli not ve STT bu pakette yok, onu ayrıca kurman gerekir. Mesajlaşma kanalları da ağırlıkla Çin ekosistemine dönük — WhatsApp yok, Discord var — yani asistanına devredeceğin kanalı kendin eklemen gerekir.",
+      "matched_project": "Kişisel bilgi tabanı",
+      "relevance": 5,
+      "investment_note": null
+    },
+    {
+      "full_name": "ApodexAI/FrontierAgent",
+      "inputs_hash": "eb1f8b469b75ae460925d7179442da13",
+      "description_tr": "FrontierAgent, uzun soluklu araştırma ve dosya tabanlı işler için açık kaynak bir ajan çalışma zamanı, terminal ürünü ve değerlendirme paketi. TUI iki akış sunuyor: tek durumlu bir ajanın araştırıp dosya yazdığı ReAct ve bir koordinatörün görev panosu tutup işi paralel alt ajanlara dağıttığı Agent Team. Dosya işleri görev kapsamlı bir sandbox'ta yürüyor; /inputs salt okunur, /workspace çalışma alanı, /outputs kalıcı çıktı. Değiştiren işlemler diff gösterip onay istiyor, oturumlar checkpoint'leniyor, /revert ile geri alınıyor ve --resume ile sürdürülebiliyor; ajan çalışırken yazılan yeni talimat güvenli bir tur sınırında akışa ekleniyor. macOS ve Linux'ta tek komutla kuruluyor ve Docker zorunlu değil, ancak model tarafında OpenAI uyumlu bir uç nokta bekleniyor ve README sağlayıcının kendi API'sini öne çıkarıyor. Apache-2.0 lisanslı, ~4,4K yıldız.",
+      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; bu, Claude Code ve OpenCode ile kurduğun hattın üçüncü bir alternatifi ve kendi model uç noktasını, dolayısıyla API maliyetini gerektiriyor. En yakın bağlam Arslan Holding tarafındaki paralel araştırma işleri olabilir — Agent Team akışı bir konuyu alt ajanlara bölüp raporları topluyor — ama aynı işi Max aboneliğinin içinde kalarak Claude Code'un alt ajanlarıyla yapabiliyorsun.",
+      "matched_project": null,
+      "relevance": 2,
+      "investment_note": null
+    },
+    {
+      "full_name": "microsoft/AI-Engineering-Coach",
+      "inputs_hash": "7cede2b0975d1e0662bb3c8cb0712693",
+      "description_tr": "AI Engineer Coach, Microsoft tarafından yayımlanan bir VS Code eklentisi; yerel AI kodlama oturum kayıtlarını okuyup tek bir panoda özetliyor ve veri makineden çıkmıyor. Prompt kalitesi, oturum hijyeni, kod review, araç ustalığı ve bağlam yönetimi başlıklarında 45 kural üzerinden anti-pattern tespiti yapıyor; pratik skorları, haftalık eğilimler ve günlük aktivite grafikleri üretiyor. Dile, workspace'e, modele ve harness'a göre üretilen kod hacmini ölçüyor, tekrar eden prompt'ları bulup yeniden kullanılabilir skill önerisine çeviriyor. Ayrıca talimat dosyalarını denetleyen ve workspace bağlam haritası çıkaran bir bağlam sağlığı skoru var; aynı pano GitHub Copilot uygulaması içinde de çalışabiliyor. MIT lisanslı ve VS Code 1.115+ istiyor; markete yayımlanmadığı için .vsix'i kendin derleyip kuruyorsun. ~4,3K yıldız.",
+      "usage_tr": "Lyricdrop v2'yi ofisteki M4 Pro Mac'te Claude Code ve Superpowers ile yazarken biriken oturum kayıtlarını bu eklentiye okutabilirsin; ölçtüğü şey kodun değil senin kullanım biçimin. Özellikle iki başlık işine yarar: talimat dosyası denetimi, çünkü CLAUDE.md pratiklerini iyileştirmek istiyorsun; ve tekrar eden prompt'ları skill'e çeviren bölüm, çünkü bugün elle tekrarladığın işlerin somut listesini veriyor. Tamamen yerel çalışıyor, ek API maliyeti yok ve Max aboneliğine dokunmuyor. Kurulum sürtünmesi var: markette olmadığı için .vsix'i kendin derliyorsun ve VS Code sürümünün yeterince yeni olması gerekiyor. Önce küçük bir workspace'te dene ve OpenCode oturumlarını da okuyup okumadığını doğrula; okumuyorsa ölçüm resmin eksik kalır.",
+      "matched_project": "Lyricdrop",
+      "relevance": 7,
+      "investment_note": null
+    },
+    {
+      "full_name": "dagucloud/dagu",
+      "inputs_hash": "311846f89ed7394ace65861cfd649482",
+      "description_tr": "Dagu, orkestrasyonu asıl işi olmayan ekipler için yazılmış, kendi sunucunda çalışan bir iş akışı motoru. Tek bir Go ikili dosyası olarak kuruluyor; harici veritabanı veya mesaj kuyruğu istemiyor, web arayüzü içinde geliyor ve Linux, macOS ile Windows'ta çalışıyor. İş akışları YAML ile DAG olarak tanımlanıyor; mevcut shell komutları, Docker konteynerleri, Kubernetes Job'ları ve SSH üzerinden uzak komutlar değiştirilmeden çalıştırılabiliyor. Zamanlama (cron sözdizimi, zaman dilimi, çakışma politikası), yeniden deneme, bağımlılıklar, insan onayı adımları, loglar ve çalışma geçmişi tek yerde toplanıyor; alt DAG'lar ve eşzamanlılık kontrolü de var. İş akışlarını ve çalışmaları inceleyip kontrol edebilen yerleşik bir MCP sunucusu geliyor. GPL-3.0 lisanslı, 2022'den beri geliştiriliyor ve ~4,1K yıldıza ulaşmış.",
+      "usage_tr": "Lyricdrop v2'nin şarkı hattı — YouTube indirme, yerel STT, hizalama, kontrol ve CDN'e yükleme — tam olarak bunun tarif ettiği iş: birbirine bağlı adımlar, yeniden deneme ve hangi şarkıda ne olduğunu gösteren bir çalışma geçmişi. Bugün n8n'de duran zincirin ağır ve uzun süren parçalarını ofis Mac'inde ya da Mac mini'de Dagu'ya taşıyıp n8n'i olay ve bildirim tarafında bırakabilirsin. Tek ikili dosya olması ve veritabanı istememesi kurulum maliyetini sıfıra yakın tutuyor; kendisi model çağırmadığı için ek API gideri yok ve insan onayı adımı, şarkı onay kapısını akışın içine almanı sağlar. Folio'nun günlük içerik üretimi de aynı zamanlayıcıya oturabilir. Uyarı: GPL-3.0 olduğu için bunu yanında çalışan bir altyapı servisi gibi kullan, dağıttığın uygulamanın içine gömmeyi planlama; ayrıca tek düğümde çalıştığı için Mac'in uyku ve yeniden başlatma davranışını önce test et.",
+      "matched_project": "Lyricdrop",
+      "relevance": 7,
+      "investment_note": null
+    },
+    {
+      "full_name": "Human-Agent-Society/reef",
+      "inputs_hash": "d4476b3759a4456f07cfb3b10c86547f",
+      "description_tr": "Reef, kendini geliştiren ajanlar için sürekli öğrenme altyapısı olarak konumlanan açık kaynak bir Python projesi. Ajanın çıkarımını, geri bildirimi, öğrenmeyi ve sürümlenmiş dağıtımı tek bir döngüde birleştiriyor: istekleri servis ediyor ve etkileşimleri kaydediyor, geri bildirimi bu kayıtlarla eşleştiriyor, uygun kayıtlardan bir güncelleme üretiyor ve kabul edilen güncellemeyi sürüm geçmişine işliyor. İki öğrenme yolu sunuluyor: Slime ve SGLang ile model ağırlığı eğitimi, ya da GPU gerektirmeden prompt, kural ve skill'lerden oluşan harness'ın optimizasyonu. Servisin güncellemeler sırasında ayakta kalması ve sürüm yönetimi, çıkarım motorlarının ve RL çerçevelerinin kapsamadığı boşluk olarak anlatılıyor. Python 3.12+, Apache-2.0 lisanslı, Ağustos 2026'da açılmış ve ~4K yıldıza ulaşmış.",
+      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; ağırlık eğitimi yolu bir GPU yığını istiyor, harness optimizasyonu yolu bile düzenli bir değerlendirici ve temsil gücü olan bir görev kümesi kurmayı gerektiriyor. En yakın bağlam Folio'nun beğeni ve beğenmeme sinyallerinden öğrenen öneri tarafı olabilir; ama orada ihtiyacın bir bandit ya da öneri katmanı, bu proje ise LLM ajanlarının kendini güncellemesi için kurulmuş, aynı problem değil.",
+      "matched_project": null,
+      "relevance": 1,
+      "investment_note": "Ağustos 2026'da açılıp kısa sürede 4K yıldıza ulaşan proje, ajan altyapısında henüz kimsenin sahiplenmediği sürümleme ve sürekli öğrenme katmanını hedefliyor; erken aşama AI altyapısı tezinde ekibiyle tanışmaya değer bir isim."
+    },
+    {
+      "full_name": "totec448-spec/chat-on-steroids",
+      "inputs_hash": "b28c15ea404aeb8c53c490decc3f16a7",
+      "description_tr": "Chat On Steroids, ChatGPT konuşmasını yerel dosyalar, terminal ve tarayıcı üzerinde çalıştıran Electron tabanlı bir masaüstü çalışma alanı. Codex'i doğrudan çağırmak yerine ChatGPT oturumunu kullanıyor; dosya okuma ve yazma, test çalıştırma ve açık terminaller araç sonuçları akarken izlenebiliyor. Bağımsız işleri paralel worker'lara bölüp sonuçları geri topluyor, worker'lar kendi bağlamını koruyor; Goal, Loop ve Compact & Resume ile uzun işler yeni bir sohbete taşınabiliyor. Windows, macOS (Apple Silicon) ve Linux için kurulum paketleri var; MCP ve Chrome eklentisiyle çalışıyor ve tamamen yerelde koşuyor. MIT lisanslı; README bunun bağımsız bir beta olduğunu ve kullanım sınırlarını aşmak için kullanılmaması gerektiğini ayrıca vurguluyor. Ağustos 2026'da açılmış, ~3,8K yıldız.",
+      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; ürün tamamen ChatGPT aboneliğine bağlı, senin hattın ise Claude Code ve OpenCode. En yakın bağlam, kapalı üçüncü parti istemciler yerine açık kaynak bir masaüstü istemci kullanma refleksin; ancak bu istemcinin bağlandığı sağlayıcı sende yok ve depo, sağlayıcı kuralları konusunda açık bir uyarı taşıyor.",
+      "matched_project": null,
+      "relevance": 2,
+      "investment_note": null
+    },
+    {
+      "full_name": "gnekt/My-Brain-Is-Full-Crew",
+      "inputs_hash": "a811ec7d6a43a504a8198108d04bb883",
+      "description_tr": "My Brain Is Full — Crew, bir Obsidian kasasını yöneten sekizden fazla ajan ve 14 skill'den oluşan bir set. Sohbet arayüzün kendisi: konuşuluyor, ajanlar notu dosyalıyor, klasör yapısını kuruyor, notlar arasında bağlantı kuruyor, arama yapıyor, ses kaydını yazıya döküyor ve e-posta triyajı yapıyor. Ajanlar bir dispatcher üzerinden koordine oluyor; örneğin toplantı transkripsiyonu yeni bir proje tespit ettiğinde klasör yapısını kuran ajan otomatik devreye giriyor. Aynı kod tabanı Claude Code, Gemini CLI, OpenCode ve Codex CLI üzerinde çalışıyor, sistem herhangi bir dilde kullanılabiliyor ve yeni ajan konuşarak tasarlatılabiliyor. Kapsam yalnızca bilgi değil; beslenme ve gündelik yük takibi de dahil edilmiş. Shell ağırlıklı bir depo, ~3,8K yıldız; lisans beyanı standart bir kalıba oturmuyor.",
+      "usage_tr": "Kişisel bilgi tabanı fikrinin çalışan bir sürümü gibi duruyor: sesli notu yazıya döküp kategoriyi kendisi çıkaran, form doldurtmayan akış tam olarak tarif ettiğin şey. Claude Code ve OpenCode üzerinde çalıştığı için Max aboneliğinin içinde kalıyor, kasanın tamamı Mac'te düz dosya olarak duruyor ve ajanlarla Türkçe konuşabiliyorsun. Ofis Mac'inde kurup Tailscale ile ev makinesindeki kasayla aynı dosyaları paylaştırabilir, iPhone'dan Remote Control ile tek cümlelik not bırakma akışını buna bağlayabilirsin. Uyarı: depo iş ve özel hayatı aynı kasada birleştiriyor, sen ise kişisel sistemin asistan ve iş sistemiyle karışmamasını istiyorsun — ayrı bir kasa ve ayrı kimlik bilgileriyle başlat. Lisans beyanı da net değil; kendi uygulamana parça taşımadan önce bunu çöz.",
+      "matched_project": "Kişisel bilgi tabanı",
+      "relevance": 7,
+      "investment_note": null
+    },
+    {
+      "full_name": "HiThink-Tech/Financial-API",
+      "inputs_hash": "5d1e10a3326d332f56aaa8ff06db9c4e",
+      "description_tr": "Tonghuashun (HiThink) tarafından resmî olarak sağlanan A hisse finansal veri servisi; AI ajanları, kantitatif araştırmacılar ve uygulama geliştiricileri hedefleniyor. Tek bir API anahtarıyla anlık ve geçmiş fiyat verisi, açılış seansı, finansal tablolar, değerleme, endeks ve sektör verileri, fonlar ile açık türev verileri sorgulanabiliyor. Erişim yolu olarak REST API, MCP, CLI, Python SDK, yerel DuckDB veritabanı ve doğrudan bir agent skill sunuluyor; büyük sonuçlar dosyaya yazılabiliyor. marketdb aracı geçmiş fiyat verisini yerelde DuckDB olarak kurup artımlı güncelliyor, böylece SQL ile çalışmak mümkün oluyor. TypeScript ve Python bileşenlerinden oluşuyor, MIT lisanslı, ~3,7K yıldız. Kapsam tamamen Çin A hisse piyasasıyla sınırlı.",
+      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; veri kapsamı Çin A hisse piyasası, senin yatırım tarafın ise MENA–Türkiye–Körfez koridorunda erken aşama özel şirketler. En yakın bağlam, aynı kalıbın — veri servisinin yanında hazır bir agent skill ve yerel bir DuckDB kopyası vermek — portföy takibi için nasıl kurgulandığını görmek olabilir.",
+      "matched_project": null,
+      "relevance": 1,
+      "investment_note": null
+    },
+    {
+      "full_name": "miqdadbadjuber/anti-slop",
+      "inputs_hash": "860a015f7273050db12ecaada5228964",
+      "description_tr": "antislop, AI kodlama ajanlarının ürettiği jenerik arayüz, metin ve kodu filtrelemek için yazılmış bir kural seti. Üç katmanda 38 zorunlu kural içeriyor: mutlak kapılar, tekniğe izin veren ama gerekçe isteyen kapılar ve tutarlılık kilitleri. Yanında ENERGY, RHYTHM ve MOTION kadranlarından oluşan bir canlılık araç seti ve bir iş yayına çıkmadan önce doldurulan dört bloklu PASS/FAIL teslim raporu var. Kendini stil kılavuzu değil filtre olarak tanımlıyor: renk, font veya düzen dayatmıyor, yön projenin kendi DESIGN.md dosyasından geliyor ve steril sonuç bu dosyanın eksikliğine bağlanıyor. Yalnızca sayfa üretimi için değil, metin yazımı ve denetimi için de kullanılıyor; skill'ler ek yüklenecek biçimde ayrılmış, böylece ajan yalnızca görevin gerektirdiğini okuyor. MIT lisanslı, ~3,5K yıldız.",
+      "usage_tr": "Arslan Holding'in markası ve web sitesi AI araçlarıyla üretiliyor; bu filtreyi o üretimin önüne koymak doğrudan işine yarar, çünkü sessiz ve gösterişsiz bir kurumsal ton istediğin yerde jenerik AI dili en görünür hata. Aynı kural seti Lyricdrop'un uygulama içi metinlerinde ve mağaza açıklamalarında da işe yarıyor; uydurma sayıları ve abartılı iddiaları teslim kapısında yakalıyor. Claude Code skill'i olarak kuruluyor, tamamen yerel çalışıyor ve ek API maliyeti getirmiyor, yani Max aboneliğinin içinde kalıyor. Kural setinin tek başına yön üretmediğini unutma: kendi DESIGN.md'ni yazmazsan sonuç temiz ama karaktersiz çıkar, asıl iş hâlâ marka yönünü tanımlamakta. İstediğin iki açılı review'ın ürün ve eğitim mantığı ayağının yerine de geçmez; bu yalnızca yüzey ve metin katmanını denetler.",
+      "matched_project": "Arslan Holding",
+      "relevance": 6,
+      "investment_note": null
+    },
+    {
+      "full_name": "jordan-gibbs/hyperresearch",
+      "inputs_hash": "8d2f6e9ba836bc1d630e18f922f113c7",
+      "description_tr": "Hyperresearch, Claude Code'u derin araştırma ajanına çeviren bir Python paketi. Tek bir istemden başlayıp kademeye göre uyarlanan 16 adımlı bir hattı yürütüyor; genişlik taraması, atıf takibi ve boşluk doldurma ile tek çalışmada yüzlerce kaynağa ulaşabiliyor. Her atıf, kaynağın o cümleyi gerçekten desteklediğini denetleyen şüpheci bir kontrolden geçiyor; bağımsızlık denetimi aynı metnin türevlerini kümeleyip tek kaynak ağırlığında sayıyor ve dört eleştirmen taslağa paralel saldırırken düzeltmeleri yalnızca sınırlı müdahale yapabilen bir yamacı uyguluyor. Bilimsel arama katmanı OpenAlex, Crossref, CORE, DOAB, ClinicalTrials.gov, SEC EDGAR ve FRED'i tek sorguda tarayıp DOI ve başlığa göre tekilleştiriyor; kapalı makaleler için Unpaywall, Europe PMC ve CORE üzerinden yasal açık erişim kopyası aranıyor ve her ikame raporda açıkça belirtiliyor. Okunan her kaynak markdown ve SQLite'tan oluşan bir kasaya düşüyor, sonraki oturumlar önce bu kasayı kullanıyor ve çöken çalışmalar manifest üzerinden kaldığı adımdan devam ediyor. MIT lisanslı, Python 3.11+, ~3,5K yıldız; sıralama iddiası README'de kendi iç ölçümüne dayandırılıyor.",
+      "usage_tr": "Arslan Holding tarafındaki pazar ve rakip araştırması, due diligence ve tez çalışmaları için bu, doğrudan Claude Code'un içinde çalışan somut bir hat. Türkiye AI Eylem Planı ya da MENA deal flow gibi tekrar ettiğin konularda asıl faydayı kalıcı kasa veriyor: ikinci ve üçüncü araştırma, birincinin topladığı kaynakların üzerine biniyor. SEC EDGAR ve FRED'in aynı arama katmanında olması, güneş enerjisi yatırımında piyasa ve finansman verisine bakarken de işine yarar. Max aboneliğinin içinde Claude Code üzerinden çalışıyor ve ayrı bir model anahtarı istemiyor; buna karşılık uzun çalışmalar ciddi bağlam ve süre tüketiyor, önce dar kapsamlı bir soruyla ölç. Asistanına devretmek istersen arada bir adım gerekiyor: arayüz terminal, çıktı ise ona verebileceğin bir rapor — devri raporun teslimi üzerinden kur, çalıştırmayı sen tetikle.",
+      "matched_project": "Arslan Holding",
+      "relevance": 7,
+      "investment_note": null
+    },
+    {
+      "full_name": "melgarafael/DeskcommCRM",
+      "inputs_hash": "401de9828ca30c678d32293eaced4452",
+      "description_tr": "DeskcommCRM, WhatsApp üzerinden satış yapan işletmeler için açık kaynak ve kendi sunucunda çalışan bir CRM ile yapay zekâ ajanı katmanı; Kommo, Octadesk ve Intercom'a alternatif olarak konumlanıyor. Next.js 16 ve TypeScript ile yazılmış, veritabanı, kimlik ve depolama tarafında Supabase kullanıyor, WhatsApp bağlantısı WAHA üzerinden kuruluyor ve çok kiracılı çalışıyor. Ajanlar gelen mesajlara yanıt veriyor, müşteriyi niteliyor ve satış akışını yürütüyor; RAG ile kendi içeriğine dayanabiliyor ve MCP'ye hazır olduğu belirtiliyor. Kurulum bir VPS'te tek komutla yapılıyor ve model tarafında OpenRouter, Anthropic veya OpenAI anahtarlarından biri isteniyor. MIT lisanslı, ~3,5K yıldız; arayüz ve dokümantasyon Portekizce öncelikli ve varsayımların bir kısmı Brezilya pazarına göre kurulmuş.",
+      "usage_tr": "Asistan ve holding operasyon araçlarında bugün HubSpot ve TimelinesAI ikilisiyle çözdüğün şeyin açık kaynak karşılığı bu: WhatsApp konuşmaları ve ilişki geçmişi kendi Supabase'inde durur, asistan değiştiğinde geçmiş seninle kalır. Golden One tarafındaki yat kiralama ve planlanan holiday home operasyonu gibi sohbet üzerinden ilerleyen talepler varsa ilk temas ve niteleme adımına oturur. Stack senin hattınla aynı — Next.js ve Supabase — yani forklayıp kendi sürümünü yazma refleksine uygun ve DigitalOcean'da kendi başına barındırılabilir. İki gerçek maliyeti var: ajan katmanı bir model anahtarı istiyor, yani mesaj başına API gideri; arayüz ve dokümantasyon ise Portekizce öncelikli, Türkçe ve İngilizce kullanım için çeviri işi çıkar. Kurulum da bir VPS ve alan adı varsayıyor; Mac'te yerel denemek mümkün ama üretim senaryosu sunucu tarafında.",
+      "matched_project": "Asistan ve holding operasyon araçları",
+      "relevance": 5,
+      "investment_note": null
+    },
+    {
+      "full_name": "AlphaGBM/skills",
+      "inputs_hash": "3acd18a19bd28e685e8c16155fc8c275",
+      "description_tr": "AlphaGBM Skills, hisse, opsiyon, emtia ve dijital varlık araştırmasını Claude Code veya Cursor gibi AI çalışma alanlarının içine taşıyan yaklaşık 27 skill'lik bir set. Beş çekirdek skill sonuç odaklı tanımlanmış: hisse fırsatları, opsiyon stratejileri, haber etkisi, araştırma raporu ayrıştırma ve iki anlık görüntüyü karşılaştıran yatırım gözden geçirmesi. Çağrılabilir paketler kendi içinde Python 3.9+ çalıştırıcısıyla geliyor, ayrı bir CLI kurulumu gerekmiyor ve paketler npx skills add ile tek tek kurulabiliyor. Canlı veri kullanan paketler AlphaGBM hesabına bağlı bir API anahtarı ve o hesabın kotasını istiyor; referans paketleri ise yalnızca yöntem anlatıyor ve canlı bir API açmıyor. MIT lisanslı, ~3,4K yıldız; depo hangi paketin canlı veriye eriştiğini ve hangisinin yöntem referansı olduğunu açıkça ayırıyor.",
+      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; setin tamamı halka açık piyasalara, hisse ve opsiyon araştırmasına dönük, senin yatırım tarafın ise erken aşama özel şirketler ve proje bazlı enerji yatırımı. En yakın bağlam, aynı paketleme biçiminin — Claude Code skill'i artı hesaba bağlı kota — bir veri servisini ajanın içine taşımak için nasıl kullanıldığını görmek olabilir.",
+      "matched_project": null,
+      "relevance": 2,
+      "investment_note": null
+    }
+  ]
+}

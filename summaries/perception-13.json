@@ -1,0 +1,166 @@
+{
+  "repos": [
+    {
+      "full_name": "RealXiaoze/humanoid-motion-intelligence",
+      "inputs_hash": "1d70c150d634c458b7523fc8260d05b5",
+      "description_tr": "Çince yazılmış, insansı robotlarda hareket zekâsı üzerine bir bilgi tabanı. İçerik altı teknik hat halinde düzenlenmiş: hareket verisi ve retargeting, locomotion ve hareket önselleri, tüm vücut hareket takibi, LocoManip, dünya modelleri/VLA/Agent, ve mühendislik ile gerçek robot dağıtımı. Depoda kod yok; makale çözümlemeleri, açık kaynak proje tabloları, veri seti karşılaştırmaları, şirket ve iş ilanı sayfaları var. Repoyu klonlayıp yerel dosya okuyabilen bir agent'a açmak üzere tasarlanmış ve AGENTS.md ile bir alıntılama protokolü dayatıyor: sonuçlarda kaynak sayfa numarası verilmesini, makale sonucu ile README iddiasının ayrılmasını istiyor. CC BY-NC-SA 4.0 ile lisanslı, ~590 yıldız, Temmuz 2026'da açılmış.",
+      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın olası bağlam Arslan Holding'in frontier teknoloji merceğiyle insansı robotik alanını okurken bir alan haritası olarak kullanmak olabilir. Bu haliyle bir araç değil, Çince bir literatür ve sektör indeksi; deal screening için ihtiyacın olan şirket/tur verisini değil, teknik hatları ve akademik kaynakları veriyor. Ticari olmayan lisansı da holdingin çıktılarında kullanılmasını sınırlar. Teknik bir alan hızlı öğrenilmek istendiğinde bir agent'a klonlatılabilecek referans olarak not edilebilir, ötesi değil.",
+      "matched_project": null,
+      "relevance": 1,
+      "investment_note": null
+    },
+    {
+      "full_name": "robocurve/inspect-robots",
+      "inputs_hash": "c73bb2f607d55fb1ab0f73943072feaf",
+      "description_tr": "Inspect Robots, fiziksel AI için açık kaynak bir değerlendirme çerçevesi. Bir robotik benchmark'ı bir kez tanımlayıp aynı testi farklı politikalarla (LLM ajanı ya da VLA modeli) ve farklı gövdelerle (gerçek kol, insansı robot veya simülatör) çalıştırmayı hedefliyor. Her koşudan grader skorları, LLM transkripti ve tam konfigürasyonu içeren denetlenebilir loglar çıkıyor; Rerun ile canlı görselleştirme birinci sınıf destekleniyor. Konumlandırma açık: Inspect AI'ın robotik karşılığı olmak. Python 3.10–3.13, mypy strict, MIT lisanslı; README projenin alpha aşamasında olduğunu ve API'nin sürümler arasında değişebileceğini söylüyor. ~590 yıldız, Haziran 2026'da açılmış.",
+      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın olası bağlam, robot kolu ya da insansı gövde gerektirdiği için ancak fiziksel AI alanına yatırım tarafından bakarken bir olgunluk göstergesi olabilir. Lyricdrop'ta kurduğun test ve kabul kapısı fikriyle kavramsal olarak aynı aileden — bir kez tanımlanan benchmark, farklı modellerle tekrar koşuluyor — ama kod tarafında paylaşılabilir hiçbir parçası yok, tamamı gövde ve sürücü katmanına bağlı. Mac'te anlamlı bir şey çalıştırmak için donanım ya da simülatör kurulumu gerekir. Zorlama bir bağ kurmaktansa bu satırı boş bırakmak daha doğru.",
+      "matched_project": null,
+      "relevance": 1,
+      "investment_note": null
+    },
+    {
+      "full_name": "tornikegomareli/Talkify",
+      "inputs_hash": "c55b5f606be8585483e6926f1cd9c9ec",
+      "description_tr": "Talkify, macOS için notch üzerinden çalışan yerel bir dikte uygulaması. Tanımayı Apple'ın SpeechAnalyzer/SpeechTranscriber API'leriyle, sesli okumayı AVSpeechSynthesizer ile, çeviriyi Translation çerçevesiyle ve istem düzenlemeyi cihaz üstündeki FoundationModels ile yapıyor; ağ isteği göndermiyor, ses saklamıyor ve geçmişi yerelde tutuyor. fn basılı tutulunca dikte, sağ option ile ikinci dilde dikte, sağ command ile dikte edip çevirme, notch'a sürüklenen ses veya video dosyasını transkribe etme gibi kısayolları var. Swift 6 ile yazılmış; Apple Silicon üzerinde macOS 26 (Tahoe) gerektiriyor, Homebrew cask veya DMG ile kuruluyor. Dikte edilen metnin yapıştırılırken yaklaşık yarım saniye sistem panosundan geçtiği README'de açıkça belirtiliyor. MIT lisanslı, ~555 yıldız.",
+      "usage_tr": "Kişisel bilgi tabanı projesinin sesli not girişi için doğrudan aday: tek tuşla konuşup metni istediğin alana bırakıyor, yani \"form doldurmadan kaydet\" hedefine uyuyor. Ofisteki M4 Pro Mac'te tamamen yerel çalışır ve modeli işletim sistemi yönettiği için ne API maliyeti ne de ayrı ağırlık indirme var — Max aboneliğinin dışına çıkmıyorsun. Notch'a dosya sürükleyip transkribe etme özelliği, ses kayıtlarını toplu çözümleyip n8n ile Supabase'e yazdığın akış için ayrıca işine yarar. Online toplantılarda Wispr Flow yerinde kalabilir; Talkify'ı gün içindeki kısa notlar ve antrenman sonrası kayıtlar için yanına koyabilirsin. Swift kaynağı MIT olduğundan, doğrudan kendi veritabanına yazan bir sürümü fork'layıp çıkarman mümkün. Uyarı: macOS 26 ve Apple Silicon şartı var, ve dikte metni bir anlığına panodan geçiyor — pano yöneticisi kullanıyorsan bunu hesaba kat.",
+      "matched_project": "Kişisel bilgi tabanı",
+      "relevance": 7,
+      "investment_note": null
+    },
+    {
+      "full_name": "letorig/video-generator-client",
+      "inputs_hash": "11a784e4edc1ac5a9f17dbb159b1824e",
+      "description_tr": "Seedance, Kling, MiniMax/Hailuo ve Wan video üretim sağlayıcılarını tek bir asenkron Python istemcisi altında toplayan bir sarmalayıcı. Sağlayıcıların model kimlikleri bir katalogda tutuluyor; text-to-video ve image-to-video, negatif prompt, süre, en-boy oranı ve çözünürlük ortak bir arayüzden veriliyor. CLI'ın yanında FastAPI ile sunulan ve npm/Node derleme adımı gerektirmeyen yerel bir web arayüzü, ayrıca bir MCP server dizini içeriyor. Kendi model ağırlığı yok: tüm üretim sağlayıcı API'leri üzerinden, kullanıcının kendi anahtarları ve ücretiyle çalışıyor. MIT lisanslı, ~540 yıldız, Eylül 2026'da açılmış; README sağlayıcılar API'lerini değiştirdikçe adaptörlerin bakım gerektireceğini not ediyor.",
+      "usage_tr": "Folio'nun günlük içerik pipeline'ında video tarafını tek arayüzün arkasına almak için kullanabilirsin: aynı prompt'u dört sağlayıcıya gönderip hangisinin dikey feed ve story formatında daha tutarlı sonuç verdiğini maliyetiyle birlikte ölçebilirsin. MCP server dizini sayesinde Claude Code'dan, CLI'ı sayesinde n8n'den çağrılabilir, yani gece çalışan bir içerik üretim akışına doğrudan oturur. Çıktıyı DigitalOcean'a yazıp Supabase'deki post kayıtlarına bağlaman yeterli. Aynı katman, app stüdyosu fikrinde reklam kreatifi üretimi için de tekrar kullanılabilir. Uyarı: burada yerel çalışan hiçbir şey yok — her klip sağlayıcı faturasına yazılır ve Max aboneliği bunu kapsamaz, o yüzden Folio'yu açmadan önce günlük klip sayısına bir tavan koy. İkinci uyarı: sağlayıcı API'leri bağımsız değişiyor, adaptörlerin kırıldığı gün pipeline sessizce durmasın diye hata durumunu görünür yap.",
+      "matched_project": "Folio",
+      "relevance": 5,
+      "investment_note": null
+    },
+    {
+      "full_name": "HAKORADev/VODER",
+      "inputs_hash": "b4dfbfdd8da2be0d672708f21897bd23",
+      "description_tr": "VODER, sekiz ses işleme modunu tek bir yerel araçta toplayan bir komut satırı uygulaması: konuşma tanıma, konuşma sentezi, ses dönüştürme, müzik üretimi, konuşma iyileştirme, ses efekti üretimi, vokal ayırma ve konuşmacı ayrıştırma. Bunların üstünde üç katman var: yeniden kullanılabilir ses klonlarını kaydeden train, URL indirme ve ses kesme/birleştirme gibi yardımcı işleri toplayan quest, ve birden çok görevi uçtan uca bağlayan chain. YouTube, TikTok ve benzeri bağlantıları doğrudan girdi olarak alabiliyor, 76 dile çeviri yapıyor ve konuşmacı kimliğini koruyarak video dublajı üretiyor. Project Eva eklentisiyle görsel, video ve 3B sahne üretimi de ekleniyor. Tamamen yerelde çalışacak şekilde tasarlanmış ve GPU'suz kullanımı da desteklediği belirtiliyor. AGPL-3.0 lisanslı, ~510 yıldız.",
+      "usage_tr": "Lyricdrop v2'nin içerik hazırlama adımında üç ayrı işi tek araçta topluyor: parçayı bağlantıdan indirme, vokali enstrümandan ayırma ve ayrılan vokali transkribe etme. Vokal ayırma burada asıl değerli parça — STT'ye karışık mix yerine temiz vokal vermek, kelime hizalamasında aradığın hata düşüşünü sağlayabilir. Ofisteki M4 Pro Mac'te yerel çalıştığı için şarkı başına ek API maliyeti getirmiyor; admin panelinin arkasında bir hazırlık adımı olarak koşturup çıktıyı karşılaştırdığın STT sistemlerine besleyebilirsin. Chain katmanı bu üç adımı tek komuta indirdiğinden, 20–30 şarkılık test setini asistanına devredilebilir bir işe dönüştürür. Uyarı: README kelime düzeyinde zaman damgası verdiğini söylemiyor, dublajda yalnızca segment düzeyi hizalamadan bahsediyor — yani Lyricdrop'un asıl problemini tek başına çözmez, hizalama katmanı ayrı kalır. İkinci uyarı: AGPL-3.0, bu aracı yayımlayacağın uygulamanın içine gömmek yerine yalnızca kendi makinendeki hazırlık hattında tutmayı gerektirir.",
+      "matched_project": "Lyricdrop",
+      "relevance": 6,
+      "investment_note": null
+    },
+    {
+      "full_name": "AudarAI/Audar-ASR-V1",
+      "inputs_hash": "6f70667d8f09410c3b4b7c9f250d3544",
+      "description_tr": "Audar-ASR-V1, Arapça öncelikli üretken bir konuşma tanıma model ailesi; transkripsiyonu CTC veya transducer yerine ses koşullu sonraki token tahmini olarak kuruyor (Whisper tarzı 128-mel encoder, Qwen3 decoder, 30 saniyelik bağlam). İki katman sunuluyor: gerçek zamanlı ve uç cihaz için 0.78B Flash, doğruluk için 2.35B Turbo; ikisi aynı mimariyi ve aynı prompt arayüzünü paylaşıyor. Modern standart Arapça ile başlıca lehçeleri, Arapça-İngilizce code-switching'i ve toplam 30 dili kapsadığı, 300.000+ saat etiketli sesle uyarlandığı ve sürecin KTO tercih hizalamasıyla bitirildiği belirtiliyor. Open Universal Arabic ASR Leaderboard'da Turbo 36 sistem arasında birinci, Flash 11. sırada gösteriliyor. Çalıştırma yolları Transformers, GGUF (llama.cpp) ve vLLM. Depo kodu Apache-2.0, model ağırlıkları ise AudarAI'ın kendi Open ve Community lisanslarıyla dağıtılıyor; ~500 yıldız.",
+      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın olası bağlam Lyricdrop'un STT katmanı, çünkü GGUF ile llama.cpp üzerinde Mac'te yerel çalışabiliyor. Ama iki nedenle aday değil: model Arapça odaklı, Lyricdrop ise İngilizce öğretiyor, ve README hiçbir yerde kelime düzeyinde zaman damgası vaat etmiyor — LLM decoder mimarisi zaten bunu doğal olarak vermez. Lisans tarafı da ayrı bir engel: kod Apache-2.0 olsa da ağırlıklar üreticinin kendi lisanslarıyla geliyor, ticari bir uygulamaya koymadan önce okunması gerekir. Asıl ilgi çekici tarafı ürün değil, şirket.",
+      "matched_project": null,
+      "relevance": 2,
+      "investment_note": "Arapça konuşma tanımada ölçülebilir bir liderlik iddiası olan, ağırlıklarını açık dağıtıp üstüne kendi ticari API'sini kuran erken aşama bir AI şirketi — MENA koridoru odağıyla örtüştüğü için takip ve tanışma listesine alınmaya değer."
+    },
+    {
+      "full_name": "Rhoban/bam",
+      "inputs_hash": "1351e18e7aae6bb2a7f8c35b43a3c470",
+      "description_tr": "BAM, servo aktüatörler için genişletilmiş sürtünme modellerini kayıtlı yörüngelerden tanımlayan ve bu modelleri simülasyona taşıyan bir kütüphane. Çıkış noktası, MuJoCo ve IsaacGym gibi yaygın simülatörlerde kullanılan Coulomb-viskoz sürtünme modelinin Stribeck etkisi, yüke bağımlılık ve karesel etkiler gibi olguları yakalayamaması. Depo bir identification pipeline'ı, genişletilmiş model seti ve Dynamixel MX-64/MX-106/XL-320/XL330, eRob80 ve Feetech STS3215 gibi yaygın servolar için önceden kalibre edilmiş model kütüphanesi sunuyor. Modeller MuJoCo CPU ve MuJoCo Warp içinde basit bir API ile kullanılabiliyor. Arkasında ICRA 2025'te yayımlanmış bir makale var; Apache-2.0 lisanslı, ~500 yıldız, 2024'ten beri açık.",
+      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın olası bağlam, fiziksel AI ve robotik yatırımlarına bakarken sim2real transferinin neden zor olduğunu somut bir örnek üzerinden okumak olabilir. Bu dar kapsamlı bir robotik araştırma kütüphanesi: girdisi gerçek servo yörünge kayıtları, çıktısı simülatör parametreleri. Ne yazılım projelerinden birine gömülebilir bir parçası var ne de asistanına devredilebilecek bir iş üretiyor. Bu satırı boş bırakmak doğru sonuç.",
+      "matched_project": null,
+      "relevance": 0,
+      "investment_note": null
+    },
+    {
+      "full_name": "swarm-subnet/Langostino",
+      "inputs_hash": "4308c5842d4d964ec953b6280537820d",
+      "description_tr": "Langostino, ROS2 üzerine kurulu açık kaynak bir otonom drone referans platformu. Sıfırdan montaj kılavuzu, INAV uçuş kontrolü, Raspberry Pi üzerinde çalışan otonomi katmanı, GPS ve LiDAR entegrasyonu ile pekiştirmeli öğrenmeyle eğitilmiş uçuş politikalarını bir arada veriyor. Amacı bir ürün satmak değil, gerçek dünya drone otonomisini anlaşılır ve genişletilebilir bir referans olarak sunmak; pozisyon tutma gibi uçuşların video kayıtları README'de yer alıyor. Geliştirme Bittensor üzerindeki bir subnet ekosistemine bağlı olarak yürüyor. MIT lisanslı, ~480 yıldız.",
+      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın olası bağlam, donanım tarafına meraklı bir hafta sonu projesi ya da frontier teknoloji yatırım okumaları olabilir. Çalıştırmak için drone gövdesi, uçuş kontrol kartı ve Raspberry Pi gerekiyor; Mac'te yerel olarak anlamlı bir parçası koşmuyor. Yazılım projelerinden hiçbirine gömülebilecek bir bileşeni de yok. Bittensor bağlantısı da yatırım tarafında ayrı bir değerlendirme konusu, senin belirttiğin tezlerle örtüşmüyor.",
+      "matched_project": null,
+      "relevance": 1,
+      "investment_note": null
+    },
+    {
+      "full_name": "v-modal/vmodal_sdk_robotics",
+      "inputs_hash": "c39ffe02b7900471fc62c769a7c25d3a",
+      "description_tr": "V-Modal Robotics SDK, robot üzerinde kaydedilen LeRobot v3 veri kümelerini ağ ve güç kesintilerine dayanıklı biçimde robottan çıkarmak için yazılmış bir aktarım katmanı. Üretici süreç dosyalarını kapatıp atomik olarak bir .ready.json manifestosu yayınlıyor; SDK baytları doğrulayıp yerel bir spool'a kopyalıyor ve her nesneyi kalıcı olarak onaylanana kadar takip ediyor. Dayanıklılık kuralları tek tek yazılmış: geçici dosya + fsync + atomik rename, WAL modunda ve synchronous=FULL ayarlı SQLite, SHA-256 tabanlı kimlik, video ile telemetri için ayrı yükleme şeritleri, yeniden başlatmada uzlaştırma ve boyut/checksum/inode/symlink kontrolleriyle kabul kapısı. Çalışma zamanı bağımlılığı yalnızca Fire; LeRobot, PyTorch, ROS veya veritabanı sunucusu import edilmiyor. MIT lisanslı, ~470 yıldız, Eylül 2026'da açılmış.",
+      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın olası bağlam, kendi veri pipeline'larında kesintiye dayanıklılık tasarımını okurken bir örnek olarak bakmak olabilir. SDK'nın kendisi robot gövdesine ve LeRobot veri formatına bağlı, yani Lyricdrop ya da Kanarya tarafına takılabilecek bir parçası yok. Değerli olan kod değil, README'deki değişmezler tablosu: hangi garantinin hangi mekanizmayla sağlandığını tek satırda yazma biçimi, kendi pipeline'larında da kullanabileceğin bir belgeleme kalıbı. Araç olarak kurulacak bir şey değil.",
+      "matched_project": null,
+      "relevance": 1,
+      "investment_note": null
+    },
+    {
+      "full_name": "YeJe-cpu/talk-to-fengge",
+      "inputs_hash": "29295130a666418fe7c5fbedeabf08ab",
+      "description_tr": "Bir kişinin ses tonunu ve konuşma kişiliğini klonlayıp gerçek zamanlı sesli sohbete çeviren bir referans uygulama; ilk tam örnek olarak Çinli bir yayıncının AI kopyası kurulmuş. Zincir LiveKit (WebRTC) üzerinde STT → LLM → ses klonlayan TTS biçiminde kurulu ve mühendislik gecikmesini 1 saniyenin altında tutmayı hedefliyor. Her katman .env ile değiştirilebiliyor: STT tarafında Cartesia ya da Deepgram, LLM tarafında MiniMax, DeepSeek veya Gemini, TTS tarafında açık kaynak VoxCPM (NVIDIA GPU gerektiriyor), CPU'da çalışabilen MOSS-TTS ya da bulut Cartesia Sonic. Ses klonlaması 15–45 saniyelik örnekle yapılıyor; kişilik tarafı ayrı bir skill dosyasında konuşma tarzı, kalıp ifadeler ve düşünme biçimi olarak tanımlanıyor, yani başka birine geçirmek için mimari hazır. İsteğe bağlı bir hafıza katmanı da var. Apache-2.0 lisanslı, ~466 yıldız.",
+      "usage_tr": "Folio bugün bir feed uygulaması, ama bu repo aynı fikrin sesli hali: yazar profillerinden birine gerçek zamanlı konuşma modu eklemek istersen mimarinin tamamı burada duruyor. Kişilik tanımı koddan ayrılmış bir dosya olduğu için, Folio'da zaten yazdığın yazar profillerini aynı biçimde besleyebilirsin. İkinci ve daha hafif kullanım İngilizce tarafında: karşılıklı konuşma partneri olarak shadowing pratiğini kayıt yapmadan sürdürmeni sağlar. Uyarı: en iyi klonlama yolu olan VoxCPM NVIDIA GPU istiyor, yani ofisteki Mac'te yerel çalışmaz — CPU alternatifi var ama kalite ve gecikme düşüyor. İkinci uyarı: varsayılan STT ve LLM bulut API'leri, yani dakika başına maliyet getiriyor ve Max aboneliğinin kapsamı dışında. Son olarak, gerçek bir kişinin sesini klonlamak yayınlanmayan kişisel bir uygulamada bile izin sorusu doğurur; Folio yayınlanmayacağı için risk düşük ama tasarım kararını bilerek ver.",
+      "matched_project": "Folio",
+      "relevance": 4,
+      "investment_note": null
+    },
+    {
+      "full_name": "showlab/Show-Harness",
+      "inputs_hash": "69170f9cf53f171e0c59f80fc603f5eb",
+      "description_tr": "Show-Harness, bir görsel-dil modelinin robotu doğrudan \"oynamasını\" sağlayan semantik bir arayüz. Model ayrık ve artımlı eylem birimleri üzerinden akıl yürütüyor, gövdeye özgü yorumlayıcılar bu birimleri deterministik biçimde harekete çeviriyor; böylece her fiziksel karar modelde kalıyor. Aynı arayüz iki modu paylaşıyor: kapalı kaynak bir frontier VLM ile sıfır atış kontrol, ya da birkaç H200 GPU saatinden az ince ayarla adım başına tek eylem tokenı üreten küçük bir açık model. Franka, AgileX Piper, ManiSkill ve Isaac Lab tek bir eylem sözlüğünü kullanıyor; GUMI adlı tarayıcı aracıyla teleoperasyon donanımı olmadan gösterim toplanabiliyor. NUS Show Lab'den çıkmış; Apache-2.0, altı LoRA adaptörü ve gösterim veri kümesi Hugging Face'te yayınlanmış, ~440 yıldız.",
+      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın olası bağlam, embodied AI alanına yatırım merceğiyle bakarken \"genel model + ince arayüz\" yaklaşımının nereye geldiğini görmek olabilir. Çalıştırmak robot kolu veya simülatör kurulumu, çoğu durumda da ayrı bir GPU makinesi gerektiriyor. Ajan mimarisi olarak ilgi çekici parçası, modele serbest kod yazdırmak yerine dar ve deterministik bir eylem sözlüğü vermesi — kendi ajan tasarımlarında akılda tutulabilir bir kalıp, ama kurulacak bir araç değil. Bu satırı boş bırakmak doğru sonuç.",
+      "matched_project": null,
+      "relevance": 1,
+      "investment_note": null
+    },
+    {
+      "full_name": "shengshu-ai/Vidu-S",
+      "inputs_hash": "a9c3ce4e5684b5493eb78b57b1b445a0",
+      "description_tr": "Vidu S, Shengshu'nun gerçek zamanlı etkileşimli video üretim model ailesinin geliştirici deposu. S1 sesle yönlendirilen dijital karakterler üretiyor; S2 bunu 720p ve 25–42 FPS etkileşimli avatarlara, canlı video akışını referans görselle dönüştüren düzenlemeye (stil aktarımı, sanal deneme, karakter ve arka plan değiştirme) ve immersif ekranlar için stereo uzamsal videoya genişletiyor. Uzun akışlarda hata birikimini azaltmak için Self-Replay Forcing, düşük maliyetli GPU'larda gerçek zamanlı çıkarım için TurboDiffusion ve TurboServe anlatılıyor. Depo model ağırlığı veya çalıştırılabilir kod içermiyor; makale bağlantıları, kullanım kılavuzları, API dokümanları ve API entegrasyonu için bir agent skill'i barındırıyor. Lisans belirtilmemiş, erişim ticari API üzerinden veriliyor; ~440 yıldız.",
+      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın olası bağlam Folio'nun video üretim adımı, ama oradaki ihtiyaç gece toplu üretilen kısa klipler, buradaki teklif ise canlı akış ve etkileşimli avatar — aynı şey değil. Depo zaten bir yazılım değil, ticari API'nin dokümantasyon merkezi; yerel çalıştırılabilecek hiçbir parçası yok ve lisans beyanı bulunmuyor. Bir gün Folio'ya konuşan bir avatar eklemek istersen S2-Avatar aday listesine girebilir, o zaman da maliyet dakika başına hesaplanır. Bugünkü haliyle izlenecek bir başlık, kurulacak bir araç değil.",
+      "matched_project": null,
+      "relevance": 2,
+      "investment_note": null
+    },
+    {
+      "full_name": "PetoiCamp/OpenCatEsp32-Quadruped-Robot",
+      "inputs_hash": "745f67f02bc35d082d32c04f4b807f92",
+      "description_tr": "OpenCatESP32, Petoi'nin ESP32 tabanlı BiBoard kartı üzerinde çalışan dört ayaklı robot yazılım çerçevesi; 12 servoya kadar çok eklemli bacaklı robotları sürüyor. Yürüyüş üretimi, denge, blok tabanlı kodlama ve eğitim amaçlı örnekler içeriyor ve Bittle ile Nybble gibi hazır kitlerle birlikte kullanılıyor. Depo aynı zamanda şirketin yeni Quaddle modelinin Kickstarter duyurusuna ev sahipliği yapıyor; Quaddle sekiz yerine dört servoyla yürüyen bir tasarım ve pozisyon geri beslemeli servolarla elle hareket kaydetmeye izin veriyor, ancak kendi kaynak kodu henüz açık değil. Proje kendini oyuncak değil, gait araştırması, pekiştirmeli öğrenme ve sim2real için fiziksel bir platform olarak konumlandırıyor. MIT lisanslı, 2021'den beri sürdürülüyor, ~410 yıldız.",
+      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın olası bağlam, eğitim amaçlı donanım ve fiziksel AI kitleri pazarını bir yatırım teması olarak izlemek olabilir. Depo gömülü C++ ve belirli bir donanım kartına bağlı; Mac'te yerel çalıştırılacak, kendi uygulamalarına gömülecek ya da asistana devredilecek bir tarafı yok. Robot kitleri ve STEM eğitimi, belirttiğin B2B yazılım ve frontier tech odağının dışında kalıyor. Bu satırı boş bırakmak doğru sonuç.",
+      "matched_project": null,
+      "relevance": 0,
+      "investment_note": null
+    },
+    {
+      "full_name": "FrigadeHQ/yap",
+      "inputs_hash": "98771775554abcc57d6b122f353a6998",
+      "description_tr": "Yap, macOS menü çubuğunda çalışan ücretsiz ve açık kaynak bir dikte uygulaması. Kısayola basıp konuşuyorsun, tekrar basınca metin o an kullandığın metin alanına yapıştırılıyor; ekranın altında canlı dalga formu ve o ana kadar söylediklerinin önizlemesi beliriyor. Tanıma tamamen cihaz üzerinde, macOS 26'nın SpeechAnalyzer ve SpeechTranscriber API'leriyle yapılıyor; uygulama kendi model ağırlığını taşımıyor, hesap veya API anahtarı istemiyor ve ses makineden çıkmıyor. Transkriptler yerelde saklanıyor, kısayol tek bir değiştirici tuşa da bağlanabiliyor. Swift 6 ile yazılmış, Apple Silicon ve macOS 26 (Tahoe) gerektiriyor; Homebrew cask'i imzalı ve notarize edilmiş. MIT lisanslı, ~400 yıldız.",
+      "usage_tr": "Kişisel bilgi tabanı projesinin sesli not girişi için sade bir aday: tek kısayol, tek iş, ayar kalabalığı yok — \"form doldurmak yok\" ilkesine Talkify'dan bile daha yakın duruyor. Ofisteki M4 Pro Mac'te ve evdeki Mac mini'de yerel çalışır, model işletim sisteminin olduğu için ne indirme ne de API maliyeti var. Yerelde tutulan transkript arşivini n8n ile okuyup Supabase'e taşıyan küçük bir akış yazarsan, sesli notlar kendiliğinden sınıflandırma hattına girer. MIT ve Swift olduğu için kaydı doğrudan kendi veritabanına yazan bir sürümü fork'lamak da makul bir hafta sonu işi. Toplantılarda Wispr Flow yerinde kalsın; Yap gün içindeki kısa notlar için yanına otursun. Uyarı: model Apple'a ait, yani Whisper'da alıştığın sözlük ve terim kontrolüne sahip değilsin — özel isimler ve Türkçe-İngilizce karışık cümlelerde hatayı kendi test cümlelerinle ölç.",
+      "matched_project": "Kişisel bilgi tabanı",
+      "relevance": 6,
+      "investment_note": null
+    },
+    {
+      "full_name": "HRuiCcc/RuiC-card-skill",
+      "inputs_hash": "4cc602bdd2df5924325889b03acdd01c",
+      "description_tr": "Bir Agent Skill olarak paketlenmiş, tek cümlelik bir istemden tarayıcıda dönen holografik 3B koleksiyon kartı üreten bir pipeline. Model dört katmanı (ana özne, arka plan, çizgi, metin) aynı tuval ve koordinat sisteminde üretiyor; Blender'da kart geometrisi kuruluyor, katmanlar derinlikte açılıyor, hologram materyali uygulanıyor ve Three.js ile tek dosyalık bir görüntüleyici olarak paketleniyor. Teslimat paketi web sayfası, düzenlenebilir card.blend, şeffaf katman PNG'leri, yapılandırma dosyası ve render görsellerinden oluşuyor. Blender'ın taşınabilir sürümünü SHA-256 doğrulamasıyla proje dizinine kendisi kuruyor, sistem ortamına dokunmuyor. Headless tarayıcı açıp sürükleme, çevirme, kaydırıcılar ve dar ekran yerleşimini gerçek kareler üzerinden karşılaştıran bir kabul betiği içeriyor. Çok modlu her model ve SKILL.md okuyan her host ile çalışacak şekilde yazılmış; lisans beyanı net değil, ~370 yıldız.",
+      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın olası bağlam, hosta bağımlı olmayan bir Agent Skill'in nasıl yazıldığına dair okunabilir bir örnek olması. İlgi çekici tarafı çıktı değil, kabul betiği: skill kendi işini headless tarayıcıda gerçek kareleri karşılaştırarak doğruluyor — Lyricdrop'un playtest kapısında aradığın \"model kendi çıktısını kanıtlasın\" mantığının çalışan bir örneği. Ürettiği şey ise koleksiyon kartı; ne Lyricdrop'un boşluk doldurma oyununa ne de Folio'nun feed içeriğine karşılık geliyor. Lisansı belirsiz olduğu için kod ödünç alınacaksa önce bu netleşmeli.",
+      "matched_project": null,
+      "relevance": 2,
+      "investment_note": null
+    },
+    {
+      "full_name": "kigner/audio.cpp-webui",
+      "inputs_hash": "d3de09ba4c462b930152f71374ba83c2",
+      "description_tr": "audio.cpp, ggml üzerine kurulu ve Python bağımlılığı olmayan bir C++ ses modeli çıkarım motoru; bu depo onun tam görev kapsamlı bir WebUI ve Windows başlatma betikleriyle genişletilmiş alt dağıtımı. Aynı çalışma zamanı TTS, ses klonlama, ses dönüştürme, ASR, konuşmacı ayrıştırma, VAD, kaynak ayırma, hizalama ve kodek tarzı modelleri çalıştırıyor; amaç her model için ayrı bir Conda ortamı kurmayı ortadan kaldırmak. CUDA, HIP/ROCm, Vulkan, Metal ve saf CPU arka uçları destekleniyor, tüm model aileleri GGUF yüklüyor ve test edilen Q8 paketleri bazı yollarda daha düşük bellekle daha hızlı çalışıyor. README birkaç bağımsız karşılaştırma ve hız ölçümü aktarıyor, ancak bunların büyük kısmı CUDA donanımında yapılmış. Üst kaynak proje Apache-2.0; bu deponun kendi lisans beyanı net değil, ~366 yıldız.",
+      "usage_tr": "Lyricdrop v2'nin yerel ses hattını tek bir ikilinin arkasına toplamak için en güçlü aday bu: vokal ayırma, ASR ve hizalama aynı çalışma zamanında, Python paket çakışması olmadan. Ofisteki M4 Pro Mac'te Metal arka ucuyla çalıştığı için şarkı başına API maliyeti getirmez ve yerel çalıştırma tercihinle aynı yöne gider. Admin panelinin arkasına bir CLI ya da yerel HTTP servisi olarak koyup karşılaştırdığın 2–3 STT sisteminden biri yapabilirsin; GGUF Q8 paketleri 24 GB RAM'de birden fazla modeli aynı anda tutmayı kolaylaştırır. Aynı kurulum ikinci beyin tarafında sesli notları da çözer, yani tek motor iki projeye birden hizmet eder. Uyarı: yayımlanan hız sayıları ağırlıkla CUDA üzerinde ölçülmüş — Apple Silicon'da aynı oranları bekleme, kendi 20–30 şarkılık test setinde ölç. İkinci uyarı: bu bir alt dağıtım ve lisans beyanı net değil; üretim hattını üst kaynak depoya dayandırıp WebUI'yi ayrı bir katman olarak tutmak daha güvenli.",
+      "matched_project": "Lyricdrop",
+      "relevance": 8,
+      "investment_note": null
+    },
+    {
+      "full_name": "estebanstifli/LocalText2Voice",
+      "inputs_hash": "7eca5de0af17975e8c93c0c1f8e6fb30",
+      "description_tr": "LocalText2Voice, uzun biçimli sesli anlatım ve video üretimi için PySide6 ile yazılmış bir masaüstü uygulaması. Akış şöyle kurulmuş: metni içe aktar veya yaz, anlatımı üret, segmentleri gözden geçirip düzelt, ses miksini kur, ardından Video Storyboard ile sahneleri planla, görselleri üret ve anlatım sesiyle birlikte uzun bir MP4 render et. Anlatım tarafında Piper, Kokoro, Chatterbox, Qwen3 TTS ve OmniVoice gibi yerel motorlarla tamamen çevrimdışı çalışabiliyor; OpenAI TTS, ElevenLabs, Gemini TTS ve Azure Speech gibi bulut sağlayıcıları isteğe bağlı. Dağıtım Windows kurucusu olarak yapılıyor, Linux kaynaktan derleniyor; README'de macOS desteğinden söz edilmiyor. Video Storyboard beta olarak işaretli ve süreklilik ile zamanlamanın insan denetimi gerektirdiği açıkça yazılmış. MIT lisanslı, ~360 yıldız.",
+      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın olası bağlam Folio'nun günlük içerik üretiminde anlatım ve video birleştirme adımı olurdu. Ama senin üç kriterinin üçü de karşılanmıyor: dağıtım Windows odaklı ve macOS desteği belirtilmemiş, uygulama GUI merkezli olduğu için n8n'den ya da Claude Code'dan çağrılamaz, ve akış tek kullanıcılı bir masaüstü projesi olarak tasarlanmış. Folio'ya asıl lazım olan şey bu kabuk değil, altında çalışan Piper ve Kokoro gibi yerel TTS motorları — onları doğrudan kullanmak hem Mac'te çalışır hem de pipeline'a girer. Uygulamayı bir ürün olarak değil, hangi motorların bir araya getirildiğini gösteren bir kaynak listesi olarak okuyabilirsin.",
+      "matched_project": null,
+      "relevance": 2,
+      "investment_note": null
+    },
+    {
+      "full_name": "oboroge0/hayamimi",
+      "inputs_hash": "d8c596a03d6de8aaca6e9b1dfa836fcb",
+      "description_tr": "hayamimi, yalnızca CPU üzerinde çalışan gerçek zamanlı çok dilli bir konuşma tanıma aracı. Tek bir genel amaçlı model kullanmak yerine her konuşmayı diline göre uzman bir modele yönlendiriyor: ja/zh/ko/yue ve İngilizce ile 24 Avrupa dili kendi modeline gidiyor, kalan diller Meta'nın Omnilingual ASR'ına düşüyor; modeller sherpa-onnx üzerinden INT8 nicelenmiş ONNX olarak çalıştığı için PyTorch veya CUDA gerekmiyor. Sen konuşurken kısmi altyazı üretiyor, sustuktan yaklaşık 100 ms sonra nihai satırı veriyor, iki saniyelik sessizlikten sonra ikinci bir geçişle daha doğru bir temiz transkript çıkarıyor. Konuşmacı etiketleme, canlı çeviri, hotword sözlüğü ve tarayıcı paneli var; 2 GB RAM altında ve altı çekirdekli bir masaüstü CPU'sunda gerçek zamanın 10–50 katı hızda çalıştığı ölçülmüş. README kaybettiği dilleri ve bilinen kısıtları ayrı bir karşılaştırma dosyasında açıkça veriyor; MIT rozeti taşıyor, ~346 yıldız.",
+      "usage_tr": "Kişisel bilgi tabanı projesinin transkripsiyon katmanı için evdeki 7/24 açık Mac mini'ye kurulabilecek kadar hafif: GPU istemiyor, 2 GB RAM'in altında kalıyor ve bir servis olarak arka planda çalışıyor. Sesli notları ve toplantı kayıtlarını buraya besleyip çıktıyı n8n üzerinden Supabase'e yazdırabilirsin; konuşmacı etiketleri, Wispr Flow'un tek konuşmacı odaklı çıktısında eksik kalan tarafı doldurur. Tarayıcı paneli ayrı bir istemci yazmadan asistanına devredilebilecek kadar basit duruyor. Canlı altyazı ve çeviri, İngilizce dinleme çalışmasında ikinci bir kullanım alanı açar. Uyarı: ölçümlerin ağırlık merkezi Japonca; İngilizce ayrı bir rotadan geçiyor ve hotword sözlüğünün her katmanda etkili olmadığı README'de yazılı — kendi ses örneklerinle ölçmeden karar verme. İkinci uyarı: kelime düzeyinde zaman damgası vaat etmiyor, yani Lyricdrop'un hizalama problemine aday değil.",
+      "matched_project": "Kişisel bilgi tabanı",
+      "relevance": 6,
+      "investment_note": null
+    }
+  ]
+}

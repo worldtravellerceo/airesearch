@@ -1,0 +1,175 @@
+{
+ "repos": [
+  {
+   "full_name": "tonhowtf/omniget",
+   "inputs_hash": "cf3b5116c0b19e5c6a93ee62e599b070",
+   "description_tr": "OmniGet, Tauri, Rust ve Svelte ile yazılmış, tek masaüstü uygulamada üç işi birleştiren açık kaynak bir araç. İndirici tarafında yt-dlp üzerine kurulu bir arayüz sunuyor: YouTube, Instagram, TikTok, X, Pinterest ve 1.800'ü aşkın site, ayrıca kurs platformları, torrent ve altyazı indirme, terminal gerektirmeden. Araç kutusu tarafında Whisper ile transkripsiyon, metinden konuşma, ffmpeg dönüşümleri, görüntü/video sıkıştırma, PDF ve EPUB araçları ile Anki kartları var. Ajan tarafında Claude Code, Codex, Gemini CLI ve Ollama/LM Studio üzerindeki yerel modelleri çalıştıran bir arayüz bulunuyor; izin ve diff incelemesi, undo checkpoint'leri, zamanlanmış ve dayanıklı işler, cron/webhook tetikleyicileri, testler geçene kadar döngüde çalıştırma ve yerleşik MCP sunucusu/istemcisi içeriyor. GPL-3.0 lisanslı, Şubat 2026'da açılmış ve 14.170 yıldıza ulaşmış; Windows, macOS ve Linux için dağıtılıyor ve dosyaların makinede kaldığı vurgulanıyor.",
+   "usage_tr": "Lyricdrop v2'nin içerik hattındaki iki adım buradaki iki parçaya doğrudan karşılık geliyor: yt-dlp tabanlı indirme ve Whisper transkripsiyonu, ikisi de ofisteki M4 Pro Mac'te yerel çalışır ve API maliyeti getirmez — ElevenLabs ile Apify'ı bırakıp yerel STT ve açık kaynak indiriciye geçme kararının tam karşılığı. Şarkı sesini toplama ve ilk kaba transkripti çıkarma adımını GUI'den yürütüp, tekrar eden koşumları yerleşik MCP sunucusu üzerinden Claude Code'a bağlayabilirsin. GPL-3.0 ve bir masaüstü uygulaması olması nedeniyle kodu admin paneline gömmek yerine panelin yanında duran bir operatör aracı olarak konumlandırman daha gerçekçi; bu haliyle asistanına da devredilebilir. Ajan tarafındaki izin, undo ve zamanlanmış iş özellikleri, Claude Code'u terminal yerine arayüzden yönetme tercihine uyar. Uyarı: Whisper çıktısı tek başına kelime düzeyinde hizalama için yeterli değildir; zamanlama doğruluğunu ayrı bir forced alignment adımıyla ölçmen gerekir. İndirme tarafında platform kullanım şartlarına uyum tamamen sende kalır.",
+   "matched_project": "Lyricdrop",
+   "relevance": 8,
+   "investment_note": null
+  },
+  {
+   "full_name": "hypit-ai/hypit",
+   "inputs_hash": "a7666de85507bcb735902abf7b2b2c6f",
+   "description_tr": "Hypit, viral bir videoyu girdi alıp akışını çıkararak yeni varyantlar üreten, TypeScript ile yazılmış bir video otomasyon sistemi. Kendi işaretleme dili ve derleyicisi üzerine kurulu; yüz değişimi, metin değişimi ve B-roll değişimi gibi adımları ajanlara yaptırıp tek komutla çok sayıda varyant çıkarmayı hedefliyor. ffmpeg tabanlı bir işleme hattı, eklenti sistemi ve monorepo yapısı var; Node 22 ve pnpm gerektiriyor. Temmuz 2026'da açılmış ve 13.546 yıldıza ulaşmış; lisansı standart Apache-2.0 değil, koşullar eklenmiş bir varyant. Üretim kalitesi ve çalıştırma maliyeti büyük ölçüde bağlanan üçüncü parti video ve ses modellerine bağlı.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, Lyricdrop lansmanı için planladığın içerik otomasyonu ve Dubai'de kurmayı düşündüğün uygulama stüdyosunda reklam kreatifi üretimi olabilir. Ancak projenin çekirdek vaadi mevcut bir viral videoyu klonlamak; senin ihtiyacın kendi ürününün tanıtım kreatifini üretmek ve bunun için kod tabanlı, Claude Code'dan sürülebilen bir hat daha uygun. Varyant başına üçüncü parti üretim modeli çağrıldığı için maliyet varyant sayısıyla doğrusal büyür, bu da Max aboneliğiyle kapatamayacağın ayrı bir kalem açar. Lisans koşullarının standart olmaması ticari kullanımda ayrıca kontrol gerektirir. Başkasının videosunu klonlama çerçevesi, kurmak istediğin sessiz ve gösterişsiz marka diline de ters düşüyor.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "miuuyy/codex-chatgpt-web",
+   "inputs_hash": "3bb4fc9f551575c4154166e6740f4ceb",
+   "description_tr": "codex-chatgpt-web, ChatGPT Web hesabındaki modelleri (uygun hesaplarda Pro dahil) Codex'in yerel model seçicisine bir sağlayıcı gibi ekleyen bir launcher. Gömülü bir tarayıcı üzerinden ChatGPT oturumunu kullanıyor; böylece Codex kotası harcanmadan ChatGPT Web'in ayrı limitleriyle çalışılıyor, bağlam, araçlar, streaming ve görsel desteği korunuyor. 'Full harness' modunda MCP üzerinden görevin dosyalarına, terminaline ve onay akışına bağlanıyor ve konuşmalar Codex görevine bağlı kalıyor. Kendi tarayıcısını ve çalışma zamanını paketlediği için ayrı Chrome, Node veya Bun kurulumu gerekmiyor; Windows, macOS (Apple Silicon ve Intel) ve Linux için kurulumlar var. MIT lisanslı, Temmuz 2026'da açılmış, 10.537 yıldız. Yaklaşım doğası gereği sağlayıcının arayüzüne ve kullanım şartlarına bağımlı, bu yüzden kırılgan bir zemin üzerinde duruyor.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, API anahtarı yerine abonelik üzerinden çalışma tercihin — bu araç da aynı mantığı kuruyor ama ChatGPT tarafında. Günlük zincirin Claude Code Max aboneliği ve yanında OpenCode üzerine kurulu; Codex senin akışında yok, dolayısıyla kazanacağın bir şey yok. Tarayıcı oturumunu otomatikleştirerek kota sınırlarını aşmak sağlayıcı şartları açısından risklidir ve üretim işine bağlanmaya uygun değildir. İzlemeye değer tek yanı, harness'ların model sağlayıcıdan bağımsızlaşma eğilimi; açık kaynak istemciyi fork'layıp kendi sürümünü yazma alışkanlığın açısından desen olarak bakılabilir.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "thesysdev/openui",
+   "inputs_hash": "783af5073d46052cf864eb156c28b7e8",
+   "description_tr": "OpenUI, dil modeli çıktısını düz metin yerine yapılandırılmış arayüze çeviren, renderer'dan bağımsız bir generative UI çerçevesi. Merkezinde OpenUI Lang var: streaming için tasarlanmış, aynı arayüzü JSON ile tarif etmeye göre belirgin biçimde daha az token harcadığı belirtilen kompakt bir dil. Resmi React desteği, hazır bileşen kütüphaneleri (grafik, form, tablo, layout), izin verilen bileşenlerden prompt talimatı üretme ve token'lar geldikçe aşamalı render sunuyor; diğer çerçeveler için topluluk entegrasyonları var. Aralık 2024'te açılmış, MIT lisanslı ve 9.796 yıldıza ulaşmış; thesys ekibi tarafından sürdürülüyor, Discord topluluğu ve bir playground'u var. Kurulum bir CLI şablonuyla başlıyor ve varsayılan olarak bir model sağlayıcı anahtarı bekliyor.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, istediğin asistan/orkestratör ajanın cevaplarını düz metin yerine kart ve tablo olarak döndürmesi olabilir. Lyricdrop'un oyun ekranı ve Folio'nun feed'i sabit tasarımlar — modelin arayüzü üretmesine ihtiyaç duymuyorlar, üstelik ikisi de Expo/React Native tarafında, buradaki resmi destek ise React için. Token tasarrufu iddiası ancak arayüzü gerçekten modele ürettirdiğin bir üründe anlam kazanır. Kendi uygulamana gömülebilir olması teknik olarak uygun, ama şu an gömülecek bir problem yok. To-do ve hayat orkestrasyonu uygulamasını çok kaynaklı bir asistan arayüzüne çevirdiğin gün buraya yeniden bakmak mantıklı olur.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "rocketride-org/rocketride-server",
+   "inputs_hash": "727c6ddbf04661113294d30095691d0d",
+   "description_tr": "RocketRide, C++ çekirdekli bir veri ve AI pipeline motoru; pipeline'lar taşınabilir JSON olarak tanımlanıyor, VS Code eklentisiyle görsel olarak kuruluyor ve çok iş parçacıklı bir runtime tarafından çalıştırılıyor. 50'den fazla hazır düğüm var: 13 LLM sağlayıcısı, 8 vektör veritabanı, OCR ve NER gibi adımlar dahil. Python ve TypeScript SDK'ları, bir MCP sunucusu ve Docker dağıtımı sunuluyor; tamamının kullanıcının kendi altyapısında çalıştığı ve vendor lock-in olmadığı vurgulanıyor. MIT lisanslı, Şubat 2026'da açılmış, 9.344 yıldız; runtime v3 sürümünde ve CI aktif. Kurulum ve işletme yükü hafif bir kütüphaneden çok bir platform kurmaya benziyor.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, sesli not uygulamandaki RAG/semantik arama katmanı ve Lyricdrop'un toplu şarkı işleme hattı olabilir. Ama o işleri bugün n8n ile Claude Code'un yazdığı betikler hallediyor; buraya geçmek çalışan bir hattı platform kurulumuyla değiştirmek demek ve 'önce çalışan basit sürüm' tercihine ters düşer. Kendi altyapında çalışması artı yanı; buna karşılık C++ runtime, Docker ve VS Code eklentisi üçlüsü tek kişilik bir kurulumda kalıcı bakım yükü getirir. Pipeline'ı tek bir JSON'a indirmesi, ileride bir hattı asistanına devretmek istersen yeniden değerlendirmeye değer tek özellik. Şimdilik ihtiyaç ortaya çıkana kadar izlemede tutman yeterli.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "Vincentwei1021/video-shotcraft",
+   "inputs_hash": "9372c0caad50aec593441b56c393397c",
+   "description_tr": "video-shotcraft, Claude Code ve Codex için yazılmış bir agent skill; ürün tanıtım videolarını Remotion ile kod üzerinden üretiyor. Depoda 152 çekim reçete kartı, 214 stil ve hareket önizlemesi ile üretime hazır bir şablon bulunuyor; gerçek sayfa yakalamaları, 2.5D kamera hareketleri, ritme senkron kesmeler ve ses efektleri destekleniyor. Ajan ürüne yönlendirildiğinde storyboard, animasyon ve ses tasarımını sırayla üretiyor. Apache-2.0 lisanslı, Temmuz 2026'da açılmış ve 9.224 yıldıza ulaşmış; canlı bir önizleme galerisi ile İngilizce, Çince ve Japonca dokümantasyonu var. Aynı serinin video-talkcraft adlı kardeş projesi anlatım videoları için kelime düzeyinde yerel hizalama yaptığını belirtiyor.",
+   "usage_tr": "Lyricdrop lansmanında mağaza videosu, tanıtım klibi ve sosyal kreatifleri üretme adımında kullanabilirsin; çıktı Remotion kodu olduğu için aynı şablondan dil ve şarkı başına varyant üretmek tekrar edilebilir bir işe dönüşür. Zaten Claude Code ile çalıştığın için ek bir API maliyeti getirmez ve render ofisteki M4 Pro Mac'te yerel biter. Uygulama stüdyosu fikrinde de her uygulama için aynı reçete setinden kreatif çıkarmak, tek tek tasarım yaptırmaktan ucuza gelir. Şablonlar bir kez tanımlandıktan sonra tekrar üretimi asistanına devredebilirsin; onay sende kalır. Uyarı: reçete kartları SaaS ve ürün ekranı anlatımına göre kurulmuş, müzik üstüne kurulu bir oyun ekranı için bir kısmını yeniden yazman gerekir. Uzun videolarda render Mac'i uzun süre meşgul eder, bu işleri gece koşumlarına almak mantıklı.",
+   "matched_project": "Lyricdrop",
+   "relevance": 6,
+   "investment_note": null
+  },
+  {
+   "full_name": "google/artemis",
+   "inputs_hash": "4cfad4ea4c6d0ee4db76988be276df40",
+   "description_tr": "ARTEMIS, doğal dildeki talimatları gerçek Android cihazlarda yürütülen otomasyona çeviren, Google tarafından yayımlanmış bir Python projesi. Uygulamalar arası akışları çalıştırıyor, Logcat çıktısı ve ekran görüntüsü topluyor; öğe indeksleri yoksa koordinat ve görsel hedeflemeye düşüyor. MCP sunucusu olarak Claude Code, Antigravity ve Windsurf gibi araçlara bağlanıyor; adım başına tipik 3-5 saniyelik bir gözlemle-uygula döngüsü ve uzun soluklu kararlılık testleri için ayrı bir keşif modu var. Gemini, Claude, GPT-4o ve Qwen-VL gibi çok modlu modellerle çalışıyor; AndroidWorld kıyaslamasında %99'un üzerinde tamamlama bildiriliyor. Apache-2.0 lisanslı, Ağustos 2026'da açılmış, 9.132 yıldız; Python 3.12 ve üzeri gerekiyor.",
+   "usage_tr": "Lyricdrop'ta kendin yapmak istemediğin manuel testi devretmek için en somut adaylardan biri: 'şu şarkıyı aç, üç boşluğu doğru cevapla, highlight kaymasını ekran görüntüsüyle kaydet' gibi talimatları Android cihazda tekrar tekrar koşturabilirsin. MCP üzerinden Claude Code'a bağlandığı için mevcut zincirine oturur; cihaz ofisteki Mac'e bağlı kalır ve koşum yerel olur. Admin panelinde duran tarayıcı playtest gate'inin mobil karşılığını burada kurup regresyonları gece çalıştırabilirsin. İki sınırı var: yalnızca Android, yani iPhone tarafı kapsam dışı; ve çok modlu model çağrıları Max aboneliğinin dışında API maliyeti doğurur, bu yüzden adım sayısını sınırlı tutmak gerekir. Android TV sürümü için bir vaat yok; leanback arayüzünde uzaktan kumanda odak akışını ayrıca denemelisin. Sonuçların Logcat ve ekran görüntüsüyle gelmesi, hataları asistanının takip edebileceği biçimde biriktirmeni sağlar.",
+   "matched_project": "Lyricdrop",
+   "relevance": 7,
+   "investment_note": null
+  },
+  {
+   "full_name": "trailhq/Graft",
+   "inputs_hash": "0ace3ddea815ff47992aa55ed0b52c92",
+   "description_tr": "Graft, kodlama ajanlarının büyük kod tabanlarını daha az token harcayarak anlaması için tree-sitter ile bir kod grafiği çıkaran bir bağlam katmanı. Claude Code, Cursor, Codex ve Gemini gibi araçlara CLI ve MCP sunucusu olarak bağlanıyor; her görevden öğrenip güncellenen bir skill dosyası tutuyor. Depodaki karşılaştırma tablosu soğuk Claude Code'a kıyasla %46 daha az araç çağrısı, %42 token ve %60 süre tasarrufu ile doğrulukta %54'ten %66'ya artış bildiriyor; bunlar projenin kendi ölçümleri. MIT lisanslı, Temmuz 2026'da açılmış, 8.997 yıldız; npm üzerinden dağıtılıyor ve anonim, kapatılabilir telemetri içeriyor. Ayrıca aynı ekibin barındırılan bir servisi de tanıtılıyor.",
+   "usage_tr": "Lyricdrop v2 sıfırdan yazıldığı ve kod tabanı hızla büyüdüğü için en görünür kazanç orada: Claude Code her oturumda dosyaları yeniden keşfetmek yerine grafikten gider, bu da Max aboneliğinin oturum limitlerine daha geç çarpman demektir. Kurulumu bir npm paketi ve bir MCP kaydından ibaret olduğu için ofisteki Mac'teki düzenine ek bir servis getirmez. Superpowers eklentisiyle çakışmaz; biri süreç, bu ise bağlam tarafında çalışır. Ölçmeden benimseme: aynı görevi grafikli ve grafiksiz koşturup süre ile tekrar sayısını karşılaştır, çünkü tablodaki rakamlar projenin kendi ölçümü. Uyarı: telemetri varsayılan açık geliyor, kapatılabiliyor; barındırılan tarafı açmadığın sürece indeksleme yerel kalır.",
+   "matched_project": "Lyricdrop",
+   "relevance": 6,
+   "investment_note": null
+  },
+  {
+   "full_name": "zhouxiaoka/autoclip",
+   "inputs_hash": "eaed24f0610703c3d888605ae6edc843",
+   "description_tr": "AutoClip, uzun videoları altyazı üzerinden analiz edip öne çıkan bölümleri bulan ve otomatik kısa klipler ile derlemeler üreten bir araç. Altyazıdan anahat, konu zaman çizelgesi, parlaklık skoru ve klip başlığı çıkarıyor; yerel video dosyası, YouTube ve Bilibili bağlantısı ile isteğe bağlı SRT altyazısı kabul ediyor. Masaüstü uygulaması (macOS Apple Silicon ve Windows), Docker tabanlı web arayüzü ve CLI/MCP olmak üzere üç kullanım biçimi sunuyor; v1.3.2'den itibaren hazır kliplerin bağlı sosyal hesaplara yüklenmesi de aynı ekrandan yapılabiliyor. MIT lisanslı, Temmuz 2025'te açılmış, 8.660 yıldız; arayüz sekiz dile çevrilmiş ve sürümler düzenli çıkıyor. Analiz adımı bir dil modeline bağlı olduğundan çalıştırma maliyeti seçilen sağlayıcıya göre değişiyor.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, stand-up özelini çok modlu veriyle analiz ettiğin çalışmanın altyazı ayağı ve psikoloji/sosyoloji içeriklerini Türkçe YouTube kaynaklarından takip etme alışkanlığın. Lyricdrop'un kaynak materyali şarkı; kesilecek uzun oturum kaydı ya da podcast yok, dolayısıyla ürün hattına girecek bir adım bulunmuyor. Mac'te Apple Silicon paketi olduğu için video işleme yerel kalır, ama analiz için bağladığın model ayrı bir maliyet kalemidir. Kendi uygulamana gömmek için uygun bir bileşen değil; CLI/MCP arayüzü sayesinde en fazla Claude Code'dan tetiklenen yardımcı bir araç olur. İleride uzun formatlı içerik üretmeye başlarsan sosyal klip üretimi için yeniden bakılabilir.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "dataelement/dsh-desktop",
+   "inputs_hash": "eddf6b141323eafcaacef44501b7e2ea",
+   "description_tr": "DSH Desktop, DeepSeek Harness'ı kurulabilir bir masaüstü uygulaması olarak paketleyen, yerel öncelikli bir istemci. Harness'ı otomatik başlatıyor; profil, eklenti, workspace, model ayarı ve oturumları uygulama dizininin dışında tutuyor. Resmi DeepSeek modellerinin yanında yaygın üçüncü parti sağlayıcıları, taşınabilir agent preset'lerini, telefondan oturuma devam etmeyi ve kaynak metinden düzenlenebilir PPTX üretmeyi destekliyor. macOS (Apple Silicon ve Intel) ve Windows x64 için imzalı kurulumlar sunuluyor; MIT lisanslı, Ağustos 2026'da açılmış, 8.417 yıldız. Proje kendini erken önizleme olarak tanımlıyor ve hızla değişen bir harness sürümünün üzerine kurulu olduğunu belirtiyor.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, iPhone'dan ofis Mac'ine bağlanırken yaşadığın oturum kopmaları ve açık kaynak bir istemciyi fork'layıp kendi sürümünü yazma alışkanlığın. Telefondan oturuma devam etme yaklaşımı desen olarak okunmaya değer, ama uygulama DeepSeek Harness'a bağlı; senin zincirin Claude Code ve OpenCode üzerine kurulu olduğu için doğrudan bir karşılığı yok. Yeni bir model sağlayıcı eklemek Max aboneliğinin dışında ayrı bir maliyet açar. Erken önizleme etiketi ve hızla değişen bağımlılık, üretim işine sokmayı şimdilik riskli kılıyor. OpenCode için planladığın istemciyi tasarlarken oturum taşıma ve profil/veri izolasyonu tarafında referans olarak açabilirsin.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "max-sixty/worktrunk",
+   "inputs_hash": "36f920947f769acf91468f525df84717",
+   "description_tr": "Worktrunk, git worktree yönetimini komut satırından yapan ve paralel AI ajan akışları için tasarlanmış bir Rust CLI'ı. Her ajana ayrı bir çalışma ağacı açıp dal, dizin ve durum takibini birkaç komuta indirgemeyi hedefliyor. MIT veya Apache-2.0 lisansı altında dağıtılıyor, crates.io üzerinden kuruluyor; CI, kod kapsamı ölçümü ve ayrı bir dokümantasyon sitesi var. Ekim 2025'te açılmış ve 8.333 yıldıza ulaşmış. Tek bir işi yapan, bağımlılığı az bir araç olduğu için benimseme ve geri çıkma maliyeti düşük.",
+   "usage_tr": "Lyricdrop v2'yi yazarken aynı depoda birden fazla Claude Code oturumunu paralel çalıştırmak için doğrudan bunun için tasarlanmış: hizalama servisi, admin panel ve mobil taraf ayrı worktree'lerde, birbirlerinin dosyalarını bozmadan ilerler. Ofisteki M4 Pro Mac'te yerel çalışır, ek API maliyeti yoktur ve tek binary olduğu için mevcut kurulumunu değiştirmez. İstediğin 'iki ayrı açıdan review' kurgusunu da kolaylaştırır: inceleme ayrı bir ağaçta yapılırken geliştirme devam eder. Terminal tarafında bir araç, GUI tercihine uymaz; ama günlük kullanımı birkaç komuttan ibaret kalır. Uyarı: paralel ajan sayısını artırmak Max aboneliğinin oturum limitlerini daha hızlı tüketir, kazancı ölçerek artır.",
+   "matched_project": "Lyricdrop",
+   "relevance": 6,
+   "investment_note": null
+  },
+  {
+   "full_name": "apify/apify-mcp-server",
+   "inputs_hash": "29d82c1cbb79d0bd4d9e237752496faa",
+   "description_tr": "Apify MCP Server, Apify Store'daki binlerce hazır scraper ve otomasyon aktörünü Model Context Protocol üzerinden ajanlara açan bir sunucu. Sosyal medya, arama motorları, haritalar ve e-ticaret siteleri gibi kaynaklardan veri çekmeyi tek bir araç arayüzüne indiriyor. OAuth desteklediği için Claude.ai veya VS Code gibi istemcilere yalnızca URL ile bağlanılabiliyor; barındırılan sürüm mcp.apify.com adresinde çalışıyor ve yapılandırılmış çıktı şeması çıkarımı gibi bazı özellikleri yalnızca orada sunuyor, yerel stdio kurulumu da mümkün. Aktör çalıştırmak için jeton satın alma ve istek başına ödeme gibi ajanlara yönelik ödeme yolları ekleniyor. MIT lisanslı, Ocak 2025'te açılmış, 8.040 yıldız; Apify tarafından sürdürülüyor ve eski SSE taşıması kaldırılmış durumda.",
+   "usage_tr": "Arslan Holding'in deal sourcing ve pazar araştırması adımında, MENA ve Türkiye tarafındaki şirket listelerini, haber ve profil verisini toplamak için araştırma ajanının arkasına koyabileceğin hazır bir tedarik katmanı. Asistanının elle yürüttüğü tedarikçi karşılaştırması ve etkinlik/kişi taraması gibi işler de Claude Code'dan tetiklenen düzenli koşumlara dönüşebilir. Asıl uyarı maliyet tarafında: aktörler kullanım başına ücretli ve tam olarak bu nedenle Lyricdrop'ta Apify'ı bırakmıştın; araştırmada hacim düşük olduğu için hesap tutabilir, ama her koşuma üst sınır koymadan açma. Yerel çalışmaz, veri üçüncü parti bir altyapıdan geçer; hesabın ve verinin holding kontrolünde kalması ilkesine uygun kurulması gerekir. Kendi uygulamana gömülecek bir bileşen değil, araştırma ajanlarını besleyen bir kanal olarak düşün.",
+   "matched_project": "Arslan Holding",
+   "relevance": 5,
+   "investment_note": null
+  },
+  {
+   "full_name": "genspark-ai/genoffice",
+   "inputs_hash": "a0b92b5250101c7a646da102727268be",
+   "description_tr": "GenOffice, Word, Excel, PowerPoint ve PDF dosyalarını gerçek formatlarında açıp kaydeden açık kaynak bir ofis paketi. Docs, Sheets, Slides, PDF, Markdown ve HTML editörlerinin yanında yerleşik bir AI paneli bulunuyor; ayrıca bir `genoffice` CLI'ı ve agent skill'i sayesinde Claude Code, Codex ve Cursor yerelde .docx, .xlsx ve .pptx dosyaları üretip düzenleyebiliyor. Kendi anahtarını getir modeliyle çalışıyor ve dosyalar makinede kalıyor; macOS, Windows ve Linux için paketler yayımlanıyor, bir MCP sunucusu da sunuluyor. Apache-2.0 lisanslı, Temmuz 2026'da açılmış ve 7.486 yıldıza ulaşmış. Genspark ekibi tarafından sürdürülüyor, sürümler düzenli çıkıyor ve README yirmiye yakın dile çevrilmiş.",
+   "usage_tr": "Arslan Holding tarafında en net karşılığı var: gelen pitch deck ve finansal modelleri okuyup özet çıkarma, karşılaştırma tablosu üretme ve yatırım notunu doğrudan .docx veya .pptx olarak yazma adımı Claude Code'dan yerelde yapılabilir hale gelir. Asistanının ürettiği karşılaştırma ve araştırma dosyaları da aynı hattan geçebilir; çıktı gerçek Office formatında olduğu için karşı tarafa doğrudan gönderilebilir. Dosyaların Mac'te kalması, paylaşılmamış belgelerin üçüncü parti bir buluta yüklenmemesi açısından önemli. Agent skill üzerinden çalıştırdığında model tarafı zaten Claude Code'un; uygulamanın kendi AI panelini kullanırsan ayrı bir anahtar ve maliyet gerekir. Uyarı: karmaşık biçimlendirmeli kurumsal şablonlarda biçim kayıpları olabilir, dışarı gidecek belgeleri gözle kontrol etmek gerekir.",
+   "matched_project": "Arslan Holding",
+   "relevance": 5,
+   "investment_note": null
+  },
+  {
+   "full_name": "AIPentest/CyberStrikeAI",
+   "inputs_hash": "7339cb368fd544a9e461d801dd72be7f",
+   "description_tr": "CyberStrikeAI, yetkili güvenlik operasyonları için planlama, yürütme, insan denetimi, kanıt toplama ve tekrar oynatmayı tek bir denetlenebilir çalışma alanında birleştiren, Go ile yazılmış bir platform. Eino tabanlı ajanlar, MCP yerlisi araçlar, RAG bilgi tabanı, görsel iş akışları ve saldırı zinciri modellemesi içeriyor. Web konsolu üzerinden görev yönetimi, zafiyet takibi, WebShell yönetimi, MCP yönetimi ve bilgi tabanı ekranları sunuluyor; tek komutla kurulum ve ayrı bir güvenlik sertleştirme kılavuzu var. Apache-2.0 lisanslı, Kasım 2025'te açılmış, 7.008 yıldız. Depo, aracın yalnızca sahibi olunan veya açıkça yetki verilmiş sistemlerde kullanılması gerektiğini özellikle vurguluyor.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, Supabase ve DigitalOcean üzerinde duran Lyricdrop ile Kanarya verilerinin güvenliği olabilir, ama o ihtiyaç saldırı platformu kurmakla değil, yapılandırma ve erişim denetimiyle karşılanır. Bu araç bir güvenlik ekibinin operasyon merkezi; tek kişilik bir geliştirme kurulumunda kurulum ve sertleştirme yükü faydasını aşar. Yetkisiz sistemlerde kullanımı hukuki risk taşıdığı için denemenin kendisi ayrı bir maliyet kalemidir. Yine de ajanların denetlenebilir yürütme ve kanıt biriktirme deseni, kendi otomasyonlarında izin ve iz kaydı tasarlarken bakmaya değer bir örnek.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": "AI yerlisi güvenlik operasyonu, Arslan Holding'in erken aşama B2B yazılım tezine oturan ve MENA'da kurumsal alıcısı bulunan bir kategori; ekibi ve ticarileşme planı izleme listesine alınabilir."
+  },
+  {
+   "full_name": "google/ax",
+   "inputs_hash": "5d1dc52ddb6d2dfdda44561966561f7d",
+   "description_tr": "AX, Google tarafından yayımlanan, Go ile yazılmış deklaratif bir ajan orkestrasyon çalışma zamanı. Kubernetes'e benzer bir manifest modeliyle çalışıyor: Task ajanı izole bir sandbox'ta CPU ve bellek sınırlarıyla koşturuyor, Workspace git depolarını, MCP sunucularını ve skill paketlerini önceden bağlıyor, Gateway dışa giden trafiği açık bir host listesine kilitliyor, Model ise platformun kullandığı dil modelini tanımlıyor. Boşta kalan ajanı duraklatma, sürdürme ve çalışan ajana ssh ile bağlanma komutları var. Agent Substrate üzerine kurulu ve küme başına çok büyük sayıda ajan iş yükü çalıştırmak için tasarlanmış; çalıştırmak için bir Kubernetes kümesi ve container registry gerekiyor. Apache-2.0 lisanslı, Mart 2026'da açılmış, 7.000 yıldız; depo kararlı sürüm öncesinde büyük kırıcı değişiklikler olacağını açıkça uyarıyor.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, tüm projelerini bilen bir orkestratör ajan isteğin — ama o istek kişisel bir asistan, bu ise küme ölçeğinde iş yükü çalıştıran bir altyapı. Kubernetes kümesi gerektirdiği için ofisteki Mac ve evdeki Mac mini üzerine kurulu düzenine oturmuyor. Manifest'lerdeki ağ kısıtlama ve sandbox mantığı, ajanların kontrolsüz maliyet üretmesini engelleme fikri açısından okunmaya değer; aynı sınırları kendi n8n ve Claude Code akışlarında çok daha basit kurabilirsin. Kararlı sürüm öncesi kırıcı değişiklik uyarısı da şimdilik uzak durmak için yeterli bir sebep.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "kunchenguid/firstmate",
+   "inputs_hash": "1adafd1e2bc93c779e1a1753054625ae",
+   "description_tr": "firstmate, tek bir ajanla konuşup arkasında bir ajan ekibi çalıştırmayı hedefleyen ve kendini 'agent distro' olarak tanımlayan bir depo. Kurulacak bir uygulama yok: klonlanan dizinin kendisi dağıtım — AGENTS.md, paket içi skill'ler ve herhangi bir terminal kodlama ajanının izleyebileceği yardımcı betiklerden oluşuyor. Birincil ajan görevleri dağıtıyor, her görevi ayrı bir git worktree'sinde ve görünür bir tmux penceresinde açıyor, tamamlanana kadar denetliyor ve sonucu PR, onaylanmış yerel merge ya da bağımsız bir inceleme raporu olarak döndürüyor. Daha büyük filolar için aynı makinede veya SSH ile erişilebilen başka bir makinede çalışan kalıcı 'secondmate'ler tanımlanabiliyor. MIT lisanslı, Haziran 2026'da açılmış, 6.972 yıldız; macOS ve Linux destekleniyor.",
+   "usage_tr": "Lyricdrop v2'de aynı anda ilerleyen işler için doğrudan kullanılabilir: tek bir ajana işi tarif edip paralel oturumları onun yönetmesi, 'orkestra şefi' çalışma tarzının kod tarafındaki karşılığı. Klonlanan dizinden ibaret olduğu için ofisteki Mac'e kurulum maliyeti neredeyse sıfır ve Claude Code'u kendi aboneliğinle kullanmaya devam edersin; evdeki Mac mini SSH ile ikinci bir işçi hâline getirilebilir. Her görevin ayrı worktree'de çalışması, v1'de pişman olduğun 'tek seferde yaz' yaklaşımının yerine inceleme kapıları koymanı kolaylaştırır. Beklentiyi doğru kur: bu, istediğin 'tüm projelerini bilen hayat orkestratörü' değil, yalnızca kod görevlerini paralelleştiren bir katman. Uyarı: tmux ve kabuk üzerine kurulu, GUI yok; ayrıca paralel ajan sayısı arttıkça Max aboneliğinin limitleri hızla tükenir.",
+   "matched_project": "Lyricdrop",
+   "relevance": 6,
+   "investment_note": null
+  },
+  {
+   "full_name": "tech-leads-club/agent-skills",
+   "inputs_hash": "79b1687f38c03bc1953072ac963a5b9a",
+   "description_tr": "Agent Skills, kodlama ajanları için doğrulanmış ve test edilmiş skill'ler barındıran bir kayıt defteri. Antigravity, Claude Code, Cursor ve Copilot gibi araçlara npm üzerinden dağıtılan bir CLI ile kurulum yapılıyor; skill'ler yayımlanmadan önce güvenlik ve doğrulama sürecinden geçiriliyor. Projenin çıkış noktası, açık pazar yerlerindeki skill'lerin %13'ünden fazlasında kritik güvenlik açığı bulunduğuna dair bir rapor. TypeScript ile yazılmış, Nx tabanlı bir monorepo; semantic-release ile düzenli sürüm çıkıyor, Ocak 2026'da açılmış ve 6.637 yıldıza ulaşmış. Lisans standart bir SPDX kimliğiyle işaretlenmemiş, bu yüzden kullanım öncesinde okunması gerekiyor.",
+   "usage_tr": "Lyricdrop v2'yi Superpowers eklentisiyle yazarken kullandığın skill setini genişletmek için bakabileceğin bir kaynak; tek tek depolardan kopyalamak yerine sürümlenmiş ve incelenmiş bir kanaldan kurulum yaparsın. Asıl değeri güvenlik tarafında: Claude Code'a verdiğin skill'ler ofis Mac'inde secrets ve Supabase anahtarlarıyla aynı ortamda çalışıyor, dolayısıyla nereden geldikleri önemli. Kurulum npm üzerinden yerel, ek API maliyeti yok ve Max aboneliğiyle uyumlu. İstediğin 'geliştirici doğruluğu ve ürün mantığı için ayrı review' kurgusunu hazır review skill'leriyle denemek için uygun bir başlangıç noktası. Uyarı: her kayıt defteri gibi bu da tek bir güven noktası; kurduğun skill'in içeriğine yine de bakmak ve lisans durumunu netleştirmek gerekir.",
+   "matched_project": "Lyricdrop",
+   "relevance": 5,
+   "investment_note": null
+  },
+  {
+   "full_name": "arcboxlabs/arcbox",
+   "inputs_hash": "b6f5333545176627829b88598554701f",
+   "description_tr": "ArcBox, macOS için sıfırdan Rust ile yazılmış bir konteyner ve sanal makine çalışma zamanı; Docker Desktop ve OrbStack'e açık kaynak bir alternatif olmayı hedefliyor. Kendi VMM'i, VirtIO aygıtları, dosya sistemi paylaşımı ve ağ veri yolu var; tek bir servis ve tek CLI üzerinden dört tür iş yükü çalıştırıyor: Docker uyumlu konteynerler ve yerel Kubernetes, AI ajanları ile güvenilmeyen kod için tek kullanımlık microVM sandbox'ları, tam Linux sanal makineleri ve klonlanabilir macOS misafir sistemleri. Sandbox'ların 100 ms'nin altında açıldığı belirtiliyor ve aynı sandbox ilkelinin bulut platformunda da çalıştığı söyleniyor. MIT/Apache-2.0 lisanslı, Ocak 2026'da açılmış ve 6.581 yıldıza ulaşmış; Homebrew ile kuruluyor. Proje açık beta aşamasında olduğunu belirtiyor.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, Claude Code ajanlarını ofis Mac'inde izole bir sandbox'ta çalıştırma fikri ve evdeki Mac mini'yi home server'a çevirme planın. Mevcut yığının Expo, Supabase, DigitalOcean ve Vercel üzerine kurulu; günlük işinde konteyner çalıştırma ihtiyacı görünmüyor, dolayısıyla şu an çözeceği bir sorun yok. İhtiyaç doğarsa — örneğin ajanlara geniş izin verirken bunu tek kullanımlık bir makineyle sınırlamak istersen — yerel, ücretsiz ve Apple Silicon'a özel yazılmış olması avantaj olur. Açık beta etiketi nedeniyle kritik bir işi buna bağlamak şimdilik erken.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": "OrbStack'in kapalı kaynak olduğu bir pazarda izin verici lisanslı bir alternatif ve ücretli bulut sandbox katmanıyla net bir ticarileşme yolu var; geliştirici altyapısı tezine bakarken ekibiyle tanışmaya değer."
+  },
+  {
+   "full_name": "Tencent/BrowserSkill",
+   "inputs_hash": "cfbb722b71cd782875b5134c41cb7a21",
+   "description_tr": "BrowserSkill, AI ajanlarının kullanıcının halihazırda oturum açtığı tarayıcıyı kullanmasını sağlayan bir CLI ve tarayıcı eklentisi. Ajan işini ayrı ve görünür bir Agent Window içinde yürütüyor; açık bir sekmeye dokunması gerekiyorsa onu açıkça ödünç alıp iş bitince geri veriyor, böylece kullanıcı kendi tarayıcısını kullanmaya devam edebiliyor. Kabuk çağırabilen her ajan `bsk` komutu üzerinden bağlanabiliyor; Cursor, Claude Code, Codex ve başka harness'lar destekleniyor, belirli bir modele veya çerçeveye bağımlılık yok. Captcha, giriş ve onay gibi yalnızca insanın yapabileceği adımlarda kontrol kullanıcıya devrediliyor ve sonra akış kaldığı yerden sürüyor; tam sayfa ekran görüntüsü gibi yardımcı komutlar var. MIT lisanslı, Haziran 2026'da açılmış, 6.514 yıldız; macOS, Linux ve Windows ile Chrome ve Edge destekleniyor, Tencent tarafından yayımlanıyor.",
+   "usage_tr": "Lyricdrop'un admin panelinde duran tarayıcı playtest gate'i buna birebir oturuyor: ajan senin oturum açtığın panelde şarkıyı açıp boşlukları oynayabilir, highlight kaymasını ekran görüntüsüyle kaydedip kararı sana bırakabilir — devretmek istediğin manuel adım tam olarak bu. İkinci alan asistan tarafı: araştırma ve karşılaştırma işlerinde ayrı test hesabı açmadan mevcut oturumlarla çalışılabilir. Mac'te yerel çalışır, ek API maliyeti getirmez ve Claude Code'dan kabuk üzerinden çağrıldığı için mevcut zincirine doğrudan girer; Claude in Chrome kurulumunun yanında ikinci bir otomasyon kanalı olur. İnsan devri özelliği captcha ve giriş ekranlarında akışın kilitlenmesini önlüyor, bu da gece koşumlarını mümkün kılar. Uyarı: ajan senin gerçek oturumlarınla hareket eder; platformların otomasyon kuralları hesap riski doğurabilir, izinleri dar tut ve önce ayrı bir tarayıcı profilinde dene.",
+   "matched_project": "Lyricdrop",
+   "relevance": 7,
+   "investment_note": null
+  }
+ ]
+}

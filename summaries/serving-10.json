@@ -1,0 +1,175 @@
+{
+ "repos": [
+  {
+   "full_name": "PeterGriffinJin/Search-R1",
+   "inputs_hash": "f5a0dd97306f267b548c28203c390c08",
+   "description_tr": "Search-R1, akıl yürütme ile arama motoru çağrılarını iç içe geçiren dil modellerini pekiştirmeli öğrenmeyle eğitmek için kurulmuş bir araştırma çerçevesi. veRL üzerine inşa edilmiş; PPO, GRPO ve REINFORCE gibi yöntemleri, Qwen2.5 ve Llama3 ailesindeki modelleri, yerel seyrek/yoğun retriever'ları ve çevrimiçi arama motorlarını destekliyor. Temel iddia, modelin ne zaman arama yapacağını kural tabanlı sonuç ödülüyle kendi kendine öğrenmesi; DeepSeek-R1 fikirlerinin araç kullanımına genişletilmiş açık kaynak karşılığı olarak konumlanıyor. İki arXiv makalesi, Hugging Face üzerinde yayımlanmış model ve veri koleksiyonları ile tam deney logları mevcut. Apache-2.0 lisanslı ve ~5.4K star; çalıştırmak için çok GPU'lu bir eğitim ortamı gerekiyor.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın olası bağlam, Arslan Holding tarafında araştırma ajanlarının nasıl kurulduğuna dair kavramsal bir okuma olabilir. Burada çıkan şey kullanıma hazır bir arama ajanı değil, kendi modelini eğitmen için bir RL reçetesi; sen hazır modelleri kullanıyorsun, model eğitmiyorsun. Ofisteki Mac'te çalışmaz, çok GPU'lu bir küme ister; Expo/Supabase yığınının hiçbir adımına gömülemez. Asistanına devredilebilecek bir tarafı da yok, çünkü çıktısı bir ürün değil bir eğitim koşusu. Araştırma ajanı ihtiyacın için doğru katman bunun çok altında: hazır bir ajan kütüphanesi ya da doğrudan Claude Code.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "transformerlab/transformerlab-app",
+   "inputs_hash": "8c65c6e40781385e7a0158f0dc76fcf9",
+   "description_tr": "Transformer Lab, model eğitme, fine-tune etme, değerlendirme ve sohbet adımlarını tek bir masaüstü arayüzde toplayan açık kaynak bir ML platformu. Electron tabanlı uygulama macOS (Apple Silicon), Linux ve Windows (WSL2) üzerinde yerel çalışıyor; MLX, LoRA, RLHF ve diffusion modelleri için hazır iş akışları içeriyor. Takım sürümü aynı arayüzden Slurm kümelerine ve SkyPilot üzerinden bulut sağlayıcılara iş göndermeyi, deney takibi ve model kaydı tutmayı ekliyor. Hedef kitlesi açıkça ML araştırmacıları ve kendi donanımında model eğiten kişiler. AGPL-3.0 lisanslı, ~5.2K star, Mozilla Builders desteği var ve aktif geliştiriliyor.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın olası bağlam, yerel modelleri Mac üzerinde çalıştırma tercihin ve MLX tarafına duyduğun ilgi. Ancak bu uygulamanın merkezinde model eğitmek ve fine-tune etmek var; sen hazır modelleri tüketiyorsun, ağırlık üretmiyorsun, dolayısıyla arayüzün büyük kısmı boşa kalır. Lyricdrop'un asıl darboğazı olan kelime hizalama ve STT karşılaştırması bu platformun kapsamında görünmüyor; ses tarafı için hazır bir iş akışı yok. AGPL-3.0 lisansı da kendi uygulamana gömme senaryosunu baştan kapatıyor. Sadece yerel model indirip çalıştırmak istiyorsan bu ağır bir çözüm; bu paketteki Magnitude aynı ihtiyaca çok daha doğrudan oturuyor.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "Sophia-Community/SophiApp",
+   "inputs_hash": "0693ee0bb74c395330abd465158b333e",
+   "description_tr": "SophiApp, Windows 10 ve Windows 11 kurulumlarını ince ayarlamak için yazılmış açık kaynak bir masaüstü aracı. Gereksiz uygulamaları kaldırma, telemetri ve gizlilik ayarlarını kapatma, arayüz ve sistem davranışlarını değiştirme gibi yüzlerce ayarı tek bir GUI'de topluyor. C# ile yazılmış, yalnızca Windows üzerinde çalışıyor ve Insider sürümleri dahil güncel Windows yapılarını takip ediyor. MIT lisanslı, ~5.2K star; uzun süredir bakımı yapılan olgun bir proje. Yapay zeka ile ilgisi yok, sistem yönetimi kategorisinde bir araç.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın olası bağlam, makine kurulumunu otomatikleştirme isteğin olabilir ama o da Mac tarafında geçerli. Tüm geliştirme ve içerik pipeline'ların macOS üzerinde koşuyor, bu araç ise yalnızca Windows'ta çalışıyor. Hiçbir projene gömülemez, asistanına devredilecek bir iş de üretmez. Yapay zeka indeksine kategori sınıflandırması nedeniyle düşmüş görünüyor; içerik olarak bu listeye ait değil.",
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "timesler/facenet-pytorch",
+   "inputs_hash": "3cd0cd3f10a229b4e519f341d1847398",
+   "description_tr": "facenet-pytorch, yüz tespiti ve yüz tanıma için önceden eğitilmiş iki modeli PyTorch'ta paketleyen bir kütüphane: tespit için MTCNN, kimlik gömme vektörleri için VGGFace2 ve CASIA-Webface üzerinde eğitilmiş InceptionResnetV1. Bir fotoğraf ya da video karesinden yüzleri kırpıp her yüz için sabit boyutlu bir embedding üretiyor; bu vektörler arasındaki uzaklıkla aynı kişi olup olmadığı karşılaştırılıyor. Kurulumu pip ile yapılıyor, CPU üzerinde de çalışıyor ve toplu işleme için basit bir API sunuyor. MIT lisanslı, ~5.2K star; 2019'dan beri yaygın biçimde kullanılıyor ama geliştirme temposu uzun süredir yavaş ve PyTorch sürüm uyumu zaman zaman sorun çıkarıyor.",
+   "usage_tr": "Model ajansı tarafındaki görüntü analizi ihtiyacına oturan somut bir parça. Aday portföylerindeki fotoğrafları kişi bazında otomatik gruplamak, aynı kişinin farklı çekimlerini birleştirmek ve mükerrer başvuruları yakalamak için embedding'leri kullanabilirsin; bu, bugün elle yapılan bir eleme adımını doğrudan kısaltır. Ofisteki Mac'te yerel çalışır, ek API maliyeti getirmez ve bir Python servisi olarak Supabase'in yanına koyup sonuçları tabloya yazabilirsin. Asistanına devredilebilir bir hale gelmesi için üstüne küçük bir arayüz gerekir; kütüphane tek başına komut satırı seviyesinde kalıyor. Uyarı: model kimlik doğrulama için değil benzerlik araması için kullanılmalı, eşik değerini kendi veri setinde kalibre etmen gerekir; ayrıca biyometrik veri işlemenin hukuki tarafını baştan netleştir.",
+   "matched_project": "Model ajansı",
+   "relevance": 4,
+   "investment_note": null
+  },
+  {
+   "full_name": "Kiln-AI/Kiln",
+   "inputs_hash": "945958a8c717dde4aae368c632b16d5f",
+   "description_tr": "Kiln, LLM tabanlı bir işin prompt'unu, değerlendirmesini ve veri setini tek yerde toplayan bir masaüstü uygulaması ve Python kütüphanesi. Otomatik eval üretimi (judge + sentetik değerlendirme seti), prompt optimizasyonu, RAG, sentetik veri üretimi, fine-tuning ve ajan/araç tanımları aynı proje dosyası üzerinden yürüyor. Masaüstü uygulaması Mac, Windows ve Linux için tek tıkla kuruluyor; kod yazmayan kişilerin çıktı puanlaması yapmasına izin verdiği için ekip çalışmasına uygun. Kendi API anahtarlarınla ya da Ollama ile tamamen çevrimdışı çalışabiliyor. ~5.1K star; README kütüphanenin MIT lisanslı olduğunu söylüyor ama GitHub depoyu standart olmayan bir lisans olarak işaretliyor, bu yüzden ticari kullanımdan önce lisans dosyasını okumak gerekiyor.",
+   "usage_tr": "Lyricdrop v2'nin içerik kalite kapısında kullanabilirsin: boşluk seçimi ve her boşluk için üretilen dört şıkkın \"tek doğru, üçü makul ama yanlış\" kuralına uyup uymadığı tam olarak bir eval problemi. Şu an 20-30 şarkıda elle yaptığın onayı Kiln'de bir judge + örnek seti haline getirip her prompt değişikliğinde aynı ölçüyü tekrar koşabilir, hangi modelin bu işi daha ucuza ve daha tutarlı yaptığını yan yana görebilirsin. Masaüstü uygulaması kod yazmayan birine açık olduğu için şarkı onayı adımını asistanına ya da dışarıya devretme planına doğrudan uyuyor. Mac'te yerel kurulur; modelleri Ollama üzerinden çevrimdışı koşarsan ek API maliyeti doğmaz, bulut modelleriyle koşarsan eval başına maliyet çıkar. Uyarı: Kiln metin çıktılarına bakar, v2'nin asıl darboğazı olan kelime-ses hizalamasına dokunmaz; onu ayrı ölçmeye devam etmen gerekir. Python kütüphanesi admin panelinin yanında ayrı bir servis olarak durur, Expo tarafına gömülmez.",
+   "matched_project": "Lyricdrop",
+   "relevance": 6,
+   "investment_note": null
+  },
+  {
+   "full_name": "Deci-AI/super-gradients",
+   "inputs_hash": "7eb7d33b2a3af0fef26f815b8f652afb",
+   "description_tr": "SuperGradients, bilgisayarlı görü modellerini eğitmek ve fine-tune etmek için yazılmış bir PyTorch eğitim kütüphanesi. Nesne tespiti, sınıflandırma ve segmentasyon için hazır tarifler, önceden eğitilmiş ağırlıklar ve YOLO-NAS mimarisinin resmi uygulaması burada bulunuyor. Eğitim döngüsü, veri artırma ve kuantizasyona hazır dışa aktarım gibi adımları yapılandırma dosyalarıyla yönetiyor. Apache-2.0 lisanslı, ~5.1K star ve Jupyter Notebook ağırlıklı bir depo. Projeyi geliştiren şirketin el değiştirmesinden sonra bakım temposu belirgin biçimde düştü; yeni sürüm akışı durmuş durumda.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın olası bağlam, görüntü skorlamaya dayalı uygulama fikrin ve model ajansı tarafındaki görsel analiz ihtiyacı. Ancak bu kütüphane hazır bir tespit servisi değil, kendi veri setini etiketleyip model eğitmeni bekleyen bir eğitim altyapısı; o adımı yapmak istemediğini biliyoruz. Eğitim için GPU gerekir, Mac'teki yerel akışına oturmaz; sadece çıkarım isteyeceksen hazır YOLO ağırlıklarını çok daha hafif bir paketle çalıştırmak daha mantıklı. Bakımın yavaşlamış olması da uzun ömürlü bir bağımlılık olarak seçmeyi zorlaştırıyor.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "mizorewww/laya-mlx",
+   "inputs_hash": "410612d3bd97878de7aecaf66b3254fa",
+   "description_tr": "Laya-MLX, \"tipli karar\" modellerini Apple Silicon üzerinde MLX ile çalıştıran bir çıkarım kütüphanesi. Metin üretmiyor; bir duruma ve bir soru şemasına bakıp seçenekler üzerinde olasılık, rubrik puanı ya da bir önermenin doğruluk olasılığını tek bir çift yönlü geçişte döndürüyor. Ölçülen gecikme M3 Max üzerinde kısa bir soru için 13.4 ms, çok dilli kontrol noktasıyla 7.4 ms; PyTorch, Transformers çalışma zamanı veya bulut API'si gerekmiyor. pip ile kuruluyor, macOS 14+ ve Python 3.11+ istiyor, ağırlıklar Hugging Face'ten iniyor. Apache-2.0 lisanslı; deponun kendisi birkaç günlük ve yukarı akış Convai Innovations ağırlıklarının resmi olmayan bağımsız bir portu olduğunu açıkça belirtiyor.",
+   "usage_tr": "Sesli not uygulaması için düşündüğün \"kategoriyi AI çıkarsın, form doldurma olmasın\" adımına doğrudan oturuyor: transkripti duruma, kategori listesini de choice tipi bir soruya çevirip milisaniyeler içinde sınıflandırma alırsın. Aynı kalıp Folio'nun beğen/beğenme sinyallerini puanlamakta da işe yarar, çünkü score tipi bir rubrik zaten olasılık döndürüyor. En güçlü tarafı senin kriterlerine uyması: Mac'te yerel çalışır, üretim token'ı olmadığı için API maliyeti getirmez ve küçük bir Python servisi olarak n8n akışının içine girer. Uyarı: depo çok yeni ve resmi olmayan bir port, yıldız sayısı olgunluk göstergesi değil; üretime bağlamadan önce kendi kategori setinde doğruluğunu ölçmen ve ağırlıkların lisans durumunu yukarı akıştan teyit etmen gerekir. Metin üretmediği için özetleme veya rapor yazma adımlarında bir işe yaramaz; sadece sınıflandırma ve puanlama katmanı.",
+   "matched_project": "Kişisel bilgi tabanı",
+   "relevance": 6,
+   "investment_note": "Üretken olmayan, sabit gecikmeli \"tipli karar\" modelleri erken aşama AI merceğin için izlenmeye değer bir alt kategori: aynı işi bugün pahalı üretken modellerle yapan ürünlerde maliyet tarafında açık bir boşluk var."
+  },
+  {
+   "full_name": "Plachtaa/VITS-fast-fine-tuning",
+   "inputs_hash": "a7db617f2199c17202683d73a79e0e0f",
+   "description_tr": "VITS-fast-fine-tuning, mevcut bir VITS tabanlı TTS modeline yeni konuşmacı sesleri eklemek için hazırlanmış bir fine-tuning hattı. On kısa kayıt, uzun bir ses dosyası ya da bir video bağlantısından bir sesi öğrenip hem metinden konuşma hem de konuşmacılar arası ses dönüştürme yapabiliyor; İngilizce, Japonca ve Çince destekleniyor. Eğitim Google Colab üzerinde ya da yerel olarak yapılabiliyor ve tipik olarak 20 dakika ile 2 saat arasında sürüyor. Apache-2.0 lisanslı, ~5K star; hazır çıkarım paketi yalnızca Windows için sunuluyor. Depo 2023 başından kalma ve o günden bu yana ses sentezi tarafı belirgin biçimde ilerledi, bu yüzden güncel bir temel olarak değil tarihsel bir referans olarak okunmalı.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın olası bağlam, Folio'nun günlük içerik pipeline'ına ileride bir seslendirme katmanı eklemek isteyebilmen. Lyricdrop'un ihtiyacı bunun tersi yönde — sesten metne ve kelime zamanlaması — dolayısıyla bu depo o probleme hiçbir şey katmıyor. Fine-tuning adımı GPU istiyor, hazır çıkarım paketi ise Windows'a bağlı; Mac merkezli akışına sürtünmesiz oturmuyor. Seslendirme gerçekten gündeme gelirse 2023 mimarisi yerine güncel açık kaynak TTS seçeneklerine bakmak daha verimli olur. Ayrıca başkasının sesini klonlama senaryosu, yayınlamayacağın kişisel bir uygulamada bile hak tarafında dikkat ister.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "bojieli/ai-infra-book",
+   "inputs_hash": "286802f8498d1851c6857ca68663b026",
+   "description_tr": "Bu depo, LLM çıkarım ve eğitim sistemlerinin tasarımını donanım kısıtlarından ve model mimarisinden yola çıkarak niceliksel olarak ele alan Çince bir kitabın açık kaynak yazımı. Konu başlıkları arasında hızlandırıcı mimarileri, veri merkezi ağı, KV cache yönetimi, mixture-of-experts, dağıtık eğitim ve çıkarım servis tasarımı yer alıyor. Depo kitabın tam metnini, PDF çıktısını ve hesaplamaları yeniden üretmek için Python araçlarını birlikte veriyor. Apache-2.0 lisanslı, ~5K star ve yeni açılmış bir depo. Metin Çince; teknik seviyesi sistem mühendisliğine yönelik ve okuyucudan GPU/dağıtık sistem arka planı bekliyor.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın olası bağlam, Arslan Holding tarafında AI altyapısı yatırımlarını değerlendirirken maliyet ve performans iddialarını okuyabilmek. Ama bu bir araç değil bir kitap; hiçbir pipeline'a gömülmez, asistanına devredilecek bir iş de üretmez. Senin çalıştığın katman hazır modelleri Mac'te koşturmak; buradaki tartışmalar kendi GPU kümeni tasarlamakla ilgili ve o soruların hiçbiri gündeminde değil. Metnin Çince olması da hızlı taramayı zorlaştırıyor. Bir due diligence sorusu çıkarsa ilgili bölümü çevirtip okumak makul bir kullanım, düzenli bir kaynak olarak değil.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "getzep/zep",
+   "inputs_hash": "5e5dfa3cf1109a57ec373fd99edf618d",
+   "description_tr": "Bu depo Zep'in ürünü değil, Zep Cloud adlı yönetilen ajan hafızası servisi için örnek kod, entegrasyon paketleri ve araçlar topluyor. İçinde Python, TypeScript ve Go örnekleri, LangGraph, CrewAI, Pydantic AI, Mastra ve Vercel AI SDK gibi çerçeveler için entegrasyonlar, toplu veri alma hattı ve hafıza kıyaslamaları (LoCoMo, LongMemEval) bulunuyor. Servisin arkasındaki zamansal bilgi grafı çerçevesi ayrı bir depoda, Graphiti adıyla açık kaynak olarak duruyor. Daha önce self-host edilebilen Zep Community Edition desteklenmiyor ve legacy klasörüne taşınmış durumda. Apache-2.0 lisanslı, ~4.9K star; deponun kendisi çalışan bir sistem değil, bir hesap açmayı gerektiren bulut servisine bağlı.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın olası bağlam, projelerin arasında köprü kuran asistan/orkestratör ajan fikrinin kalıcı hafıza ihtiyacı. Ancak bu depo o ihtiyacı karşılamıyor: kendisi yalnızca örnek ve entegrasyon kodu, çalışan kısım kapalı bir bulut servisinde ve self-host edilen sürüm bırakılmış. Verilerin ve hesapların kendi kontrolünde kalması ilkenle de, yerel çalıştırma tercihinle de çelişiyor. Bu alana bakacaksan doğru adres aynı ekibin açık kaynak bıraktığı Graphiti; onu kendi Supabase/DigitalOcean kurulumunun yanında değerlendirebilirsin. Entegrasyon listesi yine de bir işe yarıyor: ajan hafızasının hangi çerçevelere nasıl bağlandığını görmek için hızlı bir harita.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": "Açık kaynak sürümü bırakıp yönetilen servise geçme hamlesi, ajan hafızası kategorisinin nasıl ticarileştiğine dair erken aşama AI taramanda not edilecek bir örnek."
+  },
+  {
+   "full_name": "macanv/BERT-BiLSTM-CRF-NER",
+   "inputs_hash": "3c2f0b147bdb34eb5d574d5ed06398ce",
+   "description_tr": "Bu depo, BERT ince ayarı üstüne BiLSTM ve CRF katmanları ekleyerek varlık ismi tanıma (NER) yapan bir TensorFlow uygulaması. Eğitim, değerlendirme ve basit bir sunucu servisi içeriyor; örnekler ağırlıklı olarak Çince veri setleri üzerinden veriliyor. Metin sınıflandırma için de bir yol sunuyor ve kendi etiketli verinle yeniden eğitilebiliyor. ~4.9K star toplamış ve kendi döneminde yaygın bir referans olmuş. Depoda lisans dosyası belirtilmemiş, kod TensorFlow 1.x dönemine ait ve uzun süredir güncellenmiyor.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın olası bağlam, sesli notlardan yapı çıkarma fikrinin uzak bir atası sayılabilecek varlık çıkarımı. Pratikte bu yol artık kapalı: TensorFlow 1.x dönemi kodu güncel bir Mac'te ayağa kaldırmak başlı başına bir iş ve aynı sonucu bugün çok daha az emekle hazır modellerle alıyorsun. Lisans belirtilmemiş olması kendi uygulamana gömme ihtimalini de riskli hale getiriyor. Örnekler Çince veri setlerine dayanıyor, Türkçe veya İngilizce için sıfırdan etiketli veri üretmen gerekir. Kısacası tarihsel değeri olan, bugün kullanılacak bir bileşen değil.",
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "magnitudedev/magnitude",
+   "inputs_hash": "2ed462cbcd644457956eb379527a58d0",
+   "description_tr": "Magnitude, tüketici donanımında yerel model çalıştırmayı hedefleyen açık kaynak bir çıkarım motoru ve masaüstü uygulaması. Makineyi profilleyip katalogdaki her model ve kuantizasyon için beklenen token/s tahminini indirmeden önce gösteriyor, sonra seçilen modeli o donanıma göre ayarlayıp (bağlam boyutu, speculative decoding) çalıştırıyor. Apple Silicon, NVIDIA, AMD ve yalnızca CPU olan makineleri destekliyor; modeller istendiğinde yükleniyor, boşta kalınca veya bellek dolunca boşaltılıyor. Uygulama macOS, Windows ve Linux'ta yerel çalışıyor, yanında bir CLI getiriyor ve OpenCode, Claude Code, Codex, Cline gibi istemcilere tek tıkla bağlanıyor. Apache-2.0 lisanslı, ~4.8K star; depo birkaç aylık olduğu için olgunluk iddiası henüz zamanla sınanmadı.",
+   "usage_tr": "Evdeki 7/24 açık Mac mini'yi gerçek bir yerel model sunucusuna çevirmek için en doğrudan aday bu: Magnitude'u oraya kurup Tailscale üzerinden ofisteki Mac'ten bağlanırsan, hangi modelin o makinede gerçekten kaç token/s verdiğini tahmin ederek seçersin. OpenCode ve Claude Code'u desteklediği için mevcut çalışma düzenine ayrı bir yapılandırma işi çıkarmadan oturuyor. İkinci somut kullanım, Lyricdrop ve Folio'nun toplu içerik adımlarında sınıflandırma ve temizlik gibi ucuz işleri yerel modele kaydırıp API maliyetini sadece gerçekten gereken adımlarda bırakman. Kurulum ve model seçimi GUI üzerinden yürüdüğü için asistanının da kullanabileceği bir araç. Uyarı: proje yeni, model kataloğu ve ayarlamalar sık değişecektir; kritik bir pipeline'ı buna bağlamadan önce bir haftalık kararlılık testi yap ve Mac mini'nin belleği dolunca model boşaltma davranışını kendi yük profilinde izle.",
+   "matched_project": "Ev teknolojisi",
+   "relevance": 7,
+   "investment_note": "Yerel çıkarımda \"hangi modeli seçmeliyim\" sorusunu donanım profiliyle cevaplayan bir katman; Ollama ve LM Studio'nun boş bıraktığı bu aralık, erken aşama AI altyapısı tezin için bakmaya değer bir konumlanma."
+  },
+  {
+   "full_name": "facebookarchive/Tweaks",
+   "inputs_hash": "d25b3b2d97055bd1684b44afe7655bd2",
+   "description_tr": "Tweaks, geliştirme aşamasındaki iOS uygulamalarında parametreleri cihaz üzerinde canlı olarak değiştirmeye yarayan bir Objective-C kütüphanesi. Animasyon süresi, renk, eşik değeri gibi sabitleri kodda değiştirip yeniden derlemek yerine uygulama içindeki bir panelden kaydırarak ayarlamayı sağlıyor. Paper uygulamasının geliştirilmesi sırasında ortaya çıkmış ve kendi döneminde yaygın kullanılmış. ~4.7K star; depo facebookarchive hesabı altında arşivlenmiş durumda ve yeni geliştirme almıyor. Kod UIKit ve Objective-C dönemine ait; modern Swift/SwiftUI veya React Native projelerine yönelik bir karşılığı yok.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın olası bağlam, Lyricdrop'un zorluk ayarlarını (boşluk sayısı, zamanlama toleransı) cihaz üzerinde denemek isteyebilmen. Ancak uygulamaların Expo / React Native ile yazılıyor ve bu kütüphane yerel Objective-C dünyasına ait; köprü yazma maliyeti kazancından fazla olur. Depo arşivlenmiş, yani gelecekteki iOS sürümleriyle uyum garantisi de yok. Aynı ihtiyacı React Native tarafında basit bir geliştirici ayar ekranıyla ya da uzaktan yapılandırma değeriyle çok daha ucuza karşılarsın. Yapay zeka ile ilgisi yok; bu listeye sınıflandırma hatasıyla düşmüş görünüyor.",
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "PrimeIntellect-ai/verifiers",
+   "inputs_hash": "28ac4174ac6bc06055f71ac851045463",
+   "description_tr": "verifiers, dil modellerini pekiştirmeli öğrenmeyle eğitmek ve değerlendirmek için ortam (environment) tanımlamaya yarayan bir Python kütüphanesi. Bir görevi, model çıktısını puanlayan doğrulayıcılarla birlikte tanımlayıp hem eğitim hem eval döngüsünde aynı tanımı kullanmayı amaçlıyor. Prime Intellect'in Environments Hub'ı, prime-rl eğitim çerçevesi ve yönetilen eğitim platformuyla sıkı entegre çalışıyor. MIT lisanslı, ~4.6K star; README kısa, asıl belgeler depo içindeki docs klasöründe. Kütüphane tek başına bir ürün değil, bir eğitim yığınının parçası olarak konumlanıyor.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın olası bağlam, Lyricdrop'ta içerik kalitesini otomatik puanlama fikri. Ama buradaki değerlendirme mantığı RL eğitim döngüsü için tasarlanmış; sen model eğitmiyorsun ve ortam tanımlamanın getirdiği yük, basit bir eval için gereğinden fazla. Aynı işi bu paketteki Kiln çok daha az kurulumla ve kod yazmayan birinin de kullanabileceği bir arayüzle yapıyor. Eğitim tarafı GPU ve harici platform bağımlılığı getirir, Mac'teki yerel akışına oturmaz. Kısacası ilgi çekici ama senin katmanının bir üstünde duran bir kütüphane.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": "Eğitim ortamlarını paylaşılan bir hub üzerinden dağıtma modeli, açık kaynak bir kütüphanenin etrafına platform kurma örneği olarak erken aşama AI altyapısı taramanda izlenmeye değer."
+  },
+  {
+   "full_name": "llm-d/llm-d",
+   "inputs_hash": "69a5dec54eeec9bdf0dd88d3a1d0ee3b",
+   "description_tr": "llm-d, büyük dil modeli çıkarımını Kubernetes üzerinde dağıtık biçimde çalıştırmak için kurulmuş bir proje. Önbellek farkındalıklı istek yönlendirme, prefill ve decode aşamalarının ayrıştırılması ve çok düğümlü model sunumu gibi teknikleri hazır kurulum tarifleriyle paketliyor. Depo ağırlıklı olarak kurulum betikleri, Helm/Kubernetes yapılandırmaları ve kıyaslama araçlarından oluşuyor. CNCF çatısında konumlanıyor ve modern hızlandırıcılarda yüksek verim hedefliyor. Apache-2.0 lisanslı, ~4.6K star ve aktif geliştirilen yeni bir proje; hedef kitlesi kendi GPU filosunu işleten ekipler.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın olası bağlam, oyuncu tarafını uzak sunucularda tutma tercihin. Ancak senin uzak tarafın Supabase ve DigitalOcean üzerinde duruyor ve model çağrıları sağlayıcıya gidiyor; kendi GPU kümeni işletmek gündeminde değil. Bu yığın Kubernetes ve çok GPU'lu donanım varsayıyor, Mac'te yerel çalışma senaryosu yok. Kurmak ve ayakta tutmak başlı başına bir altyapı işi; orkestrasyon yükünü azaltma yönündeki tercihinin tam tersi yönde. Yerel çıkarım istiyorsan bu paketteki Magnitude, ölçekli servis istiyorsan yönetilen bir sağlayıcı daha doğru cevap.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "yizhongw/self-instruct",
+   "inputs_hash": "648ed34e4fb633a269b6b1759284bbda",
+   "description_tr": "self-instruct, bir dil modelinin kendi ürettiği talimat verisiyle ince ayarlanabileceğini gösteren araştırma deposu. Az sayıda elle yazılmış tohum görevden başlayıp modele yeni talimatlar, girdiler ve çıktılar ürettiren, ardından bunları filtreleyip veri setine ekleyen bir döngü tanımlıyor. Depo üretim kodunu, oluşturulan veri setini ve makaledeki değerlendirmeleri içeriyor. Apache-2.0 lisanslı, ~4.6K star; 2022 sonunda yayımlanmış ve sonraki birçok talimat veri seti çalışmasının temelini oluşturmuş. Bugün aktif geliştirilen bir kütüphane değil, tarihsel önemi olan bir referans uygulama.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın olası bağlam, Lyricdrop için toplu içerik üretiminde kalite filtreleme fikri. Fakat buradaki amaç fine-tuning için veri seti üretmek; sen model eğitmiyorsun, hazır modellerden içerik üretiyorsun, dolayısıyla döngünün çıktısı senin işine yaramıyor. Yöntemin devredilebilir tek kısmı filtreleme disiplini, yani üretilenleri benzerlik ve kalite eşiğiyle eleme fikri; bunu kendi pipeline'ında birkaç satırla tarif edebilirsin. Kod 2022 dönemine ait ve güncel model API'leriyle uyumu sınırlı. Okunacak bir makale olarak değerli, kurulacak bir bağımlılık olarak değil.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "slvDev/esp32-ai",
+   "inputs_hash": "5d2bfecfe240fb1ab1fec399710ab304",
+   "description_tr": "Bu depo, 28.9 milyon parametreli bir dil modelini ESP32-S3 mikrodenetleyicisi üzerinde, ağa hiç çıkmadan çalıştıran bir çalışma. Modelin büyük kısmı (25M parametrelik gömme tablosu) flash bellekte duruyor ve token başına yalnızca gereken birkaç satır okunuyor; bu Google'ın Gemma 3n'deki Per-Layer Embeddings fikrinin mikrodenetleyici bellek hiyerarşisine uyarlanmış hali. Ölçülen hız uçtan uca 9.88 token/s ve model 4-bit'te 14.9MB. Aynı kart üzerinde meyve sineği konektomunun bir bölümü de (48.311 nöron, 9.46 milyon bağlantı) çalıştırılıyor ve eğitilmiş hiçbir model olmadan, sineğin kendi kaçış devreleriyle ekrandaki örümcekten kaçıyor. MIT lisanslı, ~4.4K star; model TinyStories üzerinde eğitildiği için soru cevaplamıyor, kısa hikâyeler yazıyor. Depo açıkça mimari bir gösteri, ürün bileşeni değil.",
+   "usage_tr": "Giyilebilir cihaz ve neuroteknoloji tezin açısından somut bir ölçüm noktası: bugün bir mikrodenetleyici sınıfı çipte gerçekten ne kadar modelin sığdığını ve hangi hızda çalıştığını, pazarlama metni yerine ölçülmüş sayılarla gösteriyor. Yatırım tarafında bir cihaz ekibinin \"on-device çalışıyor\" iddiasını değerlendirirken bu rakamları referans olarak kullanabilirsin. Konektom bölümü de neurofeedback ve biyosinyal ilgi alanınla aynı zeminde duruyor, ancak bu bir analiz aracı değil bir simülasyon gösterisi. İkinci bir kullanım, hackathon demoları için hazır ve gerçekten çalışan bir donanım projesi olması: kart ucuz, kod açık ve sonuç ekranda görünüyor. Uyarı: mevcut hiçbir projene gömülecek bir bileşen değil; firmware tarafına girmek istemiyorsan burada okuyup bırakılacak bir referans olarak kalır.",
+   "matched_project": "Neuroteknoloji tezi",
+   "relevance": 4,
+   "investment_note": null
+  },
+  {
+   "full_name": "CLUEbenchmark/CLUE",
+   "inputs_hash": "aaea952becf8fa0eadb4f8ee3c39a643",
+   "description_tr": "CLUE, Çince doğal dil anlama modellerini karşılaştırmak için kurulmuş bir kıyaslama projesi. Sınıflandırma, okuduğunu anlama ve cümle eşleştirme gibi görevlerden oluşan veri setlerini, temel model uygulamalarını (BERT, RoBERTa, ALBERT) ve bir liderlik tablosunu bir arada sunuyor. Ayrıca büyük bir Çince ön eğitim derlemi ve TensorFlow ile PyTorch için çalıştırma betikleri içeriyor. ~4.3K star toplamış ve Çince NLP çalışmalarında standart bir referans haline gelmiş. Depoda lisans belirtilmemiş; içerik ve görev tanımları ağırlıklı olarak Çince.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın olası bağlam, model karşılaştırmalarını nasıl kurgulaman gerektiğine dair yöntem fikri. Veri setlerinin tamamı Çince olduğu için Lyricdrop'un İngilizce içerik tarafına da, Türkçe kullanım senaryolarına da bir katkısı yok. Kıyaslama koşmak için eğitim/çıkarım altyapısı gerekiyor ve çıktısı bir skor tablosu; senin akışında karşılığı olan bir adım değil. Kendi değerlendirme setini kurma ihtiyacın için doğru yaklaşım, kendi şarkılarından küçük ve etiketli bir set oluşturmak; hazır bir akademik kıyaslama bunu ikame etmiyor. Lisansın belirtilmemiş olması da herhangi bir veri kullanımını baştan riskli hale getiriyor.",
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "limix-ldm-ai/LimiX",
+   "inputs_hash": "a4980494954b34ed65f389531ee2643f",
+   "description_tr": "LimiX, tablo biçimli (yapılandırılmış) veriler için eğitilmiş bir temel model ailesi. Tek bir önceden eğitilmiş model, göreve özel parametre güncellemesi yapmadan tek geçişte sınıflandırma, regresyon ve eksik değer doldurma yapabildiğini iddia ediyor; yaklaşım, klasik tablo PFN'lerinden farklı olarak hedef merkezli tahmin yerine ortak dağılımı modellemeye dayanıyor. Ağırlıklar Hugging Face ve ModelScope üzerinden yayımlanıyor, teknik raporlar arXiv'de. ~4.3K star ve hızlı bir sürüm akışı var. Lisans Apache-2.0 değil: LimiX-2 ağırlıkları StableAI'nin ticari olmayan kullanım lisansına tabi ve çalıştırmak için GPU bellek gerekiyor.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın olası bağlam, Kanarya'nın topladığı fizyolojik zaman serisi ve yatırım tarafındaki basit skorlama tabloları. Ancak ticari olmayan lisans, yayınlamayı planladığın hiçbir uygulamaya gömülmesine izin vermiyor; bu tek başına konuyu kapatıyor. Model GPU bekliyor, Mac'te yerel koşturma senaryosuna da oturmuyor. Elindeki tablo verisi ölçeğinde klasik bir gradient boosting modeli hem daha ucuz hem daha öngörülebilir sonuç verir. Yine de alanın kendisi izlenmeye değer: tablo verisi için temel model fikri olgunlaşırsa, veri hazırlığı adımını kısaltma potansiyeli var.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": "Tablo verisi için temel model kategorisi hızlı hareket ediyor ama ağırlıkların ticari olmayan lisansla yayımlanması, bu alandaki açık kaynak iddialarının yatırım incelemesinde ayrıca doğrulanması gerektiğini gösteriyor."
+  }
+ ]
+}

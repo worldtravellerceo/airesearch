@@ -1,0 +1,175 @@
+{
+ "repos": [
+  {
+   "full_name": "mlabonne/llm-datasets",
+   "inputs_hash": "fc1923b28b2c20ddc23703ded527c71d",
+   "description_tr": "LLM'lerin post-training aşaması için derlenmiş bir veri kümesi ve araç listesi. Instruction tuning (SFT), tercih hizalama ve alan bazlı uzmanlaştırma için kullanılan açık veri kümelerini kategorilere ayırıp her biri için boyut, kaynak ve lisans bilgisi veriyor. Deponun kendisi kod içermiyor; iyi bir veri kümesinin ölçütlerini (doğruluk, çeşitlilik, karmaşıklık) tarif eden bir giriş bölümü ve veri temizleme, kural tabanlı filtreleme, judge LLM ile puanlama gibi tekniklere yönlendirmeler barındırıyor. Listelenen veri kümelerinin çoğu Apache 2.0, MIT veya CC-BY-4.0 gibi izin verici lisanslarla dağıtılıyor. Yaklaşık 4.790 yıldızla, model eğitenler arasında sık başvurulan bir referans listesi konumunda; deponun kendisi için ayrı bir lisans belirtilmemiş.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, kendi modelini eğitme ihtimali olurdu ki mevcut kurulumunda böyle bir adım yok. Lyricdrop da Folio da hazır modellerle çalışıyor; şarkı başına maliyeti düşük tutma hedefi fine-tuning değil, yerel STT ve iyi prompt tarafından karşılanıyor. Liste bir kütüphane değil, okunacak bir kaynak olduğu için Mac'te çalıştırma, gömme ya da asistana devretme soruları da anlamsız kalıyor. Yatırımcı şapkasıyla bakarken veri katmanının nerede darboğaz olduğunu görmek için ara ara göz atılabilir, ama bir araç olarak rafa kaldırılabilir.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "datawhalechina/competition-baseline",
+   "inputs_hash": "41c1ea28da488bdf8b82d3fa97ab78cb",
+   "description_tr": "Çince veri bilimi yarışmaları için hazırlanmış baseline çözümleri, kod ve yaklaşım notları topluluğu. Veri madenciliği, bilgisayarlı görü, doğal dil işleme ve öneri sistemleri kategorilerindeki yarışmalar için Jupyter Notebook formatında örnek çözümler barındırıyor. İçerik büyük ölçüde Çince ve Kaggle benzeri platformlardaki geçmiş yarışmalara bağlı; genel amaçlı bir kütüphane değil, eğitim amaçlı bir arşiv. GPL-3.0 lisanslı, yaklaşık 4.764 yıldız. Datawhale topluluğu tarafından sürdürülüyor ve yeni yarışmalar geldikçe büyüyen bir yapısı var.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, klasik makine öğrenmesi tekniklerini öğrenme merakı olabilir. İçeriğin ağırlıklı olarak Çince olması ve yarışma veri kümelerine bağlı olması, hızlı bir referans olarak kullanımını da zorlaştırıyor. Ne Lyricdrop'un hizalama problemine ne Folio'nun içerik pipeline'ına oturan bir bileşen çıkıyor buradan. Bir arşiv olduğu için Mac'te yerel çalıştırma ya da kendi uygulamana gömme sorusu geçerli değil.",
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "hyunwoongko/transformer",
+   "inputs_hash": "1d575394c51a40633264c7e086e1b844",
+   "description_tr": "\"Attention Is All You Need\" makalesindeki Transformer mimarisinin sıfırdan PyTorch ile yazılmış eğitim amaçlı bir uygulaması. Multi-head attention, positional encoding, encoder-decoder blokları gibi parçaları ayrı ayrı, okunabilir dosyalar halinde sunuyor ve bir makine çevirisi veri kümesi üzerinde eğitim örneği içeriyor. Üretim için değil, mimariyi anlamak isteyenler için yazılmış; performans optimizasyonu veya dağıtık eğitim desteği hedeflenmiyor. Depoda ayrı bir lisans dosyası belirtilmemiş. Yaklaşık 4.664 yıldızla, konuyu öğrenmek isteyenlerin sık kullandığı referans uygulamalardan biri.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, kullandığın modellerin içeride nasıl çalıştığını merak etmen olabilir. Eğitim amaçlı bir uygulama olduğu için ne Lyricdrop'un STT zincirine ne de başka bir üretim akışına bileşen olarak girer. Mac'te çalıştırılabilir ama çıktısı bir araç değil, bir ders; asistana devredilecek bir tarafı da yok. Aynı konuyu öğrenmek istersen zamanının karşılığını daha iyi veren yol, mimariyi okumak yerine yerel model altyapılarını (MLX, llama.cpp) doğrudan kullanmak olur.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "conorbronsdon/avoid-ai-writing",
+   "inputs_hash": "b34e875dab60cf29fd78c07351999362",
+   "description_tr": "Metinlerdeki \"AI yazımı\" kalıplarını tespit edip temizleyen, ajanlara kurulabilen bir skill. Claude Code, OpenClaw, Codex, Cursor ve Hermes gibi agentskills.io uyumlu ajanlarla çalışıyor; detect (sadece işaretle), rewrite (yeniden yaz) ve edit (dosyayı yerinde düzenle) olmak üzere üç modu var. Şişirilmiş sıfatlar, sohbet botu açılışları, belirsiz atıf, gereksiz tireleme gibi desen ailelerini kategorilere ayırıyor ve düzenleme turu sayısını `--iterate` ile sınırlandırıyor; kaynak kodu ve yapılandırma dosyalarını bilerek reddediyor. Yanında npm paketi olarak dağıtılan bir detector motoru geliyor; komut satırından, pre-commit hook'u olarak, GitHub Actions'ta kapı olarak veya MCP üzerinden çalıştırılabiliyor. Casual/professional/technical/warm/blunt ses profilleri, çıktının tonunu bağlamdan bağımsız olarak ayarlıyor. MIT lisanslı, yaklaşık 4.663 yıldız ve 2026 başında açılmış aktif bir depo.",
+   "usage_tr": "Arslan Holding'in marka, website ve LinkedIn metinleri AI araçlarıyla üretildiği için bu skill'i o çıktıların önüne bir kapı olarak koyabilirsin: metin yayına gitmeden önce detect modunda taranır, işaretlenen kalıplar tek tek gözden geçirilir. Sessiz ve gösterişsiz bir kurumsal ton istediğin düşünülürse, en çok işe yarayacak kısım tam da abartılı sıfatları ve \"dönüştürücü\" tipi cümleleri ayıklaması. Claude Code'a skill olarak kuruluyor, Max aboneliğinle çalışıyor ve ayrı bir API maliyeti getirmiyor; detector tarafı npm paketi olduğu için ofis Mac'inde tamamen yerel çalışır. Asistanına devretmeye de uygun: taramayı o çalıştırıp işaretli satırları sana getirebilir. Folio'nun günlük içerik üretiminde de kullanılabilir ama orada metinler yayınlanmadığı için kazanç daha düşük. Uyarı: desenler İngilizce prozaya göre tanımlanmış, Türkçe metinlerde skor güvenilir olmayacaktır; ayrıca edit modunu doğrudan üretim dosyalarına salmadan önce küçük bir örnekte dene.",
+   "matched_project": "Arslan Holding",
+   "relevance": 6,
+   "investment_note": null
+  },
+  {
+   "full_name": "okfn-brasil/serenata-de-amor",
+   "inputs_hash": "c0c8e8fb2f9c889e652ab5c3e03b73e5",
+   "description_tr": "Brezilya'da milletvekillerinin kamu harcamalarını otomatik denetlemek için kurulmuş bir sivil teknoloji projesi. Resmî harcama beyanlarını toplayıp anomali tespiti ile şüpheli kalemleri işaretliyor ve bulguları bir Twitter botu üzerinden kamuoyuna duyuruyordu. Python ile yazılmış, veri toplama ve makine öğrenmesi bileşenlerini ayrı depolara bölmüş bir yapıya sahip. Depo açıklamasında sık güncelleme almadığı açıkça belirtiliyor; yani arşiv niteliğinde bir çalışma. MIT lisanslı, yaklaşık 4.611 yıldız; alanında sık örnek gösterilen bir açık veri projesi.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, harcama verisinde anomali tespiti fikrinin aile şirketi tarafında bir muadili olması olurdu, ama proje tamamen Brezilya kamu veri şemalarına bağlı. Kodun kendisi başka bir ülkeye taşınabilir bir kütüphane değil, tek bir veri kaynağına yazılmış bir pipeline. Aktif bakım almadığı da deponun kendi açıklamasında yazıyor. Fikir düzeyinde ilham verici, araç düzeyinde kurulacak bir yeri yok.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "nexu-io/html-video",
+   "inputs_hash": "0a6398f0c6e70fa551eb5627521ea292",
+   "description_tr": "HTML, CSS ve veriden programatik olarak MP4 video üreten, kodlama ajanlarıyla kullanılmak üzere tasarlanmış bir araç. Bir prompt, bir makale linki veya bir GitHub deposu veriliyor; ajan içeriği çok sahneli animasyonlu bir HTML videosuna dönüştürüyor ve headless Chromium + ffmpeg ile yerel makinede gerçek bir MP4'e render ediyor. Varsayılan render motoru Hyperframes (HTML + CSS + GSAP); Remotion, Motion Canvas ve Revideo gibi motorlar tek bir `render(input, ctx)` adaptör arayüzü arkasına planlanmış durumda. 21 hazır şablon (veri grafiği, başlık kartı, kinetik tipografi, logo outro, sinematik kare vb.), opsiyonel AI müzik ve anlatım desteği içeriyor; Claude Code, OpenCode, Cursor, Codex dahil 14 ajan arka ucuyla çalışıyor. Apache-2.0 lisanslı, render başına ücret yok; 2026 ortasında açılmış, yaklaşık 4.603 yıldızlı yeni bir depo.",
+   "usage_tr": "Folio'nun günlük içerik pipeline'ında story ve post formatındaki hareketli kartları bununla üretebilirsin: yazarın kitabından çıkan bir fikir metne dönüşür, şablon doldurulur, MP4 ofisteki M4 Pro Mac'te render edilir ve Supabase + DigitalOcean üzerinden uygulamaya düşer. Ajan arka uçlarından biri Claude Code olduğu için Max aboneliğinle çalışır; render tarafı tamamen yerel ve render başına ücret yok, bu da günde çok sayıda içerik üreten bir akışta önemli. İkinci kullanım Lyricdrop'un lansman tarafı: ASO görselleri, tanıtım videoları ve sosyal medya kreatifleri için şablonları bir kez markana göre ayarlayıp üretimi tekrarlayabilirsin. Şablonlar tek dosya HTML olduğu için fork'layıp kendi tasarımına çevirmen de kolay, üretimi asistanına devretmeye uygun. Uyarı: bu araç tasarlanmış hareketli grafik üretir, fotogerçekçi görsel üretmez; Folio'daki yazar fotoğrafı ve video içerikleri için ayrıca bir görüntü modeline ihtiyacın olacak. Ayrıca depo çok yeni, şablon ve motor tarafının kararlılığını küçük bir seride ölçmeden büyük bir seriye bağlama.",
+   "matched_project": "Folio",
+   "relevance": 7,
+   "investment_note": "HTML'den videoya üretim, Remotion'ın kapalı fiyatlandırması ile ajan tabanlı iş akışları arasında sıkışmış bir kategori; motor bağımsız bir meta katman olarak konumlanması ve ekibin Open Design tarafından geliyor olması, izleme listesine alınmayı hak ettiriyor."
+  },
+  {
+   "full_name": "Jia-Ethan/codex-keysmith",
+   "inputs_hash": "9a53f27fdb91568fd36210f342ace0af",
+   "description_tr": "Yerel Codex kurulumuna talimat (instruction) setlerini sürümlü biçimde kuran, önizleyen ve geri alan bir Python CLI'ı. Yazmadan önce bir plan gösteriyor, onay alınca uyguluyor; sahiplik manifestosu tutuyor, hook'ları izole ediyor ve `--uninstall`, `--restore-hooks`, `--reactivate` ile kurulumu eski haline döndürebiliyor. Codex yazılımının kendisini değiştirmiyor, hesap ve anahtar bilgilerini okumuyor; değişiklik sadece sonradan açılan yeni oturumları etkiliyor. macOS ve Linux birincil destek, Windows hâlâ test kanalında; Python 3.10+ gerekiyor ve imzasız masaüstü sürümleri de var. MIT lisanslı, yaklaşık 4.567 yıldız; Claude Code, Grok Build ve ZCode için kardeş depoları bulunuyor.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, CLAUDE.md ve talimat dosyalarını makineler arasında tutarlı tutma ihtiyacın, ama bu depo özellikle Codex'i hedefliyor ve senin kurulumun Claude Code ile OpenCode üzerine oturuyor. Fikir ilgini çekiyorsa bakılacak yer aynı ailenin Claude Code sürümü olur; bu depodaki kod Codex dizinine yazıyor. Yaklaşımın kendisi — önce plan, sonra onay, her an geri alma — ofis ve ev Mac'i arasında talimat senkronunu kendin kurarken taklit etmeye değer bir desen. Uyarı: imzasız masaüstü sürümleri Gatekeeper'a takılıyor, tek dosya script yolunu tercih et.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "Anakin-Inc/anakin",
+   "inputs_hash": "2607315a91161fc4319e4aa918baaa9d",
+   "description_tr": "Herhangi bir web sitesini LLM'e hazır markdown veya yapılandırılmış JSON'a çeviren, kendi sunucunda barındırılabilen açık kaynak bir scraping API'si. Go ile yazılmış tek binary olarak çalışıyor; HTTP çekme → anti-detect tarayıcı (Camoufox) → harici API sırasıyla ilerleyen bir handler zinciri kullanıyor, böylece sayfaların çoğu ücretsiz yerel yolda çözülüyor ve ücretli servisler sadece gerekli olduğunda devreye giriyor. Alan bazlı yapılandırma, başarısızlık deseni tespiti ve otomatik yeniden deneme, Thompson Sampling ile proxy seçimi ve iş takibi için React tabanlı bir panel içeriyor. Senkron, asenkron ve toplu (10 URL'e kadar) uç noktalar sunuyor; yapılandırılmış JSON çıkarımı için kendi Gemini anahtarını getirmeni istiyor. Veritabanı olmadan `go run` ile, tam yığın için Docker Compose ile ayağa kalkıyor. AGPL-3.0 lisanslı, yaklaşık 4.402 yıldız, 2026 başında açılmış aktif bir depo.",
+   "usage_tr": "Arslan Holding'in deal sourcing ve pazar araştırması adımında bunu veri toplama katmanı olarak kullanabilirsin: takip ettiğin haber kaynakları, ekosistem listeleri ve şirket siteleri markdown'a çevrilip araştırma ajanına temiz girdi olarak verilir. Asistanının yaptığı tedarikçi ve hizmet sağlayıcı karşılaştırmaları da aynı uç noktadan beslenebilir; panel üzerinden işleri o takip edebilir, yani devretmeye uygun. Ev Mac mini'sinde Docker ile 7/24 çalışır, Tailscale üzerinden ofis makinesinden erişilir; handler zinciri sayesinde sayfaların büyük kısmı ücretli API'ye hiç gitmez, bu da API maliyetinden kaçınma tercihine uyar. n8n akışlarının içinden basit bir HTTP çağrısıyla tetiklenebilir. İki uyarı: yapılandırılmış JSON çıkarımı Gemini anahtarı istediği için o kısım maliyet getirir, ve AGPL-3.0 lisansı bu servisi kendi yayınlayacağın bir ürünün parçası yapmayı zorlaştırır — kendi iç kullanımında sorun değil, Lyricdrop tarafına gömmeyi düşünüyorsan lisansı önce oku.",
+   "matched_project": "Arslan Holding",
+   "relevance": 6,
+   "investment_note": "Firecrawl'ın yükselttiği \"ajanlar için scraping altyapısı\" kategorisinde açık çekirdek bir rakip; anti-detect ve maliyet düşüren handler zinciri net bir farklılaşma, ticari sürümün nasıl fiyatlandığına bakmaya değer."
+  },
+  {
+   "full_name": "wainshine/Chinese-Names-Corpus",
+   "inputs_hash": "352d5e6b59e440d7d68e8a0c359cd183",
+   "description_tr": "Çince kişi adlarından oluşan bir derlem ve ad üretici. Soyadları, verilen adlar, hitap biçimleri, Japonca adlar ve çeviri yoluyla Çinceleşmiş İngilizce adlar gibi ayrı listeler içeriyor. Temel kullanım alanı Çince kelime bölütleme (word segmentation) ve adlandırılmış varlık tanıma (NER) modellerinin sözlük ihtiyacı. Kod değil, düz metin sözlük dosyalarından oluşan bir veri deposu; Apache-2.0 lisanslı ve yaklaşık 4.335 yıldız almış. README kısa ve büyük ölçüde dosya listesinden ibaret.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam Çince doğal dil işleme olurdu ki çalıştığın dillerin arasında yok. Lyricdrop'un çok dilli katalog hedefi İngilizce ve Türkçe üzerinden ilerliyor, bu derlemin sağladığı sözlükler oraya girmiyor. Veri dosyası olduğu için yerel çalışma veya gömme sorusu da anlamını yitiriyor. Kaydedip geçebilirsin.",
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "whoiskatrin/sql-translator",
+   "inputs_hash": "ab835383d87e991feffee635a8c8f0a9",
+   "description_tr": "Doğal dil sorgularını SQL'e, SQL'i de okunabilir açıklamaya çeviren web tabanlı bir araç. TypeScript ve Next.js ile yazılmış; koyu tema, büyük/küçük harf dönüşümü, sözdizimi vurgulama, sorgu geçmişi ve beta düzeyinde şema farkındalığı gibi özellikler sunuyor. Çeviriyi OpenAI API'si yapıyor, yani kendi anahtarını `.env` dosyasına koyman gerekiyor; yerel geliştirme ve Docker Compose ile kurulum adımları belgelenmiş. MIT lisanslı ve tamamen açık kaynak; yaklaşık 4.324 yıldız almış, 2023 başından beri var olan bir proje. Yol haritasında fonksiyon ve prosedür desteği hâlâ açık maddeler olarak duruyor.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam Supabase üzerindeki Lyricdrop verisine hızlı sorgu atmak olabilir, ama bu işi Claude Code zaten şema bağlamıyla ve ek maliyetsiz yapıyor. Araç OpenAI anahtarı istediği için API maliyetinden kaçınma tercihine de ters düşüyor. Şema farkındalığının beta olması, üretim tablolarında yazdığı sorgulara güvenmeyi zorlaştırır. Asistanına veri sorgulatmak istersen, tek başına bir çeviri arayüzü yerine admin paneline eklenmiş hazır raporlar daha sağlam bir yol olur.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "shashankvemuri/Finance",
+   "inputs_hash": "a3592d5892a03621e4e1b05305e7ab21",
+   "description_tr": "Nicel finans için toplanmış bir Python script koleksiyonu. Hisse senedi analizi, teknik gösterge hesaplama, strateji backtest'i, portföy optimizasyonu ve finansal modelleme başlıkları altında birbirinden bağımsız çalışan dosyalar içeriyor; pandas ve yaygın veri kaynakları üzerine kurulu. Paketlenmiş bir kütüphane değil, çoğunlukla tek tek çalıştırılan örnek programlardan oluşan bir arşiv. MIT lisanslı, yaklaşık 4.281 yıldız. Halka açık piyasa enstrümanlarına odaklı; özel sermaye veya proje finansmanı tarafına dair bir bileşen içermiyor.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam Arslan Holding'in portföy takibi olabilir, ama burada araçlar halka açık hisse senedi ve teknik gösterge mantığına göre yazılmış, erken aşama yatırım akışına değil. Güneş enerjisi tarafında ihtiyacın olan şey proje finansmanı ve DCF modellemesi; bu depodaki backtest ve indikatör kodları o soruyu cevaplamıyor. Python script arşivi olduğu için Mac'te çalışır ve maliyeti yok, ama çalıştırmanın karşılığı sana bir cevap değil bir keşif turu olur. Şimdilik atlanabilir.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "kubeflow/pipelines",
+   "inputs_hash": "d580b8b5a6525cbf0e70037e4ffb3105",
+   "description_tr": "Kubernetes üzerinde uçtan uca makine öğrenmesi iş akışları kurmak için geliştirilen Kubeflow bileşeni. Pipeline'lar Python SDK'sı (kfp) ile tanımlanıyor, konteyner adımları halinde çalıştırılıyor ve deney/çalıştırma geçmişi arayüz üzerinden izlenebiliyor. Bileşenlerin yeniden kullanılabilir olması, deneylerin karşılaştırılabilmesi ve eğitim akışlarının taşınabilir olması hedefleniyor. Kubeflow Platform'un parçası olarak ya da bağımsız servis olarak kurulabiliyor; çalışması için Kubernetes kümesi ve konteyner çalışma zamanı gerekiyor. Go ve Python ile yazılmış, Apache-2.0 lisanslı, yaklaşık 4.224 yıldız ve kurumsal MLOps ekipleri tarafından kullanılan olgun bir proje.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam Lyricdrop'un şarkı işleme akışının orkestrasyonu olurdu, ama o akış n8n ve DigitalOcean üzerinde yürüyor ve Kubernetes kümesi işletmek bu ölçekte gereksiz bir işletim yükü getirir. Kubeflow'un çözdüğü problem çok kişili ML ekiplerinin deney yönetimi; senin problemin tek makinede tekrarlanabilir bir işleme hattı. Ofisteki Mac'te yerel çalıştırılabilir bir şey değil, ayrı bir küme ve ona bakacak bir el gerektirir. n8n ile karşılaştığın sınırlar büyürse önce daha hafif bir iş kuyruğuna bakmak daha doğru olur.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "nucleuscloud/neosync",
+   "inputs_hash": "ea9693eca61de22fe833187dcea916be",
+   "description_tr": "Üretim veritabanlarındaki kişisel veriyi (PII) tespit edip anonimleştiren ve ortamlar arasında senkronize eden açık kaynak bir veri güvenliği platformu. Gerçek veriyi geliştirme ve test ortamlarına taşımadan önce maskeleyerek ya da sentetik veriyle değiştirerek kullanılabilir hale getiriyor; ayrıca fine-tuning için sentetik veri kümesi üretimini de kapsıyor. Go ile yazılmış bir arka uç ve Next.js/React arayüzden oluşuyor; Postgres ve MySQL kaynaklarını destekliyor, Docker ve Kubernetes ile kendi altyapında barındırılabiliyor. Lisansı standart SPDX listesine girmiyor, yani ticari kullanım koşullarını ayrıca okumak gerekiyor. Yaklaşık 4.139 yıldız; arkasında ticari bir şirket bulunan, aktif geliştirilen bir proje.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, playtest ve manuel testi dışarıya devretmek istediğinde test ortamına gerçek kullanıcı verisi taşımama ihtiyacı olabilir. Ancak Lyricdrop'un test panelindeki veri şarkı ve hizalama verisi, kişisel veri değil; anonimleştirme katmanının karşılığı bu aşamada düşük. Kurulumu Docker/Kubernetes üzerinden birkaç servis getiriyor, Mac'te ayakta tutulacak hafif bir bileşen değil. Supabase tarafında hassas veri tutan bir proje büyüdüğünde tekrar bakılabilir; şimdilik satır seviyesinde erişim kuralları daha ucuz bir cevap.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": "Geliştiriciye satan, açık kaynak çekirdekli bir veri güvenliği ürünü; B2B yazılım tezine oturan bir kategori ve PII yönetimi düzenleme baskısıyla büyüyor, rakip konumlandırmasına bakmaya değer."
+  },
+  {
+   "full_name": "orchest/orchest",
+   "inputs_hash": "6c00f7f9339d103704e06ee5dc59844f",
+   "description_tr": "Veri pipeline'larını görsel olarak kurmayı hedefleyen, notebook tabanlı bir akış aracı. Adımlar Jupyter notebook'ları veya script'ler olarak tanımlanıyor, aralarındaki bağımlılıklar bir DAG olarak çiziliyor ve konteynerler üzerinde çalıştırılıyor; kendi altyapında veya Kubernetes üzerinde barındırılabiliyor. TypeScript ve Python ile yazılmış, Apache-2.0 lisanslı, yaklaşık 4.131 yıldız. Pakette verilen README yalnızca bir quickstart yönlendirmesinden ibaret; projenin mimarisi, güncel bakım durumu ve olgunluğu hakkında bu metinden sağlıklı bir yargıya varmak mümkün değil, ayrıntılar için dokümantasyona bakmak gerekiyor.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam Lyricdrop'un şarkı işleme adımlarını görsel bir akışta toplamak olabilir, ama bu işi hâlihazırda n8n yapıyor ve iki orkestratör tutmanın karşılığı yok. Notebook merkezli bir model olduğu için üretim akışından çok veri bilimi keşfine uygun. Kendi uygulamana gömülecek bir bileşen değil, ayrı bir servis olarak çalışıyor. Mevcut metinden bakım durumu da okunamadığı için altyapına bağlamadan önce projenin canlı olup olmadığını doğrulaman gerekir.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "DLR-RM/BlenderProc",
+   "inputs_hash": "eee8560a278ee86c7ad2dc52ece07f7c",
+   "description_tr": "Blender üzerinde çalışan, fotogerçekçi eğitim görüntüsü üretmek için yazılmış prosedürel bir render pipeline'ı. Sahneye 3D model yükleyip nesne pozlarını, malzemeleri, ışıkları ve kamera konumlarını örnekliyor; ardından RGB, derinlik, normal ve segmentasyon görüntülerini COCO veya BOP formatlarında etiketleriyle birlikte üretiyor. Temel kullanım alanı, gerçek veri toplamanın pahalı olduğu poz tahmini, segmentasyon ve 3B yeniden yapılandırma modelleri için sentetik veri kümesi oluşturmak. Python ile yazılmış, `pip install blenderproc` ile kurulabiliyor ve akademik yayınlarla belgelenmiş durumda. GPL-3.0 lisanslı, yaklaşık 3.724 yıldız; DLR Robotik ve Mekatronik Merkezi tarafından sürdürülüyor.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam Folio'nun görsel üretimi olurdu, ama orada ihtiyacın olan şey üretken bir görüntü modeli, 3B sahne render'ı değil. BlenderProc'un çözdüğü problem bir bilgisayarlı görü modelini eğitecek etiketli veri üretmek; senin akışında model eğiten bir adım yok. Mac'te yerel çalışır ve API maliyeti getirmez ama Blender sahnesi kurmak başlı başına bir uzmanlık; asistana devredilecek bir iş değil. Model ajansı fikrindeki görüntü analizi tarafıyla da kesişmiyor, orası hazır vision modelleriyle çözülür.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "JetBrains/go-modern-guidelines",
+   "inputs_hash": "aa46a77cad23abfa1a82375349ae8165",
+   "description_tr": "Kodlama ajanlarının güncel Go yazmasını sağlamak için hazırlanmış bir kılavuz paketi. Ajanın `go.mod` dosyasından projenin Go sürümünü tespit etmesini, o sürüme kadar gelen dil ve standart kütüphane eklemelerini kullanmasını sağlıyor; örneğin elle döngü yerine `slices.Contains`, nil zinciri yerine `cmp.Or`, tip güvenli hata eşleme için `errors.AsType[T]`. Gerekçe olarak iki sorun gösteriliyor: modellerin eğitim kesme tarihinden sonraki özellikleri bilmemesi ve bildiklerinde bile eski kalıpları daha sık görmüş olmaları. Go 1.0'dan 1.27'ye kadar `modernize` analizcisinin hedeflediği her şey dahil olmak üzere geniş bir özellik listesi belgelenmiş. Junie, Claude Code, Codex ve Cursor için marketplace eklentisi olarak, diğer ajanlar için skill biçiminde dağıtılıyor; kılavuz bir CLI aracılığıyla çalışıyor ve projeyi değiştirmiyor. Apache-2.0 lisanslı resmî bir JetBrains projesi, yaklaşık 3.648 yıldız.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam Claude Code eklenti ve skill pratiğin, ama senin yığının TypeScript/Expo ve Python üzerine kurulu, Go yazdığın bir proje yok. Yine de deponun kurgusu taklit etmeye değer: ajanın eski kalıplara kaymasını engellemek için dile özgü bir kılavuzu plugin olarak yüklemek, Superpowers'ın yanında kendi TypeScript veya Expo kılavuzunu yazarken doğrudan örnek alınabilecek bir desen. Claude Code'a `/plugin marketplace add` ile kuruluyor, Max aboneliğinle çalışıyor ve ek maliyet getirmiyor. Go'ya geçmedikçe bu deponun kendisini kurmanın bir karşılığı yok; değeri fikrinde.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "linhandev/dataset",
+   "inputs_hash": "46d387bdfd48c426fd1e2c0f7d79e4ed",
+   "description_tr": "Tıbbi görüntüleme veri kümelerinin derlendiği bir dizin. Karaciğer, akciğer, prostat gibi organlara ve CT, MRI gibi modalitelere göre ayrılmış yaklaşık 20 başlık altında 80'den fazla veri kümesini listeliyor; her biri için temel bilgileri veriyor ve lisansın izin verdiği durumlarda hızlandırılmış indirme bağlantısı sunuyor. İçerik Çince, ayrıca İngilizce bir README sürümü mevcut. Kod içermiyor; topluluk katkısıyla büyüyen bir referans listesi. Depoda ayrı bir lisans belirtilmemiş, yaklaşık 3.619 yıldız almış.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam neuroteknoloji ve giyilebilir cihaz tezin olabilir, ama oradaki ilgi alanın EEG ve biyosinyal işleme, tıbbi görüntüleme değil. Kanarya'nın topladığı veri fizyolojik öz-izleme verisi; CT/MRI veri kümeleriyle kesişmiyor. Liste bir araç olmadığı için Mac'te çalıştırma veya uygulamana gömme sorusu da geçerli değil. Sağlık yapay zekâsı tarafında bir yatırım teziyle ilgilenirsen veri erişiminin ne kadar açık olduğunu görmek için bakılabilir, o kadar.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "seakee/CPA-Manager-Plus",
+   "inputs_hash": "c35b7f4148b7a3ce0f4c9e86c32bb019",
+   "description_tr": "CLIProxyAPI (CPA) tabanlı AI gateway kurulumları için kendi sunucunda barındırılan bir yönetim ve gözlemlenebilirlik paneli. İstek geçmişini kalıcı olarak saklıyor; model, sağlayıcı, hesap, API anahtarı, proje ve zaman aralığına göre token ve tahmini maliyet dökümü çıkarıyor. Hata oranlarını, durum kodlarını ve etkilenen model/hesapları inceleyebileceğin bir hata teşhis ekranı ile kota pencerelerini, sıfırlama kanıtlarını ve kimlik bilgisi sağlığını izleyen bir bölüm içeriyor. Hafif panel modunda mevcut CPA arayüzünün yerine geçiyor, tam modda ayrı bir yönetim sunucusu ve veritabanı ile çalışıyor. Go ile yazılmış, Docker imajı yayınlanıyor; yaklaşık 3.583 yıldızlı ve 2026'da açılmış aktif bir depo.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam Lyricdrop'ta şarkı başına içerik üretim maliyetini takip etme ihtiyacın, ama bu panel özellikle CLIProxyAPI gateway'i üzerinden geçen trafiği ölçüyor ve senin kurulumun Max aboneliği ile yerel modeller üzerine kurulu, API anahtarı havuzu üzerine değil. Böyle bir gateway kurmadan panelin ölçeceği bir şey olmaz. İleride Lyricdrop'un katalog üretimi birden fazla ücretli sağlayıcıya yayılırsa, model bazlı maliyet dökümü fikri tekrar gündeme gelir. O günde de bakılacak ilk soru, tek bir sağlayıcının kendi kullanım raporunun yetip yetmediği olmalı.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "edtechre/pybroker",
+   "inputs_hash": "d023b815bb835e4520f9fbbbe580f4a2",
+   "description_tr": "Makine öğrenmesi odaklı algoritmik alım satım stratejileri geliştirmek için yazılmış bir Python çerçevesi. NumPy üzerine kurulu ve Numba ile hızlandırılmış bir backtest motoru, çoklu enstrüman ve çoklu zaman aralığı desteği, Walkforward Analysis ile model eğitimi ve Optuna ile parametre optimizasyonu sunuyor. Sonuç metriklerini bootstrap örneklemesiyle hesaplayarak tek bir geçmiş senaryoya aşırı güvenmeyi azaltmayı hedefliyor; Alpaca, Yahoo Finance, AKShare veya kendi veri kaynağından geçmiş veri çekebiliyor. İndirilen veriyi, göstergeleri ve modelleri önbelleğe alıyor ve hesaplamaları paralelleştiriyor. Lisansı Apache 2.0 + Commons Clause, yani ticari yeniden satış kısıtlı; yaklaşık 3.545 yıldız ve belgelenmiş, düzenli sürüm çıkaran bir proje.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam yatırım tarafın, ama orada odağın erken aşama şirketler ve proje finansmanı, halka açık piyasada algoritmik strateji değil. Güneş enerjisi yatırımında ihtiyacın olan modelleme üretim simülasyonu ve nakit akışı tarafında; backtest motorunun cevapladığı soru bu değil. Mac'te yerel çalışır ve veri sağlayıcısı dışında maliyeti yok, ama kullanmaya başlamak yeni bir alan öğrenmek demek. Commons Clause kısıtı, ileride bunun üzerine ticari bir şey kurmayı da sınırlar.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  }
+ ]
+}

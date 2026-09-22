@@ -1,0 +1,175 @@
+{
+ "repos": [
+  {
+   "full_name": "eth-sri/lmql",
+   "inputs_hash": "fc53aca7bbeba6d90f01fe85a57a21c9",
+   "description_tr": "LMQL, Python'un üst kümesi olarak tasarlanmış, büyük dil modeli çağrılarını doğrudan program koduna gömen bir programlama dili. Sorgunun içinde kısıt (constraint) tanımlanmasına izin verir; üretilecek metni belirli bir biçime, uzunluğa veya sabit bir seçenek kümesine zorlayabilir, böylece çıktı ayrıştırma işi büyük ölçüde ortadan kalkar. HuggingFace üzerinden yerel modellerle ve OpenAI uyumlu API'lerle çalışır, tarayıcıdan denemek için bir playground IDE'si ve ayrı bir dokümantasyon sitesi vardır. ETH Zürich çıkışlı akademik bir proje; Apache-2.0 lisanslı, 4.2K yıldızlı ve 2022 sonunda açılmış. README'nin üst kısmında hâlâ \"bir sonraki büyük sürümü şekillendirin\" anketi duruyor, yani proje yön arayışında bir dönemde.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam Lyricdrop'ta şarkı başına boşluk ve dört şık üretirken çıktının biçimini garantilemek olabilir. Ancak o iş bugün sağlayıcıların yapılandırılmış çıktı / JSON şema desteğiyle ek bir dil öğrenmeden çözülüyor; LMQL araya kendi söz dizimini ve çalışma zamanını koyduğu için pipeline'a fazladan bir bağımlılık katmanı ekler. Yerel modellerle çalışabilmesi Mac'teki yerel çalıştırma tercihine uyuyor, ama Lyricdrop'un içerik üretimi zaten kısıtlı değil, üretim kalitesi ve maliyeti üzerinden ilerliyor. Kısıtlı üretim konusunu ileride ciddiye alırsan bu depoyu kavramsal bir referans olarak okumak yeterli, kod tabanına almak için bir neden yok. Not olarak: projenin bakım temposu belirsiz göründüğü için üretimde bağımlılık olarak taşımak riskli olur.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "thinking-machines-lab/tinker-cookbook",
+   "inputs_hash": "f96e5c469d402ca01307bdb31a4b80f5",
+   "description_tr": "Tinker Cookbook, Thinking Machines Lab'in Tinker adlı ince ayar (fine-tuning) SDK'sı için hazırlanmış örnek tarifler ve ortak soyutlamalar deposu. Tinker'ın kendisi dağıtık eğitimin karmaşıklığını servis tarafında tutan bir API; kullanıcı LoRA eğitim istemcisi oluşturuyor, forward_backward ve optim_step çağrılarını yapıyor, ardından aynı istemciden örnekleme alıyor. Cookbook denetimli öğrenme döngüleri, RL reçeteleri ve değerlendirme akışları için çalışır örnekler içeriyor; Llama gibi açık modellerin yanı sıra laboratuvarın kendi Inkling ailesini de destekliyor. Kullanmak için kayıt olup API anahtarı almak gerekiyor, eğitim kendi donanımında değil sağlayıcının altyapısında koşuyor ve modeller kullanım başına ücretlendiriliyor. Apache-2.0 lisanslı, 4.1K yıldızlı, 2025 ortasında açılmış; pytest, pyright ve reçete duman testleri CI'da işletiliyor.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, Lyricdrop'un içerik üretimini ileride küçük ve ince ayarlı bir modele devretmek isteyip istemeyeceğin sorusu olabilir. Bugünkü çalışma şeklinle örtüşmüyor: model eğitimi senin işin değil, ürettiğin şey uygulama; üstelik kapalı bir servise API anahtarıyla bağlanmayı ve token başına ödemeyi gerektiriyor, bu da Mac'te yerel çalıştırma ve Max aboneliği üzerinden ilerleme tercihinin tam tersi yönde. Kendi uygulamana gömülecek bir bileşen değil, bir eğitim servisinin istemcisi; asistanına devredilebilecek bir tarafı da yok. Post-training'in nasıl bir iş akışına dönüştüğünü görmek için bir akşamlık okuma olarak değerli, ondan fazlası değil.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": "Tinker, post-training'i servis olarak satan yeni bir altyapı katmanının somut örneği; Arslan Holding'in AI altyapısı tezinde bu katmanın fiyatlanması ve kimin hangi modeli eğitebildiği izlenmeye değer bir gösterge."
+  },
+  {
+   "full_name": "zly2006/zhihu-plus-plus",
+   "inputs_hash": "44e44584219ed778fc6f83408ff77cf5",
+   "description_tr": "Zhihu++, Çin'deki Zhihu platformu için yazılmış, reklamsız ve düşük kaynak tüketen üçüncü parti bir Android istemcisi; Kotlin Multiplatform ile deneysel bir masaüstü sürümü de üretiliyor. Projenin ayırt edici yanı öneri akışını tamamen cihazda çalıştırması: yerel öneri algoritması kendi ağırlıklarıyla özelleştirilebiliyor, Full sürümde ONNX ile yerel LLM embedding'leri kullanılarak anlamsal içerik filtreleme ve vektör benzerliğine dayalı engelleme sözcükleri destekleniyor. Bunun yanında düzenli ifadeyle engelleme, kullanıcı ve konu engelleme, içerik dışa aktarma (PDF, resim, Markdown, HTML), AI özetleme, sesli okuma ve AIGC işaretleme gibi okuma odaklı özellikler var. Telemetri isteğe bağlı ve toplananlar README'de açıkça sayılmış. AGPL-3.0 lisanslı, 4.1K yıldızlı, 2024 sonunda açılmış ve README'ye göre hâlâ eksikleri olan aktif bir proje.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam Folio'nun beğen/beğenme sinyallerinden öğrenen yerel öneri akışı olabilir. Oradaki fikir örtüşüyor: sıralamayı sunucuya değil cihaza koymak ve embedding benzerliğiyle filtrelemek — ama bu depo Kotlin/Android ve tamamen Zhihu API'sine bağlı, Expo/React Native tarafına taşınabilir bir bileşen çıkmıyor. Kullanmadığın bir platformun istemcisi olduğu için ürün olarak da bir karşılığı yok. En fazla, cihaz üstü öneri ve içerik filtrelemenin nasıl kurgulandığını görmek için okunacak bir örnek; AGPL lisansı da kod parçası kopyalamayı düşünürsen ayrıca dikkat edilmesi gereken bir nokta.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "thu-ml/SageAttention",
+   "inputs_hash": "2d8114ddf480ebf3634730fbd6886537",
+   "description_tr": "SageAttention, transformer attention hesabını nicemleyerek (INT8, FP8 ve yeni sürümde FP4) hızlandıran CUDA ve Triton çekirdeklerinden oluşan bir kütüphane. FlashAttention'a göre 2-5 kat hız iddiası taşıyor ve dil, görüntü ve video modellerinde uçtan uca metriklerde kayıp olmadığını raporluyor; mevcut modellere kod değiştirmeden takılabilecek şekilde tasarlanmış. Ampere, Ada, Hopper ve Blackwell nesli NVIDIA GPU'lar için ayrı optimize çekirdekler içeriyor, torch.compile ve dağıtık çıkarımla çalışıyor. Tsinghua'daki bir grup tarafından geliştiriliyor; arkasında ICLR, ICML ve NeurIPS'te kabul edilmiş üç makale var. Apache-2.0 lisanslı, 3.9K yıldızlı, 2024 sonbaharında açılmış ve sürüm notlarına göre düzenli güncelleniyor.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, Folio için video veya görsel üretimini kiralık NVIDIA GPU'larda koşturmaya karar verdiğin bir senaryo olabilir. Bu çekirdekler Apple Silicon'da çalışmıyor, dolayısıyla ofisteki M4 Pro Mac'te ya da Mac mini'de bir karşılığı yok; kurulum CUDA araç zinciri ve uygun nesil bir kart gerektiriyor. Kendi uygulamana gömülecek bir bileşen değil, çıkarım altyapısının en alt katmanında duran bir hızlandırma parçası. Bir gün kendi GPU'nda video üretimi yaparsan aynı kartla daha fazla kare almanı sağlar; o noktaya gelmeden ilgilenmek için bir neden yok.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "microsoft/PhiCookBook",
+   "inputs_hash": "e4ec948970cc4ad0fd859f4875a9fe6c",
+   "description_tr": "Phi Cookbook, Microsoft'un küçük dil modeli (SLM) ailesi Phi için hazırlanmış, Jupyter defterlerinden oluşan bir başlangıç kitabı. Phi-3 ve Phi-4 sürümlerini, vision ve multimodal varyantlarını kapsıyor; modelleri buluta veya uç cihazlara dağıtma, ONNX Runtime ile çalıştırma, ince ayar yapma ve üzerine küçük uygulamalar kurma senaryolarını örneklerle gösteriyor. Depo bir kütüphane değil, öğretici bir kaynak; GitHub Codespaces ve Dev Container ile doğrudan açılabiliyor ve otomatik çeviriyle çok sayıda dile aktarılıyor. Örneklerin önemli bir kısmı Microsoft ekosistemine (Azure, Foundry, Windows araçları) yaslanıyor. MIT lisanslı, 3.9K yıldızlı, 2024 ortasında açılmış ve model ailesiyle birlikte güncellenmiş.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, kişisel bilgi tabanındaki sesli notların kategorisini API'ye çıkmadan yerelde çıkarma ihtiyacı olabilir. Küçük bir modelin bu sınıflandırma işine yetip yetmeyeceğini tartmak için defterler fikir verir, ama depo Azure ve Windows tarafına yaslandığı için Mac'te aynı yolu izlemek yerine Ollama veya MLX üzerinden doğrudan bir Phi sürümünü denemek daha kısa bir yol. Buradan uygulamana gömeceğin bir bileşen çıkmıyor; çıkan şey okuma malzemesi. Karar vermek istiyorsan ölçülecek tek şey basit: kendi sesli not metinlerinden otuz kırk tanesini elle etiketleyip yerel küçük modelin kategori isabetini ölçmek, kitabı baştan sona okumaktan daha bilgilendirici olur.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "wafer-ai/gpu-perf-engineering-resources",
+   "inputs_hash": "a88f419829756451f95bbb6c2e608ff9",
+   "description_tr": "Bu depo, GPU ve çıkarım performans mühendisliği öğrenmek için derlenmiş bir kaynak listesi. Sıralama tek bir çıkarım isteğinden başlayıp tek GPU'ya, optimize çekirdeklere, çıkarım motorlarına ve dağıtık sistemlere doğru ilerliyor; bölümler arasında CUDA programlama modeli, matris çarpımı, tensor core ve düşük hassasiyet, Triton ve CUTLASS, sürekli yığınlama, KV cache, nicemleme, spekülatif çözme ve prefill/decode ayrıştırma var. Kaynak politikası olarak özgün makaleler, resmi belgeler ve üreticilerin kendi depoları tercih edilmiş; ayrıca güncel NVIDIA, AMD, TPU ve Trainium donanımları için ayrı bölümler tutuluyor. Liste, çıkarım performansı üzerine çalışan Wafer adlı şirket tarafından sürdürülüyor ve README'de işe alım ilanı da yer alıyor. 3.7K yıldız, 2026 Ocak'ta açılmış; depoda standart bir açık kaynak lisansı belirtilmemiş.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam Arslan Holding tarafında AI altyapısı yatırımlarını değerlendirirken maliyet yapısını okuyabilmek olabilir. Bir çıkarım şirketinin marjının nereden geldiğini, token maliyetinin hangi kalemlerden oluştuğunu ve bir ekibin teknik iddiasının gerçekten ayırt edici olup olmadığını anlamak için bu liste iyi bir çerçeve verir. Ama bu bir araç değil, okuma listesi; ne Mac'te çalışacak bir şey ne de uygulamana gömülecek bir bileşen. Asistanına devredilebilecek bir tarafı da yok, çünkü değeri okuyanın kendisinde kalıyor. Gerçekçi kullanım biçimi, bir deal görüşmesi öncesi ilgili bölümü seçip okumak; baştan sona çalışmak senin zaman bütçene oturmaz.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": "Listenin çıkarım optimizasyonu üzerine çalışan bir startup tarafından işe alım aracı olarak sürdürülmesi, bu katmanda yetenek rekabetinin sertleştiğini gösteriyor; çıkarım maliyeti optimizasyonu, deal flow'da izlenmeye değer bir segment."
+  },
+  {
+   "full_name": "yaojingang/GEOFlow",
+   "inputs_hash": "b8e98405f05dca329a60479bd487d7f3",
+   "description_tr": "GEOFlow, kurumsal siteler için içerik üretimi ve çok siteli dağıtımı tek bir yönetim panelinde toplayan açık kaynak bir platform; odağı, içeriğin arama motorlarının yanı sıra üretken modellerin cevaplarında da görünür olması (generative engine optimization). Bilgi tabanı, başlık ve anahtar kelime kütüphaneleri, görsel havuzu ve prompt yönetimi; üretilen yazıların kanıt, veri, atıf ve reklam kurallarına göre puanlandığı bir AI kalite denetimi; ardından insan onayı ve yayın adımı zincir olarak kurgulanmış. Yayın kanalları arasında kendi ön yüzü, barındırılan alt alan adlı siteler, WordPress REST, genel HTTP API ve insan yayınını yöneten bir Chrome uzantısı var; siteler robots.txt, sitemap ve llms.txt dosyalarını otomatik üretiyor. Yığın PHP 8.3 / Laravel, PostgreSQL ve OpenAI uyumlu model uçları; imzalı güncelleme ve yedekleme için ayrı bir updater servisi bulunuyor. AGPL-3.0 lisanslı, 3.7K yıldız, 2026 Nisan'da açılmış; kaynak 3.2 beta sürümünde ve arayüzle dokümantasyonun ağırlığı Çince.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam Lyricdrop lansmanının içerik üretimi ve Arslan Holding sitesinin modellerin cevaplarında görünürlüğü olabilir. İkisi de gerçek ihtiyaç, ama bu platform PHP/Laravel ve PostgreSQL üzerine kurulu bütün bir sistem; Next.js, Vercel ve Supabase üzerinde yürüyen düzenine gömülecek bir bileşen çıkmıyor, yanına ayrı bir sunucu olarak kurulması gerekir. Yayın ve onay akışının asistanına devredilebilir olması olumlu tarafı, kurulum ve bakım yükü ise olumsuz tarafı. AGPL lisansı, ileride kendi ürününe uyarlamayı düşünürsen ayrıca değerlendirilmesi gereken bir kısıt. Bu işi şimdilik n8n üzerinde küçük bir yayın akışıyla çözmen, tam teşekküllü bir içerik platformu işletmekten daha ucuza gelir.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": "GEO, yani içeriğin model cevaplarında görünürlüğü, henüz oturmamış yeni bir B2B kategorisi; aynı ürünün Arapça ve Türkçe içerik üreten kurumlar için karşılığı MENA-Türkiye koridorunda boş duruyor."
+  },
+  {
+   "full_name": "zvec-ai/zvec-grep",
+   "inputs_hash": "d6840085f263d32111eb41dabc5af859",
+   "description_tr": "zvec-grep (kısaca zg), ripgrep tarzı düzenli ifade aramasını, BM25 tam metin aramasını ve vektör aramasını tek bir yerel-öncelikli arayüzde birleştiren bir arama katmanı. Bir çalışma alanını bir kez indeksliyor, sonra aynı indeksi hem terminalden hem de MCP üzerinden bir kod ajanına sunuyor; sonuçlar kaynak konumuna bağlı ve sıralı döndüğü için ajanın daha az çağrıyla daha az bağlam tüketmesi hedefleniyor. Kaynak kodun yanı sıra doküman ve yapılandırılmış veri biçimlerinde de arama yapıyor, indeks projenin kökündeki bir klasörde tutuluyor. Yerel embedding modelleriyle çalışabiliyor; uzak embedding servisine veri yalnızca açık izinle gidiyor. macOS, Linux ve Windows'ta çalışıyor, Node 22+ ile npm üzerinden kuruluyor ve ayrıca bir Rust uygulaması geliştiriliyor. Apache-2.0 lisanslı, 3.7K yıldız, 2026 Temmuz'da açılmış genç bir proje.",
+   "usage_tr": "Bu, kişisel bilgi tabanı projenin arama katmanına doğrudan oturur: sesli notlardan çıkan metinleri ve biriktirdiğin belgeleri tek bir klasörde toplayıp indekslersen, hem anlam üzerinden hem de birebir metinle arayabilirsin; RAG için ayrı bir vektör veritabanı işletmeye gerek kalmaz. İkinci ve en az onun kadar somut kullanım, MCP üzerinden Claude Code ve OpenCode'a bağlamak: Lyricdrop v2 ve diğer depolarında ajanın dosyaları tarayarak değil, sıralı sonuçlarla çalışmasını sağlar, bu da hem süreyi hem bağlam tüketimini düşürür. Yerel embedding modelleriyle ofisteki M4 Pro Mac'te tamamen yerelde koşar; API maliyeti getirmez ve indeks makineden çıkmaz. Fayda net biçimde ölçülebilir: aynı soruyu önce mevcut arama akışıyla, sonra zg ile sorup ajanın kaç adımda doğru dosyaya vardığını karşılaştır. Uyarı: proje birkaç aylık, sürümler arasında davranış değişebilir; kurduğun sürümü sabitle ve indeksi yeniden kurma maliyetini büyük depolarda bir kez ölç.",
+   "matched_project": "Kişisel bilgi tabanı",
+   "relevance": 7,
+   "investment_note": null
+  },
+  {
+   "full_name": "AIDotNet/OpenDeepWiki",
+   "inputs_hash": "76198d9c4983d6e1b65aaa4923d6e524",
+   "description_tr": "OpenDeepWiki, Git depolarını, ZIP arşivlerini veya yerel dizinleri aranabilir bir bilgi tabanına çeviren açık kaynak bir sistem. Depodan README özeti, proje genel bakışı, wiki kataloğu, doküman içerikleri, çok dilli çeviriler ve zihin haritaları üretiyor; aynı indekslenmiş içeriği hem herkese açık bir Next.js sitesinde yayımlıyor hem de sohbet asistanı, gömülebilir chat API'si ve depo bazlı MCP uçları üzerinden sunuyor. Arka uç .NET 10 üzerinde ASP.NET Core, veri tabanı olarak SQLite veya PostgreSQL kullanılıyor; arka plan işçileri depo işleme, çeviri ve artımlı güncellemeleri yürütüyor. Kurulum Docker Compose ile yapılıyor ve en az bir LLM sağlayıcı anahtarı gerekiyor; katalog ve içerik üretimi için ayrı model tanımlanabiliyor. MIT lisanslı, 3.6K yıldız, 2025 Nisan'da açılmış.",
+   "usage_tr": "Bütün projelerini tanıyan ve aralarında köprü kuran bir asistan isteğinin somut bir parçası burada: depolarını tek tek indeksleyip her biri için MCP ucu açarsan, Claude Code oturumları ve asistanın aynı proje belgelerine aynı yerden bakar. Lyricdrop v2 gibi hızlı büyüyen bir kod tabanında, her yeni oturumun projeyi baştan keşfetmesi yerine üretilmiş wiki üzerinden bağlam alması zaman kazandırır. Ev tarafındaki 7/24 açık Mac mini'de Docker ile kurup Tailscale üzerinden erişmen mümkün; yani bir sunucu kiralamadan deneyebilirsin. Uyarı iki başlıkta: katalog ve içerik üretimi token harcayan bir iş, Max aboneliğinin kapsamına girmez, bu yüzden önce tek bir depoda maliyeti ölç; ayrıca .NET 10 + Next.js yığını senin standart yığınının dışında, yani hata çıktığında kendi başına müdahale etmen zor olur. Depolarını herkese açık yayımlama tarafını kapalı tutmayı da baştan ayarla.",
+   "matched_project": "Asistan ve holding operasyon araçları",
+   "relevance": 4,
+   "investment_note": null
+  },
+  {
+   "full_name": "NVlabs/FoundationPose",
+   "inputs_hash": "4fc8b4c097287f67d15bc28a60524bac",
+   "description_tr": "FoundationPose, daha önce görülmemiş nesnelerin 6 boyutlu duruşunu (konum ve yönelim) tahmin eden ve video boyunca takip eden bir temel model. İki kurulumu tek çatıda birleştiriyor: nesnenin CAD modeli varsa model tabanlı, yoksa birkaç referans görüntüyle model bağımsız çalışıyor; aradaki boşluğu yeni görünüm sentezi yapan örtük bir sinirsel temsil kapatıyor. Test anında ince ayar gerektirmiyor ve büyük ölçekli sentetik eğitimle genelleme sağlandığı belirtiliyor; BOP sıralamasında ilk sırayı aldığı raporlanmış. NVIDIA Labs tarafından geliştirilmiş, CVPR 2024'te öne çıkan bildiri olarak kabul edilmiş; kurulum ağırlıklı olarak CUDA'lı Docker imajı üzerinden yapılıyor ve ROS sürümü ayrı bir depoda sürdürülüyor. 3.6K yıldız, 2023 sonunda açılmış; lisans standart bir etiketle işaretlenmemiş, ticari kullanım öncesi lisans metnine bakmak gerekir.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; bu depo robot kavrama ve artırılmış gerçeklik uygulamaları için tasarlanmış, senin proje listende bu ikisinden biri yok. Yakınlaştırılabilecek tek bağlam, giyilebilir ve sensör tarafındaki genel ilgi alanın, ama orada işlenen sinyal biyolojik, burada işlenen ise kamera görüntüsündeki nesne geometrisi; aynı problem ailesine girmiyorlar. Çalıştırmak için CUDA'lı bir GPU ve ağırlık indirmeleri gerekiyor, Mac'te bir karşılığı yok. Bilgi olarak izlemek dışında bir adım atmanı gerektiren bir yan görünmüyor.",
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "xtekky/chatgpt-clone",
+   "inputs_hash": "b850081cac6351d3954c7a40d287ef82",
+   "description_tr": "Bu depo, ChatGPT arayüzünün Python ile yazılmış bir kopyası; sohbet penceresi, konuşma yönetimi, tema değiştirme ve kullanıcı tercihlerini hatırlama gibi temel özellikler sunuyor. OpenAI API anahtarıyla ya da yapılandırmadan verilen bir ters proxy adresi üzerinden çalışıyor; sanal ortam kurulumu veya docker-compose ile ayağa kaldırılıyor. README'nin en üstünde geliştirmenin zaman yokluğundan durduğu yazıyor ve yapılacaklar listesindeki maddelerin çoğu (konuşma dışa aktarma, ses girişi/çıkışı, dosya yükleme) açık bırakılmış. GPL-3.0 lisanslı, 3.5K yıldız; 2023 Nisan'ında, ChatGPT arayüz kopyalarına ilginin en yüksek olduğu dönemde açılmış. Yıldız sayısı bugünkü bakım durumundan çok o dönemin ilgisini yansıtıyor.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, kurmayı düşündüğün uygulama stüdyosu fikrinde hızlı bir sohbet arayüzü şablonu ihtiyacı olabilir. Ama bu kod 2023'te durmuş; bugün aynı işi Expo veya Next.js tarafındaki güncel başlangıç şablonlarıyla hem daha az hem de daha bakımlı kodla kurarsın. Kendi uygulamana gömülecek bir bileşen değil, tek başına duran bir web arayüzü; GPL-3.0 lisansı da ticari bir üründe kullanmayı düşünürsen ayrı bir kısıt. Terk edilmiş bir depoyu fork'layıp canlandırmak, sıfırdan yazmaktan daha pahalıya gelir.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "OpenGVLab/Ask-Anything",
+   "inputs_hash": "02d9567570989bd552a46a8eadfa38af",
+   "description_tr": "Ask-Anything, video anlama üzerine çalışan VideoChat model ailesinin ana deposu. İki hattı var: videodan çıkarılan açıklamaları bir dil modeline taşıyan erken sürüm ve uçtan uca eğitilmiş çok modlu VideoChat2 türevleri; kısa, uzun ve akış halindeki videolarda soru-cevap, açıklama üretme ve olay çıkarma yapabiliyorlar. Depo Gradio demoları, çıkarım betikleri, talimat verisi ve MVBench değerlendirme kümesini barındırıyor; vLLM ile hızlandırılmış bir dal da mevcut. En yeni sürümler (VideoChat-Flash, VideoChat3) ayrı depolara taşınmış, burası daha çok ailenin giriş noktası ve arşivi olarak duruyor. MIT lisanslı, 3.4K yıldız, 2023 Nisan'da açılmış; akademik bir araştırma deposu olduğu için kurulum ve sürüm yönetimi ürünleşmiş araçlara göre dağınık.",
+   "usage_tr": "Stand-up özelini çok modlu olarak analiz ettiğin çalışmanın devamı için kullanabilirsin: transkriptin tek başına yakalayamadığı sahne, jest ve seyirci tepkisi anlarını video üzerinden sorgulayıp not çıkarmak bu modellerin tam işi. Transkript analizini zaten yapabiliyorsun; buradan gelen katkı, \"şu dakikada sahnede ne oluyor\" sorusunun cevabını metne eklemek ve tekniği tersine mühendislikle çıkarırken görüntü tarafını kaybetmemek olur. Uyarı donanımda: buradaki 7-8B modeller pratikte CUDA'lı GPU bekliyor, ofisteki Mac'te rahat koşmazlar; küçük ve yeni sürümleri denemek istersen ayrı depolarına bakman ve bellek sınırını ölçmen gerekir. Kendi uygulamana gömülecek bir bileşen değil, tek seferlik bir analiz için kurulup bırakılacak bir araştırma yığını. Hobi tarafında kalan, ölçülü zaman ayırmaya değer bir kullanım.",
+   "matched_project": "Stand-up komedi analizi",
+   "relevance": 3,
+   "investment_note": null
+  },
+  {
+   "full_name": "Snailclimb/interview-guide",
+   "inputs_hash": "fbbd33aabc51bb9404ec99d3d8b6db96",
+   "description_tr": "InterviewGuide, iş görüşmesi hazırlığı için yazılmış açık kaynak bir AI mülakat platformu: özgeçmiş analizi, yazılı ve sesli mülakat simülasyonu, mülakat takvimi ve bilgi tabanı üzerinden RAG soru-cevap sunuyor. Arka uç Spring Boot 4.1 ve Java 25 üzerinde Spring AI ile kurulu; vektör verisi pgvector ile PostgreSQL'de tutuluyor, asenkron işler Redis Stream ile yürütülüyor, doküman ayrıştırma Tika ve PDF dışa aktarma iText ile yapılıyor. Sesli mülakat WebSocket üzerinden Qwen3 ASR/TTS ile gerçek zamanlı çalışıyor; README gecikme ve yankı gibi bilinen sorunları açıkça listeliyor. Ön yüz React ve TypeScript; mülakat yönü başına SKILL.md dosyalarıyla soru kapsamı tanımlanıyor. AGPL-3.0 lisanslı, 3.3K yıldız, 2026 başında açılmış; proje aynı zamanda ücretli bir eğitim serisinin örnek uygulaması ve dokümantasyonu Çince.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam Türkiye tarafındaki operasyonel şirkette işe alım ve değerlendirme süreçleri olabilir, ama o alan senin gündeminde nadiren yer tutuyor. Teknik olarak da uzak duruyor: Java/Spring yığını senin Expo, Supabase ve n8n düzeninle hiçbir noktada kesişmiyor, içerik ve arayüz Çin pazarındaki mülakat pratiğine göre yazılmış. Sesli görüşme akışının nasıl kurulduğu merak edersen okunabilir bir referans, çünkü gerçek zamanlı ASR/TTS zincirini ve bilinen sorunlarını açıkça anlatıyor. Bunun dışında kurup denemek için bir gerekçe görünmüyor.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "arnegiacomo/fugleramme",
+   "inputs_hash": "942d2629a2c908ed11fb74da921413f5",
+   "description_tr": "Fugleramme, Raspberry Pi üzerinde çalışan ve bahçede duyulan kuşları bir e-ink çerçevede gösteren bir ev projesi. Ses sınıflandırmasını BirdNET-Go yapıyor; proje onun API'sini yoklayıp tespit edilen her türü kendi illüstrasyon kütüphanesindeki bir görselle eşliyor, sayfayı kuşların büyüklüğüne göre diziyor ve yalnızca kuşlar değiştiğinde ekranı yeniliyor. Kullanılan görseller 1800'lerin kamu malı doğa tarihi levhalarından elle kesilmiş 800'den fazla çizim; 400'ün üzerinde tür kapsanıyor. E-ink panel zorunlu değil, aynı görünüm web kiosk olarak da sunuluyor; ayarlar için bir admin sayfası, Docker kurulumu ve otomatik güncelleme mekanizması var. Tüm çıkarım yerelde çalışıyor. Kod MIT, görseller CC BY-SA lisanslı; 3.3K yıldız, 2026 Temmuz'da açılmış ve README erken geliştirme aşamasında olduğunu söylüyor.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam ev teknolojisi tarafı, yani 7/24 açık Mac mini ve ev ağı üzerinde kendi kendine çalışan küçük servisler fikri olabilir. Projenin öğretici yanı, uçtan uca yerel bir ses sınıflandırma döngüsünün sınırlı donanımda nasıl kurulduğunu göstermesi; bu, yerel model tercihinle aynı çizgide ama senin iş akışına bir şey eklemiyor. Kurmak için ayrıca donanım (Pi ve e-ink panel) almak gerekiyor, yani bir hafta sonu işi olarak bile küçük bir giriş maliyeti var. Hoş bir proje, ama hobi listendeki başlıklardan hiçbirine denk düşmüyor.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "Nerogar/OneTrainer",
+   "inputs_hash": "79208c474ecf974aeb50ba9c922e3679",
+   "description_tr": "OneTrainer, difüzyon modellerini eğitmek için tek bir arayüzde toplanmış bir araç; tam ince ayar, LoRA ve embedding eğitimini destekliyor. Desteklenen model listesi geniş: FLUX.1, Stable Diffusion 1.5'ten 3.5'e, SDXL, Qwen Image, Sana, PixArt ve Hunyuan Video gibi mimariler sayılıyor. Eğitim tarafında maskeli eğitim, en-boy oranı kovalama, çoklu çözünürlük, EMA, gürültü zamanlaması düzeltmeleri ve düzenli otomatik yedekleme var; veri seti tarafında BLIP ve WD-1.4 ile otomatik etiketleme, ClipSeg ve Rembg ile maske üretimi geliyor. Hem grafik arayüzle hem komut satırından kullanılabiliyor, eğitim sırasında örnek üretmek için ayrı bir panel ve TensorBoard entegrasyonu bulunuyor. AGPL-3.0 lisanslı, 3.2K yıldız, 2023 Nisan'da açılmış; yeni model mimarileri eklenmeye devam ediyor.",
+   "usage_tr": "Folio'da her profilin aynı yazar kimliğine ve aynı görsel dile sahip olması gerekiyor; bunu her gün prompt ile yeniden yakalamaya çalışmak yerine bir kez LoRA eğitip günlük üretimi o ağırlıkla yapmak daha istikrarlı sonuç verir. Pratik akış şöyle olur: küçük ve dikkatle seçilmiş bir görsel setiyle karakter ve stil LoRA'sı eğitirsin, sonra günlük içerik pipeline'ın (n8n + DigitalOcean) yalnızca çıkarım tarafını koşturur. Uyarı donanımda ve ciddi: bu eğitim pratikte NVIDIA GPU bekliyor, 24 GB'lık M4 Pro Mac'te makul sürede tamamlanmaz; yani bu adım kiralık bir GPU'da yapılacak tek seferlik bir iş olarak planlanmalı, sonrası yerele dönebilir. Maliyet tarafı API'ye göre öngörülebilir: eğitim bir kez ödenir, sonra üretim başına ek ücret çıkmaz. AGPL lisansı eğitilen ağırlıkları değil aracın kendisini bağlar, ama aracı bir ürünün içine gömmeyi düşünürsen lisans metnini okuman gerekir.",
+   "matched_project": "Folio",
+   "relevance": 4,
+   "investment_note": null
+  },
+  {
+   "full_name": "NVIDIA-NeMo/Switchyard",
+   "inputs_hash": "6becc8b234cc1883989c462cb72875c3",
+   "description_tr": "Switchyard, her LLM çağrısını işi yapabilecek en ucuz modele yönlendiren bir yönlendirme katmanı. Üç kullanım yolu sunuyor: mevcut bir gateway'e eklenti olarak (NeMo Relay ve LiteLLM), kendi uygulamana gömülen bir kütüphane olarak (Python ve Rust), ya da OpenAI ve Anthropic API'leriyle uyumlu bağımsız bir proxy olarak; üçüncü yolda Claude Code veya Codex CLI gibi istemciler doğrudan proxy'ye yönlendirilebiliyor. Kademeli yönlendirme, yükseltme ve sınıflandırıcı temelli algoritmalar var; README, Terminal-Bench 2.1 üzerinde doğruluk-maliyet grafiğiyle iddiasını sayısallaştırıyor. Kütüphane yalnızca modeli seçiyor, çağrıyı senin altyapın yapıyor; böylece kimlik bilgileri ve yeniden deneme mantığı yerinde kalıyor. Apache-2.0 lisanslı, 3.2K yıldız, 2026 Mayıs'ta açılmış; bileşenlerin olgunluğu beta ile \"yalnızca demo\" arasında değişiyor ve sürüm sabitlenmesi öneriliyor.",
+   "usage_tr": "Lyricdrop'un şarkı başına içerik üretiminde (boşluk seçimi, çeldiriciler, kontrol adımları) toplu işleri ucuz bir modele, yalnızca zor vakaları güçlü modele gönderecek bir yönlendirme kurmak için kullanabilirsin. Dil başına binlerce şarkılık bir katalog hedeflerken şarkı başına maliyet doğrudan kataloğun büyüklüğünü belirlediği için, burada kazanılan her kuruş ölçekle çarpılıyor. Kütüphane olarak pipeline'ına gömülebilir; böylece n8n akışını ve mevcut istek mantığını değiştirmeden yalnızca model seçimi dışarı alınır. Max aboneliği üzerinden yürüyen Claude Code çalışmalarına bir faydası olmaz, kazanç yalnızca token başına ödediğin üretim hattında ortaya çıkar. Uyarı: bağımsız proxy bileşeni README'de üretim için önerilmiyor ve proje 1.0 öncesi; ayrıca ucuz modele düşen çağrıların kalitesini mevcut 20-30 şarkılık test setinde ölçmeden yönlendirmeye güvenme.",
+   "matched_project": "Lyricdrop",
+   "relevance": 5,
+   "investment_note": null
+  },
+  {
+   "full_name": "stepfun-ai/Step-Video-T2V",
+   "inputs_hash": "dcf3c9f43bc36156bc9f45ce76afaf6c",
+   "description_tr": "Step-Video-T2V, StepFun tarafından yayımlanan 30 milyar parametreli bir metinden videoya üretim modeli; 204 kareye kadar video üretebiliyor. Mimaride videoyu 16x16 uzamsal ve 8 kat zamansal sıkıştıran bir Video-VAE, 3D tam dikkatli bir DiT ve akış eşlemeyle eğitim var; son aşamada görüntü kalitesini artırmak için video üzerinde DPO uygulanmış. İki dilli metin kodlayıcılarla hem İngilizce hem Çince istemleri işliyor ve kendi değerlendirme kümesiyle karşılaştırma sonuçları paylaşılıyor. Model ağırlıkları ve çıkarım kodu Hugging Face üzerinden açık; daha hızlı bir turbo varyantı ve görüntüden videoya sürümü de yayımlanmış. MIT lisanslı, 3.2K yıldız, 2025 Şubat'ta açılmış; çalıştırmak için yüksek bellekli ve çok sayıda GPU gerekiyor.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam Folio'nun günlük video içerik üretimi, ama bu model o iş için pratik bir seçenek değil. 30 milyar parametrelik bir video modeli 24 GB'lık Mac'te çalışmaz; anlamlı bir hızda üretim yapmak çoklu GPU'lu bir makine kiralamayı gerektirir ki bu hem yerel çalıştırma tercihinle hem de düşük maliyetli içerik üretimi hedefinle çelişir. Folio için gerçekçi yol, klip başına ücretlendirilen bir servisi ölçülü kullanmak ya da Mac'te koşabilen daha küçük modellerle başlamak. Bu depo, açık ağırlıklı video üretiminin nereye geldiğini görmek için izlenecek bir referans olarak kalsın.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "FB208/OpenBidKit_Yibiao",
+   "inputs_hash": "53f77a4162fd1c6a743d0181b6305060",
+   "description_tr": "OpenBidKit (易标), ihale teklif dosyası hazırlamak için yazılmış açık kaynak bir masaüstü araç kutusu. Teknik teklif metni üretme, görsel ve tablo oluşturma, ticari teklif hazırlama, kurumsal bilgi tabanı yönetimi, teklif metninde benzerlik/kopya denetimi ve teklifi geçersiz kılacak maddelerin kontrolü gibi adımları tek uygulamada topluyor. Electron, React 19 ve TypeScript ile yazılmış; yapılandırma ve çalışma alanı yerelde tutuluyor. Model tarafında OpenAI uyumlu tüm API'lerin yanı sıra Ollama ve LM Studio üzerinden yerel modelleri de kabul ediyor, bu da maliyeti kullanıcının kontrolünde bırakıyor. Ürünün konumlanması, pahalı ticari standart yazılımlarına ücretsiz bir alternatif olmak; README'de token maliyeti üzerinden karşılaştırma veriliyor. AGPL-3.0 lisanslı, 3.0K yıldız, 2025 Ağustos'ta açılmış; arayüz ve dokümantasyon Çince ve akış Çin ihale mevzuatına göre kurgulanmış.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam Türkiye tarafındaki operasyonel şirkette kurumsal teklif ve doküman üretimi olabilir, ama o operasyon artık senin günlük gündeminde değil. Araç, geçersiz teklif maddelerini Çin ihale mevzuatına göre denetlediği için Türkiye veya Körfez ihale kurallarına uyarlamak yalnızca çeviri değil, kural setini baştan yazmak demek. Yerel model desteğiyle Mac'te API maliyeti olmadan çalışabiliyor olması artı bir yan, fakat ortada çözmek istediğin bir problem yok. Kendi uygulamalarına gömülebilecek bir bileşen de çıkmıyor; bu kapalı bir masaüstü iş akışı.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": "Dikey doküman üretimi — ihale ve teklif dosyaları — kurumsal tarafta somut ve tekrarlayan bir iş yükü; aynı ürünün Türkçe ve Arapça ihale mevzuatına göre kurulmuş bir karşılığı MENA-Türkiye koridorunda görünmüyor ve B2B yazılım tezine giriyor."
+  },
+  {
+   "full_name": "ExplosiveCoderflome/AI-Novel-Writing-Assistant",
+   "inputs_hash": "8dd0f805123044191a7f6896bff7ace1",
+   "description_tr": "Bu proje, uzun soluklu roman yazımını uçtan uca bir üretim hattı olarak kuran AI-native bir çalışma tezgâhı. Tek cümlelik bir fikirden başlayıp kitap yönü, dünya kurgusu, karakterler, cilt stratejisi ve bölüm görevlerini otomatik planlayan bir \"otomatik yönetmen\" akışı var; bölüm üretimi, AI denetimi, düzeltme ve durum geri beslemesi duraklatılıp kaldığı kontrol noktasından sürdürülebilen tek bir zincire bağlanmış. Karakter kaynak defteri, dünya el kitabı, yazım tarzı motoru ve kitap çözümleme çıktıları kalıcı varlıklar olarak tutuluyor ve RAG ile geri çağrılıyor. Teknik olarak pnpm monorepo, React + Vite ön yüz, Express + Prisma arka uç, LangChain/LangGraph ajan çalışma zamanı, SQLite ve isteğe bağlı Qdrant kullanılıyor; OpenAI, DeepSeek, SiliconFlow ve xAI arasında görev bazlı model yönlendirme yapılabiliyor. 3.0K yıldız, 2025 Şubat'ta açılmış; Windows masaüstü sürümü dağıtılıyor, arayüz ve dokümantasyon Çince ve lisans standart bir etiketle işaretlenmemiş.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam Folio'nun her gün yeni içerik üreten pipeline'ı için mimari bir referans olabilir. Oradaki iki fikir gerçekten ilgini çekebilir: uzun üretim zincirini kontrol noktalarına bölüp kaldığı yerden sürdürmek ve karakter/dünya tutarlılığını prompt'a değil kalıcı bir deftere yaslamak — Folio'da yazar kimliğinin günden güne kaymaması aynı problem. Ama ürünün kendisi roman yazmak için kurulmuş, Çince arayüzlü bir masaüstü uygulaması; içinden alıp Expo/Supabase düzenine gömebileceğin bir bileşen çıkmıyor ve çalışması için sağlayıcı anahtarları gerekiyor. Lisansın standart bir etiketle işaretlenmemiş olması, kod ödünç almayı düşünürsen ayrıca kontrol edilmesi gereken bir nokta. Yani okunacak bir mimari örnek, kurulacak bir araç değil.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  }
+ ]
+}

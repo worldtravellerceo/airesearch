@@ -1,0 +1,175 @@
+{
+ "repos": [
+  {
+   "full_name": "superloglabs/superlog",
+   "inputs_hash": "170ee2cc475b0de18f5b80b5c1407a44",
+   "description_tr": "Superlog, OpenTelemetry verisini (trace, log, metrik) toplayan ve gürültülü sinyalleri olaylara gruplayan açık kaynak bir gözlemlenebilirlik çalışma alanı. Depo web arayüzünü, API'yi, OTLP ingest proxy'sini ve arka plan worker'larını birlikte veriyor; veri katmanı Postgres şeması ile ClickHouse üzerindeki telemetri sorgularına dayanıyor. İnceleme yapan ajan çalışma zamanları takılabilir bir arayüz üzerinden tanımlanıyor, depodaki varsayılan community runner yalnızca yerel bir olay özeti kaydediyor. Kurulum Node.js 20+, pnpm ve Docker gerektiriyor; proje open-core modelini benimsemiş ve ücretli bir bulut sürümü de bulunuyor. Apache-2.0 lisanslı, yaklaşık 1.450 yıldız; Haziran 2026'da açılmış, commit akışı ve Discord topluluğu aktif.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam Lyricdrop'un Supabase ve DigitalOcean üzerinde duran arka ucu olabilir. Oradaki sinyal hacmi, ClickHouse ve Postgres'i ayakta tutmanın külfetini karşılayacak seviyede değil; Supabase'in kendi logları ve DigitalOcean metrikleri bu ölçekte yetiyor. Kendini iyileştiren ajan katmanı kulağa uygun gelse de, açık sürümdeki varsayılan runner sadece yerel bir olay özeti yazıyor, asıl inceleme davranışı ücretli tarafta duruyor. Ofis Mac'inde Docker ile ayağa kalkar ama 7/24 açık tutman gereken bir yığın daha ekler ve bu yükü taşıyacak bir operasyon şu an yok.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": "Açık çekirdek gözlemlenebilirlik pazarında ajan tabanlı olay incelemesine oynayan, YC rozetli genç bir ekip; Arslan Holding'in erken aşama B2B yazılım tezine giren, izlemeye değer bir isim."
+  },
+  {
+   "full_name": "DreambigOu/ELI5",
+   "inputs_hash": "f40c9401c6b28e900cf9733fd4d7d6c5",
+   "description_tr": "ELI5, bir konuyu hedef kitleye göre yeniden anlatan bir Claude Code skill'i. Prompt içinden muhatabı (5 yaş, ortaokul, mühendis, yönetici, tasarımcı, aile) çıkarıp kelime dağarcığını, analojileri, tonu ve derinliği buna göre ayarlıyor. Kurulum skill klasörünü ~/.claude/skills altına kopyalamaktan ibaret; ek servis ya da ayrı API anahtarı istemiyor. Depo ayrıca bir değerlendirme düzeneği içeriyor: evals.json'daki vakaları skill'li ve skill'siz çalıştırıp çıktıları iddia iddia otomatik puanlıyor, yayınlanan sonuç 12 iddiada %83'e karşı %41 geçme oranı. MIT lisanslı, yaklaşık 1.450 yıldız; yazarın süreci anlattığı iki blog yazısı depoya bağlanmış.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, Claude Code'un sana yaptığı açıklamaların seviyesini ayarlamak olabilir. Skill İngilizce muhatap tiplerine göre kalibre edilmiş ve senin günlük akışında böyle bir sürtünme kayıtlı değil. Asıl bakılmaya değer kısım ürün değil yöntem: depodaki eval düzeneği bir skill'i taban çizgisiyle yan yana çalıştırıp iddia bazında puanlıyor. Bir CLAUDE.md değişikliğinin ya da denediğin bir plugin'in gerçekten fark yaratıp yaratmadığını ölçmek istersen bu kalıbı kendi kurulumuna kopyalayabilirsin; ofis Mac'inde yerel çalışır ve Max aboneliğinin dışına çıkmaz. Ürün olarak kurup unutmaya değmez.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "datavane/tis",
+   "inputs_hash": "bd5026e02a0133ddc58dd096181d22e2",
+   "description_tr": "TIS, DataX ve Flink-CDC üzerine kurulu, web arayüzlü bir veri entegrasyonu platformu. Toplu ve gerçek zamanlı senkronizasyon işlerini (MySQL'den StarRocks, Doris, ElasticSearch, Kafka veya Paimon'a) kod yazmadan tanımlamayı hedefliyor; Jenkins'ten devralınan bir eklenti ve SPI mimarisi var. v5.1.0 ile LLM katmanı eklendi: doğal dille pipeline kuran bir agent, iş terimlerini tanımlayan bir Ontology katmanı ve Neo4j üzerinde GraphRAG ile çalışan bir ChatBI modülü; DeepSeek, Qwen ve GPT-4 gibi modeller destekleniyor. Kurulum tar paketi, Docker, Docker Compose veya Kubernetes ile yapılıyor. Java ile yazılmış, Apache-2.0 lisanslı, 2019'dan beri sürüyor; yaklaşık 1.400 yıldız ve dokümantasyonun büyük kısmı Çince.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam Arslan Holding tarafında zamanla birikecek portföy ve deal verisinin raporlanması olabilir, ki o hacim de bu ölçekte bir motoru gerektirmiyor. Lyricdrop ve Kanarya'nın verisi tek bir Supabase örneğinde duruyor; Flink, CDC ve veri ambarı ölçeğinde bir entegrasyon motorunun burada çözeceği bir problem yok. Kurulumu ve bakımı ekip işi: Java yığını ve Kubernetes tarafı senin Mac merkezli akışının dışında kalıyor. ChatBI kısmı ilgi çekici görünse de faydası ancak ilişkisel bir ambar ve tanımlı bir iş sözlüğü varken ortaya çıkar. Dokümantasyonun ağırlıklı olarak Çince olması değerlendirmeyi ayrıca yavaşlatır.",
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "amphi-ai/amphi-etl",
+   "inputs_hash": "6f1459e1098e61c85f02e8c27a33e614",
+   "description_tr": "Amphi, tabloları görsel bir arayüzde hazırlamak için kullanılan, Python üreten bir veri hazırlama aracı. Kurduğun akışı pandas ve DuckDB kullanan düz Python koduna çeviriyor, yani ürettiği şey araca bağımlı olmayan, başka yerde çalıştırılabilir bir betik. Hem bağımsız uygulama (pip install amphi-etl) hem de JupyterLab eklentisi olarak dağıtılıyor; kendi makinende ya da bir sunucuda barındırılıyor. Pipeline içine doğrudan Python veya SQL yazılabiliyor ve arayüzden TSX dosyasıyla kendi bileşenini ekleyebiliyorsun. Veri dönüşümü, raporlama ve hafif ETL işlerine odaklanıyor; ELv2 lisansı ile açık çekirdek olarak yürüyor, yaklaşık 1.400 yıldız ve 2024'ten beri geliştiriliyor.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, asistanının hazırladığı tedarikçi ya da aday listelerinin düzenli temizlenmesi olabilir. Senin veri işlerin bugün Claude Code ve Supabase üzerinde SQL ile yürüyor, araya görsel bir ETL katmanı koymak bakımı gereken bir araç daha demek. Olumlu yanı, çıktısının düz pandas/DuckDB kodu olması: akışı bir kez kurup üretilen kodu kendi pipeline'ına gömer, arayüzü bir daha açmayabilirsin. Mac'te pip ile kurulur, tamamen yerel çalışır ve API maliyeti getirmez; arayüzü asistanına devredilebilecek türden. Yine de tekrar eden bir tablo temizleme işi birikmeden kurulacak bir şey değil.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "Blueturboguy07/cue",
+   "inputs_hash": "fbf5837ed5e19d9662a7a42d2f383795",
+   "description_tr": "cue, macOS ve Windows'ta ekranın üzerinde duran, açık kaynak bir AI copilot uygulaması. Üç girdiyi ayrı ayrı alıyor: ekran görüntüsü, kendi mikrofonun ve toplantıda karşı tarafın sesi; bunlardan canlı öneri, takip sorusu ve toplantı özeti üretiyor. Model tarafı kendi anahtarınla çalışıyor (OpenAI, Anthropic, Gemini veya OpenAI uyumlu uçlar), konuşma çözümleme için pakete sabitlenmiş bir whisper.cpp çalışma zamanı geliyor. Ekran paylaşımlarında görünmemeyi hedefliyor; README bunun garanti olmadığını, macOS 15.4+ ile zayıfladığını ve sınav, mülakat veya kayıtlı toplantılarda kullanımın platform kurallarını ve rıza yasalarını ihlal edebileceğini açıkça yazıyor. Electron tabanlı ve yerel modül kullanmıyor, GPL-3.0 lisanslı, yaklaşık 1.380 yıldız; toplantı sesi macOS 14.4+ istiyor.",
+   "usage_tr": "Kişisel bilgi tabanı projesindeki toplantı kaydı ve transkript ayağında, Wispr Flow'un yanında deneyebileceğin bir alternatif. Toplantı sesiyle kendi mikrofonunu ayrı kanallarda tuttuğu için özet ve takip sorusu çıkarırken kimin ne dediği ayrımı korunuyor; transkript whisper.cpp ile ofis Mac'inde yerelde üretiliyor, ses dosyası dışarı çıkmıyor. Model çağrıları kendi anahtarınla gittiğinden Max aboneliğinin dışında bir API kalemi doğurur; özeti günde birkaç toplantıyla sınırlarsan bu kalem küçük kalır. Kapalı bir istemci değil, fork'layıp kendi sürümüne çevirebileceğin bir Electron projesi, ancak her paketlemeden sonra macOS mikrofon ve ekran izinlerinin sıfırlanması tekrar eden bir külfet. Lyricdrop'un kelime hizalama ihtiyacına cevap vermez: buradaki whisper.cpp canlı transkript için ayarlı, kelime düzeyinde zaman damgası üretmiyor. Ekran paylaşımında gizlenme özelliğini kapalı tutmanı öneririm, README'nin kendisi bu kullanımın kural ihlali doğurabileceğini söylüyor.",
+   "matched_project": "Kişisel bilgi tabanı",
+   "relevance": 5,
+   "investment_note": null
+  },
+  {
+   "full_name": "px0-ai/px0",
+   "inputs_hash": "891a0d302f02180c9aa079d70ef753a9",
+   "description_tr": "px0, tarayıcıda çalışan, tek bir statik Go ikilisi olarak dağıtılan hafif bir kod gezme ve inceleme ortamı. Electron ya da Node çalışma zamanı yok; depo 1 ms'nin altında açılış ve ~20 MB bellek iddia ediyor ve karşılaştırma betiklerini kendi içinde yayımlıyor. GitHub pull request'ini URL vererek açıp merge-base diff'ini inceleyebiliyor, satır içi yorum taslağı yazabiliyor, tarayıcıdan stage, commit ve push yapabiliyor. Claude Code, OpenCode, Codex, Cursor Agent, Aider ve Goose gibi yerel ajanlara düzenleme gönderip sonucu canlı yenilemeyle izliyor; ayrıca fuzzy dosya arama, sembol listesi, regex arama ve isteğe bağlı LSP desteği var. Uzak bir sunucuda veya konteynerde çalıştırılıp yerelden tarayıcıyla bağlanmak üzere tasarlanmış, 400 bin satırlık dosyaları sanal render ile açıyor. MIT lisanslı, yaklaşık 1.380 yıldız.",
+   "usage_tr": "Lyricdrop v2'yi ofis Mac'inde Claude Code ile yazarken ortaya çıkan diff'leri gözden geçirme adımına oturuyor. px0'ı ofis Mac'inde host modunda açıp Tailscale üzerinden dizüstünden veya iPhone tarayıcısından bağlanabilirsin; Remote Control oturumu koptuğunda bile kodu ve açık PR'ları okumaya devam edersin. Tek ikili, ek servis yok, tamamen yerel çalışıyor ve API maliyeti getirmiyor. İnceleme sırasında bir düzeltmeyi doğrudan Claude Code'a ya da OpenCode'a gönderebildiği için, ürün mantığı ile kod doğruluğunu ayrı ayrı gözden geçirme alışkanlığını tek ekranda toplar. Uyarı: sunucu modunda açtığında ağına kod içeriği servis ediyorsun, dinleme adresini Tailscale arayüzüyle sınırlı tut. Telefonda diff okumanın konforu da sınırlı; asıl kazancı dizüstünde ve ikinci ekranda görürsün.",
+   "matched_project": "Lyricdrop",
+   "relevance": 7,
+   "investment_note": null
+  },
+  {
+   "full_name": "aminkheddache-dotcom/Ptero",
+   "inputs_hash": "34a5dde78d3ac7102a295413681aa9c2",
+   "description_tr": "Ptero, kayıt olmadan birden çok dil modeline tek arayüzden erişim veren ücretsiz bir sohbet platformu. DeepSeek, Llama, Qwen, MiniMax ve Mistral gibi modeller arasında tek tıkla geçiş, proje bazlı sohbet organizasyonu ve dosya yükleme sunuyor; sohbet geçmişinin sunucuda değil tarayıcıda saklandığı belirtiliyor. Kod tarafı PHP ve JavaScript; asıl dağıtım biçimi bir WordPress eklentisi ve sohbet arayüzü sayfaya bir shortcode ile gömülüyor. Lisans bilgisi tutarsız: depo meta verisi Apache-2.0 gösterirken README GPL v2 diyor. Proje kâr amacı gütmediğini ve masrafların sponsorlarla karşılandığını söylüyor; yaklaşık 1.320 yıldız, Ağustos 2026'da açılmış.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam Arslan Holding sitesine gömülebilecek bir sohbet arayüzü olabilir, ama o site WordPress üzerinde değil ve kurumsal kimlik üretimi Claude tarafında yürüyor. Model erişimi tarafında Claude Code ve Max aboneliğin zaten daha iyi bir yerde duruyor. Kapalı üçüncü parti istemcilere veri emanet etmeme refleksinle de çelişiyor: modeller barındırılan bir servis üzerinden çağrılıyor, yerel saklama iddiası yalnızca sohbet geçmişi için geçerli. Kendin barındırsan bile arkada model sağlayıcı anahtarları durur, yani ücretsizlik kalıcı bir özellik değil.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "snflkd/fluent-korean",
+   "inputs_hash": "7228778acbf6e3f9a00174baba6d4bb6",
+   "description_tr": "fluent-korean, Claude Code için iki output-style varyantı sunan bir eklenti; amacı kodlama ajanlarının bozuk ve telgraf üslubuna kaymış Korece yerine anlaşılır Korece yazması. Depoya göre sorunun kaynağı, token ve bağlam baskısı altında ajanların ekleri, bağlaçları ve cümle yapısını düşürmesi; eklenti bunu skill katmanında değil, oturum başında sistem prompt'una eklenen bir stil kuralıyla önlüyor. İki stil var: Claude Code'un kodlama talimatlarını koruyan sürüm ve bu talimatlar çıkarılmış sürüm. Kurulum Claude Code içinden iki komutla yapılıyor; alternatif olarak md dosyasının gövdesi CLAUDE.md'ye, proje talimatlarına veya başka bir ortamın kişisel yönergelerine yapıştırılabiliyor. Depo ayrıca çok ajanlı akışlarda dil kaybının adım adım biriktiğini savunuyor; MIT lisanslı, yaklaşık 1.320 yıldız ve Korece bölümleri insan eliyle yazılmış.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam Claude Code'un sana Türkçe rapor verdiği ya da Türkçe metin ürettiği durumlar olabilir, ama eklentinin içeriği tamamen Korece dil bilgisine özgü ve olduğu gibi taşınmıyor. Aktarılabilir olan kurgusu: dil kalitesini iş sırasında düzeltmek yerine output-style katmanında, her oturumun başında sabitlemek. Aynı yapıyı Türkçe için kendi output-styles klasörüne tek bir md dosyasıyla kurabilirsin; maliyeti yok, tamamen yerel ve Max aboneliğiyle uyumlu. Deponun ikinci noktası da kayda değer: çok adımlı ajan kurgularında dil kaybı her adımda birikiyor, bu da senin alt ajanlı Claude Code akışlarında anlam kaybı olarak geri dönebilir.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "Spielewoy/autoprompt-skill",
+   "inputs_hash": "2fb40cba2ffc0491e892343e28097b33",
+   "description_tr": "Autoprompt, kodlama ajanının kendi işini gözden geçirip düzeltmesini ve yeniden kontrol etmesini sağlayan bir skill ve iş akışı. Claude Code, Codex, OpenCode, VS Code, Hermes Agent ve Grok Build dahil on bir ajan için kurulum yapan bir npm CLI'ı ile geliyor; doctor komutu mevcut kurulumları denetliyor, uninstall ile geri alınıyor. Yayınlanan ölçüm Terminal-Bench 2.1 üzerinde OpenCode ile yapılmış: 89 görevde 60 çözümden 73'e çıkış, yani %45 daha az başarısızlık. Aynı depo bunun karşılığının yaklaşık 3 kat süre ve 2 kat token olduğunu, ancak bu iki rakamın ölçülmediğini ve kullanıcı bildirimlerine dayalı tahmin olduğunu yazıyor. Node 20+, Python 3.11+ ve Bash gerektiriyor; MIT lisanslı, yaklaşık 1.250 yıldız, sürüm 2.0.0 ama yayımlanan benchmark'lar hâlâ v1'e ait.",
+   "usage_tr": "Lyricdrop v2'yi Superpowers ile yazdığın akışta doğrudan denenecek türden bir şey: ajanın ürettiği değişikliği ikinci bir geçişte gözden geçirip düzeltmesi, her değişikliğin iki ayrı açıdan review edilmesi isteğinin ucuz bir sürümü. Kurulumu ofis Mac'inde tamamen yerel, ek servis yok ve hem Claude Code'u hem OpenCode'u desteklediği için mevcut kurulumunu değiştirmeden yanına giriyor. Maliyet API faturası olarak değil Max aboneliğindeki kullanım limiti olarak geri döner: iki katı token ve üç katı süre, uzun oturumlarda limite daha hızlı çarparsın. Öğrenmeyi planladığın Hermes Agent da destekleniyor, o tarafa geçersen alışkanlığı taşıyabilirsin. Önce Lyricdrop admin panelinde dar ve iyi tanımlı bir görevde açıp aynı görevi skill'siz haliyle karşılaştır; benchmark başka bir ajan ve başka bir modelle alınmış, seninkine birebir taşınmaz. Küçük işlerde üç katı sürenin karşılığını vermeyebileceğini depo da söylüyor, kapatmayı kolay tut.",
+   "matched_project": "Lyricdrop",
+   "relevance": 8,
+   "investment_note": null
+  },
+  {
+   "full_name": "SaladDay/pi-from-scratch",
+   "inputs_hash": "b32e35a23e6a303d2220325092b98af6",
+   "description_tr": "pi-from-scratch, yaklaşık 600 satır TypeScript ile dosya okuyan, kod değiştiren ve komut çalıştıran küçük bir kodlama ajanı (nano-pi) yazmayı anlatan bir öğretici. pi adlı ajanın veri akışını sadeleştirerek yeniden kuruyor; araç çağrısı döngüsü, mesaj geçmişi ve araç tanımları adım adım ekleniyor. Yanındaki web sitesinde makale ilerledikçe sağdaki editörde kod tamamlanıyor, ayrıca önceden üretilmiş bir trace üzerinde çalışma akışı satır satır izlenebiliyor. Ajanı çalıştırmak için Node.js 22 ve OpenAI uyumlu bir API ucu gerekiyor; siteyi gezmek model çağrısı yapmıyor. Metnin tamamı Çince, MIT lisanslı, yaklaşık 1.230 yıldız.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, tüm projelerini bilen bir orkestratör ajan yazma isteğin olabilir. Bu depo bir bileşen değil bir ders: bitirdiğinde elinde üretime koyacağın bir parça değil, araç çağrısı döngüsünün nasıl kurulduğuna dair bir zihin haritası olur. TypeScript zaten günlük dilin olduğu için kod tarafı yorucu değil, ama anlatı Çince ve çeviriyle ilerlemek gerekir. Denemek istersen OpenAI uyumlu bir anahtar istiyor, yani Max aboneliğinin dışında küçük bir maliyet; sadece okumak için siteyi gezmek yeterli ve bedava. Aynı zamanı Claude Code üzerinde gerçek bir alt ajan kurgusu denemeye ayırmak muhtemelen daha çok şey öğretir.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "CopilotKit/OpenTag",
+   "inputs_hash": "bcd579f1644e295a6ef95867d5cace37",
+   "description_tr": "OpenTag, Slack ve Microsoft Teams içinde çalışan, kendi altyapında barındırılabilen bir AI ajan başlangıç uygulaması. Channels SDK üzerine kurulu; ajan tarafı Python ve LangGraph, çalışma zamanı Node, arayüz AG-UI ile Slack'in kendi bileşenlerine çiziliyor — yüklenen bir CSV thread içinde grafik ve kısa bir yorum olarak geri dönüyor. Linear ve Notion gibi yazma işlemleri onay düğmesinin arkasında duruyor, onay verildiğinde LangGraph akışı kaldığı yerden devam ediyor; web araştırması kaynak listesiyle yanıtlanıyor. Railway üzerinde iki servis ya da AWS'de tek bir ECS Fargate görevi olarak dağıtım örnekleri ve yayımlanmış konteyner imajları var. Kanal bağlantısı ya CopilotKit'in yönettiği bir Channel ile ya da açık kaynak Channels SDK ile kendi çalıştırdığın bir runner ile kuruluyor. MIT lisanslı, yaklaşık 1.190 yıldız.",
+   "usage_tr": "Asistan ve holding operasyon araçlarında, araştırma ve kayıt işlerini asistanının zaten içinde olduğu Slack'e taşımak için bir iskelet olarak bakılabilir. Notion ya da Linear'a yazmadan önce onay isteyen akış, hesapların ve verinin kontrolde kalması ilkene uyuyor: ajan kendi başına kayıt değiştirmiyor, insan onayıyla ilerliyor. Maliyet ve bağımlılık tarafı net: OpenAI anahtarı gerekiyor, yani Max aboneliğinin dışında bir API kalemi, üstelik hızlı kurulum yolu CopilotKit'in yönettiği bir Channel'dan geçiyor. Bugün benzer işlerin çoğunu n8n ile daha az parçayla kuruyorsun; bu depo ancak Slack içinde grafik ve onay düğmesi gibi yerel arayüz istediğinde fark yaratır. Python ve LangGraph'a bağlı kaldığın için fork'layıp kendi istemcini yazma refleksin burada tam karşılığını bulmaz. Denersen tek bir dar işle başlat: asistanının tedarikçi araştırmasını kaynaklı bir tablo olarak thread'e döndürmek gibi.",
+   "matched_project": "Asistan ve holding operasyon araçları",
+   "relevance": 4,
+   "investment_note": null
+  },
+  {
+   "full_name": "GaoSSR/best-claude-hud",
+   "inputs_hash": "46be3bf06cddfec23e774401eb726f0a",
+   "description_tr": "best-claude-hud, Claude Code'un terminal statusline'ını dolduran, Rust ile yazılmış küçük bir araç. Gösterdikleri: aktif model ve varsa canlı reasoning effort, Claude Code'un başlatıldığı dizin, Git dalı ile temiz/kirli/çakışma durumu ve ileri-geri commit sayısı, bağlam penceresi kullanımı, isteğe bağlı olarak kullanım/limit, maliyet ve oturum bilgisi. Bağlam kullanımını Claude Code'un resmî statusLine verisinden okuyor, bulamazsa aktif transcript'e düşüyor. npm üzerinden önceden derlenmiş ikili olarak dağıtılıyor, setup komutu ~/.claude/settings.json içine statusLine bloğunu mevcut ayarları koruyarak yazıyor; Nix flake'i de var. macOS, Linux ve Windows destekleniyor; Apache-2.0 lisanslı, yaklaşık 1.110 yıldız ve README'de üç dil mevcut.",
+   "usage_tr": "Lyricdrop v2'nin uzun Claude Code oturumlarında en çok işine yarayacak iki sayıyı ekranda tutuyor: bağlam penceresinin ne kadarını harcadığın ve Max aboneliğindeki limit durumun. Ofis Mac'ine bir kez kurulur, tamamen yerel çalışır, API maliyeti getirmez; Rust ikilisi olduğu için terminalde gecikme hissetmezsin. Bağlamın dolmak üzere olduğunu önceden görmek, uzun bir refactor oturumunun ortasında özetlenip bağlam kaybetmeni engeller. Git dalı ve kirli durum göstergesi, aynı Mac'te birden çok proje arasında gidip gelirken yanlış depoda commit etme riskini düşürür. Uyarı: kurulumdan sonra açık oturumlar ayarları yeniden okumuyor, Claude Code'u yeniden başlatman gerekiyor; ayrıca bu bir gösterge, davranışı değiştirmiyor — limit yönetimini yine sen yaparsın.",
+   "matched_project": "Lyricdrop",
+   "relevance": 6,
+   "investment_note": null
+  },
+  {
+   "full_name": "SeanJ1ang/design-judge-skills",
+   "inputs_hash": "48071978904eb1758bf3e603bb9c5852",
+   "description_tr": "design-judge-skills, tasarım ödülü başvuru sürecini altı ayrı Agent Skill'e bölen bir depo: benzer kazanan işleri arama, tasarımı ve sunumu kanıta dayalı bir ölçekle değerlendirme, uygun ödül ve kategoriyi eşleştirme, başvuru metinlerini hazırlama ve gönderim paketini son kez kontrol etme. iF, Red Dot, IDEA, DIA, K-Design, GOOD DESIGN, Core77, James Dyson ve EPDA gibi ödülleri kapsıyor; tarih, ücret, uygunluk ve kategori bilgilerinin çalışma anında resmî sayfadan yeniden doğrulanması kural olarak konmuş. Değerlendirme modülünde 22.125 kazanan veya finalist işten toplanmış betimleyici gözlem kaydı var, ama bunların puanı değiştirmediği ve kazanma olasılığı tahmininde kullanılamayacağı özellikle belirtiliyor. Yayınlanan test K-Design 2026'nın 1.612 başvurusunun tamamı üzerinde ve sonuçlar açıklanmadan önce yapılmış; Top-115 isabet oranı çıplak modellerde %17-29 iken skill'lerle %36-41'e çıkıyor. Claude Code, Codex, OpenCode ve Hermes için kurulum yolu sunuyor; Apache-2.0 lisanslı, yaklaşık 1.020 yıldız, belgeler Çince, İngilizce ve Japonca.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam Arslan Holding'in marka ve kurumsal kimlik işleri olabilir, ama orada bir endüstriyel tasarım ödülüne başvuru söz konusu değil. Skill'ler ürün tasarımı jürilerinin kriterlerine göre kalibre edilmiş; uygulama arayüzü ya da web sitesi değerlendirmesi için yazılmamış. İlgini çekebilecek tek taraf yöntem: puanlar sonuçlar açıklanmadan önce dondurulmuş ve isabet sonradan ölçülmüş, yani kendi değerlendirme akışlarında taklit edilebilecek bir disiplin var. Araç olarak kurup beklemek için bir sebep görünmüyor.",
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "Gentleman-Programming/gentle-shell",
+   "inputs_hash": "253381f953b31c85cb454089cd77c05c",
+   "description_tr": "gentle-shell, Pi kodlama ajanı için yazılmış bir harness: ajanın çalıştığı iş akışını, alt ajanları, inceleme kurallarını, skill'leri ve hafıza entegrasyonlarını tek bir çalışma alanında topluyor. Organic Driven Development adını verdiği bir akışı varsayılan alıyor; isteğe bağlı olarak SDD/OpenSpec ile spesifikasyon güdümlü geliştirmeyi, TDD kanıtı üretimini ve inceleme bariyerlerini destekliyor. npm üzerinde gentle-pi paketi olarak ve Pi'nin kendi paket formatında dağıtılıyor. MCP sunucularını, alt ajanları ve skill'leri kendi yapılandırma dosyalarıyla tanımlıyor. TypeScript ile yazılmış, MIT lisanslı, yaklaşık 1.000 yıldız; belgeler ayrı bir site ve wiki üzerinde tutuluyor.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam Lyricdrop v2'yi yazarken kullandığın Superpowers ve Claude Code kurgusu olabilir. Sorun şu ki bu harness Pi'ye özgü: Claude Code ya da OpenCode'un yanına eklenmiyor, onların yerine geçen bir ajan ortamı kuruyor. Aradığın şey inceleme bariyerleri ve alt ajan disiplini ise, bunu ajan değiştirmeden veren seçenekler var ve geçiş maliyeti çok daha düşük. Yine de bir gün Pi tarafını denersen, buradaki kanıt üretimi ve inceleme kurgusu, kod doğruluğu ile ürün mantığını ayrı ayrı gözden geçirme isteğine en yakın duran yapı. Şimdilik izleme listesinde tutmak yeterli.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "Raymondhou0917/speak-human-tw",
+   "inputs_hash": "ab695571f41185487f2874b8598201f7",
+   "description_tr": "speak-human-tw, geleneksel Çince (Tayvan) metinlerdeki yapay zekâ yazım izlerini yakalayıp düzeltme öneren bir skill. Otuz sekiz kadar tipik kalıbı (abartılı açılışlar, değer yükselten sözcükler, açıklama bağlaçları, emoji yığınları) tespit ediyor; ayrıca anakara Çincesine özgü sözcükleri Tayvan kullanımına ve yarım genişlikteki noktalama işaretlerini yerel biçime çeviriyor. Yazma aracı değil, düzelti aracı olarak konumlanmış: önce kendi taslağını yazman, sonra öneri listesini alıp neyi uygulayacağına kendin karar vermen bekleniyor. Claude Code, Codex, Cursor ve Markdown okuyabilen diğer ajanlarla çalışıyor; depoda 42 vakalık bir kıyas seti ve öncesi/sonrası örnekleri var. MIT lisanslı, yaklaşık 1.000 yıldız, sürüm 1.4.0.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam Folio'nun günlük içerik üretimi olabilir, ama oradaki metinler Türkçe ve İngilizce, bu skill ise tamamen Tayvan Çincesine özgü kurallardan oluşuyor. Sözlükleri ve kalıp listesi olduğu gibi taşınmıyor; alınabilecek şey sıralama, yani önce insan taslağı, sonra yapay zekâ izlerini temizleyen ikinci geçiş. Kendi içerik pipeline'ında benzer bir ikinci geçiş kurmak istersen yapı kopyalanabilir ama kural listesini sıfırdan yazman gerekir. Çalışma tarafı ucuz: yerel bir skill dosyası, ek servis ya da API maliyeti yok.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "furkankly/zoetrope",
+   "inputs_hash": "9029708b51132068b877486048a0efee",
+   "description_tr": "zoetrope, Claude Code ve Codex oturumlarının yazdığı transcript dosyalarını okuyup oturumu bir akış grafiği olarak çizen bir terminal uygulaması. Ana ajanı, onun başlattığı alt ajanları ve her birinin çalıştırdığı araçları bir zaman çizelgesi üzerinde gösteriyor; biten bir oturumu kendi zaman damgalarına göre yeniden oynatıyor, süren bir oturumu ise canlı takip ediyor. Salt okunur çalışıyor ve verinin makineden çıkmadığı belirtiliyor. Rust ile ratatui üzerine yazılmış; aynı ikili WASM'a derlenip tarayıcıda da çalışıyor. Oturumu dosya yolundan ya da kimliğinden bulabiliyor ve iki ajanın formatını içeriğe bakarak ayırt ediyor. MIT lisanslı, yaklaşık 920 yıldız, crates.io üzerinde yayımlanıyor.",
+   "usage_tr": "Lyricdrop v2'yi Superpowers ile yazarken alt ajanların ne yaptığını sonradan anlamak için doğrudan kullanışlı: uzun bir oturumun hangi adımda dağıldığını metin loglarında aramak yerine grafik üzerinde görürsün. Ofis Mac'inde yerel çalışır, salt okunurdur ve API maliyeti getirmez; ~/.claude/projects altındaki dosyaları okuduğu için ek kurulum ya da enstrümantasyon istemiyor. Tarayıcıda çalışan WASM sürümü sayesinde ofis Mac'indeki bir oturumu Tailscale üzerinden başka bir makineden de izleyebilirsin. Bu, Remote Control bağlantısı koptuğunda oturumun ilerleyip ilerlemediğini görmenin ucuz bir yolu — ama yalnızca izleme; kopan bağlantıyı onarmaz, komut gönderemezsin. Hangi adımın zamanı yediğini ölçmek istiyorsan önce tek bir uzun oturumu yeniden oynatıp bak, sonra kurguyu buna göre böl.",
+   "matched_project": "Lyricdrop",
+   "relevance": 6,
+   "investment_note": null
+  },
+  {
+   "full_name": "github/codespaces-jupyter",
+   "inputs_hash": "9ccde31e0fcac8ac76088b747519d7d4",
+   "description_tr": "github/codespaces-jupyter, GitHub Codespaces içinde hazır bir Jupyter Notebook ortamı açmak için kullanılan resmî bir şablon depo. Amacı, makine öğrenmesi ve veri bilimi denemelerine yerel kurulum yapmadan başlamak; depo kopyalanıp bir codespace açıldığında Python ve defter ortamı çalışır halde geliyor. README yalnızca birkaç paragraf ve tamamen Codespaces'in ilk açılış deneyimini anlatıyor; hangi kütüphanelerin kurulu geldiği, bakım durumu ve kapsam hakkında karar vermeye yetecek kadar açık metin yok. MIT lisanslı, 2022'de açılmış ve yaklaşık 900 yıldızı var. Bir kütüphane değil, kopyalanarak kullanılan bir başlangıç şablonu.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam Lyricdrop'un STT denemelerini defter içinde yan yana karşılaştırmak olabilir, ama o iş zaten ofis Mac'inde yerelde ve Claude Code ile yürüyor. Codespaces bulutta ücretli dakika harcar ve modelleri Mac'te yerel çalıştırma tercihinin tam tersi yönde durur. Şablonun kendisi de bir araç değil, boş bir başlangıç noktası. Tek seferlik hızlı bir deneme için bile kendi makinen daha hızlı ve maliyetsiz.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "LB623/no-negative-echo",
+   "inputs_hash": "c82a8a75de9585a9ed7d6bdedf2d97ab",
+   "description_tr": "no-negative-echo, Agent Skills biçiminde yazılmış küçük bir skill; ajanın nihai çıktıyı — başlık, dosya adı, yorum satırı, commit mesajı, PR metni ve teslim notu — reddedilmiş ara denemelere atıfta bulunmadan, yalnızca kabul edilen son duruma bakarak yeniden üretmesini istiyor. Depo sorunu tek bir örnekle anlatıyor: 'X yapma' talimatının sonunda başlığa 'X'siz' diye sızması. Kurulum betiği, provenance sha256 doğrulaması ve teslim yüzeylerini tarayan bir kontrol betiği geliyor; alternatif olarak çekirdek kuralların projenin AGENTS.md dosyasına yazılması öneriliyor. Neyin korunacağı ve neyin atılacağı bir tabloyla ayrılmış: yayımlanmış API kaldırmaları, göç notları ve güvenlik açısından gerekli olgular kalıyor, oturum içi denemeler çıkıyor. Sınırlarını da açıkça yazıyor — bu bir prompt katmanı önlemi, deterministik bir filtre değil. Python 3.10+, MIT lisanslı, yaklaşık 880 yıldız; belgeler Çince, İngilizce çevirisi mevcut.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam Lyricdrop v2'de Claude Code'un yazdığı commit ve PR metinleri olabilir. Tek kişilik depolarda commit mesajının uzun tartışmayı yansıtması can yakan bir sorun değil; kural asıl olarak birden çok kişinin okuduğu teslim yüzeylerinde karşılığını buluyor. Denemesi yine de ucuz: kurulum yerel, ek maliyet yok ve Claude Code Agent Skills formatını okuyor. Buradaki aktarılabilir fikir, çıktının 'oturumu hiç görmemiş bir okuyucu'ya göre yeniden üretilmesi; aynı cümleyi kendi CLAUDE.md dosyana tek satır olarak eklemek faydanın çoğunu verir.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "Zyrexnn/Cybermes",
+   "inputs_hash": "dec26ff70aa18927eec457d2f4b7ce1d",
+   "description_tr": "Cybermes, yetkili bug bounty ve sızma testi çalışmaları için tasarlanmış, ajan tabanlı bir saldırgan güvenlik otomasyon çerçevesi. Go ile yazılmış performans araçları, iki yüzü aşkın modüler playbook ve nuclei, sqlmap, Playwright gibi bilinen araçların etrafında bir orkestrasyon katmanı sunuyor; keşif, zafiyet araştırması, doğrulama ve CVSS v3'e göre raporlama adımlarını kapsıyor. Hermes Agent üzerine kurulu ve çok modelli LLM orkestrasyonu kullanıyor. Kendi Go tabanlı MCP sunucusu sayesinde Claude Code, Codex, Cursor, OpenCode gibi ortamlara araç olarak bağlanabiliyor; ayrıca bağımsız CLI, Docker ve CI/CD kullanımı destekleniyor. Python 3.11+ ve Go 1.22+ gerektiriyor, Apache-2.0 lisanslı, yaklaşık 870 yıldız ve v3.3.0 sürümünde.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, öğrenmeyi planladığın Hermes Agent'ın gerçek bir iş yükü üzerinde nasıl kurgulandığını görmek olabilir. Kendi yığınında (Supabase, DigitalOcean, Vercel) bir güvenlik gözden geçirmesi gerekirse bu çerçeve fazlasıyla ağır kalır; orada hedefli ve küçük kontroller daha doğru sonuç verir. Araçların çoğu yalnızca sahibi olduğun ya da yazılı izin aldığın sistemlere karşı çalıştırılabilir, aksi halde hukuki sorumluluk doğar. Çalıştırmak ayrıca çok modelli LLM çağrıları üzerinden API maliyeti getirir ve Max aboneliğinin kapsamı dışında kalır.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  }
+ ]
+}

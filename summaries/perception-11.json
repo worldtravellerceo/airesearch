@@ -1,0 +1,175 @@
+{
+ "repos": [
+  {
+   "full_name": "FireRedTeam/FireRedTTS3",
+   "inputs_hash": "803c17032ef44b4efa2a377ad518862e",
+   "description_tr": "FireRedTTS3, konuşma üretimi ve konuşma düzenlemeyi tek bir modelde birleştiren açık kaynak bir PyTorch projesi. Base sürümü 24 dilde ve 21 Çince ağzında zero-shot ses klonlama yapıyor; Instruct sürümü ise referans ses olmadan, doğal dildeki bir tarifle (cinsiyet, yaş, tını, duygu, tempo) yeni bir ses tasarlamaya ve üretilmiş konuşmada ekleme, silme, değiştirme ile hız/perde/ses seviyesi düzenlemesine izin veriyor. Desteklenen diller arasında Türkçe de var. Apache-2.0 lisanslı, model ağırlıkları Hugging Face ve ModelScope üzerinden dağıtılıyor, Gradio demosu mevcut. Ağustos 2026'da açılmış yeni bir depo; yaklaşık 1.750 yıldıza ulaşmış, README'de Apple Silicon üzerinde çalışmaya dair bir not bulunmuyor.",
+   "usage_tr": "Folio'nun günlük içerik pipeline'ında seslendirme katmanı olarak kullanabilirsin: her yazar profili için Instruct sürümüyle tarifle sabit bir anlatıcı sesi tasarlayıp story ve post videolarının altına aynı tınıyla konuşma üretebilirsin. Konuşma düzenleme tarafı, bir cümleyi baştan üretmek yerine tek kelimeyi değiştirmene izin verdiği için günlük yeniden üretim maliyetini düşürür. Türkçe ve İngilizce aynı modelden çıktığı için iki dilli içerik denemesi de tek kurulumla yapılır. Depoda Apple Silicon yolu belgelenmemiş; ofisteki M4 Pro Mac'te MPS ile kalkıp kalkmadığını önce kısa bir testle ölçmen gerekir, kalkmazsa kiralık GPU maliyeti girer. Lyricdrop tarafına uymaz: orada ihtiyacın olan şarkı sesinin transkripsiyonu ve kelime hizalaması, konuşma üretimi değil. Kullanım koşullarında ses klonlamaya dair kısıtlar olduğunu da not et, yayın öncesi lisans metnini okumakta fayda var.",
+   "matched_project": "Folio",
+   "relevance": 5,
+   "investment_note": null
+  },
+  {
+   "full_name": "robocasa/robocasa",
+   "inputs_hash": "aa6e05d161106cffae59db121422e331",
+   "description_tr": "RoboCasa, genel amaçlı robotları gündelik ev işlerinde eğitmek için kurulmuş büyük ölçekli bir simülasyon çerçevesi; 2024'te UT Austin araştırmacıları tarafından yayımlandı. Son sürüm RoboCasa365, büyük dil modelleri yardımıyla oluşturulmuş 365 görev, 2.500'den fazla mutfak sahnesi ve 3.200'den fazla 3D nesne içeriyor. Veri tarafında 600 saatin üzerinde insan demonstrasyonu ve otomatik trajektori araçlarıyla üretilmiş 1.600 saatin üzerinde robot verisi var; Diffusion Policy, pi ve GR00T gibi politika öğrenme yöntemleri için benchmark ve liderlik tablosu desteği sunuyor. RoboSuite üzerine kurulu, Python ve conda ile kurulan bir yığın; lisansı standart bir açık kaynak lisansı olarak işaretlenmemiş. Yaklaşık 1.750 yıldız ve düzenli sürüm notlarıyla aktif bakımda.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam Arslan Holding'in frontier tech yatırım merceği altında robotik simülasyonun nerede durduğunu görmek olabilir. Bu bir akademik araştırma ve benchmark altyapısı, ürün bileşeni değil; Expo/Supabase yığınına girecek bir parçası yok. Mac'te çalıştırmak da pratik değil, eğitim tarafı GPU kümesi ister. Asistanına devredilebilecek bir iş de üretmiyor. Robotik veri ve simülasyon şirketlerini değerlendirirken karşılaştırma zemini olarak bir kenarda durabilir, ama bugünkü projelerinin hiçbirine bağlanmıyor.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "StanfordVL/BEHAVIOR-1K",
+   "inputs_hash": "f7fc0d117474e7fb96f1a6da33b04732",
+   "description_tr": "BEHAVIOR-1K, embodied AI ajanlarını 1.000 gündelik ev aktivitesi üzerinde test etmek için hazırlanmış bir simülasyon benchmark'ı. Görevler rastgele seçilmiyor; gerçek zaman kullanımı anketlerinden ve tercih çalışmalarından türetilmiş temizlik, yemek pişirme, düzenleme gibi insan merkezli işler. Depo tek parça bir monorepo olarak kurgulanmış ve modüler bir kurulum scriptiyle yalnızca ihtiyaç duyulan bileşenleri kuruyor. MIT lisanslı, Stanford Vision and Learning Lab tarafından sürdürülüyor, yaklaşık 1.700 yıldıza sahip. README kısa; ayrıntılar proje sitesine ve kurulum kılavuzuna bırakılmış.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam yine Arslan Holding'in frontier tech tarafında embodied AI alanını takip etmek olabilir. Ev robotiği benchmark'ı, ne Lyricdrop'un medya pipeline'ına ne de kişisel bilgi tabanına bağlanan bir bileşen üretiyor. Mac üzerinde yerel olarak anlamlı biçimde çalıştırılabilecek bir yapı değil, simülasyon tarafı ciddi donanım istiyor. Bu alandaki bir yatırımı değerlendirirken ekiplerin hangi benchmark'a göre iddia ürettiğini bilmek işine yarayabilir, ama araç olarak kullanacağın bir şey değil.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "Tencent/WeMM-Embedding",
+   "inputs_hash": "18181d8af60819ca86b9aab50bc210df",
+   "description_tr": "WeMM-Embedding, Tencent'in WeChat Vision ekibi tarafından geliştirilen çok modlu gömme (embedding) modelleri ailesi. Metin, görsel, video, görsel doküman ve iç içe geçmiş çok modlu girdiler için tek bir temsil uzayı üretiyor; ses girdisi desteklenmiyor. 2B, 4B ve 9B boyutlarında yayımlanmış ve Matryoshka temsili sayesinde 64'ten 4096'ya kadar farklı boyutlarda vektör alınabiliyor. Kullanım transformers, sentence-transformers, vLLM ve SGLang üzerinden belgelenmiş; Apache-2.0 lisanslı ve ağırlıklar Hugging Face'te. Ağustos 2026'da açılmış, yaklaşık 1.650 yıldızlı yeni bir depo.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam Folio'nun öneri tarafında içerikleri benzerliklerine göre sıralamak olabilir. Ama oradaki katalog kendi ürettiğin, sınırlı sayıda gönderiden oluşuyor; bu ölçekte beğen/beğenme sinyalini basit bir skorla taşımak, 2B-9B'lik bir gömme modelini ayakta tutmaktan daha ucuz ve daha az kırılgan. Servis tarafı vLLM/SGLang üzerinden belgelenmiş, Apple Silicon için hazır bir yol yok, yani ofisteki Mac'te yerel çalıştırma garantisi vermiyor. Kişisel bilgi tabanındaki sesli notlar da metne dönüyor; orada metin gömmesi yeterli, çok modluluk fazladan yük. İleride Folio'nun kataloğu büyürse yeniden bakmaya değer.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "Zhefan-Xu/NavRL",
+   "inputs_hash": "357657201314fd8998fcaadf4f715ac2",
+   "description_tr": "NavRL, dinamik ortamlarda güvenli uçuş için pekiştirmeli öğrenme tabanlı bir navigasyon çerçevesi; IEEE RA-L 2025'te yayımlanan bir çalışmanın resmi uygulaması. Eğitim NVIDIA Isaac Sim içinde yapılıyor, dağıtım tarafı hem ROS1 Noetic hem ROS2 Humble için hazır paketlerle geliyor. Makale insansız hava araçlarına odaklansa da yöntem hız tabanlı kontrol kullanan her robota uyarlanabilir olarak tanımlanıyor. Depoda önceden eğitilmiş bir model ve hızlı demo için Python scriptleri var. C++ ve Python karışık, MIT lisanslı, Ubuntu hedefli; yaklaşık 1.600 yıldız ve yazarların sürdürdüğü düzenli güncellemeler.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam sadece frontier tech ilgisi, yani drone ve otonom sistemlerde nelerin açık kaynak olduğunu görmek olabilir. Ubuntu, ROS ve Isaac Sim gerektiriyor; Mac'te yerel çalışmaz, ofisteki makineye kurulacak bir şey değil. Lyricdrop, Folio veya asistan tarafındaki hiçbir adıma temas etmiyor. Robotik yatırımı değerlendirirsen akademik referans olarak bakılabilir, ama bugün için okunacak değil kullanılacak bir şey aramıyorsan atlayabilirsin.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "ddalcu/mlx-serve",
+   "inputs_hash": "58eb2ca707ede2e628fa13cd2697efef",
+   "description_tr": "mlx-serve, Apple Silicon üzerinde yerel model çalıştırmak için Zig ile yazılmış native bir çıkarım sunucusu; Python bağımlılığı yok. Hem MLX formatındaki ağırlıkları hem Hugging Face'teki GGUF modelleri çalıştırıyor ve aynı adreste hem OpenAI hem Anthropic uyumlu HTTP API sunuyor, böylece Claude Code, OpenAI SDK, Continue, Cursor veya Open WebUI gibi istemciler ek bir köprü olmadan bağlanabiliyor. Metnin yanında görsel, video, müzik, ses (klonlama dahil) ve 3D üretimi de aynı sunucu üzerinden yapılıyor; yanında sohbet, agent modu ve MCP araç çağırma içeren MLX Core adlı imzalı bir macOS menü çubuğu uygulaması geliyor. MIT lisanslı, Homebrew ile kuruluyor, macOS 26.2+ ve Apple Silicon istiyor. Şubat 2026'da açılmış, yaklaşık 1.480 yıldızlı ve sık sürüm çıkaran bir proje.",
+   "usage_tr": "Bu, tam olarak senin tercih ettiğin yerde duruyor: ücretli API yerine Mac'te yerel model. Lyricdrop'un maliyet planında ElevenLabs ve Apify'ı bıraktığın yerlerin bir kısmını buradan doldurabilirsin; ses üretimi ve model çağrılarını ofisteki M4 Pro Mac'te tek bir localhost adresine toplayıp admin panelinin arkasına koyabilirsin. Anthropic uyumlu uç nokta sayesinde Claude Code ve OpenCode'u toplu, ucuz işler için (toplu etiketleme, taslak üretimi, sınıflandırma) yerel bir modele yönlendirip Max aboneliğini asıl geliştirme işine saklayabilirsin. Evdeki 7/24 açık Mac mini'ye kurup Tailscale üzerinden hem ofisten hem iPhone'dan aynı sunucuya bağlanman da mümkün; MLX Core uygulaması GUI tercih ettiğin için ayrıca işine gelir. Uyarı: tek kişilik genç bir proje ve macOS 26.2+ şartı var, üretim yoluna koymadan önce model başına hız ve bellek ölçümünü kendi 24 GB'lık makinende yap. Kritik bir bağımlılık haline gelirse sürüm sabitlemeyi baştan düşün.",
+   "matched_project": "Lyricdrop",
+   "relevance": 8,
+   "investment_note": null
+  },
+  {
+   "full_name": "OpenMOSS/Awesome-WAM",
+   "inputs_hash": "9e1aa19788da31890a46f42386040b2d",
+   "description_tr": "Awesome-WAM, World Action Model (WAM) adı verilen ve dünya modellemesiyle aksiyon üretimini birleştiren yaklaşım üzerine derlenmiş bir makale ve kaynak listesi. Fudan Üniversitesi, Shanghai Innovation Institute ve NUS'tan araştırmacıların yazdığı bir survey makalesine eşlik ediyor; mimari taksonomi, eğitim verisi ve değerlendirme protokollerini kapsıyor. Her makale için kısa ve yapılandırılmış bir özet blogu da sunuluyor, bu özetleri üreten skill'in kendisi de açık kaynak. Ayrıca benchmark'ları karşılaştıran bir liderlik tablosu ve EasyWAM adlı eğitim deposuna bağlantı var. MIT lisanslı, HTML olarak yayımlanan bir site; Nisan 2026'da açılmış ve yaklaşık 1.430 yıldıza ulaşmış, topluluk katkısına açık tutuluyor.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam Arslan Holding tarafında embodied AI alanına dair bir okuma haritası olarak kullanmak olabilir. Bir araç değil, kaynak listesi; hiçbir pipeline'a takılmıyor ve kurulacak bir şey yok. Deal screening için de doğrudan kullanılmaz, çünkü akademik literatürü düzenliyor, pazar veya şirket verisi vermiyor. İçindeki Paper2Blog skill'i, uzun teknik metinleri otomatik özetleme fikrinin nasıl kurgulandığını görmek açısından ayrıca bakılabilir. Bunun dışında bu satırı geçebilirsin.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "techjarves/Portable-Local-Studio",
+   "inputs_hash": "1625468d93424789729716dbbd8c5442",
+   "description_tr": "Portable AI Studio, dört yerel AI yeteneğini tek bir masaüstü arayüzde toplayan, kurulum gerektirmeyen taşınabilir bir uygulama: Stable Diffusion ile görsel üretimi, GGUF formatındaki modellerle llama.cpp üzerinden sohbet, whisper.cpp ile konuşmadan metne çevirme ve Kokoro-82M ONNX modeliyle metinden sese. Tamamen çevrimdışı çalışıyor; API anahtarı, hesap veya telemetri istemiyor. Donanımı otomatik algılayıp CUDA, ROCm, Vulkan, macOS'ta Metal veya Intel NPU için OpenVINO arka uçlarını yüklüyor; Apple Silicon'da CoreML görsel modelleri için ayrı bir kurulum yolu var. Model yöneticisi Hugging Face bağlantısından ağırlık indirmeye ve yerel dosyaları sürükleyip bırakmaya izin veriyor. JavaScript tabanlı, MIT lisanslı; Haziran 2026'da açılmış ve yaklaşık 1.390 yıldıza ulaşmış.",
+   "usage_tr": "Lyricdrop'un STT karşılaştırma adımında hızlı bir tezgah olarak işine yarayabilir: whisper.cpp'yi ayrı ayrı kurmadan birkaç model boyutunu aynı ses dosyasında deneyip hangisinin şarkı sesinde daha az hata verdiğini gözle görebilirsin. GUI tercih ettiğin ve her şey çevrimdışı olduğu için Mac'te API maliyeti olmadan çalışır, kurulumu asistanına da devredebilirsin. Ancak bu bir uygulama, gömülebilir bir bileşen değil: kelime düzeyinde zaman damgası ve pipeline'a bağlanma ihtiyacın için sonunda yine kendi whisper.cpp ya da hizalama servisini yazman gerekir. Windows/Linux önce düşünülmüş bir proje; macOS yolu belgelenmiş olsa da hangi hızlandırmanın gerçekten devreye girdiğini kendi makinende doğrula. Yani seçim turu için evet, üretim yolu için hayır.",
+   "matched_project": "Lyricdrop",
+   "relevance": 4,
+   "investment_note": null
+  },
+  {
+   "full_name": "ant-research/4DAnyone",
+   "inputs_hash": "7b43775d6b31b7ea91d2a62d40ab1ff0",
+   "description_tr": "4DAnyone, tek kameradan çekilmiş gündelik bir videoyu, birbiriyle senkron ve görüş açıları tutarlı onlarca videoya çeviren bir üretim modeli; çıktısı 4D Gaussian Splatting ile yeniden yapılandırma için kullanılıyor. Girdi olarak kamera parametresi ya da sabit kamera istemiyor. Tepe GPU belleğini 22 GB'a indirerek RTX 4090 gibi tüketici kartlarında çalışabiliyor ve 121 karelik bir video için ortalama 27 saniye sürüyor; damıtılmış Turbo sürümü dört adımlı denoising ile temel modele göre belirgin hızlanma sağlıyor. Etkileşimli çıkarım için bir GUI de yayımlanmış. SIGGRAPH Asia 2026 makalesine eşlik eden Apache-2.0 lisanslı bir Python deposu; Ağustos 2026'da açılmış, yaklaşık 1.370 yıldız ve sık güncelleme var.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam Folio'nun görsel üretim tarafı olabilir, ama oradaki ihtiyaç bir kişinin çok kameralı 4D yeniden yapılandırması değil, feed'e girecek düz görsel ve kısa video. CUDA gerektiriyor ve README'de Apple Silicon yolu yok; ofisteki Mac'te çalışmaz, kiralık GPU maliyeti getirir. Lyricdrop tarafında da video üretimi değil YouTube oynatımı kullanıyorsun, yani oraya hiç değmiyor. Volumetrik video ve 3D varlık üretimi ileride bir yatırım teması olarak ilgini çekerse teknik seviyeyi görmek için bakılabilir.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "bytedance/Bernini",
+   "inputs_hash": "c187d122cc150982f506e53abf7aa611",
+   "description_tr": "Bernini, video üretimi ve video düzenlemeyi tek çatıda toplayan açık kaynak bir çerçeve; MLLM tabanlı bir anlamsal planlayıcı ile DiT tabanlı bir renderer'ı birleştiriyor. ByteDance ağırlıkları Hugging Face üzerinden yayımlamış: 1.3B ve 14B renderer sürümleri (Bernini-R) ile planlayıcıyla birlikte çalışan 7+14B tam sürüm. 1.3B varyantı Wan2.1 üzerinden ince ayarlanmış ve stil transferi, altyazı veya filigran silme, yerel düzenleme gibi basit işlerde büyük sürüme yakın sonuç verirken insan üretimi gibi karmaşık işlerde geriye düşüyor. Depo hem çıkarım hem renderer eğitimi kodunu içeriyor; EditVerse, OpenVE, OpenS2V ve VBench sonuçları ile kendi kör oylamalı arena ölçümleri paylaşılmış. Apache-2.0 lisanslı, yaklaşık 1.320 yıldızlı ve 2026 boyunca düzenli sürüm çıkaran bir proje.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam Folio'nun günlük video üretimi olabilir. Ama oradaki iş, her gün kısa dikey klipler üretip feed'e düşürmek; Bernini araştırma sürümü olarak 14B'lik bir DiT'i ayakta tutmanı istiyor ve README'de Apple Silicon yolu yok, yani ofisteki Mac'te yerel çalışmaz. Kiralık GPU'ya bağlanmak, senin bıraktığın ücretli üretim servislerinden daha ucuz olmayabilir; önce basit bir hosted üretimle günlük hacmini ölçmek daha doğru sıralama. Filigran ve altyazı silme gibi yerel düzenleme yetenekleri ileride elinde büyük bir video arşivi olursa tekrar bakılacak bir başlık. Şimdilik teknik seviyeyi takip listesine almak yeterli.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "pyang5166/gbro-collage-broll",
+   "inputs_hash": "a20644c389b667df634e965f94613244",
+   "description_tr": "gbro-collage-broll, yaklaşık beş saniyelik bir seslendirme cümlesini tek bir görsel metafora indirip yarı tonlu kağıt kolaj (halftone paper-collage) tarzında bir B-roll klibine çeviren bir agent skill'i. Çıktı varsayılan olarak 9:16, 5 saniye, 720x1280, 24fps ve sessiz MP4; öğeler boş zeminden tek tek kayıp yerine oturuyor, stop-motion hissi hedefleniyor. Projenin merkezinde üç aşamalı zorunlu onay var: önce yalnızca metafor önerisi, sonra renkli statik kare ve contact sheet, en sonunda Gemini Omni Flash ile ilk/son kare animasyonu ve kare kare QA. Kurulum, skill dizinine klonlamaktan ibaret; GEMINI_API_KEY, Python 3.10+, google-genai ve ffmpeg gerekiyor, video üretimi kullandıkça ücretlendiriliyor. MIT lisanslı, Temmuz 2026'da açılmış ve yaklaşık 1.300 yıldıza ulaşmış.",
+   "usage_tr": "Folio'nun günlük içerik pipeline'ında story ve kısa post görselleri için doğrudan kullanabilirsin: bir yazarın fikrini tek cümleye indirip o cümleye eşlik eden 9:16 dikey bir klip üretmek, tam olarak senin feed formatına oturuyor. Bir agent skill olduğu için Claude Code veya OpenCode içinden çalışıyor, ayrı bir uygulama öğrenmen gerekmiyor ve üretilen MP4'leri Supabase/DigitalOcean tarafına düşürmek kolay. Üç kapılı onay yapısı, onay işini asistanına devretmeye uygun: ilk iki kapı ücretsiz metin ve tek görsel, pahalı olan yalnızca son adım. Uyarı: Mac'te yerel çalışmıyor, video üretimi Gemini API üzerinden ücretli; günlük içerik hacmini önce küçük tutup klip başı maliyeti ölç. Lyricdrop'un lansman içeriklerinde de aynı skill'i kullanabilirsin, ama estetiği tek bir sabit tarza bağlı; her markaya uymaz.",
+   "matched_project": "Folio",
+   "relevance": 5,
+   "investment_note": null
+  },
+  {
+   "full_name": "Anionex/agent-vision-toolkit",
+   "inputs_hash": "9c681504efc50f783e65dd8f04be61c9",
+   "description_tr": "agent-vision-toolkit, yalnızca metin işleyen modellerle çalışan kod ajanlarına görsel yetenek kazandırmayı hedefleyen bir araç seti ve skill koleksiyonu. İki bileşenden oluşuyor: kabuktan çağrılabilen görsel CLI'lar (görsel soru-cevap, uzun ekran görüntüsünde OCR, frontend arayüz yeniden üretimi, GUI otomasyonu) ve bunların üstüne, ajana hangi aracı ne zaman kullanacağını öğreten bir skill. İsteğe bağlı ikinci katman, şeffaf bir yerel proxy ve tek dosyalık eklentilerle yapıştırılan görsellerin ve ajanın yerleşik görsel araçlarının ek bir kurulum olmadan çalışmasını sağlıyor. Codex, Claude Code, Pi, Oh My Pi ve OpenCode ile uçtan uca doğrulandığı belirtiliyor. Python ağırlıklı, MIT lisanslı; Ağustos 2026'da açılmış ve yaklaşık 1.200 yıldıza ulaşmış.",
+   "usage_tr": "Asıl değeri senin için görsel yönlendirme değil, içindeki GUI otomasyonu ve ekran görüntüsü araçları: Lyricdrop v2'nin admin panelinde tarayıcı playtest kapısını Claude Code'a yaptırmak istiyorsun ve bu tam olarak o adım. Paneli açıp boşluk doldurma ekranını gezen, ekran görüntüsü alıp beklenen durumla karşılaştıran bir döngü kurabilirsin; şimdilik elle yaptığın 20-30 şarkılık onay turunun bir kısmı böylece devredilir. Kurulum kabuk tabanlı ve yerel, ek API maliyeti getirmiyor; Claude Code zaten çok modlu olduğu için metin-model köprüsü kısmına ihtiyacın yok, sadece CLI'ları alıp kullanabilirsin. Uyarı: proxy ve eklenti katmanı ajan davranışına müdahale ediyor, önce yalnızca CLI'larla dene, çalışan kurulumunu bozma. Folio'nun ürettiği görselleri otomatik gözden geçirmek için de aynı araçlar ikinci bir kullanım alanı.",
+   "matched_project": "Lyricdrop",
+   "relevance": 7,
+   "investment_note": null
+  },
+  {
+   "full_name": "Vincentwei1021/video-talkcraft",
+   "inputs_hash": "1d920208337b30eecfcd9c94c2ad146e",
+   "description_tr": "video-talkcraft, Claude Code veya Codex'i seslendirme tabanlı anlatım videoları üreten bir motion design tezgahına çeviren bir agent skill'i. Girdi olarak bir konuşma metni ve hazır bir seslendirme alıyor; kelime düzeyinde zaman damgalarını yerel makinede hizalıyor, her anlamsal vuruşu bir SHOTBOOK planına yazıyor ve Remotion ile dinamik yazı kartları, kamera hareketleri ve altyazılarla final videoyu render ediyor. Kütüphanede yüzden fazla hazır animasyon reçete kartı, çok katmanlı bir kamera sistemi ve üç aşamalı bir kabul kontrolü var; ayrıca gerçek insan kaydındaki duraklama ve tekrarları metne göre kesen bir ön kırpma scripti bulunuyor. Ortak bir runtime dizini ile projeler arasında node_modules paylaşımı yapılıyor. Depo yoğun geliştirme altında ve dokümantasyon ağırlıklı olarak Çince; lisansı PolyForm Noncommercial olarak işaretlenmiş ve yaklaşık 1.190 yıldıza sahip.",
+   "usage_tr": "İki yerde işine yarayabilir. Birincisi Lyricdrop'un lansman ve ASO içeriklerinde: elinde bir seslendirme varsa, kelime seviyesinde senkron kart animasyonlarıyla tanıtım videosunu Claude Code içinden çıkarabilirsin, ayrı bir video editörü öğrenmene gerek kalmaz. İkincisi teknik olarak daha ilginç olanı: kelime düzeyinde hizalamayı yerel makinede yapıp bir zaman çizelgesine yazma yaklaşımı, Lyricdrop v2'deki söz-ses hizalama probleminin kardeşi; kendi pipeline'ını kurarken kırpma ve hizalama scriptlerine bakmaya değer. Remotion tarafı Node ile ofisteki Mac'te yerel render ediyor, API maliyeti getirmiyor, ama bağımlılıklar yaklaşık 760 MB'lık bir runtime istiyor. En önemli uyarı: lisans ticari olmayan kullanımla sınırlı görünüyor; Lyricdrop gelir hedefli bir ürün olduğu için pazarlama videolarında kullanmadan önce lisans metnini okuman gerekir. Fikirlerini ödünç almak, kodunu ürününe koymaktan daha güvenli bir yol.",
+   "matched_project": "Lyricdrop",
+   "relevance": 6,
+   "investment_note": null
+  },
+  {
+   "full_name": "magicrew/doc7",
+   "inputs_hash": "a61f7a8104c29984926d24e41f3f96bf",
+   "description_tr": "doc7, PDF, Office dosyaları, taramalar, ekran görüntüleri, grafik ve formülleri, kendi kullandığın OpenAI uyumlu çok modlu bir model üzerinden Markdown'a çeviren bir komut satırı aracı. Klasik OCR yığını veya ücretli bir doküman işleme servisi gerektirmiyor; LM Studio ya da Ollama ile yerel bir görsel model başlatıp `doc7 dosya.pdf` demek yeterli, uzak uç nokta da ayarlanabiliyor. Sayfayı karakter çıkarımında bırakmak yerine bütün olarak okuduğu için tablo, denklem, şema ilişkileri ve grafik içeriğini de metne taşıdığını iddia ediyor; depoda iki tarama PDF'i üzerinde MarkItDown ve Docling ile karşılaştırmalı bir ölçüm yayımlanmış. Go ile yazılmış, tek binary olarak kuruluyor, MIT lisanslı. Ağustos 2026'da açılmış ve yaklaşık 1.140 yıldıza ulaşmış.",
+   "usage_tr": "Arslan Holding'in deal screening ve due diligence akışında somut bir boşluğu dolduruyor: gelen pitch deck'leri, finansal modelleri ve bilgi memolarını grafikleriyle birlikte Markdown'a çevirip Claude Code'un okuyabileceği hale getirebilirsin. Asıl kazanç, sayı tablolarının ve grafiklerin metne dönmesi; klasik PDF çıkarıcılarda kaybolan tam da bu kısım. Yerel bir model uçlandığında ofisteki Mac'te çalışıyor, sayfa başı ücret yok ve belgeler dışarı çıkmıyor; hassas dosyalar için önemli bir fark. Tek binary olduğu için asistanına devretmesi kolay, n8n içinden bir adım olarak da çağrılabilir. Uyarı: çıktının kalitesi seçtiğin görsel modele bağlı ve model bir sayıyı yanlış okuduğunda bunu sessizce yapar; finansal modellerde kritik rakamları kaynak dosyadan teyit et.",
+   "matched_project": "Arslan Holding",
+   "relevance": 6,
+   "investment_note": null
+  },
+  {
+   "full_name": "InternRobotics/InternNav",
+   "inputs_hash": "5381e38d39eef43acf1ac1566469f253",
+   "description_tr": "InternNav, embodied navigasyon için PyTorch, Habitat ve Isaac Sim üzerine kurulmuş hepsi bir arada açık kaynak bir araç kutusu. Ayrık aksiyon uzaylı görsel-dil navigasyonu, nokta/görsel/yörünge hedefli görsel navigasyon ve sürekli yörünge üreten tam sistemi modüler biçimde destekliyor. Altı veri kümesi ve benchmark ile on üzerinde temel yöntem içeriyor; 3.000'den fazla sahne ve 830 bin VLN örneği barındıran InternData-N1 veri kümesi ve InternVLA-N1 adlı çift sistemli navigasyon modeli de depoya bağlı. MIT lisanslı, Jupyter Notebook ağırlıklı, sürüm notları 2026 başına kadar güncel; yaklaşık 1.120 yıldız ve aktif bir Discord topluluğu var.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam yalnızca frontier tech yatırım tarafında robot navigasyonunun açık kaynak durumuna bakmak olabilir. Isaac Sim ve Habitat gerektiriyor, Mac'te yerel çalışmıyor ve kendi uygulamalarına gömülebilecek bir parçası yok. Mobil uygulama, içerik pipeline'ı veya asistan otomasyonu tarafına hiçbir temas noktası bulunmuyor. Bu alanda bir şirket değerlendirirsen açık kaynak temel çizgisinin nerede olduğunu gösterir, tek pratik faydası bu.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "ysr666/dsh-vision-router",
+   "inputs_hash": "54c458ab86f6bfe050bb145a46f022bb",
+   "description_tr": "dsh-vision-router, DeepSeek Harness üzerinde çalışan ve yalnızca metin işleyen ajanlara görsel yetenek ekleyen bir eklenti. Anahtar gerektirmeyen yerleşik bir ücretsiz görsel zinciri ile birlikte on dört araç sunuyor: görsel soru-cevap, nesne konumlama, kırpma, piksel farkı, renk analizi, OCR, SVG izleme, arka plan ayıklama ve ekran görüntüsü alma. Görsel, yalnızca ihtiyaç duyulduğunda composer üzerindeki bir kontrolle açılıyor ve görsel içeren turlar sıradan araç çağırma turları gibi işleniyor. Node.js 22+ ile çalışıyor, Python gerektirmiyor ve tek komutla kuruluyor; yerel Ollama ile de kullanılabiliyor. MIT lisanslı, JavaScript ile yazılmış; Ağustos 2026'da açılmış ve yaklaşık 1.110 yıldıza ulaşmış.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam Claude Code ve OpenCode etrafındaki eklenti ekosistemi olabilir. Bu eklenti özellikle DeepSeek Harness için yazılmış ve çözdüğü problem metin-modelli bir ajana görme kazandırmak; senin kullandığın ajanlar zaten görsel işliyor, yani asıl faydası sende oluşmuyor. İçindeki piksel farkı, OCR ve ekran görüntüsü araçlarının fikri, Lyricdrop panelinin görsel doğrulaması için ilham verici olsa da aynı işi ajan bağımsız yapan araçlar mevcut. Kullandığın yığına yeni bir harness eklemeden geçebilirsin.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "boona13/image-extender",
+   "inputs_hash": "b33984b019cb8770de4a899102e7556a",
+   "description_tr": "Image Extender, bir görseli istenen yönde AI ile genişleten (outpainting) ve aynı arayüzde 2D oyun grafiği üreten küçük bir açık kaynak web uygulaması. OpenRouter üzerinden Google'ın Gemini görsel modellerini kullanıyor; orijinal ve üretilmiş pikseller arasındaki dikişi gizlemek için Poisson harmanlama uyguluyor ve üç varyant arasından dikiş kalitesine göre seçim yaptırıyor. Extender dışında dört çalışma alanı daha var: katmanlı parallax arka planlar, on üç parçalık autotile setleri, karakter animasyon sayfaları ve şeffaf dekorasyon sprite'ları. Next.js, TypeScript ve Tailwind ile yazılmış; OpenRouter anahtarı sunucuya gitmeden tarayıcıda kalıyor. MIT lisanslı, Mayıs 2026'da açılmış ve yaklaşık 1.110 yıldıza sahip.",
+   "usage_tr": "Folio'nun içerik pipeline'ında pratik bir boşluğu kapatıyor: Instagram düzeninde dikey feed ve story kullanıyorsun, üretilen görseller çoğu zaman kare çıkıyor ve bunları kırpmadan 9:16'ya taşımak gerekiyor; outpainting tam olarak bu iş. Next.js ve TypeScript ile yazıldığı için fork'layıp kendi admin paneline bir ekran olarak gömmen, hatta toplu iş kuyruğuna bağlaman mümkün — tam senin tercih ettiğin biçim. Anahtar tarayıcıda kaldığı için asistanına da devredebilirsin, ama her genişletme OpenRouter üzerinden ücretli bir Gemini çağrısı; günlük içerik hacmini belirlemeden açık uçlu bırakma. Mac'te yerel model kullanmıyor, yani 'API maliyeti yok' kriterine uymuyor; buna karşılık kurulum yükü çok düşük. Oyun grafiği modülleri senin bugünkü projelerinin dışında, onları görmezden gelebilirsin.",
+   "matched_project": "Folio",
+   "relevance": 5,
+   "investment_note": null
+  },
+  {
+   "full_name": "mosaico-labs/mosaico",
+   "inputs_hash": "27bced3fe9e12b0ea948359981a0b95a",
+   "description_tr": "Mosaico, robotik ve fiziksel AI verisi için kurulmuş bir veri platformu; tek parça sensör loglarını sorgulanabilir, yapılandırılmış bir arşive çeviriyor. Veri gölü yaklaşımı ve zero-copy mimarisiyle `.bag` veya `.mcap` dosyalarının tamamını ayrıştırmadan tek tek sinyallere doğrudan erişim sağlıyor; akışlar otomatik indeksleniyor ve sorgu motoru yalnızca gereken dilimleri getiriyor. Temelinde her nesneye anlam yükleyen katı tipli bir veri ontolojisi var, bu da fiziksel değerlere göre sorgulamayı ve doğrulamayı mümkün kılıyor; sürümleme yerine değişmez veri katmanları kullanılıyor. Depo hem Python SDK'sını hem Rust arka ucunu (mosaicod) barındıran bir monorepo; SQL benzeri ayrı bir dil öğrenmek yerine kod öncelikli bir kullanım hedefleniyor. Apache-2.0 lisanslı, Aralık 2025'te açılmış ve yaklaşık 1.050 yıldıza ulaşmış.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam biyosinyal ve giyilebilir cihaz tarafında zaman serisi sensör verisini saklamak olabilir, ama Kanarya'nın ölçeğinde Supabase fazlasıyla yetiyor ve robotik log formatlarına göre tasarlanmış bir platform gereksiz karmaşıklık getirir. Rust arka ucu ve konteyner dağıtımı, tek kişilik bir pipeline için ağır bir kurulum. Mac'te geliştirme yapılabilir olsa da bu bir ekip altyapısı, gömülebilir bir bileşen değil. Ürün olarak değil, yatırımcı gözüyle bakılacak bir satır.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": "Arslan Holding'in B2B yazılım ve frontier tech tezine uyan bir profil: arkasında bir şirket, açık kaynak çekirdek ve fiziksel AI veri altyapısı gibi hızla büyüyen bir kategoride erken konumlanma var; ekibiyle tanışmak deal flow açısından değerlendirilebilir."
+  },
+  {
+   "full_name": "HanyuanWang/LiveStream-Agent-Studio",
+   "inputs_hash": "35d03dcd7c3abc487af7c5223de45c21",
+   "description_tr": "LiveStream Agent Studio, Çin'deki canlı yayın e-ticaret ekipleri için hazırlanmış, Windows'ta yerel öncelikli çalışan bir AI ajan tezgahı. Dört akışı tek arayüzde topluyor: aday yayıncı bulma ve profil çıkarma, tam uzunluktaki yayın kayıtlarını saniye düzeyinde zaman damgalı transkripte çevirme, transkripti dakikalık trafik verisiyle hizalayıp giriş-çıkış ve etkileşim değişimlerini analiz eden bir değerlendirme raporu, ve referans kısa videolardan özgün çekim senaryosu üretme. Çıktılar Excel ve Word olarak veriliyor, görev merkezi tüm işlerin durumunu tek yerde topluyor. Transkripsiyon için kullanıcının kendi Alibaba Cloud DashScope ve OSS hesapları yapılandırılıyor, yani bulut bileşeni var. MIT lisanslı ve ilk kamuya açık sürüm (v0.2.0-beta) olarak işaretlenmiş; Ağustos 2026'da açılmış ve yaklaşık 1.020 yıldıza ulaşmış.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam içerik analizi fikri, yani bir videoyu transkripte çevirip hangi bölümünün ilgi topladığını ölçmek olabilir. Ancak uygulama Windows'a bağlı, Mac'te çalışmıyor ve Douyin ile Chanmama gibi Çin'e özgü platformlara göre kurgulanmış; senin kanalların bunlar değil. Transkripsiyon tarafı da yerel değil, Alibaba Cloud hesabı istiyor, bu da 'Mac'te yerel çalışsın' kriterinin tersi. Tek modda birleştirilmiş ajan akışları fikri, kendi to-do ve orkestrasyon uygulamanda görev merkezi tasarımı için bakılabilecek bir örnek. Araç olarak kullanacağın bir şey değil.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  }
+ ]
+}

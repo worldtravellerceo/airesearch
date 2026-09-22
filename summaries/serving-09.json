@@ -1,0 +1,175 @@
+{
+ "repos": [
+  {
+   "full_name": "google-research/text-to-text-transfer-transformer",
+   "inputs_hash": "0f2829ea5ae65376982d0380758f0e71",
+   "description_tr": "T5, tüm doğal dil görevlerini ortak bir metin-girdi / metin-çıktı biçimine indirgeyen transfer öğrenme yaklaşımının referans kodudur. Deponun büyük kısmı veri kümelerini yükleyen, ön işleyen, karıştıran ve değerlendiren t5.data bileşenlerinden oluşur; SentencePiece tokenizasyonu ve görev başına metrik tanımları burada durur. Eğitim ve fine-tuning TensorFlow ile Mesh TensorFlow üzerinde, ağırlıklı olarak TPU hedefiyle yapılır; makaleyle birlikte yayımlanan checkpoint'ler indirilebilir. Google Research Temmuz 2022'den beri JAX/Flax tabanlı T5X'i öneriyor ve bu depo aktif geliştirilmiyor. Apache-2.0 lisanslı, ~6,5K yıldız; bugün daha çok makaleyi yeniden üretmek ve görev tanımı örüntüsünü incelemek için kullanılıyor.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, Lyricdrop ve Folio'da kullandığın hazır modellerin dayandığı metin-metin formülasyonunu kaynağından okumak olabilir. Kendi modelini sıfırdan eğitme ihtiyacın yok: içerik üretiminde hazır servisler ve Mac'te çalışan yerel modeller senin maliyet çizgine çok daha uygun. Eğitim yolu TPU ve TensorFlow etrafında kurulmuş; ofisteki M4 Pro'da anlamlı biçimde çalıştırılamaz. Depo bakımda olmadığı için yeni bir iş buraya bağlanmamalı. Arslan Holding tarafında bir ekip \"T5 tabanlı\" diyorsa, bunun 2019-2022 kuşağı bir yaklaşım olduğunu bilmek yeterli.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "PixelPlayerHQ/PixelPlayer",
+   "inputs_hash": "0cb282b48d57f6ca3f932bd6e8ceefa1",
+   "description_tr": "PixelPlayer, Android için çevrimdışı çalışan bir müzik oynatıcı; %100 Kotlin, Jetpack Compose ve Material 3 ile yazılmış. Ses motoru FFmpeg destekli Media3 ExoPlayer; boşluksuz çalma, crossfade, kuyruk yönetimi, equalizer ön ayarları ve Chromecast'e gönderme var. Sözler LRCLIB üzerinden LRC formatında çekiliyor, kayan bir söz ekranında gösteriliyor ve elle düzenlenebiliyor; etiket düzenleme TagLib ile yapılıyor. Kütüphane Room'da tutuluyor, sanatçı görselleri Deezer API'sinden geliyor, isteğe bağlı olarak Gemini veya OpenAI anahtarıyla çalma listesi üretiliyor. Android 11 ve üzeri gerekiyor; standart olmayan bir lisansla dağıtılıyor, Mayıs 2025'te açılmış depo ~6,5K yıldıza ulaşmış.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam Lyricdrop'un senkron söz ekranı — LRCLIB'den gelen LRC dosyalarının nasıl çekilip kaydırıldığını çalışan bir üründe görebilirsin. Ama Lyricdrop'un ihtiyacı satır değil kelime düzeyinde hizalama, ve bu kod bütünüyle Kotlin/Compose; Expo tarafına taşınacak bir bileşen çıkmıyor. Android TV sürümünde Media3 ExoPlayer kurulumuna bakmak istersen kaynak olarak durabilir, oysa senin oynatıcın ekranda YouTube videosu çalıştırıyor. Lisansı bilinen açık kaynak lisanslarından biri değil; fork'layıp kendi istemcini yazma refleksinden önce lisans metnini okuman gerekir.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "flashinfer-ai/flashinfer",
+   "inputs_hash": "1229a879c69c188c7504dba3350ab1ee",
+   "description_tr": "FlashInfer, LLM servis etmek için GPU çekirdekleri sağlayan bir kütüphane ve çekirdek üreteci. Attention (paged ve ragged KV cache, prefill, decode, append, MLA, cascade, sparse), GEMM ve MoE işlemleri için tek bir API sunup arkada FlashAttention-2/3, cuDNN, CUTLASS ve TensorRT-LLM uygulamalarından uygun olanı seçiyor. FP8 ve FP4 düşük hassasiyetli hesaplama, sıralama gerektirmeyen top-k/top-p örnekleme ve speculative decoding destekleniyor; CUDAGraph ve torch.compile ile uyumlu çalışıyor. Yalnızca NVIDIA donanımında (SM75 Turing ve sonrası, Blackwell dahil) çalışır ve vLLM, SGLang gibi servis katmanlarının altında kullanılır. Apache-2.0 lisanslı, ~6,5K yıldız; aktif geliştirilen bir altyapı projesi.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, bir gün Lyricdrop'un içerik üretimini kendi GPU'nda servis etmeye karar verirsen en altta duracak katman olması. Bugün model tarafında Claude Code aboneliğin ve Mac'te çalışan küçük yerel modeller üzerinden ilerliyorsun; her iki yolda da bu çekirdekler devreye girmiyor. Apple Silicon desteği yok, ofisteki M4 Pro'da çalışmaz — oradaki karşılığı MLX ve llama.cpp tarafıdır. Yatırımcı gözüyle bakarsan çıkarım maliyetinin nerede düştüğünü anlamak için sürüm notları iyi bir gösterge; ama bu izlenecek bir depo, kurulacak bir araç değil.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "kingoflolz/mesh-transformer-jax",
+   "inputs_hash": "cc8a1d2cc9182cc472223e9d0d8920b7",
+   "description_tr": "Mesh Transformer JAX, JAX'in xmap/pjit operatörleriyle Haiku üzerinde model paralelliği yapan bir transformer kütüphanesi. Paralelleştirme şeması orijinal Megatron-LM'e benziyor ve TPU'ların yüksek hızlı iki boyutlu mesh ağında verimli çalışacak şekilde tasarlanmış; yaklaşık 40B parametreye kadar ölçeklenmesi hedeflenmiş. Deponun asıl bilinirliği, The Pile üzerinde eğitilmiş 6 milyar parametreli GPT-J-6B modelini ve ağırlıklarını yayımlamış olmasından geliyor; fine-tuning rehberi, Colab demosu ve sıfır-atış değerlendirme tabloları da içinde. Kod 2021-2022 dönemine ait; güncellemeler durmuş ve depo pratikte arşiv niteliğinde. Apache-2.0 lisanslı, ~6,4K yıldız.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, açık ağırlıklı model dalgasının nereden başladığını görmek isteyen bir okuma. Çalıştırmak TPU pod'u gerektirir; ofisteki Mac'te ya da DigitalOcean üzerindeki kurulumunda karşılığı yok. Bugün benzer bir işi yapmak istesen hazır açık ağırlıklar ve güncel fine-tuning araçları çok daha kısa yol. Arslan Holding tarafında açık kaynak model tezini tartarken tarihsel referans olarak işe yarar, ürün tarafında değil.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "henrythe9th/AI-Crash-Course",
+   "inputs_hash": "3f65f216f359f073f8d6d07a9531182c",
+   "description_tr": "AI Crash Course, yazılım geçmişi olan ama yapay zeka araştırmasının bugünkü sınırına hızla yetişmek isteyenler için derlenmiş bir kaynak listesi. Sinir ağı temelleriyle başlayıp survey makalelerine, oradan konu başlıklarına ayrılmış makalelere gidiyor: temel modelleme (Transformers, Scaling Laws, LoRA, RLHF, DPO, MoE), planlama ve akıl yürütme (CoT, ReAct, DeepSeek R1), uygulamalar ve benchmark'lar. Her makalenin yanına yıl bilgisi ve bir cümlelik \"neden önemli\" notu konmuş, öncelikli okunacaklar yıldızla işaretlenmiş. Ayrıca video dersler, kitaplar ve tamamlayıcı listeler (3Blue1Brown, Karpathy'nin Zero to Hero serisi, a16z AI Canon, prompt rehberleri) yer alıyor. Kod içermiyor; MIT lisanslı bir liste deposu, ~6,3K yıldız, Ocak 2025'ten beri güncelleniyor.",
+   "usage_tr": "Arslan Holding'in erken aşama AI yatırımlarını değerlendirirken kullanabilirsin: listedeki yıldızlı makaleler, bir ekip \"post-training yapıyoruz\" ya da \"model yönlendirme katmanı kurduk\" dediğinde iddianın nereye oturduğunu anlamana yetecek asgari zemini veriyor. Deal screening notlarını hazırlarken listeyi bir sözlük gibi yanına alıp, okuma ve özetleme işini konu başlığı başına bölüp asistanına ya da Claude Code'a devredebilirsin. Listeyi derleyen kişi araç satan biri değil, şirket kurup çıkmış bir kurucu; sıralama ürün tanıtmaya değil boşluk aramaya göre kurulmuş, senin merceğine yakın. Maliyeti ve kurulumu yok, Mac'te açıp okunuyor; tek riski listenin sabit kalması ve bazı bağlantıların zamanla eskimesi. Kod tarafına hiçbir şey katmaz — bu bir müfredat, araç değil.",
+   "matched_project": "Arslan Holding",
+   "relevance": 5,
+   "investment_note": null
+  },
+  {
+   "full_name": "microsoft/fara",
+   "inputs_hash": "3466b8f9cb6d1f12373e32f029abf33b",
+   "description_tr": "Fara1.5, Microsoft'un yayımladığı bilgisayar kullanan ajan (computer use agent) model ailesi; 4B, 9B ve 27B boyutlarında, Qwen3.5 üzerine FaraGen1.5 veri hattından gelen verilerle supervised fine-tuning ile eğitilmiş. Modeller tarayıcı ekran görüntüsü ve konuşma geçmişini alıp gözlemle-düşün-eylem döngüsünde doğrudan koordinat üreterek fare ve klavye eylemleri yapıyor; erişilebilirlik ağacı veya ayrı bir ayrıştırma modeli kullanmıyor. Depo ayrıca WebTailBench ve CUAVerifierBench değerlendirme setlerini, trajektori puanlayan Universal Verifier yargıcını ve yeniden üretim CLI'ını içeriyor. Ağırlıklar Hugging Face'te açık; depodaki örnek akış Playwright ile tarayıcıyı sürüp modeli OpenAI uyumlu bir uç noktadan çağırıyor, Magentic-UI ile denetimli bir arayüzde de çalıştırılabiliyor. MIT lisanslı, ~6,2K yıldız; 9B modeli için Online-Mind2Web'de %63,4, 27B için %72,3 bildiriliyor.",
+   "usage_tr": "Lyricdrop v2'de admin panelindeki tarayıcı playtest gate'i şu an elle yürüyen ve devretmek istediğin adım; Fara tam olarak bu tip tarayıcı işlerini ekran görüntüsü üzerinden yürütmek için eğitilmiş. Playwright akışını kendi paneline bağlayıp \"şarkıyı aç, boşlukları doldur, hizalaması bozuk satırları raporla\" gibi senaryoları koşturabilirsin; bu insan playtest'inin yerini tutmaz ama açıkça bozuk şarkıları onay kuyruğundan elemeye yarar. İkinci kullanım asistan tarafında: tedarikçi karşılaştırma gibi tekrar eden tarayıcı araştırmalarını aynı döngüyle yarı otomatik hale getirebilirsin. Maliyet tarafına dikkat — depodaki önerilen yol modeli bir bulut uç noktasından çağırmak, yani sürekli bir fatura; 4B sürümü ofisteki 24 GB'lık Mac'e sığar ama büyük modelle arasındaki başarı farkı küçük değil. Ajanın tarayıcında gerçek tıklamalar yapacağını unutma: ilk denemeleri ayrı bir tarayıcı profilinde ve test verisiyle yap.",
+   "matched_project": "Lyricdrop",
+   "relevance": 6,
+   "investment_note": null
+  },
+  {
+   "full_name": "Akegarasu/lora-scripts",
+   "inputs_hash": "ed15342b540e7969531cec34e2498911",
+   "description_tr": "SD-Trainer (lora-scripts), kohya-ss/sd-scripts eğitim betiklerini tek bir WebUI ve hazır bir ortam altında toplayan araç. Stable Diffusion tabanlı difüzyon modelleri için LoRA ve Dreambooth eğitimini parametreleri panelden seçerek yürütüyor; Tensorboard takibi, WD 1.4 Tagger ile otomatik etiketleme ve etiket düzenleyici aynı arayüzde. Kurulum Windows (PowerShell) ve Linux (bash) betikleriyle yapılıyor, arayüz yerelde 28000 portunda açılıyor. Python 3.10 ve submodule'lerle klonlama gerektiriyor; pratikte NVIDIA GPU'lu bir makine varsayıyor. AGPL-3.0 lisanslı, ~6,1K yıldız; 2023'ten beri düzenli sürüm çıkaran aktif bir depo.",
+   "usage_tr": "Folio'nun içerik hattında en çok zorlayacak şey tutarlılık: her profil bir yazara ait olduğu için aynı yüzün ve aynı görsel dilin her gün yeniden çıkması gerekiyor. Bunun standart çözümü profil başına bir LoRA eğitip günlük üretimi o LoRA ile yapmak; SD-Trainer bu eğitimi komut satırı yerine panelden yürütmeni sağlar, veri etiketleme ve eğitim takibi de aynı yerde durur. Uyarı: bu iş ofisteki M4 Pro'da pratik değil, kurulum NVIDIA GPU'ya göre yazılmış — eğitimi saatlik kiraladığın bir GPU'da yapıp çıkan LoRA dosyasını üretim tarafında kullanmak daha gerçekçi. Eğitilen LoRA'lar küçük dosyalar; n8n ile kurduğun günlük üretim akışına parametre olarak girer ve tekrar eden bir maliyet doğurmaz. Lisansın AGPL-3.0 olduğunu not et: aracın kendisini bir ürüne gömmeyi düşünürsen lisans zinciri konuşulması gereken bir konu, dışarıda eğitip yalnızca çıktıyı kullanmak bu sorunu doğurmaz.",
+   "matched_project": "Folio",
+   "relevance": 5,
+   "investment_note": null
+  },
+  {
+   "full_name": "YILING0013/AI_NovelGenerator",
+   "inputs_hash": "e8cae18786a23628696736bae80c4eec",
+   "description_tr": "AI_NovelGenerator, büyük dil modelleriyle çok bölümlü uzun roman üreten, Python ile yazılmış masaüstü bir araç. Dünya kurma, karakter tasarımı ve olay örgüsü planını ayrı adımlarda üretip bölümleri çok aşamalı bir akışla yazıyor; karakter gelişimini ve açılan ipuçlarını izleyen bir durum takip sistemi, uzun bağlam tutarlılığı için vektör tabanlı semantik arama ve yerel doküman referansı bulunuyor. Çelişkileri yakalamaya çalışan otomatik bir denetim adımı ve tüm süreci yürüten bir GUI var. Bulut sağlayıcılarla (OpenAI, DeepSeek) ya da Ollama gibi OpenAI uyumlu yerel servislerle çalışabiliyor. Arayüz ve dokümantasyon ağırlıklı olarak Çince; geliştirici bakımın durduğunu, yeniden yazılan sürümün dev dalında ilerleyeceğini belirtmiş. AGPL-3.0 lisanslı, ~6,1K yıldız.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam Folio'nun günlük içerik üretiminde aynı sorunun küçük ölçekte yaşanması — uzun bir seri boyunca anlatının ve karakterin tutarlı kalması. Oradan alınabilecek şey kod değil yaklaşım: plan, özet ve durum kaydını ayrı tutup her yeni parçayı bu kayıtla üretmek. Araç masaüstü uygulaması olarak tasarlandığı için Expo ve Supabase hattına gömülecek bir bileşen çıkmıyor, üstelik bakımı durmuş durumda. Yerel model desteği Mac'te çalıştırmaya uygun olsa da senin ihtiyacın roman değil, kısa ve görselle eşlenmiş içerik.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "HelixDB/helix-db",
+   "inputs_hash": "2854ae5fe6685a4f6a2ecf5f02dceb84",
+   "description_tr": "HelixDB, Rust ile sıfırdan yazılmış, graph ve vektör veri modelini tek motorda birleştiren bir veritabanı; RAG ve ajan hafızası gibi kullanımları hedefliyor. Aynı örnek üzerinde KV, doküman ve ilişkisel veriyi de tutabildiğini, böylece ayrı uygulama veritabanı ile vektör veritabanı ikilisine gerek kalmadığını söylüyor. Sorgular Rust, TypeScript, Go ve Python DSL'leriyle yazılıp çalışan örneğe HTTP üzerinden gönderiliyor; ayrı bir derleme veya deploy adımı yok. CLI macOS ve Linux'ta tek komutla kuruluyor ve yerel bir örnek başlatıyor; helix chef adımı Claude Code, Codex, OpenCode veya Cursor'ı algılayıp proje iskeletini kurduruyor. Apache-2.0 lisanslı, ~6,1K yıldız; Y Combinator destekli bir ekip tarafından geliştiriliyor ve yanında ticari bir bulut sürümü var.",
+   "usage_tr": "Kişisel bilgi tabanında not, kişi, proje ve tarih arasındaki ilişkileri hem graph hem vektör olarak tek yerde tutmak isteyeceğin bir nokta var: \"bu ay antrenman nasıl gidiyor\" tipi bir soru hem semantik aramayı hem de notların birbirine bağlanmasını gerektiriyor. HelixDB'yi evdeki 7/24 açık Mac mini'de yerel bir örnek olarak çalıştırıp sesli not transkriptlerini oraya yazabilirsin; TypeScript SDK'sı olduğu için mevcut Expo ve n8n hattına uzak durmaz ve API maliyeti getirmez. Karşı argümanı da net: Supabase zaten pgvector ile bu işin basit halini yapıyor ve ikinci bir veritabanı işletmek, yedeklemek ve taşımak demek. Bu yüzden denemeyi Lyricdrop gibi canlı bir üründe değil, ikinci beyin prototipinde yapman daha doğru — veri kaybı riskini alabileceğin tek yer orası. Genç bir proje olduğunu ve SDK sürüm numaralarının hızla değiştiğini hesaba kat.",
+   "matched_project": "Kişisel bilgi tabanı",
+   "relevance": 5,
+   "investment_note": "Graph ve vektörü tek motorda birleştiren, YC destekli ve bulut sürümü olan genç bir altyapı ekibi; erken aşama AI altyapısı ilgi alanına giriyorsa tanışmaya değer bir isim."
+  },
+  {
+   "full_name": "alexcasalboni/aws-lambda-power-tuning",
+   "inputs_hash": "4090a9c2fd19b7cf0972b02b3d24304a",
+   "description_tr": "AWS Lambda Power Tuning, bir Lambda fonksiyonunun bellek/CPU ayarını veriye dayanarak seçmek için kurulan bir AWS Step Functions durum makinesi. Fonksiyon ARN'ını girdi alıp farklı güç seviyelerinde (128MB'tan 10GB'a) gerçek çağrılar yapıyor, yürütme loglarını analiz ediyor ve maliyet, hız ya da dengeli strateji için en uygun ayarı öneriyor. Sonuçları maliyet/süre grafiği olarak görselleştiriyor; paralel çalıştırma ve bölgeler arası çağrı destekleniyor. Dilden bağımsız çalışıyor ve kullanıcının kendi AWS hesabında kuruluyor; SAM, CDK ve Terraform dahil birkaç farklı kurulum yolu var. Apache-2.0 lisanslı, ~6,1K yıldız; 2017'den beri sürdürülen olgun bir araç.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam sunucu maliyeti optimizasyonu, ama oyuncu tarafını Supabase ve DigitalOcean üzerinde tuttuğun için AWS Lambda ayarının karşılığı yok. Lyricdrop ölçeklenince maliyeti belirleyecek kalemler şarkı başına içerik üretimi ve CDN trafiği; ikisi de fonksiyon bellek ayarıyla ilgisiz. Bir gün AWS'ye geçersen, ayarı tahminle değil ölçümle seçtirdiği için ilk kurulacak araçlardan biri olur. Uyarı: fonksiyonu gerçekten çağırdığı için test sırasında gerçek maliyet ve gerçek yan etki üretir.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "kserve/kserve",
+   "inputs_hash": "cc0755b35ff4a86c8a2a8c2d7a7080a6",
+   "description_tr": "KServe, Kubernetes üzerinde hem üretken hem öngörücü yapay zeka modellerini servis etmek için standart bir platform; CNCF'in inkübasyon projelerinden biri. Üretken tarafta vLLM ve llm-d arka uçlarını, OpenAI uyumlu çıkarım protokolünü, model önbellekleme, KV cache offload ve istek tabanlı otomatik ölçeklemeyi sağlıyor. Öngörücü tarafta TensorFlow, PyTorch, scikit-learn, XGBoost ve ONNX modellerini aynı arayüzle sunuyor; predictor, transformer ve explainer bileşenleri arasında yönlendirme ve canary trafik yönetimi yapıyor. Knative ve Istio gibi bileşenlere dayandığı için ciddi bir Kubernetes kurulumunu varsayıyor. Apache-2.0 lisanslı, ~6K yıldız; kurumsal kullanıcıları olan olgun bir proje.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam Lyricdrop'un arka ucu, ama orası Supabase ve DigitalOcean üzerinde duruyor ve bir Kubernetes kümesi işletmeyi gerektirmiyor. Bu tür platformlar birden çok modeli sürekli servis eden ve ayrı bir altyapı ekibi olan yapılarda karşılığını buluyor; tek kişilik bir geliştirme hattında getirdiği operasyon yükü kazandırdığından fazla olur. Yerel model ihtiyacında senin yolun Mac üzerinde MLX ve llama.cpp, uzak tarafta ise hazır bir servis. Yatırım merceğiyle bakarsan, bir ekibin \"kendi çıkarım altyapımızı kurduk\" iddiasını tartarken hazır standardın ne olduğunu bilmek işine yarar.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "OpenGVLab/LLaMA-Adapter",
+   "inputs_hash": "7f34526bea8c68899a7578866d1b748b",
+   "description_tr": "LLaMA-Adapter, LLaMA modellerini az sayıda ek parametreyle talimat takip eder hale getiren parametre-verimli bir fine-tuning yöntemi ve onun resmi uygulaması. Zero-init attention adı verilen yaklaşımla yaklaşık 1,2 milyon ek parametre eğitiliyor; makale eğitimin bir saat mertebesinde tamamlandığını bildiriyor. V2 sürümü yöntemi çok modlu hale getirip görüntü girdisiyle talimat takibi ekliyor; depoda eğitim ve fine-tune kodu ile demo bağlantıları var. Çalışma ICLR 2024'te yayımlandı, ancak ekip o zamandan beri LLaMA2-Accessory, SPHINX ve OneLLM gibi yeni depolara geçtiğini duyuruyor; burası artık esas geliştirme yeri değil. GPL-3.0 lisanslı, ~5,9K yıldız.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam Folio ya da Lyricdrop için bir modeli kendi verinle özelleştirme fikri, ama ikisinde de kalite farkı prompt ve veri tarafından geliyor, model ağırlıklarından değil. Yöntem 2023 kuşağına ait ve ekip başka depolara taşınmış; bugün benzer bir iş için LoRA ekosistemi çok daha bakımlı. Eğitim NVIDIA GPU varsayıyor; ofisteki Mac'te çalıştırılacak bir iş değil. GPL-3.0 lisansı, kendi uygulamasına gömülebilecek bileşen arama refleksin açısından ayrıca dikkat gerektirir.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "vllm-project/semantic-router",
+   "inputs_hash": "62cf44ddad91ac4b94c1961ef97690a0",
+   "description_tr": "vLLM Semantic Router, farklı modeller arasında istek bazında yönlendirme yapan, Go ile yazılmış programlanabilir bir katman. Gelen isteğin içeriğini, kullanıcı tercihlerini ve uygulama politikalarını değerlendirip hangi modele ya da model zincirine gideceğine karar veriyor; amaç kalite, maliyet, gecikme, gizlilik ve güvenlik dengesini uygulama koduna gömmeden yönetmek. Guardrails, AI gateway ve karma altyapı (GPU, uç, bulut) senaryoları için konumlandırılmış; kullandığı sınıflandırma modelleri Hugging Face'te yayımlanmış. Kurulum tek satırlık bir betikle yapılabiliyor, Kubernetes dağıtımı ve denemek için bir playground var. Apache-2.0 lisanslı, ~5,9K yıldız; vLLM ekosisteminin parçası olarak Ağustos 2025'ten beri hızla gelişiyor.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam Lyricdrop'un şarkı başına içerik üretim maliyeti, ama orada belirleyici olan bir yönlendirici değil, hangi adımda hangi modeli çağırdığın. Kod tarafında Claude Code'u abonelikle kullanıyorsun; araya giren bir router bu kullanım biçimine oturmuyor. Bu katman çok sayıda modeli aynı anda servis eden ve isteği başkaları adına yöneten yapılar için yazılmış; senin hacminde kazandırdığından fazla operasyon getirir. İleride \"önce ucuz modeli dene, başarısızsa pahalıya yükselt\" mantığını kurmak istersen aynı fikri n8n akışında birkaç adımla da yazabilirsin.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "SWE-bench/SWE-bench",
+   "inputs_hash": "d9a6423fe752171ca357765897ae43b0",
+   "description_tr": "SWE-bench, dil modellerinin gerçek GitHub issue'larını çözüp çözemediğini ölçen bir benchmark ve değerlendirme altyapısı. Görevler popüler Python depolarının gerçek hata kayıtlarından türetiliyor; model bir yama üretiyor ve deponun kendi testleri çalıştırılarak sonuç doğrulanıyor. Değerlendirme Docker konteynerlerinde yapılıyor, böylece sonuçlar yeniden üretilebiliyor; bulutta çalıştırma ve liderlik tablosuna gönderim için sb-cli aracı var. İnsanların çözülebilirliğini onayladığı SWE-bench Verified alt kümesi ve görsel yazılım alanlarını ölçen SWE-bench Multimodal aynı depoda bulunuyor. MIT lisanslı, ~5,9K yıldız; kod ajanlarının karşılaştırıldığı fiili standartlardan biri.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, kod ajanlarını günlük olarak kullanan biri olarak \"hangi ajan daha iyi\" cevaplarının nereden geldiğini bilmek. Kendi başına koşturmak yüzlerce Docker konteyneri ve ciddi makine zamanı demek; ofisteki Mac'te yapılacak bir iş değil ve projelerine bir çıktısı olmaz. Arslan Holding tarafında bir kod ajanı girişimi \"SWE-bench'te şu skoru aldık\" dediğinde, hangi alt kümede ve hangi doğrulama yoluyla ölçüldüğünü sormak için doğru referans burasıdır. Kendi kalite ihtiyacının karşılığı ise benchmark değil, projelerinde kurduğun ayrı geliştirici ve ürün review adımlarıdır.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "meta-pytorch/torchtune",
+   "inputs_hash": "89bce3ba9b540a57f854196a6957f275",
+   "description_tr": "torchtune, LLM'lerin post-training aşamasını PyTorch ile yazmak için geliştirilmiş bir kütüphane. SFT, bilgi damıtma, DPO, PPO, GRPO ve quantization-aware training için üzerinde oynanabilir eğitim reçeteleri ile Llama, Gemma, Mistral, Phi ve Qwen gibi modellerin sade PyTorch uygulamalarını sunuyor. Bellek verimliliği, activation offloading, çok düğümlü eğitim ve çok modlu QLoRA gibi özellikler zaman içinde eklendi. Depo başındaki uyarıya göre geliştirme 2025'te sonlandırıldı ve proje artık aktif olarak bakılmıyor. BSD-3-Clause lisanslı, ~5,8K yıldız.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam bir modeli kendi verinle eğitme ihtiyacı, ki bugün Lyricdrop'ta da Folio'da da böyle bir adım yok. Bakımı durmuş bir kütüphanenin üzerine yeni iş kurmak, bir yıl sonra tek başına kalmak demek; aynı reçeteler için bakımı süren alternatiflere bakmak daha doğru olur. Eğitim NVIDIA GPU'ya göre kurgulanmış; ofis Mac'inde anlamlı çalışmaz ve kiralık GPU maliyeti doğurur. Yerel model tarafındaki asıl ihtiyacın çıkarım (MLX, llama.cpp) ve o başka bir araç ailesi.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "Gen-Verse/OpenClaw-RL",
+   "inputs_hash": "1e8c4a9cd640258001c8ad038c8ba19c",
+   "description_tr": "OpenClaw-RL, ajanları gündelik konuşmalardan gelen geri bildirimle kişiselleştirmeyi hedefleyen, tamamen asenkron bir pekiştirmeli öğrenme çerçevesi. Kendi barındırdığın modeli OpenClaw içinde OpenAI uyumlu bir API olarak sarıp çok turlu konuşmaları yakalıyor ve politikayı arka planda sürekli güncelliyor; dil geri bildirimi, hibrit RL ve on-policy distillation gibi yöntemleri destekliyor. Terminal, GUI, SWE ve tool-call ortamlarında genel ajan eğitimi için ölçeklenebilir uygulamalar da aynı depoda. Eğitim yerel GPU ile ya da bulut üzerinden (Tinker) çalıştırılabiliyor; slime altyapısı, LoRA eğitimi ve Qwen3.5 ailesi destekleniyor. Apache-2.0 lisanslı, ~5,7K yıldız; Şubat 2026'da yayımlanmış, teknik raporu olan ve hızlı sürüm çıkaran genç bir araştırma projesi.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, tüm projelerini bilen kişisel bir orkestratör ajan isteğin — buradaki \"konuştukça sana uyan ajan\" vaadi kulağa o isteğe yakın geliyor. Aradaki fark belirleyici: bu çerçeve kendi ağırlıklarını eğittiğin bir kurulum varsayıyor, oysa senin kullandığın ajan abonelikle gelen kapalı bir model ve eğitilecek bir ağırlığın yok. Yol ya GPU gerektiriyor ya da bir bulut eğitim servisine bağlanıyor; ofisteki Mac'te çalışmaz ve kalıcı bir maliyet kalemi açar. Aynı kişiselleşme etkisini bugün CLAUDE.md, skill ve hook'larla çok daha ucuza alıyorsun. Alanın nereye gittiğini görmek için izlemeye değer bir depo, kurulmaya değil.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "huggingface/alignment-handbook",
+   "inputs_hash": "efafed22305f9145d92bca9b14ffc5bd",
+   "description_tr": "Alignment Handbook, Hugging Face'in dil modellerini insan ve yapay zeka tercihleriyle hizalamak için yayımladığı eğitim reçeteleri derlemesi. Sürekli ön eğitimden SFT'ye, oradan DPO, ORPO ve Constitutional AI gibi tercih hizalama yöntemlerine kadar uçtan uca yapılandırma dosyaları ve betikler içeriyor. Zephyr 7B, StarChat2 ve SmolLM serisi gibi modellerin gerçek eğitim reçeteleri kullanılan veri kümeleriyle birlikte yayımlanmış; DPO, KTO ve IPO'yu karşılaştıran değerlendirme çalışmaları da var. Reçeteler çok GPU'lu makineleri varsayıyor ve transformers ile TRL ekosistemine bağlı. Apache-2.0 lisanslı, ~5,7K yıldız; en son büyük güncellemesi SmolLM3 post-training reçetesi.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam kendi modelini hizalama fikri, ama Lyricdrop'ta ve Folio'da kalite prompt, veri ve review adımlarından geliyor. Reçeteler çok GPU'lu kurulumlara göre yazılmış; Mac'te çalışmaz, bulutta ise saatlik ciddi bir maliyet demektir. Buradan pratikte alınabilecek tek şey, tercih verisinin (iyi ve kötü örnek çiftleri) nasıl toplandığına dair yaklaşım; Lyricdrop'un playtest onaylarını ileride böyle bir veri gibi saklamak işine yarayabilir. Bu bir fikir alıntısı, kurulacak bir bağımlılık değil.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "ramon-victor/freegpt-webui",
+   "inputs_hash": "a8be9d08347d8d8c024aede44f2cbf9b",
+   "description_tr": "FreeGPT WebUI, G4F (gpt4free) API'sini kullanarak API anahtarı olmadan ChatGPT benzeri bir sohbet arayüzü sunan Python tabanlı bir web uygulaması. Model seçimi, hazır jailbreak ön ayarları ve web araması gibi seçenekleri olan bir arayüz sağlıyor; Replit ve Hugging Face Spaces üzerinde barındırılan demoları listelenmiş. Kurulum depo klonlama, pip ve Docker ile yapılıyor. Depo sahibi tarafından arşivlendi; artık bakılmıyor ve yalnızca referans olarak bırakıldı. Çalışma biçimi üçüncü parti sağlayıcıların uç noktalarına dolaylı erişime dayandığı için hem kırılgan hem de sağlayıcı şartlarıyla çelişen bir zeminde duruyor. GPL-3.0 lisanslı, ~5,6K yıldız.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam model erişim maliyetini düşürme fikri, ama senin çözümün zaten abonelik ve Mac'te çalışan yerel modeller. Depo arşivlenmiş durumda ve erişimi başkasının uç noktaları üzerinden dolaylı yoldan sağlıyor; gelir hedefi olan bir ürünün altına konacak bir bağımlılık değil. Kapalı üçüncü parti istemcilere güvenmeme ilkenle de ters düşüyor: burada isteğin nereye gittiği denetlenebilir değil. Ucuz erişim arıyorsan doğru yön açık ağırlıklı yerel modeller ve gerektiğinde ölçülü bir API bütçesi.",
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "karpathy/build-nanogpt",
+   "inputs_hash": "869d11229717212bcdd00758d4be99ff",
+   "description_tr": "build-nanoGPT, GPT-2'nin 124M sürümünün boş bir dosyadan başlanarak adım adım yeniden üretildiği eğitim amaçlı bir depo. Commit geçmişi bilerek küçük ve sıralı tutulmuş, her adımı anlatan bir YouTube ders videosu eşlik ediyor. Kod aynı zamanda GPT-3 yapılandırmalarını da üretebiliyor; yazarın notuna göre 124M modelin eğitimi bugün bir bulut GPU'sunda yaklaşık bir saat ve on dolar mertebesinde. Sohbet fine-tuning'i kapsam dışı: ortaya çıkan model talimat takip etmiyor, yalnızca metin tamamlıyor. Lisans bilgisi belirtilmemiş, ~5,5K yıldız; soru-cevap Discussions sekmesinden yürüyor.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, modellerin içinde ne olduğunu ilk elden görmek istediğin öğrenme tarafı. Pratik faydası şu: bir ekip \"kendi modelimizi eğitiyoruz\" dediğinde maliyetin ve adımların gerçekte ne olduğunu bilmek, yatırım görüşmelerinde doğru soruyu sormanı sağlar. Eğitimi çalıştırmak bulut GPU gerektiriyor; ofisteki Mac'te yapılacak bir iş değil, videoyu izleyip kodu okumak faydanın büyük kısmını zaten veriyor. Projelerine kod olarak girecek bir parça yok — bu bir ders, kütüphane değil.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  }
+ ]
+}

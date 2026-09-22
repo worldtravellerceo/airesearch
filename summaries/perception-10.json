@@ -1,0 +1,175 @@
+{
+ "repos": [
+  {
+   "full_name": "12britz/awesome-free-models",
+   "inputs_hash": "ad6b7d63c1f18de90fadaa96d064285d",
+   "description_tr": "Ücretsiz kullanılabilen yapay zeka modellerini, API'leri ve araçları derleyen bir \"awesome\" listesi. Yirmi bir bölüm altında açık ağırlıklı modeller, ücretsiz API katmanları, yerel çalıştırma araçları, sohbet arayüzleri, TTS/STT modelleri, embedding ve vektör veritabanları, agent framework'leri, MCP sunucuları ve fine-tuning araçları toplanıyor. Bakımcılar bağlantıları periyodik olarak yeniden doğruluyor ve erişilemeyen ya da ücretliye geçen servisleri HTTP durum koduyla birlikte not ediyor; bu, listenin en ayırt edici tarafı. Depo kod değil metin barındırıyor, CC0 olarak işaretlenmiş ve yaklaşık 2.3K yıldıza ulaşmış. Kendi başına çalışan bir yazılım sunmaz; bir kaynak dizinidir.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın olası bağlam, yerel model seçimi yaparken hangi açık ağırlıklı STT veya görüntü modelinin ücretsiz indirilebildiğini hızlıca taramak olabilir. Bir liste bir pipeline adımına gömülmez, ölçülebilir bir çıktı üretmez ve fork'layıp kendi istemcini yazabileceğin bir bileşen değil. Bu tür listeler hızlı eskiyor; buradaki doğrulama notları bile bir sağlayıcının ücretsiz katmanını kapattığını gösteriyor, yani bir karar bu listeye dayandırılmamalı.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "onlytailei/CppRobotics",
+   "inputs_hash": "a527b13c91e3124edbe610aeb84a972f",
+   "description_tr": "PythonRobotics deposundaki klasik robotik algoritmalarının C++ karşılığı. Extended Kalman filtresi ve parçacık filtresiyle lokalizasyon, Gaussian grid map ile haritalama, FastSLAM 1.0, Dijkstra/A*/RRT/Dynamic Window Approach gibi yol planlama yöntemleri ve LQR ile MPC tabanlı yol takip kontrolü içeriyor. Her algoritma tek başına derlenip çalıştırılabilen bir örnek olarak duruyor; bağımlılıkları cmake, OpenCV ve Eigen, MPC tarafı için ayrıca CppAD/IPOPT. ROS bağımlılığı depoyu hafif tutmak için kaldırılmış. MIT lisanslı, 2019'dan beri açık ve yaklaşık 2.2K yıldızı var; amacı üretim değil öğretim.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın olası bağlam, mühendislik geçmişin nedeniyle kişisel merak düzeyinde kalır. Mobil uygulama, içerik pipeline'ı veya yatırım akışı taraflarının hiçbirinde filtreleme veya hareket planlama ihtiyacı yok.",
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "dexmal/opendm",
+   "inputs_hash": "b165627e0f0d03b4a2d3de3d389c10c5",
+   "description_tr": "OpenDM, Dexmal'in açık dünyada robot kontrolü için geliştirdiği DM0.5 Vision-Language-Action (VLA) modelinin açık kaynak dağıtımı. Model ağırlıklarının yanında eğitim, fine-tuning, veri kümesi kaydı ve değerlendirme akışları için betikler veriliyor; LoRA ile SFT ve farklı robot platformlarına uyarlama belgelenmiş. Hedef, açık uçlu talimatlar, uzun ufuklu görevler ve birden fazla robot gövdesiyle çalışabilen tek bir politika. RoboColiseum ve RoboDojo-Sim gibi simülasyon sıralamalarındaki sonuçlar ve Pi0, GR00T gibi modellerle karşılaştırmalar README'de tablolanmış. Apache-2.0 lisanslı, ağırlıklar Hugging Face ve ModelScope üzerinden dağıtılıyor; yaklaşık 2.2K yıldız.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın olası bağlam, embodied AI ve VLA modellerinin yatırımcı şapkasıyla izlediğin frontier teknoloji başlıkları arasında olması. Model gerçek robot donanımı ve GPU kümesi varsayıyor, Mac'te yerel çalışacak veya bir Expo uygulamasına gömülecek bir bileşen değil.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": "Robot temel modelleri (VLA) bu depodaki karşılaştırma tabloları üzerinden hızlı bir rekabet haritası veriyor; alanı bir tez olarak izliyorsan bu sıralamalar hangi ekiplerin öne çıktığını görmek için ucuz bir takip noktası."
+  },
+  {
+   "full_name": "HUANGCHIHHUNGLeo/claude-real-video",
+   "inputs_hash": "6f3cd2f92d7991cbc968057b5e525d5e",
+   "description_tr": "Bir videoyu bir dil modelinin gerçekten \"izleyebileceği\" hale getiren komut satırı aracı. Sabit aralıkla kare örneklemek yerine sahne değişimi tespiti ile anlamlı kareleri seçiyor, birbirine çok benzeyen kareleri kayan pencereyle eliyor, sesi Whisper ile yazıya döküyor ve kareler, transkript ve bir MANIFEST dosyasından oluşan bir klasör üretiyor. Girdi olarak yerel dosya ya da yt-dlp'nin çözebildiği bir URL alıyor; işlemenin tamamı kullanıcının makinesinde, ffmpeg üzerinde yapılıyor. `--why` bayrağıyla analiz belirli bir soruya odaklanabiliyor, `--kb` sonucu tarihli bir not olarak kendi not klasörüne yazıyor. Python 3.10+, MIT lisanslı, PyPI'da yayınlanıyor ve Claude Code için bir skill olarak kurulabiliyor; yaklaşık 2.2K yıldız.",
+   "usage_tr": "Bunu kişisel bilgi tabanı tarafında kullanabilirsin: YouTube'dan psikoloji ve sosyoloji izleyerek öğrenme alışkanlığında videoyu `--why` ile belirli bir soruya odaklatıp `--kb` ile doğrudan not klasörüne yazdırmak, elle izleyip not almanın yerini alır. İkinci ve daha spesifik yer, stand-up özelini kare kare analiz ederken yaptığın görsel tanıklık işi; sahne değişimine göre seçilmiş kareler artı transkript, komedi tekniğini çıkarmak için elle kare ayıklamaktan daha düzenli bir girdi verir. Ofisteki M4 Pro Mac'te tamamen yerel çalışıyor, tek sistem gereksinimi ffmpeg ve Whisper; Max aboneliğinin dışında bir API maliyeti getirmiyor çünkü yalnızca kareleri ve metni üretiyor, yorumu Claude Code yapıyor. Claude Code skill olarak kurulduğunda işi ajana devredebilirsin: video bağlantısını verip soruyu sormak yeterli oluyor. Uyarı: kare sayısı arttıkça Claude'a taşınan bağlam da büyür, `--max-frames` ve `--scene` değerlerini düşük tutup sonucu kontrol et. Lyricdrop tarafında ise işe yaramaz; bu araç kelime düzeyinde zamanlama üretmiyor, yalnızca düz transkript veriyor.",
+   "matched_project": "Kişisel bilgi tabanı",
+   "relevance": 8,
+   "investment_note": null
+  },
+  {
+   "full_name": "ompl/ompl",
+   "inputs_hash": "4745709b96b50a21eab3dd4bf772e0bd",
+   "description_tr": "OMPL, örnekleme tabanlı hareket planlama algoritmalarının uzun süredir bakımda olan akademik referans kütüphanesi. RRT-Connect, PRM, KPIECE ve RRT* dahil kırktan fazla planlayıcıyı, SE(3) ve Öklid uzayları başta olmak üzere yirmiden fazla durum uzayında sunuyor. C++ çekirdeği var, Python bağlamaları PyPI üzerinden kurulabiliyor ve kendi planlayıcını veya durum uzayını ekleyecek şekilde genişletilebiliyor. Son sürümlerde VAMP ile SIMD hızlandırmalı planlama eklenmiş, milisaniye ölçeğinde çözüm hedefleniyor. Yaklaşık 2.2K yıldız; robotik araştırmasında ve ROS ekosisteminde yaygın bir temel bileşen.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın olası bağlam, robot kolu veya araç planlaması gibi tamamen alan dışı bir problem sınıfı. Ne Lyricdrop'un medya pipeline'ında ne de holding tarafındaki araştırma akışında bir hareket planlama adımı var.",
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "LeCAR-Lab/ASAP",
+   "inputs_hash": "0d47cf115b2ca130fa9366a3574a4774",
+   "description_tr": "ASAP, insansı robotlarda simülasyonla gerçek dünya fiziği arasındaki farkı kapatmayı hedefleyen bir araştırma kodu (RSS 2025). Yaklaşım, simülasyonda öğrenilen çevik tüm-vücut hareketlerinin gerçek donanımda bozulmasına yol açan fizik uyuşmazlığını, gerçek veriden öğrenilen bir düzeltme adımıyla hizalamak üzerine kurulu. Depo IsaacGym, IsaacSim ve Genesis üzerinde kurulum yolları, eğitim ve değerlendirme betikleri içeriyor. Linux ve NVIDIA GPU varsayıyor; MIT lisanslı, yaklaşık 2.1K yıldız. Bir ürün değil, makale eşlikçisi bir araştırma deposu.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın olası bağlam, insansı robotik alanının genel olarak frontier teknoloji ilgi alanına girmesi. Kod Linux ve NVIDIA GPU zincirine bağlı, Mac'te yerel olarak çalıştırabileceğin bir şey değil.",
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "v-modal/vmodal_sdk_flutter",
+   "inputs_hash": "fbaa026c96542cd1dc422c0cb65723dc",
+   "description_tr": "VModal'ın video arama servisine Flutter uygulamalarından erişmek için yazılmış resmi SDK. Anlamsal video ve görüntü arama, ASR ve OCR kaynaklarıyla konuşulan veya ekranda görünen kelimeleri arama, imzalı ve ilerleme bildiren yükleme akışları ile işlem bazlı iptal token'ları sunuyor. Dart tarafında tipli bir API veriyor; koleksiyon, indeks ve kullanım kaynakları da tiplenmiş durumda. Flutter 3.44+ ve Dart 3.12+ gerektiriyor, Android ve iOS destekleniyor. SDK MIT lisanslı olsa da arkasındaki servis kapalı ve API anahtarı talep üzerine veriliyor; yaklaşık 2.1K yıldız.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın olası bağlam, Folio'nun video içeriğinde anlamsal arama ihtiyacı olabilir ama üç kriter birden düşüyor. Stack Flutter, senin standart stack'in Expo/React Native; işlem kapalı bir bulut servisinde yapılıyor, yani yerel çalışmıyor ve kullanım başına maliyet getiriyor; SDK açık olsa da arkasındaki motoru fork'layıp kendi istemcini yazamazsın. Kapalı üçüncü parti servislere veri göndermeme tercihinle de doğrudan çelişiyor.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "roboterax/humanoid-gym",
+   "inputs_hash": "6b91fdbaeeed791ae2d93cd55e1516db",
+   "description_tr": "Humanoid-Gym, insansı robotlara yürüme ve denge becerileri öğretmek için NVIDIA Isaac Gym üzerine kurulmuş bir pekiştirmeli öğrenme çerçevesi. Odak noktası sıfır-atışlı sim2real aktarımı: insansı gövdeye özel ödül tasarımları ve Isaac Gym'den MuJoCo'ya bir sim-to-sim doğrulama katmanı içeriyor, böylece politika gerçek donanıma gitmeden ikinci bir fizik motorunda sınanıyor. Kod, RobotEra'nın XBot-S ve XBot-L robotlarında gerçek dünyada doğrulanmış olarak sunuluyor. Eğitim betikleri ve belgelerle birlikte geliyor ve arXiv'deki bir makaleye dayanıyor. Depoda lisans dosyası etiketlenmemiş, yaklaşık 2.1K yıldız.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın olası bağlam, insansı robotik ve sim2real'in izlediğin frontier teknoloji başlıkları arasında olması. Isaac Gym ve NVIDIA GPU zorunluluğu nedeniyle ofisteki Mac'te denenebilir bir şey değil, ayrıca lisans etiketi bulunmaması ticari bir kullanımı baştan belirsiz kılıyor.",
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "facebookresearch/theseus",
+   "inputs_hash": "89ce0157fe4b59d0058a4d30a0339c0c",
+   "description_tr": "Theseus, PyTorch üzerine kurulu, türevlenebilir doğrusal olmayan optimizasyon kütüphanesi. Gauss-Newton ve Levenberg-Marquardt gibi doğrusal olmayan en küçük kareler çözücülerini, geri yayılımın içinden geçebilecek şekilde sunuyor; böylece bir optimizasyon problemi sinir ağı eğitiminin bir katmanı haline geliyor. Tipik kullanım alanları SLAM, poz grafiği optimizasyonu, robotik ve bilgisayarlı görü; implicit differentiation ve iki seviyeli (bilevel) optimizasyon destekleniyor. Meta AI araştırma tarafından geliştirilmiş, MIT lisanslı, PyPI'da `theseus-ai` adıyla yayınlanıyor ve yaklaşık 2.1K yıldıza sahip. Uygulama değil, araştırma ve mühendislik kodu için bir altyapı kütüphanesi.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın olası bağlam, Kanarya'daki biyosinyal verisini model uydurmayla işleme fikri olabilir ama orada ihtiyacın olan şey bu ölçekte bir optimizasyon altyapısı değil. Kütüphane PyTorch bilgisi ve problem formülasyonu gerektiriyor; Claude Code ile prototip üretme ritmine oturmuyor.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "OpenMOSS/MOSS-Transcribe-Diarize",
+   "inputs_hash": "2f477d48e66db770cc8d5c273e0b4746",
+   "description_tr": "Uzun kayıtları tek geçişte konuşmacı etiketli ve zaman damgalı metne çeviren 0.9B parametreli açık kaynak bir ses anlama modeli. Ayrı ASR ve diarization sistemlerini birleştirmek yerine transkripsiyon ile konuşmacı ayrıştırmayı aynı modelde yapıyor; çıktı `[başlangıç][S01]metin[bitiş]` biçiminde kompakt bir akış ve isteğe bağlı akustik olay etiketleri içerebiliyor. Mimari Qwen3-0.6B tarzı bir metin omurgası ile Whisper-Medium ses kodlayıcısını bir MLP adaptörle birleştiriyor; 50'den fazla dil destekleniyor. Toplantı, çağrı, podcast, röportaj ve ders gibi çok konuşmacılı uzun kayıtlar için tasarlanmış; vLLM, SGLang ve FunASR ekosistemiyle servis edilebiliyor ve altyazı için bir web arayüzü de veriliyor. Apache-2.0 lisanslı, ağırlıklar Hugging Face'te, yaklaşık 2.1K yıldız; aynı ekibin daha güçlü bir Pro sürümü kapalı bir platform üzerinden sunuluyor.",
+   "usage_tr": "Bunu kişisel bilgi tabanı projesinde kullanabilirsin: sesli notlar ve toplantı kayıtları tek geçişte konuşmacı etiketli, zaman damgalı metne dönüşür ve kategori çıkarımını yapan LLM adımına temiz bir girdi gider; şu an Wispr Flow'un yaptığı işin yerel bir alternatifi olarak yan yana ölçmeye değer. Konuşmacı ayrıştırma, asistanınla yaptığın toplantıların kaydında kimin ne söylediğini ayırdığı için özet kalitesini doğrudan etkiler. Model 0.9B, yani boyut olarak 24 GB'lık Mac'e sığar; ancak README servis yolu olarak vLLM ve SGLang gösteriyor, Apple Silicon üzerinde çalıştırmanın maliyetini küçük bir kayıtla önce ölçmen gerekir. Lyricdrop tarafında ise yalnızca kısmi bir aday: denemeyi planladığın 2-3 STT sisteminden biri olabilir, fakat ürettiği zaman damgaları segment düzeyinde, kelime düzeyinde değil; boşluk highlight'ının söylenen kelimeyle eş zamanlı başlaması için üstüne ayrı bir forced alignment adımı gerekir. Açık ağırlıklı olması, ElevenLabs'i bırakma kararınla aynı yönde: kayıt başına API faturası yok, işlem kendi donanımında kalıyor.",
+   "matched_project": "Kişisel bilgi tabanı",
+   "relevance": 8,
+   "investment_note": "Açık 0.9B modelin yanında daha güçlü bir Pro sürümün kapalı bir platformda satılması klasik bir open-core kurgusu; çok dilli transkripsiyon MENA pazarında gerçek bir boşluk olduğu için ekibin ticarileşme yolu izlemeye değer."
+  },
+  {
+   "full_name": "Alisa0808/vox-director",
+   "inputs_hash": "811dfe72d0c2cb7d3cd7e30eb83a1831",
+   "description_tr": "Tek bir konu başlığından Vox tarzı kağıt kolaj açıklayıcı video üreten bir agent skill. Akış beat haritası çıkarma, üç-dört temada stil denemesi, her beat için kolaj poster üretimi, posterlerin videoya animasyonu, anlatıcı sesi ve müzik, son olarak ffmpeg ile birleştirme ve altyazı yakma adımlarından oluşuyor ve tek bir `beats.json` dosyası üzerinden yürüyor. İki insan onay kapısı var: beat haritasını onaylama ve stili gözle seçme; geri kalan adımlar otomatik. Konudan üretim dışında, elindeki konuşan kafa videosunu kolaj diline çevirme ve tek bir fotoğraftan karakter çıkarma modları da aynı motoru kullanıyor. Görüntü, video, TTS ve müzik modelleri Atlas Cloud API'si üzerinden çağrılıyor, birleştirme yerel ffmpeg ile yapılıyor; MIT lisanslı, Claude Code ve Codex gibi kodlama ajanlarıyla kullanılmak üzere yazılmış ve yaklaşık 2K yıldıza ulaşmış.",
+   "usage_tr": "Folio'nun günlük içerik pipeline'ında değerlendirebilirsin: her yazar profili için kitap anlatan kısa video üretimini beat haritası + poster + animasyon zincirine oturtmak, tek tek prompt yazmaktan daha tekrarlanabilir bir akış verir ve `beats.json` sayesinde çıktıyı elle düzeltebileceğin bir ara katman bırakır. İkinci olası yer Lyricdrop'un lansman içeriği: ASO ve sosyal tarafta aynı şablonla seri video üretmek marketing bütçesinin bir kısmını içeride tutar. Bir agent skill olduğu için işi Claude Code'a devredebilirsin, konu başlığını verip onay kapılarında karar vermek yeterli. Ana uyarı maliyet tarafında: görüntü, video, ses ve müzik adımlarının hepsi Atlas Cloud üzerinden ücretli API çağrısı, yani yerel çalışmıyor ve video başına maliyet çıkarman gerekir; ElevenLabs'i maliyet nedeniyle bırakma kararınla aynı soruyu burada da sormalısın. Ayrıca stil güçlü bir şekilde Vox kolajına bağlı; Folio'nun Instagram birebir tasarımına uyup uymadığını üç-dört beat'lik tek bir denemeyle görmelisin.",
+   "matched_project": "Folio",
+   "relevance": 7,
+   "investment_note": null
+  },
+  {
+   "full_name": "Farama-Foundation/Gymnasium-Robotics",
+   "inputs_hash": "02734fcb896416f005545010967bcb0f",
+   "description_tr": "Gymnasium API'sine uyumlu robotik pekiştirmeli öğrenme ortamlarının derlemesi. Ortamlar MuJoCo fizik motoru ve onun bakımı sürdürülen Python bağlamaları üzerinde çalışıyor; manipülasyon ve gezinme görevlerini standart bir arayüz arkasında topluyor. Farama Foundation tarafından bakılıyor, `pip install gymnasium-robotics` ile kuruluyor ve ayrı bir belge sitesi ile Discord topluluğu var. MIT lisanslı, yaklaşık 2K yıldız; d4rl uyumlu offline RL veri kümeleriyle birlikte anılıyor. Bir uygulama değil, algoritma karşılaştırmak için ortam kütüphanesi.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın olası bağlam, Folio'nun beğeni sinyallerinden öğrenen öneri sistemi için pekiştirmeli öğrenme okuması yapmak olabilir, ama oradaki ihtiyaç bir bandit kurgusu ve robot kolu simülasyonuyla ilgisi yok. MuJoCo kurulumu ve RL eğitimi, bu aşamada ölçülebilir bir getiri vermeden zaman alır.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "MIT-SPARK/Kimera-VIO",
+   "inputs_hash": "0a4a352f7a4c0f55e539bf63fcb309bb",
+   "description_tr": "Kimera-VIO, stereo kamera ve IMU verisinden gerçek zamanlı konum ve yönelim kestirimi yapan açık kaynak bir görsel-ataletsel odometri hattı. İsteğe bağlı olarak tek kamera + IMU ile de çalışabiliyor, SLAM yetenekleri ve 3B mesh üretimi içeriyor. MIT SPARK Lab tarafından geliştirilmiş, C++ ile yazılmış ve EuRoC veri kümesi üzerinde sürekli entegrasyonla ölçülüyor. Akademik bir yayın zincirine dayanıyor ve robotik ile artırılmış gerçeklik tarafında referans bir uygulama sayılıyor. BSD-2-Clause lisanslı, yaklaşık 1.9K yıldız.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın olası bağlam, drone veya robot tabanlı bir donanım yatırımını değerlendirirken teknik arka planı tanımak olabilir. Kurulum ROS ve C++ zincirine bağlı, senkronize stereo kamera ve IMU donanımı gerektiriyor; elindeki hiçbir projede böyle bir girdi yok.",
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "karlkurzer/path_planner",
+   "inputs_hash": "6beaadd596963c7e52fc018890ba8443",
+   "description_tr": "KTH Research Concept Vehicle için geliştirilmiş Hybrid A* yol planlayıcısının açık kaynak uygulaması. Algoritma, sürekli uzayda A* aramasını ayrıklaştırılmış yönelim kümesiyle birleştirerek nonholonomik araçlar için sürülebilir ve yumuşak yollar üretiyor. Girdi olarak LIDAR'dan üretilen ikili engel haritası alıyor; gerçek zaman gereksinimi nedeniyle C++ ile yazılmış ve modülerlik için ROS kullanıyor. Kod bir yüksek lisans tezinin çıktısı ve ayrı bir belge sitesi ile birlikte yayınlanmış. BSD-3-Clause lisanslı, yaklaşık 1.9K yıldız; 2015'ten bu yana otonom araç derslerinde sık referans verilen bir uygulama.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın olası bağlam, otonom araç alanına duyduğun genel ilgi. Araba ve sürüş tarafındaki ilginle bu kodun ilgisi yok: burada yapılan şey park ve manevra ölçeğinde rota üretmek, sürüş tekniği ya da araç dinamiği değil.",
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "jd-opensource/JoyAI-Video-Edit",
+   "inputs_hash": "2b9eaa93f56ff5b7e9608e9965a8b165",
+   "description_tr": "JoyAI-Video-Edit, canlı ya da yüklenmiş video akışlarını doğal dil talimatıyla, kareler geldikçe düzenleyen bir video düzenleme sistemi. Videonun tamamını beklemeden nedensel olarak çalıştığı için önceden tanımlı bir uzunluk gerektirmiyor; özne değiştirme, yerel düzenleme, arka plan değiştirme, stil aktarımı ve referans görsele göre düzenleme destekleniyor. Mimari bir MLLM koşul kodlayıcısı, nedensel video VAE ve 16B parametreli çok modlu difüzyon transformer'ından oluşuyor, üstüne dağıtım için damıtma ve sınırlı KV durum çıkarımı uygulanmış. Duyurulan performans 720p çözünürlükte 30 FPS; tüketici donanımında tek bir RTX 5090 üzerinde 840x480 ve 24 FPS bildiriliyor. Apache-2.0 lisanslı, ağırlıklar ve dağıtım kodu yayınlanmış, Hugging Face'te canlı bir demo var; yaklaşık 1.9K yıldız.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın olası bağlam Folio'nun video üretim adımı, ama donanım gereksinimi bunu baştan eliyor. Sistem en iyi durumda tek bir üst seviye NVIDIA GPU varsayıyor; ofisteki M4 Pro Mac'te yerel çalışmaz ve bulutta GPU kiralamak, düşük maliyetli içerik üretimi hedefinle çelişir. Gerçek zamanlı akış düzenlemesi, senin ihtiyacın olan toplu ve gece çalışan içerik pipeline'ının çözdüğü problem de değil.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "NVlabs/curobo",
+   "inputs_hash": "247b5ba6656e55c72312eff2f83a2257",
+   "description_tr": "cuRobo, robot hareket üretimi için CUDA ile hızlandırılmış bir kütüphane. PyTorch, CUDA ve Warp üzerine kurulu; ileri ve ters kinematik, çarpışma kontrolü, yörünge optimizasyonu, geometrik planlama ve GPU üzerinde algı işlemlerini paralel algoritmalarla sunuyor. Derinlik görüntülerinden yoğun işaretli mesafe alanları üreten GPU-yerel ESDF ve tork limitlerini gözeten B-spline tabanlı yörünge optimizasyonu öne çıkan yetenekleri. Tek kollu manipülatörlerden yüksek serbestlik dereceli insansılara kadar ölçeklenecek şekilde tasarlanmış. NVIDIA tarafından geliştiriliyor, Apache-2.0 lisanslı, v2 ile genel API baştan yazılmış; yaklaşık 1.9K yıldız.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın olası bağlam, robotik donanım tarafındaki yatırım okumalarında NVIDIA'nın yazılım yığınının nereye oturduğunu görmek. Kütüphane adı üstünde CUDA'ya bağlı, yani Mac'te yerel çalışmıyor ve senin hiçbir projende ters kinematik ya da çarpışma kontrolü gereken bir adım yok.",
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "Robbyant/lingbot-vla",
+   "inputs_hash": "fa1440bc84117fc6ae6f923f5c2dd471",
+   "description_tr": "LingBot-VLA, robot kontrolü için geliştirilmiş bir Vision-Language-Action temel modeli. Ön eğitim verisi olarak dokuz farklı çift kollu robot konfigürasyonundan toplanmış yaklaşık 20.000 saatlik gerçek dünya kaydı kullanıldığı belirtiliyor; depoda ayrıca GM-100 adlı bir veri kümesi paylaşılmış. Model kartları ve ağırlıklar Hugging Face ve ModelScope üzerinden dağıtılıyor, teknik rapor depoda PDF olarak duruyor. Öne çıkarılan iddia, simülasyon ve gerçek dünya karşılaştırmalarında rakip modellerin üstünde sonuç ve eğitim verimliliği. Apache-2.0 lisanslı, yaklaşık 1.8K yıldız; hedef kitlesi robotik araştırmacıları ve robot üreticileri.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın olası bağlam, embodied AI alanının frontier teknoloji ilgi alanına girmesi. Modeli çalıştırmak için gerçek robot donanımı ve GPU altyapısı gerekiyor; ne Mac'te yerel denenebilir ne de bir mobil uygulamaya gömülebilir.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "xuanyustudio/LocalMiniDrama",
+   "inputs_hash": "48b516f77a3c46ea34601f9be268d814",
+   "description_tr": "Kısa dizi ve çizgi dizi üretimini senaryodan sonuç videosuna kadar tek arayüzde toplayan bir masaüstü uygulaması. Akış senaryo, karakter ve sahne üretimi, storyboard ve video birleştirme adımlarından oluşuyor; liste görünümünde ince ayar, tuval görünümünde toplu düzenleme yapılabiliyor ve bir iş akışı grubu bütünüyle yeniden çalıştırılabiliyor. Proje verisi ve üretilen materyaller SQLite ve yerel dosyalarda tutuluyor, ancak görüntü ve video üretimi kullanıcının kendi API anahtarlarıyla dış sağlayıcılara gidiyor; birden fazla model sağlayıcısı destekleniyor. Uygulama Vue 3, Node.js ve Electron ile yazılmış; README'deki platform rozeti Windows'u gösteriyor. MIT lisanslı, sürüm notları düzenli tutuluyor ve yaklaşık 1.8K yıldıza ulaşmış.",
+   "usage_tr": "Folio'nun günlük içerik pipeline'ı için referans alabileceğin bir iş akışı sunuyor: senaryo, karakter tutarlılığı, storyboard ve video birleştirme adımlarının nasıl bölündüğü ve her adımın ayrı ayrı yeniden çalıştırılabilmesi, senin her gün yeni post ve story üretecek kurgunda aynen gereken yapı. Karakter görünümünü bölümler boyunca tutarlı tutma çözümü özellikle işine yarar, çünkü Folio'da her profilin aynı yazar kimliğiyle görünmesi gerekiyor. Pratik engeller net: rozetlenmiş platform Windows, yani ofisteki Mac'te doğrudan kurulamayabilir, ve Electron masaüstü uygulaması olduğu için Expo/Supabase hattına gömülecek bir bileşen değil. Üretimin dış API'lere gitmesi de \"yerel\" tanımını sınırlıyor; içerik başına maliyet yine sağlayıcıdan çıkar ve desteklenen sağlayıcılar ağırlıklı olarak Çin merkezli. Değerlendirmenin en ucuz yolu, uygulamayı kurmak yerine depodaki iş akışı ve tuval belgelerini okuyup adım ayrımını kendi pipeline'ına taşımak.",
+   "matched_project": "Folio",
+   "relevance": 5,
+   "investment_note": null
+  },
+  {
+   "full_name": "PurpleDoubleD/locally-uncensored",
+   "inputs_hash": "4ae9a1336f388964280920bee2ab46c9",
+   "description_tr": "Sohbet, görüntü ve video üretimi ile bir kodlama ajanını tek bir masaüstü uygulamasında toplayan yerel yapay zeka stüdyosu. Docker veya terminal gerektirmeden kurulup model seçilerek kullanılacak şekilde tasarlanmış; kodlama ajanı değişiklikleri uygulamadan önce diff gösteriyor ve ayrı bir ajan modu bulunuyor. Sürümler GitHub Actions ile açık kaynaktan derleniyor, güncelleme kanalı imzalı ve sürüm notları ayrıntılı tutuluyor. Masaüstü derlemeleri yalnızca Windows ve Linux için yayınlanıyor; macOS için masaüstü sürümü yok, onun yerine tarayıcı üzerinden çalışan bir bulut sürümü gösteriliyor. AGPL-3.0 lisanslı, v3 serisinde ve yaklaşık 1.8K yıldıza ulaşmış.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın olası bağlam Folio'nun görüntü ve video üretim adımını tek bir yerel arayüzde toplamak olabilir, ama macOS masaüstü derlemesi bulunmadığı için iki Mac'inin hiçbirinde çalışmaz. Önerilen alternatif tarayıcı üzerinden bulut sürümü; bu da hem yerel çalıştırma tercihini hem de kapalı servislere veri göndermeme ilkeni karşılamıyor. AGPL-3.0 lisansı, ileride kendi uygulamana bir parçasını gömmeyi düşünürsen ayrıca dikkat etmen gereken bir kısıt.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  }
+ ]
+}
