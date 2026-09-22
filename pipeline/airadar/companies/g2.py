@@ -54,7 +54,16 @@ class G2Report:
 
 
 def product_candidate(domain: str) -> str:
-    """The G2 product slug a domain most likely maps to. A guess, like the rest."""
+    """The G2 product slug a domain most likely maps to. A guess, like the rest.
+
+    Measured over the 400 companies bought so far: 61 came back with a rating
+    and 339 came back with zero reviews. Whether those 339 are companies with
+    no G2 page or slugs guessed wrong cannot be told apart from here, and not
+    for free either — g2.com answers 403 to every unpaid request, including a
+    plain HEAD on a public product URL, which is the reason the paid actor
+    exists at all. So the zeroes are recorded rather than retried: a second
+    run costs the same money to learn the same nothing.
+    """
     return domain.rsplit(".", 1)[0].replace(".", "-")
 
 

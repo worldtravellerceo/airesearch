@@ -30,6 +30,20 @@ number: 14 of the 40 highest-star repos created since July scored zero; 400 of
 has to stay distinguishable from evidence of absence — and anything unsettled
 goes to a human, not to silence.
 
+**A sample can be too small to hold the counter-example.** A rule that capped
+any repository carrying a non-AI product topic scored 95% precision on the
+160-repo labelled sample and looked finished. The sample contains eight such
+repositories. Run over the whole index it moved 1,393 of them to review,
+`FlowiseAI/Flowise` and `qdrant/qdrant` among them. Before a classifier change
+ships, run it over the population as well as the sample and read a random slice
+of what moved.
+
+**A refusal is not an empty answer.** The valuation channel treated every
+status at or above 400 as "past the last page". news.crunchbase.com answers 403
+to the default `python-httpx` user agent, so it fetched nothing for its whole
+life and logged a clean finish every time. Distinguish "the source said no"
+from "the source said nothing", and make the first one loud.
+
 **Never buy recall with precision.** A soft ceiling set below the decision
 threshold stranded 17,849 repositories in permanent escalation. A README weight
 set one tier too high put a release-notes CLI on an AI board. Every widening
