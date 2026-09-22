@@ -48,7 +48,17 @@ export type BoardEntry = {
   days_to_10k: number | null;
   days_to_50k: number | null;
   coverage_days: number | null;
-  sparkline: number[];
+  /** Daily star gains, dense from `sparkline_from` to the export date. A null
+   *  inside it is a day with no row, which is not the same as a day with no
+   *  stars. */
+  sparkline: Array<number | null>;
+  /** Where in the 90-day window the series starts, so a repo with two recorded
+   *  days is not drawn as wide as one with ninety. */
+  sparkline_from: string | null;
+  /** measured | too_young | no_baseline — two of acceleration's values are
+   *  produced by the metric code rather than observed. */
+  acceleration_basis: string | null;
+  history_backfilled_through: string | null;
 };
 
 export type BoardFile = {
@@ -56,6 +66,14 @@ export type BoardFile = {
   category: string;
   as_of: string | null;
   entries: BoardEntry[];
+};
+
+export type CategoryFile = {
+  categories: CategoryRow[];
+  /** Per board, how many repositories that board was allowed to rank in each
+   *  category. The chips used to print the size of the category across the
+   *  whole universe next to a filter that returns at most fifty rows. */
+  pools: Record<string, Record<string, number>>;
 };
 
 export type CategoryRow = {
@@ -68,7 +86,15 @@ export type CategoryRow = {
 
 export type Overview = {
   as_of: string | null;
-  counts: { tracked: number; ai_repos: number; backfilled: number; day_rows: number };
+  counts: {
+    tracked: number;
+    ai_repos: number;
+    ai_measured: number;
+    ai_unsettled: number;
+    backfilled: number;
+    day_rows: number;
+    pools: Partial<Record<Board, number>>;
+  };
   last_run: {
     command: string;
     finished_at: string | null;
@@ -80,7 +106,11 @@ export type Overview = {
   } | null;
 };
 
-export type HistoryPoint = { date: string; stars_gained: number; cumulative: number };
+export type HistoryPoint = {
+  date: string;
+  stars_gained: number;
+  cumulative: number;
+};
 
 export type RepoDetail = {
   full_name: string;
@@ -103,6 +133,8 @@ export type RepoDetail = {
   velocity_28d: number | null;
   velocity_90d: number | null;
   acceleration: number | null;
+  /** measured | too_young | no_baseline. See BoardEntry. */
+  acceleration_basis: string | null;
   relative_growth_14d: number | null;
   fresh_power: number | null;
   momentum_score: number | null;

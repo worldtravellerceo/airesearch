@@ -1,13 +1,7 @@
 import { BoardView } from "@/components/BoardView";
 import { SearchBox } from "@/components/SearchBox";
 import { StatTile } from "@/components/StatTile";
-import {
-  getBoard,
-  getBoardCounts,
-  getCategories,
-  getOverview,
-  getSearchIndex,
-} from "@/lib/data";
+import { getBoard, getBoardCounts, getCategoryFile, getOverview, getSearchIndex } from "@/lib/data";
 import { compact, count, shortDate } from "@/lib/format";
 import { ALL_CATEGORIES, type Board } from "@/lib/types";
 
@@ -17,13 +11,14 @@ import { ALL_CATEGORIES, type Board } from "@/lib/types";
  *  search reach for another file, and both are static assets.
  */
 export async function BoardShell({ board }: { board: Board }) {
-  const [overview, categories, file, index, boardCounts] = await Promise.all([
+  const [overview, categoryFile, file, index, boardCounts] = await Promise.all([
     getOverview(),
-    getCategories(),
+    getCategoryFile(),
     getBoard(board, ALL_CATEGORIES),
     getSearchIndex(),
     getBoardCounts(),
   ]);
+  const categories = categoryFile.categories;
 
   const entries = file?.entries ?? [];
 
@@ -35,8 +30,8 @@ export async function BoardShell({ board }: { board: Board }) {
             GitHub yapay zeka ekosistemi
           </h1>
           <p className="text-ink-secondary mt-1 max-w-3xl text-sm">
-            Aynı repolar, dört farklı soruya göre sıralanıyor. Listelerin birbirinden
-            farklı çıkması bir tutarsızlık değil — bütün mesele o.
+            Aynı repolar, dört farklı soruya göre sıralanıyor. Listelerin birbirinden farklı çıkması
+            bir tutarsızlık değil — bütün mesele o.
           </p>
         </div>
         {index.length ? <SearchBox total={index.length} /> : null}
@@ -44,15 +39,28 @@ export async function BoardShell({ board }: { board: Board }) {
 
       {overview ? (
         <section className="grid grid-cols-2 gap-3 md:grid-cols-4">
+          {/* Two numbers, not one. Of the repositories classified as AI, under
+              a third have any star history at all — the rest were read off
+              their metadata and have never been watched, and their velocities
+              are zero because the column defaults to zero. A single tile
+              claimed all of it had been observed. */}
           <StatTile
-            label="İzlenen AI projesi"
+            label="Sınıflandırılan AI projesi"
             value={count(overview.counts.ai_repos)}
-            hint={`${count(overview.counts.tracked)} repo taranıyor`}
+            hint={`${count(overview.counts.tracked)} repo tarandı${
+              overview.counts.ai_unsettled
+                ? ` · ${count(overview.counts.ai_unsettled)} karara bağlanmadı`
+                : ""
+            }`}
           />
           <StatTile
-            label="Tam geçmişi çıkarılmış"
-            value={count(overview.counts.backfilled)}
-            hint="Fresh Power sadece bunları sıralar"
+            label="Yıldız geçmişi ölçülen"
+            value={count(overview.counts.ai_measured)}
+            hint={
+              overview.counts.pools?.fresh !== undefined
+                ? `Fresh Power ${count(overview.counts.pools.fresh)} projeyi sıralıyor`
+                : "Hız ve ivme yalnızca bunlar için gerçek"
+            }
           />
           <StatTile
             label="Günlük veri noktası"
@@ -79,6 +87,8 @@ export async function BoardShell({ board }: { board: Board }) {
         initialEntries={entries}
         categories={categories}
         boardCounts={boardCounts}
+        categoryPools={categoryFile.pools[board] ?? {}}
+        asOf={file?.as_of ?? overview?.as_of ?? null}
       />
     </div>
   );

@@ -27,12 +27,19 @@ export function BoardView({
   initialEntries,
   categories,
   boardCounts,
+  categoryPools = {},
+  asOf = null,
 }: {
   board: Board;
   initialEntries: BoardEntry[];
   categories: CategoryRow[];
   /** Entry count per board, so an empty one can point at a populated one. */
   boardCounts: Record<string, number>;
+  /** How many repositories *this* board can rank in each category. The chips
+   *  used to print the category's size across the whole universe, next to a
+   *  filter that returns at most fifty rows. */
+  categoryPools?: Record<string, number>;
+  asOf?: string | null;
 }) {
   const [category, setCategory] = useState(ALL_CATEGORIES);
   const [entries, setEntries] = useState(initialEntries);
@@ -94,16 +101,12 @@ export function BoardView({
                 } ${count ? "" : "opacity-50"}`}
               >
                 {BOARD_COPY[value].title}
-                {count ? (
-                  <span className="tabular text-ink-muted text-xs">{count}</span>
-                ) : null}
+                {count ? <span className="tabular text-ink-muted text-xs">{count}</span> : null}
               </Link>
             );
           })}
         </nav>
-        <p className="text-ink-secondary mt-3 max-w-3xl text-sm">
-          {BOARD_COPY[board].blurb}
-        </p>
+        <p className="text-ink-secondary mt-3 max-w-3xl text-sm">{BOARD_COPY[board].blurb}</p>
       </section>
 
       {/* Filtering an empty board narrows nothing, and the counts on the chips
@@ -121,7 +124,9 @@ export function BoardView({
               onSelect={() => select(row.category)}
             >
               {categoryLabel(row.category)}{" "}
-              <span className="tabular opacity-60">{count(row.repos)}</span>
+              {categoryPools[row.category] !== undefined ? (
+                <span className="tabular opacity-60">{count(categoryPools[row.category])}</span>
+              ) : null}
             </Chip>
           ))}
         </section>
@@ -133,11 +138,7 @@ export function BoardView({
         </p>
       ) : (
         <div className={state === "loading" ? "opacity-50 transition" : "transition"}>
-          <BoardTable
-            board={board}
-            entries={entries}
-            populated={populatedElsewhere}
-          />
+          <BoardTable board={board} entries={entries} populated={populatedElsewhere} asOf={asOf} />
         </div>
       )}
     </>

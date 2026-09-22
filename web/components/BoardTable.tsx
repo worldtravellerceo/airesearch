@@ -25,19 +25,21 @@ export function BoardTable({
   board,
   entries,
   populated = [],
+  asOf = null,
 }: {
   board: Board;
   entries: BoardEntry[];
   /** Boards that do have data, so an empty one can point at them. */
   populated?: Board[];
+  /** The export date, so a sparkline can be placed on the window it belongs to
+   *  rather than stretched to fill the column. */
+  asOf?: string | null;
 }) {
   if (!entries.length) {
     return (
       <div className="border-border rounded-lg border border-dashed p-10 text-center">
         <p className="text-ink font-medium">Bu board henüz boş</p>
-        <p className="text-ink-muted mx-auto mt-2 max-w-xl text-sm">
-          {WAITING_ON[board]}
-        </p>
+        <p className="text-ink-muted mx-auto mt-2 max-w-xl text-sm">{WAITING_ON[board]}</p>
         {populated.length ? (
           <p className="text-ink-secondary mt-4 text-sm">
             Şimdilik bakabileceklerin:{" "}
@@ -61,9 +63,7 @@ export function BoardTable({
   return (
     <div className="border-border bg-surface-1 overflow-x-auto rounded-lg border">
       <table className="w-full min-w-[880px] text-sm">
-        <caption className="sr-only">
-          {board} board&apos;u, sıra ve büyüme metrikleriyle
-        </caption>
+        <caption className="sr-only">{board} board&apos;u, sıra ve büyüme metrikleriyle</caption>
         <thead>
           <tr className="text-ink-muted border-border border-b text-left text-xs">
             <th scope="col" className="py-2.5 pr-2 pl-4 font-medium">
@@ -145,12 +145,14 @@ export function BoardTable({
               <td className="py-2.5 pr-4">
                 <Sparkline
                   values={entry.sparkline}
+                  from={entry.sparkline_from}
+                  until={asOf}
                   label={`${entry.full_name} son 90 günün günlük yıldız hızı`}
                 />
               </td>
               <td className="tabular py-2.5 pr-4 text-right">{rate(entry.velocity_14d)}</td>
               <td className="tabular py-2.5 pr-4 text-right">
-                {multiple(entry.acceleration)}
+                <Acceleration entry={entry} />
               </td>
               <td className="tabular text-ink py-2.5 pr-4 text-right font-medium">
                 {scoreValue(board, entry)}
@@ -192,7 +194,6 @@ const BOARD_LABELS: Record<Board, string> = {
   popular: "Popüler",
 };
 
-
 function scoreHeading(board: Board): string {
   return {
     fresh: "Fresh Power",
@@ -205,7 +206,12 @@ function scoreHeading(board: Board): string {
 function scoreValue(board: Board, entry: BoardEntry): string {
   switch (board) {
     case "fresh":
-      return compact(entry.fresh_power);
+      // A repo whose history does not reach its creation date has a Fresh
+      // Power that is a floor, not a total — the days we never pulled can only
+      // add to it. 790 detail pages printed the floor as a flat number.
+      return entry.history_backfilled_through
+        ? compact(entry.fresh_power)
+        : `≥ ${compact(entry.fresh_power)}`;
     case "momentum":
       return rate(entry.velocity_14d);
     case "breakout":
@@ -213,6 +219,38 @@ function scoreValue(board: Board, entry: BoardEntry): string {
     case "popular":
       return count(entry.stars);
   }
+}
+
+/** Acceleration, with the two values the metric code invents marked as such.
+ *
+ *  `_acceleration` reports 1.0 for a repository too young to have a baseline
+ *  and a cap for one that was dormant and suddenly woke. Both reached the
+ *  Breakout board — the board whose whole subject is acceleration — printed
+ *  exactly like a reading taken off ninety days of history. */
+export function Acceleration({
+  entry,
+}: {
+  entry: Pick<BoardEntry, "acceleration" | "acceleration_basis">;
+}) {
+  const basis = entry.acceleration_basis;
+  if (basis === "too_young") {
+    return (
+      <span className="text-ink-muted" title="Henüz kendi temposu ölçülemedi — çok yeni">
+        —
+      </span>
+    );
+  }
+  if (basis === "no_baseline") {
+    return (
+      <span
+        className="text-ink-secondary"
+        title="Uzun süre hareketsizdi: oran sıfıra bölünmesin diye tavanlandı"
+      >
+        ↑ {multiple(entry.acceleration)}
+      </span>
+    );
+  }
+  return <>{multiple(entry.acceleration)}</>;
 }
 
 /** Milestones are the most direct answer to "five years or two weeks?", so they

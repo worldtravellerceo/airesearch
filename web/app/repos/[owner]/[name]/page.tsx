@@ -7,11 +7,7 @@ import { StatTile } from "@/components/StatTile";
 import { getManifest, getRepo } from "@/lib/data";
 import { categoryLabel, count, multiple, percent, rate, shortDate } from "@/lib/format";
 import { repoSlug } from "@/lib/paths";
-import {
-  BOARD_COPY,
-  type Board,
-  type RepoDetail,
-} from "@/lib/types";
+import { BOARD_COPY, type Board, type RepoDetail } from "@/lib/types";
 
 export const dynamic = "force-static";
 // A repo that was exported yesterday but not today would otherwise 404 the whole
@@ -83,22 +79,44 @@ export default async function RepoPage({
           value={rate(detail.velocity_14d)}
           hint={`90 günlük ortalama ${rate(detail.velocity_90d)}`}
         />
+        {/* The two values `_acceleration` invents are not readings: 1.0 for a
+            repository too young to have a baseline, and a cap for one that was
+            dormant and suddenly woke. Neither should carry a tone. */}
         <StatTile
           label="İvme"
-          value={multiple(detail.acceleration)}
-          hint="kendi 90 günlük temposuna göre"
+          value={detail.acceleration_basis === "too_young" ? "—" : multiple(detail.acceleration)}
+          hint={
+            detail.acceleration_basis === "too_young"
+              ? "kendi temposu için henüz çok yeni"
+              : detail.acceleration_basis === "no_baseline"
+                ? "uzun süre hareketsizdi — oran tavanlandı"
+                : "kendi 90 günlük temposuna göre"
+          }
           tone={
-            detail.acceleration && detail.acceleration >= 3
-              ? "good"
-              : detail.acceleration && detail.acceleration < 0.5
-                ? "critical"
-                : "neutral"
+            detail.acceleration_basis !== "measured"
+              ? "neutral"
+              : detail.acceleration && detail.acceleration >= 3
+                ? "good"
+                : detail.acceleration && detail.acceleration < 0.5
+                  ? "critical"
+                  : "neutral"
           }
         />
+        {/* Without a backfill the recorded history does not reach the creation
+            date, so this integral is a floor: the days never pulled can only
+            add to it. 790 pages printed the floor as a total. */}
         <StatTile
           label="Fresh Power"
-          value={count(detail.fresh_power)}
-          hint="yaşa göre sönümlenmiş yıldız"
+          value={
+            detail.history_backfilled_through
+              ? count(detail.fresh_power)
+              : `≥ ${count(detail.fresh_power)}`
+          }
+          hint={
+            detail.history_backfilled_through
+              ? "yaşa göre sönümlenmiş yıldız"
+              : "geçmiş eksik — alt sınır"
+          }
         />
       </section>
 
@@ -135,9 +153,7 @@ export default async function RepoPage({
               ))}
             </dl>
           ) : (
-            <p className="text-ink-muted text-sm">
-              Hiçbir board&apos;un ilk 200&apos;ünde değil.
-            </p>
+            <p className="text-ink-muted text-sm">Hiçbir board&apos;un ilk 200&apos;ünde değil.</p>
           )}
           <dl className="text-ink-secondary mt-4 space-y-1 text-xs">
             <div className="flex gap-2">

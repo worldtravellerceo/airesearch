@@ -12,6 +12,7 @@ import path from "node:path";
 import { ALL_CATEGORIES, BOARDS } from "@/lib/types";
 import type {
   BoardFile,
+  CategoryFile,
   CategoryRow,
   CompanyBoardFile,
   CompanyBoardSummary,
@@ -47,8 +48,14 @@ export function getOverview(): Promise<Overview | null> {
 }
 
 export async function getCategories(): Promise<CategoryRow[]> {
-  return (await readJson("categories.json", { categories: [] as CategoryRow[] }))
-    .categories;
+  return (await getCategoryFile()).categories;
+}
+
+export function getCategoryFile(): Promise<CategoryFile> {
+  return readJson<CategoryFile>("categories.json", {
+    categories: [],
+    pools: {},
+  });
 }
 
 export async function getSearchIndex(): Promise<IndexEntry[]> {

@@ -60,15 +60,24 @@ def export(conn: sqlite3.Connection, out_dir: Path, *, date: dt.date | None = No
         # No scoring run yet. Write the empty shell rather than failing, so the
         # site builds and says so instead of 404ing.
         _write(out_dir / "overview.json", _overview(conn, None), report)
-        _write(out_dir / "categories.json", {"categories": []}, report)
+        _write(out_dir / "categories.json", {"categories": [], "pools": {}}, report)
         _write(out_dir / "index.json", {"repos": []}, report)
         _write(out_dir / "manifest.json", {"as_of": None, "boards": [], "repos": []}, report)
         log.warning("export: no leaderboard data yet, wrote an empty site")
         return report
 
     categories = _categories(conn, date)
+    pools = db.load_board_pools(conn, date)
     _write(out_dir / "overview.json", _overview(conn, date), report)
-    _write(out_dir / "categories.json", {"categories": categories}, report)
+    # The chips print a count and the filter returns at most CATEGORY_LIMIT
+    # rows, so a chip reading "agent-framework 4.812" next to a list of fifty
+    # is answering a question nobody asked. `pools` is per board, because a
+    # category's size on Breakout is not its size in the universe.
+    _write(
+        out_dir / "categories.json",
+        {"categories": categories, "pools": _pools_by_board(pools)},
+        report,
+    )
     _write(out_dir / "index.json", {"repos": _search_index(conn)}, report)
 
     slugs = _boards(conn, out_dir, date, categories, report)
@@ -147,6 +156,13 @@ def _overview(conn: sqlite3.Connection, date: dt.date | None) -> dict:
         "FROM run_log WHERE finished_at IS NOT NULL ORDER BY finished_at DESC LIMIT 1"
     ).fetchone()
     return {"as_of": date, "counts": counts, "last_run": last_run}
+
+
+def _pools_by_board(pools: dict[tuple[str, str], int]) -> dict[str, dict[str, int]]:
+    out: dict[str, dict[str, int]] = {}
+    for (board, category), eligible in pools.items():
+        out.setdefault(board, {})[category] = eligible
+    return out
 
 
 def _categories(conn: sqlite3.Connection, date: dt.date) -> list[dict]:
