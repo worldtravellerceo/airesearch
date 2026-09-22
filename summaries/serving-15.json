@@ -1,0 +1,175 @@
+{
+ "repos": [
+  {
+   "full_name": "thuml/Large-Time-Series-Model",
+   "inputs_hash": "697ad08152c84a3d3d96633f69559822",
+   "description_tr": "Timer ve Sundial ailesindeki zaman serisi temel modellerinin resmi kod, veri kümesi ve checkpoint deposu. Transformer mimarisini zaman serisi parçalarına uygulayarak tahmin, doldurma ve anomali tespiti gibi görevleri tek bir önceden eğitilmiş ağırlık setiyle yapmayı hedefliyor. HuggingFace üzerinden yayımlanan timer-base-84m ve sundial-base-128m ağırlıkları transformers kütüphanesiyle doğrudan yükleniyor; sıfır atışlı tahmin için eğitim ve GPU gerekmediği belirtiliyor. Depo ayrıca UTSD ön eğitim veri kümesini, ince ayar betiklerini ve ön eğitim pipeline'ının tamamını içeren OpenLTM'e bağlantıları barındırıyor. ICML 2024 ve ICLR 2025 yayınlarına dayanıyor; MIT lisanslı, yaklaşık 1.020 yıldız ve akademik bir grup tarafından sürdürülüyor.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam güneş enerjisi tarafında üretim ve piyasa fiyatı serilerinin tahmini olabilir. Orada ihtiyacın olan şey genel amaçlı bir tahmin modeli değil, PV üretimini fiziksel olarak modelleyen araçlar ve proje finansmanı hesabı. Kanarya'nın topladığı fizyolojik serilerde de soru \"ne olacak\" değil \"ne oldu\"; bu model o soruyu yanıtlamıyor. Sıfır atışlı çıkarım için GPU gerekmediğinden Mac'te denemesi ucuz ve API maliyeti yok, ama karşılaştıracağın bir temel çizgi olmadan çıktısı yorumlanamaz. Şimdilik zaman serisi temel modellerinin nereye gittiğini izlemek dışında bir işlevi yok.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "microsoft/aurora",
+   "inputs_hash": "75363d6c3cf8fc7ba709521af25e86e0",
+   "description_tr": "Aurora, Microsoft'un yer sistemi tahmini için geliştirdiği temel modelin açık uygulaması. Önce geniş veriyle genel olarak eğitilip sonra dar görevlere uyarlanıyor; depoda orta çözünürlüklü hava tahmini, yüksek çözünürlüklü tahmin, hava kirliliği ve okyanus dalgası için dört uzmanlaşmış sürüm var. pip veya conda ile kuruluyor, önceden eğitilmiş ağırlıklar ve ERA5 verisiyle uçtan uca çalışan bir örnek sunuluyor. Çalıştırmak ciddi GPU ve büyük girdi veri kümeleri gerektiriyor; model Nature'da yayımlanmış ve ayrı bir dokümantasyon sitesi tutuluyor. Lisans standart bir açık kaynak şablonuna oturmuyor ve ticari kullanım için ayrıca iletişime geçilmesi isteniyor; yaklaşık 1.017 yıldız, CI ve sürüm akışı düzenli.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam Avrupa'daki güneş santrali planında hava tahmininin üretim tahminine girdi olması olabilir. Hazır ya da RTB aşamasındaki bir proje satın alma yolunda bu tahmini kendin üretmek yerine ticari bir servisten almak daha makul kalıyor. Model ağırlıkları büyük ve çalıştırmak GPU istiyor; ofisteki Mac'te pratik bir yol değil. Lisansın ticari kullanımı ayrı bir izne bağlaması, bir ürüne gömme ihtimalini de baştan sınırlıyor. Yer sistemi temel modellerinin bugün nereye geldiğini görmek için okunabilir bir kaynak.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "Tencent-Hunyuan/UniRL",
+   "inputs_hash": "b9f8b742697f92edebbfab081195ba10",
+   "description_tr": "UniRL, birleşik multimodal modeller için tek bir pekiştirmeli öğrenme sonrası eğitim döngüsü kuran bir çatı: örnek üret, puanla, avantaj hesapla, politikayı güncelle ve ağırlıkları rollout işçilerine geri yaz. Katmanlı bir yapısı var; Hydra konfigürasyonları, değiştirilebilir rollout motorları (vLLM, SGLang), algoritmalar, ödül servisleri ve Ray DevicePool, FSDP, LoRA/tam ağırlık senkronu içeren dağıtık çalışma zamanı ayrı modüller olarak duruyor. Ekibin kendi önerdiği Flow-DPPO, DRPO ve CPPO algoritmaları için birer öğretici ve çalıştırılabilir örnek tarif bulunuyor. Eş zamanlı olmayan AR ve difüzyon giriş noktaları rollout ile eğitimi ayrı GPU kümeleri üzerinde üst üste bindiriyor. Python 3.12+ isteniyor, README'de Apache-2.0 rozeti var; Haziran 2026'da açılmış ve yaklaşık 972 yıldıza ulaşmış.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam yerel model altyapısına duyduğun ilgi. Ama burada yapılan iş model kullanmak değil model eğitmek: çok GPU'lu bir küme, Ray ve FSDP varsayılıyor, ofisteki Mac'te çalışacak bir şey değil. Lyricdrop ya da Folio tarafında hazır modelleri çağırmak yerine kendi verinle post-training yapmayı gerektiren bir adım da yok. Depoyu en fazla, multimodal RL'in hangi algoritmalar etrafında standartlaştığını uzaktan izlemek için işaretleyebilirsin.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "seal-rg/recurrent-pretraining",
+   "inputs_hash": "e1406e4e784f270ccf3aaee7e8c1a58f",
+   "description_tr": "Huginn-0125 adlı derinlik-özyinelemeli dil modelinin ön eğitim ve çıkarım kodu. Model, test zamanında hesap miktarını gizli uzayda tekrar ederek artırıyor; teknik rapor bu yaklaşımı 4096 AMD GPU üzerinde Frontier süper bilgisayarında ölçeklendirme deneyimini anlatıyor. Depoda model tanımı, eğitim orkestrasyonu, model kayıt defteri, büyük koşuların konfigürasyonları ve AMD sistemlerine özgü iletişim çözümleri yer alıyor. HuggingFace uyumlu tek dosyalık bir çıkarım uygulaması ve lm-eval üzerinden karşılaştırma talimatları da var; ağırlıklar HuggingFace'te açık. Yazarların kendisi bu kodla kimsenin kendi modelini ön eğitmesini beklemediğini, deponun daha çok bir referans olduğunu yazıyor. Apache-2.0, yaklaşık 965 yıldız.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam yerel modellerde test zamanı hesabının nasıl çalıştığını anlamak olabilir. Kod bir süper bilgisayardaki koşuyu belgelemek için yazılmış ve yazarları da başkasının bununla eğitim yapmasını önermiyor. Merak edersen çıkarım dosyası üzerinden mimariyi okuyabilirsin; bu pratik bir kullanım değil, okuma malzemesi. Lyricdrop, Folio ve asistan tarafındaki adımların hiçbiri bu depoya dokunmuyor.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "patchy631/time-to-first-token",
+   "inputs_hash": "5112d11fc4f936a70ef1901b71752949",
+   "description_tr": "LLM çıkarım servisi kurmayı öğreten, 10 hafta ve 50 oturumluk bir yol haritası; günde 30 dakikalık oturumlar tek bir OpenAI uyumlu servisi büyütmek üzerine kurulu. İçerik roofline modeliyle başlıyor, ölçümü optimizasyondan önce koyuyor: enstrümantasyon üçüncü haftada, yük testi beşinci haftada geliyor. Sonraki bölümler kuantizasyon, speculative decoding, KV tahliyesi, sürekli batch'leme ve maliyet/gecikme/kalite yönlendiricisi gibi konuları vLLM ve SGLang kodunu okuyarak ele alıyor. Çıktı olarak Grafana panoları, 1000+ eş zamanlı isteği süren bir yük testi düzeneği ve sürümleri sabitlenmiş bir karşılaştırma yazısı hedefleniyor; kiralık GPU maliyeti açıkça belirtiliyor. Bir kütüphane değil müfredat; Apache-2.0 lisanslı, Ağustos 2026'da açılmış ve yaklaşık 956 yıldıza ulaşmış.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam yerel model çalıştırma merakın. Yol haritası kiralık GPU üzerinde üretim seviyesinde bir servis kurmayı öğretiyor; senin tarafında oyuncuya dönük altyapı Supabase ve DigitalOcean'da, modeller ise Mac'te yerel çalışıyor, yani aradaki bu katman zaten yok. Depo çalıştırılabilir bir araç da sunmuyor, 25 saatlik bir okuma ve pratik planı sunuyor. İleride çıkarım tarafını birine devretmek istersen, işe alacağın kişiye verilecek somut bir referans olarak değerli olabilir.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "kennss/SiliconScope",
+   "inputs_hash": "acb9caa8f065a7a7b2d4dd7be3809b15",
+   "description_tr": "Apple Silicon için sudo gerektirmeyen bir sistem monitörü; native SwiftUI panosu ve menü çubuğu takımı olarak çalışıyor. Activity Monitor'ün göstermediği ANE (Neural Engine), Media Engine ve bellek bant genişliği metriklerini okuyor, termal kısılmayı ve bellek baskısını ayrı ayrı işaretliyor. Replay adlı özellik tüm metrikleri kaydedip bir oturumu geriye sararak incelemeyi sağlıyor; her metrik kendi menü çubuğu öğesine ve görüntüleme stiline sahip olabiliyor. 4.0 sürümüyle uzak makineler de aynı panoya katılıyor: headless bir Mac mini, masa altındaki bir Linux GPU makinesi veya kiralık bir bulut örneği küçük bir ajanla şifreli bağlantı üzerinden izleniyor. macOS 14+ ve Apple Silicon gerektiriyor; MIT lisanslı, yaklaşık 955 yıldız, Haziran 2026'da açılmış ve sık sürüm çıkarıyor.",
+   "usage_tr": "Lyricdrop v2'nin yerel STT aşamasında ofisteki M4 Pro Mac'in gerçekte neyi doyurduğunu görmek için kullanabilirsin: bir modelin ANE'yi mi GPU'yu mu sürdüğü, bellek bant genişliğinin çipin tavanına ne kadar yaklaştığı ve toplu şarkı işlerken termal kısılma olup olmadığı doğrudan okunuyor. Karşılaştırmayı planladığın iki-üç STT sistemi arasında seçim yaparken doğruluk kadar bu maliyet tarafını da ölçmeni sağlar, çünkü bir modelin Mac'i kilitlemesi pratikte pipeline'ın hızını belirliyor. Replay sayesinde gece çalışan toplu işleri başında beklemeden sonradan inceleyebilirsin. 4.0'daki uzak makine desteği evdeki 7/24 açık Mac mini'yi aynı panoya alıyor; Tailscale ile zaten kurduğun ağın üstüne ikinci bir görünürlük katmanı koyar. Tamamen yerel çalışır, API maliyeti yok, sudo istemiyor ve kurulumu asistanına devredilebilecek kadar basit. Uyarı: bu bir ölçüm aracı, hızlandırıcı değil; gördüğün darboğazı düzeltmek için yine model, quant seviyesi veya paralellik ayarını değiştirmen gerekir.",
+   "matched_project": "Lyricdrop",
+   "relevance": 7,
+   "investment_note": null
+  },
+  {
+   "full_name": "instadeepai/nucleotide-transformer",
+   "inputs_hash": "582105574c5e6445044766da5c133aa1",
+   "description_tr": "InstaDeep'in genomik ve transkriptomik için geliştirdiği temel modellerin toplandığı depo; Nucleotide Transformer ile başlayıp Agro Nucleotide Transformer, SegmentNT ve ChatNT gibi çalışmalarla genişlemiş. Son sürüm NTv3, tek baz tokenizasyonu ve U-Net benzeri bir mimariyle 1 Mb'a kadar bağlamı nükleotid çözünürlüğünde modelliyor; trilyonlarca baz çiftiyle ön eğitilmiş ve on binlerce fonksiyonel iz üzerinde sonradan eğitilmiş. Depo çıkarım kodu, önceden eğitilmiş ağırlıklar ve her model için ayrı dokümantasyon sayfaları sunuyor; kod JAX tabanlı ve ağırlıklar HuggingFace üzerinden dağıtılıyor. Lisans CC BY-NC-SA 4.0, yani ticari kullanıma kapalı. Jupyter Notebook ağırlıklı bir depo; yaklaşık 920 yıldız, 2023'ten beri sürdürülüyor.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; genomik dizilerle çalışan bir projen yok. En yakın bağlam sağlık ve giyilebilir cihaz tezin olabilir, ama oradaki veri biyosinyal ve davranış verisi; ortak nokta yalnızca \"temel model\" kavramı. Ağırlıkların lisansı ticari kullanıma kapalı olduğu için bir ürüne gömme ihtimali de yok. Yatırım tarafında da biyoteknoloji, tanımladığın odak alanlarının dışında kalıyor.",
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "MartinDelophy/ai-video-editor",
+   "inputs_hash": "271db133fe92b190f754bc383d99f8fc",
+   "description_tr": "Timeline Studio, tarayıcıda çalışan yerel öncelikli bir video editörü; işlem WebCodecs, WebGPU ve WebAssembly ile kullanıcının makinesinde yapılıyor, sunucuya yükleme gerekmiyor. Zaman çizelgesi, marker hizalama, ripple düzenleme, opaklık keyframe'leri ve WAV/MP3 ses dışa aktarımı gibi klasik montaj işlevlerinin yanında otomatik altyazı, seslendirme, konuşan avatar ve video restorasyonu gibi model tabanlı adımlar içeriyor. Silero VAD ile uzun konuşma duraklamaları yerel olarak bulunup önizlemeli biçimde kesilebiliyor. WebMCP üzerinden 21 tarayıcı aracı açıyor: ajanlar aynı gerçek zaman çizelgesinde klip taşıma, kırpma, altyazı stili ve çerçeveleme gibi düzenlemeleri yapıp sonucu kontrol edebiliyor. MIT lisanslı, 13 dilde arayüz, yaklaşık 852 yıldız; Temmuz 2026'da açılmış ve neredeyse günlük güncelleniyor. Derin sentez bileşenleri için depoda ayrı bir sorumlu kullanım uyarısı bulunuyor.",
+   "usage_tr": "Folio'nun günlük içerik pipeline'ında üretilen görsel ve seslerin montaj adımına oturuyor: klipleri diziyor, altyazıyı basıyor, seslendirmeyi ekliyor ve dışa aktarıyor; hepsi tarayıcıda, yerel olarak. Asıl değerli kısmı WebMCP arayüzü, çünkü Claude Code'un aynı zaman çizelgesini düzenleyebilmesi \"her gün yeni içerik\" akışını elle montaja bağlamadan kurmanı sağlıyor. Mac'te yerel çalıştığı için montaj tarafında API maliyeti getirmiyor; maliyet yalnızca görseli ve sesi üreten modellerde kalıyor. Lyricdrop'un lansman içeriklerinde kısa tanıtım videolarını asistanına devredebileceğin bir araç olarak da düşünülebilir. Uyarı: işlem tarayıcıda yapıldığı için uzun zaman çizelgelerinde bellek ve dışa aktarma süresi sınırlayıcı olur; önce tek bir günlük içerik akışıyla ölç. İkinci uyarı: konuşan avatar ve ses üretimi bileşenleri depoda ayrı bir kullanım sorumluluğu uyarısıyla geliyor, Folio kişisel kullanım olsa bile bu bileşenleri kapalı tutmak daha temiz.",
+   "matched_project": "Folio",
+   "relevance": 6,
+   "investment_note": null
+  },
+  {
+   "full_name": "OpenWAM-Official/OpenWAM",
+   "inputs_hash": "b46625b23ba214649a6de24d91069ada",
+   "description_tr": "OpenWAM, dünya-eylem modellerini (World-Action Model) sistematik biçimde geliştirmek için kurulmuş açık bir araştırma yığını. Üç parçadan oluşuyor: bileşenleri karşılaştırmalı kurmayı sağlayan modüler altyapı, tasarım tercihlerini kontrollü deneylerle ölçen çalışmalar ve bu ilkelerle ölçekte eğitilmiş açık bir model olan OpenWAM-α. Model yaklaşık 6.400 saatlik egosantrik insan ve robot verisi üzerinde eğitilmiş; video, eylem ve VLM omurgaları ayrı soyutlamalar olarak değiştirilebiliyor. Depoda Hydra konfigürasyonları, eğitim ve dağıtım betikleri ile RoboTwin, LIBERO, RoboCasa ve VLABench gibi yedi kadar değerlendirme paketine istemciler bulunuyor. Apache-2.0 lisanslı; Eylül 2026'da açılmış, yaklaşık 848 yıldız ve ağırlıklar HuggingFace'te yayımlanıyor.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; robotik ya da bedenlenmiş bir ajan tarafın yok. En yakın bağlam frontier teknolojiye duyduğun yatırım ilgisi, ama bu bir şirket değil akademik bir araştırma yığını ve çalıştırmak çok GPU'lu bir kümeye bağlı. Lyricdrop, Folio veya asistan tarafındaki hiçbir adıma bağlanmıyor. Okumak istersen değeri, alanın hangi bileşenlerinin standartlaştığını tek bir yerde görebilmek.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "HazyResearch/hyena-dna",
+   "inputs_hash": "d25c93ccf3f3a48e229301e6bddf7d0c",
+   "description_tr": "HyenaDNA, tek nükleotid çözünürlüğünde ve bir milyon token'a kadar bağlamla ön eğitilmiş genomik bir temel model. Attention yerine Hyena operatörünü kullanarak uzun dizileri daha ucuz işlemeyi hedefliyor; ağırlıklar 1k'dan 1M'a kadar farklı dizi uzunlukları için ayrı ayrı yayımlanmış. Depo hem ön eğitim hem de makaledeki alt görevler için kod içeriyor; HuggingFace entegre bir Colab defteri en kolay giriş noktası olarak sunuluyor. Kodun büyük kısmı S4 ve Safari depolarından türetilmiş, kurulum için Docker öneriliyor ve model boyutuna göre GPU gereksinimleri ayrıca listeleniyor. Apache-2.0 lisanslı, yaklaşık 808 yıldız; depo yazarların kendi ifadesiyle hâlâ gelişim aşamasında.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; depo genomik dizilerde uzun bağlam araştırması için yazılmış. En yakın bağlam, uzun bağlamın attention dışındaki yöntemlerle nasıl çözüldüğü sorusu; bu da bir kullanım değil okuma konusu. İşleyecek bir DNA verin olmadığı için ağırlıkların açık olması da pratik bir fark yaratmıyor. Lyricdrop, Folio ve kişisel bilgi tabanı tarafındaki adımların hiçbiri buraya bağlanmıyor.",
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "ckiplab/ckip-transformers",
+   "inputs_hash": "2222592d9863faf591fff607b99f170c",
+   "description_tr": "CKIP Transformers, geleneksel Çince için eğitilmiş ALBERT, BERT ve GPT2 modellerini ve bunların üzerine kurulu doğal dil işleme araçlarını sunan bir Python paketi. Sağladığı üç temel işlev kelime sınırı bulma (word segmentation), sözcük türü etiketleme ve varlık tanıma. PyPI üzerinden kuruluyor, ReadTheDocs'ta dokümantasyonu ve Academia Sinica tarafından işletilen çevrimiçi bir demosu var. Modeller transformers kütüphanesiyle uyumlu olduğundan CPU üzerinde de çalıştırılabiliyor. GPL-3.0 lisanslı; 2020'de açılmış, yaklaşık 781 yıldız ve sürüm akışı yavaş ama düzenli.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam Lyricdrop'un ileride başka dillere açılması olabilir. Boşlukla ayrılmayan bir yazı sistemine geçilirse boşluk doldurma oyununun \"kelime\" tanımı böyle bir segmentasyon aracına ihtiyaç duyar; bugünkü odak İngilizce olduğu için bu ihtiyaç henüz yok. Modeller Mac'te CPU ile çalışacak boyutta, yani engel teknik değil sıralama meselesi. Uyarı: GPL-3.0 lisansı, kapalı bir mobil uygulamaya gömerken baştan çözülmesi gereken bir kısıt getiriyor.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "CodeBendKit/codeseek",
+   "inputs_hash": "54977b7f35701dd561d1a5059007a4ec",
+   "description_tr": "CodeSeek, kod tabanını AST üzerinden çağrı grafiğine çeviren ve aynı anda hibrit bir semantik arama indeksi kuran Rust tabanlı bir CLI. Arama tarafında yoğun vektör, BM25 ve RRF birleşimi ile bir reranker kullanılıyor; indeks LanceDB'de tutuluyor ve tree-sitter ile yedi dil ayrıştırılıyor. `codeseek callers` ve `codeseek callees` gibi komutlarla bir fonksiyonun yukarı ve aşağı çağrı zinciri doğrudan sorgulanabiliyor. `codeseek install` komutu aracı Claude Code ve Codex CLI'a MCP aracı olarak kaydediyor, `install-hooks` ise git commit'lerinde artımlı yeniden indeksleme kuruyor. npm veya Homebrew ile kuruluyor, macOS arm64 dahil ikili dosyalar yayımlanıyor; ilk çalıştırmada bir embedding modeli, token ve base URL soran bir sihirbaz çıkıyor. MIT lisanslı, yaklaşık 766 yıldız, Haziran 2026'da açılmış.",
+   "usage_tr": "Lyricdrop v2 sıfırdan yazılırken kod tabanı, ajanın tek seferde okuyabileceğinden hızlı büyüyor; codeseek'i MCP aracı olarak bağlayıp Claude Code'un dosya taraması yerine çağrı grafiğinden ilerlemesini sağlayabilirsin. Özellikle admin panel, test paneli ve mobil katmanların birbirine değdiği yerlerde \"bu fonksiyonu kim çağırıyor\" sorusunun grep'siz yanıtlanması, yaptığın değişikliğin yan etkisini görmeyi kolaylaştırır. Superpowers ile kurduğun kalite akışının yanına oturur; commit hook'u sayesinde indeks kendiliğinden güncel kalır. Mac'te yerel çalışan bir Rust ikilisi, kurulumu asistanına devredilebilecek kadar kısa. Uyarı: embedding tarafı varsayılan olarak uzak bir API bekliyor; bunu yerel bir embedding sunucusuna çevirmeden kurarsan her yeniden indeksleme küçük ama sürekli bir API maliyeti demek, önce bunu test et. İkinci uyarı: desteklenen dil sayısı yedi ile sınırlı, karışık bir depoda kapsama boşluklarını erken ölç.",
+   "matched_project": "Lyricdrop",
+   "relevance": 7,
+   "investment_note": null
+  },
+  {
+   "full_name": "vgel/repeng",
+   "inputs_hash": "f01e0e78a965ebb31bf7c518205f6dcd",
+   "description_tr": "repeng, temsil mühendisliği (representation engineering) yöntemiyle kontrol vektörleri üreten bir Python kütüphanesi. Karşıt ifade çiftlerinden oluşan küçük bir veri kümesiyle modelin ara katman aktivasyonları üzerinde bir yön öğreniyor ve bu yönü çıkarım sırasında ayarlanabilir bir güçle uyguluyor. Kullanımı bir modeli ControlModel ile sarmalayıp vektörü eğitmekten ibaret; yazarına göre eğitim bir dakikadan kısa sürüyor. Açık ağırlıklı transformers modelleriyle çalışıyor, örnekler Mistral-7B üzerinden veriliyor ve defterler depoda bulunuyor. MIT lisanslı, PyPI'da yayımlanıyor, yaklaşık 760 yıldız; ayrıntılı bir blog yazısı deponun ana dokümantasyonu durumunda.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam Folio'daki yazar personalarının üslubunu sabitlemek olabilir. Ancak kontrol vektörü yalnızca kendi çalıştırdığın açık ağırlıklı bir modelde işe yarıyor; metinler bir API modeliyle üretildiği sürece bu katmanın tutunacağı bir yer yok. Yerel bir modele geçersen dönüp bakılabilir: vektör eğitimi kısa sürüyor, tamamen Mac'te çalışıyor ve ek API maliyeti getirmiyor. Şu haliyle bir ürün bileşeni değil, modelin içini görmek isteyenler için bir deney kütüphanesi.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "ucam-eo/tessera",
+   "inputs_hash": "1a0be80b713a05da0b39bd817813c0c5",
+   "description_tr": "TESSERA, Sentinel-1 ve Sentinel-2 uydu verisini işleyip bir yılın tamamını temsil (embedding) haritalarına sıkıştıran bir yer gözlem temel modeli. Ürettiği temsiller arazi örtüsü sınıflandırması ve kanopi yüksekliği tahmini gibi alt görevlerde girdi olarak kullanılıyor. Depo veri ön işleme, çıkarım ve nihai temsil haritasının birleştirilmesi için adım adım bir pipeline tarif ediyor; Docker kurulumu, veri sağlayıcı hesapları ve önemli miktarda depolama ile bellek gerektiriyor. Cambridge Üniversitesi'nde geliştirilmiş ve CVPR 2026'da yayımlanacağı belirtiliyor. Depo alfa aşamasında ve öncelikle kurum içi kullanıma açık; dışarıdan erişim için yazarla iletişim isteniyor. MIT lisanslı, yaklaşık 749 yıldız.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam güneş santrali yatırımında arazi örtüsü ve saha ön elemesi olabilir. Hazır ya da RTB aşamasındaki projeleri satın alma yolunda bu bilgi zaten proje dosyasıyla geliyor, sıfırdan üretmeye gerek kalmıyor. Depo alfa durumunda ve erişim için yazışma gerekiyor; veri hazırlığı da Docker ve büyük depolama istiyor, yani Mac üzerinde hafif bir deneme değil. Uydu temsillerinin ne işe yaradığını görmek için iyi bir örnek, ama bugün oturacağı bir adım yok.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "Anil-matcha/awesome-jev-by-typesafe",
+   "inputs_hash": "d331062b8a0c6aec60333e333b148000",
+   "description_tr": "TypeSafe AI'ın Jev adlı modeli etrafında derlenmiş bir kullanım senaryosu, kalıp ve başlangıç kodu listesi. Jev, paragraf üretmek yerine tipli sorulara kısıtlı yanıt ve olasılık döndüren bir karar modeli olarak tanıtılıyor; sınıflandırma, yönlendirme, puanlama, çıkarım ve otomasyon kapısı gibi işler için konumlandırılıyor. Kontrol akışının, eşiklerin ve yan etkilerin çağıran kodda kalması öneriliyor; Python ve JavaScript SDK'ları ile bir API dokümantasyonu bulunuyor. Depo kendi ifadesiyle bağımsız bir topluluk derlemesi, resmi bir TypeSafe deposu değil ve model kapalı bir API üzerinden sunuluyor. Depo 2023'te açılmış ama içeriği 2026 tarihli bir anlık görüntüye göre düzenlenmiş; yaklaşık 684 yıldız, MIT lisanslı, ağırlıklı olarak bağlantı ve örnek metin içeriyor.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam sesli notların kategorisini çıkarma veya pipeline'larına karar eşiği koyma ihtiyacı olabilir. O adımı bugün Claude Code ve n8n üzerinden zaten çözüyorsun; buradaki model kapalı ve ücretli bir API, yerelde çalıştırma ve kendi istemcini yazma tercihinle de örtüşmüyor. Deponun kendisi çalıştırılabilir bir kütüphane değil, örnek ve kalıp derlemesi; kurulup denenecek bir şey yok. Yine de ucuz, tipli ve güven skoru veren karar modellerini bir kategori olarak izlemek mantıklı, çünkü bu işler bugün büyük modellere gereğinden pahalıya yaptırılıyor.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": "Depo bir ürün değil bir tanıtım yüzeyi; asıl ilgi çekici olan, tipli ve güven skorlu ucuz karar modellerinin LLM'lerin altında ayrı bir katman olarak ticarileşmesi ve bu kategorinin erken aşama AI merceğine girmesi."
+  },
+  {
+   "full_name": "ARahim3/mlx-dspark",
+   "inputs_hash": "f88715ab7c7439cb77cc2cd89e1258e4",
+   "description_tr": "mlx-dspark, EAGLE ailesinden iki speculative decoding yöntemini (DeepSeek'in DSpark'ı ve z-lab'ın DFlash'ı) MLX üzerinde Apple Silicon'a taşıyan bir paket. Taslak model tarafından önerilen token'lar hedef model tarafından doğrulandığı için çıktı kayıpsız; kazanç yalnızca hızda. Gemma-4, Qwen3 ailesi, LFM2.5, Nemotron ve ternary Bonsai gibi tüketici boyutundaki hedefler destekleniyor ve taslak model `--model` değerinden otomatik çözülüyor. Depo M4 Pro üzerinde ölçülmüş tablolar veriyor; sohbet içeriğinde iki kat civarı, kod ve matematikte dört kata yaklaşan hızlanmalar bildiriliyor. CLI, Python API ve OpenAI uyumlu bir sunucu sunuyor; LM Studio gibi yerel araçlar ya da Claude Code bu sunucuya bağlanabiliyor. pip ile kuruluyor, MIT lisanslı, yaklaşık 679 yıldız, Haziran 2026'da açılmış.",
+   "usage_tr": "Lyricdrop'un içerik üretim adımlarını ücretli API yerine Mac'te yerel modele taşıma planında bu doğrudan hızı belirleyen parça: boşluk seçimi, çeldirici şık üretimi ve söz temizliği gibi şarkı başına tekrarlayan işler toplu koştuğunda iki-dört kat fark ciddi bir zaman kazancı demek. Çıktının kayıpsız olması, hız için kalite pazarlığı yapmadığın anlamına geliyor; bu da yerel modele geçiş kararını kolaylaştırır. Folio'nun günlük içerik pipeline'ında da aynı sunucu arkasında çalışabilir, üstelik OpenAI uyumlu uç nokta sayesinde mevcut n8n akışlarına ayrı bir istemci yazmadan bağlanır. Ölçümlerin senin makinenle aynı sınıfta yapılmış olması, bildirilen rakamların sende de yaklaşık geçerli olacağı anlamına geliyor. Uyarı: hedef ve taslak model aynı anda bellekte duruyor; 24 GB birleşik bellekte büyük hedeflerle çalışmak yerine 2-12B aralığında kalman gerekir. İkinci uyarı: kayıpsızlık \"yeterince iyi\" demek değil, seçtiğin yerel modelin kalitesini yine Lyricdrop'un test panelinde ölçmelisin.",
+   "matched_project": "Lyricdrop",
+   "relevance": 8,
+   "investment_note": null
+  },
+  {
+   "full_name": "rmaphoh/RETFound",
+   "inputs_hash": "9ed4eb12bc25f93fdedb8ac73c29e4db",
+   "description_tr": "RETFound, retina görüntüleri için eğitilmiş bir görü temel modeli ve bu modelin çevresindeki uygulamaları toplayan depo. Model 1,6 milyon retina görüntüsü üzerinde kendi kendine denetimli olarak ön eğitilmiş ve çeşitli hastalık tespiti görevlerinde doğrulanmış. Depo ayrıca DINOv2 ve DINOv3 ağırlıklarını da aynı ince ayar hattına bağlıyor ve üçünü karşılaştıran bir ön baskıya işaret ediyor. Ağırlıklar HuggingFace'te, ancak erişim için kayıt olup form doldurmak gerekiyor; kurulum CUDA 12 ve PyTorch 2.3+ varsayıyor, ücretsiz GPU ile çalışan bir Colab defteri de var. Lisans standart bir açık kaynak şablonuna oturmuyor; yaklaşık 674 yıldız, 2023'ten beri düzenli güncelleniyor.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam sağlık ve performans verisine olan ilgin. Ancak buradaki iş retina görüntüsünden klinik teşhis; Kanarya'nın topladığı fizyolojik veriyle de, giyilebilir cihaz tezinle de örtüşmüyor. Ağırlıklar için erişim başvurusu gerekiyor ve lisans ticari kullanımı belirsiz bırakıyor. İnce ayar CUDA'lı bir GPU varsayıyor, Mac'te yerel bir yol tarif edilmiyor.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "AmmarkoV/SAM3DBody-cpp",
+   "inputs_hash": "3a080897269e7e005ee1d7f5d86754c3",
+   "description_tr": "SAM-3D-Body modelinin saf C++ çıkarım motoru; çalışma zamanında Python bağımlılığı olmadan tek bir kameradan çok kişili 3B gövde pozu üretiyor. Girdi olarak BGR görüntü alıp kişi başına poz parametreleri, kamera ötelemesi ve isteğe bağlı olarak tam 3B mesh ile eller dahil 70 eklemli iskelet döndürüyor. Her kişi için standart BVH motion capture dosyası yazıyor, kimlikleri kareler arasında 2B kutu takibiyle koruyor ve iskelet ölçülerini kişiye göre yeniden boyutlandırıyor; ayrıca MPEG ARF avatar konteyneri dışa aktarabiliyor. ONNX Runtime ve ggml kullanıyor; model dosyaları CUDA, CPU ve TensorRT profillerine göre yaklaşık 1,9 ile 5,2 GB arasında HuggingFace'ten iniyor ve CUDA'lı GPU öneriliyor. Sonucu Blender'da bir karaktere bağlayan bir eklenti ve ctypes ile kütüphaneyi çağıran Python ön yüzleri de var. MIT lisanslı, yaklaşık 668 yıldız, Mayıs 2026'da açılmış.",
+   "usage_tr": "Bir stand-up özelini çok modlu veriyle çözümlediğin çalışmanın görsel tarafında kullanabilirsin: sahnedeki duruş, ağırlık aktarımı ve el jestleri kare kare sayısal hale gelir ve transkript ile kahkaha zamanlamasıyla aynı zaman eksenine oturur. Aynı çıktı boks çalışmalarında kendi kayıtlarından duruş ve vuruş açısı çıkarmak için de işe yarar. Tamamen yerel çalışır, tek seferlik model indirmesi dışında API maliyeti yok ve çıktı BVH olduğu için sonrasında standart araçlarla incelenebilir. Uyarı: depo CUDA'yı öneriyor ve Metal ya da CoreML yolu belirtmiyor; Mac'te CPU profiliyle bunu gerçek zamanlı değil, kayıttan toplu işleme olarak planla. İkinci uyarı: bu bir analiz aracı, ürün bileşeni değil; Lyricdrop ve Folio tarafında karşılığı yok, dolayısıyla hobi zamanından karşılanacak bir iş.",
+   "matched_project": "Stand-up analizi",
+   "relevance": 4,
+   "investment_note": null
+  },
+  {
+   "full_name": "EverMind-AI/SkillCorpus",
+   "inputs_hash": "338d6e9ae62883f83c88c32f088cf9c8",
+   "description_tr": "SkillCorpus, halka açık depolara dağılmış SKILL.md dosyalarını toplayıp ajanlar için düzenli bir bağlam katmanına çeviren açık kaynak bir pipeline. Kaynakları bir araya getiriyor, güvenlik ve lisans kapılarından geçiriyor, kalite ve tekilleştirme kurallarıyla eliyor ve göreve göre beceri eşleştiriyor. Taksonomi, retrieval tarifi, dışa aktarma şeması ve değerlendirme paketleri değiştirilebiliyor; yayımlanan retrieval modelleri self-host edilip kendi ajan sunucuna bağlanabiliyor. Son sürüm altı farklı ajan host'unun tek bir ortak beceri dizinini okumasını sağlıyor ve alınan beceriler tur sonunda atılmak yerine saklanıyor. Çekirdek kod Apache-2.0 (match/ ve evaluate/ dizinleri MIT), her beceri kendi lisansını koruyor; barındırılan SkillHub aynı işin ticari yüzü. Ağustos 2026'da açılmış, yaklaşık 665 yıldız, bin becerilik açık bir demo ve üç ajan karşılaştırması yayımlanmış.",
+   "usage_tr": "Tüm projelerini bilen bir orkestratör ajan isteğinde eksik parçalardan biri tam olarak bu: hangi becerinin hangi göreve gireceğini seçen katman. Superpowers gibi hazır paketlerin yanına kendi SKILL.md dosyalarını koyup kendi korpusunu üretebilir, retrieval modellerini ofisteki Mac'te self-host ederek API maliyetinden kaçınabilirsin. Değerlendirme paketi, bir beceriyi eklemenin ajanı gerçekten iyileştirip iyileştirmediğini ölçmeni sağlıyor; kalite süreçlerine verdiğin önemle en çok örtüşen tarafı bu. Kurulumu ve korpusun bakımı asistanına devredilebilir, çünkü iş büyük ölçüde kaynak listesi ve onay kapılarını yönetmek. Uyarı: elinde sayılı proje varken binlerce genel beceri getiren bir korpus, elle seçilmiş birkaç beceriden daha iyi sonuç vermeyebilir; önce kendi becerilerinle kurup ölç. İkinci uyarı: dışarıdan gelen beceriler ajanına talimat veren bir yüzey demek; deponun lisans ve güvenlik kapıları bunun için var, onları gevşetme.",
+   "matched_project": "Asistan/orkestratör ajan",
+   "relevance": 5,
+   "investment_note": null
+  }
+ ]
+}

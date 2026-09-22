@@ -1,0 +1,175 @@
+{
+  "repos": [
+    {
+      "full_name": "peonist-ai/halogen-flash-server",
+      "inputs_hash": "16b180fe79773eb208e8384f817c2d65",
+      "description_tr": "halogen-flash-server, Qwen3.8-Flash-Next modelini AMD Strix Halo (gfx1151) yongası üzerinde çalıştırmak için yazılmış özel bir çıkarım sunucusu. Kernel'lerin tamamı tek bir GPU ve tek bir model ailesi için yazılmış; genel amaçlı bir çalışma zamanı, taşınabilirlik katmanı veya yedek yol yok. 32K promptlu bir ölçümde prefill ve decode sürelerini, rakip çalışma zamanlarının yayımlanmış sayılarıyla yan yana veriyor ve bit/ağırlık değerini checkpoint'in kendi tensor tablosundan hesaplayıp belgeliyor. Speculative decoding sıcaklık 0'da seri greedy decode ile bayt düzeyinde aynı çıktıyı verecek şekilde kurulmuş, yani hız optimizasyonu kalite takası olarak sunulmuyor; 0.7.0'dan beri mevcut llama.cpp GGUF dosyaları da doğrudan açılabiliyor. OpenAI uyumlu API ve ajan harness'larından kullanım belgelenmiş. ~646 star; lisans alanı standart bir OSI lisansı olarak işaretlenmemiş.",
+      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; motor yalnızca AMD Strix Halo (gfx1151) donanımında çalışıyor, senin tarafındaki iki makine ise ofisteki M4 Pro MacBook ve evdeki Mac mini. En yakın bağlam, ücretli API yerine yerel model çalıştırma tercihin: aynı ihtiyacı Apple Silicon tarafında Metal tabanlı çalışma zamanları karşılıyor, bu depo o listeye giremiyor. Tek değeri ölçüm disiplini olabilir; prefill ve decode'u ayrı ayrı raporlama ve bit/ağırlık değerini checkpoint'ten hesaplama biçimi, kendi STT ve model karşılaştırmalarında örnek alınabilecek bir raporlama şablonu. Donanım almadan denenecek bir tarafı yok, o yüzden kurulum maliyetine girmeden geçebilirsin.",
+      "matched_project": null,
+      "relevance": 1,
+      "investment_note": null
+    },
+    {
+      "full_name": "leonickson1/Swiftlet",
+      "inputs_hash": "1b72548d9b2ffbbb3b0af41ccbb2ae3b",
+      "description_tr": "Swiftlet, Qwen3-Next ve Qwen3.5/3.6 MoE ailesini Apple cihazlarında çalıştıran Swift ve Metal tabanlı bir çalışma zamanı. Modelin küçük yoğun çekirdeğini bellekte tutup yönlendirilen expert ağırlıklarını depolamadan akıtıyor; böylece 4-bit 35B model diskte 18 GB yer kaplarken tepe RAM kullanımı 2.6 GB'ta, 4-bit 80B ise 4.3 GB'ta kalıyor. Yayımlanan ölçümlerde M5 Mac'te 4-bit 35B 7-11 tok/s, M4 Max'te ~19.5 tok/s, iPhone 17'de ~1 tok/s; decode hızı model boyutundan çok aktif parametre sayısına bağlı. macOS 14+ ve iOS 17+ hedefleniyor, lisans Apache-2.0, ~644 star ve geliştirme şu an kernel hızına odaklanmış durumda. Depo dürüst bir sınır da koyuyor: token başına yalnızca ~3B parametre aktif olduğu için bu modeller büyük model gibi yazıyor ama küçük model gibi olgu hatırlıyor.",
+      "usage_tr": "Bunu kişisel bilgi tabanı (ikinci beyin) uygulamanın sınıflandırma ve özetleme adımında kullanabilirsin: sesli nottan gelen metni kategoriye ayırmak, günlük/haftalık özet çıkarmak için bulut API'sine gitmene gerek kalmaz. Bellek profili senin donanımına oturuyor; 24 GB'lık ofis Mac'inde 35B sınıfı bir model birkaç GB RAM ile çalışır, evdeki 7/24 açık Mac mini'de de gece toplu iş olarak döndürülebilir ve API maliyeti doğurmaz. Swift + Metal olduğu için Expo/TypeScript yığınına doğrudan girmiyor; ya yerel bir HTTP servisi olarak sarmalaman ya da native module yazman gerekir, bu ek iştir ama iOS istemcisini kendin yazma refleksinle uyumlu. Fayda: tekrar eden sınıflandırma işini sabit maliyetle kendi makinende tutarsın. Uyarı: aktif parametre sayısı düşük olduğu için olgu hatırlaması zayıf, yani sınıflandırma ve yeniden yazma işlerine ver, bilgi sorulan işlere verme; ayrıca uzun sistem prompt'larında prefill maliyeti hissedilir.",
+      "matched_project": "Kişisel bilgi tabanı",
+      "relevance": 7,
+      "investment_note": "Sıradan Apple cihazlarında büyük MoE modellerini çalıştıran açık bir çalışma zamanının yanında App Store'da bir uygulaması da bulunması, on-device çıkarım kategorisinde ticarileşme yolu görünen küçük bir ekip anlamına geliyor; izleme listesine alınabilir."
+    },
+    {
+      "full_name": "calmrocks/ai-engineer-notebooks",
+      "inputs_hash": "f75f37d8d12d606fc70a24dca037f786",
+      "description_tr": "Framework kullanmadan, ham API çağrılarıyla uygulamalı LLM yığınını öğreten bir Colab notebook koleksiyonu. Prompting, structured output, tool calling, RAG, değerlendirme (eval), sıfırdan ajan döngüsü, guardrail'ler, MCP, fine-tuning ve LoRA karşılaştırması, prompt-injection güvenliği ve LLMOps başlıklarını sırayla işliyor. Tüm notebook'lar ücretsiz Groq API üzerinde çalışacak şekilde yazılmış; Groq'un barındıramadığı iki konu, LoRA fine-tuning ve self-hosted serving, kavram ağırlıklı işlenip isteğe bağlı Colab GPU ekleriyle veriliyor. Üç uçtan uca vaka çalışması (üretimde hata ayıklanan destek asistanı, pipeline-ajan maliyet karşılaştırması, red-team dayanıklılık kıyası) da var. MIT lisanslı, ~640 star; bir kariyer geçiş planının uygulamalı eşlikçisi olarak konumlanıyor ve hedef kitlesi AI Engineer / Forward Deployed Engineer rollerine geçen geliştiriciler.",
+      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; bu bir araç ya da gömülebilir bir bileşen değil, mülakat odaklı bir öğrenme materyali. En yakın bağlam, notebook'ların omurgasını kurduğu 'önce ölç, sonra ayarla' alışkanlığı: Lyricdrop'un kelime hizalama denemelerinde de aynı yaklaşımı zaten kullanıyorsun, oradan alınacak yeni bir şey yok. Kod tarafını Claude Code ile yazdığın için ham API kalıplarını elle kurmak senin zaman ayıracağın bir iş değil. Asistanına devredilebilecek bir çıktısı da yok. Kısacası ilginç bir kaynak ama açıp geçilecek bir sekme.",
+      "matched_project": null,
+      "relevance": 2,
+      "investment_note": null
+    },
+    {
+      "full_name": "redai-studio/Relax",
+      "inputs_hash": "7f0a7e116e091a6f94a0bccd47b7fd44",
+      "description_tr": "Relax, Xiaohongshu AI Infra ekibinin açık kaynakladığı asenkron pekiştirmeli öğrenme (RL) post-training çerçevesi. Ray Serve üzerinde servis odaklı bir mimari kuruyor; eğitim tarafında Megatron-LM, çıkarım tarafında SGLang kullanıyor ve TransferQueue adlı veri aktarım sistemiyle eğitim ile çıkarımı tamamen birbirinden ayırıyor. Metin, görüntü, video ve ses dahil omni-modal RL eğitimini uçtan uca destekliyor; çok turlu ajan etkileşimi, loss masking ve esnek sonlandırma ile 'çalıştır - gözlemle - karar ver' döngüsü eğitilebiliyor. PPO, GRPO, RLOO, GSPO, CISPO ve on-policy distillation gibi algoritmalar ile LLM-as-judge ödül modu hazır geliyor. Çalışması için çok GPU'lu bir küme gerekiyor; Apache-2.0 lisanslı, ~622 star, Docker imajları ve arXiv makalesi var.",
+      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; bu çerçeve bağımsız GPU kümeleri üzerinde model post-training yapmak için tasarlanmış, senin tarafında ise model eğitimi değil hazır modelleri kullanma ihtiyacı var. En yakın bağlam, Arslan Holding'in frontier tech merceğinde RL post-training altyapısının ayrı bir kategori haline gelişini tanımak olabilir. Ofisteki Mac'te çalışmaz, asistanına devredilebilir bir tarafı yoktur ve kendi uygulamana gömülecek bir bileşen değildir. Bu satırı okuyup geçmen yeterli.",
+      "matched_project": null,
+      "relevance": 1,
+      "investment_note": null
+    },
+    {
+      "full_name": "pallavi-shekhar/ai-engineering-interview-questions-company-wise",
+      "inputs_hash": "109f2cab0d7ff0dabb9257c0c9ded226",
+      "description_tr": "35 şirketin AI mühendisliği mülakatlarında sorulduğu bildirilen soruları şirket şirket derleyen, cevapları olduğu yerde bağlanmış bir Markdown deposu. Ortak başlıklar arasında LLM iç yapısı, çıkarım/serving ve GPU performansı, RAG, ajanlar ve tool use, fine-tuning ve hizalama, değerlendirme ve gözlemlenebilirlik, güvenlik, çok modluluk ve AI sistem tasarımı var. Frontier laboratuvarlar, büyük teknoloji şirketleri, altyapı şirketleri ve AI-native ürün şirketleri ayrı bölümlere ayrılmış. Sorular kamuya açık mülakat deneyimlerinden derlendiği, gizli bilgi içermediği ve sürekli güncelleneceği belirtiliyor. Bir eğitim şirketi tarafından bakılıyor; Apache-2.0, ~621 star ve depo Eylül 2026'da açılmış.",
+      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; bu bir çalışma listesi ve iş arayan mühendisler için hazırlanmış. En yakın bağlam, ileride bir AI mühendisi ya da freelance geliştirici değerlendirirken buradaki başlıkları ön eleme sorusu olarak kullanman olabilir. Yazılımı sen Claude Code ile ürettiğin için bu soruların cevaplarını ezberlemenin karşılığı yok. Kurulum, maliyet veya entegrasyon kararı gerektiren bir tarafı da yok; ihtiyaç doğarsa asistanına 'şu başlıktan beş soru çıkar' diye verilebilecek bir kaynak.",
+      "matched_project": null,
+      "relevance": 2,
+      "investment_note": null
+    },
+    {
+      "full_name": "incoai/splash",
+      "inputs_hash": "245a3640dab5e92a54f9f4a248b9f45a",
+      "description_tr": "Splash, Apple Silicon için yazılmış yerel bir çıkarım motoru; kernel'leri, draft modeli ve bellek planı servis ettiği her model için ayrı ayrı özelleştirilmiş, bu yüzden yapılandırma dosyası yok. OpenAI Chat Completions, OpenAI Responses ve Anthropic Messages uçlarını streaming, tool call, JSON Schema çıktısı, görsel ve satır içi PDF desteğiyle konuşuyor; ayrıca üretim yapmadan puanlama veren /v1/judgments ucu var. Homebrew ile kuruluyor ve `splash opencode`, `splash claude`, `splash codex` gibi komutlarla kurulu kodlama ajanlarını kendi sunucusuna bağlıyor. Gereksinimler net: M3 veya üstü, macOS 26.4+, en az 36 GB birleşik bellek (48 GB öneriliyor); şu an iki paket servis ediliyor, Qwen3.8-27B ve Qwen3.6-35B-A3B. Apache-2.0, ~603 star, CI ve LM Studio entegrasyonu belgelenmiş.",
+      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; motor en az 36 GB birleşik bellek istiyor, ofisteki M4 Pro'da ise 24 GB var, yani bugün kurulup denenebilecek bir aday değil. En yakın bağlam, kodlama ajanlarını yerel modelle besleme fikrin: OpenCode ve Claude Code'u tek komutla kendi sunucusuna bağlıyor olması, makineyi yenilediğin gün bu depoya tekrar bakmayı mantıklı kılar. Kodlamanın ana yolu zaten Max aboneliğin olduğu için buradan çıkacak kazanç maliyet değil, internet bağımsızlığı ve gizlilik olurdu. Şimdilik yapılacak tek şey depoyu izlemeye almak; RAM eşiği düşerse veya daha küçük bir paket eklenirse durum değişir.",
+      "matched_project": null,
+      "relevance": 2,
+      "investment_note": "Küme değil tek Mac hedefleyen, doğrudan kodlama ajanlarına servis veren ve bir yerel model istemcisiyle entegrasyonu olan bir motor; on-device çıkarımın ticarileşme tarafında tanışmaya değer bir ekip olabilir."
+    },
+    {
+      "full_name": "microsoft/mattersim",
+      "inputs_hash": "0907302fcc8ee8ed708535403a78902c",
+      "description_tr": "MatterSim, Microsoft'un malzeme bilimi için geliştirdiği atomistik derin öğrenme modeli; farklı elementler, sıcaklıklar ve basınçlar boyunca enerji, kuvvet ve gerilim tahmini yapıyor. M3GNet mimarisine dayanan iki ön eğitimli sürüm sunuluyor: hızlı çalışan 1M ve daha doğru olan 5M. ASE ekosistemine bir calculator olarak takılıyor, böylece mevcut simülasyon akışlarında makine öğrenmesi kuvvet alanı olarak kullanılabiliyor. Python 3.12+ gerektiriyor, PyPI'dan kuruluyor ve MIT lisanslı; Apple Silicon'da MPS arka ucunda sayısal kararsızlık bildirildiği için CPU öneriliyor. Daha gelişmiş sürümler Azure Quantum Elements üzerinden ticari olarak veriliyor; ~598 star ve arXiv makalesi var.",
+      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; bu hesaplamalı malzeme bilimi için bir araştırma aracı ve kullanıcısı simülasyon yapan bilim insanları. En yakın bağlam, yatırım tarafında AI4Science kategorisinin nasıl göründüğüne dair somut bir örnek olması. Günlük iş akışında, Lyricdrop veya kişisel bilgi tabanı gibi projelerinde karşılığı yok. Mac'te kurulup çalışsa bile üreteceği çıktıyı değerlendirecek bir sorun tanımın bulunmuyor.",
+      "matched_project": null,
+      "relevance": 1,
+      "investment_note": null
+    },
+    {
+      "full_name": "Helldez/BigMoeOnEdge",
+      "inputs_hash": "04ed8804c9b1e854ab7976620175ce72",
+      "description_tr": "BigMoeOnEdge, MoE modellerinin her token'da yalnızca birkaç expert kullandığı gerçeğini temel alan bir C++ çıkarım katmanı: modelin her zaman gereken küçük kısmını bellekte tutuyor, kalan expert'leri tam ihtiyaç anında flash depolamadan okuyor. Böylece cihazın RAM'inden kat kat büyük modeller üretim yapabiliyor ve çıktı, modelin tamamen bellekte çalıştırılmış haliyle bayt düzeyinde aynı kalıyor. llama.cpp'nin genel API'si üzerine kurulduğu için tüm quantization formatları, tokenizer'lar ve chat template'leri olduğu gibi çalışıyor; yeni bir MoE mimarisi eklemek registry'ye bir satır yazmak anlamına geliyor. Belgelenen uç örnek, 284B parametreli ve diskte ~91 GB yer kaplayan DeepSeek V4 Flash 0731'in 12 GB RAM'li bir telefonda ~0.94 tok/s üretmesi. Apache-2.0, ~587 star, CI ve Android demo uygulaması var; akış yolu CPU üzerinde çalışıyor.",
+      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; kazanç telefonlarda ve CPU'da ortaya çıkıyor, senin yerel model ihtiyacın ise Apple Silicon'da GPU hızlandırmalı çalışma zamanlarıyla daha iyi karşılanıyor. En yakın bağlam, ücretli API yerine Mac'te yerel model çalıştırma tercihin: 24 GB RAM'e sığmayan bir modeli SSD'den akıtma fikri cazip ama CPU-only akış yolu, aynı işi Metal üzerinden yapan seçeneklerin yanında yavaş kalır. Lyricdrop'un Android ve Android TV tarafında da cihaz üstünde LLM'e ihtiyaç yok; oyuncu tarafı zaten Supabase ve DigitalOcean üzerinden uzaktan besleniyor. Mühendislik olarak okunmaya değer, kurulum listene girmesi için bir sebep yok.",
+      "matched_project": null,
+      "relevance": 2,
+      "investment_note": null
+    },
+    {
+      "full_name": "baidu-baige/LoongForge",
+      "inputs_hash": "410ccc18dc15606b7ac9c83bacb25cba",
+      "description_tr": "LoongForge, Baidu AI Cloud Baige ekibinin LLM, VLM, difüzyon ve embodied model eğitimi için açık kaynakladığı bir eğitim çerçevesi. NVIDIA GPU'ların yanında Baidu'nun Kunlun XPU'larında da çalışıyor; Megatron tabanlı paralellik stratejileri, pretraining, mid-training, SFT ve LoRA akışları ile 40'tan fazla hazır model örneği sunuyor. Açık kaynak temel çizgilere göre 5 kata varan eğitim verimi ve 5000'den fazla XPU'ya kadar üretim koşuları belgeleniyor; örnek olarak embodied bir modelin 4.38 kat verimle, kayıp eğrileri hizalı kalarak eğitilmesi gösteriliyor. Apache-2.0 lisanslı, ~574 star, Docker imajları ve ayrı bir dokümantasyon sitesi var.",
+      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; bu çerçeve büyük GPU/XPU kümelerinde model eğitmek için, sen ise hazır modelleri kullanıyor ve eğitim yapmıyorsun. En yakın bağlam, Arslan Holding'in frontier tech merceğinde donanım bağımsızlığının (NVIDIA dışı hızlandırıcılar) bir rekabet ekseni haline gelmesini izlemek olabilir. Ofisteki Mac'te çalışmaz, API maliyeti sorusu bile gündeme gelmez, kendi uygulamana gömülecek bir bileşeni yoktur. Bu satır bir bilgi notu olarak kalsın.",
+      "matched_project": null,
+      "relevance": 1,
+      "investment_note": null
+    },
+    {
+      "full_name": "Liquid4All/liquid-audio",
+      "inputs_hash": "eb9f3087b6994153910a323b9581f846",
+      "description_tr": "Liquid Audio, Liquid AI'ın uçtan uca ses temel modeli LFM2-Audio-1.5B'nin referans uygulaması; hafif LFM2 omurgası üzerine kurulu ve düşük gecikmeli konuşmadan konuşmaya etkileşimi hedefliyor. İki üretim modu var: interleaved mod metin ve ses token'larını sabit bir düzende dönüşümlü üreterek ilk sese kadar geçen süreyi kısaltıyor, sequential mod ise modelin özel token'larla modlar arasında geçiş yapmasına izin vererek ASR ve TTS gibi konuşma dışı görevlere uyuyor. Paket pip ile kuruluyor, isteğe bağlı Gradio demosu ve flash attention desteği var; 1.2.0 ile veri hazırlama araçları ve hafif bir trainer eklendi, böylece ASR, TTS, function calling ve konuşmadan konuşmaya sohbet için fine-tuning yapılabiliyor. Daha güçlü LFM2.5-Audio-1.5B ve Japonca sürümü ayrıca yayımlandı. ~569 star; depo standart bir OSI lisansı olarak işaretlenmemiş, model lisansının ayrıca okunması gerekiyor.",
+      "usage_tr": "Kişisel bilgi tabanı (ikinci beyin) uygulamanda sesli notların Mac üzerinde yerel olarak metne çevrilmesi için deneyebilirsin; 1.5B'lik bir model olduğu için ofisteki M4 Pro'da rahat çalışır ve not başına API maliyeti doğurmaz. Online toplantılarda Wispr Flow yerindeyken, bu model toplantı dışı hızlı notların n8n akışına bağlanan yerel transkripsiyon adımı olabilir. İkinci bir kullanım, İngilizce telaffuz ve dinleme çalışmanda düşük gecikmeli konuşmadan konuşmaya bir sparring partneri kurmak; bunun için fine-tuning yoluna girmene gerek yok. Lyricdrop tarafında ise dikkatli ol: bu depo ASR ve TTS anlatıyor, senin ihtiyacın olan kelime düzeyinde zaman damgası belgelenmiyor, dolayısıyla hizalama adayı değil en fazla bir STT adayı. Uyarı: lisans standart değil, ticari bir üründe kullanmadan önce model lisansını okuman gerekir.",
+      "matched_project": "Kişisel bilgi tabanı",
+      "relevance": 6,
+      "investment_note": "Uç cihazda gerçek zamanlı çalışan küçük ses modelleri, giyilebilir cihaz ve on-device ML tezinle örtüşen bir kategori; bu ekibin lisans ve ticarileşme modeli izlenmeye değer."
+    },
+    {
+      "full_name": "zengxiao-he/tessera",
+      "inputs_hash": "6f2337690374edbe250604337773b907",
+      "description_tr": "Tessera, tek bir hedef etrafında sıfırdan yazılmış küçük bir LLM yığını: büyük bir öğretmen modeli küçük bir öğrenciye damıtmak ve o öğrenciyi verimli servis etmek. Eğitim tarafında RMSNorm, RoPE, grouped-query attention ve SwiGLU içeren bir decoder transformer, damıtma kayıpları ve sıfırdan yazılmış FSDP/ZeRO-3 sharding var; kernel tarafında Triton ile FlashAttention forward, fused RMSNorm, fused SwiGLU ve int8 matmul, ayrıca ham CUDA C++ karşılıkları bulunuyor. Servis tarafında blok sayfalı KV cache, sürekli batching zamanlayıcısı, speculative decoding, int8/AWQ/FP8 quantization ve PyO3 ile Python motoruna bağlanan bir Rust (tokio + axum) gateway yer alıyor. Bağımsız bir doğrulama katmanı olarak JAX ile yazılmış bir forward geçişi ve logit lens gibi yorumlanabilirlik araçları ekleniyor. Dizüstünde CPU veya Apple MPS ile çalışıp test ediliyor, kernel'ler NVIDIA içindir ve başka donanımda torch referansına düşer. Apache-2.0, ~564 star.",
+      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; bu depo üretimde kullanacağın bir motor değil, bir öğrenme ve referans projesi ve servis ettiği modeller oyuncak ölçekte. En yakın bağlam, yerel model altyapısına duyduğun ilgi: paged KV cache, continuous batching ve speculative decoding gibi kavramların ne yaptığını okunabilir kodla görmek istersen iyi bir kaynak. Mac'te CPU/MPS ile çalışması bu okumayı kolaylaştırıyor ama performans beklentisiyle kurma. Kendi uygulamana gömülecek bir bileşen ya da asistanına devredilecek bir iş çıkmaz.",
+      "matched_project": null,
+      "relevance": 2,
+      "investment_note": null
+    },
+    {
+      "full_name": "hmorimitsu/ptlflow",
+      "inputs_hash": "56844fbe2c93947305ed9bb1f3be72f1",
+      "description_tr": "PTLFlow, optik akış tahmini yapan derin öğrenme modellerini PyTorch Lightning üzerinde tek bir çatı altında toplayan bir kütüphane. Amaç, farklı makalelerden gelen modellerin ortak bir eğitim ve test arayüzüyle, ön eğitimli ağırlıklarla ve aynı veri kümesi hazırlığıyla karşılaştırılabilmesi. RAFT, FlowSeek, MEMFOF, WAFT, DPFlow gibi çok sayıda model ve bunların sonuçlarının orijinal makalelerle karşılaştırıldığı tablolar bulunuyor. v0.4 ile Lightning 2'ye geçilmiş ve YAML yapılandırma dosyaları eklenmiş; 2021'den beri düzenli sürüm çıkıyor. Apache-2.0, ~553 star; depo aynı zamanda NeurIPS 2026 RoCo-Spring yarışmasının altyapısı olarak duyuruluyor.",
+      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; optik akış, ardışık video kareleri arasındaki piksel hareketini kestiren bir bilgisayarla görme problemi ve senin projelerinde böyle bir soru yok. En yakın bağlam, stand-up özelini analiz ederken kullandığın türden video incelemeleri olabilir; ancak orada ihtiyacın olan şey transkript, ses ve tepki analizi, kare arası hareket vektörleri değil. Lyricdrop'un video tarafı da YouTube oynatmaktan ibaret, kare analizi gerektirmiyor. Kurulum ve GPU maliyetine girmeden geçebilirsin.",
+      "matched_project": null,
+      "relevance": 1,
+      "investment_note": null
+    },
+    {
+      "full_name": "reasoning-machines/pal",
+      "inputs_hash": "592b98f411e2e6b1e2bc1c4e99d24e0e",
+      "description_tr": "PaL (Program-Aided Language Models), ICML 2023'te yayımlanan makalenin referans deposu. Fikir şu: dil modeli aritmetik ve prosedürel problemleri doğrudan cevaplamak yerine metin ve kod karışımı bir akıl yürütme zinciri üretsin, hesabın kendisini bir Python yorumlayıcısı yapsın. Depo, model çağrısını, üretilen kodun çalıştırılmasını ve sonuç ifadesinin değerlendirilmesini birleştiren bir ProgramInterface sınıfı ile birkaç görev için few-shot prompt'lar ve değerlendirme betikleri sunuyor. Ayrıca GSM8k'nın daha zor bir versiyonu olan GSM-hard veri kümesi yayımlanmış. Apache-2.0, ~528 star; kod Codex ve erken ChatGPT API'leri dönemine ait ve son güncellemeler 2023'te yapılmış. Fikir bugün model sağlayıcılarının tool calling ve kod çalıştırma özelliklerine yerleşmiş durumda.",
+      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; burada anlatılan kalıbı zaten Claude Code ile her gün kullanıyorsun, model kod yazıp çalıştırıyor. En yakın bağlam, bir hesaplama adımını modele bırakmak yerine koda bırakma ilkesi: örneğin Lyricdrop'ta zorluk seviyesine göre boşluk sayısını belirleyen mantığı prompt'a değil koda yazmak. Bunun için bu depoya ihtiyacın yok, kod dönemsel ve bakımsız. Tarihsel bir kaynak olarak kalsın.",
+      "matched_project": null,
+      "relevance": 2,
+      "investment_note": null
+    },
+    {
+      "full_name": "r14dd/patent",
+      "inputs_hash": "9eb0aa4299bf98493127161e825f0c92",
+      "description_tr": "patent, düz İngilizce yazılmış bir geliştirici aracı fikrini alıp 19 kaynakta prior art arayan Rust tabanlı bir CLI/TUI aracı. Kaynaklar crates.io, npm, PyPI, Homebrew, Packagist, Hex gibi paket kayıtlarının yanında GitHub ve Hacker News'i kapsıyor; eşleşmeler fastembed ile yerel olarak gömülüp kosinüs benzerliğine göre sıralanıyor, yani anahtar kelime değil anlam eşleşmesi aranıyor. Sonuç Open, Crowded veya Saturated olarak özetleniyor ve bu özet benzerlik verisine karşı tabanlandığı için kalabalık bir alanı olduğundan boş gösteremiyor. Bakım sinyali gösteriliyor, iki yıldan uzun süredir güncellenmemiş eşleşmeler işaretleniyor ama elenmiyor; ulaşılamayan kaynaklar 'not reached' olarak ayrıca raporlanıyor ve temiz bir sonucun yokluk kanıtı olmadığı açıkça yazılıyor. MIT veya Apache-2.0, ~526 star, cargo ile kuruluyor.",
+      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; aracın taradığı kaynaklar paket kayıtları olduğu için geliştirici araçlarını buluyor, senin fikirlerin ise Lyricdrop ve Folio gibi tüketici uygulamaları ve bunlar npm ya da crates.io'da görünmez. En yakın bağlam, Dubai'de kurmayı düşündüğün uygulama stüdyosunda fikir eleme adımı: mantık doğru ama kaynak seti yanlış tarafta, App Store ve Play Store taraması gerekirdi. İşe yarayabileceği tek nokta, kendi pipeline'ın için bir bileşen yazmadan önce aynısının paket olarak var olup olmadığına bakmak. Yerel çalışıyor ve gömme işi makinede yapılıyor, yani maliyeti düşük; ama verdiği 'Open' sonucunu kendisinin de söylediği gibi yokluk kanıtı sayma.",
+      "matched_project": null,
+      "relevance": 2,
+      "investment_note": null
+    },
+    {
+      "full_name": "MAGICS-LAB/DNABERT_2",
+      "inputs_hash": "f1b772c4a770449f6df88635ef68c570",
+      "description_tr": "DNABERT-2, çok türlü genom verisi üzerinde eğitilmiş bir temel model ve beraberinde gelen GUE (Genome Understanding Evaluation) değerlendirme kümesi. Önceki sürümün k-mer tokenizasyonunu BPE ile, konum gömmelerini ALiBi ile değiştirerek verimlilik ve doğruluk iyileştirmesi hedefliyor. 117M parametreli model Hugging Face üzerinden transformers ile birkaç satırda yükleniyor; depoda ön eğitim ve fine-tuning betikleri de var. GUE, 4 tür ve 7 görev üzerinde 28 veri kümesi içeriyor ve promoter, splice site, transkripsiyon faktörü bağlanması gibi görevleri kapsıyor. ICLR 2024 makalesi, Apache-2.0 lisansı, ~516 star; DNABERT-S ve GenomeOcean gibi devam çalışmaları duyurulmuş.",
+      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; bu biyoinformatik alanına ait bir araştırma modeli ve kullanıcısı genom analizi yapan ekipler. En yakın bağlam, sağlık ve ölçüm ilgisi taşıyan Kanarya tarafı olurdu ama orada konu fizyolojik zaman serisi, DNA dizisi değil. Ne Mac'te çalıştırmanın ne de asistanına devretmenin bir karşılığı var. Yatırım merceğiyle bile bakılacaksa bu bir akademik depo, ürün değil.",
+      "matched_project": null,
+      "relevance": 0,
+      "investment_note": null
+    },
+    {
+      "full_name": "ARahim3/kaggle-tpu-lab",
+      "inputs_hash": "9a633cf68eeaa201d3592db3e5dd395e",
+      "description_tr": "kaggle-tpu-lab, Kaggle'ın ücretsiz TPU v5e-8 kotası üzerinde açık modelleri çalıştırıp OpenAI ve Anthropic API'lerini konuşan herkese açık bir uç nokta veren tarif koleksiyonu. Şu an iki model var: vllm-tpu üzerinde tek yamayla çalışan Qwen3.8-27B (bf16, tek akışta ~130 tok/s) ve ekibin kendi JAX motorunda çalışan GLM-5.3-Flash 320B MoE (~64 tok/s); ikisi de 262k bağlam ve prefix caching ile ölçülmüş. Notebook ağırlıkları hazır veri kümelerinden bağlıyor, motoru sekiz çip üzerinde kuruyor, bir Cloudflare tüneli açıp URL ile API anahtarını yazdırıyor; kurulum yaklaşık 16-22 dakika sürüyor. Oturum, Kaggle'ın sınırı olan dokuz saate yakın bir süre ayakta kalıyor, sonra yeniden çalıştırılıp yeni bir URL alınıyor. Her model klasöründe Claude Code, Codex CLI ve opencode için bağlantı satırları veriliyor; terminalden Kaggle CLI ile de çalıştırılabiliyor. Kod MIT, ~514 star; doğrulanmış bir Kaggle hesabı ve haftalık ~20 TPU saatlik kota gerekiyor.",
+      "usage_tr": "Bunu Lyricdrop'un toplu içerik üretim adımında kullanabilirsin: şarkı başına şık üretimi, boşluk seçimi ve çok dilli metin işleri gibi katalog genişletirken tekrarlayan işleri bu uç noktaya yollayıp API faturası doğurmadan çalıştırmak, ElevenLabs ve Apify'ı bırakırken kurduğun maliyet planıyla aynı mantıkta. Uç nokta Anthropic ve OpenAI uyumlu olduğu için n8n akışlarına ve OpenCode'a tek satırla bağlanır; Max aboneliğini günlük kodlamada tutup yalnızca toplu işleri buraya kaydırabilirsin. Kurulum notebook'tan çalıştığı için bu iş asistanına da devredilebilir, oturum düştüğünde yeniden başlatması yeterli. Uyarılar önemli: oturum dokuz saatte kapanıyor ve her seferinde URL değişiyor, yani üretim trafiği değil planlı toplu işler için uygun; ücretsiz kota haftalık sınırlı ve Kaggle'ın kullanım şartlarına bağlı. Üretilen içeriğin kalite kapısı yine admin panelindeki onay adımı olmalı, çünkü model değişimi şık kalitesini sessizce düşürebilir.",
+      "matched_project": "Lyricdrop",
+      "relevance": 6,
+      "investment_note": null
+    },
+    {
+      "full_name": "scallop-lang/scallop",
+      "inputs_hash": "ba36df4ae3eae159ebb7bac5355bf480",
+      "description_tr": "Scallop, Datalog tabanlı, türevlenebilir mantıksal ve ilişkisel akıl yürütmeyi destekleyen bir dil ve çalışma zamanı. İçeride genelleştirilmiş bir provenance semiring çerçevesi var; semiring değiştirilerek aynı program ayrık mantık, olasılıksal akıl yürütme veya gradyan taşıyan türevlenebilir akıl yürütme için çalıştırılabiliyor. Bir yorumlayıcı (scli), derleyici (sclc) ve REPL ile geliyor; scallopy bağlaması sayesinde Python'dan kullanılabiliyor ve PyTorch öğrenme modüllerine takılabiliyor. Kurulum için Rust'ın nightly kanalı gerekiyor. MIT lisanslı, ~513 star; akademik nörosembolik programlama çalışmalarından çıkmış bir proje.",
+      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; Scallop, sinir ağı çıktılarıyla sembolik kuralları birlikte eğitmek isteyen araştırmacılar için ve senin böyle bir eğitim döngün yok. En yakın bağlam, Lyricdrop'un zorluk ve boşluk seçimi gibi kural ağırlıklı mantığı olabilir; ama orada olasılıksal çıkarıma değil birkaç net kurala ihtiyacın var ve TypeScript/Supabase yığınına Rust nightly artı Python bağlaması sokmanın karşılığı yok. Mac'te derlenip çalışır, API maliyeti getirmez, yine de kazancı kurulum yüküne değmez. Merak edersen okunacak, kurulacak bir depo değil.",
+      "matched_project": null,
+      "relevance": 1,
+      "investment_note": null
+    },
+    {
+      "full_name": "huawei-csl/KVarN",
+      "inputs_hash": "619ae549602e38fd9e59aa8a8f008f2f",
+      "description_tr": "KVarN, vLLM için yazılmış yerel bir KV-cache quantization arka ucu; kalibrasyon gerektirmeden tek bir bayrakla açılıyor ve model tarafında değişiklik istemiyor. İddiası, FP16 seviyesinde doğruluğu korurken 3-5 kat daha fazla KV-cache kapasitesi ve FP16'nın bir miktar üzerinde throughput sunması; karşılaştırma olarak mevcut yöntemlerin kapasiteyi throughput'tan ödün vererek aldığı gösteriliyor. vLLM v0.23 fork'u olarak dağıtılıyor, kernel'ler Triton ile çalışma anında derleniyor, hesap float16'da yapılıyor ve vLLM blok boyutu KVarN tile boyutuna eşitleniyor. Hedef iş yükü uzun bağlamlı ve ajan tarzı kullanım; Qwen3-32B üzerinde doğruluk, throughput ve kapasite ölçümleri paylaşılıyor. Apache-2.0, ~497 star, arXiv makalesi var.",
+      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; KVarN vLLM ve NVIDIA sınıfı GPU'lar üzerinde anlam kazanıyor, senin altyapın ise Mac'te yerel çalıştırma ve bulutta Supabase artı DigitalOcean üzerine kurulu. En yakın bağlam, ileride kendi ajan iş yüklerini GPU'lu bir sunucuda barındırmaya karar verirsen uzun bağlamın bellek maliyetini düşüren bir seçenek olması. Bugün kurup ölçebileceğin bir yerin yok, dolayısıyla karar gerektiren bir tarafı da yok. Uzun bağlamın asıl maliyet kalemi olduğunu hatırlatan bir referans olarak not edilebilir.",
+      "matched_project": null,
+      "relevance": 2,
+      "investment_note": null
+    },
+    {
+      "full_name": "uni-medical/Project-Imaging-X",
+      "inputs_hash": "ad9a21802b324a4e751a816a180144ac",
+      "description_tr": "Project Imaging-X, dünya genelinde açık erişimli 1000'den fazla tıbbi görüntüleme veri kümesini tarayıp yapılandırılmış meta veri ve referans bağlantılarıyla tek bir depoda toplayan bir araştırma girişimi. Radyoloji, patoloji, oftalmoloji, dermoskopi, endoskopi, fundus ve ultrason gibi modaliteleri kapsıyor; veri kümelerini modalite, görev, anatomi, etiketleme ve sınırlılıklar açısından analiz ediyor. Çalışmanın tespiti, mevcut veri kümelerinin çoğunun küçük ölçekli ve dağınık olduğu ve bunun tıbbi temel modellerin gelişimini sınırladığı; buna karşılık ortak modalite veya görevi paylaşan kümeleri birleştirmek için sistematik bir yöntem öneriliyor. Depoda veri kümesi keşfi ve indirme rehberliği için yeniden kullanılabilir bir skill dizini de bulunuyor. MIT lisanslı, ~482 star, arXiv makalesi eşlik ediyor.",
+      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; bu bir veri kümesi kataloğu ve hedef kitlesi tıbbi görüntüleme modeli eğiten araştırmacılar. En yakın bağlam, fizyolojik öz-izleme tarafındaki Kanarya ilgisi; ancak orada sensör ve zaman serisi verisi var, radyoloji veya patoloji görüntüsü değil. Yatırım merceğiyle bakılırsa da bu bir akademik envanter çalışması, değerlendirilecek bir ekip veya ürün değil. Kurulum, maliyet ya da entegrasyon kararı gerektirmiyor.",
+      "matched_project": null,
+      "relevance": 1,
+      "investment_note": null
+    }
+  ]
+}
