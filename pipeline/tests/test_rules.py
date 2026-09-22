@@ -342,3 +342,76 @@ def test_a_passing_mention_of_a_harness_is_not_a_decision():
         facts("getumbrel/umbrel", "An elegant home server OS. Run OpenClaw, store your files", [])
     )
     assert verdict.is_ai is False
+
+
+# --- negative evidence -----------------------------------------------------
+
+
+def test_a_search_engine_that_supports_ai_is_not_an_ai_project():
+    """`meilisearch/meilisearch` declares twenty topics, fifteen of them search
+    and storage and one of them `ai`, and reached an AI board at 0.99. Noisy-OR
+    cannot tell "supports AI" from "is AI" on its own; the author's own topic
+    list can."""
+    verdict = classify(
+        facts(
+            "meilisearch/meilisearch",
+            "A lightning-fast search engine API bringing AI-powered hybrid search "
+            "to your sites and applications.",
+            ["ai", "database", "enterprise-search", "full-text-search", "search", "search-engine"],
+        )
+    )
+
+    assert verdict.is_ai is False
+    assert verdict.needs_llm is True  # to a person, not to silence
+
+
+def test_the_product_reading_is_a_ratio_and_not_a_flag():
+    """Capping on the mere presence of a product topic scored beautifully on
+    the 160-repo sample — which holds eight such repositories — and then took
+    `FlowiseAI/Flowise`, `qdrant/qdrant` and 1,390 others off the boards when
+    run over the whole index. An AI project that also stores things declares
+    mostly AI topics."""
+    ai_first = classify(
+        facts(
+            "FlowiseAI/Flowise",
+            "Build AI Agents, Visually",
+            ["agents", "artificial-intelligence", "chatbot", "llm", "workflow-automation"],
+        )
+    )
+
+    assert ai_first.is_ai is True
+
+
+def test_a_repository_that_carries_the_vocabulary_in_its_own_name_is_exempt():
+    """Naming a thing is not describing it. This is what keeps
+    `Untrivial-ai/agent-orchestrator` on the boards while `conductor-oss/conductor`,
+    whose description also says "agentic", goes to review."""
+    named = classify(
+        facts("Untrivial-ai/agent-orchestrator", "Run and supervise teams of coding agents", [])
+    )
+    unnamed = classify(
+        facts(
+            "conductor-oss/conductor",
+            "Conductor is an event driven agentic workflow engine providing durable execution",
+            ["orchestration-engine", "orchestrator", "workflow-engine", "workflow-management"],
+        )
+    )
+
+    assert named.is_ai is True
+    assert unnamed.is_ai is False
+
+
+def test_identity_evidence_overrides_the_product_reading():
+    """`pgvector/pgvector` is a database by every topic it carries, and it is
+    also unambiguously part of this field. A term from before any of this was
+    called AI is not something a marketing line produces."""
+    assert (
+        classify(
+            facts(
+                "pgvector/pgvector",
+                "Open-source vector similarity search for Postgres",
+                ["database", "postgres"],
+            )
+        ).is_ai
+        is True
+    )

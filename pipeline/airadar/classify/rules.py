@@ -293,7 +293,7 @@ NAME_TOKENS: frozenset[str] = frozenset(
 # Bumped whenever the rules or the taxonomy change. It is folded into the
 # content hash, so a change here re-classifies everything instead of leaving
 # old verdicts cached under rules that no longer exist.
-RULES_VERSION = "7"
+RULES_VERSION = "8"
 
 WEIGHT_DECISIVE_TOPIC = 0.90
 WEIGHT_AI_LAB_OWNER = 0.90
@@ -501,6 +501,50 @@ CJK_TERMS: tuple[str, ...] = (
 # of weak signals could ever settle anything, and 17,849 repos — `openai/codex`
 # and `meta-llama/llama` among them — were escalated forever.
 SOFT_CEILING = 0.88
+
+#: Topics that name a product class this field did not invent. They are not
+#: evidence *against* AI on their own — an AI-native vector database is still a
+#: database — but they say what the author thinks the thing is, and that is the
+#: reading the classifier had no way to make.
+#:
+#: Measured: `meilisearch/meilisearch` declares twenty topics, of which fifteen
+#: are search and storage and one is `ai`, and it reached an AI board at 0.99.
+#: So did `elastic/elasticsearch`, `directus/directus` (a headless CMS),
+#: `SigNoz/signoz` (observability) and `amark/gun` (a graph protocol that tags
+#: itself `machine-learning`).
+PRODUCT_TOPICS: frozenset[str] = frozenset(
+    {
+        "database",
+        "graph-database",
+        "search",
+        "search-engine",
+        "full-text-search",
+        "enterprise-search",
+        "workflow-engine",
+        "workflow-automation",
+        "workflow-management",
+        "orchestration-engine",
+        "orchestrator",
+        "microservice-orchestration",
+        "notion-alternative",
+        "spreadsheet",
+        "cms",
+        "monitoring",
+        "observability",
+        "blockchain",
+        "web3",
+        "cloc",
+        "sloc",
+        "sloccount",
+    }
+)
+
+#: Evidence that says what a repository *is* rather than what it works with:
+#: an AI lab published it, it imports `torch`, its own name carries the field's
+#: vocabulary, it describes itself in Chinese, or it uses a term from before
+#: any of this was called AI. None of these can be produced by a marketing
+#: line, which is why they override the product reading above.
+IDENTITY_PREFIXES: tuple[str, ...] = ("owner:", "pkg:", "name:", "cjk:", "domain:")
 
 _WORD = re.compile(r"[a-z0-9]+")
 
@@ -714,6 +758,38 @@ def classify(facts: RepoFacts, *, low: float = 0.2, high: float = 0.8) -> Verdic
         )
         for key, _ in signals
     )
+    # Negative evidence. Noisy-OR can add up "this project supports AI" until it
+    # is indistinguishable from "this project is AI", and six of the sample's
+    # eight false positives had exactly that shape: general-purpose
+    # infrastructure whose topics name a product class and whose AI words are
+    # modifiers on it.
+    #
+    # The test is a ratio, not a flag, and it had to be. A flag — any product
+    # topic at all caps it — looked excellent on the 160-repo sample, which
+    # contains eight such repositories, and then took `FlowiseAI/Flowise`,
+    # `qdrant/qdrant`, `langfuse/langfuse` and 1,390 others off the boards when
+    # run over the whole universe. An AI project that also stores things
+    # declares mostly AI topics; a database that also does AI declares mostly
+    # database ones.
+    #
+    # A repository that carries the vocabulary in its own name is exempt: it is
+    # the author naming the thing rather than describing it, and it rescues
+    # `Untrivial-ai/agent-orchestrator` without readmitting `meilisearch`.
+    #
+    # Measured over the whole index: 109 of 58,367 repositories move to review.
+    # On the labelled sample precision goes 88% to 94% with recall unchanged at
+    # 95%, and the eleven-project non-AI control group drops from four false
+    # positives to one.
+    product = topics & PRODUCT_TOPICS
+    declared_ai = topics & (DECISIVE_TOPICS | STRONG_TOPICS | SUGGESTIVE_TOPICS)
+    named_ai = bool(name_tokens & (DECISIVE_TOKENS | AMBIGUOUS_TOKENS))
+    if (
+        product
+        and len(product) > len(declared_ai)
+        and not named_ai
+        and not any(key.startswith(IDENTITY_PREFIXES) for key, _ in signals)
+    ):
+        confidence = min(confidence, high - 0.05)
     if not has_decisive:
         # Weak evidence only. Cap it below certainty so these still get read.
         confidence = min(confidence, SOFT_CEILING)
