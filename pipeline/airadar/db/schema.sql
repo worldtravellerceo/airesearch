@@ -129,6 +129,10 @@ CREATE TABLE IF NOT EXISTS repo_scores (
     velocity_28d        REAL NOT NULL DEFAULT 0,
     velocity_90d        REAL NOT NULL DEFAULT 0,
     acceleration        REAL NOT NULL DEFAULT 0,
+    -- measured | too_young | no_baseline. Two of acceleration's values are
+    -- produced by the metric code rather than observed, and the Breakout board
+    -- is exactly where that difference matters.
+    acceleration_basis  TEXT NOT NULL DEFAULT 'measured',
     relative_growth_14d REAL NOT NULL DEFAULT 0,
     fresh_power         REAL NOT NULL DEFAULT 0,
     momentum_score      REAL NOT NULL DEFAULT 0,
@@ -144,6 +148,18 @@ CREATE TABLE IF NOT EXISTS repo_scores (
 
 CREATE INDEX IF NOT EXISTS repo_scores_date_fresh_idx ON repo_scores (date, fresh_power DESC);
 CREATE INDEX IF NOT EXISTS repo_scores_date_momentum_idx ON repo_scores (date, momentum_score DESC);
+
+-- How many repositories each board was allowed to rank on a given day. The
+-- boards themselves are truncated to a limit, so their length says nothing
+-- about the size of the question they answer — and the Fresh Power tile was
+-- reading a backfill count instead, which is a different number again.
+CREATE TABLE IF NOT EXISTS board_pool (
+    date     DATE NOT NULL,
+    board    TEXT NOT NULL,
+    category TEXT NOT NULL DEFAULT '_all',
+    eligible INTEGER NOT NULL,
+    PRIMARY KEY (date, board, category)
+);
 
 -- A row per board position per day. Keeping the history is what makes "up 40
 -- places since last week" answerable.

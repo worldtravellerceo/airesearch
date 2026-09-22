@@ -128,6 +128,25 @@ def build_all(
     return entries
 
 
+def pool_sizes(
+    metrics: Sequence[RepoMetrics],
+) -> dict[tuple[Board, str], int]:
+    """How many repositories each board was allowed to rank, globally and per
+    category.
+
+    `rank_board` truncates to a limit, so the board's own length cannot answer
+    this and neither can any count taken from the database afterwards —
+    eligibility is decided here, from metrics that are not all stored."""
+    pools: dict[tuple[Board, str], int] = {}
+    categories = sorted({m.category for m in metrics if m.category})
+    for board in BOARDS:
+        eligible_here = [m for m in metrics if m.repo_id is not None and eligible(board, m)]
+        pools[(board, ALL_CATEGORIES)] = len(eligible_here)
+        for category in categories:
+            pools[(board, category)] = sum(1 for m in eligible_here if m.category == category)
+    return pools
+
+
 def rank_deltas(
     current: Iterable[Entry], previous: Iterable[Entry]
 ) -> dict[tuple[Board, str, int], int | None]:

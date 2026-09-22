@@ -26,7 +26,7 @@ from airadar.gh.metrics import (
     StarHistoryFormatError,
     parse_star_history,
 )
-from airadar.scoring.leaderboards import build_all
+from airadar.scoring.leaderboards import build_all, pool_sizes
 from airadar.scoring.metrics import (
     compute_repo_metrics,
     milestone_days,
@@ -357,6 +357,7 @@ def score(conn: sqlite3.Connection, *, today: dt.date | None = None) -> tuple[in
     saved = db.save_scores(conn, today, metrics)
     entries = build_all(metrics)
     db.save_leaderboards(conn, today, entries)
+    db.save_board_pools(conn, today, pool_sizes(metrics))
 
     # Pruning happens after scoring, not before: today's numbers are computed
     # from the full retained window, and only then does the window slide.

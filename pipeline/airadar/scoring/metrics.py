@@ -59,6 +59,12 @@ class RepoMetrics:
     velocity_90d: float = 0.0
     baseline_velocity: float = 0.0
     acceleration: float = 0.0
+    #: Where `acceleration` came from. Two of its values are not measurements:
+    #: a repo too young to have a baseline is reported as "unremarkable" at
+    #: 1.0, and one that was dormant and suddenly woke is capped rather than
+    #: divided by zero. Both used to reach the site as though they had been
+    #: observed, on the one board whose whole subject is acceleration.
+    acceleration_basis: str = "measured"
     relative_growth_14d: float = 0.0
     fresh_power: float = 0.0
     peak_velocity: float | None = None
@@ -125,7 +131,7 @@ def compute_repo_metrics(
     metrics.velocity_90d = _window_velocity(by_date, today, BASELINE_WINDOW)
 
     metrics.baseline_velocity, baseline_days = _baseline_velocity(by_date, today)
-    metrics.acceleration = _acceleration(
+    metrics.acceleration, metrics.acceleration_basis = _acceleration(
         metrics.velocity_14d, metrics.baseline_velocity, baseline_days
     )
 
@@ -175,18 +181,22 @@ def _baseline_velocity(by_date: dict[dt.date, int], today: dt.date) -> tuple[flo
     return sum(observed) / len(observed), len(observed)
 
 
-def _acceleration(velocity_14d: float, baseline: float, baseline_days: int) -> float:
+def _acceleration(velocity_14d: float, baseline: float, baseline_days: int) -> tuple[float, str]:
+    """The ratio, and whether it is one. Both are returned because the caller
+    cannot tell them apart afterwards: 1.0 is a real reading for a repo holding
+    its pace and an invented one for a repo too young to have a pace."""
     if velocity_14d == 0.0:
-        return 0.0
+        # Not moving is an observation, not a gap.
+        return 0.0, "measured"
     if baseline_days < MIN_BASELINE_DAYS:
         # Too young to have a baseline. Report "unremarkable" rather than a
         # number invented from two data points.
-        return 1.0
+        return 1.0, "too_young"
     if baseline <= 0.0:
         # Dormant then suddenly alive. Cap it so a single star off a zero base
         # cannot dominate the rankings.
-        return float(BREAKOUT_ACCELERATION * 10)
-    return velocity_14d / baseline
+        return float(BREAKOUT_ACCELERATION * 10), "no_baseline"
+    return velocity_14d / baseline, "measured"
 
 
 def _fresh_power(days: list[DailyStars], today: dt.date, half_life_days: float) -> float:

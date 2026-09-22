@@ -377,3 +377,76 @@ def test_the_star_curve_ends_at_the_number_printed_beside_it(conn, tmp_path):
     points = json.loads((tmp_path / "repos" / "a" / "b.history.json").read_text())["points"]
     assert points[-1]["cumulative"] == 500
     assert all(p["cumulative"] >= 0 for p in points)
+
+
+# --- saying which numbers are measurements ---------------------------------
+
+
+def test_the_overview_separates_what_is_classified_from_what_is_measured(conn):
+    """58,367 repositories were classified as AI and 19,248 of them have so
+    much as one day of star history. The rest carry a velocity of zero because
+    the column is NOT NULL DEFAULT 0, not because they are standing still — and
+    a single tile reading "İzlenen AI projesi 58.367" claims all of it was
+    observed. Measured on the live database on 2026-09-22."""
+    seed(conn)
+
+    counts = export_site._overview(conn, TODAY)["counts"]
+
+    assert counts["ai_repos"] >= counts["ai_measured"]
+    assert counts["ai_measured"] > 0
+
+
+def test_the_fresh_tile_reads_the_board_pool_and_not_a_backfill_count(conn, tmp_path):
+    """`backfilled` counts every repository with a completed history, AI or
+    not, scoring above zero or not. The Fresh Power tile printed it as though
+    it were the pool the board ranks. They are different questions with
+    different answers."""
+    seed(conn)
+    export_site.export(conn, out := tmp_path / "data", date=TODAY)
+
+    counts = read(out, "overview.json")["counts"]
+    pools = counts["pools"]
+
+    assert set(pools) <= set(BOARDS)
+    assert pools["fresh"] == len(read(out, "boards", "fresh", "_all.json")["entries"])
+
+
+def test_a_sparkline_says_where_in_the_window_it_starts(conn, tmp_path):
+    """Every row on every board is labelled "90 gün" and stretched to the same
+    96 pixels. A repo with two recorded days and one with ninety drew the same
+    width, which reads as two shapes of the same thing."""
+    seed(conn, scored_days=(TODAY,))
+    export_site.export(conn, out := tmp_path / "data", date=TODAY)
+
+    for entry in read(out, "boards", "momentum", "_all.json")["entries"]:
+        if not entry["sparkline"]:
+            continue
+        start = dt.date.fromisoformat(entry["sparkline_from"])
+        # Dense from its own first day to the export date, gaps included as
+        # nulls, so the caller can place it on a fixed grid.
+        assert len(entry["sparkline"]) == (TODAY - start).days + 1
+
+
+def test_acceleration_says_whether_it_was_measured():
+    """`_acceleration` invents two of its values: 1.0 for a repository too
+    young to have a baseline, and a cap for one that was dormant and suddenly
+    woke. Both reached the Breakout board — the one board whose entire subject
+    is acceleration — looking exactly like a reading."""
+    from airadar.scoring.metrics import compute_repo_metrics
+
+    young = compute_repo_metrics(
+        days=series(TODAY - dt.timedelta(days=5), TODAY, 40),
+        stars_total=240,
+        created_at=TODAY - dt.timedelta(days=5),
+        today=TODAY,
+    )
+    assert young.acceleration == 1.0
+    assert young.acceleration_basis == "too_young"
+
+    steady = compute_repo_metrics(
+        days=series(TODAY - dt.timedelta(days=120), TODAY, 10),
+        stars_total=1_210,
+        created_at=TODAY - dt.timedelta(days=120),
+        today=TODAY,
+    )
+    assert steady.acceleration_basis == "measured"

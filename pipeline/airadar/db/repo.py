@@ -18,7 +18,7 @@ import hashlib
 import json
 import logging
 import sqlite3
-from collections.abc import Iterable, Iterator, Sequence
+from collections.abc import Iterable, Iterator, Mapping, Sequence
 from contextlib import contextmanager
 from dataclasses import dataclass
 from pathlib import Path
@@ -160,11 +160,15 @@ def connect(path: str | Path) -> Iterator[sqlite3.Connection]:
         conn.close()
 
 
-# Columns added to `repos` after the first database was published. The schema
-# file is `CREATE TABLE IF NOT EXISTS` throughout, which is right for a fresh
-# start and does nothing at all for the database that already exists — and the
-# only copy of ours is a release asset that every run downloads. Without this,
-# a new column is silently absent in production and present in every test.
+# Columns added after the first database was published. The schema file is
+# `CREATE TABLE IF NOT EXISTS` throughout, which is right for a fresh start and
+# does nothing at all for the database that already exists — and the only copy
+# of ours is a release asset that every run downloads. Without these, a new
+# column is silently absent in production and present in every test.
+_SCORES_MIGRATIONS: tuple[tuple[str, str], ...] = (
+    ("acceleration_basis", "TEXT NOT NULL DEFAULT 'measured'"),
+)
+
 _REPOS_MIGRATIONS: tuple[tuple[str, str], ...] = (
     ("etag_readme", "TEXT"),
     ("readme_excerpt", "TEXT"),
@@ -176,6 +180,7 @@ _REPOS_MIGRATIONS: tuple[tuple[str, str], ...] = (
 def apply_schema(conn: sqlite3.Connection) -> None:
     conn.executescript(SCHEMA_PATH.read_text())
     _migrate_repos(conn)
+    _migrate_scores(conn)
     _migrate_companies(conn)
     _migrate_classification_nullable(conn)
     conn.commit()
@@ -244,6 +249,23 @@ def _migrate_companies(conn: sqlite3.Connection) -> list[str]:
         conn.execute("UPDATE companies SET name = NULL WHERE name IS NOT NULL")
         added.append("name_source")
         log.info("schema: added name_source to companies and cleared unattributed names")
+    return added
+
+
+def _migrate_scores(conn: sqlite3.Connection) -> list[str]:
+    """Add any missing `repo_scores` column.
+
+    `schema.sql` is CREATE TABLE IF NOT EXISTS throughout, which does nothing to
+    a table that already exists — and the published release asset is the only
+    copy of this database there is."""
+    have = {row["name"] for row in conn.execute("PRAGMA table_info(repo_scores)")}
+    added = []
+    for column, decl in _SCORES_MIGRATIONS:
+        if column not in have:
+            conn.execute(f"ALTER TABLE repo_scores ADD COLUMN {column} {decl}")
+            added.append(column)
+    if added:
+        log.info("schema: added %s to repo_scores", ", ".join(added))
     return added
 
 
@@ -731,7 +753,7 @@ def cached_classification_hashes(conn: sqlite3.Connection) -> dict[int, str]:
 
 
 SCORE_COLUMNS = (
-    "velocity_7d velocity_14d velocity_28d velocity_90d acceleration "
+    "velocity_7d velocity_14d velocity_28d velocity_90d acceleration acceleration_basis "
     "relative_growth_14d fresh_power momentum_score peak_velocity days_since_peak "
     "days_to_1k days_to_10k days_to_50k breakout coverage_days"
 ).split()
@@ -762,6 +784,33 @@ def save_scores(conn: sqlite3.Connection, date: dt.date, metrics: Sequence[RepoM
     )
     conn.commit()
     return len(rows)
+
+
+def save_board_pools(conn: sqlite3.Connection, date: dt.date, pools: Mapping[tuple, int]) -> int:
+    """Record how many repositories each board could have ranked today.
+
+    The board file itself is truncated to its limit, so its length answers
+    "how many did we show", never "out of how many". The Fresh Power tile was
+    answering the second question with a third number — the count of repos with
+    a completed backfill, which includes every repo we have never classified as
+    AI and excludes nothing that scored zero."""
+    conn.execute("DELETE FROM board_pool WHERE date = ?", (date,))
+    rows = [(date, board, category, n) for (board, category), n in pools.items()]
+    if rows:
+        conn.executemany(
+            "INSERT INTO board_pool (date, board, category, eligible) VALUES (?, ?, ?, ?)", rows
+        )
+    conn.commit()
+    return len(rows)
+
+
+def load_board_pools(conn: sqlite3.Connection, date: dt.date) -> dict[tuple[str, str], int]:
+    return {
+        (row["board"], row["category"]): row["eligible"]
+        for row in conn.execute(
+            "SELECT board, category, eligible FROM board_pool WHERE date = ?", (date,)
+        )
+    }
 
 
 def save_leaderboards(conn: sqlite3.Connection, date: dt.date, entries: Sequence[Entry]) -> int:
@@ -797,9 +846,11 @@ def load_leaderboard(
         """
         SELECT l.rank, l.score, r.id AS repo_id, r.full_name, r.description,
                r.language, r.stars, r.archived, c.category, c.one_liner,
-               s.velocity_14d, s.acceleration, s.relative_growth_14d,
+               s.velocity_14d, s.acceleration, s.acceleration_basis,
+               s.relative_growth_14d,
                s.fresh_power, s.momentum_score, s.breakout,
-               s.days_to_1k, s.days_to_10k, s.days_to_50k, s.coverage_days
+               s.days_to_1k, s.days_to_10k, s.days_to_50k, s.coverage_days,
+               r.history_backfilled_through
         FROM leaderboard_snapshots l
         JOIN repos r ON r.id = l.repo_id
         LEFT JOIN repo_classification c ON c.repo_id = l.repo_id

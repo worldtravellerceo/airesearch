@@ -107,16 +107,41 @@ def _encode(value):
 
 
 def _overview(conn: sqlite3.Connection, date: dt.date | None) -> dict:
+    # `ai_repos` and `ai_measured` are deliberately two numbers. Of 58,367
+    # repositories classified as AI, 19,248 have so much as one day of star
+    # history — the rest were classified from their metadata and have never
+    # been measured, and their velocities are zero because the column is
+    # NOT NULL DEFAULT 0, not because they are standing still. Printing only
+    # the first overstates what this index has actually observed by a factor
+    # of three.
     counts = conn.execute(
         """
         SELECT
             (SELECT count(*) FROM repos) AS tracked,
             (SELECT count(*) FROM repo_classification WHERE is_ai = 1) AS ai_repos,
+            (SELECT count(*) FROM repo_classification WHERE is_ai IS NULL) AS ai_unsettled,
+            (SELECT count(DISTINCT c.repo_id)
+               FROM repo_classification c
+               JOIN repo_star_daily d ON d.repo_id = c.repo_id
+              WHERE c.is_ai = 1) AS ai_measured,
             (SELECT count(*) FROM repos WHERE history_backfilled_through IS NOT NULL)
                 AS backfilled,
             (SELECT count(*) FROM repo_star_daily) AS day_rows
         """
     ).fetchone()
+    # What each board was allowed to rank today. The Fresh Power tile used to
+    # print `backfilled`, which is a count over every repository in the
+    # database, AI or not, and takes no account of whether the repo scores
+    # above zero — a different question with a much larger answer.
+    counts["pools"] = (
+        {
+            board: n
+            for (board, category), n in db.load_board_pools(conn, date).items()
+            if category == ALL_CATEGORIES
+        }
+        if date is not None
+        else {}
+    )
     last_run = conn.execute(
         "SELECT command, finished_at, ok, api_calls, api_304s, llm_cost_usd, notes "
         "FROM run_log WHERE finished_at IS NOT NULL ORDER BY finished_at DESC LIMIT 1"
@@ -175,7 +200,12 @@ def _boards(
         for entry in entries:
             old = previous.get(entry["repo_id"])
             entry["rank_delta"] = None if old is None else old - entry["rank"]
-            entry["sparkline"] = sparklines.get(entry["repo_id"], [])
+            series = sparklines.get(entry["repo_id"])
+            entry["sparkline"] = series["days"] if series else []
+            # Where in the 90-day window the series starts. Without it every
+            # row says "90 gün" and stretches whatever it has — two points or
+            # ninety — across the same 96 pixels.
+            entry["sparkline_from"] = series["from"] if series else None
             entry["archived"] = bool(entry["archived"])
             entry["breakout"] = bool(entry["breakout"])
 
@@ -191,16 +221,37 @@ def _boards(
     return slugs
 
 
-def _sparklines(conn: sqlite3.Connection, date: dt.date) -> dict[int, list[int]]:
-    """90 days of daily gains per repo, in one pass rather than a query per row."""
+def _sparklines(conn: sqlite3.Connection, date: dt.date) -> dict[int, dict]:
+    """90 days of daily gains per repo, in one pass rather than a query per row.
+
+    Dense from the repo's first observed day to `date`, so a missing day inside
+    the series is a `null` and not a silently skipped column. The leading gap is
+    not padded — it is reported as `from` instead, because most repositories
+    here have far fewer than ninety days recorded and ninety nulls per row
+    across every board file is megabytes of nothing.
+    """
     since = date - dt.timedelta(days=SPARKLINE_DAYS - 1)
-    out: dict[int, list[int]] = {}
+    seen: dict[int, dict[dt.date, int]] = {}
     for row in conn.execute(
         "SELECT repo_id, date, stars_gained FROM repo_star_daily "
         "WHERE date >= :since AND date <= :date ORDER BY repo_id, date",
         {"since": since, "date": date},
     ):
-        out.setdefault(row["repo_id"], []).append(row["stars_gained"])
+        day = row["date"]
+        if isinstance(day, str):
+            day = dt.date.fromisoformat(day)
+        elif isinstance(day, dt.datetime):
+            day = day.date()
+        seen.setdefault(row["repo_id"], {})[day] = row["stars_gained"]
+
+    out: dict[int, dict] = {}
+    for repo_id, by_date in seen.items():
+        first = min(by_date)
+        span = (date - first).days + 1
+        out[repo_id] = {
+            "from": first,
+            "days": [by_date.get(first + dt.timedelta(days=i)) for i in range(span)],
+        }
     return out
 
 
@@ -225,7 +276,8 @@ def _details(
                r.discovered_via, r.history_backfilled_through,
                c.category, c.subcategory, c.one_liner,
                s.velocity_7d, s.velocity_14d, s.velocity_28d, s.velocity_90d,
-               s.acceleration, s.relative_growth_14d, s.fresh_power, s.momentum_score,
+               s.acceleration, s.acceleration_basis,
+               s.relative_growth_14d, s.fresh_power, s.momentum_score,
                s.peak_velocity, s.days_since_peak, s.days_to_1k, s.days_to_10k,
                s.days_to_50k, s.breakout, s.coverage_days
         FROM repos r
