@@ -437,12 +437,19 @@ def export_review_queue(
         count = stars.get(item.full_name, 0)
         if count < min_stars:
             continue
-        if rules.classify(item).is_ai:
+        verdict = rules.classify(item)
+        if verdict.is_ai:
             continue
-        candidates.append((count, item))
+        candidates.append((count, item, verdict))
 
     report.considered = len(candidates)
-    candidates.sort(key=lambda pair: -pair[0])
+    # Unsettled first, and by stars within each group. Both kinds belong here,
+    # but they are not the same question and sorting them together buries the
+    # smaller one: 6,823 repositories carry evidence the engine could not
+    # resolve, against 53,427 that carry none at all, so a slice ordered purely
+    # by stars opens with `freeCodeCamp/freeCodeCamp` and never reaches an
+    # actual open question.
+    candidates.sort(key=lambda row: (not row[2].needs_llm, -row[0]))
 
     items = [
         {
@@ -451,9 +458,16 @@ def export_review_queue(
             "description": item.description,
             "topics": list(item.topics),
             "language": item.language,
+            # What kind of "no" this is. `unsettled` means evidence was found
+            # and did not settle it; `no-signal` means nothing was found, which
+            # is absence of evidence and not evidence of absence — the reading
+            # that once hid `anomalyco/opencode` at 208,847 stars.
+            "basis": "unsettled" if verdict.needs_llm else "no-signal",
+            "confidence": round(verdict.confidence, 3),
+            "matched": list(verdict.matched)[:6],
             "inputs_hash": item.inputs_hash(),
         }
-        for count, item in candidates[:limit]
+        for count, item, verdict in candidates[:limit]
     ]
 
     path.parent.mkdir(parents=True, exist_ok=True)

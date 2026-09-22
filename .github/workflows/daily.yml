@@ -84,6 +84,23 @@ jobs:
       - name: Rebuild the company universe
         run: airadar companies-sync
 
+      # The queue of repositories the engine did not settle. It has existed as
+      # a command since the day a zero was found to mean "no signal" rather
+      # than "not AI" — and it was never run by anything, so the 6,823
+      # unsettled repositories went exactly where the zeroes used to go. A
+      # verdict nobody can reach is silence with extra steps.
+      - name: Write the review queue
+        if: always()
+        run: airadar review-queue --out review-queue.json --limit 2000
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: review-queue
+          path: review-queue.json
+          if-no-files-found: warn
+          retention-days: 30
+
       - uses: ./.github/actions/publish-db
         if: always()
         with:

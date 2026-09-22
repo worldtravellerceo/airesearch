@@ -514,7 +514,27 @@ def test_the_review_queue_holds_everything_the_engine_did_not_settle(conn, tmp_p
     classify_run.export_review_queue(conn, out, limit=10, min_stars=1_000)
     names = [r["full_name"] for r in json.loads(out.read_text())["repos"]]
 
-    assert names == ["acme/silent", "acme/ambiguous"]  # settled AI stays out
+    assert set(names) == {"acme/silent", "acme/ambiguous"}  # settled AI stays out
+
+
+def test_an_open_question_outranks_a_bigger_settled_no(conn, tmp_path):
+    """Both kinds belong in the queue and they are not the same question.
+    Measured on the live database: 6,823 repositories carry evidence the engine
+    could not resolve against 53,427 that carry none, so a slice ordered purely
+    by stars opens with `freeCodeCamp/freeCodeCamp` and never reaches an
+    actual open question. Unsettled first, stars within each group."""
+    add_repo(conn, 1, "acme/huge-and-silent", "A tool for teams", [], stars=500_000)
+    add_repo(conn, 2, "acme/small-and-open", "A lightweight agent", ["agent"], stars=1_100)
+    conn.commit()
+
+    out = tmp_path / "queue.json"
+    classify_run.export_review_queue(conn, out, limit=10, min_stars=1_000)
+    rows = json.loads(out.read_text())["repos"]
+
+    assert [r["full_name"] for r in rows] == ["acme/small-and-open", "acme/huge-and-silent"]
+    assert [r["basis"] for r in rows] == ["unsettled", "no-signal"]
+    # The evidence travels with the row, so the reader is not re-deriving it.
+    assert rows[0]["matched"]
 
 
 def test_the_queue_is_ordered_by_stars_and_reports_what_is_left(conn, tmp_path):
