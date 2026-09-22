@@ -1,0 +1,175 @@
+{
+ "repos": [
+  {
+   "full_name": "Ucas-HaoranWei/GOT-OCR2.0",
+   "inputs_hash": "7131e84fbd18c88e0856e91e098d3238",
+   "description_tr": "GOT-OCR2.0, “OCR-2.0” olarak adlandırdığı yaklaşımı uçtan uca tek bir modelle uygulayan akademik bir çalışmanın resmî kod deposu. Klasik tespit + tanıma hattı yerine yaklaşık 580M parametreli bir görsel-dil modeli kullanıyor; düz metnin yanı sıra formül, tablo, nota ve geometrik şekil gibi yapılandırılmış içerikleri de metne çeviriyor ve çıktıyı Markdown ya da LaTeX olarak verebiliyor. Kod, ağırlıklar ve benchmark'lar açık; model Hugging Face transformers'a entegre edildiği için toplu çıkarım da destekleniyor. Toplulukta llama.cpp, ONNX ve MNN çevrimleri üretilmiş, ms-swift ile kendi verinle fine-tune yolu belgelenmiş. 8,2K yıldız; depo 2024 sonrasında ağırlıklı olarak sürüm duyurularıyla ilerliyor ve bir lisans dosyası belirtilmemiş.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın olası bağlam Arslan Holding tarafında gelen pitch deck ve finansal tabloların metne çevrilmesi olabilir. Ancak bu belgeler çoğunlukla zaten metin katmanı taşıyan PDF'ler olarak geliyor ve profilde OCR'a dayanan tanımlı bir adım yok. Lyricdrop sözleri üçüncü parti bir lyrics DB'den aldığı için orada da bir giriş noktası bulunmuyor. Yine de not etmeye değer: formül ve tabloyu tek geçişte yapılı metne çevirmesi, ileride taranmış belgeyle çalışman gerekirse aday listesinin başında olmasını sağlar.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "FareedKhan-dev/kimi-k3-in-c",
+   "inputs_hash": "13452d6ce45096805cfdedcb293cbef2",
+   "description_tr": "2,78 trilyon parametreli Kimi K3 modelini tek bir CPU üzerinde, ölçülen 8,24 GB tepe bellek kullanımıyla çalıştıran, taşınabilir C99 ile yazılmış bir çıkarım motoru. BLAS, framework ve GPU kullanmıyor; motorun tamamı 176 KB ve MoE uzmanlarını her token için diskten akıtarak bellek ihtiyacını düşürüyor. Çıktı makineden makineye bayt düzeyinde aynı kalıyor, değişen tek şey hız: 8 GB RAM'de token başına yaklaşık 26,5 saniye, 128 GB üstünde 5,6 saniye. MXFP4 quantization ve AVX2 SIMD kullanıyor, hedef platform Linux x86-64. Apache-2.0, 8,2K yıldız; 2026 Ağustos'unda açılmış, tek yazarlı ve ölçüm kayıtlarıyla birlikte yayınlanmış bir çalışma.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın olası bağlam yerel model altyapısına olan ilgin. Ancak depo Linux x86-64 ve AVX2 hedefliyor, Apple Silicon yolu yok; ofisteki Mac'te ya da evdeki Mac mini'de çalıştıramazsın. Token başına saniyelerle ölçülen hız da Lyricdrop'un şarkı başına içerik üretimi dahil hiçbir üretim akışına uymuyor. Değeri pratik değil eğitici: uzmanları diskten akıtarak bellek ihtiyacını nasıl düşürdüğünü okumak, aynı fikrin Mac tarafındaki uygulamalarını değerlendirirken işine yarar.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "ai-dynamo/dynamo",
+   "inputs_hash": "d1cbe5fb24b65850652b839aec23a70a",
+   "description_tr": "Dynamo, NVIDIA'nın veri merkezi ölçeğinde dağıtık LLM çıkarımı için yazdığı orkestrasyon katmanı. vLLM, SGLang veya TensorRT-LLM'in yerini almaya çalışmıyor; bu motorları çok düğümlü, koordine tek bir sisteme dönüştürüyor. Disaggregated serving, KV-cache farkındalığıyla yönlendirme, çok katmanlı KV önbellek ve otomatik ölçekleme başlıca bileşenleri; LLM'in yanı sıra çok kipli ve video üretim yükleri de hedefleniyor. Çekirdek performans için Rust, genişletilebilirlik için Python kullanılıyor ve dağıtım ağırlıklı olarak Kubernetes üzerinden yapılıyor. 160'ın üzerinde katkıcı, 8,1K yıldız; aktif geliştirilen, kurumsal destekli bir proje.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın olası bağlam model servis etme ilgin, ama bu araç çok düğümlü GPU kümeleri için yazılmış. Senin tarafında model çalıştırma ya Mac'te yerel ya da hazır bir API üzerinden oluyor; Lyricdrop ve Folio'nun uzak tarafı Supabase ve DigitalOcean üzerinde duruyor, ortada bir çıkarım kümesi yok. Bu katmana ihtiyaç duyman için kendi modelini binlerce eşzamanlı kullanıcıya kendi donanımında servis etmen gerekirdi. Yatırımcı şapkasıyla da bir açılım çıkmıyor: proje NVIDIA'nın kendi ekosistem hamlesi, bağımsız bir ekip değil.",
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "InternLM/lmdeploy",
+   "inputs_hash": "a6b2a5f07c44faf9cd6ff9839110a1e5",
+   "description_tr": "LMDeploy, büyük dil modellerini sıkıştırmak, dağıtmak ve servis etmek için geliştirilen bir toolkit. İki motoru var: C++/CUDA ile yazılmış TurboMind ve daha esnek olan PyTorch motoru; 4-bit ve 8-bit quantization, karışık hassasiyet, CUDA graph ve prefill/decode ayrıştırması destekleniyor. NVIDIA GPU'ların yanı sıra Huawei Ascend platformu da hedefleniyor, çok kipli modeller için de ayrı bir yol var. Apache-2.0 lisanslı, 8,1K yıldız, 2023'ten beri düzenli sürüm çıkaran aktif bir proje ve TurboMind üzerine yazılan makale EuroSys 2027'ye kabul edilmiş. Kurulum pip ile yapılıyor ve dokümantasyon geniş.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın olası bağlam yerel model çalıştırma tercihin, ancak araç NVIDIA GPU ve Ascend hedefli, Apple Silicon desteği yok. Mac'te yerel çalıştırma tarafında MLX ve llama.cpp tabanlı seçenekler senin donanımına doğrudan oturuyor; bu depoyu kurmanın bir karşılığı olmaz. Bir gün kiralık bir GPU üzerinde kendi modelini servis etmeye karar verirsen quantization ve servis tarafı için geri dönebileceğin olgun bir seçenek olarak aklında kalabilir. Şu an böyle bir adım ne Lyricdrop'ta ne de Folio'da var.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "PriorLabs/TabPFN",
+   "inputs_hash": "7a599b4e7320a5df9e445c4968bf24c9",
+   "description_tr": "TabPFN, tablo verisi için eğitilmiş bir foundation model. Sentetik veri setleri üzerinde önceden eğitilmiş bir transformer, yeni bir veri setini tek bir forward pass'te sınıflandırıyor ya da regresyon yapıyor; klasik anlamda bir eğitim döngüsü ve hiperparametre araması gerekmiyor. Kullanım scikit-learn arayüzüne birebir uyuyor (fit / predict) ve paket pip ile kuruluyor. Apple Silicon Mac'lerde GPU desteği otomatik geliyor; CPU'da birkaç bin satıra kadar veri setleri makul, daha büyüğü için GPU ya da barındırılan bir istemci öneriliyor. Apache-2.0, 8K yıldız; arkasında Prior Labs var ve model sürümleri düzenli olarak yenileniyor.",
+   "usage_tr": "Kanarya'nın topladığı fizyolojik öz-izleme verisi TabPFN'in tam hedef kitlesi: az satır, çok sütun ve hiperparametre ayarına vakit ayırmak istemediğin küçük tablolar. Uyku, antrenman ve gün içi ölçümlerden ertesi günün bir göstergesini tahmin etmek gibi soruları scikit-learn arayüzüyle birkaç satırda deneyebilirsin. Apple Silicon'da GPU desteği hazır geldiği için ofisteki M4 Pro'da yerel çalışır, API maliyeti getirmez ve Supabase'den veri çeken küçük bir Python servisi olarak mevcut n8n akışına takılabilir. Uyarı: CPU'da birkaç bin satırlık bir tavan var ve model tahmin üretir, açıklama değil — “neden” sorusunu yanıtlamak için yanına ayrı bir yorumlama adımı koyman gerekir. Küçük örneklemde güven aralıklarının gerçekçi olup olmadığını, elindeki birkaç haftalık veriyi ikiye bölerek önce doğrula.",
+   "matched_project": "Kanarya",
+   "relevance": 5,
+   "investment_note": "Tablo verisi için foundation model kategorisinde ticari bir şirketin (Prior Labs) açık çekirdeği; erken aşama AI tezinde “LLM dışı foundation model” başlığını izliyorsan tanışılmaya değer bir isim."
+  },
+  {
+   "full_name": "evidentlyai/evidently",
+   "inputs_hash": "69aab9cb70a298e5e911e300866811c6",
+   "description_tr": "Evidently, makine öğrenmesi ve LLM tabanlı sistemleri değerlendirmek, test etmek ve izlemek için yazılmış açık kaynak bir Python framework'ü. İki temel yapısı var: metrikleri hesaplayıp özetleyen Report'lar ve bunlara geçti/kaldı koşulları ekleyerek regresyon testine dönüştüren Test Suite'ler. Veri drift'inden veri kalitesine, sınıflandırma metriklerinden RAG değerlendirmesine ve LLM judge'lara kadar 100'ün üzerinde hazır metrik içeriyor, kendi metriğini de yazabiliyorsun. Çıktılar JSON, HTML veya Python sözlüğü olarak dışarı alınabiliyor; ayrıca self-host edilebilen bir izleme arayüzü var. Apache-2.0, 7,9K yıldız, 2020'den beri aktif; açık kaynak sürümün yanında Evidently Cloud adlı ticari bir sürüm bulunuyor.",
+   "usage_tr": "Lyricdrop v2'de 20-30 şarkılık hizalama test setini bir kalite kapısına çevirmek için Test Suite kısmını kullanabilirsin: referans bir koşudan eşikleri üretip her yeni STT denemesini geçti/kaldı olarak raporlarsın, böylece “daha iyi oldu” hissi yerine bir sayı kalır. Rapor HTML veya JSON olarak dışarı alınabildiği için mevcut admin paneline gömmek zorunda kalmadan yanına koyabilir, çıktıyı Supabase'e yazabilirsin. Ofisteki Mac'te yerel çalışır ve LLM judge'ları kullanmadığın sürece API maliyeti getirmez. Sınırını da söylemek gerekir: aracın ağırlık merkezi tablo verisi ve drift izleme; kelime-zaman hizası metriklerini kendin yazıp custom metric olarak bağlaman gerekir. Yani buradan aldığın şey hazır metrikler değil, koşuları saklayan ve eşikleri uygulayan bir iskelet. Küçük başla: tek bir metrikle bir test suite kurup gerçekten karar verdiriyor mu diye bak, vermiyorsa kendi ince betikleri daha ucuza gelir.",
+   "matched_project": "Lyricdrop",
+   "relevance": 4,
+   "investment_note": null
+  },
+  {
+   "full_name": "RapidAI/RapidOCR",
+   "inputs_hash": "334edffd5f699c2f94713af6ea224120",
+   "description_tr": "RapidOCR, PaddleOCR modellerinin ONNX'e çevrilmesiyle başlamış, çok platformlu ve çok dilli bir OCR toolkit'i. ONNX Runtime, OpenVINO, MNN, PaddlePaddle, TensorRT ve PyTorch olmak üzere farklı çıkarım arka uçlarını destekliyor; öne çıkan iddiası hız ve çevrimdışı dağıtım kolaylığı. Linux, Windows ve macOS üzerinde çalışıyor, Python'un yanı sıra birçok dilde bağlama sunuluyor. Varsayılan olarak Çince ve İngilizce tanıma geliyor, diğer diller ayrı model listesinden seçiliyor. Apache-2.0 lisanslı, 7,9K yıldız, PyPI üzerinden dağıtılıyor ve düzenli sürüm çıkaran aktif bir proje.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın olası bağlam asistan tarafında gelen fatura, sözleşme ve taranmış belgelerin metne çevrilmesi olabilir. Profilde böyle bir adım tanımlı değil — belge akışı HubSpot, Trello ve Drive üzerinde dosya olarak duruyor, metin çıkarma bir darboğaz olarak geçmiyor. Lyricdrop, Folio ve Kanarya tarafında görüntüden metin okuma ihtiyacı hiç yok. Yine de not edilmeye değer: tamamen çevrimdışı çalışıyor, Mac'te ONNX Runtime ile hızlı ve Apache-2.0 — böyle bir ihtiyaç doğarsa bulut OCR servislerine gitmeden bakacağın ilk yer burası olur.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "cloneofsimo/lora",
+   "inputs_hash": "6a5cc69eff5d9574cd1d9ee539d6e176",
+   "description_tr": "Stable Diffusion modellerini LoRA (low-rank adaptation) ile hızlı şekilde fine-tune eden erken dönem bir depo. Dreambooth'a göre yaklaşık iki kat hızlı eğitim ve 1-6 MB aralığında paylaşılması kolay çıktı dosyaları sunuyor; diffusers ile uyumlu çalışıyor ve inpainting eğitimini destekliyor. Alpha katsıyısıyla stil karışımı, iki LoRA'yı birleştirme ve çok vektörlü pivotal tuning inversion gibi tekniklerin çalışan örnekleri içinde. Apache-2.0 lisanslı, 7,5K yıldız, Jupyter Notebook ağırlıklı bir kod tabanı. LoRA 2023 başında resmî olarak Hugging Face diffusers kütüphanesine entegre edildi ve bu depo o tarihten sonra büyük ölçüde durdu; bugün tarihsel referans niteliğinde.",
+   "usage_tr": "Folio'nun ihtiyacı olan teknik tam olarak bu: her yazar profili için tutarlı bir görsel kimlik istiyorsan, o stili birkaç MB'lık bir LoRA'ya sıkıştırıp üretim anında baz modele eklemek doğru yol — her gün yeni post ve story üretirken personanın kaymamasını sağlayan şey bu olur. Depo bu fikrin erken ve iyi anlatılmış hali; alpha ile stil karışımı ve LoRA birleştirme örnekleri okunmaya değer. Ama pratik tavsiye bu depoyu kullanmak değil: bakımlı yol artık diffusers'ın kendi LoRA desteği, burası 2023'ten beri duruyor. Kavramı buradan okuyup eğitimi diffusers örnekleriyle yapman daha az sürpriz çıkarır. Eğitim tarafı GPU istiyor, yani Mac'te yerel değil kiralık bir GPU'da yapılacak bir iş; üretim tarafı sonrasında DigitalOcean üzerinde bir servise dönüşebilir.",
+   "matched_project": "Folio",
+   "relevance": 3,
+   "investment_note": null
+  },
+  {
+   "full_name": "openlm-research/open_llama",
+   "inputs_hash": "3e00ac870fb7dd88b8d24daad85fc8aa",
+   "description_tr": "OpenLLaMA, Meta'nın LLaMA modelinin izin verici lisanslı açık kaynak yeniden üretimi. 3B, 7B ve 13B boyutlarında, 1 trilyon token üzerinde eğitilmiş modeller sunuyor; v1 RedPajama, v2 ise Falcon RefinedWeb, StarCoder ve RedPajama karışımıyla eğitilmiş. Ağırlıklar hem PyTorch (transformers) hem de JAX (EasyLM) formatlarında yayınlanmış ve mevcut LLaMA uygulamalarına doğrudan takılabiliyor. Depo kod deposundan çok bir ağırlık dağıtım ve değerlendirme noktası; karşılaştırma tabloları orijinal LLaMA'ya karşı verilmiş. Apache-2.0, 7,5K yıldız; son sürüm 2023 ortasında yayınlanmış ve proje o günden beri güncellenmiyor.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın olası bağlam Mac'te yerel model çalıştırma tercihin. Ancak bunlar 2023 ortasında donmuş 3B-13B ağırlıklar; aynı boyuttaki bugünkü açık modeller her ölçüte göre önde ve llama.cpp ya da MLX ile Mac'te doğrudan çalışıyor. Lyricdrop'un içerik üretimi veya Folio'nun metinleri için bu ağırlıkları seçmen için bir neden yok. Deponun kalan değeri tarihsel: izin verici lisanslı bir yeniden üretimin nasıl belgelendiğine ve değerlendirildiğine dair temiz bir örnek.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "bigcode-project/starcoder",
+   "inputs_hash": "fa0c9599beb1435013670ee4e0ce3439",
+   "description_tr": "StarCoder, BigCode projesi kapsamında 80'den fazla programlama dili ile GitHub issue, commit ve not defteri metinleri üzerinde eğitilmiş bir kod dil modeli; bu depo da modelin kullanımını gösteren ev deposu. İçinde transformers ile kod üretimi örnekleri, text-generation-inference ile servis etme yolu, PEFT adapter birleştirme dahil fine-tuning betikleri ve değerlendirme adımları var. Modeli kullanabilmek için Hugging Face üzerinde ayrı bir sözleşmeyi kabul etmek gerekiyor; sohbet için ayarlanmış bir StarChat varyantı da aynı depoda anlatılıyor. Donanım gereksinimleri belgelenmiş durumda. Apache-2.0, 7,5K yıldız; son anlamlı güncellemeler 2023'e ait, devamı ayrı bir StarCoder2 deposunda.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın olası bağlam yerel bir kod modeli çalıştırma fikri. Kod tarafında Claude Code'u Max aboneliğiyle kullanıyorsun ve bu model onun yanında bir seçenek değil; 2023'te eğitilmiş, ağırlıkları ayrı sözleşme kabulü isteyen bir kod tamamlama modeli. Yerel bir kod modeli denemek istersen bugünün küçük modelleri Mac'te doğrudan çalışıyor ve daha iyi sonuç veriyor. Bu depo artık referans değerinde: kod modeli eğitimi ve değerlendirmesinin o dönemde nasıl kurgulandığını gösteriyor.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "EleutherAI/gpt-neox",
+   "inputs_hash": "8f33574d98f97590c9dfe962c36d918f",
+   "description_tr": "GPT-NeoX, EleutherAI'nin GPU kümelerinde büyük dil modeli eğitmek için kullandığı kütüphane; NVIDIA'nın Megatron'u temel alıp DeepSpeed teknikleriyle genişletilmiş. ZeRO ve 3D paralellik, rotary ve alibi pozisyon gömmeleri, paralel feedforward attention katmanları ve flash attention gibi özellikler içeriyor. Slurm, MPI ve IBM Job Step Manager ile başlatılabiliyor; AWS, CoreWeave, Summit, Frontier ve LUMI gibi sistemlerde ölçekte çalıştırılmış. Pythia, PaLM, Falcon ve LLaMA gibi mimariler için hazır konfigürasyonları var; README açıkça “milyarlarca parametreli model sıfırdan eğitmiyorsanız yanlış kütüphane” uyarısı taşıyor. Apache-2.0, 7,5K yıldız; akademi, sanayi ve devlet laboratuvarlarında yaygın kullanılıyor.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; deponun kendi README'si de bunu “sıfırdan büyük model eğitmiyorsanız yanlış yerdesiniz” diyerek açıkça söylüyor. Senin tarafında sıfırdan model eğitimi hiçbir projede yok; Lyricdrop ve Folio hazır modelleri çağırıyor, Kanarya klasik analiz yapıyor. Araç Slurm kuyrukları ve süperbilgisayar ortamları etrafında kurulmuş, tek bir Mac ile ilişkisi yok. En yakın olası bağlam yatırımcı merceği: büyük ölçekli eğitimin gerçekte hangi altyapıyı gerektirdiğini somut görmek istersen konfigürasyon dosyaları ve donanım notları iyi bir okuma.",
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "lingfengQAQ/webnovel-writer",
+   "inputs_hash": "8bf5803dfa0cc4ce99cd9a80f05591db",
+   "description_tr": "Claude Code üzerinde çalışan, uzun soluklu Çince web romanı yazımı için geliştirilmiş bir eklenti. Çözmeye çalıştığı problem tek bir bölümü yazmak değil, yüzlerce bölüm sonrasında modelin kurguyu unutması ve kendi kendisiyle çelişmesi. Kurulum, cilt planı, bölüm yazma, tutarlılık denetimi, “hafıza çökeltme” ve salt okunur bir durum paneli tek bir akışa bağlanmış; yazmadan önce bilgi tabanını sorgulama ve yazdıktan sonra yeni olguları kaydetme adımları Claude Code'un otomatik olarak koştuğu adımlar olarak tanımlanmış. İki milyon karakter ölçeğinde seri üretim hedefleniyor. GPL-3.0, 7,2K yıldız; 2026 Ocak'ında açılmış, bu dal (v6) artık yalnızca kritik hata düzeltmeleri alıyor ve geliştirme DeepSeek Harness tabanlı v8 üzerinde sürüyor.",
+   "usage_tr": "İlgi çekici kısmı içeriği değil mimarisi: bir Claude Code eklentisinin uzun süreli üretimde tutarlılığı nasıl koruyacağını adım adım göstermesi. Folio'nun her gün yeni post ve story üreten pipeline'ında birebir aynı problem var — yazar personasının kaymaması, aynı kitabın iki kez aynı şekilde anlatılmaması, beğen/beğenme tepkilerinin kalıcı bir duruma dönüşmesi. “Yazmadan önce durumu sorgula, yazdıktan sonra olguyu kaydet, sonra tutarlılık denetimi koş” döngüsünü Supabase üzerinde kendi şemanla kurup denetim adımını Claude Code tarafında bir skill olarak tanımlayabilirsin. Superpowers ile zaten eklenti tarafındasın, yani okuma maliyeti düşük ve kazanç doğrudan: her gün elle içerik onaylamak zorunda kalmadan üretimi devretmiş olursun. Uyarı: depo Çince web romanı alanına özel ve GPL-3.0 lisanslı; kodu kendi uygulamana gömmek yerine yaklaşımı okuyup kendi sürümünü yazmak hem lisans hem bakım açısından doğru olur.",
+   "matched_project": "Folio",
+   "relevance": 4,
+   "investment_note": null
+  },
+  {
+   "full_name": "ymcui/Chinese-LLaMA-Alpaca-2",
+   "inputs_hash": "cc339bd0fc7d4c822bf1c6cfa772edca",
+   "description_tr": "Llama-2 tabanında geliştirilmiş bir Çince model ailesi ve eğitim betikleri koleksiyonu. Orijinal Llama-2'nin sözlüğü Çince için genişletilmiş, büyük ölçekli Çince veriyle artımlı ön eğitim yapılmış, ardından talimat ince ayarıyla Alpaca-2 sohbet modelleri üretilmiş. 1,3B / 7B / 13B boyutlarının yanı sıra 16K ve 64K uzun bağlam sürümleri ve insan tercihiyle hizalanmış RLHF varyantları var; eğitim FlashAttention-2 destekliyor. Yerel dağıtım için transformers, llama.cpp, text-generation-webui, LangChain ve vLLM ile kullanım belgelenmiş. Apache-2.0, 7,1K yıldız; proje 2024'te Chinese-LLaMA-Alpaca-3 ile devam ettiği için bu depo bugün arşiv değerinde.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; Çince bir model ailesinin ağırlıkları senin akışlarının hiçbirine girmiyor. En yakın olası bağlam yöntemin kendisi: bir gün Türkçe için yerel bir modelin sözlüğünü genişletip artımlı ön eğitim ve talimat ince ayarı yapmak istersen, bu depo o sürecin uçtan uca belgelenmiş nadir örneklerinden biri. Uzun bağlam sürümlerinin nasıl üretildiği de aynı şekilde okunabilir bir kayıt. Ancak bu bugün yol haritanda olan bir iş değil ve depo üçüncü sürümle devam ettiği için pratik değerinin çoğu taşınmış durumda.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "makepad/makepad",
+   "inputs_hash": "55faf1d2fbd008b2aa0ce883fd9a6ef8",
+   "description_tr": "Makepad, Rust için bir UI runtime ve uygulama geliştirme ortamı; wasm/WebGL, macOS/Metal, Windows/DX11 ve Linux/OpenGL hedeflerine derleniyor. Canlı düzenlenebilir bir UI DSL'i, hızlı geri besleme döngüsü, GPU hızlandırmalı 2D/3D render ve harita, glTF gibi hazır örnekler sunuyor; ayrıca uygulama içine LLM ve generatif modelleri gömmek için çeşitli AI arka uçları entegre edilmiş. Örneklerden biri bir VJ uygulaması: BS-RoFormer ile parçayı vokal, davul, bas ve diğer olarak ayırıyor ve Whisper large-v3-turbo ile karaoke kelime zamanlaması üretiyor. Bu iki MIT lisanslı model uygulama içinden indiriliyor; VJ'in GPU-AI hattı CUDA'ya bağlı olduğu için macOS'ta bu özellikler kapalı kalıyor, uygulamanın geri kalanı çalışıyor. MIT lisanslı, 7K yıldız, 2019'dan beri geliştirilen olgun bir kod tabanı.",
+   "usage_tr": "VJ örneğindeki zincir doğrudan Lyricdrop v2'nin kelime zamanlama problemiyle aynı: önce stem ayrımıyla vokali izole et, sonra transkripsiyonu yalnızca vokal kanalı üzerinde çalıştır — söz-ses hizalamasında en çok hata veren yer zaten enstrümanın üstüne binen vokal. Bu sırayı kendi Python hattına taşıyıp karşılaştırdığın STT sistemlerinin yanına üçüncü bir aday olarak koyabilirsin; BS-RoFormer ve Whisper ayrı ayrı MIT lisanslı ve Mac'te yerel çalışıyor, yani API maliyeti getirmez. Hobi tarafında aynı stem ayrımı afro house kütüphaneni hazırlarken set çalışması için de işine yarar. Uyarı: deponun VJ uygulamasını M4 Pro'da çalıştırıp bu özellikleri kullanamazsın, çünkü GPU-AI hattı CUDA'ya bağlı ve macOS'ta devre dışı kalıyor. Değerli olan çalışan uygulama değil, iki modelin nasıl birbirine bağlandığını gösteren kod; onu okuyup kendi hattını kur. Ölçüyü de unutma: stem ayrımının hizalama hata oranını mevcut 20-30 şarkılık test setinde gerçekten düşürüp düşürmediğini yan yana koyarak doğrula.",
+   "matched_project": "Lyricdrop",
+   "relevance": 6,
+   "investment_note": null
+  },
+  {
+   "full_name": "MakazhanAlpamys/Soup",
+   "inputs_hash": "907a85e5f8b682e296c8e7c2ce60c95e",
+   "description_tr": "Soup, LLM ince ayarı ve post-training'i tek bir YAML dosyasından çalıştıran bir CLI aracı. SFT, LoRA, QLoRA ve DPO destekliyor; “layer streaming” adını verdiği yöntemle 8B'lik bir modeli 4 GB VRAM'li bir dizüstü GPU'sunda eğitebildiğini söylüyor. Hugging Face modelleriyle çalışıyor, GGUF çıktısı üretip Ollama'ya aktarabiliyor ve CLI'nın yanında bir web arayüzü sunuyor. Apache-2.0 lisanslı, Python 3.10-3.12, CI ve test rozetleri aktif; README Türkçe dahil dört dilde. 7K yıldız; 2026 Şubat'ında açılmış, yani yıldızlarını yaklaşık yedi ayda toplamış ve bir ürün sitesi ile topluluğu var.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; profilde bir modeli kendi verinle eğitmen gereken tanımlı bir adım yok. Yerel model kullanımın STT ve çıkarım tarafında; üretimdeki zeka Claude Code ve hazır API'lardan geliyor. En yakın olası bağlam Lyricdrop'un şarkı başına içerik üretimini ucuzlatmak için küçük bir modeli kendi çıktı formatına göre ince ayar etme fikri olurdu, ama bu ancak prompt ile istediğin kaliteyi alamadığında gündeme gelir ve önce o ölçümü yapman gerekir. Araç tüketici NVIDIA GPU'ları etrafında konumlanmış; ofisteki M4 Pro bu akışın hedef donanımı değil. Şimdilik izleme listesinde tutmak yeterli.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": "Yerel ince ayarı tek komuta indiren geliştirici araçları kategorisinde yaklaşık yedi ayda 7K yıldıza ulaşmış, ürün sitesi ve web arayüzü olan küçük bir ekip çıkışı; erken aşama AI aracı merceğinden ekibiyle tanışılmaya değer olabilir."
+  },
+  {
+   "full_name": "dataease/SQLBot",
+   "inputs_hash": "fe7bc39866acbc6a99712d4fe866f08a",
+   "description_tr": "SQLBot, büyük dil modeli ve RAG kullanarak doğal dildeki soruyu SQL'e çeviren ve sonucu tablo ile grafik olarak döndüren bir “veriye soru sorma” sistemi. Çalışma alanı düzeyinde kaynak izolasyonu ve ince taneli veri yetkilendirmesi sunuyor; doğruluk özel prompt, terim sözlüğü ve örnek SQL'lerle kalibre ediliyor. Web gömme, popup gömme ve MCP çağrısı gibi entegrasyon yolları var; n8n, Dify ve DataEase gibi araçlara bağlanabiliyor. Kurulum tek bir Docker komutuyla yapılıyor ve OpenAI uyumlu birçok model sağlayıcısı destekleniyor. DataEase ekibinin ürünü, 6,8K yıldız, 2025'te açılmış ve aktif; lisansı standart bir açık kaynak lisansı olarak işaretlenmemiş.",
+   "usage_tr": "Arslan Holding tarafında asistanının SQL yazmadan veriye soru sorabilmesi gereken yerde işe yarar: portföy ve deal takibi tablolarının üstüne oturtup “bu çeyrek hangi şirketlerle görüşüldü” tipi soruları doğrudan yanıtlatabilirsin. DigitalOcean'da Docker ile kurup mevcut n8n akışlarına MCP üzerinden bağlayabilir, çalışma alanı izolasyonuyla asistanına yalnızca görmesi gereken şemayı açabilirsin — erişim kapsamlarını ayrı tutma ilkene bu kısmı uyuyor. Aynı kurulum Lyricdrop'un Supabase'indeki katalog ve onay durumu raporları için de kullanılabilir. Uyarılar net: Mac'te yerel çalışmıyor, bir sunucu ve bir model sağlayıcısı anahtarı istiyor, yani Max aboneliğinin dışında sorgu başına API maliyeti doğuyor. Lisansı standart dışı işaretlenmiş, ticari kullanımda şartları okumak gerekir. Bir de text-to-SQL'in yanlış ama makul görünen sayılar üretebildiğini unutma; rapor kapısına üretilen SQL'i gösteren bir doğrulama adımı koy.",
+   "matched_project": "Arslan Holding",
+   "relevance": 5,
+   "investment_note": null
+  },
+  {
+   "full_name": "drumih/turbo-fieldfare",
+   "inputs_hash": "e775b52efdb82327afffe9c8a741e061",
+   "description_tr": "TurboFieldfare, Gemma 4 26B-A4B modelini Apple Silicon Mac'lerde yaklaşık 2 GB bellekle çalıştıran, Swift ve Metal ile yazılmış bir runtime. Modelin 14,3 GB'lık tamamını belleğe almak yerine 1,35 GB'lık paylaşılan çekirdeği ve FP16 KV cache'i bellekte tutuyor, her token için gereken MoE uzmanlarını SSD'den akıtıyor; ağırlıklar 4-bit MLX affine quantization ile saklanıyor. MLX veya llama.cpp üzerine bir sarmalayıcı değil, bu modele özel yazılmış bağımsız bir motor. Paket olarak bir CLI, yerli bir Mac uygulaması ve OpenAI uyumlu yerel bir sunucu içeriyor; diskte yaklaşık 14,3 GB yer ve macOS 26 veya üstü gerekiyor. Apache-2.0, 6,8K yıldız; 2026 Temmuz'unda açılmış ve 103 ölçümlük bir deney kaydıyla birlikte yayınlanmış.",
+   "usage_tr": "OpenAI uyumlu yerel sunucu kısmı Lyricdrop'un şarkı başına içerik üretiminde denemeye değer: boşluk seçimi ve dört şıklık çeldiricilerin üretimi gibi hacimli ama kalıbı belli işleri ofisteki M4 Pro'da API maliyeti olmadan çalıştırabilirsin, üstelik hattında base_url dışında bir şey değişmez. Evdeki 7/24 açık Mac mini'yi Tailscale üzerinden bu sunucuyu barındıran makineye çevirmek de doğal bir adım; böylece üretim işi geliştirme makineni meşgul etmez. Yerel model tercihin açısından dağıtımın tek bir Swift paketine indirgenmiş olması ayrı bir avantaj. Uyarı: tek bir modele özel yazılmış bir runtime, model değiştirme esnekliği yok; ağırlıklar SSD'den aktığı için token hızı MLX ya da llama.cpp'den beklediğinin altında kalabilir ve macOS 26 şartı var. Asıl ölçmen gereken şey maliyet değil kalite: Gemma 4'ün ürettiği çeldiriciler şu an kullandığın modelin çıktısının yerini tutuyor mu? Tutmuyorsa şarkı başına kazanılan birkaç sentin anlamı kalmaz.",
+   "matched_project": "Lyricdrop",
+   "relevance": 7,
+   "investment_note": null
+  },
+  {
+   "full_name": "zai-org/CogVLM",
+   "inputs_hash": "815a5084df6ea0ecba6d54a1b521c28f",
+   "description_tr": "CogVLM ve CogAgent, aynı depoda yayınlanan iki açık görsel-dil modeli. CogVLM-17B, 10 milyar görsel ve 7 milyar dil parametresiyle 490x490 çözünürlükte görüntü anlama ve çok turlu diyalog yapıyor; NoCaps, RefCOCO ve ScienceQA gibi on klasik çok kipli ölçütte dönemin en iyi sonuçları raporlanmış. CogAgent-18B ise 1120x1120 çözünürlüğe çıkıp ekran görüntülerini anlayan ve grafik arayüzlerde ajan olarak çalışabilen bir varyant; AITW ve Mind2Web gibi GUI veri setlerinde ölçülmüş. Web demo, CLI, kendi sunucunda dağıtım ve fine-tuning yolları belgelenmiş, ancak çıkarım yüksek VRAM gerektiriyor. Kod Apache-2.0, 6,7K yıldız; proje 2024 Mayıs'ında CogVLM2 ile devam ettiği için bu depo bakım modunda.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın olası bağlam görüntü skorlama fikirlerin, yani scouting tarafındaki portföy değerlendirmesi ya da vision skorlamalı uygulama konseptin. Ancak bu 2023 tarihli 17-18 milyar parametreli bir model; çıkarımı yüksek VRAM istiyor, Mac'te yerel çalıştırma yolu pratik değil ve geliştirme CogVLM2'ye taşınmış durumda. Aynı işi bugün Apple Silicon'da rahatça çalışan çok daha küçük görsel-dil modelleriyle yapabilirsin. CogAgent tarafı ayrı bir not olarak ilginç: ekran görüntüsünü anlayıp arayüzde iş yapan modellerin erken bir örneği ve manuel testi devretme fikrinle kavramsal olarak aynı yöne bakıyor — ama bu haliyle kullanılabilir bir araç değil, bir araştırma kaydı.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "yangjianxin1/Firefly",
+   "inputs_hash": "cefcb4aeb45a3c9e76935daaaa8d5148",
+   "description_tr": "Firefly, Çince topluluğtan çıkmış kapsamlı bir LLM eğitim aracı. Ön eğitim, talimat ince ayarı ve DPO'yu tam parametre, LoRA ve QLoRA modlarında tek bir konfigürasyon dosyasıyla çalıştırıyor; Unsloth entegrasyonuyla bellek ve süre kazancı raporlanıyor. Qwen2.5, Llama3, Gemma, Yi, Mistral, Mixtral-8x7B, ChatGLM, Baichuan ve MiniCPM dahil geniş bir model listesini destekliyor ve her modelin kendi chat template'ine hizalanıyor. Proje ayrıca firefly-train-1.1M gibi talimat veri setlerini ve eğitilmiş model ağırlıklarını yayınlamış durumda. 6,7K yıldız; bir lisans dosyası belirtilmemiş ve son büyük güncellemeler 2024 dönemine ait.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; model eğitimi senin akışlarının hiçbirinde bir adım değil. En yakın olası bağlam, bir gün küçük bir modeli kendi verinle ince ayar etmek istersen bu tarz konfigürasyonla çalışan bir sarmalayıcının işi kolaylaştırması olurdu. Araç NVIDIA GPU'lar ve ağırlıklı olarak Çince ekosistem etrafında kurulmuş; Mac'te yerel bir karşılığı yok. Ayrıca lisans dosyası belirtilmemiş, bu da ticari bir üründe kullanmayı düşünürsen başlı başına bir belirsizlik.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  }
+ ]
+}

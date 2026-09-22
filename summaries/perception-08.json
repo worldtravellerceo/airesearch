@@ -1,0 +1,175 @@
+{
+ "repos": [
+  {
+   "full_name": "ArcReel/ArcReel",
+   "inputs_hash": "ff05b65fe892acbc2a34ed870ea303ef",
+   "description_tr": "ArcReel, roman, hazır senaryo veya ürün materyalini önce karakter, sahne ve aksesuar varlıklarına, sonra storyboard ve kısa video kliplerine dönüştüren, kendi sunucunda çalışan açık kaynak bir video üretim tezgâhı. Üretim hattı içerik analizi, varlık üretimi, bölümleme, storyboard, klip ve seslendirme, birleştirme adımlarına ayrılmış; her aşama onaylanabiliyor, tek bir parça yeniden üretilebiliyor ve eski sürüme dönülebiliyor. Metin, görüntü, video ve TTS için sağlayıcılar ayrı ayrı yapılandırılıyor, üretim öncesi ve sonrası maliyet arayüzde takip ediliyor. Docker Compose ile kuruluyor; çıktı doğrudan birleştirilmiş video olarak ya da JianYing taslağı olarak dışa aktarılıyor, CapCut uyumu README'de doğrulanmamış olarak işaretlenmiş. Python tabanlı, AGPL-3.0 lisanslı, yaklaşık 5.100 star; depo Şubat 2026'da açılmış.",
+   "usage_tr": "Folio'nun günlük içerik pipeline'ı için elindeki en yakın hazır iskelet bu: bir yazarın kitabından çıkarılan metni senaryoya, oradan story ve post videolarına çeviren adımlar kurulu geliyor ve her adımda bir onay noktası var. Evdeki Mac mini'de ya da DigitalOcean'da Docker ile çalıştırıp Supabase'e yalnızca bitmiş medyayı yazabilirsin; üretim hattı Expo uygulamasının tamamen dışında kalır. Kendi sunucunda çalışması modellerin de yerel olduğu anlamına gelmiyor: görüntü ve video üretimi dış sağlayıcılara gidiyor, yani klip başına ücret doğuyor — içindeki maliyet takibi de tam bu yüzden Folio'nun günlük içerik bütçesini ölçmek için işine yarar. Lyricdrop lansmanında ihtiyacın olacak kısa tanıtım videolarını aynı kurulumda ikinci bir proje olarak üretebilirsin. Onay ve yeniden üretme adımları panel üzerinden yürüdüğü için içerik eleme işini asistanına devredebilirsin. Uyarı: AGPL-3.0 olduğu için kodu fork'layıp yayınlanan bir ürüne gömersen lisans yükümlülüğü doğar; Folio yayınlanmayacağı için orada sorun değil, Lyricdrop tarafında dikkat et.",
+   "matched_project": "Folio",
+   "relevance": 6,
+   "investment_note": null
+  },
+  {
+   "full_name": "ros-navigation/navigation2",
+   "inputs_hash": "86e27b19b1cb8f1baf3648ddbeb2765e",
+   "description_tr": "Nav2, ROS 2 üzerinde çalışan mobil robotlar için navigasyon çerçevesi ve çalışma zamanı sistemi. Lokalizasyon, global ve yerel planlama, rota takibi ve kurtarma davranışlarını eklenti mimarisiyle bir araya getiriyor; algoritmaların her biri kendi eklentinle değiştirilebiliyor. Depo daha çok dokümantasyon sitesine yönlendiriyor; kavramlar, kurulum rehberleri, yapılandırma, eklenti geliştirme eğitimleri ve ROS dağıtımlarının destek durumu orada tutuluyor. Hazır Docker imajları, sürekli entegrasyon, sürümler arası migrasyon rehberleri ve ROSCon konuşmalarıyla ROS 2 tarafında yerleşik navigasyon yığını sayılıyor. C++ ile yazılmış, 2018'den beri geliştiriliyor, yaklaşık 4.700 star.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, Arslan Holding'in frontier tech merceğiyle robotik yazılım yığınının nerede standartlaştığını izlemek olabilir. Lyricdrop, Folio ve Kanarya'nın hiçbirinde fiziksel bir robot ya da harita yok, dolayısıyla kod tarafında temas noktası çıkmıyor. Eklenti mimarisi ajan orkestrasyonuna kavramsal olarak benziyor ama C++ ve ROS 2 çalışma zamanına bağlı olduğu için Expo/Supabase yığınına taşınacak bir parçası yok. Bu satırı bir araç olarak değil, alanın olgunluk göstergesi olarak okumak daha doğru.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "real-stanford/diffusion_policy",
+   "inputs_hash": "0f2dd965959620bf972e0ecee63beec5",
+   "description_tr": "Diffusion Policy, robot hareket politikalarını difüzyon modelleriyle öğrenen ve RSS 2023'te sunulan yöntemin resmî uygulaması. Politika tek bir eylem yerine bir eylem dizisini gürültüden adım adım çözerek üretiyor; aynı görevin birden çok geçerli çözümü olduğu çok modlu durumlarda kararlı kalması hedefleniyor. Depoda durum tabanlı ve görüntü tabanlı iki Colab defteri, makaledeki tabloları yeniden üretmeye yeten yapılandırma dosyaları, ayrıntılı eğitim logları ve kontrol noktaları bulunuyor. Columbia, Toyota Research Institute ve MIT'den araştırmacıların çalışması; Python, MIT lisansı, yaklaşık 4.600 star. Bir ürün değil, üzerine yeni çalışmalar kurulan bir referans uygulama.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, Arslan Holding'in erken aşama frontier tech tezinde embodied AI'ın hangi yöntemler etrafında toplandığını takip etmek. Kod tarafı robot kolları ve simülasyon ortamlarına bağlı; mobil uygulama ya da içerik pipeline'ı tarafında kullanacağın bir bileşen çıkmıyor. Difüzyonun burada görüntü değil eylem dizisi üretmek için kullanılması kavram olarak ilginç ama Folio'nun görsel üretim ihtiyacıyla ilgisi yok. Yatırım görüşmelerinde karşına çıkacak robotik ekiplerin dayandığı temel çalışmalardan biri olarak adını bilmen yeterli.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "MarkFzp/mobile-aloha",
+   "inputs_hash": "be8a6b03b1872c966aa23d90bf6bea7a",
+   "description_tr": "Mobile ALOHA, düşük maliyetli iki kollu ve hareketli bir robot platformunda tüm vücutla teleoperasyon ve veri toplama için yazılmış kod tabanı. ALOHA deposundan fork'lanmış; donanımın nasıl kurulacağı ayrı bir montaj dokümanında, öğrenme algoritmaları ise act-plus-plus deposunda duruyor. Depo dört kamera ve dört robot için ROS launch dosyaları, her robot için port yapılandırmaları ve teleoperasyon ile veri toplama Python betiklerinden oluşuyor. Test edilmiş kurulum Ubuntu 18.04/20.04 ve ROS 1 noetic; ROS 2 ve daha yeni Ubuntu sürümleri için uyumluluk çalışması sürüyor olarak işaretlenmiş. MIT lisanslı, yaklaşık 4.500 star; ağırlıklı olarak Jupyter Notebook ve Python.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, robotik donanım maliyetinin nereye indiğini Arslan Holding'in frontier tech tezi açısından izlemek. Çalıştırmak için belirli bir robot donanımı, Ubuntu ve ROS 1 kurulumu gerekiyor; Mac üzerinde denenebilecek bir şey değil. Yazılım tarafında Expo, Supabase veya n8n yığınına bağlanacak bir parça yok. Bu satırı ürün değil, alan takibi olarak değerlendir.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "MichaelGrupp/evo",
+   "inputs_hash": "9872fd4866bd92d3828c6b7fa238ebf0",
+   "description_tr": "evo, odometri ve SLAM algoritmalarının ürettiği yörüngeleri değerlendirmek ve karşılaştırmak için yazılmış bir Python paketi. Komut satırı araçları ve küçük bir kütüphane sunuyor; TUM, KITTI ve EuRoC MAV formatlarıyla ROS ve ROS 2 bag dosyalarındaki poz ve odometri mesajlarını okuyabiliyor. Mutlak ve göreli hata metrikleri hesaplayıp sonuçları grafik, tablo ve harita üstü çizimler olarak veriyor. Linux, macOS ve Windows'ta çalışıyor; sürekli entegrasyonu aktif, dokümantasyonun büyük kısmı depo wiki'sinde. GPL-3.0 lisanslı, 2017'den beri sürdürülüyor, yaklaşık 4.300 star.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, farklı algoritmaların çıktısını ortak bir metrikle karşılaştırma alışkanlığı — Lyricdrop'ta üç STT sistemini yan yana koyarken yaptığın şeyin robotik karşılığı. Ancak evo yalnızca yörünge formatlarını okuyor, ses veya kelime zamanlaması tarafında kullanılabilecek bir yanı yok. Kanarya'nın topladığı fizyolojik zaman serileri de bu formatların hiçbirine oturmuyor. Karşılaştırma panelini kendin yazmaya devam etmen daha kısa yol.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "BehaviorTree/BehaviorTree.CPP",
+   "inputs_hash": "c28c81c9b01d8acdda113489f4bc9a38",
+   "description_tr": "BehaviorTree.CPP, davranış ağaçları kurmak için yazılmış bir C++17 kütüphanesi. Asenkron, yani bloklamayan eylemleri birinci sınıf vatandaş yapıyor; birden fazla eylemin eşzamanlı yürüdüğü tepkisel davranışlar kurulabiliyor. Ağaçlar XML tabanlı bir alan diliyle tanımlanıyor ve çalışma zamanında yüklenebiliyor, yani davranış değişikliği için yeniden derleme gerekmiyor. Asıl hedefi robotik olsa da oyun yapay zekâsı yazmak veya sonlu durum makinelerinin yerini almak için de kullanılıyor; ROS 2, Ubuntu, Windows ve conda üzerinde derleniyor. MIT lisanslı, 2018'den beri geliştiriliyor, 4.x serisinde, yaklaşık 4.200 star.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, uzun süredir istediğin orkestratör ajan fikri — davranış ağaçları da tam olarak paralel yürüyen, iptal edilebilen ve tepkisel görevleri düzenleme problemini çözüyor. Ama kütüphane C++ ve robot çalışma zamanına bağlı; Claude Code, n8n ve Supabase ile kurduğun yığına gömülecek bir parçası yok. Çalışma zamanında XML'den ağaç yükleme fikrini kendi ajan tasarımında ödünç alabilirsin, kodu değil. Bu haliyle okunacak bir tasarım örneği, kurulacak bir bağımlılık değil.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "RobotLocomotion/drake",
+   "inputs_hash": "093e97ef4f953640476b1386c79eea0e",
+   "description_tr": "Drake, robotik için model tabanlı tasarım ve doğrulama araç takımı olarak tanımlanıyor; MIT kökenli, C++ ağırlıklı bir proje. Depodaki README yalnızca birkaç satır ve okuyucuyu drake.mit.edu adresindeki dokümantasyona yönlendiriyor. Bu pakette projenin hangi bileşenleri içerdiği, hangi platformlarda çalıştığı ve bakım durumu hakkında karar verecek kadar metin yok; ayrıntı için dış dokümantasyona bakmak gerekiyor. Lisans alanı standart bir SPDX kimliğine oturmuyor, yani kullanım koşullarının depo içinden ayrıca okunması gerekir. 2014'ten beri açık, yaklaşık 4.200 star.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, robotik ve kontrol tarafında akademik kökenli araçların nerede toplandığını görmek. Elinde yalnızca birkaç satır tanıtım olduğu için ürün tarafında bir değerlendirme yapmak da mümkün değil. Mobil uygulama, içerik pipeline'ı veya yatırım akışı süreçlerinin hiçbirinde temas noktası yok. Bu satırı geçmen makul.",
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "google-deepmind/mujoco_menagerie",
+   "inputs_hash": "17d14c0e96ae573be89339639c81b006",
+   "description_tr": "MuJoCo Menagerie, MuJoCo fizik motoru için Google DeepMind tarafından derlenmiş, elden geçirilmiş model koleksiyonu. Çıkış noktası şu: güçlü bir simülatörde çok sayıda modelleme seçeneği olduğu için beklendiği gibi davranmayan kötü modeller üretmek kolay; koleksiyon kutudan çıktığı gibi düzgün çalışan modeller sunmayı hedefliyor. Robot kolları, eller, dört ayaklılar ve insansı modeller gibi hazır varlıkları kalite notlarıyla birlikte veriyor ve katkı süreci için ayrı bir kalite ölçütü tanımlıyor. PyPI üzerinden bir Python paketi olarak da kurulabiliyor. Yaklaşık 4.100 star; lisans alanı tek bir standart kimliğe oturmuyor, modellerin kendi lisansları ayrıca okunmalı.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, simülasyon ve robotik varlık kalitesinin nasıl standartlaştırıldığını görmek. Koleksiyonun içeriği fizik motoru modelleri, yani Folio'nun görsel üretim tarafında ya da Lyricdrop'un video oynatma tarafında kullanılacak bir varlık değil. Mac'te MuJoCo çalıştırmak mümkün olsa da elde edeceğin çıktının senin iş akışlarında karşılığı yok. Alan takibi dışında bir değer taşımıyor.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "introlab/rtabmap",
+   "inputs_hash": "bf66e97228e17b1ea23a32c22362fb41",
+   "description_tr": "RTAB-Map, gerçek zamanlı görüntü tabanlı eşzamanlı konumlandırma ve haritalama (SLAM) yapan bir kütüphane ve yanında gelen masaüstü uygulaması. Bellek yönetimli döngü kapama yaklaşımıyla büyük ortamlarda gerçek zamanlı çalışmayı hedefliyor; ROS ve ROS 2 entegrasyonu ayrı paketlerde sürdürülüyor. Depo etiketlerine göre Android ve iOS tarafında tarama uygulamaları da bulunuyor. Kurulum, örnekler ve parametre listesi wiki ile API dokümantasyonunda tutuluyor; sürüm numaralandırması düzenli ilerliyor ve hazır kurulum paketleri yayımlanıyor. C++ ile yazılmış, 2014'ten beri geliştiriliyor, yaklaşık 4.000 star; README'deki rozet BSD lisansını gösteriyor.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, holding tarafındaki gayrimenkul ve holiday home işinde mekân taraması gibi bir ihtiyaç doğarsa telefonla 3B tarama yapan araçların nerede olduğunu bilmek. Bugün böyle bir iş akışın yok ve tarama çıktısını kullanacağın bir uygulama da yok. Lyricdrop, Folio ve Kanarya tarafında hiçbir temas noktası bulunmuyor. Gerçek bir ihtiyaç doğana kadar bu satırı bekletmen doğru olur.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "dora-rs/dora",
+   "inputs_hash": "24625050544b7cce013bd52dcd1506af",
+   "description_tr": "Dora, gerçek zamanlı robotik ve yapay zekâ uygulamaları kurmak için yazılmış, tamamen Rust tabanlı bir dataflow middleware. Uygulamalar yönlü graf biçiminde modelleniyor; düğümler arasında düşük gecikmeli mesajlaşma ve dağıtık çalışma hedefleniyor. Python ve Rust için ayrı düğüm API'leri, bir komut satırı aracı ve crates.io ile PyPI üzerinden dağıtım sunuyor. Eylül 2026'da 1.0 sürümü yayımlanmış ve depo bunu ayrı bir sürüm yazısıyla duyuruyor. Apache-2.0 lisanslı, 2022'de açılmış, yaklaşık 4.000 star.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, pipeline'larını graf olarak kurma fikri — ama o ihtiyacı bugün n8n ve kendi Python servislerinle zaten karşılıyorsun. Dora'nın kazandırdığı şey milisaniyelik gecikme ve sensör akışları; Lyricdrop'un şarkı işleme hattı toplu ve zaman kritik olmayan bir iş, oraya böyle bir katman getirmek sadece karmaşıklık ekler. Rust bağımlılığı ve robotik odaklı düğüm ekosistemi de mevcut yığınına uzak. Alan takibi dışında bir karşılığı yok.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "facebookresearch/map-anything",
+   "inputs_hash": "e04d9c32c34d8d9185cda78e944b0490",
+   "description_tr": "MapAnything, görüntülerden ileri beslemeli biçimde metrik ölçekli 3B yeniden yapılandırma üreten bir model ve kod tabanı. Tek görüntüden çok görüntüye kadar farklı girdileri, kalibrasyon ve derinlik bilgisini isteğe bağlı olarak kullanabiliyor; çıktısı ölçek bilgisi taşıyan geometri. Meta ve Carnegie Mellon kökenli araştırmacıların çalışması; teknik rapor arXiv'de, deneme için Hugging Face üzerinde bir demo alanı var. Python ile yazılmış, Apache-2.0 lisanslı. Eylül 2025'te açılmış ve yaklaşık 3.800 star toplamış.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, Folio'nun görsel üretim tarafı gibi görünse de orada üretim değil yeniden yapılandırma söz konusu — yani elindeki fotoğraflardan geometri çıkarıyor, yeni içerik üretmiyor. Lyricdrop tarafında video yalnızca oynatılıyor, sahne geometrisine ihtiyaç yok. Model ağırlıkları Mac'te çalıştırılabilir olsa bile üretilen çıktıyı tüketecek bir ürünün yok. Somut bir 3B ihtiyacın doğduğunda geri dönmek üzere not etmek yeterli.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "stack-of-tasks/pinocchio",
+   "inputs_hash": "1e20b7ab4f01780b5e1214ccfd7db40a",
+   "description_tr": "Pinocchio, katı cisim dinamiği algoritmalarını ve bu algoritmaların analitik türevlerini hızlı biçimde hesaplayan bir C++ kütüphanesi. İleri ve ters dinamik, kinematik ve Jacobian hesapları için hem klasik hem de otomatik türev alma yolları sunuyor; CasADi ve CppAD ile kod üretimi destekleniyor. URDF model dosyalarını okuyup hareket planlama ve optimizasyon tabanlı kontrol çalışmalarında temel katman olarak kullanılıyor. Python bağlayıcıları var, conda-forge ve PyPI üzerinden kuruluyor; dokümantasyon, test kapsamı ve pre-commit süreçleri düzenli işletiliyor. BSD-2-Clause lisanslı, 2014'ten beri sürdürülüyor, yaklaşık 3.800 star.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, robotik yatırım dosyalarında adı geçen temel kütüphanelerden birini tanımak. Hesapladığı şey eklemli cisimlerin dinamiği; ne Lyricdrop'un ses hizalaması ne de Kanarya'nın fizyolojik zaman serileriyle ortak bir yanı var. Kurulumu ve kullanımı C++/Python bilgisi gerektiren, araştırma ve kontrol mühendisliğine dönük bir katman. Geçmen uygun olur.",
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "starVLA/starVLA",
+   "inputs_hash": "495b129db09aab1dae6c5e96a16178c9",
+   "description_tr": "StarVLA, görü-dil-eylem (VLA) modelleri geliştirmek için parçalı, 'lego benzeri' bir kod tabanı olarak tanımlanıyor. Amacı genel amaçlı robotlar için farklı görü kodlayıcı, dil modeli ve eylem başlığı bileşenlerinin aynı iskelet içinde değiştirilebilmesi; bir ürün değil, açık bir araştırma platformu. Model ağırlıkları ve veri kümeleri Hugging Face üzerinde yayımlanıyor, teknik rapor arXiv'de duruyor. Python ile yazılmış; lisans alanı standart bir kimliğe oturmuyor, kullanım koşullarının depodan okunması gerekiyor. Ekim 2025'te açılmış ve yaklaşık 3.700 star toplamış, yani birikimi kısa sürede yapmış.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, Arslan Holding'in frontier tech tarafında embodied AI dosyalarını okurken kullanılan ortak kelime dağarcığına aşina olmak. Eğitim ve değerlendirme için robot verisi ve GPU gerekiyor; ofisteki Mac'te çalıştırılacak bir iş değil ve mevcut ürünlerine gömülecek bir bileşeni yok. Ajan mimarisi olarak yazılım ajanlarınla isim benzerliği taşısa da problem alanı tamamen farklı, oradan analoji kurmaya değmez. Bu satırı araç listesine değil, izleme listesine koy.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": "Görü-dil-eylem modelleri Arslan Holding'in frontier tech ilgi alanına giriyor; bir yıldan kısa sürede bu büyüklüğe ulaşan açık bir araştırma tabanı, alanda hangi ekiplerin aktif olduğunu ve deal flow'un nereye kaydığını görmek için izlenmeye değer."
+  },
+  {
+   "full_name": "borglab/gtsam",
+   "inputs_hash": "87a8935e7c206b7f0218e4cc3c2bb583",
+   "description_tr": "GTSAM, robotik ve bilgisayarlı görüde yumuşatma ve haritalama (SAM) problemlerini çözen bir C++ kütüphanesi. Hesaplama modeli olarak seyrek matrisler yerine faktör graflarını ve Bayes ağlarını kullanıyor; manifold üzerinde doğrusallaştırma, teğet uzayda çözme ve geri yansıtma döngüsüyle optimizasyon yapıyor. Konum tahmini, sensör füzyonu ve kalibrasyon gibi problemler için yaygın bir temel katman; Python bağlayıcıları ve Jupyter defterleriyle birlikte geliyor. Geliştirme dalı C++17 gerektiriyor, Boost desteği isteğe bağlı hale getirilmiş; üretim için etiketli sürümler öneriliyor. Georgia Tech kökenli, 2017'den beri sürdürülüyor, yaklaşık 3.700 star.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, Kanarya ve giyilebilir cihaz tezindeki çok kaynaklı sensör füzyonu fikri — ama GTSAM'in çözdüğü problem konum ve harita tahmini, fizyolojik sinyal değil. Kütüphaneyi kurup kullanmak C++ ve olasılıksal grafik modeller tarafında ciddi bir öğrenme yükü getirir; karşılığında senin veri tipinde bir kazanç vermez. Fizyolojik zaman serilerini birleştirmek için çok daha basit yöntemlerle başlamak daha doğru. Bu satırı geçebilirsin.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "MarkFzp/act-plus-plus",
+   "inputs_hash": "fc5e7e4aca80cbd67c3e8dd795b173e7",
+   "description_tr": "act-plus-plus, Mobile ALOHA platformu için taklit öğrenme algoritmalarını ve ortak eğitim (co-training) düzeneğini bir araya getiren depo. İçinde ACT, Diffusion Policy ve VINN uygulamaları ile Transfer Cube ve Bimanual Insertion adlı iki simülasyon ortamı bulunuyor; modeller hem simülasyonda hem gerçek donanımda eğitilip değerlendirilebiliyor. ACT deposundan fork'lanmış; gerçek robotla çalışmak için ayrıca Mobile ALOHA deposunun kurulması gerekiyor. Simülasyon ortamları MuJoCo ve dm_control üzerine kurulu, kurulum conda ve PyTorch ile yapılıyor, örnek gösteri verileri harici bir sürücüde paylaşılıyor. MIT lisanslı, 2023'te açılmış, yaklaşık 3.700 star.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, robotik ekiplerin hangi taklit öğrenme yöntemlerini karşılaştırdığını yatırım tarafında takip etmek. Depo belirli bir robot donanımına ve simülasyon ortamına bağlı; Mac'te anlamlı bir çıktı üretmesi mümkün değil. Yazılım ürünlerinin hiçbirinde eylem politikası öğrenme ihtiyacı yok. Bu satırı geçmen makul.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "Open-Less/openless",
+   "inputs_hash": "303916a1087bf6fa06078eaa88229afc",
+   "description_tr": "OpenLess, macOS ve Windows'ta çalışan açık kaynak bir sesli giriş uygulaması. Bir kısayol tuşunu basılı tutup konuşuyorsun; tuşu bıraktığında kayıt yazıya çevriliyor, seçtiğin yazım moduna göre düzenleniyor ve imlecin bulunduğu alana yazılıyor, yazma engellenirse metin panoya kopyalanıyor. Düz diktenin ötesinde bir AI-prompt modu var: serbestçe konuştuğun şeyi yapılandırılmış, kısıtları toplanmış bir prompt'a çeviriyor. Tauri 2 ve Rust ile yazılmış, macOS 12+ ve Windows 10+ destekliyor; Typeless, Wispr Flow ve Superwhisper gibi ticari araçların açık kaynak karşılığı olarak konumlanıyor. AGPL-3.0 lisanslı, yaklaşık 3.600 star; depo Nisan 2026'da açılmış. README transkripsiyonun yerel mi yoksa bir bulut sağlayıcıyla mı yapıldığını açıkça söylemiyor.",
+   "usage_tr": "Sesli not tabanlı kişisel bilgi tabanı fikrinin masaüstü ayağı tam olarak bu: tek tuşla konuşup form doldurmadan temiz metin elde etme akışı burada çalışır halde duruyor. Ofisteki Mac'te Wispr Flow'un yanına kurup ikisini aynı hafta karşılaştırabilirsin; kapalı kaynak bir istemciye bağlı kalmadan kendi kısayolunu ve yazım modlarını tanımlarsın. Asıl değerli parça uygulamanın kendisi değil, kayıt → transkripsiyon → LLM ile düzeltme → imlece yazma zinciri; bunu fork'layıp notu doğrudan Supabase'e yazan bir mod eklemek senin alışkın olduğun türden bir iş ve ikinci beyin uygulamasının ilk sürümünü ayrı bir mobil uygulama yazmadan ayağa kaldırır. AI-prompt modu ayrıca Claude Code'a uzun görev tarifi dikte ederken işine yarar. İki uyarı var: kurduğunda ilk bakman gereken şey sesin ve metnin dışarı çıkıp çıkmadığı ile arkada bir API maliyeti doğup doğmadığı, çünkü README bunu netleştirmiyor. İkincisi AGPL-3.0; kişisel kullanımda ve kendi makinende sorun değil ama fork'ladığın kodu yayınlanan bir ürüne gömersen lisans yükümlülüğü doğar.",
+   "matched_project": "Kişisel bilgi tabanı",
+   "relevance": 7,
+   "investment_note": null
+  },
+  {
+   "full_name": "ai-winter/ros_motion_planning",
+   "inputs_hash": "fe1fc534bd389c1375f17ce9619edec7",
+   "description_tr": "ROS Motion Planning, yaygın hareket planlama algoritmalarının ROS eklentisi olarak toplu bir uygulaması. Yol arama tarafında A*, JPS, D*, LPA*, D* Lite, Theta*, RRT ve türevleri, ACO, PSO ve Voronoi; yörünge takibi tarafında PID, LQR, MPC, DWA, APF ve Pure Pursuit yer alıyor. Aynı algoritmaların Python ve MATLAB sürümleri ayrı depolarda tutuluyor, teori tarafı yazarın blog serisine bağlanıyor; yani eğitim amacı belirgin. Hedef platform Ubuntu 20.04 ve ROS noetic; depo demo görselleri ve simülasyon kurulumlarıyla geliyor. GPL-3.0 lisanslı, 2023'te açılmış, yaklaşık 3.600 star.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, klasik arama algoritmalarının bir arada görülebildiği bir öğrenme kaynağı olması. Kod ROS 1 ve Ubuntu'ya bağlı, Mac'te doğrudan çalışmıyor ve çıktısı bir robot tabanı gerektiriyor. Lyricdrop'un oyun mantığında ya da Folio'nun öneri tarafında kullanılabilecek bir bileşen içermiyor. Bu satırı geçebilirsin.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "Introduction-to-Autonomous-Robots/Introduction-to-Autonomous-Robots",
+   "inputs_hash": "0e6c22f7e94d508f89e594227e275de3",
+   "description_tr": "Introduction to Autonomous Robots, otonom robotların hesaplamalı ilkelerine odaklanan açık bir ders kitabının LaTeX kaynağı. Depo kitabın metnini ve görsellerini barındırıyor; PDF'i kendin derlemen için pdflatex veya Overleaf üzerinden adım adım talimatlar veriliyor. Kaynak CC-BY-NC-ND ile yayımlanmış, basılı sürümün telifi MIT Press'te; yani içerik ticari olmayan kullanımda atıfla serbest ama derlenmiş kitabı yayımlamak serbest değil. İçerik bir yazılım kütüphanesi değil, üniversite dersi düzeyinde bir öğretim materyali. 2013'ten beri açık, yaklaşık 3.500 star.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, öğrenme alışkanlığın — ama senin öğrenme listende psikoloji, sosyoloji ve felsefe var, robotik ders kitabı o listeye girmiyor. Kod ya da araç olarak kullanılabilecek bir yanı yok; çıktısı bir PDF. Yatırım tarafında da bir ekip ya da ürün sinyali taşımıyor. Bu satırı geçmen doğru olur.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "ob-f/OpenBot",
+   "inputs_hash": "6aaeb56a2c7ee521e7397d90744e8df1",
+   "description_tr": "OpenBot, akıllı telefonları düşük maliyetli robotların beyni olarak kullanan bir donanım ve yazılım projesi. Yaklaşık 50 dolarlık küçük bir elektrikli araç gövdesinin tasarımını, Arduino tarafındaki firmware'i ve telefon üzerinde çalışan uygulamayı bir arada veriyor. Yazılım yığını kişi takibi ve gerçek zamanlı otonom navigasyon gibi işleri telefonun kendi işlemcisinde yürütmeyi hedefliyor; eğitim ve araştırma kullanımına açıkça yöneliyor. README birçok dile çevrilmiş, sürekli entegrasyon ve yayımlanan uygulama indirmeleri ile topluluk tarafı canlı görünüyor. MIT lisanslı, 2020'de açılmış, yaklaşık 3.500 star.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, telefon donanımını uç cihazda model çalıştırmak için kullanma fikri — Kanarya tarafında cihaz üstü işlem ilgini çekiyor ama oradaki veri fizyolojik sinyal, kamera tabanlı navigasyon değil. Projenin değerli kısmı donanım tasarımı ve robot gövdesi; senin yazdığın uygulamalara taşınacak bir bileşen içermiyor. Demo yapmak istediğin bir hackathon fikri doğarsa hazır ve ucuz bir gövde olarak akılda tutulabilir. Bugünkü haliyle bir eşleşme yok.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  }
+ ]
+}

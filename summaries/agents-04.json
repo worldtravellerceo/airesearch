@@ -1,0 +1,175 @@
+{
+  "repos": [
+    {
+      "full_name": "CherryHQ/cherry-studio",
+      "inputs_hash": "23a066ced1d448ae677140c172a5551c",
+      "description_tr": "Cherry Studio, Windows, macOS ve Linux üzerinde çalışan masaüstü bir LLM istemcisi. OpenAI, Anthropic ve Gemini gibi bulut sağlayıcılarının yanında Ollama ve LM Studio üzerinden yerel modelleri de aynı arayüzde kullanabiliyor. 300'ün üzerinde hazır asistan tanımı, doküman ve PDF işleme, WebDAV yedekleme, global arama ve MCP sunucu desteği içeriyor. Yol haritasında not ve koleksiyon yönetimi, OCR, TTS ve ASR ile mobil sürümler duruyor. AGPL-3.0 lisanslı, ayrıca ticari lisans sunuluyor; 52.000'in üzerinde star ile aktif geliştirilen bir proje.",
+      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın olası bağlam, ofisteki Mac'te Ollama ya da LM Studio ile denediğin yerel modelleri tek arayüzden karşılaştırmak olabilir. Kodlama tarafında zaten Claude Code ve OpenCode kullanıyorsun, ek bir masaüstü sohbet istemcisi günlük akışına yeni bir adım katmıyor. AGPL-3.0 lisansı ve Electron mimarisi, parçalarını kendi Expo uygulamalarına gömme ihtimalini pratikte kapatıyor. Yerel model kalitesini ölçmek için kısa bir deneme işe yarayabilir, ama kalıcı bir yere oturmasını beklemek gerçekçi değil.",
+      "matched_project": null,
+      "relevance": 2,
+      "investment_note": null
+    },
+    {
+      "full_name": "coreyhaines31/marketingskills",
+      "inputs_hash": "3a4dd3bc5b790f3beff8c250ce6d9840",
+      "description_tr": "Marketing Skills, AI kodlama ajanları için hazırlanmış pazarlama odaklı bir skill koleksiyonu. Conversion optimizasyonu, copywriting, SEO, analytics ve growth engineering başlıklarında adım adım tanımlanmış iş akışları içeriyor. Agent Skills spesifikasyonuna uyduğu için Claude Code, Codex, Cursor ve Windsurf gibi skill destekleyen ajanlarla çalışıyor. MIT lisanslı; depo, ayrı bir kayıt dosyasında açıkça listelenen doğrulanmış iş ortağı entegrasyonlarıyla finanse ediliyor. 2026 başında açılmasına rağmen 51.000'in üzerinde star toplamış.",
+      "usage_tr": "Lyricdrop'un lansman hazırlığında doğrudan kullanabilirsin: landing page metni, mağaza açıklaması ve kampanya sayfası varyantları için Claude Code'a skill olarak kurulur, Max aboneliğinin dışında ek API maliyeti çıkarmaz. Skill dosyaları düz metin olduğu için ofisteki Mac'te yerel çalışır; depoyu fork'layıp kendi ürün diline ve Türkçe pazar metinlerine göre düzenleyebilirsin. Aynı koleksiyon Arslan Holding'in marka ve website metinlerinde ikinci bir kullanım alanı buluyor ve bu tür tekrar eden işler asistanına devredilebilir. Faydası, pazarlama adımlarını \"ne yazayım\" aşamasından çıkarıp kontrol listesine çevirmesi. Uyarı: öneriler ağırlıklı olarak SaaS ve B2B hunilerine göre yazılmış; tüketici mobil uygulama ve ASO tarafını ayrı bir araçla tamamlaman gerekir.",
+      "matched_project": "Lyricdrop",
+      "relevance": 7,
+      "investment_note": null
+    },
+    {
+      "full_name": "multica-ai/multica",
+      "inputs_hash": "aa24888450776a6e352ff0967023d9e2",
+      "description_tr": "Multica, AI kodlama ajanlarıyla insanların aynı pano üzerinde çalıştığı açık kaynak bir çalışma alanı. Bir issue ajana atanıyor, ajan işi üstlenip ilerlemesini yorum olarak yazıyor ve sonucu insan onayına geri veriyor. 26 farklı ajan CLI'ını destekliyor (Claude Code, Codex, Cursor, OpenCode ve diğerleri) ve ajanlar kendi kontrolündeki bir runtime'da, örneğin kendi makinendeki bir daemon üzerinde koşuyor. Niyet, çalışma kaydı, kararlar ve diff aynı issue'ya bağlı kalıyor; Go ile yazılmış ve self-host edilebiliyor. 2026 başında açılmış, 51.000'in üzerinde star almış; lisans alanı standart bir SPDX kimliğiyle eşleşmiyor, ticari kullanımdan önce okunması gerekir.",
+      "usage_tr": "Lyricdrop v2'de birden fazla ajanı ayrı terminal sekmelerinde takip etme sorununu doğrudan hedefliyor: admin panel, hizalama servisi ve mobil istemci işlerini ayrı issue'lar olarak açıp Claude Code ve OpenCode arasında dağıtabilir, sonucu tek panodan onaylayabilirsin. Daemon ofisteki M4 Pro Mac'te çalıştığı için kod makineden çıkmıyor ve Max aboneliğinin dışında ek model maliyeti getirmiyor. Şarkı onayı ve playtest gibi insan gerektiren adımları da aynı panoda görev olarak açıp asistanına ya da dışarıdan birine devredebilirsin. Faydası, \"hangi ajan neyi yapıyordu\" sorusunu ortadan kaldırması ve her işin diff'iyle birlikte kayda geçmesi. Uyarı: self-host bir daemon ve sürekli açık bir makine gerektiriyor; uzaktan bağlantı koptuğunda panodaki iş de yarım kalır.",
+      "matched_project": "Lyricdrop",
+      "relevance": 7,
+      "investment_note": "Ajan orkestrasyonunu issue panosuna bağlayan, self-host edilebilir bir B2B yazılım; kategori henüz oturmamış ve depo birkaç ayda büyük bir topluluk toplamış, erken aşama izleme listesine alınabilir."
+    },
+    {
+      "full_name": "bojieli/ai-agent-book",
+      "inputs_hash": "2060e968558eb0bae068367d1a64e747",
+      "description_tr": "Bu depo, AI ajanlarının tasarım ilkelerini ve mühendislik pratiğini on bölümde anlatan açık kaynak bir kitabın tamamını barındırıyor. Kitap metni, derlenmiş PDF ve EPUB sürümleri ile bölümlere karşılık gelen 109 deney birlikte yayınlanıyor. Bağlam mühendisliği, bellek, araç kullanımı, MCP, çok ajanlı yapılar, değerlendirme ve model sonrası eğitim konularını kapsıyor. Türkçe dahil 15 dilde topluluk çevirisi bulunuyor ve çevrimiçi okuma arayüzü her push'ta güncelleniyor. Apache-2.0 lisanslı, 2025 sonbaharında açılmış ve 50.000'in üzerinde star almış.",
+      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın olası bağlam, kurmayı düşündüğün orkestratör ajanın bellek ve bağlam tasarımı kararlarını okumak olabilir. Bu bir kütüphane değil referans metin: mevcut bir adımın yerine geçmiyor, mevcut bir aracın yanına da oturmuyor. Türkçe çevirisi olduğu için okuma maliyeti düşük, ama ayak işini azaltan bir tarafı yok. Deney depoları yerelde çalıştırılabilir; yine de bunlar öğretici örnekler, üretime taşınacak bileşenler değil.",
+      "matched_project": null,
+      "relevance": 2,
+      "investment_note": null
+    },
+    {
+      "full_name": "HKUDS/CLI-Anything",
+      "inputs_hash": "ebe8201d6346195587aba6c12aa7334e",
+      "description_tr": "CLI-Anything, ajanların kullanamadığı masaüstü ve web yazılımlarına komut satırı arayüzü üretmeyi hedefleyen bir proje. Topluluk tarafından yazılan CLI'lar CLI-Hub adlı bir kayıt defterinde toplanıyor, tek komutla kuruluyor ve Claude Code, Cursor, nanobot gibi ajanlar tarafından çağrılabiliyor. Kayıt defterinde CAD, 3B sahne, diyagram, altyazı, not uygulaması ve coğrafi bilgi sistemleri gibi farklı alanlardan araçlar bulunuyor. Demolarda ajanların bu CLI'ları önizleme ve yörünge döngüleriyle birlikte kullanarak somut çıktı üretmesi gösteriliyor. Python ile yazılmış, Apache-2.0 lisanslı; 2026 Mart'ta açılmış ve 49.000'in üzerinde star toplamış.",
+      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın olası bağlam, Folio'nun günlük içerik hattında arayüzü olan bir düzenleme aracını ajana açmak olabilir. Lyricdrop ve Kanarya tarafındaki adımların çoğu zaten ffmpeg, yt-dlp ve Python gibi komut satırı araçlarıyla yürüyor, yani bu katmanın çözdüğü problem sende büyük ölçüde yok. Kayıt defterindeki CLI'lar topluluk katkısı olduğu için kalite ve bakım seviyesi araçtan araca değişiyor. İhtiyaç çıkarsa yerel çalışır ve ek API maliyeti getirmez; şimdilik takip listesinde tutmak yeterli.",
+      "matched_project": null,
+      "relevance": 2,
+      "investment_note": null
+    },
+    {
+      "full_name": "kepano/obsidian-skills",
+      "inputs_hash": "2488fdb3aa84d7251addb2bcbe775e2e",
+      "description_tr": "Bu depo, Obsidian'ı bir ajan üzerinden kullanmak için hazırlanmış skill koleksiyonu. Obsidian Flavored Markdown, Bases ve JSON Canvas gibi açık formatlarda dosya oluşturma ve düzenleme ile Obsidian CLI'ını çağırma işlerini tanımlıyor. Agent Skills spesifikasyonuna uygun olduğu için Claude Code, Codex ve OpenCode ile kullanılabiliyor; kurulum marketplace, npx skills veya depoyu vault içine kopyalama yoluyla yapılıyor. İçerik kod değil, SKILL.md dosyalarından oluşuyor. MIT lisanslı ve 48.000'in üzerinde star almış.",
+      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın olası bağlam kişisel bilgi tabanı fikrinin not tarafı olabilir, ancak oradaki hedefin tek dokunuşla sesli not ve kendi yazdığın sade bir uygulama. Skill'ler yalnızca Obsidian'ın dosya formatlarını ve CLI'ını bildiği için kurulu bir vault olmadan karşılığı yok. Yerel çalışır ve ek maliyet getirmez; asıl maliyet, sistemine yeni bir not uygulaması sokmak. Bir gün vault tutmaya karar verirsen, notları ajanın düzenlemesi için doğru başlangıç noktası burası olur.",
+      "matched_project": null,
+      "relevance": 2,
+      "investment_note": null
+    },
+    {
+      "full_name": "HKUDS/nanobot",
+      "inputs_hash": "d73b58ac8c80550bc02885301fbf58db",
+      "description_tr": "nanobot, Python ile yazılmış, kendi makinende barındırılan hafif bir kişisel AI ajan çerçevesi. WebUI, terminal ve Telegram, Discord, Slack, e-posta, Mattermost, Linear gibi kanallar üzerinden çalışıyor; dosya, shell, web arama, MCP, cron, görsel üretimi ve alt-ajan araçlarını içeriyor. Uzun vadeli bellek, model yönlendirme ve yedek model tanımı, zamanlanmış otomasyonlar ve OpenAI uyumlu bir API sunuyor. Yerel LLM'lerle çalışabiliyor, çekirdeği küçük ve okunur tutulmuş; Python SDK ile genişletiliyor. MIT lisanslı; 2026 Şubat'ta açılmış ve 48.000'in üzerinde star toplamış.",
+      "usage_tr": "Uzun süredir istediğin, projeleri bilen ve ayak işlerini üstlenen orkestratör ajan için hayat orkestrasyonu tarafında somut bir iskelet sunuyor. Evdeki 7/24 açık Mac mini'de servis olarak koşturup cron ile günlük özet, hatırlatma ve takip işlerini n8n akışlarının yanına koyabilirsin; MCP desteği sayesinde takvim ve görev araçlarını araç olarak bağlaman mümkün. Çekirdeği küçük ve Python olduğu için fork'layıp kendi mantığını yazma refleksine uyuyor, kapalı bir istemciye bağımlı kalmıyorsun. Yerel model desteğiyle API maliyetini sıfıra yaklaştırıp yalnızca zor işlerde bulut modeline düşebilirsin. Uyarı: kanal listesinde WhatsApp yok, asistan tarafındaki mesaj akışını yine mevcut köprülerinle beslemen gerekir. İkinci uyarı: bellek ve zamanlanmış işler sürekli açık bir makineye bağlı, makine kapandığında işler sessizce kaçar.",
+      "matched_project": "Hayat orkestrasyonu",
+      "relevance": 7,
+      "investment_note": null
+    },
+    {
+      "full_name": "jeecgboot/JeecgBoot",
+      "inputs_hash": "1250468531a6599b0e60bd59f0f8a2e5",
+      "description_tr": "JeecgBoot, Java tabanlı kurumsal bir low-code geliştirme platformu. Doğal dil tarifinden tablo, CRUD kodu, menü yetkileri ve ekran üreten bir kod üreticisinin yanında form, süreç, rapor ve dashboard tasarımcıları içeriyor. Arka uçta Spring Boot ve MyBatis-Plus, ön uçta Vue3, TypeScript ve Ant Design Vue kullanıyor; BPM iş akışı, raporlama, çok kiracılılık ve ayrıntılı yetki kontrolü destekleniyor. AI tarafında sohbet asistanı, RAG tabanlı bilgi tabanı, MCP eklentileri ve Claude Code için hazır skill'ler sunuyor. Apache-2.0 lisanslı, 2018'den beri geliştiriliyor ve 47.000'in üzerinde star almış; dokümantasyon ve topluluk ağırlıklı olarak Çince.",
+      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın olası bağlam, klasik kurumsal iç yönetim ekranları gibi MIS türü bir ihtiyaç olabilir. Standart stack'in Expo, Supabase, DigitalOcean ve Vercel üzerinde duruyor; Java ve Spring tarafına geçmek mevcut hiçbir projeyi hızlandırmaz, bakımı sana yabancı bir yığın ekler. Yerel çalışır ve lisansı serbest, ama kurulum ve öğrenme maliyeti bu faydanın önünde duruyor. Kurumsal tarafta devredilecek bir iç sistem ihtiyacı çıkarsa yeniden bakmaya değer.",
+      "matched_project": null,
+      "relevance": 1,
+      "investment_note": null
+    },
+    {
+      "full_name": "abhigyanpatwari/GitNexus",
+      "inputs_hash": "66c287cbb1839947021e14284872db68",
+      "description_tr": "GitNexus, bir kod tabanını bağımlılık, çağrı zinciri ve yürütme akışlarını içeren bir bilgi grafiğine dönüştüren kod analiz motoru. Tek komutla depo indeksleniyor, ardından MCP yapılandırması yazılıyor ve Claude Code, Cursor, Codex gibi ajanlar bu grafiği sorgulayabiliyor. Kurulum sırasında agent skill'leri, Claude Code hook'ları ve AGENTS.md ile CLAUDE.md bağlam dosyaları da oluşturuluyor; ayrıca tarayıcıdan depo ile sohbet etmeye yarayan bir web arayüzü var. TypeScript ile yazılmış, tree-sitter tabanlı native bağımlılıkları var ve indeksleme tamamen yerelde çalışıyor. 47.000'in üzerinde star almış; lisans alanı standart bir SPDX kimliğine oturmuyor.",
+      "usage_tr": "Lyricdrop v2'yi sıfırdan yazarken ajanın kod tabanını eksik görmesi sorununa oturuyor: admin panel, hizalama servisi ve mobil istemci arasındaki çağrı zincirlerini indeksleyip Claude Code'un bağımlılık kaçırmasını azaltır. Kurulum tek komut, indeksleme ofisteki Mac'te yerel koşuyor ve ayrı bir API anahtarı istemiyor, yani Max aboneliğinin dışına çıkmıyor. Kalite hassasiyetine denk gelen tarafı, review ajanının bir değişikliğin nereye dokunduğunu dosya dosya okumadan görebilmesi. Aynı pakette bulunan codebase-memory-mcp ile aynı işi hedefliyor; ikisini aynı depo üzerinde ölçüp birini bırakmak en temizi. Uyarı: native bağımlılıklar nedeniyle npm sürümüne bağlı kurulum sorunları bildiriliyor ve MCP başlatma süresi varsayılan zaman aşımına takılabiliyor.",
+      "matched_project": "Lyricdrop",
+      "relevance": 6,
+      "investment_note": null
+    },
+    {
+      "full_name": "zhayujie/CowAgent",
+      "inputs_hash": "922333bb4a8c2d59fc9794d075f85c0b",
+      "description_tr": "CowAgent, görevleri planlayan, araç ve skill çalıştıran, bellek ile bilgi tabanı biriktiren açık kaynak bir kişisel asistan ve ajan harness'ı. Dosya, terminal, tarayıcı, zamanlayıcı ve web arama gibi yerleşik araçların yanında MCP entegrasyonu, çok ajanlı takımlar ve sağlayıcı bağımsız model desteği sunuyor. Bellek üç katmanlı tutuluyor ve konuşmalardan otomatik damıtma ile skill'leri güncelleyen bir kendi kendine gelişme döngüsü içeriyor. Web arayüzünün yanı sıra WeChat, Feishu, DingTalk ve QQ gibi mesajlaşma kanallarına bağlanıyor; kişisel bilgisayarda veya sunucuda sürekli çalışacak şekilde tasarlanmış. Python ile yazılmış, MIT lisanslı; depo 2022'den beri geliştiriliyor ve 47.000'in üzerinde star almış.",
+      "usage_tr": "Asistan ve holding operasyon araçları tarafında, tekrar eden araştırma ve takip işlerini üstlenecek sürekli çalışan bir ajan olarak değerlendirebilirsin; evdeki Mac mini'de açık tutup skill'leri konuşarak tanımlaman mümkün. Bellek ve bilgi tabanı katmanı, aynı araştırmayı iki kez yaptırmamak için n8n akışlarının vermediği bir süreklilik sağlıyor. Sağlayıcı bağımsız olduğu için yerel bir modelle maliyetsiz koşturup yalnızca zor işlerde bulut modeline geçebilirsin. Uyarı: kanal desteği ağırlıklı olarak Çin merkezli mesajlaşma platformlarına göre yazılmış ve dokümantasyonun bir kısmı Çince; asistanının kullandığı WhatsApp ve Slack tarafına kendin köprü yazman gerekir. Aynı ihtiyaç için nanobot daha küçük bir çekirdek sunuyor, ikisini yan yana denemek mantıklı.",
+      "matched_project": "Asistan operasyon araçları",
+      "relevance": 5,
+      "investment_note": null
+    },
+    {
+      "full_name": "siyuan-note/siyuan",
+      "inputs_hash": "56ddd7fdc031dd8d69918b367b00ddd8",
+      "description_tr": "SiYuan, blok düzeyinde referanslama ve Markdown WYSIWYG düzenleme sunan, gizlilik öncelikli bir kişisel bilgi yönetimi sistemi. Veriler yerelde tutuluyor; Docker, Kubernetes ve NAS üzerinde kendi sunucunda barındırılabiliyor, masaüstü ve mobil istemcileri bulunuyor. İçerik blokları üzerinde SQL sorgusu, iki yönlü bağlantı, web kırpma ve eklenti pazarı gibi özellikler içeriyor; MCP desteğiyle ajanların da aynı çalışma alanında çalışması hedefleniyor. Komut satırı arayüzü ve çok sayıda barındırma seçeneği belgelenmiş durumda. AGPL-3.0 lisanslı, çoğu özellik ücretsiz; 2020'den beri geliştiriliyor ve 46.000'in üzerinde star almış.",
+      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın olası bağlam kişisel bilgi tabanının depolama katmanı olabilir, ama oradaki hedefin sesli notla başlayan ve kendi yazdığın sade bir uygulama. SiYuan tam teşekküllü bir not ürünü, yani daha önce birkaç hafta sonra bıraktığın popüler uygulamalarla aynı kategoride. Evdeki Mac mini'de self-host edilebilir olması home server tarafında ilgini çekebilir. AGPL-3.0 lisansı ise parçalarını kendi uygulamana taşımayı pratikte zorlaştırıyor.",
+      "matched_project": null,
+      "relevance": 2,
+      "investment_note": null
+    },
+    {
+      "full_name": "K-Dense-AI/scientific-agent-skills",
+      "inputs_hash": "4b23c3a8b893a248078d7e7c689d4f3f",
+      "description_tr": "Scientific Agent Skills, bilimsel araştırma iş akışlarını ajanlara öğreten 165'ten fazla skill'den oluşan bir kütüphane. Kanser genomiği, varyant etkisi, proteomik, metabolomik, kemoinformatik, malzeme bilimi ve bilimsel görselleştirme gibi alanları ve 100'ün üzerinde bilimsel veri tabanına erişimi kapsıyor. Agent Skills standardına uyduğu için Claude Code, Codex, Cursor ve benzeri ajanlarla kullanılabiliyor; ayrıca kendi makinende çalışan, kendi anahtarınla kullandığın bir araştırma ortamı sunuluyor. Çalışma bir arXiv ön baskısıyla belgelenmiş. MIT lisanslı ve 46.000'in üzerinde star almış.",
+      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın olası bağlam biyosinyal ve giyilebilir cihaz tezin, ancak kütüphanenin kapsamı genomik ve kimya tarafında — EEG ya da fizyolojik zaman serisi işleme burada yok. Kanarya'nın veri analizinde kullanılabilecek genel bir istatistik veya görselleştirme skill'i bulunabilir, fakat bunun için 165 skill'lik bir kütüphaneye ihtiyaç yok. Yerel çalışır ve ek maliyet getirmez; engel maliyet değil, konu uyumsuzluğu. Skill yazım biçimini örnek olarak incelemek, kendi alan skill'lerini tasarlarken işine yarayabilir.",
+      "matched_project": null,
+      "relevance": 2,
+      "investment_note": "Bilimsel iş akışlarını ajan skill'lerine çeviren bu kütüphanenin arkasında ticari bir ekip ve geniş bir kullanıcı tabanı var; AI-for-science araç katmanı, erken aşama tezin açısından izlenmeye değer bir alan."
+    },
+    {
+      "full_name": "danny-avila/LibreChat",
+      "inputs_hash": "0f008d4277d86b8fdbcaf184b266acdb",
+      "description_tr": "LibreChat, kendi sunucunda barındırılan çok kullanıcılı bir sohbet arayüzü. OpenAI, Anthropic, Azure, AWS, Gemini, Mistral, OpenRouter ve uyumlu yerel uç noktalar dahil çok sayıda sağlayıcıyı tek arayüzde topluyor; ajanlar, MCP, skill'ler, kod yorumlayıcı, dosya arama ve görsel üretim araçları içeriyor. Son sürümlerde ajan yönetimi API'si, rol tabanlı erişim, OIDC kimlik doğrulama ve kod çalıştırma izinleri için ayrıntılı kontroller eklenmiş. Bağlam kullanımını ve maliyeti izleyen panolar ile elle bağlam sıkıştırma gibi işletim özellikleri de var. MIT lisanslı, Docker ile kuruluyor; 2023'ten beri geliştiriliyor ve 44.000'in üzerinde star almış.",
+      "usage_tr": "Asistan ve holding operasyonları tarafında, hesapların ve konuşma geçmişinin sende kalması ilkesine uyan bir arayüz olarak kurulabilir: DigitalOcean'da tek bir örnek, asistan için ayrı kullanıcı ve rolle sınırlanmış erişim. Araştırma işlerini MCP araçlarıyla birlikte buraya taşırsan, ekip değiştiğinde geçmiş kaybolmaz ve erişim kapsamları izole kalır. Uyarı: LibreChat sağlayıcı anahtarlarıyla çalışıyor, yani Max aboneliğinin kapsamadığı bir API maliyeti açıyor; kullanım arttıkça bu kalem görünür hale gelir. Yerel modelleri uyumlu uç nokta olarak bağlayıp maliyeti düşürebilirsin, ama o zaman da sürekli açık bir makineye bağlanırsın. Kendi uygulamana gömülecek bir bileşen değil, ayrı bir servis olarak duruyor.",
+      "matched_project": "Asistan operasyon araçları",
+      "relevance": 4,
+      "investment_note": null
+    },
+    {
+      "full_name": "Kong/kong",
+      "inputs_hash": "1601e266fa2f0c18862d96332b607ae4",
+      "description_tr": "Kong, mikroservis ve API trafiğini yöneten, eklenti mimarisiyle genişletilen bir API gateway. Yönlendirme, yük dengeleme, sağlık kontrolü, kimlik doğrulama ve benzeri işleri tek katmanda topluyor; Kubernetes üzerinde resmi ingress controller ile çalışıyor. Son dönemde LLM ve MCP trafiği için çok sağlayıcılı yönlendirme, semantik güvenlik ve kullanım analitiği eklenmiş. Lua ile yazılmış, Apache-2.0 lisanslı ve bulut, bare metal veya konteyner üzerinde dağıtılabiliyor. 2014'ten beri geliştirilen, arkasında ticari bir şirket bulunan olgun bir altyapı bileşeni; 44.000'in üzerinde star.",
+      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın olası bağlam, ileride birden çok uygulamanın aynı LLM sağlayıcılarını kullanması durumunda anahtar ve maliyet yönetimini tek yerde toplamak olabilir. Bugünkü kurulumun Supabase, DigitalOcean ve Vercel üzerinde duruyor; araya bir gateway koymak çözdüğünden fazla işletim yükü getirir. Kurulum ve bakımı Kubernetes tarafına yakın, bu da tek kişilik geliştirme akışına uymuyor. App stüdyosu fikri birden fazla yayınlanmış uygulamaya dönüşürse yeniden bakılabilir.",
+      "matched_project": null,
+      "relevance": 1,
+      "investment_note": null
+    },
+    {
+      "full_name": "DeusData/codebase-memory-mcp",
+      "inputs_hash": "1925e840bdc1a25a3713bf3b709a634d",
+      "description_tr": "codebase-memory-mcp, kod tabanını kalıcı bir bilgi grafiğine indeksleyen bir MCP sunucusu. tree-sitter ile 158'den fazla dili ayrıştırıyor, bir grup dilde LSP tabanlı tip çözümlemesi ekliyor ve fonksiyon, sınıf, çağrı zinciri, HTTP route gibi ilişkileri saklıyor. Tek bir statik çalıştırılabilir dosya olarak dağıtılıyor; dil çalışma zamanı, barındırılan servis veya API anahtarı gerektirmiyor ve tüm işlem yerelde yapılıyor. 17 MCP aracı sunuyor, macOS dahil üç platformda çalışıyor ve ölçümleri bir arXiv ön baskısında belgelenmiş. MIT lisanslı; 2026 Şubat'ta açılmış ve 44.000'in üzerinde star almış.",
+      "usage_tr": "Lyricdrop v2'nin sıfırdan yazımında Claude Code'a kod tabanının yapısını veren katman olarak kullanabilirsin; ajanın dosya dosya gezinmek yerine çağrı zincirini sorgulaması hem token tüketimini hem de gözden kaçan bağımlılıkları azaltır. Tek bir ikili olması ve API anahtarı istememesi, ofisteki Mac'te kurulumu birkaç dakikaya indiriyor ve Max aboneliğinin dışına çıkmıyor. Kanarya ve diğer Expo projelerinde aynı sunucu yeniden kullanılabilir, her proje için ayrı bir yapılandırma gerekmiyor. Kalite süreçlerinde review ajanına \"bu değişiklik neyi kırar\" sorusunu cevaplatmak için doğrudan bir zemin kuruyor. Uyarı: araç ajan yapılandırma dosyalarına yazıyor ve önceden derlenmiş bir ikili çalıştırıyorsun; sürüm notlarındaki doğrulama kayıtlarına bakmadan kurmamak gerekir.",
+      "matched_project": "Lyricdrop",
+      "relevance": 7,
+      "investment_note": null
+    },
+    {
+      "full_name": "Yuan1z0825/nature-skills",
+      "inputs_hash": "0743d18a9ee6c4ce8fa047932d632531",
+      "description_tr": "nature-skills, akademik makale yazımı ve bilimsel şekil üretimi için hazırlanmış Çince bir skill koleksiyonu. Akademik anlatım biçimi, araştırma grafiği üretimi ve yeniden kullanılabilir bilimsel iş akışlarını hedefliyor; kurulum npx skills, Claude Code, Codex ve Chatbox üzerinden yapılıyor. Depo aynı zamanda kurucunun topluluk, eğitim ve ticari hizmet duyurularını geniş biçimde içeriyor. Python ağırlıklı ve Apache-2.0 lisanslı; 2026 Nisan'da açılmış ve 43.000'in üzerinde star almış. Dokümantasyonun tamamına yakını Çince.",
+      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın olası bağlam yatırım tarafında hazırlanan sunumlarda tutarlı grafik üretimi olabilir, fakat koleksiyon akademik yayın formatına göre kurgulanmış. Akademik makale yazmadığın sürece skill'lerin çıktısı senin belgelerine uymaz. Yerel çalışır ve ek maliyeti yoktur; engel maliyet değil, konu uyumsuzluğu. Depodaki ticari duyuru yoğunluğu da bunu tarafsız bir araç seti olarak değerlendirmeyi zorlaştırıyor.",
+      "matched_project": null,
+      "relevance": 1,
+      "investment_note": null
+    },
+    {
+      "full_name": "MadsLorentzen/ai-job-search",
+      "inputs_hash": "1fc5915366e1fb13b2eceeb5b6596408",
+      "description_tr": "AI Job Search, iş başvurusu sürecini Claude Code üzerinde yürüten bir çerçeve. Profil oluşturma, ilan tarama, uygunluk skorlama, CV uyarlama, ön yazı yazma ve mülakat hazırlığı adımlarını slash komutlarıyla tanımlıyor ve drafter-reviewer yapısıyla çıktıyı ikinci bir geçişten geçiriyor. Çekirdek akış dil ve ülke bağımsız; ilan arama skill'leri Danimarka iş portalları için yazılmış ve başka pazarlara uyarlanması bekleniyor. Yazarın kendi iş arama sürecinden çıkmış, çıktı olarak LaTeX tabanlı CV üretiyor. MIT lisanslı; 2026 Mart'ta açılmış ve 43.000'in üzerinde star almış.",
+      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın olası bağlam işleri dışarıya devrederken aday değerlendirmesinin ters yönü olabilir, ancak bu depo tamamen aday tarafında duruyor. İlan tarama skill'leri Danimarka portallarına bağlı, Körfez ya da Türkiye tarafı için yeniden yazılması gerekir. Drafter-reviewer deseni, kendi kalite süreçlerinde istediğin iki aşamalı review yapısına okunabilir bir örnek sunuyor. Bunun dışında mevcut bir adımın yerine geçmiyor.",
+      "matched_project": null,
+      "relevance": 2,
+      "investment_note": null
+    },
+    {
+      "full_name": "vercel-labs/agent-browser",
+      "inputs_hash": "bbaecfd6f059e2b68e6a2d3286e9b9cd",
+      "description_tr": "agent-browser, AI ajanları için yazılmış native bir tarayıcı otomasyon CLI'ı. Rust ile derlenmiş tek bir ikili olarak çalışıyor; sayfayı açıyor, erişilebilirlik ağacından referanslı bir snapshot çıkarıyor ve tıklama, yazma gibi eylemleri bu referanslar üzerinden yürütüyor. Kurulum npm, Homebrew veya cargo ile yapılıyor ve test için ayrılmış Chrome sürümü otomatik indiriliyor; Playwright ya da Node.js çalışma zamanı gerektirmiyor. Mevcut Chrome, Brave, Playwright ve Puppeteer kurulumlarını da tanıyor. Apache-2.0 lisanslı, Vercel Labs tarafından geliştiriliyor ve 43.000'in üzerinde star almış.",
+      "usage_tr": "Lyricdrop v2'de dışarı vermek istediğin tarayıcı playtest gate'inin otomatikleştirilebilir kısmı için doğrudan aday: admin paneldeki şarkı onay akışını, boşluk sayısını ve oynatıcı davranışını Claude Code'a adım adım yürüttürebilirsin. Erişilebilirlik ağacı üzerinden çalışması, ekran görüntüsüne dayalı yöntemlere göre hem daha ucuz hem daha kararlı; ofisteki Mac'te yerel koşuyor ve ek API maliyeti getirmiyor. Aynı ikili, Folio'nun içerik toplama adımlarında ve tekrar eden tarayıcı işlerinde de kullanılabilir. Faydası, insan gerektiren onay adımında yalnızca gerçekten karar isteyen kısmı sana bırakması. Uyarı: söz-ses senkronunu kulakla değerlendiren adımlar bu yolla ölçülemez; hizalama doğruluğunu yine kendi test setinle ölçmen gerekir.",
+      "matched_project": "Lyricdrop",
+      "relevance": 8,
+      "investment_note": null
+    },
+    {
+      "full_name": "luongnv89/claude-howto",
+      "inputs_hash": "d65fcda98f1958d7a5ea38020f5dd79a",
+      "description_tr": "claude-howto, Claude Code'un özelliklerini örnek ve şemalarla anlatan bir rehber deposu. Slash komutları, hook'lar, skill'ler, subagent'lar, bellek ve MCP sunucularını tek tek açıklayıp bunları birleştiren iş akışı şablonları veriyor. İçerik seviyelere ayrılmış bir öğrenme yolu olarak düzenlenmiş; kopyalanıp projeye konabilecek şablonlar ve bir özellik kataloğu içeriyor. İngilizce dışında Vietnamca, Çince, Ukraynaca ve Japonca çevirileri var. MIT lisanslı ve 41.000'in üzerinde star almış.",
+      "usage_tr": "Lyricdrop v2'de kurmak istediğin iki aşamalı review sürecinin — geliştirici doğruluğu ve ürün mantığının ayrı ayrı bakılması — hook ve subagent tarafını buradaki şablonlardan kurabilirsin. Superpowers'ın yanında, kendi CLAUDE.md dosyanı ve komut setini düzenlerken referans olarak duruyor. İçerik dokümantasyon olduğu için Mac'te çalışacak bir şey yok, ek maliyet de yok; kazanç tamamen kurulum süresinden geliyor. Katalogdaki şablonlar asistanına verilebilecek kadar somut, ama hangi adımların otomatikleşeceğine senin karar vermen gerekiyor. Uyarı: rehberler hızlı değişen bir alanı anlatıyor, şablonları kopyalamadan önce Claude Code'un güncel davranışıyla karşılaştır.",
+      "matched_project": "Lyricdrop",
+      "relevance": 5,
+      "investment_note": null
+    }
+  ]
+}

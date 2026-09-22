@@ -1,0 +1,175 @@
+{
+ "repos": [
+  {
+   "full_name": "Graphify-Labs/graphify",
+   "inputs_hash": "37e6a2ac7cfb5542c4a930d672ecf765",
+   "description_tr": "graphify, bir klasördeki kodu, dokümanları, PDF'leri, SQL şemalarını ve görselleri tek bir sorgulanabilir bilgi grafiğine çeviren açık kaynak bir araç. Claude Code, Cursor, Codex ve Gemini CLI içinden `/graphify` komutuyla çağrılan bir skill olarak kuruluyor; kod tarafını tree-sitter ile yerel ve deterministik AST ayrıştırması, doküman ve görsel tarafını ise model çağrıları üzerinden işliyor. Çıktı olarak etkileşimli bir graph.html, Obsidian vault, ajanların gezebileceği bir wiki, bir rapor dosyası ve kalıcı bir graph.json üretiyor; SHA256 cache sayesinde tekrar çalıştırmada yalnızca değişen dosyalar işleniyor. Vektör veritabanı kullanmıyor, kurduğu her kenar için düz metin bir gerekçe yazıyor ve MCP stdio sunucusu, git post-commit hook'u, Neo4j ile GraphML dışa aktarımı gibi bağlantı noktaları sunuyor. Python 3.10+ ve Claude Code gerektiriyor, Apache-2.0 lisanslı; 2026 Nisan'ında açılmış ve 120 bin yıldıza ulaşmış görece yeni bir proje.",
+   "usage_tr": "Lyricdrop v2'yi sıfırdan yazdığın için kod tabanı hızla büyüyor; graphify'ı ofisteki M4 Pro Mac'te admin panel ve pipeline repo'suna kurup Claude Code oturumlarının dosyaları her seferinde baştan okumak yerine kalıcı graph.json üzerinden gezmesini sağlayabilirsin. Bir skill olarak kurulduğu için Superpowers'ın yanında durur ve Max aboneliğiyle çalıştırdığın Claude Code içinden çağrılır, ayrı bir API anahtarı istemez. İkinci kullanım alanı kişisel bilgi tabanı tarafı: biriktirdiğin PDF'leri, makaleleri ve ekran görüntülerini tek klasöre atıp aynı komutla gezilebilir bir Obsidian vault'una çevirebilirsin. Kod ayrıştırması tamamen yerel çalışıyor ama doküman ve görsel çıkarımı model çağrısı yapıyor; büyük bir klasörü ilk kez işlerken süresini ve tüketimini ölçmeden bunu alışkanlık haline getirme. post-commit hook'u grafiği her commit'te güncel tutar, yani asistanına devredilecek bir iş değil, doğrudan senin geliştirme döngüne oturan bir parça.",
+   "matched_project": "Lyricdrop",
+   "relevance": 8,
+   "investment_note": "Beş ayda 120 bin yıldıza ulaşmış, kendi alan adı olan ama görünür bir ticarileşme modeli henüz olmayan bir geliştirici aracı; erken aşama dev-tools akışında ekibiyle tanışmaya değer bir isim."
+  },
+  {
+   "full_name": "supabase/supabase",
+   "inputs_hash": "cf6ba7233421cafdf3f6bff5a69fde0f",
+   "description_tr": "Supabase, her projeye ayrılmış bir Postgres veritabanının üzerine auth, otomatik REST ve GraphQL API'leri, realtime abonelikler, dosya depolama ve edge functions ekleyen açık kaynak bir geliştirme platformu. Firebase'in sunduğu geliştirici deneyimini kurumsal olgunluktaki açık kaynak bileşenlerle kuruyor: PostgREST, GoTrue, Realtime ve Envoy gibi parçaları bir araya getiriyor. pgvector ve embedding araçlarıyla vektör arama, postgis ile coğrafi sorgular aynı veritabanında çalışıyor. Barındırılan servis olarak kullanılabildiği gibi Docker ile self-host edilebiliyor ve yerel geliştirme için ayrı bir akış sunuyor. Apache-2.0 lisanslı, 2019'dan beri geliştiriliyor, 110 bin yıldızın üzerinde ve geniş bir istemci kütüphanesi ekosistemi var.",
+   "usage_tr": "Bu zaten senin standart stack'inin parçası; Lyricdrop'un admin paneli ve oyuncu tarafı, Kanarya ve Folio hep bunun üzerinde duruyor, dolayısıyla soru 'kullanır mıyım' değil 'hangi parçasını henüz kullanmıyorum'. Kişisel bilgi tabanı için ayrı bir vektör veritabanı kurmadan aynı Supabase projesinde pgvector ile sesli not embedding'lerini tutabilir, semantik aramayı Expo istemcisinden doğrudan sorgulayabilirsin. Yayınlamayı planladığın çok kullanıcılı to-do uygulamasında asıl işi row level security politikaları yapacak; bunu baştan kurmak sonradan çok kullanıcıya geçmekten ucuz. Self-host seçeneği evdeki 7/24 açık Mac mini'de yerel bir geliştirme kopyası çalıştırmanı sağlar, böylece prototiplerde canlı veriye dokunmazsın. Uyarı: edge functions ve realtime tarafında sürüm geçişleri kırıcı olabiliyor, Lyricdrop v2 panelini canlıya bağlarken sürümü sabitleyip yükseltmeyi ayrı bir adım olarak planla.",
+   "matched_project": "Lyricdrop",
+   "relevance": 9,
+   "investment_note": null
+  },
+  {
+   "full_name": "thedotmack/claude-mem",
+   "inputs_hash": "2c76354a88cfab9be0aaaffd1143dd94",
+   "description_tr": "claude-mem, Claude Code ve benzeri kodlama ajanlarına oturumlar arası kalıcı bellek ekleyen bir eklenti. Oturum boyunca ajanın yaptığı araç çağrılarını ve gözlemleri yakalıyor, bunları model yardımıyla sıkıştırıp özetliyor ve sonraki oturumlara ilgili bağlamı geri enjekte ediyor. Aramayı MCP araçları üzerinden sunuyor; depolama tarafında SQLite ve vektör indeksleme kullanıyor, hosted bir bellek servisi ile yerel çalışan bir observer seçeneği arasında geçiş yapılabiliyor. TypeScript ile yazılmış, Node 20+ gerektiriyor, Apache-2.0 lisanslı ve Claude Code dışında OpenCode, Codex, Gemini ve Copilot gibi istemcilerle de kurulabiliyor. 2025 Ağustos'unda açılmış, 94 bin yıldıza ulaşmış ve sürüm numarasından görüldüğü üzere hızlı bir yayın temposu var.",
+   "usage_tr": "Lyricdrop v2'yi uzun bir yeniden yazım olarak yürüttüğün için her yeni Claude Code oturumunda kelime hizalama kararlarını, denenip elenen STT yaklaşımlarını ve panel şema kararlarını yeniden anlatmak zorunda kalıyorsun; claude-mem tam bu tekrarları hedefliyor. Ofis Mac'inde Superpowers'ın yanına kurup birden çok repo arasında gezinen oturumlarda bağlamın taşınıp taşınmadığını bir hafta boyunca ölçebilirsin. Uzun vadede istediğin 'tüm projelerini bilen orkestratör ajan' fikrinin bellek katmanına denk düşüyor, ama tek başına o ajanı kurmuyor. Dikkat edilecek nokta kurulum varsayılanı: bellek hosted servise gidiyor, yerel observer ayrıca seçilmek zorunda; Lyricdrop ve holding tarafındaki repo'larda çalışırken oturum içeriğinin Mac'ten çıkmasını istemiyorsan yerel sağlayıcıyı açık şekilde seçmelisin. Kurulum komutlarının farklı istemciler için ayrı ayrı davranması da ilk denemede karışıklık yaratabilir, tek bir repo'da deneyip yay.",
+   "matched_project": "Lyricdrop",
+   "relevance": 8,
+   "investment_note": null
+  },
+  {
+   "full_name": "vllm-project/vllm",
+   "inputs_hash": "3b347a2de15850ef6d90bafa6ed8df54",
+   "description_tr": "vLLM, büyük dil modellerini yüksek verimle sunmak için yazılmış bir çıkarım ve servis motoru. PagedAttention ile attention bellek yönetimi, sürekli batch'leme, prefix caching ve parçalı prefill gibi tekniklerle aynı donanımdan daha fazla eşzamanlı istek çıkarıyor. FP8'den INT4'e uzanan niceleme biçimlerini, tensor/pipeline/expert paralelliğini, speculative decoding'i ve OpenAI uyumlu bir API sunucusunu destekliyor; Hugging Face üzerindeki 200'den fazla model mimarisiyle çalışıyor. Öncelikli hedefi NVIDIA ve AMD GPU'ları, yanında TPU, Gaudi ve Apple Silicon gibi donanımlar için eklenti katmanları var. UC Berkeley'deki Sky Computing Lab'de başlamış, Apache-2.0 lisanslı, 2000'den fazla katkıcısı ve 92 bin yıldızı olan olgun bir proje.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, ileride Lyricdrop'un içerik üretimi için kendi modelini barındırmaya karar vermen olurdu. vLLM'in kazancı çok sayıda eşzamanlı isteği GPU kümesinde toplamaktan geliyor; senin oyuncu tarafın zaten Supabase ve DigitalOcean üzerinde duruyor ve tek kullanıcılık yerel denemeler için 24 GB'lık bir Mac'te llama.cpp ya da MLX tabanlı bir yol daha az sürtünme yaratır. Kiralık GPU'ya geçmek, bilinçli olarak kaçındığın sabit maliyeti geri getirir. Bu repo'yu bir araç olarak değil, yerel model tarafında karşılaştırma yaptığında referans aldığın performans çıtası olarak takip etmek yeterli.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "PaddlePaddle/PaddleOCR",
+   "inputs_hash": "dd565db4da63edaf2da3b7281e818b51",
+   "description_tr": "PaddleOCR, PDF ve görüntü belgelerini JSON veya Markdown gibi yapılandırılmış çıktılara çeviren bir OCR ve belge ayrıştırma araç seti. Metin tanımanın ötesinde düzen analizi, tablo çıkarımı, anahtar bilgi çıkarımı ve belge çevirisi gibi işleri de kapsıyor; 100'den fazla dili destekliyor. Son sürümlerde 1 milyar parametrenin altında, belge ayrıştırmaya özel bir görsel-dil modeli öne çıkarılıyor ve çıktı doğrudan RAG hatlarına verilecek biçimde üretiliyor. Linux, Windows ve macOS'ta, CPU ve çeşitli hızlandırıcılarla Python 3.8-3.12 aralığında çalışıyor. Apache-2.0 lisanslı, 2020'den beri geliştiriliyor, 90 bin yıldız ve altı binden fazla bağımlı repo ile olgun bir tabana sahip.",
+   "usage_tr": "Arslan Holding tarafında deal akışının ilk adımı PDF okumak: pitch deck'ler, finansal modeller, term sheet'ler ve şirket dokümanları. PaddleOCR'ı ofisteki Mac'te yerel çalıştırıp bu dosyaları yapılandırılmış metne çevirebilir, çıktısını Claude Code'a verdiğin screening akışının girdisi yapabilirsin; belge bulutta bir servise yüklenmediği için gizlilik tarafı da rahat oluyor. Tablo ve anahtar bilgi çıkarımı, finansal modellerin sayılarını elle kopyalama işini ortadan kaldırır ve bu adım asistanına devredilebilir bir iş. API maliyeti yok, karşılığında ilk kurulumda model indirme ve bağımlılık yönetimi var; tek bir klasör üzerinden çalışan küçük bir komut satırı sarmalayıcısı yazıp kurulumu bir kez halletmek mantıklı. Uyarı: Türkçe ve Arapça belgelerde doğruluk dile göre değişiyor, önce elinde sonucunu bildiğin beş on dokümanla ölçüp karar ver.",
+   "matched_project": "Arslan Holding",
+   "relevance": 6,
+   "investment_note": null
+  },
+  {
+   "full_name": "odysseus-dev/odysseus",
+   "inputs_hash": "f977c9bd02798f18d4f0d642d5c4d405",
+   "description_tr": "Odysseus, sohbet, ajanlar, derin araştırma, doküman düzenleme, e-posta, not, görev ve takvimi tek bir self-host edilen arayüzde toplayan bir AI çalışma alanı. Yerel modellerle ya da API sağlayıcılarıyla çalışıyor; araç kullanımı, MCP, dosya yükleme, skill'ler ve bellek destekleniyor, donanıma göre model önerip indiren bir bölüm bulunuyor. E-posta tarafı IMAP/SMTP ile bağlanıp triyaj, etiketleme, özet ve yanıt taslağı üretiyor; notlar, görevler ve CalDAV senkronizasyonlu takvim ile zamanlanmış ajan görevleri aynı yerde duruyor. Kurulum Docker Compose ile yapılıyor ve varsayılan olarak kimlik doğrulamanın açık bırakılması, servis portlarının dışarı açılmaması öneriliyor. AGPL-3.0 lisanslı, 2026 Mayıs'ında açılmış ve 87 bin yıldıza ulaşmış; geliştirme varsayılan olarak `dev` dalında ilerliyor, yani hızlı ama oynak bir proje.",
+   "usage_tr": "Evdeki 7/24 açık Mac mini bu tür bir şeyi barındırmak için zaten duruyor; hayat orkestrasyonu tarafında e-posta triyajı, görevler ve takvimi tek yerde deneyip Trello akışının yanında ne kadar yer tuttuğunu görebilirsin. Kişisel bilgi tabanı için doküman ve not bölümü, yerel model desteğiyle birlikte API maliyeti olmadan çalışabilir; Tailscale üzerinden iPhone'dan da erişilebilir. Buradaki asıl risk senin bilinen zaafın: popüler bir uygulamayı iki hafta kullanıp bırakma eğilimin var ve bu kendi uygulamanı yazmanın yerine geçmez, olsa olsa hangi özelliklerin gerçekten kullanıldığını ölçtüğün bir ön deneme olur. Gömülebilirlik açısından da sınırlı: AGPL-3.0, bu kodu yayınlamayı düşündüğün kendi uygulamana almanı pratikte engeller, ayrı bir servis olarak kullanmak gerekir. Kurulum bir akşamlık iş, ama e-posta hesabını bağlamadan önce erişim kapsamlarını izole tutma ilkeni burada da uygula.",
+   "matched_project": "Hayat orkestrasyonu",
+   "relevance": 5,
+   "investment_note": null
+  },
+  {
+   "full_name": "fighting41love/funNLP",
+   "inputs_hash": "aa618a7bb55f3856fedf27ccf1498602",
+   "description_tr": "funNLP, Çince doğal dil işleme alanındaki araç, veri kümesi ve sözlükleri tek bir dizinde toplayan çok büyük bir kaynak listesi. İçerik hassas kelime listelerinden isim ve adres sözlüklerine, duygu analizinden metin düzeltmeye, bilgi grafiklerinden özetlemeye kadar onlarca başlığa yayılıyor ve büyük ölçüde harici repo'lara bağlantılardan oluşuyor. Son yıllarda ChatGPT benzeri modeller, eğitim/çıkarım kütüphaneleri, prompt mühendisliği ve çok modlu modeller için de bölümler eklenmiş. Kendi başına çalışan bir kütüphane değil, bir dizin; materyalin neredeyse tamamı Çince. 2018'den beri düzensiz aralıklarla güncelleniyor, 83 bin yıldızı var ve repo'da açık bir lisans belirtilmemiş.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam Lyricdrop'un çok dilli katalog hedefi olurdu, ama buradaki kaynakların dili ve odağı Çince olduğu için o ihtiyaca değmiyor. Liste tipi repo'lar arama motoru gibi kullanılır, araç olarak kurulmaz; bir konuda ne olduğunu taramak istediğinde işe yarar, bir adımı otomatikleştirmez. Yıldız sayısı bu repo'nun bir yazılımdan çok bir kaynak derlemesi olduğunu gizliyor, kıyaslama yaparken bunu aklında tut. Açık bir lisansı olmaması da içindeki verileri bir üründe kullanmayı ayrıca sorunlu hale getiriyor.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "nomic-ai/gpt4all",
+   "inputs_hash": "216cc6ae99cec6dd4354d5f3d5ae0e60",
+   "description_tr": "GPT4All, büyük dil modellerini sıradan masaüstü ve dizüstü bilgisayarlarda yerel olarak çalıştıran bir masaüstü uygulaması ve Python istemcisi. Arka planda llama.cpp kullanıyor, GPU ya da API çağrısı gerektirmiyor; modeller GGUF biçiminde indirilip çalıştırılıyor. Windows, Linux ve macOS için kurulumlar var, macOS tarafında Apple Silicon işlemcilerde daha iyi sonuç verdiği belirtiliyor. Python paketi birkaç satırla model indirip sohbet oturumu açmayı sağladığı için kendi hatlarına gömülebiliyor, LangChain ve çeşitli vektör veritabanlarıyla entegrasyonları mevcut. MIT lisanslı, ticari kullanıma açık, 77 bin yıldızlı ve 2023'ten beri geliştiriliyor.",
+   "usage_tr": "Kişisel bilgi tabanı tarafında sesli notların kategorisini çıkarma ve günlük/haftalık özet üretme işini ücretli API yerine Mac'te yerel bir modele yaptırmak istiyorsun; GPT4All'ın Python istemcisi bu adımı n8n akışının içine gömülebilir küçük bir servise çeviriyor. Masaüstü uygulaması bir sohbet arayüzü olarak ilgini çekmeyebilir ama asıl değer, model indirme ve çalıştırma işini tek bir bağımlılığa indirmesinde. 24 GB RAM'de makul boyutta modeller rahat çalışır; sınıflandırma ve etiketleme gibi dar işlerde sonuç yeterli olur, uzun metin muhakemesinde Claude'un yerini tutmaz. Maliyet tarafı net: API harcaması yok, karşılığında disk alanı ve ilk kurulum zamanı var. Karar vermeden önce kendi sesli notlarından yirmi tanesini alıp kategori doğruluğunu ölçmen, genel bir kanaate güvenmekten daha hızlı sonuç verir.",
+   "matched_project": "Kişisel bilgi tabanı",
+   "relevance": 5,
+   "investment_note": null
+  },
+  {
+   "full_name": "hiyouga/LlamaFactory",
+   "inputs_hash": "a5e1d15aaba4d03410dabaffdaebe343",
+   "description_tr": "LlamaFactory, yüzden fazla dil ve görsel-dil modelinin ince ayarını tek bir arayüz altında toplayan bir eğitim çerçevesi. LoRA, QLoRA, tam parametre eğitimi, talimat ayarı, RLHF ve niceleme gibi yöntemleri komut satırından ya da LLaMA-Board adlı web arayüzünden çalıştırılabilir hale getiriyor. Llama, Qwen, Gemma ve DeepSeek gibi model ailelerini destekliyor; Colab, SageMaker ve çeşitli bulut sağlayıcılarında hazır şablonları var. Çalışması için pratikte NVIDIA sınıfı GPU'lara ihtiyaç duyuyor. Apache-2.0 lisanslı, ACL 2024'te yayımlanmış, 75 bin yıldızlı ve aktif bir proje.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam Lyricdrop'un şık üretimi için küçük bir modeli kendi verinle özelleştirmek olurdu. Ama bu iş GPU kiralamayı, veri kümesi hazırlamayı ve eğitim döngüsünü sahiplenmeyi gerektirir; senin yaklaşımın hazır modele iyi prompt vermek ve maliyeti şarkı başına düşük tutmak yönünde, ince ayar bu dengeyi bozar. Ofisteki Mac'te anlamlı bir eğitim yapılamaz, yani 'yerel çalışır mı' sorusunun cevabı da hayır. Bu repo'yu şimdilik yatırım merceğinden bakarken 'ince ayar artık ne kadar ucuzladı' sorusunun ölçüsü olarak takip etmek yeterli.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "666ghj/MiroFish",
+   "inputs_hash": "214af28fa9d0622b21409280cccb62e0",
+   "description_tr": "MiroFish, çok ajanlı simülasyon üzerinden tahmin yapmayı amaçlayan bir motor. Haber, politika taslağı ya da finansal sinyal gibi bir 'tohum' girdiden yola çıkarak içinde binlerce ajanın kişilik, uzun dönemli bellek ve davranış kurallarıyla etkileştiği bir dijital ortam kuruyor; kullanıcı bu ortama dışarıdan değişken enjekte edip sonuçların nasıl değiştiğini izliyor. Çıktı olarak bir tahmin raporu ve etkileşimli bir simülasyon dünyası üretiyor, kamuoyu analizi ve finansal öngörü örnek kullanım alanları olarak sunuluyor. Python ile yazılmış, Docker ile kuruluyor, AGPL-3.0 lisanslı ve bir kurumsal destekçisi var. 2025 Kasım'ında açılmış, 74 bin yıldıza hızla ulaşmış; ürettiği tahminlerin doğruluğuna dair repo metninde bağımsız bir ölçüm sunulmuyor.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam Arslan Holding tarafındaki pazar ve senaryo çalışmaları olurdu. Ama bir yatırım kararında kullanılacak çıktının doğrulanabilir olması gerekiyor ve burada simülasyonun gerçeği ne kadar öngördüğünü gösteren bir ölçüm yok; ajan sayısı çoğaldığında ikna edici görünen ama denetlenemeyen metinler üretmek bu tür sistemlerin bilinen riski. Rapor üretimi model çağrısı üzerinden çalışıyor, yani ciddi bir simülasyonun API maliyeti olacaktır ve bu maliyet elde edilen kesinlikle orantılı değil. Bir ürün olarak değil, çok ajanlı simülasyon alanının nereye gittiğini görmek için ara ara bakılacak bir örnek olarak değerlendir.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "BerriAI/litellm",
+   "inputs_hash": "7faff976a93e776afe3ae6810351867d",
+   "description_tr": "LiteLLM, yüzden fazla model sağlayıcısını tek bir OpenAI uyumlu arayüz altında toplayan bir AI gateway. Python SDK olarak uygulamaya gömülebiliyor ya da self-host edilen bir proxy sunucusu olarak çalıştırılabiliyor; çekirdeği Rust ile yazılmış. Sağlayıcı bazında maliyet takibi, bütçe ve oran sınırı tanımlama, yük dengeleme, yeniden deneme, loglama ve guardrail gibi işletim özellikleri sunuyor; OpenAI, Anthropic, Bedrock, Azure, VertexAI, vLLM ve NIM gibi arka uçları destekliyor. Render, Railway, AWS ve GCP için hazır dağıtım düğmeleri ve bir kurumsal sürümü var. 59 bin yıldızlı, Y Combinator çıkışlı bir ekip tarafından geliştiriliyor ve 2023'ten beri aktif.",
+   "usage_tr": "Lyricdrop'un içerik hattında şarkı başına maliyeti düşük tutmak açık bir hedef; LiteLLM proxy'sini araya koyarsan hangi adımın ne kadar harcadığını şarkı bazında görebilir, aylık bütçe sınırı tanımlayıp bir hata döngüsünün faturayı şişirmesini engelleyebilirsin. İkinci faydası sağlayıcı değiştirmeyi tek satırlık bir ayar haline getirmesi: aynı kodla Mac'teki yerel bir OpenAI uyumlu sunucuya da, ücretli bir API'ye de gidebilirsin, bu da yerel modelleri denerken kodu her seferinde değiştirmeni önler. Ofis Mac'inde ya da DigitalOcean'da tek konteyner olarak durur, Folio'nun günlük içerik üretimi de aynı proxy'nin arkasına alınabilir. Net bir sınırı var: Claude Code'u Max aboneliğiyle kullanıyorsun, LiteLLM oranın maliyetine dokunmaz, yalnızca kendi uygulamalarının API harcamasını yönetir. Kurulumu ölçüm amaçlı yapıp bir ay sonra gerçekten rakam okuyup okumadığına bakmak, katmanı kalıcı tutup tutmamaya karar vermenin en hızlı yolu.",
+   "matched_project": "Lyricdrop",
+   "relevance": 6,
+   "investment_note": "AI gateway katmanı B2B yazılım tezine doğrudan oturuyor; açık kaynak dağıtım artı kurumsal sürüm modeliyle ticarileşmiş bu örnek, benzer altyapı yatırımlarını değerlendirirken karşılaştırma noktası olabilir."
+  },
+  {
+   "full_name": "pathwaycom/llm-app",
+   "inputs_hash": "671af088fa415b95e157cbf3c67bd0bb",
+   "description_tr": "Pathway'in llm-app deposu, RAG ve kurumsal arama uygulamaları için çalışmaya hazır şablonlar sunuyor. Şablonlar dosya sistemi, Google Drive, SharePoint, S3, Kafka ve PostgreSQL gibi kaynaklara bağlanıp ekleme, silme ve güncellemeleri sürekli senkron tutuyor; böylece indeks veri değiştikçe tazeleniyor. Vektör, hibrit ve tam metin arama dahili olarak, ayrı bir vektör veritabanı kurmadan bellek içinde ve cache'li biçimde çalışıyor. Docker ile yerelde denenip bulutta ya da şirket içinde dağıtılabiliyor ve milyonlarca sayfalık koleksiyonlara ölçeklendiği belirtiliyor. MIT lisanslı, büyük ölçüde Jupyter Notebook biçiminde sunulmuş, 58 bin yıldızlı ve ticari bir şirket tarafından sürdürülüyor.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam asistanınla ortak kullandığın Google Drive üzerindeki dokümanlarda arama olurdu. Ancak buradaki şablonlar Kafka, S3 ve SharePoint ölçeğindeki kurumsal kurulumlar için tasarlanmış; senin doküman hacmin bu ağırlığı taşımıyor ve zaten kullandığın Supabase pgvector aynı ihtiyacı fazladan bir servis çalıştırmadan karşılıyor. Canlı senkron özelliği ilgi çekici ama karşılığında sürekli açık kalan bir Docker servisi ve ayrı bir çerçeve öğrenme maliyeti getiriyor. Bu repo'ya, ileride holding tarafında paylaşılan bir doküman havuzu gerçekten büyürse geri dönmek üzere bakmış say.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "karpathy/nanochat",
+   "inputs_hash": "40c7315feb6b701a27b044c44e5137a0",
+   "description_tr": "nanochat, bir dil modelinin tüm aşamalarını tek bir küçük kod tabanında toplayan deneysel bir eğitim iskelesi. Tokenizasyon, ön eğitim, ince ayar, değerlendirme ve çıkarım adımlarını kapsıyor ve tek bir GPU düğümünde çalışacak şekilde tasarlanmış. Tek bir karmaşıklık ayarı olan katman sayısı üzerinden diğer hiperparametreleri otomatik hesaplayarak birbirinin ölçekli sürümü olan bir model serisi eğitmeyi sağlıyor. Depoda GPT-2 seviyesine ulaşma süresini ölçen bir sıralama tablosu tutuluyor ve topluluk katkılarıyla bu süre düşürülüyor. MIT lisanslı, 58 bin yıldızlı; amacı üretim değil, öğretme ve deney.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, model eğitiminin gerçekte neye mal olduğunu anlamak isteyen bir yatırımcı merakı olurdu. Kendi ürünlerinde eğitilmiş bir modele ihtiyacın yok, hazır modelleri iyi kullanmak senin için daha verimli bir yol ve bu repo çalıştırmak için kiralık GPU düğümü gerektiriyor. Buna karşılık kod tabanı kasıtlı olarak küçük ve okunabilir; bir akşam ayırıp okumak, pitch deck'lerde geçen eğitim maliyeti iddialarını değerlendirirken sana somut bir çıpa verir. Araç olarak değil, okuma malzemesi olarak listeye al.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "ultralytics/yolov5",
+   "inputs_hash": "3f7396289f46cfd2520148d41ab88831",
+   "description_tr": "YOLOv5, PyTorch tabanlı bir nesne tespiti model ailesi ve bunun etrafındaki eğitim, değerlendirme ve dışa aktarma araçları. Nesne tespitinin yanında örnek bölütleme ve görüntü sınıflandırma görevlerini de kapsıyor. Eğitilen modeller ONNX, CoreML, TFLite ve TensorRT gibi biçimlere aktarılabildiği için mobil ve gömülü cihazlarda çalıştırılmaya uygun. AGPL-3.0 lisanslı; bu lisans, modeli kapalı kaynak bir üründe kullanmayı ayrı bir ticari lisans olmadan engelliyor. 58 bin yıldızlı ve 2020'den beri duran bir proje, ancak bu pakette README metni yer almadığı için bakım durumu ve güncel sürüm konusunda buradan bir şey söylemek mümkün değil.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam görüntü skorlaması düşündüğün tarafta, yani model scouting fikri ve görsel değerlendirme içeren deneylerde olurdu. Ama oradaki ihtiyaç 'karede kaç nesne var' değil nitelik ve estetik değerlendirmesi; bu iş bir nesne tespiti modelinin yaptığı iş değil, görsel-dil modellerinin alanı. CoreML dışa aktarımı Expo uygulamalarında cihaz üstü çalıştırmayı mümkün kılar, yani teknik yol açık, eksik olan gerçek bir tespit ihtiyacı. AGPL lisansı da yayınlamayı düşündüğün bir uygulamaya gömmeyi ayrıca sorunlu hale getiriyor; bir ihtiyaç doğarsa önce lisans tarafına bakmak gerekir.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "zylon-ai/private-gpt",
+   "inputs_hash": "b6f839637efbe383fa108bc865191e69",
+   "description_tr": "PrivateGPT, yerel modellerin üzerine üretime uygun bir API katmanı koyan açık kaynak bir proje. Kendisi model çalıştırmıyor; Ollama, llama.cpp veya vLLM gibi OpenAI uyumlu herhangi bir çıkarım sunucusuna bağlanıyor ve üstüne akışlı mesaj API'si, dosya yükleme, kaynak göstererek getirim, agentic RAG, gömme, araç çağırma, MCP bağlantıları ve veritabanı ile CSV üzerinde yapılandırılmış erişim ekliyor. Test ve demo için dahili bir arayüzü var ama asıl ürün API'nin kendisi. macOS'ta brew ile, Linux'ta uv ile kuruluyor ve Docker seçeneği mevcut. Apache-2.0 lisanslı, 57 bin yıldızlı ve aynı ekibin kurumsal ürününün altyapısı olarak sürdürülüyor.",
+   "usage_tr": "Kişisel bilgi tabanı için istediğin şey tam olarak bu katman: sesli not metinlerini yükleyip kaynak gösteren bir arama ve özetleme arka ucu, ama kendi arayüzünü kendin yazacak şekilde. Ofis Mac'inde Ollama'yı arkasına koyup çalıştırabilir, Expo istemcinden doğrudan bu API'ye gidebilirsin; API maliyeti yok ve notlar Mac'ten çıkmıyor. Dosya yükleme ve alıntılı getirim hazır geldiği için haftalık ve aylık rapor üretimini sıfırdan kurmak yerine mevcut uçlara bağlayarak yapabilirsin. Uyarı: modeli kendisi çalıştırmadığı için kalite tamamen arkasına koyduğun modele bağlı ve 24 GB RAM'de bu sınırı hızlı görürsün; ayrıca proje ticari bir ürünün altyapısı olduğundan açık kaynak tarafın yol haritası şirketin önceliklerine bağlı. Küçük bir not kümesiyle kurup getirim kalitesini ölçtükten sonra devam etmeye karar vermek doğru sıra.",
+   "matched_project": "Kişisel bilgi tabanı",
+   "relevance": 7,
+   "investment_note": "Şirket içinde çalışan, veriyi dışarı çıkarmayan AI altyapısı Körfez ve Türkiye'de veri yerleşimi kuralları nedeniyle gerçek bir talep alanı; bu proje o tezin açık kaynak tarafını ticarileştirmiş bir örnek olarak deal flow'da referans alınabilir."
+  },
+  {
+   "full_name": "microsoft/VibeVoice",
+   "inputs_hash": "a3ce6f29c96342c950ea80c7f997ce26",
+   "description_tr": "VibeVoice, konuşma sentezi ve konuşma tanıma modellerini bir arada toplayan açık kaynak bir model ailesi. Tanıma tarafındaki model, 60 dakikaya varan uzun kayıtları tek geçişte işleyip kimin ne zaman ne söylediğini içeren yapılandırılmış bir transkript üretiyor; 50'den fazla dili, kullanıcı tanımlı bağlam ve anahtar kelime desteğini ve ses gelirken çalışan bir akışlı sürümü kapsıyor. Mimarinin çekirdeğinde 7,5 Hz gibi çok düşük bir kare hızında çalışan sürekli konuşma tokenizer'ları ve difüzyon tabanlı bir üretim çerçevesi var. BitNet tabanlı bir uç sürümle model 4,62 GB'tan 1,58 GB'a indirilip GPU olmadan, birkaç CPU çekirdeğiyle gerçek zamanlı çalışabiliyor; ince ayar kodu ve vLLM ile servis seçeneği de mevcut. MIT lisanslı ve 54 bin yıldızlı; metin-konuşma kodunun bir bölümü kötüye kullanım gerekçesiyle depodan kaldırılmış durumda.",
+   "usage_tr": "Bu, Lyricdrop v2'nin kelime zamanlama adımında karşılaştırmak istediğin iki üç STT sisteminden biri olmayı hak ediyor. Özellikle kullanıcı tanımlı bağlam ve anahtar kelime desteği senin tam olarak kurmak istediğin karşılıklı düzeltme mantığına denk geliyor: lyrics DB'den gelen düz sözü bağlam olarak verip modelin yanlış duyduğu kelimeleri metinle sabitleyebilirsin. Uzun kaydı tek geçişte işlemesi ve akışlı sürümü panelin toplu işleme adımını basitleştirir; BitNet sürümü sayesinde ofis Mac'inde GPU olmadan yerel çalıştırma ihtimali var, yani API maliyeti getirmeden denenebilir. Ölçmen gereken tek şey şu: model zaman damgalarını konuşmacı ve cümle düzeyinde üretiyor, senin ihtiyacın olan kelime düzeyindeki hassasiyete ulaşıp ulaşmadığını mevcut 20-30 şarkılık test setinde doğrulamadan karar verme. Şarkı sesi konuşmadan farklı; enstrüman altındaki vokalde doğruluk düşüyorsa önce stem ayırma adımı ekleyip aynı ölçümü tekrarla, böylece karşılaştırdığın diğer sistemlerle aynı koşulda yarışsın.",
+   "matched_project": "Lyricdrop",
+   "relevance": 9,
+   "investment_note": null
+  },
+  {
+   "full_name": "run-llama/llama_index",
+   "inputs_hash": "ffdf56f6397a3ae87278aae5c2e1c485",
+   "description_tr": "LlamaIndex, RAG ve ajan uygulamaları kurmak için kullanılan açık kaynak bir Python çerçevesi. Veri yükleyiciler, indeksleme, getirim, sorgu motorları, çok ajanlı akışlar ve çok sayıda vektör veritabanı entegrasyonu sunuyor. Deponun kendi açıklamasında şirketin önceliğinin artık doküman ayrıştırma ve çıkarım ürünlerine kaydığı, açık kaynak çerçevenin kullanılabilir durumda kaldığı ancak birincil odak olmadığı belirtiliyor. Ticari tarafta belge ayrıştırma platformu ve açık kıyaslama çalışmaları öne çıkarılıyor. MIT lisanslı, 2022'den beri geliştiriliyor ve 52 bin yıldızlı.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam kişisel bilgi tabanının getirim katmanı olurdu. Ama o iş için zaten Supabase pgvector'ün var ve genel amaçlı bir çerçeve eklemek, yazdığın kodun büyük kısmını çerçevenin soyutlamalarına bağlamak anlamına geliyor; senin tarzın bileşeni alıp kendi istemcini yazmak yönünde. Bakımın öncelikli olmadığının repo'da açıkça yazılması da uzun ömürlü bir bağımlılık seçerken dikkate alınması gereken bir bilgi. Buna karşılık veri yükleyici koleksiyonu, belirli bir kaynaktan veri çekerken tek dosyalık örnek olarak okunabilir.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "milvus-io/milvus",
+   "inputs_hash": "d78ea82ea10eaffa2ce7ddd979261b54",
+   "description_tr": "Milvus, büyük ölçekli vektör aramasına odaklanmış açık kaynak bir vektör veritabanı. Go ve C++ ile yazılmış, CPU ve GPU hızlandırması kullanıyor; HNSW, DiskANN ve FAISS tabanlı indeks türlerini destekliyor. Kubernetes yerlisi ve dağıtık mimarisiyle milyarlarca vektör üzerinde on binlerce eşzamanlı sorguyu karşılamak ve gerçek zamanlı güncellemelerle veriyi taze tutmak için tasarlanmış. Tek makinede çalışan bir standalone modu ve pip ile kurulan hafif bir sürümü de var. Apache-2.0 lisanslı, 2019'dan beri geliştiriliyor, 46 bin yıldızlı ve arkasında yönetilen bir bulut servisi sunan bir şirket var.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam Lyricdrop kataloğu ya da kişisel bilgi tabanı için vektör arama olurdu. Ancak her iki durumda da veri hacmin binler mertebesinde ve Supabase içindeki pgvector bu ölçeği ayrı bir servis çalıştırmadan karşılıyor; Milvus asıl kazancını milyarlarca vektörde veriyor. Ayrı bir veritabanı eklemek yedekleme, sürüm ve erişim yönetimini ikiye katlar, bu da tek merkezde toplama eğilimine ters düşer. Ölçek gerçekten büyüdüğünde, yani pgvector sorgu süreleri ölçülebilir biçimde bozulduğunda yeniden bakılacak bir seçenek olarak not etmek yeterli.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "hpcaitech/ColossalAI",
+   "inputs_hash": "1b75feba340d5209496cbb53647fb062",
+   "description_tr": "Colossal-AI, büyük modellerin eğitimini ve çıkarımını dağıtık donanımda ucuzlatmayı hedefleyen bir sistem kütüphanesi. Veri, model, pipeline ve tensor paralelliği ile heterojen eğitim gibi teknikleri tek bir arayüz altında sunuyor ve mevcut eğitim kodlarına görece az değişiklikle uygulanabilecek şekilde tasarlanmış. Hedef kitlesi çok GPU'lu kümelerde temel model eğiten ya da ince ayar yapan ekipler; depoda bulut GPU sağlayıcısı olan kendi ticari hizmetleri de tanıtılıyor. Bir akademik yayına dayanıyor, Apache-2.0 lisanslı ve 41 bin yıldızlı. Tek makinede, özellikle GPU'suz bir ortamda, sunduğu tekniklerin karşılığı yok.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; bu kütüphane çok GPU'lu küme işletenler için yazılmış ve senin geliştirme merkezin tek bir Mac. Model eğitmek ya da ince ayar yapmak projelerinin hiçbirinde gerekli bir adım değil; hazır modelleri çağırmak hem maliyet hem hız açısından senin kurduğun dengeye uyuyor. En yakın bağlam yatırım tarafında donanım ve eğitim maliyeti konuşulan bir toplantı olurdu, orada da repo'nun kendisi değil sunduğu tekniklerin adları işe yarar. Takip listesine almak için bir sebep görünmüyor.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  }
+ ]
+}

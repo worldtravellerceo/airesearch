@@ -1,0 +1,175 @@
+{
+ "repos": [
+  {
+   "full_name": "petercorke/robotics-toolbox-python",
+   "inputs_hash": "926de23452383dd6ec8ab8e05b777ac4",
+   "description_tr": "Robotics Toolbox for Python, robot kinematiği ve dinamiği için açık kaynak bir Python kütüphanesi. Seri manipülatörler için ileri ve ters kinematik, Jacobian ve Hessian hesapları, yörünge üretimi ve hareket planlama rutinleri sunuyor; robot modelleri Denavit-Hartenberg parametreleri veya URDF dosyalarından kurulabiliyor. Peter Corke'un uzun süredir kullanılan MATLAB Robotics Toolbox'ının Python karşılığı olarak geliştirildi ve ağırlıklı olarak araştırma ile eğitim kullanımını hedefliyor. PyPI üzerinden dağıtılıyor, tarayıcıda JupyterLite ile denenebilen örnek not defterleri var. MIT lisanslı, ~3.5K yıldız; 2015'ten beri sürüyor, CI, kod kapsama raporları ve düzenli sürümlerle bakımı devam ediyor.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın olası bağlam, fizik simülasyonu ve robot kolu kontrolü gerektiren donanım tarafı olurdu ki profilinde böyle bir iş yok. Mac'te yerel çalışan saf bir Python kütüphanesi olması bir avantaj ama ortada çözdüğü bir problemin olmaması bunu anlamsız kılıyor.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "mani-skill/ManiSkill",
+   "inputs_hash": "01e570b03bfbb8108e1204d6a7ed20ff",
+   "description_tr": "ManiSkill, SAPIEN motoru üzerine kurulu, GPU'da paralelleştirilmiş bir robot simülasyon ve eğitim çerçevesi; odak noktası manipülasyon becerileri. Binlerce ortamı aynı anda koşturarak durum tabanlı ve görsel (RGBD + segmentasyon) sentetik veriyi yüksek hızda toplayabiliyor, her paralel ortamda farklı bir sahne ve nesne kümesi kullanılabiliyor. İnsansı robotlar, mobil manipülatörler ve tek kollu robotlar gibi farklı gövdeleri; masaüstü görevleri, çizim/temizlik ve el becerisi görevlerini örnek olarak getiriyor. Görev tanımlama API'si ile yeni ortamlar yazılabiliyor, aynı zamanda robot öğrenme alanında bir benchmark olarak kullanılıyor. Apache-2.0 lisanslı, ~3.4K yıldız; dokümantasyonu, Colab başlangıç örnekleri ve aktif bir topluluğu var, pratik kullanım için NVIDIA GPU bekliyor.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın olası bağlam, embodied AI alanına yatırımcı gözüyle bakarken hangi araçların standart haline geldiğini takip etmek olabilir. Pratik tarafta güçlü bir NVIDIA GPU beklediği için ofisteki Mac üzerinde yerel çalıştırma senaryosuna da oturmuyor.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "Source-Robotics/PAROL6-Desktop-robot-arm",
+   "inputs_hash": "977321c6fb9cbb7089833fc0f6bfa6d6",
+   "description_tr": "PAROL6, 3D baskıyla üretilen masaüstü boyutlu bir robot kolun açık kaynak donanım deposu. İçinde malzeme listesi (BOM), STL dosyaları, montaj talimatları ve kontrol yazılımına bağlantılar bulunuyor; kinematik tarafında Robotics Toolbox for Python kullanılıyor. Proje bir dokümantasyon sitesi, Discord topluluğu ve hazır parça satan bir mağaza ile birlikte yürütülüyor, yani açık tasarım ile ticari satışı birlikte ilerletiyor. Hedef kitle hobi robotikçiler, eğitim kurumları ve masaüstü otomasyon denemeleri yapan geliştiriciler. GPL-3.0 lisanslı, ~3.3K yıldız; sürüm etiketleri ve issue akışı düzenli görünüyor.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın olası bağlam fiziksel donanım hobisi olurdu, profilindeki hobiler ise müzik, spor ve araba tarafında. Yazılım olarak da kendi uygulamalarına gömülebilecek bir bileşen değil, bir donanım yapım kılavuzu.",
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "MisoLabsAI/MisoTTS",
+   "inputs_hash": "b3c51934763a85744dee65dd185918dc",
+   "description_tr": "Miso TTS 8B, metinden konuşma üreten yaklaşık 8 milyar parametreli bir RVQ transformer modeli; Sesame CSM mimarisinden esinlenmiş, Llama 3.2 tarzı bir backbone ile daha küçük bir otoregresif ses çözücü kullanıyor. Mimi ses kodlayıcısı üzerinden çalışıyor, önceki ses parçalarını bağlam olarak alıp kısa bir referans klibinden ses klonlayabiliyor ve konuşma/diyalog sentezine odaklanıyor. Şu an yalnızca İngilizce destekliyor; ağırlıklar Hugging Face üzerinde yayınlanıyor ve ilk çalıştırmada üretilen sese SilentCipher filigranı ekleniyor. README, modelin hafif bir CPU modeli olmadığını ve etkileşimli kullanım için yüksek VRAM'li bir GPU gerektiğini açıkça yazıyor; dolaşımdaki 110 ms gecikme rakamı yerel çalıştırmaya değil, H100 sınıfı donanımdaki barındırılan API'ye ait. Lisans alanı standart bir açık kaynak lisansı olarak tanınmıyor (NOASSERTION); depo 2026'da açılmış ve ~3.2K yıldıza ulaşmış.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın olası bağlam Folio'nun günlük içerik pipeline'ında seslendirme üretmek olabilir, ama orada tanımlı ihtiyaç görsel ve video üretimi, metinden konuşma değil. Donanım beklentisi de kriterlerine ters düşüyor: yüksek VRAM'li bir GPU isteyen 8B'lik bir model, ofisteki Mac'te yerel çalıştırma alışkanlığına oturmuyor ve bulutta koşturmak API maliyeti demek. Lisansın belirsiz olması, çıktının kendi uygulamana gömülmesi ihtimalini de şimdilik tartışmalı kılıyor.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": "Kendi mimarisini eğitmiş bir ekibi ve barındırılan bir API'si olan ticari bir TTS girişiminin açık kaynak ayağı; ses modeli katmanındaki fiyat-kalite rekabetini yatırımcı gözüyle izliyorsan ekip takip listesine alınabilir."
+  },
+  {
+   "full_name": "dexmal/dexbotic",
+   "inputs_hash": "ee5cbf55cdf996117abe15b8169aacde",
+   "description_tr": "Dexbotic, PyTorch üzerine kurulu bir Vision-Language-Action (VLA) geliştirme araç kutusu; robotlarda görme, dil ve eylemi birleştiren modellerin ön eğitim, ince ayar, çıkarım ve değerlendirme adımlarını tek çatı altında topluyor. π0, CogACT, OpenVLA-OFT ve MemoryVLA gibi yaygın politikalar için hazır ortam yapılandırmaları ve önceden eğitilmiş taban modeller sunuyor. Katmanlı yapılandırma, fabrika kaydı ve giriş noktası yönlendirmesine dayanan modüler bir mimari kullanıyor; hem simülasyon hem gerçek dünya kurulumlarını hedefliyor. Bir arXiv makalesi, çevrimiçi dokümantasyonu ve Hugging Face üzerinde model koleksiyonu ile birlikte yayınlanıyor. MIT lisanslı, ~3.2K yıldız; depo 2025 sonunda açılmış ve hızlı ilgi toplamış.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın olası bağlam, frontier tech yatırım merceğinden VLA alanının nasıl standartlaştığını izlemek olabilir. Araç olarak robot donanımı ve GPU kümesi varsayıyor, senin mobil uygulama ve veri pipeline'ı işlerine bağlanacak bir tarafı yok.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "rpng/open_vins",
+   "inputs_hash": "587dd0477354427ca81e4635d16b52df",
+   "description_tr": "OpenVINS, görsel-ataletsel navigasyon (visual-inertial odometry) araştırmaları için geliştirilmiş açık kaynak bir platform. Kamera ve IMU verisini birleştirerek bir cihazın konum ve yönelimini kestiren, MSCKF tabanlı bir genişletilmiş Kalman filtresi çekirdeği sunuyor; sensör kalibrasyonu ve SLAM özellikleri de kapsamında. C++ ile yazılmış ve GPL-3.0 lisanslı; ~3.1K yıldızla robotik araştırma topluluğunda yerleşik bir referans. Pakette bu deponun README metni boş geldi, bu yüzden kurulum adımları, desteklenen sürümler ve güncel bakım durumu hakkında buradan kesin bir şey söylenemiyor. Ayrıntı için projenin kendi dokümantasyon sitesine bakmak gerekir.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın olası bağlam, giyilebilir cihaz ve sensör füzyonu ilgisiyle uzaktan akraba sayılabilecek hareket kestirimi konusu olabilir. Ancak burada söz konusu olan kamera-IMU tabanlı robot navigasyonu; fizyolojik öz-izleme tarafındaki ihtiyaçlarınla örtüşmüyor.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "0xShug0/audio.cpp",
+   "inputs_hash": "d7d1ecc3f79003c6a5c40a81e1871c84",
+   "description_tr": "audio.cpp, ggml üzerine kurulu saf C++ bir ses çıkarım motoru; TTS, konuşma tanıma (ASR), VAD, ses dönüştürme, ses klonlama, diarizasyon, kaynak ayırma, hizalama ve müzik üretimi gibi model ailelerini tek bir yerel çalışma zamanında topluyor. Python bağımlılığı yok; CUDA, HIP/ROCm, Vulkan, Metal ve saf CPU backend'leri ortak bir CLI ve sunucu arayüzünün arkasında duruyor, yani Apple Silicon dahil çoğu makinede çalışıyor. Modeller GGUF olarak dağıtılıyor ve Q8 paketleri bazı yollarda belleği belirgin biçimde düşürüyor; ayrıca gürültü azaltma, yeniden örnekleme ve STFT gibi yerleşik ses araçları geliyor. Yeni Arena sekmesi aynı girdiyi birden çok modele verip çıktıları ölçütlerle yan yana karşılaştırmayı sağlıyor, deneysel bir JSON pipeline desteği de var. ~2.9K yıldız, 2026 ortasında açılmış ve sık sürüm çıkaran aktif bir proje; lisans alanı standart bir açık kaynak lisansı olarak tanınmıyor (NOASSERTION). Yayınlanan hız karşılaştırmalarının çoğu CUDA yolundan geliyor.",
+   "usage_tr": "Lyricdrop v2'nin kelime zamanlama adımı için doğrudan denemeye değer: karşılaştırmayı planladığın 2-3 STT sistemini ayrı Python ortamları kurmadan aynı arayüzden koşturabilir, üstüne hizalama ve VAD modellerini de aynı çalışma zamanında tutabilirsin. Metal backend'i sayesinde ofisteki M4 Pro Mac'te yerel çalışır, API maliyeti getirmez; Python bağımlılığı olmadığı için admin paneline bir CLI çağrısı ya da yerel HTTP sunucusu olarak bağlanması kolaydır. Arena sekmesindeki yan yana karşılaştırma akışı, 20-30 şarkılık test setinde hangi STT'nin kalacağına karar verme işini ölçülebilir hale getirir ve bu kıyaslamayı asistanına devredebileceğin bir forma sokar. Kaynak ayırma tarafı ikinci bir fayda: vokali enstrümandan ayırıp hizalamayı temiz vokal üzerinde yapmak sözlerin zamanlamasını düzeltebilir, aynı bileşen DJ kütüphanesi tarafında stem çıkarmak için de işine yarar. Uyarı: README'deki hız kazanımlarının çoğu CUDA yolunda ölçülmüş, Apple Silicon'da aynı oranı varsayma ve kendi ölçümünü al. İkinci uyarı: lisans standart bir açık kaynak lisansı olarak tanınmadığı için kendi uygulamana gömmeden önce lisans dosyasını okumak gerekir.",
+   "matched_project": "Lyricdrop",
+   "relevance": 9,
+   "investment_note": "ggml ekosisteminde ses modelleri için ortak bir yerel çalışma zamanı boşluğunu dolduruyor ve hızlı büyüyor; llama.cpp çevresinde oluşan ticarileşme örüntüsünün ses tarafında tekrarlanıp tekrarlanmayacağını izlemeye değer."
+  },
+  {
+   "full_name": "OpenMind/OM1",
+   "inputs_hash": "e65dc39feef9758bd33af4db651e0058",
+   "description_tr": "OM1, çok modlu yapay zeka ajanlarını hem dijital ortamlarda hem fiziksel robotlarda çalıştırmak için tasarlanmış modüler bir çalışma zamanı; kendini robotlar için bir donanım soyutlama katmanı (HAL) olarak tanımlıyor. İnsansı robotlar, dört ayaklılar, TurtleBot 4 gibi eğitim robotları ve Gazebo/Isaac Sim simülatörleri destekleniyor; girdi olarak kamera, LIDAR, web ve sosyal medya verisi alıp hareket, otonom navigasyon ve konuşma gibi eylemler üretebiliyor. Proje Python'dan Go'ya taşındı: Go çalışma zamanı daha düşük gecikme, daha küçük bellek ayak izi ve tek ikili dosya ile dağıtım için öneriliyor, Python sürümü ise artık bakım almıyor. ROS2 ve Zenoh ile entegre çalışıyor, bir teknik makalesi ve dokümantasyon sitesi var. MIT lisanslı, ~2.9K yıldız; 2025 başında açılmış ve ticari bir şirket tarafından geliştiriliyor.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın olası bağlam, uzun süredir istediğin orkestratör ajan fikri olabilir, ama OM1 genel amaçlı bir görev ajanı değil, robot donanımına bağlanan bir çalışma zamanı. Projelerin arasında köprü kuracak asistan için aradığın şey takvim, CRM ve repo entegrasyonları; burada bunların yerini sensör ve hareket sürücüleri alıyor, dolayısıyla zorlama bir eşleşme olur.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "RoboTwin-Platform/RoboTwin",
+   "inputs_hash": "5d0fd7b579233814a5cdfc172b94dafc",
+   "description_tr": "RoboTwin, çift kollu (bimanual) robot manipülasyonu için bir simülasyon platformu ve benchmark; üretken dijital ikizlerle eğitim verisi üretmeye odaklanıyor. 2.0 sürümü ICML 2026'da yayımlandı, önceki sürümleri CVPR 2025 ve bir ECCV atölyesinde ödül almıştı. Platform bir veri üretici, görev kümesi ve topluluk liderlik tablosu ile birlikte geliyor; embodied AI politikalarının karşılaştırılabilir biçimde ölçülmesini hedefliyor. Dokümantasyon sitesi, makaleler ve yarışma raporları düzenli olarak güncelleniyor. MIT lisanslı, ~2.9K yıldız; akademik bir ekip tarafından aktif biçimde sürdürülüyor.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın olası bağlam, embodied AI alanındaki akademik kıyas altyapısının nereye gittiğini yatırım merceğiyle izlemek olabilir. Günlük işlerinde kullanılabilecek, kendi uygulamalarına gömülebilir bir bileşen sunmuyor.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "tum-vision/lsd_slam",
+   "inputs_hash": "eca9baaf7fd0d19e9e3e735ddc0480f5",
+   "description_tr": "LSD-SLAM, tek kameradan gerçek zamanlı, doğrudan (öznitelik çıkarmayan) monoküler SLAM yapan bir araştırma sistemi; dizüstü bilgisayarda büyük ölçekli, yarı yoğun haritalar üretebiliyor. TUM Görü grubunun ECCV '14 ve ICCV '13 makalelerine eşlik eden referans uygulaması ve alanında sık atıf alan bir çalışma. Kod ROS düğümleri olarak kurgulanmış; bir görüntüleyici ve canlı SLAM düğümü ile örnek rosbag dizileri üzerinde çalıştırılıyor. README'deki kurulum talimatları Ubuntu 12.04 + ROS fuerte ve Ubuntu 14.04 + ROS indigo üzerinde test edilmiş durumda, yani güncel sistemlerde kurulum ciddi uğraş ister. GPL-3.0 lisanslı, ~2.7K yıldız; 2014'ten kalma ve pratikte tarihsel bir referans niteliğinde.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın olası bağlam, kameradan mekan haritalama gerektiren bir donanım projesi olurdu ki elinde öyle bir iş yok. Kodun on yıllık ROS sürümlerine bağlı olması, denemek istesen bile maliyeti kazancının çok üstüne çıkarır.",
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "ros-planning/navigation",
+   "inputs_hash": "d86cfde594a3e453d655c03a5a755f3a",
+   "description_tr": "ROS Navigation Stack, tekerlekli bir mobil robotun odometri, sensör akışları ve bir hedef pozdan yola çıkarak güvenli hız komutları üretmesini sağlayan 2B navigasyon yığını. Konum kestirimi, maliyet haritaları, global ve yerel yol planlama bileşenlerini bir arada barındırıyor ve yıllarca ROS 1 ekosisteminin varsayılan navigasyon çözümü oldu. Depo, navigation_msgs ve navigation_tutorials gibi yan depolarla birlikte kullanılıyor. README çok kısa; tartışma bir Google Groups listesi üzerinden yürütülüyor ve Debian paket derleme durumları rozetlerle izleniyor. ~2.7K yıldız; lisans alanı pakette boş geldi ve proje ROS 1 dönemine ait, ROS 2 tarafında yerini başka bir yığın almış durumda.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın olası bağlam, robot navigasyonuna meraktan bakmak olabilir. Mobil uygulama, veri pipeline'ı ve yatırım akışı işlerinin hiçbirine değmiyor.",
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "pnnbao97/VieNeu-TTS",
+   "inputs_hash": "64b932274a76480359d261fdf77eb76e",
+   "description_tr": "VieNeu-TTS, cihaz üzerinde çalışmaya odaklanmış bir Vietnamca metinden konuşma sistemi; 10.000 saatin üzerinde iki dilli veriyle eğitilmiş ve kısa bir referans klipten anında ses klonlama yapabiliyor. v3 Turbo sürümü sıfırdan tasarlanmış yeni bir mimari kullanıyor: 48 kHz çıktı, 25 hazır ses, toplu üretim, çok konuşmacılı konuşma modu ve metne gömülen deneysel duygu/non-verbal işaretler. Gerçek zamanlı akış ve OpenAI uyumlu bir `/v1/audio/speech` uç noktası sunuyor, Docker imajları ve tek tüketici GPU'da LoRA ince ayarı destekleniyor; CPU'da bile gerçek zamanın iki katı hızda üretim bildiriliyor. Deponun kendisi Apache-2.0 lisanslı ve v3 Turbo'yu içeriyor, ancak daha iyi klonlama başarımı olan v4 kapalı kaynak olarak yalnızca ticari API üzerinden veriliyor. ~2.6K yıldız; 2025 sonunda açılmış, sürümleri ve dokümantasyonu aktif biçimde güncelleniyor.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; model Vietnamca'ya özel olduğu için Lyricdrop'un dil listesine ya da İngilizce dinleme pratiğine hizmet etmiyor. En yakın olası bağlam, cihaz üzerinde düşük gecikmeli TTS'in nasıl kurulduğuna dair mimari bir referans olarak okumak olabilir; OpenAI uyumlu API yüzeyi ve Docker paketlemesi bu açıdan örnek alınabilir.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "ARISE-Initiative/robosuite",
+   "inputs_hash": "9eb69f6497889c0eb0e9c7f6a32e8934",
+   "description_tr": "robosuite, MuJoCo fizik motoru üzerine kurulu modüler bir robot öğrenme simülasyon çerçevesi ve benchmark'ı. Standartlaştırılmış görev ortamları, farklı robot gövdeleri (insansı robotlar dahil), özelleştirilebilir robot kompozisyonu ve bileşik kontrolcüler sunuyor; teleoperasyon cihazları ve foto-gerçekçi render desteği de var. Pekiştirmeli öğrenme ve taklit öğrenme çalışmalarında tekrarlanabilir karşılaştırma zemini sağlamak için tasarlandı. v1.5 ile gövde çeşitliliği ve tüm-vücut kontrolcüleri eklendi; sürüm notları ve dokümantasyonu düzenli tutuluyor. ~2.6K yıldız, akademik bir topluluk tarafından sürdürülüyor; lisans alanı standart bir açık kaynak lisansı olarak tanınmıyor (NOASSERTION).",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın olası bağlam, robot öğrenme alanındaki standart araçları yatırım tarafında tanımak olabilir. Ne Mac'te gündelik kullanacağın bir araç ne de kendi uygulamalarına gömebileceğin bir bileşen.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "AprilRobotics/apriltag",
+   "inputs_hash": "a35f76337ec64a0f4c4f41f9190f409b",
+   "description_tr": "AprilTag, kamerayla tanınan basılı işaretlere (fiducial marker) dayalı bir görsel konumlandırma sistemi; robotik araştırmalarında nesne ve kamera pozunu ölçmek için yaygın olarak kullanılıyor. Bu depo, önceki sürüme göre iki kattan fazla hızlanan, küçük etiketlerde tespit oranı artan ve esnek etiket düzenlerini destekleyen AprilTag 3'ü içeriyor. Bağımlılığı az, küçük bir C kütüphanesi olarak yazılmış; Python, MATLAB ve Julia sarmalayıcıları ile OpenCV entegrasyonu mevcut. Poz kestirimi, dedektör parametrelerinin hız/menzil dengesine göre ayarlanması ve hazır etiket görselleri dokümante edilmiş durumda. Resmî olarak Linux destekleniyor; ~2.5K yıldız ve üniversite kaynaklı istikrarlı bir bakım geçmişi var, lisans alanı standart olarak tanınmıyor (NOASSERTION).",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın olası bağlam, kamerayla nesne konumu ölçmek isteyen fiziksel bir kurulum olurdu, profilinde böyle bir proje yok. Görüntü analizi ilgin daha çok içerik ve skorlama tarafında; AprilTag bunun yerine milimetrik poz ölçümü problemini çözüyor.",
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "MIT-SPARK/TEASER-plusplus",
+   "inputs_hash": "63fd31fc884698aa37a67fd71fca1246",
+   "description_tr": "TEASER++, iki nokta bulutu arasındaki katı cisim dönüşümünü hızlı ve sertifikalanabilir biçimde kestiren bir C++ kütüphanesi. Girdi eşleşmelerinin büyük bölümü hatalı olduğunda bile çalışacak şekilde tasarlanmış; çözümün doğruluğunu belgeleyen teorik garantiler sunması ayırt edici yanı. Python ve MATLAB bağlayıcıları var, 3B yeniden yapılandırma ve SLAM boru hatlarında bir kayıt (registration) bileşeni olarak kullanılıyor. MIT tabanlı bir araştırma grubunun makalelerine eşlik ediyor ve dokümantasyonu çevrimiçi yayımlanıyor. MIT lisanslı, ~2.3K yıldız; derleme durumu CI ile izleniyor.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın olası bağlam 3B tarama ve nokta bulutu işleyen bir iş olurdu, senin tarafında böyle bir veri yok. Kütüphane Mac'te derlenip yerel çalışsa da çözdüğü problem mevcut projelerinin hiçbirinde ortaya çıkmıyor.",
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "xbpeng/MimicKit",
+   "inputs_hash": "dd07517ed852242dbc62a07997766026",
+   "description_tr": "MimicKit, hareket taklidi (motion imitation) yöntemleriyle karakter ve robot kontrolcüleri eğitmek için hafif bir çerçeve. DeepMimic, AMP, AWR, ASE, LCP, ADD ve SMP gibi yöntemlerin tek bir kod tabanında toplanmış uygulamalarını içeriyor ve her biri için ayrı kullanım dokümanı veriyor. Farklı simülatör arka uçlarıyla (örneğin Isaac Gym) çalışacak şekilde kurgulanmış, bağımlılıkları bilinçli olarak az tutulmuş; daha kapsamlı bir alternatif olarak ProtoMotions'a yönlendiriyor. Örnekleri insansı karakterler ile Unitree G1 ve Go2 gibi robotlar üzerinde gösteriliyor, bir başlangıç rehberi arXiv'de yayımlanmış. Apache-2.0 lisanslı, ~2.3K yıldız; 2025 sonunda açılmış yeni bir depo.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın olası bağlam, hareket yakalama ve animasyon merakı olabilir ama profilinde bunu bağlayacak bir proje bulunmuyor. Eğitim döngüsü simülatör ve GPU gerektirdiği için Mac'te yerel çalıştırma kriterine de uymuyor.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "PRBonn/kiss-icp",
+   "inputs_hash": "04206484d2dc8bcd8761efd96f594fc1",
+   "description_tr": "KISS-ICP, LiDAR verisinden odometri üreten, yani sensörün zaman içindeki hareketini kestiren bir işlem hattı; temel fikri, parametre ayarı yapmadan çoğu veri kümesinde çalışan sade bir ICP uygulaması sunmak. Bağımsız bir kütüphane ve CLI olarak kullanılabiliyor, ayrıca ROS ve ROS 2 sarmalayıcıları geliyor. Linux, Windows ve macOS üzerinde derlenebildiği belirtiliyor; bir RAL makalesine dayanıyor ve Bonn Üniversitesi fotogrametri grubu tarafından geliştiriliyor. Sürüm etiketleri ve kurulum yolları düzenli dokümante edilmiş, alanında sık kullanılan bir temel referans. MIT lisanslı, ~2.3K yıldız.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın olası bağlam LiDAR verisi üreten bir cihazla çalışmak olurdu, elinde böyle bir donanım ve veri akışı yok. Yerel çalışabilirlik kriterini karşılıyor ama karşılayacağı bir ihtiyaç ortada değil.",
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "chvmp/champ",
+   "inputs_hash": "0e3c68741e11a135aea221ebba87b529",
+   "description_tr": "CHAMP, dört ayaklı (quadruped) robotlar için ROS tabanlı bir kontrol ve geliştirme çerçevesi; MIT Cheetah robotunda uygulanan hiyerarşik yürüyüş kontrolcüsünün açık kaynak uygulaması. ROS navigasyon yığınıyla otonom hareket, yeni robotları yapılandırmak için bir kurulum asistanı ve Anymal, MIT Mini Cheetah, Spot, LittleDog gibi hazır URDF modelleri sunuyor. Gazebo simülasyon ortamı ve SpotMicroAI gibi amatör quadruped projeleriyle uyumluluk içeriyor; çekirdek kontrol kodu hem tek kart bilgisayarda hem mikrodenetleyicide çalışabilen başlık-dosyası tabanlı hafif bir C++ kütüphanesi olarak ayrılmış. README'deki test edilmiş kurulumlar Ubuntu 16.04 (ROS Kinetic) ve 18.04 (ROS Melodic), yani ROS 1 dönemine ait. BSD-3-Clause lisanslı, ~2.3K yıldız.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın olası bağlam dört ayaklı robotlarla ilgilenen bir donanım hobisi olurdu, senin hobilerin müzik, spor ve araba tarafında yoğunlaşıyor. Eski ROS sürümlerine bağlı olması, merak amaçlı bir denemeyi bile pahalı hale getirir.",
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "OpenHelix-Team/VLA-Adapter",
+   "inputs_hash": "6bc366de912346d03f9151a374fa6a3b",
+   "description_tr": "VLA-Adapter, küçük ölçekli görme-dil-eylem (VLA) modelleri eğitmek için önerilen bir yöntemin resmî uygulaması; amaç büyük taban modellere gerek kalmadan rekabetçi başarım elde etmek. Depo makale koduna ek olarak uygulama tarafında iyileştirilmiş bir Pro sürümü ve Hugging Face üzerinde yayımlanan model ağırlıkları içeriyor. 2026 başında gerçek dünya ALOHA dağıtımı desteği eklendi ve Cobot Magic donanımı üzerinde doğrulandı. Proje sayfası, arXiv makalesi ve örnek deney betikleriyle birlikte dağıtılıyor. MIT lisanslı, ~2.3K yıldız; 2025 sonunda açılmış, güncel ve akademik bir çıktı.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın olası bağlam, küçük modellerle büyük modellere yaklaşma fikrinin genel olarak ilgini çekmesi olabilir. Uygulamalı tarafı robot kolu donanımına bağlı olduğu için ne Lyricdrop ne de diğer projelerinde bir adıma oturuyor.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  }
+ ]
+}

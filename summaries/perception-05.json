@@ -1,0 +1,175 @@
+{
+  "repos": [
+    {
+      "full_name": "apple-aiml-research/ml-stable-diffusion",
+      "inputs_hash": "57dbf21a6dcec8d47ce3a692d6870904",
+      "description_tr": "Core ML Stable Diffusion, Stable Diffusion model ailesini Apple Silicon üzerinde Core ML ile çalıştırmak için hazırlanmış bir depo. İki parçadan oluşuyor: PyTorch ağırlıklarını Core ML formatına çeviren bir Python paketi ve üretilen model dosyalarını Xcode projelerine bağımlılık olarak eklemeye yarayan bir Swift paketi. Hedef platformlar macOS, iPadOS ve iOS; donanım tarafında M1 ve üzeri Mac'ler ile A14 ve üzeri iPhone'lar destekleniyor, 6 bit ve üzeri ağırlık sıkıştırmasıyla bellek kullanımı düşürülebiliyor. Depoda cihaz bazında uçtan uca gecikme ve difüzyon hızı ölçümleri, ayrıca compute unit ve attention implementation seçenekleri belgelenmiş. Apple'ın makine öğrenmesi araştırma grubu tarafından 2022'de açılmış, MIT lisanslı ve yaklaşık 18.000 yıldıza ulaşmış; kapsamı Stable Diffusion 1.x/2.x ve XL ailesiyle sınırlı.",
+      "usage_tr": "Folio'nun günlük içerik pipeline'ında doğrudan yerini bulur: yazar profillerine ait post ve story görsellerini ofisteki M4 Pro Mac'te yerel olarak üretip Supabase ve DigitalOcean tarafına yazabilirsin. Core ML dönüşümü bir kez yapılıyor, sonrasında görsel başına API maliyeti kalmıyor; bu da günde onlarca görsel üreten bir akışta maliyeti tamamen öngörülebilir kılıyor. Üretimi n8n'den tetikleyip günlük partiyi asistanının onayına bırakmak mümkün, yani her sabah senin müdahaleni gerektirmez. Swift paketi sayesinde üretimi ileride doğrudan iPhone'a taşıyabilirsin, ancak Expo tabanlı bir uygulamada bu bir native modül yazmayı gerektirir. Uyarı: depo SD 1.x/2.x/XL ailesine odaklı, güncel kapalı görsel modellerinin kalitesini beklersen karşılığını alamazsın; aynı yazar karakterinin her postta aynı görünmesi için ayrıca bir kontrol katmanı (ControlNet/IP-Adapter tarzı) kurman gerekir.",
+      "matched_project": "Folio",
+      "relevance": 7,
+      "investment_note": null
+    },
+    {
+      "full_name": "pytorch/vision",
+      "inputs_hash": "1492728c5a8d9a2003029ccfc3d3e3d3",
+      "description_tr": "torchvision, PyTorch ekosisteminin görüntü işleme paketi: yaygın veri kümeleri, hazır model mimarileri ve görüntü dönüşümleri (transforms) sağlıyor. Araştırmacılar ve model eğiten geliştiriciler için bir temel katman; tek başına bir ürün değil, PyTorch ile birlikte kullanılan bir kütüphane. Sürümleri torch sürümlerine sıkı sıkıya bağlı ve depoda hangi torch sürümünün hangi torchvision ve Python sürümüyle çalıştığını gösteren bir uyumluluk tablosu tutuluyor. BSD-3-Clause lisanslı, yaklaşık 17.900 yıldızlı ve 2016'dan beri PyTorch ana sürüm takvimiyle birlikte güncelleniyor.",
+      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, Kanarya çevresindeki görüntü skorlama fikirlerinde kendi modelini eğitmeye kalkışman olurdu. Pratikte bu paket, kullandığın üst seviye araçların altında zaten çalışan bir bağımlılık; senin onunla doğrudan kod yazman gereken bir adım yok. Model eğitmek yerine hazır modelleri Claude Code ile bir araya getiren çalışma tarzına da uzak kalıyor. Bir gün özel bir sınıflandırıcı eğitmen gerekirse ofisteki Mac'te MPS ile yerel olarak çalışır ve API maliyeti getirmez; o güne kadar ayrıca öğrenilmesi gereken bir şey değil.",
+      "matched_project": null,
+      "relevance": 1,
+      "investment_note": null
+    },
+    {
+      "full_name": "Mikubill/sd-webui-controlnet",
+      "inputs_hash": "d997daebd6767c681280cbab9053eba3",
+      "description_tr": "sd-webui-controlnet, AUTOMATIC1111'in Stable Diffusion web arayüzüne ControlNet ve benzeri enjeksiyon tabanlı kontrol yöntemlerini ekleyen bir eklenti. Üretilen görselin pozunu, derinliğini, kenar yapısını veya referans görselden gelen stilini sabitlemeye yarayan preprocessor ve model setleri sunuyor; IP-Adapter, tile, Depth Anything V2 ve union model desteği gibi kalemler README'de sıralanmış. Modeli ana Stable Diffusion ağırlıklarıyla birleştirmeye gerek olmadan çalışma anında devreye giriyor. GPL-3.0 lisanslı ve yaklaşık 17.800 yıldızlı. README'deki sürüm notları 2024 ortasında duruyor; kullanımı da doğrudan WebUI'nin sürüm yapısına bağlı.",
+      "usage_tr": "Folio'da aynı yazar karakterinin her post ve story'de aynı yüzle, farklı poz ve sahnelerde çıkması gerekiyor; bu eklentinin çözdüğü problem tam olarak budur. ml-stable-diffusion ile yerel üretim kurarsan, kontrol katmanını buradan alıp poz ve kompozisyonu sabitleyebilir, referans görselle yüzü tutarlı tutabilirsin. Mac'te çalışır ve API maliyeti getirmez, ama bedeli şu: eklenti WebUI'ye bağlı, yani pipeline'ına gömmek yerine WebUI'yi bir servis gibi ayağa kaldırıp API'sinden sürmen gerekir. Günlük üretimi asistanına devretmek istiyorsan bu ek kurulum katmanı ilk engelin olur. Önce 10-15 görselle karakter tutarlılığını ölç, kabul edilebilir çıkmazsa WebUI bağımlılığını hiç üstlenme; eklentinin sürüm notlarının 2024'te durduğunu da hesaba kat.",
+      "matched_project": "Folio",
+      "relevance": 5,
+      "investment_note": null
+    },
+    {
+      "full_name": "leon-ai/leon",
+      "inputs_hash": "749d86f9cb9330bbac5f8f6b0f2d75d0",
+      "description_tr": "Leon, açık kaynak bir kişisel asistan projesi: sesle veya yazıyla komut alıp \"skill\" adı verilen modüller üzerinden görevleri çalıştırmayı hedefliyor. Çekirdeği TypeScript/Node ile, skill'leri Python ile yazılmış; konuşma tanıma ve konuşma sentezi bileşenleri internetsiz çalışabilecek şekilde tasarlanmış ve gizlilik projenin öne çıkardığı başlıklardan biri. MIT lisanslı ve yaklaşık 17.500 yıldızlı. README'de bakımcı, çekirdeğin baştan yazıldığını ve bu süreçte dış katkıları kapattığını açıkça belirtiyor; yani depo şu anda bir geçiş döneminde.",
+      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, hayat orkestrasyonu ve sesli not projelerinde hayalini kurduğun asistan/orkestratör katmanı olurdu. Ancak o katmanı bugün Claude Code, n8n ve Trello üçlüsüyle zaten daha esnek biçimde kuruyorsun; Leon'un skill mimarisi mevcut LLM ajanlarından önceki bir tasarıma dayanıyor. Çekirdeğin yeniden yazıldığı ve katkıların kapatıldığı bir dönemde üstüne bir şey inşa etmek, fork'layıp kendi istemcini yazma refleksin için de kötü bir zemin. Yerel çalışması ve MIT lisansı olumlu, ama bu tek başına bir adım kazandırmıyor. İzleme listesinde tutulabilir; yeni çekirdek çıktığında ses arayüzü tarafına tekrar bakmaya değer.",
+      "matched_project": null,
+      "relevance": 2,
+      "investment_note": null
+    },
+    {
+      "full_name": "hardikpandya/stop-slop",
+      "inputs_hash": "843fdc529cdc8bbf7aefa7cb2d870c58",
+      "description_tr": "stop-slop, kod değil, bir skill dosyası: LLM'lerin yazdığı metinlerdeki tanıdık kalıpları bulup temizlemeyi öğreten bir talimat seti. İçinde çekirdek kurallar (SKILL.md) ve üç referans dosyası var; yasaklı ifadeler, kaçınılacak yapısal klişeler (ikili karşıtlıklar, olumsuz listeleme, dramatik cümle parçalama, edilgen çatı) ve öncesi/sonrası örnekler ayrı ayrı tutuluyor. Metni beş boyutta (doğrudanlık, ritim, güven, samimiyet, yoğunluk) 1-10 arası puanlayan ve 35/50'nin altını revizyona gönderen bir rubrik sunuyor. Claude Code'a skill olarak eklenebiliyor, proje bilgisine yüklenebiliyor veya sistem prompt'una kopyalanabiliyor. MIT lisanslı, 2026 Ocak'ta açılmış ve kısa sürede yaklaşık 17.500 yıldıza ulaşmış.",
+      "usage_tr": "Folio'nun günlük içerik üretiminde en zayıf halka metin tarafı: yazarların kitaplarını anlatan post ve story metinleri, kalıplaşmış bir LLM tonuna kayarsa uygulamanın Instagram yerine geçme iddiası ilk günde biter. Bu skill'i içerik üreten prompt'un arkasına koyup çıktıyı rubrikle puanlatabilir, eşiğin altında kalanları otomatik olarak yeniden yazdırabilirsin. Kurulum maliyeti yok: dosyayı Claude Code'a skill olarak ekliyorsun, Max aboneliğinin dışına çıkmıyor, ayrı bir API faturası doğurmuyor. Aynı rubriği Lyricdrop'un lansman metinleri ve Arslan Holding'in web/LinkedIn içerikleri için de tekrar kullanabilirsin. Uyarı: kurallar İngilizce nesir için yazılmış, Türkçe çıktıda birebir karşılığı yok; ayrıca rubriği körlemesine uygularsan metinler birbirine benzeyip kendi sesini kaybedebilir, bu yüzden eşiği kapı değil uyarı olarak kullan.",
+      "matched_project": "Folio",
+      "relevance": 6,
+      "investment_note": null
+    },
+    {
+      "full_name": "HBAI-Ltd/Toonflow-app",
+      "inputs_hash": "8a57ec565da24281b9a43166d9a416d3",
+      "description_tr": "Toonflow, roman ve senaryo metinlerini animasyon formatında kısa dizilere çeviren açık kaynak bir masaüstü uygulaması. Akış tek bir üründe toplanmış: AI ile senaryo yazımı, sahne/storyboard bölümleme, karakter tasarımı ve metin-görüntüden video üretimi. Electron tabanlı bir masaüstü istemci olarak paketlenmiş; arayüz Vue 3 + Vite + TypeScript, çalıştırma tarafı Node.js. Apache-2.0 lisanslı, 2026 Ocak'ta açılmış ve yaklaşık 15.900 yıldıza ulaşmış; dokümantasyonu yedi dilde tutuluyor. Görüntü ve video üretimini kendi modelleriyle değil, dışarıdan bağlanan model servisleriyle yapıyor.",
+      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam Folio'nun günlük görsel ve video üretim akışı olurdu. Aradaki fark biçimsel değil yapısal: Toonflow bitmiş bir masaüstü ürünü, senin değer verdiğin şey ise kendi pipeline'ına gömebileceğin bileşenler. Video üretimini dış model API'lerine dayandırdığı için Mac'te yerel ve maliyetsiz çalışma kriterini de karşılamıyor. Apache-2.0 olması tek somut kazanç: senaryo → storyboard → sahne üretimi zincirini nasıl kurduğunu okuyup kendi akışına fikir olarak taşıyabilirsin. Fikir almak bir eşleşme değildir; bir öğleden sonrasından fazlasını ayırmaya değmez.",
+      "matched_project": null,
+      "relevance": 2,
+      "investment_note": null
+    },
+    {
+      "full_name": "pipecat-ai/pipecat",
+      "inputs_hash": "58b20826f4d7e9f307283a546b999528",
+      "description_tr": "Pipecat, gerçek zamanlı sesli ve çok kipli konuşma ajanları kurmak için yazılmış açık kaynak bir Python framework'ü. Konuşma tanıma, dil modeli ve konuşma sentezi servislerini bir pipeline'da birleştiriyor; WebSocket gibi taşıma katmanlarıyla düşük gecikmeli etkileşim hedefliyor. Tek bir ajanın ötesinde, birbirine görev devreden, paralel dallanan veya ortak bir veri yolu üzerinden koordine olan çok ajanlı sistemleri de destekliyor. Daily ve topluluk tarafından sürdürülüyor, BSD-2-Clause lisanslı ve yaklaşık 15.800 yıldızlı; dokümantasyon, test altyapısı ve bir quickstart komutu mevcut.",
+      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, sesli not uygulamasının ileride konuşarak sorgulanan bir arayüze dönüşmesi olurdu. Ama o projenin tarifi tek dokunuşla kayıt, sonra sınıflandırma ve rapor; gerçek zamanlı diyalog gecikmesi çözmen gereken bir problem değil. Framework'ün varsayılan yolu bulut servisleri üzerinden geçtiği için yerel çalıştırma ve API maliyeti kriterlerinde de ek iş çıkarır. İngilizce telaffuz pratiği için konuşan bir muhatap kurmak istersen ikinci bir bağlam olabilir, ancak bu bugün bir ihtiyaç değil hobiden gelen bir olasılık. Sesli ajan tarafına gerçekten girdiğin gün bakılacak ilk adreslerden biri olarak not etmek yeterli.",
+      "matched_project": null,
+      "relevance": 2,
+      "investment_note": null
+    },
+    {
+      "full_name": "duixcom/Duix-Avatar",
+      "inputs_hash": "fedcf2ad7b4b8552cd9e9fe366f42229",
+      "description_tr": "Duix.Avatar, gerçek kişi videolarından dijital insan modeli üretip bu avatarı metin veya sesle konuşturan açık kaynak bir araç. Görünüm ve ses klonlamayı birlikte yapıyor ve video sentezini tamamen çevrimdışı çalışacak şekilde tasarlamış; README bu akışın Windows sistemleri için kurgulandığını belirtiyor. Gerçek zamanlı etkileşim ve dış sistemlerden çağrılabilecek açık API'ler de kapsamda. Şirketin yıllardır ticari olarak kullandığı klonlama teknolojisini açık kaynağa taşıdığı anlatılıyor; depo yaklaşık 15.550 yıldızlı. Lisans alanı standart bir etikete oturmuyor, yani kullanım koşullarının dosyadan okunması gerekiyor.",
+      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, Folio'da bir yazar profilinin kitabını anlattığı konuşan video story'leri olurdu. Engel teknik ve net: akış Windows üzerine kurgulanmış, senin tüm geliştirme ve içerik üretimin ise iki Mac üzerinde duruyor. Lisansın standart bir etikete oturmaması da, Folio yalnızca kendi telefonunda kalacak olsa bile, üzerine bir şey inşa etmeden önce okunması gereken bir madde. Gerçek bir kişinin yüzünü ve sesini klonlamanın izin tarafı ayrı bir konu. Dijital insan tarafına gerçekten gireceksen, önce Mac'te çalışan bir muadilini aramak daha hızlı sonuç verir.",
+      "matched_project": null,
+      "relevance": 2,
+      "investment_note": null
+    },
+    {
+      "full_name": "kaldi-asr/kaldi",
+      "inputs_hash": "557f8d12e40806f6f41d346135ee52cc",
+      "description_tr": "Kaldi, konuşma tanıma araştırmaları için yazılmış klasik bir araç seti: C++ çekirdeği, kabuk betiklerinden oluşan veri kümesi tarifleri (egs) ve konuşmacı tanıma/doğrulama bileşenleri içeriyor. Hazır bir ürün değil, üzerine sistem kurulan bir altyapı; kullanım için derleme, tarif takip etme ve alan bilgisi gerektiriyor. CUDA desteği var ve UNIX türevleri ile Windows'ta derlenebiliyor. 2015'ten beri GitHub'da, yaklaşık 15.500 yıldızlı ve akademik çevrede uzun süre referans nokta oldu. Lisans alanı standart bir SPDX etiketine oturmuyor; destek forumlar ve e-posta listeleri üzerinden yürüyor.",
+      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam Lyricdrop v2'nin kelime hizalama adımı olurdu, çünkü bilinen metni sesle hizalama işinin klasik motoru buradan çıktı. Ama o işi bugün Kaldi'nin kendisiyle değil, ondan türeyen paketlenmiş araçlarla yapıyorsun; aynı paketteki Vosk ve sherpa-onnx tam olarak bu nedenle var. Kaldi'yi doğrudan kullanmak C++ derlemesi ve tarif yazmak demek, bu da tek kişilik bir ekipte Lyricdrop'un kelime hizalama hedefine giden en pahalı yol. Mac'te yerel çalışır ve API maliyeti getirmez, ancak zaman maliyeti diğer kalemlerin hepsinden yüksek. Referans olarak bilmek yeterli; kurulum listene almaya gerek yok.",
+      "matched_project": null,
+      "relevance": 2,
+      "investment_note": null
+    },
+    {
+      "full_name": "chatfire-AI/huobao-drama",
+      "inputs_hash": "b0278e6965a0e1c4dba0473bc447e353",
+      "description_tr": "Huobao Drama, tek bir cümleden başlayıp senaryo, karakter tasarımı, storyboard bölümleme ve video birleştirme adımlarını uçtan uca otomatikleştiren bir kısa dizi üretim platformu. Ön yüz Nuxt 3 + Vue 3 + TypeScript, arka uç Hono + Drizzle ORM + SQLite üzerinde Mastra tabanlı ajanlarla çalışıyor; ajan davranışları arayüzden düzenlenebilen SKILL.md dosyalarında tutuluyor. macOS ve Windows için Electron masaüstü sürümü var, üretilen varlıklar ve veritabanı yerel bir klasörde tutuluyor. Model erişimi için projenin kendi API anahtarı satışına yönlendiriliyor. CC BY-NC-SA 4.0 lisanslı, 2026 Ocak'ta açılmış ve yaklaşık 15.400 yıldıza ulaşmış.",
+      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam yine Folio'nun günlük içerik üretim hattı olurdu. Lisans bu seçeneği baştan kapatıyor: CC BY-NC-SA ticari kullanıma ve türev koşullarına bağlı, yani kodunu kendi ürününe taşımak istediğinde sorun çıkarır. Üretim gücü de dış model API'lerinden geldiği için Mac'te yerel ve maliyetsiz çalışma kriterine uymuyor. İlgi çekici tek ayrıntı, ajan davranışlarını arayüzden düzenlenebilir SKILL.md dosyalarında tutması; aynı deseni kendi Claude Code akışlarında kullanabilirsin. Bunun dışında kurulup denenmesi gereken bir araç değil.",
+      "matched_project": null,
+      "relevance": 2,
+      "investment_note": "Depo açık kaynak dağıtımı doğrudan kendi model API anahtarı satışına bağlıyor; kısa dizi üretiminin bu hızla paketlenip ürünleşmesi, Arslan Holding'in içerik üretimi tarafında izlediği kategori için bir sinyal."
+    },
+    {
+      "full_name": "google-deepmind/mujoco",
+      "inputs_hash": "616a43e84e06edae8ab3355f7b3fe537",
+      "description_tr": "MuJoCo, eklemli cisimlerin ve temas kuvvetlerinin hızlı ve doğru simülasyonu için yazılmış genel amaçlı bir fizik motoru. Robotik, biyomekanik, animasyon ve makine öğrenmesi araştırmalarında kullanılıyor; C API'si, XML tabanlı model derleyicisi ve OpenGL ile çizen yerleşik etkileşimli görüntüleyicisi var. Python bağlantıları ve Unity eklentisi de sağlanıyor. Google DeepMind tarafından sürdürülüyor, Apache-2.0 lisanslı ve yaklaşık 15.300 yıldızlı; dokümantasyon ve Colab üzerinde çalışan öğretici defterler mevcut.",
+      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, Arslan Holding'in frontier teknoloji ilgisinde robotik tarafını okurken arka plan bilgisi olarak karşına çıkması olurdu. Yazdığın uygulamaların hiçbirinde fizik simülasyonu geçmiyor; mobil uygulama, veri pipeline'ı ve içerik üretimi hatlarının hiçbir adımına bağlanmıyor. Robotik girişimlerini değerlendirirken ekiplerin hangi simülasyon altyapısını kullandığını bilmek işine yarayabilir, o kadar. Kurup denemeye değecek bir tarafı yok.",
+      "matched_project": null,
+      "relevance": 1,
+      "investment_note": null
+    },
+    {
+      "full_name": "alphacep/vosk-api",
+      "inputs_hash": "2e933ab78ab66852fbed1ce49ee8b36e",
+      "description_tr": "Vosk, çevrimdışı çalışan açık kaynak bir konuşma tanıma araç seti. 20'den fazla dil ve lehçeyi destekliyor; Türkçe de listede. Modelleri yaklaşık 50 MB gibi küçük boyutlarda tutuluyor, buna rağmen sürekli ve geniş sözlüklü transkripsiyon, akış (streaming) API'si üzerinden sıfır gecikmeli yanıt, yeniden yapılandırılabilir sözlük ve konuşmacı kimliği sunuyor. Python, Java, Node.js, C#, C++, Rust ve Go dahil birçok dil için bağlayıcıları var; Raspberry Pi ve Android telefondan sunucu kümelerine kadar ölçekleniyor. Apache-2.0 lisanslı ve yaklaşık 15.100 yıldızlı; kurulum ve örnekler ayrı bir site üzerinden yürüyor.",
+      "usage_tr": "Lyricdrop v2'de karşılaştıracağını söylediğin 2-3 STT sisteminden biri olarak doğrudan sıraya girer: ofisteki M4 Pro Mac'te yerel çalışır, şarkı başına API maliyeti eklemez ve mevcut admin paneline Python servisi olarak bağlanır. En ilgi çekici özelliği yeniden yapılandırılabilir sözlük: şarkının sözleri zaten lyrics DB'sinden elinde olduğu için tanımayı o kelime kümesine daraltıp hizalama doğruluğunu ölçebilirsin. İkinci kullanım alanı sesli not uygulaması; küçük modelleri cihazda çalıştığı için Türkçe notları buluta hiç çıkarmadan yazıya çevirebilir, Expo tarafına da gömülebilir. Uyarı: küçük modellerin doğruluğu Whisper sınıfı modellerin altında kalıyor ve şarkı sesi, üzerine eğitildiği konuşma verisine benzemiyor; bu yüzden onu tek başına değil, 20-30 şarkılık test setinde taban çizgisi olarak ölç.",
+      "matched_project": "Lyricdrop",
+      "relevance": 8,
+      "investment_note": null
+    },
+    {
+      "full_name": "midday-ai/midday",
+      "inputs_hash": "4fcaaf6a83cb095602c8f96bc39855b2",
+      "description_tr": "Midday, serbest çalışanlar ve tek kişilik işletmeler için fatura kesme, zaman takibi, gelen fiş/faturaları banka hareketleriyle eşleştirme, sözleşme saklama ve finansal görünüm sunan bir iş yönetim aracı. Harcama alışkanlıkları ve belge arama üzerine yorum yapan bir asistan bileşeni de var. Teknik olarak Bun tabanlı bir monorepo: React, Next.js, TypeScript, Supabase, Expo ve Tauri kullanıyor; banka bağlantısı için GoCardless, Plaid ve Teller gibi servislere bağlanıyor. AGPL-3.0 lisanslı ve yaklaşık 15.000 yıldızlı; yerel geliştirme dokümantasyonunun hâlâ hazırlandığı belirtiliyor.",
+      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam asistan ve holding operasyon tarafı olurdu, ama orada ilişki geçmişi HubSpot ve Trello üzerinde duruyor ve Midday tek kişilik serbest çalışan senaryosuna göre tasarlanmış. Banka entegrasyonları da ağırlıklı olarak AB, ABD ve Kanada kurumlarına bakıyor. Tek ilgi çekici tarafı kod tabanı: Supabase, Next.js ve Expo üçlüsü senin standart stack'inle birebir örtüşüyor, yani yayınlamak istediğin çok kullanıcılı to-do uygulaması için okunacak bir üretim örneği. Bunu referans olarak okumak başka şey, eşleşme başka şey; AGPL-3.0 de kendi ürününe kod taşımayı düşünürsen ayrıca dikkat etmen gereken bir madde.",
+      "matched_project": null,
+      "relevance": 2,
+      "investment_note": null
+    },
+    {
+      "full_name": "k2-fsa/sherpa-onnx",
+      "inputs_hash": "2e00267d12abb82a988d7d797d6c3724",
+      "description_tr": "sherpa-onnx, next-gen Kaldi ekibinin onnxruntime üzerine kurduğu, internet bağlantısı gerektirmeyen bir konuşma araç seti. Tek çatı altında konuşma tanıma, konuşma sentezi, konuşmacı ayrıştırma ve doğrulama, ses etkinliği tespiti (VAD), anahtar kelime yakalama, noktalama ekleme, ses iyileştirme ve kaynak ayrıştırma (source separation) sunuyor. macOS, iOS, Android, Linux, Windows, HarmonyOS, Raspberry Pi ve RISC-V dahil geniş bir platform listesi; C++, C, Python, Swift, Kotlin, Java, C#, Go, Rust, Dart ve JavaScript olmak üzere 12 dil için bağlayıcı, ayrıca WebAssembly ve Flutter desteği var. Apache-2.0 lisanslı ve yaklaşık 14.900 yıldızlı; belgeler ayrı bir dokümantasyon sitesinde tutuluyor.",
+      "usage_tr": "Lyricdrop v2'nin kelime zamanlama hattında denenecek ilk adaylardan biri: ofisteki M4 Pro Mac'te tamamen yerel çalışır, şarkı başına API maliyeti eklemez ve ElevenLabs'i bıraktıktan sonra kurmak istediğin yerel STT tarafına doğrudan oturur. Kaynak ayrıştırma bileşeni ayrıca işine yarar: vokali enstrümandan ayırıp transkripsiyona öyle verirsen tanıma doğruluğu genelde yükselir, bu da hizalama hatasını azaltan somut bir ön adım. Swift ve Kotlin bağlayıcıları sayesinde aynı motoru ileride Expo uygulamasına native modül olarak gömebilirsin; WebAssembly sürümü admin paneli tarafında tarayıcıda hızlı denemeler yapmanı sağlar. İkinci bağlam sesli not uygulaması: VAD ve konuşmacı ayrıştırma ile kayıtları cihazda bölüp etiketleyebilirsin. Uyarı: bu bir C++ kütüphanesi ve asıl iş model seçmek ile ölçmek; desteklenen onlarca model arasından şarkı sesinde hangisinin dayandığını 20-30 şarkılık test setinde kendin ölçmen gerekir.",
+      "matched_project": "Lyricdrop",
+      "relevance": 9,
+      "investment_note": null
+    },
+    {
+      "full_name": "bulletphysics/bullet3",
+      "inputs_hash": "fe2a40a5491bbcffbef56984e1be0772",
+      "description_tr": "Bullet Physics SDK, gerçek zamanlı çarpışma tespiti ve çok gövdeli fizik simülasyonu yapan bir C++ kütüphanesi. Oyunlar, görsel efektler, sanal gerçeklik, robotik ve pekiştirmeli öğrenme ortamlarında kullanılıyor; robotik ve RL tarafı için PyBullet adıyla bir Python bağlayıcısı öneriliyor. Windows, Linux, macOS, iOS ve Android üzerinde derlenebiliyor ve deneysel bir OpenCL GPU yolu içeriyor. 2011'den beri GitHub'da ve yaklaşık 14.700 yıldızlı; issue takipçisi kapatılmış durumda, destek forumlar üzerinden yürütülüyor. Lisans alanı standart bir etikete oturmuyor.",
+      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam robotik ve simülasyon tarafındaki genel frontier teknoloji ilgisi olurdu. Ne Lyricdrop'un ses hattında, ne Folio'nun içerik üretiminde, ne de holding araçlarında fizik simülasyonuna bağlanan bir adım var. Kütüphanenin issue takibinin kapalı olması ve desteğin foruma taşınmış olması da yeni bir bağımlılık olarak üstlenmeyi cazip kılmıyor. Bu satırı bilgi olarak geçmek yeterli.",
+      "matched_project": null,
+      "relevance": 0,
+      "investment_note": null
+    },
+    {
+      "full_name": "supertone-oss-archive/supertonic",
+      "inputs_hash": "7d76252edc195aa461e0244c69d1dfe6",
+      "description_tr": "Supertonic, cihaz üzerinde çalışan çok dilli bir metin-konuşma (TTS) sistemi. ONNX Runtime üzerinde çalışıyor, bulut çağrısı yapmıyor ve düşük gecikmeyi öne çıkarıyor; masaüstü, tarayıcı, mobil ve gömülü ortamlar hedefleniyor. Swift, C++, C#, Go, Java, Node.js, Python, Rust ve WebGPU dahil birçok dil ve ortam için örnek uygulamalar içeriyor. MIT lisanslı ve yaklaşık 13.800 yıldıza ulaşmış. En önemli ayrıntı deponun başındaki not: depo arşivlendi, geliştirme ve destek sona erdi, issue ve pull request'ler artık izlenmiyor; model ağırlıkları da bir arşiv ad alanına taşındı.",
+      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam Folio'da story videolarına anlatım sesi eklemek veya İngilizce dinleme pratiği için referans ses üretmek olurdu. Lyricdrop gerçek şarkılarla çalıştığı için sentez sesine ihtiyaç duymuyor; sesli not projesinde de yön ters, orada gereken STT. Cihazda çalışması ve MIT lisansı senin kriterlerine uyuyor, ama depo arşivlenmiş durumda: hata düzeltmesi ve güvenlik yaması gelmeyecek. Yerel TTS gerçekten gerektiği gün bakman gereken yer bakımı süren bir alternatif olur.",
+      "matched_project": null,
+      "relevance": 2,
+      "investment_note": null
+    },
+    {
+      "full_name": "k2-fsa/OmniVoice",
+      "inputs_hash": "b98a5ebcfdaec2bf0ad69d1927346c37",
+      "description_tr": "OmniVoice, 600'den fazla dili destekleyen, örnek görmeden (zero-shot) ses klonlayabilen bir metin-konuşma modeli. Ses klonlamanın yanında konuşmacı özniteliklerini (cinsiyet, yaş, perde, aksan, fısıltı) vererek ses tasarlamaya, sözel olmayan işaretler eklemeye ve telaffuzu fonem veya pinyin ile düzeltmeye izin veriyor. Difüzyon dil modeli tarzı bir mimariye dayanıyor ve gerçek zamandan yaklaşık 40 kat hızlı çıkarım bildiriliyor. Python API'si, komut satırı araçları, eğitim/değerlendirme betikleri, Hugging Face demosu ve Colab defteri mevcut; kurulum talimatları PyTorch ve CUDA üzerinden ilerliyor. Apache-2.0 lisanslı, 2026 Mart'ta açılmış ve yaklaşık 13.700 yıldıza ulaşmış.",
+      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam Folio'nun video içeriklerinde anlatım sesi üretmek olurdu. Lyricdrop'un çok dilli içerik hedefi sentez sesle değil gerçek şarkı kataloğuyla büyüyor, dolayısıyla oradaki adımların hiçbirine oturmuyor. Kurulum talimatlarının CUDA merkezli olması, işleri ofisteki Mac'te tutma tercihine karşı bir sürtünme noktası. Ses klonlamanın izin tarafı da, üretilen içerik yalnızca kendinde kalacak olsa bile ayrıca düşünülmesi gereken bir konu. Yatırım merceğiyle bakarken dil kapsamı geniş modellerin nereye gittiğini görmek için izlemeye değer, ama bugün kurulacak bir araç değil.",
+      "matched_project": null,
+      "relevance": 2,
+      "investment_note": null
+    },
+    {
+      "full_name": "QwenLM/Qwen3-TTS",
+      "inputs_hash": "5722aad0476354cd0de3333780a0ef3d",
+      "description_tr": "Qwen3-TTS, Alibaba Cloud'daki Qwen ekibinin açık kaynak metin-konuşma model serisi. 0.6B ve 1.7B boyutlarında iki model yayımlanmış; ses klonlama, doğal dille ses tasarımı ve akış halinde (streaming) konuşma üretimi destekleniyor. Depoda Python paketi kullanımı, yerel bir web arayüzü demosu, vLLM ile çalıştırma, ince ayar ve değerlendirme bölümleri var; ayrıca bulut API'si üzerinden kullanım seçeneği sunuluyor. On ana dili kapsıyor ve Apache-2.0 lisanslı. 2026 Ocak'ta açılmış, yaklaşık 13.500 yıldızlı; blog yazısı ve makalesi yayımlanmış durumda.",
+      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam Folio'daki video ve story içeriklerine anlatım sesi eklemek olurdu. Lyricdrop'ta gereken yön tam tersi: sesten metne hizalama, metinden ses üretimi değil. Model boyutlarının küçük olması ilkesel olarak 24 GB'lık bir Mac'te yerel çalışmayı akla getiriyor, ancak depodaki yol vLLM ve CUDA üzerinden tarif edilmiş, yani Apple Silicon'da çalıştırmak ölçülmesi gereken ayrı bir iş. Apache-2.0 lisansı ve yerel web arayüzü, bir gün seslendirme ihtiyacı doğduğunda denemeyi ucuzlatıyor. Bugün için bir not, bir kurulum değil.",
+      "matched_project": null,
+      "relevance": 2,
+      "investment_note": null
+    },
+    {
+      "full_name": "HIllya51/LunaTranslator",
+      "inputs_hash": "8a6a28e7ad8086b62e5906b735ba158b",
+      "description_tr": "Bu depo için pakette README metni yok; aşağıdaki tanım yalnızca açıklama satırı, etiketler ve dil/lisans alanlarından çıkarılabildiği kadarıyla veriliyor. LunaTranslator, görsel roman (visual novel / galgame) oyunlarının metinlerini çeviren bir masaüstü aracı olarak tanımlanıyor. Etiketler, metni elde etmek için hem OCR hem de oyun üzerinde tersine mühendislik yöntemlerinin kullanıldığını ve hedef platformun Win32 olduğunu gösteriyor. C++ ile yazılmış, GPL-3.0 lisanslı ve yaklaşık 13.300 yıldızlı; kendi web sitesi var. Mimarisi, desteklediği çeviri motorları ve bakım durumu hakkında pakette karar verilecek kadar metin bulunmuyor.",
+      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, altyazı ve dil araçlarıyla İngilizce çalışma alışkanlığın olurdu. Ancak bu araç Windows masaüstünde çalışan oyunlardan metin çekmeye göre kurgulanmış; senin iki Mac üzerinde duran kurulumuna ve Netflix/YouTube üzerinden altyazılı izleme rutinine karşılık gelmiyor. Lyricdrop'un söz senkronizasyonu ile de ortak bir teknik yüzeyi yok; oradaki problem sesi metne hizalamak, burada ekrandaki metni yakalayıp çevirmek. Ekran yakalama ve OCR gerektiren bir işin çıkarsa bakılabilecek bir örnek olarak kalır.",
+      "matched_project": null,
+      "relevance": 1,
+      "investment_note": null
+    }
+  ]
+}

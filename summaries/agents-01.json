@@ -1,0 +1,175 @@
+{
+  "repos": [
+    {
+      "full_name": "openclaw/openclaw",
+      "inputs_hash": "7d2860c41aa0b527bc9646bd32103170",
+      "description_tr": "OpenClaw, kullanıcının kendi donanımında çalışan açık kaynaklı bir kişisel asistan; Discord, iMessage, Slack, Telegram, WhatsApp gibi yirmiden fazla mesajlaşma kanalından ve macOS, iOS, Android, Windows, Linux uygulamalarından erişiliyor. Gateway adı verilen yerel bir kontrol düzlemi oturumları, araçları, olayları ve kanal bağlantılarını yönetiyor; durum, hafıza ve kimlik bilgileri kullanıcının makinesinde kalıyor. Model ve ajan harness katmanı eklenti olarak tasarlanmış, Claude, Codex veya yerel modeller birbirinin yerine takılabiliyor. Node.js üzerinde çalışıyor, TypeScript ile yazılmış, kurulum betikleri üç işletim sistemini de kapsıyor ve README MIT lisansını gösteriyor. Proje bağımsız bir vakıf tarafından yürütülüyor; ücretli katman, barındırılan servis veya token yok, varsayılan telemetri günlük sürüm kontrolüyle sınırlı. Kasım 2025'te açılmış ve ~390 bin star toplamış.",
+      "usage_tr": "Tarif ettiğin, tüm projelerini bilen ve ayak işlerini yapan orkestratör ajan fikrine en yakın açık kaynak altyapı bu. Evdeki 7/24 açık Mac mini'ye Gateway olarak kurup WhatsApp ve Telegram kanallarını bağlayabilir, asistanının da aynı kanaldan görev vermesini sağlayabilirsin; kimlik bilgileri ve konuşma geçmişi senin makinende kalır. Makineler arasında Tailscale zaten kurulu olduğu için ofis Mac'i ile ev makinesinin aynı gateway'i paylaşması ek bir ağ işi çıkarmaz. Model tarafı eklenti olduğundan Claude'u ve Mac'te çalışan yerel bir modeli aynı kurulumda yan yana deneyebilirsin, bu da yerel çalıştırma tercihinle örtüşür. Kazanç, Trello ve takvim akışıyla mesajlaşma trafiğini tek bir yerel ajanın arkasına toplamanın ilk çalışır sürümü olması. Uyarı: gateway'e mesajlaşma hesaplarını bağlamak geniş bir erişim yüzeyi açar, erişim kapsamlarını izole tutma ilkeni burada baştan kurgula.",
+      "matched_project": "Hayat orkestrasyonu",
+      "relevance": 8,
+      "investment_note": null
+    },
+    {
+      "full_name": "obra/superpowers",
+      "inputs_hash": "fc2efecf2243567a3031430bc6475760",
+      "description_tr": "Superpowers, kodlama ajanlarına spec çıkarma, plan yapma ve alt-ajanlarla uygulama disiplinini kazandıran beceri tabanlı bir geliştirme metodolojisi. Ajan doğrudan kod yazmaya başlamıyor; önce ne yapılmak istendiğini sorup okunabilir parçalar halinde bir spec üretiyor, onaydan sonra kırmızı/yeşil TDD, YAGNI ve DRY vurgulu bir uygulama planı çıkarıyor. Plan onaylandığında işi alt-ajanlara bölüp her görevi denetleyerek ilerleyen bir döngü başlatıyor. Beceriler otomatik tetiklendiği için ayrı komut verilmesi gerekmiyor; Claude Code, Codex, Cursor, OpenCode, Gemini CLI ve Hermes Agent dahil yirmiye yakın harness için ayrı kurulum yolu var. Shell ağırlıklı ve MIT lisanslı, kurumsal destek ayrıca ticari olarak sunuluyor; Ekim 2025'te açılmış, ~290 bin star.",
+      "usage_tr": "Lyricdrop v2'yi zaten bu plugin ile yazıyorsun, dolayısıyla soru kullanıp kullanmamak değil, hangi adımda sıkı uygulandığı. Admin panel ve söz-ses hizalama işlerini tek tek spec, plan ve alt-ajan döngüsüne sokmak, v1'de pişman olduğun tek oturumda yazma alışkanlığına karşı en doğrudan panzehir. İstediğin çift açılı incelemeyi (geliştirici doğruluğu ve ürün/eğitim mantığı) plan aşamasında iki ayrı alt-ajan olarak tanımlamak, sonradan eklemekten ucuza gelir. Kurulum harness başına ayrı olduğu için ofisteki Claude Code yanında OpenCode tarafına da ayrıca kurman gerekir. Tamamen Mac'te yerel çalışır, ek API maliyeti getirmez ve mevcut aboneliğinle uyumludur. Uyarı: aynı depoda birden fazla beceri paketi çalıştırmak talimat çakışması üretiyor, Lyricdrop deposunda tek bir metodoloji paketiyle kal.",
+      "matched_project": "Lyricdrop",
+      "relevance": 9,
+      "investment_note": null
+    },
+    {
+      "full_name": "affaan-m/ECC",
+      "inputs_hash": "5092ec981f3c65c7cf8119be26f7059f",
+      "description_tr": "ECC, Claude Code, Codex, OpenCode ve Cursor gibi ajan harness'ları için beceri, hafıza, güvenlik ve araştırma öncelikli iş akışlarını tek pakette toplayan bir kurulum sistemi. ecc-universal ve ecc-agentshield npm paketleri, bir GitHub App ve ecc@ecc plugin slug'ı üzerinden kuruluyor; depo Shell, TypeScript, Python ve Go karışımı bir yapı. README on üçten fazla dilde hazırlanmış ve yalnızca resmi kanallardan kurulum yapılması için açık bir uyarı içeriyor. MIT lisanslı ve ücretsiz kullanılabiliyor, özel depolar için kişi başı aylık ücretli bir katman sunuluyor. Ocak 2026'da açılmış ve ~265 bin star toplamış.",
+      "usage_tr": "Lyricdrop v2'nin Claude Code kurulumunda Superpowers'ın karşısına koyabileceğin ikinci seçenek; hafıza ve güvenlik katmanları Superpowers'ta bulunmayan taraf. Kurulum ofis Mac'inde yerel kalır, ek model maliyeti getirmez ve mevcut aboneliğinle çalışır. Uyarı olarak README iki tam kurulumun üst üste yığılmamasını açıkça söylüyor, yani Superpowers ile yan yana değil, ayrı bir depoda dönüşümlü denemelisin. Karar için ölçebileceğin şey net: aynı Lyricdrop görevinde plan kalitesi ve üretilen gereksiz kod miktarı. Asistanına devredilebilecek bir iş değil, beceri seçimi ve ayar senin elinde kalır. Özel depolarda ücretli katman gerekiyorsa maliyeti bu ölçümden sonra değerlendir.",
+      "matched_project": "Lyricdrop",
+      "relevance": 5,
+      "investment_note": "Ücretsiz açık kaynak çekirdeğin üstüne GitHub App ve kişi başı abonelik koymuş, tek bir geliştiricinin yürüttüğü bir ajan aracı; ajan tooling tarafında ticarileşme deneyi olarak izlenmeye değer."
+    },
+    {
+      "full_name": "deepseek-ai/deepseek-harness",
+      "inputs_hash": "1cf9d0d55aa0009c94417a263cb051c8",
+      "description_tr": "DeepSeek Harness (dsh), DeepSeek AI tarafından geliştirilen açık kaynak bir ajan harness'ı. Her şeyin eklenti olduğu bir mimari üzerine kurulu ve altında Cordis adlı bir kompozisyon runtime'ı çalışıyor. npx ile tek komutta yerel bir web arayüzü açıyor, kaynaktan pnpm ile de derlenebiliyor. TypeScript ile yazılmış ve MIT lisanslı; depo geliştirici önizlemesinde olduğunu, uyumluluğu bozan değişiklikler geleceğini ve çalıştırmadan önce güvenlik notunun okunması gerektiğini açıkça belirtiyor. Ağustos 2026'da açılmış ve ~233 bin star toplamış, yani yaşına göre çok hızlı büyümüş bir depo.",
+      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın olası bağlam, Claude Code ve OpenCode yanında üçüncü bir ajan harness'ı denemek olurdu. Model tarafı sağlayıcı API'sine bağlı çalışacağı için mevcut aboneliğinin dışında ayrı bir kullanım maliyeti doğurur. Geliştirici önizlemesinde olması ve kırıcı değişiklik uyarısı, üretimdeki Lyricdrop işine sokmayı şimdilik anlamsız kılıyor. Eklenti mimarisi ilgini çekiyorsa izleme listesine alıp ilk kararlı sürümde tekrar bakmak yeterli.",
+      "matched_project": null,
+      "relevance": 2,
+      "investment_note": null
+    },
+    {
+      "full_name": "Significant-Gravitas/AutoGPT",
+      "inputs_hash": "83fe2cf1d0d9ef6b42a26ed975f3669c",
+      "description_tr": "AutoGPT, tarif edilen bir işi uçtan uca yürütecek ajanlar kurmak için geliştirilen açık kaynak bir platform. Düz metinle ajan tarifleyen bir sohbet katmanı, adım adım kurgulanabilen görsel bir akış tasarımcısı, zamanlanmış veya tetikleyiciye bağlı çalıştırma ve hazır ajan kütüphanesi sunuyor. Çekirdek Python ile yazılmış; barındırılan bir bulut sürümü ile kendi sunucunda çalıştırma seçeneği birlikte veriliyor. Lisansı standart bir açık kaynak lisansı değil, depoya özgü koşullar içeriyor. 2023 başında açılmış ve ~187 bin star ile kategorinin en tanınmış depolarından biri.",
+      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın olası bağlam, bugün n8n ile yürüttüğün zamanlanmış otomasyon ve içerik işleri olurdu. n8n hem kurulu hem de akışlarına oturmuş durumda, ikinci bir orkestrasyon platformu eklemek bakım yükünü ikiye katlar. Ajan tarifleme tarafında zaten Claude Code ile daha kontrollü çalışıyorsun ve çıktıyı kendi koduna gömebiliyorsun. Platformun bulut sürümü ayrı bir maliyet kalemi açar, kendi sunucunda çalıştırmak ise DigitalOcean tarafında sürekli bakım isteyen bir servis demek.",
+      "matched_project": null,
+      "relevance": 2,
+      "investment_note": null
+    },
+    {
+      "full_name": "firecrawl/firecrawl",
+      "inputs_hash": "c4f9abb7f564d37ce67bf1ece95f25d7",
+      "description_tr": "Firecrawl, web sayfalarını dil modellerinin kullanabileceği temiz Markdown veya yapılandırılmış JSON çıktıya çeviren bir tarama, arama ve veri çıkarma API'si. JavaScript ile üretilen sayfaları işleyebiliyor, proxy ve oran sınırı yönetimini kendi üstleniyor, tıklama ve kaydırma gibi eylemlerden sonra içerik alabiliyor; web üzerindeki PDF ve DOCX dosyalarını da ayrıştırıyor. Açık kaynak sürümü AGPL-3.0 lisanslı ve kendi sunucunda çalıştırılabiliyor, yanında barındırılan ücretli bir servis bulunuyor. TypeScript ile yazılmış ve MCP istemcilerine tek komutla bağlanacak şekilde paketlenmiş. 2024 Nisan'ında açılmış, ~183 bin star.",
+      "usage_tr": "Arslan Holding'in deal sourcing ve rakip araştırması adımında somut bir yeri var: şirket sitelerini, program sayfalarını ve haber kaynaklarını tek tek okumak yerine yapılandırılmış çıktıya çevirip bir tabloya yazdırabilirsin. Asistanının yürüttüğü tedarikçi ve hizmet karşılaştırma işleri de aynı yolla yarı otomatik hale gelir, sonuç HubSpot veya Trello tarafına düşürülebilir. En az kodlu yol, n8n içinden bir HTTP adımıyla çağırmak; kendi sunucunda çalıştırmak istersen DigitalOcean'da ayrı bir servis olarak durur. Maliyet tarafına dikkat et: barındırılan sürüm sayfa başına ücretlidir ve Apify'ı bu nedenle bırakma deneyimin burada da geçerli, önce küçük bir kaynak listesiyle ölç. AGPL lisansı, kendi uygulamana gömmeyi değil, yanında ayrı bir servis olarak çalıştırmayı gerektirir.",
+      "matched_project": "Arslan Holding",
+      "relevance": 6,
+      "investment_note": "Açık kaynak çekirdek ile barındırılan API ikilisi üzerine net bir gelir modeli kurmuş; ajan altyapısı kategorisinde fiyatlama ve konumlandırma açısından karşılaştırma noktası olarak izlenebilir."
+    },
+    {
+      "full_name": "Snailclimb/JavaGuide",
+      "inputs_hash": "ab8ff098771bb1583fd295c4bdcb87e9",
+      "description_tr": "JavaGuide, Java arka uç geliştiricileri için hazırlanmış Çince bir bilgi ve mülakat rehberi. Bilgisayar temelleri, veritabanları, dağıtık sistemler, yüksek eşzamanlılık ve sistem tasarımı başlıklarını yüzlerce Markdown dokümanında topluyor; son dönemde LLM, ajan, RAG ve MCP konuları ayrı bir rehbere taşınmış. Depoda kod değil metin var, içerik bir dokümantasyon sitesi olarak yayımlanıyor ve ücretli ek mülakat kitapçıklarına yönlendirmeler içeriyor. Apache-2.0 lisanslı, 2018'de açılmış ve ~159 bin star ile GitHub'ın en büyük eğitim depolarından biri.",
+      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın olası bağlam öğrenme alışkanlığın olurdu, ancak içerik Çince ve Java arka uç mülakatlarına odaklı. Kullandığın TypeScript/Expo ve Python hattına değen bir bölümü yok. Depoda kendi projelerine gömebileceğin bir bileşen bulunmuyor, yalnızca okuma metni var. Yapay zeka etiketleri taşıması, deponun bir yapay zeka aracı olduğu anlamına gelmiyor.",
+      "matched_project": null,
+      "relevance": 0,
+      "investment_note": null
+    },
+    {
+      "full_name": "langgenius/dify",
+      "inputs_hash": "a84abedcec32abc9a23c1504d75147d6",
+      "description_tr": "Dify, ajan akışları ve RAG hatları kurmak için tarayıcı üzerinden çalışan bir geliştirme ortamı. Model sağlayıcıları, araç entegrasyonları, bilgi tabanı, izleme ve ekip çalışması tek arayüzde toplanıyor; üretilen akışlar API olarak yayımlanabiliyor. Bulutta, VPC içinde veya kendi sunucunda çalıştırılabiliyor; arayüz TypeScript ve Next.js, çekirdek Python. Lisansı standart bir açık kaynak lisansı değil, ticari kullanım için ek koşullar içeren depoya özgü bir metin. 2023'te açılmış, ~157 bin star ve yoğun bir commit trafiği var.",
+      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın olası bağlam, sesli not tabanlı kişisel bilgi tabanının RAG tarafını hazır bir platforma devretmek olurdu. O iş için zaten Supabase ve n8n hattın var, Dify ise tam bir platform olarak ayrıca işletilmeyi istiyor. Senin tercihin bitmiş ürünler değil, kendi uygulamana gömebileceğin parçalar; lisans koşulları da gömme ihtimalini sınırlıyor. Kendi sunucunda çalıştırmak DigitalOcean tarafında kalıcı bir servis ve düzenli bakım demek.",
+      "matched_project": null,
+      "relevance": 2,
+      "investment_note": null
+    },
+    {
+      "full_name": "langflow-ai/langflow",
+      "inputs_hash": "c6a695ea2a77c7b77d5ada733e24a83a",
+      "description_tr": "Langflow, ajan ve iş akışı kurmak için görsel bir düzenleyici sunan Python tabanlı bir araç. Her bileşenin kaynak kodu açılıp değiştirilebiliyor, akışlar adım adım test edilebiliyor, API olarak yayımlanabiliyor veya MCP sunucusu olarak dışa verilebiliyor. Bağımlılıkları paketlenmiş bir masaüstü sürümü macOS ve Windows için indirilebiliyor. Yaygın model sağlayıcılarını ve vektör veritabanlarını destekliyor, izleme araçlarıyla entegrasyonu var; MIT lisanslı. 2023 başında açılmış, ~155 bin star.",
+      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın olası bağlam, n8n ile kurduğun akışların dil modeli ağırlıklı olanlarını görsel bir ortamda prototiplemek olurdu. Masaüstü sürümünün Mac'te yerel çalışması artı, ancak model çağrıları yine sağlayıcı API'lerine gider ve abonelik dışı maliyet doğurur. Prototipten çıkan akışı sonunda yine kendi koduna taşıman gerekeceği için, Claude Code ile doğrudan yazmaya kıyasla net bir kazanç görünmüyor. Ürün olarak değil, kategorinin nereye gittiğini görmek için bakılacak bir depo.",
+      "matched_project": null,
+      "relevance": 2,
+      "investment_note": null
+    },
+    {
+      "full_name": "msitarzewski/agency-agents",
+      "inputs_hash": "a078a116314fdc8419e3d1c309bde935",
+      "description_tr": "Agency Agents, farklı uzmanlıklara ayrılmış çok sayıda hazır ajan tanımını tek depoda toplayan bir koleksiyon; frontend, tasarım, topluluk yönetimi ve gerçeklik kontrolü gibi roller var. Her ajan bir kişilik, bir süreç ve beklenen çıktı tanımıyla geliyor, tanımlar Markdown ve Shell betikleri olarak tutuluyor. Claude Code, Cursor, Codex, Gemini CLI, OpenCode ve Qwen gibi harness'lara kurulumu yapan, macOS, Linux ve Windows için bir masaüstü uygulaması da yayımlanmış. MIT lisanslı, bir Reddit tartışmasından büyümüş ve topluluk katkısıyla genişliyor. Ekim 2025'te açılmış, ~154 bin star.",
+      "usage_tr": "Lyricdrop'un lansman tarafında işe yarayabilir: pazarlama metni, ASO ve topluluk içeriği için ayrı ajan tanımlarını Claude Code'a kurup kendi akışın içinde çağırabilirsin. İstediğin çift açılı inceleme için de hazır bir başlangıç noktası, ancak ürün mantığını sorgulayan ajanı kendi eğitim kurallarınla yeniden yazman gerekir. Kurulum ofis Mac'inde yerel kalır, ek API maliyeti getirmez ve tanımların seçilip kurulması asistanına devredilebilecek kadar basit bir iş. Uyarı: tanımların kalitesi ajandan ajana değişiyor ve Superpowers gibi bütün bir metodolojinin üstüne yığıldığında talimat gürültüsü yaratıyor; paketin tamamını kurmak yerine iki üç tanımı alıp kendi depona kopyalamak daha sağlıklı.",
+      "matched_project": "Lyricdrop",
+      "relevance": 5,
+      "investment_note": null
+    },
+    {
+      "full_name": "open-webui/open-webui",
+      "inputs_hash": "f79d798b0c7f172f1cc08a7830b95a6a",
+      "description_tr": "Open WebUI, kendi sunucunda çalışan, Ollama ile OpenAI uyumlu API'leri aynı arayüzde toplayan bir sohbet ve model yönetim katmanı. Tamamen çevrimdışı çalışabiliyor; rol ve grup bazlı yetkilendirme, kullanıcı yönetimi, belge kütüphanesi üzerinden RAG ve MCP veya OpenAPI araç sunucularıyla eklenti desteği sunuyor. pip, uv, Docker veya Kubernetes ile kurulabiliyor ve yerel modellerle bulut sağlayıcıları aynı kurulumda karıştırmaya izin veriyor. Python ve Svelte tabanlı; lisansı standart açık kaynak lisanslarından biri değil, depoya özgü koşullar içeriyor. 2023 sonunda açılmış, ~153 bin star ile kendi kendine barındırılan arayüzler arasında en yaygın olanı.",
+      "usage_tr": "Evdeki 7/24 açık Mac mini'ye Ollama ile birlikte kurup kişisel bilgi tabanının ön yüzü olarak kullanabilirsin; sesli notlardan çıkan metinleri belge kütüphanesine atıp üzerinde arama yapmak, ayrı bir arayüz yazmadan çalışan ilk sürümü verir. Yerel modellerle çalıştığında API maliyeti doğmaz, bu da ücretli API yerine Mac'te yerel çalıştırma tercihinle örtüşür. Rol ve grup yetkilendirmesi sayesinde asistanına yalnızca belirli modellere ve belgelere erişim verebilirsin, yani erişim kapsamlarını izole tutma ilkeni burada uygulayabilirsin. Tailscale üzerinden ofis Mac'inden ve telefondan erişim ek kurulum gerektirmez. Uyarı: bu gömülebilir bir bileşen değil, bitmiş bir ürün; kişisel bilgi tabanını kendi uygulaman olarak yazmayı planlıyorsan burası ancak geçici bir ön yüz olur.",
+      "matched_project": "Kişisel bilgi tabanı",
+      "relevance": 6,
+      "investment_note": null
+    },
+    {
+      "full_name": "anthropics/claude-code",
+      "inputs_hash": "8d9f2b49cdec151c6f3b2816822a41bf",
+      "description_tr": "Claude Code, terminalde çalışan, depoyu okuyup değişiklik yapabilen ve git akışlarını yürütebilen bir kodlama ajanı; terminalden, IDE içinden veya GitHub üzerinde etiketlenerek kullanılıyor. Bu depo aracın kaynak kodunu değil, kurulum yollarını, eklenti dizinini, dokümantasyon bağlantılarını ve hata bildirim akışını barındırıyor. macOS, Linux ve Windows için kurulum betikleri ile Homebrew ve WinGet paketleri sunuluyor, npm üzerinden kurulum artık önerilmiyor. Depoda ayrı bir lisans dosyası belirtilmemiş; veri kullanımı ve saklama politikaları dokümantasyon tarafında tanımlı. Şubat 2025'te açılmış, ~148 bin star.",
+      "usage_tr": "Bu zaten günlük çalışma aracın, dolayısıyla depoda senin için değerli olan kısım kod değil: eklenti dizini ve issue akışı. Lyricdrop v2 ile Kanarya depolarında kullandığın kurulum buradan yayımlanan eklentilerle genişliyor; Superpowers dışındaki resmi eklentileri buradan takip edip hangi hook ve skill'lerin işine yaradığını tek tek deneyebilirsin. iPhone'dan ofis Mac'ine Remote Control ile bağlanırken yaşadığın kopmalar da burada issue olarak izlenen konulardan, açık bir kayıt bulup üstüne yazmak kendi başına uğraşmaktan hızlı olur. Mevcut aboneliğinle çalışır, ek API maliyeti getirmez ve kurulum ofisteki Mac'te yerel kalır. Uyarı: eklentileri toplu kurmak talimat çakışması üretiyor, her yeni eklentiyi tek bir depoda bir hafta deneyip karar vermek daha temiz.",
+      "matched_project": "Lyricdrop",
+      "relevance": 9,
+      "investment_note": null
+    },
+    {
+      "full_name": "langchain-ai/langchain",
+      "inputs_hash": "52ee2d721d637f6e5474feab1bd654a1",
+      "description_tr": "LangChain, dil modeli uygulamaları ve ajanlar kurmak için bileşenleri birbirine bağlayan bir Python ve TypeScript çerçevesi. Model sağlayıcılarını tek bir arayüz altında topluyor; araç çağırma, bellek ve RAG gibi yaygın desenler için hazır parçalar veriyor. Planlama, alt-ajan ve dosya sistemi kullanımı gibi kalıpları hazır sunan Deep Agents paketi bunun üzerine kurulu; kontrollü akışlar için LangGraph, izleme ve dağıtım için LangSmith ile bir ürün ailesi oluşturuyor. MIT lisanslı ve indirme sayısı çok yüksek. 2022 sonunda açılmış, ~147 bin star.",
+      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın olası bağlam, ileride sunucu tarafında kendi ajanını yazarken model sağlayıcılarını tek arayüzde toplamak olurdu. Bugünkü hattında bu işi Claude Code ve n8n görüyor, araya genel amaçlı bir çerçeve koymak somut bir adımı hızlandırmıyor. Expo ve React Native tarafına giren bir parçası yok, kullanımı sunucu tarafında Python veya Node gerektirir. Genel amaçlı bir çerçeve olması tek başına projelerinden biriyle eşleştiği anlamına gelmiyor.",
+      "matched_project": null,
+      "relevance": 2,
+      "investment_note": null
+    },
+    {
+      "full_name": "DietrichGebert/ponytail",
+      "inputs_hash": "0431077e926a31592800dd7790650650",
+      "description_tr": "Ponytail, kodlama ajanlarına mümkün olan en az kodu yazdırmayı hedefleyen bir beceri paketi; tarayıcıda zaten bulunan bir özellik için kütüphane kurup sarmalayıcı yazmak yerine tek satırlık çözümü tercih ettiriyor. Yirmiye yakın ajanla çalışıyor, npm üzerinden kuruluyor ve MIT lisanslı. Depo, gerçek bir FastAPI ve React projesinde on iki görevle yapılmış bir ölçüm yayımlıyor: aynı ajana kıyasla ortalama %54 daha az kod, yaklaşık %20 daha ucuz ve %27 daha hızlı; ölçüm betikleri de depoda. Güvenlik kontrollerini düşürmeden çalıştığı ve daha önceki tek seferlik ölçümün ortalama değil tavan değer olduğu ayrıca not edilmiş. Haziran 2026'da açılmış, ~144 bin star.",
+      "usage_tr": "Lyricdrop v2'de Superpowers'ın plan disiplininin yanına koyabileceğin küçük ve ucuz bir ek: ajanın gereksiz bağımlılık ve ara katman üretme eğilimini kısar. Özellikle admin panel tarafında işe yarar, çünkü orada üretilen bileşenlerin çoğu bir kez kullanılıp kalıyor. Kurulumu yerel, ek API maliyeti yok, aksine token tüketimini düşürdüğü ölçülmüş. Uyarı: ölçümler projenin kendi deposundan ve tek bir kod tabanından geliyor; kendi deponda aynı görevi iki kez koşturup çıkan diff'i karşılaştırmadan genel kural haline getirme. Az kod her zaman doğru kod değil, söz hizalama gibi kenar durumu çok olan yerlerde sadeleştirmeyi incelemeden geçir.",
+      "matched_project": "Lyricdrop",
+      "relevance": 6,
+      "investment_note": "Tek bir beceri paketinden bekleme listesi açılmış bir ürüne doğru ilerliyor; ajan araçlarında küçük ekiplerin ticarileşme yolunu izlemek için örnek bir vaka."
+    },
+    {
+      "full_name": "Shubhamsaboo/awesome-llm-apps",
+      "inputs_hash": "0058574058230d5a7a671b2433a86cb1",
+      "description_tr": "Awesome LLM Apps, yüzden fazla çalışır durumda ajan, beceri ve RAG örneğini tek depoda toplayan bir örnek koleksiyonu. Sesli ajanlar, çok ajanlı uygulamalar, sürekli çalışan brifing ajanları ve kendi kendini geliştiren beceriler gibi kategorilere ayrılmış; her örnek kendi klasöründe çalıştırma talimatıyla geliyor. Örneklerin çoğu Python ile yazılmış ve Claude, Gemini, GPT, DeepSeek, Llama, Qwen gibi farklı modellerle çalışacak şekilde hazırlanmış. Apache-2.0 lisanslı; depo adım adım anlatımlar yayımlayan bir eğitim sitesine bağlı. 2024'te açılmış, ~139 bin star.",
+      "usage_tr": "Dubai'de kurmayı araştırdığın AI uygulama stüdyosu fikri için hızlı bir tarama kaynağı; hangi tür wrapper uygulamanın kaç parçadan oluştuğunu okumak, sıfırdan tasarlamaktan hızlı. Folio'nun günlük içerik üretimi ve öneri tarafında da benzer örnekler var, ancak oradaki mantığı kendi Expo ve Supabase hattına taşıman gerekir. Örnekleri olduğu gibi kullanmak yerine desenini alıp Claude Code'a yazdırmak senin çalışma şeklinle daha uyumlu. Kategorilere göre kısa bir liste çıkarma işi asistanına devredilebilir. Uyarı: örneklerin çoğu demo seviyesinde ve ücretli sağlayıcı API'lerini varsayıyor; üretim kalitesi, hata yönetimi veya maliyet kontrolü beklentisiyle bakma.",
+      "matched_project": "Dubai AI uygulama stüdyosu",
+      "relevance": 4,
+      "investment_note": null
+    },
+    {
+      "full_name": "garrytan/gstack",
+      "inputs_hash": "8e7778042fbc24413894ea8b72aa0e6d",
+      "description_tr": "gstack, Claude Code'u rol tabanlı bir ekip gibi çalıştıran 23 uzman tanımını ve sekiz yardımcı aracı slash komutları halinde paketleyen bir kurulum. Roller arasında ürünü sorgulayan bir CEO, mimariyi sabitleyen bir mühendislik yöneticisi, tasarım hatalarını yakalayan bir tasarımcı, üretim hatası arayan bir reviewer, gerçek tarayıcı açan bir QA lideri ve OWASP/STRIDE denetimi yapan bir güvenlik sorumlusu var. Tanımların tamamı Markdown; kurulum Bun gerektiriyor, macOS'ta belirli bir tarayıcı öneriliyor ancak paketin kendi tarayıcısıyla da çalışıyor. MIT lisanslı ve yazarının kendi günlük kurulumu olarak yayımlanıyor; depoda üretkenlik iddiaları ve bunların yöntem tartışması ayrı bir dokümanda anlatılıyor. Mart 2026'da açılmış, ~134 bin star.",
+      "usage_tr": "Lyricdrop v2'de en çok işine yarayacak parçası QA rolü: staging URL'sine gerçek tarayıcı açıp akışı gezen bir komut, bugün elle yaptığın ve dışarı vermek istediğin playtest gate'inin otomatikleşebilir kısmını kapatır. İstediğin çift açılı inceleme de burada hazır geliyor; reviewer ile ürün rolünü ayrı ayrı çalıştırıp çıktıları yan yana koyabilirsin. Kurulum ofis Mac'inde yerel kalır, mevcut aboneliğinle çalışır ve ek API maliyeti getirmez; Bun kurulumu tek seferlik bir iş. Uyarı: Superpowers ile aynı depoda çalıştırmak iki ayrı metodolojinin çakışması demek, önce yalnızca QA ve review komutlarını alıp kendi kurulumuna kopyalamak daha kontrollü. Depodaki üretkenlik sayıları tek kişinin kendi depolarından çıkarılmış; aracı bu sayılara göre değil, Lyricdrop'ta yakaladığı hata sayısına göre değerlendir.",
+      "matched_project": "Lyricdrop",
+      "relevance": 7,
+      "investment_note": null
+    },
+    {
+      "full_name": "browser-use/browser-use",
+      "inputs_hash": "2f0a5d3866ad790de47bc3a2d565ce2e",
+      "description_tr": "Browser Use, bir dil modelinin tarayıcıyı insan gibi kullanmasını sağlayan açık kaynak bir ajan kütüphanesi; sayfa gezme, form doldurma, tıklama, bekleme ve veri çıkarma adımlarını modele bırakıyor. Python ve TypeScript sürümleri var, Playwright üzerine kurulu ve hem yerel tarayıcıya hem bulut tarayıcılara bağlanabiliyor. Açık kaynak kütüphanenin yanında bir CLI, barındırılan bir ajan API'si, saatlik ücretlendirilen stealth tarayıcılar ve CAPTCHA çözme gibi ticari katmanlar sunuluyor. MIT lisanslı; 2024 sonunda açılmış, ~116 bin star.",
+      "usage_tr": "Lyricdrop v2'nin tarayıcı playtest gate'i bunun tam hedefinde: admin panelde bir şarkıyı açıp boşluk doldurma akışını baştan sona gezen bir senaryo yazıp her yeni şarkı partisinde koşturabilirsin. Elle yaptığın ve dışarı vermek istediğin işin tekrar eden kısmını kapatır, geriye yalnızca kulakla kontrol edilmesi gereken hizalama kalır. Kütüphane Mac'te yerel çalışır ama kararı veren model dışarıdan gelir; görüntü destekli bir modelle koşturmak abonelik dışı API maliyeti doğurur ve bunu şarkı başına maliyet hesabına eklemen gerekir. Asistanının yürüttüğü araştırma işlerinde ikinci bir kullanım alanı var, ancak oturum açılmış hesaplarla çalıştırırken erişimi ayrı bir tarayıcı profiliyle sınırla. Uyarı: tarayıcı ajanları kırılgandır, panel arayüzü değiştikçe senaryolar bakım ister; testleri kritik birkaç akışla sınırlı tut.",
+      "matched_project": "Lyricdrop",
+      "relevance": 7,
+      "investment_note": "Açık kaynak kütüphaneyi saatlik tarayıcı ve barındırılan ajan API'siyle birlikte satan net bir model kurmuş; tarayıcı ajanı kategorisi yatırım tezinde takip edilecek bir başlık."
+    },
+    {
+      "full_name": "earendil-works/pi",
+      "inputs_hash": "5a8928df0755804bbbd455217ed28ecc",
+      "description_tr": "Pi, ajan harness'ı olarak paketlenmiş bir TypeScript kütüphane ailesi: çok sağlayıcılı tek bir LLM API'si, araç çağırma ve durum yönetimi yapan bir ajan çekirdeği, terminal arayüzü kütüphanesi ve bunların üzerine kurulu bir kodlama ajanı CLI'ı. Paketler ayrı ayrı kullanılabiliyor; servis kompozisyonu, dayanıklı konuşma ve görev saklama ile telemetri için ek paketler var. MIT lisanslı ve npm üzerinden dağıtılıyor. Depo, yerleşik bir izin sistemi bulunmadığını, dosya sistemi, süreç ve ağ erişimini sınırlamak için konteyner veya sandbox gerektiğini açıkça yazıyor. Yeni katkıcıların issue ve PR'ları varsayılan olarak otomatik kapatılıyor; Ağustos 2025'te açılmış, ~108 bin star.",
+      "usage_tr": "OpenCode için Expo ve EAS ile kendi iOS istemcini yazma fikrinde bu paketler işe yarayabilir; ajan çekirdeği ile çok sağlayıcılı LLM API'si, kendi uygulamana gömülebilecek ayrı parçalar olarak kullanılabiliyor. Hayat orkestrasyonu uygulamasında görev ajanlarını kendin yazmak istersen, dayanıklı konuşma ve görev saklama paketi Supabase'in yanında iş görecek bir yapı sunuyor. Sağlayıcı anahtarı gerektirdiği için mevcut aboneliğinin dışında API maliyeti doğar; bunu küçük bir prototiple ölçmeden ilerleme. Uyarı: izin sisteminin olmaması, aracı kendi makinende geniş yetkiyle çalıştırmak demek, konteyner içinde denemeden ofis Mac'ine kurma. Katkı politikası kapalı olduğu için sorun yaşadığında kendi fork'unu sürdürmeye hazır olman gerekir.",
+      "matched_project": "Hayat orkestrasyonu",
+      "relevance": 5,
+      "investment_note": null
+    },
+    {
+      "full_name": "TauricResearch/TradingAgents",
+      "inputs_hash": "5f86c197b4714f95b63330e17d36de47",
+      "description_tr": "TradingAgents, finansal alım satım kararını analist, araştırmacı ve trader rollerine bölünmüş dil modeli ajanlarıyla modelleyen bir araştırma çerçevesi. Ajanlar haber, sosyal veri, makro seriler ve SEC dosyalamaları üzerinden tartışıp bir karara varıyor; son sürümlerle geçmişe bakış sızıntısını önleyen point-in-time veri yolları, hisse ve tarih ızgarasında backtest ve portföy farkındalıklı koşular eklenmiş. Python ile yazılmış, Apache-2.0 lisanslı ve bir arXiv makalesine dayanıyor. Farklı model sağlayıcılarını destekliyor ve komut satırından çalıştırılıyor. 2024 sonunda açılmış, ~108 bin star.",
+      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın olası bağlam Arslan Holding'in deal screening süreci olurdu, ancak bu çerçeve halka açık piyasalarda hisse alım satımı için kurulmuş ve girdisi borsa verisi, SEC dosyalaması ve haber akışı. Erken aşama özel şirket akışında bu kaynakların hiçbiri yok, dolayısıyla çok ajanlı tartışma deseni dışında taşınabilir bir parçası yok. Çalıştırmak ayrı model API maliyeti ve veri sağlayıcı anahtarları gerektirir. Güneş enerjisi tarafındaki finansal modelleme ihtiyacına da denk düşmüyor; orada gereken üretim simülasyonu ve proje finansmanı modeli bu çerçevenin kapsamı dışında.",
+      "matched_project": null,
+      "relevance": 2,
+      "investment_note": null
+    }
+  ]
+}

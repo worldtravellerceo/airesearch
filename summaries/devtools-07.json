@@ -1,0 +1,175 @@
+{
+  "repos": [
+    {
+      "full_name": "open-pencil/open-pencil",
+      "inputs_hash": "69368997c4f57c38c8e5f9d448780b6e",
+      "description_tr": "OpenPencil, Figma'ya açık kaynak bir alternatif olarak geliştirilen, tasarım dosyalarını yerelde açıp düzenleyen bir editör. .fig ve .pen dosyalarını okuyup yazabiliyor; auto layout ve CSS Grid tarafı Yoga WASM, render tarafı Skia/WebGPU üzerinde çalışıyor. Editörün içinde sohbetle tasarım üreten bir AI katmanı var ve bu katman OpenRouter, Anthropic, OpenAI, Google AI ya da DeepSeek gibi sağlayıcılara kullanıcının kendi anahtarıyla bağlanıyor. Yalnızca bir GUI değil: headless CLI, XPath sorguları, MCP sunucusu, Claude Code ve Codex gibi ajanlar için masaüstü entegrasyonu, kendi editörünü kurmak için headless bir Vue SDK'sı ve seçimleri JSX/Tailwind olarak dışa aktarma da kapsamda. Tauri v2 ile yaklaşık 15 MB'lık masaüstü uygulaması olarak macOS, Windows ve Linux'ta, ayrıca tarayıcıda PWA olarak çalışıyor. MIT lisanslı, 8.5K yıldız; depo Şubat 2026'da açılmış ve README projenin aktif geliştirme aşamasında olduğunu, pürüzlerin sürdüğünü belirtiyor.",
+      "usage_tr": "Folio'nun Instagram ekranlarını birebir kopyalayan arayüz tarafında kullanabilirsin: Claude Design ile ürettiğin ekranları .fig olarak açıp bileşen ve varyantlara bölmek, sonra seçimi JSX/Tailwind olarak dışa aktarmak Expo tarafına geçişi kısaltır. Arslan Holding'in marka ve website üretiminde de aynı döngü işine yarar; design token çıkarma ve lint komutları, ajansa gitmeden tutarlı bir kimlik tutmanı sağlar. Masaüstü sürümü ofisteki M4 Pro Mac'te yerel çalışıyor ve tasarım dosyaları dışarı çıkmıyor. MCP sunucusu ile tasarım dosyasını Claude Code'un okuyabildiği bir veri kaynağına çeviriyor; asistanına devredilecek türden bir iş değil, ama ajana devredilebilecek bir adım. Uyarı: editörün içindeki AI özellikleri kendi API anahtarınla çalıştığı için Max aboneliğinin dışında ayrı bir maliyet kalemi açıyor. İkinci uyarı: depo Şubat 2026'da açılmış ve README kendi durumunu 'pürüzlü' diye tanımlıyor, o yüzden üretimdeki tasarım dosyalarını yedeklemeden bu editörde açma.",
+      "matched_project": "Folio",
+      "relevance": 6,
+      "investment_note": "Açık kaynak Figma alternatifi olarak B2B yazılım tezine oturuyor; CLI ve SDK katmanı ticarileşme için doğal bir yüzey, ekibin gelir modeline nasıl geçeceği izlenmeye değer."
+    },
+    {
+      "full_name": "vaexio/vaex",
+      "inputs_hash": "29cdae8a1ba0c0df0148549be6b6a860",
+      "description_tr": "Vaex, Python için bellek dışı (out-of-core) çalışan bir DataFrame kütüphanesi. HDF5 ve Apache Arrow dosyalarını memory mapping ile açıp veriyi kopyalamadan, tembel ifade sistemiyle işliyor; amacı milyar satır ölçeğindeki groupby, join ve istatistik hesaplarını tek makinede bitirmek. Histogram, yoğunluk grafiği ve 3B hacim render ile büyük tablo verisini görselleştirme de kütüphanenin parçası. Jupyter ve Voila entegrasyonu ile açık bir makine öğrenmesi pipeline katmanı sunuyor, S3'ten tembel akış destekleniyor. MIT lisanslı, 8.5K yıldız; depo 2014'ten beri açık ve dokümantasyonu geniş.",
+      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor. En yakın bağlam Lyricdrop'un şarkı kataloğu olabilir; ancak dil başına birkaç bin şarkılık bir katalog Supabase ve sıradan pandas ölçeğinde rahatça duruyor, Vaex'in çözdüğü problem ise tek makinenin belleğine sığmayan milyarlık tablolar. O eşiğe gelmeden HDF5'e dönüştürme ve ayrı bir DataFrame API'si öğrenme maliyeti karşılığını vermez.",
+      "matched_project": null,
+      "relevance": 1,
+      "investment_note": null
+    },
+    {
+      "full_name": "py-why/dowhy",
+      "inputs_hash": "f8359e0c7e788a1805f37ca034a573e6",
+      "description_tr": "DoWhy, nedensellik çıkarımı için bir Python kütüphanesi. Grafiksel nedensel modeller ile potansiyel sonuçlar çerçevesini tek bir arayüzde birleştiriyor ve süreci modelleme, tanımlama, tahmin ve çürütme adımlarına ayırıyor. Öne çıkan yanı, kullanılan yöntemden bağımsız olarak varsayımları test eden refutation/falsification API'si; ayrıca kök neden analizi, müdahale ve karşıolgusal senaryo üretimi için algoritmalar içeriyor. PyWhy ekosisteminin parçası ve örnek not defterleri müşteri kaybı, rezervasyon iptali, mikroservis gecikmesi gibi vakaları kapsıyor. MIT lisanslı, 8.3K yıldız, 2018'den beri geliştiriliyor.",
+      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor. En yakın bağlam Kanarya'nın haftalık raporlarındaki 'şu davranış şunu etkiliyor mu' sorusu olabilir; ancak DoWhy'ın işe yaraması için nedensel grafiği elle kurman ve yeterli gözlem sayısına ulaşman gerekiyor, tek kişilik bir zaman serisi bunun altında kalır. Bu tür sorular için önce basit korelasyon ve görselleştirme, sonra bilinçli bir değişiklik denemesi daha doğru sıra.",
+      "matched_project": null,
+      "relevance": 2,
+      "investment_note": null
+    },
+    {
+      "full_name": "OpenDCAI/DataFlow",
+      "inputs_hash": "d455ced49c1894320626dca1d76900ea",
+      "description_tr": "DataFlow, LLM eğitim ve ince ayar verisi hazırlamak için operatör tabanlı bir veri hazırlama çerçevesi. Ham veriden temizlenmiş, filtrelenmiş ve sentetik olarak çoğaltılmış veri kümesine giden adımları yeniden kullanılabilir operatörler ve pipeline'lar halinde tanımlıyor. Düşük kodlu bir Gradio arayüzü, pipeline'ları kuran bir veri ajanı ve alan bazlı hazır tarifler sunuyor. Çıkarım tarafında vLLM ve SGLang backend'leriyle yerel modelleri ya da API tabanlı modelleri kullanabiliyor. Apache-2.0 lisanslı, 8.2K yıldız; SIGMOD'27'ye kabul edilmiş bir teknik raporu, Docker imajı ve Colab örneği var.",
+      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor. En yakın bağlam Lyricdrop'un şarkı başına içerik üretim hattı olabilir; fakat DataFlow model eğitimi için veri kümesi hazırlamaya göre tasarlanmış ve vLLM/SGLang backend'leri GPU varsayıyor, senin Mac üzerinde yerel çalıştırma tercihinle örtüşmüyor. Bu ölçekte kendi yazdığın Python adımları ve n8n aynı işi daha az bağımlılıkla görüyor.",
+      "matched_project": null,
+      "relevance": 2,
+      "investment_note": null
+    },
+    {
+      "full_name": "AI4Finance-Foundation/FinRobot",
+      "inputs_hash": "643e1d697cb6819851123faf789afb47",
+      "description_tr": "FinRobot, finansal uygulamalar için çok ajanlı açık kaynak bir platform. Yatırım araştırması otomasyonu, hisse analizi, değerleme ve otomatik rapor üretimi gibi işleri LLM tabanlı ajanlara dağıtıyor. Sürümleri farklı ajan çerçeveleri üzerine kurulmuş: V0 AutoGen, V1 OpenAI Agents SDK, V2 PydanticAI; V2'nin kaynak kodu henüz açılmamış durumda. Ağırlıklı olarak halka açık piyasa verisiyle çalışıyor ve model çağrıları için harici API anahtarları gerektiriyor. arXiv'de bir teknik raporu, pip paketi ve bir masaüstü sürümü var; Apache-2.0 lisanslı, 8K yıldız, 2024'ten beri geliştiriliyor.",
+      "usage_tr": "Arslan Holding'in pazar ve rakip araştırması tarafında, 'veriyi topla, analiz et, raporu yaz' zincirini ajanlara bölen mimarisini örnek alabilirsin. Equity research ajanlarının rapor şablonları, hazırladığın sektör notlarının iskeletini çıkarmak için doğrudan kullanılabilir. Ama sınırı net koyalım: senin asıl ihtiyacın erken aşama şirket taraması ve due diligence, FinRobot ise halka açık şirket analizi için kurulmuş — özel şirket verisi, pitch deck okuma veya portföy takibi tarafında karşılığı yok. Çalıştırmak harici model API'leri istiyor, yani Max aboneliğinin dışında bir maliyet açıyor; ofis Mac'inde kurulabilir ama veri kaynakları yine dışarıda kalıyor. Kurulum ve konfigürasyon geliştirici işi olduğu için asistanına devredebileceğin bir araç değil; önce tek bir sektör raporunda deneyip çıktının senin okuduğun kalitede olup olmadığına bak.",
+      "matched_project": "Arslan Holding",
+      "relevance": 4,
+      "investment_note": null
+    },
+    {
+      "full_name": "chenyme/grok2api",
+      "inputs_hash": "098c92aff8769ce61eeeab50c11490e7",
+      "description_tr": "grok2api, Grok'un Build, Web ve Console arayüzlerini çok hesaplı bir API ağ geçidi arkasında toplayan Go ile yazılmış bir servis. Hesap havuzu yönetimi, istek yönlendirme ve React 19 ile yazılmış bir yönetim arayüzü sunuyor; amd64 ve arm64 için Docker imajları yayımlanıyor. Resmî bir API istemcisi değil, web arayüzlerinin üzerine kurulmuş bir köprü. README projenin yalnızca teknik araştırma amaçlı olduğunu, Grok'un kullanım şartlarına ve yerel mevzuata uymanın kullanıcının sorumluluğunda olduğunu açıkça belirtiyor. MIT lisanslı, 7.7K yıldız, Ekim 2025'te açılmış; README'nin önemli bir bölümü sponsor tanıtımlarına ayrılmış.",
+      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor. En yakın bağlam model maliyetini düşürme çaban olabilir; ancak bu proje maliyeti sağlayıcının kullanım şartlarını dolaşarak düşürüyor ve gelir hedefi olan bir ürünün — Lyricdrop'un — içerik hattına koyabileceğin bir zemin değil. Maliyet tarafındaki ihtiyacın için Mac üzerinde çalışan açık ağırlıklı modeller çok daha temiz bir yol.",
+      "matched_project": null,
+      "relevance": 1,
+      "investment_note": null
+    },
+    {
+      "full_name": "Visualize-ML/Book3_Elements-of-Mathematics",
+      "inputs_hash": "eef400c2a14e353821b7f445fb3fc3cb",
+      "description_tr": "Bu depo, Çince yayımlanan bir matematik kitap dizisinin 'Matematik Öğeleri' cildine eşlik eden Jupyter Notebook koleksiyonu. Depo açıklamasına göre içerik dört işlemden makine öğrenmesine uzanan konuları Python ile görselleştirerek anlatıyor. README'de bundan fazla kamuya açık metin yok: mevcut metin kitapların indirim bağlantılarından ve hata bildiren okuyuculara kitap hediye edileceği notundan ibaret, dolayısıyla deponun yapısı ve bakım durumu hakkında buradan karar vermek mümkün değil. 7.6K yıldız toplamış, 2022'de açılmış; GitHub'da tanımlı bir lisans dosyası görünmüyor ve materyalin tamamı Çince.",
+      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor. En yakın bağlam öğrenme merakın olabilir, ama materyal Çince ve mühendislik eğitiminin zaten kapsadığı temel matematiği anlatıyor. Lisans tanımlı olmadığı için içeriğini kendi ürettiğin materyallerde kullanmak da uygun değil.",
+      "matched_project": null,
+      "relevance": 1,
+      "investment_note": null
+    },
+    {
+      "full_name": "android/skills",
+      "inputs_hash": "ee28e34db97d53426162991556ad2a36",
+      "description_tr": "android/skills, Google'ın Android geliştirme için yayımladığı, kod ajanlarına yönelik modüler talimat paketlerinden oluşan resmî bir depo. Skill'ler açık standart SKILL.md formatında yazılmış markdown dosyaları ve developer.android.com'daki pratikleri modelin kullanabileceği teknik şartnamelere çeviriyor. Depo kapsamını bilinçli olarak, değerlendirmelerde modellerin zayıf kaldığı iş akışlarıyla sınırlıyor; temel Jetpack Compose pratikleri gibi zaten iyi bilinen alanlar dışarıda bırakılmış. Kurulum Android CLI üzerinden yapılıyor ve skill'ler tespit edilen ajan dizinlerine, yoksa Gemini ile Antigravity dizinlerine yazılıyor; r8-analyzer ve wear-compose-m3 gibi tekil paketler ayrı ayrı kurulabiliyor. Apache-2.0 lisanslı, 7.5K yıldız, Mart 2026'da açılmış; şu an dışarıdan katkı kabul edilmiyor, geri bildirim issue üzerinden alınıyor.",
+      "usage_tr": "Lyricdrop'un Android ve Android TV sürümünde, native tarafa inen işleri Claude Code'a yaptırırken kullanabilirsin: skill'ler ajan-bağımsız markdown olduğu için Android CLI ile kurup Claude Code'un skill dizinine taşımak mümkün. En çok değeri build ve paketleme tarafında görürsün — küçültme/R8 analizi, TV ve Wear gibi modellerin sık hata yaptığı noktalar. Uyarı: Android TV sürümünü Expo/EAS üzerinden çıkardığın için Compose odaklı skill'lerin çoğu doğrudan karşılık bulmayacak; fayda, EAS'ın altındaki native katmana indiğin anlarda ortaya çıkıyor. Tamamen yerel markdown dosyaları olduğu için API maliyeti getirmiyor ve Max aboneliğiyle sorunsuz çalışıyor. Kurulum tek komutluk ve bir kerelik; asistanına devredilecek bir iş değil ama seni de oyalamaz.",
+      "matched_project": "Lyricdrop",
+      "relevance": 5,
+      "investment_note": null
+    },
+    {
+      "full_name": "firmai/industry-machine-learning",
+      "inputs_hash": "c9cc558c61b4e21d56a314c031dcfd77",
+      "description_tr": "Bu depo, sektör sektör derlenmiş uygulamalı makine öğrenmesi ve veri bilimi not defterleri ile kütüphanelerin bağlantı listesi. Finanstan sağlığa, perakendeden üretime kadar alanlarda örnek çalışmaları tek sayfada toplayan bir 'awesome list' formatında ilerliyor. README'nin başındaki büyük bölüm, derlemeyi yürüten Sov.ai'nin araştırmacı ilanına ve platform tanıtımına ayrılmış. Kod değil referans koleksiyonu; 7.5K yıldız, 2019'da açılmış ve bağlantıların önemli bir kısmı o dönemin araçlarına ait. Depoda tanımlı bir lisans dosyası görünmüyor.",
+      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor. En yakın bağlam Arslan Holding'in sektör taraması olabilir; ancak liste büyük ölçüde 2019 çevresinde donmuş ve bir yatırım kararını dayandıracağın güncel pazar verisini vermiyor. Bugünün deal flow'u için takip ettiğin bölgesel veri kaynakları ve doğrudan araştırma ajanları daha isabetli.",
+      "matched_project": null,
+      "relevance": 1,
+      "investment_note": null
+    },
+    {
+      "full_name": "open-compass/opencompass",
+      "inputs_hash": "eea330bc5da7b2a75381a37658e3b4e3",
+      "description_tr": "OpenCompass, büyük dil modellerini karşılaştırmak için kurulmuş bir değerlendirme platformu. OpenAI, Anthropic, Gemini, Qwen, GLM, DeepSeek gibi API modelleri ile yerel modelleri aynı arayüzden çağırıp bilgi, akıl yürütme, kodlama, bilim, uzun bağlam ve güvenlik başlıklarında 100'den fazla veri kümesi üzerinde ölçüyor. Konfigürasyon dosyaları üzerinden çalışıyor; dağıtık çalıştırma, sonuç özetleyicileri ve CompassRank ile CompassHub gibi bir sonuç/veri kümesi ekosistemi etrafında toplanmış. 2026 içinde VLMEvalKit entegrasyonu ve OpenAI Responses API desteği gibi güncellemeler almış, yani çok modlu değerlendirme de kapsama girmiş. Apache-2.0 lisanslı, 7.5K yıldız; alışkanlıkları akademik ölçüm pratiğine yakın bir araç.",
+      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor. En yakın bağlam Lyricdrop'un içerik üretiminde hangi modelin yeteceğini ölçmek olabilir; fakat OpenCompass akademik veri kümelerinde genel yetenek ölçüyor, senin sorun ise 'bu şarkıda boşluk seçimi doğru mu' gibi göreve özel bir kalite sorusu. Elindeki 20-30 şarkılık test setinin üzerine yazacağın küçük bir değerlendirme scripti bu çerçeveyi kurmaktan hem daha hızlı hem de senin sorunla daha ilgili bir cevap verir.",
+      "matched_project": null,
+      "relevance": 2,
+      "investment_note": null
+    },
+    {
+      "full_name": "feast-dev/feast",
+      "inputs_hash": "9efbe56b1440d7e8a7457c2c058e50e9",
+      "description_tr": "Feast, makine öğrenmesi için açık kaynak bir feature store. Eğitimde kullanılan geçmiş veriyi tutan offline store ile tahmin anında kullanılan düşük gecikmeli online store'u tek bir özellik tanımı üzerinden servis ederek eğitim ile servis arasındaki tutarsızlığı kapatmayı hedefliyor. Zaman noktası doğru (point-in-time correct) veri kümeleri üreterek veri sızıntısını engelliyor ve model kodunu veri altyapısından ayırıyor. Snowflake, GCP ve AWS üzerinde çalışan dağıtım seçenekleri ile denenmiş bir feature server bileşeni var. Apache-2.0 lisanslı, 7.3K yıldız, 2018'den beri geliştiriliyor; hedef kitlesi açıkça ML platform ekipleri.",
+      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor. En yakın bağlam Folio'nun beğeni sinyallerinden öğrenen öneri katmanı olabilir; fakat feature store, kendi modelini eğitip ölçekte servis eden ekiplerin problemi ve senin kurgunda öneri tarafı Supabase'deki birkaç tablo ile çözülüyor. Tek kullanıcılı bir uygulamada bu katman net bir bakım yükünden başka bir şey getirmez.",
+      "matched_project": null,
+      "relevance": 1,
+      "investment_note": null
+    },
+    {
+      "full_name": "Gentleman-Programming/gentle-ai",
+      "inputs_hash": "c8b1d564c02eb96bf785c1faf149f9ac",
+      "description_tr": "Gentle-AI, hâlihazırda kullanılan AI kod ajanlarını tek bir kurulumdan yapılandıran, Go ile yazılmış bir araç. Claude Code, OpenCode, Codex, Cursor, Gemini CLI, Hermes, Copilot ve Windsurf dahil 16 ajan için kalıcı bellek, seçilmiş skill'ler, MCP sunucuları, persona'lar ve isteğe bağlı sınırlı review adımlarını kuruyor. Engram adını verdiği bellek katmanı, oturum yeniden başladığında veya bağlam sıkıştırıldığında kaybolan proje kararlarını ajanın altında tutmayı amaçlıyor. Spec/'Organic-Driven Development' adını verdiği bir iş akışı ve ajanın yaptığı işi kanıtla gösterme yaklaşımı deponun merkezinde duruyor. MIT lisanslı, 7.1K yıldız, Şubat 2026'da açılmış; macOS, Linux ve Windows'ta çalışıyor ve tek bir ajana kilitlenmiyor.",
+      "usage_tr": "Bu, Lyricdrop v2'yi yazdığın kurulumun tam ortasına oturuyor: ofis Mac'indeki Claude Code ile yanında kullandığın OpenCode'u aynı bellek, skill ve MCP setiyle yapılandırıp iki ajanın da aynı proje kararlarını bilmesini sağlayabilirsin. İstediğin 'her değişiklik iki ayrı açıdan review edilsin' kuralına da hazır bir iskelet veriyor; persona'lar ve sınırlı review adımı, kendi CLAUDE.md pratiklerini sıfırdan kurmak yerine üstüne inşa edeceğin bir taban oluyor. Go ikilisi olarak yerelde çalışıyor ve kendi model çağrısını yapmıyor, yani Max aboneliğinin dışına maliyet çıkarmıyor. Uyarı: denediğin Superpowers ile aynı yeri hedefliyor; ikisini aynı depoda üst üste kurarsan hangi talimatın kazandığını takip etmek zorlaşır, önce tek bir projede karşılaştırmalı dene. İkinci uyarı: depo Şubat 2026'da açılmış ve kurulum senin repoya dosya yazıyor — değişiklikleri git'te tutup geri alabildiğinden emin ol.",
+      "matched_project": "Lyricdrop",
+      "relevance": 8,
+      "investment_note": null
+    },
+    {
+      "full_name": "Nutlope/llamacoder",
+      "inputs_hash": "71009bfb9fb6ca2e1e0088311ade5f49",
+      "description_tr": "Llama Coder, tek bir istemle küçük web uygulamaları üreten, Claude Artifacts'in açık kaynak bir benzeri. Next.js app router ve Tailwind ile yazılmış; model tarafında Together AI üzerinden Llama 3.1 405B çağırıyor. Üretilen kodu esbuild-wasm ve esm.sh kullanarak sandbox'lı bir iframe içinde tarayıcıda derleyip önizliyor. Veritabanı için Postgres/Prisma, ekran görüntüsü yüklemeleri için S3 uyumlu depolama, gözlemlenebilirlik için Braintrust bağlanabiliyor. MIT lisanslı, 7.1K yıldız; 2024'te yayımlanmış, bir model sağlayıcısının yeteneklerini gösteren örnek uygulama niteliğinde.",
+      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor. En yakın bağlam Dubai'de kurmayı düşündüğün uygulama stüdyosu için bir demo iskeleti olabilir; ancak proje bir sağlayıcı tanıtımı ve çalışması Together AI anahtarı istiyor, yani hem dışarıya maliyet hem de Claude Code ile zaten yaptığın işin zayıf bir kopyası. Gerçekten ayrıştırıcı tek parçası tarayıcı içi sandbox önizleme; bir gün kendi paneline kullanıcı kodu çalıştıran bir alan koymak istersen yalnızca o bölüme bakmaya değer.",
+      "matched_project": null,
+      "relevance": 2,
+      "investment_note": null
+    },
+    {
+      "full_name": "scikit-learn-contrib/imbalanced-learn",
+      "inputs_hash": "e160528e4d04798cbf1b5e6a44ac91e8",
+      "description_tr": "imbalanced-learn, sınıf dağılımı çok dengesiz veri kümeleri için yeniden örnekleme teknikleri sunan bir Python paketi. SMOTE gibi aşırı örnekleme yöntemlerini, çeşitli azaltma yöntemlerini ve bunları birleştiren topluluk yaklaşımlarını scikit-learn API'siyle uyumlu biçimde veriyor, böylece mevcut pipeline'lara doğrudan takılıyor. scikit-learn-contrib çatısı altında; NumPy, SciPy ve scikit-learn üzerine kurulu, Pandas, TensorFlow ve Keras ile isteğe bağlı entegrasyonları var. Dokümantasyonu örneklerle geniş ve sürüm bağımlılıkları güncel scikit-learn sürümlerini takip ediyor. MIT lisanslı, 7.1K yıldız, 2014'ten beri sürdürülüyor.",
+      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor. En yakın bağlam Folio'da beğenmeme sinyallerinin azınlıkta kalması gibi bir denge problemi olabilir; fakat bu paket klasik tablo verisiyle model eğiten işler için ve senin öneri tarafın eğitilmiş bir sınıflandırıcıya değil LLM ile basit kurallara dayanıyor. Kendi modelini eğitme aşamasına gelirsen scikit-learn pipeline'ının doğal eklentisi olarak geri dönebilirsin.",
+      "matched_project": null,
+      "relevance": 1,
+      "investment_note": null
+    },
+    {
+      "full_name": "afshinea/stanford-cs-230-deep-learning",
+      "inputs_hash": "09ceb64e311f96fcbcdad420f576de00",
+      "description_tr": "Bu depo, Stanford'un CS 230 Deep Learning dersini özetleyen 'cheatsheet' PDF'lerini topluyor. Evrişimli ağlar, tekrarlayan ağlar ve model eğitiminde kullanılan ipuçları üç ayrı özet halinde, ayrıca hepsini birleştiren tek bir derleme olarak sunuluyor. İçerik İngilizce dışında Fransızca, Japonca, Korece, Farsça, Türkçe ve Vietnamca çevirileriyle de mevcut ve ayrı bir web sitesinden okunabiliyor. Kod değil öğretim materyali; MIT lisanslı, 7.1K yıldız, 2018'de açılmış ve içerik o dönemin müfredatını yansıtıyor.",
+      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor. En yakın bağlam yatırım tarafındaki teknik okuryazarlık olabilir; bir ekibin anlattığı mimariyi hızlıca yerine oturtmak için Türkçe çevirisi de bulunan derli toplu bir referans. Ama derin öğrenme eğitimi kurduğun hiçbir hattın içinde yok — ürün tarafında model eğitmiyor, hazır modelleri çağırıyorsun.",
+      "matched_project": null,
+      "relevance": 2,
+      "investment_note": null
+    },
+    {
+      "full_name": "anbeime/skill",
+      "inputs_hash": "e5856054e3a28175443c164c8d7f86fe",
+      "description_tr": "Bu depo, AI ajanları için skill paketlerini tek yerde toplayan bir katalog. İki kaynaktan besleniyor: awesome-agent-skills deposundan 24 saatte bir otomatik çekilen 182 'resmî' skill (Anthropic, Vercel, Cloudflare, Hugging Face, Expo, Supabase, Stripe gibi ekiplerden) ve depo sahibinin hazırladığı 63 Çince skill. Yerel skill'ler ağırlıklı olarak içerik üretimi, kısa video, e-ticaret ve Çin pazarına özgü yayın akışlarına odaklanıyor. Skill'ler kategori, güncellenme tarihi ve yıldız sayısına göre sıralanıyor; JSON ve CSV dışa aktarımı ile arşivlenmiş paketler sunuluyor. 7.1K yıldız, Şubat 2026'da açılmış; README bir CC-BY-4.0 rozeti taşıyor ama GitHub'da tanımlı bir lisans görünmüyor ve sayfa tanıtım bağlantıları içeriyor.",
+      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor. En yakın bağlam Claude Code kurulumuna skill aramak olabilir; ancak deponun 'resmî' bölümü zaten awesome-agent-skills listesinden otomatik kopyalanıyor, yani kaynağa gitmek aynı sonucu daha temiz veriyor. Yerel skill'ler Çin pazarına özgü içerik akışlarına dönük ve lisans durumu net değil; kendi projelerine kopyalayacağın dosyalarda bu tek başına yeterli bir uzak durma sebebi.",
+      "matched_project": null,
+      "relevance": 2,
+      "investment_note": null
+    },
+    {
+      "full_name": "datajuicer/data-juicer",
+      "inputs_hash": "3708577f65f8579e45277ccd042de84f",
+      "description_tr": "Data-Juicer, temel modeller için veri işleme altyapısı sunan bir Python projesi. Metin, görüntü, ses ve video üzerinde çalışan 200'den fazla operatörü, 'recipe' adı verilen tariflerle birleştirilebilen bloklar halinde veriyor; tekilleştirme, filtreleme, temizleme ve sentetik veri üretimi tipik kullanımları. Tek dizüstü bilgisayardan çok düğümlü kümeye ölçeklenmeyi hedefliyor ve Alibaba Cloud PAI ürünlerine entegre edilmiş durumda. Ayrıca doğal dil talimatlarını yapılandırılmış veri işleme adımlarına çeviren kendi modelini Hugging Face ve ModelScope üzerinden yayımlamış. Apache-2.0 lisanslı, 7.1K yıldız; NeurIPS'25 spotlight bir makalesi, Docker imajı ve geniş bir doküman sitesi var.",
+      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor. En yakın bağlam Lyricdrop'un katalog ölçeğinde söz metinlerini temizleyip tekilleştirme adımı olabilir; fakat çerçeve eğitim korpusu hazırlamak için tasarlanmış ve getirdiği operatör/recipe soyutlaması birkaç bin şarkılık bir hatta kendi Python adımlarından daha fazla bakım istiyor. Ses ve video operatörleri ilk bakışta ilgi çekici olsa da senin çözmen gereken problem kelime düzeyinde hizalama ve bu depo onu çözmüyor.",
+      "matched_project": null,
+      "relevance": 2,
+      "investment_note": null
+    },
+    {
+      "full_name": "repowise-dev/repowise",
+      "inputs_hash": "7f67fbea1895a5304e997a6fb61ae7e9",
+      "description_tr": "Repowise, bir kod tabanını yerelde indeksleyip hem geliştiricilere hem ajanlara kaynak gösterilmiş cevaplar veren bir analiz aracı. Bağımlılık grafiği, git geçmişi, testler, dokümantasyon ve mimari kararları tek indekste birleştiriyor; üstüne kod sağlığı puanı, ölü kod tespiti, bir değişikliğin sembol düzeyindeki etki alanı ve o diff'in gerçekten dokunduğu testlerin listesi gibi çıktılar üretiyor. Grafik, risk, sağlık, test ve PR incelemesi tarafında LLM çağrısı yapmıyor; üretilen düz metin açıklamalar isteğe bağlı, yani API anahtarı olmadan ve hiçbir şey yüklemeden çalışabiliyor. Sonuçlara MCP üzerinden ajanlar, yerel bir dashboard, editör eklentileri ve PR analizi olarak erişiliyor; çoklu repo çalışma alanları destekleniyor. Python ile yazılmış ve AGPL-3.0 ya da ticari lisans ikilisiyle dağıtılıyor; 6.9K yıldız, Mart 2026'da açılmış ve README karşılaştırma iddialarını örneklem, yöntem ve kaybettiği satırlarla birlikte yayımlıyor.",
+      "usage_tr": "Lyricdrop v2'nin sıfırdan yazımında Claude Code'a bağlayacağın MCP sunucusu olarak kullanabilirsin: ajan her oturumda repoyu yeniden keşfetmek yerine indekslenmiş grafikten hangi dosyaya dokunacağını çıkarır, bu da uzun oturumlarda bağlamın erken dolmasını azaltır. İstediğin çift review kuralına somut bir ayak da getiriyor; bir değişikliğin etki alanı ve çalıştırılması gereken test listesi, geliştirici doğruluğu tarafındaki incelemeye kanıt olur. Ofisteki M4 Pro Mac'te tamamen yerel çalışıyor, temel analiz için LLM çağırmadığı için Max aboneliğinin dışına maliyet çıkarmıyor ve kod dışarı gitmiyor. Uyarı: lisans AGPL-3.0; yalnızca geliştirme sırasında kullanmak sorun değil, ama aracı kendi kapalı ürününe gömmeyi düşünürsen ticari lisans gerekiyor. Depo Mart 2026'da açılmış, yani genç: önce Lyricdrop'un panel deposunda çalıştırıp ürettiği sağlık puanlarının senin zaten sorunlu bildiğin dosyalarla örtüşüp örtüşmediğine bak, örtüşmüyorsa ajanı ona göre yönlendirme.",
+      "matched_project": "Lyricdrop",
+      "relevance": 8,
+      "investment_note": "Geliştirici araçlarında AGPL + ticari lisans ikilisiyle ilerleyen, ölçümlerini yöntemiyle birlikte açık yayımlayan genç bir ekip; B2B yazılım tezine uyuyor ve izleme listesine alınmaya değer."
+    },
+    {
+      "full_name": "googlecreativelab/quickdraw-dataset",
+      "inputs_hash": "33160e85e9bb48050bb6ca454bcb606a",
+      "description_tr": "Quick, Draw! veri kümesi, Google'ın aynı adlı tarayıcı oyununda toplanan 345 kategoride 50 milyon çizimi içeriyor. Çizimler zaman damgalı vektörler olarak saklanmış: her nokta için x ve y koordinatı ile ilk noktadan itibaren geçen milisaniye, ayrıca kategori, ülke kodu ve oyunun çizimi tanıyıp tanımadığı bilgisi tutuluyor. Ham ndjson dosyalarının yanında sadeleştirilmiş, 256x256 alana hizalanmış ve zamanlama bilgisi çıkarılmış sürümler de yayımlanmış. Depo kodu değil, veriye erişim ve format dokümantasyonunu barındırıyor; kendi çizim sınıflandırıcını eğitmek için ayrı bir TensorFlow eğitimi bağlantılı. 6.8K yıldız, 2017'den beri açık; lisans alanı standart bir açık kaynak lisansına çözülmüyor ve veri moderasyondan geçmiş olsa da uygunsuz içerik barındırabileceği not ediliyor.",
+      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor. En yakın bağlam generatif sanat ve veri görselleştirme merakın olabilir; milyonlarca vektör çizim, hareketli bir görsel deney için hazır ve temiz bir kaynak. Ürün tarafında ise ne Lyricdrop'un ne Folio'nun ihtiyaç listesinde çizim verisi var; kullanmadan önce deponun lisans bölümünü okuman gerekir.",
+      "matched_project": null,
+      "relevance": 1,
+      "investment_note": null
+    }
+  ]
+}

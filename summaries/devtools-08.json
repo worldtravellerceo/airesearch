@@ -1,0 +1,175 @@
+{
+ "repos": [
+  {
+   "full_name": "latent-spaces/brag",
+   "inputs_hash": "9fd7fffe0a3725ea115de19c912dc0dd",
+   "description_tr": "/brag, bir projeyi kısa ve paylaşılabilir bir lansman videosuna çeviren bir Claude Code skill'i. Tek komutla çalışıyor: anlatının açısını, tonunu ve hangi anların gösterileceğini kendisi kurguluyor, render işini Hyperframes'e devrediyor ve çıktı klasöründe planı, kompozisyon brief'ini, paylaşım metnini ve brag.mp4 dosyasını bırakıyor. Claude Code dışında opencode, Codex CLI, Cursor ve Gemini CLI gibi Agent Skills destekleyen ajanlarda da kurulabiliyor; depo her ajanın standart keşif dizinine symlink veriyor. Çalışması için Node.js 22+, PATH üzerinde FFmpeg ve Hyperframes CLI gerekiyor; seslendirme varsayılan olarak kapalı, açıldığında Kokoro üzerinden üretiliyor. MIT lisanslı, ~6.8K star; 2026 ortasında açılmış yeni bir depo.",
+   "usage_tr": "Lyricdrop'un lansman ve içerik tarafında deneyebileceğin küçük bir parça: panel ve mobil sürüm hazır olduğunda depodan tek komutla bir tanıtım videosu çıkarıp ASO ekran kayıtlarının ve sosyal medya içeriğinin ilk taslağını alabilirsin. Aynı komut Dubai'deki hackathon ve tanışma görüşmelerinde \"bunu yaptım\" demosu için de hızlı bir çıktı üretir. Skill formatında olduğu için ofisteki M4 Pro Mac'te zaten kullandığın Claude Code kurulumuna ek altyapı olmadan giriyor, video üretimini de asistanına devredebilirsin. Uyarı: render işi Hyperframes üzerinden yapılıyor, yani tamamen yerel değil ve harici bir servise bağımlısın; Node 22 ve FFmpeg kurulumu da gerekiyor. Beklentini teaser düzeyinde tut — ürün içi ekran akışını doğru anlatan bir demo videosu için yine kendi kaydın üzerinden çalışman gerekir.",
+   "matched_project": "Lyricdrop",
+   "relevance": 5,
+   "investment_note": null
+  },
+  {
+   "full_name": "rhiever/Data-Analysis-and-Machine-Learning-Projects",
+   "inputs_hash": "1aa888af701f401f1ec3b96738cd4183",
+   "description_tr": "Randal Olson'ın blog yazılarına eşlik eden veri analizi ve makine öğrenmesi projelerinin arşivi. Her klasör bir yazıya karşılık geliyor ve analizi, veriyi, notları IPython/Jupyter notebook biçiminde içeriyor. Amaç öğretim: kod parçaları tek tek çalıştırılıp okunacak şekilde yazılmış, kütüphane olarak kullanılmak üzere paketlenmemiş. Rozetler Python 2.7 ve 3.5 dönemine işaret ediyor; eğitim materyali CC BY, kod MIT lisanslı. ~6.7K star topladı ama içerik güncel bir araç seti değil, dönemin örneklerinin arşivi.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, klasik veri analizi tekniklerini okuyarak öğrenme isteğin olabilir. Burada kurup kullanabileceğin bir bileşen yok, çalıştırılacak notebook'lar var ve bağımlılıkları eski Python sürümlerine dayanıyor. Lyricdrop'un veya Kanarya'nın veri tarafında ihtiyaç duyduğun şey hazır analiz kodu değil, kendi verinin üzerine yazılmış küçük servisler. Yatırım açısından da bakılacak bir taraf yok: ticarileşecek bir ürün değil, bir yazı arşivi.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "superagent-ai/superagent",
+   "inputs_hash": "2a1b249723e8991e833269dcd9acf09f",
+   "description_tr": "Superagent, yapay zeka uygulamalarını prompt injection, veri sızıntısı ve zararlı çıktılara karşı korumayı hedefleyen açık kaynak bir güvenlik SDK'sı. Dört ana işlevi var: çalışma anında girdileri ve araç çağrılarını sınıflandırıp engelleyen Guard, metinden PII ve sırları temizleyen Redact, depoları ajan hedefli saldırılara karşı tarayan Scan ve henüz gelmemiş olan red team senaryoları için Test. TypeScript ve Python istemcileri sunuyor; kullanım superagent.sh üzerinden alınan bir API anahtarına bağlı ve çağrı başına maliyet raporlanıyor. MIT lisanslı, ~6.7K star, Y Combinator destekli bir ekip tarafından geliştiriliyor. Kod SDK olarak açık olsa da sınıflandırma ve tarama işleri servis tarafında yapılıyor.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, asistan tarafındaki otomasyonlarda dışarıdan gelen WhatsApp ve e-posta içeriğinin bir ajana girdi olarak verildiği akışlar olabilir. Lyricdrop ve Folio'da kullanıcıdan serbest metin alan bir LLM ucu yok — içerik üretimi senin kontrolündeki pipeline'da oluyor, dolayısıyla korunacak bir saldırı yüzeyi de sınırlı. Ayrıca servis tarafı bir API anahtarı istiyor; bu da yerel çalıştırma ve Max aboneliği içinde kalma tercihinle örtüşmüyor. İleride to-do/orkestrasyon uygulamasını çok kullanıcılı yayınlarsan bu kategoriye geri dönmek mantıklı olur.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": "Ajan güvenliği ve guardrail katmanı B2B yazılımda net bir bütçe kalemine dönüşüyor; YC destekli bu ekip, Arslan Holding'in erken aşama AI tezinde izlenecek bir kategori örneği."
+  },
+  {
+   "full_name": "gepa-ai/gepa",
+   "inputs_hash": "a28b49b6dfcf8f495d052a894c48efce",
+   "description_tr": "GEPA, metinsel parametreleri — prompt'ları, kod parçalarını, ajan mimarilerini, konfigürasyonları — ölçülebilir bir metriğe karşı optimize eden açık kaynak bir Python kütüphanesi. Tek bir skaler ödüle indirgemek yerine çalıştırma izlerini, hata mesajlarını ve akıl yürütme loglarını bir LLM'e okutup adayın neden başarısız olduğunu teşhis ediyor ve hedefli düzeltmeler öneriyor; sonra bu adayları Pareto temelli evrimsel bir arama ile seçiyor. Yaklaşımın iddiası az sayıda değerlendirmeyle sonuca varmak: RL tabanlı yöntemlerdeki binlerce değerlendirme yerine yüzler mertebesinde çalıştırma. pip ile kurulabiliyor, MIT lisanslı, ~6.7K star ve bir makaleye dayanıyor; depoda üretim kullanım örnekleri ve kullanım kılavuzları listelenmiş. Optimizasyonu yürüten reflection adımı bir LLM gerektirdiği için kullanılan modele göre maliyet doğuruyor.",
+   "usage_tr": "Lyricdrop'un içerik üretim adımında — boşluk seçimi ve her boşluk için üretilen dört şıkkın kalitesinde — deneyebileceğin bir yöntem. Elindeki 20-30 şarkılık test seti ve admin panelindeki onay/playtest kapısı zaten bir değerlendirme fonksiyonu kurmana yetecek malzeme: \"kaç şık elenebilir derecede kolay\", \"kaç boşluk hizalama hatası\" gibi bir metrik tanımlarsan prompt'u elle çevirmek yerine ölçüye karşı optimize edebilirsin. Python kütüphanesi olduğu için mevcut pipeline'ın yanına bir script olarak girer, ofisteki M4 Pro Mac'te çalışır. Uyarı: reflection adımı LLM çağrısı yapıyor, yani Max aboneliğinin dışında bir API maliyeti doğurur ve optimizasyon turları bu maliyeti çarpar. İkinci uyarı daha önemli: otomatik skorlayamadığın bir kaliteyi GEPA da optimize edemez, o yüzden önce metriği yazıp elle etiketlediğin şarkılarla doğrulaman gerekir.",
+   "matched_project": "Lyricdrop",
+   "relevance": 6,
+   "investment_note": null
+  },
+  {
+   "full_name": "Moonvy/OpenPromptStudio",
+   "inputs_hash": "3c8699d3d4e5a5a815b1625df128b67e",
+   "description_tr": "OpenPromptStudio (OPS), AIGC prompt'larını görselleştirip düzenlemeye yarayan tarayıcı tabanlı bir editör; şu an ağırlıklı olarak Midjourney prompt'larına odaklı. İngilizce prompt'ların Çince karşılığını gösteriyor, girilen Çince metni İngilizceye çeviriyor ve prompt parçalarını normal/stil/kalite/komut olarak sınıflandırıp sıralama ve gizleme imkânı veriyor. Kendi prompt sözlüğünü Notion veritabanına bağlayarak yönetebiliyorsun; entegrasyon token'ı yalnızca tarayıcının localStorage'ında tutuluyor. Vue ile yazılmış, ~6.7K star; dokümantasyon ve eğitim içeriği büyük ölçüde Çince. Arayüz elle prompt yazan bir kullanıcıyı hedefliyor, programatik bir API sunmuyor.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam Folio'nun görsel üretim tarafı olabilir. Ancak Folio'da istediğin şey her gün kendi kendine içerik üreten bir pipeline; burada ise insanın oturup prompt düzenlediği bir editör var, yani akışın tam tersi yönde. Üstelik araç Midjourney'nin prompt gramerine ve Notion sözlüğüne bağlı, kendi Expo/Supabase kurulumuna gömülecek bir bileşen değil. Prompt kalıplarını tek seferlik keşfetmek istersen tarayıcıdan bakılacak bir referans olarak kalır.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "crisxuan/bestJavaer",
+   "inputs_hash": "2b64a5812839d81b9b714d8f3864af66",
+   "description_tr": "Eskiden Java öğrenme materyali olan bu depo, cxuan-ai-labs adıyla bir kişisel AI laboratuvarına dönüştürülmüş. İçerik bir yazılım geliştiricinin AI araçlarıyla yaptığı denemeleri, ajan deneylerini, model gözlemlerini, araç değerlendirmelerini ve başarısızlık notlarını topluyor; eski Java içeriği arşiv klasöründe korunuyor. Yazılar İngilizce ve Çince olarak iki dilde yayımlanıyor ve Vercel üzerinde bir siteye dönüştürülmüş. Lisans CC-BY-SA-4.0; ~6.6K star'ın önemli kısmı deponun Java dönemindeki geçmişinden geliyor. Çalıştırılabilir bir araç değil, okunacak bir not ve kaynak derlemesi.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, AI kodlama araçlarını takip etme alışkanlığın olabilir. Kurulacak ya da fork'lanıp kendi uygulamana gömülecek bir bileşen yok; içerik blog yazısı formatında ve büyük ölçüde başkasının deneyim notlarından oluşuyor. Bu tür kaynakları düzenli taramak istersen bu iş asistanına ya da bir araştırma ajanına devredilebilecek türden. Yıldız sayısının büyük bölümü deponun Java dönemindeki geçmişinden geliyor, yani rakam bugünkü içeriğin ağırlığını göstermiyor.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "Tencent/AI-Infra-Guard",
+   "inputs_hash": "3e9cac79bb805762d7b3647e043acb54",
+   "description_tr": "AI-Infra-Guard, Tencent tarafından geliştirilen açık kaynak bir AI red teaming platformu. Ajanları, MCP sunucularını, skill paketlerini ve AI altyapısını zafiyetlere karşı tarayan modüller ile jailbreak değerlendirmesi yapan bir bölüm içeriyor; model parmak izi çıkaran bir API Checker'ı da var. Sunucu tarafı Docker imajı olarak dağıtılıyor, web arayüzüyle birlikte geliyor ve dokümantasyonu sekiz dilde sunuluyor. Apache-2.0 lisanslı, ~6.5K star, düzenli sürüm çıkıyor ve Black Hat Arsenal programında yer almış. Hedef kullanıcı tekil geliştirici değil, AI sistemlerini denetleyen güvenlik ekipleri.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, Claude Code kurulumuna yeni bir plugin ya da MCP sunucusu eklemeden önce paketin içine bakmak olabilir. Ancak bu iş için tek seferlik bir tarama yeterken burada sürekli çalışan bir sunucu, web arayüzü ve güvenlik ekibi diline hâkim bir kullanıcı varsayılıyor. İşlettiğin bir AI altyapısı, çok kullanıcılı bir ajan servisi ya da denetlenmesi gereken bir müşteri kurulumu yok. Üçüncü parti araçlara duyduğun temkinin pratik karşılığı, bu platformdan çok, kurduğun paketlerin kaynak kodunu okuyup kendi istemcini yazma alışkanlığın olmaya devam eder.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "pixie-io/pixie",
+   "inputs_hash": "8edc730263c6b327483974ccae6c9a04",
+   "description_tr": "Pixie, Kubernetes uygulamaları için açık kaynak bir gözlemlenebilirlik aracı. eBPF kullanarak kod değişikliği veya manuel enstrümantasyon olmadan tam gövdeli istekleri, kaynak ve ağ metriklerini ve uygulama profillerini otomatik topluyor. Veriyi küme dışına çıkarmadan küme içinde saklayıp sorguluyor ve genellikle küme CPU'sunun küçük bir bölümünü kullandığını belirtiyor; sorgular PxL adlı Python benzeri bir dille yazılıyor. Servis haritaları, ağ ve DNS trafiği akışı, pod durumu ve flame graph gibi görünümler sunuyor. Apache-2.0 lisanslı, CNCF projesi, ~6.5K star.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, barındırma tarafında kullandığın DigitalOcean ve Supabase kurulumları olabilir. Pixie'nin çalışması için bir Kubernetes kümesi gerekiyor, senin kurulumunda ise küme yok ve olmasını da istemiyorsun. Lyricdrop'un oyuncu tarafında izlemek isteyeceğin şey konteyner telemetrisinden çok istek gecikmesi ve CDN tarafındaki hatalar; bunun için çok daha hafif araçlar yeterli. İleride bir müşteri kurulumu ya da ekip projesi Kubernetes'e geçerse konu yeniden açılır; bugünkü kurulumunda kuracak bir yer bulunmuyor.",
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "rushter/data-science-blogs",
+   "inputs_hash": "e220a3065aa3b91dc821ab5587b7be4d",
+   "description_tr": "Veri bilimi bloglarının elle derlenmiş bir listesi. Her satır bir blogun adını, adresini ve varsa RSS bağlantısını içeriyor; liste alfabetik ve kişisel bloglardan kurumsal mühendislik bloglarına kadar geniş bir aralığı kapsıyor. Deponun kendisi bir okuma listesi; yanında listeyi besleyen bir okuyucu arayüzüne bağlantı veriliyor. Kod değil metin ağırlıklı bir kaynak, ~6.3K star. Listenin doğası gereği bağlantıların bir kısmının zamanla ölmesi bekleniyor.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, teknik takip için bir RSS akışı kurmak olabilir. Buradaki RSS bağlantılarını n8n ile çekip özetleyen küçük bir akış yazmak mümkün, ama listenin odağı klasik veri bilimi; senin izlediğin AI araçları ve ajan ekosistemi ile örtüşmesi zayıf. Bu tür kaynak taramasını asistanına devretmek, listeyi kendi başına bir sisteme bağlamaktan daha pratik kalır. Listeyi bir kez tarayıp birkaç kaynağı okuma akışına eklemek dışında kalıcı bir kullanım çıkmıyor.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "online-ml/river",
+   "inputs_hash": "9d6bbd8d68201afc9577593be4d76358",
+   "description_tr": "River, Python'da online (artımlı) makine öğrenmesi için geliştirilen bir kütüphane. Toplu eğitim yerine veriyi örnek örnek işliyor: model her gözlemde tahmin üretip hemen o gözlemle güncelleniyor, metrikler de aynı akış içinde ilerliyor. Sınıflandırma, regresyon, kümeleme, ön işleme ve akış istatistikleri modüllerini scikit-learn'e benzer bir pipeline söz dizimiyle sunuyor; kavram kayması (concept drift) altında çalışacak yöntemler kütüphanenin ana ilgi alanı. creme ve scikit-multiflow projelerinin birleşmesinden doğdu, BSD-3-Clause lisanslı, Linux/macOS/Windows için hazır paketleri var ve ~6.1K star ile aktif bir topluluğa sahip. Veri akışı üzerinde çalıştığı için modeli diske almadan, düşük bellekle güncel tutmayı hedefliyor.",
+   "usage_tr": "Folio'nun öneri tarafı için doğrudan aday: like ve dislike düğmelerinden gelen tepkileri biriktirip gece toplu eğitim yapmak yerine, her etkileşimde modeli tek örnekle güncelleyip ertesi günün feed'ini ona göre sıralayabilirsin. Uygulama tek kullanıcılık olduğu için veri hacmi küçük, ve River'ın artımlı yaklaşımı tam da az veriyle erken davranış göstermek isteyen bu senaryoya uyuyor. Modeli DigitalOcean'daki küçük bir Python servisinde tutup Supabase'deki etkileşim kayıtlarıyla besleyebilir, günlük içerik pipeline'ını n8n ile aynı servise bağlayabilirsin; her şey yerel veya kendi sunucunda çalışır, API maliyeti getirmez. Aynı mantık Kanarya'nın günlük ölçümlerinde de işe yarar: zaman içinde kayan bir taban çizgisini artımlı takip etmek için uygun. Uyarı: ilk haftalarda model senin tıklama gürültünü öğrenir, o yüzden feed'e bilinçli bir keşif payı bırak; yoksa Folio kısa sürede tek yazara kilitlenir.",
+   "matched_project": "Folio",
+   "relevance": 7,
+   "investment_note": null
+  },
+  {
+   "full_name": "snorkel-team/snorkel",
+   "inputs_hash": "1cf45d60baabdf0a9bed2c46ffe5b17f",
+   "description_tr": "Snorkel, eğitim verisini elle etiketlemek yerine programatik olarak üretmeyi amaçlayan bir sistem. Kullanıcı gürültülü \"etiketleme fonksiyonları\" yazıyor, Snorkel bunların örtüşme ve çelişkilerini modelleyip tek bir olasılıksal etiket kümesine indiriyor; ayrıca veri artırma ve veri dilimleme için modüller içeriyor. Stanford'da 2015'te başlayan bir araştırma projesinden çıktı ve zayıf gözetim (weak supervision) literatürünün referans uygulamalarından biri oldu. Apache-2.0 lisanslı, ~6K star. Depo kendi duyurusunda ekibin artık ticari Snorkel Flow ürününe odaklandığını belirtiyor; yani açık kaynak taraf aktif geliştirmeden çok yerleşik bir referans konumunda.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam Lyricdrop'ta şarkı onayı için yazacağın kural setleri olabilir. Ancak oradaki ihtiyaç bir model eğitmek değil, hizalama hatasını ölçüp eşiğin altındakini elemek — bunun için birkaç deterministik kontrol yazmak Snorkel'ın etiket modelinden daha basit ve daha okunur olur. Snorkel'ın kazandırdığı şey binlerce örneği etiketlemek zorunda olan ekiplerde ortaya çıkıyor, senin test setin ise küçük ve elle gözden geçirilebilir boyutta. Kendi model eğitimine giren bir işin olursa bu yaklaşım yeniden gündeme gelir.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "pacifio/atlas",
+   "inputs_hash": "056246cc219378f2b19dafb54b2cf2db",
+   "description_tr": "Atlas, kodlama ajanları için sürüm kontrolü olmayı hedefleyen bir masaüstü uygulaması. Her ajan çalıştırması checkpoint üretiyor ve commit'ler onu üreten oturuma — prompt'lara, araç çağrılarına, dosya değişikliklerine — bağlı kalıyor; böylece aylar sonra bir kod parçasının neden öyle yazıldığı sorgulanabiliyor. Claude Code, Codex, Atlas'ın kendi ajanı ve ACP kayıt defterindeki diğer ajanlar aynı kod tabanı üzerinde yan yana çalıştırılabiliyor ve ortak bir hafıza paylaşıyor, yani ajan değiştirmek baştan başlamak anlamına gelmiyor. Dosya, sembol, branch, commit ve geçmiş oturumlar prompt gönderilmeden önce yerelde çözülüyor; kod ve oturumlar yerelde kalıyor. Apache-2.0 lisanslı, macOS (Apple Silicon dahil) ve Windows için paket sunuyor, ~6K star; 2026'da açılmış genç bir proje.",
+   "usage_tr": "Lyricdrop v2'nin sıfırdan yazımı bu aracın hedeflediği duruma birebir oturuyor: ajanla yazılan kodun gerekçesi şu an terminal geçmişinde kalıyor ve kaydırılınca kayboluyor, Atlas bunu commit'e bağlı bir kayda çeviriyor. Claude Code ile OpenCode'u aynı kod tabanında yan yana çalıştırıp hangi değişikliği hangi ajanın yaptığını görebilir, istediğin \"iki ayrı açıdan review\" alışkanlığını da bu kayıt üzerinden kurabilirsin. macOS paketi var, kod ve oturumlar yerelde kalıyor, Apple Silicon'da ofisteki M4 Pro Mac'te çalışır; abonelikle kullandığın ajanları değiştirmeni gerektirmiyor. Uyarı: proje genç ve günlük iş akışının merkezine oturuyor, o yüzden önce ikincil bir depoda — örneğin Kanarya'da — bir hafta deneyip commit geçmişini kirletmediğinden emin ol. Ek fayda: ajan oturumlarının sorgulanabilir olması, bir işi asistanına ya da dışarıya devrettiğinde neyin neden yapıldığını göstermeni kolaylaştırır.",
+   "matched_project": "Lyricdrop",
+   "relevance": 7,
+   "investment_note": null
+  },
+  {
+   "full_name": "ujjwalkarn/DataSciencePython",
+   "inputs_hash": "c643a60b910281a222b37b899ce728fa",
+   "description_tr": "Veri bilimi, NLP ve makine öğrenmesi için Python eğitim kaynaklarının elle derlenmiş bir listesi. İçerik dil temellerinden kütüphane belgelerine, ücretsiz kurslardan blog yazılarına ve Stack Overflow başlıklarına kadar konu başlıklarına göre gruplanmış bağlantılardan oluşuyor. Aynı yazarın R ve genel makine öğrenmesi listelerine de yönlendiriyor. MIT lisanslı ve ~5.8K star toplamış. Çalıştırılabilir kod değil, bağlantı koleksiyonu; bağlantıların bir bölümü listenin oluşturulduğu döneme ait.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam Python tarafını kendi kendine öğrenme isteğin olabilir. Kuracağın ya da uygulamana gömeceğin bir bileşen yok ve liste, üzerinde çalıştığın ajan ve LLM pipeline'larından çok klasik veri bilimi müfredatını kapsıyor. Bu konularda ihtiyacın olduğunda doğrudan Claude Code'a sorman, bağlantı listesi taramaktan daha hızlı sonuç verir. Yatırım tarafında da bir sinyal taşımıyor; ticarileşecek bir ürün değil, elle derlenmiş bir okuma listesi.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "aaronwangy/Data-Science-Cheatsheet",
+   "inputs_hash": "27b8a3732e0172a0f2451cc4f8d7d05e",
+   "description_tr": "Beş sayfalık bir makine öğrenmesi özet kağıdı (cheatsheet). Lineer ve lojistik regresyon, karar ağaçları, rastgele orman, SVM, kümeleme, boosting, boyut indirgeme, NLP, sinir ağları, öneri sistemleri, pekiştirmeli öğrenme, anomali tespiti, zaman serileri ve A/B testi başlıklarını kapsıyor. Bir dönemlik giriş seviyesi ders içeriğini yoğunlaştırıyor ve okuyucudan temel istatistik ile lineer cebir bilgisi bekliyor. Çıktı tek bir PDF dosyası; programlama dilleri ve veri yapıları bilinçli olarak kapsam dışı bırakılmış. CC BY-NC-SA lisanslı, ~5.4K star.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, bir yatırım görüşmesinde teknik terimleri hızlıca tazelemek olabilir. Ürünlerine girecek bir kod ya da servis içermiyor, sınav ve mülakat hazırlığı için yazılmış bir referans. Folio'nun öneri tarafı gibi somut bir konuya geldiğinde tek sayfalık özet yerine o konunun kendi kaynaklarına inmen gerekir. PDF formatında olduğu için ne bir pipeline'a bağlanır ne de asistanına devredilecek bir iş üretir.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "rasbt/mlxtend",
+   "inputs_hash": "856b80431922c0c2bd99218c16da5aa4",
+   "description_tr": "Mlxtend, günlük veri bilimi işleri için scikit-learn ekosistemini tamamlayan yardımcı modüllerden oluşan bir Python kütüphanesi. Stacking ve voting gibi topluluk (ensemble) yöntemleri, öznitelik seçimi ve çıkarımı teknikleri, karar bölgesi ve karışıklık matrisi gibi görselleştirme yardımcıları ve Apriori dahil sık örüntü madenciliği algoritmaları içeriyor. pip veya uv ile kuruluyor, scikit-learn ve matplotlib ile birlikte çalışacak şekilde tasarlanmış. 2014'ten beri tek bir yazar tarafından sürdürülüyor, bir JOSS makalesi var ve BSD tabanlı bir lisansla dağıtılıyor. ~5.2K star ile olgun ve düzenli bakım gören bir kütüphane.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, elindeki bir veri kümesinde klasik bir model kurup incelemek isteyeceğin tek seferlik analizler olabilir. Aktif işlerin LLM pipeline'ları, mobil uygulama ve içerik üretimi etrafında dönüyor; buralarda scikit-learn tabanlı bir yardımcı katmana ihtiyaç doğmuyor. Kanarya'nın ölçümlerinde basit bir sınıflandırma denemek istersen bu kütüphane Mac'te yerel çalışır ve maliyet getirmez, ama o iş için de önce en sade çözümü denemek doğru olur. Yatırım açısından da bakılacak bir taraf yok: uzun süredir sürdürülen, ticari hedefi olmayan bir akademik yardımcı kütüphane.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "vastsa/PI-Desktop",
+   "inputs_hash": "b0c17b9780de7cbe53316cbb5e9a5e22",
+   "description_tr": "PI-Desktop, AI kodlama ajanları için kalıcı ve modüler bir masaüstü çalışma ortamı sunan bir uygulama. Electron arayüzü ile Rust tabanlı bir çekirdek üzerine kurulu; projeler, oturumlar, önizlemeler ve ajanlar tek bir yerde toplanıyor ve belirli bir IDE veya terminale bağlı çalışmıyor. Eklenti mimarisi yalnızca ajanı değil masaüstünü de genişletiyor: panel, görünüm, widget, araç, MCP sunucusu, tema ve arka plan servisi eklenebiliyor ve eklentiler paket olarak dağıtılabiliyor. Subagent'lara iş devretme ve paralel worker oturumları koordine etme; bulut modelleri, yerel modeller ve uyumlu API'ler arasında geçiş yapma öne çıkan iki özelliği. macOS, Windows ve Linux için sürüm var, LGPL-3.0 lisanslı, ~5.1K star; sürüm hattı 0.15.x ve erken önizleme olarak işaretlenmiş.",
+   "usage_tr": "Ofiste OpenCode Desktop ile yaptığın işin yerine geçebilecek bir aday: Lyricdrop v2'nin panel ve pipeline tarafını paralel worker oturumlarına bölüp aynı pencerede takip edebilir, model seçimini iş bazında değiştirebilirsin. Yerel model desteği senin \"önce Mac'te yerel çalışsın\" tercihinle örtüşüyor; projeler ve oturumlar yerelde kaldığı için kapalı bir istemciye veri bırakma sorunu da azalıyor. Eklenti mimarisi, fork'layıp kendi panelini yazma refleksine uygun bir zemin sunuyor — örneğin Lyricdrop'un onay kuyruğunu doğrudan bir çalışma paneline gömebilirsin. Uyarı: sürüm erken önizleme aşamasında ve sunduğu şeyin önemli bir kısmını zaten Claude Code ve OpenCode ile yapıyorsun; kazanç yalnızca paralel oturum yönetimi ve eklenti tarafında somutlaşırsa geçişe değer. Önce ikincil bir projede deneyip günlük akışını bozmadığını görmek makul.",
+   "matched_project": "Lyricdrop",
+   "relevance": 5,
+   "investment_note": null
+  },
+  {
+   "full_name": "FailproofAI/failproofai",
+   "inputs_hash": "9f1a3bfda3112fb2aeca49f5ad03e4c0",
+   "description_tr": "Failproof, kodlama ajanlarının çalıştığı harness'lar için gözlemlenebilirlik ve kural uygulama katmanı. On iki harness'a bağlanıyor — Claude Code ve Codex gibi kodlama CLI'ları, Hermes ve OpenClaw gibi sohbet/asistan geçitleri — her çalıştırmayı kaydediyor ve tehlikeli araç çağrılarını çalışmadan önce engelleyebiliyor. Kırk civarında hazır politika ile geliyor; bir aracı çalışmadan durdurma on iki harness'ta, tur sonu kontrolleri sekizinde doğrulanmış durumda ve hangi olayın nerede desteklendiği bir matris olarak belgelenmiş. Bu listede olmayan ajanlar Python SDK üzerinden izleme, oturum ve denetim kaydı gönderebiliyor; kural uygulaması için kendi hook'unu yazmak gerekiyor. npm paketi olarak dağıtılıyor, yerel çalışıyor ve MIT + Commons Clause lisansıyla veriliyor; ~5.1K star ve on dörtten fazla dile çevrilmiş dokümantasyonu var.",
+   "usage_tr": "Lyricdrop v2'de ajanların canlı Supabase paneline ve CDN'deki içeriğe dokunduğu noktalarda işine yarar: yıkıcı araç çağrılarını çalıştırmadan durduran bir politika katmanı, \"bir daha yaz\" turlarında yanlışlıkla silinen veri riskini kapatır. Kayıt tarafı da işe yarıyor — her ajan çalıştırmasının izi tutulduğu için bir işi asistanına veya dışarıya devrettiğinde ne yapıldığını sonradan gösterebilirsin. Yerel çalışıyor ve hook tabanlı olduğu için Claude Code kurulumunu değiştirmene gerek kalmıyor, API maliyeti getirmiyor. Profilinde öğrenmeyi planladığın Hermes de desteklenen geçitler arasında; ajan tarafını genişletirken tek bir politika ve oturum geçmişi üzerinden ilerleyebilirsin. Uyarı: lisans MIT + Commons Clause, yani ticari olarak yeniden paketlemek serbest değil; kendi uygulamana gömmeyi düşünüyorsan lisans metnini önce okuman gerekir.",
+   "matched_project": "Lyricdrop",
+   "relevance": 6,
+   "investment_note": "Ajan harness'larında politika uygulama ve denetim kaydı, kurumsal AI kullanımının zorunlu katmanına dönüşme ihtimali taşıyan bir alan; ekibi ve lisans modeli Arslan Holding'in erken aşama B2B yazılım tezine yakın duruyor."
+  },
+  {
+   "full_name": "javascriptdata/danfojs",
+   "inputs_hash": "75c5baa24be0eefa096e72e0501b5340",
+   "description_tr": "Danfo.js, JavaScript için pandas'tan esinlenmiş bir veri analizi kütüphanesi. DataFrame ve Series yapıları, gruplama, birleştirme, dilimleme, eksik veri yönetimi ve etiket tabanlı indeksleme gibi pandas'a yakın bir API sunuyor; pandas bilen birinin hızlıca geçebilmesi hedeflenmiş. CSV, JSON ve Excel gibi düz dosyalardan veri okuyabiliyor, grafik çizim yardımcıları içeriyor ve veri yapılarını TensorFlow.js tensörlerine çevirebiliyor. Hem tarayıcıda hem Node.js tarafında çalışıyor, MIT lisanslı ve ~5.1K star toplamış. Olgun bir kütüphane olsa da JavaScript ekosisteminde veri analizi kullanımının Python'a göre daha dar olduğu bir alanda duruyor.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, Lyricdrop'un admin panelinde şarkı kalitesi ve hizalama hatası tablolarına bakarken tarayıcı içinde veri çevirmek olabilir. Ancak o veriyi Supabase'de SQL ile sorgulamak ya da Python tarafında hesaplamak hem daha az kod hem daha az bağımlılık demek. Panelde tablo ve grafik gerekiyorsa bunu doğrudan sorgu sonucu üzerinden çizmek yeterli; araya bir DataFrame katmanı koymak şu ölçekte kazanç getirmez. Node tarafında toplu bir veri dönüşümü ihtiyacı doğarsa kütüphane Mac'te yerel çalışır ve maliyet getirmez, ama bugün böyle bir adımın yok.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "langwatch/langwatch",
+   "inputs_hash": "7f2241d839f82bac288213ecbb03ca22",
+   "description_tr": "LangWatch, üretimdeki LLM çağrılarını izlemek, test etmek, yönlendirmek ve yönetmek için açık kaynak bir platform. Dört alanı kapsıyor: izleme ve değerlendirme (trace, eval, simülasyon testleri, prompt yönetimi), kodlama ajanlarının oturum ve maliyet takibi, OpenAI ve Anthropic uyumlu tek uçtan geçen bir AI gateway (sanal anahtar, bütçe, yönlendirme) ve şirket genelinde AI kullanımını görünür kılan bir yönetişim katmanı. Kendi sunucunda `npx @langwatch/server` ile çalıştırılabiliyor, yalnızca Node.js gerektiriyor; bulut sürümü de var. Python ve TypeScript SDK'ları yayımlanıyor, kodlama ajanları tek komutla izlemeye alınabiliyor. Çekirdek Apache-2.0 lisanslı, kurumsal eklentiler ayrı lisansla veriliyor; ~4.9K star.",
+   "usage_tr": "Lyricdrop'un içerik pipeline'ında şarkı başına LLM maliyetini ve hata oranını tek yerden görmek için kullanabilirsin: her üretim adımını trace olarak kaydedip hangi adımın pahalı, hangisinin hatalı olduğunu ayırt etmek, maliyeti düşük tutma hedefin için doğrudan ölçü sağlar. Eval ve simülasyon testleri, 20-30 şarkılık test setini elle gözden geçirmek yerine tekrarlanabilir bir kapıya çevirmene yardımcı olur; bu da outsource etmek istediğin playtest yükünü azaltır. Kendi sunucunda çalıştırılabildiği için DigitalOcean'daki mevcut kurulumun yanına girer, verini üçüncü parti bir buluta göndermek zorunda kalmazsın ve Node dışında bağımlılık istemez. Uyarı: platform şirket ölçeğinde kullanım için tasarlanmış — gateway, bütçe ve yönetişim katmanları senin bugünkü kullanımında boş duracak, kurulumun ağırlığı sağladığı faydayı aşabilir. Önce yalnızca içerik pipeline'ının trace'lerini gönderip panelin gerçekten karar değiştirip değiştirmediğine bak.",
+   "matched_project": "Lyricdrop",
+   "relevance": 6,
+   "investment_note": "Açık çekirdek LLMOps katmanı, kurumsal AI harcamasının görünür kılınması ihtiyacına oturuyor; Arslan Holding'in B2B yazılım deal flow'unda izlenecek ve ekibiyle tanışmaya değer bir isim."
+  }
+ ]
+}

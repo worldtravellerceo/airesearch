@@ -1,0 +1,175 @@
+{
+  "repos": [
+    {
+      "full_name": "kangarooking/cangjie-skill",
+      "inputs_hash": "620486a65aa4c8aa782cb941887d95e6",
+      "description_tr": "Cangjie Skill, kitap, uzun video ve podcast gibi uzun içerikleri çağrılabilir Agent Skill paketlerine dönüştüren açık kaynak bir araç zinciri. Çıkarım önce kararlı yetenek kartları ve metadata üretiyor, ardından tek bir router Skill ya da router artı bağımsız Skill'lerden oluşan bir paket derleniyor. Depodaki scripts/cangjie.py aracı teşhis, derleme, artımlı güncelleme, onarım, geri alma, değerlendirme ve benchmark adımlarını tek yerden kapsıyor; içerik adresli ön işleme ve işlem bazlı yamalar sayesinde kaynak metin değiştiğinde çıktı yeniden üretilebiliyor. Claude Code, OpenClaw ve DeepSeek Harness için paket biçimleri sunuyor; Python ile yazılmış ve MIT lisanslı. Nisan 2026'da açılmış, ~10.5K yıldıza ulaşmış ve v2.5.0 üzerinde düzenli sürüm notlarıyla ilerliyor.",
+      "usage_tr": "Folio'nun günlük içerik pipeline'ında bir yazarın kitaplarını post ve story'ye çevirmeden önce yapılandırılmış bir kaynak çıkarman gerekiyor; Cangjie tam bu çıkarım adımına oturuyor. Bir kitabı bölüm bölüm yöntem kartlarına ayırıp, her gün üretilecek içeriğin girdisi olarak Supabase'e yazabileceğin sabit bir yapı bırakır; kaynak güncellendiğinde her şeyi baştan üretmek yerine artımlı yama uygular. Ofisteki Mac'te Claude Code içinden çalışır ve kendi API anahtarını istemez, yani Max aboneliğinle uyumlu, ek servis maliyeti getirmez. Aynı akışı Türkçe YouTube kaynaklarından psikoloji ve felsefe öğrenme alışkanlığın için müfredat çıkarmakta da kullanabilirsin. Uyarı: çıktı formatı bir agent skill, feed içeriği değil; Folio'da kullanmak için arada kendi şablon katmanını yazman gerekir ve çıktının kalitesi doğrudan verdiğin kaynak metne bağlı.",
+      "matched_project": "Folio",
+      "relevance": 6,
+      "investment_note": null
+    },
+    {
+      "full_name": "ZeroLu/awesome-nanobanana-pro",
+      "inputs_hash": "99e7101fa0df27f7776261ffcf73a21a",
+      "description_tr": "Nano Banana Pro görüntü modeli için derlenmiş bir prompt ve örnek koleksiyonu. Fotogerçekçilik, yaratıcı deneyler, eğitim içeriği, e-ticaret stüdyosu, fotoğraf onarımı ve iç mekan tasarımı gibi başlıklar altında, X ve Replicate gibi kaynaklardan toplanan girdileri üretilmiş görsellerle birlikte listeliyor. Depo kod içermiyor; tamamen Markdown tabanlı bir referans listesi ve README düzenli olarak güncelleniyor. İçeriğin arasında sponsor bağlantıları ve ücretli API platformlarının reklamları yer alıyor. ~10.3K yıldızla awesome-list kategorisinde büyük bir derleme, ancak kapsamı tek bir kapalı modele bağlı.",
+      "usage_tr": "Folio'nun görsel üretim adımında kullanabilirsin: her yazar profili için post ve story görselleri üretirken sıfırdan prompt yazmak yerine buradaki kalıpları başlangıç noktası alabilirsin. Özellikle eğitim ve bilgi ile fotoğraf düzenleme başlıkları, kitap anlatan bir feed'in görsel diline yakın duruyor. Bu bir kütüphane değil; kendi uygulamana gömebileceğin bir bileşen yok, prompt metinlerini kendi pipeline'ına kopyalarsın. Maliyet tarafı dikkat ister: model ücretli bir API üzerinden çalışıyor ve Mac'te yerel karşılığı yok, dolayısıyla günlük içerik üretimine bağlamadan önce görsel başına maliyeti ölçmelisin. Prompt seçme ve deneme işi asistanına devredilebilecek türden, sonuçları tek tek onaylaman yeterli olur.",
+      "matched_project": "Folio",
+      "relevance": 5,
+      "investment_note": null
+    },
+    {
+      "full_name": "alexeygrigorev/data-science-interviews",
+      "inputs_hash": "c8d476de6c3ca6aac1f12d392fe88525",
+      "description_tr": "Veri bilimi iş görüşmelerinde sorulan soruları ve topluluk tarafından yazılmış cevapları toplayan bir depo. Sorular teorik (doğrusal modeller, ağaçlar, sinir ağları) ve teknik (SQL, Python, kodlama) olmak üzere iki ana dosyaya ayrılmış; ayrıca katkı olarak gelen bir olasılık bölümü var. İçerik Markdown olarak tutuluyor ve bir GitHub Pages sitesi üzerinden de okunabiliyor. CC BY 4.0 lisanslı, 2020'de açılmış ve ~10.2K yıldıza ulaşmış. Yazılım değil, baştan sona bir hazırlık ve öğrenme materyali.",
+      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, ileride veri tarafında birini değerlendirirken hazır bir teknik soru havuzu olarak bakmak olabilir. Geliştirme akışın Claude Code üzerinden ilerlediği için buradaki içerik Lyricdrop'un ya da diğer projelerin herhangi bir adımına girmiyor. Materyal ayrıca klasik ML konularına odaklı ve çalıştığın LLM tabanlı alanla örtüşmüyor. Yatırım tarafında da değerlendirilecek bir ürün ya da ekip yapısı yok.",
+      "matched_project": null,
+      "relevance": 1,
+      "investment_note": null
+    },
+    {
+      "full_name": "drivendataorg/cookiecutter-data-science",
+      "inputs_hash": "4c608a80296ca6bb1c4c85613df5a0de",
+      "description_tr": "Cookiecutter Data Science, veri bilimi projeleri için standart bir dizin ve dosya yapısı üreten bir şablon aracı. data, models, notebooks, docs gibi klasörleri, bir Makefile'ı ve pyproject.toml tabanlı proje yapılandırmasını hazır olarak kuruyor; amaç ekipler arasında paylaşılabilir ve tekrarlanabilir bir düzen sağlamak. v2 ile birlikte doğrudan cookiecutter yerine kendi ccds komut satırı aracı üzerinden çalışıyor ve Python 3.9+ istiyor. MIT lisanslı, 2015'ten beri sürüyor ve ~10K yıldızla kategorisinde yerleşik bir referans. Kendi başına bir model ya da kütüphane değil, yalnızca proje iskeleti üretiyor.",
+      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, Lyricdrop'un STT ve hizalama denemelerini tutan Python tarafına bir klasör düzeni vermek olabilir. Ancak senin yığının Expo, TypeScript ve Supabase üzerine kurulu ve proje iskeletlerini zaten Claude Code'a kurdurtuyorsun, dolayısıyla araya ayrı bir şablon aracı koymanın getirisi sınırlı. Şablon veri bilimi iş akışını (ham veri, ara veri, model çıktıları) varsayıyor; senin ürün odaklı depolarında bu klasörlerin çoğu boş kalır. Fikir olarak bakılabilir: kendi tekrar eden proje kurulumların için benzer bir iskelet yazmak, tam otomasyon isteğinin küçük bir parçası olur.",
+      "matched_project": null,
+      "relevance": 1,
+      "investment_note": null
+    },
+    {
+      "full_name": "cloudflare/cloudflare-os",
+      "inputs_hash": "b3ed13204109775c6d04360634c1ff7e",
+      "description_tr": "Cloudflare OS, Cloudflare'in şirket içinde kullandığı ve açık kaynağa açtığı bir AI üretkenlik ortamı. Üç bileşenden oluşuyor: şirket bağlamıyla beslenmiş bir ajan sohbet arayüzü, kullanıcıların ajanlara yaptırdığı küçük kişisel uygulamaların izole biçimde çalıştığı bir geliştirme ortamı ve hem ajanlara hem bu uygulamalara sınır koyan Gatekeepers adlı güvenlik çerçevesi. Tamamen Cloudflare Workers ve workerd üzerinde çalışıyor; pnpm ile yerelde denenebiliyor ya da kişinin kendi Cloudflare hesabına deploy edilebiliyor. TypeScript ile yazılmış ve Apache-2.0 lisanslı; depo v1'den sonra sıfırdan yazılmış v2 sürümü ve bakımcıları tarafından açıkça erken erişim olarak tanımlanıyor. Nisan 2026'da açılmış ve ~10K yıldıza ulaşmış.",
+      "usage_tr": "Arslan Holding tarafında asistanının ve ekibin ortak kullanacağı bir zemin arıyorsan bakmaya değer bir örnek: şirket bağlamını bir kez yükleyip sunum hazırlama, doküman düzeltme ve rapor çıkarma gibi işleri ajanlara bırakan bir arayüz sunuyor. Gadget mantığı çalışma tarzına yakın; herkes kendi küçük uygulamasını üretiyor, Gatekeepers de teknik olmayan birinin bir şeyi kırmasını engelliyor, bu da erişim kapsamlarının izole olması ilkenle örtüşüyor. Buna karşılık altyapı tamamen Cloudflare Workers'a bağlı ve Supabase, DigitalOcean, Vercel'den oluşan mevcut yığınının yanına bakımını üstleneceğin yeni bir platform ekliyor. Mac'te yerelde yalnızca denemelik çalışıyor; gerçek kullanım bulut tarafında ve ajan çağrıları model sağlayıcısı üzerinden ayrıca ücretlendiriliyor. Tümünü kurmak yerine referans mimari olarak da okunabilir: Gatekeepers ve uygulama izolasyonu tasarımını kendi orkestratör ajan kurulumuna taşıyabilirsin. Uyarı: depo erken aşama olduğunu kendisi söylüyor, gerçek bir operasyona bağlamadan önce tek bir iş akışıyla denemek gerekir.",
+      "matched_project": "Arslan Holding",
+      "relevance": 6,
+      "investment_note": null
+    },
+    {
+      "full_name": "open-gsd/gsd-core",
+      "inputs_hash": "4aaced0e334bcd2ebb1c54e89256743a",
+      "description_tr": "GSD Core, AI kodlama ajanlarını disiplinli bir faz döngüsünden geçiren bir bağlam mühendisliği ve spesifikasyon odaklı geliştirme çerçevesi. Her kilometre taşı beş adımı tekrarlıyor: karar alma, planlama, paralel dalgalar halinde yürütme, doğrulama ve PR ile kapatma; ağır araştırma ve yürütme işi temiz bağlamla açılan alt ajanlara veriliyor ki ana oturumun bağlam penceresi dolmasın. Claude Code, OpenCode, Codex, Copilot, Cursor ve Windsurf dahil birçok çalışma ortamını destekliyor ve npm üzerinden bir kurulum sihirbazıyla geliyor; yeni proje ve mevcut depoyu devralma için ayrı komutları var. JavaScript ile yazılmış, MIT lisanslı ve çok dilli dokümantasyonu var. Mayıs 2026'da açılmış, ~9.7K yıldıza ulaşmış ve CI'da test akışı çalışıyor.",
+      "usage_tr": "Lyricdrop v2'yi sıfırdan yazarken zaten bir plugin ile çalışıyorsun; GSD Core bunun yanında ya da yerine denenebilecek, plan ve faz disiplinini dayatan bir katman. En çok işine yarayacak kısmı doğrulama adımı: her fazı 'ne yapıldı' diye tek tek gezip kapatmadan önce hata ayıklamayı zorunlu kılıyor, bu da her değişikliğin ayrı gözden geçirilmesi isteğinle örtüşüyor. Kurulumu hem Claude Code hem OpenCode için ayrı ayrı yapabildiğinden ofisteki Mac ile Desktop kullanımını aynı akışa bağlayabilirsin ve tamamı yerelde çalıştığı için ek API maliyeti getirmez. Alt ajanlarla paralel yürütme, bir sürü küçük iş biriktiğinde bariz hızlanma sağlar ama token tüketimini de artırır; Max aboneliğinin limitlerini zorlayabileceğini hesaba kat. Önce Lyricdrop'un admin panel tarafında tek bir faz üzerinde deneyip, mevcut plugin kurulumunla çakışıp çakışmadığını görmek en düşük riskli yol.",
+      "matched_project": "Lyricdrop",
+      "relevance": 7,
+      "investment_note": null
+    },
+    {
+      "full_name": "mshumer/gpt-prompt-engineer",
+      "inputs_hash": "46ff93d0b5fbe21465650d3bfefdd4ef",
+      "description_tr": "gpt-prompt-engineer, bir görev tanımı ve test vakaları verildiğinde çok sayıda aday prompt üretip bunları birbirine karşı yarıştıran bir not defteri koleksiyonu. Her prompt 1200 ELO puanıyla başlıyor ve test vakalarındaki çıktıları karşılaştırıldıkça puanı değişiyor, böylece sonunda sıralı bir liste kalıyor. Sınıflandırma görevleri için ayrı bir sürüm, ayrıca güçlü bir modelle örnek üretip küçük modele aktarma mantığını deneyen bir dönüştürme not defteri var. Jupyter Notebook olarak dağıtılıyor, Colab üzerinden çalıştırılabiliyor ve MIT lisanslı. 2023'te açılmış, ~9.7K yıldıza ulaşmış; içindeki örnekler 2024 model kuşağına göre yazılmış durumda.",
+      "usage_tr": "Lyricdrop'un içerik üretim tarafında somut bir yeri var: bir şarkıda hangi kelimelerin boşluk olacağını ve her boşluk için üç çeldiricinin nasıl seçileceğini belirleyen prompt'u, elle denemek yerine test vakalarıyla yarıştırabilirsin. Şarkı başına maliyeti düşük tutup binlerce şarkıya çıkmayı planladığın için prompt kalitesindeki küçük farklar katalog genelinde büyük fark yaratır; bu tür bir seçimi ölçerek yapmak mantıklı. Çalıştırması ücretli API anahtarı gerektiriyor, yani Max aboneliğinin dışında ayrı bir maliyet kalemi açar ve ELO turnuvası doğası gereği çok sayıda çağrı yapar; küçük bir test setiyle başla. Kendi uygulamana gömülecek bir kütüphane değil, kenarda tek seferlik çalıştırıp kazananı alacağın bir araç. Uyarı: depo bakımlı görünmüyor ve model isimleri eski; not defterlerini kullandığın modele göre güncellemen gerekir.",
+      "matched_project": "Lyricdrop",
+      "relevance": 5,
+      "investment_note": null
+    },
+    {
+      "full_name": "Agents365-ai/drawio-skill",
+      "inputs_hash": "70457a8ac17b56dae7e8340a3e66ddfe",
+      "description_tr": "drawio-skill, doğal dil ya da gerçek sistem kaynaklarından düzenlenebilir .drawio mimari diyagramları üreten bir agent skill. Terraform, Kubernetes, SQL, OpenAPI, AsyncAPI, Protobuf ve GraphQL girdilerini okuyabiliyor; ürettiği diyagramın PNG'sini kendisi kontrol edip üst üste binen kutuları ve kesilmiş etiketleri düzeltiyor. Tek modelden birden çok görünüm türetme, elle yapılan düzeni bozmadan artımlı senkronizasyon, bağımlılık sorgulama ve CI içinde mimari testi gibi bakım odaklı özellikleri var; beyaz tahta fotoğrafını düzenlenebilir diyagrama çevirebiliyor. ERD, UML, sıra diyagramı, C4, BPMN ve ağ topolojisi dahil on bir hazır diyagram tipi sunuyor ve Claude Code, Cursor, Copilot, Codex gibi Agent Skills uyumlu ortamlarda çalışıyor. Python ile yazılmış, MIT lisanslı ve ~9.6K yıldıza ulaşmış.",
+      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, Lyricdrop v2'nin içerik pipeline'ını bir başkasına devrederken tek sayfalık bir akış şeması olarak anlatmak olabilir. Yazdığın uygulamalar mimari diyagram bakımı gerektirecek büyüklükte değil ve aracın asıl değeri olan artımlı senkronizasyon, ancak diyagramı aylarca güncel tutmak gerektiğinde ortaya çıkıyor. Holding tarafındaki sunumlar için de fazla teknik bir çıktı üretiyor; oradaki ihtiyaç mimari değil anlatım görseli. Kurulumu ücretsiz ve Claude Code içinde yerel çalıştığı için maliyeti yok, yani ihtiyaç doğarsa denemenin bedeli de düşük.",
+      "matched_project": null,
+      "relevance": 2,
+      "investment_note": null
+    },
+    {
+      "full_name": "brexhq/prompt-engineering",
+      "inputs_hash": "90abbfbd049d102259967f92f6b1b2ef",
+      "description_tr": "Brex'in kendi ekibi için yazdığı ve sonra açık kaynağa açtığı bir prompt mühendisliği rehberi. Dil modellerinin kısa tarihinden başlayıp prompt kavramı, gizli prompt'lar, token limitleri, jailbreak ve prompt sızdırma gibi başlıkları anlatıyor; ardından veri gömme, alıntılama, programatik tüketim, düşünce zinciri ve ince ayar konularında strateji önerileri veriyor. Tamamen Markdown bir doküman; kod, kütüphane ya da çalıştırılabilir bir araç içermiyor. MIT lisanslı, 2023'te yayımlanmış ve ~9.6K yıldıza ulaşmış. Örnekler GPT-4 kuşağına göre yazılmış ve doküman o dönemden sonra kapsamlı biçimde güncellenmemiş.",
+      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, Lyricdrop'un içerik üretim prompt'larını yazarken arka planda hatırlanacak genel ilkeler olabilir. Ancak doküman üretim sistemleri için yazılmış ve anlattığı çoğu teknik, Claude Code ile çalışırken zaten araç tarafından hallediliyor. Örneklerin dayandığı model kuşağı eskidiği için bugünkü davranışla birebir örtüşmeyen kısımlar var. Okuması ücretsiz ve hızlı; bir araç kararı değil, bir arka plan metni olarak değerlendirilmeli.",
+      "matched_project": null,
+      "relevance": 2,
+      "investment_note": null
+    },
+    {
+      "full_name": "AgriciDaniel/claude-ads",
+      "inputs_hash": "842e775c003d35fd0ea24e841956ea86",
+      "description_tr": "Claude Ads, ücretli medya operasyonlarını Claude Code içinden yürütmek için yazılmış bir skill paketi. Google, Meta, YouTube, LinkedIn, TikTok, Microsoft, Apple, Amazon, Reddit, Pinterest, Snapchat ve X olmak üzere on iki reklam platformu için ayrı denetim işçileri ve yetenek tanımları içeriyor; hesap verisinden kaynağa dayalı denetimler, kampanya ve bütçe planları, kreatif brief'leri ve izleme raporları üretiyor. Varsayılan olarak salt okunur çalışıyor; hesapta gerçek bir değişiklik ancak onay, geri alınabilirlik ve denetim kaydı kapıları geçildikten sonra mümkün. Çıktılar önce sürümlenmiş JSON olarak yazılıyor, sonra Markdown, HTML ve isteğe bağlı PDF'e dönüştürülüyor; eksik veri, bayat kaynak ve çelişkiler ayrıca raporlanıyor. Python ile yazılmış, MIT lisanslı ve ~9.5K yıldıza ulaşmış.",
+      "usage_tr": "Lyricdrop'un lansman tarafında işine yarayabilir: reklam hesaplarını kurup denetimi ve haftalık pacing raporunu Claude Code içinden çalıştırabilir, kanal ve bütçe planını tek bir yerden üretebilirsin. Salt okunur varsayılanı burada önemli; hesapta değişiklik yapma yetkisi vermeden asistanına devredilebilecek bir iş haline geliyor, sen sadece rapora bakıp karar verirsin. Ofisteki Mac'te Claude Code ile çalışıyor ve kendi model maliyeti getirmiyor; harcama yalnızca reklam platformlarının kendi tarafında. Aynı kurulum ileride Dubai'deki uygulama stüdyosu fikrinde birden çok uygulamanın kreatif ve ASO akışını tek şablonla yönetmek için de tekrar kullanılabilir. Uyarı: tek bakımcılı ve geniş kapsamlı bir depo; platform API'leri sık değiştiği için ilk denemede hesap bağlama adımının ne kadar güncel olduğunu küçük bir bütçeyle doğrula.",
+      "matched_project": "Lyricdrop",
+      "relevance": 6,
+      "investment_note": null
+    },
+    {
+      "full_name": "NVIDIA/garak",
+      "inputs_hash": "461121f7c9ad7b2ad1bbfaba5d1899d6",
+      "description_tr": "garak, dil modellerinin istenmeyen biçimlerde başarısız olup olmadığını sınayan bir güvenlik tarayıcısı. Halüsinasyon, veri sızdırma, prompt injection, yanlış bilgi üretimi, toksisite ve jailbreak gibi zayıflıklar için statik, dinamik ve uyarlanabilir problar çalıştırıyor; mantık olarak nmap ve Metasploit'in dil modeli karşılığı olarak tanımlanıyor. Hugging Face, OpenAI, AWS Bedrock, Replicate, litellm ve llama.cpp üzerinden gguf modeller dahil geniş bir sağlayıcı listesini destekliyor ve komut satırından çalışıyor. NVIDIA tarafından geliştiriliyor, Apache-2.0 lisanslı, Linux, macOS ve Windows'ta test ediliyor ve arkasında bir akademik makale var. 2023'te açılmış, ~9.3K yıldız ve aktif bir sürüm akışı var.",
+      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, ileride kullanıcıyla doğrudan konuşan bir model uç noktası yayına alırsan onu açmadan önce taramak olabilir. Bugünkü kurulumunda modeller içerik üretim aşamasında, oyuncu tarafına hazır veri gidiyor; yani saldırı yüzeyi dışarıya açık değil. Folio da yalnızca kendi telefonunda çalıştığı için aynı durumda. Mac'te yerel çalışıyor ve yerel modellere karşı da sınanabiliyor, dolayısıyla ihtiyaç doğduğunda ek maliyetsiz denenebilir.",
+      "matched_project": null,
+      "relevance": 2,
+      "investment_note": null
+    },
+    {
+      "full_name": "BoundaryML/baml",
+      "inputs_hash": "f52ab141be107bb16d6730cc5b9c122c",
+      "description_tr": "BAML, dil modeli çağrılarını tip güvenli fonksiyonlar olarak tanımlamak için yazılmış bir programlama dili. Sözdizimi TypeScript'e benziyor ama tip sistemi çalışma zamanında da korunuyor; any yok, hatalar tipli ve statik olarak analiz ediliyor, dosya sistemi modül yapısını belirliyor. Test ve değerlendirme çerçevesi ile ajanlar için bir standart kütüphane dilin içine gömülü; tek başına çalıştırılabildiği gibi TypeScript, Python, Go, C# ve Java'dan da çağrılabiliyor, böylece mevcut bir projeye parça parça eklenebiliyor. Derleyici Rust ile yazılmış, Apache-2.0 lisanslı ve brew üzerinden kuruluyor. 2023'te açılmış, ~9.3K yıldıza ulaşmış ve arkasında ticari bir şirket var.",
+      "usage_tr": "Lyricdrop'un içerik üretim tarafında en çok canını sıkacak şey, modelden gelen JSON'un beklediğin şemaya uymaması; BAML tam olarak bunu bir tip hatası haline getiriyor. Boşluk listesi ve her boşluk için dört şık gibi yapıları tipli bir fonksiyon olarak tanımlayıp, binlerce şarkıyı işlerken bozuk çıktının veritabanına yazılmasını engelleyebilirsin. TypeScript'ten çağrılabildiği için mevcut yığınına gömülebilir ve dilin içindeki test çerçevesi, prompt'u değiştirdiğinde eski şarkılarda ne bozulduğunu ölçmeni sağlar. Buna karşılık öğrenilecek yeni bir dil ve derleme adımı ekliyor; ayrıca model çağrıları sağlayıcı anahtarı üzerinden gittiği için Max aboneliğinin dışında maliyet doğurur. Önce 20-30 şarkılık test setinde tek bir fonksiyonu BAML'e taşıyıp şema hatası oranının düşüp düşmediğini ölçmek doğru başlangıç.",
+      "matched_project": "Lyricdrop",
+      "relevance": 6,
+      "investment_note": "Arkasında Seattle merkezli bir şirket olan, açık kaynak dil üzerinden geliştirici benimsemesi kuran ve ajan altyapısı katmanında konumlanan bir ekip; B2B yazılım tezine uygun, tanışmaya değer bir profil."
+    },
+    {
+      "full_name": "jasontang-ai/Context-Engineering",
+      "inputs_hash": "4c23c4bc3132f3076ba8f6c61692eb53",
+      "description_tr": "Context Engineering, prompt mühendisliğinin ötesine geçip bağlam penceresinin nasıl tasarlanacağını anlatan bir el kitabı ve kurs derlemesi. Akademik çalışmalara dayanan bölümlerle bağlam tasarımı, bellek, bağlam bozulması ve ajan komutları gibi konuları ilerleyen zorlukta örneklerle işliyor. Depoda Claude Code, OpenCode, Codex ve Gemini CLI gibi ortamlar için hazır ajan komutları da bulunuyor. Python ve Markdown tabanlı, MIT lisanslı ve kurs bölümü hâlâ yapım aşamasında olduğunu belirtiyor. 2025 ortasında açılmış ve ~9.3K yıldıza ulaşmış.",
+      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, Lyricdrop v2'yi yazdığın Claude Code kurulumunda CLAUDE.md ve komut tasarımını iyileştirmek için okunacak bir kaynak olması. Bir araç değil, bir metin; kurup çalıştıracağın, uygulamana gömeceğin ya da asistanına devredeceğin bir tarafı yok. İçindeki ajan komutları denenebilir ama halihazırda kullandığın plugin kurulumunun sunduğundan belirgin bir fark getirmiyor. Faydası ölçülebilir değil, dolayısıyla bir akşamlık okuma bütçesinden fazlasını ayırmaya değmez.",
+      "matched_project": null,
+      "relevance": 2,
+      "investment_note": null
+    },
+    {
+      "full_name": "catboost/catboost",
+      "inputs_hash": "582ac7eaaf14115284298d1d04ae1d8c",
+      "description_tr": "CatBoost, karar ağaçları üzerinde gradyan artırma yapan bir makine öğrenmesi kütüphanesi; sıralama, sınıflandırma ve regresyon gibi görevler için kullanılıyor. En belirgin özelliği kategorik değişkenleri ön işleme gerektirmeden doğrudan ele alabilmesi ve tahmin hızının yüksek olması. Çekirdeği C++ ile yazılmış; Python, R, Java ve C++ arayüzleri var, CPU ile birlikte çoklu GPU eğitimi ve Apache Spark üzerinde dağıtık eğitim destekleniyor. Görselleştirme araçları, çapraz doğrulama ve değişken önemi hesaplama kutudan çıkıyor. Apache-2.0 lisanslı, 2017'den beri geliştiriliyor ve ~9.1K yıldızla olgun, kurumsal bakımlı bir proje.",
+      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, Folio'da beğeni ve beğenmeme sinyallerine göre içerik sıralamak olabilir. Ancak Folio tek kullanıcılı bir uygulama; gradyan artırma modelini anlamlı biçimde eğitecek kadar etiket birikmez, o adım için basit bir bandit yaklaşımı hem daha az veri ister hem de ilk günden çalışır. Kütüphane Mac'te yerel çalışır ve API maliyeti getirmez, yani teknik bir engel yok, sorun ölçek uyumsuzluğu. Klasik tablo verisiyle çalışan bir ihtiyacın ortaya çıkarsa bu kategoride ilk bakılacak seçeneklerden biri olarak aklında kalsın.",
+      "matched_project": null,
+      "relevance": 2,
+      "investment_note": null
+    },
+    {
+      "full_name": "backnotprop/plannotator",
+      "inputs_hash": "e10c906895990dc8412a10e73c337388",
+      "description_tr": "Plannotator, kodlama ajanlarının ürettiği plan, doküman ve kod değişikliklerini tarayıcıda gözden geçirmek için kurulan yerel bir inceleme yüzeyi. Ajanın hook ve komutlarına bağlanıyor; ajan bir plan önerdiğinde ya da kodu yazıp bitirdiğinde iş tarayıcıda açılıyor, üzerine not düşülüyor ve geri bildirim tek tıkla ajana gönderiliyor. Markdown ve HTML artefaktlarının yanında yerel değişiklikleri ve uzak PR'ları da inceleyebiliyor; Git'in yanı sıra GitButler, Jujutsu ve Perforce ile çalışıyor. Claude Code, Codex, Copilot CLI, Gemini CLI, OpenCode, Kiro, Droid, Amp ve Pi destekleniyor. TypeScript ile yazılmış, Apache-2.0 lisanslı; Aralık 2025'te açılmış ve ~8.9K yıldıza ulaşmış.",
+      "usage_tr": "Bu, her değişikliğin ayrı ayrı gözden geçirilmesi isteğinin doğrudan karşılığı ve Lyricdrop v2'nin yazım döngüsüne olduğu gibi girer: ajan planı önerdiğinde planın üzerine not düşer, kod bittiğinde diff'i aynı yerde işaretlersin. Hem Claude Code hem OpenCode ile çalıştığı için ofisteki Mac ve Desktop kullanımını tek inceleme yüzeyinde birleştirir. Tamamen yerelde çalışıyor, ek API maliyeti yok ve inceleme paylaşılabildiği için oyun mantığı kontrolü gibi işleri dışarıya devretme planına da uygun bir zemin sunuyor. Pratik faydası, iki ayrı gözle bakma alışkanlığını ekrandan ekrana kopyala-yapıştır yapmadan kurabilmen; asıl kazanç kayıt altına alınan geri bildirim. Uyarı: genç bir proje ve ajan hook arayüzlerine sıkı bağlı, bu arayüzler değiştiğinde kurulumun bozulabilir; önce tek bir depoda dene.",
+      "matched_project": "Lyricdrop",
+      "relevance": 8,
+      "investment_note": "Ajan çıktılarının insan tarafından onaylandığı katman henüz sahipsiz bir alan ve bu depo arkasında bir ürün sitesiyle birlikte geliyor; erken aşama geliştirici aracı tezine uygun, izlenmeye değer."
+    },
+    {
+      "full_name": "mage-ai/mage-ai",
+      "inputs_hash": "d1133f55d7c3894798f11b3fbe65c905",
+      "description_tr": "Mage OSS, veri pipeline'larını yerelde geliştirip çalıştırmak için kurulan, kendi sunucunda barındırılan bir ortam. Pipeline'lar not defteri tarzı bir arayüzde blok blok yazılıyor; her blok Python, SQL veya R olabiliyor ve adım adım log, önizleme ve hata ayıklama sunuyor. Veritabanları, API'ler ve bulut depolama için hazır bağlayıcıları, cron ile zamanlama desteği ve dbt entegrasyonu var; Docker, pip ya da conda ile kuruluyor ve bulut hesabı gerektirmiyor. Apache-2.0 lisanslı bir açık çekirdek proje; kurumsal orkestrasyon ve iş birliği özellikleri ücretli Mage Pro tarafında kalıyor. 2022'de açılmış ve ~8.8K yıldıza ulaşmış.",
+      "usage_tr": "Lyricdrop'un katalog üretiminde işine yarayabilir: şarkı indirme, STT, hizalama ve boşluk üretme adımları aslında tekrarlanabilir, her şarkı için aynı sırayla koşan bir pipeline ve Mage bunları blok blok yazıp tek tek loglamana izin veriyor. Ofisteki Mac'te Docker ile yerel çalışır, API maliyeti getirmez ve Python bloklarının içine yerel STT çağrılarını doğrudan koyabilirsin. Başarısız şarkıyı tek tek görüp yeniden çalıştırabilmek, binlerce şarkıya çıkarken n8n'in zayıf kaldığı noktayı kapatır. Buna karşılık tetikleme ve entegrasyon tarafını zaten n8n ile çözmüş durumdasın; Mage bakımını üstleneceğin ikinci bir servis ekler ve asıl tasarım hedefi veri ambarına yönelik ETL işleri. Önce tek bir dil için 50 şarkılık bir partiyi Mage ile koşturup, hata ayıklama süresini şu anki akışla karşılaştırman kararı verdirir.",
+      "matched_project": "Lyricdrop",
+      "relevance": 4,
+      "investment_note": null
+    },
+    {
+      "full_name": "rockbenben/ChatGPT-Shortcut",
+      "inputs_hash": "03c3d03ffb7d2598ded4b0ca49ce9bb9",
+      "description_tr": "AiShort, hazır prompt'ları arayıp kopyalamak için kurulmuş bir prompt kütüphanesi ve yönetim aracı. Beş binin üzerinde prompt'u yazım, kodlama, ofis işleri, öğrenme, tasarım ve pazarlama gibi kategorilerde topluyor; kullanıcılar kendi koleksiyonlarını oluşturabiliyor. Web sitesi Docusaurus ile üretilmiş ve bir tarayıcı eklentisi de var; arayüz Türkçe dahil çok sayıda dile çevrilmiş. TypeScript ile yazılmış ve MIT lisanslı, ~8.8K yıldıza ulaşmış. İçerik hem seçilmiş hem topluluk katkısı prompt'lardan oluşuyor ve belirli bir modele bağlı değil.",
+      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, asistanının tekrar eden araştırma ve yazışma işleri için hazır kalıplara bakması olabilir. Kendi geliştirme akışın Claude Code üzerinden ilerliyor ve orada prompt'u sen yazmıyorsun, konuşuyorsun; genel amaçlı bir prompt listesinin araya gireceği bir adım yok. Depodaki içerik de çoğunlukla sohbet arayüzlerine kopyalanmak üzere yazılmış, uygulamaya gömülecek yapıda değil. Popüler uygulamalardan çabuk sıkılma eğilimin düşünülürse bu da bir-iki hafta sonra bırakılacak türden bir araç.",
+      "matched_project": null,
+      "relevance": 1,
+      "investment_note": null
+    },
+    {
+      "full_name": "freecodexyz/free-code",
+      "inputs_hash": "1a288bacae2aff281134cccf541fda0c",
+      "description_tr": "free-code, Claude Code komut satırı aracının değiştirilmiş bir derlemesi; README'ye göre kaynak, npm dağıtımındaki bir source map açığından elde edilen anlık görüntüye dayanıyor. Fork üç tür değişiklik uyguluyor: telemetri uç noktalarının kaldırılması, ürünün konuşmalara eklediği güvenlik yönergelerinin çıkarılması ve deneysel özellik bayraklarının tamamının açılması. Kurulum tek satırlık bir curl betiğiyle yapılıyor, Bun ile derleniyor ve ayrıca IPFS üzerinden yansılanıyor. Depoda bir lisans dosyası belirtilmemiş, yani kaynağın yeniden dağıtımı için açık bir izin yok. Mart 2026'da açılmış ve ~8.8K yıldıza ulaşmış.",
+      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, halihazırda kullandığın aracın kendisi olması, ki bu da onu denemek için bir gerekçe değil. Depo lisanssız ve kaynağı bir sızıntıya dayanıyor; bu, açık kaynak bir depoyu fork'layıp kendi istemcini yazma alışkanlığınla aynı şey değil, çünkü ortada fork'lamaya izin veren bir lisans yok. Aboneliğinle bu tür değiştirilmiş bir istemciden giriş yapmak hesap tarafında risk doğurur ve güvenlik yönergelerinin çıkarılması, kod yazdırdığın bir araçta işine yarayacak bir özellik değil. Aynı ihtiyacı lisanslı ve şeffaf biçimde karşılayan OpenCode zaten kurulu; kendi iOS istemcini yazma planın için doğru zemin de orası.",
+      "matched_project": null,
+      "relevance": 1,
+      "investment_note": null
+    },
+    {
+      "full_name": "apple-aiml-research/ml-ferret",
+      "inputs_hash": "d577fbab6f8aea9b6bd14d363ab18478",
+      "description_tr": "Ferret, bir görüntü içinde nokta, kutu ya da serbest çizim gibi her biçimdeki işaretlemeyi anlayıp yanıtında da bölgeleri gösterebilen çok modlu bir dil modeli. Hibrit bölge temsili ve uzamsal farkında görsel örnekleyici ile ince taneli ve açık sözlüklü referans-topraklama yapabiliyor; yaklaşık 1,1 milyon örneklik GRIT talimat veri kümesi ve Ferret-Bench değerlendirme kümesi de depoda. 7B ve 13B ağırlıkları yayımlanmış, eğitim 8 adet A100 ile yapılmış; sonraki sürümlerde arayüz ekranlarını anlamaya odaklanan Ferret-UI eklenmiş. Depo bir araştırma yayınına eşlik ediyor ve ICLR 2024'te spotlight olarak kabul edilmiş. Lisans yalnızca araştırma kullanımına izin veriyor; veri kümesi CC BY-NC 4.0 ve LLaMA ile Vicuna lisanslarının kısıtlarına tabi.",
+      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, Ferret-UI'nin ekran anlama yeteneğiyle Lyricdrop'un tarayıcı playtest adımını otomatikleştirme fikri olabilir. Ancak lisans ticari kullanımı kapatıyor, yani gelir hedefi olan bir üründe kullanılamaz ve bu tek başına konuyu kapatıyor. Model ayrıca araştırma kodu olarak dağıtılıyor; 24 GB belleğe sahip bir Mac'te kurup çalıştırmak ciddi uğraş ister, ürün kalitesinde bir bileşen değil. Aynı ihtiyaç için lisansı açık ve Apple Silicon'da çalışan güncel görsel modellere bakmak daha hızlı sonuç verir.",
+      "matched_project": null,
+      "relevance": 2,
+      "investment_note": null
+    }
+  ]
+}

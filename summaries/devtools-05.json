@@ -1,0 +1,175 @@
+{
+ "repos": [
+  {
+   "full_name": "ifixai-ai/iFixAi",
+   "inputs_hash": "3b7ebef52b73ac4701fe1d224cc69123",
+   "description_tr": "iFixAi, çalışan bir AI agent'ının yaptığı işi bağımsız biçimde denetleyen açık kaynak bir CLI aracı. Tek bir çalıştırma komutuyla rehberli bir kurulum yapıyor; denetlenecek sistemi, yargıç modeli ve test paketini seçtikten sonra beş başlık altında onlarca denetim çalıştırıp A-F arası notlu bir karne üretiyor. Odağı token verimliliği veya gecikme gibi teknik ölçütlerden çok, agent'ın iş hedeflerine ve organizasyon kurallarına uygun davranıp davranmadığı; README EU AI Act, ISO 42001, NIST AI RMF ve OWASP LLM gibi çerçevelere atıf yapıyor. Python 3.10+ ile çalışıyor, Apache-2.0 lisanslı ve arkasında ticari bir ürün sitesi var. Nisan 2026'da açılmış olmasına rağmen 15 binin üzerinde yıldıza ulaşmış; CI'lı ve dört dilde README'si olan aktif bir depo.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; iFixAi, üçüncü kişilere hizmet veren ve uyum yükümlülüğü taşıyan production agent'ları için tasarlanmış, senin çalıştırdığın akışlar ise kendi kontrolündeki içerik ve otomasyon işleri. En yakın bağlam Lyricdrop'un içerik üretim zincirini düzenli denetlemek olabilir; ama oradaki soru \"agent iş kurallarına uyuyor mu\" değil, \"kelime hizalaması doğru mu\" ve bunun ölçüsü hizalama hatası, uyum karnesi değil. Yargıç modeli üzerinden çalıştığı için her denetim ayrı bir API kalemi doğurur, bu da Max aboneliği üzerinden çalışma tercihinle uyuşmuyor. İlgi çekici olan araç değil kategori: agent denetimi ve AI uyum raporlaması.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": "Agent denetimi ve AI uyum raporlaması, Arslan Holding'in erken aşama B2B yazılım odağına oturan yeni bir kategori; deponun beş ayda 15 binin üzerinde yıldıza çıkması ve ticari bir ürün sitesine bağlı olması ekibi izleme listesine almak için yeterli sinyal."
+  },
+  {
+   "full_name": "chenhg5/cc-connect",
+   "inputs_hash": "09d4748aff6b0d408d70e35d9b092f08",
+   "description_tr": "cc-connect, yerelde çalışan AI kodlama agent'larını (Claude Code, Cursor, Gemini CLI, Codex, Kimi CLI) mesajlaşma platformlarına bağlayan, Go ile yazılmış bir köprü. Feishu/Lark, DingTalk, Slack, Telegram, Discord, LINE ve WeCom desteği var; çoğu platform için makineye genel IP adresi gerekmiyor, bağlantı dışarıdan içeri değil içeriden dışarı kuruluyor. README'nin anlattığı ana senaryo, sohbet penceresinden yerel projedeki kodu inceletmek ve değiştirmek. npm üzerinden dağıtılıyor, CI'lı ve sponsorlu bir proje; Şubat 2026'da açılmış ve 15 binin üzerinde yıldıza ulaşmış. Paket meta verisinde lisans alanı boş görünüyor, README'de MIT rozeti var.",
+   "usage_tr": "iPhone'dan ofisteki M4 Pro Mac'e Claude Code Remote Control ile bağlanırken yaşadığın kopma sorununa alternatif bir yol sunuyor: agent ofis Mac'inde kalır, sen Telegram ya da Slack üzerinden konuşursun. Seyahatteyken Lyricdrop v2'de bir hata raporunu iletip düzeltmeyi başlatmak veya Kanarya tarafında küçük bir değişikliği kuyruğa almak için kullanabilirsin. Tailscale zaten kurulu olduğu için ev Mac mini'sini de aynı köprüye ekleyip iki makineyi ayrı sohbet kanallarından ayırabilirsin. Maliyet tarafı temiz: köprü yerel çalışıyor, ayrı bir API faturası çıkarmıyor, agent Max aboneliğin üzerinden çalışmaya devam ediyor. Uyarı: mesajlaşma kanalına repo içeriği ve kod düşüyor, dolayısıyla kanal erişimini dar tutman gerekir; erişim kapsamlarının izole olması ilkenle bu noktada dikkatli çalışmak lazım.",
+   "matched_project": "Claude Code orkestrasyonu",
+   "relevance": 8,
+   "investment_note": null
+  },
+  {
+   "full_name": "coderamp-labs/gitingest",
+   "inputs_hash": "784b32319b5250c743f2743aed8d3a3c",
+   "description_tr": "Gitingest, bir Git deposunu LLM'e verilebilecek tek bir düz metin özetine çeviren açık kaynak bir araç. GitHub adresinde \"hub\" yerine \"ingest\" yazmak yeterli; ayrıca pip paketi, CLI, Python API'si ve tarayıcı eklentileri olarak da kullanılabiliyor. Çıktı dizin ağacı ve dosya içeriklerini birlikte veriyor, boyut ve desen filtreleriyle kapsam daraltılabiliyor. MIT lisanslı, 2024 sonunda açılmış ve 15 binin üzerinde yıldıza ulaşmış; CI, OpenSSF scorecard ve düzenli PyPI sürümleriyle sürdürülüyor. Kendi sunucunda da çalıştırılabiliyor.",
+   "usage_tr": "Bir açık kaynak depoyu fork'layıp kendi istemcini yazma refleksin için ön eleme adımına oturuyor: OpenCode'un iOS istemcisi gibi bir planda depoyu tek metne indirip Claude Code'a mimari özeti ve risk listesi çıkarttırabilirsin. Asistanına devredilebilir olması ayrı bir avantaj; terminal gerekmiyor, tarayıcıdan adresi değiştirip çıktıyı alabiliyor ve sana özet halinde getirebiliyor. Kendi sunucunda çalıştırılabildiği için özel depoları dışarı vermeden DigitalOcean üzerinde barındırman da mümkün. Sınırı net: Claude Code zaten yerelde klonlanmış depoyu okuyabiliyor, asıl faydası klonlamadığın veya başkasına inceletmek istediğin depolarda ortaya çıkıyor. Büyük depolarda çıktı bağlam penceresini hızla doldurur; filtreleri baştan daraltmak gerekiyor.",
+   "matched_project": "Claude Code orkestrasyonu",
+   "relevance": 4,
+   "investment_note": null
+  },
+  {
+   "full_name": "millionco/react-doctor",
+   "inputs_hash": "f439a8864934c59cd66dc07a124c1b95",
+   "description_tr": "react-doctor, AI agent'larının yazdığı React kodundaki hataları yakalamayı hedefleyen bir inceleme aracı. Depo TypeScript ile yazılmış ve monorepo yapısında; kendini code-review aracı ve agent skill'i olarak etiketliyor, react.doctor adresinde ayrı bir tanıtım sayfası var. Ancak pakette gelen kök README tek satırdan, paket içindeki README'ye işaret eden bir yol adresinden ibaret; bu nedenle hangi kuralları uyguladığı, nasıl kurulduğu ve hangi agent'larla entegre olduğu hakkında burada karar vermeye yetecek açık metin yok. Şubat 2026'da açılmış ve 14 binin üzerinde yıldıza ulaşmış; lisans alanı standart bir SPDX kimliğine çözülmüyor. Teknik ayrıntılar için proje sayfasına bakmak gerekiyor.",
+   "usage_tr": "Claude Code'un yazdığı kodu ikinci bir gözle denetleme isteğine oturan bir araç kategorisi; Lyricdrop v2'nin admin ve test panelindeki React tarafında commit öncesi bir kontrol adımı olarak deneyebilirsin. Superpowers ile kurduğun akışa review adımı olarak eklenirse, \"geliştirici doğruluğu\" incelemesinin React'e özgü kısmını otomatikleştirir. Yerel çalışan bir statik inceleme katmanıysa API maliyeti getirmez, ama pakette bunu doğrulayacak metin yok; kurulum öncesi proje sayfasından teyit etmek gerekiyor. Expo/React Native tarafında ne kadarının geçerli olduğu da belirsiz: kuralların çoğu DOM'a özgüyse mobil kodda karşılığı olmayabilir. Önce tek bir branch'te çalıştırıp ürettiği bulguların gerçek hata mı gürültü mü olduğuna bakmadan akışa almamak doğru olur.",
+   "matched_project": "Claude Code orkestrasyonu",
+   "relevance": 5,
+   "investment_note": "Agent'ın ürettiği kodu denetleyen araçlar, kod ajanlarının yaygınlaşmasıyla açılan yeni bir kategori; deponun yedi ayda 14 binin üzerinde yıldıza ulaşması bu boşluğun büyüklüğüne dair bir sinyal."
+  },
+  {
+   "full_name": "HabitRPG/habitica",
+   "inputs_hash": "5203cb03133fa3987236793fbdda8a90",
+   "description_tr": "Habitica, alışkanlık ve görev takibini rol yapma oyunu mekaniğiyle birleştiren açık kaynak bir uygulama: görev tamamlanınca seviye atlanıyor, aksayınca can kaybediliyor, biriken altınla ekipman alınıyor. Sunucu tarafı Node/Express ve MongoDB, web arayüzü Vue ile yazılmış; iOS ve Android istemcileri ayrı depolarda tutuluyor. 2012'de açılmış, 14 binin üzerinde yıldızı olan olgun bir kod tabanı; lisansı standart bir SPDX kimliğine çözülmüyor. Ağustos 2026 itibarıyla topluluk pull request'leri askıya alınmış ve depo LLM üretimi kodu açıkça yasaklıyor, ancak kaynak kod açık kalmaya devam ediyor. Yapay zeka bileşeni yok; oyunlaştırma tamamen kural tabanlı.",
+   "usage_tr": "Yayınlamayı planladığın hayat orkestrasyonu uygulaması için bir ürün değil, bir referans uygulama olarak değerli: çok kullanıcılı, yıllardır production'da duran, oyunlaştırılmış bir görev sisteminin veri modelini ve ödül ekonomisini okuyabileceğin az sayıdaki açık kaynaktan biri. Kendi uygulamanı Expo + Supabase üzerinde kurarken görev/ödül şemasını ve tekrar eden görev mantığını buradan çıkarıp sadeleştirerek alabilirsin. Günlük kullanım aracı olarak ise sana uygun değil; popüler to-do uygulamalarını iki haftada bırakma kalıbına bu da girer ve asistanla yürüyen Trello akışının yerini tutmaz. Agentic hiçbir katmanı yok, bağlamsal hatırlatma ve kişisel CRM tarafını tamamen sen yazarsın. Kod tabanı büyük ve eski bir yığın üzerinde; komple fork etmek yerine yalnızca şema ve mekanik okuması yapmak daha mantıklı.",
+   "matched_project": "Hayat orkestrasyonu",
+   "relevance": 4,
+   "investment_note": null
+  },
+  {
+   "full_name": "coleam00/context-engineering-intro",
+   "inputs_hash": "dd5e92bdd2b762232b47ab739d1ffb52",
+   "description_tr": "Context Engineering Intro, Claude Code ile çalışırken agent'a verilecek bağlamı sistematik hale getirmeyi amaçlayan bir şablon depo. İçinde CLAUDE.md kural dosyası, örnek kod klasörü, INITIAL.md istek formu ve iki slash komutu var: biri bir özellik isteğinden kapsamlı bir \"Product Requirements Prompt\" üretiyor, diğeri bunu adım adım uyguluyor. Yaklaşımın özü, doğrulama döngüleri ve örneklerle agent'ın kendi hatasını yakalayabileceği bir bağlam paketi hazırlamak. MIT lisanslı, Temmuz 2025'te açılmış ve 13 binin üzerinde yıldıza ulaşmış. Çalıştırılabilir bir kütüphane değil; metodoloji, şablon ve komut dosyalarından oluşuyor.",
+   "usage_tr": "Lyricdrop v2'yi sıfırdan yazarken Superpowers'ın yanında doğrudan kullanabileceğin bir iskelet: her yeni özelliği önce INITIAL.md biçiminde yazıp ondan bir spec üretmek, v1'i tek oturumda yazmaktan duyduğun pişmanlığa karşı doğal bir fren. Örnekler klasörü mantığı özellikle işine yarar; admin panelindeki mevcut Supabase ve CDN kalıplarını examples/ altına koyarsan agent yeni ekranları aynı kalıpla yazar. Tamamen dosya ve komuttan ibaret olduğu için yerel çalışıyor, ek API maliyeti yok ve Max aboneliğinle uyumlu. Aynı iskeleti Kanarya ve Folio'da tekrar kullanabilirsin, böylece proje başına CLAUDE.md yazma işi standartlaşır. Uyarı: üretilen spec dosyaları uzun oluyor ve bağlamı şişirebiliyor; şablonu olduğu gibi almak yerine kendi CLAUDE.md pratiklerinle birleştirip kısaltman gerekir.",
+   "matched_project": "Claude Code orkestrasyonu",
+   "relevance": 7,
+   "investment_note": null
+  },
+  {
+   "full_name": "nidhinjs/prompt-master",
+   "inputs_hash": "b7824da3cbc51fdbf5c6072c0a29ce6a",
+   "description_tr": "Prompt Master, herhangi bir AI aracı için prompt yazmayı yapılandıran bir Claude skill'i. Hedef aracı tespit edip niyeti dokuz boyutta ayrıştırıyor, kritik bilgi eksikse en fazla üç soru soruyor ve uygun prompt mimarisine yönlendiriyor; kodlama araçlarından görüntü ve video modellerine kadar geniş bir hedef listesi sayıyor. Kurulumu bir dizin kopyalamaktan ibaret: claude.ai arayüzünden skill olarak yükleniyor ya da yerel skills klasörüne klonlanıyor. Çalıştırılabilir kod içermiyor; MIT lisanslı, Mart 2026'da açılmış ve 13 binin üzerinde yıldız toplamış bir talimat deposu. README'deki \"sıfır token israfı\" türü iddialar ölçülmüş değil, tanıtım dilinde yazılmış.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; prompt yazımı senin akışında darboğaz oluşturan adımlardan biri değil. En yakın bağlam, asistanının claude.ai üzerinden yürüttüğü araştırma işlerinde istek metnini standartlaştırmak olabilir; tekrar eden görev tiplerinde hazır bir iskelet oradaki gidip gelmeyi azaltabilir. Kod tarafında Superpowers ve kendi CLAUDE.md dosyaların aynı boşluğu zaten çok daha projeye özgü biçimde dolduruyor. Kurulumu ücretsiz ve tamamen yerel olduğu için bakmanın maliyeti düşük, ama ölçülebilir bir kazanç beklememek doğru olur.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "zoicware/RemoveWindowsAI",
+   "inputs_hash": "41c3c36f3833b7b98eeab05625ee583b",
+   "description_tr": "RemoveWindowsAI, Windows 11'in 25H2 ve sonrası sürümlerindeki yapay zeka bileşenlerini kaldıran bir PowerShell script'i. Copilot, Recall, Click to Do, Paint ve Photos içindeki AI özellikleri, Defender AI platformu ve ilgili zamanlanmış görevler gibi kalemleri kayıt defteri anahtarları, appx paketleri ve CBS deposu düzeyinde devre dışı bırakıyor. Güncelleme sonrası yeniden kurulumu engellemek için özel bir Windows Update paketi yüklüyor ve sistemin güncellenip güncellenmediğini kontrol eden bir görev oluşturuyor; Notepad, Paint ve Snipping Tool'un klasik sürümlerini geri getirme seçenekleri de var. MIT lisanslı, 2024 ortasında açılmış ve 13 binin üzerinde yıldıza ulaşmış; hedef kitlesi gizlilik ve sistem kontrolü önceliği olan Windows kullanıcıları. Sistem düzeyinde geri dönüşü zor değişiklikler yaptığı için kullanımı risk taşıyor.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; tüm geliştirme ve içerik akışların Mac üzerinde çalışıyor. En yakın bağlam, kurumsal bir Windows ortamında gizlilik gerekçesiyle AI özelliklerinin kapatılması olabilir; bu da senin projelerinin değil, bir IT yönetimi tarafının işi ve orada script yerine grup ilkeleriyle yürütülmesi daha doğru. Mac tarafında karşılığı olan bir sorun da yok, çünkü tercih ettiğin yerel model kurulumları zaten senin kontrolünde. Ne araç ne yatırım tarafında bir karşılığı var.",
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "sirmalloc/ccstatusline",
+   "inputs_hash": "002ba07c1b2657e90aeb9b70f66e1422",
+   "description_tr": "ccstatusline, Claude Code CLI'nin alt satırında görünen durum çubuğunu biçimlendiren bir Node aracı. Model adı, git dalı, token kullanımı, bağlam doluluğu ve özel komut çıktıları gibi öğeleri satırlara yerleştiriyor; powerline sembolleri, temalar ve renk ayarları için terminal içinde bir yapılandırma arayüzü sunuyor. npm üzerinden kuruluyor, Windows dahil çapraz platform çalışıyor; son sürümlerde terminal genişliği tespiti hızlandırılmış ve özel komut çıktıları için önbellek ile zaman aşımı eklenmiş. MIT lisanslı, Ağustos 2025'te açılmış, 12 binin üzerinde yıldızı olan ve sık sürüm çıkaran bir proje. İşlevi tamamen görsel; agent'ın davranışına veya çıktı kalitesine etkisi yok.",
+   "usage_tr": "Günün büyük kısmını Claude Code içinde geçirdiğin için küçük ama gerçek bir faydası var: bağlam doluluğunu ve hangi modelde olduğunu sürekli görmek, uzun Lyricdrop v2 oturumlarında ne zaman özetleyip yeniden başlayacağına karar vermeni kolaylaştırır. Ofis Mac'i ile ev Mac mini'si için farklı temalar seçersen, Remote Control ile bağlandığında hangi makinede olduğunu bir bakışta ayırt edersin. Kurulumu npm ile birkaç dakika, tamamen yerel, ek API maliyeti yok ve Max aboneliğiyle bir ilgisi yok. Beklentiyi doğru tutmak gerekir: kod kalitesine veya iki açılı review isteğine katkısı yok, sadece konfor ve görünürlük. Terminal'i doğrulama için kullandığın düşünülürse en çok işine yarayacak öğeler token ve bağlam göstergeleri olur.",
+   "matched_project": "Claude Code orkestrasyonu",
+   "relevance": 4,
+   "investment_note": null
+  },
+  {
+   "full_name": "langgptai/LangGPT",
+   "inputs_hash": "a297b2f234563b066d339ffb44220223",
+   "description_tr": "LangGPT, prompt yazımını yapılandırılmış ve yeniden kullanılabilir şablonlara dönüştürmeyi öneren bir çerçeve. Rol, kurallar, iş akışı ve değişkenler gibi bölümlerden oluşan hiyerarşik bir şablon dili tanımlıyor; amaç dağınık ipuçları yerine modüler ve kopyalanabilir prompt'lar üretmek. Çin AI topluluğunda yaygınlaşmış bir yaklaşım ve arXiv'de yayımlanmış bir makalesi var; depo esasen Jupyter notebook, şablon ve doküman koleksiyonundan oluşuyor. Apache-2.0 lisanslı, 2023'te açılmış, 12 binin üzerinde yıldızı var ve çok dilli README ile sürdürülüyor. Çalıştırılabilir bir kütüphane değil, bir yazım yöntemi.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; kütüphane olarak bir şeye gömülmüyor ve prompt biçimi senin akışında ayrı bir sorun değil. En yakın bağlam Folio'nun günlük içerik üretiminde yazar başına tekrar eden prompt'ları şablonlaştırmak olabilir; ancak orada asıl ihtiyacın format standardı değil, üretilen içeriğin kalitesini ölçecek bir geri bildirim döngüsü. Dokümanların önemli kısmı Çince ve örnekler sohbet arayüzlerine göre yazılmış, kod içinden çağrılan prompt'lara birebir oturmuyor. Okuması ücretsiz ve yerel; bir akşamlık fikir taraması olarak değerlendirilebilir, akışa girecek bir bileşen olarak değil.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "tonybeltramelli/pix2code",
+   "inputs_hash": "adc05b5b512a7bed7bcb98a399fdb291",
+   "description_tr": "pix2code, 2017 tarihli bir araştırma projesi: tek bir arayüz ekran görüntüsünden iOS, Android ve web için arayüz kodu üreten uçtan uca bir derin öğrenme modeli. Makalede üç platformda %77'nin üzerinde doğruluk bildiriliyor; depo model kodunu, eğitim script'lerini ve sentetik veri setlerini içeriyor. Yazarı, projenin yalnızca eğitim amaçlı paylaşıldığını ve gerçek dünyada kod üretmek için uygun olmadığını açıkça yazıyor. Python 2/3 ve dönemin derin öğrenme yığınıyla çalışıyor, Apache-2.0 lisanslı; 12 binin üzerinde yıldızı olmasına rağmen sürdürülen bir proje değil. Bugün tarihsel bir referans niteliğinde.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; ekran görüntüsünden arayüz üretme ihtiyacını zaten çok modlu modellerle Claude Design üzerinden karşılıyorsun. En yakın bağlam Folio'nun Instagram ekranlarından birebir tasarlanması olabilir, ama pix2code'un çıktı kalitesi ve eski yığını bunun çok gerisinde kalıyor. Deponun yazarı da projenin üretimde kullanılamayacağını kendisi belirtmiş. Ne araç ne yatırım tarafında bir karşılığı var; alanın nereden başladığını görmek isteyen biri için tarihsel bir okuma.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "cleanlab/cleanlab",
+   "inputs_hash": "e9e03d416821d70f7f331c93a2f8684c",
+   "description_tr": "cleanlab, makine öğrenmesi veri setlerindeki etiket hatalarını, aykırı örnekleri, kopyaları ve dağılım dışı verileri otomatik bulan açık kaynak bir Python kütüphanesi. Mevcut modelinin tahmin olasılıklarını ve öznitelik gömülerini girdi alıp hangi örneklerin muhtemelen yanlış etiketlendiğini sıralıyor; Datalab arayüzüyle metin, görüntü, ses ve tablo verisinde tek çağrıda rapor üretiyor. Model bağımsız çalışıyor, scikit-learn ve PyTorch gibi yığınlarla birlikte kullanılıyor ve tamamen yerel çalıştırılabiliyor. Apache-2.0 lisanslı, 2018'den beri geliştiriliyor, 11 binin üzerinde yıldızı var ve arkasında ticari bir ürün şirketi bulunuyor. Etiketli veriyle çalışan ekipler için olgun ve yerleşik bir araç.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; cleanlab'in beklediği girdi etiketli bir veri seti ve onun üzerinde eğitilmiş bir modelin tahmin olasılıkları, senin akışların ise etiketli veri değil üretilmiş içerik çıkarıyor. En yakın bağlam Lyricdrop'un şarkı kalite kontrolü olabilir, ama oradaki soru \"etiket yanlış mı\" değil \"hizalama kayıyor mu\"; bunun ölçüsü kelime zamanlama hatası, sınıflandırma olasılığı değil. Folio'nun like/dislike verisi zamanla gerçek bir etiket setine dönüşürse yeniden bakmaya değer; o noktada aykırı ve tutarsız içerik tespiti anlamlı olur. Tamamen yerel çalıştığı ve API maliyeti getirmediği için o gün geldiğinde denemesi ucuz.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": "Veri kalitesi katmanı, arkasındaki ticari ürünle birlikte B2B yazılım tezine yakın duran olgun bir kategori; doğrudan bir erken aşama fırsatı değil ama benzer işi MENA ve Türkiye pazarına taşıyan ekipleri değerlendirirken iyi bir kıyas noktası."
+  },
+  {
+   "full_name": "Arize-ai/phoenix",
+   "inputs_hash": "6de1f6847f4e2708fc5c2445a4fb5fff",
+   "description_tr": "Phoenix, LLM ve agent uygulamaları için izleme (tracing) ve değerlendirme (eval) aracı. OpenTelemetry tabanlı enstrümantasyonla her çağrının girdisini, çıktısını, gecikmesini ve maliyetini kaydediyor; kaydedilen örneklerden veri seti oluşturup LLM-as-a-judge değerlendirmeleri ile deneyler çalıştırmayı ve prompt sürümlerini karşılaştırmayı sağlıyor. OpenAI, Anthropic, LangChain, LlamaIndex ve smolagents gibi yığınlarla entegrasyonları var; notebook içinde, Docker ile kendi sunucunda veya barındırılan sürümle çalıştırılabiliyor. Python ve TypeScript istemcileri bulunuyor, 11 binin üzerinde yıldızı var ve arkasında ticari bir şirket duruyor. Lisans alanı standart bir SPDX kimliğine çözülmüyor, kullanım öncesi depodaki lisans dosyasına bakmak gerekiyor.",
+   "usage_tr": "Lyricdrop'un şarkı başına içerik üretim zincirine oturuyor: boşluk seçimi ve şık üretimi adımlarını izleyip hangi adımın ne kadar sürdüğünü ve şarkı başına maliyetin nerede biriktiğini tek yerden görebilirsin. Asıl kazanç eval tarafında; onayladığın 20-30 şarkıyı referans veri seti yapıp yeni bir prompt ya da yeni bir STT sürümünü bu set üzerinde otomatik puanlatırsan, tarayıcı playtest gate'inin bir kısmı ölçüme dönüşür ve dışarı devretmek istediğin manuel işin kapsamı daralır. Docker ile ofis Mac'inde ya da DigitalOcean'da kendi sunucunda çalışıyor, veriler dışarı çıkmıyor. Maliyet uyarısı: izleme bedava ama LLM-as-a-judge değerlendirmesi ayrı model çağrısı demek, yani Max aboneliğinin dışında bir API kalemi doğar; yargıç olarak Mac'te yerel bir model denemek ilk adım olabilir. İkinci uyarı: bu tek dosyalık bir kütüphane değil, ayakta tutulacak bir servis; küçük başlayıp yalnızca içerik üretim zincirini enstrümante etmek mantıklı.",
+   "matched_project": "Lyricdrop",
+   "relevance": 7,
+   "investment_note": null
+  },
+  {
+   "full_name": "Imbad0202/academic-research-skills-codex",
+   "inputs_hash": "0f561c1df1b8e71ba6240b942e20bf0c",
+   "description_tr": "ARS-Codex, akademik araştırma iş akışlarını OpenAI Codex ortamında çalıştırmak için paketlenmiş bir skill suite'i. İçinde derin literatür taraması, makale yazımı, hakem değerlendirmesi, deney ajanı ve uçtan uca akademik pipeline modülleri var; hepsi tek bir skill altında kendi agent tanımları, hook'ları ve script'leriyle dağıtılıyor. Claude Code için hazırlanmış özgün ARS dağıtımının Codex'e uyarlanmış kardeşi ve sürüm numarası üst kaynakla birlikte ilerliyor. CC BY-NC 4.0 lisanslı, yani ticari kullanım kapsam dışı; Nisan 2026'da açılmış ve 11 binin üzerinde yıldıza ulaşmış. Hedef kitlesi insan denetimli akademik araştırma yürüten kullanıcılar.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; makale üretimi ve hakem süreci senin yaptığın iş değil, üstelik paket Codex'e göre yazılmış, sen Claude Code kullanıyorsun. En yakın bağlam neurotech ve giyilebilir cihaz tezin için literatür taraması olabilir; kaynak tarayıp özet çıkaran modüller orada işe yarayabilir. Aynı ekibin Claude Code için olan özgün dağıtımının adresi depoda veriliyor, denemek istersen doğru başlangıç noktası orası. Lisans ticari olmayan kullanımla sınırlı, dolayısıyla Arslan Holding tarafında bir due diligence akışına taşınamaz. Asistanına devredilecek araştırma işleri için de fazla ağır bir yapı; orada daha sade bir araştırma ajanı yeterli olur.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "elder-plinius/G0DM0D3",
+   "inputs_hash": "c32aa3a45cb7868621b38f4b47fc81b7",
+   "description_tr": "G0DM0D3, birden çok modeli aynı anda çalıştırabilen, red teaming ve model davranışı araştırması için tasarlanmış açık kaynak bir sohbet arayüzü. OpenRouter ve Venice üzerinden onlarca modele, ayrıca Ollama, LM Studio, llama.cpp veya vLLM ile yerel modellere bağlanıyor; aynı isteği farklı prompt-model kombinasyonlarıyla paralel çalıştırıp sonuçları bileşik bir skorla karşılaştıran modları var. Girdiyi kasıtlı olarak bozup modelin sınırlarını zorlayan bir perturbation motoru ve bağlama göre örnekleme parametrelerini ayarlayan bir modül içeriyor. Çekirdek arayüz tek bir index.html dosyası; sohbet geçmişi tarayıcıda tutuluyor ve telemetri kapatılabiliyor. AGPL-3.0 lisanslı, Mart 2026'da açılmış ve 11 binin üzerinde yıldıza ulaşmış.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; projelerinin hiçbiri model kısıtlarını aşmayı ya da red teaming yapmayı gerektirmiyor. En yakın bağlam, aynı istemi birden çok modele paralel gönderip çıktıları karşılaştıran modunun Lyricdrop içerik prompt'larında model seçimi için kullanılması olabilir; aynı karşılaştırmayı çok daha sade bir script'le de yaparsın. Yerel model desteği tercihinle uyumlu, yine de arayüzün ana amacı ve AGPL lisansı kendi uygulamana gömmeyi zorlaştırır. Yayınlamayı planladığın ürünlerin yanında durmasını istemeyeceğin bir konumlandırması var; merak için bakılır, akışa alınmaz.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "data-privacy-stack/presidio",
+   "inputs_hash": "94ecf98b4772490cce584500dd282225",
+   "description_tr": "Presidio, metin, görüntü ve yapılandırılmış veri içindeki kişisel verileri (PII) tespit edip maskeleyen, anonimleştiren açık kaynak bir çerçeve. Tanıma tarafında NER modelleriyle (spaCy, transformers) desen ve kural tabanlı eşleştirmeyi birlikte kullanıyor; depo konuları arasında guardrail, de-identification ve görüntü redaksiyonu da sayılıyor. Python ile yazılmış, MIT lisanslı ve 10 binin üzerinde yıldızı var; kendi sunucunda çalıştırılabiliyor ve pipeline'ları özelleştirilebiliyor. Bu pakette deponun README'si boş geldiği için sürüm durumu, kurulum adımları ve desteklenen varlık türlerinin tam listesi hakkında karar vermeye yetecek açık metin yok. Ayrıntılar için projenin dokümantasyon sitesine bakmak gerekiyor.",
+   "usage_tr": "Kişisel bilgi tabanı (sesli not) projende gerçek bir yeri var: transkripti bir modele sınıflandırtmadan önce isim, telefon ve adres gibi alanları maskeleyip yalnızca içerik kısmını göndererek dışarı çıkan veriyi daraltabilirsin. Aynı katman, Beeper üzerinden topladığın mesajları skorlayan pipeline'da da işe yarar; orada veri doğrudan üçüncü kişilerin mesajları olduğu için maskeleme, erişim kapsamlarını izole tutma ilkenin teknik karşılığı olur. Python kütüphanesi olarak Mac'te yerel çalışıyor, API maliyeti getirmiyor ve n8n akışlarının arasına küçük bir servis olarak konabiliyor. Asistanın kullandığı CRM tarafından dışa veri aktarırken de aynı mantıkla bir filtre yazılabilir. Uyarı: Türkçe metinde varlık tanıma kalitesi İngilizceye göre düşük olabilir; kendi örnek cümlelerinle ölçmeden akışa almamak gerekir.",
+   "matched_project": "Kişisel bilgi tabanı",
+   "relevance": 6,
+   "investment_note": null
+  },
+  {
+   "full_name": "doccano/doccano",
+   "inputs_hash": "ebc6335725095827176c675d341abbf2",
+   "description_tr": "doccano, metin verisi etiketlemek için kullanılan açık kaynak bir anotasyon aracı. Metin sınıflandırma, dizi etiketleme (NER) ve sequence-to-sequence görevlerini destekliyor; proje oluşturup veri yükleyerek birden çok kişinin aynı set üzerinde ortak çalışmasına izin veriyor. Python tarafı ve Nuxt ile yazılmış arayüzüyle pip, Docker veya Docker Compose üzerinden kuruluyor; varsayılan olarak SQLite, isteğe bağlı olarak PostgreSQL kullanıyor ve RESTful bir API sunuyor. Çok dilli arayüz, mobil destek ve karanlık tema gibi kullanım kolaylıkları var. MIT lisanslı, 2018'den beri geliştirilen ve 10 binin üzerinde yıldızı olan yerleşik bir proje.",
+   "usage_tr": "Lyricdrop'ta dışarı devretmek istediğin onay işinin metin kısmı için kullanabilirsin: bir şarkının boşlukları ve her boşluğun dört şıkkı sınıflandırma görevi olarak yüklenip \"şık mantıklı mı, çeldirici fazla kolay mı\" sorusu bir freelancer'a verilebilir. Kendi sunucunda, DigitalOcean üzerinde Docker ile çalışıyor; hesaplar ve veriler sende kalıyor, REST API'si sayesinde sonuçları Supabase'e geri yazan küçük bir n8n akışı yazılabilir. Proje açma ve sonuç toplama tarafı asistanına devredilebilir, sana yalnızca uç vakaları gözden geçirmek kalır. Sınırı net: ses ve söz senkronunu tarayıcıda oynatarak test etme adımı doccano ile yapılamaz, o gate yerinde kalır. Kurulum ve kullanıcı yönetimi bir akşamlık iş ama iki üç kişilik bir etiketleme ekibi için ağır gelebilir; önce tek bir şarkı setiyle denemek mantıklı.",
+   "matched_project": "Lyricdrop",
+   "relevance": 5,
+   "investment_note": null
+  },
+  {
+   "full_name": "LouisShark/chatgpt_system_prompt",
+   "inputs_hash": "1c0093f9916dc719c65bd683d91a88ee",
+   "description_tr": "Bu depo, ChatGPT ve custom GPT'lerden derlenmiş sistem prompt'larının bir koleksiyonu. Yüzlerce GPT'nin talimat metni, bu metinlerin ve bilgi dosyalarının nasıl elde edildiğini anlatan bir rehber ve prompt injection ile sızdırma tekniklerini toplayan bölümler içeriyor; ayrıca kendi GPT talimatını korumaya dönük bir güvenlik rehberi var. İçerik markdown dosyaları halinde tutuluyor ve otomatik üretilen bir içindekiler tablosuyla taranıyor. MIT lisanslı, 2023'te açılmış ve 10 binin üzerinde yıldıza ulaşmış; çalıştırılabilir kod değil, bir referans arşivi. Değeri, gerçek ürünlerde kullanılan talimat metinlerinin nasıl yazıldığını görmekte.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; koleksiyon ChatGPT custom GPT'lerine odaklı, senin akışın ise kod içinden çağrılan prompt'lar üzerine kurulu. En yakın bağlam, yayınlamayı planladığın uygulamalarda sistem talimatının sızdırılmaya karşı nasıl korunacağı olabilir; depodaki güvenlik bölümü bu konuda kısa bir kontrol listesi veriyor. İkinci bir okuma değeri, benzer ürünlerin talimatlarının ne kadar kısa ve somut yazıldığını görmek. Okuması ücretsiz ve yerel, ama akışına girecek bir bileşen değil.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "chiphuyen/machine-learning-systems-design",
+   "inputs_hash": "b0a8e1e4ba6d36401c11687a6d45664c",
+   "description_tr": "Bu depo, makine öğrenmesi sistemlerinin tasarımını dört adımda (proje kurulumu, veri pipeline'ı, modelleme, servis etme) anlatan 2019 tarihli bir kitapçıktan ve buna eşlik eden 27 açık uçlu tasarım sorusundan oluşuyor. Sorular ML mülakatlarına hazırlık için derlenmiş; topluluk cevapları ayrı bir klasörde toplanıyor. Yazarı, konuyu çok daha kapsamlı ele alan kitabının 2022'de yayımlandığını ve bu metnin ilk denemesi olduğunu depoda açıkça belirtiyor. İçerik HTML olarak üretiliyor, çalıştırılabilir kod yok ve depoda lisans bilgisi bulunmuyor. 10 binin üzerinde yıldızı var ama güncellenen bir kaynak değil.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; ne bir ML sistemi tasarlıyorsun ne de mülakat tarafında bir ihtiyacın var. En yakın bağlam, Arslan Holding tarafında erken aşama AI şirketlerini değerlendirirken veri ve servis katmanına hangi soruların sorulacağına dair genel bir çerçeve edinmek olabilir. Ancak metin 2019'a ait ve yazarı kendisi güncel olmadığını söylüyor; LLM çağrılarının maliyeti, değerlendirmesi ve gecikmesi gibi bugün belirleyici olan sorular burada yok. Bu haliyle bir akşamlık genel okuma değeri taşıyor, akışına girecek bir araç değil.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  }
+ ]
+}

@@ -1,0 +1,175 @@
+{
+ "repos": [
+  {
+   "full_name": "cube-js/cube",
+   "inputs_hash": "45cabbb4186d23aa3c815cfe041f2c5c",
+   "description_tr": "Cube Core, veri kaynaklarının üstüne oturan açık kaynak bir semantik katman. Metrikler, boyutlar, join'ler ve erişim kuralları bir kez kod olarak tanımlanıyor, sonra SQL, REST ve GraphQL API'leri üzerinden BI araçlarına, uygulamalara veya AI ajanlarına aynı biçimde açılıyor. Snowflake, Databricks, BigQuery, Postgres, Presto gibi SQL kaynaklarıyla çalışıyor ve istek gecikmesini düşürmek için ilişkisel bir önbellek motoru taşıyor. Headless çalışıyor, yani kendi arayüzünü göndermiyor; görselleştirme tarafını kullanan kuruyor. Rust ağırlıklı, ~20.9K yıldız, 2018'den beri geliştirilen olgun bir proje, lisans alanı standart bir SPDX kimliğine oturmuyor. README, CUBEJS_DEV_MODE ile açılan geliştirme modunun kimlik doğrulamayı tamamen devre dışı bıraktığını ve internete açılmaması gerektiğini ayrıca uyarıyor.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam Lyricdrop'un admin panelindeki sayılar ve holding tarafındaki portföy takibi olabilir. Ama her ikisinde de veri tek bir Supabase örneğinde duruyor ve doğrudan sorguyla dönüyor; araya bir semantik katman koymak çözdüğünden fazla bakım yükü getirir. Cube'un çözdüğü problem, aynı metrik tanımının birden çok BI aracı ve ekip arasında tutarlı kalması — senin kurulumunda o çokluk henüz yok. Docker ile ofis Mac'inde yerel çalışır ve API maliyeti getirmez, yani denemesi ucuz; yine de bugün kuracağın bir parça değil. İleride Lyricdrop'un içerik ve oyuncu metriklerini bir ajana sorulabilir hale getirmek istersen bu kategoriye tekrar bakmak mantıklı olur.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": "AI ajanlarının kurumsal veriye tanımlı metrikler üzerinden eriştiği semantik katman kategorisi B2B yazılım tarafında izlemeye değer; Cube bu kategorinin açık kaynak referans noktası ve ticari bir şirket tarafından sürdürülüyor."
+  },
+  {
+   "full_name": "tanweai/pua",
+   "inputs_hash": "32952b8cac588c123003f367a026d60f",
+   "description_tr": "pua, kodlama ajanlarına takılan bir skill paketi; ajanı bir problemi çözmeden pes etmemeye zorlamayı hedefliyor. Üç bileşenden oluşuyor: kurumsal performans planı (PIP) retoriğiyle yazılmış bir sistem metni, yedi maddelik bir hata ayıklama kontrol listesi ve ajanı pasif beklemek yerine inisiyatif almaya iten kurallar. Claude Code, Codex CLI, Cursor, Kiro, OpenCode, Copilot ve benzeri bir düzine istemci için taşınabilir paketler sunuyor. 2026 Mart'ta açılmış ve ~19.7K yıldıza ulaşmış; depo meta verisinde lisans alanı boş, README MIT rozeti taşıyor. README'nin kendisi tüm modellerin uyumluluk testinden geçmediğini ve verimlilik artışının bu değerlendirmeyle kanıtlanmadığını yazıyor.",
+   "usage_tr": "Lyricdrop v2'yi ofis Mac'inde Superpowers ile yazarken ajanın aynı yanlış çözümü döndürüp durduğu oturumlar için denenebilecek bir skill; kurulumu skill klasörüne bir paket kopyalamaktan ibaret ve geri alması da o kadar kolay. Claude Code içinde çalıştığı için Max aboneliğinle uyumlu, ayrı bir API maliyeti getirmiyor. Asıl değeri retorikte değil, ajanı belirli bir hata ayıklama kontrol listesini sonuna kadar yürütmeye zorlamasında; senin kalite kapısı arayışına yakın duran taraf bu. Uyarı: deponun kendisi verimlilik iddiasının ölçülmediğini söylüyor, dolayısıyla kazanç varsayımsal; üstelik dili senin sakin çalışma tonunla örtüşmüyor. Denersen ölçülebilir tek yol aynı hatayı skill açık ve kapalıyken iki oturumda karşılaştırmak olur. Asistanına devredilecek bir şey değil, tamamen kendi terminalinde kalan bir ayar.",
+   "matched_project": "Lyricdrop",
+   "relevance": 3,
+   "investment_note": null
+  },
+  {
+   "full_name": "Avaiga/taipy",
+   "inputs_hash": "60de12a7b80d990ea651532362d108fb",
+   "description_tr": "Taipy, Python ile yazılmış veri ve AI uygulamalarını web arayüzüne çeviren açık kaynak bir framework. İki ana parçası var: arayüz üretimi ve senaryo/pipeline orkestrasyonu — veri entegrasyonu, job scheduler, what-if senaryo yönetimi, sürüm yönetimi ve dağıtım betikleri. Hedef kitlesi veri bilimciler ve ML mühendisleri; JavaScript yazmadan üretime yakın uygulama çıkarmayı amaçlıyor. Kimlik doğrulama, rol yönetimi ve cron işleri gibi operasyonel parçalar da kütüphanenin içinde geliyor. Apache-2.0, ~19.4K yıldız, 2022'den beri geliştiriliyor ve Python 3.9-3.12 destekliyor.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam güneş santrali yatırımındaki üretim ve finansman modellerinin what-if senaryolarını bir arayüze bağlamak olabilir. Ancak o iş henüz model kurma aşamasında ve tek kullanıcılı; Taipy'nin senaryo yönetimi asıl karşılığını birden çok kişinin aynı modeli çevirdiği kurumsal kurulumlarda buluyor. Uygulama tarafındaki yığının Expo, Supabase ve Vercel üzerine oturmuş durumda, araya bir Python web framework'ü eklemek tek seferlik bir analiz için ağır kalır. Yerel çalışır ve API maliyeti getirmez, o yüzden bir gün gerekirse denemesi risksiz. Şimdilik aynı işi bir not defteri ve tablo ile çözmek daha hızlı.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "wasp-lang/wasp",
+   "inputs_hash": "6f5165ca1d79b96605a162eb48835e91",
+   "description_tr": "Wasp, React, Node.js ve Prisma üzerine kurulu, Rails benzeri bir full-stack web framework'ü. Uygulamanın üst seviye tanımını (sayfalar, rotalar, sorgular, kimlik doğrulama, arka plan işleri, e-posta gönderimi) tek bir bildirimsel dosyada topluyor, kalan kodu normal React ve Node olarak yazıyorsun. Üretilen kod ortada duruyor ve istediğin yere dağıtılabiliyor, yani sağlayıcı kilidi yok. Projenin öne çıkardığı iddialardan biri, bu üst seviye tanımın AI ajanlarına net sınırlar ve daha az boilerplate vermesi. MIT lisanslı, TypeScript ile yazılmış, ~18.7K yıldız, 2020'den beri geliştiriliyor.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam yayınlamayı planladığın çok kullanıcılı to-do uygulamasının ve app stüdyosu fikrinin web tarafı olabilir. Fakat Wasp, Prisma ve kendi Node sunucusuyla gelerek Supabase merkezli kurulumunun yanına değil yerine geçer; auth ve veritabanını ikinci bir yerde yönetmek sadeleşme değil, dallanma olur. Senin tekrar eden yığının Expo + Supabase + Vercel ve yeni projelerde kazanç bu tekrardan geliyor. Framework tamamen yerel çalışır ve ek API maliyeti getirmez, dolayısıyla engel maliyet değil, mevcut kurulumla çakışması. Sıfırdan bir web SaaS'ı deneme kararı verirsen o zaman bakılacak bir aday.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "alyssaxuu/screenity",
+   "inputs_hash": "8ed9a508b9e89e637d0ea26e81027e39",
+   "description_tr": "Screenity, Chrome için açık kaynak bir ekran kaydı ve anotasyon eklentisi. Sekme, seçili alan, masaüstü, uygulama veya kamera kaydı alıyor; mikrofon ve sistem sesi, ekran üstüne çizim, ok, metin, zoom, tıklama vurgusu ve hassas alanları bulanıklaştırma gibi işlevleri var. Kayıtlar mp4, gif ve webm olarak dışa aktarılabiliyor ya da Google Drive'a kaydedilebiliyor; süre sınırı ve zorunlu hesap açma yok. Self-host edildiğinde tamamen yerel modda çalışıyor, hiçbir istek dışarı gitmiyor. GPL-3.0, ~18.7K yıldız, 2020'den beri tek geliştirici tarafından sürdürülüyor; ayrıca ücretli bir Pro sürümü mevcut.",
+   "usage_tr": "Lyricdrop v2'de şu an tarayıcıdan kendin yürüttüğün playtest gate'ini dışarıya vermek istiyorsun; bu adımda testçiden yazılı rapor yerine ekran kaydı istemek hem daha az yanlış anlaşılma hem daha çok kanıt demek. Screenity ücretsiz, hesap istemiyor ve kayıt süresini sınırlamıyor, yani serbest çalışan bir testçiye \"şu şarkıyı sonuna kadar oyna ve kaydı gönder\" demek için yeterince basit bir araç. Gelen kayıtları aynı pakette duran claude-video ile izletip highlight'ın sesten kaydığı anları zaman damgasıyla çıkarabilirsin, böylece playtest raporu büyük ölçüde otomatikleşir. Kendi uygulamana gömülecek bir bileşen değil; GPL-3.0 zaten buna uygun değil, yanında duran bir araç olarak düşün. Uyarı: kapsamı dar — kayıt topluyor, testçi bulma, görev dağıtma ve sonuç takibi tarafını çözmüyor, o kısım hâlâ senin akışında kalır.",
+   "matched_project": "Lyricdrop",
+   "relevance": 3,
+   "investment_note": null
+  },
+  {
+   "full_name": "confident-ai/deepeval",
+   "inputs_hash": "c1a25ceec5af8db82260bcc379971acc",
+   "description_tr": "DeepEval, LLM uygulamalarını test etmek için yazılmış açık kaynak bir değerlendirme framework'ü; kullanımı pytest'e benzetilmiş, testler kod içinde tanımlanıyor. G-Eval, görev tamamlama, cevap alaka düzeyi ve halüsinasyon gibi metriklerle hem uçtan uca çıktıları hem tek tek ajan adımlarını hem de tam ajan yörüngelerini ölçebiliyor. Metrikler LLM-as-a-judge ve NLP modelleriyle çalışıyor, bir kısmı yerel makinede koşuyor. LangChain ve OpenAI gibi yaygın yığınlarla entegrasyonları var. Python, Apache-2.0, ~18.4K yıldız, 2023'ten beri aktif; arkasında ticari bir bulut ürünü var ama çekirdek kütüphane bağımsız kullanılabiliyor.",
+   "usage_tr": "Lyricdrop'ta şarkı başına üretilen boşluk listesi ve dört şıkkın kalitesi ürünün tamamını belirliyor, ama bugün bu kalite 20-30 şarkılık panelde gözle onaylanıyor. DeepEval ile o gözle bakışın bir kısmını koşulabilir teste çevirebilirsin: \"şıklardan tam biri doğru\", \"çeldiriciler aynı sözcük türünde\", \"boşluk sayısı seçilen zorluk aralığında\" gibi kuralları metrik olarak yazıp her prompt değişikliğinde regresyon çalıştırırsın. Bu tam da istediğin ikinci review açısına denk düşüyor: geliştirici doğruluğu değil, eğitim mantığı tarafı. Ofisteki Mac'te yerel çalışır ve mevcut test panelinin yanına Python servisi olarak girer; ancak LLM-as-a-judge metrikleri model çağrısı demek, yerel model seçmezsen Max aboneliğinin dışında ayrı bir API maliyeti doğar. Kural tabanlı ucuz metriklerle başlayıp yargıç modelini yalnızca gözle bakmanın pahalı olduğu yerde açmak makul bir sıra. Uyarı: yargıç metriklerinin kendi hata payı var, elindeki onaylı şarkılarla önce kalibre et.",
+   "matched_project": "Lyricdrop",
+   "relevance": 6,
+   "investment_note": null
+  },
+  {
+   "full_name": "jlcodes99/cockpit-tools",
+   "inputs_hash": "725e2a52f7974c4d65a393179bb4c341",
+   "description_tr": "Cockpit Tools, birden çok AI IDE hesabını tek yerden yöneten bir masaüstü aracı. Antigravity, Codex, GitHub Copilot, Windsurf, Kiro, Cursor, Grok CLI, CodeBuddy, Qoder, Trae ve Zed gibi istemciler için tek tıkla hesap değiştirme, kalan kota izleme, kotayı erken sıfırlamayı hedefleyen zamanlanmış uyandırma görevleri ve aynı IDE'nin farklı hesaplarla birden çok örneğini paralel çalıştırma sunuyor. Rust ile yazılmış, macOS, Windows ve Linux destekliyor, arayüzü 18 dilde. 2026 Ocak'ta açılmış ve ~18.2K yıldıza ulaşmış; depo meta verisinde lisans alanı boş. README'nin üst kısmı API satan aracı siteler ve parmak izi tarayıcısı gibi sponsor bağlantıları içeriyor.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam ofis Mac'inde birden çok kodlama ajanını paralel çalıştırma isteğin olabilir. Ama aracın desteklediği istemciler arasında ana aracın Claude Code yok ve sen tek bir abonelikle çalışıyorsun, yani çözdüğü asıl problem — çok sayıda hesap arasında kota gezdirmek — senin kurulumunda karşılığı olmayan bir problem. Ayrıca hesap çoğaltma ve kota uyandırma pratikleri sağlayıcıların kullanım koşulları açısından gri alan; hesapların ve erişimin temiz kalması senin için açıkça bir ilke. Paralel ajan ve telefondan takip ihtiyacın için aynı paketteki Paseo doğrudan doğru adres. Bu depoyu izleme listesine almak için bir neden görünmüyor.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "andrewyng/openworker",
+   "inputs_hash": "a1d071eece7ef20ade443353c35a4968",
+   "description_tr": "OpenWorker, masaüstünde çalışan açık kaynak bir AI iş arkadaşı; sohbet yerine bitmiş çıktı üretmeyi hedefliyor — taranmış kod ve hazır düzeltmeler, biçimlendirilmiş doküman, ayıklanmış gelen kutusu, zamanlanmış raporlar. Native bir arayüz ile yerel bir Python ajan sunucusundan oluşuyor; model sağlayıcısı kullanıcıya bırakılmış, OpenAI, Anthropic, Google anahtarlarıyla ya da Ollama ile tamamen yerel çalışabiliyor. 25'in üzerinde konnektörle dosyalara, terminale ve bağlı uygulamalara erişiyor; mesaj gönderme, takvim değiştirme, komut çalıştırma gibi sonuç doğuran her adımda onay istiyor ve tüm eylemler loglanıyor. İlk uzmanlık paketleri güvenlik tarafında: kod ve bulut yapılandırması taraması, olay triyajı. MIT lisanslı, 2026 Temmuz'da açılmış ve ~18.1K yıldıza ulaşmış; macOS Apple Silicon derlemesi imzalı ve proje açık beta olduğunu belirtiyor.",
+   "usage_tr": "Profildeki en büyük isteğin — projelerini bilen, ayak işlerini yapan bir orkestratör ajan — bu aracın tarif ettiği şeye birebir oturuyor. Asistan tarafındaki tekrar eden işleri, yani HubSpot ve Trello üzerinden toplantı hazırlığı, haftalık rapor derleme ve sabah brief'i gibi akışları, zamanlanmış otomasyon olarak buraya taşıyabilirsin. Onay kapısı ve tam eylem kaydı, \"hesaplar ve veriler benim kontrolümde kalsın, erişim kapsamları izole olsun\" ilkenle aynı yöne bakıyor; evdeki 7/24 açık Mac mini bunun için doğal bir ev sahibi. Uyarı: kendi anahtarınla çalışıyor, yani Claude Code'daki abonelik kapsamının dışında ayrı bir model maliyeti demek; Ollama ile yerel modele düşersen maliyet biter ama uzun araç zincirlerinde kalite gözle görülür şekilde düşer. Beta olduğunu ve konnektörlerin geniş erişim istediğini hesaba kat: önce rapor derleme gibi düşük riskli bir akışla dene, gelen kutusu ve mesaj gönderme yetkisini ancak kayıtları okuduktan sonra aç.",
+   "matched_project": "Asistan operasyon araçları",
+   "relevance": 7,
+   "investment_note": null
+  },
+  {
+   "full_name": "getpaseo/paseo",
+   "inputs_hash": "56f544292d071a64f02627e2cc926cbe",
+   "description_tr": "Paseo, birden çok kodlama ajanını tek arayüzden yöneten açık kaynak bir orkestrasyon katmanı. Claude Code, Codex, Copilot, OpenCode ve Pi ajanlarını aynı ekranda paralel çalıştırıyor; ajanlar kendi makinende, kendi geliştirme ortamın, ayarların ve skill'lerinle koşuyor. Yerelde bir daemon çalışıyor, masaüstü, iOS, Android, web ve CLI istemcileri ona bağlanıyor; cihaz eşleştirme uçtan uca şifreli röle üzerinden ya da doğrudan TCP, Tailscale veya başka bir VPN ile yapılabiliyor. Sesli komut modu, TypeScript eklenti sistemi ve Docker ile self-host seçeneği var; telemetri, takip ve zorunlu giriş olmadığı belirtiliyor. TypeScript, ~18.1K yıldız, 2025 Ekim'de açılmış; lisans alanı standart bir SPDX kimliğine oturmuyor.",
+   "usage_tr": "Bu, telefondan ofis Mac'ine bağlanıp ajan çalıştırma kurulumunun yerine geçebilecek bir katman; kopan bağlantılar senin tekrar eden acı noktan ve Paseo'nun daemon'una Tailscale üzerinden doğrudan bağlanabiliyorsun, araya bir bulut servisi girmiyor. Lyricdrop v2'de admin panel, STT denemeleri ve mobil tarafı ayrı ajanlara paralel verip ilerlemeyi yoldan takip edebilirsin — senin \"orkestra şefi\" çalışma biçimine bunu yapan ekranın kendisi. OpenCode için Expo ve EAS ile kendi iOS istemcini yazma planını da büyük ölçüde gereksizleştiriyor: hem Claude Code hem OpenCode zaten aynı arayüzde. Tamamen yerel ve self-hosted çalıştığı için ek API maliyeti getirmiyor, mevcut abonelikle kullandığın CLI'ları olduğu gibi çağırıyor. Uyarı: eklentiler daemon makinesine erişimle çalışıyor, yalnızca güvendiğin kodu kur; ayrıca lisans alanı net bir SPDX kimliği vermiyor, fork'layıp kendine uyarlamayı düşünüyorsan önce lisans metnini oku.",
+   "matched_project": "Lyricdrop",
+   "relevance": 8,
+   "investment_note": null
+  },
+  {
+   "full_name": "getmaxun/maxun",
+   "inputs_hash": "6313d6b7cb35965b309cd0f7d651c914",
+   "description_tr": "Maxun, kod yazmadan web sitelerini yapılandırılmış veri kaynağına çeviren açık kaynak bir platform. Tarayıcıda tıklayarak bir \"robot\" kaydediyorsun; robot aynı adımları tekrarlayarak listeleri, tabloları ve ekran görüntülerini çekiyor, sonucu API olarak ya da zamanlanmış iş olarak sunuyor. Altında Playwright çalışıyor; sayfalama, dinamik içerik, proxy kullanımı ve değişiklik izleme destekleniyor. TypeScript ile yazılmış, Docker ile self-host edilebiliyor, barındırılan ticari bir sürümü de var. AGPL-3.0 lisanslı, ~17.5K yıldız, 2023'ten beri geliştiriliyor.",
+   "usage_tr": "Asistanının yaptığı tekrar eden araştırma işleri — tedarikçi ve fiyat karşılaştırma, eğitmen listeleri, etkinlik takvimleri — Maxun'da bir kez kaydedilip haftalık çalışan robotlara dönüşebilir; no-code olması bu işi gerçekten devredilebilir kılan şey. Ev Mac mini'sinde veya DigitalOcean'da Docker ile self-host edip çıktıyı n8n üzerinden Trello ya da HubSpot'a akıtabilirsin, böylece veri ve hesaplar senin tarafında kalır. Arslan Holding tarafında izlediğin kaynaklardan basit bir deal-flow listesi biriktirmek için de aynı kurulum iş görür. Ücretli bir scraping servisi yerine kendi altyapında çalışması, Apify'ı bırakma kararınla aynı yöne gidiyor. İki uyarı: AGPL-3.0 kendi uygulamanın içine gömmek için uygun değil, yanında duran ayrı bir servis olarak kullan; ve hedef sitelerin kullanım koşulları her zaman veri çekmeye izin vermiyor, Lyricdrop'un söz kaynağı gibi hassas yerlerde bu yolu tercih etme.",
+   "matched_project": "Asistan operasyon araçları",
+   "relevance": 5,
+   "investment_note": null
+  },
+  {
+   "full_name": "bradautomates/claude-video",
+   "inputs_hash": "13554b6ad7b92ba7df79a1f8b7cf3158",
+   "description_tr": "claude-video, Claude Code'a ve Agent Skills destekleyen diğer istemcilere video izleme yeteneği ekleyen bir skill. /watch komutuna verilen bağlantıyı veya yerel dosyayı yt-dlp ile alıyor, ffmpeg ile sahne değişimine duyarlı kareler çıkarıyor, zaman damgalı bir transkript üretiyor ve ikisini birden modele veriyor. Transkript önce kaynağın kendi altyazılarından geliyor; altyazı yoksa ses 16 kHz mono mp3'e indirgenip Whisper API'sine gönderiliyor. Kare bütçesi video süresine göre ayarlanıyor ve birbirine çok benzeyen kareler eleniyor, böylece bağlam maliyeti sınırlanıyor; belirli bir aralık verildiğinde saniye başına daha yoğun örnekleme yapılıyor. Python, MIT, 2026 Nisan'da açılmış, ~17.5K yıldız; macOS'ta yt-dlp ve ffmpeg ilk çalıştırmada brew ile kuruluyor.",
+   "usage_tr": "Lyricdrop'ta zaten açık kaynak bir YouTube indiricisi ve yerel ses hattı kuruyorsun; bu skill yt-dlp ve ffmpeg zincirini Claude Code'un içine hazır getirip \"şu videonun 0:45-1:00 arasını incele\" demeyi tek komuta indiriyor. Somut kullanım, oyun ekranındaki oynatıcıda highlight'ın sesten kaydığı anları kare ve transkript üzerinden çıkarmak; yukarıdaki Screenity ile toplanan playtest kayıtlarıyla birleşince rapor yazma işi büyük ölçüde ajana geçer. Hobiler tarafında da gerçek bir karşılığı var: Türkçe YouTube kaynaklarından psikoloji ve felsefe içeriklerini not dosyasına indirgemek, stand-up analizinde sahne ile transkripti eşleştirmek aynı komutla oluyor. Altyazısı olan videolarda maliyet sıfır, altyazı yoksa Whisper API'si devreye giriyor ve abonelik dışında küçük bir ücret doğuyor. Uyarı: bu bir anlama aracı, hizalama aracı değil — kelime düzeyinde zaman damgası üretmiyor, Lyricdrop'un asıl senkron problemini çözmez; onu ayrı bir forced alignment adımıyla çözmen gerekir.",
+   "matched_project": "Lyricdrop",
+   "relevance": 7,
+   "investment_note": null
+  },
+  {
+   "full_name": "AgriciDaniel/claude-seo",
+   "inputs_hash": "57ea0ba9556b1f787610a8d75e7f7a12",
+   "description_tr": "claude-seo, Claude Code için yazılmış bir SEO analiz eklentisi. 25 alt-skill ve 18 uzman ajanı paralel çalıştırarak teknik SEO, içerik kalitesi, Schema.org işaretlemesi, AI aramaya yönelik optimizasyon, yerel SEO, e-ticaret ve çok dilli site başlıklarını tarıyor. Her denetim önceliklendirilmiş bir aksiyon planı çıkarıyor ve önerileri \"bunun yanlış olduğunu nasıl anlarız\" kontrolüyle birlikte veriyor. PDF ve Excel raporlama ile Google API entegrasyonları içeriyor; DataForSEO, Firecrawl ve Banana uzantıları isteğe bağlı ve ücretli servislere bağlanıyor. MIT lisanslı, ~17.4K yıldız, 2026 Şubat'ta açılmış, Codex için ayrı bir portu var.",
+   "usage_tr": "Lyricdrop'un lansmanı için ayrı bir pazarlama hattı kuruyorsun; uygulamanın tanıtım sitesi ve şarkı sayfaları organik aramadan trafik alacaksa ilk denetimi bu skill ile Claude Code içinden çalıştırabilirsin. Arslan Holding'in AI araçlarıyla üretilen web sitesi için de aynısı geçerli: şema işaretlemesi ve sayfa yapısı denetimi, ajans harcamadan kapatılabilecek türden bir eksik. Claude Code içinde çalıştığı için mevcut aboneliğinle uyumlu ve ek servis açmadan başlıyor; çıktısı rapor dosyası olduğu için takip listesi haline getirip asistanına devredebilirsin. Uyarı: bu SEO, ASO değil — App Store tarafındaki anahtar kelime ve ekran görüntüsü optimizasyonunu kapsamıyor, oysa Lyricdrop'un asıl kullanıcı kaynağı orası olabilir. Ücretli uzantıları açmadan başla; temel denetim onlarsız çalışıyor ve önce hangi sorunların gerçek olduğunu görmen gerekiyor.",
+   "matched_project": "Lyricdrop",
+   "relevance": 5,
+   "investment_note": null
+  },
+  {
+   "full_name": "apache/apisix",
+   "inputs_hash": "ceca0ce2cfe985825045e5568a34bdc8",
+   "description_tr": "Apache APISIX, NGINX ve etcd üzerine kurulu, çalışırken yeniden yapılandırılabilen bir API gateway. Yük dengeleme, dinamik upstream, kanarya dağıtım, devre kesici, kimlik doğrulama ve gözlemlenebilirlik gibi trafik yönetimi işlevlerini eklenti olarak sunuyor; Kubernetes ingress controller olarak da kullanılabiliyor. Son sürümlerde AI gateway tarafı öne çıkmış: farklı LLM sağlayıcılarını tek arayüzden proxy'lemek, sağlayıcılar arası yeniden deneme ve yedekleme, token bazlı hız sınırlama ve stdio tabanlı MCP sunucularını HTTP SSE'ye çeviren bir köprü eklentisi. Lua ve LuaJIT ile yazılmış, Apache-2.0 lisanslı, ~17.2K yıldız, Apache Software Foundation çatısında sürdürülüyor. Docker ile tek komutluk bir kurulum betiği var.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam Lyricdrop ileride model çağrılarını istemciden sunucuya taşırsa token bazlı maliyet sınırlama ihtiyacı olabilir. Bugünkü kurguda içerik üretimi ofis Mac'inde toplu olarak koşuyor ve oyuncu tarafı yalnızca Supabase ile DigitalOcean'a bakıyor, yani arada sınırlanacak bir LLM trafiği yok. APISIX, çok servisli mikroservis mimarilerinin problemini çözüyor ve etcd kümesiyle birlikte kendi bakım yükünü getiriyor. Yerel olarak Docker'da çalışır ve lisansı serbesttir, ama bu ölçekte kurulması kazanç değil yeni bir bakım kalemi olur. Bu kategoriye ancak birden çok uygulamaya aynı anda model servisi sunmaya başlarsan dönmek anlamlı.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "kubesphere/kubesphere",
+   "inputs_hash": "98cf95f5e1052bbfe0f8f5bcf777b65b",
+   "description_tr": "KubeSphere, çekirdeği Kubernetes olan çok kiracılı bir konteyner yönetim platformu. Küme kurulumu, çoklu küme yönetimi, CI/CD pipeline'ları, uygulama mağazası, servis mesh, gözlemlenebilirlik ve eBPF tabanlı ağ izleme gibi parçaları tek bir web konsolunda topluyor. Eklenti mimarisiyle üçüncü parti uygulamaların ekosisteme girmesine izin veriyor ve çevrimdışı (air-gapped) kuruluma da destek veriyor. Go ile yazılmış, ~17.1K yıldız, 2018'den beri geliştiriliyor ve bulut yerel ekosistemin bilinen projelerinden biri; lisans alanı standart bir SPDX kimliğine oturmuyor. Hedef kullanıcısı, kurumsal Kubernetes işletmek zorunda olan platform ve DevOps ekipleri.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam DigitalOcean üzerinde duran servislerin işletilmesi olabilir, ama orada Kubernetes bile kullanmıyorsun. Bu araç, birden çok ekibin ve kümenin aynı platformu paylaştığı kurumsal kurulumlar için tasarlandı; tek kişilik bir geliştirme akışında kurulum ve bakım maliyeti üretilen değerden büyük olur. Senin tarafında konteyner ihtiyacı doğduğunda Docker Compose veya yönetilen bir servis yeterli kalıyor. Yerel çalışması mümkün ama ofis Mac'inde tek başına bir küme ayağa kaldırmak makine kaynaklarını da boşa harcar. Bu depoyu izlemek için bir neden görünmüyor.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "richards199999/Thinking-Claude",
+   "inputs_hash": "9792839466258cb979554ca14d1640b3",
+   "description_tr": "Thinking-Claude, modeli cevap vermeden önce ayrıntılı bir düşünme sürecinden geçirmeyi amaçlayan bir talimat seti ve buna eşlik eden bir tarayıcı eklentisinden oluşuyordu. Talimat tarafı sürümlenmiş \"düşünme protokolü\" dosyaları, eklenti tarafı ise Claude web arayüzünde düşünme çıktısını katlanabilir, kopyalanabilir bölümlere ayıran bir Chrome eklentisi. TypeScript ve Markdown ağırlıklı, MIT lisanslı, ~17K yıldız, 2024 Kasım'da açılmış. README'nin en üstünde depo sahibi projeyi emekliye ayırdığını yazıyor: modelin kendisi artık akıl yürüttüğü için proje gereksiz hale gelmiş. Yani depo tarihsel bir kayıt olarak duruyor, aktif olarak sürdürülmüyor.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam Claude Code kurulumundaki prompt ve skill katmanı olabilir, ama depo sahibi projeyi bizzat gereksiz ilan edip arşivlemiş. Bugünkü modeller bu protokolün yaptığı işi kendi içinde yapıyor, dolayısıyla eski talimat dosyalarını kopyalamak kazanç getirmez. Eklenti tarafı yalnızca Claude web arayüzünü hedefliyor, senin ağırlıklı kullandığın terminal ve VS Code akışına dokunmuyor. Skill ve plugin arayışın için aynı paketteki Paseo ve claude-video gibi aktif sürdürülen depolar daha iyi adresler. Bu depo yalnızca prompt tasarımının nasıl evrildiğini görmek isteyen için okunacak bir arşiv.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "ahmedkhaleel2004/gitdiagram",
+   "inputs_hash": "15ce3dffae76c383cf6a885d8cb40a09",
+   "description_tr": "GitDiagram, herhangi bir GitHub deposunu etkileşimli bir mimari diyagramına çeviren bir araç. Depo adresindeki \"hub\" yerine \"diagram\" yazıldığında, proje için AI ile üretilmiş bir Mermaid diyagramı ve akan bir açıklama çıkıyor; diyagramdaki bileşene tıklandığında ilgili dosya veya klasöre gidiliyor. Özel depolar bir GitHub token'ı ile destekleniyor, diyagram PNG olarak dışa aktarılabiliyor ya da Mermaid kaynağı kopyalanabiliyor. Next.js, React, TypeScript ve Tailwind ile yazılmış, Vercel'de barındırılıyor; MIT lisanslı, ~16.9K yıldız, 2024 Aralık'ta açılmış. Kendi makinende çalıştırmak için Bun, Cloudflare R2, Upstash Redis ve bir OpenAI ya da OpenRouter anahtarı gerekiyor.",
+   "usage_tr": "Bir depoyu fork'layıp kendi istemcini yazma refleksin var; bir projeye dalmadan önce mimarisini tek ekranda görmek bu kararı hızlandırır ve OpenCode gibi büyük depolarda nereye dokunacağını bulmanın en ucuz yolu olur. Lyricdrop v2 büyüdükçe kendi depona da aynı şekilde bakıp panel, içerik pipeline'ı ve mobil sınırlarının gerçekten ayrı kaldığını gözle doğrulayabilirsin. Çıktının Mermaid kaynağı olarak alınabilmesi işe yarıyor: diyagramı CLAUDE.md yanına koyup ajanlara mimari bağlamı hazır verebilirsin. Barındırılan sürüm ücretsiz ve tarayıcıdan çalışıyor; kendi makinende çalıştırmak istersen R2, Redis ve bir OpenAI anahtarı gerekiyor, yani abonelik dışında maliyet. Uyarı: diyagram modelin yorumu, kanıt değil — büyük depolarda eksik veya yanlış bağlantı çıkabiliyor, mimari kararı buna dayandırma.",
+   "matched_project": "Lyricdrop",
+   "relevance": 4,
+   "investment_note": null
+  },
+  {
+   "full_name": "tradecatlabs/vibe-coding-cn",
+   "inputs_hash": "5bcbc869cec26071bbeb32f8c61295df",
+   "description_tr": "vibe-coding-cn, AI ile eşli programlamayı baştan sona anlatan Çince bir eğitim deposu. Prompt yazımı, skill ve workflow tasarımı, bağlam yönetimi, kalite kapıları ve mühendislik döngüsünü kapatma başlıklarını kavramsal bir çerçeveyle birlikte veriyor. İçinde Codex, Claude Code, Cursor ve Gemini CLI için yapılandırma dosyaları, hazır skill koleksiyonu, çevrimiçi bir prompt tablosu ve kurumsal mimari şablonları da bulunuyor. MIT lisanslı, ~16.3K yıldız, 2025 Kasım'da açılmış ve geniş bir wiki ile birlikte sürdürülüyor. İçeriğin neredeyse tamamı Çince; belgelerin başlıkları dışında çeviri yok.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam kendi Claude Code kurulumundaki CLAUDE.md pratikleri ve kalite kapıları olabilir. Fakat materyalin tamamı Çince, dolayısıyla okuma maliyeti yüksek ve çeviriden geçen bir metodolojide asıl değer olan ayrıntı kayboluyor. Depodaki skill ve yapılandırma dosyaları dil bağımsız çalışsa da, onları anlamadan kopyalamak senin iki açılı review alışkanlığınla çelişir. Aynı konuların İngilizce karşılıkları hem daha hızlı okunur hem de doğrudan kendi kurulumuna uyarlanır. Depoyu olsa olsa bir fikir kaynağı olarak, seçili bölümleri çevirterek kullanabilirsin.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "treeverse/dvc",
+   "inputs_hash": "43467a1e3577b8f1deff849a1c631935",
+   "description_tr": "DVC, veri ve model dosyalarını Git deposunun dışında tutup sürüm bilgisini Git içinde saklayan bir komut satırı aracı ve VS Code eklentisi. Büyük dosyalar S3, GCS veya benzeri bir uzak depoya gidiyor, repoda yalnızca referansları kalıyor; böylece hangi veri sürümüyle hangi sonucun alındığı izlenebiliyor. Hafif pipeline tanımlarıyla yalnızca değişen adımları yeniden çalıştırıyor, deneyleri yerel Git deposunda takip ediyor ve metrikleri, parametreleri, grafikleri yan yana karşılaştırıyor. Sunucu gerektirmiyor, tamamen komut satırından çalışıyor. Python, Apache-2.0, ~15.9K yıldız, 2017'den beri geliştirilen olgun bir proje.",
+   "usage_tr": "Lyricdrop v2'nin ilk hedefi 20-30 şarkıda söz ve ses hizalamasını sıfıra yakın hataya indirmek ve bunun için 2-3 STT sistemini karşılaştıracaksın; DVC tam olarak bu ölçüm defterini tutmak için var. Ses dosyalarını DigitalOcean Spaces gibi S3 uyumlu bir remote'a bağlayıp test setini sürümlersin, her STT sistemi bir pipeline adımı olur ve deney karşılaştırmasıyla hizalama hatasını yan yana okursun. Böylece \"hangisi daha iyiydi\" sorusu hafızaya değil kayda dayanır, prompt veya parametre değiştiğinde eski sonuç kaybolmaz. Ofisteki Mac'te tamamen yerel çalışır, API maliyeti yok ve mevcut Git akışının üstüne oturuyor. Uyarı: getirdiği disiplin bu boyuttaki bir test setinde fazla gelebilir; düz bir metrik tablosu da iş görür. DVC'yi set büyüyüp tekrar üretilebilirlik gerçekten sorun olmaya başladığında devreye almak daha doğru olur.",
+   "matched_project": "Lyricdrop",
+   "relevance": 5,
+   "investment_note": null
+  },
+  {
+   "full_name": "dottxt-ai/outlines",
+   "inputs_hash": "26f73dad49120916b7584c07d5e38814",
+   "description_tr": "Outlines, dil modellerinin çıktısını üretim anında belirli bir yapıya zorlayan bir Python kütüphanesi. Bir tip, Pydantic modeli, JSON şeması, regex ya da dilbilgisi veriyorsun; model yalnızca o yapıya uyan çıktıyı üretebiliyor, dolayısıyla bozuk JSON ayıklama ve yeniden deneme döngüsü ortadan kalkıyor. Aynı kod Transformers, Ollama, vLLM gibi yerel çalıştırıcılarla ve API sağlayıcılarıyla çalışıyor, model değiştirmek kodu değiştirmiyor. Sınıflandırma, alan çıkarma, kategori atama ve fonksiyon çağrısı gibi kullanımlar için örneklerle birlikte geliyor. Apache-2.0, ~15.9K yıldız, 2023'ten beri geliştiriliyor; arkasında .txt adlı bir şirket ve erken erişimde ticari bir API var.",
+   "usage_tr": "Lyricdrop'ta şarkı başına üretilen boşluk listesi ve dört şık katı bir şemaya uymak zorunda; bugün şemayı bozan çıktılar panelde elle yakalanıyor ve yeniden üretiliyor. Outlines ile üretimi bir Pydantic modeline bağlayıp \"tam dört şık\", \"zorluk seviyesine karşılık gelen boşluk sayısı aralığı\" gibi kuralları biçim düzeyinde garanti altına alabilirsin, böylece yeniden deneme maliyeti ve panelde harcadığın kontrol süresi düşer. Yapı garantisi asıl gücünü yerel açık ağırlıklı modellerde gösteriyor; ofisteki Mac'te Ollama ile koşarsan şarkı başına maliyet neredeyse sıfıra iner, ki katalogu dil başına binlerce şarkıya çıkarma planının dayanağı bu. Folio'nun günlük içerik pipeline'ında da aynı kalıp işe yarar: post ve story nesnelerini şemayla üretip doğrudan Supabase'e yazarsın. Uyarı: Outlines yalnızca biçimi garanti eder, içeriği değil — çeldiricilerin gerçekten zorlayıcı olup olmadığını ayrı bir kontrol ölçmeli. Yerel modelde kalırken makinenin bellek sınırının seçebileceğin model boyutunu belirlediğini de hesaba kat.",
+   "matched_project": "Lyricdrop",
+   "relevance": 6,
+   "investment_note": null
+  }
+ ]
+}

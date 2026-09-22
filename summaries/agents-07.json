@@ -1,0 +1,175 @@
+{
+  "repos": [
+    {
+      "full_name": "OtterMind/Chat2DB",
+      "inputs_hash": "cc762c9f71799cc1fe320a8f721d7ba2",
+      "description_tr": "Chat2DB, masaüstü, web, Docker ve CLI olarak çalışan, yerel öncelikli bir veritabanı istemcisi ve SQL çalışma alanıdır. MySQL, PostgreSQL, Oracle, SQL Server, ClickHouse, MongoDB, Redis ve SQLite dahil 40'tan fazla veritabanına JDBC üzerinden bağlanır; yeni JDBC kaynakları kod değişikliği olmadan yalnızca yapılandırmayla eklenebiliyor. SQL düzenleme, tamamlama, biçimlendirme, çalıştırma geçmişi, metadata tarama, DDL/DML yönetimi ve tablo verisini yerinde düzenleme sunar. Doğal dille sorgu üretmek, açıklamak ve iyileştirmek için kullanıcının kendi modelini bağladığı bir AI asistanı, ayrıca dashboard ve grafikler, içe/dışa aktarma ve MCP destekli açık kaynak bir CLI içerir. Java ile yazılmış, ~28K yıldızlı ve olgun bir proje; lisans standart bir SPDX kimliğine oturmuyor (NOASSERTION), bu yüzden kurumsal kullanımda şartları okumak gerekir.",
+      "usage_tr": "Lyricdrop v2'nin şarkı kataloğu, söz ve hizalama tabloları Supabase Postgres'te durduğu için Chat2DB'yi bu veriyi Mac'te yerel bir istemciden inceleme aracı olarak kullanabilirsin. Admin panelinde henüz ekran olmayan sorguları -- 20-30 şarkılık test setinde hangi satırların hizalaması bozuk, hangi şarkı hangi aşamada takılı -- panel geliştirmeyi beklemeden burada çalıştırırsın. Mac'te yerel kurulur ve GUI tercihine uyar; AI asistanı ise kendi model anahtarını istediğinden Max aboneliğinin kapsamı dışında kalır, yani doğal dille SQL üretimi ayrı bir maliyet kalemi olur. Aynı istemciyi Kanarya'nın Supabase tarafında da kullanabilirsin, böylece iki proje için tek bir veri görüntüleme aracı kalır. Uyarı: yazma ve DDL yetkisi olan bir istemciyi asistanına devretme; devredeceksen salt okunur bir veritabanı kullanıcısı aç ve bağlantıyı onunla tanımla.",
+      "matched_project": "Lyricdrop",
+      "relevance": 5,
+      "investment_note": null
+    },
+    {
+      "full_name": "PrefectHQ/fastmcp",
+      "inputs_hash": "e5db2a8e85e77c8b593f24b456db7be7",
+      "description_tr": "FastMCP, Model Context Protocol sunucuları ve istemcileri yazmak için kullanılan bir Python framework'üdür. Sıradan bir Python fonksiyonunu dekore etmek yeterli: şema, doğrulama ve dokümantasyon otomatik üretiliyor; istemci tarafında transport pazarlığı, kimlik doğrulama ve protokol yaşam döngüsü kütüphane tarafından yönetiliyor. Sunucular, istemciler ve etkileşimli uygulamalar olmak üzere üç ayağı var; ayrı bir TypeScript sürümü de yayımlanıyor. FastMCP 1.0 2024'te resmi MCP Python SDK'sına dahil edilmişti; bağımsız proje o günden beri ayrı ve aktif geliştiriliyor. Apache-2.0 lisanslı, ~27,9K yıldızlı; README günlük bir milyon indirme ve tüm dillerdeki MCP sunucularının %70'inin bir FastMCP sürümünü kullandığını belirtiyor (proje kendi beyanı).",
+      "usage_tr": "Tüm projelerini bilen ve aralarında köprü kuran bir orkestratör ajan isteğinin en somut yapı taşı bu: Trello, HubSpot, Supabase ve takvim gibi kaynakları Claude Code'a araç olarak açan küçük MCP sunucularını burada yazarsın. Asistan araçları tarafında en çok işe yarayacağı yer, asistanının Trello listesi ile HubSpot kayıtları arasındaki tekrar eden kontrolleri tek bir araca indirmek olur. Sunucu ofis Mac'inde yerel çalışır, stdio üzerinden Claude Code'a bağlanır ve ayrı bir API maliyeti getirmez; modeli zaten Max aboneliğindeki istemci sağlıyor. Python bilgisi az olan bir araç için giriş bariyeri düşük, bir araç yirmi satır; n8n akışlarının yerini almaz ama onları tetikleyen ince bir katman olabilir. Uyarı: her yeni araç bağlam penceresinden yer yiyor ve her token'ın bir yetkisi oluyor -- araçları dar kapsamlı tut, hesap erişimlerini izole tutma ilkeni MCP token'larında da uygula.",
+      "matched_project": "Asistan araçları",
+      "relevance": 8,
+      "investment_note": null
+    },
+    {
+      "full_name": "trycua/cua",
+      "inputs_hash": "e54d70261e3170e60951ac8e199ae9e9",
+      "description_tr": "Cua, yapay zeka ajanlarına kullanabilecekleri bilgisayarlar veren açık kaynak bir altyapıdır. Cua Driver, macOS, Windows ve Linux'ta yerel uygulamaları ve tarayıcıları CLI, MCP veya tipli SDK'lar üzerinden inceleyip çalıştırmayı sağlıyor; destekleyen platformlarda işlemler arka planda yürüyüp imleci ve odağı almayabiliyor. Lume bileşeni Apple Silicon üzerinde yerel macOS ve Linux sanal makineleri oluşturuyor, Cua Fleets ise bulutta izole masaüstü havuzları sunuyor (ücretli tarafı budur). Paket ayrıca bilgisayar kullanımı kararları için küçük özelleşmiş modeller (CUA-S1) ve ajan değerlendirmesi için görev/benchmark araçları (Cua Bench) içeriyor. MIT lisanslı, ~25,9K yıldız, 2025 başında açılmış ve hızlı gelişen bir proje.",
+      "usage_tr": "Asistan araçları tarafında, hesap açma, form doldurma, tedarikçi panellerinde karşılaştırma gibi tarayıcıya ve masaüstüne bakan tekrar eden işleri bir ajana devretmek için kullanabilirsin. Lume sayesinde bu ajan evdeki 7/24 açık Mac mini üzerinde izole bir sanal makinede çalışır; ana makinedeki Supabase ve DigitalOcean anahtarlarına hiç dokunmaz, bu da erişim kapsamlarını izole tutma ilkenle aynı yöne bakar. Proje kurulumunun uçtan uca otomasyonu isteğinde, API'si olmayan panellerde (hesap açma, ödeme ekranı) elle kalan adımları kapatan parça tam olarak budur. Bulut Fleets tarafı ücretli; yerel VM'ler ise disk ve RAM ister, 24 GB'lık makinede geliştirmeyle aynı anda çalıştırmak sıkıştırır. Uyarı: bilgisayar kullanan ajanlar hâlâ kırılgan; ödeme veya hesap silme gibi geri alınamaz adımlara mutlaka bir onay kapısı koy ve ekran kaydını açık tut.",
+      "matched_project": "Asistan araçları",
+      "relevance": 5,
+      "investment_note": null
+    },
+    {
+      "full_name": "browserbase/stagehand",
+      "inputs_hash": "78d151db5992d7cd9c05a20c5b6fae69",
+      "description_tr": "Stagehand, tarayıcı ajanları yazmak için kullanılan ve Playwright üzerine oturan bir SDK'dır. Üç temel işlem sunuyor: act() bir eylemi doğal dille yaptırıyor, observe() sayfadaki gerçek seçicileri döndürüyor, extract() ise şemayla doğrulanmış veri çıkarıyor. observe() seçici döndürdüğü için kimlik bilgileri modele gönderilmeden form doldurulabiliyor; oturum ve çerezler yerel bir profil dizininde kalıcı tutulabiliyor. TypeScript, Python ve Go istemcileri var; yerel tarayıcıyla veya Browserbase'in bulut tarayıcısıyla çalışıyor ve bir model sağlayıcısı (API anahtarı) gerektiriyor. MIT lisanslı, ~25K yıldız, aktif geliştiriliyor.",
+      "usage_tr": "Lyricdrop v2'de şu an elde duran tarayıcı playtest gate'ini otomatikleştirmek için doğrudan aday: admin panelinde bir şarkıyı açtırıp boşlukları oynatan, highlight ile sesin eş zamanlı gidip gitmediğini ekran kaydıyla toplayan bir akış yazılabilir. TypeScript istemcisi olduğu için mevcut stack'ine (TS, Vercel, admin panel) ayrı bir dil getirmeden girer ve onay akışının regresyon testine dönüşür. Yerel tarayıcıyla Mac'te çalışır, ancak her act() ve extract() bir model çağrısıdır: Max aboneliği bunu kapsamaz, ayrı bir API anahtarı ve şarkı başına maliyet demektir. Maliyeti düşürmek için akışın gövdesini düz Playwright ile yaz, yalnızca arayüz değişince kırılan adımlarda act() kullan. Uyarı: üçüncü parti lyrics veya video sitelerinden veri çekmek için kullanmadan önce o sitelerin kullanım şartlarına bak; oyuncu tarafı için değil, yalnızca kendi panelin için kurgulamak daha güvenli.",
+      "matched_project": "Lyricdrop",
+      "relevance": 6,
+      "investment_note": null
+    },
+    {
+      "full_name": "vectorize-io/hindsight",
+      "inputs_hash": "b28a9425b5d9a23f70a067956c3b756d",
+      "description_tr": "Hindsight, ajanlar için uzun vadeli hafıza sistemi olarak geliştiriliyor; konuşma geçmişini hatırlatmak yerine zamanla öğrenen bir hafıza katmanı kurmayı hedefliyor. Üç işlem etrafında çalışıyor: retain (gözlem biriktirme), recall (çağırma) ve reflect (gözlemlerden zihinsel model ve bilgi sayfaları çıkarma); veriler hafıza bankalarına ayrılabiliyor. Docker, pip, Kubernetes ile sunucu olarak veya Python içinde sunucusuz gömülü biçimde çalışıyor; depolama PostgreSQL üzerinde. 25'ten fazla LLM sağlayıcısını destekliyor; bunların arasında ollama, lmstudio ve llamacpp gibi tamamen yerel seçenekler ve API anahtarı istemeyen abonelik tabanlı sağlayıcılar da var. MIT lisanslı, ~25K yıldız; LongMemEval sonuçları ve sürekli güncellenen bir benchmark sayfası yayımlanıyor.",
+      "usage_tr": "Sesli not tabanlı ikinci beyin projende eksik olan parça tam olarak bu: notların ham metni Supabase'de dursa da, zamanla biriken gözlemlerden haftalık ve aylık özet çıkaran katman ayrı bir iş ve Hindsight bunu hazır veriyor. Notu kaydettikten sonra n8n akışından retain çağırır, rapor zamanında recall ve reflect ile o dönemin çıkarımını alırsın; kategori çıkarımı için ayrı bir sınıflandırma adımı yazmana gerek kalmaz. Evdeki Mac mini'de Docker ile 7/24 çalıştırabilir, model sağlayıcısını ollama veya lmstudio'ya vererek tamamen yerel tutabilirsin; gömülü Python modu da var, yani küçük bir serviste ayrı sunucu işletmeden kullanılabilir. İş ve asistan tarafıyla karışmaması şartın burada kolay karşılanıyor: kişisel notlar ve holding tarafı ayrı hafıza bankalarına konur. Uyarı: PostgreSQL bağımlılığı ve sunucu bakımı küçük bir yük getirir, önce tek bir bankayla bir aylık notta dene ve ürettiği özetin elle yazdığından daha iyi olup olmadığına bak.",
+      "matched_project": "İkinci beyin",
+      "relevance": 7,
+      "investment_note": null
+    },
+    {
+      "full_name": "vxcontrol/pentagi",
+      "inputs_hash": "2e9e7301c159a7591e6374e840ec9f76",
+      "description_tr": "PentAGI, penetrasyon testi görevlerini otonom yürütmeyi hedefleyen çok ajanlı bir sistemdir. Go ile yazılmış bir çekirdek, React arayüz ve GraphQL API'den oluşuyor; ajanlar araçları izole Docker konteynerlerinde çalıştırıyor ve bir denetleyici ajan onları yönetiyor. OpenAI, Anthropic, Google, Bedrock, DeepSeek, Ollama gibi çok sayıda sağlayıcı yapılandırılabiliyor; Langfuse ile izleme, Graphiti ile bilgi grafiği ve OAuth entegrasyonları destekleniyor. Tamamen self-hosted çalışacak şekilde kurgulanmış ve çok kiracılı kullanım için tenant ayrımı var. MIT lisanslı, ~24,9K yıldız, 2025'te açılmış ve aktif.",
+      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam Supabase ve DigitalOcean üzerinde duran uygulamaların güvenlik denetimi olabilir. Ancak bu iş yetkili bir sızma testi hizmetine ait: otonom bir saldırı ajanını kendi üretim altyapına salmak hem izin hem veri riski taşır, üstelik uzun süren ajan koşuları ciddi API maliyeti üretir. Lyricdrop veya Folio tarafında koruman gereken şey bugün daha çok anahtar yönetimi ve Supabase satır düzeyi güvenlik kuralları; bunlar için bu araca değil, basit bir gözden geçirmeye ihtiyaç var. Güvenlik ajanlarına ilgi duyuyorsan kendi makinende kurulu skill ve plugin'leri denetleyen araçlar bu pakette daha doğrudan karşılık buluyor.",
+      "matched_project": null,
+      "relevance": 1,
+      "investment_note": null
+    },
+    {
+      "full_name": "activepieces/activepieces",
+      "inputs_hash": "f2827ece1682b9738e78d0798ed4316e",
+      "description_tr": "Activepieces, Zapier ve n8n'e açık kaynak alternatif olarak geliştirilen bir otomasyon platformudur. Otomasyon adımları (pieces) TypeScript ile yazılmış npm paketleridir; 280'den fazla parça mevcut, bunların çoğu topluluk katkısı ve hepsi aynı zamanda MCP sunucusu olarak LLM istemcilerine açılabiliyor. No-code bir akış kurucusu, bekletme ve insan onayı adımları, kendi AI parçalarıyla ajan kurma imkânı ve self-hosted kurulum sunuyor. Yerel geliştirmede parçalar hot reload ile yazılabiliyor, yani kendi entegrasyonunu eklemek kod tarafında düz bir iş. ~24,7K yıldızlı ve hareketli bir depo; lisans tek parça değil (NOASSERTION), kurumsal özellikler ayrı şartlara tabi.",
+      "usage_tr": "Asistan araçları tarafında, Trello, HubSpot, Slack ve e-posta arasındaki tekrar eden akışları asistanının kendisinin kurabileceği bir arayüze taşımak için bakabilirsin; n8n'de senin yazdığın akışların bir kısmı burada no-code kurucudan yönetilebilir hale gelir. İnsan onayı adımı, asistanın hazırladığı bir mesajın sana düşüp onaylanmasını akışın içine koymanı sağlar -- bugün elle yürüyen bir adım. Parçaların MCP olarak açılabilmesi, aynı entegrasyonları Claude Code'a araç olarak vermeni sağlar, yani otomasyon ile ajan tarafı tek yerden beslenir. DigitalOcean'da self-host edilir, veriler sende kalır; bu, hesapların ve ilişki geçmişinin daima kontrolünde olması ilkesine uyar. Uyarı: n8n'i zaten işletiyorsun ve ikinci bir otomasyon platformu ikinci bir bakım yüküdür -- tek bir akışı taşıyıp karşılaştırmadan geçiş yapma; ayrıca lisansın tamamı MIT değil, kurumsal özelliklere güvenmeden önce şartları oku.",
+      "matched_project": "Asistan araçları",
+      "relevance": 6,
+      "investment_note": null
+    },
+    {
+      "full_name": "modelcontextprotocol/python-sdk",
+      "inputs_hash": "ec02b14ae0c1996fe6d5baf969e55530",
+      "description_tr": "Bu depo, Model Context Protocol'ün resmi Python SDK'sıdır ve hem sunucu hem istemci yazmak için kullanılır. Yayımlanan v2, 2026-07-28 spesifikasyonunu ve daha önceki tüm revizyonları desteklemek ve eski mimari sorunları gidermek için yapılmış büyük bir yeniden yazımdır; v1.x ayrı bir dalda kritik hata ve güvenlik düzeltmeleriyle sürüyor. stdio, Streamable HTTP ve SSE olmak üzere standart taşıma katmanlarının hepsini konuşuyor ve araç, kaynak, prompt tanımlarını on beş satırlık bir sunucuya indirebiliyor. Python 3.10+ gerektiriyor, uv veya pip ile kuruluyor ve ayrı bir komut satırı aracı (mcp dev, mcp run, mcp install) sunuyor. MIT lisanslı, ~24,4K yıldız; protokolün referans uygulaması olduğu için spesifikasyon değişikliklerini ilk bu depo yansıtıyor.",
+      "usage_tr": "Orkestratör ajan ve asistan araçları tarafında yazacağın MCP sunucuları için bu depo referans kaynağıdır: FastMCP gibi üst katmanlar pratikte daha hızlı yazdırsa da, bir sürüm kırılması veya taşıma katmanı sorunu çıktığında doğru davranışın ne olduğuna buradan bakarsın. Claude Code ve OpenCode'a bağladığın araçların protokol tarafında uyumlu kalmasını istiyorsan, sunucularını buradaki örneklerle aynı iskelete oturtmak uzun vadede daha az sürpriz üretir. Ofis Mac'inde yerel çalışır, ek API maliyeti getirmez ve tek dosyalık sunucular Claude Code'a stdio ile bağlanır. Uyarı: pip install mcp artık 2.x kuruyor ve v2 geçişi kırıcı değişiklikler içeriyor -- mevcut bir sunucun varsa bağımlılığına üst sınır koy, taşımayı ayrı bir işte yap.",
+      "matched_project": "Asistan araçları",
+      "relevance": 6,
+      "investment_note": null
+    },
+    {
+      "full_name": "pascalorg/editor",
+      "inputs_hash": "faed5177da47ad4c089e812602a4c785",
+      "description_tr": "Pascal Editor, React Three Fiber ve WebGPU ile yazılmış, yerel öncelikli açık kaynak bir 3D bina editörüdür. Tarayıcıda veya komut satırından çalışıyor; kat planı, parametrik tasarım ve BIM tarafına yönelik araçlar sunuyor. MCP sunucusu ve CLI üzerinden yapay zeka ajanlarının modeli okuyup değiştirmesine açık; core, viewer ve cli paketleri npm'de yayımlanıyor. Depoda tanıtılan 'Pascal Next' önizlemesi (patlatılmış görünüm, kesit, x-ray, yürüyüş) barındırılan bir demo olup açık kaynak sürümün parçası olmadığı açıkça belirtiliyor. MIT lisanslı, ~24,2K yıldız; 2025 sonunda açılmış genç ama hızlı ilerleyen bir proje.",
+      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam Arslan Holding'in gayrimenkul ve holiday home tarafı olabilir, ama oradaki iş bina modellemek değil listeleme, operasyon ve kiralama akışı. Lyricdrop, Folio veya Kanarya ile bir kesişimi yok; 3D editör bu uygulamaların hiçbir adımına oturmuyor. Denemek istersen tarayıcıda ve Mac'te yerel çalışır, API maliyeti getirmez -- ama bir ihtiyacın üzerine oturmadan kurcalanacak türden bir araç. İnşaat tarafı gündeme gelirse mimari ofisle ortak bir görüntüleyici olarak yeniden bakılabilir.",
+      "matched_project": null,
+      "relevance": 2,
+      "investment_note": "Yerel öncelikli bir BIM/CAD tabanını ajan arayüzüyle birleştirmesi, PropTech ilgi alanınla kesişen bir kategori ve izlenecek bir ekip olarak not edilebilir."
+    },
+    {
+      "full_name": "mksglu/context-mode",
+      "inputs_hash": "cdec2b92ad9e2fb439e41ef81e2dd014",
+      "description_tr": "Context Mode, yapay zeka kodlama ajanlarının bağlam penceresini korumayı hedefleyen bir MCP sunucusu ve hook setidir. Araç çıktısını bağlama dökmek yerine bir sandbox'ta tutup yalnızca sonucu veriyor; README'de 315 KB'lık bir çıktının 5,4 KB'a indiği örneklenmiş. Oturum boyunca dosya düzenlemeleri, git işlemleri, görevler, hatalar ve kullanıcı kararları SQLite'a yazılıyor; konuşma sıkıştırıldığında veriyi geri dökmek yerine FTS5/BM25 aramasıyla yalnızca ilgili olanı çağırıyor. Üçüncü ilkesi 'think in code': ajanın elli dosyayı okumak yerine sayan bir script yazıp sadece sonucu yazdırması. Claude Code, OpenCode, Codex ve Cursor dahil 17 istemciyi destekliyor; npm üzerinden dağıtılıyor, ~23,9K yıldızlı ve lisansı ELv2 (standart bir açık kaynak lisansı değil).",
+      "usage_tr": "Lyricdrop v2'yi ofis Mac'inde uzun Claude Code oturumlarıyla yazdığın için en çok işine yarayacak yer burası: admin panel ve test paneli işinde sıkıştırma sonrası 'hangi dosyadaydık, hangi görev yarımdı' kaybı bu kütüphanenin doğrudan hedef aldığı sorun. Ofiste OpenCode, terminalde Claude Code kullandığın için iki istemcide birden çalışması ayrı bir kurulum yükü çıkarmaz. Mac'te yerel çalışır, ek API maliyeti getirmez; aksine token tüketimini düşürmesi beklenir, ama bunu iddia olarak değil ölçüm olarak ele al -- aynı görevi bir hafta onsuz, bir hafta onunla çalıştırıp oturum başına kaç kez sıkıştırmaya girdiğine bak. Superpowers ile aynı katmanda oynadığı için ikisini aynı anda açıp sonucu birbirine karıştırma. Uyarı: ELv2 lisansı fork'layıp kendi istemcine gömme refleksine izin vermez; bu yüzden bağımlılığı sana ait olmayan bir katman olarak gör.",
+      "matched_project": "Lyricdrop",
+      "relevance": 8,
+      "investment_note": "Geliştirici araçlarında hızlı benimsenme ve ELv2 lisansıyla ticari bir sürüme açık yapı, kategoriyi izleme listesine almaya değer kılıyor."
+    },
+    {
+      "full_name": "SuperClaude-Org/SuperClaude_Framework",
+      "inputs_hash": "2744bb1c3ffd57d9ab19937e23bfbef3",
+      "description_tr": "SuperClaude, Claude Code'u yapılandırılmış bir geliştirme ortamına çeviren bir konfigürasyon framework'üdür. Depo istatistiklerine göre 30 slash komutu, 20 özelleşmiş ajan, 7 davranış modu ve 8 MCP sunucu entegrasyonu içeriyor; komutlar fikir aşamasından dağıtıma kadar geliştirme döngüsünü kapsıyor. Kurulum PyPI üzerinden Python paketi veya npm paketi olarak yapılıyor ve kullanıcının Claude Code yapılandırmasına yazıyor. Gemini ve Qwen için kardeş sürümleri var; belgeler İngilizce, Çince ve Japonca sürdürülüyor. MIT lisanslı, ~23,9K yıldız, sürüm 4.x ve aktif bakımda.",
+      "usage_tr": "Her değişikliğin iki ayrı açıdan -- geliştirici doğruluğu ve ürün/eğitim mantığı -- review edilmesi isteğin, burada ayrı persona ve ajan tanımlarıyla kurulabilecek bir şey; Lyricdrop v2'de boşluk seçimi ve zorluk dengesi gibi kararlar teknik review'dan geçse bile eğitim mantığı açısından ayrı bir gözle bakılmayı hak ediyor. Komut setini olduğu gibi almak yerine, sana lazım olan iki reviewer tanımını alıp kendi CLAUDE.md pratiğine taşımak daha az yük getirir. Ofis Mac'inde yerel çalışır ve ek API maliyeti yoktur, ama her mod ve persona bağlamda yer tutar; Max aboneliğinde bu doğrudan oturum uzunluğuna yansır. Superpowers'ı zaten deniyorsun ve iki framework aynı yapılandırma alanına yazar -- ikisini üst üste kurmak davranışı takip edilemez hale getirir. Uyarı: kurulum global Claude Code yapılandırmanı değiştiriyor, önce yedek al ve tek bir projede dene.",
+      "matched_project": "Lyricdrop",
+      "relevance": 7,
+      "investment_note": null
+    },
+    {
+      "full_name": "jhao104/proxy_pool",
+      "inputs_hash": "f3831d7c47c516a6e996adbfd0cdd07f",
+      "description_tr": "ProxyPool, internette yayımlanan ücretsiz proxy IP'lerini düzenli aralıklarla toplayıp doğrulayan ve bir havuzda tutan Python projesidir. Toplanan proxy'ler Redis'te saklanıyor, periyodik doğrulama ile çalışmayanlar düşürülüyor ve havuz hem HTTP API hem CLI üzerinden kullanılabiliyor. Yeni proxy kaynakları eklenerek havuzun kalitesi ve büyüklüğü genişletilebiliyor. Python 3.8-3.11 destekleniyor, kurulum git veya release paketi ile yapılıyor; belgeler ve README büyük ölçüde Çince. MIT lisanslı, ~23,7K yıldız ve 2016'dan beri sürdürülüyor; README'de ücretli bir proxy sağlayıcısının reklamı da yer alıyor.",
+      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam Lyricdrop'un YouTube indirme ve söz toplama adımında karşılaşılan hız sınırları olabilir. Ama ücretsiz proxy havuzları güvenilirliği düşük, ömrü kısa ve kaynağı belirsiz IP'ler üretir; şarkı başına düşük maliyetle büyük katalog hedefinde bu, kazandığından çok kırık koşu ve yeniden deneme maliyeti getirir. Söz tarafında kazımayı artırmak yerine lisanslı bir lyrics kaynağı ve yerel STT ikilisi hem hukuken hem kalite olarak daha sağlam bir zemin. Kısaca: bu depo senin problemine değil, ölçekli kazıma yapan ekiplerin problemine bakıyor.",
+      "matched_project": null,
+      "relevance": 1,
+      "investment_note": null
+    },
+    {
+      "full_name": "micro/go-micro",
+      "inputs_hash": "abab8454dec08ef9aae9e61ee0e11151",
+      "description_tr": "Go Micro, Go ile servis, ajan ve iş akışı yazmak için kullanılan bir framework'tür. Servis keşfi, RPC, mesajlaşma, depolama ve yapılandırma temel katmanı oluşturuyor; her bileşen eklenti mimarisiyle değiştirilebiliyor ve uygulamanın kendi binary'si içinde çalışıyor. Ajanlar, kayıtlı servis uç noktalarını araç olarak kullanan ve proto tanımlı bir Chat RPC'si olan servisler biçiminde kuruluyor; iş akışları sıralı adımları yönetip kaydedilmiş checkpoint'lerden devam edebiliyor. İhtiyaç halinde HTTP ve MCP gateway'leri eklenebiliyor, model sağlayıcı olmadan da servis olarak çalışabiliyor. Apache-2.0 lisanslı, ~23K yıldız; 2015'ten beri sürdürülen olgun bir proje, son dönemde ajan tarafına yönelmiş.",
+      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam çoklu servis orkestrasyonu ve dayanıklı iş akışı ihtiyacın olabilir. Ancak stack'in TypeScript, Python, Expo ve Supabase üzerinde duruyor; Lyricdrop'un veya Kanarya'nın arka ucunu Go'ya taşımak bir kazanç değil, yeni bir dil ve bakım yükü olur. İhtiyaç duyduğun 'adımları sırala, yarıda kalırsa devam et' davranışını bugün n8n ve Supabase ile zaten karşılıyorsun. Bir gün yüksek eşzamanlılık gerektiren bir servis yazman gerekirse bakılabilir, ama bugünkü projelerinin hiçbiri o noktada değil.",
+      "matched_project": null,
+      "relevance": 1,
+      "investment_note": null
+    },
+    {
+      "full_name": "1jehuang/jcode",
+      "inputs_hash": "2c3ebf721a58a5bfcafad31a0ed51839",
+      "description_tr": "jcode, Rust ile yazılmış terminal tabanlı bir kodlama ajanı istemcisidir (TUI). Öne çıkardığı iddia düşük RAM kullanımı; proje kendi benchmark sayfasını yayımlıyor. Linux, macOS ve Windows için tek satırlık kurulum betikleri, MCP desteği, Claude ve OpenAI sağlayıcıları ve ayrı bir SDK sunuyor. Oturumu koruyarak kendi kendini güncelleyen bir sürüm akışı var; geliştirme sürümlerinde sürüm düşürmeyi engelleyen ayrıntılı bir ataç kontrolü uygulanıyor. MIT lisanslı, ~20K yıldız, 2026 başında açılmış genç bir proje.",
+      "usage_tr": "Lyricdrop v2'de yerel STT denemeleri, Expo bundler ve ajan istemcisi aynı anda 24 GB'lık ofis Mac'inde yarıştığı için, istemcinin hafif olması ölçülebilir bir kazanç olabilir. MIT lisanslı ve Rust olduğu için fork'layıp kendi istemcini yazma refleksine uygun bir taban; OpenCode için düşündüğün Expo/EAS iOS istemcisi fikrinin benzeri burada da kurulabilir, üstelik ayrı bir SDK'sı var. Sağlayıcı olarak kendi anahtarını istediği için Max aboneliğinin kapsamına girmez; bu, günlük kullanım için Claude Code'un yerini almasını zorlaştıran ana nokta. Deneyecekse, tek bir ölçümle karar ver: aynı görevi çalıştırırken bellek kullanımı ve tamamlanma süresi mevcut istemcinden ne kadar iyi. Uyarı: hâlihazırda iki harness kullanıyorsun, üçüncüsü ancak net bir kazanç varsa anlamlı; proje genç ve sürüm akışı hızlı, kritik bir işe bağlamadan önce oturt.",
+      "matched_project": "Lyricdrop",
+      "relevance": 5,
+      "investment_note": null
+    },
+    {
+      "full_name": "NVIDIA/SkillSpector",
+      "inputs_hash": "f423a821e271ba63847c7082c192e9a5",
+      "description_tr": "SkillSpector, yapay zeka ajan skill'lerini kurmadan önce tarayan bir güvenlik aracıdır. Git deposu, URL, zip, dizin veya tek dosya girdi olarak kabul ediliyor; 17 kategoride 71 zafiyet deseni tarıyor: prompt injection, veri sızdırma, yetki yükseltme, tedarik zinciri, bellek zehirlenmesi, MCP en az yetki ve araç zehirlenmesi bunlar arasında. Analiz iki aşamalı: hızlı statik analiz ve isteğe bağlı LLM tabanlı anlamsal değerlendirme; bilinen güvenlik açıkları için OSV.dev'e canlı sorgu atıp çevrimdışı yedeğe düşebiliyor. Çıktı terminal, JSON, Markdown ve SARIF olarak alınabiliyor, 0-100 arası risk skoru ve bilinen bulguları susturmak için baseline mekanizması var. Apache-2.0 lisanslı, Python 3.12+, ~18K yıldız; NVIDIA'nın doğrulanmış skill yayın hattının parçası ve README taranan alt kümede skill'lerin %26,1'inde zafiyet, %5,2'sinde kötü niyet işareti bulunduğunu bildiriyor.",
+      "usage_tr": "Asistan ve holding araçlarında koyduğun 'erişim kapsamları izole olsun' ilkesi, ofis Mac'ine kurduğun her üçüncü parti skill ve plugin ile deliniyor; o makine aynı anda Supabase, DigitalOcean ve hesap anahtarlarını taşıyor. SkillSpector'ı kurulum öncesi bir kapı olarak kullanabilirsin: marketplace'ten veya bir GitHub deposundan gelen skill'i tarat, risk skoru ve raporu oku, sonra kur. Statik aşama Mac'te yerel ve ücretsiz çalışıyor, LLM aşaması isteğe bağlı olduğu için maliyeti sen kontrol ediyorsun. Bu, asistanına devredilebilecek türden bir iş: 'kurmadan önce tara, Markdown raporu gönder' tek komuta iner. Uyarı: tarayıcı kesin hüküm vermez, yanlış pozitif üretir; baseline kullanarak bilinen bulguları sustur ki her taramada yalnızca yeni riskler öne çıksın.",
+      "matched_project": "Asistan araçları",
+      "relevance": 6,
+      "investment_note": null
+    },
+    {
+      "full_name": "browser-use/web-ui",
+      "inputs_hash": "60521a889c62ec221a4c8627beb84c60",
+      "description_tr": "browser-use/web-ui, tarayıcıyı kullanan browser-use ajanının üzerine Gradio ile yazılmış bir arayüzdür. Ajanın işlevlerinin çoğunu terminal yerine bir web arayüzünden kullanmayı sağlıyor. Google, OpenAI, Azure OpenAI, Anthropic, DeepSeek ve Ollama dahil çeşitli model sağlayıcılarını destekliyor. Kendi tarayıcını bağlayabiliyorsun; böylece sitelere yeniden giriş yapma gerekmiyor, ayrıca tarayıcı oturumu görevler arasında açık tutulabiliyor ve yüksek çözünürlüklü ekran kaydı alınabiliyor. Yerel kurulum veya Docker ile çalışıyor, MIT lisanslı ve ~16,6K yıldızlı; temel işlevsellik üst projeden geliyor, bu depo arayüz katmanını sağlıyor.",
+      "usage_tr": "Arslan Holding'in deal sourcing ve pazar/rakip taraması adımında, ekosistem kaynaklarından tekrar eden liste ve profil çıkarma işini buradan yürütebilirsin. En güçlü yanı GUI olması: terminal gerektirmediği için araştırma işlerini asistanına devredebilirsin, o da sonucu ekran kaydıyla birlikte geri verir. Model sağlayıcısı olarak Ollama bağlanabildiği için taramayı Mac'te yerel modelle, API maliyeti olmadan çalıştırmayı deneyebilirsin; kalite düşükse aynı akışı ücretli bir modelle tekrarlarsın. Kendi tarayıcı profilini kullanması giriş yapılmış oturumlarla çalışmayı kolaylaştırır, ama bu kolaylık aynı zamanda risk: profesyonel ağ platformlarında otomasyon hesap kısıtlamasına yol açabilir, ayrı bir profil ve düşük hızla dene. Uyarı: Gradio arayüzü kişisel kullanım içindir; dışarı açacaksan kimlik doğrulaması olmadan yayına alma.",
+      "matched_project": "Arslan Holding",
+      "relevance": 6,
+      "investment_note": null
+    },
+    {
+      "full_name": "wanshuiyin/Auto-claude-code-research-in-sleep",
+      "inputs_hash": "5e77fd5493b49d1b298b58571a07be6c",
+      "description_tr": "ARIS, otonom makine öğrenmesi araştırması için tasarlanmış, yalnızca Markdown dosyalarından oluşan bir skill setidir. Fikir keşfi, deney otomasyonu, makale yazımı ve inceleme adımlarını kapsıyor; temel çalışma biçimi çapraz model review döngüsü: bir model işi yürütüyor, bağımsız başka bir model denetliyor. Framework bağımlılığı olmadığını, Claude Code, Codex, Cursor, OpenClaw gibi farklı ajanlarla çalıştığını vurguluyor; bağımsız bir CLI ve plugin dağıtımları da var. Teknik rapor arXiv'de yayımlanmış ve depo çeşitli platformlar için uyarlama belgeleri tutuyor. MIT lisanslı, ~16,5K yıldız; 2026 başında açılmış ve hızlı ilgi görmüş.",
+      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor: akademik ML araştırması yürüttüğün, deney koşup makale ürettiğin bir iş yok. En yakın bağlam, her değişikliğin iki ayrı açıdan review edilmesi isteğin -- ARIS'in 'yürüten model ayrı, denetleyen model ayrı' döngüsü bu fikrin çalışan bir örneği ve skill'ler düz Markdown olduğu için okunup kendi review akışına uyarlanabilir. Yani buradan alınacak şey araç değil desen; skill'leri olduğu gibi kurmak seni deney ve makale terminolojisine bağlar, projelerinde karşılığı olmayan komutlar getirir. Bir yatırım tezi araştırmasını otomatikleştirmek istersen aynı desen daha uygun bir yere oturabilir, ama bunun için kendi skill'ini yazman gerekir.",
+      "matched_project": null,
+      "relevance": 2,
+      "investment_note": null
+    },
+    {
+      "full_name": "earthtojake/text-to-cad",
+      "inputs_hash": "3795860055115072dde37532d3b237b9",
+      "description_tr": "text-to-cad, CAD, CAE ve CAM işleri için hazırlanmış bir ajan skill kütüphanesidir. Yerel proje dosyalarından geometri üretmeyi, üretileni incelemeyi, dilimlemeyi ve STEP, STL, 3MF gibi formatlara aktarmayı kapsıyor. Robotik tarafı için URDF, SDF ve MoveIt2 uyumlu SRDF üreten ayrı skill'ler içeriyor, ayrıca sonucu görüntülemek için bir CAD görüntüleyicisiyle birlikte çalışıyor. Python 3.11+ gerektiriyor, testleri CI'da koşuyor ve belgeleri ayrı bir sitede tutuluyor. MIT lisanslı, ~16,3K yıldız; 2026 ortasında açılmış yeni bir proje.",
+      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam makine mühendisliği geçmişin ve donanım tarafına olan ilgin. Lyricdrop, Folio, Kanarya ve holding tarafındaki işlerin hiçbiri parça tasarımı veya üretim dosyası üretmiyor, dolayısıyla bugün bir adıma oturmuyor. Giyilebilir cihaz tezin bir prototipe dönüşürse -- muhafaza, bant, sensör yuvası gibi basit parçalar -- yerel dosyalardan STL üretip baskıya göndermek için tekrar bakılabilir. O gün gelene kadar bu depo, ilgi çekici ama karşılığı olmayan bir başlık olarak kalır.",
+      "matched_project": null,
+      "relevance": 2,
+      "investment_note": null
+    },
+    {
+      "full_name": "Arindam200/awesome-ai-apps",
+      "inputs_hash": "8a655d29cc8f384d3b24f1a8553c7e19",
+      "description_tr": "Bu depo, LLM tabanlı uygulamalar için 132 örnek proje, tutorial ve tariften oluşan bir derlemedir. Başlıklar metin ajanları, sesli asistanlar, MCP destekli araçlar, hafıza ajanları, RAG uygulamaları, ileri seviye ajanlar ve fine-tuning örneklerine ayrılmış. Örnekler tek bir framework'e bağlı değil; farklı ajan kütüphaneleri ve model sağlayıcılarıyla kurulmuş çalışır projeler halinde duruyor. Depo sponsorlu ve bazı örnekler sponsor sağlayıcıların modellerine veya servislerine bağlı, bu da taşınabilirliği örnekten örneğe değiştiriyor. Python ağırlıklı, MIT lisanslı, ~15,9K yıldız ve düzenli katkı alıyor.",
+      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, sesli not tabanlı ikinci beyin projendeki ses girdisi, sınıflandırma ve RAG hattı olabilir. Ama burası bir kütüphane değil, bir bağlantı ve örnek derlemesi: kendi uygulamana gömeceğin bir bileşen çıkmaz, olsa olsa Claude Code'a 'şu örneği baz al' diyeceğin bir okuma listesi olur. Örneklerin bir kısmı sponsor sağlayıcıların modellerine bağlı olduğu için yerelde çalıştırmak isteyince ollama'ya çevirmek ek iş çıkarır. Bu tür derlemelerde kalite örnekten örneğe değişir ve bir kısmı bakımsız kalır; buradan alınacak kodu üretime yaklaştırmadan önce kendi review akışından geçirmen gerekir.",
+      "matched_project": null,
+      "relevance": 2,
+      "investment_note": null
+    }
+  ]
+}

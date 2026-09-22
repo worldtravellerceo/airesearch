@@ -1,0 +1,175 @@
+{
+  "repos": [
+    {
+      "full_name": "cocoindex-io/cocoindex",
+      "inputs_hash": "42c1c76578f6583062ffa501f4844729",
+      "description_tr": "CocoIndex, LLM uygulamaları ve ajanlar için veri indeksleme hattını artımlı çalıştıran açık kaynak bir çerçeve. Akış Python ile bildirimsel olarak tanımlanıyor, çekirdek Rust ile yazılmış ve kaynak veride yalnızca değişen kısım yeniden işleniyor. Kod tabanı, PDF, toplantı notu, e-posta ve Slack gibi kaynakları okuma, parçalama, embedding üretme ve hedef depoya yazma adımlarını tek bir akışta topluyor; hedef olarak vektör veritabanları ve knowledge graph çıkışları destekleniyor. Apache-2.0 lisanslı, yaklaşık 11.6K star; depo Mart 2025'te açılmış ve düzenli sürüm çıkıyor. Arkasında ticari bir şirket ve barındırılan bir sürüm var, çekirdek kütüphane ise pip ile kuruluyor.",
+      "usage_tr": "Kişisel bilgi tabanı projesinde arşiv büyüdükçe asıl sorun embedding üretmek değil, her yeni notta tüm koleksiyonu yeniden işlememek olacak; CocoIndex tam bu adımda duruyor. Ses notlarının transkriptlerini ve not dosyalarını kaynak olarak bağlayıp parçalama ve embedding akışını Python'da tanımlayabilir, çıktıyı zaten kullandığın Supabase'in Postgres tarafına yazdırabilirsin. Ofisteki M4 Pro Mac'te yerel çalışır; embedding modelini de yerel seçersen API maliyeti çıkmaz, OpenAI uyumlu bir uca bağlarsan çıkar. n8n'de kurduğun tetikleyicilerin yanında, ağır indeksleme adımını n8n akışından alıp buraya taşıyabilirsin. Uyarı: birkaç yüz notluk bir arşivde artımlı işlemenin kazancı küçük, kurulum maliyeti gerçek; bu yüzden ancak kaynak ve hacim arttığında anlamlı hale gelir.",
+      "matched_project": "Kişisel bilgi tabanı",
+      "relevance": 5,
+      "investment_note": null
+    },
+    {
+      "full_name": "lancedb/lancedb",
+      "inputs_hash": "31caf2e65ce292f4553a0c33e1164421",
+      "description_tr": "LanceDB, uygulamanın içine gömülerek çalışan bir vektör ve çok modlu arama veritabanı. Ayrı bir sunucu kurmayı gerektirmiyor; veriyi Lance adlı sütunlu dosya biçiminde diske yazıyor ve vektör benzerliği, tam metin araması ile SQL filtrelemeyi aynı sorguda birleştirebiliyor. Python, TypeScript/Node ve Rust SDK'ları var; LangChain ve LlamaIndex entegrasyonları mevcut. Metin, görsel ve video gibi farklı veri tiplerini metadata ile birlikte saklıyor, veri sürümleme yerleşik geliyor. Apache-2.0 lisanslı, yaklaşık 11.5K star, 2023'ten beri geliştiriliyor; aynı ekip yönetilen bir bulut sürümü de sunuyor.",
+      "usage_tr": "Kişisel bilgi tabanındaki transkriptleri semantik olarak aratmak istediğinde, ayrı bir vektör veritabanı sunucusu çalıştırmak yerine LanceDB'yi doğrudan Python veya TypeScript servisinin içine gömebilirsin. Evdeki 7/24 açık Mac mini'de tek bir dizin olarak durur, Supabase'deki yapısal kayıtların yanında yerel arama katmanı olur ve yedeklemesi dosya kopyalamaktan ibarettir. Embedding'i Mac'te yerel bir modelle üretirsen sorgu başına API maliyeti olmaz. TypeScript SDK'sı sayesinde aynı yaklaşımı ileride Folio'nun içerik havuzunda benzer gönderileri bulmak için de tekrarlayabilirsin. Uyarı: gömülü çalıştığı için çok kullanıcılı eşzamanlı yazma onun güçlü olduğu yer değil; tek makineli ve tek yazarlı kullanımda kalmak daha sağlıklı.",
+      "matched_project": "Kişisel bilgi tabanı",
+      "relevance": 6,
+      "investment_note": null
+    },
+    {
+      "full_name": "datawhalechina/all-in-rag",
+      "inputs_hash": "58f9b4bdc83edf5b99e6b03753b4b207",
+      "description_tr": "All-in-RAG, Datawhale topluluğunun hazırladığı, retrieval-augmented generation konusunu baştan sona anlatan Çince bir eğitim kaynağı. Bir kütüphane değil; çevrimiçi okunabilen bir kitap ile eşlik eden örnek kod ve proje vakalarından oluşuyor. İçerik embedding, vektör veritabanı (Milvus), knowledge graph (Neo4j), LangChain ve LlamaIndex ile RAG kurma ve çok modlu erişim başlıklarını kapsıyor; DeepSeek ve Kimi gibi Çin kökenli modeller örneklerde kullanılıyor. Depoda belirtilmiş bir lisans dosyası yok. Haziran 2025'te açılmış, yaklaşık 11.3K star toplamış ve içerik güncelleniyor.",
+      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; bu bir araç değil, bir ders materyali ve metnin tamamı Çince. En yakın bağlam kişisel bilgi tabanı için RAG mimarisini öğrenmek olurdu, ama o konuda İngilizce ve doğrudan çalıştırılabilir kaynaklar senin için daha pratik.",
+      "matched_project": null,
+      "relevance": 1,
+      "investment_note": null
+    },
+    {
+      "full_name": "artidoro/qlora",
+      "inputs_hash": "ae53373cae6d831d56b514d47b8c231a",
+      "description_tr": "QLoRA, aynı adlı makalenin referans uygulaması; 4-bit'e nicelenmiş bir dil modelinin üzerine LoRA adaptörleri eğiterek ince ayar maliyetini düşürüyor. Yöntemin üç bileşeni var: normal dağılıma uygun 4-bit NF4 veri tipi, nicelenme sabitlerinin de nicelenmesi ve bellek sıçramalarını yöneten sayfalı optimizasyon. bitsandbytes ile çalışıyor, Hugging Face PEFT ve transformers kütüphanelerine entegre; ayrıca Guanaco model ailesi bu depo üzerinden yayınlanmış. MIT lisanslı, yaklaşık 11K star. Depo 2023'te açılmış bir araştırma çıktısı ve son güncellemeleri aynı yıla ait; yöntemin kendisi bugün PEFT içinde standart hale geldi.",
+      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; burada eğitim tarafı var ve NVIDIA GPU gerektiriyor, senin akışın ise Mac üzerinde çıkarım yapmak üzerine kurulu. En yakın bağlam yerel model altyapısı olurdu, ama orada ince ayar değil MLX ve llama.cpp tarafındaki çalıştırma araçları işine yarar.",
+      "matched_project": null,
+      "relevance": 1,
+      "investment_note": null
+    },
+    {
+      "full_name": "mistralai/mistral-inference",
+      "inputs_hash": "4b55df61683af62e13a00db5419726e1",
+      "description_tr": "mistral-inference, Mistral modellerini çalıştırmak için yayımlanmış resmî ve minimal çıkarım kütüphanesi. 7B, Mixtral 8x7B ve 8x22B, Codestral, Nemo ve Pixtral gibi model ağırlıklarının doğrudan indirilip yüklenmesini, sohbet ve tamamlama örneklerini içeriyor. Kurulumu xformers'a bağlı olduğu için GPU gerektiriyor; CPU veya Apple Silicon üzerinde çalıştırmak hedeflenmemiş. README'nin başında deponun arşivlendiği ve artık bakımının yapılmadığı yazıyor. Apache-2.0 lisanslı, yaklaşık 10.8K star; 2023'te açılmış ve model dosyalarına doğrudan indirme bağlantıları veriyor.",
+      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; depo arşivlenmiş ve GPU'suz bir Mac'te kurulmuyor. En yakın bağlam yerel model çalıştırma ilgin, ama aynı modelleri Mac'te çalıştırmak istediğinde llama.cpp veya MLX tarafındaki GGUF sürümleri doğru adres.",
+      "matched_project": null,
+      "relevance": 1,
+      "investment_note": null
+    },
+    {
+      "full_name": "Megvii-BaseDetection/YOLOX",
+      "inputs_hash": "73684e541706cc38e75420fe6ea67120",
+      "description_tr": "YOLOX, Megvii'nin yayımladığı anchor-free bir nesne tespiti modeli ailesi ve PyTorch eğitim/çıkarım kod tabanı. Nano'dan X'e kadar farklı boyutlarda modeller sunuyor ve COCO üzerinde hız-doğruluk dengesini kendi döneminin YOLO sürümleriyle karşılaştırıyor. Dağıtım tarafında ONNX, TensorRT, ncnn, OpenVINO ve MegEngine çıktıları için hazır örnekler var. Apache-2.0 lisanslı, yaklaşık 10.6K star. Depodaki güncelleme kayıtları 2023'te duruyor; endüstride hâlâ kullanılıyor ama aktif geliştirme başka YOLO projelerine kaymış durumda.",
+      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; bu model COCO'daki genel nesneleri kutuluyor, senin ilgilendiğin görsel işler ise sahne ve estetik yorumu gerektiriyor. En yakın bağlam giyilebilir/maruz bırakma konseptindeki görüntü skorlaması ya da model ajansı fikrindeki görsel analiz olurdu; ikisinde de genel amaçlı bir vision-language modeli nesne detektöründen daha isabetli sonuç verir.",
+      "matched_project": null,
+      "relevance": 1,
+      "investment_note": null
+    },
+    {
+      "full_name": "ultralytics/yolov3",
+      "inputs_hash": "baaf1b48da0fe62e9770c5a1efa61044",
+      "description_tr": "Bu depo, YOLOv3, YOLOv3-SPP ve YOLOv3-tiny nesne tespiti modellerinin Ultralytics tarafından bakımı yapılan PyTorch uygulaması. Eğitim, doğrulama, çıkarım ve ONNX, TensorRT, CoreML gibi biçimlere dışa aktarma araçlarını bir arada veriyor; ortak yardımcı kodları ultralytics paketinden kullanıyor. YOLOv3 mimarisi 2018 tarihli ve aynı ekibin daha yeni modellerine göre geride kalmış durumda; depo esas olarak süreklilik ve geriye dönük uyumluluk için tutuluyor. AGPL-3.0 lisanslı, yaklaşık 10.6K star. Dokümantasyon ve topluluk kanalları aktif.",
+      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; ortada eski bir nesne tespiti modeli var ve projelerinden hiçbiri kutu tespiti üzerine kurulu değil. En yakın bağlam görsel skorlama fikirleri olurdu; ayrıca AGPL-3.0 lisansı, kapalı bir mobil uygulamanın içine gömme ihtimalini baştan zorlaştırır.",
+      "matched_project": null,
+      "relevance": 1,
+      "investment_note": null
+    },
+    {
+      "full_name": "pyannote/pyannote-audio",
+      "inputs_hash": "1081ce6425c05a09fb8aa15d631c8ccf",
+      "description_tr": "pyannote.audio, konuşmacı ayrıştırma (speaker diarization) için PyTorch tabanlı açık kaynak bir Python araç seti. Ses etkinliği tespiti, konuşmacı değişimi, üst üste binen konuşma tespiti ve konuşmacı gömme gibi yapı taşlarını ve bunları birleştiren hazır işlem hatlarını içeriyor; çıktı olarak her konuşma parçası için başlangıç-bitiş zamanı ve konuşmacı etiketi veriyor. Açık kaynak community-1 hattı Hugging Face üzerinden indiriliyor, kullanım koşullarının kabulü ve bir erişim anahtarı gerektiriyor; aynı ekibin precision-2 adlı ücretli bulut hattı da aynı API'den çağrılabiliyor. Kod MIT lisanslı, yaklaşık 10.6K star; benchmark tablosu 2025 sonunda güncellenmiş ve proje aktif. Modeller kendi verinizle yeniden eğitilebiliyor.",
+      "usage_tr": "Kişisel bilgi tabanının toplantı ve kayıt tarafında, birden fazla kişinin konuştuğu ses dosyalarında \"kim ne dedi\" ayrımını yerel olarak çıkarmak için kullanabilirsin; Wispr Flow'un verdiği düz transkriptin üzerine konuşmacı etiketi eklemiş olursun. Stand-up analizi işinde de kayıttaki sahne sesi ile seyirci tepkisini ayırmak için aynı işlem hattı kullanılabilir, özellikle kendi open mic kayıtlarını biriktirmeye başladığında. Ofisteki M4 Pro Mac'te CPU veya MPS ile çalışır; açık kaynak hattı için API maliyeti yok, yalnızca model koşullarını kabul edip bir Hugging Face anahtarı üretmen gerekiyor. Python servisi olarak n8n akışına bağlanır, yani kayıt düştüğünde otomatik çalışıp Supabase'e yazacak biçimde asistanının eline bırakılabilir. Uyarı: üst üste binen konuşmada ve gürültülü ortamda hata oranı belirgin şekilde yükseliyor; aynı API'den çağrılan precision-2 hattı ise buluta gider ve ücretlidir, yanlışlıkla ona geçmemek için model adını sabitle.",
+      "matched_project": "Kişisel bilgi tabanı",
+      "relevance": 6,
+      "investment_note": null
+    },
+    {
+      "full_name": "niedev/RTranslator",
+      "inputs_hash": "4855431b516c46cac1e75795bded7850",
+      "description_tr": "RTranslator, iki telefon arasında gerçek zamanlı konuşma çevirisi yapan açık kaynak bir Android uygulaması. Konuşma modunda cihazlar Bluetooth üzerinden eşleşiyor, biri konuşurken ses metne çevrilip karşı tarafa gönderiliyor ve orada hedef dile çevrilip seslendiriliyor; ayrıca tek telefonla sırayla konuşmaya dayanan bir walkie-talkie modu var. Depodaki kurulum bölümü, konuşma tanıma ve çeviri için Google Cloud hesabı ve servis anahtarı isteyen sürümü anlatıyor; depo etiketleri ve açıklaması ise Whisper ile NLLB modellerinin ONNX Runtime üzerinden cihaz içinde çalıştığı çevrimdışı bir yöne işaret ediyor. Java ile yazılmış, Apache-2.0 lisanslı ve yaklaşık 10.4K star toplamış. Dağıtım doğrudan GitHub sürümlerinden APK olarak yapılıyor.",
+      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; bu bileşen değil, bitmiş bir çeviri uygulaması ve dil öğrenme akışına oturmuyor. En yakın bağlam Lyricdrop'un Android tarafı olabilir: cihaz içinde ONNX ile ses modeli çalıştıran bir Android uygulamasının nasıl paketlendiğine referans olarak bakılabilir.",
+      "matched_project": null,
+      "relevance": 2,
+      "investment_note": null
+    },
+    {
+      "full_name": "RunanywhereAI/runanywhere-sdks",
+      "inputs_hash": "8cb37cf453fd49ac5b9bc550a4ac269a",
+      "description_tr": "RunAnywhere, yapay zeka modellerini cihazın kendisinde çalıştırmak için tek bir C++ çekirdeği üzerine kurulmuş SDK ailesi. Swift, Kotlin, React Native, Flutter, Python, C++ ve web tarafı için ayrı paketler veriyor ve hepsi aynı semantik API'yi paylaşıyor: LLM sohbeti, yapılandırılmış çıktı, araç çağırma, görsel-dil modeli, Whisper ve Moonshine ile konuşma tanıma, Piper ve Kokoro gibi seslerle TTS, VAD, embedding, yerel RAG ve Core ML üzerinde görsel üretimi. Bir yetenek kayıt defteri, çağrıyı cihazdaki en uygun motora yönlendiriyor: Apple Silicon'da MLX, her yerde llama.cpp (Apple'da Metal), konuşma ve embedding için sherpa + ONNX. Yaklaşık 10.3K star, depo Temmuz 2025'te açılmış; App Store ve Google Play'de birer vitrin uygulaması var. Lisans standart bir açık kaynak lisansı değil, projeye özel \"RunAnywhere License\" olarak veriliyor; ayrıca model dağıtımı ve telemetri toplayan bir konsol bileşeni mevcut.",
+      "usage_tr": "Kişisel bilgi tabanı uygulamasının tam istediğin haline en yakın altyapı bu: tek dokunuşla kayıt, cihaz içinde Whisper ile transkripsiyon, ardından yerel bir LLM ile kategori çıkarımı — hepsi telefondan çıkmadan. React Native SDK'sı mevcut Expo/TypeScript stack'ine oturur, yani kayıt ekranını değiştirmeden altına yerel bir ses hattı koyabilirsin ve nota ait ham ses hiçbir yere gitmez. API maliyeti yok, Max aboneliğinden bağımsız çalışır; aynı paket Mac ve web tarafında da çalıştığı için M4 Pro'da toplu yeniden işleme yapıp telefonda canlı kullanabilirsin. Yerel model altyapısı ilgin açısından da izlemeye değer: MLX, llama.cpp ve Core ML'i tek arayüz arkasına koyması, her motoru ayrı ayrı sarmalama işini ortadan kaldırıyor. Uyarı: lisans standart bir açık kaynak lisansı değil, dolayısıyla yayınlayacağın bir uygulamaya gömmeden önce metnini okuman gerekiyor; ayrıca cihazda hangi motorun kurulu olduğunu çalışma anında sorgulamak zorundasın, yetenek listesinde görünmesi çalışacağı anlamına gelmiyor.",
+      "matched_project": "Kişisel bilgi tabanı",
+      "relevance": 8,
+      "investment_note": "Cihaz içi çıkarımı tek API arkasında toplayan bir altyapı katmanı ve çoklu platform desteğiyle dağıtım tarafında gerçek bir boşluğu dolduruyor; erken aşama AI altyapı tezine uygun, tanışılabilecek bir ekip."
+    },
+    {
+      "full_name": "oceanbase/oceanbase",
+      "inputs_hash": "79d1c68f3818a8b03477483b81d64239",
+      "description_tr": "OceanBase, Ant Group tarafından geliştirilen dağıtık ilişkisel bir veritabanı. Paxos tabanlı çoğaltma ile yüksek erişilebilirlik ve yatay ölçeklenme sağlıyor; tek kümede binlerce düğüm ve petabayt ölçeğinde veri hedefliyor. MySQL uyumluluğu sunuyor, aynı motorda hem işlemsel hem analitik yükleri (HTAP) çalıştırmayı ve son sürümlerde vektör ile tam metin aramayı da kapsamayı amaçlıyor. C++ ile yazılmış, Apache-2.0 lisanslı, yaklaşık 10.3K star; kurulum paketleri Linux için sunuluyor. Kurumsal bir bulut sürümü ve geniş bir doküman seti var.",
+      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; bu, binlerce düğümlük kurumsal yükler için tasarlanmış bir veritabanı ve senin projelerin Supabase'in taşıdığı ölçekte. En yakın bağlam veri katmanı seçimi olurdu, ama orada Postgres'ten ayrılmanı gerektiren bir sıkışıklık yaşamıyorsun.",
+      "matched_project": null,
+      "relevance": 0,
+      "investment_note": null
+    },
+    {
+      "full_name": "snakers4/silero-vad",
+      "inputs_hash": "5a36e10a9b37d940a2ef24e8f4c4ec40",
+      "description_tr": "Silero VAD, bir ses kaydında konuşmanın nerede başlayıp nerede bittiğini işaretleyen, önceden eğitilmiş bir ses etkinliği tespiti (VAD) modeli. Tek bir CPU çekirdeğinde 30 ms'lik bir parçayı bir milisaniyenin altında işliyor ve JIT model dosyası yaklaşık iki megabayt; 8 kHz ve 16 kHz örnekleme hızlarını destekliyor. PyTorch ve ONNX Runtime üzerinden çalışıyor, bu da masaüstünden mobile kadar geniş bir dağıtım alanı bırakıyor; pip ile kurulup birkaç satırda konuşma zaman damgaları üretiyor. Çok sayıda dili kapsayan büyük bir derlemle eğitilmiş, telemetri veya anahtar gerektirmiyor. MIT lisanslı, yaklaşık 10.3K star ve düzenli sürüm çıkıyor.",
+      "usage_tr": "Kişisel bilgi tabanındaki sesli notlarda kaydın sessiz ve nefes alınan kısımlarını atıp yalnızca konuşma parçalarını yerel STT'ye vermek için kullanabilirsin; transkripsiyon süresi ve dolayısıyla Mac'teki işlem yükü doğrudan düşer. Kayıt bittiğinde çalışan bir n8n adımına Python fonksiyonu olarak girer, iki megabaytlık model sayesinde ileride Expo uygulamasının içine ONNX olarak da taşınabilir. API maliyeti yok, anahtar yok, MIT lisansı yayınlayacağın bir uygulamaya gömmeyi de serbest bırakıyor. Lyricdrop tarafında kısmen işe yarayabilir: a cappella veya vokali ayrıştırılmış parçalarda vokalin olduğu aralıkları bulup hizalamayı o pencerelere sınırlayabilirsin. Uyarı: model konuşma için eğitildi, enstrüman üstündeki şarkı vokalinde kararları güvenilmez olur; şarkı hattında kullanacaksan önce stem ayrıştırma yapıp sonucu ölçmeden akışa bağlama.",
+      "matched_project": "Kişisel bilgi tabanı",
+      "relevance": 6,
+      "investment_note": null
+    },
+    {
+      "full_name": "OpenRLHF/OpenRLHF",
+      "inputs_hash": "55c85ec2f0a67972b2c0ba8ff14d688a",
+      "description_tr": "OpenRLHF, büyük dil modellerini insan geri bildirimiyle pekiştirmeli öğrenme (RLHF) yoluyla eğitmek için kurulmuş bir çerçeve. Ray ile dağıtık yürütme, vLLM ile hızlı örnekleme ve DeepSpeed ile bellek yönetimini bir araya getiriyor; PPO, GRPO, REINFORCE++ ve RLOO gibi algoritmaları, denetimli ince ayar ve ödül modeli eğitimi adımlarıyla birlikte sunuyor. Tek ve çok turlu ajan senaryoları, özel ödül fonksiyonları ve görsel-dil modelleri destekleniyor. Apache-2.0 lisanslı, yaklaşık 10K star; aktif geliştiriliyor ve yeni bir eğitim arka ucu eklenmiş durumda. Kullanımı çok GPU'lu bir küme varsayıyor.",
+      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; burada model eğitmek için GPU kümesi gerekiyor, sen ise hazır modelleri çağırarak ürün kuruyorsun. En yakın bağlam Folio'daki beğen/beğenme geri bildirimiyle öğrenen akış olurdu, ama orada ihtiyacın olan şey bir bandit veya öneri sistemi; model ağırlıklarını yeniden eğiten bir RLHF hattı değil.",
+      "matched_project": null,
+      "relevance": 1,
+      "investment_note": null
+    },
+    {
+      "full_name": "brightmart/nlp_chinese_corpus",
+      "inputs_hash": "7f131eb059eb249d9a57d8ee059397f0",
+      "description_tr": "Bu depo, Çince doğal dil işleme için toplanmış büyük ölçekli metin derlemlerini indirme bağlantılarıyla birlikte yayınlıyor. İçinde yaklaşık bir milyon Vikipedi maddesi, 2.5 milyon haber metni, 1.5 milyon ansiklopedik soru-cevap, 4.1 milyon topluluk soru-cevabı ve 5.2 milyon Çince-İngilizce cümle çifti bulunuyor. Veriler JSON biçiminde, Google Drive ve Baidu bulut üzerinden dağıtılıyor; amaç kelime vektörü ve önceden eğitilmiş model çalışmalarına kaynak sağlamak. Kod değil veri kümesi deposu; MIT lisanslı ve yaklaşık 9.9K star toplamış. İlk yayın 2019'a ait, README daha sonra Çince model karşılaştırma sonuçlarıyla güncellenmiş.",
+      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; bu bir Çince eğitim verisi arşivi ve senin çalıştığın dillerle kesişmiyor. En yakın bağlam Lyricdrop'un ileride yeni dillere açılması olurdu, ama orada da ihtiyacın şarkı sözü ve ses verisi, genel metin derlemi değil.",
+      "matched_project": null,
+      "relevance": 0,
+      "investment_note": null
+    },
+    {
+      "full_name": "Tiiny-AI/PowerInfer",
+      "inputs_hash": "85097ca1fe70c58fcb326b878ba2f3b3",
+      "description_tr": "PowerInfer, büyük dil modellerini tek bir tüketici sınıfı GPU'su olan kişisel bilgisayarda hızlı çalıştırmayı hedefleyen bir çıkarım motoru. Temel fikri aktivasyon yerelliği: her girdide çalışan \"sıcak\" nöronlar GPU'da tutuluyor, girdiye göre değişen \"soğuk\" nöronlar CPU'da hesaplanıyor, böylece GPU belleği ihtiyacı ve veri taşıma azalıyor. Ölçümler bir RTX 4090 üzerinde llama.cpp'ye göre belirgin hızlanma bildiriyor; ROCm ile AMD desteği ve Windows GPU çıkarımı da eklenmiş. Yöntem seyrek aktivasyonlu (ReLU tabanlı) modelleri varsayıyor, her model dosyasıyla çalışmıyor. MIT lisanslı, yaklaşık 9.8K star; proje SJTU-IPADS çıkışlı ve son duyuruları cep boyutunda bir yerel çıkarım cihazına yönelmiş durumda.",
+      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; kazancın kaynağı ayrık bir GPU'nun belleğini idareli kullanmak ve bu, birleşik belleğe sahip bir Mac'te karşılığını bulmuyor. En yakın bağlam yerel model çalıştırma ilgin, ama Apple Silicon tarafında llama.cpp ve MLX hâlâ doğru araçlar.",
+      "matched_project": null,
+      "relevance": 2,
+      "investment_note": "Akademik bir sistem grubundan çıkıp yerel çıkarım donanımına yönelmiş bir ekip; cihaz üstü çıkarım tezine bakıyorsan takip edilmeye değer bir ticarileşme örneği."
+    },
+    {
+      "full_name": "onnx/models",
+      "inputs_hash": "2e14f5eb42211cfe6803d5b89c7c2364",
+      "description_tr": "ONNX Model Zoo, önceden eğitilmiş modelleri ONNX biçiminde bir araya toplayan bir derleme deposu. Görüntü sınıflandırma, nesne tespiti, makine çevirisi, dil modelleme ve ses işleme gibi başlıklarda timm, torchvision ve transformers kaynaklı modelleri, doğrulama verileri ve örnek kodla birlikte sunuyor. Model dosyaları Git LFS ile tutuluyordu; README'nin başındaki not, deponun artık yalnızca tarihsel amaçla korunduğunu ve LFS indirmelerinin durdurulduğunu, modellerin Hugging Face üzerindeki bir aynaya taşındığını söylüyor. Apache-2.0 lisanslı ve yaklaşık 9.8K star toplamış. Yeni model paylaşımı bu depoda değil, Hugging Face tarafında sürüyor.",
+      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; depo resmen emekliye ayrılmış ve model indirmeleri başka yere taşınmış. En yakın bağlam ONNX biçiminde bir modeli mobil tarafta çalıştırmak olurdu; o durumda da modeli doğrudan Hugging Face üzerinden almak gerekiyor.",
+      "matched_project": null,
+      "relevance": 1,
+      "investment_note": null
+    },
+    {
+      "full_name": "farag2/Sophia-Script-for-Windows",
+      "inputs_hash": "b6f3ae686bf0d2dda1b01835cfa4b5d6",
+      "description_tr": "Sophia Script, Windows 10 ve Windows 11 kurulumlarını ayarlamak için yazılmış bir PowerShell modülü. Gereksiz uygulamaları kaldırma, telemetri ve gizlilik ayarlarını değiştirme, arayüz ve sistem davranışlarını toplu biçimde yapılandırma gibi yüzlerce işlemi tek bir betikten yürütülebilir hale getiriyor; ayrı bir GUI sürümü de var. Windows sürümlerine göre ayrı dallar tutuluyor ve düzenli güncelleniyor. Adındaki \"fine-tuning\" ifadesi işletim sistemi ayarlarını kastediyor, makine öğrenmesiyle ilgisi yok. MIT lisanslı, yaklaşık 9.8K star ve 2018'den beri sürdürülüyor.",
+      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; bu bir Windows sistem betiği ve yapay zekayla ilgisi bulunmuyor, çalışma düzenin ise tamamen macOS üzerinde. Yakın bir bağlam da yok.",
+      "matched_project": null,
+      "relevance": 0,
+      "investment_note": null
+    },
+    {
+      "full_name": "deeplethe/utopia",
+      "inputs_hash": "d539551b33e6f710de2f47b9a488c390",
+      "description_tr": "Utopia, kurumsal bilgi tabanını zaman boyutuyla birlikte tutmayı hedefleyen, kendi sunucunda çalıştırılan açık kaynak bir sistem. Bir kütüphane değil, kurulunca çalışan bir uygulama: yönetim konsolu, graf tarayıcısı ve ontoloji çalışma alanı tek bir web arayüzünde geliyor. Teknik olarak tek bir Rust ikilisi ve bir Postgres yetiyor; tam metin araması ikiliye gömülü Tantivy ile, vektörler pgvector ile tutuluyor ve iş kuyruğu da bir tablo. PDF, DOCX, PPTX, XLSX, CSV, Markdown ve HTML yükleniyor; web sayfaları, RSS, GitHub, Jira, Notion ve S3 uyumlu kovalar zamanlanmış olarak senkronlanıyor. Yanıtlar kaynak pasajına açılan atıflarla geliyor ve OpenAI uyumlu her uç (Ollama, vLLM dahil) kullanılabildiği için sistem tamamen çevrimdışı çalıştırılabiliyor. Apache-2.0 lisanslı; depo Ağustos 2026'da açılmış ve kısa sürede yaklaşık 9.7K star toplamış, yani olgunluk değerlendirmesi için henüz erken.",
+      "usage_tr": "Arslan Holding tarafındaki belge yığını için değerlendirilebilir: pitch deck'ler, data room dosyaları ve pazar raporları yüklenip atıflı biçimde sorgulanabilir, böylece bir şirketle ilgili geçmiş notların hangi tarihte neye dayandığı kayıt altında kalır. Kurulum tek ikili ve tek Postgres olduğundan evdeki 7/24 açık Mac mini'de veya küçük bir DigitalOcean makinesinde durabilir; Tailscale arkasına alırsan veriler kendi kontrolünde kalır. Modeli Ollama gibi yerel bir uca bağlarsan API maliyeti oluşmaz, bulut modeline bağlarsan oluşur. Hazır web arayüzü olması, belge yükleme ve etiketleme işini asistanına devretmeyi kolaylaştırır. Uyarı: bu bir bileşen değil bütün bir ürün, yani kendi uygulamana gömme refleksine uymuyor; ayrıca depo birkaç aylık, ontoloji kurmak gerçek bir emek istiyor ve az sayıda belgeyle bu emeğin karşılığı çıkmaz.",
+      "matched_project": "Arslan Holding",
+      "relevance": 5,
+      "investment_note": "Birkaç ay içinde on bine yakın star toplayan, kurumsal bilgi yönetimi ve karar izlenebilirliğine oynayan yeni bir ekip; erken aşama B2B yazılım merceğiyle bakılacaksa ekibin ve ticari modelinin yakından incelenmesi mantıklı."
+    },
+    {
+      "full_name": "apache/seatunnel",
+      "inputs_hash": "ab9bf819659f0b32b859516ecc3ea37d",
+      "description_tr": "Apache SeaTunnel, farklı veri kaynakları arasında toplu ve gerçek zamanlı veri aktarımı yapan dağıtık bir veri entegrasyon aracı. 160'tan fazla kaynak ve hedef bağlayıcısı, değişiklik yakalama (CDC), tüm veritabanı senkronizasyonu ve dağıtık anlık görüntü algoritmasıyla tutarlılık garantisi sunuyor. Kendi Zeta motorunun yanında Flink ve Spark üzerinde de çalışabiliyor; yapılandırılmış metnin yanı sıra görüntü, video ve ikili dosyaları da taşıyabildiğini ve embedding üretimini akışa katabildiğini belirtiyor. Java ile yazılmış, Apache-2.0 lisanslı ve yaklaşık 9.7K star toplamış. Apache Software Foundation çatısında, kurumsal ölçekli günlük senkronizasyon yükleri için konumlandırılmış olgun bir proje.",
+      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; bu araç günde milyarlarca satır taşıyan kurumsal kurulumlar için tasarlandı ve bir Flink veya Spark kümesi işletmeyi varsayıyor. En yakın bağlam veri taşıma ihtiyaçların olurdu; orada n8n ile Supabase ikilisi senin hacmin için hem yeterli hem de bakımı çok daha ucuz.",
+      "matched_project": null,
+      "relevance": 1,
+      "investment_note": null
+    }
+  ]
+}

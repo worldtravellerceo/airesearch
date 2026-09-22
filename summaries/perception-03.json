@@ -1,0 +1,175 @@
+{
+  "repos": [
+    {
+      "full_name": "fabricjs/fabric.js",
+      "inputs_hash": "5adcf93391ef07a7f870c9e546dd77ad",
+      "description_tr": "fabric.js, HTML5 canvas üzerine bir nesne modeli koyan JavaScript/TypeScript kütüphanesi. Canvas'a çizilen her öğeyi (metin, resim, path, grup) seçilebilir, taşınabilir, döndürülebilir ve ölçeklenebilir nesneler olarak yönetir; ayrıca SVG'yi canvas'a, canvas'ı SVG'ye çeviren bir parser içerir. Hem tarayıcıda hem Node.js tarafında çalıştığı için sunucuda görsel üretmek amacıyla da kullanılıyor. Tipik kullanım alanları tarayıcı içi tasarım editörleri, görsel işaretleme araçları ve şablondan görsel üreten sistemler. MIT lisanslı, 31.454 yıldızlı ve 2010'dan beri sürdürülen olgun bir proje; yapay zeka bileşeni yok, saf bir render/etkileşim katmanı.",
+      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor. En yakın bağlam, uygulama stüdyosu fikrindeki reklam kreatifi üretimi ya da şablondan kapak görseli çıkarma gibi tarayıcı içi bir editör katmanı olurdu; ama bugün böyle bir adımın yok, görselleri elle düzenlemek yerine üretiyorsun. Expo/React Native tarafında karşılığı da zayıf: kütüphane DOM canvas'ına bağlı, React Native içinde doğrudan çalışmaz. Kütüphanenin kendisi Mac'te tamamen yerel ve API maliyeti getirmiyor; sorun maliyet değil, çözdüğü bir probleminin olmaması. Kullanıcının görsel düzenlediği bir ürün fikri çıkarsa buraya dönmeye değer.",
+      "matched_project": null,
+      "relevance": 2,
+      "investment_note": null
+    },
+    {
+      "full_name": "Zackriya-Solutions/meetily",
+      "inputs_hash": "e562dd8ff8b2c450d1db3cae0fd4a929",
+      "description_tr": "Meetily, toplantı sesini yerelde yazıya döken ve özetleyen açık kaynak bir masaüstü asistanı. Rust/Tauri ile yazılmış; transkripsiyon için whisper.cpp ve Parakeet modellerini, konuşmacı ayrıştırma için diarization modellerini, özetleme için Ollama üzerinden yerel LLM'leri kullanıyor. Sistem sesini doğrudan yakaladığı için toplantıya bot sokmaya gerek kalmıyor ve ses buluta çıkmıyor. macOS ve Windows için hazır paketleri var, MIT lisanslı. Aralık 2024'te açılmış, 31.025 yıldıza ulaşmış; arkasında aynı ürünü ticari olarak da sunan bir şirket bulunuyor.",
+      "usage_tr": "Kişisel bilgi tabanı projenin toplantı ayağına doğrudan oturuyor: online toplantılarda şu an Wispr Flow kullanıyorsun, Meetily bunun açık kaynak ve tamamen yerel karşılığı olabilir. Ofisteki M4 Pro Mac'te yerel çalışır, API maliyeti getirmez ve ses kayıtları kapalı kaynak bir istemciye gitmez — fork'layıp kendi istemcini yazma refleksine de uygun bir zemin. Çıktısı düz transkript ve özet olduğu için n8n ile Supabase'e yazıp sesli notlarınla aynı havuzda arayabilirsin; ikinci beyin tarafındaki semantik arama adımının girdisini besler. Kurulumu bir kez yapıldıktan sonra kullanımı tek tuş olduğu için asistanına da devredilebilir. Uyarı: kod tabanı Rust/Tauri, Expo alışkanlığından uzak; ayrıca transkripsiyon ve diarization modelleri aynı anda çalışırken 24 GB bellekte baskı yaratabilir, uzun toplantılarda bunu ölç.",
+      "matched_project": "Kişisel bilgi tabanı",
+      "relevance": 8,
+      "investment_note": "Yerel-öncelikli toplantı asistanı kategorisinde açık çekirdek artı ticari sürüm modelini yürüten küçük bir ekip; gizlilik hassasiyeti yüksek kurumsal alıcının MENA'da karşılığı olup olmadığı izlemeye değer bir soru."
+    },
+    {
+      "full_name": "AtsushiSakai/PythonRobotics",
+      "inputs_hash": "770c2829b04c7c1c5137fd1ccdf49826",
+      "description_tr": "PythonRobotics, robotik algoritmalarının Python'daki örnek uygulamalarını tek bir yerde toplayan bir kaynak ve ders kitabı. Yol planlama, lokalizasyon (EKF ve parçacık filtreleri), SLAM, haritalama ve kontrol algoritmaları ayrı ayrı, okunabilir ve çalıştırılabilir betikler halinde veriliyor; her örnek matplotlib animasyonuyla görselleştiriliyor. Amaç üretimde kullanılacak bir kütüphane sunmak değil, algoritmaların nasıl çalıştığını anlaşılır biçimde göstermek. cvxpy gibi birkaç bilimsel bağımlılık dışında ağır bir altyapı gerektirmiyor. 30.562 yıldızlı, 2016'dan beri sürüyor ve düzenli katkı alıyor; lisans etiketi standart bir SPDX kimliğine oturmuyor, ticari kullanımda dosyadaki şartlara bakmak gerekir.",
+      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor. En yakın bağlam, Arslan Holding tarafındaki frontier tech merceği: robotik alanında bir dosyayı değerlendirirken kullanılan algoritmaların ne olduğunu anlamak için okunacak bir kaynak, kullanılacak bir araç değil. Ne Lyricdrop'un ses/zamanlama hattına ne de Folio'nun içerik üretimine değen bir tarafı var. Mac'te yerel çalışır ve hiçbir API maliyeti getirmez, ama çalıştırmanın da bir getirisi yok. Robotik bir yatırım konusu önüne gelirse teknik okuryazarlık için buraya bakılabilir.",
+      "matched_project": null,
+      "relevance": 1,
+      "investment_note": null
+    },
+    {
+      "full_name": "facefusion/facefusion",
+      "inputs_hash": "dd60fcc6be047d78fcb70284515effa2",
+      "description_tr": "FaceFusion, videolar ve fotoğraflar üzerinde yüz değiştirme, yüz iyileştirme ve dudak senkronizasyonu yapan bir Python uygulaması. Hazır ONNX modelleriyle çalışıyor; GUI, komut satırı ve toplu iş (job) arayüzü sunuyor, CPU'nun yanında CUDA ve CoreML gibi hızlandırıcıları destekliyor. Yüz tespiti, maskeleme, renk eşitleme ve çözünürlük artırma adımlarını tek bir hat halinde birleştiriyor. 29.984 yıldızlı ve 2023'ten beri aktif geliştiriliyor. Lisansı standart bir açık kaynak lisansı değil; depo, kullanım alanlarını sınırlayan kendi politikasına atıf yapıyor ve rıza olmadan gerçek kişilerin yüzünün kullanılmasını yasaklıyor.",
+      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor. En yakın bağlam Folio'nun video üretimi olurdu — yapay zekayla üretilmiş bir anlatıcı görüntüsünde dudak senkronizasyonu — ama Folio'nun profilleri gerçek yazarlar üzerine kurulu ve gerçek bir kişinin yüzünü sentetik videoya taşımak, uygulama yayınlanmasa bile hem deponun kendi kullanım şartlarına hem de kişilik haklarına takılıyor. Dudak senkronizasyonu ihtiyacın varsa bunu kurgu bir karakter ya da doğrudan sesle anlatım üzerinden çözmek daha güvenli. Teknik tarafta CoreML desteği sayesinde Mac'te yerel çalışabilir ve API maliyeti getirmez, ama burada engel performans değil. Bu satırı bir araç değil, kaçınılacak bir yol olarak not et.",
+      "matched_project": null,
+      "relevance": 2,
+      "investment_note": null
+    },
+    {
+      "full_name": "Anil-matcha/Open-Generative-AI",
+      "inputs_hash": "3d5edde17412dc4e4803241348a4854c",
+      "description_tr": "Open Generative AI, görsel ve video üretimi için kendi sunucunda barındırabileceğin bir web stüdyosu. Kendi modelini çalıştırmıyor; Flux, Kling, Sora ve Veo gibi 600'ü aşkın modeli MuAPI adlı ticari bir aracı servis üzerinden çağırıyor, yani arayüz açık kaynak, üretim ücretli. JavaScript ile yazılmış ve MIT lisanslı; 29.028 yıldızı var. Depo aynı zamanda MuAPI'nin white-label satış kanalı olarak konumlanmış: README'nin önemli bir kısmı uygulamayı kendi markanla yeniden satma teklifine ayrılmış. İçerik filtresi uygulamadığını açıkça belirtmesi, hangi kullanım profilini hedeflediğini de gösteriyor.",
+      "usage_tr": "Folio'nun günlük içerik pipeline'ında işe yarayabileceği yer model karşılaştırma yüzeyi: aynı prompt'u onlarca görsel ve video modeline gönderip hangisinin yazar profillerinin görsel diline oturduğunu birkaç saatte görebilirsin. Ama kriterlerinin ikisine birden takılıyor — modeller Mac'te yerel çalışmıyor ve her üretim aracı servis üzerinden ücretlendiriliyor, yani Lyricdrop'ta ElevenLabs ve Apify'ı bırakırken uzaklaştığın maliyet yapısına geri dönüyorsun. Kalıcı bir bileşen olarak değil, seçim yapıp sonra o modeli kendi hattına sabitlemek için kısa süre kullanılacak bir araç olarak düşün. Kendi sunucunda tutup Expo uygulamanın arkasındaki servisten çağırabilirsin, ama bağımlılığın tek bir satıcıya kilitlenmesi riski var. Uyarı: depo pazarlama amaçlı büyümüş bir proje; kod kalitesini ve API anahtarının nasıl saklandığını gömmeden önce kendin incele.",
+      "matched_project": "Folio",
+      "relevance": 4,
+      "investment_note": "MuAPI'nin white-label modeli, Dubai'de kurmayı düşündüğün AI uygulama stüdyosu için 'model katmanını satın al, markayı ve dağıtımı sen koy' tezinin çalışan bir örneği; birim ekonomisi ve marj yapısı incelemeye değer."
+    },
+    {
+      "full_name": "ATH-MaaS/Pixelle-Video",
+      "inputs_hash": "541cc349f2da1e96752d490e97bcc294",
+      "description_tr": "Pixelle-Video, tek bir konu başlığından tam bir kısa video üreten uçtan uca bir hat. Sırayla metin yazıyor, her cümleye görsel ya da video üretiyor, seslendirmeyi sentezliyor, arka plan müziği ekliyor ve hepsini birleştiriyor; web arayüzü üzerinden yönetiliyor. Modüler kurulmuş: görsel, video, TTS ve dil modeli katmanları ComfyUI/RunningHub iş akışlarıyla ya da doğrudan API sağlayıcılarıyla değiştirilebiliyor, dil modeli tarafında Ollama gibi yerel seçenekler de destekleniyor. Dikey ve yatay formatlar, şablon tabanlı görsel stiller ve toplu iş oluşturma var. Apache-2.0 lisanslı, Kasım 2025'te açılmış ve 28.337 yıldıza ulaşmış; dokümantasyonun ve topluluğun ağırlığı Çince.",
+      "usage_tr": "Folio'nun günlük içerik pipeline'ına en yakın duran repo bu: bir yazarın bir fikrini konu olarak verip feed'e düşecek dikey videoyu uçtan uca ürettirmeyi deneyebilirsin. Modüler yapısı sayesinde dil modeli tarafını Ollama ile Mac'te yerel tutup yalnızca görsel/video adımında karar verebilirsin; ComfyUI'yi de yerel çalıştırırsan API maliyeti sıfıra yakın kalır, aksi halde her video ücretli üretim demek. Tetiklemeyi n8n'e, çıktıyı Supabase ve DigitalOcean'a bağlamak mevcut kurulumunla doğrudan uyumlu, günlük üretim gece çalışıp sabaha hazır olur. Şablon çıktılarının jenerik bir görünümü var; Folio'nun tasarım çıtası Instagram'ın birebir kopyası olduğu için videoyu hazır şablonla değil, kendi stil tanımınla üretmen gerekir. Uyarı: arayüz ve doküman Çince ağırlıklı, bazı entegrasyonlar Çin'deki sağlayıcılara göre ayarlanmış; kurulum maliyetini bir hafta sonu deneyip ölçmeden günlük üretime bağlama.",
+      "matched_project": "Folio",
+      "relevance": 6,
+      "investment_note": null
+    },
+    {
+      "full_name": "invoke-ai/InvokeAI",
+      "inputs_hash": "73acf4deed2fc09db0f2e0ff561b750a",
+      "description_tr": "InvokeAI, Stable Diffusion ailesi ve FLUX gibi açık ağırlıklı görsel modelleri yerelde çalıştırmak için geliştirilmiş bir üretim ortamı. Profesyonel bir web arayüzü, inpainting ve outpainting yapılabilen bir tuval, düğüm tabanlı iş akışı editörü ve model yöneticisi sunuyor; aynı stili tekrar tekrar üretmeyi kolaylaştıran kontrol katmanlarını destekliyor. macOS, Linux ve Windows üzerinde kurulabiliyor, model ağırlıkları makinede tutuluyor. Apache-2.0 lisanslı ve birkaç ticari ürünün de temeli durumunda. 2022 Ağustos'undan beri geliştiriliyor, 28.266 yıldızı var ve bakımı düzenli.",
+      "usage_tr": "Folio'nun görsel üretim adımı için evdeki 7/24 açık Mac mini'yi bir görsel fabrikasına çevirebileceğin en olgun seçenek bu. Düğüm tabanlı iş akışlarıyla her yazar profiline bir stil tanımlayıp aynı ayarları her gün tekrarlatabilir, geceleri toplu üretim yaptırıp sonucu n8n ile Supabase ve DigitalOcean'a taşıyabilirsin. Tamamen yerel çalıştığı için API maliyeti yok ve Max aboneliğinle çakışmıyor; web arayüzü olduğu için günlük görsel onayını asistanına devretmek de mümkün. Uyarı: 24 GB birleşik bellekte hangi modelin sığdığı belirleyici olur — SDXL rahat, büyük FLUX varyantları yavaş kalır — ve Apple Silicon'da üretim süresi NVIDIA kartlara göre belirgin düşüktür. Günlük kaç görsel üreteceğine karar vermeden önce tek görsel başına süreyi kendi makinende ölç.",
+      "matched_project": "Folio",
+      "relevance": 6,
+      "investment_note": null
+    },
+    {
+      "full_name": "op7418/guizang-ppt-skill",
+      "inputs_hash": "1be2d22b58f98c8a3cbc4bcf02e1570e",
+      "description_tr": "Bu depo, Claude Code ve Codex gibi agent ortamlarına kurulan ve tek dosyalık HTML sunum üreten bir Skill. İki hazır görsel sistem içeriyor: anlatı ve görüş odaklı bir dergi/elektronik mürekkep stili ile veri ve ürün anlatımına uygun İsviçre tipografi geleneğine dayanan bir grid stili. Sunum üretmenin yanında slayt görselleri için prompt çıkarıyor, sosyal medya kapakları hazırlıyor ve konuşmacı notları, sayfa başına süre ve prova modu içeren bir sunum çalıştırıcısı getiriyor. Kurulum, depoyu skills dizinine klonlamak kadar basit; çıktı tarayıcıda açılan tek bir HTML dosyası. AGPL-3.0 lisanslı, Nisan 2026'da açılmış ve 26.785 yıldıza ulaşmış; dokümantasyon ağırlıklı olarak Çince.",
+      "usage_tr": "Arslan Holding tarafında konferans hazırlığı ve yatırımcı/iş ortağı sunumları için doğrudan kullanabilirsin: markayı ve web sitesini zaten AI araçlarıyla üretiyorsun, sunum katmanı da aynı hatta oturuyor. Claude Code içinde çalıştığı için Max aboneliğinle ek API maliyeti getirmiyor; yalnızca slayt görsellerini üretirken görsel modeli tarafında maliyet çıkar. Çıktı tek bir HTML dosyası olduğundan Vercel'e atıp link olarak paylaşabilir ya da doğrudan tarayıcıdan sunabilirsin, PowerPoint dosyası taşımana gerek kalmaz. Asistanına devretmeye uygun: kaynak metni verip 'yedi sayfalık İsviçre stili sunum' demek yeterli oluyor. Uyarı: AGPL-3.0 lisansı, skill'in kendi kodunu türeteceğin bir ürüne gömersen bağlayıcı olur — ürettiğin sunumların içeriği sana ait, ama kodu ticarileştirme senaryosunda lisansı okumadan ilerleme. Ayrıca iki stilin de güçlü bir karakteri var; kurumsal kimliğinle yan yana koyup çatışıp çatışmadığına bak.",
+      "matched_project": "Arslan Holding",
+      "relevance": 7,
+      "investment_note": null
+    },
+    {
+      "full_name": "resemble-ai/chatterbox",
+      "inputs_hash": "d719f11e411744295f78e94bbe1f9c85",
+      "description_tr": "Chatterbox, Resemble AI'ın açık kaynak olarak yayınladığı metinden konuşma modeli ailesi. Çok dilli V3 sürümü 0,5 milyar parametreyle tek bir referans ses kaydından konuşmacı klonlaması yapıyor; önceki sürümlere göre konuşmacı benzerliğini artırdığı ve halüsinasyonu azalttığı belirtiliyor. Öncelikli diller için ayrı ince ayarlı tek dil paketleri de yayınlanmış. Düşük gecikmeli İngilizce sesli ajanlar için 350 milyon parametrelik Turbo sürümü var; bu sürümde öksürük ve gülme gibi paralinguistik etiketler doğrudan destekleniyor. MIT lisanslı, Nisan 2025'te açılmış ve 26.514 yıldıza ulaşmış durumda.",
+      "usage_tr": "Folio'nun video üretiminde seslendirme katmanı olarak kullanabilirsin: her yazar profiline bir referans kaydından sabit bir ses tanımlayıp tüm post ve story'leri aynı sesle anlatırsın. MIT lisanslı olması, onu tam bir ürün olarak değil kendi hattına gömülecek bir bileşen olarak kullanmana izin veriyor — bu senin tercih ettiğin yapı. 0,5 milyar parametrelik model ofisteki M4 Pro Mac'te yerelde dönecek boyutta, yani ElevenLabs'ı bırakırken kurduğun 'ses üretimi Mac'te, oyuncu tarafı uzakta' mantığını bozmuyor. İkinci bir kullanım, kişisel bilgi tabanının haftalık raporlarını sesli dinlenebilir hale getirmek olabilir. Uyarı: gerçek bir kişinin sesini klonlamanın rıza tarafı var, yayınlanmayan bir uygulamada bile sentetik bir ses tanımlamak daha temiz; ayrıca hangi dillerde ne kadar iyi olduğunu kendi metinlerinle test etmeden içerik takvimi kurma.",
+      "matched_project": "Folio",
+      "relevance": 5,
+      "investment_note": "MIT lisanslı bir modelin ticari TTS sağlayıcılarıyla arayı kapatması, ses üretiminde kapalı API'lerin fiyatlama gücünü aşağı çekiyor; ses tarafındaki yatırım tezlerini değerlendirirken bu marj baskısını hesaba kat."
+    },
+    {
+      "full_name": "baidu/Unlimited-OCR",
+      "inputs_hash": "57e81358e36c61db91936abe95b6173e",
+      "description_tr": "Unlimited-OCR, Baidu'nun uzun dokümanları tek seferde ayrıştırmayı hedefleyen görsel-dil modeli. Sayfa sayfa OCR yapıp sonra birleştirmek yerine uzun bir belgeyi tek geçişte yapıya (başlık, paragraf, tablo, formül) dönüştürmeyi amaçlıyor ve DeepSeek-OCR'ın açtığı yolu bir adım ileri taşıdığını söylüyor. Model ağırlıkları Hugging Face ve ModelScope üzerinde; çıkarım transformers ve vLLM ile yapılıyor, depodaki kurulum NVIDIA GPU ve CUDA üzerinde test edilmiş. Haziran 2026'da yayınlanmış, arXiv makalesi var ve 26.028 yıldıza ulaşmış; MIT lisanslı. Eğitim tarafı için ms-swift entegrasyonu, kullanım tarafı için bulut servisi seçeneği sunuluyor.",
+      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor. En yakın bağlam Arslan Holding'in deal screening adımı — pitch deck ve finansal model PDF'lerini yapılandırılmış metne çevirmek — ama bu işi Claude Code zaten doğrudan yapıyor ve araya ayrı bir OCR modeli koymanın getirisi belirsiz. Pratik engel de var: çıkarım yolu CUDA'ya bağlı, ofisteki Mac'te çalıştıramazsın, bulutta GPU kiralamak demek. Dosya hacmin ayrı bir model ayağa kaldırmayı haklı çıkaracak seviyeye gelirse yeniden bakılabilir. Şimdilik bunu bir araç olarak değil, belge ayrıştırmanın nereye gittiğini gösteren bir okuma olarak not et.",
+      "matched_project": null,
+      "relevance": 2,
+      "investment_note": null
+    },
+    {
+      "full_name": "black-forest-labs/flux",
+      "inputs_hash": "9b668f104e3bb73f78090a0141b10ad3",
+      "description_tr": "Bu depo, Black Forest Labs'ın FLUX.1 görsel üretim modelleri için resmi çıkarım kodunu barındırıyor. Metinden görsel üretmenin yanında düzenleme ve boşluk doldurma gibi varyantları da kapsıyor; komut satırı ve basit bir demo arayüzü sunuyor. Depodaki kod Apache-2.0, ancak model ağırlıklarının lisansı sürüme göre değişiyor: hızlı sürüm izin verici bir lisansla gelirken geliştirme sürümü ticari kullanımı kısıtlayan ayrı bir lisansa tabi. Ağırlıklar Hugging Face üzerinden indiriliyor ve 12 milyar parametrelik ana model ciddi bellek istiyor. Ağustos 2024'te açılmış, 25.977 yıldızı var; bir ürün değil, referans çıkarım kodu niteliğinde.",
+      "usage_tr": "Folio'nun feed'ini besleyen görsel üretiminde model katmanı olarak yeri var; kalite açısından açık ağırlıklı seçeneklerin üst sırasında duruyor. Folio yalnızca kendi telefonunda kalacağı ve yayınlanmayacağı için geliştirme sürümünün ticari olmayan lisansı büyük ihtimalle yeterli, ama aynı ağırlıkları Arslan Holding'in marka görselleri veya Lyricdrop'un pazarlama kreatifleri için kullanmadan önce lisansı okumalısın — bu iki kullanım ticari sayılır. Pratikte bu depoyu doğrudan çalıştırmak yerine, aynı modeli arayüzüyle ve bellek optimizasyonlarıyla sunan InvokeAI gibi bir katmandan kullanmak M4 Pro'da daha gerçekçi. Tamamen yerel çalıştığı için API maliyeti yok, karşılığında üretim süresi ve 24 GB belleğin sınırı var. Denemeye değer ilk ölçüm: tek görsel başına süre ve bellek tepe noktası, çünkü Folio'nun günlük içerik hacmi buna göre belirlenir.",
+      "matched_project": "Folio",
+      "relevance": 6,
+      "investment_note": null
+    },
+    {
+      "full_name": "lucidrains/vit-pytorch",
+      "inputs_hash": "77277e8d133c84add1750df897f2c01b",
+      "description_tr": "vit-pytorch, Vision Transformer mimarisinin ve ondan türeyen onlarca varyantın PyTorch ile sade uygulamalarını toplayan bir kütüphane. Her varyant tek dosyada, okunabilir ve doğrudan çalıştırılabilir biçimde yazılmış; amaç hazır ağırlık sunmak değil, mimariyi anlaşılır kodla göstermek ve kendi eğitim döngünde kullanılabilecek bir yapı taşı vermek. pip ile kurulup birkaç satırda örneklenebiliyor. MIT lisanslı, 2020'den beri sürüyor ve 25.519 yıldızı var; araştırma ve öğretim tarafında yaygın bir referans. Kullanmak için kendi veri setini ve eğitim altyapını getirmen gerekiyor.",
+      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor. En yakın bağlam, görüntü sınıflandırma gerektiren bir fikir — örneğin görsel skorlama denemeleri — olurdu, ama orada da sıfırdan model eğitmek yerine hazır bir görsel-dil modelini çağırıyorsun ve doğru karar bu. Bu depo model eğitmeye niyetli birine hitap ediyor; senin çalışma şeklin modelleri kullanmak, eğitmek değil. Mac'te yerel çalışır ve API maliyeti getirmez, ama anlamlı bir eğitim için elindeki donanım da uygun değil. Bir yatırım dosyasında geçen mimari terimlerini anlamak istersen kaynak olarak açılabilir.",
+      "matched_project": null,
+      "relevance": 1,
+      "investment_note": null
+    },
+    {
+      "full_name": "junyanz/pytorch-CycleGAN-and-pix2pix",
+      "inputs_hash": "f7bb75d8eedb554ddbcc3394a3c88d42",
+      "description_tr": "Bu depo, pix2pix ve CycleGAN makalelerinin yazarları tarafından yazılmış resmi PyTorch uygulaması. Eşleşmiş veriyle (pix2pix) ve eşleşmemiş veriyle (CycleGAN) görüntüden görüntüye çeviri yapıyor: çizimden fotoğrafa, yazdan kışa, at-zebra gibi klasik örnekleri kapsıyor. Eğitim ve test betikleri, hazır veri setleri ve önceden eğitilmiş birkaç model içeriyor. 2017'den kalan bir kod tabanı; GAN mimarileri görüntü üretiminde büyük ölçüde difüzyon modellerine yerini bıraktı, bu yüzden bugün daha çok akademik referans ve ders materyali olarak kullanılıyor. 25.249 yıldızlı; lisansı standart bir SPDX kimliğine oturmuyor ve bazı bileşenler için ticari kullanım kısıtı bulunuyor.",
+      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor. En yakın bağlam Folio'nun görsel üretimi olurdu, ama oradaki iş için difüzyon tabanlı modeller hem kalite hem kullanım kolaylığı açısından açık ara önde; GAN hattına dönmenin bir getirisi yok. Mac'te yerel çalışır ve API maliyeti getirmez, ancak kullanılabilir bir sonuç için kendi verinle eğitim yapman gerekir. Bu depoyu bir araç olarak değil, görüntü üretiminin difüzyondan önceki dönemini gösteren bir tarihsel referans olarak gör. Ticarileşebilir bir tarafı da kalmadı.",
+      "matched_project": null,
+      "relevance": 1,
+      "investment_note": null
+    },
+    {
+      "full_name": "haotian-liu/LLaVA",
+      "inputs_hash": "d499b76732e9090af3a4ea6effe46b46",
+      "description_tr": "LLaVA, bir görsel kodlayıcıyı bir dil modeline bağlayarak görsel talimat takibi yapan açık kaynak bir çok-kipli model ailesi ve onu eğitmek için kullanılan yöntemin referans uygulaması. Depo, model ağırlıklarının yanında eğitim verisi üretimi, ince ayar betikleri ve değerlendirme araçlarını içeriyor; yaklaşım NeurIPS'23'te sunuldu ve sonraki birçok açık çok-kipli modelin temelini oluşturdu. Apache-2.0 lisanslı, 2023'te açılmış ve 25.035 yıldıza ulaşmış. Bugün alanda daha yeni ve daha yetenekli açık model aileleri var; bu depo ağırlıklı olarak araştırma ve eğitim hattı olarak değerini koruyor. Çalıştırmak için GPU ve model ağırlığı indirimi gerekiyor.",
+      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor. En yakın bağlam, görselden skor üreten fikirlerin — sistematik maruz bırakma uygulaması ya da model scouting tarafındaki portföy değerlendirmesi — görüntü analizi adımı olurdu; ama o adımda bugünün güncel görsel-dil modellerini kullanmak hem daha doğru sonuç verir hem daha az iş çıkarır. Bu depo bir API değil, bir eğitim ve araştırma hattı; kendi modelini ince ayarlamaya niyetin yoksa karşılığı yok. Mac'te çalıştırmak da pratik değil, ağırlıklar ve çıkarım NVIDIA tarafına göre ayarlanmış. Alanın nereden geldiğini anlamak için okunacak bir kilometre taşı olarak not et.",
+      "matched_project": null,
+      "relevance": 2,
+      "investment_note": null
+    },
+    {
+      "full_name": "readest/readest",
+      "inputs_hash": "cba7f641758a5bbd614c0eddb9e59cd3",
+      "description_tr": "Readest, Foliate'in modern bir yeniden yazımı olarak geliştirilen açık kaynak e-kitap okuyucu. Next.js ve Tauri v2 üzerine kurulu; masaüstünde macOS, Windows ve Linux, mobilde Android ve iOS, ayrıca tarayıcı sürümü olmak üzere aynı kod tabanından tüm platformlara çıkıyor. EPUB, MOBI ve PDF gibi biçimleri açıyor; not alma, vurgulama, cihazlar arası senkronizasyon, WebDAV ve OPDS desteği ile metin okuma (TTS) özellikleri var. AGPL-3.0 lisanslı, Ekim 2024'te açılmış ve 24.525 yıldıza ulaşmış; sürüm akışı ve katkı hızı yüksek. Yapay zeka bileşeni ürünün merkezinde değil.",
+      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor. En yakın bağlam, Folio'nun beslendiği kitap okuma alışkanlığı ve öğrenme tarafın; ama bu bir bileşen değil, tam bir ürün — popüler uygulamaları birkaç hafta kullanıp bıraktığın kategoriye giriyor. İlginç olabilecek tek taraf mimari: tek kod tabanından masaüstü ve mobile çıkan Tauri + Next.js kalıbı, senin Expo/EAS alışkanlığının yanında karşılaştırmalı bir örnek sunuyor. Kendi uygulamana gömmeyi düşünürsen AGPL-3.0 lisansı engel olur, yayınlayacağın bir üründe türev kodu açmak zorunda kalırsın. Mac'te yerel çalışır ve API maliyeti yok, ama bugün çözdüğü bir problemin yok.",
+      "matched_project": null,
+      "relevance": 2,
+      "investment_note": null
+    },
+    {
+      "full_name": "m-bain/whisperX",
+      "inputs_hash": "10c909e465fe644741b203a535a20ed7",
+      "description_tr": "WhisperX, Whisper tabanlı konuşma tanımayı kelime düzeyinde zaman damgalarıyla birleştiren bir Python hattı. Transkripsiyonu faster-whisper ile toplu (batched) çalıştırarak büyük modelde gerçek zamanın çok üzerinde hız elde ediyor; ardından fonem düzeyinde zorunlu hizalama (forced alignment) yapan ayrı bir model ile her kelimenin başlangıç ve bitiş süresini çıkarıyor. Sessizlik tespiti ile sesi parçalara ayırıp uzun kayıtlarda kaymayı azaltıyor, isteğe bağlı olarak pyannote ile konuşmacı ayrıştırma ekliyor. Altyazı ve transkripsiyon hatlarında yaygın biçimde kullanılan bir referans uygulama. BSD-2-Clause lisanslı, 2022 sonundan beri sürüyor ve 24.186 yıldızı var.",
+      "usage_tr": "Bu, Lyricdrop v2'nin kelime zamanlama probleminin tam merkezinde duruyor. Lyrics veritabanından gelen düz sözü bilinen metin olarak verip ses üzerinde hizalatabilirsin; böylece STT'nin yanlış duyduğu kelimeler metinle düzelir, metnin zamanlaması da sesten gelir — karşılıklı düzeltme mantığının istediği şey bu. Ofisteki M4 Pro Mac'te yerel çalışır, API maliyeti getirmez ve admin paneline ayrı bir Python servisi olarak eklenebilir; oyuncu tarafına hiç dokunmaz. Karşılaştırdığın iki üç STT sistemiyle yan yana koyup 20-30 şarkılık test setinde kelime hizalama hatasını ölç, seçimi bu sayıyla yap. Konuşmacı ayrıştırma için Hugging Face token'ı ve kapılı model onayı gerekiyor; şarkıda bir faydası olmadığı için o adımı kapat. Uyarı: hızlı toplu çıkarım yolu NVIDIA'ya göre yazılmış, Apple Silicon'da gerçek süreyi kendin ölçmeden katalog hızını planlama; ayrıca nakarat tekrarlarında, uzatılan hecelerde ve İngilizce olmayan kelimelerde kayma bildiriliyor, bu vakaları test setine bilerek koy.",
+      "matched_project": "Lyricdrop",
+      "relevance": 10,
+      "investment_note": null
+    },
+    {
+      "full_name": "index-tts/index-tts",
+      "inputs_hash": "ca6d7060011bc8b1c29608fd417e63b1",
+      "description_tr": "IndexTTS, tek bir referans kayıttan ses klonlayan sıfır-atışlı bir metinden konuşma sistemi. Son sürümü Çince, İngilizce, Japonca, İspanyolca ve Arapça destekliyor; duygu, konuşma hızı ve telaffuz üzerinde ayrıntılı kontrol sunuyor, telaffuzu Pinyin, CMU fonem veya Japonca kana ile elle düzeltmeye izin veriyor. Vokoder tarafında BigVGAN kullanıyor ve önceki sürüme göre çıkarım hızını artırdığını belirtiyor. Şubat 2025'te açılmış, arXiv makaleleri var ve 24.131 yıldıza ulaşmış. Lisansı standart bir SPDX kimliğine oturmuyor; kullanım şartlarını depodan okumak gerekiyor.",
+      "usage_tr": "Folio'nun video seslendirmesinde, özellikle belirli bir duygu tonu ya da bir ismin doğru telaffuzu gerektiğinde kullanılabilir; telaffuz kontrolü bu işte Chatterbox'a göre üstünlüğü. Ama aynı kategoride karşılaştıracağın Chatterbox MIT lisanslı ve daha hafif; buradaki lisans belirsizliği, kendi uygulamana gömme alışkanlığın düşünüldüğünde önce çözülmesi gereken bir konu. Desteklenen diller listesinde Türkçe yok, dolayısıyla Türkçe anlatım düşünüyorsan önce kendi metninle test etmen gerekir. Çıkarım ağırlıklı olarak NVIDIA tarafına göre ayarlanmış; M4 Pro'da çalışsa bile üretim süresini ölçmeden günlük içerik hacmi planlama. Kısacası ikinci sırada denenecek bir seçenek: önce Chatterbox'ı ölç, yetmezse buraya bak.",
+      "matched_project": "Folio",
+      "relevance": 4,
+      "investment_note": null
+    },
+    {
+      "full_name": "graphdeco-inria/gaussian-splatting",
+      "inputs_hash": "62805c8392dc5fcc38c579cbe247feca",
+      "description_tr": "Bu depo, 3D Gaussian Splatting makalesinin yazarları tarafından yayınlanan referans uygulama. Bir sahnenin farklı açılardan çekilmiş fotoğraflarından, sahneyi milyonlarca küçük gaussian ile temsil eden bir model eğitiyor ve bunu gerçek zamanlı hızda görüntüleyebiliyor. Eğitim kodu Python, hızlı görüntüleme için CUDA ile yazılmış özel bir rasterizer ve ayrı bir görüntüleyici uygulaması içeriyor. Yayınlandığı 2023'ten beri kendi alt alanını doğurdu; 23.947 yıldızı var ve birçok türev proje bu kod tabanından çıktı. Lisansı araştırma amaçlı: ticari kullanım için ayrıca izin alınması gerekiyor.",
+      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor. En yakın iki bağlam, gayrimenkul ve holiday home tarafında mülkün fotoğraflardan gerçekçi bir 3D turunu çıkarmak ve hobi tarafında ilgini çeken generatif sanat/veri görselleştirme işleri; ama araştırma lisansı ticari kullanıma kapalı ve eğitim NVIDIA GPU gerektiriyor, yani ofisteki Mac'te çalışmaz. Mülk turu gerçekten gündeme gelirse bu teknolojiyi ürünleştirmiş ticari servislerden birini kullanmak daha doğru olur. Yatırımcı şapkasıyla bakınca PropTech ilgi alanınla kesişen bir teknoloji, ama bu depo ürün değil, akademik referans. Şimdilik izlenecek bir alan olarak not et.",
+      "matched_project": null,
+      "relevance": 2,
+      "investment_note": null
+    },
+    {
+      "full_name": "deepseek-ai/DeepSeek-OCR",
+      "inputs_hash": "0132edf3030f5c23ae55aa3613eb20e7",
+      "description_tr": "DeepSeek-OCR, metni görüntü olarak kodlayıp bir görsel kodlayıcıyla çok daha az token'a sıkıştırmayı inceleyen bir araştırma modeli. Pratik çıktısı, uzun dokümanları yapılandırılmış metne çeviren güçlü bir belge ayrıştırma modeli; depoda transformers ve vLLM ile çıkarım örnekleri veriliyor ve test edilen ortam CUDA tabanlı. Asıl ilginç tarafı OCR performansından çok ortaya attığı soru: uzun bağlamı metin yerine görüntü olarak taşımak token maliyetini ne kadar düşürür. MIT lisanslı, Ekim 2025'te yayınlanmış ve 23.906 yıldıza ulaşmış; makalesi ve ardından ikinci bir sürümü var. Bir ürün değil, model ağırlığı ve çıkarım koduyla gelen bir araştırma çıktısı.",
+      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor. En yakın bağlam Arslan Holding'in yatırım dosyalarını okuma adımı — sunum ve finansal model PDF'lerini metne çevirmek — ama bu işi Claude Code zaten yapıyor ve araya ayrı bir model koymanın karşılığı yok. Çıkarım yolu NVIDIA GPU'ya bağlı olduğu için ofisteki Mac'te ya da Mac mini'de çalıştıramazsın. Buradaki asıl değer araç değil fikir: uzun bağlamı görüntü olarak sıkıştırma yaklaşımı, ileride kendi ajan kurulumlarında token maliyetini düşüren yöntemlerin habercisi olabilir. Okunacak bir başlık olarak takip listende kalsın.",
+      "matched_project": null,
+      "relevance": 2,
+      "investment_note": null
+    }
+  ]
+}

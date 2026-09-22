@@ -1,0 +1,175 @@
+{
+ "repos": [
+  {
+   "full_name": "elder-plinius/CL4R1T4S",
+   "inputs_hash": "bcc98a7206ec07b0e34fab6fda0702ae",
+   "description_tr": "Bu depo, büyük AI ürünlerinin sistem prompt'larının çıkarılmış ya da sızdırılmış kopyalarını tek bir yerde topluyor. Kapsamında OpenAI, Anthropic, Google, xAI ve Perplexity gibi model sağlayıcıların yanı sıra Cursor, Windsurf, Devin, Replit ve Manus gibi kod ajanları da var. İçerik kod değil düz metin dosyalarından oluşuyor; katkı yolu, yeni çıkarımı model adı ve tarihiyle birlikte pull request olarak göndermek. Deponun beyan ettiği amaç, bir modelin davranışını şekillendiren görünmeyen talimat katmanını herkese açık hale getirmek. AGPL-3.0 lisanslı ve 50 binin üzerinde yıldızı var. README'nin sonunda, metni okuyan modellere kendi talimatlarını ifşa etmelerini söyleyen gömülü bir yönerge bulunuyor; depo otomatik olarak işlenecekse bu metinlerin talimat değil veri olarak ele alınması gerekiyor.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, Lyricdrop ve Folio için yazdığın üretim prompt'larında yapı ve ton örneği aramak olabilir. Burada çalıştırılacak bir şey yok: depo bir metin arşivi, kendi uygulamana gömülebilecek bir bileşen ya da Mac'te koşan bir araç değil. Bu metinleri kopyalayıp kendi sistem prompt'una taşımak lisans ve telif açısından belirsiz, ayrıca başka bir ürünün kısıtlarını da beraberinde getirir. Pratik faydası daha çok okuma malzemesi düzeyinde: ajanlara araç tanımlarının nasıl anlatıldığını görmek, kendi CLAUDE.md ve skill yazımında işine yarayabilir. Bir uyarı: içerikte modellere yönelik gömülü yönergeler var, bu yüzden dosyaları bir ajana ham girdi olarak verme, veri olarak sarmalayıp ver.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "Imbad0202/academic-research-skills",
+   "inputs_hash": "5885815d113b37f4d7f76c3038a1a340",
+   "description_tr": "Claude Code için akademik araştırma sürecini kapsayan bir skill ve plugin paketi. Araştırma sorusunu planlamaktan literatür taramasına, kaynak doğrulama, atıf biçimlendirme, mantıksal tutarlılık kontrolü ve revizyona kadar olan adımları ayrı skill'ler halinde tanımlıyor. Kurulum plugin marketplace üzerinden yapılıyor; Claude Code CLI, VS Code ve JetBrains istemcilerinde çalışıyor. Paket bilinçli olarak tam otomasyon yerine insan-döngüde bir akış kuruyor ve bütünlük kontrolü aşamaları içeriyor. Lisansı CC BY-NC 4.0, yani ticari kullanım dışarıda bırakılmış. Şubat 2026'da açılmış, 49 bin yıldıza ulaşmış ve v3.22.0 sürümünde.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, asistanının yaptığı araştırma işleri olurdu ama onlar tedarikçi ve eğitmen karşılaştırması gibi işler, makale literatürü taraması değil. Paketin skill'leri akademik yayın döngüsüne göre yazılmış; Lyricdrop veya Folio gibi ürün geliştirme akışlarına karşılığı olan bir adım içermiyor. Yine de bir yan fayda var: bir skill setinin nasıl aşamalara bölündüğünü, kalite kapılarının nereye konduğunu ve plugin marketplace ile nasıl dağıtıldığını görmek, kendi Claude Code kurulumunda skill yazarken örnek olarak kullanılabilir. Ticari olmayan lisansı, holding tarafında herhangi bir kullanım için de kapıyı kapatıyor. Denemek istersen maliyeti düşük, çünkü kurulum yerel ve Claude Code aboneliğinin üstünde ek bir servis istemiyor.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "KeygraphHQ/shannon",
+   "inputs_hash": "870c2182497571f811247cc70b19aa5d",
+   "description_tr": "Shannon, web uygulamaları ve API'ler için otonom çalışan bir AI sızma testi ajanı. Kaynak kodu analiz edip olası saldırı yollarını çıkarıyor, ardından bu yolları gerçek exploit'lerle deneyerek doğruluyor; doğrulanamayan bulguyu rapora yazmama ilkesiyle çalışıyor. Terminalden npx ile başlatılıyor, CI/CD içinde koşturulabiliyor, SARIF çıktısı ve PDF rapor üretiyor. TypeScript ile yazılmış, AGPL-3.0 lisanslı ve 48 bin civarında yıldızı var. Depo, Keygraph adlı şirketin ticari ürününün açık kaynak sürümü olarak konumlanıyor ve insan pentester'ın yerine geçme iddiasında olmadığını açıkça yazıyor. Eylül 2025'te açılmış, 3.0 sürümüyle aktif geliştiriliyor.",
+   "usage_tr": "Lyricdrop'un canlı admin paneli ve Supabase tarafı için lansman öncesi bir kontrol adımı olarak kullanabilirsin; panel şu an internete açık ve yanında onay/playtest akışı var, yani yanlış yapılandırılmış bir yetki kuralının maliyeti gerçek. To-do uygulamasını multi-user ve production olarak yayınlamayı planladığın için orada da aynı adım işe yarar: kod tabanını verip saldırı yollarını çıkarttırmak, kendi review turlarının yakalamadığı yetki ve girdi doğrulama hatalarını gösterir. Ofisteki M4 Pro Mac'te terminalden yerel çalışıyor, ancak ajan bir model sağlayıcısına bağlanıyor; Max aboneliğiyle değil, anahtar ve token maliyetiyle çalışacağını hesaba kat. Çıktısı SARIF ve PDF olduğu için bulguların takibini asistanına ya da Trello'ya devretmek kolay. Uyarı: yalnızca kendi sistemlerinde çalıştır, staging ortamında dene ve exploit denemelerinin üretim verisine dokunmadığından emin ol.",
+   "matched_project": "Lyricdrop",
+   "relevance": 5,
+   "investment_note": "Açık kaynak çekirdek üstüne kurulu otonom güvenlik testi, Arslan Holding'in erken aşama B2B yazılım odağına giren bir kategori; ekibi ve ticarileşme modeli izleme listesine alınabilir."
+  },
+  {
+   "full_name": "SimplifyJobs/Summer2027-Internships",
+   "inputs_hash": "f9cc9aee94d3c37eb7beb9586c3762a1",
+   "description_tr": "Depo, 2027 yazına ait teknoloji stajlarının listesini tutuyor; yazılım mühendisliği, veri bilimi, AI/ML, kuantitatif finans, ürün yönetimi ve donanım kategorilerini kapsıyor. Liste Pitt Computer Science Club ile Simplify tarafından günlük olarak güncelleniyor ve iki binin üzerinde ilan içeriyor. İçerik README içindeki tablolarda duruyor; katkılar issue üzerinden geliyor ve güncelleme Python betikleriyle yapılıyor. Vize sponsorluğu ve vatandaşlık şartı gibi kısıtlar satır başına işaretlerle gösteriliyor. Bir yazılım kütüphanesi değil, veri deposu; bu nedenle depoda açık bir lisans beyanı bulunmuyor. Yıldız sayısı 47 binin üzerinde ve 2020'den beri sürdürülüyor.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, işleri genç ve hızlı öğrenen kişilere devretme fikrin olurdu ama bu liste tamamen ABD merkezli üniversite stajlarına odaklı. İçindeki ilanlar sponsorluk ve vatandaşlık kısıtlarıyla filtreleniyor, yani Dubai veya İstanbul tarafında ekip kurma ihtiyacına karşılık gelmiyor. Bir araç ya da gömülebilir bir bileşen de değil; yalnızca düzenli güncellenen bir metin listesi. Manuel test ve playtest gibi işleri devretmek için baktığın crowd ve freelance platformları bu depodan tamamen ayrı bir kategori.",
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "apache/airflow",
+   "inputs_hash": "934a2d1a82d1cc2fe559d79a4abeaff6",
+   "description_tr": "Apache Airflow, iş akışlarını Python kodu olarak tanımlayıp zamanlamak ve izlemek için kullanılan bir orkestrasyon platformu. İş akışları yönlü çevrimsiz graf (DAG) olarak yazılıyor; scheduler bağımlılıkları çözüp görevleri çalıştırıyor, web arayüzü koşuları, yeniden denemeleri ve logları gösteriyor. Çoğunlukla ETL/ELT, veri mühendisliği ve MLOps pipeline'larında kullanılıyor; bulut servisleri ve veritabanları için geniş bir provider paketi ekosistemi var. Apache-2.0 lisanslı, 2015'ten beri geliştiriliyor ve 46 binin üzerinde yıldızı var. Kurumsal ölçekte en yerleşik seçeneklerden biri; buna karşılık scheduler, metadata veritabanı ve worker'lardan oluşan bir servis kümesi işletmeyi gerektiriyor.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, Lyricdrop'un şarkı işleme zinciri ile Folio'nun günlük içerik üretimi gibi zamanlanmış çok adımlı işler olurdu. Ancak bu işleri hâlihazırda n8n ile yürütüyorsun ve bu ölçekte Airflow'un getirdiği işletme yükü kazancından fazla: ayrı bir scheduler, metadata veritabanı ve worker katmanını sürekli ayakta tutmak gerekiyor. Airflow'un asıl kazandırdığı şey yüzlerce DAG ve ekip ölçeğinde görünürlük; tek makinede koşan birkaç pipeline'da bu fark hissedilmiyor. Ofisteki Mac veya evdeki Mac mini üzerinde Docker ile çalıştırılabilir, API maliyeti getirmez, ama kendi uygulamana gömülebilecek bir bileşen değil. Pipeline sayısı artıp n8n'de takip edilemez hale gelirse yeniden bakılacak bir seçenek olarak not edilebilir.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "sickn33/agentic-awesome-skills",
+   "inputs_hash": "fee3e6fcb10527fd034f6148f43a56f5",
+   "description_tr": "AAS Core, Claude Code, Codex CLI, Cursor ve Gemini CLI gibi kodlama ajanları için yerel bir skill kataloğu ve kontrol düzlemi. Katalogda 2.445 civarında agentic skill bulunuyor; ajan projeyi inceleyip katalogdan kendi seçimini yapıyor, aracın kendisi sıralama veya öneri üretmiyor. Yerel ve salt okunur bir MCP sunucusu, seçimi bellekte doğrulayan compose_stack aracı, aas-stack.json olarak kalıcılaştırma ve değişmez bir plan önizlemesi sunuyor. Uygulama (apply) ve geri alma adımları deneysel olarak işaretlenmiş, desteklenen önizleme yolunun dışında tutulmuş. MIT lisanslı, CLI, plugin'ler ve tarayıcıda çalışan bir Workbench ile birlikte geliyor. Ocak 2026'da açılmış ve 46 binin üzerinde yıldıza ulaşmış.",
+   "usage_tr": "Lyricdrop v2'yi ofis Mac'inde Claude Code ve Superpowers plugin'iyle sıfırdan yazarken, kullandığın skill setini elle toplamak yerine katalogdan seçip aas-stack.json olarak sabitlemek için kullanabilirsin. En somut faydası seçimin kayıt altına alınması: hangi skill'in hangi sürümüyle çalıştığın dosyada duruyor, aynı seti diğer projelerine de aynen taşıyabiliyorsun. Katalog ve MCP sunucusu yerel çalışıyor, ek API maliyeti getirmiyor ve Max aboneliğiyle kullandığın Claude Code kurulumunun yanına oturuyor. Uyarı: 2.445 skill'in tamamı topluluk katkısı ve denetlenmiş değil; seçilen her skill'in dosyasını okumadan projeye almak, kod kalitesi için kurduğun review turlarını baypas eder. Apply adımı deneysel olduğu için değişiklikleri önce plan önizlemesiyle gözden geçir, sonra uygula. Bu iş asistanına devredilecek türden değil; seçim doğrudan senin geliştirme akışını değiştiriyor.",
+   "matched_project": "Lyricdrop",
+   "relevance": 4,
+   "investment_note": null
+  },
+  {
+   "full_name": "danielmiessler/Fabric",
+   "inputs_hash": "d213cb18da0838a56715d40716d271a5",
+   "description_tr": "Fabric, prompt'ları dosya halinde saklanan \"pattern\"lere dönüştürüp komut satırından çalıştıran, Go ile yazılmış açık kaynak bir çerçeve. Bir metni (yazı, transkript, not) bir pattern'den geçirip özet, çıkarım veya yapılandırılmış not üretiyor; pattern'ler topluluk tarafından yazılıyor ve kendi pattern'lerini eklemek mümkün. Tek binary olarak kuruluyor, ayrıca REST API sunucusu ve Swagger arayüzü ile başka uygulamalardan çağrılabiliyor. Anthropic, OpenAI Codex, Azure AI Gateway ve DigitalOcean GenAI dahil çok sayıda model sağlayıcısını destekliyor. MIT lisanslı, 44 bin civarında yıldızı var ve sürüm akışına bakılırsa aktif geliştiriliyor.",
+   "usage_tr": "Kişisel bilgi tabanı uygulamanda, sesli nottan çıkan transkripti kategoriye ayırma ve günlük/haftalık özet üretme adımına doğrudan oturuyor: her adım için bir pattern yazıp n8n akışından CLI veya REST API ile çağırabilirsin, kendi sınıflandırma prompt'larını kod içine gömmek zorunda kalmazsın. İkinci kullanım alanı öğrenme tarafın: Türkçe YouTube kaynaklarından psikoloji ve sosyoloji izlerken transkripti özet ve çıkarım pattern'lerinden geçirip notlarına aynı formatta yazdırabilirsin. Tek binary olduğu için ofisteki Mac'te ve evdeki Mac mini'de sorunsuz çalışır, pattern'ler düz dosya olduğu için sürüm kontrolüne girer. Maliyet tarafında dikkat et: Fabric bir model sağlayıcısına bağlanıyor ve Max aboneliğini kullanamıyor, yani her çağrı API faturası demek; ucuz bir modelle sınıflandırma, pahalı modelle yalnızca haftalık rapor gibi bir ayrım mantıklı olur. Hazır pattern'lerin kalitesi değişken; kendi ihtiyacına göre iki üç pattern yazıp geri kalanını görmezden gelmek daha iyi sonuç verir.",
+   "matched_project": "Kişisel bilgi tabanı",
+   "relevance": 7,
+   "investment_note": null
+  },
+  {
+   "full_name": "Hmbown/Codewhale",
+   "inputs_hash": "6c75199de9770d80b8ff8aeeb1fcd320",
+   "description_tr": "Codewhale, Rust ile yazılmış terminal tabanlı bir kodlama ajanı: projeyi okuyor, dosyaları düzenliyor, komut çalıştırıyor ve kendi çıktısını kontrol ediyor. Büyük işlerde farklı model ve rollere sahip birden çok ajana iş bölüştürebiliyor; MCP desteği ve bir TUI arayüzü var. Barındırılan veya yerel model sağlayıcılarıyla çalışıyor, ilk açılışta sağlayıcı bağlama adımını sunuyor. Kurulum script, npm, Cargo, Docker, Nix ve Scoop üzerinden yapılabiliyor; README aralarında Türkçe'nin de olduğu on sekiz dile çevrilmiş. MIT lisanslı, Ocak 2026'da açılmış ve 41 bin civarında yıldıza ulaşmış.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, terminalde Claude Code ve ofiste OpenCode ile kurduğun mevcut kodlama akışı. Codewhale bu akışa bir bileşen eklemiyor, onun yerine geçmeyi öneriyor ve Max aboneliğini kullanamıyor: ya bir sağlayıcı anahtarı ya da M4 Pro üzerinde yerel bir model gerekiyor, ikisi de bugünkü kurulumuna göre geri adım. Çok ajanlı rol dağıtımı, uzun vadede istediğin orkestratör fikrine yakın duruyor ama burada iş dağıtımı kod tabanıyla sınırlı, projeler arası köprü kuran bir asistan değil. Rust olması ve yerel model desteği, ileride kendi istemcini yazmak için forklanacak adaylar listesine girmesini sağlayabilir. Şimdilik izlemek, kurup akışını değiştirmekten daha makul.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "outline/outline",
+   "inputs_hash": "68bf58e08e9da96ed6815eb19a06f637",
+   "description_tr": "Outline, ekipler için gerçek zamanlı ortak düzenleme destekli bir bilgi tabanı ve wiki uygulaması. React ve Node.js ile yazılmış, Markdown uyumlu; doküman koleksiyonları, arama, izinler ve Slack entegrasyonu sunuyor. Kendi sunucunda çalıştırılabiliyor; resmi container imajları ve barındırılan bir sürümü var. Lisansı BSL 1.1, yani klasik anlamda serbest açık kaynak değil ve ticari kullanımda kısıtları var. 2016'dan beri geliştiriliyor, 40 binin üzerinde yıldızı var ve aktif bakımda. Depo, AI araçlarıyla üretilmiş toplu pull request'leri kabul etmediğini ayrıca belirtiyor.",
+   "usage_tr": "Arslan Holding ve asistan tarafındaki dokümantasyon ihtiyacı için Notion'ın yerine kendi kontrolündeki bir bilgi tabanı olarak kurabilirsin; DigitalOcean'da Docker ile çalıştırmak mevcut altyapına uyuyor. Asıl kazanç ilkenle örtüşüyor: hesap ve veri tamamen sende kalır, asistan değiştiğinde süreç dokümanları ve ilişki geçmişi kaybolmaz, erişim kapsamlarını koleksiyon bazında ayırabilirsin. Günlük kullanım asistanına devredilebilir; tedarikçi karşılaştırmaları, süreç notları ve toplantı çıktıları HubSpot ve Trello'nun yanında burada birikir. Bir servis işletmek demek olduğunu unutma: veritabanı, depolama, yedek ve kimlik doğrulama senin sorumluluğunda, bir Notion aboneliğinden daha fazla bakım istiyor. BSL lisansı nedeniyle bunu kendi ürününe gömmeyi ya da müşteriye sunmayı planlama; iç kullanım için değerlendir.",
+   "matched_project": "Arslan Holding",
+   "relevance": 5,
+   "investment_note": null
+  },
+  {
+   "full_name": "PostHog/posthog",
+   "inputs_hash": "9b9d3df6b44d531feef56a74d5d6f076",
+   "description_tr": "PostHog, ürün analitiği, web analitiği, oturum kaydı, feature flag, A/B deneyleri, anketler ve hata takibini tek bir platformda toplayan açık kaynak bir araç. Olayları otomatik yakalama veya elle işaretleme ile topluyor; verileri görselleştirme veya SQL ile sorgulanabiliyor ve oturum kayıtları web ile mobil uygulamaları kapsıyor. Bulut sürümü önerilen kullanım yolu, ancak kendi sunucunda çalıştırmak için bir hobi kurulum yolu da belgelenmiş. Slack, masaüstü ve MCP üzerinden yönetilebiliyor; ürün verisinden rapor ve düzeltme önerisi üreten bir otomasyon katmanı da ekli. Python ve TypeScript ağırlıklı, 39 bin civarında yıldızı olan ve yoğun geliştirilen bir depo; lisansı tek tip değil, çekirdek ile kurumsal bileşenler ayrı koşullara tabi.",
+   "usage_tr": "Lyricdrop'un lansmanında ölçmen gereken şey tam olarak bunun kapsamında: şarkı seçiminden boşluk doldurmaya ve tamamlamaya giden funnel, zorluk seviyelerinin bırakma oranına etkisi ve ilk oturumda nerede kopulduğu. Feature flag ve deney tarafı, zorluk eşiklerini ya da yeni oyun ekranını önce küçük bir kitleye açıp karşılaştırmanı sağlar; oturum kaydı ise tarayıcı playtest'inde neyin takıldığını izlemek zorunda kalmadan görmeni sağlar. App stüdyosu fikrinde de aynı kurulum birden çok uygulamada tekrarlanabilir. Başlangıç için bulut sürümünün ücretsiz kotası yeterli olur; kendi sunucunda çalıştırmak istersen bunun ayrı bir altyapı işi olduğunu ve DigitalOcean tarafında kalıcı bir maliyet getireceğini hesaba kat. Uyarı: oturum kaydı ve otomatik olay yakalama kullanıcı verisi topluyor, mağaza yayını öncesi hangi alanların maskeleneceğine karar ver.",
+   "matched_project": "Lyricdrop",
+   "relevance": 6,
+   "investment_note": null
+  },
+  {
+   "full_name": "anthropics/prompt-eng-interactive-tutorial",
+   "inputs_hash": "1a38b5dfdcb8985b58e952079fa1da1b",
+   "description_tr": "Anthropic'in prompt mühendisliği üzerine hazırladığı etkileşimli eğitim materyali. Dokuz bölüm ve alıştırmalardan oluşuyor; temel prompt yapısı, rol atama, veriyi talimattan ayırma, çıktı biçimlendirme, adım adım düşündürme, örnek verme ve halüsinasyondan kaçınma gibi konuları sırayla işliyor. Jupyter Notebook formatında; her derste örneklerin değiştirilip sonucun görülebildiği bir alan var ve ayrı bir cevap anahtarı bulunuyor. Materyal Claude 3 Haiku üzerinden yazılmış, ayrıca Google Sheets üzerinde çalışan bir sürümü de mevcut. 38 bin civarında yıldızı var; bir kütüphane değil eğitim içeriği olduğu için depoda lisans beyanı bulunmuyor.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, Lyricdrop'un şarkı başına içerik üretimi ve Folio'nun günlük içerik akışı gibi prompt'a dayanan pipeline'lar olurdu. Burada çalıştırılacak bir araç yok: notebook'lar öğretim amaçlı, kendi uygulamana gömülebilecek bir bileşen ya da Mac'te koşan bir servis değil. Materyalin içeriği de temel seviyede; Claude Code ile uçtan uca uygulama yazdığın noktada büyük olasılıkla yeni bir şey eklemeyecek. Devredilebilir bir tarafı var: asistanına araştırma ve içerik görevlerini daha iyi tarif etmesi için verebileceğin derli toplu bir kaynak. Çalıştırmak için bir API anahtarı gerekiyor, yani Max aboneliğinin dışında küçük de olsa bir maliyet doğuruyor.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "continuedev/continue",
+   "inputs_hash": "0d4309298c0c73a59299736e107c8e15",
+   "description_tr": "Continue, VS Code eklentisi, JetBrains plugin'i ve CLI olarak sunulan açık kaynak bir kodlama ajanıydı. Farklı model sağlayıcılarıyla çalışacak şekilde yapılandırılabiliyor, kod tamamlama ve ajan modunu aynı arayüzde topluyordu. README'nin en başında deponun artık aktif olarak bakılmadığı ve herkes için salt okunur hale getirildiği belirtiliyor. Son 2.0.0 sürümünde anonim telemetri kaldırılmış, kimlik doğrulama çıkarılmış ve hata düzeltmeleriyle proje kapatılmış. Apache-2.0 lisanslı ve 35 binin üzerinde yıldızı var; kod tabanı referans olarak açık bırakılmış durumda.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, Claude Code ve OpenCode ile kurduğun kodlama akışı olurdu ama depo arşivlenmiş ve bakımı durmuş durumda. Bakılmayan bir kodlama ajanını günlük akışa almak, model sağlayıcı arayüzleri değiştikçe kendi başına bir bakım yüküne dönüşür. Tek kalıcı değeri kaynak kod: VS Code ve JetBrains tarafında bir ajan arayüzünün nasıl kurulduğunu görmek isteyen için okunacak bir referans. Kendi istemcini yazma fikrini ilerletirsen, forklanacak canlı bir taban yerine yalnızca örnek olarak bakılacak bir depo olduğunu unutma.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "linshenkx/prompt-optimizer",
+   "inputs_hash": "dfe0709acc8dc7af040ee9c09c37a66b",
+   "description_tr": "Prompt Optimizer, bir prompt'u iyileştirmek, test etmek ve sürümlerini karşılaştırmak için kullanılan açık kaynak bir araç. Web uygulaması, masaüstü uygulaması, Chrome eklentisi ve Docker kurulumu olmak üzere dört kullanım yolu sunuyor; ayrıca bir MCP sunucusu ve Vercel ile Cloudflare dağıtım rehberleri var. Prompt'lar elle yazılabiliyor, şablondan başlatılabiliyor veya dışarıdan içe aktarılıp yeniden kullanılabilir varlıklar olarak saklanabiliyor. TypeScript ile yazılmış, AGPL-3.0 lisanslı ve 35 bin civarında yıldızı var. Model çağrılarını kullanıcının kendi API anahtarlarıyla yapıyor, yani ayrı bir servis aboneliği gerektirmiyor.",
+   "usage_tr": "Lyricdrop'ta şarkı başına üretilen içeriğin prompt'larını (boşluk seçimi, çeldirici şık üretimi, zorluk ayarı) iyileştirirken iki varyantı yan yana koyup karşılaştırmak için kullanabilirsin; şu an bu karşılaştırmayı panelde elle yapıyorsun. Folio'nun günlük içerik üretiminde de aynı şekilde, yazar personası prompt'larını sürümleyip saklamak işine yarar. Vercel üzerinde kendi kopyanı çalıştırabilirsin, bu mevcut deploy akışına uyuyor; Chrome eklentisi tarafı da Claude in Chrome kurulumunun yanında durur. İki uyarı var: araç kendi API anahtarınla çalışıyor, yani her test çağrısı Max aboneliğinin dışında maliyet demek; ve AGPL lisansı kodu kendi ürününe gömmeyi zorlaştırır, ayrı bir iç araç olarak çalıştırmak daha doğru. Aracın kendi değerlendirmesi genel kalite üzerinden konuşuyor; asıl kararı 20-30 şarkılık test setindeki hata oranına bakarak ver.",
+   "matched_project": "Lyricdrop",
+   "relevance": 4,
+   "investment_note": null
+  },
+  {
+   "full_name": "langfuse/langfuse",
+   "inputs_hash": "f1d94f8d79c859c1a518127c7fe46d38",
+   "description_tr": "Langfuse, LLM uygulamaları için izleme (tracing), değerlendirme (eval) ve prompt yönetimi sunan açık kaynak bir gözlemlenebilirlik platformu. Her model çağrısını girdi, çıktı, gecikme, token ve maliyet bilgisiyle kaydediyor; zincirleme çağrıları tek bir iz altında toplayıp nerede hata alındığını gösteriyor. Python ve JavaScript SDK'ları, LangChain, LlamaIndex ve OpenAI gibi kütüphanelerle entegrasyonları ve bir playground'u var. MIT lisanslı bir çekirdeği var; bulut sürümünün yanında Docker ile kendi sunucunda çalıştırma yolu belgelenmiş. Y Combinator W23 çıkışlı bir ekip tarafından geliştiriliyor, 34 bin civarında yıldızı ve düzenli sürüm akışı var.",
+   "usage_tr": "Lyricdrop'un katalog üretimi tam olarak bunun ölçtüğü şekle sahip: dil başına binlerce şarkı, her şarkı için birkaç model çağrısı ve hangi adımda ne harcandığının takibi. Her üretim koşusunu izlemeye alırsan şarkı başına gerçek maliyeti, başarısız olan çağrıları ve hangi prompt sürümünün daha az hata ürettiğini tek yerden görürsün; şu anda bu bilgi panelde dağınık duruyor. Değerlendirme tarafı 20-30 şarkılık test setine oturuyor: hizalama ve şık kalitesi skorlarını iz kayıtlarına bağlayıp sürümler arasında karşılaştırabilirsin. Docker ile DigitalOcean'da kendi kopyanı çalıştırabilirsin, böylece veriler kendi kontrolünde kalır; SDK'lar mevcut Python ve TypeScript pipeline'larına birkaç satırla giriyor. Uyarı: self-host ayrı bir servis işletmek demek, önce bulut sürümünde bir koşuyu izleyip gerçekten baktığın sayıları üretip üretmediğini gör, sonra taşı.",
+   "matched_project": "Lyricdrop",
+   "relevance": 6,
+   "investment_note": null
+  },
+  {
+   "full_name": "TabbyML/tabby",
+   "inputs_hash": "8e88619d025e5e902c60b84b986b8242",
+   "description_tr": "Tabby, kendi sunucunda çalıştırılan açık kaynak bir kod asistanı; GitHub Copilot'a şirket içi bir alternatif olarak konumlanıyor. Kod tamamlama, sohbet paneli ve depo indeksleme üzerine kurulu bir cevap motoru sunuyor; GitLab merge request'leri ve kendi dokümanlarını bağlam olarak ekleyebiliyor. Veritabanı veya bulut servisi gerektirmeyen tek parça bir kurulum ve OpenAPI arayüzü sağlıyor, tüketici sınıfı GPU'larla çalışabiliyor. Rust ile yazılmış, Docker imajları mevcut ve 33 bin civarında yıldızı var. Lisansı standart bir açık kaynak lisansı değil, kullanım koşulları içeren ayrı bir metin.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, mümkün olduğunca yerel çalıştırma tercihin ve Mac mini'yi ev sunucusuna dönüştürme fikrin. Ancak Tabby'nin çözdüğü problem editör içi kod tamamlama ve şirket içi gizlilik; sen kodu Claude Code ve OpenCode ile ajan modunda yazıyorsun, tamamlama katmanı akışında belirgin bir boşluk değil. Model sunmak için ayrılan bellek, 24 GB'lık makinede geliştirme ortamıyla aynı anda zorlanır; ayrı bir makineye kurmadan denemek muhtemelen hayal kırıklığı yaratır. Ekip büyüyüp kod tabanına birden çok kişi dokunmaya başlarsa, depo indeksleme ve kendi dokümanlarını bağlama özelliği için yeniden bakılabilir.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "Pythagora-io/gpt-pilot",
+   "inputs_hash": "12c059ef5a0c3dac9aaefabe7c6a3ecf",
+   "description_tr": "GPT Pilot, bir uygulamayı gereksinim toplamadan koda kadar adım adım üretmeyi hedefleyen erken dönem bir AI geliştirici ajanı. README'nin en başında bir güvenlik bildirimi yer alıyor: Ağustos 2025'te depoya gizlenen ve Haziran 2026'da temizlenen bir tedarik zinciri zararlısı, çalıştırıldığında makinedeki bulut anahtarlarını, GitHub ve npm token'larını ve SSH anahtarlarını toplayan bir yük indiriyormuş. Zararlı kod yalnızca proje kaynaktan çalıştırıldığında devreye giriyordu; o dönemde çalıştıranlara tüm kimlik bilgilerini yenilemeleri öneriliyor. Depo artık aktif olarak bakılmıyor ve bildirimde bu durumun zararlının uzun süre fark edilmemesinin nedeni olduğu belirtiliyor. Python ile yazılmış, 33 binin üzerinde yıldızı var; lisansı standart bir açık kaynak lisansı değil.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, uçtan uca uygulama üreten kod ajanları kategorisi, ki orada zaten Claude Code ile çok daha ileri bir noktadasın. Bunun ötesinde deponun kendisi bir risk kaydı taşıyor: bakımsız bir proje ve geçmişinde uzun süre fark edilmemiş, kimlik bilgisi toplayan bir yük var. Ofisteki Mac'te Supabase, DigitalOcean, Vercel ve GitHub anahtarların duruyor; bu tür bir depoyu klonlayıp çalıştırmanın bedeli doğrudan o anahtarlar olur. Denemek istersen bile kaynaktan değil, yalnızca izole bir ortamda ve token'sız bir makinede düşün. Pratik çıkarım daha çok süreçle ilgili: kod ajanlarını kurarken deponun bakım durumuna ve son commit geçmişine bakmayı kendi kontrol listene eklemek.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "Gitlawb/openclaude",
+   "inputs_hash": "3dc48a0a814938ef6f29c4dc0ad3ed01",
+   "description_tr": "OpenClaude, bulut ve yerel model sağlayıcılarıyla çalışan terminal tabanlı açık kaynak bir kodlama ajanı CLI'ı. OpenAI uyumlu API'ler, Gemini, GitHub Models, Codex OAuth ve Ollama dahil farklı arka uçları tek bir terminal akışı altında topluyor; prompt'lar, araçlar, alt ajanlar, MCP, slash komutları ve akışlı çıktı destekleniyor. TypeScript ile yazılmış, npm üzerinden dağıtılıyor ve MIT lisanslı. Nisan 2026'da açılmış, 33 binin üzerinde yıldıza ulaşmış ve aktif bir sürüm akışı var. İsim benzerliğine rağmen, ofiste kullanılan OpenCode'dan ayrı bir proje.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, terminalde Claude Code ve ofiste OpenCode ile kurduğun kodlama akışı. OpenClaude bu akışın yanına bir şey eklemiyor, yerine geçiyor ve Max aboneliğini kullanamıyor; sağlayıcı anahtarı ya da M4 Pro'da Ollama ile yerel model gerektiriyor. Yine de ilgini çekebilecek bir tarafı var: MIT lisanslı, TypeScript ve çok sağlayıcılı olduğu için, kendi mobil istemcini yazmak üzere forklamayı düşündüğün türden bir taban. Böyle bir denemeye girişirsen isim karışıklığına dikkat et; kullandığın OpenCode ile aynı proje değil ve konfigürasyonları uyumlu değil. Şimdilik izleme listesinde tutmak, kurulumunu değiştirmekten daha makul.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "voideditor/void",
+   "inputs_hash": "8babd045cdc80c44242b88884d2e5474",
+   "description_tr": "Void, VS Code'dan forklanmış açık kaynak bir AI kod editörüydü; ajanları kod tabanında çalıştırma, değişiklikleri checkpoint'leyip görselleştirme ve istenen modeli yerel olarak bağlama üzerine kuruluydu. README'nin başında projenin artık kullanımdan kaldırıldığı ve katkı kabul etmediği belirtiliyor; kaynak kodu referans olarak açık bırakılmış. Depo, VS Code forklamak isteyenler için React ve Tailwind'in editöre nasıl monte edildiğini, imzalama ve otomatik güncelleme iş akışlarını ve token düzeyinde diff gösteren düzenleme servislerini belgeliyor. Apache-2.0 lisanslı ve 28 bin civarında yıldızı var. Projeyi devam ettiren forkların listesi ayrı bir depoda tutuluyor.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, kapalı istemcilere güvenmek yerine açık kaynak bir tabanı forklama refleksin. Ancak burada canlı bir taban yok: proje kapatılmış, katkı alınmıyor ve editör forkunu ayakta tutmak tek başına ciddi bir bakım işi. Kod yazma tarafında Claude Code ve OpenCode ile kurduğun akış bu editörün sunduğundan daha ilerde. Kaynak kodunun kalan değeri dokümantasyonunda: bir Electron uygulamasını imzalama, paketleme ve otomatik güncelleme iş akışları, ileride kendi masaüstü istemcini yazarsan bakılacak bir referans olabilir.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "TanStack/table",
+   "inputs_hash": "4e095daced61151c207041f0155059e5",
+   "description_tr": "TanStack Table, veri tabloları ve datagrid'ler kurmak için kullanılan headless bir kütüphane; markup ve stil tamamen geliştiriciye bırakılıyor, kütüphane yalnızca durum ve mantığı yönetiyor. Sıralama, filtreleme, gruplama, sayfalama, sütun görünürlüğü ve satır seçimi gibi işlevleri tek bir çekirdek üzerinden sağlıyor. React, Vue, Solid, Svelte, Angular ve Lit için ayrı adaptörleri var; TypeScript ile yazılmış ve paket boyutu küçük tutuluyor. MIT lisanslı, 2016'dan beri geliştiriliyor ve 28 binin üzerinde yıldızı var. Tarayıcıda çalışan bir istemci kütüphanesi olduğu için arka uç veya servis gerektirmiyor.",
+   "usage_tr": "Lyricdrop v2'nin admin ve test panelindeki onay kuyruğu için doğrudan kullanılabilir: 20-30 şarkılık listeyi duruma göre filtrelemek, hizalama hata oranına göre sıralamak ve sayfalamak tam olarak bu kütüphanenin işi. Headless olduğu için Claude Design ile ürettiğin arayüzün üstüne hazır bir tablo görünümü dayatmıyor; yalnızca mantığı veriyor, görünümü kendi bileşenlerinle yazıyorsun. Tamamen istemci tarafında çalışıyor, API maliyeti getirmiyor ve Supabase'den gelen veriyi olduğu gibi besleyebiliyorsun. Onay ve playtest adımını asistanına ya da dışarıya devretmeyi planladığın için, filtre ve sıralamanın tutarlı çalıştığı bir liste ekranı o devri kolaylaştırır. Uyarı: markup vermediği için satır seçimi, klavye gezinmesi ve uzun listelerde sanal kaydırma senin yazacağın kod; küçük bir onay kuyruğunda bu yük az, binlerce satırlık katalog ekranında planlaman gerekir.",
+   "matched_project": "Lyricdrop",
+   "relevance": 6,
+   "investment_note": null
+  }
+ ]
+}

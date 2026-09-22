@@ -1,0 +1,175 @@
+{
+ "repos": [
+  {
+   "full_name": "HKUDS/LightRAG",
+   "inputs_hash": "7945e562969158ca16db46b513070bc1",
+   "description_tr": "LightRAG, belgelerden çıkarılan varlık-ilişki grafiğini vektör aramasıyla birlikte kullanan açık kaynak bir retrieval-augmented generation kütüphanesi. Metinleri parçalara ayırıp aralarındaki bağlantıları bir bilgi grafiğinde tutuyor ve sorguyu hem grafik hem benzerlik üzerinden yanıtlıyor. Python ile yazılmış ve MIT lisanslı; farklı LLM ve embedding sağlayıcılarıyla çalışıyor, docling ve MinerU gibi belge dönüştürücüleri ile ragas tabanlı değerlendirme konu etiketleri arasında yer alıyor. EMNLP 2025'te sunulan bir akademik çalışmanın referans uygulaması. Yaklaşık 39.800 star ile RAG tarafında en çok izlenen depolardan biri.",
+   "usage_tr": "Kişisel bilgi tabanı projende sesli notların üzerine arama katmanı kurarken deneyebilirsin: notlar metne çevrildikten sonra grafik çıkarımından geçer ve zamana yayılan 'bu konu aylar içinde nasıl değişti' türü sorular tek tek parça eşleşmesinden daha iyi cevaplanır. Python servisi olarak çalıştığı için Supabase + DigitalOcean kurgunun yanına n8n'den tetiklenen bir adım olarak eklenebilir. Grafik çıkarımı her belge için model çağrısı demek; yerel bir modele bağlarsan ofisteki Mac'te maliyetsiz kalır, bulut modeline bağlarsan not sayısıyla birlikte büyüyen bir gider kalemi olur. Faydası, düz vektör aramasının veremediği özetleri mümkün kılması. Uyarı: cognee ve Khoj ile büyük ölçüde aynı işi yapıyor; üçünü birden kurmak yerine aynı 50-100 notluk test setinde hangisinin daha doğru cevap verdiğini ölçmek daha hızlı yol.",
+   "matched_project": "Kişisel bilgi tabanı",
+   "relevance": 5,
+   "investment_note": null
+  },
+  {
+   "full_name": "lm-sys/FastChat",
+   "inputs_hash": "de624aa89333ec3e7d054ef1fffde263",
+   "description_tr": "FastChat, büyük dil modellerini eğitmek, sunmak ve değerlendirmek için geliştirilmiş açık bir platform. Vicuna modellerinin ve Chatbot Arena'nın yayın deposu; dağıtık çok modelli bir sunum sistemi, web arayüzü ve OpenAI uyumlu REST API içeriyor. MT-Bench ve Arena Elo tablosu gibi değerlendirme araçları da aynı depoda. Python, Apache-2.0 lisanslı, yaklaşık 39.500 star. README'deki duyurular 2024'te duruyor; geliştirme ritminin yavaşladığı ve deponun daha çok bir dönemin referans altyapısı olduğu görülüyor.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, ücretli API yerine yerel model çalıştırma tercihin olurdu. Ancak FastChat çok GPU'lu sunucu kurulumları için tasarlanmış; 24 GB'lık bir Mac'te tek başına anlamlı bir kazanç vermez ve bugün o işi Ollama, llama.cpp veya MLX çok daha az bakım yüküyle karşılıyor. Model karşılaştırma tarafındaki MT-Bench mantığı, Lyricdrop'ta hangi modelin şarkı içeriğini daha iyi ürettiğini ölçerken fikir verebilir, fakat bunun için tüm platformu kurmak gerekmez.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "khoj-ai/khoj",
+   "inputs_hash": "e96e2b936be5479f63267a1ddb193159",
+   "description_tr": "Khoj, kişisel belgeler ve web üzerinden soru yanıtlayan, kendi sunucunda barındırılabilen bir yapay zeka asistanı. Yerel veya bulut modelleriyle (llama, qwen, mistral, gpt, claude, gemini) çalışıyor; PDF, markdown, org-mode, Word ve Notion dosyalarını indeksleyip semantik arama yapıyor. Tarayıcı, Obsidian, Emacs, masaüstü, telefon ve WhatsApp üzerinden erişilebiliyor; özel bilgi, persona ve araçlarla ajan tanımlamaya, zamanlanmış araştırma ve bildirim üretmeye izin veriyor. Python ağırlıklı, AGPL-3.0 lisanslı ve yaklaşık 37.500 star; Docker imajı, PyPI paketi ve CI akışlarıyla bakımı süren bir proje. Ekip ayrıca bilgisayarda çalışan Pipali adlı ikinci bir açık kaynak proje duyurmuş durumda.",
+   "usage_tr": "Kişisel bilgi tabanı projenin aradığı şeyin büyük kısmını hazır veriyor: notları ve belgeleri indeksleyip semantik arama, zamanlanmış özet ve bildirim üretiyor. Evdeki 7/24 açık Mac mini'de self-host edip Tailscale üzerinden ofis Mac'inden ve telefondan aynı örneğe bağlanabilirsin; yerel modelle çalıştırdığında ek API maliyeti çıkmaz. WhatsApp ve Obsidian bağlantıları, asistan tarafındaki takip işlerini de aynı yere toplamanı sağlar. İki uyarı: AGPL-3.0, bunu kendi uygulamana gömüp yayınlamayı düşünüyorsan lisans tarafını baştan netleştirmeni gerektirir; ikincisi bu bitmiş bir ürün, senin 'sade ve sistematik olsun, iş sistemiyle karışmasın' şartını karşılayıp karşılamadığı ancak gerçek kullanımla anlaşılır. Hızlı yol: notlarının bir kopyasıyla kur, kendi uygulamanı yazmadan önce neyin eksik kaldığını listele.",
+   "matched_project": "Kişisel bilgi tabanı",
+   "relevance": 7,
+   "investment_note": null
+  },
+  {
+   "full_name": "LAION-AI/Open-Assistant",
+   "inputs_hash": "f7e89d5d335e3e49b509374914fb37a8",
+   "description_tr": "Open-Assistant, LAION tarafından yürütülen, topluluk katkısıyla insan geri bildirimi toplayıp RLHF ile sohbet asistanı eğitmeyi amaçlamış bir projeydi. Depoda veri toplama web uygulaması (Next.js), eğitim kodu, Discord botu ve API bileşenleri yer alıyor. README'nin en üstünde projenin tamamlandığı ve son veri kümesinin oasst2 adıyla HuggingFace'te yayımlandığı belirtiliyor. Python ağırlıklı, Apache-2.0 lisanslı, yaklaşık 37.400 star. Bugün aktif bir yazılımdan çok, açık RLHF veri kümesinin kaynağı ve o dönemin arşivi.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, açık modellerin nasıl hizalandığını merak ettiğinde okunacak bir arşiv olması. Proje kapandığı için kurup çalıştırmanın bir getirisi yok, bakım da almıyor. Asistan tarafındaki ihtiyaçların için bugün bakılacak yer bu depo değil, aktif geliştirilen self-host asistanlar.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "huggingface/pytorch-image-models",
+   "inputs_hash": "4bd489404d11a8f3e11fc31bbe87f044",
+   "description_tr": "timm (pytorch-image-models), PyTorch için görüntü modeli omurgalarının en geniş koleksiyonu. ResNet, EfficientNet, ViT, ConvNeXt, Swin, MaxViT ve MobileNet dahil yüzlerce mimariyi önceden eğitilmiş ağırlıklarla tek bir API altında sunuyor; eğitim, değerlendirme, çıkarım ve dışa aktarma betikleri de depoda. Hugging Face tarafından sürdürülüyor, Apache-2.0 lisanslı ve yaklaşık 37.200 star. Sürüm notları güncel: yeni ViT aileleri, optimizer ve veri yükleyici düzeltmeleri düzenli olarak ekleniyor. Görüntü sınıflandırma ve özellik çıkarma tarafında fiilen standart kütüphane konumunda.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, görsel skorlama düşündüğün işler (model ajansı fikri ve görüntüyle skorlama konsepti) olabilir. Ancak oralarda ihtiyacın hazır bir çok modlu modele soru sormak; timm ise kendi modelini eğitecek ya da omurga seçecek kişiler için yazılmış bir altyapı. Kendi veri kümeni toplayıp bir sınıflandırıcı eğitmeye karar verdiğin gün ilk durak bu depo olur, o güne kadar değil.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "JustVugg/colibri",
+   "inputs_hash": "1ea4024f9bbc7dfa363225808b217311",
+   "description_tr": "Colibrì, büyük MoE modellerini tüketici donanımında çalıştırmayı hedefleyen, saf C ile yazılmış ve motor tarafında bağımlılığı olmayan bir çıkarım motoru. Depolama, RAM ve VRAM'i tek bir bellek hiyerarşisi gibi ele alıp uzman ağırlıklarını diskten akıtarak 744B-2.8T aralığındaki dokuz model ailesini tek makinede çalıştırdığını belirtiyor. Kullanım için `coli chat`, `coli serve` ve `coli web` komutları var; canlı metrik gösteren bir web panosu, belge üzerinden yalnızca izin verilen yanıtların olasılığını okuyan bir 'Brio' kipi ve yönlendirmeyi görselleştiren bir uzman atlası içeriyor. Apache-2.0 lisanslı, Temmuz 2026'da açılmış ve kısa sürede yaklaşık 37.000 star toplamış. Proje kendini hız garantisi vermeyen bir araştırma platformu olarak tanımlıyor; yetersiz hızlı bellekte yavaşlayacağını ama model semantiğini sessizce değiştirmeyeceğini yazıyor.",
+   "usage_tr": "Lyricdrop'ta şarkı başına düşen içerik üretim maliyetini aşağı çekme planının motor tarafı bu: boşluk seçimi ve çeldirici şık üretimi gibi adımları bulut API'si yerine ofisteki Mac'te çalışan bir modele devretmek. Aynı yerel katman Folio'nun günlük içerik üretiminde de kullanılabilir. Karar vermeden önce iki şeyi ölç: diskten uzman akıtma token hızını düşürür ve senin işin binlerce şarkıyı sırayla işleyen toplu üretim; ayrıca elimizdeki metinde Apple Silicon desteği açıkça yazmıyor, önce kendi makinende derlenip derlenmediğine bakman gerekir. Karşılaştırma için llama.cpp ya da MLX üzerinde küçük bir modelle aynı işi yapıp kalite ve süre farkını yan yana koy. Bu motor kalite tarafını, diğerleri hızı kazanıyor olabilir; hangisinin kazandığını 20-30 şarkılık test setin zaten söyler.",
+   "matched_project": "Lyricdrop",
+   "relevance": 4,
+   "investment_note": "Açıldıktan üç ay sonra bu ölçekte ilgi toplayan ve çıkarım maliyetini donanım yerine yazılımla düşürmeye çalışan bir motor; ticarileşme yolu belirsiz olsa da kategoriyi ve arkasındaki ekibi Arslan Holding'in frontier tech izleme listesinde tutmak mantıklı."
+  },
+  {
+   "full_name": "AlexsJones/llmfit",
+   "inputs_hash": "65e226d8b6ab7d780a9e2256f9a10968",
+   "description_tr": "llmfit, bir makinenin hangi açık kaynak dil modellerini rahat çalıştırabileceğini hesaplayan bir terminal aracı. CPU, RAM, GPU/VRAM ve birleşik bellek mimarisini (NVIDIA CUDA, Apple Silicon, AMD ROCm, Intel OneAPI) algılıyor; model parametre sayısı, bağlam uzunluğu ve niceleme biçimlerine (GGUF, AWQ, GPTQ, EXL2) göre bellek ihtiyacını ve tahmini token hızını çıkarıyor. Etkileşimli bir TUI, klasik CLI, web panosu ve /api/v1 altında REST uçları sunuyor; Ollama, llama.cpp, MLX, LM Studio ve Docker Model Runner gibi yerel çalıştırıcıları tanıyor. Kendi makinende ölçtüğün gerçek token/saniye değerlerini TUI içinden projeye katkı olarak gönderebiliyorsun, birleşen ölçümler tahminlerin yerini alıyor. Rust ile yazılmış, MIT lisanslı, Şubat 2026'da açılmış ve yaklaşık 37.000 star toplamış.",
+   "usage_tr": "'Bu Mac'te ne çalışır' sorusunu her yeni modelde elle araştırmak yerine tek komutla cevaplayabilirsin; 24 GB birleşik bellekli makinede hangi niceleme seviyesinin sığdığını ve kabaca hangi hızda çalışacağını söylüyor. Doğrudan faydası Lyricdrop'ta: şarkı başına çeldirici şık ve boşluk üretimini yerel bir modele taşımayı denerken aday modelleri saatlerce indirip denemeden eleyebilirsin. Aynı liste Folio'nun günlük içerik üretimi ve kişisel bilgi tabanındaki sınıflandırma adımı için de geçerli. Mac'te yerel çalışıyor, API maliyeti getirmiyor ve MLX/llama.cpp kurulumunun yanına oturuyor; REST ucu sayesinde bir n8n akışından da sorgulanabilir. Uyarı: verdiği hız değerleri çoğu donanım için ölçüm değil tahmin, kendi ölçümünü yapıp üzerine yazman gerekir.",
+   "matched_project": "Lyricdrop",
+   "relevance": 6,
+   "investment_note": null
+  },
+  {
+   "full_name": "sgl-project/sglang",
+   "inputs_hash": "ea166cbe6705ec05e1fbe967a3aad8a8",
+   "description_tr": "SGLang, büyük dil modellerini ve çok modlu modelleri yüksek verimle sunmak için yazılmış bir çıkarım sunucusu. Önek önbellekleme, speküle edici kod çözme ve büyük ölçekli uzman paralelliği gibi tekniklerle üretim yüklerini hedefliyor; DeepSeek, Qwen, GLM, Llama ve görüntü-dil modelleri için gün sıfır desteği yayımlıyor. Birincil hedefi NVIDIA GPU'ları, ayrıca AMD ve TPU arka uçları var. Python, Apache-2.0 lisanslı, yaklaşık 36.300 star; haftalık geliştirici toplantıları ve sık blog yayınıyla yoğun bir geliştirme ritmi sürdürüyor. Tek kullanıcılı yerel kullanım için değil, çok kullanıcılı sunucu kurulumları için tasarlanmış.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, Lyricdrop kataloğunu kiralık GPU'larda toplu üretmeye karar verdiğin bir senaryo olurdu. Bugünkü kurguda oyuncu tarafı Supabase + DigitalOcean üzerinde ve model işleri ya bulut API'si ya da Mac'te yerel çalışıyor; ikisinde de SGLang'a yer yok. CUDA sınıfı donanım istediği için ofisteki Mac'te anlamlı biçimde çalışmaz.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "qdrant/qdrant",
+   "inputs_hash": "13e514fe61515947673258b8562b8fee",
+   "description_tr": "Qdrant, vektör arama için yazılmış açık kaynak bir veritabanı ve arama motoru. Yüksek boyutlu gömme vektörlerini saklıyor, HNSW tabanlı yaklaşık en yakın komşu araması yapıyor ve filtreleme ile anahtar kelime aramasını birleştiren hibrit sorgulara izin veriyor; benzerlik araması, öneri sistemleri ve semantik arama tipik kullanım alanları. Rust ile yazılmış, Apache-2.0 lisanslı ve yaklaşık 34.750 star; ayrıca yönetilen bir bulut sürümü sunuluyor. Elimizdeki metin depo açıklaması ve konu etiketleriyle sınırlı olduğu için sürüm ritmi ve bakım durumu hakkında burada bir değerlendirme yapılmadı.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, kişisel bilgi tabanındaki notların semantik araması olurdu. Oradaki veri hacmi Supabase'in pgvector desteğiyle rahat karşılanıyor; ayrı bir vektör veritabanı kurmak kazandırdığından fazla işletme yükü getirir. Daha az riskli yol, kullanacağın RAG kütüphanesinin arka ucunu değiştirilebilir bırakmak ve gerekirse sonra geçmek. Not sayısı yüz binleri bulduğunda ya da Folio tarafında öneri sistemine geçtiğinde bu karara yeniden bakılabilir.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "lyogavin/airllm",
+   "inputs_hash": "e95937b2dd571f56f723c46aa672ae3e",
+   "description_tr": "AirLLM, çok büyük dil modellerini küçük VRAM'li tek bir GPU'da çalıştırmayı sağlayan bir Python kütüphanesi. Yöntemi niceleme veya damıtma değil katman katman yükleme: model katmanları sırayla belleğe alınıp bırakılıyor, böylece 70B'lik modellerin 4 GB'lık bir kartta çalıştığı belirtiliyor. Son sürümlerde çok büyük MoE modelleri ve küçük VRAM üzerinde eğitim (donmuş ağırlıkları akıtıp adaptörleri GPU'da tutma) desteği eklenmiş; README'de macOS için ayrı bir bölüm bulunuyor. Jupyter Notebook ağırlıklı bir depo, Apache-2.0 lisanslı, yaklaşık 34.700 star ve güncel sürüm notları var. Yöntemin doğası gereği bellekte kazanılan şeyin bedeli hızdan ödeniyor.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, ücretli API yerine Mac'te yerel model çalıştırma tercihin. Fakat AirLLM'in çözdüğü problem 'az VRAM'li ayrı bir NVIDIA kartı'; senin donanımın birleşik bellekli bir Mac ve orada MLX ile llama.cpp aynı işi daha yüksek hızda yapıyor. Lyricdrop'un binlerce çağrı gerektiren toplu içerik üretiminde katman akışının getirdiği yavaşlık zaten kabul edilebilir olmaz. Meraktan macOS bölümünü okuyup tek bir modelle deneyebilirsin, ama üretim yoluna koyacağın bir bileşen değil.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "datawhalechina/self-llm",
+   "inputs_hash": "d6458151860b9523773d602a5fca4a3d",
+   "description_tr": "self-llm, açık kaynak büyük dil modellerinin Linux üzerinde kurulumu, dağıtımı ve ince ayarı için hazırlanmış Çince bir eğitim serisi. Elli üzerinde model için ortam kurulumu, komut satırı çağrısı, demo dağıtımı, LangChain entegrasyonu ve LoRA/tam parametre ince ayar adımlarını notebook'lar halinde veriyor. Datawhale topluluğu tarafından sürdürülüyor, Apache-2.0 lisanslı ve yaklaşık 32.300 star. İçerik ağırlıklı olarak Çince ve Çin'de yaygın bulut GPU kiralama kurgularını varsayıyor. Bir kütüphane değil, uçtan uca öğretici bir kaynak.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, yerel model çalıştırma ve ince ayar konularını öğrenmek isteyebileceğin durumlar. İçeriğin Çince olması ve Linux + kiralık GPU varsayımı, Mac merkezli kurulumunla örtüşmüyor. Bir modeli kendi verinle ince ayar etmeye karar verdiğinde aynı adımları İngilizce kaynaklardan ya da doğrudan Claude Code üzerinden almak daha pratik olur.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "onyx-dot-app/onyx",
+   "inputs_hash": "e53dc7301b35291318c60621ac7b01a0",
+   "description_tr": "Onyx, kurum içi belgeler üzerinde arama ve sohbet sunan, kendi sunucunda barındırılabilen açık kaynak bir yapay zeka platformu. Elli üzerinde hazır bağlayıcı veya MCP ile Drive, Slack, Notion gibi kaynakları indeksliyor; hibrit arama üzerine kurulu ajanlı RAG, çok adımlı derin araştırma, web araması, kod çalıştırma, belge üretimi, görsel üretimi ve ses kipi içeriyor. Kendi talimat, bilgi ve araçlarıyla özel ajanlar tanımlanabiliyor; Ollama, vLLM ve LiteLLM dahil hem yerel hem bulut model sağlayıcılarıyla çalışıyor. Python ve Next.js ile yazılmış, tek komutluk bir kurulum betiği sunuyor, yaklaşık 32.200 star. Lisans alanı standart bir SPDX etiketiyle eşleşmiyor; README'de MIT rozeti görünse de ticari kullanım öncesi lisans metnini okumak gerekiyor.",
+   "usage_tr": "Asistan ve holding operasyon tarafında dağınık duran Drive, Notion, Slack ve toplantı notlarını tek bir aranabilir yere toplamak için kullanabilirsin; 'bunu nerede konuşmuştuk' sorusu sana gelmeden cevaplanabilir hale gelir. Evdeki 7/24 açık Mac mini'de ya da DigitalOcean'da bir kutuda self-host edilir, model tarafını yerel bir modele bağlarsan ek API maliyeti çıkmaz. Erişim kapsamlarının ayrı kalması senin için bir ilke; kurarken bağlayıcıları asistanın görmesi gereken kaynaklarla sınırlamak ilk adım olmalı. Arslan Holding tarafında derin araştırma kipi, pazar ve rakip taraması için ikinci bir kullanım alanı açıyor. Uyarı: bu gömülebilir bir bileşen değil, kurulup bakımı yapılacak bütün bir platform; Docker, veritabanı ve güncelleme yükünü kabul etmeden başlama.",
+   "matched_project": "Asistan ve holding operasyon araçları",
+   "relevance": 5,
+   "investment_note": null
+  },
+  {
+   "full_name": "stanford-oval/storm",
+   "inputs_hash": "c816a2c3dfff64236aa75371cdb4d4d6",
+   "description_tr": "STORM, bir konuyu internette araştırıp kaynak gösteren uzun bir rapor yazan, Stanford OVAL laboratuvarından çıkmış açık kaynak bir sistem. Yöntemi, farklı bakış açılarından sorular üretip arama sonuçlarıyla bir taslak plan çıkarmak ve ardından bölüm bölüm yazmak; Co-STORM sürümü aynı süreci insanla birlikte yürütmeye izin veriyor. litellm entegrasyonu sayesinde farklı dil modelleri ve embedding sağlayıcıları takılabiliyor, kendi belgelerini kaynak vermek için VectorRM bileşeni var. `pip install knowledge-storm` ile kurulabiliyor ve Streamlit tabanlı küçük bir arayüz içeriyor; MIT lisanslı, yaklaşık 31.500 star. Yazarları çıktının yayına hazır olmadığını, daha çok yazım öncesi hazırlık aşamasında işe yaradığını belirtiyor.",
+   "usage_tr": "Arslan Holding'in deal screening ve pazar araştırması adımında kullanabilirsin: bir alt sektör ya da coğrafya için kaynaklı bir ön rapor çıkarıp üzerine kendi notlarını yazarsın. İkinci kullanım asistan tarafında; tedarikçi karşılaştırma ve 'bu alanda kim var' türü araştırmalar sana gelmeden önce taslak halinde hazırlanabilir, yani devredilebilir bir iş. Python servisi olarak Mac'te çalışıyor ama arama motoru anahtarı ve model çağrıları gerektiriyor; Max aboneliğinin kapsamına girmez, rapor başına ayrı bir gider kalemi olur. Çıktıyı olduğu gibi kullanmamak gerekiyor: yazarlarının da söylediği gibi bu bir ilk taslak, kararın dayanağı değil. Hızlı test, zaten iyi bildiğin bir alanda rapor ürettirip kaç maddesinin doğru olduğunu saymak — ne kadar güveneceğini tek oturumda gösterir.",
+   "matched_project": "Arslan Holding",
+   "relevance": 6,
+   "investment_note": null
+  },
+  {
+   "full_name": "ScrapeGraphAI/Scrapegraph-ai",
+   "inputs_hash": "b7ac5d3f0cf2813495e559d8de3b2f9b",
+   "description_tr": "ScrapeGraphAI, hangi bilgiyi istediğini yazdığın bir istemle web sayfalarından ve yerel belgelerden yapılandırılmış veri çıkaran bir Python kütüphanesi. CSS seçici yazmak yerine sayfayı bir dil modeline okutuyor ve grafik tabanlı bir akışla kazıma hattı kuruyor; HTML, XML, JSON ve Markdown girdilerini destekliyor. LangChain, LlamaIndex ve CrewAI gibi çerçevelerle, ayrıca Python ve Node SDK'larıyla entegre oluyor; farklı model sağlayıcılarıyla çalışacak biçimde tasarlanmış. MIT lisanslı ve yaklaşık 31.200 star; aynı ekibin ücretli bir bulut servisi de var ve README belirgin şekilde oraya yönlendiriyor. Depo aktif bakım altında ve Türkçe dahil çok dilli dokümantasyon sunuyor.",
+   "usage_tr": "Arslan Holding'in deal sourcing adımında, izlediğin kaynaklardaki şirket ve tur listelerini elle kopyalamak yerine yapılandırılmış olarak çekmek için kullanabilirsin; çıkan kayıtları HubSpot'a ya da bir Supabase tablosuna yazan bir n8n akışının başına oturur. Akışı bir kez kurarsın, haftalık çalıştırma ve gözden geçirme asistanına devredilebilir. Sayfa başına model çağrısı yaptığı için maliyet sayfa sayısıyla artıyor; yerel bir modele bağlanabiliyorsa bu kalem sıfırlanır, karşılığında çıkarım kalitesi düşebilir — kurmadan önce bunu doğrula. İki uyarı: kazıdığın sitenin kullanım koşullarını kontrol et ve modelin doldurduğu alanları doğrulamadan kaydetme, çünkü yanlış ama gerçekçi görünen bir şirket kaydı boş kayıttan daha pahalıya mal olur.",
+   "matched_project": "Arslan Holding",
+   "relevance": 5,
+   "investment_note": null
+  },
+  {
+   "full_name": "topoteretes/cognee",
+   "inputs_hash": "e513ac0c5a81ed40068598414cb45e62",
+   "description_tr": "cognee, yapay zeka ajanlarına oturumlar arasında kalıcı hafıza vermeyi amaçlayan açık kaynak bir bellek katmanı. Belgeleri, kodu ve konuşmaları işleyip kendi sunucunda duran bir bilgi grafiğine dönüştürüyor; ajanlar bu grafiği arayıp yeniden kullanıyor. OpenAI veya Anthropic anahtarı olmadan, yerel çıkarım ve gömme modelleriyle başlanabildiği belirtiliyor; grafik ve vektör veritabanı bileşenleriyle birlikte çalışıyor. Python ile yazılmış, Apache-2.0 lisanslı, yaklaşık 30.900 star; topluluk eklentileri için ayrı bir depo ve açık katkı etiketleriyle işleyen aktif bir akış var. Bellek ve bağlam mühendisliği alanında son dönemde en çok ilgi gören projelerden biri.",
+   "usage_tr": "Uzun süredir istediğin 'tüm projelerini bilen orkestratör ajan' fikrinin eksik parçası tam olarak bu: Claude Code oturumları arasında taşınan, kaynağı belli bir hafıza. Kişisel bilgi tabanı projende notların, Trello kartlarının ve proje dokümanlarının tek bir grafikte toplanması, 'geçen ay Lyricdrop'ta neyi neden bıraktım' sorusunu cevaplanabilir hale getirir. Anahtarsız ve yerel modellerle başlanabildiği için ofisteki Mac'te API maliyeti olmadan denenebilir; Python servisi olduğundan Supabase + n8n kurgunun yanına eklenir. Uyarı: LightRAG ve Khoj ile işlevi büyük ölçüde örtüşüyor, üçünü birden kurmak yerine aynı test setinde hangisinin daha doğru cevap verdiğini ölç. İkinci uyarı: grafik kurma adımı belge sayısıyla birlikte uzuyor, ilk denemeyi küçük tut.",
+   "matched_project": "Kişisel bilgi tabanı",
+   "relevance": 6,
+   "investment_note": "Ajan hafızası, açık çekirdek modelle ticarileşmeye çalışan birkaç oyuncunun yarıştığı bir kategori; cognee'nin benimsenme hızı bu alanı Arslan Holding'in AI izleme listesine almak için yeterli bir sinyal."
+  },
+  {
+   "full_name": "tatsu-lab/stanford_alpaca",
+   "inputs_hash": "123fecac0f574fa3175e9476dee3c024",
+   "description_tr": "Stanford Alpaca, LLaMA-7B modelinin 52 bin talimat-yanıt örneğiyle ince ayar edilmesini anlatan 2023 tarihli araştırma deposu. İçinde veri kümesi, Self-Instruct yöntemiyle veriyi üreten kod, eğitim betikleri ve ağırlık farkından model geri kazanma adımları var. Kod Apache-2.0 lisanslı, ancak veri kümesi ve ağırlık farkı CC BY-NC 4.0 ile yalnızca araştırma kullanımına açık. Yaklaşık 30.200 star; canlı demo kapatılmış ve depo o dönemin referansı olarak duruyor. Açık talimat ince ayarı dalgasını başlatan çalışmalardan biri olarak tarihsel değeri yüksek.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, bir modeli kendi verinle ince ayar etme fikrine baktığın an olurdu. Ancak hem lisans ticari kullanıma kapalı hem de yöntem ve temel model üç yıl geride kaldı. Talimat verisi üretme mantığı hâlâ okunmaya değer, çalıştırılmaya değil.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "garrytan/gbrain",
+   "inputs_hash": "1e493868815f0a9dfa6da5f0d7c685d4",
+   "description_tr": "GBrain, kullandığın yapay zeka ajanlarına kaynağı belli, düzeltilebilir ve taşınabilir bir hafıza veren açık kaynak bir sistem. Açık olguları kaynaklarıyla saklıyor, düzeltme ve geri çekmeyi destekliyor; anahtarsız kurulum ve anahtar kelime aramasıyla başlayıp semantik arama, sentez ve arka plan zenginleştirme katmanları eklenebiliyor. Tek komutla MCP üzerinden Tailscale ağında yayımlanabiliyor, böylece Claude Code dahil farklı istemciler aynı hafızaya bağlanıyor; her yazma işleminde kişi ve şirket varlıklarını çıkarıp bağlayan bir bilgi grafiği kuruyor. Ekip kullanımı için girişe göre kapsamlanan, kişi bazlı izole görünürlük sunduğu belirtiliyor. TypeScript ile yazılmış, MIT lisanslı, Nisan 2026'da açılmış ve yaklaşık 30.200 star toplamış; yazarı sistemi kendi üretim kurulumunda çalıştırdığını aktarıyor.",
+   "usage_tr": "İstediğin orkestratör ajanın hafıza katmanına doğrudan oturuyor. Kişisel bilgi tabanı projende sesli notlar, toplantı transkriptleri ve e-postalar kaynağı belli tek bir kayda dönüşür; Claude Code'a MCP üzerinden bağlandığında her oturum sıfırdan başlamaz. Tailscale zaten kurulu olduğu için ofisteki Mac'te tutup ev makinesinden ve telefondan aynı hafızaya erişmek ek altyapı gerektirmiyor. İkinci kullanım Arslan Holding tarafında: kişi ve şirket zenginleştirme sayesinde deal akışında karşılaştığın isimleri ve şirketleri HubSpot'un yanında kaynaklı bir kayıtta tutabilirsin, kişi bazlı kapsamlama da erişimlerin izole kalması ilkenle örtüşüyor. Uyarı: sentez katmanı model çağrısı demek, hangi modele bağlanacağını ve maliyetin nereye yazılacağını baştan sabitle. İkinci uyarı: proje çok yeni, verinin dışa aktarılabilir kalmasına dikkat et — hafızanı bir depoya kilitlemek istemezsin.",
+   "matched_project": "Kişisel bilgi tabanı",
+   "relevance": 8,
+   "investment_note": "Kişisel ve kurumsal 'brain' katmanı bugün açıkça talep edilen bir şekil; hem bu depoyu hem üzerine kurulan erken aşama ekipleri Arslan Holding'in AI deal flow'unda izlemek mantıklı."
+  },
+  {
+   "full_name": "NirDiamant/RAG_Techniques",
+   "inputs_hash": "23dc9c7ffced25a559dca385f561083b",
+   "description_tr": "RAG_Techniques, retrieval-augmented generation tekniklerini çalıştırılabilir notebook'lar halinde toplayan bir eğitim deposu. Kırk üzerinde defter, temel parçalama ve yeniden sıralamadan sorgu dönüşümü, bağlamsal sıkıştırma, grafik tabanlı ve ajanlı RAG'a kadar yöntemleri sezgi, kod ve kaynak üçlüsüyle anlatıyor. LangChain, LlamaIndex ve OpenAI gibi yaygın araçların üzerine kurulu; topluluk katkısına açık ve düzenli olarak yeni teknik ekleniyor. Yaklaşık 29.600 star; lisans alanı standart bir SPDX etiketiyle eşleşmiyor, kullanmadan önce lisans dosyasına bakmak gerekiyor. README, yazarın ücretli kursuna ve ilgili ürünlerine geniş yer veriyor.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, kişisel bilgi tabanının arama katmanını kurarken hangi tekniği seçeceğine karar verdiğin an olabilir. Burada kurulacak bir yazılım yok, okunacak defterler var; senin çalışma şeklinde bu bilgiyi doğrudan Claude Code'a sorup uygulatmak daha kısa yol. Yine de arama alakasız sonuç döndürdüğünde, tek tek tekniklerin nasıl ölçüldüğünü görmek için başvurulabilecek bir kaynak.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "gitleaks/gitleaks",
+   "inputs_hash": "fc4ec46aaa5580aed723151150340b44",
+   "description_tr": "Gitleaks, git depolarında, dosyalarda ve stdin'den gelen içerikte parola, API anahtarı ve token gibi sırları tespit eden bir komut satırı aracı. Tespit motoru düzenli ifade ve entropi tabanlı kurallara dayanıyor; bulguyu dosya, satır, commit ve parmak izi bilgisiyle raporluyor. Homebrew, Docker veya Go ile kurulabiliyor, pre-commit kancası ya da GitHub Action olarak çalıştırılabiliyor. Go ile yazılmış, MIT lisanslı, yaklaşık 29.400 star. Bakımcı README'nin başında projeyi özellik olarak tamamlanmış saydığını, bundan sonra yalnızca güvenlik yaması yayımlayacağını ve Betterleaks adlı yeni projeye yöneldiğini belirtiyor.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, Claude Code ile kurduğun proje iskeletlerine standart bir pre-commit kancası olarak eklenmesi — Supabase ve DigitalOcean anahtarlarının yanlışlıkla commit'lenmesini ucuza engeller. Mac'te brew ile kuruluyor, yerel çalışıyor, API maliyeti getirmiyor. Bir ürün eşleşmesi değil, proje kurulum otomasyonunda bir satırlık hijyen adımı olarak düşünülmeli. Bakımcısı yeni özellik eklemeyeceğini yazdığı için, kural setinin yeni servislerin anahtar biçimlerine ayak uydurup uyduramayacağını takip etmek gerekir.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  }
+ ]
+}

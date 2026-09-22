@@ -1,0 +1,175 @@
+{
+  "repos": [
+    {
+      "full_name": "x1xhlol/system-prompts-and-models-of-ai-tools",
+      "inputs_hash": "0b0dc9b62be7a5e2ad26546ba6772140",
+      "description_tr": "Depo, ticari AI kodlama ve ajan ürünlerinin (Cursor, Devin, Windsurf, v0, Replit, Lovable, Claude Code, Codex ve onlarca başkası) sistem prompt'larını ve araç tanımlarını tek bir arşivde topluyor. İçerik kod değil metin: her ürün için klasörler halinde prompt dosyaları, tool şemaları ve bazı model yapılandırmaları bulunuyor. Kurulacak bir paket, çalıştırılacak bir CLI ya da bağımlılık yok; okunmak üzere derlenmiş bir koleksiyon. GPL-3.0 lisanslı ve ~144K star ile bu listenin en çok yıldız alan deposu, düzenli olarak yeni araçlarla güncelleniyor. README'nin büyük kısmı sponsorluk, bağış ve güvenlik hizmeti tanıtımlarından oluşuyor; metinlerin kaynağı ve doğruluğu depo dışından doğrulanamıyor.",
+      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın olası bağlam, istediğin orkestratör ajanın kendi sistem prompt'unu yazarken bu dosyaları referans olarak okumak olabilir. Kurulacak bir şey olmadığı için Mac'te maliyeti yok, ama bir pipeline adımını da hızlandırmıyor — okuma malzemesi. Prompt tasarımı konusunda fikir vermesi dışında Lyricdrop veya asistan tarafındaki hiçbir adıma oturmuyor. Uyarı: kaynağı belirsiz ve GPL-3.0 altında yayınlanmış metinleri kendi ürün prompt'una kopyalamak hem lisans hem kalite riski taşır. İçeriğin gerçekten o ürünlerin güncel prompt'ları olduğunu doğrulamanın bir yolu da yok.",
+      "matched_project": null,
+      "relevance": 2,
+      "investment_note": null
+    },
+    {
+      "full_name": "github/spec-kit",
+      "inputs_hash": "167ada197803e349060e5ceaea6a52eb",
+      "description_tr": "GitHub'ın yayınladığı, AI kodlama ajanlarına yapılandırılmış süreçler ve şablonlar veren açık kaynak araç seti. Üç bağımsız giriş noktası sunuyor: spec-driven development (constitution → specify → plan → tasks → implement → converge), hata giderme (assess → fix → test) ve fikir değerlendirme (intake → research → define → shape → decide). Süreçler ajanın sohbetinde skill olarak çağrılıyor, üretilen spesifikasyon ve raporlar depoda `.specify/` altında Markdown olarak kalıyor. `specify` CLI'ı Python 3.11+ ve uv ile kuruluyor; macOS, Linux ve Windows'ta Claude Code, Copilot, Cursor gibi ajanlarla çalışıyor. MIT lisanslı, ~138K star, GitHub çatısı altında aktif bakımda.",
+      "usage_tr": "Lyricdrop v2'yi sıfırdan yazarken en doğrudan oturduğu yer burası: admin panel ve test paneli özelliklerini Superpowers'la kodlamadan önce specify → plan → tasks adımlarından geçirip ne yapılacağını yazıya dökebilirsin. Üretilen spesifikasyon dosyaları depoda kaldığı için, söz-ses hizalama kurallarını her oturumda yeniden anlatmak yerine ajanın okuyacağı kalıcı bir kaynak oluşuyor. Bug akışının 'doğrulanmamış düzeltme başarılı sayılmaz' kuralı, senin istediğin ikinci review katmanına yakın bir kapı koyuyor. Ofis Mac'inde yerel çalışır, ek API maliyeti getirmez, ajanın token'ları Max aboneliğinin içinde kalır. Uyarı: her özellik için doküman üretir ve küçük değişikliklerde süreç işin kendisinden uzun sürer; ayrıca bu pakette OpenSpec ve BMAD-METHOD aynı boşluğu dolduruyor, üçünü birden kurma. Fikir değerlendirme uzantısı ayrıca Arslan Holding tarafında bir fikri yatırıma değer mi diye kayıt altında tartmak için kullanılabilir.",
+      "matched_project": "Lyricdrop",
+      "relevance": 8,
+      "investment_note": null
+    },
+    {
+      "full_name": "farion1231/cc-switch",
+      "inputs_hash": "a0c2cab9d68dc4882711aa6dd39b2020",
+      "description_tr": "Claude Code, Claude Desktop, Codex, Gemini CLI, OpenCode, Hermes Agent gibi kodlama ajanlarının yapılandırmasını tek bir masaüstü uygulamasından yöneten araç. Sağlayıcı profilleri, MCP sunucuları ve skill'ler arasında geçişi arayüzden yaptırıyor ve değişiklikleri ilgili ajanın kendi config dosyalarına yazıyor. Rust ve Tauri 2 ile yazılmış; Windows, macOS ve Linux için hazır derlemeler yayınlıyor, WSL desteği var. MIT lisanslı, ~134K star, Ağustos 2025'te açılmış ve sık sürüm çıkarıyor. README'nin önemli bir bölümü API relay servislerinin sponsorluk ve indirim kodlarından oluşuyor; projenin gelir modeli bu bağlantılara dayanıyor.",
+      "usage_tr": "Ofis Mac'i ve ev Mac mini'sinde hem Claude Code hem OpenCode çalıştırdığın kurulumda, iki makinenin ajan ayarlarını ve MCP sunucularını aynı yerden görünür kılmak için kullanabilirsin — Mac ayarlarında GUI'yi tercih etme alışkanlığına da uyuyor. Yerel bir masaüstü uygulaması; ek API maliyeti yok ve Max aboneliğiyle çalışma şeklini değiştirmiyor. Profil bazlı geçiş, Lyricdrop deposu ile kişisel projeler arasında farklı MCP ve skill setleri tutmayı kolaylaştırır. Uyarı: aracın satış noktalarının büyük kısmı üçüncü parti relay sağlayıcılarına geçiş üzerine kurulu; Max aboneliğiyle çalışırken o kısma ihtiyacın yok ve anahtarlarını bilinmeyen relay'lere vermek istemezsin. Yaptığı iş dosya düzenlemek olduğu için kritik kurulumlardan önce config yedeğini alman yeterli.",
+      "matched_project": "Claude Code",
+      "relevance": 5,
+      "investment_note": null
+    },
+    {
+      "full_name": "nextlevelbuilder/ui-ux-pro-max-skill",
+      "inputs_hash": "b5be83d2a01e1d82efa0de08f9056944",
+      "description_tr": "Kodlama ajanlarına UI/UX karar desteği veren bir agent skill. 192 kurallı bir akıl yürütme seti ve aranabilir 79 UI stili üzerinden, proje gereksiniminden bölüm düzeni, tipografi, renk ve bileşen önerileri içeren bir design system üretmeyi hedefliyor. React, Tailwind, mobil arayüz ve landing page senaryolarına odaklanıyor; Python tabanlı, ayrıca npm üzerinden bir CLI olarak da kuruluyor. Claude Code, Codex, Cursor, Copilot gibi skill destekleyen araçlarla çalışıyor; MIT lisanslı, ~130K star, v2.0 ile design system üreteci eklenmiş. Depo çok dilli README, bağış çağrıları ve aynı ekibin diğer skill ürünlerine yapılan tanıtımlarla birlikte geliyor.",
+      "usage_tr": "Lyricdrop v2'de panel bittikten sonra mobil arayüze geçerken, ekran düzeni ve bileşen kararlarını Claude Code'a bu skill açıkken verdirebilirsin; boşluk doldurma ekranı gibi yoğun etkileşimli bir oyun ekranında tipografi ve kontrast kararları için işe yarar bir başlangıç noktası sağlar. İkinci bağlam, Arslan Holding'in website ve sunum sayfalarının Claude Design ile üretildiği akış: landing page kalıpları oradaki işi kısaltabilir. Tek bir skill dosyası olduğu için ofis Mac'inde yerel çalışır, ayrı API maliyeti getirmez ve asistanına devredilecek bir tarafı yoktur. Uyarı: ürettiği design system genel kalıplara dayanır; Folio'da hedefin Instagram'ın birebir kopyası olduğu için orada işine yaramaz, ekran görüntüsünden çalışmaya devam etmen gerekir. Çıktıyı ölçmeden benimseme — önce tek bir ekranda dene ve mevcut tasarımla yan yana koy.",
+      "matched_project": "Lyricdrop",
+      "relevance": 5,
+      "investment_note": null
+    },
+    {
+      "full_name": "JuliusBrussee/caveman",
+      "inputs_hash": "d79f87c9b883ecf9b7dd9a067154b090",
+      "description_tr": "Kodlama ajanlarının yazdığı ve okuduğu metni kısaltarak token tüketimini düşürmeyi amaçlayan bir skill ve proxy kombinasyonu. Skill tarafı ajanın düzyazısını telgraf üslubuna indiriyor; kod, komut, dosya yolu, hata mesajları ve güvenlik uyarıları dokunulmadan kalıyor. Proxy tarafı log, test çıktısı, JSON ve diff gibi araç sonuçlarını yerel makinede sıkıştırıyor ve orijinalini geri çağrılabilir şekilde saklıyor; LangChain, Vercel AI SDK, OpenAI ve Anthropic çağrıları için middleware paketleri de var. Go ile yazılmış, MIT ve BSL karışık lisanslı, 30'dan fazla ajanla çalışıyor, ~107K star. Nisan 2026'da açılmış; bir Adobe Research makalesinde ve JetBrains'in 86 görevlik testinde maliyet etkisi ölçülmüş.",
+      "usage_tr": "Max aboneliğiyle çalıştığın için etkisi faturada değil kullanım limitinde görünür: uzun Lyricdrop v2 oturumlarında bağlamı daha geç doldurur ve limite daha geç çarparsın. Asıl kazanç proxy tarafında — test ve build çıktılarını Claude Code okumadan önce ofis Mac'inde yerel olarak kısaltır, ek API maliyeti yoktur. iPhone'dan Remote Control ile bağlandığında kısa çıktı okunaklılık açısından da işine yarar. Uyarı: üslup kısaltması, istediğin iki açılı review'da (geliştirici doğruluğu ve ürün/eğitim mantığı) gerekçeyi de kırpabilir; o adımlarda skill'i kapatıp proxy'yi açık bırakmak daha mantıklı. Lisansı MIT ile BSL karışımı olduğu için kendi uygulamana gömmeyi düşünürsen middleware tarafının koşullarını okuman gerekir.",
+      "matched_project": "Claude Code",
+      "relevance": 4,
+      "investment_note": "Ajan token ve bağlam maliyetini düşüren araçlar bu pakette tek başına üç depoda karşına çıkıyor; kategori olarak Arslan Holding'in AI deal flow'unda izlenmeye değer, ancak bu depo ücretsiz bir skill üzerine kurulu olduğu için kendi başına net bir gelir modeli göstermiyor."
+    },
+    {
+      "full_name": "Egonex-AI/Understand-Anything",
+      "inputs_hash": "51099635b3065d631074120f94d79a5e",
+      "description_tr": "Bir kod tabanını veya bilgi tabanını çok ajanlı bir analiz hattından geçirip dosya, fonksiyon, sınıf ve bağımlılıklardan oluşan etkileşimli bir bilgi grafiğine çeviren Claude Code eklentisi. Yapısal grafiğin yanında iş mantığını gösteren domain görünümü, bağımlılık sırasına göre üretilmiş rehberli turlar, bulanık ve semantik arama ile diff etki analizi sunuyor. Çıktı tarayıcıda açılan bir dashboard; Karpathy kalıbındaki LLM wiki'lerini de grafiğe çevirebiliyor. TypeScript ile yazılmış, MIT lisanslı; Claude Code, Codex, Cursor, Copilot, Gemini CLI ve OpenCode dahil birçok ajanla çalışıyor. Mart 2026'da açılmış, ~84K star, canlı demosu ve Türkçe README'si var.",
+      "usage_tr": "OpenCode'u fork'layıp Expo/EAS ile kendi iOS istemcini yazma planında ilk engel 'bu kod tabanı nasıl işliyor' sorusu; grafik ve rehberli turlar o okuma işini kısaltır. Lyricdrop v2'nin panel, pipeline ve mobil tarafı büyüdükçe, Claude Code'un yazdığı kodun bütününü kendin görmek için de kullanabilirsin — diff etki analizi, bir değişikliğin hangi akışları etkilediğini commit'ten önce gösterir. Analiz ajanları Claude Code üzerinden koştuğu için Max aboneliğinin içinde kalır, ayrı API maliyeti çıkmaz ve indeksleme ofis Mac'inde yerel olur. Uyarı: büyük depolarda ilk indeksleme uzun sürer ve üretilen özetler LLM çıktısıdır; mimari kararları grafiğe değil kodun kendisine dayandır. Tek seferlik bir kurulum olduğu için asistanına değil, senin tarafında kalan bir araç.",
+      "matched_project": "Claude Code",
+      "relevance": 6,
+      "investment_note": "Depoyu yayınlayan Egonex'in ücretsiz eklenti artı ticari site ikilisi, ajanlara kod bağlamı sağlayan katmanda ticarileşme denemesi olarak izlenebilir."
+    },
+    {
+      "full_name": "rtk-ai/rtk",
+      "inputs_hash": "b869ac579f48e000aeeefdce21c960e9",
+      "description_tr": "Kabuk komutlarının çıktısını ajan okumadan önce filtreleyip sıkıştıran bir CLI proxy. ls, cat, grep, git, pytest, npm test, cargo test ve docker ps dahil 100'ün üzerinde komut için özel özetleme kuralları var; testlerde yalnızca hatalar, git log'da yalnızca hash, yazar ve konu bırakılıyor. Tek bir Rust ikilisi olarak dağıtılıyor, bağımlılık istemiyor, Homebrew ile kuruluyor ve 10 ms'nin altında ek gecikme bildiriyor. Depo, 'bash çıktısında %90 azalma' ile 'fatura %90 azalır' iddiasının aynı şey olmadığını açıkça yazıyor ve token sayımlarının bayt/4 tahmini olduğunu belirtiyor. Apache-2.0 lisanslı, ~81K star, Ocak 2026'da açılmış.",
+      "usage_tr": "Claude Code ile Lyricdrop v2 üzerinde çalışırken uzun test, build ve git çıktıları bağlamı hızla dolduruyorsa, rtk bunu ofis Mac'inde yerel olarak kesiyor; Homebrew ile tek komut kuruluyor ve Max aboneliğinde limite geç çarpmanı sağlıyor. Ek API maliyeti yok, kod dışarı çıkmıyor, ajanın çalışma biçimini değiştirmeden araya giriyor. Caveman ile aynı problemi farklı uçtan çözüyor: rtk ajanın okuduğunu, caveman ağırlıklı olarak yazdığını kısaltıyor; ikisini aynı anda kurup etkiyi ayrı ayrı ölçmek zor olur, birini seç. Uyarı: filtreleme kayıplıdır — söz-ses hizalama hatalarını ayıklarken tam log'a ihtiyacın olacağı anlar olur, o oturumlarda devre dışı bırak. Asistanına devredilecek bir tarafı yok, senin terminal kurulumunda kalan bir araç.",
+      "matched_project": "Claude Code",
+      "relevance": 5,
+      "investment_note": null
+    },
+    {
+      "full_name": "colbymchenry/codegraph",
+      "inputs_hash": "b25e8fbbc440e75f60111a943726e03c",
+      "description_tr": "Kod tabanını önceden indeksleyip semantik bir kod grafiğine çeviren ve kod değiştikçe grafiği güncelleyen bir CLI. Ajan, 'bu fonksiyonu kim çağırıyor' türü soruları dosyaları tek tek okumak yerine MCP araçlarıyla grafik üzerinden yanıtlıyor; amaç tool call ve token sayısını düşürmek. Çekirdeği Rust ile yazılmış, Node.js gerektirmeyen tek komutluk kurulum sunuyor ve tamamen yerel çalışıyor; framework farkındalığı ile karışık iOS / React Native / Expo projelerinde köprü çözümleme iddiası var. Claude Code, Cursor, Codex, OpenCode, Copilot ve Gemini dahil birçok ajanı destekliyor; MIT lisanslı, ~72K star, Ocak 2026'da açılmış. Depoda barındırılan bir platform sürümü bekleme listesiyle duyuruluyor ve bir telemetri bölümü bulunuyor.",
+      "usage_tr": "Lyricdrop'un Expo/React Native kod tabanı bu aracın açıkça hedeflediği yapı; native köprülerin olduğu yerlerde Claude Code'un doğru dosyayı bulmak için harcadığı turu kısaltır. Android TV sürümü ile mobil sürüm aynı depoda büyüdükçe, hangi değişikliğin hangi ekranı etkilediğini grafikten görmek işini kolaylaştırır. Tamamen yerel çalıştığı için ofis Mac'inde kod dışarı çıkmadan indeksleniyor ve ek API maliyeti getirmiyor; MCP sunucusu olarak bağlandığı için mevcut Claude Code kurulumuna gömülüyor. Uyarı: kurulumdan sonra telemetri ayarını kontrol et ve indeksin bayatladığı durumlarda ajanın eski grafiğe güvenip güvenmediğini test et. Ölçüt basit: aynı görevde tool call sayısı ve oturum uzunluğu düşüyor mu, bir hafta paralel kullanıp karşılaştır.",
+      "matched_project": "Lyricdrop",
+      "relevance": 7,
+      "investment_note": "Ücretsiz CLI'ın yanında bekleme listesiyle duyurulan barındırılan platform, ajanlara kod bağlamı sağlayan katmanda erken aşama bir ticarileşme yolu gösteriyor ve geliştirici araçları tezine uyan bir izleme adayı."
+    },
+    {
+      "full_name": "Fission-AI/OpenSpec",
+      "inputs_hash": "7f2cf07084309022e3e66fc8f7d244ac",
+      "description_tr": "AI kodlama asistanları için spec-driven development akışı sunan bir CLI ve komut seti. explore → propose → apply → archive döngüsüyle her değişiklik için proposal.md, specs/, design.md ve tasks.md üretiyor; spesifikasyonlar özel sözdizimi olmayan düz Markdown ve senaryo temelli yazılıyor. Proje kendini mevcut (brownfield) kod tabanlarına göre konumlandırıyor ve süreci katı bir şelaleye çevirmemeyi ilke olarak belirtiyor. TypeScript ile yazılmış, npm üzerinden kuruluyor, MIT lisanslı, ~70K star. Ağustos 2025'te açılmış; yakın zamanda artefakt güdümlü yeni bir akışa (opsx) geçmiş.",
+      "usage_tr": "Lyricdrop v2'de panel üzerinde küçük ve sık değişiklikler yaparken spec-kit'ten daha hafif bir kayıt katmanı arıyorsan bu işe yarar: her değişiklik bir klasör, bitince arşive gidiyor. Arşivlenen spesifikasyonlar, söz-ses hizalama kurallarının neden öyle olduğunu sonradan hatırlamanı sağlayan bir karar defteri oluşturur. npm ile kuruluyor, ofis Mac'inde yerel çalışıyor, ek API maliyeti yok ve Claude Code içinden komutlarla çağrılıyor. Uyarı: bu pakette spec-kit ve BMAD-METHOD aynı boşluğu dolduruyor; üçünü aynı depoda kurma, birini seçip iki hafta ölç. Ayrıca akış yakın zamanda değiştiği için internetteki eski örnekler güncel komutlarla uyuşmayabilir.",
+      "matched_project": "Lyricdrop",
+      "relevance": 6,
+      "investment_note": null
+    },
+    {
+      "full_name": "tt-a1i/archify",
+      "inputs_hash": "a971de24bf66585b3337bd42184ece53",
+      "description_tr": "Ajana anlattığın sistemi, akışı ya da planı kendi kendine yeten etkileşimli HTML diyagramlara çeviren bir agent skill. Mimari, sıralama, veri akışı ve yaşam döngüsü diyagramlarının yanında öğrenme haritası veya gezi planı gibi teknik olmayan senaryoları da örnekliyor; çıktı hareketli, tek dosya ve dışa aktarılabilir. Mermaid gibi metinden diyagram üreten araçlara alternatif olarak konumlanıyor. JavaScript ile yazılmış, MIT lisanslı, ~70K star; Nisan 2026'da açılmış, sık sürüm çıkaran genç bir proje. Claude Code, Codex ve OpenCode gibi skill destekleyen ajanlarla çalışıyor.",
+      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın olası bağlam, Lyricdrop'un söz-ses hizalama akışını bir kez görselleştirip belgelemek ya da Türkçe kaynaklardan çıkardığın psikoloji-sosyoloji okuma planını bir harita hâline getirmek olabilir. İkisi de tekrar eden bir pipeline adımı değil, tek seferlik çıktılar. Yerel çalışıyor ve ek maliyet getirmiyor, yani denemesi ucuz; ancak bir aracı değiştirmiyor, yalnızca bir sunum biçimi ekliyor. Uyarı: diyagramın doğruluğu tamamen ajanın anlatımına bağlı, yani ürettiği şemayı kaynak belge saymadan önce kendin okuman gerekir.",
+      "matched_project": null,
+      "relevance": 2,
+      "investment_note": null
+    },
+    {
+      "full_name": "openinterpreter/openinterpreter",
+      "inputs_hash": "04bf95fda8a9d8fffab15d014c093e9f",
+      "description_tr": "Düşük maliyetli ve açık modellerle iyi çalışmak üzere ayarlanmış bir terminal kodlama ajanı; OpenAI Codex'in Rust ile yeniden yazılmış bir fork'u. `/harness` komutuyla claude-code, kimi-code, qwen-code, deepseek-tui, swe-agent gibi farklı ajan davranış profilleri arasında geçiş yapıyor ve aynı modelden daha iyi sonuç almayı hedefliyor. ACP uyumlu editörlerde çalışıyor ve Codex exec protokolünü konuştuğu için Codex SDK'sı tek satırlık bir değişiklikle bu ikiliye yönlendirilebiliyor. macOS, Linux ve Windows'a tek komutla kuruluyor; Apache-2.0 lisanslı, ~68K star. 2023'ten beri sürdürülen ve yön değiştirerek bugünkü hâline gelmiş bir proje.",
+      "usage_tr": "Claude Code Max aboneliğin ana yolun olmaya devam ederken, bunu ucuz veya yerel modelleri sürdüğün ikinci bir ajan olarak kullanabilirsin: Lyricdrop'un katalog script'leri, log ayıklama ve toplu dosya düzenleme gibi ucuz işler Max limitini yemeden buradan gidebilir. Harness seçimi, alışık olduğun Claude Code davranışını başka bir modelle taklit etmeyi denemene izin veriyor. Ofis Mac'inde yerel model ile çalıştırırsan API maliyeti sıfır kalır; ücretli bir sağlayıcıya bağlarsan maliyet doğrudan sana yansır. Uyarı: düşük maliyetli modellerle kalite belirgin şekilde düşer, bu yüzden üretim koduna dokunan adımlarda değil yardımcı işlerde tut. ACP ve Codex uyumu, ileride kendi istemcini yazma planında bu ajanı da bir arka uç olarak denemeni mümkün kılıyor.",
+      "matched_project": "Claude Code",
+      "relevance": 5,
+      "investment_note": null
+    },
+    {
+      "full_name": "docling-project/docling",
+      "inputs_hash": "c19bba7a7caeca9fdd6c8c288e005d30",
+      "description_tr": "Belgeleri üretken yapay zekâ hatlarında kullanılabilir, yapılandırılmış bir forma çeviren Python kütüphanesi ve CLI. PDF, DOCX, PPTX, XLSX, HTML, EPUB, e-posta, görüntü, ses ve video dosyalarını okuyor; PDF tarafında sayfa düzeni, okuma sırası, tablo yapısı, formül ve grafik anlama gibi ayrıntılı çıkarımlar yapıp Markdown, HTML, JSON ve DocTags biçimlerine veriyor. Yerel çalışabiliyor (hava boşluklu ortamlar için tasarlanmış), OCR ve görsel dil modeli desteği, ASR ile ses transkripsiyonu, MCP sunucusu ve API servis modu var. LangChain, LlamaIndex, Crew AI ve Haystack entegrasyonları hazır geliyor. MIT lisanslı, LF AI & Data çatısı altında, ~68K star ve yoğun bir sürüm temposu var.",
+      "usage_tr": "Arslan Holding'in deal akışında gelen pitch deck'leri, finansal modelleri ve rapor PDF'lerini okunabilir metin ve tabloya çevirmek için kullanabilirsin; çıktı Markdown olduğu için Claude Code ya da bir araştırma ajanı doğrudan üzerinde çalışır. Kritik nokta yerel çalışması: gelen belgeler ofis Mac'inden dışarı çıkmadan işlenir ve sayfa başına bir API maliyeti doğmaz. İkinci bağlam kişisel bilgi tabanın: sesli notlar, toplantı kayıtları ve kaydettiğin dokümanlar aynı hatta geçip RAG indeksine girebilir. API server modunda kurulursa asistanının da kullanabileceği bir servis hâline gelir, yani belge özetleme işini devredebilirsin. Uyarı: VLM ve OCR hatları M4 Pro'da yavaş çalışır ve belleği zorlar; metin tabanlı PDF'lerde varsayılan hattı kullan, ağır hattı yalnızca taranmış belgelere aç.",
+      "matched_project": "Arslan Holding",
+      "relevance": 7,
+      "investment_note": null
+    },
+    {
+      "full_name": "scikit-learn/scikit-learn",
+      "inputs_hash": "1cfb802bfde9869ae90e2aaf380ebd9a",
+      "description_tr": "Python için klasik makine öğrenmesi kütüphanesi: sınıflandırma, regresyon, kümeleme, boyut indirgeme, model seçimi ve ön işleme algoritmalarını tek ve tutarlı bir API altında toplar. NumPy ve SciPy üzerine kurulu, BSD-3-Clause lisanslı; 2007'de başlamış, gönüllü topluluk ve kurumsal destekle sürdürülen bir proje. ~67K star ile alanın standart kütüphanelerinden biri, dokümantasyonu ve sürüm disiplini olgun. Derin öğrenme ve dil modelleri kapsamı dışında; odak tablo verisi üzerindeki klasik yöntemler.",
+      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın olası bağlam, Folio'da bir öneri katmanı ya da Kanarya'daki fizyolojik zaman serilerinin analizi gerektiğinde ajanın arka planda kullanacağı bir bağımlılık olması. Bu, senin kurup öğreneceğin bir araç değil, kod yazılırken zaten içeri giren bir kütüphane. Yerel çalışır ve maliyeti yoktur, ama tek başına kurmanın bir karşılığı yok. Bugünkü ihtiyaçların model eğitmek değil, hazır modelleri ve servisleri birbirine bağlamak; bu kütüphane o boşluğa oturmuyor.",
+      "matched_project": null,
+      "relevance": 2,
+      "investment_note": null
+    },
+    {
+      "full_name": "pathwaycom/pathway",
+      "inputs_hash": "bd22adab544964bb924cd2cc295e29be",
+      "description_tr": "Akış işleme, gerçek zamanlı analitik, LLM hatları ve RAG için tasarlanmış bir Python ETL çerçevesi. Python API'nin altında Rust ile yazılmış bir dataflow motoru var; aynı kod hem toplu hem akış modunda çalışıyor ve veri değiştikçe indeksleri artımlı olarak güncelliyor. Kafka ve benzeri kaynaklarla bağlanıyor, canlı belge indeksleme ve RAG uygulamaları için hazır şablonlar sunuyor. ~62K star, 2022'den beri geliştiriliyor ve üretim kullanımını hedefliyor. Lisansı BSL (depo meta verisinde NOASSERTION görünüyor), yani ticari kullanımda koşulları okumak gerekiyor.",
+      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın olası bağlam, mesajları toplayıp skorlayan pipeline'ın ya da kişisel bilgi tabanının sürekli indekslenmesi olabilir. Ancak bugün bu işleri n8n ve Supabase ile çözüyorsun ve Pathway bu ölçek için ağır kalıyor: kendi altyapısını, dağıtımını ve izlemesini getiriyor. Yerel çalıştırılabilir ve API maliyeti getirmez, fakat kurulum ve bakım yükü bir veri mühendisliği işidir, asistanına devredilebilecek bir adım değil. Uyarı: BSL lisansı, ileride bir ürünün içine gömmeyi düşünürsen kısıtlar doğurabilir; denemeden önce lisans koşullarını okumak gerekir.",
+      "matched_project": null,
+      "relevance": 2,
+      "investment_note": null
+    },
+    {
+      "full_name": "AntonOsika/gpt-engineer",
+      "inputs_hash": "10839b45a7a8a72ec8e1de8164212fa7",
+      "description_tr": "Doğal dilde yazılmış bir istekten kod tabanı üreten, 2023'te popülerleşen bir CLI. Proje klasörüne konan bir `prompt` dosyası üzerinden kodu sıfırdan ürettiriyor ya da mevcut kodu iyileştiriyor; OpenAI API anahtarı istiyor, yerel ve diğer sağlayıcılar için yapılandırma seçenekleri sunuyor. README kendisini kod üretimi üzerine deneysel bir platform olarak tanımlıyor ve okuyucuyu bakımı sürdürülen bir CLI alternatifine ve projenin ticari devamına yönlendiriyor. Python ile yazılmış, MIT lisanslı, ~55K star. Bugünkü kodlama ajanlarının öncülü sayılıyor; güncel araçların gerisinde kalmış durumda.",
+      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın olası bağlam, uygulama stüdyosu fikrinde hızlı iskelet üretimi olurdu, ama o işi Claude Code ve Superpowers zaten daha ileri düzeyde yapıyor. Ayrıca OpenAI API anahtarı istediği için Max aboneliğinin dışında ayrı bir maliyet kalemi açar — yerel modelle çalıştırma seçeneği var, fakat kalite düşer. Değeri bugün pratik değil tarihsel: kod üretme araçlarının nereden nereye geldiğini ve bir açık kaynak CLI'ın nasıl ticari bir ürüne dönüştüğünü gösteren bir örnek. Kurup denemek yerine okunup geçilecek bir depo.",
+      "matched_project": null,
+      "relevance": 1,
+      "investment_note": null
+    },
+    {
+      "full_name": "bmad-code-org/BMAD-METHOD",
+      "inputs_hash": "d6d5d0984387a771e1f34619d3cb92c7",
+      "description_tr": "Yapay zekâ destekli yazılım geliştirmeyi çevik bir yöntem olarak tarifleyen ve skill/plugin paketleri hâlinde dağıtılan bir metodoloji. Clarify → Plan → Build ve doğrula → Learn döngüsü üzerine kurulu; küçük değişiklikler doğrudan build'e giderken karmaşık işler brief, spesifikasyon ve mimari adımlarından geçiyor. Skills CLI ile ya da Claude Code ve Codex plugin marketplace'leri üzerinden kuruluyor, kurulum ve yardımcı script'ler için uv gerekiyor. Ücretsiz ve açık kaynak, ~53K star, aktif bir Discord topluluğu var. Lisans dosyası standart bir SPDX kimliğiyle eşleşmiyor (depoda NOASSERTION görünüyor), ticari kullanımda okunması gerekir.",
+      "usage_tr": "Lyricdrop v2'yi kalite süreçleriyle yazma kararına en yakın duran yaklaşım bu: işin büyüklüğüne göre süreci ölçeklemesi, panel üzerindeki küçük düzeltmelerle mobil mimari kararlarını aynı ağırlıkta ele almanı engelliyor. Rolleri ayırması, her değişikliğin hem geliştirici doğruluğu hem ürün mantığı açısından bakılması isteğine karşılık geliyor. Claude Code plugin marketplace'inden kuruluyor, ofis Mac'inde yerel çalışıyor ve ek API maliyeti getirmiyor. Uyarı: yöntem ağır; hafif bir değişiklikte süreç işin kendisinden uzun sürebilir, ayrıca spec-kit ve OpenSpec ile aynı boşluğu dolduruyor — üçünü birden kurmak kafa karışıklığından başka bir şey üretmez. Lisans belirsizliği, üretilen şablonları ticari bir üründe kullanmadan önce kontrol etmeni gerektirir.",
+      "matched_project": "Lyricdrop",
+      "relevance": 6,
+      "investment_note": null
+    },
+    {
+      "full_name": "heygen-com/hyperframes",
+      "inputs_hash": "aaff203aace1bce09cdb707fac3d8e61",
+      "description_tr": "HTML, CSS, medya ve animasyonları deterministik MP4 videolara çeviren açık kaynak bir render çerçevesi. Sayfayı Puppeteer ile kare kare yakalayıp ffmpeg ile birleştiriyor; GSAP tabanlı, zamanda ileri geri sarılabilir animasyonlar ve grafik, başlık, altyazı gibi hazır bloklardan oluşan bir katalog sunuyor. CLI olarak yerel kullanılabiliyor, kodlama ajanları için skill paketleri ve MCP desteği var; Node.js 22 ve üzeri gerekiyor. TypeScript ile yazılmış, Apache-2.0 lisanslı, ~52K star; HeyGen tarafından Mart 2026'da açılmış ve hızlı geliştiriliyor.",
+      "usage_tr": "Folio'nun günlük içerik pipeline'ında en somut karşılığı var: AI ile ürettiğin görselleri story ve dikey post formatında videoya çevirmek için şablonu bir kez HTML olarak yazıp her gün yeni içerikle besleyebilirsin. Render deterministik olduğu için aynı şablondan yüzlerce varyant üretip n8n ile zamanlayabilirsin; ofis Mac'inde veya evdeki 7/24 açık Mac mini'de yerel çalıştığı için render başına bir servis ücreti doğmaz (görsel üretiminin maliyeti ayrı kalem). İkinci bağlam Lyricdrop'un lansman kreatifleri: ASO ve reklam için aynı videonun farklı başlık ve dil varyantlarını üretmek bu yapıyla ucuzlar. Uyarı: Puppeteer artı ffmpeg render'ı CPU'yu doldurur, bu yüzden geliştirme yaptığın makinede değil ev sunucusunda kuyruğa alman daha iyi olur. Font yükleme ve zamanlama ayrıntıları karelerin tutarlılığını bozabilir, ilk şablonu tek bir videoda baştan sona kontrol et.",
+      "matched_project": "Folio",
+      "relevance": 7,
+      "investment_note": null
+    },
+    {
+      "full_name": "blader/humanizer",
+      "inputs_hash": "b44ba63133155c92341d2f0c2a9ce547",
+      "description_tr": "Metindeki 'yapay zekâ yazmış' izlerini, söylenen şeyi değiştirmeden temizleyen bir agent skill. Bulduğu kalıpları en güçlüden başlayarak işaretliyor, bir taslak yazıyor, taslağı hem kalıplara hem orijinal iddialara karşı denetliyor ve son sürümü veriyor. Kendi yazınızdan örnek verilerek ses eşlemesi yapılabiliyor; dosya üzerinde çalışırken yalnızca düzyazıya dokunuyor, kod, veri ve frontmatter'ı bırakıyor. İsim, sayı, tarih ve alıntı gibi olguları uydurmuyor, eksik bir ayrıntı gerekiyorsa soruyor. Tek bir Markdown kural dosyası olduğu için skill destekleyen tüm ajanlarda çalışıyor; MIT lisanslı, ~51K star.",
+      "usage_tr": "Arslan Holding'in LinkedIn gönderileri, website metinleri ve yatırımcı e-postaları AI araçlarıyla üretiliyorsa, bu skill çıktıyı hedeflediğin sessiz ve gösterişsiz profesyonel tona yaklaştırır. Kendi yazdığın birkaç paragrafı örnek olarak verip ses eşlemesi yaptırabilirsin; sonuç bir metin dosyası olduğu için adım asistanına da devredilebilir. Yerel bir skill, ayrı API maliyeti yok ve Claude Code içinden Max aboneliğiyle çalışıyor. Uyarı: kuralların tamamı İngilizce yazı kalıpları üzerine kurulu, Türkçe metinde aynı kazancı vermesi beklenmemeli — çıktıyı her hâlükârda kendin okumalısın. Olgu uydurmama kuralı yatırımcıya giden metinlerde önemli bir güvenlik payı sağlıyor, ama sayıları yine de kaynağıyla karşılaştır.",
+      "matched_project": "Arslan Holding",
+      "relevance": 5,
+      "investment_note": null
+    },
+    {
+      "full_name": "ayghri/i-have-adhd",
+      "inputs_hash": "372b30963ee5cb045ac661691f081fae",
+      "description_tr": "Kodlama asistanının cevabı uzun girişlerin altına gömmesini engellemeyi amaçlayan bir skill. On kural üzerine kurulu: önce yapılacak eylem, numaralı adımlar, tek somut sonraki adım, teğetlerin bastırılması, listelerin beş maddeyle sınırlanması ve kapanış nezaket cümlelerinin kaldırılması. Tek bir SKILL.md dosyası olarak dağıtılıyor, Claude Code eklentisi olarak da kurulabiliyor; README on dile çevrilmiş. MIT lisanslı, ~50K star, Mayıs 2026'da açılmış genç bir proje. Modelin davranışını değiştirmiyor, yalnızca çıktının biçimini kısıtlıyor.",
+      "usage_tr": "iPhone'dan Remote Control ile ofis Mac'ine bağlanıp Claude Code çalıştırdığında küçük ekranda uzun cevabı taramak zaman alıyor; bu skill sonucu ilk satıra taşıdığı için o senaryoda doğrudan işe yarar. Kurulumu tek dosya, yerel, maliyeti yok ve istediğin an kaldırılabiliyor. Lyricdrop v2'de panel üzerinde hızlı düzeltme turları atarken de oturum başına okuduğun metni azaltır. Uyarı: gerekçeyi de kısalttığı için ürün ve eğitim mantığını tarttığın review adımlarında kapatman gerekir — orada görmek istediğin şey tam olarak muhakeme. Caveman ve rtk ile aynı aileden; üçünü aynı anda açarsan hangisinin ne kazandırdığını ayırt edemezsin.",
+      "matched_project": "Claude Code",
+      "relevance": 4,
+      "investment_note": null
+    }
+  ]
+}

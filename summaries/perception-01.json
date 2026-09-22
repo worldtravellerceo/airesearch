@@ -1,0 +1,175 @@
+{
+ "repos": [
+  {
+   "full_name": "AUTOMATIC1111/stable-diffusion-webui",
+   "inputs_hash": "f20ca92ba43b620b024d54cca8c7efb5",
+   "description_tr": "Stable Diffusion modellerini tarayıcıdan çalıştırmak için Gradio ile yazılmış bir web arayüzü. txt2img, img2img, inpainting, outpainting ve prompt matrisi gibi üretim modlarının yanında GFPGAN/CodeFormer yüz onarımı ile ESRGAN, SwinIR ve LDSR büyütücülerini aynı panelde topluyor. Üretim parametreleri çıktının PNG/EXIF verisine yazıldığı için bir görseli arayüze geri sürükleyip aynı ayarları geri yüklemek mümkün; X/Y/Z grafiği ile parametre karşılaştırması yapılabiliyor. Python ve PyTorch üzerine kurulu, tek tıklamalık kurulum betiği var ve düşük VRAM'li kartlarda çalışacak ayarlar sunuyor. AGPL-3.0 lisanslı, 2022'de açıldı ve 165 bin yıldıza ulaştı; arayüzün büyük kısmı eklenti ekosistemi üzerinden genişliyor.",
+   "usage_tr": "Folio'nun günlük içerik pipeline'ında post ve story görsellerini üretmek için kullanabilirsin; yazar temalı bir görsel setini prompt matrisiyle varyasyonlayıp en iyi çıktıları seçmek arayüzün doğal işi. Mac ayarlarında GUI tercih ettiğin için tek panelde üretim, yüz onarımı ve büyütme adımlarının toplanması sana uyan tarafı; yerel çalıştığı sürece görsel başına API maliyeti de yok. Üretim parametrelerinin görselin içine gömülmesi, beğeni/beğenmeme sinyallerine göre hangi ayarın tuttuğunu geriye dönük izlemeni kolaylaştırır. Uyarı: Gradio arayüzü elle çalışmaya uygun, her gün otomatik içerik üreten bir akış için API ucu olan ComfyUI tarzı bir kurulum daha uygun düşer. İkinci uyarı: depoda öne çıkan senaryo ayrık ekran kartları; M4 Pro'da üretim süresini ve bellek sınırını küçük bir testle ölçmeden pipeline'a bağlama. AGPL-3.0 olduğu için kendi uygulamana gömmek yerine dışarıda bir üretim aracı olarak tutman daha temiz olur.",
+   "matched_project": "Folio",
+   "relevance": 5,
+   "investment_note": null
+  },
+  {
+   "full_name": "Comfy-Org/ComfyUI",
+   "inputs_hash": "a6e4d26e08226ebc02b30c057c272248",
+   "description_tr": "Difüzyon modellerini düğüm grafiği (node graph) üzerinden kurgulayan modüler bir üretim motoru ve arayüzü. Görsel, video, 3B ve ses üretimini aynı grafik mantığıyla ele alıyor; açık kaynak modelleri yerelde çalıştırıyor, partner düğümleri üzerinden kapalı kaynak modellere de erişim veriyor. Windows, Linux ve macOS için masaüstü uygulaması, taşınabilir kurulum ve bulut seçeneği mevcut; App Mode ile karmaşık bir grafik sade bir forma indirgenebiliyor. API uçları sayesinde kaydedilmiş bir workflow dışarıdan tetiklenip üretim hattına bağlanabiliyor. Python ile yazılmış, GPL-3.0 lisanslı, 2023'te açıldı ve 134 bin yıldıza ulaştı; sürüm ve indirme sayaçları depoda görünür durumda.",
+   "usage_tr": "Folio'nun günlük içerik pipeline'ında bunu üretim motoru olarak konumlandırabilirsin: bir kez kurduğun grafiği workflow olarak kaydedip n8n'den API ile tetiklersin, her gün aynı stilde post ve story görselleri çıkar. Feed'in tek bir yazarın hesabı gibi görünmesi gerektiği için aynı grafik ve aynı seed ile tekrar edilebilir stil üretmek, elle prompt yazmaktan daha güvenilir bir yol. macOS masaüstü uygulaması yerel çalışır, üretim başına API maliyeti getirmez; ihtiyaç olursa partner düğümleriyle ücretli modelleri aynı grafiğe geçici olarak ekleyebilirsin. Lyricdrop'un lansman görselleri ve ASO ekran görüntüleri için de aynı kurulumu ikinci bir workflow olarak kullanabilirsin. Uyarı: model ağırlıkları disk ve bellek tüketir, 24 GB'lık makinede hangi model ailesinin sığdığını önce ölç. İkinci uyarı: GPL-3.0 lisansı, motoru kendi uygulamanın içine gömmek yerine ayrı bir servis olarak çağırmayı gerektirir.",
+   "matched_project": "Folio",
+   "relevance": 7,
+   "investment_note": null
+  },
+  {
+   "full_name": "harry0703/MoneyPrinterTurbo",
+   "inputs_hash": "537368c64eb784b2a8b6113474496385",
+   "description_tr": "Bir konu ya da anahtar kelimeden kısa video üreten uçtan uca bir otomasyon aracı. Akış; senaryoyu LLM ile yazmayı, konuya uygun stok görüntüleri eşleştirmeyi, altyazı üretmeyi, metni seslendirmeyi ve arka plan müziğiyle birlikte HD videoya birleştirmeyi kapsıyor. Python 3.11+ ve FFmpeg üzerine kurulu; WebUI ve API olmak üzere iki kullanım biçimi var, Windows, macOS ve Linux için sürümler yayınlanıyor. Metin, görsel ve video adımları dışarıdaki sağlayıcıların API anahtarlarıyla çalışıyor; README'nin önemli bir bölümü bu sağlayıcıların sponsorluk ve kampanya duyurularından oluşuyor. MIT lisanslı, 2024'te açıldı ve 125 bin yıldıza ulaştı; belgelerin ana dili Çince, İngilizce ve Japonca çevirileri de mevcut.",
+   "usage_tr": "Folio'nun günlük içerik pipeline'ında video tarafı için bir iskelet olarak deneyebilirsin: bir kitap ya da tema başlığı verip senaryo, altyazı ve seslendirmeyi tek akışta çıkarır, sen yalnızca onay adımında kalırsın. API ucu olduğu için n8n'den tetiklenebilir; WebUI'yi asistanına devredip günlük üretim listesini onun çalıştırmasını da sağlayabilirsin. Lyricdrop'un lansman döneminde kısa tanıtım videolarını seri üretmek için ikinci bir kullanım alanı var. Maliyet tarafı senin tercihine ters: birleştirme FFmpeg ile Mac'te yerel çalışsa da senaryo, görsel ve seslendirme adımları ücretli API çağrılarına dayanıyor; yerel modelle çalıştırmak için ayrı bir uyarlama gerekir. Uyarı: çıktının estetiği stok görüntü artı seslendirme kalıbında; Folio'nun Instagram ekranlarıyla 1:1 eşleşen görünümüne doğrudan oturmaz, bu yüzden önce tek bir post formatında dene. İkinci uyarı: depo sponsor bağlantılarıyla dolu, varsayılan sağlayıcı ayarlarını kendi seçimlerinle değiştirmeden çalıştırma.",
+   "matched_project": "Folio",
+   "relevance": 5,
+   "investment_note": null
+  },
+  {
+   "full_name": "openai/whisper",
+   "inputs_hash": "2a98644691d012067ede4ea339397000",
+   "description_tr": "Çok dilli konuşma tanıma için eğitilmiş genel amaçlı bir model ve onun referans Python uygulaması. Aynı model konuşma tanımanın yanında konuşma çevirisi ve dil tanıma görevlerini de yapıyor; bu görevler tek bir dizi-diziye mimaride özel token'larla temsil ediliyor. Farklı boyutlarda ağırlıklar yayınlanmış; kurulum pip ile yapılıyor ve sistemde FFmpeg gerekiyor, kod tabanı PyTorch üzerine kurulu. MIT lisanslı, 2022'de yayınlandı ve 109 bin yıldıza ulaştı; blog, makale ve model kartı depodan bağlanıyor. Depo, alana referans noktası olan bir uygulama; hız ve platform optimizasyonları büyük ölçüde üçüncü parti portlarda yapılıyor.",
+   "usage_tr": "Lyricdrop v2'nin kelime zamanlama adımında karşılaştıracağın 2-3 STT sisteminden biri doğrudan bu olmalı; ofisteki M4 Pro'da yerel çalışır ve şarkı başına API maliyeti eklemez. Lyrics DB'den gelen düz sözleri referans metin olarak tutup Whisper'ın duyduğuyla karşılaştırarak iki kaynağın birbirini düzeltmesi mantığını kurabilirsin. İkinci kullanım alanı kişisel bilgi tabanı: ses notlarının transkripsiyonu tamamen yerelde kalır, ardından sınıflandırma adımına girer. Uyarı: bu depodaki uygulama PyTorch referans sürümü; Mac'te hız için whisper.cpp gibi optimize edilmiş bir port pratikte daha uygun, bu depoyu doğruluk referansı olarak kullan. İkinci uyarı: varsayılan çıktı cümle/segment düzeyinde zamanlama verir; boşluk vurgusunun söylenen kelimeyle eş zamanlı başlaması için ayrı bir kelime düzeyinde hizalama adımı kurman gerekir. 20-30 şarkılık mevcut test setinde hata oranını ölçüp diğer adaylarla yan yana koymadan seçimini kesinleştirme.",
+   "matched_project": "Lyricdrop",
+   "relevance": 9,
+   "investment_note": null
+  },
+  {
+   "full_name": "opencv/opencv",
+   "inputs_hash": "bb0f2d0ca320b125850e1f916a32f87e",
+   "description_tr": "Bilgisayarla görme ve görüntü işleme için uzun süredir sürdürülen temel bir C++ kütüphanesi. Klasik görüntü işleme algoritmalarından derin öğrenme tabanlı görme işlerine kadar geniş bir yüzeyi kapsıyor; ek işlevler ayrı bir opencv_contrib deposunda tutuluyor. Depodaki README kısa ve büyük ölçüde bağlantılardan oluşuyor; kapsam, kurulum ve API ayrıntıları için docs.opencv.org'a yönlendiriyor. Apache-2.0 lisanslı, 2012'den beri GitHub'da ve 90 bin yıldıza ulaşmış; katkı kuralları, forum ve sürüm akışı kurumsallaşmış durumda. Kendi başına bir ürün değil, başka uygulamaların altına giren bir altyapı katmanı.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor. En yakın bağlam, görüntü analizi gerektiren fikirlerin (örneğin model ajansı tarafındaki görsel değerlendirme ya da Kanarya'nın ileride kamera verisi kullanması) altında dolaylı bir bağımlılık olarak gelmesi olurdu. Böyle bir durumda bile seçim OpenCV'yi doğrudan kullanmak değil, onu içeride barındıran daha üst seviye bir Python kütüphanesini çağırmak olur. Kendi uygulamalarına gömülebilir açık kaynak bileşen arayışına uyuyor ama C++ seviyesinde çalışmayı gerektirdiği için Claude Code ile yürüttüğün Expo/Supabase hattına yakın değil.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "opendatalab/MinerU",
+   "inputs_hash": "425e8fa2a50a94711ddbf6db3cd1fd97",
+   "description_tr": "PDF, Office dosyaları ve taranmış belge görüntülerini LLM'e verilebilir markdown ya da JSON'a çeviren bir belge ayrıştırma aracı. Düzen analizi, OCR, tablo ve formül çıkarımı yapıyor; .doc/.docx, .ppt/.pptx, .xls/.xlsx, .epub, .html ve .csv gibi biçimleri destekliyor. Çıktıda sayfa ve blok düzeyinde sabit konum bilgisi üretmesi, bir cevabın hangi sayfadan geldiğini göstermeyi mümkün kılıyor. PyPI üzerinden kurulup yerelde çalıştırılabiliyor, ayrıca barındırılan bir web uygulaması var; README'nin başında ajanlara yönelik bir skill tanımı taşıyor. 80 bin yıldıza ulaşmış, 2024'te açıldı; lisans alanı standart bir SPDX etiketi taşımıyor, kullanmadan önce depodaki lisans dosyasına bakmak gerekiyor.",
+   "usage_tr": "Arslan Holding'in deal screening ve due diligence adımında doğrudan işine yarar: gelen pitch deck ve finansal model PDF'lerini yapılandırılmış markdown'a çevirip Claude Code'a okutabilirsin. Sayfa ve blok konumlarını koruduğu için bir iddianın hangi sayfadan çıktığını geri gösterebilirsin; bu, özetin güvenilirliğini denetlemenin en ucuz yolu. Yerelde çalıştığı için belge başına API maliyeti yok ve gizli evrak makineden çıkmaz — dış sağlayıcıya yüklemek istemediğin dokümanlar için önemli bir fark. Adımı asistanına devredebilirsin: dosyayı klasöre bırakması yeterli olacak şekilde n8n ile bir izleyici kurup çıktıyı ortak bir arşive yazabilirsin. Uyarı: model indirmeleri ve uzun belgelerde işlem süresi ciddi; önce elindeki birkaç deck ile doğruluk ve süre ölçümü yap. İkinci uyarı: lisans etiketi net olmadığı için ticari bir akışa bağlamadan önce koşulları teyit et.",
+   "matched_project": "Arslan Holding",
+   "relevance": 6,
+   "investment_note": null
+  },
+  {
+   "full_name": "abi/screenshot-to-code",
+   "inputs_hash": "fafee0e6770ac44c128f6af5a294f585",
+   "description_tr": "Ekran görüntüsü, mockup ya da ekran kaydını çalışır arayüz koduna çeviren bir araç. Çıktı olarak HTML + Tailwind, HTML + CSS, React + Tailwind, Vue + Tailwind, Bootstrap ve Ionic desteği veriyor; ekran kaydından prototip üretme modu da var. React/Vite arayüzü ve FastAPI arka ucundan oluşuyor; çalışması için OpenAI, Anthropic ya da Gemini anahtarlarından en az birine ihtiyaç duyuyor, görsel işlemleri için Replicate öneriliyor. Birden fazla anahtar tanımlandığında aynı ekran için farklı modellerin çıktıları karşılaştırılabiliyor; projenin barındırılan ticari bir sürümü de mevcut. MIT lisanslı, 2023'te açıldı ve 79 bin yıldıza ulaştı.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor. En yakın bağlam Folio'nun Instagram ekran görüntülerinden 1:1 tasarım çıkarma adımı olurdu; ancak o işi hâlihazırda Claude Design ve Claude Code ile yapıyorsun ve araç senin katmadığın bir şey katmıyor. Ayrıca çıktı web stack'i üretiyor; Folio Expo/React Native olduğu için kod doğrudan taşınmıyor, arada elle dönüştürme çıkıyor. Son olarak en iyi sonuç için ücretli API anahtarları gerekiyor; Max aboneliğiyle API anahtarı kullanmama tercihine ters düşüyor.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "tesseract-ocr/tesseract",
+   "inputs_hash": "b6dfcee337ad0270ae6276a6e91e9cea",
+   "description_tr": "Açık kaynak bir OCR motoru ve onun komut satırı programı. Tesseract 4 ile gelen LSTM tabanlı motor satır tanımaya odaklanıyor, eski karakter kalıbı tabanlı motor uyumluluk modunda korunuyor; her iki mod için ayrı eğitilmiş veri dosyaları gerekiyor. UTF-8 desteği var, kutudan çıktığı haliyle 100'den fazla dili tanıyor; PNG, JPEG, TIFF gibi girdi biçimlerini ve düz metin, hOCR, PDF, TSV, ALTO, PAGE gibi çıktı biçimlerini destekliyor. Proje bir grafik arayüz içermiyor; sonuç kalitesi büyük ölçüde girdi görüntüsünün kalitesine bağlı. C++ ile yazılmış, Apache-2.0 lisanslı ve 76 bin yıldıza ulaşmış; adı belirli sürdürücüler tarafından uzun süredir yürütülüyor.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor. En yakın bağlam holding tarafında taranmış evrak ve faturalardan metin çıkarmak olurdu; ancak o ihtiyacı düzen analizi ve tablo çıkarımı da yapan MinerU gibi araçlar tek adımda daha iyi karşılıyor. Tesseract genellikle doğrudan seçilen araç değil, başka bir belge hattının altında çağrılan bir motor olarak gelir. Yerelde çalışması ve API maliyeti getirmemesi senin kriterlerine uyar ama tek başına bir iş akışını karşılamaz.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "unslothai/unsloth",
+   "inputs_hash": "f1c15f11677aa85cba4eb02623792011",
+   "description_tr": "Modelleri yerelde çalıştırmak ve eğitmek için masaüstü uygulaması olarak paketlenmiş bir araç. LLM'lerin yanında difüzyon, gömme (embedding) ve ses modellerini destekliyor; GGUF ve MLX biçimleriyle çalışıyor, Windows, Linux, WSL ve macOS'ta kuruluyor. Yerel modelleri OpenAI uyumlu bir API üzerinden sunuyor, LAN ya da güvenli uzak erişimle başka cihazlardan kullanılmasına izin veriyor ve Claude Code, Codex ile MCP üzerinden araç çağırma senaryolarını destekliyor. Eğitim tarafında LoRA, QLoRA, tam ince ayar ve RL/GRPO/DPO akışlarını daha az bellekle çalıştırdığını, çıktıyı GGUF ve FP8 gibi biçimlere aktarabildiğini belirtiyor. Apache-2.0 lisanslı, 2023'te açıldı ve 76 bin yıldıza ulaştı; kurulum için masaüstü paketleri, betik ve Docker imajı sunuluyor.",
+   "usage_tr": "Kişisel bilgi tabanının sınıflandırma ve özetleme adımını bunun üzerinden yerel bir modele verebilirsin: ses notunun kategorisi, haftalık ve aylık özetler ücretli API'ye gitmeden üretilir. OpenAI uyumlu API'yi n8n akışlarından çağırabildiğin için mevcut boru hattını değiştirmene gerek kalmaz, yalnızca uç noktayı değiştirirsin. Evdeki 7/24 açık Mac mini'yi LAN üzerinden model sunucusu yapıp ofisteki M4 Pro'yu geliştirmeye ayırmak da doğal bir kurulum; Tailscale zaten kurulu olduğundan erişim tarafı hazır. Lyricdrop'ta şarkı başına maliyeti düşük tutma hedefinle uyumlu: metin işleme adımlarını yerele çekip ücretli çağrıyı yalnızca gerçekten gerekli yerde bırakabilirsin. Uyarı: 24 GB bellek sığdırabileceğin model boyutunu belirler; kuantize modellerle kalite kaybını kendi örneklerinde ölçmeden üretime bağlama. İkinci uyarı: ince ayar tarafındaki hız ve bellek iddiaları ağırlıklı olarak ayrık GPU kurulumlarına ait, Mac'te eğitimi değil çalıştırmayı planla.",
+   "matched_project": "Kişisel bilgi tabanı",
+   "relevance": 8,
+   "investment_note": null
+  },
+  {
+   "full_name": "CompVis/stable-diffusion",
+   "inputs_hash": "4bd12d54b18fb3baf9ed5f1939d81039",
+   "description_tr": "Latent difüzyon tabanlı metinden görsele üretim modelinin özgün araştırma deposu. Mimari, 8 kat küçültme yapan bir autoencoder, 860M parametreli bir UNet ve dondurulmuş CLIP ViT-L/14 metin kodlayıcıdan oluşuyor; model LAION-5B'nin bir alt kümesinde eğitilmiş. Kurulum conda ortamıyla yapılıyor, örnek kodlar Jupyter Notebook ağırlıklı; ağırlıklar Hugging Face üzerinden, kullanım kısıtları içeren ayrı bir lisansla dağıtılıyor. Depodaki model kartı eğitim verisinden gelen önyargılar ve kötüye kullanım riskleri konusunda açık uyarılar taşıyor. 2022'de yayımlandı ve 73 bin yıldıza ulaştı; lisans alanı standart bir SPDX etiketi taşımıyor ve depo bugün pratik bir araçtan çok tarihsel referans niteliğinde.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor. En yakın bağlam Folio'nun görsel üretimi olurdu, ama o iş için bugün ComfyUI gibi güncel arayüzler üzerinden daha yeni modelleri çalıştırırsın; bu depo o hattın başlangıç noktası. Ağırlıkların kullanım kısıtlı lisansı da yayınlanacak bir üründe ek bir hukuki kontrol gerektirir. Alanın nasıl başladığını okumak istersen model kartı ve makale iyi bir kaynak, ama pipeline'a bağlanacak bir bileşen değil.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "pbakaus/impeccable",
+   "inputs_hash": "b3e95c6a5dabf50a3ee67784bd2bcbd5",
+   "description_tr": "AI kodlama ajanlarına tasarım rehberliği veren bir araç seti: bir skill, 24 komut ve AI üretimi arayüzler için 61 deterministik denetim kuralı. Kurulum projeye npx ile yapılıyor; `/impeccable init` projeyi inceleyip ürünün kalıcı bağlamını PRODUCT.md'ye, mevcut ya da yeni görsel sistemi DESIGN.md'ye yazıyor. Komut seti shape, craft, critique, audit, polish, harden, bolder, quieter gibi paylaşılan bir tasarım sözlüğü kuruyor; erişilebilirlik, performans ve duyarlılık kontrolleri ayrı bir komutta toplanmış. Deterministik kurallar CLI ve tarayıcı eklentisi üzerinden LLM ve API anahtarı olmadan çalışıyor, LLM'e yalnızca yorum gerektiren eleştiri adımları bırakılıyor. Apache-2.0 lisanslı, Kasım 2025'te açıldı ve 69 bin yıldıza ulaştı; çıkış noktası olarak Anthropic'in frontend-design skill'ini referans alıyor.",
+   "usage_tr": "Lyricdrop v2'nin admin ve test panelinde bunu review adımına koyabilirsin: panel ekranlarını `critique` ve `audit` komutlarından geçirip düzeltmeleri Claude Code'a yaptırırsın. Her değişikliğin iki ayrı açıdan review edilmesi isteğinin tasarım ayağını karşılar; Superpowers ile kurduğun geliştirme akışının yanında ikinci bir kalite kapısı olarak durur. Folio'nun Instagram ekranlarıyla 1:1 eşleşmesi gereken tasarımında da sapmaları yakalamak için kullanışlı; oradaki iş zaten piksel sadakati üzerine kurulu. Deterministik kuralların API anahtarı istememesi Max aboneliğiyle çalışma biçimine uyuyor, ek maliyet çıkarmıyor. Uyarı: PRODUCT.md ve DESIGN.md gibi kalıcı dosyaları güncel tutmayı gerektirir; bakılmayan bir bağlam dosyası bir süre sonra yanlış yönlendirir. İkinci uyarı: 24 komutluk yüzey geniş, önce tek bir ekranda init ve audit ile dene, faydayı gördükten sonra yayarsın.",
+   "matched_project": "Lyricdrop",
+   "relevance": 8,
+   "investment_note": "Kasım 2025'te açılıp bir yıldan kısa sürede bu yıldız sayısına ulaşan 'ajanlar için tasarım katmanı' kategorisi, kodlama ajanı ekosisteminde erken aşama bir boşluğa işaret ediyor ve izleme listesine değer."
+  },
+  {
+   "full_name": "commaai/openpilot",
+   "inputs_hash": "6ee60a882ce343e2866a5bc3ed3628ea",
+   "description_tr": "Sürücü destek sistemlerini yükselten, robotik için işletim sistemi olarak konumlanan açık kaynak bir proje. 300'den fazla desteklenen araç modelinde çalışıyor; kullanmak için üreticinin kendi cihazı, araca uygun bir kablo demeti ve kurulum gerekiyor. Yazılım master dalından çalıştırılabiliyor ama önerilen kullanım, cihaza göre hazırlanmış önceden derlenmiş dallar üzerinden. Python ağırlıklı bir kod tabanı, MIT lisanslı, 2016'dan beri geliştiriliyor ve 63 bin yıldıza ulaşmış; kapsamlı belgeler, yol haritası ve büyük bir topluluk kanalı var. Donanıma bağlı olması, depoyu yazılım tarafında incelenebilir ama pratikte cihazsız kullanılamaz bir proje yapıyor.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor. En yakın bağlam araba ilgisi olurdu, ama pistte eğitmenle drift çalışmakla sürücü destek sistemi geliştirmek farklı alanlar ve proje kendi donanımını gerektiriyor. Yatırım merceğinden bakarsan otonomi ve robotik ilgi alanına giriyor, fakat burada kurulu bir şirketin olgun deposu var, erken aşama bir fırsat değil. Gerçek zamanlı sensör verisi işleyen bir sistemin nasıl kurgulandığını okumak istersen kod tabanı iyi bir örnek, ötesi yok.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "RVC-Boss/GPT-SoVITS",
+   "inputs_hash": "3aee7142e74ce9df4f06d1c2443a097d",
+   "description_tr": "Az veriyle ses klonlama ve metinden konuşma üretimi yapan bir WebUI. Beş saniyelik bir örnekle zero-shot üretim, yaklaşık bir dakikalık veriyle ince ayar yaparak benzerliği artırma iddiası taşıyor; eğitim dilinden farklı dillerde çıkarım da destekleniyor. Şu an desteklenen çıkarım dilleri İngilizce, Japonca, Korece, Kantonca ve Çince olarak belirtiliyor. Arayüz yalnızca TTS değil, vokal-enstrüman ayrıştırma, eğitim setini otomatik bölme, çok dilli ASR ve metin etiketleme gibi hazırlık araçlarını da barındırıyor. Python 3.10-3.12 ile çalışıyor, Colab ve Docker seçenekleri var; MIT lisanslı, 2024'te açıldı ve 62 bin yıldıza ulaştı, belgelerin arasında Türkçe bir sürüm de bulunuyor.",
+   "usage_tr": "Folio'nun günlük içerik pipeline'ında seslendirme tarafını yerele çekmek için kullanabilirsin; ücretli TTS servislerinden vazgeçtiğin noktada Mac üzerinde çalışan bir alternatif olur. İkinci ve daha somut fayda Lyricdrop tarafında: pakete gelen vokal-enstrüman ayrıştırma aracıyla şarkının vokalini ayırıp STT'ye vermeyi deneyebilirsin, bu hizalama hatalarının bir kısmını kaynağında azaltır. WebUI olduğu için hazırlık ve toplu üretim işini asistanına devredebilirsin, kod tarafına girmesi gerekmez. Uyarı: desteklenen çıkarım dilleri arasında Türkçe sayılmıyor; Türkçe seslendirme gerekiyorsa çıktı kalitesini kendi örneklerinle test etmeden plan yapma. İkinci uyarı: ses klonlama, izin ve platform kuralları açısından hassas bir alan; yayınlanan içerikte yalnızca hakkına sahip olduğun ya da sentetik olduğu açık seslerle çalış. Model indirmeleri ve eğitim adımları disk ve süre tüketir, önce tek bir ses profiliyle küçük bir deneme yap.",
+   "matched_project": "Folio",
+   "relevance": 5,
+   "investment_note": null
+  },
+  {
+   "full_name": "calesthio/OpenMontage",
+   "inputs_hash": "d29a41661f47834f271854c30e2157c0",
+   "description_tr": "Video üretimini bir AI kodlama asistanı üzerinden yürüten ajan tabanlı bir üretim sistemi. 12 üretim hattı, 100'den fazla araç ve 700'ü aşkın skill ile üretim bilgisi dosyası içeriyor; araştırma, senaryo, varlık üretimi, kurgu ve son birleştirme adımlarını ajanın yönetmesi hedefleniyor. Hem görsel tabanlı videolar hem de ücretsiz stok görüntü ve açık arşivlerden derlenen gerçek hareketli klipler üzerinden kurgu yapabildiğini belirtiyor; ücretli üretim modelleri sağlayıcı entegrasyonlarıyla ekleniyor. Kompozisyon Remotion ile, işleme FFmpeg ve örnek projelerde Blender ile yapılıyor; README örnek filmlerin üretim maliyetini tek tek veriyor. Python ağırlıklı, AGPL-3.0 lisanslı, Mart 2026'da açıldı ve kısa sürede 60 bin yıldızı aştı.",
+   "usage_tr": "Folio'nun günlük içerik pipeline'ında video üretimini uçtan uca buna devredebilirsin; ajan tarafı Claude Code üzerinden çalıştığı için zaten kullandığın araçla aynı yerde durur. Ücretsiz stok ve açık arşiv hattını seçersen API maliyeti neredeyse sıfır kalır, üretken model hattını yalnızca gerçekten gerekli kliplerde açarsın. Lyricdrop'un lansman kreatiflerinde de ikinci bir kullanım alanı var; kelime düzeyinde altyazı üretimi zaten ilgilendiğin bir konu. Render işi FFmpeg ve Blender ile ofisteki Mac'te yerel dönüyor, çıktıyı onay adımında asistanına bırakabilirsin. Uyarı: AGPL-3.0 lisansı bunu kendi uygulamanın içine gömmeyi zorlaştırır; dışarıda bir üretim aracı olarak konumlandır. İkinci uyarı: proje çok yeni ve yüzeyi geniş; 12 hattın hepsini denemek yerine tek bir şablonu seçip maliyet ve süreyi ölçerek başla.",
+   "matched_project": "Folio",
+   "relevance": 7,
+   "investment_note": "Mart 2026'da açılıp aylar içinde bu ölçeğe ulaşan ajan tabanlı video üretimi, henüz kimsenin kilitlemediği bir kategori gibi duruyor; ekibiyle tanışmak ve ticarileşme planını sormak erken aşama tez için anlamlı olabilir."
+  },
+  {
+   "full_name": "Alishahryar1/free-claude-code",
+   "inputs_hash": "6eec53585075472483ebf1c4c0636133",
+   "description_tr": "Farklı kodlama ajanlarını tek bir model kataloğu ve arayüzü üzerinden çeşitli sağlayıcılara bağlayan bir yönlendirme katmanı. 53 sağlayıcıyı (ücretsiz katmanlar, ücretli servisler, abonelikler ve yerel modeller) ve Claude Code, Codex, OpenCode, Cline, Aider gibi on ajanı destekliyor; sağlayıcı kesintisinde yeniden denemeler bitince bir sonraki modele otomatik geçiyor. Terminal, VS Code, JetBrains, telefon ve tarayıcı üzerinden çalışma seçenekleri var; sesli giriş için yerel Whisper ya da bulut tabanlı bir transkripsiyon kullanılabiliyor. Terminal çıktısını filtreleyerek token tüketimini azaltan isteğe bağlı bir bileşen ve birkaç yerel optimizasyon içeriyor. Python 3.14 ile yazılmış, MIT lisanslı, Ocak 2026'da açıldı ve 55 bin yıldıza ulaştı; depo bağımsız bir proje olduğunu ve Anthropic ile ilişkili olmadığını açıkça belirtiyor, ücretsiz katmanların sürekliliği sağlayıcılara bağlı.",
+   "usage_tr": "Claude Code iş akışında iki somut faydası olur: yerel modelleri ajanlara tek katalogdan bağlamak ve bir sağlayıcı yanıt vermediğinde turu baştan başlatmadan devam etmek. Telefondan tarayıcı oturumu açabilmesi, Remote Control bağlantılarının kopması sorununa alternatif bir yol olarak denenebilir. Yerel Whisper ile sesli giriş desteği, konuşarak görev vermeyi sevdiğin akışa uyuyor ve ek maliyet getirmiyor. Ancak Max aboneliğini bilerek API anahtarı kullanmamak için aldın; ajanını üçüncü parti bir katmandan geçirmek hem hesap ve kullanım koşulları hem de kodunun hangi sağlayıcıya gittiği açısından ayrıca değerlendirilmeli. Kod açık olduğu için orta yol mümkün: depoyu fork'layıp yalnızca yerel model yönlendirmesi ve yedekleme kısmını kullanmak, ücretsiz sağlayıcı havuzunu hiç açmamak. Uyarı: ücretsiz katmanların sürekliliği projenin kontrolünde değil, üretim işini buna bağlama.",
+   "matched_project": "Claude Code iş akışı",
+   "relevance": 6,
+   "investment_note": null
+  },
+  {
+   "full_name": "jamiepine/voicebox",
+   "inputs_hash": "29deef8198d1427c53d67ed9a47d6647",
+   "description_tr": "Ses girişini ve çıkışını tek uygulamada toplayan, yerel çalışan açık kaynak bir ses stüdyosu. Yedi farklı TTS motoru, kısa bir örnekten zero-shot ses klonlama, 50'den fazla hazır ses ve 23 dil desteği sunuyor; uzun metinleri otomatik parçalayıp çapraz geçişle birleştiriyor. Giriş tarafında global kısayolla dikte, her metin alanında mikrofon ve Whisper tabanlı STT var; macOS'ta otomatik yapıştırma destekleniyor. REST API ve gömülü bir MCP sunucusu üzerinden dışarıya açılıyor, böylece MCP destekleyen ajanlar tek araç çağrısıyla seslendirme yapabiliyor; çok parçalı bir zaman çizelgesi editörü de mevcut. Tauri ile yazılmış, macOS'ta MLX/Metal ile çalışıyor, MIT lisanslı; Ocak 2026'da açıldı ve 55 bin yıldıza ulaştı, modeller ve ses verisi makinede kalıyor.",
+   "usage_tr": "Kişisel bilgi tabanının giriş adımı için doğrudan aday: tek kısayolla sesli not alıp transkripti yerelde üretirsin, ses verisi makineden çıkmaz. Toplantı dışı hızlı notlarda hâlihazırda kullandığın dikte aracının yerine yerel bir seçenek olarak karşılaştırabilirsin; iki sistemi aynı notlarla yan yana ölçmek birkaç saatlik iş. REST API'si olduğu için n8n akışına bağlayıp transkripti Supabase'e yazmak ve sınıflandırma adımına devretmek mümkün; kendi uygulamanın içine servis olarak da konabilir. MCP sunucusu Claude Code'un sesli çıktı vermesini sağlıyor, Folio'nun seslendirme ihtiyacı için de TTS tarafını kullanabilirsin. Uyarı: yedi motorun model indirmeleri disk ve bellek tüketir, 24 GB'lık makinede hangi motorun pratik olduğunu önce ölç. İkinci uyarı: proje birkaç aylık, sürümler hızlı değişiyor; günlük not akışını buna bağlamadan önce transkriptlerin dışa aktarılabilir biçimde saklandığından emin ol.",
+   "matched_project": "Kişisel bilgi tabanı",
+   "relevance": 8,
+   "investment_note": "Ses giriş ve çıkışının iki ayrı ücretli servise dağıldığı bir pazarda tamamen yerel çalışan açık kaynak bir alternatifin aylar içinde bu ilgiyi toplaması, gizlilik odaklı ses altyapısının ticarileşebilir bir boşluk olduğunu gösteriyor."
+  },
+  {
+   "full_name": "ggml-org/whisper.cpp",
+   "inputs_hash": "d894d5c739df45777ca330e1418a8863",
+   "description_tr": "Whisper konuşma tanıma modelinin ggml kütüphanesi üzerine kurulmuş, bağımlılıksız bir C/C++ uygulaması. Apple Silicon birinci sınıf hedef: ARM NEON, Accelerate, Metal ve Core ML yollarıyla optimize edilmiş; ayrıca CPU, NVIDIA, AMD, Vulkan ve çeşitli NPU arka uçları destekleniyor. Tamsayı kuantizasyon, karışık F16/F32 hassasiyet, çalışma anında sıfır bellek ayırma ve ses etkinliği tespiti (VAD) gibi özellikler taşıyor. macOS, iOS, Android, Linux, Windows, WebAssembly ve Raspberry Pi üzerinde çalışıyor; Java, npm ve C tarzı API ile farklı ortamlara gömülebiliyor. MIT lisanslı, 2022'de açıldı ve 54 bin yıldıza ulaştı; model dosyaları ayrı indiriliyor ve tüm çıkarım çevrimdışı yapılabiliyor.",
+   "usage_tr": "Lyricdrop v2'nin yerel STT adaylarında ilk sıraya koyabileceğin seçenek bu: ofisteki M4 Pro'da Metal ve Core ML ile çalışır, şarkı başına maliyeti sıfıra yakın tutar. Kuantize modellerle hız ve doğruluk arasındaki dengeyi 20-30 şarkılık test setinde ölçüp karşılaştırdığın diğer sistemlerle yan yana koyabilirsin. iOS binding'i olduğu için ileride cihaz üstü bir doğrulama ya da telaffuz kaydı adımını Expo tarafına taşımanın önü açık. Kişisel bilgi tabanındaki ses notlarının transkripsiyonu için de aynı kurulum yeterli, ikinci bir araca gerek kalmaz. Uyarı: bu bir ASR motoru, hizalayıcı değil; sözleri lyrics DB'den alıp kelime düzeyinde eşlemek için ayrı bir hizalama adımı kurman gerekir. İkinci uyarı: şarkı vokalinde hata oranı konuşmaya göre yükselir, vokal ayrıştırmayı ön adım olarak ekleyip farkı ölçmeden karar verme.",
+   "matched_project": "Lyricdrop",
+   "relevance": 9,
+   "investment_note": null
+  },
+  {
+   "full_name": "upscayl/upscayl",
+   "inputs_hash": "a0b58858813e033ed6f5bc2c056d8e67",
+   "description_tr": "Düşük çözünürlüklü görselleri yapay zeka modelleriyle büyüten bir masaüstü uygulaması. Linux, macOS ve Windows için paketlenmiş bir Electron arayüzü sunuyor; ESRGAN ailesinden modellerle büyütme ve iyileştirme yapıyor. Kullanım tamamen arayüz üzerinden: görsel seçilir, model ve ölçek belirlenir, çıktı diske yazılır. AGPL-3.0 lisanslı, 2022'de açıldı ve 50 bin yıldıza ulaştı; sürümler düzenli yayınlanıyor ve proje sponsorluklarla destekleniyor. Çalışma tamamen yerel; görseller dışarı gönderilmiyor ve kullanım başına ücret çıkmıyor.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor. En yakın bağlam Folio'da üretilen görselleri feed kalitesine çıkarmak olurdu, ama bu tek başına bir ihtiyaç değil; çözünürlüğü üretim adımında ComfyUI tarafında ayarlamak daha az parça demek. Masaüstü arayüz günlük otomatik bir pipeline'a gömülmeye de uygun değil, araya elle bir adım koyar. Yerel çalışması ve maliyet getirmemesi kriterlerine uyuyor; tek seferlik bir görsel düzeltme gerektiğinde elde bulunması iyi, planlanacak bir bileşen değil.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "moeru-ai/airi",
+   "inputs_hash": "be2e84bacc40e66b4e03f14064a1220d",
+   "description_tr": "Sanal karakterleri çalıştırmak için kendi sunucunda barındırılan bir yapay zeka eşlikçi uygulaması. Live2D ve VRM karakter desteği, gerçek zamanlı sesli sohbet ve Minecraft, Factorio gibi oyunları oynayabilme gibi yetenekler tarif ediliyor. Web, macOS ve Windows için derlenmiş sürümler dağıtılıyor; depo TypeScript ağırlıklı bir monorepo ve sürümler beta olarak etiketleniyor. MIT lisanslı, 2024'ün sonunda açıldı ve 49 bin yıldıza ulaştı; Discord, Telegram ve birçok dilde belge içeren geniş bir topluluk çevresi var. Odak noktası üretkenlik değil, karakter tabanlı eşlikçi deneyimi.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor. En yakın bağlam, gerçek zamanlı ses giriş-çıkış döngüsünü kuran açık bir uygulama olarak kod tarafının incelenmesi olabilir; sesli not ve asistan fikirlerinde benzer bir döngü var. Ürün olarak karakter eşlikçisi alanında duruyor ve senin sistemine entegre olacak bir bileşen sunmuyor. Kendi uygulamana gömülebilecek parçalar arıyorsan bu depo yerine tek işe odaklanan ses ve model kütüphaneleri daha verimli olur.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  }
+ ]
+}

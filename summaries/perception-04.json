@@ -1,0 +1,175 @@
+{
+ "repos": [
+  {
+   "full_name": "QwenAudio/CosyVoice",
+   "inputs_hash": "5e88a95b93de6e96e5d130ada0118fc1",
+   "description_tr": "CosyVoice, FunAudioLLM ekibinin geliştirdiği, büyük dil modeli tabanlı bir metinden konuşma (TTS) sistemi. Fun-CosyVoice 3.0 sürümü Çince, İngilizce, Japonca, Korece, Almanca, İspanyolca, Fransızca, İtalyanca ve Rusça olmak üzere dokuz dili ve 18'den fazla Çince ağzını kapsıyor; zero-shot ses klonlama ile çapraz dilli sentez yapabiliyor. Metin girişi ve ses çıkışında çift yönlü streaming destekliyor, dil, ağız, duygu, hız ve ses seviyesi talimatlarıyla kontrol ediliyor; Pinyin ve CMU fonemleri üzerinden telaffuz düzeltme ve sayı/sembol okuma için dahili metin normalizasyonu var. Python ile yazılmış, Apache-2.0 lisanslı; çıkarım, eğitim ve dağıtım betikleri repoda, model ağırlıkları ModelScope ve Hugging Face üzerinden veriliyor. 23.7K yıldıza ulaşmış ve 1.0'dan 3.0'a düzenli sürüm çıkaran bir proje; desteklenen diller listesinde Türkçe yer almıyor.",
+   "usage_tr": "Folio'nun günlük içerik pipeline'ında seslendirme katmanı olarak kullanabilirsin: yazar profillerine ait post ve story metinlerini ücretli bir TTS servisine ödeme yapmadan sese çevirir, ses klonlama ile her profile sabit bir ses verebilirsin. Lyricdrop tarafında ElevenLabs'i maliyet nedeniyle bıraktığın için, aynı işi yerelde yapan bir modeli elinde tutman genel yaklaşımına uyuyor. 0.5B'lik model boyutu 24 GB'lık ofis Mac'i için makul görünüyor, ancak repo kurulumu GPU odaklı anlatılmış; MPS üzerinde tek bir kısa cümleyle çalıştığını doğrulamadan pipeline'a bağlama. Apache-2.0 olduğu için bir Python servisine sarıp n8n akışından çağırabilir, çıktıyı doğrudan DigitalOcean storage'a yazabilirsin. Uyarı: Türkçe desteklenen diller arasında değil, dolayısıyla Folio içeriğini Türkçe seslendirmeyi planlıyorsan bu araç tek başına yetmez.",
+   "matched_project": "Folio",
+   "relevance": 5,
+   "investment_note": null
+  },
+  {
+   "full_name": "facebookresearch/audiocraft",
+   "inputs_hash": "30231f75f2fed43d89a44f7683066c40",
+   "description_tr": "AudioCraft, Meta'nın ses üretimi araştırmaları için yayımladığı bir PyTorch kütüphanesi. İçinde metinden müzik üreten MusicGen, metinden ses efekti üreten AudioGen, nöral ses kodeki EnCodec, difüzyon tabanlı dekoder Multi Band Diffusion, otoregresif olmayan MAGNeT, ses filigranlama için AudioSeal ve akor/melodi/davul koşullu JASCO yer alıyor. Hem çıkarım hem eğitim kodunu barındırıyor; Python 3.9 ve PyTorch 2.1 gerektiriyor, ffmpeg kurulumu öneriliyor. Kod MIT lisanslı ve 23.6K yıldızı var; 2023'te açılmış, model model büyüyen bir araştırma deposu niteliğinde. Model ağırlıklarının kullanım koşulları her model için ayrı belgelerde tanımlanıyor.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam Folio'nun içerik pipeline'ında arka plan müziği üretmek olabilir. Müzik ve DJ tarafındaki ihtiyacın üretim değil analiz tarafında: BPM/key tespiti, stem ayırma ve kütüphane düzenleme, bu kütüphanenin kapsamı dışında. Lyricdrop da gerçek kataloğa dayandığı için üretilmiş müzikle ilgisi yok. Araştırma kütüphanesi olarak konumlandığı ve model ağırlıklarının kullanım koşulları modele göre değiştiği için, ticari bir üründe kullanmadan önce lisans metnini ayrıca okuman gerekir. Denemek istersen ofis Mac'inde küçük ölçekli çalışır, ama şu anki hiçbir adımını hızlandırmaz.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "jbhuang0604/awesome-computer-vision",
+   "inputs_hash": "5b027ff2380eb83653d5e83e5714b864",
+   "description_tr": "Bilgisayarlı görü alanındaki kaynakların elle derlendiği bir bağlantı listesi. Kitaplar, dersler, makaleler, yazılım kütüphaneleri, veri setleri, önceden eğitilmiş modeller, eğitim videoları ve blog bağlantıları başlıklar altında toplanmış; ayrıca alandaki araştırmacıların akademik soyağacını tutan ayrı bir sayfa var. Kod içermiyor, katkılar pull request ve e-posta ile alınıyor. 2015'te açılmış ve 23.5K yıldıza ulaşmış; paket verisinde bir lisans tanımlı değil. İçeriğin büyük bölümü klasik görü literatürüne dayanıyor, güncel model listeleri bu tür depolarda genelde geriden geliyor.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, neuroteknoloji ve görüntü analizi yatırım tezini okurken alan haritası çıkarmak olabilir. Bir araç değil bir okuma listesi olduğu için ne Mac'te çalıştırılacak bir tarafı var ne de bir uygulamaya gömülebilir. Asistanına belirli bir alt başlığı taratıp özet çıkarttırabilirsin, ama aynı işi bir arama ajanı daha güncel kaynaklarla yapar. Listenin kendisi ücretsiz ve API maliyeti getirmiyor.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "MaaAssistantArknights/MaaAssistantArknights",
+   "inputs_hash": "aaa37e46fc5a8781238a3677dc843b95",
+   "description_tr": "MAA, Arknights adlı mobil oyunun günlük görevlerini otomatikleştiren bir masaüstü yardımcı program. Görüntü tanıma ile oyun ekranını okuyor; otomatik savaş ve ganimet tanıma, üs vardiya planlaması, otomatik personel alımı, envanter sayımı ve roguelike modunun otomatik oynanması gibi işleri tek tuşla yapıyor. C++20 ile yazılmış, Windows, Linux ve macOS'ta çalışıyor; C, Python, Java, Rust ve Go arayüzleri üzerinden dışarıdan çağrılabiliyor. AGPL-3.0 lisanslı, 23.4K yıldızı var ve aylık commit etkinliği yüksek görünüyor, çok dilli dokümantasyonu mevcut. Kapsamı tek bir oyuna özgü olduğu için genel amaçlı bir otomasyon çerçevesi değil.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, Lyricdrop'un tarayıcı playtest gate'ini otomatikleştirme fikrine mimari bir örnek oluşturması olabilir. Ekranı görüntü tanımayla okuyup adım adım senaryo yürüten bu yaklaşım ilginç, ama kod tamamen Arknights arayüzüne bağlı ve yeniden kullanılabilir bir parçası yok. AGPL-3.0 lisansı da kendi uygulamana gömme ihtimalini baştan kapatıyor. Playtest otomasyonu için genel amaçlı bir UI ajanına bakman daha doğru olur.",
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "Sanster/IOPaint",
+   "inputs_hash": "78e3c266d779effd92a5005aa2f29d7c",
+   "description_tr": "IOPaint, görüntülerden nesne silme (inpainting) ve kadraj genişletme (outpainting) işlerini yapan, kendi sunucunda çalıştırılan açık kaynak bir araç. LaMa gibi silme modellerini, Stable Diffusion ve SDXL inpainting model ailesini, nesne değiştirme için PowerPaint'i ve görsele metin yazmak için AnyText'i destekliyor. CPU, GPU ve Apple Silicon üzerinde çalışıyor; web arayüzü, komut satırı ve toplu işleme modu var, Python paketi olarak pip ile kuruluyor. Apache-2.0 lisanslı, 23.3K yıldızlı ve PyPI üzerinden düzenli sürüm yayınlıyor. Kendi modelini barındırmak istemeyenler için macOS/iOS tarafında ayrı bir uygulama da mevcut.",
+   "usage_tr": "Folio'nun günlük içerik pipeline'ında üretilen görselleri temizleme ve kadrajlama adımına oturuyor: üretim modelinin bıraktığı bozuk detayları silip, dikey feed ve story oranlarına outpainting ile genişletebilirsin. Apple Silicon desteği olduğu için ofis Mac'inde yerel çalışır, API maliyeti getirmez ve 7/24 açık makinede sıraya alınmış bir iş olarak çalıştırılabilir. Komut satırı ve toplu işleme modu sayesinde n8n akışından çağırıp çıktıyı doğrudan Supabase kaydına bağlamak mümkün; Apache-2.0 lisansı kendi pipeline'ına gömmeni engellemiyor. İçerik onayı gibi tekrar eden ayıklama işlerini asistanına devretmek istersen web arayüzü bunun için yeterli. Uyarı: difüzyon tabanlı modeller 24 GB bellekte yavaş çalışır; önce sadece LaMa tabanlı silme modeliyle ölçüp süreyi görmen iyi olur.",
+   "matched_project": "Folio",
+   "relevance": 6,
+   "investment_note": null
+  },
+  {
+   "full_name": "amusi/CVPR2026-Papers-with-Code",
+   "inputs_hash": "3cb128b79be7acc3067bed917e97093e",
+   "description_tr": "CVPR 2026 konferansına kabul edilen makalelerin, kodu açık olanlarla birlikte konu başlıklarına göre derlendiği bir liste. 3D Gaussian Splatting, difüzyon modelleri, çok modlu büyük dil modelleri, nesne tespiti, segmentasyon, OCR, otonom sürüş ve video üretimi gibi onlarca alt başlık altında makale ve repo bağlantıları veriliyor. Depo kod barındırmıyor; katkılar issue üzerinden toplanıyor ve aynı yazarın önceki yıllara ve diğer konferanslara ait benzer listeleri de var. Ağırlıklı olarak Çince yazılmış, 22.8K yıldızlı ve paket verisinde bir lisans tanımlı değil. İçeriği konferans takvimiyle birlikte güncelleniyor.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, Arslan Holding tarafında görüntü işleme ve çok modlu model alanında neyin araştırma aşamasında olduğunu görmek olabilir. Bir yatırım tarama aracı değil: burada şirket değil makale var, dolayısıyla deal flow'a doğrudan bağlanmıyor. Asistanına belirli bir alt başlığı taratıp hangi ekiplerin şirketleştiğini çıkarttırmak mümkün, ama bu işi ayrı bir araştırma adımı olarak kurgulaman gerekir. Metnin çoğunun Çince olması taramayı yavaşlatır.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "microsoft/unilm",
+   "inputs_hash": "7f6be712a65b816efa64c6d06d2927d4",
+   "description_tr": "unilm, Microsoft'un temel model araştırmalarını tek çatı altında topladığı bir depo. İçinde mimari çalışmaları (DeepNet, Magneto, X-MoE, BitNet, RetNet, LongNet) ile çok modlu ve belge odaklı model aileleri (Kosmos, BEiT, LayoutLM/LayoutXLM, TrOCR, MiniLM, TextDiffuser) yer alıyor. Her alt proje kendi klasöründe kendi kodu, eğitim betikleri ve makale bağlantılarıyla duruyor; ortak bir kurulum veya tek bir ürün arayüzü yok. Python ağırlıklı, MIT lisanslı ve 22.2K yıldızlı; 2019'dan beri sürüyor ve yeni araştırma çıktıları eklendikçe büyüyor. Bir araştırma arşivi olduğu için alt projelerin olgunluk seviyeleri birbirinden çok farklı.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, belge okuma tarafındaki LayoutLM ve TrOCR modellerinin ileride bir doküman işleme adımında referans olması olabilir. Yerel model altyapısına ilgi duyduğun için BitNet ve RetNet gibi mimari çalışmalar okunmaya değer, ama bunlar kurup çalıştıracağın bileşenler değil, makale eşlikçisi kod. Tek tek alt projelerin kurulum yükü yüksek ve çoğu NVIDIA GPU varsayıyor; ofis Mac'inde deneme yapmak zor. Kendi uygulamana gömülecek paketlenmiş bir kütüphane arıyorsan bu depo o role uygun değil.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "firecrawl/anydoc",
+   "inputs_hash": "c8ae5e89ecee280d8ca7932197a2f65d",
+   "description_tr": "anydoc, Word, PowerPoint, Excel, OpenDocument, RTF, EPUB, CSV ve PDF dosyalarını temiz GitHub-Flavored Markdown'a çeviren bir Rust kütüphanesi. Node.js, Python ve WebAssembly bağlamaları var; tarayıcıda çalışan demo sayfasında dosyalar makineden çıkmadan dönüştürülüyor. Hangi format girerse girsin tek tip çıktı üretmeyi hedefliyor ve dönüşümü milisaniyeler mertebesinde yapmak üzere yazılmış; taranmış sayfalar için OCR kendi içinde yok, bunu Firecrawl'ın ücretli hosted servisine bırakıyor. Claude Code, Codex, Cursor ve OpenCode gibi ajanlarla kullanılmak üzere bir Agent Skill olarak da paketlenmiş, CLI'ı npx ile çalışıyor. MIT lisanslı ve Ağustos 2026'da açılmasına rağmen 21.9K yıldıza ulaşmış; Firecrawl'ın ticari ürününü besleyen açık kaynak bileşen.",
+   "usage_tr": "Arslan Holding'in deal screening akışında doğrudan işe yarar: gelen pitch deck'leri, finansal modelleri ve PDF raporları Markdown'a çevirip Claude Code'a okutabilirsin, böylece her dosya formatı için ayrı çözüm aramazsın. Agent Skill olarak paketlenmiş olması Claude Code ve OpenCode kurulumuna tek komutla girmesi anlamına geliyor; Max aboneliğiyle uyumlu, ek API maliyeti yok. Rust binary olarak ofis Mac'inde ve evdeki Mac mini'de yerel çalışır, dosyalar dışarı çıkmaz — yatırım dosyalarının gizliliği açısından bu önemli bir fark. Asistanına devredilebilir bir iş: gelen dosyaları bir klasöre atması yeterli, dönüşümü ve özetlemeyi ajan tarafı yapar. Uyarı: taranmış PDF'lerde kendi başına OCR yapmıyor, o durumda ücretli hosted servise ya da ayrı bir OCR adımına ihtiyacın olur.",
+   "matched_project": "Arslan Holding",
+   "relevance": 6,
+   "investment_note": null
+  },
+  {
+   "full_name": "screenpipe/screenpipe",
+   "inputs_hash": "52116c91bbc26b77b106b0f3e2aba6d0",
+   "description_tr": "screenpipe, ekranı ve sesi sürekli olarak yerelde kaydedip bu kaydı yapay zeka ajanlarına bağlam olarak sunan bir masaüstü uygulaması. Kayıtlar makinede saklanıyor, üzerinden arama yapılabiliyor ve Claude, Codex, Hermes gibi ajanların kullanması için MCP üzerinden erişilebiliyor; ekran görüntüsü metinleri OCR, konuşmalar ise konuşma tanıma ile indeksleniyor. Rust ile yazılmış, kurulumu hazır indirilebilir uygulama olarak dağıtılıyor. 21.6K yıldızlı ve Y Combinator S26 dönemine katılmış bir şirket tarafından geliştiriliyor; paket verisinde lisans standart bir SPDX etiketi olarak tanımlı değil, yani kullanım koşullarını lisans dosyasından okumak gerekiyor. Sürekli kayıt nedeniyle disk ve mahremiyet tarafında ciddi bir yönetim yükü getiriyor.",
+   "usage_tr": "Kişisel bilgi tabanı projesinde, sesli notların yakalayamadığı ikinci bir katman olarak kullanabilirsin: masabaşında geçen saatlerin dökümünü kendin hatırlamaya çalışmak yerine ajan tarafına bağlam olarak verirsin. Ofisteki M4 Pro Mac ve evdeki Mac mini zaten 7/24 açık olduğu için altyapı hazır; her şey yerelde kaldığından API maliyeti ve üçüncü parti servise veri gönderme sorunu yok. MCP desteği sayesinde Claude Code'un doğrudan erişebileceği bir hafıza kaynağı haline geliyor, bu da istediğin orkestratör ajan fikrine denk düşüyor. Uyarı: senin tarif ettiğin sistem sade ve seçici, bu araç ise ayrım yapmadan her şeyi kaydediyor; iş ve kişisel bağlamın birbirine karışmaması için kayıt kapsamını en baştan sınırlaman gerekir. Lisans etiketi standart olmadığı için, kendi uygulamana gömmeyi düşünürsen koşulları önceden kontrol et.",
+   "matched_project": "Kişisel bilgi tabanı",
+   "relevance": 6,
+   "investment_note": "Yerelde çalışan ajan hafızası kategorisinde erken ve YC S26 dönemine girmiş bir ekip; MENA tarafında karşılığı olmayan bir alan olduğu için tanışmaya değer bir izleme kaydı olabilir."
+  },
+  {
+   "full_name": "modelscope/FunASR",
+   "inputs_hash": "eae918ab52fd985920e0c15a08f0ef29",
+   "description_tr": "FunASR, konuşma tanıma için uçtan uca bir açık kaynak araç seti. Çevrimdışı ve streaming ASR'ın yanında ses etkinliği tespiti (VAD), noktalama, konuşmacı ayrıştırma (diarization), duygu ve ses olayı modelleri içeriyor; Paraformer ve Fun-ASR model aileleriyle birlikte OpenAI uyumlu bir servis ve MCP sunucusu olarak çalıştırılabiliyor. Eğitim, çıkarım ve uç cihaza dağıtım için ayrı yollar tanımlanmış, modeller ModelScope ve Hugging Face üzerinden dağıtılıyor; Transformers API'si ile toolkit kurmadan da kullanılabilen küçük bir model var. PyTorch tabanlı, MIT lisanslı ve 20.5K yıldızlı; dokümantasyonu, model seçim rehberi ve karşılaştırma ölçümleri düzenli tutulan aktif bir proje. Model havuzunun ağırlık merkezi Çince ama çok dilli ve Whisper alternatifi olarak konumlanan modeller de var.",
+   "usage_tr": "Lyricdrop v2'nin karşılaştırmayı planladığın 2-3 STT sisteminden biri olarak doğrudan sıraya girer. Paraformer ailesinin zaman damgası üretimi, şarkı sözündeki boşluğun highlight'ını söylenen kelimeyle eşleştirme problemine aday bir kaynak; VAD ve noktalama modülleri de sözleri satırlara bölerken işini kolaylaştırır. MIT lisanslı ve PyTorch tabanlı olduğu için ofis Mac'inde yerel çalıştırıp admin panelinin arkasına bir Python servisi olarak koyabilirsin; API maliyeti yok, oyuncu tarafına hiç dokunmaz. OpenAI uyumlu servis modu, mevcut Whisper çağrılarını kod değiştirmeden bu motora yönlendirip aynı 20-30 şarkılık test setinde yan yana ölçmene imkân verir. Uyarı: model havuzunun güçlü tarafı Çince; İngilizce şarkılarda kelime düzeyinde zaman damgası kalitesini kendi test setinde ölçmeden karar verme.",
+   "matched_project": "Lyricdrop",
+   "relevance": 9,
+   "investment_note": null
+  },
+  {
+   "full_name": "DrewThomasson/ebook2audiobook",
+   "inputs_hash": "fbfb5e4c567de039df89f78d1d4753f3",
+   "description_tr": "ebook2audiobook, e-kitapları bölüm yapısı ve meta verisiyle birlikte sesli kitaba çeviren bir araç. EPUB ve benzeri formatları alıp XTTS gibi TTS motorlarıyla seslendiriyor, ses klonlama destekliyor ve çok sayıda dil için çıktı üretebildiğini belirtiyor. CPU ve GPU üzerinde çalışıyor; Gradio tabanlı bir web arayüzü, Docker imajı, Windows/macOS/Linux kurulumu ve Colab/Kaggle/Hugging Face üzerinde uzaktan çalıştırma seçenekleri var. Python ile yazılmış, Apache-2.0 lisanslı ve 20.2K yıldızlı; DRM'siz, yasal olarak edinilmiş kitaplarla kullanılması gerektiği repoda açıkça belirtiliyor. Kurulum ve model indirme adımları sürüm sürüm değiştiği için dokümantasyonu takip etmek gerekiyor.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam Folio'nun kitap anlatan içeriklerine seslendirme üretmek ya da İngilizce dinleme pratiği için kendi okuma listeni sese çevirmek olabilir. Ancak Folio'nun ihtiyacı kısa post ve story metinleri; burada araç tüm kitabı bölüm bölüm seslendirmek üzere kurgulanmış, yani ölçek ve çıktı biçimi tutmuyor. Bir kütüphane değil uçtan uca bir uygulama olduğu için kendi pipeline'ına parça olarak gömmek yerine dışarıdan çağırman gerekir. Ofis Mac'inde yerel çalışır ve API maliyeti getirmez; merak edersen tek bir kitapla denemesi ucuz, ama şu anki hiçbir adımını kısaltmaz.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "allenai/olmocr",
+   "inputs_hash": "ad93b155637707351a0302f104b50123",
+   "description_tr": "olmocr, PDF ve görüntü tabanlı belgeleri temiz Markdown metne çeviren bir araç seti. Denklem, tablo, el yazısı ve karmaşık sayfa düzenlerini destekliyor; üstbilgi ve altbilgileri otomatik atıyor, çok sütunlu sayfalarda doğal okuma sırasını koruyor. 7B parametreli bir görsel dil modeline dayandığı için GPU gerektiriyor; buna karşılık milyon sayfa başına maliyetin düşük olduğu belirtiliyor. Allen Institute for AI tarafından geliştiriliyor, Apache-2.0 lisanslı, 19.6K yıldızlı; model sürümleri ve kendi ölçüt seti (olmOCR-bench) düzenli güncelleniyor. Çıktı kalitesi taranmış ve düzeni bozuk belgelerde kural tabanlı dönüştürücülerin üstünde konumlanıyor.",
+   "usage_tr": "Arslan Holding tarafında due diligence sırasında gelen taranmış PDF'leri, imzalı belgeleri ve tablo ağırlıklı finansal raporları okunabilir metne çevirmek için kullanabilirsin; çıktı doğrudan Claude Code'a verilebilecek biçimde. Düz Office dosyaları için daha hafif bir dönüştürücü yeterli olduğundan bunu yalnızca taranmış ya da düzeni bozuk belgeler için ikinci aşama olarak konumlandırmak mantıklı. Önemli uyarı: 7B'lik bir görsel dil modeli çalıştırdığı için ofisteki Mac'te pratik değil, kiralık bir GPU ya da hosted bir servis gerekir; bu da hem maliyet hem de gizli belgelerin makine dışına çıkması demek. Yatırım dosyalarının hassasiyeti düşünülünce, kiralanan makinenin kimin elinde olduğu kararın belirleyici parçası olur. Asistanına devretmek mümkün ama kurulum tarafı ona bırakılacak kadar basit değil.",
+   "matched_project": "Arslan Holding",
+   "relevance": 5,
+   "investment_note": null
+  },
+  {
+   "full_name": "pot-app/pot-desktop",
+   "inputs_hash": "e748d9ec73962dc20c9cd999cdaf6d6d",
+   "description_tr": "Pot, seçilen metni çeviren ve ekran görüntüsünden metin tanıyan çapraz platform bir masaüstü uygulaması. Kısayolla seçili metni çevirme, pencereye yazarak çevirme, pano dinleme modu, ekran alanı seçip OCR yapma ve seçilen alanı doğrudan çevirme gibi kullanım biçimleri sunuyor; ayrıca dışarıdan çağrılabilen bir arayüzü ve çeviri/OCR/TTS servislerini genişleten bir eklenti sistemi var. Tauri üzerine JavaScript ve Rust ile yazılmış; Windows, macOS ve Linux'ta çalışıyor, Wayland desteği ayrıca belgelenmiş. GPL-3.0 lisanslı ve 19.4K yıldızlı; arayüzü Weblate üzerinden topluluk tarafından çevriliyor ve dokümantasyonun büyük bölümü Çince. Çeviri motorlarını kendisi barındırmıyor, farklı servis sağlayıcılarını arayüz arkasında topluyor.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, yabancı dildeki dokümantasyon ve ekran görüntülerini hızlıca okumak gibi günlük bir kolaylık olabilir. Bir masaüstü yardımcı programı olduğu için kendi uygulamana gömülecek bir bileşen sunmuyor ve GPL-3.0 lisansı bu ihtimali zaten kısıtlıyor. Popüler tek işlevli uygulamalardan çabuk sıkıldığını düşünürsek, Mac'te zaten kurulu olan Claude in Chrome'un üstüne kalıcı bir katman eklemesi zor. Ücretsiz ve yerel çalışıyor; kullanacağın çeviri servisine göre maliyet değişir.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "nari-labs/dia",
+   "inputs_hash": "67f35d3dd016c68ae2f0f446dc6ca471",
+   "description_tr": "Dia, Nari Labs tarafından geliştirilen 1.6B parametreli bir metinden konuşma modeli. Bir diyalog metnini tek geçişte doğrudan sese çeviriyor; çıktı bir ses örneğiyle koşullandırılarak duygu ve ton kontrol edilebiliyor, gülme ve öksürme gibi sözsüz ifadeler üretilebiliyor. Model ağırlıkları Hugging Face üzerinde açık olarak yayımlanmış ve Transformers kütüphanesi üzerinden kullanılabiliyor; çıkarım kodu repoda, ayrıca Space üzerinde deneme ortamı var. Apache-2.0 lisanslı ve 19.4K yıldızlı; Nisan 2025'te açılmış, o tarihten sonra Dia2 adıyla ayrı bir depoda devam eden bir çalışma. Şu an yalnızca İngilizce üretim destekleniyor.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam Folio'nun içeriklerine seslendirme üretmek olabilir. Ancak model diyalog üretimine göre kurgulanmış, tek sesli anlatım için değil; Türkçe de desteklenmiyor, dolayısıyla Folio'nun günlük içerik pipeline'ına tek başına oturmuyor. Ücretli bir seslendirme servisine alternatif arıyorsan çok dilli ve klonlama destekli bir motor daha doğru başlangıç olur. 1.6B'lik boyutu ofis Mac'inde denemeye uygun görünüyor ve Apache-2.0 lisansı kendi projene gömmeni engellemiyor.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": "Açık ağırlıklı ses modelleri ücretli seslendirme servislerine doğrudan rakip olduğu için, küçük bir ekiple bu seviyeye gelmiş bir projenin ticarileşme yolu erken aşama AI tezine uygun bir izleme konusu olabilir."
+  },
+  {
+   "full_name": "jianchang512/pyvideotrans",
+   "inputs_hash": "377ac408843c930da3a77755e807b388",
+   "description_tr": "pyVideoTrans, bir videoyu bir dilden diğerine çeviren uçtan uca bir masaüstü aracı. Konuşma tanıma, altyazı çevirisi, çok rollü seslendirme ve ses-video senkronizasyonunu tek akışta birleştiriyor; toplu olarak ses ve videodan SRT altyazı üretebiliyor ve konuşmacı ayrıştırma ile rolleri ayırabiliyor. ASR tarafında yerel Faster-Whisper ve OpenAI Whisper gibi seçenekler, seslendirme tarafında F5-TTS, CosyVoice ve GPT-SoVITS gibi zero-shot klonlama modelleri destekleniyor; hem tamamen çevrimdışı kurulum hem de çevrimiçi API'lerle çalışma mümkün. Python 3.10+ ile yazılmış, Windows, macOS ve Linux'ta çalışıyor, GPL-3.0 lisanslı ve 19.1K yıldızlı. Dokümantasyonun ve forumun ağırlığı Çince, proje sponsorlu bağlantılarla birlikte dağıtılıyor.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, Lyricdrop'un yerel STT zincirini kurarken Faster-Whisper ve seslendirme motorlarının nasıl bir arada paketlendiğine referans olarak bakmak olabilir. Ürettiği altyazı cümle düzeyinde; Lyricdrop'un ihtiyacı olan kelime düzeyinde hizalamayı bu akış kendi başına vermiyor. GPL-3.0 lisansı da parçalarını kendi uygulamana almanı pratikte engelliyor. Ofis Mac'inde yerel çalışabilir ve çevrimiçi API kullanmazsan ek maliyet getirmez, ama bir kütüphane değil bitmiş bir uygulama olduğu için pipeline'a bileşen olarak girmez.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "microsoft/AirSim",
+   "inputs_hash": "7b55bd232a4780dcf83ad58267343b46",
+   "description_tr": "AirSim, drone ve araçlar için Unreal Engine üzerine kurulu açık kaynak bir simülatör; deneysel bir Unity sürümü de var. PX4 ve ArduPilot gibi uçuş kontrolcüleriyle software-in-the-loop, PX4 ile hardware-in-the-loop simülasyon destekliyor ve herhangi bir Unreal ortamına eklenti olarak takılabiliyor. Derin öğrenme, bilgisayarlı görü ve pekiştirmeli öğrenme araştırmaları için veri toplama ve araç kontrolü API'leri sunuyor. C++ ile yazılmış, Windows ve Linux için hazır binary, macOS için kaynaktan derleme yolu tanımlı; Microsoft AI & Research çıkışlı, 18.5K yıldızlı ve 2017'den beri var. Paket verisinde lisans standart bir SPDX etiketi olarak görünmüyor, koşulları lisans dosyasından okumak gerekiyor.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, otonom sistemler alanını bir yatırım merceğiyle izlemek olabilir. Araba ve drift ilgin gerçek bir sürüş hobisi, bu ise otonom araç algoritmalarını test etmek için kurulmuş bir araştırma ortamı; ikisi aynı ihtiyaca oturmuyor. Unreal Engine kurulumu ve macOS'ta kaynaktan derleme gerektirdiği için ofis Mac'inde denemesi de ucuz değil. Kendi uygulamalarına gömülecek bir bileşen sunmuyor.",
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "Huanshere/VideoLingo",
+   "inputs_hash": "aaf2f5ca23d84a5716f318a45fba56d8",
+   "description_tr": "VideoLingo, video altyazısı üretme, çevirme ve seslendirme adımlarını Streamlit arayüzünde tek akışta birleştiren bir araç. yt-dlp ile YouTube videosu indiriyor, WhisperX ile kelime düzeyinde konuşma tanıma ve hizalama yapıyor, altyazıyı NLP ve dil modeli yardımıyla anlamlı parçalara bölüyor ve terim sözlüğüyle tutarlı çeviri üretiyor. Seslendirme tarafında GPT-SoVITS, Azure ve OpenAI gibi seçenekler destekleniyor; çift altyazılı veya dublajlı video çıktısı alınabiliyor. İşlem adımları duraklatılıp devam ettirilebiliyor, ilerleme günlüğe yazılıyor ve kaldığı yerden sürdürülebiliyor. Python ile yazılmış, Apache-2.0 lisanslı ve 18.5K yıldızlı; giriş dili desteği İngilizce, Rusça, Fransızca, Almanca, İtalyanca, İspanyolca ağırlıklı, Japonca ve Çince daha sınırlı.",
+   "usage_tr": "Lyricdrop v2'nin içerik hattının iki adımı bu repoda hazır duruyor: yt-dlp ile YouTube'dan indirme ve WhisperX ile kelime düzeyinde hizalama, tam olarak aradığın zamanlama verisini üreten kombinasyon. Apache-2.0 olduğu için ilgili modülleri fork'layıp kendi admin paneline bağlayabilir, Streamlit arayüzünü hiç kullanmadan sadece indirme ve hizalama adımlarını alabilirsin. Ofis Mac'inde yerel çalışır ve bu iki adım ücretli API gerektirmez; çeviri ve seslendirme adımları ise dil modeli ve TTS servisi çağırdığı için maliyeti oradan gelir, senin bu adımlara ihtiyacın yok. Karşılaştırdığın diğer STT sistemleriyle yan yana koyarken, hizalama kalitesini aynı 20-30 şarkılık test setinde ölçmen doğru olur. Uyarı: WhisperX müzik üstündeki vokalde konuşmaya göre daha zayıf çalışır; enstrümanı ayırıp yalnız vokali beslemek testin bir parçası olsun.",
+   "matched_project": "Lyricdrop",
+   "relevance": 8,
+   "investment_note": null
+  },
+  {
+   "full_name": "NVIDIA-NeMo/Speech",
+   "inputs_hash": "e19fb2f7146bbbbde35743705fede03e",
+   "description_tr": "NeMo Speech, NVIDIA'nın konuşma yapay zekası araç seti; konuşma tanıma, metinden konuşma, konuşmacı tanıma ve ayrıştırma, konuşma çevirisi için model ve eğitim altyapısı sunuyor. Parakeet ve Nemotron ASR aileleri ile MagpieTTS gibi açık ağırlıklı kontrol noktaları Hugging Face üzerinden dağıtılıyor; streaming ASR tarafında 40 dil desteği ve 80 ms'ye kadar ayarlanabilir gecikme belirtiliyor. Eğitim ve büyük ölçekli çıkarım için kurgulanmış, NGC konteynerleriyle birlikte dağıtılıyor. Python ile yazılmış, Apache-2.0 lisanslı ve 18.5K yıldızlı; 3.0 sürümüyle birlikte daha önce tek çatı altında olan NeMo deposundan ayrılmış, aktif geliştiriliyor. Kurulum ve dağıtım yolları ağırlıklı olarak NVIDIA GPU'ları varsayıyor.",
+   "usage_tr": "Lyricdrop v2'de karşılaştıracağın STT adayları arasında Parakeet modelleri ciddi bir seçenek; kelime düzeyinde zaman damgası üretimi ve streaming desteği, boşluk highlight'ının sesle eş zamanlı başlaması hedefine uygun. Ancak araç setinin tamamı NVIDIA GPU etrafında kurulu, yani ofis Mac'inde yerel çalıştırma senaryosu burada zorlanır; bu da senin \"Mac'te yerel çalışsın\" kriterine ters düşüyor. Pratik yol, modeli kiralık bir GPU üzerinde tek seferlik toplu iş olarak çalıştırıp çıktı kalitesini ölçmek, kalite kazancı belirgin çıkarsa taşıma maliyetini o zaman değerlendirmek. Eğitim altyapısı senin ihtiyacının çok ötesinde; sadece hazır kontrol noktalarıyla çıkarım tarafını kullanman yeterli. Apache-2.0 lisansı ticari kullanımı engellemiyor, ama model kontrol noktalarının kendi koşullarını ayrıca okumak gerekir.",
+   "matched_project": "Lyricdrop",
+   "relevance": 6,
+   "investment_note": null
+  },
+  {
+   "full_name": "bleedline/aimoneyhunter",
+   "inputs_hash": "c078f2b7e06a5e43229295b2d364ff64",
+   "description_tr": "Yapay zeka ile ek gelir elde etme yöntemlerini derleyen Çince bir bağlantı ve içerik koleksiyonu. Teknik yollar, içerik üreticiliği, video ve görsel üretimiyle para kazanma fikirleri, kullanılabilecek platform ve kanallar başlıklar altında toplanmış. Kod içermiyor, tamamen metin ve bağlantılardan oluşuyor. Depo sahibinin README'ye eklediği nota göre proje artık sürdürülmüyor; ilişkili alan adı elden çıkmış ve başkaları tarafından yönlendirme amacıyla kullanılmış, dolayısıyla içerideki bağlantılara güvenmemek gerekiyor. 2023 sonunda açılmış, 18.2K yıldıza ulaşmış ve paket verisinde bir lisans tanımlı değil.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, uygulama stüdyosu fikrinde içerik ve dağıtım kanallarına dair fikir taraması olabilir. İçeriğin tamamı Çin pazarına ve 2023 dönemine ait, üstelik depo sahibi projeyi bıraktığını ve bağlantıların güvenilmez hale geldiğini kendisi yazmış. Bir araç değil, artık bakımı yapılmayan bir liste; kurulacak, gömülecek ya da asistana devredilecek bir tarafı yok. Lyricdrop'un lansman tarafı için growth ve ASO kaynaklarına ihtiyacın varsa güncel ve batı pazarına dönük kaynaklara bakman daha verimli olur.",
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  }
+ ]
+}

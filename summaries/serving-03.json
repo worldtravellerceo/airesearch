@@ -1,0 +1,175 @@
+{
+ "repos": [
+  {
+   "full_name": "opendataloader-project/opendataloader-pdf",
+   "inputs_hash": "3a6224972b7c6d8e267e3987056f61ee",
+   "description_tr": "PDF dosyalarını LLM ve RAG hatlarında kullanılabilir yapılı veriye çeviren açık kaynak bir ayrıştırıcı. Düzen analizi yapıp çıktıyı Markdown, JSON (her öğe için bounding box ile), HTML ve Tagged PDF olarak veriyor; dijital, taranmış ve etiketli PDF'leri girdi kabul ediyor. Java 11+ üzerinde çalışıyor, Python, Node.js ve Java SDK'ları var; çekirdek Apache-2.0, PDF/UA dışa aktarma ve erişilebilirlik stüdyosu kurumsal eklenti olarak konumlandırılmış. Deponun kendi ölçümlerine göre çıktısı deterministik, okuma sırası için XY-Cut++ kullanılıyor ve yerel modda sayfa başına 0.015 saniye veriliyor. Yaklaşık 29K yıldız, Mayıs 2025'te açılmış; PDF Association ve veraPDF tarafıyla ortak çalışıldığı belirtiliyor.",
+   "usage_tr": "Arslan Holding'in deal screening adımında gelen pitch deck ve pazar raporlarını Claude Code'un okuyabileceği Markdown/JSON'a çevirmek için kullanabilirsin. Bounding box çıktısı, bir tablonun veya rakamın hangi sayfadan geldiğini geri izlemeni sağlar; özetin kaynağını doğrulamak bu yüzden kolaylaşır. Ofisteki Mac'te yerel çalışır, API maliyeti getirmez ve deterministik çıktı verdiği için aynı deck'i iki kez işlediğinde farklı sonuç almazsın. Kurulum ve toplu çalıştırma asistanına devredilebilir; n8n içinde bir adım olarak da çağrılabilir. Uyarı: Java bağımlılığı Python/TypeScript ağırlıklı kurulumuna ayrı bir parça ekler ve erişilebilirlik tarafı kurumsal eklentide kalıyor, yani açık kaynak çekirdekten yalnızca ayrıştırma kazanıyorsun.",
+   "matched_project": "Arslan Holding",
+   "relevance": 6,
+   "investment_note": "Açık çekirdek ayrıştırma + erişilebilirlik uyumluluğu için kurumsal eklenti modeli, düzenleme baskısıyla büyüyen bir talebe oturuyor; ticarileşme yolu görünür olduğu için izleme listesine alınabilir."
+  },
+  {
+   "full_name": "karakeep-app/karakeep",
+   "inputs_hash": "669ce6dc1dd74ea87fc18899d3f0530a",
+   "description_tr": "Bağlantı, not, görsel ve PDF saklamak için kendi sunucunda barındırılabilen bir arşivleme uygulaması. Kaydedilen bağlantıların başlık, açıklama ve görselini otomatik çekiyor; tam metin ve semantik arama, LLM ile otomatik etiketleme ve özetleme sunuyor ve bu işler ollama üzerinden yerel modellerle de yapılabiliyor. Görsellerden OCR, RSS'ten otomatik toplama, yt-dlp ile video arşivleme, monolith ile tam sayfa arşivleme, kural motoru, REST API ve CLI var; iOS, Android uygulamaları ile Chrome, Firefox ve Safari eklentileri mevcut. Stack Next.js, Drizzle, tRPC, Puppeteer ve Meilisearch; ajan istemcileri için resmi skill'ler tanımlanmış. AGPL-3.0 lisanslı, yaklaşık 29K yıldız, 2024 başında açılmış, sürüm akışı ve çeviri topluluğu aktif.",
+   "usage_tr": "Kişisel bilgi tabanının metin tarafını, yani biriktirdiğin bağlantı ve okuma malzemesini, evdeki 7/24 açık Mac mini'de Docker ile barındırıp tutabilirsin. Etiketleme ve özetlemeyi ollama ile yerel modele bağlarsan ek API maliyeti çıkmaz ve içerik makineden dışarı gitmez. REST API ve CLI olduğu için asistanının araştırma sırasında bulduğu kaynakları doğrudan bu arşive yazdırabilir, sonra semantik aramayla kendi raporlarını üretebilirsin. Uyarı: bu tam bir uygulama, Expo tarafına gömeceğin bir bileşen değil; sesli not akışını karşılamıyor ve popüler uygulamaları iki hafta sonra bırakma alışkanlığın burada da geçerli olabilir. AGPL-3.0 lisansı da ileride kod parçalarını kendi yayınlayacağın ürüne taşıma ihtimalini kısıtlar.",
+   "matched_project": "Kişisel bilgi tabanı",
+   "relevance": 5,
+   "investment_note": null
+  },
+  {
+   "full_name": "Tencent/WeKnora",
+   "inputs_hash": "20aefe173c3ac6b4bb14caefbc7b9371",
+   "description_tr": "Tencent'in açtığı, kurumsal ölçekte doküman anlama ve semantik erişim için tasarlanmış LLM tabanlı bilgi çerçevesi. Üç yetenek etrafında kurulu: RAG ile hızlı soru-cevap, MCP araçlarını ve sandbox'ları yöneten bir ReAct agent, ve ham dokümanları kendi kendini güncelleyen bağlantılı bir markdown wiki'ye dönüştüren Wiki modu. Çok çalışma alanlı RBAC, workspace başına depolama, denetim günlüğü, Langfuse gözlemlenebilirliği, görev kuyruğu paneli ve LiteLLM dahil 20+ sağlayıcı entegrasyonu içeriyor; Feishu, GitLab, Notion, Yuque ve DingTalk gibi kaynaklardan otomatik senkron yapıyor. Go ile yazılmış, 10+ doküman formatı işliyor, ollama ile yerel modeller destekleniyor ve tamamı kendi sunucunda çalıştırılabiliyor. Yaklaşık 28.8K yıldız, Temmuz 2025'te açılmış, sürüm 0.8.0.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor. En yakın bağlam, holding tarafındaki doküman arşivini sorgulanabilir hale getirme ihtiyacı olurdu. Ancak çok kiracılı RBAC, workspace yönetimi, kuyruk paneli ve denetim günlüğü tek kişilik bir yatırım akışı için taşınması gereken fazladan ağırlık; aynı işi çok daha ince bir RAG bileşeni görür. Beslendiği kaynakların çoğu da (Feishu, DingTalk, Yuque) senin kullandığın araçlar değil.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "vercel/ai",
+   "inputs_hash": "523f2bead8db6e705f2f15e5e82d2559",
+   "description_tr": "TypeScript ile yapay zeka uygulamaları ve ajanları yazmak için geliştirilen açık kaynak bir toolkit; Next.js ekibinden çıkıyor. Depo açıklaması ve konu etiketlerine göre OpenAI, Anthropic ve Gemini gibi sağlayıcıları ortak bir arayüz arkasında topluyor, React, Next.js, Svelte ve Vue tarafında dil modeli çağrıları ve generative UI için bileşenler sunuyor. Yaklaşık 26.9K yıldız, 2023 ortasında açılmış, ana dili TypeScript. Bu pakette README içeriği yer almıyor (yalnızca başka bir dosyaya işaret eden tek satır var), bu yüzden sürüm, bakım durumu ve özellik kapsamı buradaki metinden doğrulanamıyor. Lisans etiketi de standart bir SPDX kimliğine çözülmemiş durumda.",
+   "usage_tr": "Lyricdrop v2'nin admin paneli ve içerik üretim tarafında, şarkı başına çeldirici üretimi gibi model çağrılarını tek bir sağlayıcı arayüzü arkasına almak için kullanabilirsin; sağlayıcı değiştirmek istediğinde pipeline'ın tamamını değil model tanımını değiştirirsin. Panel zaten TypeScript ve Vercel tarafında olduğu için kurulumuna yeni bir dil veya çalışma zamanı getirmiyor. Aynı katman Folio'nun günlük içerik üretiminde de tekrar kullanılabilir. Uyarı: bu SDK API anahtarıyla çalışır, yani Max aboneliğinin dışında doğrudan token maliyeti demektir; katalog büyüdükçe şarkı başına maliyet hedefini bu katmanda ölçmen gerekir. Expo/React Native tarafındaki desteğin bu metinde belirtilmediğini de not et, mobil istemciye koymadan önce doğrula.",
+   "matched_project": "Lyricdrop",
+   "relevance": 6,
+   "investment_note": null
+  },
+  {
+   "full_name": "mozilla-ai/llamafile",
+   "inputs_hash": "655cc79f3318980e387211bdd6f9afa9",
+   "description_tr": "Bir dil modelini ağırlıklarıyla birlikte tek bir çalıştırılabilir dosyaya paketleyip kurulum gerektirmeden çalıştırmayı sağlayan proje; llama.cpp ile Cosmopolitan Libc'i birleştiriyor. Aynı paketleme mantığıyla üretilen whisperfile, whisper.cpp üzerine kurulu tek dosyalık bir konuşma tanıma ve çeviri aracı olarak depoya dahil. macOS dahil çoğu işletim sistemi ve CPU mimarisinde çalışıyor, harici GGUF ağırlıklarıyla da kullanılabiliyor ve OpenAI uyumlu bir sunucu içeriyor. 0.10 sürümüyle yeni bir derleme sistemine geçildi; bu daha yeni modelleri destekliyor ama önceki sürümlerdeki bazı özellikler eksik olabiliyor. Mozilla Builders projesi olarak başladı, şimdi Mozilla.ai tarafından sürdürülüyor; Apache-2.0 lisans rozeti taşıyor ve yaklaşık 26K yıldızı var.",
+   "usage_tr": "Lyricdrop v2 için karşılaştırmayı planladığın yerel STT adayları arasına whisperfile'ı koyabilirsin: ofisteki M4 Pro Mac'te tek dosya olarak çalışır, Python ortamı kurmayı gerektirmez ve API maliyeti getirmez — ücretli ses servislerini bırakma kararınla aynı yönde. Admin panelinin arkasına yerel bir dil modeli uç noktası koymak istersen aynı paketlemeyi servis olarak çalıştırıp OpenAI uyumlu API üzerinden çağırabilirsin. Kurulum adımı indir, çalıştırılabilir yap, çalıştır olduğu için asistanına devretmesi kolay. Uyarı: whisperfile'ın kelime düzeyinde zaman damgası üretip üretmediği bu metinde yazmıyor; hizalama testine almadan önce çıktı formatını doğrula, kelime zamanı vermiyorsa hizalama için ayrı bir araca ihtiyacın olur. 0.10 geçişi nedeniyle hangi sürümü indirdiğin de sonucu değiştirebilir, test setini tek sürümle sabitle.",
+   "matched_project": "Lyricdrop",
+   "relevance": 7,
+   "investment_note": null
+  },
+  {
+   "full_name": "Cinnamon/kotaemon",
+   "inputs_hash": "c61d38e173c8902f11d321edd265678d",
+   "description_tr": "Dokümanlarla soru-cevap yapmak için sade bir RAG arayüzü ve aynı zamanda kendi RAG hattını kurmak için bir çerçeve. Son kullanıcı tarafında Gradio ile yazılmış bir arayüz, geliştirici tarafında içe aktarılıp özelleştirilebilen bir kütüphane sunuyor. OpenAI, AzureOpenAI ve Cohere gibi API sağlayıcılarının yanında ollama ve llama-cpp-python üzerinden yerel modelleri destekliyor. Kurulum scriptleri, Docker imajı, Colab defteri ve Hugging Face Spaces üzerinde canlı demolar var. Python 3.10+, Apache-2.0 lisanslı, yaklaşık 25.8K yıldız; Cinnamon tarafından 2024'te açılmış ve dokümantasyonu kullanıcı/geliştirici olarak ayrılmış.",
+   "usage_tr": "Arslan Holding tarafında biriken pitch deck, memorandum ve pazar raporlarını tek bir arşivde toplayıp üzerine soru sormak için kullanabilirsin; due diligence sırasında belgeyi baştan sona okumak yerine kaynak gösteren cevaplar alırsın. Yerel model bağladığında belgeler makineden çıkmaz, bu da kapalı üçüncü parti istemcilere güvenmeme ilkenle uyumlu. Docker imajı olduğu için evdeki Mac mini'de sürekli açık tutulabilir ve arşive belge eklemeyi asistanına devredebilirsin. Uyarı: bu bir Gradio uygulaması, Expo veya Next.js tarafına gömeceğin bir bileşen değil; yanında ayrı bir servis olarak durur. Cevap kalitesi büyük ölçüde PDF ayrıştırmanın kalitesine bağlı olduğundan, grafik ağırlıklı deck'leri önce ayrı bir ayrıştırıcıdan geçirmen gerekebilir.",
+   "matched_project": "Arslan Holding",
+   "relevance": 5,
+   "investment_note": null
+  },
+  {
+   "full_name": "Vision-CAIR/MiniGPT-4",
+   "inputs_hash": "4e673149e6e8b83bb8ad8ea64db9ff39",
+   "description_tr": "KAUST'taki Vision-CAIR grubunun MiniGPT-4 ve MiniGPT-v2 makalelerine ait açık kaynak kodları. Görüntüyü bir dil modeline bağlayarak görsel soru-cevap, açıklama üretme ve çoklu görme-dil görevleri için tek bir arayüz sunmayı hedefliyor. Depoda eğitim, ince ayar ve değerlendirme kodları, Llama 2 tabanlı bir sürüm ve Gradio demoları yer alıyor. BSD-3-Clause lisanslı, Python, yaklaşık 25.6K yıldız; README'deki haber akışı 2023 sonunda duruyor ve çevresinde türetilmiş araştırma projeleri listelenmiş. Çalıştırmak için model ağırlıklarının indirilmesi ve GPU'lu bir kurulum gerekiyor.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor. En yakın bağlam, Folio'nun üretilen içeriğini etiketlemek veya görsel skorlama fikirlerin gibi görüntü anlama gerektiren işler olurdu. Ancak bu depo 2023 dönemine ait bir araştırma çıktısı ve o tarihten sonra güncellenmemiş görünüyor; aynı işi bakımı sürdürülen daha yeni görme-dil modelleri yapıyor. Kurulumu da NVIDIA GPU beklentisiyle yazılmış, Mac merkezli çalışma düzenine oturmuyor.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "SYSTRAN/faster-whisper",
+   "inputs_hash": "e95345a35339e89789db7e78fde248ff",
+   "description_tr": "OpenAI'ın Whisper modelinin, Transformer modelleri için hızlı çıkarım motoru olan CTranslate2 üzerine yeniden yazılmış hali. Aynı doğrulukla openai/whisper'a göre dört kata kadar hızlı çalıştığı ve daha az bellek kullandığı, 8-bit niceleme ile CPU ve GPU'da daha da hızlandığı README'deki ölçümlerle veriliyor. large-v2 ve distil-large-v3 için GPU/CPU süre ve bellek karşılaştırmaları tablo halinde paylaşılmış; batch işleme ile 13 dakikalık ses tek GPU'da 17 saniyeye kadar iniyor. Python 3.9+ yeterli ve ses çözümü PyAV ile yapıldığı için sistemde ayrıca FFmpeg kurulu olması gerekmiyor; GPU kullanımı CUDA 12 ve cuDNN 9 kütüphanelerini istiyor. MIT lisanslı, yaklaşık 25.5K yıldız, SYSTRAN tarafından sürdürülüyor.",
+   "usage_tr": "Lyricdrop v2'de karşılaştırmayı planladığın iki-üç STT sisteminden biri doğrudan bu olabilir; zamanlamayı sesten çıkarma adımının temel adaylarından. Ofisteki Mac'te CPU ve int8 niceleme ile yerel çalışır, ücretli ses API'si gerektirmez ve Python servisi olarak admin panelinin arkasına oturur. 20-30 şarkılık test setini toplu halde gece boyunca işletip sonuçları mevcut hizalama metriklerinle yan yana koyabilirsin. Uyarı: bu metinde kelime düzeyinde zaman damgası seçeneğinden söz edilmiyor; hizalama hedefin için önce çıktının kelime sınırı verip vermediğini doğrula. Ayrıca paylaşılan hız ölçümleri NVIDIA GPU ve Intel CPU üzerinde alınmış, Mac'teki sürelerin farklı çıkacağını varsay. Şarkı sesinde müzik ve vokalin üst üste binmesi hata oranını konuşmaya göre yükseltir, test setine bunu bilerek yansıt.",
+   "matched_project": "Lyricdrop",
+   "relevance": 9,
+   "investment_note": null
+  },
+  {
+   "full_name": "liguodongiot/llm-action",
+   "inputs_hash": "295dd676e8f2eeca5af6c25789097f71",
+   "description_tr": "Büyük dil modeli teknolojilerini ve mühendislik pratiğini Çince anlatan geniş bir kaynak derlemesi. Eğitim (tam ince ayar, LoRA, QLoRA, P-Tuning v2, RLHF), dağıtık eğitim paralellik teknikleri, çıkarım çerçeveleri ve optimizasyon, niceleme, budama, damıtma, değerlendirme, veri mühendisliği ve LLMOps gibi başlıklar altında yazı ve kod bağlantıları listeliyor. Kod deposundan çok bir öğrenme haritası; içeriğin büyük bölümü Zhihu ve benzeri platformlardaki yazılara bağlanıyor, bir kısmı depodaki örnek kodlarla eşleştirilmiş. Apache-2.0 lisanslı, yaklaşık 25K yıldız, 2023'te açılmış ve düzenli olarak genişletilmiş. Metinlerin tamamı Çince.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor. En yakın bağlam, yerel model çalıştırma ve niceleme konularını derinleştirme ilgin olurdu. Ancak içerik tamamen Çince ve ağırlığı GPU kümesi ölçeğinde eğitim ile servis pratiğinde; senin çalıştığın ölçekte kuracağın bir parça çıkmıyor. Çalıştırılabilir bir araç değil, okuma listesi olduğu için asistanına devredilebilir bir iş de üretmiyor.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "verl-project/verl",
+   "inputs_hash": "30fd2882a0c96f2d9721ad5c7a9a22f0",
+   "description_tr": "Büyük dil modelleri için pekiştirmeli öğrenme ile son eğitim (post-training) yapılmasını sağlayan bir kütüphane; ByteDance Seed ekibi tarafından başlatılmış ve HybridFlow makalesinin açık kaynak sürümü olarak sunuluyor. Hibrit kontrolcü programlama modeliyle GRPO ve PPO gibi RL akışlarının birkaç satırda tanımlanabildiği belirtiliyor. FSDP, Megatron-LM, vLLM ve SGLang gibi mevcut altyapılarla modüler API'ler üzerinden entegre oluyor ve modellerin farklı GPU kümelerine esnek yerleştirilmesini destekliyor. 3D-HybridEngine ile eğitim ve üretim fazları arasındaki bellek tekrarını ve iletişim yükünü azalttığı anlatılıyor. Apache-2.0 lisanslı, yaklaşık 23.5K yıldız; çevresinde VLA son eğitimi ve dağıtık tarifler gibi alt projeler oluşmuş, sürüm akışı aktif.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor. En yakın bağlam, ileride bir modeli kendi verinle özelleştirme merakı olurdu. Ancak bu kütüphane çok GPU'lu küme üzerinde model eğitimi için yazılmış; Mac merkezli kurulumunda çalışacak bir şey değil ve bulut GPU maliyeti getirir. Sen model eğitmiyorsun, hazır modelleri uygulamaya bağlıyorsun; bu katman senin ilgilendiğin adımın çok altında kalıyor.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "HKUDS/RAG-Anything",
+   "inputs_hash": "cee6f439a300164f5a2d5c9e1401d4ed",
+   "description_tr": "LightRAG üzerine kurulu, çok kipli doküman işleme ve RAG çerçevesi. Metnin yanında görsel, tablo, formül ve grafik içeren dokümanları tek hat üzerinden işlemeyi hedefliyor; belgede görsel varsa sorguyu bir görme-dil modeline taşıyan VLM destekli sorgu modu ve bağlam yapılandırma modülü içeriyor. Python 3.10 ile çalışıyor, PyPI üzerinden raganything paketi olarak dağıtılıyor ve teknik raporu arXiv'de yayımlanmış. MIT lisanslı, yaklaşık 23.4K yıldız, Haziran 2025'te açılmış; 2026'da LightRAG'in çok kipli desteği bu proje üzerinden sağlanmaya başlanmış. Akademik bir grup tarafından sürdürülüyor ve geliştirme temposu makale yayınlarına bağlı ilerliyor.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor. En yakın bağlam, grafik ve tablo ağırlıklı yatırım dokümanlarını sorgulanabilir hale getirme ihtiyacı olurdu. Ancak çok kipli sorgu için görme-dil modeli çağrıları gerekiyor; bu hem API maliyeti hem de belgelerin dışarı çıkması demek, iki kriterine de ters düşüyor. Aynı ihtiyaca yerel çalışan bir ayrıştırıcı ile sade bir RAG katmanı daha ucuza ve daha öngörülebilir biçimde cevap verir.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "mlc-ai/mlc-llm",
+   "inputs_hash": "7560554b6bb0d00b8364ea92b0f2fbd4",
+   "description_tr": "Dil modellerini derleyip farklı platformlarda çalıştırmak için tasarlanmış bir makine öğrenmesi derleyicisi ve dağıtım motoru. MLCEngine adı verilen ortak çalışma zamanı; Linux, Windows ve macOS'ta Vulkan, CUDA, ROCm ve Metal üzerinde, tarayıcıda WebGPU/WASM ile, iOS'ta Metal ve Android'de OpenCL ile aynı motoru sunuyor. OpenAI uyumlu API'yi REST sunucusu, Python, JavaScript, iOS ve Android üzerinden erişilebilir kılıyor. TVM tabanlı derleme yaklaşımı kullanıyor ve modelleri hedef donanıma göre derlemeyi gerektiriyor. Apache-2.0 lisanslı, yaklaşık 23.2K yıldız, 2023'te açılmış; dokümantasyonu ve WebLLM gibi kardeş projeleri var.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor. En yakın bağlam, Expo ile yazdığın uygulamalara cihaz üstünde çalışan bir model gömme fikri olurdu. Ancak ne Lyricdrop ne de Folio bugün cihaz üstü dil modeline ihtiyaç duyuyor; ağır işler Supabase ve DigitalOcean tarafında, telefonda oynatma ve arayüz var. Mac'te yerel model çalıştırmak istediğinde de tek dosyalık ya da hazır paketli çözümler, model derleme adımı olmadığı için sana daha yakın duruyor.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "pgvector/pgvector",
+   "inputs_hash": "742f2704eb51a792f8caaf729a263512",
+   "description_tr": "Postgres'e vektör veri tipi ve benzerlik araması ekleyen açık kaynak bir eklenti. Tam ve yaklaşık en yakın komşu aramasını, tek ve yarım hassasiyetli, ikili ve seyrek vektörleri, L2, iç çarpım, kosinüs, L1, Hamming ve Jaccard mesafelerini destekliyor. Vektörler verinin geri kalanıyla aynı veritabanında durduğu için JOIN, ACID ve zaman noktasına geri dönüş gibi Postgres özellikleri korunuyor; büyüyen koleksiyonlar için niceleme öneriliyor. Postgres 13+ ile derleniyor; Linux, Mac ve Windows'ta kaynaktan, ayrıca Docker, Homebrew ve paket yöneticileriyle kurulabiliyor ve birçok yönetilen Postgres sağlayıcısında hazır geliyor. Postgres istemcisi olan her dilden kullanılabiliyor, izin verici lisanslı, yaklaşık 23.1K yıldız ve 2021'den beri sürdürülüyor.",
+   "usage_tr": "Kişisel bilgi tabanı için ayrı bir vektör veritabanı kurmadan, zaten kullandığın Supabase üzerinde kalmanı sağlar: Supabase Postgres olduğu için eklentiyi açıp not parçalarını embedding'leriyle aynı tabloda tutabilirsin. Kategori, kaynak ve tarih filtreleriyle vektör sıralamasını tek bir SQL sorgusunda birleştirirsin; haftalık ve aylık özet üretimi böylece ayrı bir servise değil mevcut sorgu katmanına düşer. Yerel Postgres kurulumunda da çalışır, ek API maliyeti getirmez ve yedekleme, erişim kontrolü gibi işler zaten veritabanı tarafında çözülmüş olur. Bu kendi uygulamana gömülecek bir bileşen değil, altyapı katmanında duran bir eklenti; kurulumu bir kerelik iştir. Uyarı: indeks tipi seçimi ve niceleme, koleksiyon büyüdükçe ayar ister; Supabase planındaki bellek sınırını ve indeks oluşturma süresini küçük bir veri setiyle önden ölç.",
+   "matched_project": "Kişisel bilgi tabanı",
+   "relevance": 7,
+   "investment_note": null
+  },
+  {
+   "full_name": "antirez/ds4",
+   "inputs_hash": "c48c3d21da98c1e4a7759a6d034d0f7b",
+   "description_tr": "Tüketici donanımında birkaç seçilmiş büyük modeli çalıştırmayı hedefleyen, kapsamı bilerek dar tutulmuş yerel çıkarım motoru. Genel bir GGUF çalıştırıcısı değil: yalnızca projenin kendi ürettiği GGUF dosyalarıyla, DeepSeek V4 Flash ve PRO, V4.1 Flash, GLM 5.2/5.3 ve Qwen3.8 Flash Next gibi belirli modelleri destekliyor. Birincil hedef Metal ve 96 GB ve üzeri Mac'ler; daha küçük makineler için SSD streaming, ayrıca çok GPU'lu NVIDIA sistemleri ve Strix Halo üzerinde ROCm destekleniyor. Model yükleme, prompt render, araç çağrıları, KV durumu, HTTP sunucusu ve kodlama ajanı birlikte test ediliyor; depoda GGUF, imatrix, kalite ve hız araçları da var. llama.cpp ve GGML üzerine kurulu, MIT lisanslı, yaklaşık 22.6K yıldız ve Mayıs 2026'da açılmış yeni bir proje.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor. En yakın bağlam, Mac'te ücretli API yerine yerel model çalıştırma ilgin olurdu. Ancak birincil hedefi 96 GB ve üzeri bellekli Mac'ler; senin makinen bu eşiğin altında kalıyor ve SSD streaming ile çalıştırmak günlük kullanım için pratik bir yol değil. Desteklenen model listesi de bilinçli olarak dar ve zaman içinde değişeceği yazıyor, yani kurduğun akışın altındaki model bir sonraki sürümde kaldırılabilir; bugün kurulumuna girmek yerine izlemek daha doğru.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "PromtEngineer/localGPT",
+   "inputs_hash": "4be3d4f8d43c2cf77770f5e3a3534342",
+   "description_tr": "Belgelerin makineden hiç çıkmadan soru-cevap ve özetleme için kullanılmasını hedefleyen, kendi sunucunda çalışan bir doküman zekâsı platformu. Yoğun vektör aramasıyla LanceDB'nin tam metin aramasını birleştiren hibrit bir arama, kalibre edilmiş cross-encoder yeniden sıralama, her sorgu için RAG ile doğrudan cevap arasında seçim yapan bir yönlendirici ve cümle düzeyinde bağlam budama içeriyor. Geç parçalama, cevap doğrulama ve çok vektörlü erişim gibi adımlar yapılandırmayla açılıp kapanabiliyor; hangi bileşenin varsayılan olarak açık kaldığı depodaki ölçüm kararlarına dayandırılmış. PDF, DOCX, HTML, Markdown ve TXT Docling ile ayrıştırılıyor, metin katmanı olmayan PDF'ler OCR hattından geçiriliyor; üretim modeli Ollama üzerinden değiştirilebiliyor, gömme ve yeniden sıralama CUDA, Apple MPS ve CPU arasında otomatik seçim yapıyor. Çekirdek saf Python ve standart kütüphane HTTP sunucusu üzerine kurulu, 8000 ve 8001 portlarında REST API sunuyor; MIT lisanslı, yaklaşık 22.2K yıldız.",
+   "usage_tr": "Kişisel bilgi tabanının arama ve cevap katmanını, verinin makineden çıkmadığı bir kurulumla denemek için kullanabilirsin; Apple MPS desteği sayesinde gömme ve yeniden sıralama ofisteki Mac'te GPU hızlanmasıyla çalışır. Ollama ile model değiştirilebildiği için ek API maliyeti olmadan kurulur, REST API'si de kendi arayüzünü önüne koymana izin verir — tam ürün kullanmak yerine bileşen fork'lama refleksine uyuyor. Toplantı notu, sözleşme ve rapor gibi dosyaları indeksleyip asistanının bulduğu kaynakları aynı arşive eklemesini sağlayabilirsin. Uyarı: bu, Supabase üstünde pgvector ile kuracağın sade hattın alternatifi; ikisini birden taşıma, hangisinin aradığın cevap kalitesini verdiğini küçük bir soru setiyle ölçüp birini seç. Bileşen sayısı fazla olduğu için varsayılanların dışına çıktığında ayar yükü hızla artar.",
+   "matched_project": "Kişisel bilgi tabanı",
+   "relevance": 6,
+   "investment_note": null
+  },
+  {
+   "full_name": "QwenLM/Qwen",
+   "inputs_hash": "eba50fbd6c28636dda83a98856f63b00",
+   "description_tr": "Alibaba Cloud'un Qwen model ailesinin ilk nesline ait resmi depo. Sohbet ve ön eğitimli sürümleri 1.8B'den 72B'ye kadar farklı boyutlarda, ayrıca Int4 ve Int8 nicelenmiş varyantlarıyla Hugging Face ve ModelScope üzerinden dağıtıyor; kullanım, dağıtım ve ince ayar kodlarını içeriyor. Flash-attention ve uzun bağlam desteği gibi başlıklar dokümante edilmiş. README'nin başında deponun kod tabanı farklılıkları nedeniyle artık aktif olarak sürdürülmediği ve geliştirmenin QwenLM/Qwen2'ye taşındığı açıkça belirtiliyor. Apache-2.0 lisanslı, yaklaşık 21.8K yıldız, 2023 yazında açılmış.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor. En yakın bağlam, Mac'te ücretli API yerine yerel bir model çalıştırma ilgin olurdu. Ancak bu depo kendi ifadesiyle bakımı bırakılmış ilk nesil; aynı ailenin güncel sürümlerini takip etmek ve modelleri hazır bir yerel çalıştırıcı üzerinden kullanmak daha doğru olur. Depo bir araç değil model yayın noktası olduğu için kurulumuna gömülecek bir bileşen de sunmuyor.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "huggingface/peft",
+   "inputs_hash": "74fb2843aac9e59b633304d6edd8009f",
+   "description_tr": "Büyük ön eğitimli modelleri, parametrelerin tamamını değil küçük bir ek parametre kümesini eğiterek uyarlamayı sağlayan kütüphane. LoRA başta olmak üzere adapter, soft prompt ve IA3 gibi yöntemleri ortak bir API altında topluyor; bir modeli sarmalayıp parametrelerin yüzde birinden azını eğitmek mümkün hale geliyor. Transformers ile eğitim ve çıkarım, Diffusers ile farklı adapter'ları yönetme, Accelerate ile dağıtık çalışma entegrasyonları var; eğitilen adapter'lar ayrı dosyalar olarak saklanıp değiştirilebiliyor. PyTorch tabanlı, Apache-2.0 lisanslı, yaklaşık 21.7K yıldız; HuggingFace tarafından sürdürülüyor ve kavramsal rehberlerle birlikte geniş bir dokümantasyonu var.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor. En yakın bağlam, ileride Lyricdrop'ta çeldirici üretimi gibi dar ve tekrar eden bir görevi küçük bir modele devretme ihtimali olurdu. Ancak bugün içerik üretimini hazır modellerle yapıyorsun; ince ayar veri seti hazırlama, GPU kiralama ve ayrı bir değerlendirme döngüsü demek ve şarkı başına maliyet hedefinin altına inmeden bu yükü getiriyor. Bu bir kütüphane, uygulamana gömülecek bir bileşen değil; eğitilen adapter'ı çalıştırmak için ayrıca bir servis kurman gerekir.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "julycoding/The-Art-Of-Programming-By-July-2nd",
+   "inputs_hash": "a362acf8132354af328cae579882860e",
+   "description_tr": "Pakette bu depo için karar vermeye yetecek kadar açık metin yok: README boş, konu etiketi tanımlanmamış ve lisans belirtilmemiş. Elde yalnızca Çince depo açıklaması var; buna göre proje algoritma ve mülakat konularını işleyen bir programlama kaynağı derlemesi ve içeriği basılı bir kitap olarak da yayımlanmış. Ana dil C olarak görünüyor, 2013'te açılmış ve yaklaşık 21.5K yıldıza ulaşmış. Güncel kapsamı, bakım durumu ve içindeki materyalin bugünkü hali bu metinden değerlendirilemiyor. Yapay zekâ ile ilgili bir bileşen içerdiğine dair bir işaret de bulunmuyor.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor. En yakın bağlam genel programlama ve algoritma çalışmak olurdu, o da senin çalışma biçimine uzak: kod yazma işini Claude Code ile ürün seviyesinde yürütüyorsun. İçerik Çince olduğu için okuma kaynağı olarak da pratik değil. Çalıştırılabilir bir araç sunmadığından asistanına devredilebilir bir iş de çıkmıyor.",
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "karpathy/llama2.c",
+   "inputs_hash": "1e22723fd0fd99a1d22125104b58310a",
+   "description_tr": "Llama 2 mimarisini PyTorch ile eğitip, bağımlılığı olmayan yaklaşık 700 satırlık tek bir C dosyasıyla çıkarım yapan minimal bir proje. Amacı üretim değil sadelik ve öğreticilik: mimari sabit kodlanmış, derleme tek komutla yapılıyor ve çalıştırma için yalnızca bir model dosyası gerekiyor. TinyStories veri kümesi üzerinde eğitilmiş 15M ve 42M parametrelik küçük modeller örnek olarak veriliyor; alan yeterince daraltıldığında küçük modellerin de tutarlı metin üretebildiği gösteriliyor. Meta'nın Llama 2 ağırlıkları da yüklenebiliyor ancak çıkarım fp32 olduğu için büyük modeller pratik değil. MIT lisanslı, yaklaşık 20.1K yıldız; nanoGPT'den türetilmiş bir hafta sonu projesi olarak başladığı belirtiliyor.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor. En yakın bağlam, yerel çıkarımın altında ne olduğunu okuyarak anlama merakı olurdu; kod Mac'te derlenip çalışıyor ve tek dosya olduğu için baştan sona okunabilir. Ancak ürün hattına girecek bir bileşen değil: model boyutu ve fp32 kısıtı nedeniyle Lyricdrop ya da Folio'da yapacağın hiçbir üretim işini karşılamaz. Bu haliyle bir öğrenme malzemesi, kurulumuna ekleyeceğin bir araç değil.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  }
+ ]
+}

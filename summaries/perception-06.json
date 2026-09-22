@@ -1,0 +1,175 @@
+{
+ "repos": [
+  {
+   "full_name": "huggingface/speech-to-speech",
+   "inputs_hash": "bd643e4837b7674a71d276823216068c",
+   "description_tr": "VAD → STT → LLM → TTS sırasıyla çalışan, tamamen modüler bir sesli ajan pipeline'ı. Tüm akışı OpenAI Realtime olay kümesi üzerinden WebSocket ve WebRTC ile dışarı açıyor; her bileşen değiştirilebilir durumda. Varsayılan kurulum yerel Parakeet TDT konuşma tanıma ve Qwen3-TTS seslendirme kullanıyor, LLM yuvası OpenAI uyumlu protokol konuştuğu için vLLM ya da llama.cpp sunucusuna yönlendirilebiliyor. Apple Silicon için tamamen yerel bir yapılandırma tarif ediliyor ve bir konuşma için 16 GB veya üzeri birleşik bellek planlanması öneriliyor. Apache-2.0 lisanslı, ~13.3K yıldız; Reachy Mini robotlarının konuşma arka ucu olarak üretimde çalıştığı belirtiliyor.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam sesli not uygulaman ya da uzun süredir istediğin orkestratör ajana konuşarak komut verme fikri olabilir. Ancak sesli not tarafında tarif ettiğin şey tek dokunuşla kayıt ve otomatik kategorilendirme; burada kurulan şey ise karşılıklı konuşma döngüsü, yani bakımını üstleneceğin ayrı bir ürün. Ofisteki M4 Pro Mac'te tamamen yerel çalışabilmesi ve API maliyeti getirmemesi senin kriterlerine uyuyor, buna karşılık 16 GB üstü bellek ayırması sürekli açık bir makinede fark edilir. İlerde asistan ajanına sesli arayüz eklemek istersen STT ve TTS bloklarını tek tek almak, pipeline'ın tamamını benimsemekten daha mantıklı olur. Şimdilik izleme listesinde tutulacak bir referans mimari.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "YaoFANGUK/video-subtitle-remover",
+   "inputs_hash": "7d50008c4d9391386f00a55aafae9656",
+   "description_tr": "Videolara gömülü sabit altyazıları ve metin filigranlarını çözünürlük kaybı olmadan silen bir araç. Silinen bölgeyi STTN, LaMa, ProPainter ve OpenCV tabanlı inpainting modelleriyle yeniden dolduruyor; altyazı alanı koordinatla verilebiliyor ya da tüm video otomatik taranıyor. Toplu görüntü işleme destekleniyor ve üçüncü parti bir API'ye ihtiyaç duymadan yerel çalışıyor. Hazır paketler ağırlıklı olarak Windows ve CUDA/DirectML hedefliyor, ayrıca Docker imajları yayınlanıyor. Apache-2.0, ~13K yıldız; dokümantasyon büyük ölçüde Çince ve kullanıcı topluluğu aktif.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam Lyricdrop'ta ekranda oynattığın YouTube videolarında ya da Folio için toplanan kaynak görüntülerde gömülü altyazı temizliği olabilir. Lyricdrop'ta boşluklar söz veritabanından geliyor, videodaki görüntüye dokunmuyorsun; dolayısıyla temizlenecek bir altyazı katmanı pipeline'ında yok. Hazır paketlerin Windows ve CUDA'ya bakması da ofisteki Mac'i hedef dışı bırakıyor. Kare başına GPU inpainting maliyeti, katalog ölçeğinde düşündüğünde küçük değil. Bir gün kaynak videodan yazı silmen gerekirse buraya dönmeye değer.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "abus-aikorea/voice-pro",
+   "inputs_hash": "2a0278fa8aa32590c2ec1ef596db7c90",
+   "description_tr": "Gradio tabanlı bir web arayüzünde YouTube indirme, vokal ayırma, konuşma tanıma, çeviri ve seslendirmeyi tek ekranda birleştiren bir araç. İndirme için yt-dlp, vokal-enstrüman ayrımı için Demucs ve MDX-Net, tanıma için Whisper, Faster-Whisper ve Whisper-Timestamped kullanılıyor. Seslendirme tarafında Edge-TTS ve kokoro, ses klonlama tarafında F5-TTS, E2-TTS ve CosyVoice bulunuyor; 100'den fazla dile çeviri destekleniyor. README'deki teknoloji notları platform olarak Windows'u ve CUDA'yı işaret ediyor. GPL-3.0 lisanslı, ~12.9K yıldız, sürümleri düzenli yayınlanıyor.",
+   "usage_tr": "Lyricdrop v2'nin şarkı hazırlama adımı için bu depo neredeyse birebir referans: yt-dlp ile indirme, Demucs ile vokali enstrümandan ayırma ve Whisper-Timestamped ile kelime düzeyi zaman damgası çıkarma sırası tam olarak kurmaya çalıştığın zincir. Vokali ayırıp tanımaya öyle vermek, müzik üstünde kelime hatasını düşürdüğü için admin paneline bağlayacağın hizalama servisinde denemeye değer bir ara adım. Bunu bir bağımlılık olarak değil, ofisteki Mac'te parametre denemesi yapacağın bir tezgah olarak kullan: hangi ayırma ve tanıma kombinasyonunun 20-30 şarkılık test setinde en az kayma ürettiğini ölç. İki uyarı var: GPL-3.0 kodu kendi paneline gömmeni zorlaştırır, o yüzden sıralamayı al kodu alma; ayrıca hazır paketler Windows ve CUDA hedeflediği için Mac tarafında bileşenleri tek tek kurman gerekir. Demucs tarafı ayrıca DJ kütüphanesi için stem çıkarmada işine yarayabilir.",
+   "matched_project": "Lyricdrop",
+   "relevance": 7,
+   "investment_note": null
+  },
+  {
+   "full_name": "PaddlePaddle/PaddleSpeech",
+   "inputs_hash": "a4c642d1b5ce8c58d129483a61eb9d51",
+   "description_tr": "PaddlePaddle üzerine kurulu geniş kapsamlı bir konuşma araç kutusu. Streaming konuşma tanıma, noktalama geri getirme, streaming seslendirme, ses klonlama, konuşmacı doğrulama, uçtan uca konuşma çevirisi ve anahtar kelime tespiti gibi görevleri kapsıyor; konu etiketleri arasında konuşma hizalama da yer alıyor. Conformer, wav2vec2, Whisper ve transformer tabanlı modelleri ve hazır ağırlıkları barındırıyor. Linux, Windows ve macOS destekleniyor, Python 3.8 ve üzeri gerekiyor. NAACL 2022 Best Demo ödülü almış, Apache-2.0 lisanslı, ~12.7K yıldız; proje 2017'den beri sürüyor ve dokümantasyonun bir bölümü Çince.",
+   "usage_tr": "Lyricdrop için denemeyi planladığın iki-üç konuşma tanıma sisteminden biri olarak listeye girebilir; hem çok dilli tanıma hem de hizalama görevleri aynı çatı altında duruyor. Asıl bedel çerçeve tarafında: ofisteki Mac'e PyTorch'un yanına ikinci bir ML runtime kurmak demek ve Apple Silicon desteği bu metinden net değil. Bu yüzden ancak Whisper tabanlı adaylar kelime zamanlamasında yetersiz kalırsa açmaya değer bir kapı. Denersen aynı 20-30 şarkılık test setinde ölç ve kurulum süresini de maliyete yaz. API maliyeti getirmemesi ve tamamen yerel çalışabilmesi artı tarafta; olgunluk açısından ise deponun son dönem bakım temposunu kendin kontrol et.",
+   "matched_project": "Lyricdrop",
+   "relevance": 3,
+   "investment_note": null
+  },
+  {
+   "full_name": "krillinai/OpenCreator",
+   "inputs_hash": "6bba4bb646c7152cfa1a431b4f5c3355",
+   "description_tr": "Eskiden KrillinAI adıyla bilinen, içerik üreticileri için açık kaynak bir AI çalışma alanı. Video çevirisi ve dublaj, görsel ve video üretimi, seslendirme, avatar, kısa video senaryosu ve metin yazımı araçlarını tek arayüzde topluyor. Kendi ajan döngüsünü yazmak yerine Codex CLI'yi yürütme motoru olarak kullanıyor; üstüne yerel bir runtime, görsel bir workspace ve masaüstü kabuğu ekliyor. Skills, MCP, zamanlama, onay akışları ve bildirimler aynı yerden yönetiliyor; Web tek frontend, Desktop aynı build'i yükleyip işletim sistemi yeteneklerini ekliyor. TypeScript, Apache-2.0, ~12.2K yıldız.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam Folio'nun günlük içerik üretimi ya da düşündüğün Dubai uygulama stüdyosunun reklam kreatifi tarafı olabilir. Folio'nun ihtiyacı bir masaüstü arayüzünden üretilen tekil görseller değil, Supabase'e yazıp Expo istemcisine besleyen programatik bir günlük pipeline; bu araç o şekli vermiyor. Ajan motorunun Codex olması da seni Claude Code aboneliğinin dışında ayrı bir model maliyetine taşır. Gömülebilir bileşen yerine bitmiş bir ürün olması, kendi istemcini yazma alışkanlığınla da ters düşüyor. Yatırımcı şapkasıyla bakılacak bir proje; araç olarak değil.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": "Codex benzeri bir ajan motorunun üstüne görsel üretim araçları koyan açık kaynak workspace'ler içerik üretiminde ticarileşebilir bir katman oluşturuyor; ekibi ve dağıtım hızı izlenmeye değer."
+  },
+  {
+   "full_name": "rany2/edge-tts",
+   "inputs_hash": "cfb6c82cab9a786de3cdcea4c489e52e",
+   "description_tr": "Microsoft Edge'in çevrimiçi metin okuma servisini Python'dan kullanmayı sağlayan ince bir istemci. Edge tarayıcısına, Windows'a veya API anahtarına ihtiyaç duymuyor; komut satırından hem ses dosyası hem eşlik eden altyazı dosyası üretebiliyor. Hız, ses seviyesi ve perde ayarlanabiliyor, yüzlerce dilde neural ses listeleniyor. Özel SSML desteği, servisin izin verdiği etiketler daraldığı için kaldırılmış. ~12K yıldız; lisans alanı standart bir SPDX kimliğine çözülmüyor ve sentez yerel değil, Microsoft'un sunucusunda yapılıyor.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam Folio'nun günlük içeriğinde bir anlatım sesi gerekirse burası olabilir. Lyricdrop tarafında seslendirme zaten pipeline'dan çıkardığın bir adım, oradaki ihtiyaç ters yönde, yani sesten metne. Kendi kriterlerinle de çelişiyor: Mac'te yerel çalışmıyor, belgelenmemiş bir Microsoft ucuna bağlı ve o uç kapandığında elinde yedek kalmıyor. Tam olarak temizlemeye çalıştığın türden bir bağımlılık. Bir prototipte hızlı ses lazım olursa pratik, üretime taşınacak bir bileşen olarak değil.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "helloianneo/ian-xiaohei-illustrations",
+   "inputs_hash": "ba0934a9a009f93a1da0dac6ff648b6d",
+   "description_tr": "Çince makaleler için 16:9, beyaz zeminli, el çizimi tarzda gövde görselleri ürettiren bir Codex Skill. Depo kod değil talimat taşıyor: stil tanımı, kompozisyon kalıpları, prompt şablonu ve bir QA kontrol listesi. Çıktı olarak makale başına 4-8 görsellik bir shot list ve PNG dosyaları veriyor; vektör, PPTX veya PDF üretmiyor. Görsellerde siyah, sade bir karakterin merkezdeki eylemi üstlenmesi ve az sayıda el yazısı Çince not kuralı var. MIT lisanslı, ~12K yıldız; dokümantasyonun tamamı Çince.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam Folio'nun görsel üretimi olabilir, ancak o projenin görsel dili Instagram ekran görüntülerinden birebir kopyalanıyor ve bu skill'in Çince el yazısı notlu tarzı oraya oturmuyor. Aktarılabilir olan şey stilin kendisi değil, paketleme biçimi: bir görsel dili stil kuralları, örnek seti ve QA listesiyle tekrar kullanılabilir bir agent skill'ine çevirmek. Kendi skill ve plugin koleksiyonunu büyütürken bu yapıyı örnek alabilirsin. Üretilen görsellerde yazı hatası ve stil kayması bildirildiği için her durumda insan kontrolü gerekiyor.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "speechbrain/speechbrain",
+   "inputs_hash": "7596be1f16e0a0a7bdd6dbc96fd77327",
+   "description_tr": "PyTorch tabanlı, geniş kapsamlı bir konuşma işleme araç kutusu. Konuşma tanıma, konuşmacı tanıma ve ayrıştırma, konuşma iyileştirme ve ayırma, dil modelleme ve konuşulan dili anlama dahil 20'den fazla görevi kapsıyor. 40'tan fazla veri kümesi üzerinde 200'ü aşkın eğitim reçetesi ve HuggingFace'te 100'ün üzerinde hazır model sunuyor; Whisper, wav2vec2, WavLM ve Hubert gibi modeller ince ayara açık. Hiperparametreler YAML ile yönetiliyor, çıkarım birkaç satırlık bir API ile yapılabiliyor. 1.0 sürümüyle EEG modalitesi için de destek eklenmiş; Apache-2.0, ~11.8K yıldız, akademik kökenli ve aktif bir topluluğu var.",
+   "usage_tr": "Lyricdrop'un konuşma tanıma karşılaştırmasında hazır modelleriyle bir aday olarak kullanabilirsin; PyTorch üstünde durduğu için ofisteki Mac'te MPS ile yerel çalışır ve API maliyeti getirmez. Buradaki asıl ağırlık eğitim reçetelerinde, sen model eğitmiyorsun; dolayısıyla sana yarayan kısım hazır çıkarım ve hizalama tarafı, gerisi taşıman gerekmeyen makine. Doğrudan kelime zamanlaması veren hazır araçlarla yan yana koyup aynı test setinde ölç, kurulum yükünü de hesaba kat. İkincil bir not: EEG modalitesi desteği, nörotek ve biyosinyal tarafına girdiğinde aynı çatıyı tanıdık hale getirir. Kendi paneline Python servisi olarak eklenebilir, ama bağımlılık ağırlığı Whisper tabanlı alternatiflerden fazla.",
+   "matched_project": "Lyricdrop",
+   "relevance": 4,
+   "investment_note": null
+  },
+  {
+   "full_name": "altic-dev/FluidVoice",
+   "inputs_hash": "7bff7d527370ca6a234057b77b448015",
+   "description_tr": "macOS için açık kaynak bir dikte uygulaması; kısayola basılıp konuşulduğunda metin imlecin bulunduğu yere yazılıyor. Konuşma tanıma cihaz üzerinde çalışıyor ve Parakeet, Whisper, Apple Speech dahil birden fazla motor destekleniyor. Fluid Intelligence adı verilen yerel bir AI katmanı biçimlendirme, bağlama duyarlı büyük harf ve son işleme yapıyor; bu katman ayrı ve kapalı tutuluyor, uygulamanın kendisi GPLv3. Homebrew cask ile kuruluyor, iOS ve Windows sürümleri duyurulmuş durumda. Swift ile yazılmış, ~11.7K yıldız, sürüm temposu hızlı.",
+   "usage_tr": "Kişisel bilgi tabanı projenin giriş katmanı için doğrudan aday: toplantı ve dikte tarafında kullandığın kapalı kaynak araca birebir yerel bir alternatif ve ses Mac'ten çıkmıyor. Ofis Mac'inde ve evdeki sürekli açık Mac mini'de çalıştırıp not metinlerini n8n üzerinden Supabase'e akıtabilirsin; API maliyeti yok. Fork'layıp kendi istemcini yazma refleksin burada kısmen karşılıksız kalıyor: uygulama GPLv3, iyileştirme katmanı ise kapalı, yani çatalladığında kabuğu alırsın düzelticiyi almazsın. Swift ve macOS'a bağlı olduğu için Expo tarafına gömülecek bir bileşen de değil; sesli notun telefon ayağı için başka bir çözüm gerekir. Benimsemeden önce Türkçe dikte doğruluğunu kendi kayıtlarınla ölç, karar orada netleşir.",
+   "matched_project": "Kişisel bilgi tabanı",
+   "relevance": 6,
+   "investment_note": null
+  },
+  {
+   "full_name": "rhasspy/piper",
+   "inputs_hash": "e5b05b31b4602701a3e56f36df6cf290",
+   "description_tr": "Hızlı ve yerel çalışan bir neural metin okuma sistemi olarak bilinen proje. Bu depodaki README tek satıra inmiş durumda ve geliştirmenin OHF-Voice/piper1-gpl deposuna taşındığını bildiriyor. Dolayısıyla burada güncel kod, kurulum dokümanı veya kullanım örneği yok; ~11.3K yıldız geçmiş ilgiyi yansıtıyor. Depo MIT görünüyor, devam eden çalışmanın bulunduğu deponun adı ise GPL lisansına işaret ediyor. Örnek sesler proje sitesinde yayınlanıyor ve C++ ile yazılmış.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam Folio'ya bir gün anlatım sesi eklemek ya da evdeki Mac mini üzerinde yerel bir seslendirme servisi kurmak olabilir. Yerel çalışması ve API maliyeti getirmemesi kriterlerine uyar, ancak bu depoda benimsenecek bir şey kalmamış; yönlendirme yapılan yeni depoya bakmak gerekir. Lyricdrop tarafında zaten seslendirme adımını pipeline'dan çıkardın, oradaki ihtiyaç sesten metne. Metin okumaya gerçek bir ihtiyaç doğarsa taşındığı depodaki lisansı kontrol ederek başla.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "moonshine-ai/moonshine",
+   "inputs_hash": "16e60936a171e5947d9d33941caf5622",
+   "description_tr": "Gerçek zamanlı ses arayüzleri kurmak için açık kaynak bir araç kutusu; konuşma tanıma, niyet tanıma ve metin okuma bileşenlerini kapsıyor. Modeller sıfırdan eğitilmiş ve Whisper Large V3'ten yüksek doğruluk iddia eden sürümlerden 1 MB'lık çok küçük modellere kadar bir yelpaze sunuyor. Her şey cihaz üzerinde çalışıyor, hesap veya API anahtarı gerekmiyor; kullanıcı konuşurken işlem yaparak gecikme düşürülüyor. Tek kütüphane Python, JavaScript/WASM, iOS, Android, macOS, Linux, Windows ve Raspberry Pi üzerinde kullanılabiliyor. Kod MIT; İngilizce dışındaki eski non-streaming modeller ticari olmayan bir lisansta kalıyor, ~11.1K yıldız.",
+   "usage_tr": "Kişisel bilgi tabanı uygulamanın telefon ayağı için en uygun aday burası: iOS ve Android bağlamaları olduğu için Expo tarafına native modül olarak gömülebilir ve tanıma cihaz üzerinde kalır, yani API maliyeti yok. Tek dokunuşla kayıt fikrine de uyar; konuşma biterken metin hazır olur, sınıflandırmayı sonra Supabase tarafında yaparsın. Küçük modellerin varlığı, telefonda çalışacak sürümü seçerken elini rahatlatır. Uyarı: İngilizce dışındaki eski modeller ticari olmayan lisansta kalıyor, dolayısıyla Türkçe not alacaksan yayınlamadan önce hangi modelin hangi lisansta olduğunu netleştir. Lyricdrop için de STT adaylarından biri sayılabilir, ama tasarımı canlı akışa göre; kelime hizalaması için doğru şekil değil.",
+   "matched_project": "Kişisel bilgi tabanı",
+   "relevance": 6,
+   "investment_note": null
+  },
+  {
+   "full_name": "QuentinFuxa/WhisperLiveKit",
+   "inputs_hash": "ce853e79e7257e1a551c765df9a9d66b",
+   "description_tr": "Kendi sunucunda çalışan, düşük gecikmeli bir konuşma tanıma yığını. Simul-Whisper ve WhisperStreaming gibi eşzamanlı tanıma araştırmalarına dayanıyor; akan sesi tam cümle beklemeden parça parça işliyor. Streaming tanımanın yanında Sortformer tabanlı konuşmacı ayrıştırma, 200 dile eşzamanlı çeviri ve OpenAI/Deepgram uyumlu API uçları sunuyor. FastAPI ve WebSocket ile geliyor, tarayıcıdan açılan bir demo arayüzü var; dosya transkripsiyonu ve SRT üretimi için komut satırı araçları da mevcut. pip ile kuruluyor, Python 3.11-3.13, Apache-2.0, ~11.1K yıldız.",
+   "usage_tr": "Evdeki sürekli açık Mac mini'de yerel bir transkripsiyon servisi olarak çalıştırıp kişisel bilgi tabanı projenin ses girişini buraya bağlayabilirsin. Konuşmacı ayrıştırma sayesinde toplantı kayıtları konuşmacı etiketli metne dönüşür; bu, şu an kapalı bir araçla yaptığın işi yerelde karşılar ve sesi makineden çıkarmaz. OpenAI uyumlu uç noktası olması pratik bir avantaj: n8n akışların ve kendi servislerin istemciyi değiştirmeden bu sunucuya yönelir, API maliyeti de ortadan kalkar. Uyarı olarak iki şey var: tasarım canlı akışa göre yapıldığı için Lyricdrop'un kelime hizalaması bu araçtan beklenmemeli, ve ayrıştırma ile çeviri açıkken 24 GB'lık bir makinede kaynak tüketimi ciddileşir. Kurup asistanına devredebileceğin türden bir servis değil; bakımı sende kalır.",
+   "matched_project": "Kişisel bilgi tabanı",
+   "relevance": 6,
+   "investment_note": null
+  },
+  {
+   "full_name": "petergyang/no-ai-slop",
+   "inputs_hash": "43527f791cebbc4f53047a3638b0ac13",
+   "description_tr": "Metinlerde yirmiden fazla yapay zeka klişesini bulup temizleyen bir yazım skill'i. İkili karşıtlık kalıpları, boğaz temizleyen girişler, sahte içgörü kurguları, iki nokta ile yapılan açıklamalar ve abartılı önem atfı gibi desenleri hedefliyor; yazarın kendi sesini düzleştirmemeyi amaçlıyor. Düzenleme, tespit ve örnek üretme olmak üzere üç modu var. Depoda kod yerine kural seti bulunuyor: SKILL.md düzenleme kurallarını, eval.md skill'in kendi çıktısını denetlediği kontrolleri taşıyor. Claude Code, Codex ve ChatGPT'ye kurulabiliyor; MIT lisanslı, ~11K yıldız ve kalıplar İngilizce metin için yazılmış.",
+   "usage_tr": "Arslan Holding'in marka, website ve LinkedIn metinlerini AI araçlarıyla üretirken yayına çıkmadan önceki son geçiş adımı olarak kullanabilirsin. Claude Code'a skill olarak kurulduğu için mevcut kurulumunun dışına çıkmaz, ek API maliyeti getirmez ve asistanına sabit bir kontrol adımı olarak devredilebilir. Aradığın sessiz ve gösterişsiz tona da hizmet eder; kurumsal metinlerdeki en görünür AI izlerini o ton daha çıkmadan siler. İki sınırı bilerek kullan: kurallar İngilizce kalıplara göre yazılmış, Türkçe çıktıda karşılığı yok; ve başkasının kaleminden çıkmış bir metne uygulandığında sesi düzleştirme riski var. Kendi skill koleksiyonuna eklemesi ucuz, geri alması kolay.",
+   "matched_project": "Arslan Holding",
+   "relevance": 4,
+   "investment_note": null
+  },
+  {
+   "full_name": "SparkAudio/Spark-TTS",
+   "inputs_hash": "2f147d3c3407d7a18cda0c407c524619",
+   "description_tr": "Qwen2.5 üzerine kurulu, büyük dil modeli tabanlı bir metin okuma sistemi. Ayrı bir akustik model ya da flow matching kullanmadan, doğrudan modelin ürettiği kodlardan sesi yeniden oluşturuyor; bu da zinciri kısaltıyor. Zero-shot ses klonlama destekliyor, Çince ve İngilizce arasında diller arası geçiş ve kod değiştirme senaryolarında çalışabiliyor. Cinsiyet, perde ve konuşma hızı gibi parametrelerle sanal konuşmacı oluşturulabiliyor. Rozetler platform olarak Linux'u ve Python 3.12 ile PyTorch 2.5 üstünü gösteriyor, Nvidia Triton ile sunum destekleniyor; Apache-2.0, ~11K yıldız, birkaç üniversitenin ortak çalışması.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam Folio'nun içeriğine sabit bir anlatıcı sesi eklemek istersen burası olabilir. Lyricdrop'ta seslendirmeyi pipeline'dan çıkarmıştın ve oradaki ihtiyaç ters yönde, yani sesten metne hizalama. Yayınlanan kurulum Linux ve CUDA hedefliyor; ofisteki Apple Silicon Mac için net bir yol bu metinde yok, dolayısıyla yerel çalıştırma sorusunun cevabı belirsiz. Ses klonlamaya dayanan bir ihtiyaç da projelerinde tanımlı değil. Şimdilik uzaktan izlenecek bir model.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "nexmoe/VidBee",
+   "inputs_hash": "fc36ea57a7c5943e6d1be0f439d089ce",
+   "description_tr": "Bin'den fazla siteden video ve ses indirip düzenli, aranabilir bir yerel kütüphaneye dönüştüren açık kaynak masaüstü uygulaması. İndirilen ya da içeri aktarılan medyayı bilgisayarda transkribe ediyor; Whisper, SenseVoice, Parakeet ve Qwen3-ASR model aileleri arasından seçim yapılabiliyor ve uygulama makineye uygun modeli önerebiliyor. Konuşmacı tespiti, zaman damgalı oynatma ve metin içinde arama sunuyor; transkript üzerinden özetleme, çeviri ve soru-cevap kullanıcının seçtiği AI sağlayıcısıyla yapılıyor. İndirme kuyruğu, RSS abonelikleri ve çeşitli dışa aktarma biçimleri var. TypeScript, MIT lisanslı, ~10.7K yıldız; aktif geliştirme aşamasında.",
+   "usage_tr": "Kişisel bilgi tabanı tarafında en doğrudan karşılığı, Türkçe YouTube kaynaklarından öğrenme alışkanlığın: videoyu indirip yerelde transkribe eder, üstüne özet çıkarır ve aranabilir bir arşiv bırakır. Transkripsiyon bilgisayarda çalıştığı için o yarısı API maliyeti getirmez; özetleme kısmı hangi sağlayıcıyı bağlarsan onun maliyetine tabi olur. Bitmiş bir masaüstü uygulaması olması burada avantaj: kaynak toplama işini asistanına devredebilirsin. Lyricdrop için ise yanlış şekil; orada yt-dlp ve tanıma adımlarını ayrı ayrı betikleyebilmen gerekiyor, arayüzden tıklamak işe yaramaz. Transkriptleri Supabase'e taşımak istersen dışa aktarma üzerinden bir köprü yazman gerekecek.",
+   "matched_project": "Kişisel bilgi tabanı",
+   "relevance": 5,
+   "investment_note": null
+  },
+  {
+   "full_name": "Const-me/Whisper",
+   "inputs_hash": "e0ce1f8e682ad068ee4653fcb436ef9f",
+   "description_tr": "Depo açıklamasına göre OpenAI'ın Whisper konuşma tanıma modelini GPGPU üzerinde yüksek performansla çalıştıran bir C++ uygulaması. Pakette README boş geldiği için desteklenen işletim sistemi, GPU arka ucu, model boyutları, kurulum yolu ve bakım durumu hakkında karar verecek kadar kamuya açık metin yok. Konu etiketi ve proje sitesi bilgisi de bulunmuyor. Görünen tek sağlam veri MPL-2.0 lisansı, C++ dili ve ~10.7K yıldız. Bu metinden söylenebilecekler bununla sınırlı; ötesi tahmin olur.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam Lyricdrop için karşılaştıracağın konuşma tanıma adayları listesi olabilir. Ancak elimizdeki metin hangi GPU arka ucunu kullandığını söylemiyor, dolayısıyla ofisteki Apple Silicon Mac'te çalışıp çalışmayacağı belirsiz; senin ilk sorunun cevabı yok. Bir C++ ikilisi olarak API maliyeti getirmemesi beklenir, bu da tek olumlu işaret. Listeye almadan önce deponun kendisinde platform desteğini doğrula, aksi halde kurulum denemesine boşuna vakit gider.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "multimodal-art-projection/YuE",
+   "inputs_hash": "97e295be774108b8d93e60d92f48e346",
+   "description_tr": "Şarkı sözü ve stil tarifi alıp önce melodi-akor planı yazan, sonra bu planı vokal ve enstrümantalle birlikte tam bir şarkıya dönüştüren açık ağırlıklı bir müzik üretim modeli. Sembolik planlama sayesinde kompozisyon render edilmeden önce okunabiliyor ve değiştirilebiliyor; zero-shot cover üretimi ve ajanla düzenleme destekleniyor. Yayınlanan karşılaştırmalarda kapalı ticari sistemlerle yakın sonuçlar iddia ediliyor ve sonuçları doğrulamak için halka açık bir dinleme çalışması yürütülüyor. Yanında MERT2 ve SheetSage2 gibi müzik anlama modelleri ve bir değerlendirme veri kümesi de yayımlanmış. Apache-2.0, ~10K yıldız; 3B parametreli ağırlıklar HuggingFace üzerinde.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam Lyricdrop'un katalog tarafı ya da DJ kütüphanen olabilir. Lyricdrop'un tüm önermesi gerçek şarkılar üzerine kurulu: sözler üçüncü parti veritabanından geliyor, oyun ekranda gerçek videoyu oynatıyor ve öğrenen kişi bildiği şarkıyı dinliyor; sentetik şarkı bu zincirin hiçbir adımını karşılamıyor. Aynı ekibin yayınladığı müzik anlama modelleri, üretim modelinden çok daha yakın komşun; hizalama tarafında bir gün bakmak istersen oradan başla. Model ağırlıkları açık olduğu için Mac'te denemek teknik olarak mümkün, ama bu bir merak koşusu olur, projeye girdi olmaz.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": "Açık ağırlıklı bir müzik modelinin kapalı ticari sistemlerle karşılaştırılabilir sonuç iddia etmesi, üretken ses tarafındaki lisanslama ve ticarileşme tartışmasını yatırım merceğiyle izlemeye değer kılıyor."
+  },
+  {
+   "full_name": "santinic/audiblez",
+   "inputs_hash": "a3c02dbc332c908839149ea2c62e73e7",
+   "description_tr": "epub biçimindeki e-kitapları Kokoro-82M ses modeliyle .m4b sesli kitaba çeviren bir Python aracı. Hem komut satırı hem grafik arayüz sunuyor; ffmpeg ve espeak-ng gerektiriyor, CUDA desteği var. Belirtilen ölçümlere göre bir M2 MacBook Pro'da CPU üzerinde saniyede yaklaşık 60 karakter, Colab T4 GPU'da yaklaşık 600 karakter işleniyor. Kokoro 82M parametreli ve Apache lisanslı; desteklenen diller arasında İngilizce, İspanyolca, Fransızca, İtalyanca, Portekizce, Japonca, Çince ve Hintçe sayılıyor. Konuşma hızı 0.5 ile 2.0 arasında ayarlanabiliyor; MIT lisanslı, ~8.6K yıldız.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam Folio'nun kitap merkezli içeriği ya da İngilizce dinleme çalışman olabilir. Folio kısa feed gönderileri ve story üretiyor, saatler süren sesli kitap değil; iki format birbirini beslemiyor. Desteklenen ses listesinde Türkçe de yer almıyor, bu da öğrenme tarafındaki Türkçe kaynak alışkanlığını dışarıda bırakıyor. Mac'te CPU üzerinde bir kitabın yaklaşık bir saat sürmesi, onu pipeline bileşeni değil tek seferlik bir hobi aracı yapıyor. Yerel çalışması ve API maliyeti olmaması olumlu, ama ortada karşılayacağı bir ihtiyaç yok.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "OpenWhispr/openwhispr",
+   "inputs_hash": "ad522d3a2864f6e58b847f913a99728c",
+   "description_tr": "macOS, Windows ve Linux'ta çalışan açık kaynak bir dikte uygulaması; kısayola basıp konuşunca metin imlecin bulunduğu yere yazılıyor. Tamamen çevrimdışı yerel modellerle (Whisper, NVIDIA Parakeet ve benzerleri) ya da kendi anahtarınla bulut sağlayıcılarla çalışabiliyor. Dikte dışında toplantı transkripsiyonu, notlar ve ajan komutları sunuyor; veri toplama ve telemetri olmadığı belirtiliyor. Intel Mac'lerde canlı konuşmacı tanıma gibi bazı özellikler devre dışı kalıyor. JavaScript tabanlı, MIT lisanslı, ~8.5K yıldız; belgelenmiş bir API'si ve düzenli sürümleri var.",
+   "usage_tr": "Kişisel bilgi tabanı projen için fork'lamaya en uygun aday bu: MIT lisanslı ve JavaScript ile yazılmış, yani kendi istemcini yazma alışkanlığına lisans ve dil olarak uyuyor. Ofis Mac'inde yerel Parakeet ya da Whisper ile çalıştırıp dikte ve toplantı transkripsiyonunu tek yerde toplayabilir, şu an kapalı bir araca ödediğin işi yerele çekebilirsin; ses makineden çıkmadığı için API maliyeti de yok. Belgelenmiş API'si sayesinde n8n transkriptleri alıp Supabase'e yazabilir, kategorilendirmeyi sonraki adıma bırakırsın. Karşılaştıracağın diğer dikte uygulamasına göre farkı burada: orada iyileştirme katmanı kapalı, burada her şey MIT. Uyarı: Electron tabanlı bir uygulama sürekli açık bir makinede kaynak yer ve yerel modellerin Türkçe doğruluğunu kendi kayıtlarınla ölçmeden geçiş yapma.",
+   "matched_project": "Kişisel bilgi tabanı",
+   "relevance": 6,
+   "investment_note": null
+  }
+ ]
+}
