@@ -84,6 +84,12 @@ jobs:
       - name: Rebuild the company universe
         run: airadar companies-sync
 
+      # Also free, and unmetered: Crunchbase News is WordPress and its REST API
+      # is public. It is the only place any source here states a valuation, so
+      # it runs daily rather than only with the paid pull it used to sit beside.
+      - name: Read the valuations off the press
+        run: airadar companies-valuations --limit 400
+
       # The queue of repositories the engine did not settle. It has existed as
       # a command since the day a zero was found to mean "no signal" rather
       # than "not AI" — and it was never run by anything, so the 6,823

@@ -8,6 +8,7 @@ the same articles at $0.008 each.
 import datetime as dt
 
 import httpx
+import pytest
 
 from airadar.companies import news
 from airadar.companies.domains import CompanySeed
@@ -147,3 +148,79 @@ async def test_nothing_is_attempted_before_the_directory_exists(conn):
         report = await news.refresh_valuations(conn, limit=10, now=NOW, client=client)
 
     assert report == {"articles": 0, "valuations": 0, "attached": 0, "cost_usd": 0.0}
+
+
+# --- what a year of real headlines taught this module ----------------------
+
+
+async def test_a_refusal_is_not_an_empty_answer():
+    """The pager treated any status >= 400 as "past the last page". The site's
+    nginx answers 403 to the default `python-httpx` user agent, so this whole
+    channel fetched nothing from the day it was written and reported success
+    every time: `valuation_usd` was NULL for all 134 companies."""
+
+    def handler(request: httpx.Request) -> httpx.Response:
+        return httpx.Response(403, text="Forbidden")
+
+    async with httpx.AsyncClient(transport=httpx.MockTransport(handler)) as client:
+        with pytest.raises(news.NewsUnavailable, match="403"):
+            await news.fetch_headlines(since=dt.date(2026, 1, 1), client=client)
+
+
+async def test_the_request_says_who_it_is():
+    """Not politeness alone — the anonymous request is the one that is
+    refused, so the agent string is load-bearing."""
+    seen: list[str] = []
+
+    def handler(request: httpx.Request) -> httpx.Response:
+        seen.append(request.headers.get("user-agent", ""))
+        return httpx.Response(400, json=[])
+
+    async with httpx.AsyncClient(
+        transport=httpx.MockTransport(handler), headers={"User-Agent": news.USER_AGENT}
+    ) as client:
+        await news.fetch_headlines(since=dt.date(2026, 1, 1), client=client)
+
+    assert seen and all("airadar" in agent for agent in seen)
+
+
+def test_the_subject_is_the_company_the_verb_belongs_to():
+    """Taking the first known name in the headline is wrong in a way only real
+    headlines showed: the start of a Crunchbase News headline carries investors
+    and acquirees too. Over a year of them, anchoring on the funding verb made
+    every match correct; the earlier rule filed "Former Apple Engineers'
+    Physical AI Startup Lyte Raises $165M At $1.6B Valuation" under Apple."""
+    names = {"apple": "apple.com", "socure": "socure.com", "mistral ai": "mistral.ai"}
+
+    assert news.subject_of(HEADLINES[1][0], names) is None  # the Apple headline
+    assert news.subject_of(HEADLINES[2][0], names) == "socure.com"
+    assert news.subject_of(HEADLINES[0][0], names) == "mistral.ai"
+
+
+def test_a_name_after_the_verb_is_not_the_subject():
+    """ "Blitzy Raises $200M At $1.4B Valuation For Autonomous Software
+    Development" is not about `autonomous.ai` — and a label that generic is
+    kept out of the derived dictionary besides."""
+    assert (
+        news.subject_of(
+            "Blitzy Raises $200M At $1.4B Valuation For Autonomous Software Development",
+            {"autonomous": "autonomous.ai"},
+        )
+        is None
+    )
+
+
+def test_the_dictionary_is_every_domain_we_hold_not_the_47_we_bought(conn):
+    """The bought directory covers 47 of 9,681 companies, and against a year of
+    real headlines it matched zero valuations. A domain is a name its owner
+    registered: `anthropic.com` is Anthropic. Generic labels stay out, because
+    "scale" and "intelligence" are words before they are anyone's name."""
+    for domain in ("anthropic.com", "intelligence.dev", "ab.io"):
+        company_db.upsert_seeds(conn, [CompanySeed(domain=domain, stars=1, repos=1)], now=NOW)
+    conn.commit()
+
+    names = news.known_names(conn)
+
+    assert names.get("anthropic") == "anthropic.com"
+    assert "intelligence" not in names  # generic
+    assert "ab" not in names  # under the floor

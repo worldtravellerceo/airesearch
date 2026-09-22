@@ -33,11 +33,87 @@ from airadar.companies.funding import valuation_from_headline
 log = logging.getLogger(__name__)
 
 API = "https://news.crunchbase.com/wp-json/wp/v2/posts"
+# The default `python-httpx/x.y` is refused by the site's nginx with a 403,
+# which the pager below used to read as "no more pages" — so this whole channel
+# returned zero articles from the day it was written and said nothing. Say who
+# we are instead; it is also the polite thing to do to a free API.
+USER_AGENT = "airadar/1.0 (+https://github.com/worldtravellerceo/airesearch)"
 PAGE_SIZE = 100
 # Long enough that a word boundary makes an accidental hit unlikely. "Lyte" is
 # a real company and four characters; three would start matching prepositions.
 MIN_NAME_CHARS = 4
+# A name derived from a domain is a weaker claim than one bought from the
+# directory, so it has to be longer before it is allowed to identify anybody.
+DERIVED_MIN_CHARS = 5
 SEARCH_TERMS = ("valuation", "valued at", "raises at")
+
+#: Domain labels that are English before they are anybody's name. Measured
+#: against a year of real headlines: `autonomous.ai` claimed "Blitzy Raises
+#: $200M At $1.4B Valuation For Autonomous Software Development" and
+#: `intelligence.dev` claimed "AI Lab Ricursive Intelligence Lands $300M".
+GENERIC_LABELS: frozenset[str] = frozenset(
+    {
+        "agents",
+        "assistant",
+        "autonomous",
+        "banking",
+        "browser",
+        "capital",
+        "character",
+        "cloud",
+        "context",
+        "copilot",
+        "data",
+        "digital",
+        "energy",
+        "finance",
+        "future",
+        "general",
+        "global",
+        "health",
+        "intelligence",
+        "labs",
+        "memory",
+        "network",
+        "neural",
+        "open",
+        "platform",
+        "protocol",
+        "quantum",
+        "research",
+        "robotics",
+        "scale",
+        "science",
+        "security",
+        "studio",
+        "super",
+        "systems",
+        "technologies",
+        "together",
+        "venture",
+        "vision",
+    }
+)
+
+#: What a headline says when a company raises money. The subject of one of
+#: these verbs is the company the figure belongs to; everything after it is
+#: investors, acquirees and commentary.
+FUNDING_VERB = re.compile(
+    r"\b(raises?|raised|lands?|secures?|nears?|soars?|valued|valuation|closes?|hits?)\b"
+)
+#: How far before the verb the subject may sit. Measured: at three words every
+#: match over a year of headlines is correct; at five, "Former Apple Engineers'
+#: Physical AI Startup Lyte Raises $165M" is filed under Apple.
+MAX_WORDS_BEFORE_VERB = 3
+
+
+class NewsUnavailable(RuntimeError):
+    """The feed refused us. Distinct from "no articles", which is a real answer.
+
+    Silently equating the two is what hid a 403 for the lifetime of this
+    channel: `valuation_usd` was NULL for all 134 companies and every run
+    reported success.
+    """
 
 
 def _clean(title: str) -> str:
@@ -46,20 +122,35 @@ def _clean(title: str) -> str:
 
 
 def subject_of(headline: str, names: dict[str, str]) -> str | None:
-    """The company a headline is about: the first known name to appear in it.
+    """The company a headline is about: the one raising the money.
 
     `names` maps a lowercased company name to its domain. Matching is on word
     boundaries, so `Lyte` does not match `Lytespeed` and `AI` — which is below
     the length floor anyway — never matches at all.
+
+    The subject is the last known name standing within a few words *before* the
+    funding verb. Taking the first name in the headline was the earlier rule
+    and it is wrong in a way that only showed up against real headlines: the
+    rest of a Crunchbase News headline is investors and acquirees, but so is
+    the start of it — "Former Apple Engineers' Physical AI Startup Lyte Raises
+    $165M At $1.6B Valuation" is not about Apple. Anchoring on the verb files
+    it under Lyte, or under nobody when Lyte is not a company we track, which
+    is the right answer either way.
     """
     lowered = headline.lower()
+    verb = FUNDING_VERB.search(lowered)
+    if verb is None:
+        return None
     best: tuple[int, str] | None = None
     for name, domain in names.items():
         if len(name) < MIN_NAME_CHARS:
             continue
-        match = re.search(rf"(?<![a-z0-9]){re.escape(name)}(?![a-z0-9])", lowered)
-        if match and (best is None or match.start() < best[0]):
-            best = (match.start(), domain)
+        for match in re.finditer(rf"(?<![a-z0-9]){re.escape(name)}(?![a-z0-9])", lowered):
+            if match.end() > verb.start():
+                break
+            between = re.findall(r"[a-z0-9$%.]+", lowered[match.end() : verb.start()])
+            if len(between) <= MAX_WORDS_BEFORE_VERB and (best is None or match.start() > best[0]):
+                best = (match.start(), domain)
     return best[1] if best else None
 
 
@@ -71,7 +162,9 @@ async def fetch_headlines(
 ) -> list[dict]:
     """Every article mentioning a valuation since `since`, newest first."""
     owned = client is None
-    client = client or httpx.AsyncClient(timeout=httpx.Timeout(30.0, connect=10.0))
+    client = client or httpx.AsyncClient(
+        timeout=httpx.Timeout(30.0, connect=10.0), headers={"User-Agent": USER_AGENT}
+    )
     seen: dict[str, dict] = {}
     try:
         for term in SEARCH_TERMS:
@@ -87,10 +180,17 @@ async def fetch_headlines(
                         "_fields": "title,link,date",
                     },
                 )
-                if response.status_code >= 400:
+                if response.status_code == 400:
                     # Past the last page WordPress answers 400, which is the
                     # documented way this API says "no more".
                     break
+                if response.status_code >= 400:
+                    # Anything else is a refusal, not an answer. Reading a 403
+                    # as "no more pages" is exactly how this channel managed to
+                    # report success while fetching nothing, for weeks.
+                    raise NewsUnavailable(
+                        f"crunchbase news answered {response.status_code} for {term!r}"
+                    )
                 items = response.json()
                 if not items:
                     break
@@ -112,6 +212,22 @@ def known_names(conn: sqlite3.Connection) -> dict[str, str]:
     guesses, and only for domains we actually hold: a valuation for a company
     nobody here tracks is venture news, not an entry in this index.
     """
+    names: dict[str, str] = {}
+
+    # A domain is a name its owner chose and registered, which is a better
+    # claim than any guess — `anthropic.com` is Anthropic. Measured: the bought
+    # directory covers 47 of the 9,681 companies here, and against a year of
+    # Crunchbase News that matched zero valuations. The label carries the other
+    # 9,634. Generic labels are excluded and the result is anchored on the
+    # funding verb, because "scale" and "intelligence" are words before they
+    # are anyone's name.
+    for row in conn.execute("SELECT domain FROM companies"):
+        label = row["domain"].split(".")[0].replace("-", " ").strip().lower()
+        if len(label) >= DERIVED_MIN_CHARS and label not in GENERIC_LABELS:
+            names.setdefault(label, row["domain"])
+
+    # The bought name wins where we have one: it is the company's own, not a
+    # label that happens to be in front of a dot.
     rows = conn.execute(
         """
         SELECT d.name, c.domain FROM crunchbase_directory d
@@ -120,7 +236,8 @@ def known_names(conn: sqlite3.Connection) -> dict[str, str]:
         """,
         (MIN_NAME_CHARS,),
     ).fetchall()
-    return {row["name"].strip().lower(): row["domain"] for row in rows}
+    names.update({row["name"].strip().lower(): row["domain"] for row in rows})
+    return names
 
 
 async def refresh_valuations(
