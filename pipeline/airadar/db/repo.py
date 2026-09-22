@@ -285,10 +285,72 @@ def _migrate_repos(conn: sqlite3.Connection) -> list[str]:
 # --- repositories ----------------------------------------------------------
 
 
+#: How many names to ask about in one statement. SQLite's host-parameter limit
+#: is 999 on the builds this has to run on, and a census page is 100 rows.
+_NAME_CHUNK = 400
+
+
+def release_contested_names(conn: sqlite3.Connection, repos: Sequence[RepoRecord]) -> int:
+    """Take a name off whichever row is still holding it under a different id.
+
+    `repos` has two unique keys — `id`, and `full_name` — and the upsert below
+    can only name one of them in its ON CONFLICT clause. So a repository
+    arriving with an id we have never seen, under a name some other row still
+    carries, raises `IntegrityError` instead of updating anything. That is not
+    an exotic case: a repository is renamed and somebody takes its old name, an
+    account changes hands, a project is deleted and recreated.
+
+    It cost the scheduled run of 2026-09-22, which died in the census with
+    `UNIQUE constraint failed: repos.full_name` and skipped the eight steps
+    after it, so the site was not rebuilt that day. One row in a batch of a
+    hundred takes the whole `executemany` with it.
+
+    The stale row keeps its id and everything hanging off it — scores, star
+    history, topics and its classification are all `ON DELETE CASCADE`, and
+    throwing away the history of a project that was merely renamed is the worst
+    available answer. It gives up the name and its `last_checked_at`, which
+    puts it at the front of the next collect pass: `repos_due_for_refresh`
+    sorts nulls first. That pass asks GitHub what the id is called now and
+    writes the real name back, or gets a 404 and removes the row. Either way
+    the tombstone is gone before the same run reaches the export.
+    """
+    wanted = {record.full_name: record.id for record in repos}
+    names = list(wanted)
+    stale: list[tuple[int]] = []
+    for start in range(0, len(names), _NAME_CHUNK):
+        chunk = names[start : start + _NAME_CHUNK]
+        placeholders = ", ".join("?" * len(chunk))
+        stale.extend(
+            (row["id"],)
+            for row in conn.execute(
+                f"SELECT id, full_name FROM repos WHERE full_name IN ({placeholders})",
+                chunk,
+            )
+            if row["id"] != wanted[row["full_name"]]
+        )
+    if not stale:
+        return 0
+    conn.executemany(
+        "UPDATE repos SET full_name = full_name || '@' || id, last_checked_at = NULL WHERE id = ?",
+        stale,
+    )
+    log.info("repos: %d name(s) released by a stale row, pending re-check", len(stale))
+    return len(stale)
+
+
 def upsert_repos(conn: sqlite3.Connection, repos: Sequence[RepoRecord]) -> int:
     """Insert or refresh repo rows. `discovered_via` is kept from first sighting."""
     if not repos:
         return 0
+
+    # A batch may not contain two rows claiming one name either, and the last
+    # sighting is the one to believe.
+    by_name: dict[str, RepoRecord] = {}
+    for record in repos:
+        by_name[record.full_name] = record
+    repos = list(by_name.values())
+
+    release_contested_names(conn, repos)
 
     conn.executemany(
         """

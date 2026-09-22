@@ -326,3 +326,97 @@ def test_repos_not_yet_judged_are_still_collected(conn):
     due = {r["full_name"] for r in db.repos_due_for_refresh(conn, tier1_size=10, now=NOW)}
 
     assert due == {"acme/brand-new"}
+
+
+# --- two unique keys, one ON CONFLICT clause -------------------------------
+
+
+def test_a_new_id_may_claim_a_name_another_row_is_holding(conn):
+    """`repos` has two unique keys and the upsert names only one of them, so a
+    repository arriving with an unseen id under a name some other row still
+    carries raised `UNIQUE constraint failed: repos.full_name`.
+
+    It cost the scheduled run of 2026-09-22: the census died on it and the
+    eight steps after it were skipped, so the site was not rebuilt that day.
+    One row in a batch of a hundred takes the whole `executemany` with it.
+    """
+    db.upsert_repos(conn, [db.RepoRecord(id=111, full_name="a/one", owner="a", name="one")])
+    conn.commit()
+
+    # The same name, a different repository. GitHub does this whenever a
+    # project is renamed and somebody takes the handle it left behind.
+    db.upsert_repos(conn, [db.RepoRecord(id=222, full_name="a/one", owner="a", name="one")])
+    conn.commit()
+
+    rows = {r["id"]: r["full_name"] for r in conn.execute("SELECT id, full_name FROM repos")}
+
+    assert rows[222] == "a/one"  # the newcomer owns the name
+    assert rows[111] == "a/one@111"  # the old row kept its id and gave up the name
+    assert 111 in rows  # and was not deleted
+
+
+def test_the_row_that_gave_up_its_name_keeps_its_history(conn):
+    """Everything hanging off a repository is `ON DELETE CASCADE`. Throwing
+    away the star history of a project that was merely renamed would be a
+    worse answer than the crash."""
+    db.upsert_repos(
+        conn, [db.RepoRecord(id=111, full_name="a/one", owner="a", name="one", topics=("llm",))]
+    )
+    db.record_star_daily(conn, 111, [DailyStars(dt.date(2026, 9, 1), 40)])
+    conn.commit()
+
+    db.upsert_repos(conn, [db.RepoRecord(id=222, full_name="a/one", owner="a", name="one")])
+    conn.commit()
+
+    def count(table: str) -> int:
+        return conn.execute(
+            f"SELECT count(*) AS n FROM {table} WHERE repo_id = 111"  # noqa: S608
+        ).fetchone()["n"]
+
+    assert count("repo_star_daily") == 1
+    assert count("repo_topics") == 1
+
+
+def test_the_released_row_goes_to_the_front_of_the_next_collect_pass(conn):
+    """The tombstone is meant to be short-lived: the next pass asks GitHub what
+    the id is called now and writes the real name back, or gets a 404 and
+    removes the row. `repos_due_for_refresh` sorts nulls first, so that happens
+    in the same run, before the export."""
+    db.upsert_repos(
+        conn,
+        [db.RepoRecord(id=111, full_name="a/one", owner="a", name="one", stars=5_000)],
+    )
+    db.mark_checked(conn, 111, NOW)
+    conn.commit()
+
+    db.upsert_repos(
+        conn, [db.RepoRecord(id=222, full_name="a/one", owner="a", name="one", stars=5_000)]
+    )
+    conn.commit()
+
+    due = [r["id"] for r in db.repos_due_for_refresh(conn, tier1_size=10, now=NOW)]
+
+    assert due and due[0] == 111
+
+    # And the name repairs itself when the id turns up under its real one.
+    db.upsert_repos(conn, [db.RepoRecord(id=111, full_name="a/renamed", owner="a", name="renamed")])
+    conn.commit()
+    names = {r["id"]: r["full_name"] for r in conn.execute("SELECT id, full_name FROM repos")}
+    assert names == {111: "a/renamed", 222: "a/one"}
+
+
+def test_one_batch_may_not_contain_two_rows_claiming_one_name(conn):
+    """The same collision inside a single page would fail the same way, and the
+    last sighting is the one to believe."""
+    db.upsert_repos(
+        conn,
+        [
+            db.RepoRecord(id=111, full_name="a/one", owner="a", name="one"),
+            db.RepoRecord(id=222, full_name="a/one", owner="a", name="one"),
+        ],
+    )
+    conn.commit()
+
+    rows = {r["id"]: r["full_name"] for r in conn.execute("SELECT id, full_name FROM repos")}
+
+    assert rows == {222: "a/one"}
