@@ -450,3 +450,33 @@ def test_acceleration_says_whether_it_was_measured():
         today=TODAY,
     )
     assert steady.acceleration_basis == "measured"
+
+
+def test_a_released_name_never_reaches_the_published_index(conn, tmp_path):
+    """The first time the collision fix fired in production it put
+    `cortex-docs/cortex@1331965172` straight onto the live site.
+
+    The released name was supposed to be repaired by the next collect pass, and
+    it is — for the tracked universe, which `track_limit` caps at the top
+    12,000 by stars. That repository has 127 stars. Below the cap the
+    placeholder stands until some later discovery pass happens to see the id
+    again, so the export filters on the name rather than trusting the repair.
+    """
+    seed(conn)
+    # The shape `release_contested_names` leaves behind: a real row whose name
+    # now belongs to somebody else.
+    conn.execute("UPDATE repos SET full_name = full_name || '@' || id WHERE id = 2")
+    conn.commit()
+
+    export_site.export(conn, out := tmp_path / "data", date=TODAY)
+
+    index = read(out, "index.json")["repos"]
+    assert index
+    assert not [r for r in index if "@" in r["full_name"]]
+    # Not on a board either, so nothing links to a page that was not written.
+    for board in BOARDS:
+        entries = read(out, "boards", board, "_all.json")["entries"]
+        assert not [e for e in entries if "@" in e["full_name"]]
+    assert not [slug for slug in read(out, "manifest.json")["repos"] if "@" in slug]
+    # And it is not counted as something this index tracks.
+    assert read(out, "overview.json")["counts"]["tracked"] == 3

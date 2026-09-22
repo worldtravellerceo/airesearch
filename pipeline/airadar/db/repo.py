@@ -285,6 +285,16 @@ def _migrate_repos(conn: sqlite3.Connection) -> list[str]:
 # --- repositories ----------------------------------------------------------
 
 
+#: What a released name is suffixed with. GitHub allows letters, digits, `-`,
+#: `_` and `.` in a repository name and letters, digits and `-` in an owner, so
+#: an `@` cannot occur in a real `full_name` and this marker cannot collide
+#: with one.
+STALE_NAME_MARKER = "@"
+#: Repositories whose name we can still vouch for. A released name is a
+#: placeholder until a later pass learns what the id is really called, and an
+#: index must not publish a name it knows is wrong.
+CURRENT_NAME_SQL = "r.full_name NOT LIKE '%@%'"
+
 #: How many names to ask about in one statement. SQLite's host-parameter limit
 #: is 999 on the builds this has to run on, and a census page is 100 rows.
 _NAME_CHUNK = 400
@@ -311,8 +321,14 @@ def release_contested_names(conn: sqlite3.Connection, repos: Sequence[RepoRecord
     available answer. It gives up the name and its `last_checked_at`, which
     puts it at the front of the next collect pass: `repos_due_for_refresh`
     sorts nulls first. That pass asks GitHub what the id is called now and
-    writes the real name back, or gets a 404 and removes the row. Either way
-    the tombstone is gone before the same run reaches the export.
+    writes the real name back, or gets a 404 and removes the row.
+
+    That repair only reaches the tracked universe, which `track_limit` caps at
+    the top 12,000 by stars. Measured the first time this fired in production:
+    `cortex-docs/cortex` has 127 stars, ranks nowhere near it, and its released
+    name went straight onto the site. Below the cap a name is released until
+    some later discovery pass happens to see the id again — so the published
+    index filters on `CURRENT_NAME_SQL` rather than trusting the repair.
     """
     wanted = {record.full_name: record.id for record in repos}
     names = list(wanted)
@@ -918,6 +934,9 @@ def load_leaderboard(
         LEFT JOIN repo_classification c ON c.repo_id = l.repo_id
         LEFT JOIN repo_scores s ON s.repo_id = l.repo_id AND s.date = l.date
         WHERE l.date = :date AND l.board = :board AND l.category = :category
+          AND """
+        + CURRENT_NAME_SQL
+        + """
         ORDER BY l.rank
         LIMIT :limit
         """,
@@ -1121,7 +1140,9 @@ def load_scoring_rows(
                c.category
         FROM repos r
         JOIN repo_classification c ON c.repo_id = r.id AND c.is_ai = 1
-        WHERE r.is_fork = 0
+        WHERE r.is_fork = 0 AND """
+        + CURRENT_NAME_SQL
+        + """
         ORDER BY r.stars DESC
         """
     ).fetchall()

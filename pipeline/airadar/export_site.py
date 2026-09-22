@@ -126,7 +126,9 @@ def _overview(conn: sqlite3.Connection, date: dt.date | None) -> dict:
     counts = conn.execute(
         """
         SELECT
-            (SELECT count(*) FROM repos) AS tracked,
+            (SELECT count(*) FROM repos r WHERE """
+        + db.CURRENT_NAME_SQL
+        + """) AS tracked,
             (SELECT count(*) FROM repo_classification WHERE is_ai = 1) AS ai_repos,
             (SELECT count(*) FROM repo_classification WHERE is_ai IS NULL) AS ai_unsettled,
             (SELECT count(DISTINCT c.repo_id)
@@ -192,6 +194,9 @@ def _search_index(conn: sqlite3.Connection) -> list[dict]:
         SELECT r.full_name, r.description, r.stars, r.language, c.category, c.one_liner
         FROM repos r
         JOIN repo_classification c ON c.repo_id = r.id AND c.is_ai = 1
+        WHERE """
+        + db.CURRENT_NAME_SQL
+        + """
         ORDER BY r.stars DESC
         """
     ).fetchall()
@@ -299,10 +304,13 @@ def _details(
         FROM repos r
         JOIN repo_classification c ON c.repo_id = r.id AND c.is_ai = 1
         LEFT JOIN repo_scores s ON s.repo_id = r.id AND s.date = :date
-        WHERE r.id IN (
-                SELECT id FROM repos WHERE is_fork = 0 ORDER BY stars DESC LIMIT :limit
-              )
-           OR r.id IN (SELECT repo_id FROM leaderboard_snapshots WHERE date = :date)
+        WHERE """
+        + db.CURRENT_NAME_SQL
+        + """
+          AND (r.id IN (
+                  SELECT id FROM repos WHERE is_fork = 0 ORDER BY stars DESC LIMIT :limit
+                )
+               OR r.id IN (SELECT repo_id FROM leaderboard_snapshots WHERE date = :date))
         ORDER BY r.stars DESC
         """,
         {"date": date, "limit": DETAIL_LIMIT},
