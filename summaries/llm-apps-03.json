@@ -57,10 +57,10 @@
   {
    "full_name": "lencx/ChatGPT",
    "inputs_hash": "8580bb464efe1df7d95aa790dab82ef3",
-   "description_tr": "Bu depo, ChatGPT'nin web arayüzünü Mac, Windows ve Linux'ta masaüstü uygulaması olarak paketleyen resmi olmayan bir Tauri projesidir. Rust ve webview üzerine kurulu; kısayollar, not alma, dışa aktarma ve \"continue generating\" düğmesine otomatik basma gibi sarmalayıcı özellikler ekliyor. 2022 sonunda açılmış ve 54 binin üzerinde yıldız toplamış. README, isim ve ikon nedeniyle marka ihlali riskini ve projenin izinsiz yeniden paketlenip satılması sorununu açıkça anlatıyor, geliştiricisi devam projesi olarak Noi'yi işaret ediyor. GitHub'da tanımlı bir lisansı yok; bu da fork'layıp türev üretmeyi hukuken belirsiz kılıyor.",
-   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor. En yakın bağlam, açık kaynak bir istemciyi fork'layıp kendi sürümünü yazma alışkanlığın; OpenCode için planladığın Expo/EAS iOS istemcisi bunun somut örneği. Ancak bu depo bir web arayüzünü saran kabuk, kendi akışına gömebileceğin bir bileşen değil; üstelik geliştiricisi devamını başka bir projeye taşımış ve lisans tanımsız. Tauri ile masaüstü paketleme mimarisine bakmak istersen okunabilir bir örnek, ama üzerine bir şey kurmak için sağlam bir temel değil.",
+   "description_tr": "lencx/ChatGPT, ChatGPT web arayüzünü Tauri ile masaüstü uygulamasına saran; Mac, Windows ve Linux için paketlenmiş bir istemci. Rust ve webview üzerine kurulu, kendi model altyapısı yok; mevcut arayüzü yerel bir pencerede çalıştırıyor. README, OpenAI'ın resmi macOS uygulamasını yayınladığını hatırlatıyor ve geliştirici projenin devamı olarak Noi adlı yeni bir wrapper uygulamasına yönlendiriyor. Depoda lisans bilgisi belirtilmemiş; 2022'de açılmış ve 54 bin yıldıza ulaşmış. v2 için hâlâ ayırt edici özellik arandığı yazılı, yani ilan edilmiş aktif bir yol haritası yok.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın olası bağlam, OpenCode için Expo/EAS ile kendi istemcini yazma planında bir wrapper örneği olarak bakmak. Orada da Tauri tabanlı bu depo senin tercih ettiğin yapıdan farklı bir yol izliyor ve kaynak kodu güncelliğini yitirmiş durumda. Kapalı kaynak üçüncü parti istemcilere mesafeli duruşun düşünüldüğünde, bakımı fiilen durmuş bir wrapper'ı günlük akışa almak da anlamlı değil. Model tarafında zaten Claude Code ve Max aboneliği üzerinden çalıştığın için bu uygulama o akışa bir şey eklemiyor.",
    "matched_project": null,
-   "relevance": 2,
+   "relevance": 1,
    "investment_note": null
   },
   {

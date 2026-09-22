@@ -1,157 +1,157 @@
 {
-  "repos": [
-    {
-      "full_name": "jarrodwatts/jev-trader",
-      "inputs_hash": "f9eefb0070592f9355fadf09b778c3ce",
-      "description_tr": "jev-trader, Monad zincirinde her blokta bir alım-satım kararı üreten açık kaynak bir bot. Kuru borsasındaki MON-USDC emir defterini okuyup yaklaşık 300 ms'de al ya da sat cevabı veriyor, her blokta touch'ın bir tick içine post-only limit emri koyuyor ve bir önceki emri iptal ediyor; böylece spread'i ödemek yerine kazanmayı hedefliyor. PRIVATE_KEY verilmediğinde gerçek emir defteri ve gerçek kararlarla ama simüle dolumlarla dry-run çalışıyor; karar modeli olarak Jev (TypeSafe AI) ya da yerleşik momentum tabanlı bir mock model kullanılabiliyor. Bun üzerinde çalışan TypeScript kodu, sıcak yolu iki RPC turuna indiren ölçülmüş bir gecikme bütçesi ve SSE ile blok başına olay yayınlayan küçük bir sunucu içeriyor. MIT lisanslı, yaklaşık 2.000 star; Eylül 2026'da açılmış çok yeni bir repo.",
-      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam Arslan Holding'in FinTech ilgisi, ama bu bir ürün değil tek bir DEX üzerinde çalışan kişisel bir deney. Lyricdrop, Folio ya da kişisel bilgi tabanı tarafında karşılığı yok; zincir üstü piyasa yapıcılığı senin ele aldığın problemlerin hiçbirine değmiyor. Tek aktarılabilir yanı yöntemi: projenin README'si karar döngüsünü bir gecikme bütçesine oturtup sıcak yoldan her şeyi ölçerek çıkarıyor. Aynı disiplin Lyricdrop'un kelime hizalama adımında da işe yarar; oradaki adımların p50 sürelerini yazıp neyin sıcak yolda kalacağına böyle karar verebilirsin. Bunun dışında kurup denemek için bir sebep yok.",
-      "matched_project": null,
-      "relevance": 1,
-      "investment_note": null
-    },
-    {
-      "full_name": "YuJunZhiXue/dsh-purge",
-      "inputs_hash": "32f3c0686ca94f1789300b3efa3bd2d1",
-      "description_tr": "dsh-purge, yerel kurulu DeepSeek Harness (dsh) üzerinde güvenlik ve reddetme politikasını değiştiren bir plugin; kendisini kontrollü bir red-team / güvenlik değerlendirme aracı olarak tanımlıyor. Kurulu resmi @deepseek-ai paketlerine geri alınabilir yamalar uyguluyor ve model başına farklı sistem promptu takılmasına izin veriyor; varsayılan prompt Çince modellere göre ayarlanmış. Node.js 22 ve üzeri isteniyor, kurulumdan sonra uygulama ve yeniden başlatma gerekiyor. README'nin önemli bir kısmı hukuki uyarı, sorumluluk reddi ve bağış adreslerinden oluşuyor; teknik belgelendirme Wiki'ye bırakılmış. JavaScript, MIT lisanslı, yaklaşık 1.860 star, Ağustos 2026'da açılmış.",
-      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam kod ajanlarının yapılandırmasıyla ilgilenmen, ama bu proje yapılandırma değil bir sağlayıcının güvenlik katmanını devre dışı bırakma işi yapıyor. Kullandığın araçların hiçbiri DeepSeek Harness değil, dolayısıyla yamaların dokunacağı bir kurulum da yok. Kendi pipeline'larına koyacağın bir bileşen olarak da uygun değil: sağlayıcı kullanım şartlarıyla çatışıyor ve hesap riski taşıyor. Bu satırı bilgi olarak geçip atlayabilirsin.",
-      "matched_project": null,
-      "relevance": 0,
-      "investment_note": null
-    },
-    {
-      "full_name": "aldegad/sprite-gen",
-      "inputs_hash": "7c4204f69653763afe0166d2c070c996",
-      "description_tr": "sprite-gen, tek bir çizimden oyun motorunun tüketebileceği 2D sprite sheet ve animasyon atlası üreten bir Python CLI'ı; aynı zamanda Codex/Claude skill'i olarak da kurulabiliyor. Üretimi satır satır yönetip karakter kimliğini sabitliyor, chroma arka planı gerçek alfa kanalına çeviriyor, her pozu temiz ve şeffaf bir kare olarak çıkarıp makine tarafından okunabilir bir manifest.json ile atlas derliyor. İkinci bir boru hattı aynı kareyi bir video modeline verip her hareket durumu için kesintisiz döngülenen şeffaf GIF/WebP üretiyor ve döngü noktasını otomatik buluyor. Kareleri karşılaştırıp reddetmek için bir kürasyon webview'ı, ayrıca recolor, gölge, tile üretimi ve Aseprite/Phaser/Flame export komutları var. Apache-2.0 lisanslı, yaklaşık 1.750 star; görsel üretim için harici model sağlayıcılarına bağımlı.",
-      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam Folio'nun günlük içerik pipeline'ı, ama Folio'nun ihtiyacı yazar profillerine ait fotogerçekçi foto ve video, oyun sprite'ı değil. Lyricdrop bir oyun mantığı taşısa da ekranda YouTube videosu oynuyor; çizilmiş karakter ya da animasyon atlası gerektiren bir yüzeyi yok. Aktarılabilir tek fikir, üretimi tek seferde değil satır satır yönetip her adımda kimlik sabitleme yaklaşımı — Folio'da aynı yazarın yüzünün her gönderide tutarlı kalması için benzer bir kural gerekecek. Bir 2D oyun projesine başlamadığın sürece kurup denemek için sebep yok; ayrıca görsel üretim adımı harici bir modele bağlı olduğu için Mac'te tamamen yerel çalışmıyor.",
-      "matched_project": null,
-      "relevance": 2,
-      "investment_note": null
-    },
-    {
-      "full_name": "MiniMax-AI/minimax-code",
-      "inputs_hash": "c6e51a8ed647eaec24a4f5a239fa3b35",
-      "description_tr": "MiniMax Code, terminalden çalışan açık kaynak bir kod ajanı: projeyi okuyor, değişiklik yapıyor ve testleri çalıştırıyor. macOS, Linux, WSL ve Windows için tek komutluk kurucusu var, Node.js 22.19+ gerektiriyor ve npm üzerinden de kurulabiliyor. MiniMax hesabıyla ya da kendi anahtarınla (BYOK) kullanılıyor; openai-completions, openai-responses ve anthropic-messages protokollerini destekleyip özel veya yerel sunucuları sağlayıcı olarak eklemeye izin veriyor. Proje yönergeleri AGENTS.md dosyasında tutuluyor; arama, plugin ve çok kipli araçlar aynı akışın içinde. TypeScript, MIT lisanslı, yaklaşık 1.750 star, Haziran 2026'da açılmış.",
-      "usage_tr": "Ofis Mac'inde Claude Code'un yanında zaten OpenCode çalıştırdığın için bu, aynı rafta duran üçüncü bir seçenek ve asıl değeri kendi istemcini yazma refleksine oturması. MIT lisanslı olması ve anthropic-messages formatını desteklemesi, OpenCode için düşündüğün Expo/EAS tabanlı iOS istemci fikrine fork tabanı olarak bakmanı mümkün kılıyor; sağlayıcı katmanı zaten soyutlanmış durumda. Kurulum Mac'te yerel, kurucu sudo istemiyor ve mevcut projelerinin AGENTS.md dosyasını doğrudan okuyor. Asıl uyarı maliyet tarafında: ya krediye sahip bir MiniMax hesabı ya da kendi API anahtarın gerekiyor, yani Max aboneliğinin altına girmiyor ve token başına ücret üretiyor. Önce BYOK modunda tek bir depoda küçük bir görevle ölçüp, Claude Code'da aynı görevin kaç adımda bittiğiyle yan yana koy; kazanç yoksa istemci tarafındaki kodu okumak için tutup ajan olarak kullanmayabilirsin.",
-      "matched_project": "Claude Code iş akışı",
-      "relevance": 5,
-      "investment_note": null
-    },
-    {
-      "full_name": "coulsontl/ai-toolbox",
-      "inputs_hash": "f81528f25a1de4139056cbb6b436b17d",
-      "description_tr": "AI Toolbox, çok sayıda kod ajanının yapılandırmasını tek bir masaüstü arayüzünden yöneten bir Tauri uygulaması; Windows, macOS ve Linux için paketleniyor, macOS'ta Homebrew cask'i var. OpenCode, Claude Code, Codex, Grok CLI, Gemini CLI, Kimi, OpenClaw, Pi, Claude Desktop, Hermes Agent ve DeepSeek Harness için sağlayıcı, model, global prompt ve plugin ayarlarını görselleştiriyor; oturum geçmişlerini de aynı yerden aratıp dışa aktarıyor. MCP sunucularını ve Skills deposunu merkezi olarak yönetiyor, araç bazında açıp kapatabiliyor; ayrıca protokol dönüşümü, hata devri, istek logu ve kullanım/fiyat istatistiği sunan yerel bir proxy gateway içeriyor. WSL ve SSH senkronizasyonu, WebDAV/GitHub yedeklemesi ve sistem tepsisinden hızlı sağlayıcı değiştirme gibi işletim özellikleri var. Tauri 2 + React 19 + SQLite ile yazılmış, AGPL-3.0 lisanslı, yaklaşık 1.720 star.",
-      "usage_tr": "Bu, Claude Code ve OpenCode'u iki ayrı Mac'te yan yana çalıştırma düzenine doğrudan oturuyor: sağlayıcı ve model değişimini, global prompt'u, MCP sunucularını ve Skills listesini terminalden config dosyası düzenlemek yerine GUI'den yönetebilirsin — Mac ayarlarında GUI tercih etmen tam da bu. SSH senkronizasyonu ofis Mac'iyle evdeki Mac mini arasında aynı MCP ve Skills setini taşımak için Tailscale'in üstüne oturur; böylece iki makinede iki farklı yapılandırma yaşamaz. Öğrenmeyi planladığın Hermes Agent'ın config.yaml, sağlayıcı ve memory dosyaları da aynı panelde yönetiliyor, yani o tarafa girerken elinde bir harita olur. Tamamen yerel çalışıyor, API maliyeti getirmiyor ve asistanına devredilecek bir iş değil — bu senin kendi makinenin ayar katmanı. İki uyarı: uygulama her gün kullandığın araçların config dosyalarını yazıyor, kurmadan önce ~/.claude ve OpenCode ayarlarının yedeğini al; ve yerleşik proxy gateway'i Max aboneliğiyle çalışırken açma, trafiği gereksiz yere bir ara katmana sokar. AGPL-3.0 olduğu için kendi kapalı bir ürününe gömmeyi düşünme, yalnızca araç olarak kullan.",
-      "matched_project": "Claude Code iş akışı",
-      "relevance": 7,
-      "investment_note": null
-    },
-    {
-      "full_name": "Continuum-AI-Corp/OrcaRouter-Lite",
-      "inputs_hash": "47f9d405c3438a1ce1f748020167826c",
-      "description_tr": "OrcaRouter Lite, kendi sunucunda çalıştırılan OpenAI uyumlu bir LLM yönlendiricisi; sağlayıcı anahtarlarını sen getiriyorsun (BYOK) ve tek bir /v1 uç noktası üzerinden OpenAI, Anthropic, Google gibi sağlayıcılara yazıyor. Öne çıkan özelliği model=\"auto\": isteğin gerektirdiği yetenekleri (araç çağrısı, görsel, JSON modu) karşılayan en ucuz modeli seçiyor ve gerçekte kullanılan modeli yanıt başlığında geri veriyor. Streaming SSE desteği OpenAI SDK'larıyla birebir uyumlu; sağlayıcılar, yönlendirme, analitik ve anahtarlar için yerleşik bir panel geliyor ve Postgres ya da Redis gerektirmiyor. docker compose ile tek komutta ayağa kalkıyor; isteğe bağlı olarak şirketin barındırılan servisi zincirin sonuna yedek sağlayıcı olarak eklenebiliyor (hesap ve token başına ücret gerektiriyor). Python, MIT lisanslı, yaklaşık 1.710 star, 403 testle birlikte geliyor.",
-      "usage_tr": "Lyricdrop'ta asıl yeri şarkı başına içerik üretimi: her boşluk için çeldirici şık üretirken hangi modele gittiğini ve şarkı başına ne ödediğini tek bir panelden okuyabilirsin, bugün bu bilgi kodun içine dağılmış durumda. model=\"auto\" ile yetenek gerektirmeyen çağrıları ucuz modele düşürüp maliyeti aşağı çekmek mümkün; sağlayıcı kesintisinde toplu üretim işinin ortada kalmaması da aynı katmandan geliyor. Ollama gibi OpenAI uyumlu yerel uçları da sağlayıcı olarak ekleyebildiğin için Mac'te yerel kalma tercihini bozmuyor; docker compose ile ofis Mac'inde ya da mevcut DigitalOcean kutunda çalışır. Buradaki kritik uyarı şu: bu katman yalnızca gerçekten API anahtarı kullandığın yerde işe yarar, Max aboneliğiyle Claude Code üzerinden yaptığın hiçbir şey buradan geçmez. Barındırılan yedek sağlayıcıyı da kapalı tut; amaç maliyeti ölçmekken token başına faturalanan bir hesap açmak ters yöne gider.",
-      "matched_project": "Lyricdrop",
-      "relevance": 5,
-      "investment_note": "Barındırılan ücretli katmanı olan açık çekirdek bir router; kategori OpenRouter, LiteLLM ve Portkey ile kalabalık, ayrışma iddiası yalnızca 'kendi sunucunda + yönetilen yedek' — izleme listesine alınacak bir karşılaştırma örneği, net bir boşluk değil."
-    },
-    {
-      "full_name": "BayramAnnakov/claude-reflect",
-      "inputs_hash": "2cc3511ce3bce5f771c114afa939641f",
-      "description_tr": "claude-reflect, Claude Code için bir plugin: oturum sırasında verdiğin düzeltmeleri, olumlu geri bildirimleri ve tercihleri hook'larla yakalayıp bir kuyruğa yazıyor, /reflect komutu da bunları insan onayından geçirerek CLAUDE.md ve AGENTS.md dosyalarına işliyor. İkinci bir komut olan /reflect-skills geçmiş oturumları tarayıp tekrar eden görüntüleri buluyor ve bunları yeniden kullanılabilir komut adayı olarak öneriyor. Yakalama iki katmanlı: gerçek zamanlı regex desenleri ve /reflect sırasında çalışan, herhangi bir dildeki düzeltmeyi anlayan semantik bir filtre; her kayda 0,60–0,95 arası bir güven skoru veriliyor. Kurulum Claude Code'un plugin marketplace'i üzerinden yapılıyor, Python 3.6+ yetiyor ve macOS, Linux ile Windows destekleniyor. MIT lisanslı, yaklaşık 1.690 star, 322 testi olan 3.x sürümünde.",
-      "usage_tr": "Lyricdrop v2'yi ofis Mac'inde Superpowers ile sıfırdan yazarken verdiğin düzeltmeler şu anda oturum bitince kayboluyor; bu plugin onları CLAUDE.md'ye taşıyıp bir sonraki oturuma devrediyor. Asıl ilginç komut /reflect-skills: şarkı onayı ve tarayıcı playtest turunda tekrar ettiğin adımları kendi başına bulup komut adayı olarak önerir — yani dışarı vermek istediğin işi önce isimlendirmiş olursun. İnsan onayı aşaması, her değişikliğin ayrı gözden geçirilmesi isteğinle aynı mantıkta: kuyruk önüne tablo olarak geliyor, sen kabul ediyorsun. Yerel çalışıyor ve semantik filtre Claude Code'un kendi üzerinden koştuğu için ayrı bir API maliyeti getirmiyor, Max aboneliğiyle uyumlu. Uyarı: doğrudan CLAUDE.md'ye yazıyor, o dosyayı git altında tut ve her /reflect sonrası diff'i oku; ayrıca çok projede birden açarsan kuyruk hızla gürültüye döner, ara ara --dedupe ile temizlemek gerekir.",
-      "matched_project": "Claude Code iş akışı",
-      "relevance": 8,
-      "investment_note": null
-    },
-    {
-      "full_name": "e2b-dev/runtime",
-      "inputs_hash": "6dfd5b16e6aeb02ee25040d29b670e4f",
-      "description_tr": "E2B Runtime, ajanların ürettiği güvenilmeyen kodu çalıştırmak için Firecracker mikro-VM'leri yöneten açık kaynak bir altyapı yığını: kontrol düzlemi API'si, her düğümde Firecracker'ı süren orkestratör, VM içinde çalışan envd ajanı, kenar yönlendiricisi ve şablon derleyicisi. Temel fikir sandbox'ın sıfırdan açılmaması: şablonlar önceden boot edilmiş VM anlık görüntüleri olarak saklanıyor, bellek sayfaları userfaultfd ile talep üzerine geliyor ve kök dosya sistemi salt okunur imajın üstünde kopyala-yaz katmanı olarak duruyor. Duraklat/devam ettir, çalışan bir sandbox'ı çatallama, kalıcı diskler, sandbox başına nftables çıkış güvenlik duvarı ve OpenTelemetry ile ClickHouse'a akan gözlemlenebilirlik var. Go ile yazılmış, Apache-2.0 lisanslı, yaklaşık 1.600 star; 2023'te açılmış, bu listedeki en eski proje. Tek makinede çalıştırmak için KVM destekli bir Linux sunucusu gerekiyor ve bu paket değerlendirme amaçlı sayılıyor.",
-      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam istediğin asistan/orkestratör ajanın ileride üreteceği kodu izole bir yerde çalıştırma ihtiyacı olabilir. Ama pratik engel net: iki Mac'in de KVM'i yok, yani bu yığın senin makinelerinde çalışmıyor; DigitalOcean tarafında iç içe sanallaştırma açık bir kutu bulmak başlı başına bir proje. Bugün Claude Code'u kendi depolarında çalıştırıyorsun ve izolasyon ihtiyacın sandbox seviyesinde değil. Kullanıcı olarak değil, kategoriye bakan biri olarak okunacak bir repo.",
-      "matched_project": null,
-      "relevance": 2,
-      "investment_note": "E2B, ajan çalıştırma altyapısında açık çekirdek modelle ilerleyen ticari bir şirket; erken aşama AI altyapısı merceğiyle bakarken kategoriyi ve karşılaştırma noktasını tanımlayan referanslardan biri."
-    },
-    {
-      "full_name": "Sliverkiss/workbuddy2api",
-      "inputs_hash": "30807ee3673e0df8dac0d434ed9e8694",
-      "description_tr": "workbuddy2api, CodeBuddy hesaplarını OpenAI uyumlu bir /v1/chat/completions servisine çeviren, kendi sunucunda çalıştırılan resmi olmayan bir ağ geçidi. OAuth cihaz yetkilendirmesiyle birden çok hesabın kimlik bilgisini topluyor, token yenilemeyi üstleniyor ve kredi durumu, yaklaşan son kullanma tarihi ile boşta kalma süresine göre ağırlıklı rastgele hesap seçimi yapıyor. Hata durumunda kademeli soğutma ve devre kesici, çok turlu sohbetlerde aynı hesapta kalmayı sağlayan oturum yapışkanlığı, hesap-model çifti başına maliyet defteri ve ücretsiz kademeyi keşfetmek için trafiği yeniden yönlendiren bir mekanizma içeriyor. Ayrıca günlük giriş, token canlı tutma ve etkinlik görevleri gibi kredi toplamaya dönük zamanlanmış işler var. Go ile yazılmış, Docker Compose ile dağıtılıyor, MIT lisanslı, yaklaşık 1.480 star; README'nin kendisi projenin resmi olmadığını ve yalnızca kişinin kendi yetkili hesaplarıyla kullanılması gerektiğini yazıyor.",
-      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam sağlayıcı yönlendirme ve maliyet ölçümüne olan ilgin, ama bu proje o işi tek bir Çin pazarına özgü yukarı akışın hesaplarını döndürerek yapıyor. Kullandığın hiçbir araç CodeBuddy'ye bağlı değil, yani geçidin arkasına koyacak bir şey yok. Hesap havuzu döndürme ve günlük görevlerle kredi toplama tarafı sağlayıcı kullanım şartlarıyla açıkça çatışıyor; kurumsal bir yapının altında bu riski almak anlamsız. Yönlendirme ve maliyet defteri fikri ilgini çekiyorsa aynı işi kullanım şartlarına uygun yapan bir router'a bakmak daha doğru olur.",
-      "matched_project": null,
-      "relevance": 0,
-      "investment_note": null
-    },
-    {
-      "full_name": "zubair-trabzada/ai-sales-team-claude",
-      "inputs_hash": "7a73b5f6f788eae81ce5a1328c1a6309",
-      "description_tr": "ai-sales-team-claude, Claude Code içine kurulan 14 skill ve 5 paralel ajandan oluşan bir satış paketi. Tek bir /sales prospect komutu şirket araştırması ve firmografi, BANT + MEDDIC ile fırsat skorlaması, karar verici haritası, rakip istihbaratı ve beş e-postalık bir erişim dizisini eşzamanlı çalıştırıp 0–100 arası bir skorla tek dosyada topluyor. Ayrı komutlar toplantı hazırlığı, teklif, itiraz oyun kitabı, ideal müşteri profili ve pipeline raporu üretiyor; çıktılar Markdown dosyaları, isteğe bağlı olarak PDF. Kurulum tek satırlık bir installer ile yapılıyor; skorlama ve iletişim bulma için birkaç Python betiği ve şablon dosyası geliyor. MIT lisanslı, yaklaşık 1.380 star, Mart 2026'da açılmış.",
-      "usage_tr": "Arslan Holding'in deal screening ve toplantı hazırlığı akışında kullanabilirsin: bir şirketin sitesini verip araştırma, karar verici listesi ve toplantı brifingini tek turda çıkarmak, bugün elle yaptığın ilk eleme adımının yerine geçer. Claude Code'un içinde çalıştığı için ayrı bir API maliyeti getirmiyor ve Max aboneliğiyle uyumlu; üstelik tetiklemesi ve çıktıyı dosya olarak geri getirmesi asistanına devredilebilecek bir iş. HubSpot'un yanında duracak yeri şu: çıktı CRM kaydı değil Markdown/PDF dosyası, yani kayıtları aktaran hâlâ bir insan — ilk turda bunu kabul edip yalnızca eleme aşamasında kullanmak daha gerçekçi. Asıl uyarı çerçevede: BANT ve MEDDIC satış nitelendirme yöntemleri, yatırım due diligence'ı değil; skill promptlarını ekip, traction ve pazar uyumu kriterleriyle yeniden yazmadan skorlarına güvenme. Ayrıca araştırma kalitesi tamamen ajanın web'den çekebildiğine bağlı, o yüzden çıktıyı ilk taslak olarak gör.",
-      "matched_project": "Arslan Holding",
-      "relevance": 6,
-      "investment_note": null
-    },
-    {
-      "full_name": "momochoog/gpt-daichong",
-      "inputs_hash": "cf05a221472ec9bf1cc2882d64bff64e",
-      "description_tr": "Bu depo bir yazılım projesi değil: Çin'den ChatGPT Plus ve Pro aboneliğinin üçüncü parti bir bayi üzerinden nasıl satın alınacağını anlatan, arama motoru için yazılmış bir rehber ve yönlendirme sayfası. İçerik fiyat tabloları, ödeme yöntemleri, sipariş sorgulama, iade ve fatura SSS'si ile paket karşılaştırmasından oluşuyor ve bağlantıların tamamı aynı satıcının sitesine UTM etiketleriyle gidiyor; README'de bakımın satıcı tarafından yapıldığı açıkça yazıyor. Kod tarafında yalnızca abonelik mutabakatı için küçük bir SQL örneği var. Lisans alanı NOASSERTION, dil HTML olarak görünüyor, yaklaşık 1.370 star. Yıldız sayısı bir yazılımın olgunluğunu değil, arama trafiğine dönük bir içerik çalışmasını yansıtıyor.",
-      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; ortada kurulabilecek ya da gömülebilecek bir bileşen yok, en yakın bağlam depo formatında bir pazarlama sayfası olması. Teknik bir katkı beklemeden geçebilirsin. Tek işe yarar yanı negatif bir sinyal: yüksek yıldızlı bir deponun her zaman bir proje olmadığını gösteriyor, bu da kategori taramalarında filtre kurarken akılda tutulacak bir örnek. Abonelik ve ödeme tarafı bölgesel bir satın alma yoluna göre yazılmış, senin kurulumunla ilgisi yok.",
-      "matched_project": null,
-      "relevance": 0,
-      "investment_note": null
-    },
-    {
-      "full_name": "zblcving9-gif/xianxia-AI-town-AI-",
-      "inputs_hash": "949d2f94b4db1a3130da24d3312f4715",
-      "description_tr": "Bu depo hakkında karar vermeye yetecek kamuya açık metin yok. Tek cümlelik açıklama, büyük dil modeliyle sürülen NPC kararlarından ve NPC ile oyuncunun eşit haklara sahip olduğu bir simülasyondan söz ediyor; README de aynı cümleyi tekrarlamaktan ibaret. Kurulum talimatı, mimari açıklaması, ekran görüntüsü, demo veya örnek çıktı bulunmuyor. Dil JavaScript, MIT lisanslı, yaklaşık 1.200 star, Mart 2026'da açılmış. Yıldız sayısıyla belgelenmiş içerik arasındaki fark, değerlendirmeden önce depoyu bizzat açmayı gerektiriyor.",
-      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam Folio'nun yapay karakterleri olabilir, ama bunu iddia edecek kadar bile metin yok. Ne yaptığı belgelenmeden hiçbir projeye aday gösterilemez. İçeriği ilgini çekiyorsa tek yol depoyu klonlayıp koda bakmak; bu boyutta bir belgesizlik kendi başına bir bakım riski işareti. Bu haliyle indeksleme dışında bir değeri yok, denemek için ayıracağın zamanı başka bir satıra harca.",
-      "matched_project": null,
-      "relevance": 0,
-      "investment_note": null
-    },
-    {
-      "full_name": "fangmumu111-bot/chatgpt-plus-pro-codex-cn-guide",
-      "inputs_hash": "a65f93100c5ed0fb3f75bb4b44ef10e2",
-      "description_tr": "Bu depo da bir yazılım değil, arama motoru için yazılmış bir satın alma rehberi: ChatGPT Pro'nun 5x ve 20x kademelerinin Çin'den nasıl açılacağını, hangi bayi üzerinden hangi fiyata alınacağını ve sipariş sorgulamanın nasıl yapılacağını anlatıyor. İçerik paket karşılaştırma tabloları, ödeme yöntemleri, Codex kullanım limitleri ve model görünürlüğü sorun giderme listelerinden oluşuyor; bağlantılar UTM etiketleriyle aynı satıcıya gidiyor ve müşteri hizmeti için bir mesajlaşma numarası veriliyor. GitHub Pages üzerinde yayınlanan bir site olarak da servis ediliyor. HTML, MIT lisanslı, yaklaşık 1.040 star, Temmuz 2026'da açılmış. Depoda çalıştırılabilir bir bileşen yok.",
-      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; kurulabilecek ya da bir pipeline'a gömülebilecek hiçbir parça içermiyor, en yakın bağlam depo formatında yayınlanmış bir satış içeriği olması. Abonelik kademesi seçimiyle ilgili bilgiler de bölgesel bir satın alma yoluna göre yazılmış, senin kurulumunla ilgisi yok. Bu satırı atlayabilirsin. Yüksek yıldız sayısının bir yazılımı değil arama trafiğine dönük bir içerik çalışmasını gösterdiği örneklerden biri, kategori taramalarında filtre kurarken akılda tutulabilir.",
-      "matched_project": null,
-      "relevance": 0,
-      "investment_note": null
-    },
-    {
-      "full_name": "Gabberflast/academic-pptx-skill",
-      "inputs_hash": "eb66a1fb2024904fa066079a31775ec2",
-      "description_tr": "academic-pptx-skill, akademik sunumlar için yazılmış bir Claude skill'i: konferans konuşması, seminer, tez savunması ve hibe brifingi hedefleniyor. Claude'un varsayılan tasarım ağırlıklı slayt üretimini devre dışı bırakıp yerine iletişim öncelikli kurallar koyuyor — her başlık çıkarımı söyleyen tam bir cümle olacak, destek yapısı durum → problem → çözüm şeklinde ilerleyecek, başlıklar tek başına okunduğunda hikâyeyi anlatacak, sonuç slaytlarında tek bir görsel olacak ve bulgular doğrudan grafiğin üstüne yazılacak. Kaynak gösterimi, referans slaytı ve Q&A sırasında ekranda kalacak bir sonuçlar slaytı da kural olarak dayatılıyor. Depoda SKILL.md, içerik yönergeleri ve PptxGenJS kod desenlerini içeren slayt kalıpları ile tavsiyeleri özetleyen bir PDF var; dosya üretimini Anthropic'in yerleşik PPTX skill'i yapıyor. MIT lisanslı, yaklaşık 1.040 star.",
-      "usage_tr": "Arslan Holding tarafında konferans ve yatırımcı sunumu hazırlarken işine yarayacak kısım argüman yapısı: her başlığı çıkarım cümlesine çevirme ve başlıkları tek başına okuyup hikâyenin ayakta durup durmadığını sınama kuralı, deck'in mantığını doğrudan sıkılaştırır. Skill olarak kurulduğu için ayrı bir API maliyeti yok ve bir taslağı asistanına hazırlatıp senin üstünden geçmen mümkün. Ama bu paketin akademik bağlama göre ayarlandığını unutma: kaynak gösterimi zorunluluğu ve referans slaytı bir yatırımcı sunumunda ölü ağırlık, content_guidelines.md'den bu kuralları çıkarman gerekir. İkinci çatışma tasarım tarafında — skill bilinçli olarak beyaz zemin ve üç renkle sınırlı sade bir görünüm dayatıyor, bu da Claude Design ile kurduğun marka kimliğini ezer. Önce tek bir deck'te yalnızca başlık ve yapı kurallarını uygulayıp tasarım bölümünü kapatarak dene.",
-      "matched_project": "Arslan Holding",
-      "relevance": 4,
-      "investment_note": null
-    },
-    {
-      "full_name": "LukasNiessen/terrashark",
-      "inputs_hash": "414d1a0ecaefab3a322bd00777d671e6",
-      "description_tr": "TerraShark, Claude Code, Codex, Gemini CLI ve Antigravity için yazılmış bir Terraform/OpenTofu skill'i. Amacı dil modellerinin Terraform yazarken uydurduğu kaynak ve argümanları azaltmak: iyi, kötü ve nötr örnekler vererek modelin sık yapılan hatalara düşmesini engellemeye çalışıyor ve modüler, yeniden kullanılabilir, güvenlik öncelikli bir varsayılana yöneltiyor. İçerik HashiCorp'un resmi önerilen uygulamalarına dayandırılmış ve çakışma durumunda onlara öncelik veriliyor. Token tüketimini düşürmek için tekrar eden metinler ayıklanmış; yanıtlar yedi adımlı bir hata modu akışını ve varsayımlar, ödünleşimler ve geri alma notları içeren bir çıktı sözleşmesini takip ediyor. Kurulum ~/.claude/skills altına klonlayarak ya da plugin marketplace üzerinden yapılıyor. MIT lisanslı, yaklaşık 720 star.",
-      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; altyapını Supabase, DigitalOcean ve Vercel panellerinden yönetiyorsun ve hiçbir projende Terraform ya da OpenTofu yok. Bu skill'in değerli olabilmesi için önce altyapıyı koda dökme kararı vermen gerekir ki bu bir skill kurmaktan çok daha büyük bir karar ve bu ölçekte karşılığı yok. En yakın bağlam, projelerin çoğaldığında DigitalOcean ve Vercel kurulumlarını tekrarlanabilir hale getirme isteğin olabilir; o gün geldiğinde bu repoya dönmek mantıklı. Bugün alabileceğin şey içeriği değil biçimi: iyi/kötü örnek çiftleri artı varsayım ve geri alma notu isteyen çıktı sözleşmesi, kendi alanın için yazacağın skill'lerde kopyalamaya değer bir kalıp.",
-      "matched_project": null,
-      "relevance": 2,
-      "investment_note": null
-    },
-    {
-      "full_name": "gzxx-2025/aid-studio",
-      "inputs_hash": "9bc2e49d4855c26b90c8aa511ec47027",
-      "description_tr": "AID Studio, AI ile kısa dizi, çizgi dizi, kısa film ve çizgi roman üretimi için kendi sunucunda çalıştırılan açık kaynak bir platform. Senaryo ve bölüm yönetimi, karakter/sahne/aksesuar varlık kütüphanesi, storyboard üretimi, metinden ve görselden görsel üretimi, görselden video, TTS ile seslendirme ve film önizlemesi aynı projenin içinde birbirine bağlanıyor. Metin, görsel, video ve ses modelleri tek bir sağlayıcı katmanından tanımlanıyor; model yetenekleri, referans görsel sayısı, çözünürlük ve süre yapılandırılabiliyor. Üretim işleri kuyruklanıyor, eşzamanlılık ve yeniden deneme yönetiliyor; karakter ve sahne varlıklarının yeniden kullanımı ile stil anlık görüntüleri görsel tutarlılığı hedefliyor. Ayrıca faturalama, ödeme, kullanıcı hesapları ve operasyon paneli gibi tam bir ticari katman içeriyor. Java ile yazılmış, MIT lisanslı; Docker ya da systemd ile 64-bit bir Linux sunucusunda MySQL 5.7 ve Redis ile kuruluyor, yaklaşık 570 star.",
-      "usage_tr": "Folio'nun günlük içerik pipeline'ıyla aşama aşama örtüşüyor: karakter/sahne varlığı → storyboard → görsel → video → seslendirme zinciri, tam da her yazar profili için her gün yeni gönderi ve story üretme işinin adımları. Varlık yeniden kullanımı ve stil anlık görüntüsü mekanizması da aynı yazarın yüzünün gönderiden gönderiye tutarlı kalması sorununa doğrudan bakıyor, ki bu Folio'nun en can sıkıcı tarafı olacak. Buna rağmen ölçek uyumsuzluğu ciddi: MySQL, Redis ve opsiyonel RocketMQ isteyen bir Linux sunucusu, üstüne faturalama ve kullanıcı sistemi — tek kişilik bir iPhone uygulaması için taşınacak yük değil, Mac'te de çalışmaz, DigitalOcean'da ayrı bir kutu ister. Daha gerçekçi yol kurmak değil okumak: referans görsellerin model yeteneğine göre nasıl düzenlendiğine ve görev kuyruğunun nasıl kurulduğuna bakıp aynı mantığın küçük halini Supabase + n8n üzerinde yeniden yazmak. Sağlayıcı seti ve belgelerin Çin pazarına dönük olduğunu da hesaba kat; kullanacağın modelleri kendin tanımlaman gerekir.",
-      "matched_project": "Folio",
-      "relevance": 3,
-      "investment_note": "Faturalama, ödeme ve operasyon panelini baştan içeren bir AI kısa dizi üretim platformu — demo değil ürünleşmiş bir ekip işareti; MENA-Türkiye koridorunda benzerini aramak için iyi bir karşılaştırma noktası."
-    },
-    {
-      "full_name": "mkbhardwas12/prismos-ai",
-      "inputs_hash": "72ea2063c670edac1f37d826f68785ea",
-      "description_tr": "PrismOS-AI, tamamen yerel çalışan bir masaüstü yapay zekâ uygulaması: bir PDF sürükleyip soru soruyorsun, cevabı makinede kurulu bir Ollama modeli üretiyor ve öğrendiği kavramlar diskteki SQLite bilgi grafiğine yazılıyor. PDF, DOCX, PPTX ve XLSX içeriği cihaz üzerinde çıkarılıp parçalara bölünüyor ve TF-IDF ile geri getiriliyor; biriken grafik 3D/2D bir atlas olarak gezilebiliyor ve bir sonraki sohbette kaynak olarak kullanılıyor. Donanıma göre öneri yapan 18 modellik bir kayıt defteri, görsel eklendiğinde vision modeline geçiş, yerel olarak rapor/sunum/HTML uygulama üretimi ve cevabı göstermeden önce oylayan beş ajan rolü var. Web araştırması, IMAP ve finans bağlayıcıları varsayılan olarak kapalı ve tek tek açılıyor; ağ sınırı README'de ayrıca tanımlanmış. Tauri 2 + React 18 + Rust ile yazılmış, MIT lisanslı, GUI istemeyenler için ayrı bir CLI ikilisi var; yaklaşık 430 star ve kurulum paketleri imzasız.",
-      "usage_tr": "Bu paketteki projeler arasında kişisel bilgi tabanı fikrine en yakın duran bu: ofisteki M4 Pro Mac'te Ollama ile tamamen yerel çalışıyor, internet kapalıyken cevap veriyor ve hiçbir veri makineden çıkmıyor — ücretli API yerine yerel model tercihine birebir oturuyor. CLI'ın borulanabilir olması, belgeleri bir betikle toplu besleyip günlük/haftalık özet üretmeyi Claude Code üzerinden otomatikleştirmene izin verir; evdeki 7/24 açık Mac mini de denemek için doğru yer. Eksik olan yarı tam da senin merkezî şartın: tek dokunuşla sesli not ve kategorinin otomatik çıkarılması burada yok, STT katmanı bulunmuyor — yani bu yakalama tarafı değil hatırlama ve geri getirme tarafı. İkinci uyarı geri getirmede: arama embedding değil TF-IDF üzerine kurulu, Türkçe notlarda anlamsal eşleşme beklediğin kadar iyi olmayacaktır. Tek bakımcılı, 430 yıldızlı ve imzasız paketlerle dağıtılan bir proje olduğunu da unutma; üzerine sistem kurmadan önce birkaç haftalık bir deneme ve verinin SQLite dosyasında durduğunu doğrulamak mantıklı.",
-      "matched_project": "Kişisel bilgi tabanı",
-      "relevance": 7,
-      "investment_note": null
-    }
-  ]
+ "repos": [
+  {
+   "full_name": "jarrodwatts/jev-trader",
+   "inputs_hash": "f9eefb0070592f9355fadf09b778c3ce",
+   "description_tr": "jev-trader, Monad zincirinde her blokta bir alım-satım kararı üreten açık kaynak bir bot. Kuru borsasındaki MON-USDC emir defterini okuyup yaklaşık 300 ms'de al ya da sat cevabı veriyor, her blokta touch'ın bir tick içine post-only limit emri koyuyor ve bir önceki emri iptal ediyor; böylece spread'i ödemek yerine kazanmayı hedefliyor. PRIVATE_KEY verilmediğinde gerçek emir defteri ve gerçek kararlarla ama simüle dolumlarla dry-run çalışıyor; karar modeli olarak Jev (TypeSafe AI) ya da yerleşik momentum tabanlı bir mock model kullanılabiliyor. Bun üzerinde çalışan TypeScript kodu, sıcak yolu iki RPC turuna indiren ölçülmüş bir gecikme bütçesi ve SSE ile blok başına olay yayınlayan küçük bir sunucu içeriyor. MIT lisanslı, yaklaşık 2.000 star; Eylül 2026'da açılmış çok yeni bir repo.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam Arslan Holding'in FinTech ilgisi, ama bu bir ürün değil tek bir DEX üzerinde çalışan kişisel bir deney. Lyricdrop, Folio ya da kişisel bilgi tabanı tarafında karşılığı yok; zincir üstü piyasa yapıcılığı senin ele aldığın problemlerin hiçbirine değmiyor. Tek aktarılabilir yanı yöntemi: projenin README'si karar döngüsünü bir gecikme bütçesine oturtup sıcak yoldan her şeyi ölçerek çıkarıyor. Aynı disiplin Lyricdrop'un kelime hizalama adımında da işe yarar; oradaki adımların p50 sürelerini yazıp neyin sıcak yolda kalacağına böyle karar verebilirsin. Bunun dışında kurup denemek için bir sebep yok.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "YuJunZhiXue/dsh-purge",
+   "inputs_hash": "32f3c0686ca94f1789300b3efa3bd2d1",
+   "description_tr": "dsh-purge, yerel kurulu DeepSeek Harness (dsh) üzerinde güvenlik ve reddetme politikasını değiştiren bir plugin; kendisini kontrollü bir red-team / güvenlik değerlendirme aracı olarak tanımlıyor. Kurulu resmi @deepseek-ai paketlerine geri alınabilir yamalar uyguluyor ve model başına farklı sistem promptu takılmasına izin veriyor; varsayılan prompt Çince modellere göre ayarlanmış. Node.js 22 ve üzeri isteniyor, kurulumdan sonra uygulama ve yeniden başlatma gerekiyor. README'nin önemli bir kısmı hukuki uyarı, sorumluluk reddi ve bağış adreslerinden oluşuyor; teknik belgelendirme Wiki'ye bırakılmış. JavaScript, MIT lisanslı, yaklaşık 1.860 star, Ağustos 2026'da açılmış.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam kod ajanlarının yapılandırmasıyla ilgilenmen, ama bu proje yapılandırma değil bir sağlayıcının güvenlik katmanını devre dışı bırakma işi yapıyor. Kullandığın araçların hiçbiri DeepSeek Harness değil, dolayısıyla yamaların dokunacağı bir kurulum da yok. Kendi pipeline'larına koyacağın bir bileşen olarak da uygun değil: sağlayıcı kullanım şartlarıyla çatışıyor ve hesap riski taşıyor. Bu satırı bilgi olarak geçip atlayabilirsin.",
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "aldegad/sprite-gen",
+   "inputs_hash": "7c4204f69653763afe0166d2c070c996",
+   "description_tr": "sprite-gen, tek bir çizimden oyun motorunun tüketebileceği 2D sprite sheet ve animasyon atlası üreten bir Python CLI'ı; aynı zamanda Codex/Claude skill'i olarak da kurulabiliyor. Üretimi satır satır yönetip karakter kimliğini sabitliyor, chroma arka planı gerçek alfa kanalına çeviriyor, her pozu temiz ve şeffaf bir kare olarak çıkarıp makine tarafından okunabilir bir manifest.json ile atlas derliyor. İkinci bir boru hattı aynı kareyi bir video modeline verip her hareket durumu için kesintisiz döngülenen şeffaf GIF/WebP üretiyor ve döngü noktasını otomatik buluyor. Kareleri karşılaştırıp reddetmek için bir kürasyon webview'ı, ayrıca recolor, gölge, tile üretimi ve Aseprite/Phaser/Flame export komutları var. Apache-2.0 lisanslı, yaklaşık 1.750 star; görsel üretim için harici model sağlayıcılarına bağımlı.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam Folio'nun günlük içerik pipeline'ı, ama Folio'nun ihtiyacı yazar profillerine ait fotogerçekçi foto ve video, oyun sprite'ı değil. Lyricdrop bir oyun mantığı taşısa da ekranda YouTube videosu oynuyor; çizilmiş karakter ya da animasyon atlası gerektiren bir yüzeyi yok. Aktarılabilir tek fikir, üretimi tek seferde değil satır satır yönetip her adımda kimlik sabitleme yaklaşımı — Folio'da aynı yazarın yüzünün her gönderide tutarlı kalması için benzer bir kural gerekecek. Bir 2D oyun projesine başlamadığın sürece kurup denemek için sebep yok; ayrıca görsel üretim adımı harici bir modele bağlı olduğu için Mac'te tamamen yerel çalışmıyor.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "MiniMax-AI/minimax-code",
+   "inputs_hash": "c6e51a8ed647eaec24a4f5a239fa3b35",
+   "description_tr": "MiniMax Code, terminalden çalışan açık kaynak bir kod ajanı: projeyi okuyor, değişiklik yapıyor ve testleri çalıştırıyor. macOS, Linux, WSL ve Windows için tek komutluk kurucusu var, Node.js 22.19+ gerektiriyor ve npm üzerinden de kurulabiliyor. MiniMax hesabıyla ya da kendi anahtarınla (BYOK) kullanılıyor; openai-completions, openai-responses ve anthropic-messages protokollerini destekleyip özel veya yerel sunucuları sağlayıcı olarak eklemeye izin veriyor. Proje yönergeleri AGENTS.md dosyasında tutuluyor; arama, plugin ve çok kipli araçlar aynı akışın içinde. TypeScript, MIT lisanslı, yaklaşık 1.750 star, Haziran 2026'da açılmış.",
+   "usage_tr": "Ofis Mac'inde Claude Code'un yanında zaten OpenCode çalıştırdığın için bu, aynı rafta duran üçüncü bir seçenek ve asıl değeri kendi istemcini yazma refleksine oturması. MIT lisanslı olması ve anthropic-messages formatını desteklemesi, OpenCode için düşündüğün Expo/EAS tabanlı iOS istemci fikrine fork tabanı olarak bakmanı mümkün kılıyor; sağlayıcı katmanı zaten soyutlanmış durumda. Kurulum Mac'te yerel, kurucu sudo istemiyor ve mevcut projelerinin AGENTS.md dosyasını doğrudan okuyor. Asıl uyarı maliyet tarafında: ya krediye sahip bir MiniMax hesabı ya da kendi API anahtarın gerekiyor, yani Max aboneliğinin altına girmiyor ve token başına ücret üretiyor. Önce BYOK modunda tek bir depoda küçük bir görevle ölçüp, Claude Code'da aynı görevin kaç adımda bittiğiyle yan yana koy; kazanç yoksa istemci tarafındaki kodu okumak için tutup ajan olarak kullanmayabilirsin.",
+   "matched_project": "Claude Code",
+   "relevance": 5,
+   "investment_note": null
+  },
+  {
+   "full_name": "coulsontl/ai-toolbox",
+   "inputs_hash": "f81528f25a1de4139056cbb6b436b17d",
+   "description_tr": "AI Toolbox, çok sayıda kod ajanının yapılandırmasını tek bir masaüstü arayüzünden yöneten bir Tauri uygulaması; Windows, macOS ve Linux için paketleniyor, macOS'ta Homebrew cask'i var. OpenCode, Claude Code, Codex, Grok CLI, Gemini CLI, Kimi, OpenClaw, Pi, Claude Desktop, Hermes Agent ve DeepSeek Harness için sağlayıcı, model, global prompt ve plugin ayarlarını görselleştiriyor; oturum geçmişlerini de aynı yerden aratıp dışa aktarıyor. MCP sunucularını ve Skills deposunu merkezi olarak yönetiyor, araç bazında açıp kapatabiliyor; ayrıca protokol dönüşümü, hata devri, istek logu ve kullanım/fiyat istatistiği sunan yerel bir proxy gateway içeriyor. WSL ve SSH senkronizasyonu, WebDAV/GitHub yedeklemesi ve sistem tepsisinden hızlı sağlayıcı değiştirme gibi işletim özellikleri var. Tauri 2 + React 19 + SQLite ile yazılmış, AGPL-3.0 lisanslı, yaklaşık 1.720 star.",
+   "usage_tr": "Bu, Claude Code ve OpenCode'u iki ayrı Mac'te yan yana çalıştırma düzenine doğrudan oturuyor: sağlayıcı ve model değişimini, global prompt'u, MCP sunucularını ve Skills listesini terminalden config dosyası düzenlemek yerine GUI'den yönetebilirsin — Mac ayarlarında GUI tercih etmen tam da bu. SSH senkronizasyonu ofis Mac'iyle evdeki Mac mini arasında aynı MCP ve Skills setini taşımak için Tailscale'in üstüne oturur; böylece iki makinede iki farklı yapılandırma yaşamaz. Öğrenmeyi planladığın Hermes Agent'ın config.yaml, sağlayıcı ve memory dosyaları da aynı panelde yönetiliyor, yani o tarafa girerken elinde bir harita olur. Tamamen yerel çalışıyor, API maliyeti getirmiyor ve asistanına devredilecek bir iş değil — bu senin kendi makinenin ayar katmanı. İki uyarı: uygulama her gün kullandığın araçların config dosyalarını yazıyor, kurmadan önce ~/.claude ve OpenCode ayarlarının yedeğini al; ve yerleşik proxy gateway'i Max aboneliğiyle çalışırken açma, trafiği gereksiz yere bir ara katmana sokar. AGPL-3.0 olduğu için kendi kapalı bir ürününe gömmeyi düşünme, yalnızca araç olarak kullan.",
+   "matched_project": "Claude Code",
+   "relevance": 7,
+   "investment_note": null
+  },
+  {
+   "full_name": "Continuum-AI-Corp/OrcaRouter-Lite",
+   "inputs_hash": "47f9d405c3438a1ce1f748020167826c",
+   "description_tr": "OrcaRouter Lite, kendi sunucunda çalıştırılan OpenAI uyumlu bir LLM yönlendiricisi; sağlayıcı anahtarlarını sen getiriyorsun (BYOK) ve tek bir /v1 uç noktası üzerinden OpenAI, Anthropic, Google gibi sağlayıcılara yazıyor. Öne çıkan özelliği model=\"auto\": isteğin gerektirdiği yetenekleri (araç çağrısı, görsel, JSON modu) karşılayan en ucuz modeli seçiyor ve gerçekte kullanılan modeli yanıt başlığında geri veriyor. Streaming SSE desteği OpenAI SDK'larıyla birebir uyumlu; sağlayıcılar, yönlendirme, analitik ve anahtarlar için yerleşik bir panel geliyor ve Postgres ya da Redis gerektirmiyor. docker compose ile tek komutta ayağa kalkıyor; isteğe bağlı olarak şirketin barındırılan servisi zincirin sonuna yedek sağlayıcı olarak eklenebiliyor (hesap ve token başına ücret gerektiriyor). Python, MIT lisanslı, yaklaşık 1.710 star, 403 testle birlikte geliyor.",
+   "usage_tr": "Lyricdrop'ta asıl yeri şarkı başına içerik üretimi: her boşluk için çeldirici şık üretirken hangi modele gittiğini ve şarkı başına ne ödediğini tek bir panelden okuyabilirsin, bugün bu bilgi kodun içine dağılmış durumda. model=\"auto\" ile yetenek gerektirmeyen çağrıları ucuz modele düşürüp maliyeti aşağı çekmek mümkün; sağlayıcı kesintisinde toplu üretim işinin ortada kalmaması da aynı katmandan geliyor. Ollama gibi OpenAI uyumlu yerel uçları da sağlayıcı olarak ekleyebildiğin için Mac'te yerel kalma tercihini bozmuyor; docker compose ile ofis Mac'inde ya da mevcut DigitalOcean kutunda çalışır. Buradaki kritik uyarı şu: bu katman yalnızca gerçekten API anahtarı kullandığın yerde işe yarar, Max aboneliğiyle Claude Code üzerinden yaptığın hiçbir şey buradan geçmez. Barındırılan yedek sağlayıcıyı da kapalı tut; amaç maliyeti ölçmekken token başına faturalanan bir hesap açmak ters yöne gider.",
+   "matched_project": "Lyricdrop",
+   "relevance": 5,
+   "investment_note": "Barındırılan ücretli katmanı olan açık çekirdek bir router; kategori OpenRouter, LiteLLM ve Portkey ile kalabalık, ayrışma iddiası yalnızca 'kendi sunucunda + yönetilen yedek' — izleme listesine alınacak bir karşılaştırma örneği, net bir boşluk değil."
+  },
+  {
+   "full_name": "BayramAnnakov/claude-reflect",
+   "inputs_hash": "2cc3511ce3bce5f771c114afa939641f",
+   "description_tr": "claude-reflect, Claude Code için bir plugin: oturum sırasında verdiğin düzeltmeleri, olumlu geri bildirimleri ve tercihleri hook'larla yakalayıp bir kuyruğa yazıyor, /reflect komutu da bunları insan onayından geçirerek CLAUDE.md ve AGENTS.md dosyalarına işliyor. İkinci bir komut olan /reflect-skills geçmiş oturumları tarayıp tekrar eden görüntüleri buluyor ve bunları yeniden kullanılabilir komut adayı olarak öneriyor. Yakalama iki katmanlı: gerçek zamanlı regex desenleri ve /reflect sırasında çalışan, herhangi bir dildeki düzeltmeyi anlayan semantik bir filtre; her kayda 0,60–0,95 arası bir güven skoru veriliyor. Kurulum Claude Code'un plugin marketplace'i üzerinden yapılıyor, Python 3.6+ yetiyor ve macOS, Linux ile Windows destekleniyor. MIT lisanslı, yaklaşık 1.690 star, 322 testi olan 3.x sürümünde.",
+   "usage_tr": "Lyricdrop v2'yi ofis Mac'inde Superpowers ile sıfırdan yazarken verdiğin düzeltmeler şu anda oturum bitince kayboluyor; bu plugin onları CLAUDE.md'ye taşıyıp bir sonraki oturuma devrediyor. Asıl ilginç komut /reflect-skills: şarkı onayı ve tarayıcı playtest turunda tekrar ettiğin adımları kendi başına bulup komut adayı olarak önerir — yani dışarı vermek istediğin işi önce isimlendirmiş olursun. İnsan onayı aşaması, her değişikliğin ayrı gözden geçirilmesi isteğinle aynı mantıkta: kuyruk önüne tablo olarak geliyor, sen kabul ediyorsun. Yerel çalışıyor ve semantik filtre Claude Code'un kendi üzerinden koştuğu için ayrı bir API maliyeti getirmiyor, Max aboneliğiyle uyumlu. Uyarı: doğrudan CLAUDE.md'ye yazıyor, o dosyayı git altında tut ve her /reflect sonrası diff'i oku; ayrıca çok projede birden açarsan kuyruk hızla gürültüye döner, ara ara --dedupe ile temizlemek gerekir.",
+   "matched_project": "Claude Code",
+   "relevance": 8,
+   "investment_note": null
+  },
+  {
+   "full_name": "e2b-dev/runtime",
+   "inputs_hash": "6dfd5b16e6aeb02ee25040d29b670e4f",
+   "description_tr": "E2B Runtime, ajanların ürettiği güvenilmeyen kodu çalıştırmak için Firecracker mikro-VM'leri yöneten açık kaynak bir altyapı yığını: kontrol düzlemi API'si, her düğümde Firecracker'ı süren orkestratör, VM içinde çalışan envd ajanı, kenar yönlendiricisi ve şablon derleyicisi. Temel fikir sandbox'ın sıfırdan açılmaması: şablonlar önceden boot edilmiş VM anlık görüntüleri olarak saklanıyor, bellek sayfaları userfaultfd ile talep üzerine geliyor ve kök dosya sistemi salt okunur imajın üstünde kopyala-yaz katmanı olarak duruyor. Duraklat/devam ettir, çalışan bir sandbox'ı çatallama, kalıcı diskler, sandbox başına nftables çıkış güvenlik duvarı ve OpenTelemetry ile ClickHouse'a akan gözlemlenebilirlik var. Go ile yazılmış, Apache-2.0 lisanslı, yaklaşık 1.600 star; 2023'te açılmış, bu listedeki en eski proje. Tek makinede çalıştırmak için KVM destekli bir Linux sunucusu gerekiyor ve bu paket değerlendirme amaçlı sayılıyor.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam istediğin asistan/orkestratör ajanın ileride üreteceği kodu izole bir yerde çalıştırma ihtiyacı olabilir. Ama pratik engel net: iki Mac'in de KVM'i yok, yani bu yığın senin makinelerinde çalışmıyor; DigitalOcean tarafında iç içe sanallaştırma açık bir kutu bulmak başlı başına bir proje. Bugün Claude Code'u kendi depolarında çalıştırıyorsun ve izolasyon ihtiyacın sandbox seviyesinde değil. Kullanıcı olarak değil, kategoriye bakan biri olarak okunacak bir repo.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": "E2B, ajan çalıştırma altyapısında açık çekirdek modelle ilerleyen ticari bir şirket; erken aşama AI altyapısı merceğiyle bakarken kategoriyi ve karşılaştırma noktasını tanımlayan referanslardan biri."
+  },
+  {
+   "full_name": "Sliverkiss/workbuddy2api",
+   "inputs_hash": "30807ee3673e0df8dac0d434ed9e8694",
+   "description_tr": "workbuddy2api, CodeBuddy hesaplarını OpenAI uyumlu bir /v1/chat/completions servisine çeviren, kendi sunucunda çalıştırılan resmi olmayan bir ağ geçidi. OAuth cihaz yetkilendirmesiyle birden çok hesabın kimlik bilgisini topluyor, token yenilemeyi üstleniyor ve kredi durumu, yaklaşan son kullanma tarihi ile boşta kalma süresine göre ağırlıklı rastgele hesap seçimi yapıyor. Hata durumunda kademeli soğutma ve devre kesici, çok turlu sohbetlerde aynı hesapta kalmayı sağlayan oturum yapışkanlığı, hesap-model çifti başına maliyet defteri ve ücretsiz kademeyi keşfetmek için trafiği yeniden yönlendiren bir mekanizma içeriyor. Ayrıca günlük giriş, token canlı tutma ve etkinlik görevleri gibi kredi toplamaya dönük zamanlanmış işler var. Go ile yazılmış, Docker Compose ile dağıtılıyor, MIT lisanslı, yaklaşık 1.480 star; README'nin kendisi projenin resmi olmadığını ve yalnızca kişinin kendi yetkili hesaplarıyla kullanılması gerektiğini yazıyor.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam sağlayıcı yönlendirme ve maliyet ölçümüne olan ilgin, ama bu proje o işi tek bir Çin pazarına özgü yukarı akışın hesaplarını döndürerek yapıyor. Kullandığın hiçbir araç CodeBuddy'ye bağlı değil, yani geçidin arkasına koyacak bir şey yok. Hesap havuzu döndürme ve günlük görevlerle kredi toplama tarafı sağlayıcı kullanım şartlarıyla açıkça çatışıyor; kurumsal bir yapının altında bu riski almak anlamsız. Yönlendirme ve maliyet defteri fikri ilgini çekiyorsa aynı işi kullanım şartlarına uygun yapan bir router'a bakmak daha doğru olur.",
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "zubair-trabzada/ai-sales-team-claude",
+   "inputs_hash": "7a73b5f6f788eae81ce5a1328c1a6309",
+   "description_tr": "ai-sales-team-claude, Claude Code içine kurulan 14 skill ve 5 paralel ajandan oluşan bir satış paketi. Tek bir /sales prospect komutu şirket araştırması ve firmografi, BANT + MEDDIC ile fırsat skorlaması, karar verici haritası, rakip istihbaratı ve beş e-postalık bir erişim dizisini eşzamanlı çalıştırıp 0–100 arası bir skorla tek dosyada topluyor. Ayrı komutlar toplantı hazırlığı, teklif, itiraz oyun kitabı, ideal müşteri profili ve pipeline raporu üretiyor; çıktılar Markdown dosyaları, isteğe bağlı olarak PDF. Kurulum tek satırlık bir installer ile yapılıyor; skorlama ve iletişim bulma için birkaç Python betiği ve şablon dosyası geliyor. MIT lisanslı, yaklaşık 1.380 star, Mart 2026'da açılmış.",
+   "usage_tr": "Arslan Holding'in deal screening ve toplantı hazırlığı akışında kullanabilirsin: bir şirketin sitesini verip araştırma, karar verici listesi ve toplantı brifingini tek turda çıkarmak, bugün elle yaptığın ilk eleme adımının yerine geçer. Claude Code'un içinde çalıştığı için ayrı bir API maliyeti getirmiyor ve Max aboneliğiyle uyumlu; üstelik tetiklemesi ve çıktıyı dosya olarak geri getirmesi asistanına devredilebilecek bir iş. HubSpot'un yanında duracak yeri şu: çıktı CRM kaydı değil Markdown/PDF dosyası, yani kayıtları aktaran hâlâ bir insan — ilk turda bunu kabul edip yalnızca eleme aşamasında kullanmak daha gerçekçi. Asıl uyarı çerçevede: BANT ve MEDDIC satış nitelendirme yöntemleri, yatırım due diligence'ı değil; skill promptlarını ekip, traction ve pazar uyumu kriterleriyle yeniden yazmadan skorlarına güvenme. Ayrıca araştırma kalitesi tamamen ajanın web'den çekebildiğine bağlı, o yüzden çıktıyı ilk taslak olarak gör.",
+   "matched_project": "Arslan Holding",
+   "relevance": 6,
+   "investment_note": null
+  },
+  {
+   "full_name": "momochoog/gpt-daichong",
+   "inputs_hash": "cf05a221472ec9bf1cc2882d64bff64e",
+   "description_tr": "Bu depo bir yazılım projesi değil: Çin'den ChatGPT Plus ve Pro aboneliğinin üçüncü parti bir bayi üzerinden nasıl satın alınacağını anlatan, arama motoru için yazılmış bir rehber ve yönlendirme sayfası. İçerik fiyat tabloları, ödeme yöntemleri, sipariş sorgulama, iade ve fatura SSS'si ile paket karşılaştırmasından oluşuyor ve bağlantıların tamamı aynı satıcının sitesine UTM etiketleriyle gidiyor; README'de bakımın satıcı tarafından yapıldığı açıkça yazıyor. Kod tarafında yalnızca abonelik mutabakatı için küçük bir SQL örneği var. Lisans alanı NOASSERTION, dil HTML olarak görünüyor, yaklaşık 1.370 star. Yıldız sayısı bir yazılımın olgunluğunu değil, arama trafiğine dönük bir içerik çalışmasını yansıtıyor.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; ortada kurulabilecek ya da gömülebilecek bir bileşen yok, en yakın bağlam depo formatında bir pazarlama sayfası olması. Teknik bir katkı beklemeden geçebilirsin. Tek işe yarar yanı negatif bir sinyal: yüksek yıldızlı bir deponun her zaman bir proje olmadığını gösteriyor, bu da kategori taramalarında filtre kurarken akılda tutulacak bir örnek. Abonelik ve ödeme tarafı bölgesel bir satın alma yoluna göre yazılmış, senin kurulumunla ilgisi yok.",
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "zblcving9-gif/xianxia-AI-town-AI-",
+   "inputs_hash": "949d2f94b4db1a3130da24d3312f4715",
+   "description_tr": "Bu depo hakkında karar vermeye yetecek kamuya açık metin yok. Tek cümlelik açıklama, büyük dil modeliyle sürülen NPC kararlarından ve NPC ile oyuncunun eşit haklara sahip olduğu bir simülasyondan söz ediyor; README de aynı cümleyi tekrarlamaktan ibaret. Kurulum talimatı, mimari açıklaması, ekran görüntüsü, demo veya örnek çıktı bulunmuyor. Dil JavaScript, MIT lisanslı, yaklaşık 1.200 star, Mart 2026'da açılmış. Yıldız sayısıyla belgelenmiş içerik arasındaki fark, değerlendirmeden önce depoyu bizzat açmayı gerektiriyor.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam Folio'nun yapay karakterleri olabilir, ama bunu iddia edecek kadar bile metin yok. Ne yaptığı belgelenmeden hiçbir projeye aday gösterilemez. İçeriği ilgini çekiyorsa tek yol depoyu klonlayıp koda bakmak; bu boyutta bir belgesizlik kendi başına bir bakım riski işareti. Bu haliyle indeksleme dışında bir değeri yok, denemek için ayıracağın zamanı başka bir satıra harca.",
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "fangmumu111-bot/chatgpt-plus-pro-codex-cn-guide",
+   "inputs_hash": "a65f93100c5ed0fb3f75bb4b44ef10e2",
+   "description_tr": "Bu depo da bir yazılım değil, arama motoru için yazılmış bir satın alma rehberi: ChatGPT Pro'nun 5x ve 20x kademelerinin Çin'den nasıl açılacağını, hangi bayi üzerinden hangi fiyata alınacağını ve sipariş sorgulamanın nasıl yapılacağını anlatıyor. İçerik paket karşılaştırma tabloları, ödeme yöntemleri, Codex kullanım limitleri ve model görünürlüğü sorun giderme listelerinden oluşuyor; bağlantılar UTM etiketleriyle aynı satıcıya gidiyor ve müşteri hizmeti için bir mesajlaşma numarası veriliyor. GitHub Pages üzerinde yayınlanan bir site olarak da servis ediliyor. HTML, MIT lisanslı, yaklaşık 1.040 star, Temmuz 2026'da açılmış. Depoda çalıştırılabilir bir bileşen yok.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; kurulabilecek ya da bir pipeline'a gömülebilecek hiçbir parça içermiyor, en yakın bağlam depo formatında yayınlanmış bir satış içeriği olması. Abonelik kademesi seçimiyle ilgili bilgiler de bölgesel bir satın alma yoluna göre yazılmış, senin kurulumunla ilgisi yok. Bu satırı atlayabilirsin. Yüksek yıldız sayısının bir yazılımı değil arama trafiğine dönük bir içerik çalışmasını gösterdiği örneklerden biri, kategori taramalarında filtre kurarken akılda tutulabilir.",
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "Gabberflast/academic-pptx-skill",
+   "inputs_hash": "eb66a1fb2024904fa066079a31775ec2",
+   "description_tr": "academic-pptx-skill, akademik sunumlar için yazılmış bir Claude skill'i: konferans konuşması, seminer, tez savunması ve hibe brifingi hedefleniyor. Claude'un varsayılan tasarım ağırlıklı slayt üretimini devre dışı bırakıp yerine iletişim öncelikli kurallar koyuyor — her başlık çıkarımı söyleyen tam bir cümle olacak, destek yapısı durum → problem → çözüm şeklinde ilerleyecek, başlıklar tek başına okunduğunda hikâyeyi anlatacak, sonuç slaytlarında tek bir görsel olacak ve bulgular doğrudan grafiğin üstüne yazılacak. Kaynak gösterimi, referans slaytı ve Q&A sırasında ekranda kalacak bir sonuçlar slaytı da kural olarak dayatılıyor. Depoda SKILL.md, içerik yönergeleri ve PptxGenJS kod desenlerini içeren slayt kalıpları ile tavsiyeleri özetleyen bir PDF var; dosya üretimini Anthropic'in yerleşik PPTX skill'i yapıyor. MIT lisanslı, yaklaşık 1.040 star.",
+   "usage_tr": "Arslan Holding tarafında konferans ve yatırımcı sunumu hazırlarken işine yarayacak kısım argüman yapısı: her başlığı çıkarım cümlesine çevirme ve başlıkları tek başına okuyup hikâyenin ayakta durup durmadığını sınama kuralı, deck'in mantığını doğrudan sıkılaştırır. Skill olarak kurulduğu için ayrı bir API maliyeti yok ve bir taslağı asistanına hazırlatıp senin üstünden geçmen mümkün. Ama bu paketin akademik bağlama göre ayarlandığını unutma: kaynak gösterimi zorunluluğu ve referans slaytı bir yatırımcı sunumunda ölü ağırlık, content_guidelines.md'den bu kuralları çıkarman gerekir. İkinci çatışma tasarım tarafında — skill bilinçli olarak beyaz zemin ve üç renkle sınırlı sade bir görünüm dayatıyor, bu da Claude Design ile kurduğun marka kimliğini ezer. Önce tek bir deck'te yalnızca başlık ve yapı kurallarını uygulayıp tasarım bölümünü kapatarak dene.",
+   "matched_project": "Arslan Holding",
+   "relevance": 4,
+   "investment_note": null
+  },
+  {
+   "full_name": "LukasNiessen/terrashark",
+   "inputs_hash": "414d1a0ecaefab3a322bd00777d671e6",
+   "description_tr": "TerraShark, Claude Code, Codex, Gemini CLI ve Antigravity için yazılmış bir Terraform/OpenTofu skill'i. Amacı dil modellerinin Terraform yazarken uydurduğu kaynak ve argümanları azaltmak: iyi, kötü ve nötr örnekler vererek modelin sık yapılan hatalara düşmesini engellemeye çalışıyor ve modüler, yeniden kullanılabilir, güvenlik öncelikli bir varsayılana yöneltiyor. İçerik HashiCorp'un resmi önerilen uygulamalarına dayandırılmış ve çakışma durumunda onlara öncelik veriliyor. Token tüketimini düşürmek için tekrar eden metinler ayıklanmış; yanıtlar yedi adımlı bir hata modu akışını ve varsayımlar, ödünleşimler ve geri alma notları içeren bir çıktı sözleşmesini takip ediyor. Kurulum ~/.claude/skills altına klonlayarak ya da plugin marketplace üzerinden yapılıyor. MIT lisanslı, yaklaşık 720 star.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; altyapını Supabase, DigitalOcean ve Vercel panellerinden yönetiyorsun ve hiçbir projende Terraform ya da OpenTofu yok. Bu skill'in değerli olabilmesi için önce altyapıyı koda dökme kararı vermen gerekir ki bu bir skill kurmaktan çok daha büyük bir karar ve bu ölçekte karşılığı yok. En yakın bağlam, projelerin çoğaldığında DigitalOcean ve Vercel kurulumlarını tekrarlanabilir hale getirme isteğin olabilir; o gün geldiğinde bu repoya dönmek mantıklı. Bugün alabileceğin şey içeriği değil biçimi: iyi/kötü örnek çiftleri artı varsayım ve geri alma notu isteyen çıktı sözleşmesi, kendi alanın için yazacağın skill'lerde kopyalamaya değer bir kalıp.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "gzxx-2025/aid-studio",
+   "inputs_hash": "9bc2e49d4855c26b90c8aa511ec47027",
+   "description_tr": "AID Studio, AI ile kısa dizi, çizgi dizi, kısa film ve çizgi roman üretimi için kendi sunucunda çalıştırılan açık kaynak bir platform. Senaryo ve bölüm yönetimi, karakter/sahne/aksesuar varlık kütüphanesi, storyboard üretimi, metinden ve görselden görsel üretimi, görselden video, TTS ile seslendirme ve film önizlemesi aynı projenin içinde birbirine bağlanıyor. Metin, görsel, video ve ses modelleri tek bir sağlayıcı katmanından tanımlanıyor; model yetenekleri, referans görsel sayısı, çözünürlük ve süre yapılandırılabiliyor. Üretim işleri kuyruklanıyor, eşzamanlılık ve yeniden deneme yönetiliyor; karakter ve sahne varlıklarının yeniden kullanımı ile stil anlık görüntüleri görsel tutarlılığı hedefliyor. Ayrıca faturalama, ödeme, kullanıcı hesapları ve operasyon paneli gibi tam bir ticari katman içeriyor. Java ile yazılmış, MIT lisanslı; Docker ya da systemd ile 64-bit bir Linux sunucusunda MySQL 5.7 ve Redis ile kuruluyor, yaklaşık 570 star.",
+   "usage_tr": "Folio'nun günlük içerik pipeline'ıyla aşama aşama örtüşüyor: karakter/sahne varlığı → storyboard → görsel → video → seslendirme zinciri, tam da her yazar profili için her gün yeni gönderi ve story üretme işinin adımları. Varlık yeniden kullanımı ve stil anlık görüntüsü mekanizması da aynı yazarın yüzünün gönderiden gönderiye tutarlı kalması sorununa doğrudan bakıyor, ki bu Folio'nun en can sıkıcı tarafı olacak. Buna rağmen ölçek uyumsuzluğu ciddi: MySQL, Redis ve opsiyonel RocketMQ isteyen bir Linux sunucusu, üstüne faturalama ve kullanıcı sistemi — tek kişilik bir iPhone uygulaması için taşınacak yük değil, Mac'te de çalışmaz, DigitalOcean'da ayrı bir kutu ister. Daha gerçekçi yol kurmak değil okumak: referans görsellerin model yeteneğine göre nasıl düzenlendiğine ve görev kuyruğunun nasıl kurulduğuna bakıp aynı mantığın küçük halini Supabase + n8n üzerinde yeniden yazmak. Sağlayıcı seti ve belgelerin Çin pazarına dönük olduğunu da hesaba kat; kullanacağın modelleri kendin tanımlaman gerekir.",
+   "matched_project": "Folio",
+   "relevance": 3,
+   "investment_note": "Faturalama, ödeme ve operasyon panelini baştan içeren bir AI kısa dizi üretim platformu — demo değil ürünleşmiş bir ekip işareti; MENA-Türkiye koridorunda benzerini aramak için iyi bir karşılaştırma noktası."
+  },
+  {
+   "full_name": "mkbhardwas12/prismos-ai",
+   "inputs_hash": "72ea2063c670edac1f37d826f68785ea",
+   "description_tr": "PrismOS-AI, tamamen yerel çalışan bir masaüstü yapay zekâ uygulaması: bir PDF sürükleyip soru soruyorsun, cevabı makinede kurulu bir Ollama modeli üretiyor ve öğrendiği kavramlar diskteki SQLite bilgi grafiğine yazılıyor. PDF, DOCX, PPTX ve XLSX içeriği cihaz üzerinde çıkarılıp parçalara bölünüyor ve TF-IDF ile geri getiriliyor; biriken grafik 3D/2D bir atlas olarak gezilebiliyor ve bir sonraki sohbette kaynak olarak kullanılıyor. Donanıma göre öneri yapan 18 modellik bir kayıt defteri, görsel eklendiğinde vision modeline geçiş, yerel olarak rapor/sunum/HTML uygulama üretimi ve cevabı göstermeden önce oylayan beş ajan rolü var. Web araştırması, IMAP ve finans bağlayıcıları varsayılan olarak kapalı ve tek tek açılıyor; ağ sınırı README'de ayrıca tanımlanmış. Tauri 2 + React 18 + Rust ile yazılmış, MIT lisanslı, GUI istemeyenler için ayrı bir CLI ikilisi var; yaklaşık 430 star ve kurulum paketleri imzasız.",
+   "usage_tr": "Bu paketteki projeler arasında kişisel bilgi tabanı fikrine en yakın duran bu: ofisteki M4 Pro Mac'te Ollama ile tamamen yerel çalışıyor, internet kapalıyken cevap veriyor ve hiçbir veri makineden çıkmıyor — ücretli API yerine yerel model tercihine birebir oturuyor. CLI'ın borulanabilir olması, belgeleri bir betikle toplu besleyip günlük/haftalık özet üretmeyi Claude Code üzerinden otomatikleştirmene izin verir; evdeki 7/24 açık Mac mini de denemek için doğru yer. Eksik olan yarı tam da senin merkezî şartın: tek dokunuşla sesli not ve kategorinin otomatik çıkarılması burada yok, STT katmanı bulunmuyor — yani bu yakalama tarafı değil hatırlama ve geri getirme tarafı. İkinci uyarı geri getirmede: arama embedding değil TF-IDF üzerine kurulu, Türkçe notlarda anlamsal eşleşme beklediğin kadar iyi olmayacaktır. Tek bakımcılı, 430 yıldızlı ve imzasız paketlerle dağıtılan bir proje olduğunu da unutma; üzerine sistem kurmadan önce birkaç haftalık bir deneme ve verinin SQLite dosyasında durduğunu doğrulamak mantıklı.",
+   "matched_project": "Kişisel bilgi tabanı",
+   "relevance": 7,
+   "investment_note": null
+  }
+ ]
 }

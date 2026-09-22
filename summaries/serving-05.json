@@ -1,175 +1,175 @@
 {
-  "repos": [
-    {
-      "full_name": "FlashML-org/FreeToken",
-      "inputs_hash": "ac02c66aaceb4fb837f5e52c5798ad01",
-      "description_tr": "FreeToken, frontier ölçeğindeki açık ağırlıklı MoE modellerini tüketici donanımında çalıştırmak için yazılmış edge-native bir serving motoru. GPU, CPU, host belleği ve ara bağlantıları tek bir esnek çıkarım havuzu gibi ele alıyor; bant genişliğine uyarlanan CPU-GPU ortak yürütme, çift tamponlu prefill akışı, global LRU expert cache ve FTW ağırlık formatı temel bileşenleri. Semantic anchor checkpoint'leri sayesinde araç çağrısı veya düşünme bloğu gibi bağlam düzenlemelerinden sonra KV cache'in baştan hesaplanması azalıyor. DeepSeek-V4-Flash, Qwen3.6-35B-A3B ve GLM-5.2 gibi modelleri MXFP4, NVFP4, FP8 ve BF16 formatlarında destekliyor; Anthropic ve OpenAI uyumlu API sunduğu için Claude Code, Codex ve OpenCode gibi istemcilere bağlanabiliyor. Doğrudan desteklenen donanım NVIDIA RTX 30, 40 ve 50 serisi; Windows ve Linux için kurulumu üstlenen bir masaüstü uygulaması var. Apache-2.0 lisanslı, Temmuz 2026'da açılmış ve 13.500'ü aşkın star toplamış.",
-      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, Claude Code ve OpenCode'u ücretli API yerine yerel bir modele bağlama isteğin olurdu. Anthropic uyumlu endpoint verdiği için bu senaryo kağıt üzerinde tam oturuyor, ancak desteklenen donanım NVIDIA RTX kartları ve dağıtım Windows/Linux masaüstü üzerinden yapılıyor. Ofisteki M4 Pro Mac ve evdeki Mac mini bu listede yok, dolayısıyla bugün kuracak bir makinen yok. Apple Silicon tarafında MLX veya llama.cpp tabanlı motorlar aynı ihtiyaç için daha gerçekçi bir yol. Donanım tarafın değişirse — ayrı bir RTX makinesi ya da kiralık bir masaüstü — tekrar bakmaya değer; şimdilik izlemek yeterli.",
-      "matched_project": null,
-      "relevance": 2,
-      "investment_note": "Edge tarafında MoE serving'i ticarileştiren, iki ay içinde 13 binden fazla star toplayan ve arkasında bir ürün sitesiyle ekip bulunan yeni bir altyapı projesi; erken aşama AI altyapısı tezine uyan bir izleme adayı."
-    },
-    {
-      "full_name": "semantica-agi/semantica",
-      "inputs_hash": "7137bebd9846857935b8429ed8cdfe38",
-      "description_tr": "Semantica, kurumsal veriyi bağlam grafiği ve bilgi grafiğine (knowledge graph) dönüştürüp üzerinde graph analitiği ve nedensel akıl yürütme çalıştırmayı hedefleyen Python tabanlı bir altyapı. Ontoloji yönetimi, deterministik akıl yürütme, karar zinciri için uçtan uca izlenebilirlik ve köken (provenance) kaydı çekirdek özellikleri arasında. RDF ve LPG modellerini birlikte destekliyor, W3C standartlarına yaslanıyor ve çoklu graph deposuyla çalışabiliyor; hedef kitle olarak düzenlemeye tabi, yüksek riskli alanları işaret ediyor. Kendini pahalı kurumsal platformlara geliştirici odaklı bir alternatif olarak konumlandırıyor. MIT lisanslı, Python 3.10+ gerektiriyor, Haziran 2025'te açılmış ve 13.300'ü aşkın star toplamış.",
-      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam kişisel bilgi tabanı fikrindeki semantik arama katmanı olabilir. Ama oradaki ihtiyaç tek dokunuşla sesli not, otomatik kategori ve sade haftalık rapor; ontoloji yönetimi, RDF modelleme ve karar provenance'ı bu iş için taşınması gereken ağırlığın çok üstünde. Arslan Holding'in due diligence akışında kaynak-iddia bağını tutmak için bir gün işe yarayabilir, ancak o süreç henüz bir graph şeması isteyecek olgunlukta değil. Denemek istersen önce küçük bir soru ile sınırla: aynı işi basit bir vektör indeksi çözmüyor mu. Aksi halde kurulum ve şema bakımı, kazandırdığı izlenebilirlikten daha çok vaktini alır.",
-      "matched_project": null,
-      "relevance": 2,
-      "investment_note": "Açık kaynak çekirdek üzerine kurulmuş, düzenlemeye tabi sektörlerde AI karar izlenebilirliğini hedefleyen bir ekip; MENA ve Türkiye'de kurumsal AI yönetişimi boşluğu düşünülürse deal flow tarafında not edilmeye değer."
-    },
-    {
-      "full_name": "NVIDIA/TensorRT",
-      "inputs_hash": "52b3acc6ce0bf9a5dbfa4384ab36b08c",
-      "description_tr": "TensorRT, NVIDIA GPU'larında yüksek performanslı derin öğrenme çıkarımı için geliştirilen SDK'nın açık kaynak bileşenlerini barındıran depo. İçinde TensorRT plugin kaynakları, ONNX parser ve platformun kullanımını gösteren örnek uygulamalar yer alıyor; tam SDK'nın kendisi kapalı olarak dağıtılıyor. TensorRT 11.X ile API sadeleştirildi: zayıf tipli ağlar, örtük kuantizasyon ve IPluginV2 kaldırıldı, yerlerine strongly typed networks, explicit quantization ve IPluginV3 geçti. ONNX, Torch-TensorRT ve HuggingFace/Optimum yollarıyla model içe aktarma dokümante edilmiş durumda. Apache-2.0 lisanslı, 2019'dan beri açık, 13.300'ü aşkın star ve 2026 Q3 yol haritası yayımlanmış aktif bir proje.",
-      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam yerel model çalıştırma ilgin olurdu, ama bu tamamen NVIDIA GPU'ya bağlı bir yol. Ne ofisteki M4 Pro Mac'te ne de DigitalOcean üzerindeki mevcut kurulumunda çalıştıracağın bir bileşen; Apple Silicon tarafında karşılığı Core ML, MLX veya llama.cpp. Lyricdrop'un STT adımında bir gün kiralık NVIDIA GPU'ya geçersen, hız optimizasyonu bu katmanda yapılır — ancak o noktada da muhtemelen doğrudan TensorRT değil, onu kullanan üst seviye bir servis işini görür. Yatırımcı şapkasıyla da bir anlamı yok: halka açık büyük bir şirketin altyapı deposu. Bilgi olarak dosyalamak yeterli.",
-      "matched_project": null,
-      "relevance": 1,
-      "investment_note": null
-    },
-    {
-      "full_name": "halfrost/Halfrost-Field",
-      "inputs_hash": "2f3a534ece583f0f0e270a6b9a2a7c1a",
-      "description_tr": "Halfrost-Field, tek bir yazarın açık kaynak projelerin kaynak kodunu satır satır okuyup çıkardığı notların toplandığı bir yazı deposu. İçerik Çince ve İngilizce olarak iki dilde tutuluyor; vLLM'in generate() çağrısından ilk token'a kadar olan yolu, V1 süreç mimarisi, EngineCore döngüsü ve scheduler'daki continuous batching gibi konular ayrı yazılarda ele alınıyor. LLM bölümünün yanında Go dilinin içsel yapıları (slice, map, derleyici komutları), ağ protokolleri, TLS, HTTP/2, iOS ve algoritma konularında uzun yazılar var. Kod değil metin üreten bir depo: çalıştırılacak bir kütüphane sunmuyor, okunacak bir arşiv sunuyor. CC-BY-SA-4.0 lisanslı, 2017'den beri güncelleniyor ve 13.200'ü aşkın star toplamış.",
-      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, çıkarım motorlarının içinde ne olup bittiğini öğrenme merakın olabilir. Ancak buradaki yazılar vLLM'in scheduler'ını ve Go runtime'ını hedefleyen, altyapı geliştiricisine yazılmış metinler; senin çalıştığın katman Expo, Supabase ve Claude Code tarafında. Öğrenme ilgin daha çok Türkçe kaynaklardan psikoloji, sosyoloji ve felsefe yönünde, bu depo o boşluğu da doldurmuyor. Kaynağı bir referans olarak yer imlerine koyabilirsin, kurulacak bir şey yok. Bir araç olarak beklenti kurma.",
-      "matched_project": null,
-      "relevance": 1,
-      "investment_note": null
-    },
-    {
-      "full_name": "Jiayi-Pan/TinyZero",
-      "inputs_hash": "21c579c7921e53f3ead3f6423625048c",
-      "description_tr": "TinyZero, DeepSeek R1-Zero'nun countdown ve çarpma görevleri üzerinde minimal bir yeniden üretimi; veRL kütüphanesi üzerine kurulmuş. Amaç, 3B'lik bir temel dil modelinin yalnızca pekiştirmeli öğrenmeyle kendi kendini doğrulama ve arama davranışları geliştirmesini küçük ölçekte gösterebilmek. Depo kurulum, veri hazırlama ve eğitim betiklerini veriyor; tek GPU ile 1.5B'ye kadar, akıl yürütme davranışının ortaya çıktığı 3B ve üstü için birden fazla GPU gerekiyor. README'de artık aktif olarak bakılmadığı belirtiliyor ve RL deneyleri için doğrudan veRL'e yönlendiriliyor. Apache-2.0 lisanslı, Ocak 2025'te açılmış ve 13.200'ü aşkın star toplamış bir araştırma tekrar üretimi.",
-      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam model eğitimine genel merakın olurdu. Bu bir ürün bileşeni değil, çok GPU'lu bir kümede çalıştırılan bir araştırma deneyi; ofisteki Mac'te çalıştırılacak bir tarafı yok ve deponun kendisi bakımının bırakıldığını söylüyor. Lyricdrop, Folio ya da kişisel bilgi tabanı tarafında ihtiyacın olan şey hazır modelleri kullanmak, kendi modelini RL ile eğitmek değil. Akıl yürütme modellerinin nasıl ortaya çıktığını merak ediyorsan okuma malzemesi olarak değeri var. Araç olarak kurmaya vakit ayırma.",
-      "matched_project": null,
-      "relevance": 1,
-      "investment_note": null
-    },
-    {
-      "full_name": "PaddlePaddle/PaddleNLP",
-      "inputs_hash": "0435890164fefba04c2cea9272171ef4",
-      "description_tr": "PaddleNLP, Baidu'nun PaddlePaddle çerçevesi üzerine kurulu bir büyük dil modeli geliştirme seti; eğitim, sıkıştırma ve yüksek performanslı çıkarımı tek pakette topluyor. Qwen3 serisi, DeepSeek V3/R1 ve QwQ-32B gibi modelleri destekliyor; FP8, INT8 ve 4-bit kuantize çıkarım ile MTP spekülatif kod çözme sunuyor. Veri paralelliği, model ve boru hattı paralelliği, expert paralelliği ve FlashMask seyrek dikkat maskesi gibi dağıtık eğitim yetenekleri öne çıkan tarafı; ayrıca bilgi çıkarımı için PP-UIE gibi kendi modellerini barındırıyor. Dokümantasyon ve duyuruların büyük bölümü Çince, hedef donanım NVIDIA ve yerli hızlandırıcılar. Apache-2.0 lisanslı, 2021'den beri geliştiriliyor ve 12.900'ü aşkın star toplamış.",
-      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam yerel model çalıştırma ilgin olurdu, ama bu set PaddlePaddle ekosistemine ve GPU'lu sunuculara bağlı. Standart yığının Expo, Supabase, DigitalOcean ve Claude Code üzerine kurulu; araya bir de Paddle çerçevesi sokmak öğrenme maliyetinin karşılığını vermez. Türkçe içerik için hazırlanmış bileşenler de yok, ağırlık Çince NLP tarafında. Bir model servis etmen gerekirse Apple Silicon'da çalışan hafif motorlar ya da hazır API'ler daha kısa yol. Bu depoyu ekosistem haritasında bir nokta olarak tutman yeterli.",
-      "matched_project": null,
-      "relevance": 1,
-      "investment_note": null
-    },
-    {
-      "full_name": "neuml/txtai",
-      "inputs_hash": "679fcb4596491b2bfe5b63d16ec81219",
-      "description_tr": "txtai, semantik arama, LLM orkestrasyonu ve dil modeli iş akışlarını tek pakette toplayan Python tabanlı bir çerçeve. Merkezinde seyrek ve yoğun vektör indekslerini, graph ağlarını ve ilişkisel veritabanını birleştiren bir embeddings veritabanı var; metin, doküman, ses, görüntü ve video için embedding üretebiliyor. Üzerine kurulu pipeline'lar soru-cevap, etiketleme, transkripsiyon, çeviri ve özetleme gibi işleri çalıştırıyor, workflow katmanı bunları birbirine bağlıyor, agent katmanı ise bu parçaları otonom olarak kullanıyor. Web API'si ve Model Context Protocol (MCP) arayüzü mevcut; JavaScript, Java, Rust ve Go bağlantıları var, yerel çalışabildiği gibi konteyner orkestrasyonuyla ölçeklenebiliyor. Apache-2.0 lisanslı, Python 3.10+ ile çalışıyor, 2020'den beri geliştiriliyor ve 12.900'ü aşkın star toplamış; arkasında danışmanlık veren bir şirket var.",
-      "usage_tr": "Kişisel bilgi tabanı projesinde aradığın katmanın büyük kısmını tek çatı altında veriyor: sesli notun transkripsiyonu, kategori çıkarımı için etiketleme pipeline'ı, semantik arama ve dönem özetleri aynı çerçevede kurulabiliyor. Ofisteki M4 Pro Mac'te yerel modellerle çalıştırıp API maliyetini sıfıra yakın tutabilir, indeksi orada tutup n8n'den tetiklenen bir FastAPI servisi olarak açabilirsin. MCP arayüzü olduğu için aynı indeksi Claude Code'a da açabilirsin; böylece notlarına sorular sormak ayrı bir uygulama gerektirmez. Kurulum ve bakım senin tarafında kalır, asistanına devredilecek bir parça değil. Uyarı: çok şey yaptığı için kendi soyutlamalarını öğrenmen gerekiyor; sadece arama lazımsa daha dar bir kütüphane daha az bakım ister. İlk adım olarak bir aylık sesli notu indeksleyip aramanın Türkçede ne kadar isabetli olduğunu ölç.",
-      "matched_project": "Kişisel bilgi tabanı",
-      "relevance": 7,
-      "investment_note": null
-    },
-    {
-      "full_name": "StarTrail-org/LEANN",
-      "inputs_hash": "49cf9c7ea8080551079eae6437c265c4",
-      "description_tr": "LEANN, kişisel cihazlarda çalışacak şekilde tasarlanmış, depolama maliyetini agresif biçimde düşüren bir vektör indeksi ve RAG sistemi. Embedding'leri baştan saklamak yerine graph tabanlı seçici yeniden hesaplama ve yüksek dereceyi koruyan budama kullanıyor; iddiası, doğruluk kaybı olmadan geleneksel çözümlere göre yaklaşık %97 daha az yer kaplamak (60 milyon metin parçası için 201 GB yerine 6 GB). E-posta, dosya, tarayıcı geçmişi gibi dağınık kişisel veriyi dizinleyebiliyor, Ollama ile yerel modellere bağlanıyor ve bulut servisi gerektirmiyor. Claude Code ile uyumlu bir MCP semantik arama servisi olarak da kurulabiliyor, böylece ajanın grep'in ötesinde anlamsal arama yapabiliyor. MIT lisanslı, macOS (ARM64/Intel), Linux ve Windows destekliyor; Haziran 2025'te açılmış, MLSys 2026 en iyi makale ödülü aldığı belirtiliyor ve 12.900'ü aşkın star toplamış.",
-      "usage_tr": "Kişisel bilgi tabanı projesinin arama katmanı için doğrudan aday: sesli not transkriptlerini, dosyaları ve e-postayı tek indekste toplayıp \"bu ay hangi konuya döndüm\" tipi soruları yerelde cevaplatabilirsin. Ofisteki M4 Pro Mac'te ARM64 desteğiyle çalışıyor, embedding'leri Ollama üzerinden yerel modelle üretebildiğin için API maliyeti getirmiyor ve veri makineden çıkmıyor — bu, iş ve kişisel sistemi ayrı tutma isteğinle de uyumlu. Depolama tasarrufu sayesinde 7/24 açık Mac mini'yi ikinci bir indeks sunucusu olarak kullanmak mümkün hale geliyor. MCP tarafı ikinci bir kazanç: aynı indeksi Claude Code'a bağlayıp Lyricdrop v2 deposunda anlamsal arama yaptırabilirsin. Uyarı: yeniden hesaplama yaptığı için sorgu gecikmesi klasik vektör veritabanlarından yüksek olabilir, bu yüzden interaktif bir mobil ekranın arkasına değil, arka plan sorgularına koy. İlk ölçümün basit olsun: aynı 100 soruda isabet ve yanıt süresini not al.",
-      "matched_project": "Kişisel bilgi tabanı",
-      "relevance": 8,
-      "investment_note": null
-    },
-    {
-      "full_name": "Orchestra-Research/AI-Research-SKILLs",
-      "inputs_hash": "22cf883fbaec4b8d11be72d7a2e1d311",
-      "description_tr": "AI Research Skills Library, AI araştırmasının uçtan uca yürütülmesi için hazırlanmış 98 skill'den oluşan açık kaynak bir kütüphane; Claude Code, Codex ve Gemini gibi ajanlara paketlenerek yükleniyor. Skill'ler 23 kategoriye ayrılmış: autoresearch ve ideation'dan model mimarisi, fine-tuning, post-training, dağıtık eğitim, optimizasyon, çıkarım, değerlendirme, güvenlik, RAG, multimodal, MLOps ve mekanistik yorumlanabilirliğe kadar. Her domain skill'i Megatron-LM, vLLM, TRL gibi belirli bir çerçevenin derinlemesine kullanım bilgisini taşıyor; autoresearch skill'i iki döngülü bir mimariyle diğerlerine yönlendirme yapıyor. Hedef, literatür taramasından deney yürütmeye ve makale yazımına kadar süreci ajanın yürütebilmesi. MIT lisanslı, Kasım 2025'te açılmış ve 12.900'ü aşkın star toplamış.",
-      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, Claude Code skill ve plugin ekosistemine olan ilgin. Paketleme biçimi tanıdık olsa da içerik araştırmacıya yazılmış: Megatron ile dağıtık ön eğitim, GRPO ile post-training, vLLM ile küme üzerinde çıkarım. Senin yaptığın iş mobil uygulama, veri pipeline'ı ve otomasyon; bu skill'lerin çoğu ne donanımına ne de sorularına karşılık geliyor ve yanlış yerde yüklenirse ajanın bağlamını gereksiz doldurur. Skill yazımı konusunda örnek arıyorsan kategorilerin nasıl bölündüğüne bakmak işe yarar, kütüphaneyi olduğu gibi kurmak değil. Kendi projelerin için ince, kendi yazdığın skill'ler daha iyi sonuç verir.",
-      "matched_project": null,
-      "relevance": 2,
-      "investment_note": null
-    },
-    {
-      "full_name": "google-research/vision_transformer",
-      "inputs_hash": "c00097f484c3576f614dfc387ab34e35",
-      "description_tr": "Bu depo, Vision Transformer (ViT) ve MLP-Mixer mimarilerinin Google Research tarafından yayımlanan referans kodunu ve önceden eğitilmiş model ağırlıklarını barındırıyor. Modeller büyük görüntü veri kümeleri üzerinde ön eğitilmiş; depo bu kontrol noktalarının ince ayarı için JAX tabanlı kod veriyor. İki Colab defteri sunuluyor: biri mimarinin kodunu adım adım gezdiriyor, diğeri 50 binden fazla ViT ve hibrit kontrol noktası arasında seçim yapıp hem JAX hem de timm ile çıkarım ve ince ayar yapmayı sağlıyor. Daha gelişmiş eğitim kodu (çok makineli eğitim dahil) big_vision deposuna taşınmış durumda; buradaki kod öncelikle makaleleri yeniden üretmeye yarıyor. Apache-2.0 lisanslı, 2020'de açılmış ve 12.700'ü aşkın star toplamış bir araştırma referansı.",
-      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam görüntü modelleriyle çalışan fikirlerin olabilir. Ancak burada ürün olarak kullanılacak bir bileşen yok: JAX tabanlı araştırma kodu ve ince ayar defterleri var, üretimde kullanacağın hazır bir sınıflandırma servisi değil. Görüntü tarafında bir ihtiyaç doğarsa hazır ve bakımlı kütüphaneler ya da barındırılan modeller çok daha kısa yol olur. Mimarinin nasıl çalıştığını öğrenmek istersen Colab defterleri iyi bir giriş noktası. Bunun dışında kurulacak bir şey yok.",
-      "matched_project": null,
-      "relevance": 1,
-      "investment_note": null
-    },
-    {
-      "full_name": "bmaltais/kohya_ss",
-      "inputs_hash": "4ae354b987a757595c096974872f6b5e",
-      "description_tr": "kohya_ss, difüzyon modellerinin eğitimi için Gradio tabanlı bir grafik arayüz ve komut satırı aracı; kohya eğitim betiklerini insanların kullanabileceği bir panele dönüştürüyor. LoRA, LoHa, LoKr, Dreambooth, tam ince ayar ve Textual Inversion eğitimini destekliyor, ayrıca LECO ile kavram silme/düzenleme yapılabiliyor. Temel model desteği geniş: Stable Diffusion 1.5/2.x, SDXL, SD3, Flux.1, Lumina Image 2.0, Anima ve HunyuanImage-2.1. Yerel kurulum uv veya pip ile yapılabiliyor; Colab, Runpod gibi kiralık GPU sağlayıcıları ve Docker da destekleniyor. Linux desteği topluluk katkılarıyla sürüyor, macOS uyumluluğunun değişkenlik gösterebileceği README'de açıkça belirtiliyor. Apache-2.0 lisanslı, 2022'den beri geliştiriliyor ve 12.500'ü aşkın star toplamış.",
-      "usage_tr": "Folio'nun içerik üretim tarafında somut bir karşılığı var: her yazar profilinin görselleri arasında tutarlı bir yüz ve stil istiyorsan, bunu prompt ile değil yazar başına eğitilmiş küçük bir LoRA ile elde edersin. Eğitimi bir kez yapıp çıkan adaptörü günlük içerik pipeline'ına koyarsan, her gün üretilen post ve story'ler aynı görsel kimliği korur. Ana engel donanım: macOS desteği README'de belirsiz bırakılmış ve LoRA eğitimi pratikte NVIDIA GPU istiyor, yani ofisteki Mac yerine saatlik kiralık bir GPU kullanman gerekir — bu da tek seferlik, ölçülebilir bir maliyet demek. Arayüz panel üzerinden çalıştığı için eğitim işini tarif edip asistanına devretmek mümkün, çıktıyı sen onaylarsın. Küçük başla: tek bir yazar için 20-30 görsellik bir set ile bir LoRA eğit ve üretilen feed'in tutarlılığını gözle karşılaştır. Sonuç yeterliyse diğer profillere aynı tarifi uygularsın.",
-      "matched_project": "Folio",
-      "relevance": 5,
-      "investment_note": null
-    },
-    {
-      "full_name": "zilliztech/claude-context",
-      "inputs_hash": "0e88f72e3d304c914b63b9755468f4a3",
-      "description_tr": "Claude Context, Claude Code ve benzeri kodlama ajanlarına semantik kod arama ekleyen bir MCP eklentisi. Kod tabanını bir vektör veritabanında indeksliyor ve ajan her soruda dizinleri baştan okumak yerine yalnızca ilgili parçaları bağlama alıyor; değişen dosyaları tespit etmek için Merkle ağacı kullanıyor. Node.js 20+ ile çalışıyor, VS Code eklentisi ve npm paketleri olarak dağıtılıyor; Claude Code, Cursor ve Gemini CLI gibi istemcilerle kuruluyor. Çalışması için bir vektör veritabanı (Zilliz Cloud) ve embedding sağlayıcısı (örneğin OpenAI) anahtarı gerekiyor, yani tamamen yerel bir kurulum varsayılan yol değil. MIT lisanslı, TypeScript ile yazılmış, Haziran 2025'te açılmış ve 12.500'ü aşkın star toplamış.",
-      "usage_tr": "Lyricdrop v2 sıfırdan yazılırken kod tabanı hızla büyüyor; admin panel, test paneli ve hizalama servisleri ayrı ayrı dosyalara dağıldıkça Claude Code'un doğru dosyayı bulması zorlaşıyor. Bu eklenti tam o noktada işe yarıyor: ajanın her turda geniş dizin okumaları yapmasını azaltıp ilgili kod parçalarını doğrudan bağlama getiriyor, bu da Max aboneliğindeki bağlam sınırını daha iyi kullanmanı sağlıyor. Kurulum MCP üzerinden olduğu için mevcut Claude Code düzenine tek yapılandırma dosyasıyla giriyor, ofis Mac'inde ve Mac mini'de ayrı ayrı çalışır. Uyarı: varsayılan kurulum bulut vektör veritabanı ve OpenAI embedding anahtarı istiyor; yani küçük ama sürekli bir API maliyeti ve kodunun embedding'lerinin dışarı çıkması anlamına geliyor. Kapalı üçüncü parti servislere mesafeli yaklaşımını düşünürsek, aynı işi yerel tutan MCP arama alternatifleriyle yan yana denemek mantıklı. Ölçütün basit olsun: aynı üç görevde ajanın kaç tur ve ne kadar bağlam harcadığını karşılaştır.",
-      "matched_project": "Lyricdrop",
-      "relevance": 6,
-      "investment_note": null
-    },
-    {
-      "full_name": "bentoml/OpenLLM",
-      "inputs_hash": "b62033eb14f79098586eb6ee9fc33e49",
-      "description_tr": "OpenLLM, açık kaynak veya özel dil modellerini tek komutla OpenAI uyumlu API uç noktası olarak çalıştırmayı sağlayan bir araç; BentoML ekibi tarafından geliştiriliyor. Yerleşik bir sohbet arayüzü, güncel çıkarım arka uçları ve Docker, Kubernetes ile BentoCloud üzerinden kurumsal dağıtım için sadeleştirilmiş bir akış sunuyor. Llama 3.x, Qwen2.5, Mistral, Phi-4, Gemma ve DeepSeek R1 gibi geniş bir model listesi destekleniyor; model kataloğunda her model için gereken GPU belleği açıkça yazılı. Bu gereksinimler 12 GB'tan başlayıp büyük modellerde 80 GB'lık kartların onlarcasına çıkıyor, yani hedef donanım sunucu sınıfı GPU. Apache-2.0 lisanslı, 2023'ten beri geliştiriliyor ve 12.500'ü aşkın star toplamış.",
-      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, ücretli API yerine kendi modelini servis etme fikrin olurdu. Fakat bu araç GPU'lu sunucular için tasarlanmış: listelenen en küçük modeller bile 12-24 GB VRAM istiyor ve mevcut DigitalOcean kurulumunda böyle bir kaynak yok. Ofisteki Mac'te yerel model çalıştırmak istediğinde Apple Silicon'a göre yazılmış motorlar hem kurulumu hem maliyeti daha kolay tutar. Lyricdrop'un oyuncu tarafı zaten uzak ve hafif; oraya kendi LLM sunucunu koymak şu an çözmen gereken bir problem değil. İleride kendi modelini barındırma ihtiyacı doğarsa bu depoyu yeniden değerlendirirsin.",
-      "matched_project": null,
-      "relevance": 2,
-      "investment_note": null
-    },
-    {
-      "full_name": "axolotl-ai-cloud/axolotl",
-      "inputs_hash": "3710491f577f9856fc48f2c02adc8350",
-      "description_tr": "Axolotl, büyük dil modellerinin ince ayarı için kullanılan, yapılandırma dosyası odaklı açık kaynak bir çerçeve. LoRA, tam ince ayar, tercih optimizasyonu (DPO ve türevleri) ve pekiştirmeli öğrenme yöntemlerini tek arayüz altında topluyor; FSDP2, DeepEP ile dağıtık MoE eğitimi ve çeşitli hızlandırılmış kernel'ler destekleniyor. 2026 boyunca yeni model aileleri, MoE expert ağırlıklarına doğrudan LoRA uygulama, NVFP4 kuantize eğitim ve uzak eğitim entegrasyonları eklenmiş. Hedef kullanıcı, kendi veri kümesiyle model eğiten ekipler; çalışma ortamı GPU'lu makineler ve kümeler. Apache-2.0 lisanslı, 2023'ten beri aktif geliştiriliyor, düzenli sürüm notları yayımlanıyor ve 12.400'ü aşkın star toplamış.",
-      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, kendi veri kümenle özel bir model eğitme fikri olabilir. Ama hiçbir projende böyle bir ihtiyaç yok: Lyricdrop şarkı başına düşük maliyetle hazır modelleri kullanıyor, Folio görsel üretim tarafında, kişisel bilgi tabanı ise sınıflandırma ve aramayla çözülüyor. İnce ayar, hazır modellerin yetmediği kanıtlandıktan sonra bakılacak bir adım; şimdi başlarsan GPU kirası ve veri etiketleme maliyeti karşılığında ölçebileceğin bir kazanç olmaz. Yine de bir gün gerekirse — örneğin Türkçe sesli not sınıflandırmasında hazır model tutarsız kalırsa — bu çerçeve standart seçeneklerden biri. Şimdilik bilinen bir araç olarak not etmen yeterli.",
-      "matched_project": null,
-      "relevance": 2,
-      "investment_note": null
-    },
-    {
-      "full_name": "Embedding/Chinese-Word-Vectors",
-      "inputs_hash": "8e566f94747fe933c76304075c6440b6",
-      "description_tr": "Bu depo, farklı temsil biçimleri (yoğun ve seyrek), bağlam özellikleri (kelime, ngram, karakter) ve derlemlerle eğitilmiş 100'den fazla Çince kelime vektörü kümesini yayımlıyor. Kullanıcılar farklı özelliklere sahip önceden eğitilmiş vektörleri indirip alt görevlerde kullanabiliyor. Depo ayrıca Çince biçimbilimsel ve anlamsal ilişkiler üzerine kurulu CA8 analoji veri kümesini ve vektör kalitesini ölçmek için bir değerlendirme aracı içeriyor. İçerik 2018 tarihli ACL makalesine dayanıyor ve bugünün cümle düzeyindeki embedding modellerinden önceki kelime vektörü dönemine ait. Apache-2.0 lisanslı, 2018'de açılmış ve 12.200'ü aşkın star toplamış.",
-      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam semantik arama ihtiyacın olurdu, ama bu kaynak Çince ve kelime düzeyinde vektörler sunuyor. Kişisel bilgi tabanı ya da Lyricdrop tarafında ihtiyacın olan şey Türkçe ve İngilizce cümleleri anlayan güncel embedding modelleri; kelime vektörleri o işte belirgin biçimde geride kalıyor. Çince bir ürün hattı da planlarında yok. Akademik bir referans ve tarihsel bir kaynak olarak değerli, araç olarak değil. Denemeye vakit ayırmanı gerektirecek bir yanı yok.",
-      "matched_project": null,
-      "relevance": 0,
-      "investment_note": null
-    },
-    {
-      "full_name": "FlagOpen/FlagEmbedding",
-      "inputs_hash": "6c4e5621d571614a0e327ffd06914f26",
-      "description_tr": "FlagEmbedding, arama ve RAG uygulamaları için BGE model ailesini ve bunları eğitip değerlendirme araçlarını toplayan bir depo. İçinde yoğun ve seyrek geri getirmeyi birlikte yapan çok dilli embedding modelleri, yeniden sıralama (reranker) modelleri ve bağlam içi öğrenme yeteneği taşıyan varyantlar bulunuyor. BGE-VL ile metin-görsel arası çoklu kip arama da destekleniyor; modellerin bir bölümü MIT lisansıyla akademik ve ticari kullanıma açık olarak yayımlanmış. Depo modellerin eğitimi, ince ayarı ve değerlendirmesi için betikler de veriyor, yani yalnızca ağırlık dağıtımı değil bir araç seti. MIT lisanslı, 2023'ten beri geliştiriliyor ve 12.100'ü aşkın star toplamış.",
-      "usage_tr": "Kişisel bilgi tabanı için bir RAG yığını kurduğunda, altta hangi embedding modelinin çalışacağı senin vereceğin bir karar; BGE ailesi burada varsayılan adaylardan biri. Türkçe ve İngilizce notların bir arada olacağı için çok dilli varyantı seçmek, arama kalitesini doğrudan etkiler. Modeller ofisteki M4 Pro Mac'te yerelde çalıştırılabilir boyutta, yani API maliyeti getirmez ve notların dışarı çıkmaz. Reranker kısmı ikinci bir kazanç: ilk aramadan gelen 50 sonucu yeniden sıralayıp cevabın isabetini ucuza yükseltir. Uyarı: bu bir ürün değil, bir bileşen — tek başına kurduğunda indeksleme, saklama ve sorgu katmanını yine kendin yazman gerekir, o yüzden txtai veya LEANN gibi bir çerçevenin içinde model seçimi olarak kullanman daha mantıklı. Karar vermek için küçük bir test yap: kendi notlarından 100 soruluk bir set çıkarıp iki üç modeli aynı sorularla karşılaştır.",
-      "matched_project": "Kişisel bilgi tabanı",
-      "relevance": 5,
-      "investment_note": null
-    },
-    {
-      "full_name": "cactus-compute/needle",
-      "inputs_hash": "d12fe81689e5ce45515c15ae6d0a9d5a",
-      "description_tr": "Needle, telefon, giyilebilir cihaz, robot, akıllı ev ve mikrodenetleyici gibi küçük cihazlarda çalışmak üzere eğitilmiş bir temel model; tüm model 8-29 MB'lık tek bir ikili dosya. Genel sohbet yeteneğinden feragat edip üç işe odaklanıyor: araç çağırma, yapılandırılmış çıkarım ve metin embedding'i. Şemalardan derlenen bayt düzeyinde bir gramer her token'ı kısıtladığı için çıktının ayrıştırılabilir olması garanti ediliyor, her yanıt kalibre edilmiş bir güven skoruyla geliyor ve uygun araç yoksa tahmin yerine boş liste dönüyor. Mimari, FFN yerine Monarch Hadamard MLP, nedensel evrişim uçlu GQA dikkat ve gather ile okunan engram n-gram belleği üzerine kurulu; 2 ile 20 katman arası her derinlik dağıtılabilir bir model olacak şekilde eğitilmiş. Python paketi olarak kuruluyor, CPU, CUDA ve Metal üzerinde çalışabiliyor; Apache-2.0 lisanslı, Şubat 2026'da açılmış ve 12.100'ü aşkın star toplamış.",
-      "usage_tr": "Kişisel bilgi tabanı uygulamasında sesli notun kategorisini çıkarma adımı için doğrudan aday: transkripti verip önceden tanımladığın şemaya göre tipli alanlar (konu, proje, tarih, aksiyon) alırsın ve gramer kısıtı sayesinde çıktı her zaman ayrıştırılır. Model cihazda çalıştığı için bu adım Supabase'e gitmeden telefonda biter — form doldurmama isteğini API maliyeti eklemeden karşılar. Metal desteği olduğundan aynı modeli ofisteki Mac'te toplu geçmiş notları yeniden işlemek için de çalıştırabilirsin. Güven skoru pratik bir kapı sağlıyor: düşük güvenli notları \"sınıflandırılamadı\" kutusuna düşürüp geri kalanını otomatik geçirirsin. Uyarı: Expo/React Native tarafında entegrasyonun ne kadar pürüzsüz olduğunu paketin kendisi söylemiyor, bunu küçük bir denemede doğrulaman gerekir. Ayrıca bu bir sohbet modeli değil; özet ve rapor yazımı için yine daha büyük bir modele ihtiyacın olacak.",
-      "matched_project": "Kişisel bilgi tabanı",
-      "relevance": 5,
-      "investment_note": "Cihaz üstü temel model tarafında dar ama net bir konumlandırması, ölçülebilir kıyas sonuçları ve arkasında ticari bir şirketi olan yeni bir ekip; erken aşama AI altyapısı ilgi alanına uyan bir izleme adayı."
-    },
-    {
-      "full_name": "Tongyi-MAI/Z-Image",
-      "inputs_hash": "63d4e56802c72a2693e19159be860992",
-      "description_tr": "Z-Image, tek akışlı difüzyon transformer mimarisine dayanan 6B parametreli bir görüntü üretim modeli ailesi. Turbo varyantı damıtılmış bir sürüm; sekiz adımda (NFE) üretim yapıyor, kurumsal GPU'larda saniye altı gecikme veriyor ve 16 GB VRAM'li tüketici kartlarına sığdığı belirtiliyor. Fotogerçekçi üretim, İngilizce ve Çince metin yazımı ile talimatlara uyum öne çıkan tarafları; temel model ise ince ayar ve alt uygulamalar için çeşitlilik, estetik ve kontrol edilebilirlik hedefliyor, negatif prompt desteği var. Ağırlıklar Hugging Face ve ModelScope üzerinde yayımlanmış, denemek için hazır demo alanları mevcut. Apache-2.0 lisanslı, Kasım 2025'te açılmış ve 12.000'i aşkın star toplamış.",
-      "usage_tr": "Folio'nun günlük içerik pipeline'ında üretim motoru olarak değerlendirebilirsin: her yazar profilinin post ve story görselleri her gün yeniden üretileceği için kare başına maliyet ve gecikme doğrudan işletme maliyetin oluyor, Turbo'nun sekiz adımlık üretimi burada fark yaratır. Apache-2.0 lisansı, üretilen içeriği kendi uygulamanda kullanma konusunda rahat bir zemin sağlıyor ve ağırlıkları indirip barındırdığın için görsel servisine abonelik ödemezsin. Uyarı: belirtilen donanım 16 GB VRAM'li GPU'lar; M4 Pro Mac'te çalışıp çalışmadığı depoda yazmıyor, dolayısıyla pratikte gece çalışan bir kiralık GPU üzerinde toplu üretim yapıp çıktıyı DigitalOcean'a yazmak daha olası bir kurulum. Üretimi gece toplu çalıştırıp sabah beslemeyi hazır bulmak, uygulamayı kullanırken bekleme olmaması demek. kohya_ss ile eğitilmiş bir LoRA'yı bu modelin üstüne koyarsan yazar başına görsel tutarlılığı da sabitleyebilirsin. İlk testin dar olsun: tek bir yazar için 20 görsel üretip yüz ve stil tutarlılığına bak.",
-      "matched_project": "Folio",
-      "relevance": 6,
-      "investment_note": null
-    },
-    {
-      "full_name": "LMCache/LMCache",
-      "inputs_hash": "d2ddbd56a639a28c1b103e32255a77ec",
-      "description_tr": "LMCache, LLM çıkarımında KV cache katmanını hızlandırmayı hedefleyen bir kütüphane; tekrar eden uzun bağlamların yeniden hesaplanmasını önleyerek ilk token süresini (TTFT) düşürüyor. Temel kullanım senaryosu vLLM ile birlikte çalışmak: önek KV'lerini yerel diskte ya da ortak bir arka uçta saklayıp birden fazla vLLM örneği arasında paylaştırabiliyor. Kurulum Python 3.10+ ile pip üzerinden yapılıyor, demo ve hızlı başlangıç yolları Docker imajları üzerinden veriliyor. Çalışması için NVIDIA (CUDA) veya AMD (ROCm) GPU'lu bir sunucu gerekiyor; depoda anlatılan bütün akışlar GPU'lu makine varsayıyor. Apache-2.0 lisanslı, 2024'te açılmış ve 11.800'ü aşkın star toplamış.",
-      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, bir gün kendi LLM sunucunu çalıştırma ihtimalin olurdu. Bu, vLLM işleten ekiplerin gecikme ve maliyet optimizasyonu için taktığı bir alt katman; senin kullandığın yol ise Max aboneliğiyle Claude Code ve uygulamalarda hazır API'ler. Ne ofisteki Mac'te ne de mevcut DigitalOcean kurulumunda çalıştıracağın bir bileşen, çünkü CUDA veya ROCm GPU istiyor. Kendi çıkarım altyapını kurma noktasına gelirsen — ki bugünkü projelerin bunu gerektirmiyor — o zaman anlamlı hale gelir. Şimdilik ekosistem bilgisi olarak kalsın.",
-      "matched_project": null,
-      "relevance": 1,
-      "investment_note": null
-    }
-  ]
+ "repos": [
+  {
+   "full_name": "FlashML-org/FreeToken",
+   "inputs_hash": "ac02c66aaceb4fb837f5e52c5798ad01",
+   "description_tr": "FreeToken, frontier ölçeğindeki açık ağırlıklı MoE modellerini tüketici donanımında çalıştırmak için yazılmış edge-native bir serving motoru. GPU, CPU, host belleği ve ara bağlantıları tek bir esnek çıkarım havuzu gibi ele alıyor; bant genişliğine uyarlanan CPU-GPU ortak yürütme, çift tamponlu prefill akışı, global LRU expert cache ve FTW ağırlık formatı temel bileşenleri. Semantic anchor checkpoint'leri sayesinde araç çağrısı veya düşünme bloğu gibi bağlam düzenlemelerinden sonra KV cache'in baştan hesaplanması azalıyor. DeepSeek-V4-Flash, Qwen3.6-35B-A3B ve GLM-5.2 gibi modelleri MXFP4, NVFP4, FP8 ve BF16 formatlarında destekliyor; Anthropic ve OpenAI uyumlu API sunduğu için Claude Code, Codex ve OpenCode gibi istemcilere bağlanabiliyor. Doğrudan desteklenen donanım NVIDIA RTX 30, 40 ve 50 serisi; Windows ve Linux için kurulumu üstlenen bir masaüstü uygulaması var. Apache-2.0 lisanslı, Temmuz 2026'da açılmış ve 13.500'ü aşkın star toplamış.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, Claude Code ve OpenCode'u ücretli API yerine yerel bir modele bağlama isteğin olurdu. Anthropic uyumlu endpoint verdiği için bu senaryo kağıt üzerinde tam oturuyor, ancak desteklenen donanım NVIDIA RTX kartları ve dağıtım Windows/Linux masaüstü üzerinden yapılıyor. Ofisteki M4 Pro Mac ve evdeki Mac mini bu listede yok, dolayısıyla bugün kuracak bir makinen yok. Apple Silicon tarafında MLX veya llama.cpp tabanlı motorlar aynı ihtiyaç için daha gerçekçi bir yol. Donanım tarafın değişirse — ayrı bir RTX makinesi ya da kiralık bir masaüstü — tekrar bakmaya değer; şimdilik izlemek yeterli.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": "Edge tarafında MoE serving'i ticarileştiren, iki ay içinde 13 binden fazla star toplayan ve arkasında bir ürün sitesiyle ekip bulunan yeni bir altyapı projesi; erken aşama AI altyapısı tezine uyan bir izleme adayı."
+  },
+  {
+   "full_name": "semantica-agi/semantica",
+   "inputs_hash": "7137bebd9846857935b8429ed8cdfe38",
+   "description_tr": "Semantica, kurumsal veriyi bağlam grafiği ve bilgi grafiğine (knowledge graph) dönüştürüp üzerinde graph analitiği ve nedensel akıl yürütme çalıştırmayı hedefleyen Python tabanlı bir altyapı. Ontoloji yönetimi, deterministik akıl yürütme, karar zinciri için uçtan uca izlenebilirlik ve köken (provenance) kaydı çekirdek özellikleri arasında. RDF ve LPG modellerini birlikte destekliyor, W3C standartlarına yaslanıyor ve çoklu graph deposuyla çalışabiliyor; hedef kitle olarak düzenlemeye tabi, yüksek riskli alanları işaret ediyor. Kendini pahalı kurumsal platformlara geliştirici odaklı bir alternatif olarak konumlandırıyor. MIT lisanslı, Python 3.10+ gerektiriyor, Haziran 2025'te açılmış ve 13.300'ü aşkın star toplamış.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam kişisel bilgi tabanı fikrindeki semantik arama katmanı olabilir. Ama oradaki ihtiyaç tek dokunuşla sesli not, otomatik kategori ve sade haftalık rapor; ontoloji yönetimi, RDF modelleme ve karar provenance'ı bu iş için taşınması gereken ağırlığın çok üstünde. Arslan Holding'in due diligence akışında kaynak-iddia bağını tutmak için bir gün işe yarayabilir, ancak o süreç henüz bir graph şeması isteyecek olgunlukta değil. Denemek istersen önce küçük bir soru ile sınırla: aynı işi basit bir vektör indeksi çözmüyor mu. Aksi halde kurulum ve şema bakımı, kazandırdığı izlenebilirlikten daha çok vaktini alır.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": "Açık kaynak çekirdek üzerine kurulmuş, düzenlemeye tabi sektörlerde AI karar izlenebilirliğini hedefleyen bir ekip; MENA ve Türkiye'de kurumsal AI yönetişimi boşluğu düşünülürse deal flow tarafında not edilmeye değer."
+  },
+  {
+   "full_name": "NVIDIA/TensorRT",
+   "inputs_hash": "52b3acc6ce0bf9a5dbfa4384ab36b08c",
+   "description_tr": "TensorRT, NVIDIA GPU'larında yüksek performanslı derin öğrenme çıkarımı için geliştirilen SDK'nın açık kaynak bileşenlerini barındıran depo. İçinde TensorRT plugin kaynakları, ONNX parser ve platformun kullanımını gösteren örnek uygulamalar yer alıyor; tam SDK'nın kendisi kapalı olarak dağıtılıyor. TensorRT 11.X ile API sadeleştirildi: zayıf tipli ağlar, örtük kuantizasyon ve IPluginV2 kaldırıldı, yerlerine strongly typed networks, explicit quantization ve IPluginV3 geçti. ONNX, Torch-TensorRT ve HuggingFace/Optimum yollarıyla model içe aktarma dokümante edilmiş durumda. Apache-2.0 lisanslı, 2019'dan beri açık, 13.300'ü aşkın star ve 2026 Q3 yol haritası yayımlanmış aktif bir proje.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam yerel model çalıştırma ilgin olurdu, ama bu tamamen NVIDIA GPU'ya bağlı bir yol. Ne ofisteki M4 Pro Mac'te ne de DigitalOcean üzerindeki mevcut kurulumunda çalıştıracağın bir bileşen; Apple Silicon tarafında karşılığı Core ML, MLX veya llama.cpp. Lyricdrop'un STT adımında bir gün kiralık NVIDIA GPU'ya geçersen, hız optimizasyonu bu katmanda yapılır — ancak o noktada da muhtemelen doğrudan TensorRT değil, onu kullanan üst seviye bir servis işini görür. Yatırımcı şapkasıyla da bir anlamı yok: halka açık büyük bir şirketin altyapı deposu. Bilgi olarak dosyalamak yeterli.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "halfrost/Halfrost-Field",
+   "inputs_hash": "2f3a534ece583f0f0e270a6b9a2a7c1a",
+   "description_tr": "Halfrost-Field, tek bir yazarın açık kaynak projelerin kaynak kodunu satır satır okuyup çıkardığı notların toplandığı bir yazı deposu. İçerik Çince ve İngilizce olarak iki dilde tutuluyor; vLLM'in generate() çağrısından ilk token'a kadar olan yolu, V1 süreç mimarisi, EngineCore döngüsü ve scheduler'daki continuous batching gibi konular ayrı yazılarda ele alınıyor. LLM bölümünün yanında Go dilinin içsel yapıları (slice, map, derleyici komutları), ağ protokolleri, TLS, HTTP/2, iOS ve algoritma konularında uzun yazılar var. Kod değil metin üreten bir depo: çalıştırılacak bir kütüphane sunmuyor, okunacak bir arşiv sunuyor. CC-BY-SA-4.0 lisanslı, 2017'den beri güncelleniyor ve 13.200'ü aşkın star toplamış.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, çıkarım motorlarının içinde ne olup bittiğini öğrenme merakın olabilir. Ancak buradaki yazılar vLLM'in scheduler'ını ve Go runtime'ını hedefleyen, altyapı geliştiricisine yazılmış metinler; senin çalıştığın katman Expo, Supabase ve Claude Code tarafında. Öğrenme ilgin daha çok Türkçe kaynaklardan psikoloji, sosyoloji ve felsefe yönünde, bu depo o boşluğu da doldurmuyor. Kaynağı bir referans olarak yer imlerine koyabilirsin, kurulacak bir şey yok. Bir araç olarak beklenti kurma.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "Jiayi-Pan/TinyZero",
+   "inputs_hash": "21c579c7921e53f3ead3f6423625048c",
+   "description_tr": "TinyZero, DeepSeek R1-Zero'nun countdown ve çarpma görevleri üzerinde minimal bir yeniden üretimi; veRL kütüphanesi üzerine kurulmuş. Amaç, 3B'lik bir temel dil modelinin yalnızca pekiştirmeli öğrenmeyle kendi kendini doğrulama ve arama davranışları geliştirmesini küçük ölçekte gösterebilmek. Depo kurulum, veri hazırlama ve eğitim betiklerini veriyor; tek GPU ile 1.5B'ye kadar, akıl yürütme davranışının ortaya çıktığı 3B ve üstü için birden fazla GPU gerekiyor. README'de artık aktif olarak bakılmadığı belirtiliyor ve RL deneyleri için doğrudan veRL'e yönlendiriliyor. Apache-2.0 lisanslı, Ocak 2025'te açılmış ve 13.200'ü aşkın star toplamış bir araştırma tekrar üretimi.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam model eğitimine genel merakın olurdu. Bu bir ürün bileşeni değil, çok GPU'lu bir kümede çalıştırılan bir araştırma deneyi; ofisteki Mac'te çalıştırılacak bir tarafı yok ve deponun kendisi bakımının bırakıldığını söylüyor. Lyricdrop, Folio ya da kişisel bilgi tabanı tarafında ihtiyacın olan şey hazır modelleri kullanmak, kendi modelini RL ile eğitmek değil. Akıl yürütme modellerinin nasıl ortaya çıktığını merak ediyorsan okuma malzemesi olarak değeri var. Araç olarak kurmaya vakit ayırma.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "PaddlePaddle/PaddleNLP",
+   "inputs_hash": "0435890164fefba04c2cea9272171ef4",
+   "description_tr": "PaddleNLP, Baidu'nun PaddlePaddle çerçevesi üzerine kurulu bir büyük dil modeli geliştirme seti; eğitim, sıkıştırma ve yüksek performanslı çıkarımı tek pakette topluyor. Qwen3 serisi, DeepSeek V3/R1 ve QwQ-32B gibi modelleri destekliyor; FP8, INT8 ve 4-bit kuantize çıkarım ile MTP spekülatif kod çözme sunuyor. Veri paralelliği, model ve boru hattı paralelliği, expert paralelliği ve FlashMask seyrek dikkat maskesi gibi dağıtık eğitim yetenekleri öne çıkan tarafı; ayrıca bilgi çıkarımı için PP-UIE gibi kendi modellerini barındırıyor. Dokümantasyon ve duyuruların büyük bölümü Çince, hedef donanım NVIDIA ve yerli hızlandırıcılar. Apache-2.0 lisanslı, 2021'den beri geliştiriliyor ve 12.900'ü aşkın star toplamış.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam yerel model çalıştırma ilgin olurdu, ama bu set PaddlePaddle ekosistemine ve GPU'lu sunuculara bağlı. Standart yığının Expo, Supabase, DigitalOcean ve Claude Code üzerine kurulu; araya bir de Paddle çerçevesi sokmak öğrenme maliyetinin karşılığını vermez. Türkçe içerik için hazırlanmış bileşenler de yok, ağırlık Çince NLP tarafında. Bir model servis etmen gerekirse Apple Silicon'da çalışan hafif motorlar ya da hazır API'ler daha kısa yol. Bu depoyu ekosistem haritasında bir nokta olarak tutman yeterli.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "neuml/txtai",
+   "inputs_hash": "679fcb4596491b2bfe5b63d16ec81219",
+   "description_tr": "txtai, semantik arama, LLM orkestrasyonu ve dil modeli iş akışlarını tek pakette toplayan Python tabanlı bir çerçeve. Merkezinde seyrek ve yoğun vektör indekslerini, graph ağlarını ve ilişkisel veritabanını birleştiren bir embeddings veritabanı var; metin, doküman, ses, görüntü ve video için embedding üretebiliyor. Üzerine kurulu pipeline'lar soru-cevap, etiketleme, transkripsiyon, çeviri ve özetleme gibi işleri çalıştırıyor, workflow katmanı bunları birbirine bağlıyor, agent katmanı ise bu parçaları otonom olarak kullanıyor. Web API'si ve Model Context Protocol (MCP) arayüzü mevcut; JavaScript, Java, Rust ve Go bağlantıları var, yerel çalışabildiği gibi konteyner orkestrasyonuyla ölçeklenebiliyor. Apache-2.0 lisanslı, Python 3.10+ ile çalışıyor, 2020'den beri geliştiriliyor ve 12.900'ü aşkın star toplamış; arkasında danışmanlık veren bir şirket var.",
+   "usage_tr": "Kişisel bilgi tabanı projesinde aradığın katmanın büyük kısmını tek çatı altında veriyor: sesli notun transkripsiyonu, kategori çıkarımı için etiketleme pipeline'ı, semantik arama ve dönem özetleri aynı çerçevede kurulabiliyor. Ofisteki M4 Pro Mac'te yerel modellerle çalıştırıp API maliyetini sıfıra yakın tutabilir, indeksi orada tutup n8n'den tetiklenen bir FastAPI servisi olarak açabilirsin. MCP arayüzü olduğu için aynı indeksi Claude Code'a da açabilirsin; böylece notlarına sorular sormak ayrı bir uygulama gerektirmez. Kurulum ve bakım senin tarafında kalır, asistanına devredilecek bir parça değil. Uyarı: çok şey yaptığı için kendi soyutlamalarını öğrenmen gerekiyor; sadece arama lazımsa daha dar bir kütüphane daha az bakım ister. İlk adım olarak bir aylık sesli notu indeksleyip aramanın Türkçede ne kadar isabetli olduğunu ölç.",
+   "matched_project": "Kişisel bilgi tabanı",
+   "relevance": 7,
+   "investment_note": null
+  },
+  {
+   "full_name": "StarTrail-org/LEANN",
+   "inputs_hash": "49cf9c7ea8080551079eae6437c265c4",
+   "description_tr": "LEANN, kişisel cihazlarda çalışacak şekilde tasarlanmış, depolama maliyetini agresif biçimde düşüren bir vektör indeksi ve RAG sistemi. Embedding'leri baştan saklamak yerine graph tabanlı seçici yeniden hesaplama ve yüksek dereceyi koruyan budama kullanıyor; iddiası, doğruluk kaybı olmadan geleneksel çözümlere göre yaklaşık %97 daha az yer kaplamak (60 milyon metin parçası için 201 GB yerine 6 GB). E-posta, dosya, tarayıcı geçmişi gibi dağınık kişisel veriyi dizinleyebiliyor, Ollama ile yerel modellere bağlanıyor ve bulut servisi gerektirmiyor. Claude Code ile uyumlu bir MCP semantik arama servisi olarak da kurulabiliyor, böylece ajanın grep'in ötesinde anlamsal arama yapabiliyor. MIT lisanslı, macOS (ARM64/Intel), Linux ve Windows destekliyor; Haziran 2025'te açılmış, MLSys 2026 en iyi makale ödülü aldığı belirtiliyor ve 12.900'ü aşkın star toplamış.",
+   "usage_tr": "Kişisel bilgi tabanı projesinin arama katmanı için doğrudan aday: sesli not transkriptlerini, dosyaları ve e-postayı tek indekste toplayıp \"bu ay hangi konuya döndüm\" tipi soruları yerelde cevaplatabilirsin. Ofisteki M4 Pro Mac'te ARM64 desteğiyle çalışıyor, embedding'leri Ollama üzerinden yerel modelle üretebildiğin için API maliyeti getirmiyor ve veri makineden çıkmıyor — bu, iş ve kişisel sistemi ayrı tutma isteğinle de uyumlu. Depolama tasarrufu sayesinde 7/24 açık Mac mini'yi ikinci bir indeks sunucusu olarak kullanmak mümkün hale geliyor. MCP tarafı ikinci bir kazanç: aynı indeksi Claude Code'a bağlayıp Lyricdrop v2 deposunda anlamsal arama yaptırabilirsin. Uyarı: yeniden hesaplama yaptığı için sorgu gecikmesi klasik vektör veritabanlarından yüksek olabilir, bu yüzden interaktif bir mobil ekranın arkasına değil, arka plan sorgularına koy. İlk ölçümün basit olsun: aynı 100 soruda isabet ve yanıt süresini not al.",
+   "matched_project": "Kişisel bilgi tabanı",
+   "relevance": 8,
+   "investment_note": null
+  },
+  {
+   "full_name": "Orchestra-Research/AI-Research-SKILLs",
+   "inputs_hash": "22cf883fbaec4b8d11be72d7a2e1d311",
+   "description_tr": "AI Research Skills Library, AI araştırmasının uçtan uca yürütülmesi için hazırlanmış 98 skill'den oluşan açık kaynak bir kütüphane; Claude Code, Codex ve Gemini gibi ajanlara paketlenerek yükleniyor. Skill'ler 23 kategoriye ayrılmış: autoresearch ve ideation'dan model mimarisi, fine-tuning, post-training, dağıtık eğitim, optimizasyon, çıkarım, değerlendirme, güvenlik, RAG, multimodal, MLOps ve mekanistik yorumlanabilirliğe kadar. Her domain skill'i Megatron-LM, vLLM, TRL gibi belirli bir çerçevenin derinlemesine kullanım bilgisini taşıyor; autoresearch skill'i iki döngülü bir mimariyle diğerlerine yönlendirme yapıyor. Hedef, literatür taramasından deney yürütmeye ve makale yazımına kadar süreci ajanın yürütebilmesi. MIT lisanslı, Kasım 2025'te açılmış ve 12.900'ü aşkın star toplamış.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, Claude Code skill ve plugin ekosistemine olan ilgin. Paketleme biçimi tanıdık olsa da içerik araştırmacıya yazılmış: Megatron ile dağıtık ön eğitim, GRPO ile post-training, vLLM ile küme üzerinde çıkarım. Senin yaptığın iş mobil uygulama, veri pipeline'ı ve otomasyon; bu skill'lerin çoğu ne donanımına ne de sorularına karşılık geliyor ve yanlış yerde yüklenirse ajanın bağlamını gereksiz doldurur. Skill yazımı konusunda örnek arıyorsan kategorilerin nasıl bölündüğüne bakmak işe yarar, kütüphaneyi olduğu gibi kurmak değil. Kendi projelerin için ince, kendi yazdığın skill'ler daha iyi sonuç verir.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "google-research/vision_transformer",
+   "inputs_hash": "c00097f484c3576f614dfc387ab34e35",
+   "description_tr": "Bu depo, Vision Transformer (ViT) ve MLP-Mixer mimarilerinin Google Research tarafından yayımlanan referans kodunu ve önceden eğitilmiş model ağırlıklarını barındırıyor. Modeller büyük görüntü veri kümeleri üzerinde ön eğitilmiş; depo bu kontrol noktalarının ince ayarı için JAX tabanlı kod veriyor. İki Colab defteri sunuluyor: biri mimarinin kodunu adım adım gezdiriyor, diğeri 50 binden fazla ViT ve hibrit kontrol noktası arasında seçim yapıp hem JAX hem de timm ile çıkarım ve ince ayar yapmayı sağlıyor. Daha gelişmiş eğitim kodu (çok makineli eğitim dahil) big_vision deposuna taşınmış durumda; buradaki kod öncelikle makaleleri yeniden üretmeye yarıyor. Apache-2.0 lisanslı, 2020'de açılmış ve 12.700'ü aşkın star toplamış bir araştırma referansı.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam görüntü modelleriyle çalışan fikirlerin olabilir. Ancak burada ürün olarak kullanılacak bir bileşen yok: JAX tabanlı araştırma kodu ve ince ayar defterleri var, üretimde kullanacağın hazır bir sınıflandırma servisi değil. Görüntü tarafında bir ihtiyaç doğarsa hazır ve bakımlı kütüphaneler ya da barındırılan modeller çok daha kısa yol olur. Mimarinin nasıl çalıştığını öğrenmek istersen Colab defterleri iyi bir giriş noktası. Bunun dışında kurulacak bir şey yok.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "bmaltais/kohya_ss",
+   "inputs_hash": "4ae354b987a757595c096974872f6b5e",
+   "description_tr": "kohya_ss, difüzyon modellerinin eğitimi için Gradio tabanlı bir grafik arayüz ve komut satırı aracı; kohya eğitim betiklerini insanların kullanabileceği bir panele dönüştürüyor. LoRA, LoHa, LoKr, Dreambooth, tam ince ayar ve Textual Inversion eğitimini destekliyor, ayrıca LECO ile kavram silme/düzenleme yapılabiliyor. Temel model desteği geniş: Stable Diffusion 1.5/2.x, SDXL, SD3, Flux.1, Lumina Image 2.0, Anima ve HunyuanImage-2.1. Yerel kurulum uv veya pip ile yapılabiliyor; Colab, Runpod gibi kiralık GPU sağlayıcıları ve Docker da destekleniyor. Linux desteği topluluk katkılarıyla sürüyor, macOS uyumluluğunun değişkenlik gösterebileceği README'de açıkça belirtiliyor. Apache-2.0 lisanslı, 2022'den beri geliştiriliyor ve 12.500'ü aşkın star toplamış.",
+   "usage_tr": "Folio'nun içerik üretim tarafında somut bir karşılığı var: her yazar profilinin görselleri arasında tutarlı bir yüz ve stil istiyorsan, bunu prompt ile değil yazar başına eğitilmiş küçük bir LoRA ile elde edersin. Eğitimi bir kez yapıp çıkan adaptörü günlük içerik pipeline'ına koyarsan, her gün üretilen post ve story'ler aynı görsel kimliği korur. Ana engel donanım: macOS desteği README'de belirsiz bırakılmış ve LoRA eğitimi pratikte NVIDIA GPU istiyor, yani ofisteki Mac yerine saatlik kiralık bir GPU kullanman gerekir — bu da tek seferlik, ölçülebilir bir maliyet demek. Arayüz panel üzerinden çalıştığı için eğitim işini tarif edip asistanına devretmek mümkün, çıktıyı sen onaylarsın. Küçük başla: tek bir yazar için 20-30 görsellik bir set ile bir LoRA eğit ve üretilen feed'in tutarlılığını gözle karşılaştır. Sonuç yeterliyse diğer profillere aynı tarifi uygularsın.",
+   "matched_project": "Folio",
+   "relevance": 5,
+   "investment_note": null
+  },
+  {
+   "full_name": "zilliztech/claude-context",
+   "inputs_hash": "0e88f72e3d304c914b63b9755468f4a3",
+   "description_tr": "Claude Context, Claude Code ve benzeri kodlama ajanlarına semantik kod arama ekleyen bir MCP eklentisi. Kod tabanını bir vektör veritabanında indeksliyor ve ajan her soruda dizinleri baştan okumak yerine yalnızca ilgili parçaları bağlama alıyor; değişen dosyaları tespit etmek için Merkle ağacı kullanıyor. Node.js 20+ ile çalışıyor, VS Code eklentisi ve npm paketleri olarak dağıtılıyor; Claude Code, Cursor ve Gemini CLI gibi istemcilerle kuruluyor. Çalışması için bir vektör veritabanı (Zilliz Cloud) ve embedding sağlayıcısı (örneğin OpenAI) anahtarı gerekiyor, yani tamamen yerel bir kurulum varsayılan yol değil. MIT lisanslı, TypeScript ile yazılmış, Haziran 2025'te açılmış ve 12.500'ü aşkın star toplamış.",
+   "usage_tr": "Lyricdrop v2 sıfırdan yazılırken kod tabanı hızla büyüyor; admin panel, test paneli ve hizalama servisleri ayrı ayrı dosyalara dağıldıkça Claude Code'un doğru dosyayı bulması zorlaşıyor. Bu eklenti tam o noktada işe yarıyor: ajanın her turda geniş dizin okumaları yapmasını azaltıp ilgili kod parçalarını doğrudan bağlama getiriyor, bu da Max aboneliğindeki bağlam sınırını daha iyi kullanmanı sağlıyor. Kurulum MCP üzerinden olduğu için mevcut Claude Code düzenine tek yapılandırma dosyasıyla giriyor, ofis Mac'inde ve Mac mini'de ayrı ayrı çalışır. Uyarı: varsayılan kurulum bulut vektör veritabanı ve OpenAI embedding anahtarı istiyor; yani küçük ama sürekli bir API maliyeti ve kodunun embedding'lerinin dışarı çıkması anlamına geliyor. Kapalı üçüncü parti servislere mesafeli yaklaşımını düşünürsek, aynı işi yerel tutan MCP arama alternatifleriyle yan yana denemek mantıklı. Ölçütün basit olsun: aynı üç görevde ajanın kaç tur ve ne kadar bağlam harcadığını karşılaştır.",
+   "matched_project": "Lyricdrop",
+   "relevance": 6,
+   "investment_note": null
+  },
+  {
+   "full_name": "bentoml/OpenLLM",
+   "inputs_hash": "b62033eb14f79098586eb6ee9fc33e49",
+   "description_tr": "OpenLLM, açık kaynak veya özel dil modellerini tek komutla OpenAI uyumlu API uç noktası olarak çalıştırmayı sağlayan bir araç; BentoML ekibi tarafından geliştiriliyor. Yerleşik bir sohbet arayüzü, güncel çıkarım arka uçları ve Docker, Kubernetes ile BentoCloud üzerinden kurumsal dağıtım için sadeleştirilmiş bir akış sunuyor. Llama 3.x, Qwen2.5, Mistral, Phi-4, Gemma ve DeepSeek R1 gibi geniş bir model listesi destekleniyor; model kataloğunda her model için gereken GPU belleği açıkça yazılı. Bu gereksinimler 12 GB'tan başlayıp büyük modellerde 80 GB'lık kartların onlarcasına çıkıyor, yani hedef donanım sunucu sınıfı GPU. Apache-2.0 lisanslı, 2023'ten beri geliştiriliyor ve 12.500'ü aşkın star toplamış.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, ücretli API yerine kendi modelini servis etme fikrin olurdu. Fakat bu araç GPU'lu sunucular için tasarlanmış: listelenen en küçük modeller bile 12-24 GB VRAM istiyor ve mevcut DigitalOcean kurulumunda böyle bir kaynak yok. Ofisteki Mac'te yerel model çalıştırmak istediğinde Apple Silicon'a göre yazılmış motorlar hem kurulumu hem maliyeti daha kolay tutar. Lyricdrop'un oyuncu tarafı zaten uzak ve hafif; oraya kendi LLM sunucunu koymak şu an çözmen gereken bir problem değil. İleride kendi modelini barındırma ihtiyacı doğarsa bu depoyu yeniden değerlendirirsin.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "axolotl-ai-cloud/axolotl",
+   "inputs_hash": "3710491f577f9856fc48f2c02adc8350",
+   "description_tr": "Axolotl, büyük dil modellerinin ince ayarı için kullanılan, yapılandırma dosyası odaklı açık kaynak bir çerçeve. LoRA, tam ince ayar, tercih optimizasyonu (DPO ve türevleri) ve pekiştirmeli öğrenme yöntemlerini tek arayüz altında topluyor; FSDP2, DeepEP ile dağıtık MoE eğitimi ve çeşitli hızlandırılmış kernel'ler destekleniyor. 2026 boyunca yeni model aileleri, MoE expert ağırlıklarına doğrudan LoRA uygulama, NVFP4 kuantize eğitim ve uzak eğitim entegrasyonları eklenmiş. Hedef kullanıcı, kendi veri kümesiyle model eğiten ekipler; çalışma ortamı GPU'lu makineler ve kümeler. Apache-2.0 lisanslı, 2023'ten beri aktif geliştiriliyor, düzenli sürüm notları yayımlanıyor ve 12.400'ü aşkın star toplamış.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, kendi veri kümenle özel bir model eğitme fikri olabilir. Ama hiçbir projende böyle bir ihtiyaç yok: Lyricdrop şarkı başına düşük maliyetle hazır modelleri kullanıyor, Folio görsel üretim tarafında, kişisel bilgi tabanı ise sınıflandırma ve aramayla çözülüyor. İnce ayar, hazır modellerin yetmediği kanıtlandıktan sonra bakılacak bir adım; şimdi başlarsan GPU kirası ve veri etiketleme maliyeti karşılığında ölçebileceğin bir kazanç olmaz. Yine de bir gün gerekirse — örneğin Türkçe sesli not sınıflandırmasında hazır model tutarsız kalırsa — bu çerçeve standart seçeneklerden biri. Şimdilik bilinen bir araç olarak not etmen yeterli.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "Embedding/Chinese-Word-Vectors",
+   "inputs_hash": "8e566f94747fe933c76304075c6440b6",
+   "description_tr": "Bu depo, farklı temsil biçimleri (yoğun ve seyrek), bağlam özellikleri (kelime, ngram, karakter) ve derlemlerle eğitilmiş 100'den fazla Çince kelime vektörü kümesini yayımlıyor. Kullanıcılar farklı özelliklere sahip önceden eğitilmiş vektörleri indirip alt görevlerde kullanabiliyor. Depo ayrıca Çince biçimbilimsel ve anlamsal ilişkiler üzerine kurulu CA8 analoji veri kümesini ve vektör kalitesini ölçmek için bir değerlendirme aracı içeriyor. İçerik 2018 tarihli ACL makalesine dayanıyor ve bugünün cümle düzeyindeki embedding modellerinden önceki kelime vektörü dönemine ait. Apache-2.0 lisanslı, 2018'de açılmış ve 12.200'ü aşkın star toplamış.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam semantik arama ihtiyacın olurdu, ama bu kaynak Çince ve kelime düzeyinde vektörler sunuyor. Kişisel bilgi tabanı ya da Lyricdrop tarafında ihtiyacın olan şey Türkçe ve İngilizce cümleleri anlayan güncel embedding modelleri; kelime vektörleri o işte belirgin biçimde geride kalıyor. Çince bir ürün hattı da planlarında yok. Akademik bir referans ve tarihsel bir kaynak olarak değerli, araç olarak değil. Denemeye vakit ayırmanı gerektirecek bir yanı yok.",
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "FlagOpen/FlagEmbedding",
+   "inputs_hash": "6c4e5621d571614a0e327ffd06914f26",
+   "description_tr": "FlagEmbedding, arama ve RAG uygulamaları için BGE model ailesini ve bunları eğitip değerlendirme araçlarını toplayan bir depo. İçinde yoğun ve seyrek geri getirmeyi birlikte yapan çok dilli embedding modelleri, yeniden sıralama (reranker) modelleri ve bağlam içi öğrenme yeteneği taşıyan varyantlar bulunuyor. BGE-VL ile metin-görsel arası çoklu kip arama da destekleniyor; modellerin bir bölümü MIT lisansıyla akademik ve ticari kullanıma açık olarak yayımlanmış. Depo modellerin eğitimi, ince ayarı ve değerlendirmesi için betikler de veriyor, yani yalnızca ağırlık dağıtımı değil bir araç seti. MIT lisanslı, 2023'ten beri geliştiriliyor ve 12.100'ü aşkın star toplamış.",
+   "usage_tr": "Kişisel bilgi tabanı için bir RAG yığını kurduğunda, altta hangi embedding modelinin çalışacağı senin vereceğin bir karar; BGE ailesi burada varsayılan adaylardan biri. Türkçe ve İngilizce notların bir arada olacağı için çok dilli varyantı seçmek, arama kalitesini doğrudan etkiler. Modeller ofisteki M4 Pro Mac'te yerelde çalıştırılabilir boyutta, yani API maliyeti getirmez ve notların dışarı çıkmaz. Reranker kısmı ikinci bir kazanç: ilk aramadan gelen 50 sonucu yeniden sıralayıp cevabın isabetini ucuza yükseltir. Uyarı: bu bir ürün değil, bir bileşen — tek başına kurduğunda indeksleme, saklama ve sorgu katmanını yine kendin yazman gerekir, o yüzden txtai veya LEANN gibi bir çerçevenin içinde model seçimi olarak kullanman daha mantıklı. Karar vermek için küçük bir test yap: kendi notlarından 100 soruluk bir set çıkarıp iki üç modeli aynı sorularla karşılaştır.",
+   "matched_project": "Kişisel bilgi tabanı",
+   "relevance": 5,
+   "investment_note": null
+  },
+  {
+   "full_name": "cactus-compute/needle",
+   "inputs_hash": "d12fe81689e5ce45515c15ae6d0a9d5a",
+   "description_tr": "Needle, telefon, giyilebilir cihaz, robot, akıllı ev ve mikrodenetleyici gibi küçük cihazlarda çalışmak üzere eğitilmiş bir temel model; tüm model 8-29 MB'lık tek bir ikili dosya. Genel sohbet yeteneğinden feragat edip üç işe odaklanıyor: araç çağırma, yapılandırılmış çıkarım ve metin embedding'i. Şemalardan derlenen bayt düzeyinde bir gramer her token'ı kısıtladığı için çıktının ayrıştırılabilir olması garanti ediliyor, her yanıt kalibre edilmiş bir güven skoruyla geliyor ve uygun araç yoksa tahmin yerine boş liste dönüyor. Mimari, FFN yerine Monarch Hadamard MLP, nedensel evrişim uçlu GQA dikkat ve gather ile okunan engram n-gram belleği üzerine kurulu; 2 ile 20 katman arası her derinlik dağıtılabilir bir model olacak şekilde eğitilmiş. Python paketi olarak kuruluyor, CPU, CUDA ve Metal üzerinde çalışabiliyor; Apache-2.0 lisanslı, Şubat 2026'da açılmış ve 12.100'ü aşkın star toplamış.",
+   "usage_tr": "Kişisel bilgi tabanı uygulamasında sesli notun kategorisini çıkarma adımı için doğrudan aday: transkripti verip önceden tanımladığın şemaya göre tipli alanlar (konu, proje, tarih, aksiyon) alırsın ve gramer kısıtı sayesinde çıktı her zaman ayrıştırılır. Model cihazda çalıştığı için bu adım Supabase'e gitmeden telefonda biter — form doldurmama isteğini API maliyeti eklemeden karşılar. Metal desteği olduğundan aynı modeli ofisteki Mac'te toplu geçmiş notları yeniden işlemek için de çalıştırabilirsin. Güven skoru pratik bir kapı sağlıyor: düşük güvenli notları \"sınıflandırılamadı\" kutusuna düşürüp geri kalanını otomatik geçirirsin. Uyarı: Expo/React Native tarafında entegrasyonun ne kadar pürüzsüz olduğunu paketin kendisi söylemiyor, bunu küçük bir denemede doğrulaman gerekir. Ayrıca bu bir sohbet modeli değil; özet ve rapor yazımı için yine daha büyük bir modele ihtiyacın olacak.",
+   "matched_project": "Kişisel bilgi tabanı",
+   "relevance": 5,
+   "investment_note": "Cihaz üstü temel model tarafında dar ama net bir konumlandırması, ölçülebilir kıyas sonuçları ve arkasında ticari bir şirketi olan yeni bir ekip; erken aşama AI altyapısı ilgi alanına uyan bir izleme adayı."
+  },
+  {
+   "full_name": "Tongyi-MAI/Z-Image",
+   "inputs_hash": "63d4e56802c72a2693e19159be860992",
+   "description_tr": "Z-Image, tek akışlı difüzyon transformer mimarisine dayanan 6B parametreli bir görüntü üretim modeli ailesi. Turbo varyantı damıtılmış bir sürüm; sekiz adımda (NFE) üretim yapıyor, kurumsal GPU'larda saniye altı gecikme veriyor ve 16 GB VRAM'li tüketici kartlarına sığdığı belirtiliyor. Fotogerçekçi üretim, İngilizce ve Çince metin yazımı ile talimatlara uyum öne çıkan tarafları; temel model ise ince ayar ve alt uygulamalar için çeşitlilik, estetik ve kontrol edilebilirlik hedefliyor, negatif prompt desteği var. Ağırlıklar Hugging Face ve ModelScope üzerinde yayımlanmış, denemek için hazır demo alanları mevcut. Apache-2.0 lisanslı, Kasım 2025'te açılmış ve 12.000'i aşkın star toplamış.",
+   "usage_tr": "Folio'nun günlük içerik pipeline'ında üretim motoru olarak değerlendirebilirsin: her yazar profilinin post ve story görselleri her gün yeniden üretileceği için kare başına maliyet ve gecikme doğrudan işletme maliyetin oluyor, Turbo'nun sekiz adımlık üretimi burada fark yaratır. Apache-2.0 lisansı, üretilen içeriği kendi uygulamanda kullanma konusunda rahat bir zemin sağlıyor ve ağırlıkları indirip barındırdığın için görsel servisine abonelik ödemezsin. Uyarı: belirtilen donanım 16 GB VRAM'li GPU'lar; M4 Pro Mac'te çalışıp çalışmadığı depoda yazmıyor, dolayısıyla pratikte gece çalışan bir kiralık GPU üzerinde toplu üretim yapıp çıktıyı DigitalOcean'a yazmak daha olası bir kurulum. Üretimi gece toplu çalıştırıp sabah beslemeyi hazır bulmak, uygulamayı kullanırken bekleme olmaması demek. kohya_ss ile eğitilmiş bir LoRA'yı bu modelin üstüne koyarsan yazar başına görsel tutarlılığı da sabitleyebilirsin. İlk testin dar olsun: tek bir yazar için 20 görsel üretip yüz ve stil tutarlılığına bak.",
+   "matched_project": "Folio",
+   "relevance": 6,
+   "investment_note": null
+  },
+  {
+   "full_name": "LMCache/LMCache",
+   "inputs_hash": "d2ddbd56a639a28c1b103e32255a77ec",
+   "description_tr": "LMCache, LLM çıkarımında KV cache'i yöneten bir ara katman; cache'i geçici bir durum olmaktan çıkarıp kalıcı olarak saklanan, birden çok servis motoru arasında yeniden kullanılan bir varlığa dönüştürüyor. Amacı ilk token süresini (TTFT) düşürmek ve throughput'u artırmak; kazanç özellikle uzun bağlamlı ajan akışlarında, çok turlu sohbetlerde ve RAG yüklerinde belirginleşiyor. Bağımsız bir daemon süreci olarak çalıştığı için çıkarım motoru çökse bile cache kayboluyor değil; KV cache'i GPU belleğinden CPU belleğine, yerel diske ve uzak depolara uzanan katmanlı bir hiyerarşiye taşıyor. Sağlayıcıdan bağımsız olmayı hedefliyor ve vLLM başta olmak üzere yaygın servis motorlarıyla, CUDA ve ROCm donanımlarıyla, NVIDIA Dynamo gibi altyapılarla entegre çalışıyor. Apache-2.0 lisanslı, 11 binin üzerinde yıldızı, PyPI dağıtımı, haftalık commit akışı ve PyTorch Foundation çatısı altında bir topluluğu var.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam yerel model altyapısına duyduğun ilgi, ama LMCache'in çözdüğü problem tek kullanıcılı bir Mac'te değil, aynı anda çok sayıda uzun bağlamlı isteği karşılayan GPU filolarında ortaya çıkıyor. Lyricdrop ve Folio tarafında model çağrıları toplu ve kısa; burada yeniden kullanılacak bir prefill birikmiyor, dolayısıyla kurulum maliyetinin karşılığı yok. Mac'te anlamlı bir kazanç vermez, kendi uygulamana gömülecek bir bileşen de değil; sunucu tarafında bir operasyon katmanı. Yine de yatırımcı şapkasıyla bakılacak bir örnek olduğu için izleme listesine alınabilir.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": "Vendor-neutral bir çıkarım altyapısı katmanı olarak vLLM ekosisteminde fiilen standart konumuna yerleşmesi, PyTorch Foundation'a katılması ve arkasında ticari bir şirket oluşması, çıkarım maliyeti tarafına bakan erken aşama tezleri için izlenmeye değer bir örnek."
+  }
+ ]
 }

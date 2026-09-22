@@ -1,175 +1,175 @@
 {
-  "repos": [
-    {
-      "full_name": "Visualize-ML/Linear-Algebra-Made-Easy---Learn-with-Python-and-Visualization",
-      "inputs_hash": "20b5188663da9fd75e465b90e629e8e5",
-      "description_tr": "Visualize-ML serisinin doğrusal cebir kitabına ait Çince eğitim deposu; iki cilt ve 66 konu başlığı altında konuyu Python kodu ve görselleştirmelerle anlatıyor. İçerik Jupyter Notebook dosyaları halinde dağıtılıyor, konu etiketleri linear-algebra, machine-learning ve data-visualization olarak verilmiş. Depoda README yok ve bir lisans dosyası tanımlanmamış, bu yüzden kapsam ve kullanım koşulları depodan doğrulanamıyor. Anlatım dili Çince; bağlantılı kaynak olarak bir YouTube kanalı gösteriliyor. 3.400'ü aşkın yıldızla seri içinde geniş bir okuyucu kitlesine ulaşmış, ancak kod deposu olmaktan çok bir kitap eki niteliğinde.",
-      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, hobi olarak sürdürdüğün öğrenme rutini olabilir. Ancak orada tarif ettiğin ihtiyaç Türkçe kaynaklardan psikoloji, sosyoloji ve felsefe öğrenmek; burada anlatılan konu ve anlatım dili bunun dışında kalıyor. Kod tarafında da kullanabileceğin bir kütüphane ya da araç çıkmıyor, yalnızca ders defterleri var. Lisans tanımlı olmadığı için içeriği kendi materyaline taşımak da net değil.",
-      "matched_project": null,
-      "relevance": 1,
-      "investment_note": null
-    },
-    {
-      "full_name": "waymo-research/waymo-open-dataset",
-      "inputs_hash": "567e60d65a03958d1ee5ecbb63274571",
-      "description_tr": "Waymo'nun otonom sürüş araştırmaları için kamuya açtığı veri kümeleri ve bunlara eşlik eden değerlendirme kodunun deposu. Üç veri kümesi var: yüksek çözünürlüklü sensör verisi ve etiketleri içeren Perception, 103.354 sahne için nesne yörüngeleri ve 3B harita içeren Motion, kamera verisi ve üst düzey sürüş komutları içeren End-To-End Driving. Kod tarafı veri formatı tanımlarını, metrik hesaplamalarını ve TensorFlow yardımcı fonksiyonlarını kapsıyor. Lisans karışık: kodun çoğu Apache 2.0, wdl_limited klasörü ayrı bir BSD ve sınırlı patent lisansına tabi, veri kümesinin kendisi ise ticari olmayan kullanımla sınırlı ayrı bir sözleşmeyle veriliyor. 2019'dan beri sürdürülüyor ve 3.400'ü aşkın yıldızı var.",
-      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, frontier teknoloji tarafında izlediğin yatırım temaları olabilir. Bu bir araç değil, akademik bir veri kümesi ve metrik kodu; kullanmak için algı/hareket tahmini modeli eğiten bir ekip gerekir. Veri lisansı ticari kullanımı kapattığı için bir ürüne taşınması da mümkün değil. Pist ve sürüş tarafındaki kişisel ilgin ile bu deponun konusu isim benzerliğinden ibaret, aynı şey değil.",
-      "matched_project": null,
-      "relevance": 1,
-      "investment_note": null
-    },
-    {
-      "full_name": "Visualize-ML/Book7_Visualizations-for-Machine-Learning",
-      "inputs_hash": "77a64755abd3b0dedac874cc9735c259",
-      "description_tr": "Visualize-ML (鸢尾花书) serisinin yedinci kitabına ait Çince makine öğrenmesi materyali; konuları temel aritmetikten başlayıp makine öğrenmesine kadar Python ve görselleştirmelerle işliyor. Materyal Jupyter Notebook dosyaları halinde; etiketler linear-algebra, matrix, bayesian ve machine-learning-algorithms. README bir tanıtım metni içermiyor, yalnızca serinin diğer kitapları için indirim bağlantıları ve hata bildiren okuyuculara kitap hediye edildiğine dair bir not var. Depoda lisans dosyası tanımlı değil. 3.300'ü aşkın yıldız toplamış, 2022'den beri açık bir eğitim kaynağı olarak duruyor.",
-      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam genel bir makine öğrenmesi referansı olarak okumak olabilir. Projelerinde kullandığın modeller hazır servisler ve açık kaynak modeller; burada anlatılan algoritmaları kendin kurman gereken bir adım yok. İçerik Çince olduğu için asistanına ya da bir ajana devredilebilir bir kaynak da değil. Kod olarak alıp bir yere gömebileceğin bir bileşen içermiyor.",
-      "matched_project": null,
-      "relevance": 1,
-      "investment_note": null
-    },
-    {
-      "full_name": "fuxicodex/Fuxi",
-      "inputs_hash": "967264e0883056691b7cce9e4b3cfa2a",
-      "description_tr": "FuXi, terminalde çalışan ve Go ile yazılmış bir AI kodlama ajanı; kod okuyup dosya düzenliyor, komut çalıştırıyor ve MCP istemcisi olarak dış araçları sürüyor. Tek bir statik binary olarak dağıtılıyor, çalışma zamanı bağımlılığı yok; macOS, Linux ve Windows için tek satırlık kurulum betikleri var. Birden fazla LLM sağlayıcısı arasında maliyet farkındalıklı yönlendirme ve otomatik devretme yapıyor; kendi API anahtarını getirebiliyor ya da FuXi'nin yönettiği modelleri kullanabiliyorsun, ancak her iki durumda da hesap açmak gerekiyor. Oturumlar, checkpoint'ler, bellek ve denetim kayıtları yerel ~/.fuxi dizininde tutuluyor; lisans açık kaynak değil, proprietary olarak işaretlenmiş. Ağustos 2026'da açılan depo 3.300'ü aşkın yıldıza ulaşmış, benchmark raporu ve ayrıntılı gizlilik dokümantasyonu var.",
-      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam Claude Code ve OpenCode ile kurduğun terminal ajanı düzeni. Oraya üçüncü bir ajan eklemenin bedeli net: FuXi hesap açmayı ve model tarafında ya kendi API anahtarını ya da FuXi'nin servisini kullanmayı gerektiriyor, yani Max aboneliğiyle kapattığın maliyeti geri getiriyor. Lisansı kapalı olduğu için fork'layıp kendi istemcisini yazma alışkanlığına da uygun değil. Mac'te tek binary olarak sorunsuz çalışması ve MCP desteği tek artısı, ama bu iki özellik zaten mevcut kurulumunda var.",
-      "matched_project": null,
-      "relevance": 2,
-      "investment_note": null
-    },
-    {
-      "full_name": "TestSprite/testsprite-cli",
-      "inputs_hash": "864c1e8dd712442dc6f51191149e8ab1",
-      "description_tr": "TestSprite, kodlama ajanlarının yazdığı işi canlı uygulama üzerinde doğrulamak için kurulmuş bir test platformunun resmî CLI'ı. Uygulamayı gerçek bir kullanıcı gibi açıp kullanıyor, kırılan davranışı tek bir tutarlı paket halinde ajana geri veriyor; böylece ajan kendi çıktısını panoya bakmadan düzeltebiliyor. `testsprite setup` komutu API anahtarını doğruluyor ve doğrulama döngüsü skill'ini projede kullanılan ajanlara (claude, cursor, codex, cline, windsurf, copilot ve diğerleri) kuruyor; CI için anahtarı ortam değişkeninden alan etkileşimsiz bir mod da var. Node.js 20.19+ gerektiriyor, Apache-2.0 lisanslı ve npm üzerinden dağıtılıyor. Testler bulutta, mock'lara değil canlı ürüne karşı çalışıyor; yani CLI açık kaynak olsa da arkasındaki servis ücretli ve hesaba bağlı. Haziran 2026'da açılmış, 3.300'ü aşkın yıldız.",
-      "usage_tr": "Lyricdrop v2'de şu an elinde duran tarayıcı playtest gate'i tam olarak bu aracın hedeflediği iş. Admin panelinin şarkı onay akışını ve oyun ekranını TestSprite'a sürdürüp kırılanı doğrudan Claude Code'a geri besleyebilir, 20-30 şarkılık test setinde her değişiklikten sonra aynı turu elle tekrarlamaktan kurtulursun. Kurulumu bir kez yapıp CLI'ı asistanına ya da bir CI adımına devretmek de mümkün, çünkü anahtarı ortam değişkeninden alan etkileşimsiz bir modu var. İki uyarı: testler bulutta canlı ürüne karşı çalışıyor, yani panelin dışarıdan erişilebilir olması ve verinin makineni terk etmesi gerekiyor — yerelde tutma tercihinin tersi. İkincisi, anahtar başına ücretlendirilen bir servis, yani Max aboneliğinin dışında ayrı bir gider kalemi; ayrıca web yüzeyini kapsıyor, Expo tarafındaki mobil istemciyi değil.",
-      "matched_project": "Lyricdrop",
-      "relevance": 7,
-      "investment_note": "Ajanların ürettiği kodu doğrulama katmanı, B2B yazılım tarafında hızla ayrı bir kategori haline geliyor; ticarileşmiş bir örnek olarak deal flow'da izlemeye değer."
-    },
-    {
-      "full_name": "microsoft/tgrep",
-      "inputs_hash": "c97f4e771be9d6814005c384f089a64b",
-      "description_tr": "tgrep, büyük kod tabanlarında regex aramasını hızlandırmak için trigram indeksi kullanan, istemci/sunucu mimarili bir grep aracı. Bir kez indeks kurulup sunucu başlatıldıktan sonra aramalar yalnızca eşleşme ihtimali olan dosyalara dokunuyor; disk üzerindeki mmap'lenmiş indeks, bellekteki canlı katman ve dosya izleyici birlikte çalışıyor. Rust ile yazılmış, MIT lisanslı ve GitHub Copilot CLI'ın arama katmanı olarak entegre edilmiş; ayrıca Codex ve benzeri ajanlar için MCP arama araçları kuran bir betik var. Yayınlanan ölçümlerde 388 bin dosyalık gecko-dev'de ripgrep'e göre macOS'ta 52 kata varan hızlanma raporlanmış, küçük depolarda fark kapanıyor. Nisan 2026'da açılmış, 3.300'ü aşkın yıldız.",
-      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam ofis Mac'indeki Claude Code kurulumun. Aracın kazancı ölçümlerde 100 bin dosyayı aşan monorepo'larda ortaya çıkıyor; Expo uygulaman, admin panelin ve pipeline depoların bu ölçeğin çok altında kaldığı için mevcut arama zaten anlık dönüyor. Buna karşılık maliyeti sıfır sayılmaz: sürekli açık bir sunucu, indeks dosyası ve bakımı gerektiriyor. MIT lisanslı ve tamamen yerel çalıştığı için API maliyeti yok; bir depon gerçekten büyürse geri dönüp bakmak ucuz bir deneme olur.",
-      "matched_project": null,
-      "relevance": 2,
-      "investment_note": null
-    },
-    {
-      "full_name": "yanliudesign/mono-color-skill",
-      "inputs_hash": "0615a674a89583062bff8ab08e28c1ba",
-      "description_tr": "Tek mürekkepli (ve kontrollü iki mürekkepli) editoryal baskı görselleri üreten bir agent skill; poster, zine, portre, ambalaj ve görsel saha notu gibi formatlar için tasarlanmış. Sıcak kâğıt zemin, halftone fotoğraf, geniş negatif alan ve ölçülü tipografiden oluşan bir görsel sistemi koruyor; referansı kopyalamak yerine her kompozisyonu konuya göre yeniden kuruyor. SKILL.md formatında paketlenmiş, Claude Code ile kullanılmak üzere hazırlanmış ve MIT lisanslı; depoda sürüm etiketi, değişiklik günlüğü ve skill'i doğrulayan bir CI iş akışı var. README çok sayıda üretilmiş örnek ve görsel sistemin dayandığı on iki görsellik referans setini listeliyor. Ağustos 2026'da açılmış, 3.200'ü aşkın yıldız.",
-      "usage_tr": "Folio'nun günlük içerik pipeline'ında işine yarayabilir: her yazar profilinin post ve story görselleri için tutarlı, tanınabilir bir görsel kimlik gerekiyor ve bu skill jenerik AI görseli yerine sabit bir baskı estetiği dayatıyor. Claude Code'a skill olarak kurulduğu için ofis Mac'indeki mevcut akışına giriyor, ayrı bir servis ya da hesap istemiyor. İkinci bir bağlam Arslan Holding'in AI araçlarıyla üretilen marka görselleri; sunum ve site için aynı tek mürekkep dilini tekrar kullanabilirsin. İki uyarı: skill bir stil ve yönerge katmanı, görseli üreten modelin maliyeti yine ayrı kalıyor; ve örnekler poster/ambalaj oranlarında, dikey feed postuna oturması için formatı sabitleyip birkaç tur denemen gerekir.",
-      "matched_project": "Folio",
-      "relevance": 5,
-      "investment_note": null
-    },
-    {
-      "full_name": "ccch1mneyyy/dsh-TUI",
-      "inputs_hash": "8d634b1e62f8f6c474a34af1fca55c42",
-      "description_tr": "DeepSeek Harness için yazılmış, eklenti olarak takılan bir terminal arayüzü; çekirdeğe dokunmadan kuruluyor ve kaldırıldığında geride yama bırakmıyor. Akan Markdown, araç kartları, `/` ve `@` tamamlama, oturum yöneticisi, çift Esc ile geri alma, bağlam çubuğu ve TPS göstergesi gibi bir çalışma yüzeyi sunuyor; Kitty/Sixel ile görsel önizleme ve mermaid diyagramlarını Unicode olarak çizme gibi ayrıntıları var. TypeScript ve Ink (React) ile yazılmış, MIT lisanslı, npm üzerinden tek komutla kuruluyor ve public beta olarak etiketlenmiş. Uzun oturumlar için olay tabanlı projeksiyon ve sanallaştırma kullandığını belirtiyor. Ağustos 2026'da açılmış, 3.100'ü aşkın yıldız; dokümantasyon Çince ve İngilizce.",
-      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam terminal ajanı arayüzlerine olan ilgin ve OpenCode için kendi istemcini yazma planın. Araç yalnızca DeepSeek Harness üzerinde çalışıyor, yani kullanman için kullanmadığın bir harness'a geçmen gerekir. Değeri senin için bir kaynak okuması olabilir: çekirdeği değiştirmeden eklenti olarak monte edilen bir TUI'nin nasıl kurulduğunu gösteriyor. Onun dışında Claude Code ve OpenCode ile kurduğun düzene ekleyeceği bir şey yok.",
-      "matched_project": null,
-      "relevance": 2,
-      "investment_note": null
-    },
-    {
-      "full_name": "MeteorNOX/DeepSeek-Balance-Whale-Widget",
-      "inputs_hash": "e0af495aad6de9ea3fef3a404fd48d60",
-      "description_tr": "DeepSeek Harness web arayüzünün köşesine yerleşen, API bakiyesini ve harcamayı gösteren bir eklenti. Bakiyeyi altmış saniyede bir yeniliyor, bakiye düşüşlerinden günlük harcamayı çıkarıyor, her konuşma turunun token kullanımından maliyet hesaplayıp baloncukla gösteriyor; bakiye uyarısı ve günlük bütçe eşiği tanımlanabiliyor. Baloncuk içeriği modüler biçimde özelleştirilebiliyor, sürükle-bırak, ses efekti ve özel karakter görseli gibi bir dizi arayüz ayrıntısı içeriyor. Yerleşik DeepSeek desteğinin yanında OpenRouter, Moonshot, GLM gibi otuzdan fazla sağlayıcı için bakiye/kota şablonu sunuyor. JavaScript ile yazılmış, MIT lisanslı, standart DSH bundle eklentisi olarak kuruluyor ve dokümantasyonu Çince; Ağustos 2026'da açılmış, 2.900'ü aşkın yıldız.",
-      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam API harcamasını takip etme ihtiyacı olurdu. Ama senin kurulumun tam tersi yönde: maliyet nedeniyle API anahtarı yerine Max aboneliğini kullanıyorsun, yani izlenecek bir bakiye yok. Eklenti ayrıca yalnızca DeepSeek Harness arayüzünde çalışıyor, Claude Code ya da OpenCode tarafında karşılığı yok. Lyricdrop'un şarkı başına maliyet takibi gibi gerçek bir ihtiyacın var, ama onun yeri bu widget değil, kendi pipeline'ının ölçüm adımı.",
-      "matched_project": null,
-      "relevance": 1,
-      "investment_note": null
-    },
-    {
-      "full_name": "oritera/Cairn",
-      "inputs_hash": "893674d7ef8cb2ff5ae37020f67fa4f2",
-      "description_tr": "Cairn, bilinen bir başlangıç noktasından tanımlı bir hedefe giden yolu bilinmeyen bir durum uzayında arayan, genel amaçlı olarak tasarlanmış bir problem çözme motoru; ilk doğrulandığı alan otonom sızma testi. Mimari bir kara tahta (blackboard) üzerine kurulu: doğrulanmış bulgular Fact, denenecek yönler Intent, insanın araya soktuğu yargı Hint olarak grafiğe yazılıyor ve ajanlar yalnızca bu ortak tahta üzerinden koordine oluyor. İşçi ajanların sabit rolü yok; görevler önceden tanımlı tarifler yerine grafiğin o anki durumundan üretiliyor ve bir OODA döngüsüyle yürütülüyor. Python ile yazılmış, AGPL-3.0 lisanslı, dağıtıcı konteyner yönetimi içeriyor ve bir hackathon bağlamından çıkmış. Nisan 2026'da açılmış, 2.900'ü aşkın yıldız.",
-      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam çok ajanlı orkestrasyon mimarilerine olan ilgin. Aracın kendisi sızma testi için kurulmuş ve senin yüzeylerine (Expo uygulamaları, Supabase, panel) böyle bir otonom saldırgan salmak istemezsin. Buradan alınabilecek şey araç değil fikir: ajanların birbiriyle konuşmak yerine ortak bir bulgu grafiği üzerinden ilerlemesi, tarif ettiğin orkestratör ajan için okunmaya değer bir desen. AGPL lisansı da kendi uygulamana gömme seçeneğini pratikte kapatıyor.",
-      "matched_project": null,
-      "relevance": 2,
-      "investment_note": "Otonom güvenlik testi, açık kaynak bir motor etrafında ticarileşen kategorilerden biri; ekip ve yaklaşım olarak izleme listesine alınabilir, ancak coğrafi odağın dışında."
-    },
-    {
-      "full_name": "FreedomIntelligence/Awesome-AI4Med",
-      "inputs_hash": "0ce856a9e1a3cd5f930494828dce703b",
-      "description_tr": "Tıp alanındaki yapay zekâ kaynaklarını derleyen bir liste deposu: tıbbi LLM'ler, çok modlu tıbbi modeller, veri kümeleri ve değerlendirme setleri tablolar halinde toplanmış. Her satır makale, model ağırlığı, veri ve kod bağlantılarını birlikte veriyor; HuatuoGPT, Apollo ve MMedLM gibi model aileleri listenin omurgasını oluşturuyor. Daha önce Medical_NLP adıyla yürütülen depo yeniden adlandırılmış, eski içerik ayrı bir dalda tutuluyor. İçerik makale ve açık kaynak proje taramasından otomatik çıkarılan güncel model ve veri kümeleriyle besleniyor. Kod ya da çalıştırılabilir bir bileşen yok ve lisans tanımlı değil; 2019'dan beri sürdürülüyor, 2.800'ü aşkın yıldız.",
-      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam sağlık ve giyilebilir cihaz tarafındaki yatırım tezin. Ancak o tezin ihtiyacı biyosinyal ve EEG işleme tarafında; bu liste klinik metin ve tıbbi görüntü modellerini derliyor, aradaki mesafe büyük. Kanarya gibi fizyolojik öz-izleme tarafında da kullanabileceğin bir model ya da kütüphane çıkmıyor, yalnızca akademik bağlantılar var. Alanın haritasını çıkarmak istersen okunacak bir kaynak, kurulacak bir araç değil.",
-      "matched_project": null,
-      "relevance": 1,
-      "investment_note": null
-    },
-    {
-      "full_name": "rlaope/oh-my-hermes",
-      "inputs_hash": "7ba5e4c345cec961ec9822d73c25cf8f",
-      "description_tr": "oh-my-hermes, NousResearch'ün Hermes Agent'ı üzerine kurulan bir işletim katmanı; planlama, araştırma, üretim, kodlama devri ve operasyon akışlarını paketler halinde ekliyor. Hermes'i değiştirmek yerine üstüne çıkıyor: gelen isteği bir yeteneğe eşliyor, hangi iş akışının ve hangi kanıt kapılarının geçerli olduğunu seçiyor, native Hermes skill'lerini bu denetimli yolun içinde çalıştırıyor. Uzun vadeli proje hafızası ve ne yapıldığına dair açık bir kayıt tutmayı temel özellik olarak sunuyor. Python ile yazılmış, MIT lisanslı, dört dilde dokümantasyonu ve ayrı bir tanıtım sitesi var. Haziran 2026'da açılmış, 2.800'ü aşkın yıldız.",
-      "usage_tr": "Hermes Agent'ı öğrenme planın varsa başlangıç noktası olarak buraya bakabilirsin: tarif ettiğin \"tüm projelerini bilen, aralarında köprü kuran\" orkestratör ajanın eksik parçası tam da bu katmanın iddia ettiği şey — kalıcı proje hafızası ve yapılan işin dürüst kaydı. Pratik denemesi, asistanınla yürüttüğün araştırma ve takip işlerinden birini (tedarikçi karşılaştırma gibi) kanıt kapıları tanımlı bir iş akışı olarak kurup Trello'ya düşen çıktıyla karşılaştırmak olur. Ofis Mac'inde kurulup yerelde çalışıyor ve MIT lisanslı, yani deneme maliyeti düşük. Uyarı: Hermes'in kendi model kurulumu üzerinden çalıştığı için token maliyeti Max aboneliğinin dışında kalır ve bu katman Claude Code'un yerini almaz, yanına ikinci bir sistem koyar. Önce dar bir iş akışıyla ölç, sonra genişlet.",
-      "matched_project": "Orkestratör ajan",
-      "relevance": 6,
-      "investment_note": null
-    },
-    {
-      "full_name": "logpai/loghub",
-      "inputs_hash": "b6e5d626b3995bafe0d2ecd89e44d792",
-      "description_tr": "Loghub, yapay zekâ destekli log analizi araştırmaları için toplanmış büyük bir sistem log veri kümesi koleksiyonu. HDFS, Hadoop, Spark, Zookeeper, OpenStack gibi dağıtık sistemlerden, BGL ve Thunderbird gibi süper bilgisayarlardan ve Windows olay günlüklerinden yüz milyonlarca satırlık ham kayıt içeriyor; bir kısmı anomali etiketli. Loglar mümkün olduğunca temizlenmeden, olduğu gibi yayınlanıyor ve Zenodo üzerinden indiriliyor. Depoda kod yok, veri kümelerinin dizini, açıklamaları ve bağlantıları var; kullanım koşulları araştırma ve akademik çalışmayla sınırlanmış. 2016'dan beri sürdürülüyor, 2.800'ü aşkın yıldız ve 450'den fazla kurum tarafından indirilmiş.",
-      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam kendi pipeline'larının ürettiği log ve hata kayıtlarını izleme ihtiyacı olabilir. Ama burada sunulan şey bir izleme aracı değil, başka sistemlerin geçmiş logları; anomali tespiti modeli eğitmeyi düşünmüyorsan karşılığı yok. Supabase, DigitalOcean ve n8n tarafındaki operasyonel görünürlük ihtiyacın bu veri kümeleriyle çözülmez. Lisans da araştırma kullanımıyla sınırlı.",
-      "matched_project": null,
-      "relevance": 1,
-      "investment_note": null
-    },
-    {
-      "full_name": "Nanako0129/sepia",
-      "inputs_hash": "ccc4acf20a956da22153c40f43bd34c1",
-      "description_tr": "sepia, AI tarafından yazılmış metinlerin ele veren katmanlarını onarmayı hedefleyen taşınabilir bir agent skill. Kurgu metinlerde önce anlatı mimarisini düzeltiyor (temanın anlatıcı tarafından açıklanması, tek izli ve fazla düzenli olay örgüsü, duyguların yalnızca bedensel duyumla verilmesi gibi ölçülmüş örüntüler), profesyonel metinlerde ise sürüm notu, PR yanıtı, postmortem gibi her türe ayrı kural seti uyguluyor. Dört işlem sunuyor: write, review (yalnızca teşhis), refactor (asgari düzenleme) ve recreate. Yaklaşımını yayımlanmış bir çalışmanın bulgularına dayandırıyor ve model ailelerine göre ayrı parmak izleri tutuyor; cümle ritmi kalibrasyonu İngilizce ve Çince için yapılmış. Agent Skills standardına uygun tek bir SKILL.md olarak paketlenmiş, MIT lisanslı, Claude Code ve Codex için native eklentisi var; Ağustos 2026'da açılmış, 2.700'ü aşkın yıldız.",
-      "usage_tr": "Folio'nun günlük içerik pipeline'ında değerlendirebilirsin: her gün üretilen post ve story metinleri yazarın sesini taşımazsa ve AI kokarsa uygulamanın Instagram'ın yerini alma iddiası ilk haftada biter. Üretim adımından sonra review modunu teşhis kapısı olarak koyup yalnızca eşiği geçemeyen metinleri refactor'a göndermek, tüm metinleri yeniden yazdırmaktan ucuz olur. Claude Code'a skill olarak kurulduğu için ofis Mac'inde yerelde çalışır ve Max aboneliğinin dışında ayrı bir servis maliyeti getirmez. İkinci bir bağlam stand-up yazımı: metin taslaklarını aynı teşhis rubriğinden geçirebilirsin. Uyarı: kurallar İngilizce ve Çince için kalibre edilmiş, Türkçe çıktıda aynı ölçüde sınanmamış; ayrıca kurgu katmanının önerileri Folio'nun kısa post metinlerine birebir oturmaz.",
-      "matched_project": "Folio",
-      "relevance": 4,
-      "investment_note": null
-    },
-    {
-      "full_name": "Visualize-ML/Book6_First-Course-in-Data-Science",
-      "inputs_hash": "1bd8f834071c759dd76d9dbd4c6e774d",
-      "description_tr": "Visualize-ML serisinin altıncı kitabına ait Çince veri bilimi materyali; veri okuryazarlığı, öznitelik mühendisliği ve görselleştirme konularını Python örnekleriyle işliyor. İçerik Jupyter Notebook dosyaları halinde dağıtılıyor ve serinin diğer ciltleriyle aynı anlatım çizgisini izliyor. README bir tanıtım içermiyor; yalnızca serinin diğer kitapları için indirim bağlantıları ve hata bildirenlere kitap gönderildiğine dair bir not var. Depoda lisans dosyası tanımlı değil, bu yüzden içeriğin yeniden kullanım koşulları belirsiz. 2022'den beri açık duruyor ve 2.700'ü aşkın yıldız toplamış.",
-      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam kendi veri pipeline'larında kullandığın Python bilgisini tazelemek olabilir. Ancak bu iş zaten Claude Code'un üstlendiği katman; ders defterlerinden okuyarak kazanacağın bir adım yok. Materyalin dili Çince, yani asistanına devredilebilir bir kaynak da değil. Projelerine gömebileceğin bir kütüphane ya da bileşen içermiyor.",
-      "matched_project": null,
-      "relevance": 1,
-      "investment_note": null
-    },
-    {
-      "full_name": "snapotter-hq/SnapOtter",
-      "inputs_hash": "32a4d73a8ad9a917db955837b6a3352a",
-      "description_tr": "SnapOtter, kendi sunucunda çalışan açık kaynak bir dosya işleme yığını; görüntü, video, ses, PDF ve belge olmak üzere beş kipte iki yüzden fazla araç sunuyor. Dönüştürme, sıkıştırma, kırpma, ses çıkarma, altyazı gömme gibi işlerin yanında yerelde çalışan AI özellikleri var: OCR, ses transkripsiyonu, otomatik video altyazısı, arka plan silme, yüz bulanıklaştırma ve görüntü büyütme. Araçlar hem web arayüzünden hem REST API'den kullanılabiliyor ve adımlar zincirlenerek yeniden kullanılabilir pipeline'lara dönüştürülebiliyor. Tek bir `docker run` ile ayağa kalkıyor, üretim için Postgres ve Redis içeren bir Compose yığını öneriliyor; AMD64 ve ARM64 destekli, yani Apple Silicon üzerinde çalışıyor. AGPL-3.0 lisanslı, 21 dilde arayüzü var; Mart 2026'da açılmış, 2.700'ü aşkın yıldız.",
-      "usage_tr": "Lyricdrop'un medya hazırlık adımları için evdeki 7/24 açık Mac mini'de bir Docker servisi olarak durmaya uygun: videodan ses çıkarma, normalize etme, kırpma ve toplu dönüştürme işlerini REST API üzerinden n8n akışına bağlayıp tek tek elle yapmaktan kurtulursun. ElevenLabs ve Apify'ı bırakıp yerele dönme kararınla aynı yönde duruyor; kurulumdan sonra çağrı başına maliyet yok, dosyalar ağını terk etmiyor. Aynı servis Folio'nun görsel varlıklarını toplu olarak yeniden boyutlandırmak ve sıkıştırmak için de kullanılabilir. Önemli uyarı: buradaki transkripsiyon genel amaçlı, kelime düzeyinde hizalama vermiyor — Lyricdrop'un asıl problemi olan söz-ses zamanlaması bu araçla çözülmez, onu ayrı bir STT/alignment hattında tutmaya devam et. Ayrıca AGPL, servisi kendi ürününe gömmeyi düşünürsen lisans sorusu yaratır; arkada duran bir iç servis olarak kullanmak bu sorunu doğurmaz.",
-      "matched_project": "Lyricdrop",
-      "relevance": 6,
-      "investment_note": null
-    },
-    {
-      "full_name": "apache/hamilton",
-      "inputs_hash": "70087b040ee24e8c3e9f422450ccd82d",
-      "description_tr": "Apache Hamilton, veri dönüşümlerini yönlü çevrimsiz graf (DAG) olarak tanımlamak için kullanılan hafif bir Python kütüphanesi. Düz Python fonksiyonları yazıyorsun, bağımlılıklar parametre adlarından çıkarılıyor ve graf otomatik kuruluyor; sonuç betikte, notebook'ta, Airflow'da ya da bir FastAPI servisinde aynı şekilde çalışıyor. Veri doğrulama, deney takibi, uzak çalıştırma gibi eklentileri ve grafı görselleştirip kataloglayan ayrı bir arayüzü var; soy (lineage) ve meta veri kaydı temel özelliklerden biri. ETL hatları, ML akışları, RAG sistemleri ve BI panoları gibi veri taşıyan her uygulama için konumlandırılmış. Apache-2.0 lisanslı ve Apache Software Foundation kuluçkasında; 2.500'ü aşkın yıldız, Python 3.10-3.14 destekli.",
-      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam Lyricdrop'un şarkı başına işlem zinciri (indirme, STT, hizalama, kalite ölçümü) ve Kanarya'nın veri akışları. Ama o slot sende zaten dolu: orkestrasyonu n8n, adımları Claude Code ile yazdığın Python betikleri yapıyor ve Hamilton'ın asıl sattığı şey (soy kaydı, katalog, ekip içi test edilebilirlik) çok kişili veri platformlarında karşılığını buluyor. Yeni bir çatı öğrenmenin bedeli, tek kişilik bir pipeline'da kazandıracağından büyük görünüyor. Yerelde çalışır ve API maliyeti getirmez; ilerideki bir gün aynı pipeline'ı birden fazla kişi işletmeye başlarsa geri dönüp bakmaya değer.",
-      "matched_project": null,
-      "relevance": 2,
-      "investment_note": null
-    },
-    {
-      "full_name": "shadcn-ui/lint",
-      "inputs_hash": "0ffcc8bc81169fcf3c33c44f75e2d087",
-      "description_tr": "@shadcn/lint, Tailwind tabanlı tasarım sistemleri için yazılmış, ajanların doğrulayabileceği kurallar üreten bir linter. Neye izin verildiğini sen tanımlıyorsun; kural çiğnendiğinde hata mesajı yalnızca \"bu sınıf yasak\" demiyor, projedeki bileşenlere, varyantlara ve temaya dayanarak doğru yolu da öneriyor. Örneğin bir Button'a doğrudan padding verildiğinde mevcut size varyantlarını kullanmayı söylüyor; bileşenin her parçası için ayrı izin/yasak sözleşmeleri tanımlanabiliyor. Hem ESLint hem Oxlint için sürümü var, Tailwind v4 projelerinde React, Svelte ve Vue ile çalışıyor ve shadcn/ui kullanmayı gerektirmiyor. TypeScript ile yazılmış ve MIT lisanslı; Eylül 2026'da açılmış çok yeni bir depo, 2.400'ü aşkın yıldız.",
-      "usage_tr": "Lyricdrop'un admin ve test paneli Tailwind v4 ile kuruluysa buraya oturur: ajan panele her dokunduğunda tasarım sisteminden sapmasını lint aşamasında yakalarsın ve hata mesajı düzeltmeyi de söylediği için tur sayısı düşer. Bu, her değişikliğin ayrı ayrı review edilmesi isteğinin ucuz ve otomatik kısmı; geliştirici doğruluğu tarafını değil, görsel tutarlılık tarafını kapatıyor. Tamamen yerelde çalışır, MIT lisanslı ve API maliyeti yok, yani Max aboneliğiyle kurduğun düzene ek gider getirmez; Arslan Holding'in Vercel'de duran sitesi için de aynı kurallar yazılabilir. İki sınır: Expo ve React Native tarafı kapsam dışında, kurallar yalnızca Tailwind sınıflarına bakıyor. İkincisi depo birkaç haftalık, kural setinin ve API'sinin oturmasını beklemek makul.",
-      "matched_project": "Lyricdrop",
-      "relevance": 5,
-      "investment_note": null
-    },
-    {
-      "full_name": "Haojae/scipilot-figure-skill",
-      "inputs_hash": "bdb0beeb2e0e6d7463de64c138ce8f44",
-      "description_tr": "Bilimsel veri görselleştirme için yazılmış bir Claude Code / Codex / Cursor skill'i; önce veriyi profilliyor sonra çiziyor. Sekiz adımlı bir akış izliyor: sütun tipleri, örneklem sayısı, dağılım ve aykırı değer analizi, ardından \"neyi kanıtlamak istiyorsun\" sorusuna göre grafik tipi önerisi, dergi normlarına göre boyut ve font ayarı, çizim ve dışa aktarma. Yaygın hataları aktif olarak engelliyor: grup başına on örneklemin altında ortalama çubuğu yerine kutu grafiği öneriyor, çift Y eksenine ve pasta grafiğine itiraz ediyor, rainbow paleti yerine renk körlüğüne uygun paletleri kullanıyor. Çizimden sonra görüntüyü yeniden okuyup eksik font, kırpılmış yazı, üst üste binen etiket gibi sorunları arayan bir öz denetim döngüsü var. matplotlib, seaborn, SciencePlots ve plotly üzerine kurulu, CJK font ayarını otomatik yapıyor; Python 3.9+, MIT lisanslı, 2.400'ü aşkın yıldız.",
-      "usage_tr": "Kişisel bilgi tabanının günlük/haftalık/aylık rapor adımında kullanabilirsin: sesli notlardan ve Kanarya'nın topladığı fizyolojik veriden çıkan zaman serilerini grafiğe dökerken grafik tipini bu skill'e seçtirirsin. Küçük örneklemde ortalama çubuğunu engelleyen kuralı senin veri hacminde doğrudan işe yarıyor — birkaç haftalık antrenman verisinden \"anlamlı fark\" görüntüsü üretmeni engeller. Lyricdrop tarafında da karşılaştırdığın 2-3 STT sisteminin hata oranlarını yan yana koyan ölçüm grafikleri için aynı akışı kullanabilirsin. Claude Code'a skill olarak kurulup ofis Mac'inde yerelde çalışıyor, yalnızca Python bağımlılıkları var ve ek API maliyeti getirmiyor. Uyarı: skill'in ağırlığı akademik yayın normlarında (dergi sütun genişliği, CJK fontu, vektör çıktı) ve bu kısım sana ölü yük; ayrıca ürettiği şey statik dosya, Expo uygulamasının içindeki canlı grafikler için değil rapor çıktıları için uygun.",
-      "matched_project": "Kişisel bilgi tabanı",
-      "relevance": 5,
-      "investment_note": null
-    }
-  ]
+ "repos": [
+  {
+   "full_name": "Visualize-ML/Linear-Algebra-Made-Easy---Learn-with-Python-and-Visualization",
+   "inputs_hash": "20b5188663da9fd75e465b90e629e8e5",
+   "description_tr": "Visualize-ML serisinin doğrusal cebir kitabına ait Çince eğitim deposu; iki cilt ve 66 konu başlığı altında konuyu Python kodu ve görselleştirmelerle anlatıyor. İçerik Jupyter Notebook dosyaları halinde dağıtılıyor, konu etiketleri linear-algebra, machine-learning ve data-visualization olarak verilmiş. Depoda README yok ve bir lisans dosyası tanımlanmamış, bu yüzden kapsam ve kullanım koşulları depodan doğrulanamıyor. Anlatım dili Çince; bağlantılı kaynak olarak bir YouTube kanalı gösteriliyor. 3.400'ü aşkın yıldızla seri içinde geniş bir okuyucu kitlesine ulaşmış, ancak kod deposu olmaktan çok bir kitap eki niteliğinde.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, hobi olarak sürdürdüğün öğrenme rutini olabilir. Ancak orada tarif ettiğin ihtiyaç Türkçe kaynaklardan psikoloji, sosyoloji ve felsefe öğrenmek; burada anlatılan konu ve anlatım dili bunun dışında kalıyor. Kod tarafında da kullanabileceğin bir kütüphane ya da araç çıkmıyor, yalnızca ders defterleri var. Lisans tanımlı olmadığı için içeriği kendi materyaline taşımak da net değil.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "waymo-research/waymo-open-dataset",
+   "inputs_hash": "567e60d65a03958d1ee5ecbb63274571",
+   "description_tr": "Waymo'nun otonom sürüş araştırmaları için kamuya açtığı veri kümeleri ve bunlara eşlik eden değerlendirme kodunun deposu. Üç veri kümesi var: yüksek çözünürlüklü sensör verisi ve etiketleri içeren Perception, 103.354 sahne için nesne yörüngeleri ve 3B harita içeren Motion, kamera verisi ve üst düzey sürüş komutları içeren End-To-End Driving. Kod tarafı veri formatı tanımlarını, metrik hesaplamalarını ve TensorFlow yardımcı fonksiyonlarını kapsıyor. Lisans karışık: kodun çoğu Apache 2.0, wdl_limited klasörü ayrı bir BSD ve sınırlı patent lisansına tabi, veri kümesinin kendisi ise ticari olmayan kullanımla sınırlı ayrı bir sözleşmeyle veriliyor. 2019'dan beri sürdürülüyor ve 3.400'ü aşkın yıldızı var.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, frontier teknoloji tarafında izlediğin yatırım temaları olabilir. Bu bir araç değil, akademik bir veri kümesi ve metrik kodu; kullanmak için algı/hareket tahmini modeli eğiten bir ekip gerekir. Veri lisansı ticari kullanımı kapattığı için bir ürüne taşınması da mümkün değil. Pist ve sürüş tarafındaki kişisel ilgin ile bu deponun konusu isim benzerliğinden ibaret, aynı şey değil.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "Visualize-ML/Book7_Visualizations-for-Machine-Learning",
+   "inputs_hash": "77a64755abd3b0dedac874cc9735c259",
+   "description_tr": "Visualize-ML (鸢尾花书) serisinin yedinci kitabına ait Çince makine öğrenmesi materyali; konuları temel aritmetikten başlayıp makine öğrenmesine kadar Python ve görselleştirmelerle işliyor. Materyal Jupyter Notebook dosyaları halinde; etiketler linear-algebra, matrix, bayesian ve machine-learning-algorithms. README bir tanıtım metni içermiyor, yalnızca serinin diğer kitapları için indirim bağlantıları ve hata bildiren okuyuculara kitap hediye edildiğine dair bir not var. Depoda lisans dosyası tanımlı değil. 3.300'ü aşkın yıldız toplamış, 2022'den beri açık bir eğitim kaynağı olarak duruyor.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam genel bir makine öğrenmesi referansı olarak okumak olabilir. Projelerinde kullandığın modeller hazır servisler ve açık kaynak modeller; burada anlatılan algoritmaları kendin kurman gereken bir adım yok. İçerik Çince olduğu için asistanına ya da bir ajana devredilebilir bir kaynak da değil. Kod olarak alıp bir yere gömebileceğin bir bileşen içermiyor.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "fuxicodex/Fuxi",
+   "inputs_hash": "967264e0883056691b7cce9e4b3cfa2a",
+   "description_tr": "FuXi, terminalde çalışan ve Go ile yazılmış bir AI kodlama ajanı; kod okuyup dosya düzenliyor, komut çalıştırıyor ve MCP istemcisi olarak dış araçları sürüyor. Tek bir statik binary olarak dağıtılıyor, çalışma zamanı bağımlılığı yok; macOS, Linux ve Windows için tek satırlık kurulum betikleri var. Birden fazla LLM sağlayıcısı arasında maliyet farkındalıklı yönlendirme ve otomatik devretme yapıyor; kendi API anahtarını getirebiliyor ya da FuXi'nin yönettiği modelleri kullanabiliyorsun, ancak her iki durumda da hesap açmak gerekiyor. Oturumlar, checkpoint'ler, bellek ve denetim kayıtları yerel ~/.fuxi dizininde tutuluyor; lisans açık kaynak değil, proprietary olarak işaretlenmiş. Ağustos 2026'da açılan depo 3.300'ü aşkın yıldıza ulaşmış, benchmark raporu ve ayrıntılı gizlilik dokümantasyonu var.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam Claude Code ve OpenCode ile kurduğun terminal ajanı düzeni. Oraya üçüncü bir ajan eklemenin bedeli net: FuXi hesap açmayı ve model tarafında ya kendi API anahtarını ya da FuXi'nin servisini kullanmayı gerektiriyor, yani Max aboneliğiyle kapattığın maliyeti geri getiriyor. Lisansı kapalı olduğu için fork'layıp kendi istemcisini yazma alışkanlığına da uygun değil. Mac'te tek binary olarak sorunsuz çalışması ve MCP desteği tek artısı, ama bu iki özellik zaten mevcut kurulumunda var.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "TestSprite/testsprite-cli",
+   "inputs_hash": "864c1e8dd712442dc6f51191149e8ab1",
+   "description_tr": "TestSprite, kodlama ajanlarının yazdığı işi canlı uygulama üzerinde doğrulamak için kurulmuş bir test platformunun resmî CLI'ı. Uygulamayı gerçek bir kullanıcı gibi açıp kullanıyor, kırılan davranışı tek bir tutarlı paket halinde ajana geri veriyor; böylece ajan kendi çıktısını panoya bakmadan düzeltebiliyor. `testsprite setup` komutu API anahtarını doğruluyor ve doğrulama döngüsü skill'ini projede kullanılan ajanlara (claude, cursor, codex, cline, windsurf, copilot ve diğerleri) kuruyor; CI için anahtarı ortam değişkeninden alan etkileşimsiz bir mod da var. Node.js 20.19+ gerektiriyor, Apache-2.0 lisanslı ve npm üzerinden dağıtılıyor. Testler bulutta, mock'lara değil canlı ürüne karşı çalışıyor; yani CLI açık kaynak olsa da arkasındaki servis ücretli ve hesaba bağlı. Haziran 2026'da açılmış, 3.300'ü aşkın yıldız.",
+   "usage_tr": "Lyricdrop v2'de şu an elinde duran tarayıcı playtest gate'i tam olarak bu aracın hedeflediği iş. Admin panelinin şarkı onay akışını ve oyun ekranını TestSprite'a sürdürüp kırılanı doğrudan Claude Code'a geri besleyebilir, 20-30 şarkılık test setinde her değişiklikten sonra aynı turu elle tekrarlamaktan kurtulursun. Kurulumu bir kez yapıp CLI'ı asistanına ya da bir CI adımına devretmek de mümkün, çünkü anahtarı ortam değişkeninden alan etkileşimsiz bir modu var. İki uyarı: testler bulutta canlı ürüne karşı çalışıyor, yani panelin dışarıdan erişilebilir olması ve verinin makineni terk etmesi gerekiyor — yerelde tutma tercihinin tersi. İkincisi, anahtar başına ücretlendirilen bir servis, yani Max aboneliğinin dışında ayrı bir gider kalemi; ayrıca web yüzeyini kapsıyor, Expo tarafındaki mobil istemciyi değil.",
+   "matched_project": "Lyricdrop",
+   "relevance": 7,
+   "investment_note": "Ajanların ürettiği kodu doğrulama katmanı, B2B yazılım tarafında hızla ayrı bir kategori haline geliyor; ticarileşmiş bir örnek olarak deal flow'da izlemeye değer."
+  },
+  {
+   "full_name": "microsoft/tgrep",
+   "inputs_hash": "c97f4e771be9d6814005c384f089a64b",
+   "description_tr": "tgrep, büyük kod tabanlarında regex aramasını hızlandırmak için trigram indeksi kullanan, istemci/sunucu mimarili bir grep aracı. Bir kez indeks kurulup sunucu başlatıldıktan sonra aramalar yalnızca eşleşme ihtimali olan dosyalara dokunuyor; disk üzerindeki mmap'lenmiş indeks, bellekteki canlı katman ve dosya izleyici birlikte çalışıyor. Rust ile yazılmış, MIT lisanslı ve GitHub Copilot CLI'ın arama katmanı olarak entegre edilmiş; ayrıca Codex ve benzeri ajanlar için MCP arama araçları kuran bir betik var. Yayınlanan ölçümlerde 388 bin dosyalık gecko-dev'de ripgrep'e göre macOS'ta 52 kata varan hızlanma raporlanmış, küçük depolarda fark kapanıyor. Nisan 2026'da açılmış, 3.300'ü aşkın yıldız.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam ofis Mac'indeki Claude Code kurulumun. Aracın kazancı ölçümlerde 100 bin dosyayı aşan monorepo'larda ortaya çıkıyor; Expo uygulaman, admin panelin ve pipeline depoların bu ölçeğin çok altında kaldığı için mevcut arama zaten anlık dönüyor. Buna karşılık maliyeti sıfır sayılmaz: sürekli açık bir sunucu, indeks dosyası ve bakımı gerektiriyor. MIT lisanslı ve tamamen yerel çalıştığı için API maliyeti yok; bir depon gerçekten büyürse geri dönüp bakmak ucuz bir deneme olur.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "yanliudesign/mono-color-skill",
+   "inputs_hash": "0615a674a89583062bff8ab08e28c1ba",
+   "description_tr": "Tek mürekkepli (ve kontrollü iki mürekkepli) editoryal baskı görselleri üreten bir agent skill; poster, zine, portre, ambalaj ve görsel saha notu gibi formatlar için tasarlanmış. Sıcak kâğıt zemin, halftone fotoğraf, geniş negatif alan ve ölçülü tipografiden oluşan bir görsel sistemi koruyor; referansı kopyalamak yerine her kompozisyonu konuya göre yeniden kuruyor. SKILL.md formatında paketlenmiş, Claude Code ile kullanılmak üzere hazırlanmış ve MIT lisanslı; depoda sürüm etiketi, değişiklik günlüğü ve skill'i doğrulayan bir CI iş akışı var. README çok sayıda üretilmiş örnek ve görsel sistemin dayandığı on iki görsellik referans setini listeliyor. Ağustos 2026'da açılmış, 3.200'ü aşkın yıldız.",
+   "usage_tr": "Folio'nun günlük içerik pipeline'ında işine yarayabilir: her yazar profilinin post ve story görselleri için tutarlı, tanınabilir bir görsel kimlik gerekiyor ve bu skill jenerik AI görseli yerine sabit bir baskı estetiği dayatıyor. Claude Code'a skill olarak kurulduğu için ofis Mac'indeki mevcut akışına giriyor, ayrı bir servis ya da hesap istemiyor. İkinci bir bağlam Arslan Holding'in AI araçlarıyla üretilen marka görselleri; sunum ve site için aynı tek mürekkep dilini tekrar kullanabilirsin. İki uyarı: skill bir stil ve yönerge katmanı, görseli üreten modelin maliyeti yine ayrı kalıyor; ve örnekler poster/ambalaj oranlarında, dikey feed postuna oturması için formatı sabitleyip birkaç tur denemen gerekir.",
+   "matched_project": "Folio",
+   "relevance": 5,
+   "investment_note": null
+  },
+  {
+   "full_name": "ccch1mneyyy/dsh-TUI",
+   "inputs_hash": "8d634b1e62f8f6c474a34af1fca55c42",
+   "description_tr": "DeepSeek Harness için yazılmış, eklenti olarak takılan bir terminal arayüzü; çekirdeğe dokunmadan kuruluyor ve kaldırıldığında geride yama bırakmıyor. Akan Markdown, araç kartları, `/` ve `@` tamamlama, oturum yöneticisi, çift Esc ile geri alma, bağlam çubuğu ve TPS göstergesi gibi bir çalışma yüzeyi sunuyor; Kitty/Sixel ile görsel önizleme ve mermaid diyagramlarını Unicode olarak çizme gibi ayrıntıları var. TypeScript ve Ink (React) ile yazılmış, MIT lisanslı, npm üzerinden tek komutla kuruluyor ve public beta olarak etiketlenmiş. Uzun oturumlar için olay tabanlı projeksiyon ve sanallaştırma kullandığını belirtiyor. Ağustos 2026'da açılmış, 3.100'ü aşkın yıldız; dokümantasyon Çince ve İngilizce.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam terminal ajanı arayüzlerine olan ilgin ve OpenCode için kendi istemcini yazma planın. Araç yalnızca DeepSeek Harness üzerinde çalışıyor, yani kullanman için kullanmadığın bir harness'a geçmen gerekir. Değeri senin için bir kaynak okuması olabilir: çekirdeği değiştirmeden eklenti olarak monte edilen bir TUI'nin nasıl kurulduğunu gösteriyor. Onun dışında Claude Code ve OpenCode ile kurduğun düzene ekleyeceği bir şey yok.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "MeteorNOX/DeepSeek-Balance-Whale-Widget",
+   "inputs_hash": "e0af495aad6de9ea3fef3a404fd48d60",
+   "description_tr": "DeepSeek Harness web arayüzünün köşesine yerleşen, API bakiyesini ve harcamayı gösteren bir eklenti. Bakiyeyi altmış saniyede bir yeniliyor, bakiye düşüşlerinden günlük harcamayı çıkarıyor, her konuşma turunun token kullanımından maliyet hesaplayıp baloncukla gösteriyor; bakiye uyarısı ve günlük bütçe eşiği tanımlanabiliyor. Baloncuk içeriği modüler biçimde özelleştirilebiliyor, sürükle-bırak, ses efekti ve özel karakter görseli gibi bir dizi arayüz ayrıntısı içeriyor. Yerleşik DeepSeek desteğinin yanında OpenRouter, Moonshot, GLM gibi otuzdan fazla sağlayıcı için bakiye/kota şablonu sunuyor. JavaScript ile yazılmış, MIT lisanslı, standart DSH bundle eklentisi olarak kuruluyor ve dokümantasyonu Çince; Ağustos 2026'da açılmış, 2.900'ü aşkın yıldız.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam API harcamasını takip etme ihtiyacı olurdu. Ama senin kurulumun tam tersi yönde: maliyet nedeniyle API anahtarı yerine Max aboneliğini kullanıyorsun, yani izlenecek bir bakiye yok. Eklenti ayrıca yalnızca DeepSeek Harness arayüzünde çalışıyor, Claude Code ya da OpenCode tarafında karşılığı yok. Lyricdrop'un şarkı başına maliyet takibi gibi gerçek bir ihtiyacın var, ama onun yeri bu widget değil, kendi pipeline'ının ölçüm adımı.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "oritera/Cairn",
+   "inputs_hash": "893674d7ef8cb2ff5ae37020f67fa4f2",
+   "description_tr": "Cairn, bilinen bir başlangıç noktasından tanımlı bir hedefe giden yolu bilinmeyen bir durum uzayında arayan, genel amaçlı olarak tasarlanmış bir problem çözme motoru; ilk doğrulandığı alan otonom sızma testi. Mimari bir kara tahta (blackboard) üzerine kurulu: doğrulanmış bulgular Fact, denenecek yönler Intent, insanın araya soktuğu yargı Hint olarak grafiğe yazılıyor ve ajanlar yalnızca bu ortak tahta üzerinden koordine oluyor. İşçi ajanların sabit rolü yok; görevler önceden tanımlı tarifler yerine grafiğin o anki durumundan üretiliyor ve bir OODA döngüsüyle yürütülüyor. Python ile yazılmış, AGPL-3.0 lisanslı, dağıtıcı konteyner yönetimi içeriyor ve bir hackathon bağlamından çıkmış. Nisan 2026'da açılmış, 2.900'ü aşkın yıldız.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam çok ajanlı orkestrasyon mimarilerine olan ilgin. Aracın kendisi sızma testi için kurulmuş ve senin yüzeylerine (Expo uygulamaları, Supabase, panel) böyle bir otonom saldırgan salmak istemezsin. Buradan alınabilecek şey araç değil fikir: ajanların birbiriyle konuşmak yerine ortak bir bulgu grafiği üzerinden ilerlemesi, tarif ettiğin orkestratör ajan için okunmaya değer bir desen. AGPL lisansı da kendi uygulamana gömme seçeneğini pratikte kapatıyor.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": "Otonom güvenlik testi, açık kaynak bir motor etrafında ticarileşen kategorilerden biri; ekip ve yaklaşım olarak izleme listesine alınabilir, ancak coğrafi odağın dışında."
+  },
+  {
+   "full_name": "FreedomIntelligence/Awesome-AI4Med",
+   "inputs_hash": "0ce856a9e1a3cd5f930494828dce703b",
+   "description_tr": "Tıp alanındaki yapay zekâ kaynaklarını derleyen bir liste deposu: tıbbi LLM'ler, çok modlu tıbbi modeller, veri kümeleri ve değerlendirme setleri tablolar halinde toplanmış. Her satır makale, model ağırlığı, veri ve kod bağlantılarını birlikte veriyor; HuatuoGPT, Apollo ve MMedLM gibi model aileleri listenin omurgasını oluşturuyor. Daha önce Medical_NLP adıyla yürütülen depo yeniden adlandırılmış, eski içerik ayrı bir dalda tutuluyor. İçerik makale ve açık kaynak proje taramasından otomatik çıkarılan güncel model ve veri kümeleriyle besleniyor. Kod ya da çalıştırılabilir bir bileşen yok ve lisans tanımlı değil; 2019'dan beri sürdürülüyor, 2.800'ü aşkın yıldız.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam sağlık ve giyilebilir cihaz tarafındaki yatırım tezin. Ancak o tezin ihtiyacı biyosinyal ve EEG işleme tarafında; bu liste klinik metin ve tıbbi görüntü modellerini derliyor, aradaki mesafe büyük. Kanarya gibi fizyolojik öz-izleme tarafında da kullanabileceğin bir model ya da kütüphane çıkmıyor, yalnızca akademik bağlantılar var. Alanın haritasını çıkarmak istersen okunacak bir kaynak, kurulacak bir araç değil.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "rlaope/oh-my-hermes",
+   "inputs_hash": "7ba5e4c345cec961ec9822d73c25cf8f",
+   "description_tr": "oh-my-hermes, NousResearch'ün Hermes Agent'ı üzerine kurulan bir işletim katmanı; planlama, araştırma, üretim, kodlama devri ve operasyon akışlarını paketler halinde ekliyor. Hermes'i değiştirmek yerine üstüne çıkıyor: gelen isteği bir yeteneğe eşliyor, hangi iş akışının ve hangi kanıt kapılarının geçerli olduğunu seçiyor, native Hermes skill'lerini bu denetimli yolun içinde çalıştırıyor. Uzun vadeli proje hafızası ve ne yapıldığına dair açık bir kayıt tutmayı temel özellik olarak sunuyor. Python ile yazılmış, MIT lisanslı, dört dilde dokümantasyonu ve ayrı bir tanıtım sitesi var. Haziran 2026'da açılmış, 2.800'ü aşkın yıldız.",
+   "usage_tr": "Hermes Agent'ı öğrenme planın varsa başlangıç noktası olarak buraya bakabilirsin: tarif ettiğin \"tüm projelerini bilen, aralarında köprü kuran\" orkestratör ajanın eksik parçası tam da bu katmanın iddia ettiği şey — kalıcı proje hafızası ve yapılan işin dürüst kaydı. Pratik denemesi, asistanınla yürüttüğün araştırma ve takip işlerinden birini (tedarikçi karşılaştırma gibi) kanıt kapıları tanımlı bir iş akışı olarak kurup Trello'ya düşen çıktıyla karşılaştırmak olur. Ofis Mac'inde kurulup yerelde çalışıyor ve MIT lisanslı, yani deneme maliyeti düşük. Uyarı: Hermes'in kendi model kurulumu üzerinden çalıştığı için token maliyeti Max aboneliğinin dışında kalır ve bu katman Claude Code'un yerini almaz, yanına ikinci bir sistem koyar. Önce dar bir iş akışıyla ölç, sonra genişlet.",
+   "matched_project": "Asistan ve holding araçları",
+   "relevance": 6,
+   "investment_note": null
+  },
+  {
+   "full_name": "logpai/loghub",
+   "inputs_hash": "b6e5d626b3995bafe0d2ecd89e44d792",
+   "description_tr": "Loghub, yapay zekâ destekli log analizi araştırmaları için toplanmış büyük bir sistem log veri kümesi koleksiyonu. HDFS, Hadoop, Spark, Zookeeper, OpenStack gibi dağıtık sistemlerden, BGL ve Thunderbird gibi süper bilgisayarlardan ve Windows olay günlüklerinden yüz milyonlarca satırlık ham kayıt içeriyor; bir kısmı anomali etiketli. Loglar mümkün olduğunca temizlenmeden, olduğu gibi yayınlanıyor ve Zenodo üzerinden indiriliyor. Depoda kod yok, veri kümelerinin dizini, açıklamaları ve bağlantıları var; kullanım koşulları araştırma ve akademik çalışmayla sınırlanmış. 2016'dan beri sürdürülüyor, 2.800'ü aşkın yıldız ve 450'den fazla kurum tarafından indirilmiş.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam kendi pipeline'larının ürettiği log ve hata kayıtlarını izleme ihtiyacı olabilir. Ama burada sunulan şey bir izleme aracı değil, başka sistemlerin geçmiş logları; anomali tespiti modeli eğitmeyi düşünmüyorsan karşılığı yok. Supabase, DigitalOcean ve n8n tarafındaki operasyonel görünürlük ihtiyacın bu veri kümeleriyle çözülmez. Lisans da araştırma kullanımıyla sınırlı.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "Nanako0129/sepia",
+   "inputs_hash": "ccc4acf20a956da22153c40f43bd34c1",
+   "description_tr": "sepia, AI tarafından yazılmış metinlerin ele veren katmanlarını onarmayı hedefleyen taşınabilir bir agent skill. Kurgu metinlerde önce anlatı mimarisini düzeltiyor (temanın anlatıcı tarafından açıklanması, tek izli ve fazla düzenli olay örgüsü, duyguların yalnızca bedensel duyumla verilmesi gibi ölçülmüş örüntüler), profesyonel metinlerde ise sürüm notu, PR yanıtı, postmortem gibi her türe ayrı kural seti uyguluyor. Dört işlem sunuyor: write, review (yalnızca teşhis), refactor (asgari düzenleme) ve recreate. Yaklaşımını yayımlanmış bir çalışmanın bulgularına dayandırıyor ve model ailelerine göre ayrı parmak izleri tutuyor; cümle ritmi kalibrasyonu İngilizce ve Çince için yapılmış. Agent Skills standardına uygun tek bir SKILL.md olarak paketlenmiş, MIT lisanslı, Claude Code ve Codex için native eklentisi var; Ağustos 2026'da açılmış, 2.700'ü aşkın yıldız.",
+   "usage_tr": "Folio'nun günlük içerik pipeline'ında değerlendirebilirsin: her gün üretilen post ve story metinleri yazarın sesini taşımazsa ve AI kokarsa uygulamanın Instagram'ın yerini alma iddiası ilk haftada biter. Üretim adımından sonra review modunu teşhis kapısı olarak koyup yalnızca eşiği geçemeyen metinleri refactor'a göndermek, tüm metinleri yeniden yazdırmaktan ucuz olur. Claude Code'a skill olarak kurulduğu için ofis Mac'inde yerelde çalışır ve Max aboneliğinin dışında ayrı bir servis maliyeti getirmez. İkinci bir bağlam stand-up yazımı: metin taslaklarını aynı teşhis rubriğinden geçirebilirsin. Uyarı: kurallar İngilizce ve Çince için kalibre edilmiş, Türkçe çıktıda aynı ölçüde sınanmamış; ayrıca kurgu katmanının önerileri Folio'nun kısa post metinlerine birebir oturmaz.",
+   "matched_project": "Folio",
+   "relevance": 4,
+   "investment_note": null
+  },
+  {
+   "full_name": "Visualize-ML/Book6_First-Course-in-Data-Science",
+   "inputs_hash": "1bd8f834071c759dd76d9dbd4c6e774d",
+   "description_tr": "Visualize-ML serisinin altıncı kitabına ait Çince veri bilimi materyali; veri okuryazarlığı, öznitelik mühendisliği ve görselleştirme konularını Python örnekleriyle işliyor. İçerik Jupyter Notebook dosyaları halinde dağıtılıyor ve serinin diğer ciltleriyle aynı anlatım çizgisini izliyor. README bir tanıtım içermiyor; yalnızca serinin diğer kitapları için indirim bağlantıları ve hata bildirenlere kitap gönderildiğine dair bir not var. Depoda lisans dosyası tanımlı değil, bu yüzden içeriğin yeniden kullanım koşulları belirsiz. 2022'den beri açık duruyor ve 2.700'ü aşkın yıldız toplamış.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam kendi veri pipeline'larında kullandığın Python bilgisini tazelemek olabilir. Ancak bu iş zaten Claude Code'un üstlendiği katman; ders defterlerinden okuyarak kazanacağın bir adım yok. Materyalin dili Çince, yani asistanına devredilebilir bir kaynak da değil. Projelerine gömebileceğin bir kütüphane ya da bileşen içermiyor.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "snapotter-hq/SnapOtter",
+   "inputs_hash": "32a4d73a8ad9a917db955837b6a3352a",
+   "description_tr": "SnapOtter, kendi sunucunda çalışan açık kaynak bir dosya işleme yığını; görüntü, video, ses, PDF ve belge olmak üzere beş kipte iki yüzden fazla araç sunuyor. Dönüştürme, sıkıştırma, kırpma, ses çıkarma, altyazı gömme gibi işlerin yanında yerelde çalışan AI özellikleri var: OCR, ses transkripsiyonu, otomatik video altyazısı, arka plan silme, yüz bulanıklaştırma ve görüntü büyütme. Araçlar hem web arayüzünden hem REST API'den kullanılabiliyor ve adımlar zincirlenerek yeniden kullanılabilir pipeline'lara dönüştürülebiliyor. Tek bir `docker run` ile ayağa kalkıyor, üretim için Postgres ve Redis içeren bir Compose yığını öneriliyor; AMD64 ve ARM64 destekli, yani Apple Silicon üzerinde çalışıyor. AGPL-3.0 lisanslı, 21 dilde arayüzü var; Mart 2026'da açılmış, 2.700'ü aşkın yıldız.",
+   "usage_tr": "Lyricdrop'un medya hazırlık adımları için evdeki 7/24 açık Mac mini'de bir Docker servisi olarak durmaya uygun: videodan ses çıkarma, normalize etme, kırpma ve toplu dönüştürme işlerini REST API üzerinden n8n akışına bağlayıp tek tek elle yapmaktan kurtulursun. ElevenLabs ve Apify'ı bırakıp yerele dönme kararınla aynı yönde duruyor; kurulumdan sonra çağrı başına maliyet yok, dosyalar ağını terk etmiyor. Aynı servis Folio'nun görsel varlıklarını toplu olarak yeniden boyutlandırmak ve sıkıştırmak için de kullanılabilir. Önemli uyarı: buradaki transkripsiyon genel amaçlı, kelime düzeyinde hizalama vermiyor — Lyricdrop'un asıl problemi olan söz-ses zamanlaması bu araçla çözülmez, onu ayrı bir STT/alignment hattında tutmaya devam et. Ayrıca AGPL, servisi kendi ürününe gömmeyi düşünürsen lisans sorusu yaratır; arkada duran bir iç servis olarak kullanmak bu sorunu doğurmaz.",
+   "matched_project": "Lyricdrop",
+   "relevance": 6,
+   "investment_note": null
+  },
+  {
+   "full_name": "apache/hamilton",
+   "inputs_hash": "70087b040ee24e8c3e9f422450ccd82d",
+   "description_tr": "Apache Hamilton, veri dönüşümlerini yönlü çevrimsiz graf (DAG) olarak tanımlamak için kullanılan hafif bir Python kütüphanesi. Düz Python fonksiyonları yazıyorsun, bağımlılıklar parametre adlarından çıkarılıyor ve graf otomatik kuruluyor; sonuç betikte, notebook'ta, Airflow'da ya da bir FastAPI servisinde aynı şekilde çalışıyor. Veri doğrulama, deney takibi, uzak çalıştırma gibi eklentileri ve grafı görselleştirip kataloglayan ayrı bir arayüzü var; soy (lineage) ve meta veri kaydı temel özelliklerden biri. ETL hatları, ML akışları, RAG sistemleri ve BI panoları gibi veri taşıyan her uygulama için konumlandırılmış. Apache-2.0 lisanslı ve Apache Software Foundation kuluçkasında; 2.500'ü aşkın yıldız, Python 3.10-3.14 destekli.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam Lyricdrop'un şarkı başına işlem zinciri (indirme, STT, hizalama, kalite ölçümü) ve Kanarya'nın veri akışları. Ama o slot sende zaten dolu: orkestrasyonu n8n, adımları Claude Code ile yazdığın Python betikleri yapıyor ve Hamilton'ın asıl sattığı şey (soy kaydı, katalog, ekip içi test edilebilirlik) çok kişili veri platformlarında karşılığını buluyor. Yeni bir çatı öğrenmenin bedeli, tek kişilik bir pipeline'da kazandıracağından büyük görünüyor. Yerelde çalışır ve API maliyeti getirmez; ilerideki bir gün aynı pipeline'ı birden fazla kişi işletmeye başlarsa geri dönüp bakmaya değer.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "shadcn-ui/lint",
+   "inputs_hash": "0ffcc8bc81169fcf3c33c44f75e2d087",
+   "description_tr": "@shadcn/lint, Tailwind tabanlı tasarım sistemleri için yazılmış, ajanların doğrulayabileceği kurallar üreten bir linter. Neye izin verildiğini sen tanımlıyorsun; kural çiğnendiğinde hata mesajı yalnızca \"bu sınıf yasak\" demiyor, projedeki bileşenlere, varyantlara ve temaya dayanarak doğru yolu da öneriyor. Örneğin bir Button'a doğrudan padding verildiğinde mevcut size varyantlarını kullanmayı söylüyor; bileşenin her parçası için ayrı izin/yasak sözleşmeleri tanımlanabiliyor. Hem ESLint hem Oxlint için sürümü var, Tailwind v4 projelerinde React, Svelte ve Vue ile çalışıyor ve shadcn/ui kullanmayı gerektirmiyor. TypeScript ile yazılmış ve MIT lisanslı; Eylül 2026'da açılmış çok yeni bir depo, 2.400'ü aşkın yıldız.",
+   "usage_tr": "Lyricdrop'un admin ve test paneli Tailwind v4 ile kuruluysa buraya oturur: ajan panele her dokunduğunda tasarım sisteminden sapmasını lint aşamasında yakalarsın ve hata mesajı düzeltmeyi de söylediği için tur sayısı düşer. Bu, her değişikliğin ayrı ayrı review edilmesi isteğinin ucuz ve otomatik kısmı; geliştirici doğruluğu tarafını değil, görsel tutarlılık tarafını kapatıyor. Tamamen yerelde çalışır, MIT lisanslı ve API maliyeti yok, yani Max aboneliğiyle kurduğun düzene ek gider getirmez; Arslan Holding'in Vercel'de duran sitesi için de aynı kurallar yazılabilir. İki sınır: Expo ve React Native tarafı kapsam dışında, kurallar yalnızca Tailwind sınıflarına bakıyor. İkincisi depo birkaç haftalık, kural setinin ve API'sinin oturmasını beklemek makul.",
+   "matched_project": "Lyricdrop",
+   "relevance": 5,
+   "investment_note": null
+  },
+  {
+   "full_name": "Haojae/scipilot-figure-skill",
+   "inputs_hash": "bdb0beeb2e0e6d7463de64c138ce8f44",
+   "description_tr": "Bilimsel veri görselleştirme için yazılmış bir Claude Code / Codex / Cursor skill'i; önce veriyi profilliyor sonra çiziyor. Sekiz adımlı bir akış izliyor: sütun tipleri, örneklem sayısı, dağılım ve aykırı değer analizi, ardından \"neyi kanıtlamak istiyorsun\" sorusuna göre grafik tipi önerisi, dergi normlarına göre boyut ve font ayarı, çizim ve dışa aktarma. Yaygın hataları aktif olarak engelliyor: grup başına on örneklemin altında ortalama çubuğu yerine kutu grafiği öneriyor, çift Y eksenine ve pasta grafiğine itiraz ediyor, rainbow paleti yerine renk körlüğüne uygun paletleri kullanıyor. Çizimden sonra görüntüyü yeniden okuyup eksik font, kırpılmış yazı, üst üste binen etiket gibi sorunları arayan bir öz denetim döngüsü var. matplotlib, seaborn, SciencePlots ve plotly üzerine kurulu, CJK font ayarını otomatik yapıyor; Python 3.9+, MIT lisanslı, 2.400'ü aşkın yıldız.",
+   "usage_tr": "Kişisel bilgi tabanının günlük/haftalık/aylık rapor adımında kullanabilirsin: sesli notlardan ve Kanarya'nın topladığı fizyolojik veriden çıkan zaman serilerini grafiğe dökerken grafik tipini bu skill'e seçtirirsin. Küçük örneklemde ortalama çubuğunu engelleyen kuralı senin veri hacminde doğrudan işe yarıyor — birkaç haftalık antrenman verisinden \"anlamlı fark\" görüntüsü üretmeni engeller. Lyricdrop tarafında da karşılaştırdığın 2-3 STT sisteminin hata oranlarını yan yana koyan ölçüm grafikleri için aynı akışı kullanabilirsin. Claude Code'a skill olarak kurulup ofis Mac'inde yerelde çalışıyor, yalnızca Python bağımlılıkları var ve ek API maliyeti getirmiyor. Uyarı: skill'in ağırlığı akademik yayın normlarında (dergi sütun genişliği, CJK fontu, vektör çıktı) ve bu kısım sana ölü yük; ayrıca ürettiği şey statik dosya, Expo uygulamasının içindeki canlı grafikler için değil rapor çıktıları için uygun.",
+   "matched_project": "Kişisel bilgi tabanı",
+   "relevance": 5,
+   "investment_note": null
+  }
+ ]
 }

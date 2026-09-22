@@ -1,175 +1,175 @@
 {
-  "repos": [
-    {
-      "full_name": "cporter202/API-mega-list",
-      "inputs_hash": "75fbec840741037d6acb4fb306065d0f",
-      "description_tr": "API Mega List, tek bir depoda toplanmış büyük bir açık API dizini; README'de 11.860 dizin kaydı ve 318 sponsorlu listeleme olduğu belirtiliyor. Kategoriler web scraping, e-ticaret, sosyal medya, emlak, lead generation ve MCP gibi başlıkları kapsıyor ve listenin günlük güncellendiği söyleniyor. Depo JavaScript olarak işaretli, açık bir lisans dosyası yok ve README'nin üst kısmında ücretli sponsor blokları yer alıyor. Aralık 2025'te açılmış, 7.631 yıldıza ulaşmış; kod değil, bağlantı derlemesi sunuyor. Girişler için tanımlanmış bir editoryal kalite eşiği bulunmuyor.",
-      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor. En yakın bağlam, asistanın yürüttüğü tedarikçi ve servis karşılaştırma araştırmaları olabilir; bir entegrasyon ararken ilk bakılacak yerlerden biri sayılabilir. Ancak liste sponsorlu girişler içeriyor ve eleme yapılmamış, bu yüzden bir API'yi buradan seçmek yerine doğrudan sağlayıcının dokümanına gitmek daha hızlı sonuç verir. Lyricdrop tarafındaki lyrics ve STT servis seçimlerin zaten daralmış durumda, bu dizin o kararı değiştirmez. Kurulum maliyeti yok ama düzenli takip edilecek bir kaynak da değil.",
-      "matched_project": null,
-      "relevance": 2,
-      "investment_note": null
-    },
-    {
-      "full_name": "HKUSTDial/Supervisor-Skills",
-      "inputs_hash": "0ebbc45166413ad60c3157bda340b696",
-      "description_tr": "Supervisor-Skills, akademik araştırma sürecini büyük dil modellerinin çalıştırabileceği yapılandırılmış skill dosyalarına dönüştüren bir koleksiyon. Fikir değerlendirme, literatür taraması, giriş bölümü yazımı, dil düzeltme ve hakem gözüyle inceleme gibi adımlar için ayrı skill'ler ve bunlara eşlik eden bir handbook içeriyor. Skill'ler Claude ve GPT benzeri modellerle kullanılmak üzere yazılmış; depo CC BY-NC-SA 4.0 lisanslı, yani ticari kullanım kısıtlı. Nisan 2026'da yayımlanmış, 7.418 yıldıza ulaşmış ve sürüm notlarına göre yeni skill'ler eklenerek geliştiriliyor. Belgelerin büyük kısmı Çince, İngilizce README ikincil.",
-      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; içerik akademik yayın üretimine özel ve iş akışlarının hiçbiri makale yazmıyor. En yakın bağlam skill dosyalarının biçimi: bir alan uzmanlığının adım adım talimatlara nasıl bölündüğünü görmek, Claude Code tarafında kendi skill'lerini ve review ajanlarını yazarken örnek olarak okunabilir. Buradaki değer araçta değil yapıda; depoyu kurup çalıştırmanın anlamı yok, birkaç skill dosyasını okumak yeterli. Lisans ticari kullanımı kısıtlıyor, dolayısıyla içeriği kendi ürünlerine taşımayı planlama.",
-      "matched_project": null,
-      "relevance": 2,
-      "investment_note": "Proje bir arama/asistan ürünüyle dağıtım ortaklığı duyuruyor; akademik iş akışlarını ajan skill'lerine çevirip ürünleştiren ekipler kategorisi izlenmeye değer olabilir."
-    },
-    {
-      "full_name": "kiloreux/awesome-robotics",
-      "inputs_hash": "a4523f48b1cbd8f6b00e5e1904578826",
-      "description_tr": "Awesome Robotics, robotik alanındaki kitap, ders, simülatör, kütüphane ve konferans bağlantılarını tek listede toplayan klasik bir awesome derlemesi. İçerik ağırlıklı olarak eğitim kaynakları: Udacity ve edX dersleri, ROS çevresindeki araçlar, temel ders kitapları. 2015'te açılmış ve 7.185 yıldıza ulaşmış; girişlerin bir bölümü eski bağlantılara işaret ediyor. Kod içermiyor ve standart bir açık kaynak lisansıyla işaretlenmemiş. Büyük dil modeli sonrası dönemin robotik çalışmaları listede çok az yer tutuyor.",
-      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor. En yakın bağlam, frontier tech ilgisi kapsamında robotik alanına genel bir giriş yapmak olabilir; ancak liste güncel değil ve bir yatırım kararına dayanak olacak sinyal taşımıyor. Lyricdrop, Folio ya da asistan tarafındaki hiçbir adıma bağlanmıyor. Robotik tarafını izlemek istersen güncel kaynaklar bu derlemeden daha iyi iş görür.",
-      "matched_project": null,
-      "relevance": 1,
-      "investment_note": null
-    },
-    {
-      "full_name": "likedan/Awesome-CoreML-Models",
-      "inputs_hash": "89a3b6a07d4c47ab14ac47ce372709b9",
-      "description_tr": "Awesome CoreML Models, Apple'ın Core ML formatına dönüştürülmüş hazır modelleri tek listede toplayan bir katalog. Görüntü sınıflandırma (MobileNet, Inception v3, ResNet50), poz tahmini, metin algılama ve stil transferi gibi modeller indirme bağlantıları ve örnek uygulamalarla veriliyor. Hedef kitle iOS, macOS, tvOS ve watchOS geliştiricileri; modeller cihaz üzerinde çalışır, sunucu gerektirmez. 2017'de açılmış, 7.059 yıldızlı ve MIT lisanslı; girişlerin çoğu Core ML'in ilk yıllarından ve güncel transformer tabanlı modelleri kapsamıyor. Depo bir model dizini, kütüphane değil.",
-      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor. En yakın bağlam, giyilebilir ve neuroteknoloji tezinde geçen cihaz üstü ML ihtiyacı ile görüntü skorlamalı uygulama fikri olabilir; Core ML orada gerçekten doğru hedef biçim. Ancak buradaki modeller ağırlıklı olarak eski nesil vizyon ağları ve bu fikirlerin ihtiyaç duyduğu güncel modelleri içermiyor; ayrıca Expo tarafında kullanmak için yine de native modül yazman gerekir. Fikir kaynağı olarak bakılabilir, üzerine plan kurulacak bir katalog değil.",
-      "matched_project": null,
-      "relevance": 2,
-      "investment_note": null
-    },
-    {
-      "full_name": "KalyanM45/AI-Project-Gallery",
-      "inputs_hash": "de1485576126594f133d4d6057d72236",
-      "description_tr": "AI Project Gallery, tek bir geliştiricinin makine öğrenmesi, derin öğrenme ve üretken yapay zeka alanında yaptığı proje depolarını tablo halinde listeleyen bir dizin. Her satır bir proje adı, alan etiketi ve ayrı bir GitHub deposuna bağlantı içeriyor; fiyat tahmini, hastalık sınıflandırma ve chatbot gibi öğretici ölçekli örnekler ağırlıkta. Depo kendi başına kod barındırmıyor, portföy ve indeks işlevi görüyor. Aralık 2023'te açılmış ve 6.841 yıldıza ulaşmış; lisans belirtilmemiş. Projeler öğrenme amaçlı, üretimde kullanılacak bileşenler değil.",
-      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor. En yakın bağlam, bir tekniği örnek üzerinden hızlıca görmek isteyen birine verilecek öğrenme materyali olabilir. İhtiyaç duyduğun parçalar — kelime düzeyinde hizalama, günlük içerik pipeline'ı, ajan orkestrasyonu — bu listede yok. Depoyu klonlamanın da bir karşılığı yok; tek tek proje bağlantılarına bakmak dışında bir kullanım biçimi sunmuyor.",
-      "matched_project": null,
-      "relevance": 1,
-      "investment_note": null
-    },
-    {
-      "full_name": "src-d/awesome-machine-learning-on-source-code",
-      "inputs_hash": "6f3b054f1f3b32a9147a32dc95b9df3a",
-      "description_tr": "Bu liste, kaynak kodu üzerinde makine öğrenmesi konusundaki akademik makaleleri, veri kümelerini ve araçları derliyor: program sentezi, kod tamamlama, kod gömme, hata onarımı gibi başlıklar. README'nin başında deponun artık bakımda olmadığı ve güncelleme yapılmayacağı açıkça belirtiliyor, yerine ml4code.github.io öneriliyor. 2017'de açılmış, 6.639 yıldızlı ve CC-BY-SA-4.0 lisanslı. İçerik büyük ölçüde büyük dil modelleri öncesi döneme ait. Tarihsel bir referans olarak değerli, güncel bir kaynak değil.",
-      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor. En yakın bağlam, bugün kullandığın kod ajanlarının fikir olarak nereden geldiğini merak edersen tarihsel arka plan okuması olabilir. Günlük çalışmanda Claude Code ve OpenCode tarafında hiçbir şeyi değiştirmez; depo bakımsız olduğunu kendisi söylüyor. Bu satırı bilgi olarak geçmek yeterli.",
-      "matched_project": null,
-      "relevance": 1,
-      "investment_note": null
-    },
-    {
-      "full_name": "punkpeye/awesome-mcp-clients",
-      "inputs_hash": "69dda9f52a3e0f077ab3bb93d5ee17b5",
-      "description_tr": "Awesome MCP Clients, Model Context Protocol'ü destekleyen istemcileri tek listede toplayan bir dizin. Her giriş için GitHub bağlantısı, lisans, desteklenen platformlar, fiyatlandırma ve kullanılan diller tablo halinde veriliyor; masaüstü uygulamaları, CLI'lar, editör eklentileri, kendi sunucunda barındırılan ajanlar ve mesajlaşma köprüleri ayrı başlıklarda yer alıyor. Claude Desktop, Cline, Continue, Zed, LibreChat ve Goose gibi bilinen istemcilerin yanında WhatsApp, Telegram ve Discord'a bağlanan self-hosted ajanlar da listeleniyor. Ocak 2025'te açılmış, 6.591 yıldızlı ve MIT lisanslı; en güncel sürümün Glama'nın kendi sitesinde tutulduğu belirtiliyor. Depo kod içermiyor, yönlendirme katmanı işlevi görüyor.",
-      "usage_tr": "Kapalı kaynak istemci kullanmak yerine açık kaynak bir istemciyi fork'layıp kendi sürümünü yazma tercihin için bu liste doğrudan bir kısa liste kaynağı. Asistan ve holding operasyon araçları tarafında istediğin şey — WhatsApp, takvim ve e-posta gibi yüzeylere bağlanan, hesapların senin kontrolünde kaldığı bir ajan — listede self-hosted başlıkları altında birkaç aday olarak duruyor ve lisans ile platform sütunları sayesinde eleme hızlı yapılabilir. Tablolarda programlama dili de verildiği için TypeScript tabanlı olanları ayırıp Expo/EAS ile kendi iOS istemcini yazma planına en yakın tabanı seçebilirsin. Yerel çalışan ve ücretsiz olan seçenekler işaretli olduğundan, API maliyeti getirmeyen adayları ayrı bir kümeye koymak mümkün. Fayda: haftalara yayılacak bir araştırma yerine tek oturumda aday listesi. Uyarı: girişler editoryal denetimden geçmiyor ve bakımsız projeler de listede duruyor, seçtiğin adayın son commit tarihine ve açık issue'larına ayrıca bakmalısın.",
-      "matched_project": "Asistan ve holding operasyon araçları",
-      "relevance": 5,
-      "investment_note": null
-    },
-    {
-      "full_name": "reorx/awesome-chatgpt-api",
-      "inputs_hash": "bf1a0486fa4cc288b3090d0b8d9e0d07",
-      "description_tr": "Awesome ChatGPT API, yalnızca ChatGPT API'sini kullanan değil, kullanıcının kendi API anahtarını girmesine izin veren uygulama ve araçları derleyen bir liste. Tarayıcı eklentileri, web arayüzleri, masaüstü ve mobil istemciler, CLI araçları ve sohbet botları başlıkları altında toplanmış; ayrıca geliştiriciler için proje ve makale bölümü var. 2023'te, OpenAI'ın sohbet API'si yayımlandığı dönemde açılmış ve o dönemin ekosistemini yansıtıyor; 6.417 yıldıza ulaşmış. Liste ayrı bir web sitesi üzerinden de yayımlanıyor, depoda açık lisans belirtilmemiş. Girişlerin bir kısmı bugün bakımsız projelere işaret ediyor.",
-      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor. Listenin tanımı gereği her giriş kendi API anahtarını, dolayısıyla kullanım başına maliyeti gerektiriyor; bu, Max aboneliği üzerinden çalışma ve mümkün olduğunca yerel model kullanma tercihinle ters yönde. En yakın bağlam kendi istemcini yazarken arayüz fikri toplamak olabilir, ama bunun için MCP istemci dizinleri hem güncel hem de senin kullandığın modellere yakın. Bu satırı geçebilirsin.",
-      "matched_project": null,
-      "relevance": 1,
-      "investment_note": null
-    },
-    {
-      "full_name": "sindresorhus/awesome-chatgpt",
-      "inputs_hash": "0de0fc90ddfd9620914721a19545e652",
-      "description_tr": "Awesome ChatGPT, ChatGPT çevresindeki uygulamaları, tarayıcı eklentilerini, CLI araçlarını, botları ve entegrasyonları derleyen genel amaçlı bir liste. Awesome listelerinin alışıldık biçimini izliyor: kategori başlıkları altında kısa açıklamalı bağlantılar, kod yok. README'de düşük kaliteli başvurular nedeniyle katkıların geçici olarak durdurulduğu belirtiliyor, yani liste şu an dondurulmuş sayılır. 2023'te açılmış, 6.417 yıldızlı ve CC0-1.0 lisanslı. İçerik büyük ölçüde OpenAI ürün ailesine odaklı.",
-      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor. En yakın bağlam genel bir ekosistem taraması olabilir, ancak liste katkıya kapalı ve OpenAI merkezli; günlük kullandığın Claude Code ve yerel model tarafına dair bir şey sunmuyor. Araç seçiminde bu tür geniş listeler yerine dar ve bakımlı dizinler daha iyi iş görüyor. Atlamak güvenli.",
-      "matched_project": null,
-      "relevance": 1,
-      "investment_note": null
-    },
-    {
-      "full_name": "mahseema/awesome-ai-tools",
-      "inputs_hash": "a869aa31a0551c5fa90b85a663769ba8",
-      "description_tr": "Awesome AI Tools, metin, kod, görsel, video, ses, pazarlama ve telefon ajanları gibi başlıklar altında yapay zeka araçlarını derleyen bir liste. Girişlerin çoğu açık kaynak proje değil, ticari SaaS ürünleri; README'de araç eklemenin ücretsiz olduğu belirtiliyor ve bağlantıların bir bölümü ortaklık (affiliate) bağlantısı. 2023'te açılmış, 6.261 yıldıza ulaşmış ve MIT lisanslı. Editoryal bir kalite eşiği tanımlanmamış, öne çıkan bölümler tanıtım ağırlıklı. Güncellemeler bir bülten üzerinden duyuruluyor.",
-      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor. En yakın bağlam Arslan Holding tarafında kategori haritası çıkarmak olabilir; ancak liste ortaklık bağlantıları ve kendi kendini listeleyen ürünlerle dolu olduğu için pazar sinyali olarak güvenilir değil. Uygulama stüdyosu fikrinde hangi kategorilerin kalabalıklaştığını görmek için hızlıca göz gezdirilebilir, fakat bir karara dayanak olamaz. Asistanına araştırma verirken kaynak olarak göstermemek daha doğru olur.",
-      "matched_project": null,
-      "relevance": 2,
-      "investment_note": null
-    },
-    {
-      "full_name": "VoltAgent/awesome-codex-subagents",
-      "inputs_hash": "a0eb9c510dcb18ae3e816a640520e758",
-      "description_tr": "Awesome Codex Subagents, OpenAI Codex için yazılmış 175'ten fazla özel alt-ajan tanımını on üç kategoride toplayan bir depo. Her ajan bir .toml dosyası olarak veriliyor ve ~/.codex/agents/ ya da proje içindeki .codex/agents/ dizinine kopyalanarak kuruluyor; backend geliştirme, kod review, güvenlik ve veri gibi roller kapsanıyor. README, Codex'in özel alt-ajanları kendiliğinden çağırmadığını, görevin açıkça devredilmesi gerektiğini belirtiyor. Mart 2026'da açılmış, 6.221 yıldızlı ve MIT lisanslı; VoltAgent tarafından sürdürülüyor ve kendi ürününe yönlendirme içeriyor. İçerik kod değil, yapılandırılmış prompt tanımları.",
-      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; tanımlar Codex'in .toml biçimine ve dizin düzenine bağlı, sen ise Claude Code ve OpenCode kullanıyorsun. En yakın bağlam, her değişikliği geliştirici doğruluğu ve ürün mantığı olmak üzere iki ayrı gözle review etme isteğin: buradaki reviewer ve security ajanlarının rol tanımları okunup kendi alt-ajanlarına uyarlanabilir. Bu bir kurulum değil biçim dönüştürme işi olur ve kazanç sınırlı kalır. Claude Code tarafında aynı işi doğrudan yapan koleksiyonlar dururken buraya vakit ayırmak için güçlü bir sebep yok.",
-      "matched_project": null,
-      "relevance": 2,
-      "investment_note": null
-    },
-    {
-      "full_name": "The-Swarm-Corporation/AutoHedge",
-      "inputs_hash": "1215391de1f1cc664d9021e3bf534908",
-      "description_tr": "AutoHedge, piyasa analizi, risk yönetimi ve emir yürütmeyi birbirine bağlı ajanlarla otomatikleştirmeyi hedefleyen bir Python paketi. Mimari dört rol etrafında kurulu: tez üreten Director, teknik ve istatistiksel analiz yapan Quant, pozisyon büyüklüğünü belirleyen Risk ve emirleri gönderen Execution ajanı. README'ye göre şu an yalnızca Solana üzerinde otonom işlem destekleniyor, Coinbase ve diğer borsalar yol haritasında; çalışması için cüzdan özel anahtarı ile fiyat ve model sağlayıcı API anahtarları gerekiyor. Aralık 2024'te açılmış, 6.173 yıldızlı, MIT lisanslı ve Swarms ekosisteminin parçası. Belgeler ürün dili ağırlıklı; gerçek parayla çalıştırıldığında risk tümüyle kullanıcıya ait.",
-      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor. En yakın bağlam Arslan Holding'in yatırım tarafı, ama oradaki iş erken aşama şirket seçimi ve due diligence; bu depo kripto piyasasında otonom emir yürütüyor, bambaşka bir problem. Deal screening için ajan kurgulayacaksan buradaki rol ayrımı — tez üretimi, karşıt analiz, risk değerlendirmesi, karar — mimari olarak okunabilir, fakat kodun kendisi o işe taşınmaz. Cüzdan özel anahtarı isteyen ve gerçek emir gönderen bir sistemi denemek için de bir sebep yok.",
-      "matched_project": null,
-      "relevance": 1,
-      "investment_note": null
-    },
-    {
-      "full_name": "0xNyk/awesome-hermes-agent",
-      "inputs_hash": "b00b751b7cafbd3f3d9faee5d682525c",
-      "description_tr": "Awesome Hermes Agent, Nous Research'ün açık kaynak Hermes Agent'ı etrafındaki skill'leri, eklentileri, hafıza sağlayıcılarını, MCP sunucularını ve arayüzleri derleyen bağımsız bir dizin. Her giriş production, beta veya experimental olarak etiketleniyor ve bu etiketlerin editoryal bir değerlendirme olduğu, güvenlik onayı anlamına gelmediği açıkça yazılıyor. README kurulumdan ilk skill'e ve bir arayüze kadar üç adımlık bir başlangıç yolu ile topluluk araçlarını açmadan önce kontrol edilecek bir güven sınırı listesi içeriyor. Mart 2026'da açılmış, 5.730 yıldızlı ve CC BY 4.0 lisanslı; ekosistem durumu gözden geçirme tarihi ve Hermes sürüm numarasıyla birlikte veriliyor. Resmi bir Nous Research projesi değil ve öne çıkan listelemeler ücretli reklam olarak işaretlenmiş.",
-      "usage_tr": "Hermes Agent'ı öğrenme planın için bu dizin doğrudan başlangıç noktası: hangi skill kütüphanesiyle başlanacağı, hangi arayüzün kullanılabileceği ve hangi hafıza sağlayıcısının olgun sayıldığı tek sayfada duruyor. Asistan ve holding operasyon araçları tarafında istediğin orkestratör için önce küçük bir Hermes kurulumunu evdeki 7/24 açık Mac mini'de çalıştırıp deneyebilir, sonra Trello ve takvim köprülerini üzerine ekleyebilirsin. Güven sınırı bölümü senin ilkelerinle örtüşüyor: hangi aracın hangi kimlik bilgisini gördüğü, komutun nerede çalıştığı ve işi kimin tetikleyebildiği, asistana devredilecek bir sistemde ilk sorulacak sorular. Olgunluk etiketleri sayesinde experimental olanları eleyip yalnızca production işaretlileri denemek kurulum süresini kısaltır. Uyarı: öne çıkan listelemeler ücretli, yani sıralamayı kalite sinyali olarak okuma; ayrıca Hermes'in sürüm temposu yüksek, kurduğun yapıyı sürüm notlarına bağlı tutman gerekir.",
-      "matched_project": "Asistan ve holding operasyon araçları",
-      "relevance": 7,
-      "investment_note": null
-    },
-    {
-      "full_name": "higgsfield-ai/higgsfield",
-      "inputs_hash": "775cb9ad2561720a86797ff839ba5f0d",
-      "description_tr": "Higgsfield, çok düğümlü GPU kümelerinde çok büyük modelleri eğitmek için yazılmış bir iş yükü yöneticisi ve eğitim çerçevesi. Düğüm tahsisi, deney kuyruğu, DeepSpeed ZeRO-3 ve PyTorch FSDP ile sharding, GitHub Actions üzerinden sürekli entegrasyon gibi işlevleri bir araya getiriyor ve örnek olarak LLaMA eğitimi veriliyor. Depo Jupyter Notebook ağırlıklı, Apache-2.0 lisanslı ve 5.617 yıldıza ulaşmış. 2018'de açılmış; README'de kurulum için gösterilen paket sürümü 0.0.3 seviyesinde. Hedef kitlesi kendi GPU kümesini işleten ekipler.",
-      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; model eğitmiyorsun, hazır modelleri yerel olarak çalıştırıyorsun. En yakın bağlam yatırım tarafında GPU altyapısı kategorisini tanımak olabilir, ama bu depo o kategori için zayıf bir referans. M4 Pro Mac'te ya da Mac mini'de çalıştırılacak bir şey de değil; çok düğümlü küme varsayıyor. Bu satırı geçebilirsin.",
-      "matched_project": null,
-      "relevance": 0,
-      "investment_note": null
-    },
-    {
-      "full_name": "XiaomingX/ai-money-maker-handbook",
-      "inputs_hash": "3cfee091ffbc2f0adfbf42e5971453a9",
-      "description_tr": "Bu depo, yapay zeka araçlarıyla ek gelir elde etme yöntemlerini anlatan Çince makale, araç ve platform bağlantılarını derleyen bir el kitabı. İçerik içerik üretimi ve trafik toplama üzerine tavsiyeler, başka derleme depolarına yönlendirmeler ve erken aşama girişimcilik konularında blog yazısı listeleri şeklinde. Kod barındırmıyor; depo dili CSS olarak işaretlenmiş, Apache-2.0 lisanslı ve bir ürün sitesine bağlanıyor. Kasım 2024'te açılmış ve 5.330 yıldıza ulaşmış. Metinlerin neredeyse tamamı Çince ve Çin'deki platformlara özgü.",
-      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor. En yakın bağlam Dubai'de kurmayı düşündüğün uygulama stüdyosunun dağıtım ve trafik tarafı olabilir; ancak buradaki tavsiyeler Çin içerik platformlarına göre yazılmış ve hedef pazarına doğrudan taşınmıyor. Lyricdrop'un lansman pazarlaması için de somut bir yöntem sunmuyor, genel ilkelerin ötesine geçmiyor. Okumaya vakit ayırmaya değecek bir kaynak değil.",
-      "matched_project": null,
-      "relevance": 1,
-      "investment_note": null
-    },
-    {
-      "full_name": "alvinreal/awesome-opensource-ai",
-      "inputs_hash": "3d9f173430e8beda9ffd9739225a155f",
-      "description_tr": "Awesome Open Source AI, açık kaynak yapay zeka projelerini on dört başlık altında derleyen bir liste: çekirdek kütüphaneler, model aileleri, çıkarım motorları, ajan sistemleri, RAG, üretken medya araçları, eğitim ekosistemi, MLOps, değerlendirme ve kendi sunucunda barındırılan arayüzler. Girişler kısa açıklama ve yıldız rozetiyle veriliyor; README'de yıldız eşiği olmadığı, bakım ve dokümantasyon kalitesinin de ölçüt sayıldığı belirtiliyor. Mart 2026'da açılmış, 4.768 yıldızlı ve CC0-1.0 lisanslı, günlük güncellendiği söyleniyor. Liste ayrı bir web sitesi üzerinden de yayımlanıyor. Kendisi kod değil, seçilmiş bağlantılardan oluşuyor.",
-      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; liste geniş ve genel, tek bir adıma oturmuyor. En yakın bağlam Lyricdrop v2 için karşılaştırdığın yerel STT ve çıkarım motoru seçenekleri: çıkarım motorları ve üretken medya başlıkları aday isimleri hızlıca görmek için kullanılabilir. Yine de aday karşılaştırmasını kendi test setinde ölçerek yapıyorsun, bu yüzden liste kararı değiştirmez. Bir kez göz gezdirip yer imlerine eklemek yeterli; düzenli takip gerektiren bir kaynak değil.",
-      "matched_project": null,
-      "relevance": 2,
-      "investment_note": null
-    },
-    {
-      "full_name": "ai-boost/awesome-harness-engineering",
-      "inputs_hash": "8032beee24232ca3a4628d7fbe98a70e",
-      "description_tr": "Awesome Harness Engineering, bir yapay zeka ajanının etrafındaki iskeleyi konu başlıklarına ayırıp kaynak, desen ve şablon derliyor: bağlam aktarımı ve sıkıştırma, araç tasarımı, planlama, izin ve yetkilendirme, hafıza, görev koşucuları, doğrulama döngüleri, gözlemlenebilirlik ve insan onayı. Modelin kendisiyle değil çevresindeki katmanla ilgileniyor; referans uygulamalar, sandbox ve güvenlik, eval bölümleri ile hazır şablonlar içeriyor. Mart 2026'da açılmış, 4.457 yıldızlı ve CC0 lisanslı. Temel okumaların bir bölümü Codex harness yazılarına dayanıyor, ama başlıkların çoğu sağlayıcıdan bağımsız. Depo kod değil, okuma ve şablon listesi.",
-      "usage_tr": "Tüm projelerini bilen bir asistan/orkestratör ajan isteğin için bu liste doğru soruları sıralıyor: izinler, hafıza, doğrulama döngüsü ve insan onayı, o ajanı kurarken ayrı ayrı çözmen gereken dört problem. Asistan ve holding operasyon araçları tarafındaki erişim kapsamlarının izole kalması ilkesini izin ve yetkilendirme bölümündeki desenlerle eşleştirip kendi kurulumunun kontrol listesini çıkarabilirsin. Lyricdrop v2'deki onay ve playtest gate'ini de doğrulama/CI bölümündeki şablonlarla karşılaştırmak, hangi adımın otomatikleşeceğini ve hangisinin insanda kalacağını netleştirir. Okuma dışında maliyeti yok, Mac'te çalıştırılacak bir şey değil; çıktısı doğrudan CLAUDE.md, hook ve alt-ajan kurgularına yansır. Uyarı: içerik desen ve makale ağırlıklı, hazır çözüm beklemeyip kendi kurulumuna çevirmen gerekir.",
-      "matched_project": "Asistan ve holding operasyon araçları",
-      "relevance": 5,
-      "investment_note": null
-    },
-    {
-      "full_name": "brycewang-stanford/Auto-Empirical-Research-Skills",
-      "inputs_hash": "da8798eae3d7fda39e0e5485be90a814",
-      "description_tr": "Bu depo, sekiz sosyal bilim disiplininde ampirik araştırma adımlarını kapsayan çok sayıda ajan skill tanımını kataloglayan bir koleksiyon. Ekonomi, siyaset bilimi, psikoloji, sosyoloji ve kamu yönetimi gibi alanlar için veri hazırlama, tahmin, sağlamlık testleri ve yazım adımları tanımlanmış; depo dili Stata olarak işaretli ve katalog CI ile doğrulanıyor. Koleksiyon CoPaper.AI adlı bir ürün tarafından sürdürülüyor ve kullanıcıların kendi skill'lerini yüklemesine açık. Nisan 2026'da açılmış, 4.178 yıldızlı ve CC BY-SA 4.0 lisanslı. Skill sayısı çok büyük olduğu için kalite girişten girişe değişebilir.",
-      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; ampirik sosyal bilim makalesi üretmek yaptığın işlerin hiçbirine girmiyor. En yakın bağlam psikoloji ve sosyoloji öğrenme ilgin olabilir, fakat burada öğrenme materyali değil bir araştırma üretim hattı var. Katalogun nasıl doğrulandığı — şemanın CI ile kontrol edilmesi — kendi skill koleksiyonunu düzenli tutarken örnek alınabilir, o kadar. Kurup denemek için bir sebep yok.",
-      "matched_project": null,
-      "relevance": 1,
-      "investment_note": "Depo, akademiyle bağlantılı bir ekibin ticari ürününün dağıtım kanalı olarak işliyor; araştırma iş akışlarını ajan skill'lerine çeviren bu kategori yatırım merceğiyle izlenebilir."
-    },
-    {
-      "full_name": "hzwer/WritingAIPaper",
-      "inputs_hash": "2a21f23a39b23cb71cf9072fd76f2b81",
-      "description_tr": "WritingAIPaper, yapay zeka konferanslarına ilk kez makale gönderecek kişiler için yazılmış bir el kitabı. Makalenin bölümlerinin nasıl kurgulanacağını, şekil ve tablo düzenini, hakem gözüyle sık yapılan hataları ve teslim öncesi kontrol adımlarını anlatıyor; metne Çince özet ve tartışma bağlantıları eşlik ediyor. Depo yalnızca Markdown metinden oluşuyor, kod veya araç içermiyor ve lisans belirtilmemiş. Eylül 2024'te açılmış ve 4.087 yıldıza ulaşmış; yazarlar metnin en çok akran değerlendirmesine ihtiyaç duyduğunu belirtiyor. Hedef kitlesi lisansüstü öğrenciler ve yeni araştırmacılar.",
-      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor. En yakın bağlam, teknik bir konuyu yapılandırılmış biçimde anlatma pratiği olabilir; argüman kurma ve şekil düzeni bölümleri bir yatırım notu ya da ürün dokümanı yazarken okunabilir. Ancak metin tamamen akademik yayın sürecine özel ve iş akışlarının hiçbirine bağlanmıyor. Bu satırı bilgi olarak geçmek yeterli.",
-      "matched_project": null,
-      "relevance": 1,
-      "investment_note": null
-    }
-  ]
+ "repos": [
+  {
+   "full_name": "cporter202/API-mega-list",
+   "inputs_hash": "75fbec840741037d6acb4fb306065d0f",
+   "description_tr": "API Mega List, tek bir depoda toplanmış büyük bir açık API dizini; README'de 11.860 dizin kaydı ve 318 sponsorlu listeleme olduğu belirtiliyor. Kategoriler web scraping, e-ticaret, sosyal medya, emlak, lead generation ve MCP gibi başlıkları kapsıyor ve listenin günlük güncellendiği söyleniyor. Depo JavaScript olarak işaretli, açık bir lisans dosyası yok ve README'nin üst kısmında ücretli sponsor blokları yer alıyor. Aralık 2025'te açılmış, 7.631 yıldıza ulaşmış; kod değil, bağlantı derlemesi sunuyor. Girişler için tanımlanmış bir editoryal kalite eşiği bulunmuyor.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor. En yakın bağlam, asistanın yürüttüğü tedarikçi ve servis karşılaştırma araştırmaları olabilir; bir entegrasyon ararken ilk bakılacak yerlerden biri sayılabilir. Ancak liste sponsorlu girişler içeriyor ve eleme yapılmamış, bu yüzden bir API'yi buradan seçmek yerine doğrudan sağlayıcının dokümanına gitmek daha hızlı sonuç verir. Lyricdrop tarafındaki lyrics ve STT servis seçimlerin zaten daralmış durumda, bu dizin o kararı değiştirmez. Kurulum maliyeti yok ama düzenli takip edilecek bir kaynak da değil.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "HKUSTDial/Supervisor-Skills",
+   "inputs_hash": "0ebbc45166413ad60c3157bda340b696",
+   "description_tr": "Supervisor-Skills, akademik araştırma sürecini büyük dil modellerinin çalıştırabileceği yapılandırılmış skill dosyalarına dönüştüren bir koleksiyon. Fikir değerlendirme, literatür taraması, giriş bölümü yazımı, dil düzeltme ve hakem gözüyle inceleme gibi adımlar için ayrı skill'ler ve bunlara eşlik eden bir handbook içeriyor. Skill'ler Claude ve GPT benzeri modellerle kullanılmak üzere yazılmış; depo CC BY-NC-SA 4.0 lisanslı, yani ticari kullanım kısıtlı. Nisan 2026'da yayımlanmış, 7.418 yıldıza ulaşmış ve sürüm notlarına göre yeni skill'ler eklenerek geliştiriliyor. Belgelerin büyük kısmı Çince, İngilizce README ikincil.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; içerik akademik yayın üretimine özel ve iş akışlarının hiçbiri makale yazmıyor. En yakın bağlam skill dosyalarının biçimi: bir alan uzmanlığının adım adım talimatlara nasıl bölündüğünü görmek, Claude Code tarafında kendi skill'lerini ve review ajanlarını yazarken örnek olarak okunabilir. Buradaki değer araçta değil yapıda; depoyu kurup çalıştırmanın anlamı yok, birkaç skill dosyasını okumak yeterli. Lisans ticari kullanımı kısıtlıyor, dolayısıyla içeriği kendi ürünlerine taşımayı planlama.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": "Proje bir arama/asistan ürünüyle dağıtım ortaklığı duyuruyor; akademik iş akışlarını ajan skill'lerine çevirip ürünleştiren ekipler kategorisi izlenmeye değer olabilir."
+  },
+  {
+   "full_name": "kiloreux/awesome-robotics",
+   "inputs_hash": "a4523f48b1cbd8f6b00e5e1904578826",
+   "description_tr": "Awesome Robotics, robotik alanındaki kitap, ders, simülatör, kütüphane ve konferans bağlantılarını tek listede toplayan klasik bir awesome derlemesi. İçerik ağırlıklı olarak eğitim kaynakları: Udacity ve edX dersleri, ROS çevresindeki araçlar, temel ders kitapları. 2015'te açılmış ve 7.185 yıldıza ulaşmış; girişlerin bir bölümü eski bağlantılara işaret ediyor. Kod içermiyor ve standart bir açık kaynak lisansıyla işaretlenmemiş. Büyük dil modeli sonrası dönemin robotik çalışmaları listede çok az yer tutuyor.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor. En yakın bağlam, frontier tech ilgisi kapsamında robotik alanına genel bir giriş yapmak olabilir; ancak liste güncel değil ve bir yatırım kararına dayanak olacak sinyal taşımıyor. Lyricdrop, Folio ya da asistan tarafındaki hiçbir adıma bağlanmıyor. Robotik tarafını izlemek istersen güncel kaynaklar bu derlemeden daha iyi iş görür.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "likedan/Awesome-CoreML-Models",
+   "inputs_hash": "89a3b6a07d4c47ab14ac47ce372709b9",
+   "description_tr": "Awesome CoreML Models, Apple'ın Core ML formatına dönüştürülmüş hazır modelleri tek listede toplayan bir katalog. Görüntü sınıflandırma (MobileNet, Inception v3, ResNet50), poz tahmini, metin algılama ve stil transferi gibi modeller indirme bağlantıları ve örnek uygulamalarla veriliyor. Hedef kitle iOS, macOS, tvOS ve watchOS geliştiricileri; modeller cihaz üzerinde çalışır, sunucu gerektirmez. 2017'de açılmış, 7.059 yıldızlı ve MIT lisanslı; girişlerin çoğu Core ML'in ilk yıllarından ve güncel transformer tabanlı modelleri kapsamıyor. Depo bir model dizini, kütüphane değil.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor. En yakın bağlam, giyilebilir ve neuroteknoloji tezinde geçen cihaz üstü ML ihtiyacı ile görüntü skorlamalı uygulama fikri olabilir; Core ML orada gerçekten doğru hedef biçim. Ancak buradaki modeller ağırlıklı olarak eski nesil vizyon ağları ve bu fikirlerin ihtiyaç duyduğu güncel modelleri içermiyor; ayrıca Expo tarafında kullanmak için yine de native modül yazman gerekir. Fikir kaynağı olarak bakılabilir, üzerine plan kurulacak bir katalog değil.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "KalyanM45/AI-Project-Gallery",
+   "inputs_hash": "de1485576126594f133d4d6057d72236",
+   "description_tr": "AI Project Gallery, tek bir geliştiricinin makine öğrenmesi, derin öğrenme ve üretken yapay zeka alanında yaptığı proje depolarını tablo halinde listeleyen bir dizin. Her satır bir proje adı, alan etiketi ve ayrı bir GitHub deposuna bağlantı içeriyor; fiyat tahmini, hastalık sınıflandırma ve chatbot gibi öğretici ölçekli örnekler ağırlıkta. Depo kendi başına kod barındırmıyor, portföy ve indeks işlevi görüyor. Aralık 2023'te açılmış ve 6.841 yıldıza ulaşmış; lisans belirtilmemiş. Projeler öğrenme amaçlı, üretimde kullanılacak bileşenler değil.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor. En yakın bağlam, bir tekniği örnek üzerinden hızlıca görmek isteyen birine verilecek öğrenme materyali olabilir. İhtiyaç duyduğun parçalar — kelime düzeyinde hizalama, günlük içerik pipeline'ı, ajan orkestrasyonu — bu listede yok. Depoyu klonlamanın da bir karşılığı yok; tek tek proje bağlantılarına bakmak dışında bir kullanım biçimi sunmuyor.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "src-d/awesome-machine-learning-on-source-code",
+   "inputs_hash": "6f3b054f1f3b32a9147a32dc95b9df3a",
+   "description_tr": "Bu liste, kaynak kodu üzerinde makine öğrenmesi konusundaki akademik makaleleri, veri kümelerini ve araçları derliyor: program sentezi, kod tamamlama, kod gömme, hata onarımı gibi başlıklar. README'nin başında deponun artık bakımda olmadığı ve güncelleme yapılmayacağı açıkça belirtiliyor, yerine ml4code.github.io öneriliyor. 2017'de açılmış, 6.639 yıldızlı ve CC-BY-SA-4.0 lisanslı. İçerik büyük ölçüde büyük dil modelleri öncesi döneme ait. Tarihsel bir referans olarak değerli, güncel bir kaynak değil.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor. En yakın bağlam, bugün kullandığın kod ajanlarının fikir olarak nereden geldiğini merak edersen tarihsel arka plan okuması olabilir. Günlük çalışmanda Claude Code ve OpenCode tarafında hiçbir şeyi değiştirmez; depo bakımsız olduğunu kendisi söylüyor. Bu satırı bilgi olarak geçmek yeterli.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "punkpeye/awesome-mcp-clients",
+   "inputs_hash": "69dda9f52a3e0f077ab3bb93d5ee17b5",
+   "description_tr": "Awesome MCP Clients, Model Context Protocol'ü destekleyen istemcileri tek listede toplayan bir dizin. Her giriş için GitHub bağlantısı, lisans, desteklenen platformlar, fiyatlandırma ve kullanılan diller tablo halinde veriliyor; masaüstü uygulamaları, CLI'lar, editör eklentileri, kendi sunucunda barındırılan ajanlar ve mesajlaşma köprüleri ayrı başlıklarda yer alıyor. Claude Desktop, Cline, Continue, Zed, LibreChat ve Goose gibi bilinen istemcilerin yanında WhatsApp, Telegram ve Discord'a bağlanan self-hosted ajanlar da listeleniyor. Ocak 2025'te açılmış, 6.591 yıldızlı ve MIT lisanslı; en güncel sürümün Glama'nın kendi sitesinde tutulduğu belirtiliyor. Depo kod içermiyor, yönlendirme katmanı işlevi görüyor.",
+   "usage_tr": "Kapalı kaynak istemci kullanmak yerine açık kaynak bir istemciyi fork'layıp kendi sürümünü yazma tercihin için bu liste doğrudan bir kısa liste kaynağı. Asistan ve holding operasyon araçları tarafında istediğin şey — WhatsApp, takvim ve e-posta gibi yüzeylere bağlanan, hesapların senin kontrolünde kaldığı bir ajan — listede self-hosted başlıkları altında birkaç aday olarak duruyor ve lisans ile platform sütunları sayesinde eleme hızlı yapılabilir. Tablolarda programlama dili de verildiği için TypeScript tabanlı olanları ayırıp Expo/EAS ile kendi iOS istemcini yazma planına en yakın tabanı seçebilirsin. Yerel çalışan ve ücretsiz olan seçenekler işaretli olduğundan, API maliyeti getirmeyen adayları ayrı bir kümeye koymak mümkün. Fayda: haftalara yayılacak bir araştırma yerine tek oturumda aday listesi. Uyarı: girişler editoryal denetimden geçmiyor ve bakımsız projeler de listede duruyor, seçtiğin adayın son commit tarihine ve açık issue'larına ayrıca bakmalısın.",
+   "matched_project": "Asistan ve holding araçları",
+   "relevance": 5,
+   "investment_note": null
+  },
+  {
+   "full_name": "reorx/awesome-chatgpt-api",
+   "inputs_hash": "bf1a0486fa4cc288b3090d0b8d9e0d07",
+   "description_tr": "Awesome ChatGPT API, yalnızca ChatGPT API'sini kullanan değil, kullanıcının kendi API anahtarını girmesine izin veren uygulama ve araçları derleyen bir liste. Tarayıcı eklentileri, web arayüzleri, masaüstü ve mobil istemciler, CLI araçları ve sohbet botları başlıkları altında toplanmış; ayrıca geliştiriciler için proje ve makale bölümü var. 2023'te, OpenAI'ın sohbet API'si yayımlandığı dönemde açılmış ve o dönemin ekosistemini yansıtıyor; 6.417 yıldıza ulaşmış. Liste ayrı bir web sitesi üzerinden de yayımlanıyor, depoda açık lisans belirtilmemiş. Girişlerin bir kısmı bugün bakımsız projelere işaret ediyor.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor. Listenin tanımı gereği her giriş kendi API anahtarını, dolayısıyla kullanım başına maliyeti gerektiriyor; bu, Max aboneliği üzerinden çalışma ve mümkün olduğunca yerel model kullanma tercihinle ters yönde. En yakın bağlam kendi istemcini yazarken arayüz fikri toplamak olabilir, ama bunun için MCP istemci dizinleri hem güncel hem de senin kullandığın modellere yakın. Bu satırı geçebilirsin.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "sindresorhus/awesome-chatgpt",
+   "inputs_hash": "0de0fc90ddfd9620914721a19545e652",
+   "description_tr": "Awesome ChatGPT, ChatGPT çevresindeki uygulamaları, tarayıcı eklentilerini, CLI araçlarını, botları ve entegrasyonları derleyen genel amaçlı bir liste. Awesome listelerinin alışıldık biçimini izliyor: kategori başlıkları altında kısa açıklamalı bağlantılar, kod yok. README'de düşük kaliteli başvurular nedeniyle katkıların geçici olarak durdurulduğu belirtiliyor, yani liste şu an dondurulmuş sayılır. 2023'te açılmış, 6.417 yıldızlı ve CC0-1.0 lisanslı. İçerik büyük ölçüde OpenAI ürün ailesine odaklı.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor. En yakın bağlam genel bir ekosistem taraması olabilir, ancak liste katkıya kapalı ve OpenAI merkezli; günlük kullandığın Claude Code ve yerel model tarafına dair bir şey sunmuyor. Araç seçiminde bu tür geniş listeler yerine dar ve bakımlı dizinler daha iyi iş görüyor. Atlamak güvenli.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "mahseema/awesome-ai-tools",
+   "inputs_hash": "a869aa31a0551c5fa90b85a663769ba8",
+   "description_tr": "Awesome AI Tools, metin, kod, görsel, video, ses, pazarlama ve telefon ajanları gibi başlıklar altında yapay zeka araçlarını derleyen bir liste. Girişlerin çoğu açık kaynak proje değil, ticari SaaS ürünleri; README'de araç eklemenin ücretsiz olduğu belirtiliyor ve bağlantıların bir bölümü ortaklık (affiliate) bağlantısı. 2023'te açılmış, 6.261 yıldıza ulaşmış ve MIT lisanslı. Editoryal bir kalite eşiği tanımlanmamış, öne çıkan bölümler tanıtım ağırlıklı. Güncellemeler bir bülten üzerinden duyuruluyor.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor. En yakın bağlam Arslan Holding tarafında kategori haritası çıkarmak olabilir; ancak liste ortaklık bağlantıları ve kendi kendini listeleyen ürünlerle dolu olduğu için pazar sinyali olarak güvenilir değil. Uygulama stüdyosu fikrinde hangi kategorilerin kalabalıklaştığını görmek için hızlıca göz gezdirilebilir, fakat bir karara dayanak olamaz. Asistanına araştırma verirken kaynak olarak göstermemek daha doğru olur.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "VoltAgent/awesome-codex-subagents",
+   "inputs_hash": "a0eb9c510dcb18ae3e816a640520e758",
+   "description_tr": "Awesome Codex Subagents, OpenAI Codex için yazılmış 175'ten fazla özel alt-ajan tanımını on üç kategoride toplayan bir depo. Her ajan bir .toml dosyası olarak veriliyor ve ~/.codex/agents/ ya da proje içindeki .codex/agents/ dizinine kopyalanarak kuruluyor; backend geliştirme, kod review, güvenlik ve veri gibi roller kapsanıyor. README, Codex'in özel alt-ajanları kendiliğinden çağırmadığını, görevin açıkça devredilmesi gerektiğini belirtiyor. Mart 2026'da açılmış, 6.221 yıldızlı ve MIT lisanslı; VoltAgent tarafından sürdürülüyor ve kendi ürününe yönlendirme içeriyor. İçerik kod değil, yapılandırılmış prompt tanımları.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; tanımlar Codex'in .toml biçimine ve dizin düzenine bağlı, sen ise Claude Code ve OpenCode kullanıyorsun. En yakın bağlam, her değişikliği geliştirici doğruluğu ve ürün mantığı olmak üzere iki ayrı gözle review etme isteğin: buradaki reviewer ve security ajanlarının rol tanımları okunup kendi alt-ajanlarına uyarlanabilir. Bu bir kurulum değil biçim dönüştürme işi olur ve kazanç sınırlı kalır. Claude Code tarafında aynı işi doğrudan yapan koleksiyonlar dururken buraya vakit ayırmak için güçlü bir sebep yok.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "The-Swarm-Corporation/AutoHedge",
+   "inputs_hash": "1215391de1f1cc664d9021e3bf534908",
+   "description_tr": "AutoHedge, piyasa analizi, risk yönetimi ve emir yürütmeyi birbirine bağlı ajanlarla otomatikleştirmeyi hedefleyen bir Python paketi. Mimari dört rol etrafında kurulu: tez üreten Director, teknik ve istatistiksel analiz yapan Quant, pozisyon büyüklüğünü belirleyen Risk ve emirleri gönderen Execution ajanı. README'ye göre şu an yalnızca Solana üzerinde otonom işlem destekleniyor, Coinbase ve diğer borsalar yol haritasında; çalışması için cüzdan özel anahtarı ile fiyat ve model sağlayıcı API anahtarları gerekiyor. Aralık 2024'te açılmış, 6.173 yıldızlı, MIT lisanslı ve Swarms ekosisteminin parçası. Belgeler ürün dili ağırlıklı; gerçek parayla çalıştırıldığında risk tümüyle kullanıcıya ait.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor. En yakın bağlam Arslan Holding'in yatırım tarafı, ama oradaki iş erken aşama şirket seçimi ve due diligence; bu depo kripto piyasasında otonom emir yürütüyor, bambaşka bir problem. Deal screening için ajan kurgulayacaksan buradaki rol ayrımı — tez üretimi, karşıt analiz, risk değerlendirmesi, karar — mimari olarak okunabilir, fakat kodun kendisi o işe taşınmaz. Cüzdan özel anahtarı isteyen ve gerçek emir gönderen bir sistemi denemek için de bir sebep yok.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "0xNyk/awesome-hermes-agent",
+   "inputs_hash": "b00b751b7cafbd3f3d9faee5d682525c",
+   "description_tr": "Awesome Hermes Agent, Nous Research'ün açık kaynak Hermes Agent'ı etrafındaki skill'leri, eklentileri, hafıza sağlayıcılarını, MCP sunucularını ve arayüzleri derleyen bağımsız bir dizin. Her giriş production, beta veya experimental olarak etiketleniyor ve bu etiketlerin editoryal bir değerlendirme olduğu, güvenlik onayı anlamına gelmediği açıkça yazılıyor. README kurulumdan ilk skill'e ve bir arayüze kadar üç adımlık bir başlangıç yolu ile topluluk araçlarını açmadan önce kontrol edilecek bir güven sınırı listesi içeriyor. Mart 2026'da açılmış, 5.730 yıldızlı ve CC BY 4.0 lisanslı; ekosistem durumu gözden geçirme tarihi ve Hermes sürüm numarasıyla birlikte veriliyor. Resmi bir Nous Research projesi değil ve öne çıkan listelemeler ücretli reklam olarak işaretlenmiş.",
+   "usage_tr": "Hermes Agent'ı öğrenme planın için bu dizin doğrudan başlangıç noktası: hangi skill kütüphanesiyle başlanacağı, hangi arayüzün kullanılabileceği ve hangi hafıza sağlayıcısının olgun sayıldığı tek sayfada duruyor. Asistan ve holding operasyon araçları tarafında istediğin orkestratör için önce küçük bir Hermes kurulumunu evdeki 7/24 açık Mac mini'de çalıştırıp deneyebilir, sonra Trello ve takvim köprülerini üzerine ekleyebilirsin. Güven sınırı bölümü senin ilkelerinle örtüşüyor: hangi aracın hangi kimlik bilgisini gördüğü, komutun nerede çalıştığı ve işi kimin tetikleyebildiği, asistana devredilecek bir sistemde ilk sorulacak sorular. Olgunluk etiketleri sayesinde experimental olanları eleyip yalnızca production işaretlileri denemek kurulum süresini kısaltır. Uyarı: öne çıkan listelemeler ücretli, yani sıralamayı kalite sinyali olarak okuma; ayrıca Hermes'in sürüm temposu yüksek, kurduğun yapıyı sürüm notlarına bağlı tutman gerekir.",
+   "matched_project": "Asistan ve holding araçları",
+   "relevance": 7,
+   "investment_note": null
+  },
+  {
+   "full_name": "higgsfield-ai/higgsfield",
+   "inputs_hash": "775cb9ad2561720a86797ff839ba5f0d",
+   "description_tr": "Higgsfield, çok düğümlü GPU kümelerinde çok büyük modelleri eğitmek için yazılmış bir iş yükü yöneticisi ve eğitim çerçevesi. Düğüm tahsisi, deney kuyruğu, DeepSpeed ZeRO-3 ve PyTorch FSDP ile sharding, GitHub Actions üzerinden sürekli entegrasyon gibi işlevleri bir araya getiriyor ve örnek olarak LLaMA eğitimi veriliyor. Depo Jupyter Notebook ağırlıklı, Apache-2.0 lisanslı ve 5.617 yıldıza ulaşmış. 2018'de açılmış; README'de kurulum için gösterilen paket sürümü 0.0.3 seviyesinde. Hedef kitlesi kendi GPU kümesini işleten ekipler.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; model eğitmiyorsun, hazır modelleri yerel olarak çalıştırıyorsun. En yakın bağlam yatırım tarafında GPU altyapısı kategorisini tanımak olabilir, ama bu depo o kategori için zayıf bir referans. M4 Pro Mac'te ya da Mac mini'de çalıştırılacak bir şey de değil; çok düğümlü küme varsayıyor. Bu satırı geçebilirsin.",
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "XiaomingX/ai-money-maker-handbook",
+   "inputs_hash": "3cfee091ffbc2f0adfbf42e5971453a9",
+   "description_tr": "Bu depo, yapay zeka araçlarıyla ek gelir elde etme yöntemlerini anlatan Çince makale, araç ve platform bağlantılarını derleyen bir el kitabı. İçerik içerik üretimi ve trafik toplama üzerine tavsiyeler, başka derleme depolarına yönlendirmeler ve erken aşama girişimcilik konularında blog yazısı listeleri şeklinde. Kod barındırmıyor; depo dili CSS olarak işaretlenmiş, Apache-2.0 lisanslı ve bir ürün sitesine bağlanıyor. Kasım 2024'te açılmış ve 5.330 yıldıza ulaşmış. Metinlerin neredeyse tamamı Çince ve Çin'deki platformlara özgü.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor. En yakın bağlam Dubai'de kurmayı düşündüğün uygulama stüdyosunun dağıtım ve trafik tarafı olabilir; ancak buradaki tavsiyeler Çin içerik platformlarına göre yazılmış ve hedef pazarına doğrudan taşınmıyor. Lyricdrop'un lansman pazarlaması için de somut bir yöntem sunmuyor, genel ilkelerin ötesine geçmiyor. Okumaya vakit ayırmaya değecek bir kaynak değil.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "alvinreal/awesome-opensource-ai",
+   "inputs_hash": "3d9f173430e8beda9ffd9739225a155f",
+   "description_tr": "Awesome Open Source AI, açık kaynak yapay zeka projelerini on dört başlık altında derleyen bir liste: çekirdek kütüphaneler, model aileleri, çıkarım motorları, ajan sistemleri, RAG, üretken medya araçları, eğitim ekosistemi, MLOps, değerlendirme ve kendi sunucunda barındırılan arayüzler. Girişler kısa açıklama ve yıldız rozetiyle veriliyor; README'de yıldız eşiği olmadığı, bakım ve dokümantasyon kalitesinin de ölçüt sayıldığı belirtiliyor. Mart 2026'da açılmış, 4.768 yıldızlı ve CC0-1.0 lisanslı, günlük güncellendiği söyleniyor. Liste ayrı bir web sitesi üzerinden de yayımlanıyor. Kendisi kod değil, seçilmiş bağlantılardan oluşuyor.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; liste geniş ve genel, tek bir adıma oturmuyor. En yakın bağlam Lyricdrop v2 için karşılaştırdığın yerel STT ve çıkarım motoru seçenekleri: çıkarım motorları ve üretken medya başlıkları aday isimleri hızlıca görmek için kullanılabilir. Yine de aday karşılaştırmasını kendi test setinde ölçerek yapıyorsun, bu yüzden liste kararı değiştirmez. Bir kez göz gezdirip yer imlerine eklemek yeterli; düzenli takip gerektiren bir kaynak değil.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "ai-boost/awesome-harness-engineering",
+   "inputs_hash": "8032beee24232ca3a4628d7fbe98a70e",
+   "description_tr": "Awesome Harness Engineering, bir yapay zeka ajanının etrafındaki iskeleyi konu başlıklarına ayırıp kaynak, desen ve şablon derliyor: bağlam aktarımı ve sıkıştırma, araç tasarımı, planlama, izin ve yetkilendirme, hafıza, görev koşucuları, doğrulama döngüleri, gözlemlenebilirlik ve insan onayı. Modelin kendisiyle değil çevresindeki katmanla ilgileniyor; referans uygulamalar, sandbox ve güvenlik, eval bölümleri ile hazır şablonlar içeriyor. Mart 2026'da açılmış, 4.457 yıldızlı ve CC0 lisanslı. Temel okumaların bir bölümü Codex harness yazılarına dayanıyor, ama başlıkların çoğu sağlayıcıdan bağımsız. Depo kod değil, okuma ve şablon listesi.",
+   "usage_tr": "Tüm projelerini bilen bir asistan/orkestratör ajan isteğin için bu liste doğru soruları sıralıyor: izinler, hafıza, doğrulama döngüsü ve insan onayı, o ajanı kurarken ayrı ayrı çözmen gereken dört problem. Asistan ve holding operasyon araçları tarafındaki erişim kapsamlarının izole kalması ilkesini izin ve yetkilendirme bölümündeki desenlerle eşleştirip kendi kurulumunun kontrol listesini çıkarabilirsin. Lyricdrop v2'deki onay ve playtest gate'ini de doğrulama/CI bölümündeki şablonlarla karşılaştırmak, hangi adımın otomatikleşeceğini ve hangisinin insanda kalacağını netleştirir. Okuma dışında maliyeti yok, Mac'te çalıştırılacak bir şey değil; çıktısı doğrudan CLAUDE.md, hook ve alt-ajan kurgularına yansır. Uyarı: içerik desen ve makale ağırlıklı, hazır çözüm beklemeyip kendi kurulumuna çevirmen gerekir.",
+   "matched_project": "Asistan ve holding araçları",
+   "relevance": 5,
+   "investment_note": null
+  },
+  {
+   "full_name": "brycewang-stanford/Auto-Empirical-Research-Skills",
+   "inputs_hash": "da8798eae3d7fda39e0e5485be90a814",
+   "description_tr": "Bu depo, sekiz sosyal bilim disiplininde ampirik araştırma adımlarını kapsayan çok sayıda ajan skill tanımını kataloglayan bir koleksiyon. Ekonomi, siyaset bilimi, psikoloji, sosyoloji ve kamu yönetimi gibi alanlar için veri hazırlama, tahmin, sağlamlık testleri ve yazım adımları tanımlanmış; depo dili Stata olarak işaretli ve katalog CI ile doğrulanıyor. Koleksiyon CoPaper.AI adlı bir ürün tarafından sürdürülüyor ve kullanıcıların kendi skill'lerini yüklemesine açık. Nisan 2026'da açılmış, 4.178 yıldızlı ve CC BY-SA 4.0 lisanslı. Skill sayısı çok büyük olduğu için kalite girişten girişe değişebilir.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; ampirik sosyal bilim makalesi üretmek yaptığın işlerin hiçbirine girmiyor. En yakın bağlam psikoloji ve sosyoloji öğrenme ilgin olabilir, fakat burada öğrenme materyali değil bir araştırma üretim hattı var. Katalogun nasıl doğrulandığı — şemanın CI ile kontrol edilmesi — kendi skill koleksiyonunu düzenli tutarken örnek alınabilir, o kadar. Kurup denemek için bir sebep yok.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": "Depo, akademiyle bağlantılı bir ekibin ticari ürününün dağıtım kanalı olarak işliyor; araştırma iş akışlarını ajan skill'lerine çeviren bu kategori yatırım merceğiyle izlenebilir."
+  },
+  {
+   "full_name": "hzwer/WritingAIPaper",
+   "inputs_hash": "2a21f23a39b23cb71cf9072fd76f2b81",
+   "description_tr": "WritingAIPaper, yapay zeka konferanslarına ilk kez makale gönderecek kişiler için yazılmış bir el kitabı. Makalenin bölümlerinin nasıl kurgulanacağını, şekil ve tablo düzenini, hakem gözüyle sık yapılan hataları ve teslim öncesi kontrol adımlarını anlatıyor; metne Çince özet ve tartışma bağlantıları eşlik ediyor. Depo yalnızca Markdown metinden oluşuyor, kod veya araç içermiyor ve lisans belirtilmemiş. Eylül 2024'te açılmış ve 4.087 yıldıza ulaşmış; yazarlar metnin en çok akran değerlendirmesine ihtiyaç duyduğunu belirtiyor. Hedef kitlesi lisansüstü öğrenciler ve yeni araştırmacılar.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor. En yakın bağlam, teknik bir konuyu yapılandırılmış biçimde anlatma pratiği olabilir; argüman kurma ve şekil düzeni bölümleri bir yatırım notu ya da ürün dokümanı yazarken okunabilir. Ancak metin tamamen akademik yayın sürecine özel ve iş akışlarının hiçbirine bağlanmıyor. Bu satırı bilgi olarak geçmek yeterli.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  }
+ ]
 }

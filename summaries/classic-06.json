@@ -113,7 +113,7 @@
    "inputs_hash": "e10c1d4a176251b4fd1f9745eb620ebd",
    "description_tr": "Üretken yapay zeka uygulamalarını kategorilere ayırarak toplayan büyük bir dizin. README'deki sayaçlara göre 80 kategoride 3.400'ün üzerinde uygulama listeleniyor; her girdi kısa bir açıklama ve ürün bağlantısıyla veriliyor ve aynı veri bir web sitesi üzerinden de yayınlanıyor. Kategori yelpazesi metin, görsel, müzik, tasarım, test ve yazılım geliştirme gibi başlıkları kapsıyor. 2023'te açılmış, 9.169 star toplamış ve MIT lisanslı; katkılar pull request ile alınıyor. Ürünlerin kendisini değil, yalnızca künyelerini barındırıyor.",
    "usage_tr": "Dubai'de kurmayı düşündüğün AI uygulama stüdyosu fikrinde rakip ve boşluk taraması için kullanılabilir: bir kategoriyi açıp kaç ürünün aynı işi yaptığını, hangi nişlerin ince kaldığını görmek, ürün fikri elemesinde ilk filtre işini görür. Aynı tarama Folio gibi kişisel uygulamalarda da 'bu zaten var mı' sorusunu hızlı cevaplar. Liste tamamen metin olduğu için maliyet getirmez ve 'şu kategoriyi çıkar, fiyatlandırma modellerini tabloya dök' şeklinde asistanına devredilebilir. Sınırı şu: girdiler kullanıcı katkısıyla geliyor, kapanmış ürünler listede kalabiliyor ve indirme, gelir veya kullanıcı sayısı gibi büyüklük verisi yok — yani sıralama değil, yalnızca kapsam gösteriyor. Karar öncesi seçtiğin birkaç ürünü tek tek doğrulaman gerekir.",
-   "matched_project": "Dubai app stüdyosu",
+   "matched_project": "Dubai uygulama stüdyosu",
    "relevance": 4,
    "investment_note": null
   },

@@ -1,175 +1,175 @@
 {
-  "repos": [
-    {
-      "full_name": "ChatGPTNextWeb/NextChat",
-      "inputs_hash": "b929069306facdc4f99083cbdcb6eac9",
-      "description_tr": "NextChat, birçok sağlayıcının modellerine tek bir arayüzden erişen açık kaynak bir sohbet istemcisi. Next.js ve React ile yazılmış; masaüstü sürümleri Tauri ile paketleniyor ve web, iOS, macOS, Android, Linux ile Windows hedefleri sunuluyor. OpenAI, Claude, Gemini, DeepSeek, Groq gibi sağlayıcıların yanında Ollama üzerinden yerel modeller de destekleniyor; Vercel, Docker veya Zeabur ile kendi sunucunda barındırılabiliyor. MIT lisanslı, 88 binin üzerinde yıldızı var ve 2023'ten beri geliştiriliyor. Depo, kendi barındırdığı ücretli SaaS sürümüne ve kurumsal sürüme de yönlendiriyor; açıklamadaki \"API key gerekmez\" vaadi bu barındırılan hizmete ait, kendi kurulumunda model anahtarlarını kullanıcı sağlıyor.",
-      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, kapalı kaynak istemcilere güvenmek yerine açık kaynak bir istemciyi fork'layıp kendi sürümünü yazma alışkanlığın. Ancak günlük kodlama ve sohbet tarafında zaten Claude Code ve OpenCode ile çalışıyorsun, yani genel amaçlı bir sohbet arayüzü boş bir ihtiyaca oturmuyor. Planladığın mobil istemci Expo/React Native tarafında; NextChat ise Next.js ve Tauri üzerine kurulu, dolayısıyla fork tabanı olarak stack'inle örtüşmüyor. Kendi kurulumunda her mesaj sağlayıcı anahtarıyla gittiği için Max aboneliğiyle değil, ek API maliyetiyle çalışır; Ollama bağlayıp Mac'te yerel model kullanmak bu maliyeti kaldırabilir ama o zaman da elde ettiğin şey yalnızca bir arayüz olur.",
-      "matched_project": null,
-      "relevance": 2,
-      "investment_note": null
-    },
-    {
-      "full_name": "unclecode/crawl4ai",
-      "inputs_hash": "2f4542bd393220a777ca9786b22aee06",
-      "description_tr": "Crawl4AI, web sayfalarını LLM'lerin doğrudan tüketebileceği temiz Markdown'a çeviren açık kaynak bir Python tarayıcı ve kazıyıcı kütüphanesi. RAG sistemleri, ajanlar ve veri pipeline'ları için tasarlanmış; kütüphane olarak import edilebildiği gibi Docker imajı ve servis olarak da çalıştırılabiliyor. Çıkarım kurallarını şekillendirme, PDF işleme ve toplu kazıma gibi yetenekleri var; Apache-2.0 lisanslı ve 84 binin üzerinde yıldıza sahip. Bakım aktif: son sürüm notlarında beş güvenlik bildirimini kapatan bir yayın ve 33 hata düzeltmesi duyuruluyor. Projenin ayrıca kapalı beta aşamasında ücretli bir bulut API'si planlanıyor.",
-      "usage_tr": "Arslan Holding'in deal sourcing ve pazar araştırması adımında kullanabilirsin: MAGNiTT, startup ve rakip siteleri gibi kaynakları Markdown'a indirip, üzerine Claude Code ile çalışan bir eleme adımı koyarsan ham sayfa toplama işini otomatikleştirmiş olursun. Kazıma tarafı ofisteki Mac'te yerel çalışır ve sayfa başına API maliyeti getirmez; maliyet yalnızca topladığın metni modele okuttuğun adımda ortaya çıkar, o yüzden önce kaba filtreyi kurallarla yapıp modele sadece kalanları vermek mantıklı. n8n'den tetiklenen düzenli bir iş haline getirilip asistanına devredilebilir; çıktı Markdown olduğu için Supabase'e ya da bir bilgi tabanına yazmak kolay. Aynı kurulum, tedarikçi ve koç karşılaştırması gibi tekrar eden araştırma işlerinde de ikinci bir kullanıcı bulur. Uyarı: yakın zamanda SSRF ve dosya yazma sınıfında güvenlik bildirimleri kapatıldı, bu yüzden sürümü sabitle ve güvenilmeyen URL listelerini doğrudan besleme; ayrıca hedef sitelerin kullanım koşullarını ve hız limitlerini gözet.",
-      "matched_project": "Arslan Holding",
-      "relevance": 6,
-      "investment_note": null
-    },
-    {
-      "full_name": "mlabonne/llm-course",
-      "inputs_hash": "2b351a01855468045e7106342087b809",
-      "description_tr": "llm-course, büyük dil modelleri alanına girmek isteyenler için hazırlanmış bir yol haritası ve Colab defterleri derlemesi. İçerik üç bölüme ayrılıyor: temeller (matematik, Python, sinir ağları), model eğiten tarafı ilgilendiren \"LLM Scientist\" ve uygulama geliştirip dağıtan tarafı ilgilendiren \"LLM Engineer\". Fine-tuning, quantization, model birleştirme, değerlendirme ve dağıtım gibi konular için çalıştırılabilir defterler ve makale bağlantıları içeriyor. Kod deposu değil eğitim materyali; Apache-2.0 lisanslı, 83 binin üzerinde yıldızı var ve yazarın ücretli kitabıyla birlikte anılıyor. Ağırlık modelleri eğitmek ve ince ayar yapmak üzerinde, hazır modelleri uygulamaya gömmek üzerinde değil.",
-      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, kendi öğrenme listen ve model eğitimini kavramsal olarak anlamak. Projelerinin hiçbirinde model eğitmiyor ya da ince ayar yapmıyorsun; Lyricdrop, Folio ve Kanarya hazır modelleri servis üzerinden kullanıyor, dolayısıyla buradaki defterlerin çoğu senin pipeline'ına girmiyor. Materyalin büyük kısmı NVIDIA GPU varsayıyor ve Colab üzerinde çalışıyor, yani ofisteki Mac'te yerel olarak takip etmesi rahat değil. Kendi felsefene daha uygun kullanım, bu yol haritasını kendin baştan sona çalışmak yerine, birlikte çalışacağın teknik birine ortak referans olarak vermek.",
-      "matched_project": null,
-      "relevance": 1,
-      "investment_note": null
-    },
-    {
-      "full_name": "lobehub/lobehub",
-      "inputs_hash": "2d9cc4ce61c688d8459c7fd63ef0258e",
-      "description_tr": "LobeHub, tek bir sohbet arayüzü olmaktan çıkıp birden fazla ajanı işe alma, planlama ve raporlama mantığıyla yöneten bir ajan operasyon paneli olarak konumlanıyor. TypeScript ve Next.js ile yazılmış; bilgi tabanı, MCP desteği, eklenti sistemi ve çoklu model sağlayıcısı (OpenAI, Claude, Gemini, DeepSeek, GLM ve yerel modeller) içeriyor. Vercel, Docker, Zeabur veya Sealos ile kendi altyapında barındırılabiliyor; kurulum ortam değişkenleriyle yapılandırılıyor. 82 binin üzerinde yıldızı olan, sürüm ve test akışları işleyen aktif bir proje. Lisans standart bir açık kaynak lisansı olarak etiketlenmemiş (NOASSERTION), bu yüzden ticari kullanım ve türev ürün koşullarının ayrıca okunması gerekiyor.",
-      "usage_tr": "Uzun süredir istediğin \"tüm projeleri bilen, aralarında köprü kuran orkestratör ajan\" fikrine en yakın hazır kurulumlardan biri bu; asistan ve holding operasyon araçları tarafında deneme kurulumu olarak anlamlı. Evdeki 7/24 açık Mac mini'ye Docker ile kurup Tailscale üzerinden erişebilirsin; böylece ajanlar ve bilgi tabanı senin kontrolündeki bir makinede kalır, kapalı bir buluta veri taşımazsın. MCP desteği sayesinde Trello, takvim ve Drive gibi mevcut araçlara bağlanan ajanları tek panelde toplayıp bir kısmını asistanına devredebilirsin. Maliyet tarafını önceden hesapla: panel sağlayıcı anahtarlarıyla çalışır, yani Max aboneliğinin kapsamına girmez; sürekli çalışan ajanlar sessizce API faturası üretir, Ollama ile yerel modele bağlamak bu riski azaltır. Uyarı: lisans NOASSERTION olarak görünüyor, o yüzden bunu kendi ürününe gömülecek bir bileşen değil, kendi kullandığın bir panel olarak değerlendir.",
-      "matched_project": "Asistan ve holding operasyon araçları",
-      "relevance": 6,
-      "investment_note": null
-    },
-    {
-      "full_name": "openai/openai-cookbook",
-      "inputs_hash": "1acb9c3c8de2f83fd039ac977db5e359",
-      "description_tr": "openai-cookbook, OpenAI API'siyle çalışan örnek ve rehber koleksiyonu. Çoğunlukla Jupyter defterlerinden oluşuyor; embedding, fonksiyon çağırma, değerlendirme, yapılandırılmış çıktı ve RAG gibi konularda çalıştırılabilir örnekler içeriyor. Bir kütüphane ya da çalıştırılabilir ürün değil, dokümantasyonu tamamlayan bir referans deposu. MIT lisanslı, 76 binin üzerinde yıldızı var ve OpenAI tarafından düzenli olarak güncelleniyor. Örnekler doğal olarak OpenAI'ın kendi modellerine ve API sözleşmesine bağlı.",
-      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, genel LLM tekniklerini örnek kod üzerinden görmek. Kodlama tarafında Claude Code ve Max aboneliğiyle çalışıyorsun, yani buradaki örneklerin dayandığı API hesabı ve maliyet modeli senin tercih ettiğin kurulumun dışında kalıyor. Teknik fikirler (değerlendirme döngüleri, yapılandırılmış çıktı şemaları) sağlayıcıdan bağımsız olarak aktarılabilir ama bunun için burada verilen kodu çalıştırman gerekmiyor. Bir ihtiyaç doğarsa tek tek defterleri referans olarak okumak yeterli, depoyu takip etmeye değmez.",
-      "matched_project": null,
-      "relevance": 1,
-      "investment_note": null
-    },
-    {
-      "full_name": "career-ops-hq/career-ops",
-      "inputs_hash": "a8eed830850f4ff7a48a97b35d309b9c",
-      "description_tr": "career-ops, iş arama sürecini yerel makinede çalışan bir ajan akışına çeviren açık kaynak bir araç. İş ilanı portallarını tarıyor, her ilanı A-H başlıkları altında yapılandırılmış bir rapora ve 1-5 arası tek bir skora indirgiyor, CV'yi ilana göre uyarlıyor ve başvuruları takip ediyor. Claude Code, Codex, OpenCode gibi AI kodlama CLI'larının içinde çalışacak şekilde tasarlanmış; yerel öncelikli ve kullanıcı adına otomatik başvuru yapmadığını açıkça belirtiyor. JavaScript ile yazılmış, MIT lisanslı ve 17 dilde README'si var. Nisan 2026'da açılmış olmasına rağmen 72 binin üzerinde yıldıza ulaşmış; depoda basın referansları ve işe girenlerin bıraktığı kayıtlar toplanıyor.",
-      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, Arslan Holding'in deal screening adımıyla kurduğu biçimsel benzerlik. Kendin ya da ekibin iş aramıyor, dolayısıyla aracın kendisi bir ihtiyaca oturmuyor. Buna karşılık mimarisi ilgini çekebilir: çok sayıda adayı sabit başlıklara ve tek bir skora indirip \"bakma\" diyebilen, Claude Code'un içinde yerel çalışan bir eleme akışı, startup deal flow'u için kurmak istediğin şeyin birebir eşdeğeri. İncelersen koda değil, rapor şablonuna ve skorun nasıl gerekçelendirildiğine bak; kendi eleme akışında bu iskeleti taklit etmek sıfırdan başlamaktan hızlı olur. Ürün olarak kurmaya değmez, bir akşam okunacak referans olarak değer taşır.",
-      "matched_project": null,
-      "relevance": 2,
-      "investment_note": "Beş ay içinde 72 bin yıldıza ulaşmış, yerel-öncelikli ve AI kodlama CLI'larının üzerine kurulu bir tüketici ürünü; dağıtım kanalı olarak \"CLI içinde çalışan uygulama\" modelinin ne kadar hızlı büyüdüğünü göstermesi açısından izlemeye değer, ancak açık bir gelir modeli görünmüyor."
-    },
-    {
-      "full_name": "binary-husky/gpt_academic",
-      "inputs_hash": "55d78f04f55f46674289f6a98996476b",
-      "description_tr": "gpt_academic, akademik metinlerle çalışmayı kolaylaştıran bir LLM arayüzü. Makale okuma, dil düzeltme ve yazım desteği, PDF ile LaTeX çevirisi ve özetleme, kod tabanı çözümleme gibi işleri özelleştirilebilir kısayol düğmeleri ve fonksiyon eklentileriyle sunuyor. Birden çok modeli paralel sorgulayabiliyor; OpenAI ve Claude gibi sağlayıcıların yanında ChatGLM, Llama ve RWKV gibi yerel modelleri de destekliyor. Python ile yazılmış, GPL-3.0 lisanslı ve 71 binin üzerinde yıldızı var. Arayüz ve dokümantasyon ağırlıklı olarak Çince; hedef kitlesi Çince konuşan akademik topluluk.",
-      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, yatırım tarafında karşına çıkan uzun PDF'leri özetleme ihtiyacı. Akademik makale okuma ve LaTeX düzeltme akışı senin çalışma alanının dışında; pitch deck ve finansal doküman incelemesi için bu araca özgü bir avantaj yok, aynı işi zaten Claude Code ile yapıyorsun. GPL-3.0 lisansı, parçalarını kendi uygulamalarından birine gömmeyi de pratikte zorlaştırır. Arayüzün büyük bölümünün Çince olması, asistanına devredilebilir bir araç olmaktan da çıkarıyor.",
-      "matched_project": null,
-      "relevance": 1,
-      "investment_note": null
-    },
-    {
-      "full_name": "cline/cline",
-      "inputs_hash": "f3c3a8ac16bbc2d674ed738d7684601d",
-      "description_tr": "Cline, IDE, terminal ve masaüstü uygulaması olarak çalışan açık kaynak bir kodlama ajanı. VS Code ve JetBrains eklentisi, npm ile kurulan bir CLI ve macOS/Windows için native bir uygulama sunuyor; CLI hem etkileşimli hem de CI/CD içinde çalışacak şekilde headless kullanılabiliyor. Dosya oluşturma, komut çalıştırma ve web'de gezinme gibi işleri insan onayı adımıyla yapıyor; masaüstü uygulamasında zamanlanmış rutinler, model yönetimi ve MCP sunucuları yer alıyor. Ayrı bir SDK ile aynı motorun üzerine kendi ajanlarını, özel araçlarını ve çok ajanlı ekipleri kurmak mümkün. TypeScript ile yazılmış, Apache-2.0 lisanslı ve 69 binin üzerinde yıldıza sahip aktif bir proje.",
-      "usage_tr": "Lyricdrop v2'yi ofisteki Mac'te Claude Code ve Superpowers ile yazıyorsun; Cline bunun yanına Apache-2.0 lisanslı ikinci bir ajan olarak girer ve özellikle headless CLI tarafı işine yarar. Şarkı işleme hattında tekrar eden kontrolleri (hizalama çıktısının doğrulanması, panel için toplu iş çalıştırma) etkileşimli oturum açmadan script'ten tetikleyebilirsin. SDK tarafı, uzun süredir istediğin orkestratör ajan fikrine uygun: aynı motoru kendi uygulamanın içine gömüp zamanlanmış görevler ve özel araçlar tanımlayabilirsin, ki bu OpenCode'u fork'lama refleksinle aynı yere bakıyor. Maliyet tarafına dikkat: Cline kendi model sağlayıcı anahtarlarınla çalışır, yani Max aboneliğinin kapsamına girmez ve headless çalıştırdığın her iş faturaya yazılır. Önce tek bir tekrarlayan işte deneyip API maliyetini Claude Code ile aynı işi elle yapmanın süresine karşı ölç; fark küçükse yalnızca headless senaryolar için tutmak daha mantıklı.",
-      "matched_project": "Lyricdrop",
-      "relevance": 7,
-      "investment_note": null
-    },
-    {
-      "full_name": "asgeirtj/system_prompts_leaks",
-      "inputs_hash": "65013a49035e13082a7cf8849a753934",
-      "description_tr": "Bu depo, yaygın kullanılan sohbet ve kodlama asistanlarının sistem prompt'larını birebir metin halinde toplayan bir arşiv. Anthropic, OpenAI, Google ve xAI ürünlerinin yanında Cursor gibi araçların prompt'ları ayrı klasörlerde tutuluyor ve düzenli olarak güncelleniyor. İçerik kod değil düz metin; CC0-1.0 ile kamuya bırakılmış ve 68 binin üzerinde yıldızı var. Depoda, bu dosyalara dayanan gazete ve dashboard çalışmalarına da referans veriliyor. Metinlerin nasıl elde edildiği doğrulanabilir değil; depo bunları \"çıkarılmış\" prompt'lar olarak sunuyor.",
-      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, CLAUDE.md yazımı ve kendi reviewer/ajan prompt'larını iyileştirme ilgin. Gerçek ürünlerde araç tanımlarının, kısıtların ve \"bilmiyorum\" diyebilme kurallarının nasıl yazıldığını okumak, kendi ajan prompt'larını yazarken kalibrasyon sağlar; ama bu bir bileşen değil, bir okuma malzemesi. Hiçbir pipeline adımına oturmadığı için projelerinden birine gömülecek ya da asistanına devredilecek bir tarafı da yok. Okuyacaksan tek bir soruyla oku: bu prompt'lar modelin hangi durumda durmasını veya soru sormasını sağlıyor.",
-      "matched_project": null,
-      "relevance": 2,
-      "investment_note": null
-    },
-    {
-      "full_name": "xtekky/gpt4free",
-      "inputs_hash": "5d8440dd77888d54a707d4a44f19d16f",
-      "description_tr": "gpt4free, çeşitli sağlayıcıların web arayüzlerini tersine mühendislikle kullanarak dil modellerine ücretsiz erişim sağlamayı amaçlayan bir Python projesi. Birden çok sağlayıcıyı tek bir istemci altında toplayıp OpenAI uyumlu bir arayüz sunuyor. Yöntem gereği sağlayıcıların kullanım koşullarıyla çatışıyor ve erişim yolları sık sık kırılıp yeniden yazılıyor; kararlılık garantisi yok. GPL-3.0 lisanslı ve 66 binin üzerinde yıldızı var; depo aktif ama doğası gereği kalıcı olmayan bir yüzeye bağımlı. Üretim sistemleri için değil, deneme amaçlı bir proje olarak değerlendirilmeli.",
-      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, model maliyetlerini düşürme arayışın. Ancak burada maliyeti düşüren şey mühendislik değil, sağlayıcı koşullarının ihlali; Lyricdrop gibi gelir hedefi olan ve kullanıcıya açılacak bir üründe bu yol hem hukuki hem operasyonel risk demek. Erişim yolları haber vermeden kırıldığı için pipeline'ın sessizce durur ve bunu ancak kullanıcıdan öğrenirsin. Maliyet tarafında senin için doğru yön yerel modeller: aynı bütçe etkisini Mac'te çalışan açık ağırlıklı modellerle, kırılgan bir bağımlılık almadan elde edebilirsin.",
-      "matched_project": null,
-      "relevance": 1,
-      "investment_note": null
-    },
-    {
-      "full_name": "ZhuLinsen/daily_stock_analysis",
-      "inputs_hash": "66740e295eb04de1a67fa23c6238b1c6",
-      "description_tr": "daily_stock_analysis, takip listesindeki hisseleri her gün LLM ile analiz edip bir \"karar panosu\" üreten ve bunu mesajlaşma kanallarına gönderen bir sistem. A hisseleri, Hong Kong, ABD, Japonya, Kore ve Tayvan piyasalarını kapsıyor; fiyat verisi, teknik gösterge, haber ve temel veriyi birleştirip skor, trend ve risk uyarısı içeren rapor çıkarıyor. Python ile yazılmış; Docker, GitHub Actions ve yerel zamanlanmış görevlerle çalıştırılabiliyor, web tabanlı bir çalışma alanı ve FastAPI servisi içeriyor. Model tarafında Gemini, OpenAI uyumlu servisler, DeepSeek ve Ollama üzerinden yerel modeller destekleniyor; MIT lisanslı. Ocak 2026'da açılmış olmasına rağmen 65 binin üzerinde yıldıza ulaşmış; arayüz ve dokümantasyon ağırlıklı olarak Çince.",
-      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, Arslan Holding tarafında portföy takibi ve piyasa izleme ihtiyacı. Ne var ki holdingin odağı erken aşama şirketler ve halka açık olmayan pozisyonlar; bu sistem borsada işlem gören hisseler için tasarlanmış ve veri kaynakları ağırlıklı olarak Asya piyasalarına bağlı. Mimarisinde senin için ilginç olan kısım aracın kendisi değil deseni: zamanlanmış bir iş, veriyi toplayıp modele okutuyor ve sonucu tek bir panoya ve bildirime indiriyor — aynı iskeleti n8n ile kendi takip ettiğin konular için kurabilirsin. Kullanacak olsaydın Ollama ile yerel modele bağlamak API maliyetini sıfıra yakın tutardı, ama Çince arayüz onu asistanına devredilebilir olmaktan çıkarıyor.",
-      "matched_project": null,
-      "relevance": 2,
-      "investment_note": null
-    },
-    {
-      "full_name": "gsd-build/get-shit-done",
-      "inputs_hash": "eb37bbdb853fb037fd72ddbad874c8db",
-      "description_tr": "Depo, Claude Code için meta-prompting, context engineering ve spec-driven geliştirme sistemi olarak tanımlanıyor. Ancak bu deponun README'si yalnızca bir taşınma duyurusu içeriyor: proje artık burada geliştirilmiyor, \"GSD Core\" adıyla open-gsd/gsd-core deposunda devam ediyor ve güncel kaynak kod, issue ve sürümler için orası işaret ediliyor. Dolayısıyla sistemin nasıl çalıştığını anlatan yeterli kamuya açık metin bu depoda yok; buradaki tek bilgi kısa depo açıklaması. JavaScript olarak etiketlenmiş ve MIT lisanslı; Aralık 2025'te açılmış ve 64 binin üzerinde yıldız toplamış. Değerlendirme yapmadan önce taşındığı depoya bakmak gerekiyor.",
-      "usage_tr": "Lyricdrop v2'yi Superpowers plugin'iyle ve spec'ten başlayarak yazıyorsun; bu tür bir context engineering katmanı tam da o çalışma tarzının üstüne oturur, o yüzden bakmaya değer. Pratik sınama şu: aynı işi iki kez yap, biri mevcut akışınla diğeri GSD'nin spec akışıyla, ve v1'de pişman olduğun \"tek seferde yaz\" hatasını hangisinin daha çok engellediğine bak. Ofisteki Mac'te Claude Code'un içinde çalıştığı için ek API maliyeti getirmez ve Max aboneliğinle uyumludur. Önemli uyarı: bu depo arşivlenmiş ve geliştirme başka bir depoya taşınmış, dolayısıyla buradaki yıldız sayısına bakıp kurmaya kalkma; kurulum ve dokümantasyon için taşındığı depoyu esas al. Kod kalitesi konusunda iki ayrı review isteğin varsa, bu tür sistemlerin plan ve review adımlarını nasıl ayırdığına özellikle bak.",
-      "matched_project": "Lyricdrop",
-      "relevance": 6,
-      "investment_note": null
-    },
-    {
-      "full_name": "virattt/ai-hedge-fund",
-      "inputs_hash": "3496bb547d8735195662799973969523",
-      "description_tr": "ai-hedge-fund, yatırım kararlarının LLM ajanlarıyla nasıl modellenebileceğini gösteren bir kavram kanıtı projesi. Farklı yatırım yaklaşımlarını temsil eden ajanlar bir \"mandate\" dosyasında tanımlanan strateji, risk ve sermaye kuralları altında çalışıyor; terminal uygulaması üzerinden fon kurulabiliyor, geçmiş veriyle backtest edilebiliyor. Python ile yazılmış, pipx veya uv ile kuruluyor; fiyat ve temel veri için Financial Datasets anahtarı, ajanlar için de bir model sağlayıcı anahtarı gerekiyor. MIT lisanslı ve 63 binin üzerinde yıldızı var; proje kalıcı, sürekli çalışan bir yapıya doğru yeniden yazılıyor. Depo, sistemin gerçek işlem yapmadığını ve yalnızca eğitim amaçlı olduğunu açıkça belirtiyor.",
-      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, Arslan Holding'in yatırım analizi tarafı. Ancak bu sistem halka açık hisseler ve fiyat serileri üzerine kurulu; senin baktığın erken aşama şirketlerde ne fiyat serisi ne de backtest edilebilir bir geçmiş var, dolayısıyla eleme sürecine taşınacak bir parçası yok. Deponun kendisi de eğitim amaçlı olduğunu ve gerçek işlem yapmadığını yazıyor, yani karar destek aracı olarak kullanılmaya uygun değil. İlgini çekecek tek yan, farklı bakış açılarını ayrı ajanlara bölüp sonuçlarını karşılaştırma kurgusu; aynı fikri bir startup'ı farklı açılardan değerlendiren kendi eleme akışında kullanabilirsin, ama bunun için bu kodu çalıştırman gerekmiyor.",
-      "matched_project": null,
-      "relevance": 2,
-      "investment_note": null
-    },
-    {
-      "full_name": "byoungd/up",
-      "inputs_hash": "a9e1148089b37024c3f66de013d6eba2",
-      "description_tr": "Bu depo bir yazılım projesi değil, sürekli güncellenen bir kitap taslağı. \"Hayat İlerleme Rehberi\" adıyla İngilizce öğrenmeden başlayıp AI ile öğrenme, gerçek proje yapma, girişim deneyimleri ve kişisel toparlanma konularına uzanan bir yaşam boyu öğrenme rehberi sunuyor. Metin ağırlıklı olarak Çince; İngilizce çevirisi ve EPUB/PDF çıktıları depoda bulunuyor. JavaScript olarak etiketlenmesinin nedeni içeriğin bir dokümantasyon sitesi olarak yayınlanması; metin CC BY-NC 4.0 ile lisanslanmış, yani ticari kullanım dışarıda. 2017'den beri sürüyor ve 63 binin üzerinde yıldız toplamış.",
-      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, İngilizce öğrenme hobisi ve Lyricdrop'un içerik tarafı. Rehber Çince konuşanların İngilizce öğrenmesine göre yazılmış, dolayısıyla ne kendi UK aksanı çalışmana ne de Lyricdrop'un hedef kitlesine doğrudan oturuyor. İçeriği Lyricdrop'ta kullanmak da mümkün değil: lisans ticari olmayan kullanımla sınırlı. Öğrenme yöntemi olarak bakılacaksa bu bir araç değil bir kitap; okuma listesi malzemesi olarak değerlendirilir, projeye giren bir bileşen olarak değil.",
-      "matched_project": null,
-      "relevance": 1,
-      "investment_note": null
-    },
-    {
-      "full_name": "karpathy/nanoGPT",
-      "inputs_hash": "26ae591936d402caf10416690407158e",
-      "description_tr": "nanoGPT, orta ölçekli GPT modellerini eğitmek ve ince ayar yapmak için yazılmış, kasıtlı olarak sade tutulmuş bir PyTorch deposu. Eğitim döngüsü ve model tanımı yaklaşık üçer yüz satır; kod okunabilir olduğu için değiştirilerek sıfırdan model eğitmek veya hazır GPT-2 ağırlıklarını yüklemek kolay. Referans sonuç, GPT-2 124M modelinin sekiz A100'lü tek bir düğümde yaklaşık dört günde yeniden üretilmesi. MIT lisanslı ve 63 binin üzerinde yıldızı var. README'de depo artık eskimiş ve kullanımdan kaldırılmış olarak işaretleniyor; yazarı yerine nanochat adlı yeni projeye yönlendiriyor.",
-      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, dil modellerinin içinde ne olduğunu kodun üzerinden anlamak. Projelerinde model eğitmiyorsun; Lyricdrop, Folio ve Kanarya hazır modelleri servis olarak çağırıyor ve bu doğru kurulum. Referans eğitim çok GPU'lu bir düğüm varsayıyor, yani ofisteki Mac'te anlamlı bir şekilde çalıştırılamaz ve bulut GPU kirası gerektirir. Ayrıca depo kendi README'sinde eskimiş olarak işaretlenmiş; merak için bakacaksan yazarın yönlendirdiği yeni projeye bakman daha doğru olur.",
-      "matched_project": null,
-      "relevance": 1,
-      "investment_note": null
-    },
-    {
-      "full_name": "PlexPt/awesome-chatgpt-prompts-zh",
-      "inputs_hash": "106e9c4136ca5740d6a29b4fccf92412",
-      "description_tr": "Bu depo, Çince kullanım senaryoları için hazırlanmış prompt örneklerinden oluşan bir derleme. Çeviri, yazım, özetleme, rol verme gibi yaygın işler için kalıp metinler sunuyor ve modelden istenen davranışın nasıl tarif edileceğini örneklerle gösteriyor. Kod içermiyor; tamamen metin tabanlı bir liste. MIT lisanslı ve 62 binin üzerinde yıldıza sahip; 2022 sonunda açılmış, ilk dönem ChatGPT kullanımının yaygınlaştığı döneme ait bir kaynak. Örnekler tek seferlik sohbet kullanımına göre yazılmış, ajan veya araç kullanan sistemlere göre değil.",
-      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, kendi prompt'larını yazarken bakılacak örnekler. Ancak örnekler Çince ve tek seferlik sohbet kullanımına göre hazırlanmış; senin ihtiyacın araç kullanan, şema doğrulayan ve gerektiğinde \"eşleşme yok\" diyebilen ajan prompt'ları, bu da farklı bir yazım disiplini. Projelerine girecek bir bileşen ya da asistanına devredilecek bir akış sunmuyor. Bu tür listelerin değeri hızla eskiyor; kendi CLAUDE.md dosyalarında biriktirdiğin kurallar bundan daha isabetli.",
-      "matched_project": null,
-      "relevance": 1,
-      "investment_note": null
-    },
-    {
-      "full_name": "jingyaogong/minimind",
-      "inputs_hash": "3ea6bde89ef7642fa1ce6513481fe50d",
-      "description_tr": "MiniMind, yaklaşık 64M parametrelik çok küçük bir dil modelini sıfırdan eğitmeyi baştan sona gösteren bir eğitim projesi. Veri temizleme, pretrain, SFT, LoRA, DPO, PPO/GRPO gibi RL yöntemleri, araç kullanımı ve model damıtma adımlarının tamamı PyTorch ile, üst seviye kütüphane soyutlamaları kullanılmadan yazılmış. Amaç tek bir tüketici GPU'sunda kısa sürede ve düşük maliyetle tam bir eğitim zincirini tekrarlanabilir kılmak; referans ölçüm tek bir NVIDIA 3090 üzerinde yapılıyor. Görsel, çok modlu ve difüzyon tabanlı türevleri ayrı depolarda sürüyor. Apache-2.0 lisanslı, 62 binin üzerinde yıldızı var; dokümantasyon Çince ve İngilizce olarak sunuluyor.",
-      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, model eğitiminin adımlarını kavramsal olarak görmek. Eğitim akışı NVIDIA GPU varsayıyor, yani ofisteki Mac'te çalıştırılamaz; çalıştırmak için bulut GPU kiralaman gerekir ve karşılığında elde edeceğin model hiçbir projende kullanılamayacak kadar küçüktür. Lyricdrop'un içerik üretimi ve Folio'nun günlük pipeline'ı için doğru yol hazır modeller; kendi modelini eğitmek bu ihtiyaçların hiçbirini ucuzlatmaz. Öğrenme malzemesi olarak değerlendirecek olsaydın bile bu, senin \"öğrenecek olanı bul\" yaklaşımına göre devredilecek bir konu.",
-      "matched_project": null,
-      "relevance": 1,
-      "investment_note": null
-    },
-    {
-      "full_name": "tw93/Pake",
-      "inputs_hash": "7a1078b7dd169275ef1f2131218c8cac",
-      "description_tr": "Pake, herhangi bir web sayfasını tek komutla masaüstü uygulamasına dönüştüren bir araç. Rust ve Tauri üzerine kurulu olduğu için üretilen paketler Electron alternatiflerine göre belirgin biçimde küçük ve daha az bellek kullanıyor; kurulum dosyaları çoğunlukla 10 MB altında kalıyor. CLI ile ikon, pencere ayarları ve stil özelleştirmesi yapılabiliyor, GitHub Actions üzerinden çevrimiçi paketleme de destekleniyor; macOS, Windows ve Linux hedefleniyor. Depoda hazır paketlenmiş popüler siteler de dağıtılıyor. GPL-3.0 lisanslı ve 61 binin üzerinde yıldıza sahip, uzun süredir bakımı yapılan bir proje.",
-      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, Lyricdrop'un canlı admin ve test panelini tarayıcı sekmesi yerine ayrı bir masaüstü uygulaması olarak paketlemek. Ancak panel zaten tarayıcıda çalışıyor ve asıl darboğazın şarkı onayı ile playtest işini dışarı verebilmek; bir masaüstü sarmalayıcı bu darboğaza dokunmuyor. Dağıtmayı düşünürsen GPL-3.0 lisansı da ayrıca değerlendirilmesi gereken bir kısıt getirir. Mobil tarafta ise hiçbir karşılığı yok: Expo/EAS ile iOS ve Android TV dağıtımı yapıyorsun, Pake masaüstü hedefliyor.",
-      "matched_project": null,
-      "relevance": 2,
-      "investment_note": null
-    },
-    {
-      "full_name": "meta-llama/llama",
-      "inputs_hash": "3bce8f518c4149a05775e1421c623114",
-      "description_tr": "Bu depo, Llama 2 modelleri için yayımlanmış minimal çıkarım kodunu barındırıyor: ağırlıkları yükleyip metin üretmeyi gösteren örnekler ve model kartları. README'nin başında deponun kullanımdan kaldırıldığı belirtiliyor; Llama 3.1 ile birlikte içerik llama-models, llama-toolchain, llama-cookbook gibi ayrı depolara taşınmış durumda. Lisans standart bir açık kaynak lisansı değil, Meta'nın kendi model lisansı (NOASSERTION olarak etiketleniyor) ve kullanım koşulları içeriyor. Python ile yazılmış ve 59 binin üzerinde yıldızı var, ancak geliştirme burada sürmüyor. Bugün pratik değeri tarihsel: modern kurulumlar bu kodu değil, taşındığı depoları ve yaygın çıkarım motorlarını kullanıyor.",
-      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, Mac'te yerel model çalıştırma ilgin. Ama bunun için doğru adres bu arşiv değil: Apple Silicon üzerinde yerel çıkarım pratikte llama.cpp ve MLX tarafında çözülüyor, bu depodaki kod referans çıkarım örneği olarak yazılmış ve artık bakımı yapılmıyor. Model ağırlıklarını kullanacaksan lisans koşullarının ayrıca okunması gerekir, bu da ürüne gömme senaryolarında ek bir kontrol demek. Yerel STT ve yerel LLM hedeflerin için zamanını güncel çıkarım motorlarına ayırman daha verimli olur.",
-      "matched_project": null,
-      "relevance": 1,
-      "investment_note": null
-    }
-  ]
+ "repos": [
+  {
+   "full_name": "ChatGPTNextWeb/NextChat",
+   "inputs_hash": "b929069306facdc4f99083cbdcb6eac9",
+   "description_tr": "NextChat, birçok sağlayıcının modellerine tek bir arayüzden erişen açık kaynak bir sohbet istemcisi. Next.js ve React ile yazılmış; masaüstü sürümleri Tauri ile paketleniyor ve web, iOS, macOS, Android, Linux ile Windows hedefleri sunuluyor. OpenAI, Claude, Gemini, DeepSeek, Groq gibi sağlayıcıların yanında Ollama üzerinden yerel modeller de destekleniyor; Vercel, Docker veya Zeabur ile kendi sunucunda barındırılabiliyor. MIT lisanslı, 88 binin üzerinde yıldızı var ve 2023'ten beri geliştiriliyor. Depo, kendi barındırdığı ücretli SaaS sürümüne ve kurumsal sürüme de yönlendiriyor; açıklamadaki \"API key gerekmez\" vaadi bu barındırılan hizmete ait, kendi kurulumunda model anahtarlarını kullanıcı sağlıyor.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, kapalı kaynak istemcilere güvenmek yerine açık kaynak bir istemciyi fork'layıp kendi sürümünü yazma alışkanlığın. Ancak günlük kodlama ve sohbet tarafında zaten Claude Code ve OpenCode ile çalışıyorsun, yani genel amaçlı bir sohbet arayüzü boş bir ihtiyaca oturmuyor. Planladığın mobil istemci Expo/React Native tarafında; NextChat ise Next.js ve Tauri üzerine kurulu, dolayısıyla fork tabanı olarak stack'inle örtüşmüyor. Kendi kurulumunda her mesaj sağlayıcı anahtarıyla gittiği için Max aboneliğiyle değil, ek API maliyetiyle çalışır; Ollama bağlayıp Mac'te yerel model kullanmak bu maliyeti kaldırabilir ama o zaman da elde ettiğin şey yalnızca bir arayüz olur.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "unclecode/crawl4ai",
+   "inputs_hash": "2f4542bd393220a777ca9786b22aee06",
+   "description_tr": "Crawl4AI, web sayfalarını LLM'lerin doğrudan tüketebileceği temiz Markdown'a çeviren açık kaynak bir Python tarayıcı ve kazıyıcı kütüphanesi. RAG sistemleri, ajanlar ve veri pipeline'ları için tasarlanmış; kütüphane olarak import edilebildiği gibi Docker imajı ve servis olarak da çalıştırılabiliyor. Çıkarım kurallarını şekillendirme, PDF işleme ve toplu kazıma gibi yetenekleri var; Apache-2.0 lisanslı ve 84 binin üzerinde yıldıza sahip. Bakım aktif: son sürüm notlarında beş güvenlik bildirimini kapatan bir yayın ve 33 hata düzeltmesi duyuruluyor. Projenin ayrıca kapalı beta aşamasında ücretli bir bulut API'si planlanıyor.",
+   "usage_tr": "Arslan Holding'in deal sourcing ve pazar araştırması adımında kullanabilirsin: MAGNiTT, startup ve rakip siteleri gibi kaynakları Markdown'a indirip, üzerine Claude Code ile çalışan bir eleme adımı koyarsan ham sayfa toplama işini otomatikleştirmiş olursun. Kazıma tarafı ofisteki Mac'te yerel çalışır ve sayfa başına API maliyeti getirmez; maliyet yalnızca topladığın metni modele okuttuğun adımda ortaya çıkar, o yüzden önce kaba filtreyi kurallarla yapıp modele sadece kalanları vermek mantıklı. n8n'den tetiklenen düzenli bir iş haline getirilip asistanına devredilebilir; çıktı Markdown olduğu için Supabase'e ya da bir bilgi tabanına yazmak kolay. Aynı kurulum, tedarikçi ve koç karşılaştırması gibi tekrar eden araştırma işlerinde de ikinci bir kullanıcı bulur. Uyarı: yakın zamanda SSRF ve dosya yazma sınıfında güvenlik bildirimleri kapatıldı, bu yüzden sürümü sabitle ve güvenilmeyen URL listelerini doğrudan besleme; ayrıca hedef sitelerin kullanım koşullarını ve hız limitlerini gözet.",
+   "matched_project": "Arslan Holding",
+   "relevance": 6,
+   "investment_note": null
+  },
+  {
+   "full_name": "mlabonne/llm-course",
+   "inputs_hash": "2b351a01855468045e7106342087b809",
+   "description_tr": "llm-course, büyük dil modelleri alanına girmek isteyenler için hazırlanmış bir yol haritası ve Colab defterleri derlemesi. İçerik üç bölüme ayrılıyor: temeller (matematik, Python, sinir ağları), model eğiten tarafı ilgilendiren \"LLM Scientist\" ve uygulama geliştirip dağıtan tarafı ilgilendiren \"LLM Engineer\". Fine-tuning, quantization, model birleştirme, değerlendirme ve dağıtım gibi konular için çalıştırılabilir defterler ve makale bağlantıları içeriyor. Kod deposu değil eğitim materyali; Apache-2.0 lisanslı, 83 binin üzerinde yıldızı var ve yazarın ücretli kitabıyla birlikte anılıyor. Ağırlık modelleri eğitmek ve ince ayar yapmak üzerinde, hazır modelleri uygulamaya gömmek üzerinde değil.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, kendi öğrenme listen ve model eğitimini kavramsal olarak anlamak. Projelerinin hiçbirinde model eğitmiyor ya da ince ayar yapmıyorsun; Lyricdrop, Folio ve Kanarya hazır modelleri servis üzerinden kullanıyor, dolayısıyla buradaki defterlerin çoğu senin pipeline'ına girmiyor. Materyalin büyük kısmı NVIDIA GPU varsayıyor ve Colab üzerinde çalışıyor, yani ofisteki Mac'te yerel olarak takip etmesi rahat değil. Kendi felsefene daha uygun kullanım, bu yol haritasını kendin baştan sona çalışmak yerine, birlikte çalışacağın teknik birine ortak referans olarak vermek.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "lobehub/lobehub",
+   "inputs_hash": "2d9cc4ce61c688d8459c7fd63ef0258e",
+   "description_tr": "LobeHub, tek bir sohbet arayüzü olmaktan çıkıp birden fazla ajanı işe alma, planlama ve raporlama mantığıyla yöneten bir ajan operasyon paneli olarak konumlanıyor. TypeScript ve Next.js ile yazılmış; bilgi tabanı, MCP desteği, eklenti sistemi ve çoklu model sağlayıcısı (OpenAI, Claude, Gemini, DeepSeek, GLM ve yerel modeller) içeriyor. Vercel, Docker, Zeabur veya Sealos ile kendi altyapında barındırılabiliyor; kurulum ortam değişkenleriyle yapılandırılıyor. 82 binin üzerinde yıldızı olan, sürüm ve test akışları işleyen aktif bir proje. Lisans standart bir açık kaynak lisansı olarak etiketlenmemiş (NOASSERTION), bu yüzden ticari kullanım ve türev ürün koşullarının ayrıca okunması gerekiyor.",
+   "usage_tr": "Uzun süredir istediğin \"tüm projeleri bilen, aralarında köprü kuran orkestratör ajan\" fikrine en yakın hazır kurulumlardan biri bu; asistan ve holding operasyon araçları tarafında deneme kurulumu olarak anlamlı. Evdeki 7/24 açık Mac mini'ye Docker ile kurup Tailscale üzerinden erişebilirsin; böylece ajanlar ve bilgi tabanı senin kontrolündeki bir makinede kalır, kapalı bir buluta veri taşımazsın. MCP desteği sayesinde Trello, takvim ve Drive gibi mevcut araçlara bağlanan ajanları tek panelde toplayıp bir kısmını asistanına devredebilirsin. Maliyet tarafını önceden hesapla: panel sağlayıcı anahtarlarıyla çalışır, yani Max aboneliğinin kapsamına girmez; sürekli çalışan ajanlar sessizce API faturası üretir, Ollama ile yerel modele bağlamak bu riski azaltır. Uyarı: lisans NOASSERTION olarak görünüyor, o yüzden bunu kendi ürününe gömülecek bir bileşen değil, kendi kullandığın bir panel olarak değerlendir.",
+   "matched_project": "Asistan ve holding araçları",
+   "relevance": 6,
+   "investment_note": null
+  },
+  {
+   "full_name": "openai/openai-cookbook",
+   "inputs_hash": "1acb9c3c8de2f83fd039ac977db5e359",
+   "description_tr": "openai-cookbook, OpenAI API'siyle çalışan örnek ve rehber koleksiyonu. Çoğunlukla Jupyter defterlerinden oluşuyor; embedding, fonksiyon çağırma, değerlendirme, yapılandırılmış çıktı ve RAG gibi konularda çalıştırılabilir örnekler içeriyor. Bir kütüphane ya da çalıştırılabilir ürün değil, dokümantasyonu tamamlayan bir referans deposu. MIT lisanslı, 76 binin üzerinde yıldızı var ve OpenAI tarafından düzenli olarak güncelleniyor. Örnekler doğal olarak OpenAI'ın kendi modellerine ve API sözleşmesine bağlı.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, genel LLM tekniklerini örnek kod üzerinden görmek. Kodlama tarafında Claude Code ve Max aboneliğiyle çalışıyorsun, yani buradaki örneklerin dayandığı API hesabı ve maliyet modeli senin tercih ettiğin kurulumun dışında kalıyor. Teknik fikirler (değerlendirme döngüleri, yapılandırılmış çıktı şemaları) sağlayıcıdan bağımsız olarak aktarılabilir ama bunun için burada verilen kodu çalıştırman gerekmiyor. Bir ihtiyaç doğarsa tek tek defterleri referans olarak okumak yeterli, depoyu takip etmeye değmez.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "career-ops-hq/career-ops",
+   "inputs_hash": "a8eed830850f4ff7a48a97b35d309b9c",
+   "description_tr": "career-ops, iş arama sürecini yerel makinede çalışan bir ajan akışına çeviren açık kaynak bir araç. İş ilanı portallarını tarıyor, her ilanı A-H başlıkları altında yapılandırılmış bir rapora ve 1-5 arası tek bir skora indirgiyor, CV'yi ilana göre uyarlıyor ve başvuruları takip ediyor. Claude Code, Codex, OpenCode gibi AI kodlama CLI'larının içinde çalışacak şekilde tasarlanmış; yerel öncelikli ve kullanıcı adına otomatik başvuru yapmadığını açıkça belirtiyor. JavaScript ile yazılmış, MIT lisanslı ve 17 dilde README'si var. Nisan 2026'da açılmış olmasına rağmen 72 binin üzerinde yıldıza ulaşmış; depoda basın referansları ve işe girenlerin bıraktığı kayıtlar toplanıyor.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, Arslan Holding'in deal screening adımıyla kurduğu biçimsel benzerlik. Kendin ya da ekibin iş aramıyor, dolayısıyla aracın kendisi bir ihtiyaca oturmuyor. Buna karşılık mimarisi ilgini çekebilir: çok sayıda adayı sabit başlıklara ve tek bir skora indirip \"bakma\" diyebilen, Claude Code'un içinde yerel çalışan bir eleme akışı, startup deal flow'u için kurmak istediğin şeyin birebir eşdeğeri. İncelersen koda değil, rapor şablonuna ve skorun nasıl gerekçelendirildiğine bak; kendi eleme akışında bu iskeleti taklit etmek sıfırdan başlamaktan hızlı olur. Ürün olarak kurmaya değmez, bir akşam okunacak referans olarak değer taşır.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": "Beş ay içinde 72 bin yıldıza ulaşmış, yerel-öncelikli ve AI kodlama CLI'larının üzerine kurulu bir tüketici ürünü; dağıtım kanalı olarak \"CLI içinde çalışan uygulama\" modelinin ne kadar hızlı büyüdüğünü göstermesi açısından izlemeye değer, ancak açık bir gelir modeli görünmüyor."
+  },
+  {
+   "full_name": "binary-husky/gpt_academic",
+   "inputs_hash": "55d78f04f55f46674289f6a98996476b",
+   "description_tr": "gpt_academic, akademik metinlerle çalışmayı kolaylaştıran bir LLM arayüzü. Makale okuma, dil düzeltme ve yazım desteği, PDF ile LaTeX çevirisi ve özetleme, kod tabanı çözümleme gibi işleri özelleştirilebilir kısayol düğmeleri ve fonksiyon eklentileriyle sunuyor. Birden çok modeli paralel sorgulayabiliyor; OpenAI ve Claude gibi sağlayıcıların yanında ChatGLM, Llama ve RWKV gibi yerel modelleri de destekliyor. Python ile yazılmış, GPL-3.0 lisanslı ve 71 binin üzerinde yıldızı var. Arayüz ve dokümantasyon ağırlıklı olarak Çince; hedef kitlesi Çince konuşan akademik topluluk.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, yatırım tarafında karşına çıkan uzun PDF'leri özetleme ihtiyacı. Akademik makale okuma ve LaTeX düzeltme akışı senin çalışma alanının dışında; pitch deck ve finansal doküman incelemesi için bu araca özgü bir avantaj yok, aynı işi zaten Claude Code ile yapıyorsun. GPL-3.0 lisansı, parçalarını kendi uygulamalarından birine gömmeyi de pratikte zorlaştırır. Arayüzün büyük bölümünün Çince olması, asistanına devredilebilir bir araç olmaktan da çıkarıyor.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "cline/cline",
+   "inputs_hash": "f3c3a8ac16bbc2d674ed738d7684601d",
+   "description_tr": "Cline, IDE, terminal ve masaüstü uygulaması olarak çalışan açık kaynak bir kodlama ajanı. VS Code ve JetBrains eklentisi, npm ile kurulan bir CLI ve macOS/Windows için native bir uygulama sunuyor; CLI hem etkileşimli hem de CI/CD içinde çalışacak şekilde headless kullanılabiliyor. Dosya oluşturma, komut çalıştırma ve web'de gezinme gibi işleri insan onayı adımıyla yapıyor; masaüstü uygulamasında zamanlanmış rutinler, model yönetimi ve MCP sunucuları yer alıyor. Ayrı bir SDK ile aynı motorun üzerine kendi ajanlarını, özel araçlarını ve çok ajanlı ekipleri kurmak mümkün. TypeScript ile yazılmış, Apache-2.0 lisanslı ve 69 binin üzerinde yıldıza sahip aktif bir proje.",
+   "usage_tr": "Lyricdrop v2'yi ofisteki Mac'te Claude Code ve Superpowers ile yazıyorsun; Cline bunun yanına Apache-2.0 lisanslı ikinci bir ajan olarak girer ve özellikle headless CLI tarafı işine yarar. Şarkı işleme hattında tekrar eden kontrolleri (hizalama çıktısının doğrulanması, panel için toplu iş çalıştırma) etkileşimli oturum açmadan script'ten tetikleyebilirsin. SDK tarafı, uzun süredir istediğin orkestratör ajan fikrine uygun: aynı motoru kendi uygulamanın içine gömüp zamanlanmış görevler ve özel araçlar tanımlayabilirsin, ki bu OpenCode'u fork'lama refleksinle aynı yere bakıyor. Maliyet tarafına dikkat: Cline kendi model sağlayıcı anahtarlarınla çalışır, yani Max aboneliğinin kapsamına girmez ve headless çalıştırdığın her iş faturaya yazılır. Önce tek bir tekrarlayan işte deneyip API maliyetini Claude Code ile aynı işi elle yapmanın süresine karşı ölç; fark küçükse yalnızca headless senaryolar için tutmak daha mantıklı.",
+   "matched_project": "Lyricdrop",
+   "relevance": 7,
+   "investment_note": null
+  },
+  {
+   "full_name": "asgeirtj/system_prompts_leaks",
+   "inputs_hash": "65013a49035e13082a7cf8849a753934",
+   "description_tr": "Bu depo, yaygın kullanılan sohbet ve kodlama asistanlarının sistem prompt'larını birebir metin halinde toplayan bir arşiv. Anthropic, OpenAI, Google ve xAI ürünlerinin yanında Cursor gibi araçların prompt'ları ayrı klasörlerde tutuluyor ve düzenli olarak güncelleniyor. İçerik kod değil düz metin; CC0-1.0 ile kamuya bırakılmış ve 68 binin üzerinde yıldızı var. Depoda, bu dosyalara dayanan gazete ve dashboard çalışmalarına da referans veriliyor. Metinlerin nasıl elde edildiği doğrulanabilir değil; depo bunları \"çıkarılmış\" prompt'lar olarak sunuyor.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, CLAUDE.md yazımı ve kendi reviewer/ajan prompt'larını iyileştirme ilgin. Gerçek ürünlerde araç tanımlarının, kısıtların ve \"bilmiyorum\" diyebilme kurallarının nasıl yazıldığını okumak, kendi ajan prompt'larını yazarken kalibrasyon sağlar; ama bu bir bileşen değil, bir okuma malzemesi. Hiçbir pipeline adımına oturmadığı için projelerinden birine gömülecek ya da asistanına devredilecek bir tarafı da yok. Okuyacaksan tek bir soruyla oku: bu prompt'lar modelin hangi durumda durmasını veya soru sormasını sağlıyor.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "xtekky/gpt4free",
+   "inputs_hash": "5d8440dd77888d54a707d4a44f19d16f",
+   "description_tr": "gpt4free, çeşitli sağlayıcıların web arayüzlerini tersine mühendislikle kullanarak dil modellerine ücretsiz erişim sağlamayı amaçlayan bir Python projesi. Birden çok sağlayıcıyı tek bir istemci altında toplayıp OpenAI uyumlu bir arayüz sunuyor. Yöntem gereği sağlayıcıların kullanım koşullarıyla çatışıyor ve erişim yolları sık sık kırılıp yeniden yazılıyor; kararlılık garantisi yok. GPL-3.0 lisanslı ve 66 binin üzerinde yıldızı var; depo aktif ama doğası gereği kalıcı olmayan bir yüzeye bağımlı. Üretim sistemleri için değil, deneme amaçlı bir proje olarak değerlendirilmeli.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, model maliyetlerini düşürme arayışın. Ancak burada maliyeti düşüren şey mühendislik değil, sağlayıcı koşullarının ihlali; Lyricdrop gibi gelir hedefi olan ve kullanıcıya açılacak bir üründe bu yol hem hukuki hem operasyonel risk demek. Erişim yolları haber vermeden kırıldığı için pipeline'ın sessizce durur ve bunu ancak kullanıcıdan öğrenirsin. Maliyet tarafında senin için doğru yön yerel modeller: aynı bütçe etkisini Mac'te çalışan açık ağırlıklı modellerle, kırılgan bir bağımlılık almadan elde edebilirsin.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "ZhuLinsen/daily_stock_analysis",
+   "inputs_hash": "66740e295eb04de1a67fa23c6238b1c6",
+   "description_tr": "daily_stock_analysis, takip listesindeki hisseleri her gün LLM ile analiz edip bir \"karar panosu\" üreten ve bunu mesajlaşma kanallarına gönderen bir sistem. A hisseleri, Hong Kong, ABD, Japonya, Kore ve Tayvan piyasalarını kapsıyor; fiyat verisi, teknik gösterge, haber ve temel veriyi birleştirip skor, trend ve risk uyarısı içeren rapor çıkarıyor. Python ile yazılmış; Docker, GitHub Actions ve yerel zamanlanmış görevlerle çalıştırılabiliyor, web tabanlı bir çalışma alanı ve FastAPI servisi içeriyor. Model tarafında Gemini, OpenAI uyumlu servisler, DeepSeek ve Ollama üzerinden yerel modeller destekleniyor; MIT lisanslı. Ocak 2026'da açılmış olmasına rağmen 65 binin üzerinde yıldıza ulaşmış; arayüz ve dokümantasyon ağırlıklı olarak Çince.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, Arslan Holding tarafında portföy takibi ve piyasa izleme ihtiyacı. Ne var ki holdingin odağı erken aşama şirketler ve halka açık olmayan pozisyonlar; bu sistem borsada işlem gören hisseler için tasarlanmış ve veri kaynakları ağırlıklı olarak Asya piyasalarına bağlı. Mimarisinde senin için ilginç olan kısım aracın kendisi değil deseni: zamanlanmış bir iş, veriyi toplayıp modele okutuyor ve sonucu tek bir panoya ve bildirime indiriyor — aynı iskeleti n8n ile kendi takip ettiğin konular için kurabilirsin. Kullanacak olsaydın Ollama ile yerel modele bağlamak API maliyetini sıfıra yakın tutardı, ama Çince arayüz onu asistanına devredilebilir olmaktan çıkarıyor.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "gsd-build/get-shit-done",
+   "inputs_hash": "eb37bbdb853fb037fd72ddbad874c8db",
+   "description_tr": "Depo, Claude Code için meta-prompting, context engineering ve spec-driven geliştirme sistemi olarak tanımlanıyor. Ancak bu deponun README'si yalnızca bir taşınma duyurusu içeriyor: proje artık burada geliştirilmiyor, \"GSD Core\" adıyla open-gsd/gsd-core deposunda devam ediyor ve güncel kaynak kod, issue ve sürümler için orası işaret ediliyor. Dolayısıyla sistemin nasıl çalıştığını anlatan yeterli kamuya açık metin bu depoda yok; buradaki tek bilgi kısa depo açıklaması. JavaScript olarak etiketlenmiş ve MIT lisanslı; Aralık 2025'te açılmış ve 64 binin üzerinde yıldız toplamış. Değerlendirme yapmadan önce taşındığı depoya bakmak gerekiyor.",
+   "usage_tr": "Lyricdrop v2'yi Superpowers plugin'iyle ve spec'ten başlayarak yazıyorsun; bu tür bir context engineering katmanı tam da o çalışma tarzının üstüne oturur, o yüzden bakmaya değer. Pratik sınama şu: aynı işi iki kez yap, biri mevcut akışınla diğeri GSD'nin spec akışıyla, ve v1'de pişman olduğun \"tek seferde yaz\" hatasını hangisinin daha çok engellediğine bak. Ofisteki Mac'te Claude Code'un içinde çalıştığı için ek API maliyeti getirmez ve Max aboneliğinle uyumludur. Önemli uyarı: bu depo arşivlenmiş ve geliştirme başka bir depoya taşınmış, dolayısıyla buradaki yıldız sayısına bakıp kurmaya kalkma; kurulum ve dokümantasyon için taşındığı depoyu esas al. Kod kalitesi konusunda iki ayrı review isteğin varsa, bu tür sistemlerin plan ve review adımlarını nasıl ayırdığına özellikle bak.",
+   "matched_project": "Lyricdrop",
+   "relevance": 6,
+   "investment_note": null
+  },
+  {
+   "full_name": "virattt/ai-hedge-fund",
+   "inputs_hash": "3496bb547d8735195662799973969523",
+   "description_tr": "ai-hedge-fund, yatırım kararlarının LLM ajanlarıyla nasıl modellenebileceğini gösteren bir kavram kanıtı projesi. Farklı yatırım yaklaşımlarını temsil eden ajanlar bir \"mandate\" dosyasında tanımlanan strateji, risk ve sermaye kuralları altında çalışıyor; terminal uygulaması üzerinden fon kurulabiliyor, geçmiş veriyle backtest edilebiliyor. Python ile yazılmış, pipx veya uv ile kuruluyor; fiyat ve temel veri için Financial Datasets anahtarı, ajanlar için de bir model sağlayıcı anahtarı gerekiyor. MIT lisanslı ve 63 binin üzerinde yıldızı var; proje kalıcı, sürekli çalışan bir yapıya doğru yeniden yazılıyor. Depo, sistemin gerçek işlem yapmadığını ve yalnızca eğitim amaçlı olduğunu açıkça belirtiyor.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, Arslan Holding'in yatırım analizi tarafı. Ancak bu sistem halka açık hisseler ve fiyat serileri üzerine kurulu; senin baktığın erken aşama şirketlerde ne fiyat serisi ne de backtest edilebilir bir geçmiş var, dolayısıyla eleme sürecine taşınacak bir parçası yok. Deponun kendisi de eğitim amaçlı olduğunu ve gerçek işlem yapmadığını yazıyor, yani karar destek aracı olarak kullanılmaya uygun değil. İlgini çekecek tek yan, farklı bakış açılarını ayrı ajanlara bölüp sonuçlarını karşılaştırma kurgusu; aynı fikri bir startup'ı farklı açılardan değerlendiren kendi eleme akışında kullanabilirsin, ama bunun için bu kodu çalıştırman gerekmiyor.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "byoungd/up",
+   "inputs_hash": "a9e1148089b37024c3f66de013d6eba2",
+   "description_tr": "Bu depo bir yazılım projesi değil, sürekli güncellenen bir kitap taslağı. \"Hayat İlerleme Rehberi\" adıyla İngilizce öğrenmeden başlayıp AI ile öğrenme, gerçek proje yapma, girişim deneyimleri ve kişisel toparlanma konularına uzanan bir yaşam boyu öğrenme rehberi sunuyor. Metin ağırlıklı olarak Çince; İngilizce çevirisi ve EPUB/PDF çıktıları depoda bulunuyor. JavaScript olarak etiketlenmesinin nedeni içeriğin bir dokümantasyon sitesi olarak yayınlanması; metin CC BY-NC 4.0 ile lisanslanmış, yani ticari kullanım dışarıda. 2017'den beri sürüyor ve 63 binin üzerinde yıldız toplamış.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, İngilizce öğrenme hobisi ve Lyricdrop'un içerik tarafı. Rehber Çince konuşanların İngilizce öğrenmesine göre yazılmış, dolayısıyla ne kendi UK aksanı çalışmana ne de Lyricdrop'un hedef kitlesine doğrudan oturuyor. İçeriği Lyricdrop'ta kullanmak da mümkün değil: lisans ticari olmayan kullanımla sınırlı. Öğrenme yöntemi olarak bakılacaksa bu bir araç değil bir kitap; okuma listesi malzemesi olarak değerlendirilir, projeye giren bir bileşen olarak değil.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "karpathy/nanoGPT",
+   "inputs_hash": "26ae591936d402caf10416690407158e",
+   "description_tr": "nanoGPT, orta ölçekli GPT modellerini eğitmek ve ince ayar yapmak için yazılmış, kasıtlı olarak sade tutulmuş bir PyTorch deposu. Eğitim döngüsü ve model tanımı yaklaşık üçer yüz satır; kod okunabilir olduğu için değiştirilerek sıfırdan model eğitmek veya hazır GPT-2 ağırlıklarını yüklemek kolay. Referans sonuç, GPT-2 124M modelinin sekiz A100'lü tek bir düğümde yaklaşık dört günde yeniden üretilmesi. MIT lisanslı ve 63 binin üzerinde yıldızı var. README'de depo artık eskimiş ve kullanımdan kaldırılmış olarak işaretleniyor; yazarı yerine nanochat adlı yeni projeye yönlendiriyor.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, dil modellerinin içinde ne olduğunu kodun üzerinden anlamak. Projelerinde model eğitmiyorsun; Lyricdrop, Folio ve Kanarya hazır modelleri servis olarak çağırıyor ve bu doğru kurulum. Referans eğitim çok GPU'lu bir düğüm varsayıyor, yani ofisteki Mac'te anlamlı bir şekilde çalıştırılamaz ve bulut GPU kirası gerektirir. Ayrıca depo kendi README'sinde eskimiş olarak işaretlenmiş; merak için bakacaksan yazarın yönlendirdiği yeni projeye bakman daha doğru olur.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "PlexPt/awesome-chatgpt-prompts-zh",
+   "inputs_hash": "106e9c4136ca5740d6a29b4fccf92412",
+   "description_tr": "Bu depo, Çince kullanım senaryoları için hazırlanmış prompt örneklerinden oluşan bir derleme. Çeviri, yazım, özetleme, rol verme gibi yaygın işler için kalıp metinler sunuyor ve modelden istenen davranışın nasıl tarif edileceğini örneklerle gösteriyor. Kod içermiyor; tamamen metin tabanlı bir liste. MIT lisanslı ve 62 binin üzerinde yıldıza sahip; 2022 sonunda açılmış, ilk dönem ChatGPT kullanımının yaygınlaştığı döneme ait bir kaynak. Örnekler tek seferlik sohbet kullanımına göre yazılmış, ajan veya araç kullanan sistemlere göre değil.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, kendi prompt'larını yazarken bakılacak örnekler. Ancak örnekler Çince ve tek seferlik sohbet kullanımına göre hazırlanmış; senin ihtiyacın araç kullanan, şema doğrulayan ve gerektiğinde \"eşleşme yok\" diyebilen ajan prompt'ları, bu da farklı bir yazım disiplini. Projelerine girecek bir bileşen ya da asistanına devredilecek bir akış sunmuyor. Bu tür listelerin değeri hızla eskiyor; kendi CLAUDE.md dosyalarında biriktirdiğin kurallar bundan daha isabetli.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "jingyaogong/minimind",
+   "inputs_hash": "3ea6bde89ef7642fa1ce6513481fe50d",
+   "description_tr": "MiniMind, yaklaşık 64M parametrelik çok küçük bir dil modelini sıfırdan eğitmeyi baştan sona gösteren bir eğitim projesi. Veri temizleme, pretrain, SFT, LoRA, DPO, PPO/GRPO gibi RL yöntemleri, araç kullanımı ve model damıtma adımlarının tamamı PyTorch ile, üst seviye kütüphane soyutlamaları kullanılmadan yazılmış. Amaç tek bir tüketici GPU'sunda kısa sürede ve düşük maliyetle tam bir eğitim zincirini tekrarlanabilir kılmak; referans ölçüm tek bir NVIDIA 3090 üzerinde yapılıyor. Görsel, çok modlu ve difüzyon tabanlı türevleri ayrı depolarda sürüyor. Apache-2.0 lisanslı, 62 binin üzerinde yıldızı var; dokümantasyon Çince ve İngilizce olarak sunuluyor.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, model eğitiminin adımlarını kavramsal olarak görmek. Eğitim akışı NVIDIA GPU varsayıyor, yani ofisteki Mac'te çalıştırılamaz; çalıştırmak için bulut GPU kiralaman gerekir ve karşılığında elde edeceğin model hiçbir projende kullanılamayacak kadar küçüktür. Lyricdrop'un içerik üretimi ve Folio'nun günlük pipeline'ı için doğru yol hazır modeller; kendi modelini eğitmek bu ihtiyaçların hiçbirini ucuzlatmaz. Öğrenme malzemesi olarak değerlendirecek olsaydın bile bu, senin \"öğrenecek olanı bul\" yaklaşımına göre devredilecek bir konu.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "tw93/Pake",
+   "inputs_hash": "7a1078b7dd169275ef1f2131218c8cac",
+   "description_tr": "Pake, herhangi bir web sayfasını tek komutla masaüstü uygulamasına dönüştüren bir araç. Rust ve Tauri üzerine kurulu olduğu için üretilen paketler Electron alternatiflerine göre belirgin biçimde küçük ve daha az bellek kullanıyor; kurulum dosyaları çoğunlukla 10 MB altında kalıyor. CLI ile ikon, pencere ayarları ve stil özelleştirmesi yapılabiliyor, GitHub Actions üzerinden çevrimiçi paketleme de destekleniyor; macOS, Windows ve Linux hedefleniyor. Depoda hazır paketlenmiş popüler siteler de dağıtılıyor. GPL-3.0 lisanslı ve 61 binin üzerinde yıldıza sahip, uzun süredir bakımı yapılan bir proje.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, Lyricdrop'un canlı admin ve test panelini tarayıcı sekmesi yerine ayrı bir masaüstü uygulaması olarak paketlemek. Ancak panel zaten tarayıcıda çalışıyor ve asıl darboğazın şarkı onayı ile playtest işini dışarı verebilmek; bir masaüstü sarmalayıcı bu darboğaza dokunmuyor. Dağıtmayı düşünürsen GPL-3.0 lisansı da ayrıca değerlendirilmesi gereken bir kısıt getirir. Mobil tarafta ise hiçbir karşılığı yok: Expo/EAS ile iOS ve Android TV dağıtımı yapıyorsun, Pake masaüstü hedefliyor.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "meta-llama/llama",
+   "inputs_hash": "3bce8f518c4149a05775e1421c623114",
+   "description_tr": "Bu depo, Llama 2 modelleri için yayımlanmış minimal çıkarım kodunu barındırıyor: ağırlıkları yükleyip metin üretmeyi gösteren örnekler ve model kartları. README'nin başında deponun kullanımdan kaldırıldığı belirtiliyor; Llama 3.1 ile birlikte içerik llama-models, llama-toolchain, llama-cookbook gibi ayrı depolara taşınmış durumda. Lisans standart bir açık kaynak lisansı değil, Meta'nın kendi model lisansı (NOASSERTION olarak etiketleniyor) ve kullanım koşulları içeriyor. Python ile yazılmış ve 59 binin üzerinde yıldızı var, ancak geliştirme burada sürmüyor. Bugün pratik değeri tarihsel: modern kurulumlar bu kodu değil, taşındığı depoları ve yaygın çıkarım motorlarını kullanıyor.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, Mac'te yerel model çalıştırma ilgin. Ama bunun için doğru adres bu arşiv değil: Apple Silicon üzerinde yerel çıkarım pratikte llama.cpp ve MLX tarafında çözülüyor, bu depodaki kod referans çıkarım örneği olarak yazılmış ve artık bakımı yapılmıyor. Model ağırlıklarını kullanacaksan lisans koşullarının ayrıca okunması gerekir, bu da ürüne gömme senaryolarında ek bir kontrol demek. Yerel STT ve yerel LLM hedeflerin için zamanını güncel çıkarım motorlarına ayırman daha verimli olur.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  }
+ ]
 }

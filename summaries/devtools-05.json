@@ -14,7 +14,7 @@
    "inputs_hash": "09d4748aff6b0d408d70e35d9b092f08",
    "description_tr": "cc-connect, yerelde çalışan AI kodlama agent'larını (Claude Code, Cursor, Gemini CLI, Codex, Kimi CLI) mesajlaşma platformlarına bağlayan, Go ile yazılmış bir köprü. Feishu/Lark, DingTalk, Slack, Telegram, Discord, LINE ve WeCom desteği var; çoğu platform için makineye genel IP adresi gerekmiyor, bağlantı dışarıdan içeri değil içeriden dışarı kuruluyor. README'nin anlattığı ana senaryo, sohbet penceresinden yerel projedeki kodu inceletmek ve değiştirmek. npm üzerinden dağıtılıyor, CI'lı ve sponsorlu bir proje; Şubat 2026'da açılmış ve 15 binin üzerinde yıldıza ulaşmış. Paket meta verisinde lisans alanı boş görünüyor, README'de MIT rozeti var.",
    "usage_tr": "iPhone'dan ofisteki M4 Pro Mac'e Claude Code Remote Control ile bağlanırken yaşadığın kopma sorununa alternatif bir yol sunuyor: agent ofis Mac'inde kalır, sen Telegram ya da Slack üzerinden konuşursun. Seyahatteyken Lyricdrop v2'de bir hata raporunu iletip düzeltmeyi başlatmak veya Kanarya tarafında küçük bir değişikliği kuyruğa almak için kullanabilirsin. Tailscale zaten kurulu olduğu için ev Mac mini'sini de aynı köprüye ekleyip iki makineyi ayrı sohbet kanallarından ayırabilirsin. Maliyet tarafı temiz: köprü yerel çalışıyor, ayrı bir API faturası çıkarmıyor, agent Max aboneliğin üzerinden çalışmaya devam ediyor. Uyarı: mesajlaşma kanalına repo içeriği ve kod düşüyor, dolayısıyla kanal erişimini dar tutman gerekir; erişim kapsamlarının izole olması ilkenle bu noktada dikkatli çalışmak lazım.",
-   "matched_project": "Claude Code orkestrasyonu",
+   "matched_project": "Claude Code",
    "relevance": 8,
    "investment_note": null
   },
@@ -23,7 +23,7 @@
    "inputs_hash": "784b32319b5250c743f2743aed8d3a3c",
    "description_tr": "Gitingest, bir Git deposunu LLM'e verilebilecek tek bir düz metin özetine çeviren açık kaynak bir araç. GitHub adresinde \"hub\" yerine \"ingest\" yazmak yeterli; ayrıca pip paketi, CLI, Python API'si ve tarayıcı eklentileri olarak da kullanılabiliyor. Çıktı dizin ağacı ve dosya içeriklerini birlikte veriyor, boyut ve desen filtreleriyle kapsam daraltılabiliyor. MIT lisanslı, 2024 sonunda açılmış ve 15 binin üzerinde yıldıza ulaşmış; CI, OpenSSF scorecard ve düzenli PyPI sürümleriyle sürdürülüyor. Kendi sunucunda da çalıştırılabiliyor.",
    "usage_tr": "Bir açık kaynak depoyu fork'layıp kendi istemcini yazma refleksin için ön eleme adımına oturuyor: OpenCode'un iOS istemcisi gibi bir planda depoyu tek metne indirip Claude Code'a mimari özeti ve risk listesi çıkarttırabilirsin. Asistanına devredilebilir olması ayrı bir avantaj; terminal gerekmiyor, tarayıcıdan adresi değiştirip çıktıyı alabiliyor ve sana özet halinde getirebiliyor. Kendi sunucunda çalıştırılabildiği için özel depoları dışarı vermeden DigitalOcean üzerinde barındırman da mümkün. Sınırı net: Claude Code zaten yerelde klonlanmış depoyu okuyabiliyor, asıl faydası klonlamadığın veya başkasına inceletmek istediğin depolarda ortaya çıkıyor. Büyük depolarda çıktı bağlam penceresini hızla doldurur; filtreleri baştan daraltmak gerekiyor.",
-   "matched_project": "Claude Code orkestrasyonu",
+   "matched_project": "Claude Code",
    "relevance": 4,
    "investment_note": null
   },
@@ -32,7 +32,7 @@
    "inputs_hash": "f439a8864934c59cd66dc07a124c1b95",
    "description_tr": "react-doctor, AI agent'larının yazdığı React kodundaki hataları yakalamayı hedefleyen bir inceleme aracı. Depo TypeScript ile yazılmış ve monorepo yapısında; kendini code-review aracı ve agent skill'i olarak etiketliyor, react.doctor adresinde ayrı bir tanıtım sayfası var. Ancak pakette gelen kök README tek satırdan, paket içindeki README'ye işaret eden bir yol adresinden ibaret; bu nedenle hangi kuralları uyguladığı, nasıl kurulduğu ve hangi agent'larla entegre olduğu hakkında burada karar vermeye yetecek açık metin yok. Şubat 2026'da açılmış ve 14 binin üzerinde yıldıza ulaşmış; lisans alanı standart bir SPDX kimliğine çözülmüyor. Teknik ayrıntılar için proje sayfasına bakmak gerekiyor.",
    "usage_tr": "Claude Code'un yazdığı kodu ikinci bir gözle denetleme isteğine oturan bir araç kategorisi; Lyricdrop v2'nin admin ve test panelindeki React tarafında commit öncesi bir kontrol adımı olarak deneyebilirsin. Superpowers ile kurduğun akışa review adımı olarak eklenirse, \"geliştirici doğruluğu\" incelemesinin React'e özgü kısmını otomatikleştirir. Yerel çalışan bir statik inceleme katmanıysa API maliyeti getirmez, ama pakette bunu doğrulayacak metin yok; kurulum öncesi proje sayfasından teyit etmek gerekiyor. Expo/React Native tarafında ne kadarının geçerli olduğu da belirsiz: kuralların çoğu DOM'a özgüyse mobil kodda karşılığı olmayabilir. Önce tek bir branch'te çalıştırıp ürettiği bulguların gerçek hata mı gürültü mü olduğuna bakmadan akışa almamak doğru olur.",
-   "matched_project": "Claude Code orkestrasyonu",
+   "matched_project": "Claude Code",
    "relevance": 5,
    "investment_note": "Agent'ın ürettiği kodu denetleyen araçlar, kod ajanlarının yaygınlaşmasıyla açılan yeni bir kategori; deponun yedi ayda 14 binin üzerinde yıldıza ulaşması bu boşluğun büyüklüğüne dair bir sinyal."
   },
@@ -50,7 +50,7 @@
    "inputs_hash": "dd5e92bdd2b762232b47ab739d1ffb52",
    "description_tr": "Context Engineering Intro, Claude Code ile çalışırken agent'a verilecek bağlamı sistematik hale getirmeyi amaçlayan bir şablon depo. İçinde CLAUDE.md kural dosyası, örnek kod klasörü, INITIAL.md istek formu ve iki slash komutu var: biri bir özellik isteğinden kapsamlı bir \"Product Requirements Prompt\" üretiyor, diğeri bunu adım adım uyguluyor. Yaklaşımın özü, doğrulama döngüleri ve örneklerle agent'ın kendi hatasını yakalayabileceği bir bağlam paketi hazırlamak. MIT lisanslı, Temmuz 2025'te açılmış ve 13 binin üzerinde yıldıza ulaşmış. Çalıştırılabilir bir kütüphane değil; metodoloji, şablon ve komut dosyalarından oluşuyor.",
    "usage_tr": "Lyricdrop v2'yi sıfırdan yazarken Superpowers'ın yanında doğrudan kullanabileceğin bir iskelet: her yeni özelliği önce INITIAL.md biçiminde yazıp ondan bir spec üretmek, v1'i tek oturumda yazmaktan duyduğun pişmanlığa karşı doğal bir fren. Örnekler klasörü mantığı özellikle işine yarar; admin panelindeki mevcut Supabase ve CDN kalıplarını examples/ altına koyarsan agent yeni ekranları aynı kalıpla yazar. Tamamen dosya ve komuttan ibaret olduğu için yerel çalışıyor, ek API maliyeti yok ve Max aboneliğinle uyumlu. Aynı iskeleti Kanarya ve Folio'da tekrar kullanabilirsin, böylece proje başına CLAUDE.md yazma işi standartlaşır. Uyarı: üretilen spec dosyaları uzun oluyor ve bağlamı şişirebiliyor; şablonu olduğu gibi almak yerine kendi CLAUDE.md pratiklerinle birleştirip kısaltman gerekir.",
-   "matched_project": "Claude Code orkestrasyonu",
+   "matched_project": "Claude Code",
    "relevance": 7,
    "investment_note": null
   },
@@ -77,7 +77,7 @@
    "inputs_hash": "002ba07c1b2657e90aeb9b70f66e1422",
    "description_tr": "ccstatusline, Claude Code CLI'nin alt satırında görünen durum çubuğunu biçimlendiren bir Node aracı. Model adı, git dalı, token kullanımı, bağlam doluluğu ve özel komut çıktıları gibi öğeleri satırlara yerleştiriyor; powerline sembolleri, temalar ve renk ayarları için terminal içinde bir yapılandırma arayüzü sunuyor. npm üzerinden kuruluyor, Windows dahil çapraz platform çalışıyor; son sürümlerde terminal genişliği tespiti hızlandırılmış ve özel komut çıktıları için önbellek ile zaman aşımı eklenmiş. MIT lisanslı, Ağustos 2025'te açılmış, 12 binin üzerinde yıldızı olan ve sık sürüm çıkaran bir proje. İşlevi tamamen görsel; agent'ın davranışına veya çıktı kalitesine etkisi yok.",
    "usage_tr": "Günün büyük kısmını Claude Code içinde geçirdiğin için küçük ama gerçek bir faydası var: bağlam doluluğunu ve hangi modelde olduğunu sürekli görmek, uzun Lyricdrop v2 oturumlarında ne zaman özetleyip yeniden başlayacağına karar vermeni kolaylaştırır. Ofis Mac'i ile ev Mac mini'si için farklı temalar seçersen, Remote Control ile bağlandığında hangi makinede olduğunu bir bakışta ayırt edersin. Kurulumu npm ile birkaç dakika, tamamen yerel, ek API maliyeti yok ve Max aboneliğiyle bir ilgisi yok. Beklentiyi doğru tutmak gerekir: kod kalitesine veya iki açılı review isteğine katkısı yok, sadece konfor ve görünürlük. Terminal'i doğrulama için kullandığın düşünülürse en çok işine yarayacak öğeler token ve bağlam göstergeleri olur.",
-   "matched_project": "Claude Code orkestrasyonu",
+   "matched_project": "Claude Code",
    "relevance": 4,
    "investment_note": null
   },

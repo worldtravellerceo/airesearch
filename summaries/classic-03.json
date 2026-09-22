@@ -75,10 +75,10 @@
   {
    "full_name": "fengdu78/Coursera-ML-AndrewNg-Notes",
    "inputs_hash": "d2ad220057fa54b986da96aeeb707451",
-   "description_tr": "Andrew Ng'in 2014 tarihli Coursera makine öğrenmesi dersinin Çince ders notları ve altyazı arşivi. Repo notların Word, Markdown ve HTML sürümlerini, dersin orijinal sunumlarını, Çince-İngilizce altyazı dosyalarını ve Python kod örneklerini barındırıyor. İçerik denetimli ve denetimsiz öğrenme, SVM, sinir ağları, öneri sistemleri gibi klasik başlıkları kapsıyor. Bir kütüphane değil, tamamen eğitim materyali; online okunabilen bir not sitesine de bağlı. 37.800'ün üzerinde yıldızı var, 2017'de açılmış ve lisans belirtilmemiş.",
-   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor. En yakın bağlam genel öğrenme ilgin; ancak materyal Çince ve on yıl öncesinin klasik ML müfredatını anlatıyor, senin kullandığın hazır model ve ajan katmanıyla ilgisi yok.",
+   "description_tr": "Bu depo, Andrew Ng'in 2014 tarihli Coursera Machine Learning dersinin Çince ders notlarını ve materyallerini topluyor. İçinde notların Word ve Markdown sürümleri, dersin orijinal sunumları, İngilizce-Çince altyazı dosyaları ve derse eşlik eden Python kodları bulunuyor. Notlar çevrimiçi okuma için HTML'e dönüştürülmüş, ayrıca PDF olarak indirilebiliyor. Bir yazılım projesi değil, eğitim materyali arşivi; depoda lisans belirtilmemiş. 2017'de açılmış ve 37 binin üzerinde yıldız almış; içerik dersin 2014 sürümüne dayandığı için klasik makine öğrenmesi konularını kapsıyor, güncel derin öğrenme ve LLM konularını içermiyor.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın olası bağlam öğrenme tarafındaki ilgin, ama orada tercih ettiğin kaynak dili Türkçe ve konular psikoloji, sosyoloji, felsefe yönünde. Buradaki materyal Çince ve 2014 müfredatına ait klasik makine öğrenmesi; kullandığın araçların çalışma mantığını anlamaya da doğrudan hizmet etmiyor. Bir yazılım bileşeni olmadığı için kendi uygulamana gömülecek veya asistanına devredilecek bir tarafı yok. Yıldız sayısı burada güncel bir ilgiyi değil, uzun süredir dolaşan bir ders arşivini ölçüyor.",
    "matched_project": null,
-   "relevance": 0,
+   "relevance": 1,
    "investment_note": null
   },
   {
