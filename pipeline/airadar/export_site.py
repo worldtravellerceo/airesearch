@@ -137,7 +137,13 @@ def _overview(conn: sqlite3.Connection, date: dt.date | None) -> dict:
               WHERE c.is_ai = 1) AS ai_measured,
             (SELECT count(*) FROM repos WHERE history_backfilled_through IS NOT NULL)
                 AS backfilled,
-            (SELECT count(*) FROM repo_star_daily) AS day_rows
+            (SELECT count(*) FROM repo_star_daily) AS day_rows,
+            -- Two numbers again, for the same reason as `ai_measured`: a
+            -- repository with no paragraphs is not one the summariser judged
+            -- to have no use, it is one nobody has written about yet.
+            (SELECT count(*) FROM repo_summary) AS summarised,
+            (SELECT count(*) FROM repo_summary WHERE matched_project IS NOT NULL)
+                AS summarised_matched
         """
     ).fetchone()
     # What each board was allowed to rank today. The Fresh Power tile used to
@@ -296,6 +302,8 @@ def _details(
                r.language, r.license, r.stars, r.archived, r.created_at,
                r.discovered_via, r.history_backfilled_through,
                c.category, c.subcategory, c.one_liner,
+               m.description_tr, m.usage_tr, m.matched_project, m.relevance,
+               m.investment_note,
                s.velocity_7d, s.velocity_14d, s.velocity_28d, s.velocity_90d,
                s.acceleration, s.acceleration_basis,
                s.relative_growth_14d, s.fresh_power, s.momentum_score,
@@ -303,6 +311,7 @@ def _details(
                s.days_to_50k, s.breakout, s.coverage_days
         FROM repos r
         JOIN repo_classification c ON c.repo_id = r.id AND c.is_ai = 1
+        LEFT JOIN repo_summary m ON m.repo_id = r.id
         LEFT JOIN repo_scores s ON s.repo_id = r.id AND s.date = :date
         WHERE """
         + db.CURRENT_NAME_SQL

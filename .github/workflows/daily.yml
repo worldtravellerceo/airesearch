@@ -29,6 +29,9 @@ jobs:
       # raises the ceiling; absent, the run simply uses the single lane.
       GH_PAT_2: ${{ secrets.GH_PAT_2 }}
       GH_PAT_3: ${{ secrets.GH_PAT_3 }}
+      # Pays for the two Turkish paragraphs under each board row. Absent, the
+      # summarise step goes red and the rest of the run carries on.
+      ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
     steps:
       - uses: actions/checkout@v5
       - uses: ./.github/actions/pipeline
@@ -77,6 +80,35 @@ jobs:
 
       - name: Score
         run: airadar score
+
+      # Everything below writes the two Turkish paragraphs the site shows under
+      # each row, and it runs here because the boards are only decided by
+      # `score` — before it, there is no way to know which repositories a
+      # reader will actually see.
+
+      # The reader profile holds personal and financial detail and this
+      # repository is public, so it lives in a secret and never in git. Passed
+      # through the environment rather than interpolated into the script: that
+      # keeps the newlines and keeps the contents out of the command line.
+      - name: Place the reader profile
+        env:
+          SAM_PROFILE: ${{ secrets.SAM_PROFILE }}
+        run: printf '%s' "$SAM_PROFILE" > SAM_PROFILE.md
+
+      # The README pass above only takes repositories with no signal at all, so
+      # the ones that fill the boards — placed confidently by the rules — have
+      # never had a README read. A GitHub description is not enough to write
+      # two paragraphs from. These requests cost GitHub quota, not money.
+      - name: Read the READMEs of the repos the site shows
+        run: airadar readmes --targets visible --limit 3000
+
+      # Loud, but not fatal, for the same reason as the valuations step: a
+      # missing key or a bad afternoon at the API should not cost the whole
+      # site a rebuild. The ceiling is ours — the Batch API enforces no dollar
+      # cap — so the command estimates before it submits and refuses above it.
+      - name: Write the summaries
+        continue-on-error: true
+        run: airadar summarise --max-spend-usd 25
 
       # Free: it only reads homepages already in the corpus. It runs daily so
       # that a company which shipped its first repository this morning is in

@@ -114,6 +114,19 @@ class Settings(BaseSettings):
     llm_band_low: float = 0.2
     llm_band_high: float = 0.8
 
+    # --- summaries ---------------------------------------------------------
+    # The two Turkish paragraphs the site shows for each repository. Sonnet
+    # rather than the classifier's Haiku: the second paragraph has to weigh a
+    # project against a reader's actual work and say plainly when there is no
+    # match, and a cheaper model reaches for a match that is not there.
+    summary_model: str = Field(default="claude-sonnet-5", alias="AIRADAR_SUMMARY_MODEL")
+    # The reader profile the second paragraph is written for. It holds personal
+    # and financial detail, so it is delivered as a GitHub Actions secret and
+    # written to disk at run time; this repository is public and never carries
+    # it. With no profile there is no second paragraph, and the command says so
+    # rather than inventing a generic one.
+    profile_path: str = Field(default="SAM_PROFILE.md", alias="AIRADAR_PROFILE_PATH")
+
 
 _settings: Settings | None = None
 

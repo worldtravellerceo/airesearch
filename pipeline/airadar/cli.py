@@ -11,9 +11,10 @@ import typer
 from rich.console import Console
 from rich.table import Table
 
-from airadar import audit, classify_run, export_site
+from airadar import audit, classify_run, export_site, summarise_run
 from airadar import collect as collect_mod
 from airadar import discover as discover_mod
+from airadar import summarise as summarise_mod
 from airadar.companies import apify
 from airadar.companies import domains as company_domains
 from airadar.companies import enrich as company_enrich
@@ -790,6 +791,11 @@ def readmes(
     max_minutes: float = typer.Option(
         None, "--max-minutes", help="Stop cleanly after this long, leaving the rest for next time"
     ),
+    targets: str = typer.Option(
+        "no-signal",
+        "--targets",
+        help="no-signal: repos the metadata could not place. visible: every repo the site renders.",
+    ),
 ) -> None:
     """Read the README of every repo the metadata could not place.
 
@@ -811,10 +817,53 @@ def readmes(
                     min_stars=min_stars,
                     refetch=refetch,
                     max_minutes=max_minutes,
+                    targets=targets,
                 )
 
     report = asyncio.run(run())
     console.print(f"[green]readmes[/green]: {report.summary()}")
+
+
+@app.command("summarise")
+def summarise(
+    limit: int = typer.Option(None, "--limit", help="How many repos this run"),
+    max_spend_usd: float = typer.Option(
+        25.0, "--max-spend-usd", help="Refuse to submit if the estimate is above this"
+    ),
+    dry_run: bool = typer.Option(
+        False, "--dry-run", help="Print what it would cost and submit nothing"
+    ),
+    date: str = typer.Option(None, "--date", help="Board date to read (default: today)"),
+) -> None:
+    """Write the two Turkish paragraphs the site shows for each repository.
+
+    One describes the project; one says where it fits into the reader's own
+    work, or plainly that it does not. Only repositories the site actually
+    renders are written, biggest first, and only those whose README, metadata
+    or reader profile have changed since last time.
+    """
+    settings = _require_database()
+    when = dt.date.fromisoformat(date) if date else dt.date.today()
+
+    with db.connect(settings.db_path) as conn:
+        try:
+            report = summarise_run.run(
+                conn,
+                date=when,
+                limit=limit,
+                max_spend_usd=max_spend_usd,
+                dry_run=dry_run,
+            )
+        except summarise_mod.ProfileMissing as exc:
+            # Loud, not silent: without the profile the second paragraph would
+            # be generic, and a generic answer still reads like an answer.
+            console.print(f"[red]summarise[/red]: {exc}")
+            raise typer.Exit(code=1) from exc
+        except summarise_mod.SpendCeilingExceeded as exc:
+            console.print(f"[red]summarise[/red]: {exc}")
+            raise typer.Exit(code=1) from exc
+
+    console.print(f"[green]summarise[/green]: {report.summary()}")
 
 
 @app.command("review-queue")

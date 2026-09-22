@@ -59,6 +59,15 @@ export type BoardEntry = {
    *  produced by the metric code rather than observed. */
   acceleration_basis: string | null;
   history_backfilled_through: string | null;
+  /** Two Turkish paragraphs written by the summariser: what the project is,
+   *  and where it fits into the reader's own work. Null means nobody has
+   *  written about this repo yet — which is not the same as the summariser
+   *  finding no use for it. That case is a written paragraph with a null
+   *  `matched_project`. */
+  description_tr: string | null;
+  usage_tr: string | null;
+  matched_project: string | null;
+  relevance: number | null;
 };
 
 export type BoardFile = {
@@ -128,6 +137,12 @@ export type RepoDetail = {
   category: string | null;
   subcategory: string | null;
   one_liner: string | null;
+  /** The same two paragraphs the board rows carry. See BoardEntry. */
+  description_tr: string | null;
+  usage_tr: string | null;
+  matched_project: string | null;
+  relevance: number | null;
+  investment_note: string | null;
   velocity_7d: number | null;
   velocity_14d: number | null;
   velocity_28d: number | null;

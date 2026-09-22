@@ -463,3 +463,84 @@ async def test_a_long_pass_stops_itself_before_the_job_does(conn):
     assert report.fetched + report.missing + report.failed == 0
     assert report.left == 29
     assert "left for the next run" in report.summary()
+
+
+async def test_visible_targets_reach_repos_the_no_signal_queue_never_sees(conn):
+    """The boards are filled by repos the rule engine placed *confidently*.
+
+    `fetch_readmes` selects on `COALESCE(c.confidence, 0) = 0`, so a repo the
+    rules settled has never had its README read. That was survivable while the
+    site showed one English line per repo. It is not survivable now that the
+    site writes two Turkish paragraphs about each one, because a GitHub
+    description is not enough to write them from — and every repo a reader
+    actually sees is in exactly this state.
+    """
+    import datetime as dt
+
+    from airadar import collect as collect_mod
+
+    date = dt.date(2026, 9, 22)
+    db.upsert_repos(
+        conn,
+        [
+            db.RepoRecord(id=1, full_name="acme/settled", owner="acme", name="settled", stars=9000),
+            db.RepoRecord(id=2, full_name="acme/blank", owner="acme", name="blank", stars=10),
+        ],
+    )
+    # A confident verdict — the state that hides a repo from the README pass.
+    db.save_classification(
+        conn,
+        1,
+        is_ai=True,
+        category="llm-app",
+        subcategory="thing",
+        confidence=0.95,
+        method="rules",
+        content_hash="c1",
+    )
+    db.save_classification(
+        conn,
+        2,
+        is_ai=None,
+        category=None,
+        subcategory=None,
+        confidence=0.0,
+        method="rules-unsettled",
+        content_hash="c2",
+    )
+    conn.commit()
+
+    def handler(request: httpx.Request) -> httpx.Response:
+        return httpx.Response(404, json={"message": "Not Found"})
+
+    async with GitHubClient(
+        token="t", transport=httpx.MockTransport(handler), sleep=_no_sleep
+    ) as client:
+        # The old queue cannot see the settled repo at all.
+        no_signal = await collect_mod.fetch_readmes(
+            conn, client, min_stars=1, max_minutes=-1, targets="no-signal"
+        )
+        # The new one is selected on what the site renders, not on confidence.
+        visible = await collect_mod.fetch_readmes(
+            conn, client, max_minutes=-1, targets="visible", date=date
+        )
+
+    assert no_signal.considered == 1  # only the unsettled one
+    assert visible.considered == 1  # only the settled, AI-classified one
+
+
+async def test_an_unknown_readme_target_is_refused(conn):
+    import datetime as dt
+
+    from airadar import collect as collect_mod
+
+    def handler(request: httpx.Request) -> httpx.Response:
+        return httpx.Response(404, json={"message": "Not Found"})
+
+    async with GitHubClient(
+        token="t", transport=httpx.MockTransport(handler), sleep=_no_sleep
+    ) as client:
+        with pytest.raises(ValueError, match="unknown readme target"):
+            await collect_mod.fetch_readmes(
+                conn, client, targets="whatever", date=dt.date(2026, 9, 22)
+            )

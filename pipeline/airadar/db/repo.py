@@ -827,6 +827,127 @@ def cached_classification_hashes(conn: sqlite3.Connection) -> dict[int, str]:
     }
 
 
+# --- summaries -------------------------------------------------------------
+
+
+def save_summary(
+    conn: sqlite3.Connection,
+    repo_id: int,
+    *,
+    description_tr: str,
+    usage_tr: str,
+    matched_project: str | None,
+    relevance: int,
+    investment_note: str | None,
+    model: str,
+    content_hash: str,
+) -> None:
+    conn.execute(
+        """
+        INSERT INTO repo_summary (repo_id, description_tr, usage_tr, matched_project,
+                                  relevance, investment_note, model, content_hash,
+                                  created_at)
+        VALUES (:repo_id, :description_tr, :usage_tr, :matched_project, :relevance,
+                :investment_note, :model, :content_hash, :created_at)
+        ON CONFLICT (repo_id) DO UPDATE SET
+            description_tr = excluded.description_tr, usage_tr = excluded.usage_tr,
+            matched_project = excluded.matched_project, relevance = excluded.relevance,
+            investment_note = excluded.investment_note, model = excluded.model,
+            content_hash = excluded.content_hash, created_at = excluded.created_at
+        """,
+        {
+            "repo_id": repo_id,
+            "description_tr": description_tr,
+            "usage_tr": usage_tr,
+            # NULL means the summariser found no genuine use, which is a real
+            # answer and not a missing one.
+            "matched_project": matched_project,
+            "relevance": relevance,
+            "investment_note": investment_note,
+            "model": model,
+            "content_hash": content_hash,
+            "created_at": _utcnow(),
+        },
+    )
+
+
+def visible_repo_ids(conn: sqlite3.Connection, *, date, detail_limit: int) -> list[int]:
+    """Every repo the site actually renders, biggest first.
+
+    The same selection `export_site._details` uses — the top N by stars plus
+    everyone on a board, whatever their rank — and it lives here so the two
+    cannot drift. A repo outside this set appears on no page, so writing
+    paragraphs for it would be paying for text nobody can reach.
+    """
+    rows = conn.execute(
+        """
+        SELECT r.id
+        FROM repos r
+        JOIN repo_classification c ON c.repo_id = r.id AND c.is_ai = 1
+        WHERE """
+        + CURRENT_NAME_SQL
+        + """
+          AND (r.id IN (
+                  SELECT id FROM repos WHERE is_fork = 0 ORDER BY stars DESC LIMIT :limit
+                )
+               OR r.id IN (SELECT repo_id FROM leaderboard_snapshots WHERE date = :date))
+        ORDER BY r.stars DESC
+        """,
+        {"date": date, "limit": detail_limit},
+    ).fetchall()
+    return [row["id"] for row in rows]
+
+
+def cached_summary_hashes(conn: sqlite3.Connection) -> dict[int, str]:
+    """repo_id -> content_hash, so an unchanged repo is never paid for twice."""
+    return {
+        row["repo_id"]: row["content_hash"]
+        for row in conn.execute("SELECT repo_id, content_hash FROM repo_summary")
+    }
+
+
+def start_llm_run(
+    conn: sqlite3.Connection,
+    *,
+    command: str,
+    model: str,
+    repos: int,
+    estimate_usd: float,
+) -> int:
+    """Record a paid run before it is submitted, so a crash still leaves a trace."""
+    cursor = conn.execute(
+        """
+        INSERT INTO llm_run (command, model, repos, estimate_usd, started_at, status)
+        VALUES (?, ?, ?, ?, ?, 'running')
+        """,
+        (command, model, repos, estimate_usd, _utcnow()),
+    )
+    conn.commit()
+    return int(cursor.lastrowid)
+
+
+def finish_llm_run(
+    conn: sqlite3.Connection,
+    run_id: int,
+    *,
+    status: str,
+    batch_id: str | None = None,
+    cost_usd: float = 0.0,
+    input_tokens: int = 0,
+    output_tokens: int = 0,
+    notes: str | None = None,
+) -> None:
+    conn.execute(
+        """
+        UPDATE llm_run SET finished_at = ?, status = ?, batch_id = ?, cost_usd = ?,
+               input_tokens = ?, output_tokens = ?, notes = ?
+         WHERE id = ?
+        """,
+        (_utcnow(), status, batch_id, cost_usd, input_tokens, output_tokens, notes, run_id),
+    )
+    conn.commit()
+
+
 # --- scores and boards -----------------------------------------------------
 
 
@@ -928,10 +1049,12 @@ def load_leaderboard(
                s.relative_growth_14d,
                s.fresh_power, s.momentum_score, s.breakout,
                s.days_to_1k, s.days_to_10k, s.days_to_50k, s.coverage_days,
-               r.history_backfilled_through
+               r.history_backfilled_through,
+               m.description_tr, m.usage_tr, m.matched_project, m.relevance
         FROM leaderboard_snapshots l
         JOIN repos r ON r.id = l.repo_id
         LEFT JOIN repo_classification c ON c.repo_id = l.repo_id
+        LEFT JOIN repo_summary m ON m.repo_id = l.repo_id
         LEFT JOIN repo_scores s ON s.repo_id = l.repo_id AND s.date = l.date
         WHERE l.date = :date AND l.board = :board AND l.category = :category
           AND """

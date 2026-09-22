@@ -402,6 +402,8 @@ async def fetch_readmes(
     min_stars: int = 1000,
     refetch: bool = False,
     max_minutes: float | None = None,
+    targets: str = "no-signal",
+    date: dt.date | None = None,
 ) -> ReadmeReport:
     """Read the README of every repository the metadata could not place.
 
@@ -414,9 +416,39 @@ async def fetch_readmes(
     Ordered biggest first and bounded by `limit`, so an interrupted run has
     spent its requests on the repositories it would have hurt most to miss, and
     the next run carries on from where it stopped.
+
+    `targets` picks the queue:
+
+    - `no-signal` (the default) is the selection above, and the recall fix.
+    - `visible` is every repository the site renders — the board rows and the
+      detail pages. These are the repositories the rule engine placed
+      *confidently*, so `no-signal` never reaches them and their README has
+      never been read. That was survivable while the site showed one English
+      line per repo; it is not survivable now that it writes two paragraphs
+      about each one, because a GitHub description is not enough to write them
+      from. The requests are free — GitHub quota, not money.
     """
     report = ReadmeReport()
-    sql = """
+    params: dict = {"min_stars": min_stars}
+    if targets == "visible":
+        # Imported here rather than at module scope: the site exporter reads
+        # from this module's tables, and a top-level import would close the
+        # loop.
+        from airadar.export_site import DETAIL_LIMIT
+
+        ids = db.visible_repo_ids(conn, date=date or dt.date.today(), detail_limit=DETAIL_LIMIT)
+        if not ids:
+            log.info("readme: no visible repos for %s, nothing to read", date)
+            return report
+        placeholders = ", ".join(str(int(i)) for i in ids)
+        sql = f"""
+        SELECT r.id, r.full_name, r.etag_readme
+        FROM repos r
+        WHERE r.is_fork = 0
+          AND r.id IN ({placeholders})
+    """
+    elif targets == "no-signal":
+        sql = """
         SELECT r.id, r.full_name, r.etag_readme
         FROM repos r
         LEFT JOIN repo_classification c ON c.repo_id = r.id
@@ -424,12 +456,13 @@ async def fetch_readmes(
           AND r.stars >= :min_stars
           AND COALESCE(c.confidence, 0) = 0
     """
+    else:
+        raise ValueError(f"unknown readme target {targets!r}; expected no-signal or visible")
     if not refetch:
         # A README we have already read, or established does not exist, is not
         # worth another request until the repo itself changes.
         sql += " AND r.readme_fetched_at IS NULL"
     sql += " ORDER BY r.stars DESC"
-    params: dict = {"min_stars": min_stars}
     if limit is not None:
         sql += " LIMIT :limit"
         params["limit"] = limit
@@ -438,8 +471,9 @@ async def fetch_readmes(
     report.considered = len(queue)
     settings = get_settings()
     log.info(
-        "readme: %d repos with no signal, %d in flight",
+        "readme: %d repos to read (%s), %d in flight",
         len(queue),
+        targets,
         settings.concurrency,
     )
 

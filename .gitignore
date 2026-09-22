@@ -24,3 +24,7 @@ out/
 
 # The database is a release asset, not a committed file.
 data/
+
+# Sam profile: personal context for the summariser. Delivered as a GitHub
+# Actions secret, never committed - this repository is public.
+SAM_PROFILE.md

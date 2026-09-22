@@ -54,6 +54,15 @@ them back needed phrases chosen to match the repositories we had just looked
 at. When a change fails its own acceptance bar, write down what was measured
 and leave the code alone.
 
+**A model with no way to say "no" will say yes.** The summariser writes two
+paragraphs per repository, the second one about where a project fits into the
+reader's own work. Most projects fit nowhere, and that is the correct answer
+for them. `matched_project` is nullable in the schema, in the JSON schema the
+model answers against, and in the prompt, because a field that can only hold a
+match produces a match for a CUDA kernel library. The share of summaries
+claiming a match is the number to watch: if it climbs towards 100%, the
+prompt has stopped working, not the index.
+
 **Never buy recall with precision.** A soft ceiling set below the decision
 threshold stranded 17,849 repositories in permanent escalation. A README weight
 set one tier too high put a release-notes CLI on an AI board. Every widening
@@ -81,6 +90,25 @@ the end. The database is a release asset and the runner disappears with the job.
 **The rate limit belongs to the account, not the token.** Extra personal access
 tokens from the same user share one allowance. `airadar doctor` measures which
 is true rather than assuming.
+
+## The reader profile
+
+`SAM_PROFILE.md` is the context the second paragraph under each board row is
+written from — who the reader is, what they are building, what they would
+actually use a project for. Section 7 of that file is the writing contract the
+summariser follows, and the quality of every `usage_tr` paragraph comes from it.
+
+**It is not in this repository and must not be added to it.** This repository
+and the site it publishes are public; the profile holds personal and financial
+detail. It is a GitHub Actions secret (`SAM_PROFILE`), written to disk by the
+daily workflow and gitignored locally. `AIRADAR_PROFILE_PATH` points somewhere
+else if needed. With no profile, `airadar summarise` exits non-zero rather than
+writing a generic paragraph — a generic answer to "where does this fit into my
+work" still reads like an answer, and would quietly replace the real one.
+
+What the model may write is narrower than what it may read: the profile's own
+rule 7.6 forbids copying personal or financial detail into the output, so a
+published paragraph names a project or a need and never a number.
 
 ## Layout
 

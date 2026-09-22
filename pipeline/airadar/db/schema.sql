@@ -120,6 +120,49 @@ CREATE TABLE IF NOT EXISTS repo_classification (
 CREATE INDEX IF NOT EXISTS repo_classification_cat_idx
     ON repo_classification (category) WHERE is_ai = 1;
 
+-- The two Turkish paragraphs the site shows for a repository: one describing
+-- the project, one weighing it against the reader's own work. Written by the
+-- summariser, not by the classifier, and kept in a table of its own because
+-- they are regenerated on a different trigger: the classifier re-runs when the
+-- vocabulary changes, these re-run when the README or the reader profile does.
+--
+-- `matched_project` is nullable on purpose. A summary that found no genuine
+-- use for the reader has to stay distinguishable from one nobody has written
+-- yet, and a model that cannot express "no match" will invent one.
+CREATE TABLE IF NOT EXISTS repo_summary (
+    repo_id         INTEGER PRIMARY KEY REFERENCES repos(id) ON DELETE CASCADE,
+    description_tr  TEXT NOT NULL,
+    usage_tr        TEXT NOT NULL,
+    matched_project TEXT,
+    relevance       INTEGER NOT NULL DEFAULT 0,   -- 0-10, the profile's own priority order
+    investment_note TEXT,
+    model           TEXT NOT NULL,
+    content_hash    TEXT NOT NULL,   -- re-summarise only when the inputs change
+    created_at      TIMESTAMP NOT NULL
+);
+
+-- One row per Batch API job, written before the job is submitted. The Batch
+-- API has no server-side dollar ceiling the way Apify's `maxTotalChargeUsd`
+-- does, so this ledger plus the pre-flight estimate is the whole of the
+-- accounting: a run that dies mid-flight still leaves its row behind.
+CREATE TABLE IF NOT EXISTS llm_run (
+    id            INTEGER PRIMARY KEY AUTOINCREMENT,
+    command       TEXT NOT NULL,
+    model         TEXT NOT NULL,
+    batch_id      TEXT,
+    repos         INTEGER NOT NULL DEFAULT 0,
+    estimate_usd  REAL NOT NULL DEFAULT 0,
+    cost_usd      REAL NOT NULL DEFAULT 0,
+    input_tokens  INTEGER NOT NULL DEFAULT 0,
+    output_tokens INTEGER NOT NULL DEFAULT 0,
+    started_at    TIMESTAMP NOT NULL,
+    finished_at   TIMESTAMP,
+    status        TEXT,
+    notes         TEXT
+);
+
+CREATE INDEX IF NOT EXISTS llm_run_started_idx ON llm_run(started_at);
+
 CREATE TABLE IF NOT EXISTS repo_scores (
     repo_id             INTEGER NOT NULL REFERENCES repos(id) ON DELETE CASCADE,
     date                DATE NOT NULL,

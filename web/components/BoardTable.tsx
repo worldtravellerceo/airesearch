@@ -1,3 +1,4 @@
+import { Fragment } from "react";
 import Link from "next/link";
 
 import { repoSlug } from "@/lib/paths";
@@ -20,6 +21,61 @@ const WAITING_ON: Record<Board, string> = {
     "Breakout bir projenin kendi 90 günlük temposuyla karşılaştırma yapıyor; bunun için geçmiş verisi gerekiyor.",
   popular: "Henüz hiç proje toplanmadı.",
 };
+
+/** The nine numeric columns. The prose row spans all of them. */
+const COLUMN_COUNT = 9;
+
+type Prose = {
+  description_tr: string | null;
+  usage_tr: string | null;
+  matched_project: string | null;
+};
+
+function hasProse(entry: Prose): boolean {
+  return Boolean(entry.description_tr || entry.usage_tr);
+}
+
+/** The two paragraphs, as a full-width row under the numbers.
+ *
+ *  They are not columns, and could not be: the page shell is `max-w-7xl` and
+ *  the numeric table already claims `min-w-[880px]`, so two 400-700 character
+ *  paragraphs have nowhere to go across. Given a row of their own they get the
+ *  house prose measure at a readable width, and on a phone they stack instead
+ *  of sitting 400px to the right of a horizontally-scrolling table, where
+ *  nobody would ever read them.
+ *
+ *  A written paragraph with no `matched_project` is a real answer — the
+ *  summariser looked and found nothing that fits — so it is labelled rather
+ *  than hidden. Hiding it would make an honest miss look like a gap. */
+export function RepoProse({ entry }: { entry: Prose }) {
+  return (
+    <div className="grid gap-x-8 gap-y-4 md:grid-cols-2">
+      {entry.description_tr ? (
+        <div>
+          <h3 className="text-ink-muted mb-1 text-xs font-medium tracking-wide uppercase">
+            Ne işe yarar
+          </h3>
+          <p className="text-ink-secondary max-w-prose text-sm leading-relaxed">
+            {entry.description_tr}
+          </p>
+        </div>
+      ) : null}
+      {entry.usage_tr ? (
+        <div>
+          <h3 className="text-ink-muted mb-1 text-xs font-medium tracking-wide uppercase">
+            Sen nasıl kullanırsın
+            {entry.matched_project ? (
+              <span className="text-accent ml-2 normal-case">{entry.matched_project}</span>
+            ) : (
+              <span className="ml-2 normal-case">— doğrudan eşleşme yok</span>
+            )}
+          </h3>
+          <p className="text-ink-secondary max-w-prose text-sm leading-relaxed">{entry.usage_tr}</p>
+        </div>
+      ) : null}
+    </div>
+  );
+}
 
 export function BoardTable({
   board,
@@ -106,58 +162,84 @@ export function BoardTable({
         </thead>
         <tbody>
           {entries.map((entry) => (
-            <tr
-              key={entry.repo_id}
-              className="border-border/60 hover:bg-surface-2/60 border-b transition last:border-0"
-            >
-              <td className="tabular text-ink-secondary py-2.5 pr-2 pl-4">{entry.rank}</td>
-              <td className="py-2.5 pr-3">
-                <RankDelta delta={entry.rank_delta} />
-              </td>
-              <td className="py-2.5 pr-4">
-                <Link
-                  href={`/repos/${repoSlug(entry.full_name).owner}/${repoSlug(entry.full_name).name}/`}
-                  className="text-ink hover:text-accent font-medium"
-                >
-                  {entry.full_name}
-                </Link>
-                <GitHubLink fullName={entry.full_name} />
-                {entry.breakout ? (
-                  <span
-                    className="ml-1.5"
-                    title="Breakout: kendi temposunun en az 3 katında"
-                    aria-label="breakout"
+            <Fragment key={entry.repo_id}>
+              <tr
+                className={
+                  hasProse(entry)
+                    ? "hover:bg-surface-2/40 transition"
+                    : "border-border/60 hover:bg-surface-2/60 border-b transition last:border-0"
+                }
+              >
+                <td className="tabular text-ink-secondary py-2.5 pr-2 pl-4 align-top">
+                  {entry.rank}
+                </td>
+                <td className="py-2.5 pr-3 align-top">
+                  <RankDelta delta={entry.rank_delta} />
+                </td>
+                <td className="py-2.5 pr-4 align-top">
+                  <Link
+                    href={`/repos/${repoSlug(entry.full_name).owner}/${repoSlug(entry.full_name).name}/`}
+                    className="text-ink hover:text-accent font-medium"
                   >
-                    🔥
-                  </span>
-                ) : null}
-                {entry.archived ? (
-                  <span className="text-ink-muted ml-1.5 text-xs">(arşiv)</span>
-                ) : null}
-                <div className="text-ink-muted mt-0.5 line-clamp-1 max-w-md text-xs">
-                  {entry.one_liner ?? entry.description ?? ""}
-                </div>
-              </td>
-              <td className="text-ink-secondary py-2.5 pr-4 text-xs">
-                {categoryLabel(entry.category)}
-              </td>
-              <td className="tabular py-2.5 pr-4 text-right">{compact(entry.stars)}</td>
-              <td className="py-2.5 pr-4">
-                <Sparkline
-                  values={entry.sparkline}
-                  from={entry.sparkline_from}
-                  until={asOf}
-                  label={`${entry.full_name} son 90 günün günlük yıldız hızı`}
-                />
-              </td>
-              <td className="tabular py-2.5 pr-4 text-right">{rate(entry.velocity_14d)}</td>
-              <td className="tabular py-2.5 pr-4 text-right">
-                <Acceleration entry={entry} />
-              </td>
-              <td className="tabular text-ink py-2.5 pr-4 text-right font-medium">
-                {scoreValue(board, entry)}
-              </td>
-            </tr>
+                    {entry.full_name}
+                  </Link>
+                  <GitHubLink fullName={entry.full_name} />
+                  {entry.breakout ? (
+                    <span
+                      className="ml-1.5"
+                      title="Breakout: kendi temposunun en az 3 katında"
+                      aria-label="breakout"
+                    >
+                      🔥
+                    </span>
+                  ) : null}
+                  {entry.archived ? (
+                    <span className="text-ink-muted ml-1.5 text-xs">(arşiv)</span>
+                  ) : null}
+                  {entry.description_tr ? null : (
+                    <div className="text-ink-muted mt-0.5 line-clamp-1 max-w-md text-xs">
+                      {entry.one_liner ?? entry.description ?? ""}
+                    </div>
+                  )}
+                </td>
+                <td className="text-ink-secondary py-2.5 pr-4 text-xs align-top">
+                  {categoryLabel(entry.category)}
+                </td>
+                <td className="tabular py-2.5 pr-4 text-right align-top">{compact(entry.stars)}</td>
+                <td className="py-2.5 pr-4 align-top">
+                  <Sparkline
+                    values={entry.sparkline}
+                    from={entry.sparkline_from}
+                    until={asOf}
+                    label={`${entry.full_name} son 90 günün günlük yıldız hızı`}
+                  />
+                </td>
+                <td className="tabular py-2.5 pr-4 text-right align-top">
+                  {rate(entry.velocity_14d)}
+                </td>
+                <td className="tabular py-2.5 pr-4 text-right align-top">
+                  <Acceleration entry={entry} />
+                </td>
+                <td className="tabular text-ink py-2.5 pr-4 text-right font-medium align-top">
+                  {scoreValue(board, entry)}
+                </td>
+              </tr>
+              {hasProse(entry) ? (
+                <tr className="border-border/60 hover:bg-surface-2/40 border-b transition last:border-0">
+                  <td colSpan={COLUMN_COUNT} className="px-4 pt-0 pb-4">
+                    {/* The table is `min-w-[880px]` inside a horizontal
+                        scroller, so on a phone a paragraph left to itself
+                        wraps at 880px and the reader has to drag sideways for
+                        every line. Pinned to the viewport's left edge and
+                        sized to it, the prose wraps where it can be read; from
+                        `md` up the table fits and this does nothing. */}
+                    <div className="sticky left-4 w-[calc(100vw-3rem)] md:static md:w-auto">
+                      <RepoProse entry={entry} />
+                    </div>
+                  </td>
+                </tr>
+              ) : null}
+            </Fragment>
           ))}
         </tbody>
       </table>

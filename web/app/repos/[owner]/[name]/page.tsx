@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
-import { MilestoneStrip } from "@/components/BoardTable";
+import { MilestoneStrip, RepoProse } from "@/components/BoardTable";
 import { RepoHistory, type Milestone } from "@/components/RepoHistory";
 import { StatTile } from "@/components/StatTile";
 import { getManifest, getRepo } from "@/lib/data";
@@ -47,9 +47,11 @@ export default async function RepoPage({
           {detail.full_name}
           {detail.breakout ? <span className="ml-2">🔥</span> : null}
         </h1>
-        <p className="text-ink-secondary mt-1 max-w-3xl text-sm">
-          {detail.one_liner ?? detail.description ?? "Açıklama yok."}
-        </p>
+        {detail.description_tr ? null : (
+          <p className="text-ink-secondary mt-1 max-w-3xl text-sm">
+            {detail.one_liner ?? detail.description ?? "Açıklama yok."}
+          </p>
+        )}
         <div className="text-ink-muted mt-2 flex flex-wrap items-center gap-3 text-xs">
           <span>{categoryLabel(detail.category)}</span>
           {detail.language ? <span>{detail.language}</span> : null}
@@ -71,6 +73,17 @@ export default async function RepoPage({
           </Link>
         </div>
       </div>
+
+      {detail.description_tr || detail.usage_tr ? (
+        <section className="border-border bg-surface-1 rounded-lg border p-4">
+          <RepoProse entry={detail} />
+          {detail.investment_note ? (
+            <p className="text-ink-muted border-border/60 mt-4 border-t pt-3 text-sm">
+              <span className="font-medium">Yatırım notu:</span> {detail.investment_note}
+            </p>
+          ) : null}
+        </section>
+      ) : null}
 
       <section className="grid grid-cols-2 gap-3 md:grid-cols-4">
         <StatTile label="Toplam yıldız" value={count(detail.stars)} />
