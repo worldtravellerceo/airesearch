@@ -51,23 +51,31 @@ def get_json(client: httpx.Client, url: str):
 
 
 def fetch_readme(client: httpx.Client, full_name: str) -> str:
-    """The README, from whichever of the usual four places it lives in.
+    """The README off the repository's *default* branch.
 
-    A repository that has none goes forward with an empty string rather than
+    `HEAD` rather than a guess between `main` and `master`. Trying `main` first
+    and taking the first 200 looks equivalent and is not: a repository that
+    kept `master` as its default can still have a stale `main` sitting around,
+    and the fetch silently prefers it. `qdrant/qdrant` is exactly that —
+    `main/README.md` is a 2,072-byte React/Vite interview template, while the
+    real 11,560-byte README is on `master`. Measured across the 1,324
+    repositories on the boards, the branch guess fetched substantially wrong
+    text for 25 of them, and nothing about the result looked wrong.
+
+    A repository with no README goes forward with an empty string rather than
     being dropped: the agent can still write the first paragraph from the
     description, and is told to say so instead of inventing the rest.
     """
-    for branch in ("main", "master"):
-        for name in ("README.md", "readme.md", "README.rst", "README"):
-            try:
-                response = client.get(
-                    f"https://raw.githubusercontent.com/{full_name}/{branch}/{name}",
-                    timeout=30,
-                )
-            except Exception:
-                continue
-            if response.status_code == 200 and response.text.strip():
-                return response.text[:README_CHARS]
+    for name in ("README.md", "readme.md", "README.rst", "README"):
+        try:
+            response = client.get(
+                f"https://raw.githubusercontent.com/{full_name}/HEAD/{name}",
+                timeout=30,
+            )
+        except Exception:
+            continue
+        if response.status_code == 200 and response.text.strip():
+            return response.text[:README_CHARS]
     return ""
 
 
