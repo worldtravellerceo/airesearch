@@ -1,0 +1,29 @@
+{
+  "permissions": {
+    "defaultMode": "auto",
+    "allow": [
+      "Bash(git *)",
+      "Bash(gh *)",
+      "Bash(python3 *)",
+      "Bash(pytest *)",
+      "Bash(ruff *)",
+      "Bash(npm *)",
+      "Bash(npx *)",
+      "Bash(curl *)",
+      "Bash(ls *)",
+      "Bash(cat *)",
+      "Bash(grep *)",
+      "Bash(sed *)",
+      "Bash(rm *)",
+      "Bash(cp *)",
+      "Bash(mkdir *)",
+      "Read",
+      "Edit(pipeline/**)",
+      "Edit(web/**)",
+      "Edit(.github/**)",
+      "Edit(verdicts/**)",
+      "Edit(CLAUDE.md)",
+      "Edit(README.md)"
+    ]
+  }
+}
