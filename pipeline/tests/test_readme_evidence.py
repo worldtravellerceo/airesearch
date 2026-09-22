@@ -144,6 +144,63 @@ def test_only_the_opening_of_a_readme_is_read():
     assert classify(RepoFacts(full_name="a/b", readme_excerpt=buried)).is_ai is False
 
 
+# --- where in the README it says it ----------------------------------------
+
+METABASE = (
+    "# Metabase\n\nMetabase is the easy, open-source way for everyone in your "
+    "company to ask questions and learn from data.\n\n## Get started\n\nThe "
+    "easiest way to get started is Metabase Cloud. Run your own with Docker, "
+    "connect Postgres, MySQL, BigQuery or Snowflake, build dashboards and "
+    "share them. Metabase also ships an AI agent that can write SQL for you "
+    "and an ai agent sidebar for asking questions in plain English."
+)
+
+
+OPENMANUS = (
+    "# OpenManus\n\nManus is incredible, but OpenManus can achieve any idea "
+    "without an Invite Code! Our team members are from MetaGPT. The prototype "
+    "is launched within 3 hours and we are keeping building! It's a simple "
+    "implementation, so we welcome any suggestions, contributions, and "
+    "feedback! Enjoy your own agent with OpenManus! We're also excited to "
+    "introduce OpenManus-RL, an open-source project dedicated to reinforcement "
+    "learning based tuning methods for LLM agents."
+)
+
+
+def test_a_phrase_in_the_opening_line_is_identity():
+    """`jev-ultrafast` says what it is in its second sentence, and that is the
+    case this whole module exists for."""
+    verdict = classify(RepoFacts(full_name="browser-use/jev-ultrafast", readme_excerpt=JEV))
+
+    assert verdict.is_ai is True
+    assert any(key.startswith("readme:") for key in verdict.matched)
+
+
+def test_the_same_phrase_further_down_is_a_feature_list():
+    """`metabase/metabase` is a 49,000-star business intelligence tool. Its
+    first line says so; "AI agent" turns up paragraphs later among the things
+    it integrates. Weighted as identity it scored 0.89 and went onto a board
+    as an agent framework. Hand-read out of thirty newly-classified repos."""
+    verdict = classify(RepoFacts(full_name="metabase/metabase", readme_excerpt=METABASE))
+
+    assert verdict.is_ai is False
+    assert verdict.needs_llm is True  # a person decides, it is not dismissed
+    assert any(key.startswith("readme-late:") for key in verdict.matched)
+
+
+def test_a_readme_is_allowed_to_settle_it_on_its_own():
+    """The position rule was first written with a second half: cap anything
+    whose evidence lives only in a README body. Measured on the 160-repo
+    labelled sample, that cost five points of recall for one of precision and
+    took `FoundationAgents/OpenManus` — an agent framework whose description
+    reads "No fortress, purely open ground" — off the boards at 0.97 to 0.75.
+    The cap is gone. A README that says "agent" throughout is still a witness."""
+    verdict = classify(RepoFacts(full_name="FoundationAgents/OpenManus", readme_excerpt=OPENMANUS))
+
+    assert verdict.is_ai is True
+    assert all(not key.startswith("readme:") for key in verdict.matched)
+
+
 # --- the hashes ------------------------------------------------------------
 
 

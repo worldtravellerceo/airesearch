@@ -72,6 +72,32 @@ def test_ai_is_not_matched_as_a_substring():
         assert classify(facts(name, "A utility")).confidence == 0.0
 
 
+def test_a_domain_in_a_description_is_an_address_not_a_claim():
+    """`geohot/minikeyvalue` is a distributed key-value store. Its description
+    ends "used in production at comma.ai", `_WORD` treats the dot as a word
+    boundary, and the bare `ai` that fell out scored 0.88 and put it on an AI
+    board. Hand-read out of thirty newly-classified repositories."""
+    verdict = classify(
+        facts(
+            "geohot/minikeyvalue",
+            "A distributed key value store in under 1000 lines. Used in production at comma.ai",
+        )
+    )
+
+    assert verdict.is_ai is False
+
+
+def test_stripping_the_tld_does_not_silence_the_company():
+    """The fix takes the suffix, not the name. `openai.com` still speaks as
+    `openai`, which is the whole point of keeping the body of the hostname —
+    dropping the token wholesale would have cost every repository that names
+    a vendor by its domain."""
+    verdict = classify(facts("acme/sdk", "A client for openai.com"))
+
+    assert "phrase?:openai" in verdict.matched
+    assert verdict.needs_llm is True
+
+
 # --- the ambiguous middle --------------------------------------------------
 
 

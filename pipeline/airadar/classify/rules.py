@@ -293,7 +293,7 @@ NAME_TOKENS: frozenset[str] = frozenset(
 # Bumped whenever the rules or the taxonomy change. It is folded into the
 # content hash, so a change here re-classifies everything instead of leaving
 # old verdicts cached under rules that no longer exist.
-RULES_VERSION = "6"
+RULES_VERSION = "7"
 
 WEIGHT_DECISIVE_TOPIC = 0.90
 WEIGHT_AI_LAB_OWNER = 0.90
@@ -366,6 +366,10 @@ AI_TOKENS: frozenset[str] = frozenset(
 # paragraph is describing itself. Measured against the repos this tier exists
 # to rescue, three is where the two cases separate.
 README_TOKEN_TIERS: tuple[tuple[int, float], ...] = ((3, 0.72), (2, 0.40), (1, 0.18))
+
+#: How much of a README says what the project *is*. Past this it is listing
+#: features, integrations and the models it happens to support.
+README_IDENTITY_CHARS = 250
 
 # A dependency is the one piece of evidence that does not care what language the
 # project is written about, or whether anybody bothered to describe it. A
@@ -500,6 +504,13 @@ SOFT_CEILING = 0.88
 
 _WORD = re.compile(r"[a-z0-9]+")
 
+# A hostname is an address, not a claim. `_WORD` treats the dot as a boundary,
+# so `comma.ai` used to yield a bare `ai` token at decisive weight and put
+# `geohot/minikeyvalue` — a distributed key-value store that says only "used in
+# production at comma.ai" — on an AI board at 0.88. The TLD goes and the body
+# stays, so `openai.com` still speaks as `openai`.
+_HOSTNAME = re.compile(r"\b([a-z0-9][a-z0-9-]*)\.(ai|com|io|dev|org|net|co|app|sh)\b")
+
 
 @dataclass(frozen=True)
 class Verdict:
@@ -608,6 +619,7 @@ def classify(facts: RepoFacts, *, low: float = 0.2, high: float = 0.8) -> Verdic
             ],
         )
     )
+    haystack = _HOSTNAME.sub(r"\1", haystack)
     name_tokens = tokenise(facts.full_name.replace("/", " ").replace("-", " ").replace("_", " "))
 
     owner = facts.full_name.split("/", 1)[0].lower()
@@ -659,9 +671,27 @@ def classify(facts: RepoFacts, *, low: float = 0.2, high: float = 0.8) -> Verdic
     # `observe` keeps the higher weight, so the description's tier wins.
     readme = facts.readme_excerpt.lower()
     if readme:
+        # A README opens by saying what the project is and continues by listing
+        # what it works with. Measured on `metabase/metabase`: a business
+        # intelligence tool whose first line says exactly that, and which
+        # mentions AI agents several paragraphs down among its integrations.
+        # It scored 0.89 and went onto a board as an "agent framework".
+        #
+        # So a phrase in the opening is identity and counts fully; the same
+        # phrase later is a feature list and counts as a hint. On the 160-repo
+        # sample this costs nothing — recall stays at 95%, all seven must-catch
+        # repositories hold, `jev-ultrafast` reaches 0.91 on its opening line.
+        #
+        # It does not reach a README that makes the claim *in* its opening:
+        # `boyter/scc` counts lines of code and its second line says it is
+        # "built for AI agents". That one needs the negative evidence a strong
+        # non-AI product category carries, which is a separate change.
+        opening = readme[:README_IDENTITY_CHARS]
         for phrase in DECISIVE_PHRASES:
-            if phrase in readme:
+            if phrase in opening:
                 observe(phrase, f"readme:{phrase}", WEIGHT_README_DECISIVE)
+            elif phrase in readme:
+                observe(phrase, f"readme-late:{phrase}", WEIGHT_README_SUGGESTIVE)
         for phrase in SUGGESTIVE_PHRASES:
             if phrase in readme:
                 observe(phrase, f"readme?:{phrase}", WEIGHT_README_SUGGESTIVE)
