@@ -194,6 +194,28 @@ class SummaryInput:
     readme_excerpt: str = ""
     readme_hash: str = ""
 
+    def inputs_hash(self) -> str:
+        """Identity of the repository itself, with no README and no profile.
+
+        The split is the one `rules.py` makes for the same reason. `content_hash`
+        says whether the *paid* path should pay again, so it carries the README
+        and the profile: new evidence means a new answer. This one says whether
+        a summary somebody already wrote is still about the same project, and a
+        freshly fetched README does not invalidate a paragraph that was written
+        by reading it. An import validates on this and skips anything that
+        moved, because a stale paragraph is worse than a missing one — a missing
+        one gets written, a stale one does not get looked at again.
+        """
+        payload = "\x1f".join(
+            [
+                self.full_name,
+                (self.description or "").strip(),
+                ",".join(sorted(self.topics)),
+                (self.language or "").lower(),
+            ]
+        )
+        return hashlib.sha256(payload.encode("utf-8")).hexdigest()[:32]
+
     def content_hash(self, profile_hash: str) -> str:
         """What has to change before this repository is paid for again."""
         parts = [

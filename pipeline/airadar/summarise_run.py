@@ -9,8 +9,10 @@ cost.
 from __future__ import annotations
 
 import datetime as dt
+import json
 import logging
 from dataclasses import dataclass, field
+from pathlib import Path
 
 from airadar.config import get_settings
 from airadar.db import repo as db
@@ -187,3 +189,128 @@ def run(
     )
     log.info("summarise: %s", usage.summary())
     return report
+
+
+# --- the free path: summaries written in a session, replayed from the repo ---
+
+
+@dataclass
+class ImportReport:
+    considered: int = 0
+    imported: int = 0
+    skipped_stale: list[str] = field(default_factory=list)
+    unknown: list[str] = field(default_factory=list)
+    no_match: int = 0
+
+    def summary(self) -> str:
+        stale = f", {len(self.skipped_stale)} stale" if self.skipped_stale else ""
+        unknown = f", {len(self.unknown)} not tracked" if self.unknown else ""
+        return (
+            f"{self.considered} read, {self.imported} imported "
+            f"({self.no_match} with no match){stale}{unknown}"
+        )
+
+
+def import_summaries(conn, path, *, profile_hash: str | None = None) -> ImportReport:
+    """Read written summaries back in, from one file or a directory of them.
+
+    The paid Batch API path needs a key. This is the other way in, and it is the
+    same one `classify_run.import_verdicts` opens for classification: the text
+    is written once in a session, committed to the repository, and replayed on
+    every run. The database is a release asset, so anything living only inside
+    it is one lost asset away from being gone.
+
+    A record whose `inputs_hash` no longer matches the repository is skipped
+    rather than applied. The paragraph was written about a different project
+    description, and a stale paragraph is worse than a missing one: a missing
+    one gets written, a stale one never gets looked at again.
+    """
+    path = Path(path)
+    if path.is_dir():
+        total = ImportReport()
+        for child in sorted(path.glob("*.json")):
+            part = import_summaries(conn, child, profile_hash=profile_hash)
+            total.considered += part.considered
+            total.imported += part.imported
+            total.no_match += part.no_match
+            total.skipped_stale.extend(part.skipped_stale)
+            total.unknown.extend(part.unknown)
+        return total
+
+    report = ImportReport()
+    payload = json.loads(path.read_text(encoding="utf-8"))
+    records = payload.get("repos", [])
+    report.considered = len(records)
+    if not records:
+        return report
+
+    wanted = {entry.get("full_name") for entry in records}
+    rows = conn.execute(
+        "SELECT id, full_name, description, language, readme_excerpt, readme_hash "
+        "FROM repos WHERE full_name IN ({})".format(", ".join("?" * len(wanted))),
+        list(wanted),
+    ).fetchall()
+    by_name = {row["full_name"]: row for row in rows}
+    topics = db.repo_topics_map(conn, [row["id"] for row in rows])
+
+    # Stored under the *current* content hash so that a later paid run counts
+    # these as already written and does not pay to redo them.
+    if profile_hash is None:
+        try:
+            profile_hash = profile_fingerprint(load_profile(get_settings().profile_path))
+        except Exception:  # noqa: BLE001 - the profile is optional for an import
+            profile_hash = "no-profile"
+
+    for entry in records:
+        full_name = entry.get("full_name")
+        row = by_name.get(full_name)
+        if row is None:
+            report.unknown.append(full_name or "?")
+            continue
+
+        item = SummaryInput(
+            repo_id=row["id"],
+            full_name=row["full_name"],
+            description=row["description"],
+            topics=tuple(topics.get(row["id"], [])),
+            language=row["language"],
+            readme_excerpt=row["readme_excerpt"] or "",
+            readme_hash=row["readme_hash"] or "",
+        )
+        if entry.get("inputs_hash") and entry["inputs_hash"] != item.inputs_hash():
+            log.info("summarise: %s changed since it was written, skipping", full_name)
+            report.skipped_stale.append(full_name)
+            continue
+
+        description_tr = (entry.get("description_tr") or "").strip()
+        usage_tr = (entry.get("usage_tr") or "").strip()
+        if not description_tr or not usage_tr:
+            report.skipped_stale.append(full_name)
+            continue
+
+        matched = entry.get("matched_project")
+        matched = matched.strip() or None if isinstance(matched, str) else None
+        db.save_summary(
+            conn,
+            row["id"],
+            description_tr=description_tr,
+            usage_tr=usage_tr,
+            matched_project=matched,
+            relevance=_clamp_relevance(entry.get("relevance")),
+            investment_note=(entry.get("investment_note") or None),
+            model=entry.get("model") or "claude-code-session",
+            content_hash=item.content_hash(profile_hash),
+        )
+        report.imported += 1
+        if not matched:
+            report.no_match += 1
+
+    conn.commit()
+    return report
+
+
+def _clamp_relevance(value) -> int:
+    try:
+        return max(0, min(10, int(value)))
+    except (TypeError, ValueError):
+        return 0

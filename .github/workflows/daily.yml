@@ -102,11 +102,21 @@ jobs:
       - name: Read the READMEs of the repos the site shows
         run: airadar readmes --targets visible --limit 3000
 
+      # Free, and it runs whether or not a key is configured. The paragraphs
+      # written in a session live in `summaries/` and are replayed here, which
+      # is what makes the site's prose reproducible from the repository rather
+      # than only from a release asset. Anything whose repo has moved since it
+      # was written is skipped, not applied.
+      - name: Apply the written summaries
+        run: airadar summarise --import summaries
+
       # Loud, but not fatal, for the same reason as the valuations step: a
       # missing key or a bad afternoon at the API should not cost the whole
       # site a rebuild. The ceiling is ours — the Batch API enforces no dollar
       # cap — so the command estimates before it submits and refuses above it.
-      - name: Write the summaries
+      # With no key this step goes red and the step above has already done the
+      # work.
+      - name: Write the summaries that are still missing
         continue-on-error: true
         run: airadar summarise --max-spend-usd 25
 

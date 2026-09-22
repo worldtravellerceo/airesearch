@@ -834,6 +834,11 @@ def summarise(
         False, "--dry-run", help="Print what it would cost and submit nothing"
     ),
     date: str = typer.Option(None, "--date", help="Board date to read (default: today)"),
+    import_path: str = typer.Option(
+        None,
+        "--import",
+        help="Apply summaries written into files (a directory or one .json), free",
+    ),
 ) -> None:
     """Write the two Turkish paragraphs the site shows for each repository.
 
@@ -844,6 +849,16 @@ def summarise(
     """
     settings = _require_database()
     when = dt.date.fromisoformat(date) if date else dt.date.today()
+
+    if import_path is not None:
+        # The free path: text written in a session and committed, replayed here.
+        # No key, no spend, and it runs whether or not one is configured.
+        with db.connect(settings.db_path) as conn:
+            report = summarise_run.import_summaries(conn, import_path)
+        console.print(f"[green]summarise --import[/green]: {report.summary()}")
+        if report.unknown:
+            console.print(f"[yellow]not tracked[/yellow]: {', '.join(report.unknown[:10])}")
+        return
 
     with db.connect(settings.db_path) as conn:
         try:

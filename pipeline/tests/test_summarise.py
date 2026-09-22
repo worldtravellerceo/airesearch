@@ -427,3 +427,158 @@ def _summariser_with(client):
         return summarise.Summariser(client=client, sleep=lambda _: None, **kwargs)
 
     return factory
+
+
+# --- the free path: importing summaries written in a session ----------------
+
+
+def write_packet(tmp_path, *rows, name="batch-01.json"):
+    path = tmp_path / name
+    path.write_text(json.dumps({"repos": list(rows)}, ensure_ascii=False), encoding="utf-8")
+    return path
+
+
+def import_row(full_name: str, inputs_hash: str, **overrides) -> dict:
+    row = {
+        "full_name": full_name,
+        "inputs_hash": inputs_hash,
+        "description_tr": "Proje bir şey yapar.",
+        "usage_tr": "Lyricdrop'ta kullanabilirsin.",
+        "matched_project": "Lyricdrop",
+        "relevance": 7,
+        "investment_note": None,
+    }
+    row.update(overrides)
+    return row
+
+
+def inputs_hash_of(conn, full_name: str) -> str:
+    row = conn.execute(
+        "SELECT id, full_name, description, language FROM repos WHERE full_name = ?",
+        (full_name,),
+    ).fetchone()
+    topics = db.repo_topics_map(conn, [row["id"]])
+    return summarise.SummaryInput(
+        repo_id=row["id"],
+        full_name=row["full_name"],
+        description=row["description"],
+        topics=tuple(topics.get(row["id"], [])),
+        language=row["language"],
+    ).inputs_hash()
+
+
+def test_import_writes_paragraphs_without_any_api_key(conn, tmp_path):
+    """The paid path needs a key; this one is the way in when there is none.
+
+    Same shape as `classify_run.import_verdicts`: text decided once, committed,
+    replayed on every run, because the database is a release asset and anything
+    living only inside it is one lost asset away from being gone.
+    """
+    seed_visible_repo(conn, 1, "acme/one", stars=5000)
+    packet = write_packet(tmp_path, import_row("acme/one", inputs_hash_of(conn, "acme/one")))
+
+    report = summarise_run.import_summaries(conn, packet)
+
+    assert report.imported == 1
+    row = conn.execute("SELECT * FROM repo_summary").fetchone()
+    assert row["description_tr"] == "Proje bir şey yapar."
+    assert row["usage_tr"] == "Lyricdrop'ta kullanabilirsin."
+    assert row["model"] == "claude-code-session"
+
+
+def test_import_skips_a_repo_that_moved_since_the_paragraph_was_written(conn, tmp_path):
+    """A stale paragraph is worse than a missing one.
+
+    A missing summary gets written on the next run. A stale one is never looked
+    at again, and sits on a public page describing a project that has changed.
+    """
+    seed_visible_repo(conn, 1, "acme/one", stars=5000)
+    packet = write_packet(tmp_path, import_row("acme/one", inputs_hash_of(conn, "acme/one")))
+
+    conn.execute("UPDATE repos SET description = 'something else entirely' WHERE id = 1")
+    conn.commit()
+
+    report = summarise_run.import_summaries(conn, packet)
+
+    assert report.imported == 0
+    assert report.skipped_stale == ["acme/one"]
+    assert conn.execute("SELECT count(*) AS n FROM repo_summary").fetchone()["n"] == 0
+
+
+def test_import_reports_a_repo_it_does_not_track(conn, tmp_path):
+    packet = write_packet(tmp_path, import_row("nobody/here", "deadbeef"))
+    report = summarise_run.import_summaries(conn, packet)
+    assert report.imported == 0
+    assert report.unknown == ["nobody/here"]
+
+
+def test_import_is_idempotent(conn, tmp_path):
+    seed_visible_repo(conn, 1, "acme/one", stars=5000)
+    packet = write_packet(tmp_path, import_row("acme/one", inputs_hash_of(conn, "acme/one")))
+
+    summarise_run.import_summaries(conn, packet)
+    summarise_run.import_summaries(conn, packet)
+
+    assert conn.execute("SELECT count(*) AS n FROM repo_summary").fetchone()["n"] == 1
+
+
+def test_import_reads_a_whole_directory(conn, tmp_path):
+    seed_visible_repo(conn, 1, "acme/one", stars=5000)
+    seed_visible_repo(conn, 2, "acme/two", stars=4000)
+    write_packet(tmp_path, import_row("acme/one", inputs_hash_of(conn, "acme/one")), name="a.json")
+    write_packet(tmp_path, import_row("acme/two", inputs_hash_of(conn, "acme/two")), name="b.json")
+
+    report = summarise_run.import_summaries(conn, tmp_path)
+
+    assert report.imported == 2
+
+
+def test_import_keeps_an_honest_miss_as_a_miss(conn, tmp_path):
+    seed_visible_repo(conn, 1, "acme/one", stars=5000)
+    packet = write_packet(
+        tmp_path,
+        import_row(
+            "acme/one",
+            inputs_hash_of(conn, "acme/one"),
+            matched_project=None,
+            relevance=0,
+            usage_tr="Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor.",
+        ),
+    )
+
+    report = summarise_run.import_summaries(conn, packet)
+
+    assert report.imported == 1
+    assert report.no_match == 1
+    stored = conn.execute("SELECT matched_project FROM repo_summary").fetchone()
+    assert stored["matched_project"] is None
+
+
+def test_import_refuses_a_half_written_record(conn, tmp_path):
+    seed_visible_repo(conn, 1, "acme/one", stars=5000)
+    packet = write_packet(
+        tmp_path, import_row("acme/one", inputs_hash_of(conn, "acme/one"), usage_tr="  ")
+    )
+    report = summarise_run.import_summaries(conn, packet)
+    assert report.imported == 0
+
+
+def test_imported_rows_are_not_paid_for_again(conn, tmp_path, profile_file, monkeypatch):
+    """The whole point of storing them under the current content hash.
+
+    When a key does turn up, the paid sweep must count this text as already
+    written rather than bill for rewriting all of it.
+    """
+    seed_visible_repo(conn, 1, "acme/one", stars=5000)
+    profile_hash = summarise.profile_fingerprint(summarise.load_profile(profile_file))
+    packet = write_packet(tmp_path, import_row("acme/one", inputs_hash_of(conn, "acme/one")))
+    summarise_run.import_summaries(conn, packet, profile_hash=profile_hash)
+
+    class Exploding:
+        def __init__(self, **kwargs):
+            raise AssertionError("already written; must not be paid for again")
+
+    monkeypatch.setattr(summarise_run, "Summariser", Exploding)
+    report = summarise_run.run(conn, date=TODAY, max_spend_usd=100)
+
+    assert report.stale == 0
