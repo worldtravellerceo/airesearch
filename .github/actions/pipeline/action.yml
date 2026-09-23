@@ -59,7 +59,35 @@ runs:
           echo "::notice::the data release carries no database yet"
           exit 0
         fi
-        gh release download data --pattern 'airadar.db.gz' --dir /tmp --clobber
+        # Downloaded by tag URL, not through the asset API, because the two
+        # disagree. `publish-db` uploads with `--clobber`, and on 2026-09-23
+        # that left the release metadata stale: the API still listed the
+        # previous day's asset (id 581562802, 142MB, updated the day before)
+        # while the tag URL already served the new 146MB file. `gh release
+        # download` resolves the name through that listing, so it asked for an
+        # id that no longer existed and died with
+        # `HTTP 404: Not Found (.../releases/assets/581562802)`. It took the
+        # publish job down twice, and the database it wanted was sitting there
+        # correctly the whole time.
+        #
+        # The tag URL has no id in it, so it cannot go stale the same way. It
+        # is still retried: a 404 here is worth one more try, and the check
+        # above has already established a database exists, so giving up is a
+        # hard failure rather than a quiet empty start.
+        url="https://github.com/${{ github.repository }}/releases/download/data/airadar.db.gz"
+        for attempt in 1 2 3 4 5; do
+          if curl -fsSL -H "Authorization: Bearer ${GH_TOKEN}" -o /tmp/airadar.db.gz "$url" \
+             && gzip -t /tmp/airadar.db.gz; then
+            break
+          fi
+          if [ "$attempt" = 5 ]; then
+            echo "::error::the database asset is listed but could not be downloaded" \
+                 "after 5 attempts. Refusing to continue with an empty database."
+            exit 1
+          fi
+          echo "::notice::download attempt ${attempt} failed; retrying"
+          sleep $(( attempt * 5 ))
+        done
         gunzip -c /tmp/airadar.db.gz > data/airadar.db
         echo "database: $(du -h data/airadar.db | cut -f1)"
 
