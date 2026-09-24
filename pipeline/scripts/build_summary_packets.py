@@ -83,6 +83,12 @@ def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--out", required=True)
     parser.add_argument("--per-agent", type=int, default=19)
+    parser.add_argument(
+        "--only",
+        help="A file of full_names, one per line. Build packets for just these — "
+        "the top-up path, for repos that entered the boards after the last sweep "
+        "or whose metadata moved since their paragraph was written.",
+    )
     args = parser.parse_args()
 
     out = Path(args.out)
@@ -99,6 +105,18 @@ def main() -> int:
                 for entry in (payload or {}).get("entries", []):
                     names.setdefault(entry["full_name"], entry)
         print(f"{len(names)} unique repos across every published board file", flush=True)
+
+        if args.only:
+            wanted = {
+                line.strip()
+                for line in Path(args.only).read_text(encoding="utf-8").splitlines()
+                if line.strip()
+            }
+            absent = wanted - set(names)
+            names = {k: v for k, v in names.items() if k in wanted}
+            print(f"--only: {len(names)} of {len(wanted)} requested repos are on a board")
+            for missing in sorted(absent):
+                print(f"  not on any board any more, skipped: {missing}")
 
         ordered = sorted(names, key=lambda n: -(names[n].get("stars") or 0))
 
@@ -153,8 +171,17 @@ def main() -> int:
             }
         )
 
+    # A top-up is too small to split by subject — six groups of four would be
+    # six agents doing a quarter of an agent's work each. It is flattened into
+    # one sequence instead, and numbered independently of the groups: numbering
+    # per group and naming every file `topup-NN` had each group overwrite the
+    # last, which left 6 of 40 repositories in a single file.
+    groups = (
+        {"topup": [row for rows in by_group.values() for row in rows]} if args.only else by_group
+    )
+
     manifest = []
-    for group, rows in by_group.items():
+    for group, rows in groups.items():
         if not rows:
             continue
         for index in range(0, len(rows), args.per_agent):
