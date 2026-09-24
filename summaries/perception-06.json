@@ -38,12 +38,12 @@
   },
   {
    "full_name": "krillinai/OpenCreator",
-   "inputs_hash": "6bba4bb646c7152cfa1a431b4f5c3355",
-   "description_tr": "Eskiden KrillinAI adıyla bilinen, içerik üreticileri için açık kaynak bir AI çalışma alanı. Video çevirisi ve dublaj, görsel ve video üretimi, seslendirme, avatar, kısa video senaryosu ve metin yazımı araçlarını tek arayüzde topluyor. Kendi ajan döngüsünü yazmak yerine Codex CLI'yi yürütme motoru olarak kullanıyor; üstüne yerel bir runtime, görsel bir workspace ve masaüstü kabuğu ekliyor. Skills, MCP, zamanlama, onay akışları ve bildirimler aynı yerden yönetiliyor; Web tek frontend, Desktop aynı build'i yükleyip işletim sistemi yeteneklerini ekliyor. TypeScript, Apache-2.0, ~12.2K yıldız.",
-   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam Folio'nun günlük içerik üretimi ya da düşündüğün Dubai uygulama stüdyosunun reklam kreatifi tarafı olabilir. Folio'nun ihtiyacı bir masaüstü arayüzünden üretilen tekil görseller değil, Supabase'e yazıp Expo istemcisine besleyen programatik bir günlük pipeline; bu araç o şekli vermiyor. Ajan motorunun Codex olması da seni Claude Code aboneliğinin dışında ayrı bir model maliyetine taşır. Gömülebilir bileşen yerine bitmiş bir ürün olması, kendi istemcini yazma alışkanlığınla da ters düşüyor. Yatırımcı şapkasıyla bakılacak bir proje; araç olarak değil.",
-   "matched_project": null,
-   "relevance": 2,
-   "investment_note": "Codex benzeri bir ajan motorunun üstüne görsel üretim araçları koyan açık kaynak workspace'ler içerik üretiminde ticarileşebilir bir katman oluşturuyor; ekibi ve dağıtım hızı izlenmeye değer."
+   "inputs_hash": "c1f5c61b4e92ae4f60ebf1ca65bf8506",
+   "description_tr": "OpenCreator (eski adıyla KrillinAI), içerik üreticileri için kurulmuş açık kaynak bir çalışma alanı. Kendi ajan döngüsünü yazmak yerine yürütme motoru olarak Codex CLI'yı kullanıyor ve etrafına yerel bir runtime, görsel bir çalışma alanı ve masaüstü kabuğu ekliyor. On kadar üretim aracı sunuyor: video çevirisi ve indirme, görsel ve video üretimi, küçük resim üretimi, seslendirme ve dublaj, makale ve kısa video senaryosu yazımı, çizgi animasyon. Görsel çalışma alanı ile doğal dil sohbeti aynı durum makinesini paylaşıyor; her düzeltme yeni bir sürüm oluşturuyor ve eski çıktılar karşılaştırma için saklanıyor. Gömülü yt-dlp sürümünü kendi yönetiyor, Skills ve MCP yapılandırması Codex tarafında duruyor, veriler ve loglar varsayılan olarak yerelde kalıyor. TypeScript ile yazılmış, Apache-2.0 lisanslı ve 12 binin üzerinde yıldıza sahip.",
+   "usage_tr": "Folio'nun günlük içerik pipeline'ında değerlendirilebilir: her yazar profili için gereken görsel ve kısa video üretimini şablonlar üzerinden kurup günlük üretimi zamanlanmış Run'lara bağlayabilirsin. İkinci değerli parçası yt-dlp yönetimi ve video indirme tarafı; Lyricdrop'un YouTube indirme adımında sürüm kırılmaları tekrar eden bir sorun ve burada bu iş bakımlı bir bileşen olarak çözülmüş. Masaüstü uygulaması olarak durduğu için Expo/Supabase yığınına gömülecek bir kütüphane değil; yanında çalışan ve çıktılarını CDN'e attığın bir üretim istasyonu olarak düşünmek gerekir. Görsel arayüzü olduğu ve onay akışı içerdiği için günlük içerik üretimini asistanına devretmek mümkün. Uyarı: motoru Codex CLI, yani OpenAI hesabı ve sayaçlı API maliyeti demek — Max aboneliğinin kapsamı dışında kalıyor ve Folio gibi her gün içerik üreten bir işte bu maliyet sessizce birikir.",
+   "matched_project": "Folio",
+   "relevance": 7,
+   "investment_note": null
   },
   {
    "full_name": "rany2/edge-tts",

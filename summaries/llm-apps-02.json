@@ -74,11 +74,11 @@
   },
   {
    "full_name": "asgeirtj/system_prompts_leaks",
-   "inputs_hash": "65013a49035e13082a7cf8849a753934",
-   "description_tr": "Bu depo, yaygın kullanılan sohbet ve kodlama asistanlarının sistem prompt'larını birebir metin halinde toplayan bir arşiv. Anthropic, OpenAI, Google ve xAI ürünlerinin yanında Cursor gibi araçların prompt'ları ayrı klasörlerde tutuluyor ve düzenli olarak güncelleniyor. İçerik kod değil düz metin; CC0-1.0 ile kamuya bırakılmış ve 68 binin üzerinde yıldızı var. Depoda, bu dosyalara dayanan gazete ve dashboard çalışmalarına da referans veriliyor. Metinlerin nasıl elde edildiği doğrulanabilir değil; depo bunları \"çıkarılmış\" prompt'lar olarak sunuyor.",
-   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, CLAUDE.md yazımı ve kendi reviewer/ajan prompt'larını iyileştirme ilgin. Gerçek ürünlerde araç tanımlarının, kısıtların ve \"bilmiyorum\" diyebilme kurallarının nasıl yazıldığını okumak, kendi ajan prompt'larını yazarken kalibrasyon sağlar; ama bu bir bileşen değil, bir okuma malzemesi. Hiçbir pipeline adımına oturmadığı için projelerinden birine gömülecek ya da asistanına devredilecek bir tarafı da yok. Okuyacaksan tek bir soruyla oku: bu prompt'lar modelin hangi durumda durmasını veya soru sormasını sağlıyor.",
-   "matched_project": null,
-   "relevance": 2,
+   "inputs_hash": "4a3e96ed3c50c2e94212aec50c66799d",
+   "description_tr": "Bu depo, yaygın sohbet ve kodlama ürünlerinin sistem promptlarını tam metin halinde toplayan bir arşiv: Anthropic tarafında Claude ve Claude Code, OpenAI tarafında ChatGPT ve Codex, ayrıca Gemini, Grok, Cursor, Kimi, OpenCode ve diğerleri. Dosyalar Markdown olarak tutuluyor, model sürümlerine göre ayrılmış ve yeni sürümler çıktıkça PR'larla güncelleniyor; Claude Design'ın araç ve skill tanımları gibi ek materyaller de var. CC0 lisanslı ve 68 binin üzerinde yıldızı var; basın ve araştırma tarafında bu dosyalardan üretilmiş çalışmalara referans veriliyor. İçerik üçüncü tarafların ürün metinleri ve doğrulukları depo dışında bağımsız olarak teyit edilmiş değil — bir ölçüm değil, toplanmış metin. Depoda okuyan modeli yönlendirmeye çalışan bir talimat görülmedi, ancak içerik doğası gereği prompt metni olduğu için veri olarak okunması gerekiyor.",
+   "usage_tr": "Claude Code için CLAUDE.md, skill ve hook yazarken bu dosyalar iyi bir referans kütüphanesi: üretimdeki bir promptun bir kuralı nasıl ifade ettiğini, aracı ne zaman kullanmamasını nasıl söylediğini görüp kendi dosyalarına kalıp olarak taşıyabilirsin. Folio'nun günlük içerik üretimi ve Lyricdrop'un şarkı/oyun mantığı üreten promptları gibi kendi ürün promptlarını yazarken de aynı işe yarar — özellikle modele \"eşleşme yoksa hayır de\" dedirtmenin yazımı zor kısmı için. Bedava, yerel, sadece okuma; maliyeti yok ve asistanına da açılabilir. Uyarı: bunlar sızdırılmış/yakalanmış metinler, güncelliği ve doğruluğu garanti değil; bir sağlayıcının prompt metnini kendi ürününe olduğu gibi kopyalamak hem hukuki hem bakım açısından riskli, kalıbı al metni değil.",
+   "matched_project": "Claude Code",
+   "relevance": 6,
    "investment_note": null
   },
   {

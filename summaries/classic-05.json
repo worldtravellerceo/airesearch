@@ -119,12 +119,12 @@
   },
   {
    "full_name": "composio-community/awesome-codex-skills",
-   "inputs_hash": "b9d16b0b251331529991700ce7d6f825",
-   "description_tr": "Bu repo, Codex CLI ve API'si için yazılmış skill'leri derleyen bir koleksiyondur. Her skill, ajana belirli bir işi nasıl yapacağını anlatan talimat, betik ve kaynak dosyalarından oluşan bir klasördür; toplantı notu çıkarma gibi örnekler içeriyor. Repoda skill'leri GitHub'dan çekip `$CODEX_HOME/skills` altına kuran bir Python installer betiği bulunuyor. Liste Composio tarafından sürdürülüyor ve şirketin MCP Gateway ürünü entegrasyon katmanı olarak öne çıkarılıyor. Lisans belirtilmemiş; 16.500'ün üzerinde yıldızı var ve görece yeni bir koleksiyon.",
-   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; koleksiyon Codex CLI'ye göre yazılmış, senin günlük araçların ise Claude Code ve OpenCode. En yakın olası bağlam, skill'lerin büyük ölçüde düz talimat metni olması sayesinde bir iki tanesini Claude Code tarafına elle taşımak olabilir, ama kurulum betiği ve dizin yapısı doğrudan uymaz. Aynı işi Claude Code için hazırlanmış koleksiyonlardan almak daha az sürtünme yaratır. Skill dosyaları yerelde durduğu için denemenin maliyeti yalnızca zaman, ama iki farklı ajan formatını paralel sürdürmek bakım yükü yaratır.",
-   "matched_project": null,
-   "relevance": 2,
-   "investment_note": "Liste, Composio'nun MCP Gateway ürününe giden bir dağıtım kanalı olarak konumlanmış; ajan entegrasyon katmanında ticarileşen ekipleri izliyorsan takip edilecek bir isim."
+   "inputs_hash": "129c9544e8dfbb6da44455293d85a07c",
+   "description_tr": "Codex CLI ve API için yazılmış 'skill' paketlerini derleyen bir liste deposu. Her skill, adını ve açıklamasını içeren bir SKILL.md ile kendi klasöründe duruyor; ajan önce yalnızca meta veriyi okuyup ne zaman tetikleneceğine karar veriyor, gövdeyi ancak tetiklendikten sonra yüklüyor, böylece bağlam dar tutuluyor. Liste geliştirme araçları, üretkenlik, yazışma, veri analizi ve meta yardımcılar başlıkları altında düzenlenmiş; kod incelemesi, git geçmişinden risk analizi, GitHub PR yorumlarını yanıtlama, CI hatalarını inceleme ve MCP sunucusu kurma gibi skill'ler içeriyor. Depoda skill'leri GitHub'dan çekip $CODEX_HOME/skills altına kuran bir Python yükleyici script'i de var. Liste Composio tarafından sürdürülüyor ve şirketin MCP Gateway ürününü öne çıkaran tanıtım bölümleriyle birlikte geliyor; lisans belirtilmemiş, ~16.600 yıldızlı.",
+   "usage_tr": "Claude Code kurulumun için doğrudan bir fikir kaynağı: Superpowers'ın yanına koyabileceğin skill kalıplarını — PR yorumlarını kapatma, CI hatasını inceleme, kod incelemesini geliştirici doğruluğu ve ürün mantığı olarak ikiye ayırma — buradan okuyup kendi CLAUDE.md ve skill yapına uyarlayabilirsin. Uyarlama şart, çünkü bunlar Codex için yazılmış ve $CODEX_HOME altına kuruluyor; SKILL.md biçimi benzer olsa da olduğu gibi kopyalanmaz, listedeki Claude Code'dan Codex'e geçiş denetçisi de farkların gerçek olduğunu gösteriyor. Maliyeti yok, tamamı metin dosyası; Mac'te yerel durur ve ajanın bağlamını şişirmemesi için yalnızca seçtiğin birkaçını kurman yeterli. Değerlendirirken listenin aynı zamanda bir şirketin pazarlama yüzeyi olduğunu hesaba kat: girdilerin çoğu incelenmemiş üçüncü parti depolar, iki üç tanesi işine yararsa iyi sonuç sayılır. Bir skill'i kurmadan önce ne yaptığını okumanı öneririm, çünkü ajanına otomatik tetiklenen talimat yüklüyorsun.",
+   "matched_project": "Claude Code",
+   "relevance": 6,
+   "investment_note": null
   },
   {
    "full_name": "owainlewis/awesome-artificial-intelligence",
