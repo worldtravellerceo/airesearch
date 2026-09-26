@@ -77,6 +77,18 @@ everything after it back among the instructions. This does not make injection
 impossible; it makes the boundary legible, which is the part a prompt can be
 responsible for.
 
+**A monitor that is silent when all is well cannot be trusted to be silent.**
+The daily watchdog was told to write nothing when the run had succeeded, so
+that it would only ever speak up about a problem. It reported "Completed" for
+five days running and did nothing on any of them — the sessions it fired had no
+access to the repository, and a session that cannot check anything looks
+exactly like a session that checked and found everything fine. On 22 September
+the scheduled run died in the census and the watchdog, whose whole job was that
+case, missed it. Silence is a claim, and a monitor may only make it about a
+check it actually completed: being unable to verify is a result, and it gets
+reported. The check itself was also rebuilt on the public API, so losing a
+token now costs the ability to act, not the ability to see.
+
 **Never buy recall with precision.** A soft ceiling set below the decision
 threshold stranded 17,849 repositories in permanent escalation. A README weight
 set one tier too high put a release-notes CLI on an AI board. Every widening
