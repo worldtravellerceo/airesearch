@@ -888,13 +888,50 @@ def save_summary(
     )
 
 
+#: The morning digest's star floor and cap. They live here rather than in
+#: `export_site` because `visible_repo_ids` has to select the same rows — a
+#: repository on the digest is a repository on a page, and the two selections
+#: drifting is how a page ends up listing repos nobody wrote a paragraph for.
+DIGEST_ARRIVAL_MIN_STARS = 100
+DIGEST_ARRIVAL_LIMIT = 30
+#: Arrivals under this age are reported as new projects rather than as repos
+#: that merely crossed the census threshold.
+DIGEST_NEW_PROJECT_MAX_AGE_DAYS = 90
+
+
+def digest_arrival_ids(conn: sqlite3.Connection, *, date) -> list[int]:
+    """The repos the morning digest lists, biggest first."""
+    rows = conn.execute(
+        """
+        SELECT r.id
+        FROM repos r
+        JOIN repo_classification c ON c.repo_id = r.id AND c.is_ai = 1
+        WHERE date(r.first_seen_at) = :date
+          AND r.is_fork = 0
+          AND r.stars >= :floor
+        ORDER BY r.stars DESC
+        LIMIT :limit
+        """,
+        {"date": date, "floor": DIGEST_ARRIVAL_MIN_STARS, "limit": DIGEST_ARRIVAL_LIMIT},
+    ).fetchall()
+    return [row["id"] for row in rows]
+
+
 def visible_repo_ids(conn: sqlite3.Connection, *, date, detail_limit: int) -> list[int]:
     """Every repo the site actually renders, biggest first.
 
     The same selection `export_site._details` uses — the top N by stars plus
     everyone on a board, whatever their rank — and it lives here so the two
-    cannot drift. A repo outside this set appears on no page, so writing
-    paragraphs for it would be paying for text nobody can reach.
+    cannot drift.
+
+    Today's arrivals are in here too, and they were the gap. The old reasoning
+    was sound while it was true: a repo outside the boards appeared on no page,
+    so writing paragraphs for it would be paying for text nobody could reach.
+    Then `/bugun/` put the arrivals on a page and the premise stopped holding.
+    Measured on the first digest: 1 of its 12 arrivals had a Turkish paragraph,
+    because the other 11 sat between 100 and 1,031 stars and no board had
+    reached them yet. So the page that exists to say "this is new" was the one
+    page with nothing written about its rows.
     """
     rows = conn.execute(
         """
@@ -907,10 +944,17 @@ def visible_repo_ids(conn: sqlite3.Connection, *, date, detail_limit: int) -> li
           AND (r.id IN (
                   SELECT id FROM repos WHERE is_fork = 0 ORDER BY stars DESC LIMIT :limit
                 )
-               OR r.id IN (SELECT repo_id FROM leaderboard_snapshots WHERE date = :date))
+               OR r.id IN (SELECT repo_id FROM leaderboard_snapshots WHERE date = :date)
+               OR (date(r.first_seen_at) = :date
+                   AND r.is_fork = 0
+                   AND r.stars >= :arrival_floor))
         ORDER BY r.stars DESC
         """,
-        {"date": date, "limit": detail_limit},
+        {
+            "date": date,
+            "limit": detail_limit,
+            "arrival_floor": DIGEST_ARRIVAL_MIN_STARS,
+        },
     ).fetchall()
     return [row["id"] for row in rows]
 

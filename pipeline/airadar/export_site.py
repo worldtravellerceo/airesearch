@@ -179,13 +179,17 @@ def _pools_by_board(pools: dict[tuple[str, str], int]) -> dict[str, dict[str, in
 #: At 1,000 stars it is 2-3 a day, which is too thin to be worth opening. At
 #: 100 it is 10-101, median around 23 — one screen, and the spike day is what
 #: the cap is for.
-ARRIVAL_MIN_STARS = 100
-ARRIVAL_LIMIT = 30
+#:
+#: Taken from `db` rather than defined here, because `visible_repo_ids` has to
+#: select the same rows: a repository the digest lists is a repository the site
+#: renders, and that is what decides whether a paragraph gets written for it.
+ARRIVAL_MIN_STARS = db.DIGEST_ARRIVAL_MIN_STARS
+ARRIVAL_LIMIT = db.DIGEST_ARRIVAL_LIMIT
 #: A repository can be new to the index in two ways and they are not the same
 #: news. Measured on 5 October, of the 12 arrivals above the floor, 10 were
 #: genuinely young and 2 were long-lived projects that had just crossed the
 #: census threshold. Reporting them in one list would bury the first kind.
-NEW_PROJECT_MAX_AGE_DAYS = 90
+NEW_PROJECT_MAX_AGE_DAYS = db.DIGEST_NEW_PROJECT_MAX_AGE_DAYS
 MOVER_LIMIT = 15
 
 

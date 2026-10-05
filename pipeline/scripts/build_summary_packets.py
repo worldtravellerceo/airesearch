@@ -106,6 +106,15 @@ def main() -> int:
         "or whose metadata moved since their paragraph was written.",
     )
     parser.add_argument(
+        "--from-digest",
+        action="store_true",
+        help="Take the repos from the published morning digest instead of the "
+        "boards. Needed because the boards are not the whole site any more: "
+        "`/bugun/` lists today's arrivals, and an arrival is by definition not "
+        "on a board yet. Measured on the first digest — 11 of its 12 rows had "
+        "no paragraph, and this path is how they get one.",
+    )
+    parser.add_argument(
         "--prefix",
         help="Name the packets `<prefix>-NN.json` instead of `topup-NN.json`. "
         "Required for a second top-up round, and the reason is measured: agents "
@@ -125,12 +134,19 @@ def main() -> int:
         slugs = ["_all"] + [row["category"] for row in categories.get("categories", [])]
 
         names: dict[str, dict] = {}
-        for board in BOARDS:
-            for slug in slugs:
-                payload = get_json(client, f"{BASE}/boards/{board}/{slug}.json")
-                for entry in (payload or {}).get("entries", []):
+        if args.from_digest:
+            digest = get_json(client, f"{BASE}/digest.json") or {}
+            for key in ("new_projects", "newly_tracked"):
+                for entry in digest.get(key, []):
                     names.setdefault(entry["full_name"], entry)
-        print(f"{len(names)} unique repos across every published board file", flush=True)
+            print(f"{len(names)} repos in the {digest.get('date')} digest", flush=True)
+        else:
+            for board in BOARDS:
+                for slug in slugs:
+                    payload = get_json(client, f"{BASE}/boards/{board}/{slug}.json")
+                    for entry in (payload or {}).get("entries", []):
+                        names.setdefault(entry["full_name"], entry)
+            print(f"{len(names)} unique repos across every published board file", flush=True)
 
         if args.only:
             wanted = {
