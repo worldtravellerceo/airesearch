@@ -77,6 +77,57 @@ everything after it back among the instructions. This does not make injection
 impossible; it makes the boundary legible, which is the part a prompt can be
 responsible for.
 
+**A successful fetch is not the same as the thing you asked for.** Git stores
+a symbolic link as a blob holding its target, and raw.githubusercontent.com
+serves that blob: `colinhacks/zod`'s root README.md comes back as status 200
+with the 22 bytes `packages/zod/README.md`. Three of the 1,324 repositories on
+the boards had their two Turkish paragraphs written from a path instead of a
+README — `vercel/ai` among them, the AI SDK, on an AI board, described from
+nothing — and three of the 200 in the first automated review slice had the
+same. The API's `/repos/{repo}/readme` endpoint resolves the link; measured
+over 55,534 stored excerpts, not one is a symlink body. So the bug lived only
+in the token-free raw path, which is the path the packet builders use precisely
+because it needs no token. Nothing about the result looked wrong, in either
+direction: a short README is normal, and a paragraph written from a filename
+still reads like a paragraph.
+
+**A second round must not be able to overwrite the first.** The agents write
+their output to `summaries/<packet name>`, so a top-up round that reuses the
+previous round's `topup-01` clobbers a committed file. It did: 31 rows went
+under, `facebookresearch/faiss` and `exo-explore/exo` among them, and the only
+reason it was caught is that the row count moved. The same shape had already
+cost six repositories inside a single round, when per-group numbering produced
+six files all called `topup-NN`. Output names are now dated, and the lesson is
+that the collision is never visible in the file that survives.
+
+**Precision between two readings is measurable, and it is worth the accident
+that measures it.** The first automated review slice was drawn from the
+database by hand instead of through `review-queue`, so it lost the exclusion of
+repositories already judged and re-offered 21 of them. The merge gate refused
+all 17 that came back — and in doing so measured what no deliberate test had:
+two independent readings seven weeks apart agreed on `is_ai` for 16 of 17 and
+on the category for all 5 they both called AI. The single disagreement was not
+a reading error either. `coder/coder` went from not-AI to AI because the
+project shipped an agent loop and rewrote its README around it, which is why a
+verdict file carries a date and a later one supersedes an earlier one.
+
+**A verdict that cannot expire cannot follow a project that changes.**
+`inputs_hash` deliberately excludes the README, so a hand judgement survives a
+vocabulary change — and so survives a project repositioning itself in its own
+README, which is exactly where a repositioning shows up. Re-offering on any
+README change is the obvious fix and is probably wrong: excerpts churn on badge
+counts, and it could re-offer most of the existing verdicts forever. So nothing
+was changed. The README hash each judgement was read from is now recorded
+alongside it, which costs 16 bytes a row and turns the question into a number a
+later round can read off instead of an argument.
+
+**A test whose result depends on today's date is a timer, not a test.** Two
+Apify budget tests seeded a ledger row at a fixed September timestamp while the
+code under test asks the real clock what month it is. They passed for as long
+as the real month was September and started failing on 1 October, with nothing
+wrong in the code they cover — which is the worst kind of red, because it
+teaches you to ignore the suite.
+
 **A monitor that is silent when all is well cannot be trusted to be silent.**
 The daily watchdog was told to write nothing when the run had succeeded, so
 that it would only ever speak up about a problem. It reported "Completed" for

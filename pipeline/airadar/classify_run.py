@@ -372,6 +372,123 @@ def import_verdicts(conn: sqlite3.Connection, path: Path) -> ClassifyReport:
     return report
 
 
+class ReviewSpendCeilingExceeded(RuntimeError):
+    """The slice would cost more than this run is allowed to spend."""
+
+
+async def judge_review_queue(
+    conn: sqlite3.Connection,
+    client: GitHubClient,
+    queue_path: Path,
+    out_path: Path,
+    *,
+    settings,
+    take: int,
+    min_confidence: float = 0.0,
+    max_spend_usd: float = 1.0,
+) -> ClassifyReport:
+    """Read a review-queue slice with the model instead of by hand.
+
+    The hand path and this one have to judge the *same* repositories or the
+    automation is not the automation of anything. `classify --max-llm` does not
+    do that: it sends whatever the rule engine escalated, which is the 1,930
+    repositories in the band and never the 52,475 that scored zero. Those
+    zeroes are most of the queue and the whole reason the review exists —
+    `anomalyco/opencode` was one of them at 208,847 stars. A paid run over the
+    band would report a cost and a count and leave the actual problem
+    untouched.
+
+    So the slice comes from the queue file, which draws from both groups, and
+    the result is written where a hand round writes it: `verdicts/pending/`, in
+    the same shape, to be merged by the same `merge_verdicts.py` and held to
+    the same gates. One validation path for both, because the share gate — a
+    round that has stopped saying no — is exactly the failure a model is most
+    likely to produce.
+
+    Nothing is written to the database here. A verdict file is replayed on
+    every classification run, so going through the file is what makes a paid
+    judgement survive the database rather than living in one release asset.
+    """
+    report = ClassifyReport()
+    queue = json.loads(queue_path.read_text(encoding="utf-8"))
+    rows = [
+        row for row in queue.get("repos", []) if (row.get("confidence") or 0.0) >= min_confidence
+    ]
+    rows.sort(key=lambda row: -(row.get("stars") or 0))
+    rows = rows[:take]
+    report.considered = len(rows)
+    if not rows:
+        log.info("review-judge: nothing in the slice")
+        return report
+
+    # Before the READMEs are fetched, not after: the estimate is cheap and the
+    # fetch is 200 API calls. A ceiling that is checked after the expensive
+    # preparation is a ceiling that has already let the work happen.
+    report.estimated_cost_usd = estimate_cost_usd(len(rows))
+    if report.estimated_cost_usd > max_spend_usd:
+        raise ReviewSpendCeilingExceeded(
+            f"{len(rows)} repos would cost about ${report.estimated_cost_usd:.2f}, "
+            f"ceiling is ${max_spend_usd:.2f}"
+        )
+
+    facts, _ = load_facts(conn)
+    by_name = {item.full_name: item for item in facts}
+    inputs: list[LLMInput] = []
+    hashes: dict[str, str] = {}
+    for row in rows:
+        item = by_name.get(row["full_name"])
+        if item is None:
+            # The slice was drawn from an older database than this one.
+            report.unmatched.append(row["full_name"])
+            continue
+        inputs.append(
+            LLMInput(
+                full_name=item.full_name,
+                description=item.description,
+                topics=item.topics,
+                language=item.language,
+                readme_excerpt=await fetch_readme_excerpt(client, item.full_name),
+                content_hash=item.content_hash(),
+            )
+        )
+        # The verdict file validates on `inputs_hash`, not `content_hash`: a
+        # judgement made from a description does not expire because a phrase
+        # was added to a vocabulary list.
+        hashes[item.full_name] = item.inputs_hash()
+
+    classifier = LLMClassifier(api_key=settings.anthropic_api_key, model=settings.classifier_model)
+    verdicts, usage = classifier.classify(inputs)
+    report.llm_cost_usd = usage.cost_usd()
+    report.llm_input_tokens = usage.input_tokens
+    report.llm_output_tokens = usage.output_tokens
+    report.classified_by_llm = len(verdicts)
+
+    judged = [
+        {
+            "full_name": verdict.full_name,
+            "is_ai": bool(verdict.is_ai),
+            "category": verdict.category if verdict.is_ai else None,
+            "confidence": round(float(verdict.confidence), 3),
+            "inputs_hash": hashes[verdict.full_name],
+        }
+        for verdict in verdicts
+        if verdict.full_name in hashes
+    ]
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    out_path.write_text(
+        json.dumps({"repos": judged}, ensure_ascii=False, indent=1) + "\n", encoding="utf-8"
+    )
+    report.exported = len(judged)
+    log.info(
+        "review-judge: %d of %d judged, $%.2f spent, written to %s",
+        len(judged),
+        len(rows),
+        report.llm_cost_usd,
+        out_path,
+    )
+    return report
+
+
 # --- the weekly review queue -----------------------------------------------
 
 

@@ -28,3 +28,7 @@ data/
 # Sam profile: personal context for the summariser. Delivered as a GitHub
 # Actions secret, never committed - this repository is public.
 SAM_PROFILE.md
+
+# A judging round in progress. `merge_verdicts.py` turns it into one dated
+# file under `verdicts/`; the raw per-packet output is scratch.
+verdicts/pending/

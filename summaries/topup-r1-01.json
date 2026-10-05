@@ -163,15 +163,6 @@
    "investment_note": null
   },
   {
-   "full_name": "feder-cr/invisible_playwright_mcp",
-   "inputs_hash": "232a2b33489899d9e8ffc8495876baed",
-   "description_tr": "invisible_playwright_mcp, yapay zeka ajanlarının tarayıcıyı bot korumalarına takılmadan sürmesi için yazılmış, kendi makinende çalışan bir MCP sunucusu. Python ile yazılmış; anti-detect ayarları yapılmış bir Firefox sürümünü kullanıyor ve sayfayı bir insanın kullandığı gibi, imleci hareket ettirip tuşlara basarak geziyor. İki kullanım biçimi var: Claude Code, Codex veya Gemini CLI gibi bir asistana MCP olarak bağlamak, ya da OpenRouter anahtarıyla kendi yerel web arayüzünde çalıştırmak. Proxy, aynı tarayıcı kimliğini üreten sabit seed, kalıcı profil dizini ve headed mod gibi seçenekleri var; anahtar .env üzerinden okunuyor ve değeri loglara yazılmıyor. MIT lisanslı, 31 binin üzerinde yıldızı var; motor kütüphanesi ve fingerprint katmanı ayrı depolarda tutuluyor.",
-   "usage_tr": "Claude Code'a MCP olarak bağlayıp asistanına devrettiğin araştırma işlerinde kullanabilirsin: tedarikçi ve rakip karşılaştırmaları, Arslan Holding tarafında deal sourcing ve pazar taraması gibi, API'si olmayan sayfalardan veri toplamayı gerektiren adımlar. MCP modunda model senin asistanının modeli olduğu için ayrı bir API maliyeti çıkmıyor; yalnızca standalone arayüz bir OpenRouter anahtarı istiyor. Kurulum uv ile yerel, yani ofisteki M4 Pro Mac'te çalışır ve veri dışarı bir servise çıkmaz. Lyricdrop tarafında Apify'ı bıraktıktan sonra elde kalan sayfa tabanlı toplama işleri için de bir seçenek, ama bu iş için bir ajan çalıştırmak doğrudan bir indirici yazmaktan daha yavaş ve daha kırılgan olur. Uyarı: aracın ayırt edici özelliği bot tespitini atlatmak; gittiğin sitelerin şartları ve hız limitleri senin sorumluluğunda, ve oturum açılmış bir profil dizinini paylaşılan hesaplarla kullanma.",
-   "matched_project": "Claude Code",
-   "relevance": 8,
-   "investment_note": null
-  },
-  {
    "full_name": "hkproj/pytorch-llama",
    "inputs_hash": "e250addc6792b9d3f6d618d62dd548a7",
    "description_tr": "pytorch-llama, LLaMA 2 mimarisinin PyTorch ile sıfırdan yazılmış eğitim amaçlı bir uygulaması. Depo, aynı yazarın YouTube'daki anlatım videosuna eşlik ediyor; konu etiketleri makale uygulaması, dil modeli ve PyTorch olarak işaretlenmiş. README tek satırdan ibaret — kapsamı, tamlığı, hangi bileşenlerin uygulandığı ve bakım durumu hakkında karar vermeye yetecek kamuya açık metin yok, bu yüzden buradaki değerlendirme yalnızca açıklama, etiketler ve ana sayfa bağlantısına dayanıyor. MIT lisanslı, ~380 yıldızlı ve 2023 tarihli. Görünen haliyle üretimde kullanılacak bir kütüphane değil, okunmak için yazılmış bir referans uygulama.",

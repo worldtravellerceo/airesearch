@@ -28,15 +28,6 @@
    "investment_note": null
   },
   {
-   "full_name": "millionco/react-doctor",
-   "inputs_hash": "f439a8864934c59cd66dc07a124c1b95",
-   "description_tr": "react-doctor, AI agent'larının yazdığı React kodundaki hataları yakalamayı hedefleyen bir inceleme aracı. Depo TypeScript ile yazılmış ve monorepo yapısında; kendini code-review aracı ve agent skill'i olarak etiketliyor, react.doctor adresinde ayrı bir tanıtım sayfası var. Ancak pakette gelen kök README tek satırdan, paket içindeki README'ye işaret eden bir yol adresinden ibaret; bu nedenle hangi kuralları uyguladığı, nasıl kurulduğu ve hangi agent'larla entegre olduğu hakkında burada karar vermeye yetecek açık metin yok. Şubat 2026'da açılmış ve 14 binin üzerinde yıldıza ulaşmış; lisans alanı standart bir SPDX kimliğine çözülmüyor. Teknik ayrıntılar için proje sayfasına bakmak gerekiyor.",
-   "usage_tr": "Claude Code'un yazdığı kodu ikinci bir gözle denetleme isteğine oturan bir araç kategorisi; Lyricdrop v2'nin admin ve test panelindeki React tarafında commit öncesi bir kontrol adımı olarak deneyebilirsin. Superpowers ile kurduğun akışa review adımı olarak eklenirse, \"geliştirici doğruluğu\" incelemesinin React'e özgü kısmını otomatikleştirir. Yerel çalışan bir statik inceleme katmanıysa API maliyeti getirmez, ama pakette bunu doğrulayacak metin yok; kurulum öncesi proje sayfasından teyit etmek gerekiyor. Expo/React Native tarafında ne kadarının geçerli olduğu da belirsiz: kuralların çoğu DOM'a özgüyse mobil kodda karşılığı olmayabilir. Önce tek bir branch'te çalıştırıp ürettiği bulguların gerçek hata mı gürültü mü olduğuna bakmadan akışa almamak doğru olur.",
-   "matched_project": "Claude Code",
-   "relevance": 5,
-   "investment_note": "Agent'ın ürettiği kodu denetleyen araçlar, kod ajanlarının yaygınlaşmasıyla açılan yeni bir kategori; deponun yedi ayda 14 binin üzerinde yıldıza ulaşması bu boşluğun büyüklüğüne dair bir sinyal."
-  },
-  {
    "full_name": "HabitRPG/habitica",
    "inputs_hash": "5203cb03133fa3987236793fbdda8a90",
    "description_tr": "Habitica, alışkanlık ve görev takibini rol yapma oyunu mekaniğiyle birleştiren açık kaynak bir uygulama: görev tamamlanınca seviye atlanıyor, aksayınca can kaybediliyor, biriken altınla ekipman alınıyor. Sunucu tarafı Node/Express ve MongoDB, web arayüzü Vue ile yazılmış; iOS ve Android istemcileri ayrı depolarda tutuluyor. 2012'de açılmış, 14 binin üzerinde yıldızı olan olgun bir kod tabanı; lisansı standart bir SPDX kimliğine çözülmüyor. Ağustos 2026 itibarıyla topluluk pull request'leri askıya alınmış ve depo LLM üretimi kodu açıkça yasaklıyor, ancak kaynak kod açık kalmaya devam ediyor. Yapay zeka bileşeni yok; oyunlaştırma tamamen kural tabanlı.",

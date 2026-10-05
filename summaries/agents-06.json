@@ -82,15 +82,6 @@
    "investment_note": null
   },
   {
-   "full_name": "heroui-inc/heroui",
-   "inputs_hash": "8e8940aa1e02022934e123961bac296e",
-   "description_tr": "HeroUI, React için geliştirilen ve önceden NextUI adıyla bilinen bir arayüz bileşen kütüphanesi. Depo açıklamasına göre odak hazır, modern ve hızlı bileşenler sunmak; konu etiketleri de bileşen kütüphanesi ve React dışında bir alan göstermiyor. Apache-2.0 lisanslı, TypeScript ile yazılmış, 2021'den beri açık ve 30 bin yıldıza ulaşmış — bu yaştaki bir kütüphane için olgun bir topluluk anlamına geliyor. Bu pakette gelen README bir dosya yolundan ibaret, yani sürüm, bağımlılıklar ve React Native desteği gibi ayrıntılar hakkında karar vermeye yetecek kadar metin yok. Daha ileri bir değerlendirme için deponun kendi dokümantasyonuna bakmak gerekir.",
-   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam Lyricdrop v2'nin tarayıcıda çalışan admin ve test paneli ya da Arslan Holding'in web varlığı olabilir. Ama bu bir web React kütüphanesi, mobil tarafındaki Expo/React Native ekranlarına doğrudan gelmiyor, ve arayüzlerini zaten Claude Design ile üretiyorsun. Yapay zekâ ile ilgili bir tarafı da yok; index'te bir araç olarak değil, ekosistemin genel bir parçası olarak duruyor. Web panelinde hazır bir bileşen seti gerekirse aday listesine girebilir, ama bunun için önce deponun kendi dokümantasyonuna bakman gerekir.",
-   "matched_project": null,
-   "relevance": 1,
-   "investment_note": null
-  },
-  {
    "full_name": "78/xiaozhi-esp32",
    "inputs_hash": "11907cc284781d475ea668fe134c2509",
    "description_tr": "xiaozhi-esp32, ESP32 ailesi üzerinde çalışan açık kaynak bir sesli sohbet cihazı firmware'i; MCP protokolü üzerinden hem cihaz kontrolü hem bulut tarafı yetenek genişletme yapıyor. ESP-SR ile çevrimdışı uyandırma sözcüğü, Opus ses akışı, klasik ASR + LLM + TTS hattı veya uçtan uca gerçek zamanlı ses modelleri, konuşmacı tanıma ve OLED/LCD ekran desteği içeriyor. Wi-Fi, Ethernet, USB RNDIS ve 4G modülleriyle bağlanabiliyor; 138 kart dizini ve 171 sürüm varyantı destekleniyor, arayüz 39 dilde. Qwen ve DeepSeek gibi modellerle kullanılıyor ve ESP-IDF v6.0.1 veya üzeri gerektiriyor. C++ ile yazılmış, MIT lisanslı, 30 bin yıldızlı ve aktif bakılıyor.",

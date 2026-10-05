@@ -1,0 +1,1348 @@
+{
+ "repos": [
+  {
+   "full_name": "1c7/chinese-independent-developer",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92,
+   "inputs_hash": "c273a1e989e163336974948f73e97be3",
+   "readme_sha": "a6a9d75c70c05526"
+  },
+  {
+   "full_name": "AllThingsSmitty/css-protips",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92,
+   "inputs_hash": "a8cd816f82a1bddf8169201d5cd91ef4",
+   "readme_sha": "0b07abae9d5185df"
+  },
+  {
+   "full_name": "AppFlowy-IO/AppFlowy",
+   "is_ai": true,
+   "category": "llm-app",
+   "confidence": 0.92,
+   "inputs_hash": "5f2df83f8681037682bd9d443ae14041",
+   "readme_sha": "9411b200d13aabd6"
+  },
+  {
+   "full_name": "Budibase/budibase",
+   "is_ai": true,
+   "category": "agent-framework",
+   "confidence": 0.92,
+   "inputs_hash": "ffc3981d90bb38d028391871c860a831",
+   "readme_sha": "a635cf133568d87d"
+  },
+  {
+   "full_name": "CamDavidsonPilon/Probabilistic-Programming-and-Bayesian-Methods-for-Hackers",
+   "is_ai": true,
+   "category": "classic-ml",
+   "confidence": 0.92,
+   "inputs_hash": "47700cee9a61917f5d7f7f633196865e",
+   "readme_sha": "377f5c8ba234215d"
+  },
+  {
+   "full_name": "Chalarangelo/30-seconds-of-code",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92,
+   "inputs_hash": "8317d39e0383d342fb69e4ea405249d2",
+   "readme_sha": "292177e76844059f"
+  },
+  {
+   "full_name": "Chanzhaoyu/chatgpt-web",
+   "is_ai": true,
+   "category": "llm-app",
+   "confidence": 0.92,
+   "inputs_hash": "c9afdaf08e20252635de18221e54f76e",
+   "readme_sha": "193a1302102b3344"
+  },
+  {
+   "full_name": "DefinitelyTyped/DefinitelyTyped",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92,
+   "inputs_hash": "445f6a25adbcdbeac51b6d18e9919438",
+   "readme_sha": "f30f753bd84bf345"
+  },
+  {
+   "full_name": "Dod-o/Statistical-Learning-Method_Code",
+   "is_ai": true,
+   "category": "classic-ml",
+   "confidence": 0.92,
+   "inputs_hash": "d5be859407db70f502ff2d4259ee1768",
+   "readme_sha": "f25935a1f92350b4"
+  },
+  {
+   "full_name": "IDEA-Research/Grounded-Segment-Anything",
+   "is_ai": true,
+   "category": "multimodal-vision",
+   "confidence": 0.92,
+   "inputs_hash": "6ee3982a26b92dcba5525cc6d1217874",
+   "readme_sha": "e463033f0254053c"
+  },
+  {
+   "full_name": "JanDeDobbeleer/oh-my-posh",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92,
+   "inputs_hash": "0b961f42ebe19cd62c09eaaec4c04c8c",
+   "readme_sha": "3a75f5e1deef17cb"
+  },
+  {
+   "full_name": "KittenML/KittenTTS",
+   "is_ai": true,
+   "category": "audio-speech",
+   "confidence": 0.92,
+   "inputs_hash": "673993729a5af956d658be7876dd0743",
+   "readme_sha": "d31e788774c6f640"
+  },
+  {
+   "full_name": "MisterBooo/LeetCodeAnimation",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92,
+   "inputs_hash": "0781f6152db0b176872a5930c9bd01e4",
+   "readme_sha": "8f51ac9c3b862e72"
+  },
+  {
+   "full_name": "NaturalNode/natural",
+   "is_ai": true,
+   "category": "classic-ml",
+   "confidence": 0.92,
+   "inputs_hash": "64b8bfac615645ff395defa4cafe978d",
+   "readme_sha": "7ddc72934b9b5511"
+  },
+  {
+   "full_name": "OpenCut-app/OpenCut",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92,
+   "inputs_hash": "cf11797adb6f298415ede723c3837369",
+   "readme_sha": "95ccfeb63ebca77a"
+  },
+  {
+   "full_name": "Physical-Intelligence/openpi",
+   "is_ai": true,
+   "category": "robotics-embodied",
+   "confidence": 0.92,
+   "inputs_hash": "aceb7abb09946bd19d85554fb8288a66",
+   "readme_sha": "2f5edc15fb6f975f"
+  },
+  {
+   "full_name": "Python-World/python-mini-projects",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92,
+   "inputs_hash": "bfac7378adc2735c91516c16fbcab3a5",
+   "readme_sha": "a953cb1570c7279a"
+  },
+  {
+   "full_name": "RPCS3/rpcs3",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92,
+   "inputs_hash": "033cc4d2f10197c1d88c74dee96dac6b",
+   "readme_sha": "297d62a8c7558947"
+  },
+  {
+   "full_name": "SesameAILabs/csm",
+   "is_ai": true,
+   "category": "audio-speech",
+   "confidence": 0.92,
+   "inputs_hash": "58cf836942ad62c033a9176ad464d2f2",
+   "readme_sha": "151da9951f24cb1f"
+  },
+  {
+   "full_name": "SnapKit/Masonry",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92,
+   "inputs_hash": "2634cd001636df6c4e102fc4d4b4f58d",
+   "readme_sha": "eb9266e52516bdfd"
+  },
+  {
+   "full_name": "THU-MIG/yolov10",
+   "is_ai": true,
+   "category": "multimodal-vision",
+   "confidence": 0.92,
+   "inputs_hash": "2230188d262f05e9ebfa7a39e7a94835",
+   "readme_sha": "02309650c64f917f"
+  },
+  {
+   "full_name": "TeamStuQ/skill-map",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92,
+   "inputs_hash": "7765ad8064b959b1e7b36df6a6a2d970",
+   "readme_sha": "f24a32d4c9c86c98"
+  },
+  {
+   "full_name": "The-Cool-Coders/Project-Ideas-And-Resources",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92,
+   "inputs_hash": "2468924349fe38f49dfc6630d735e398",
+   "readme_sha": "31c3bf66bb948681"
+  },
+  {
+   "full_name": "ToolJet/ToolJet",
+   "is_ai": true,
+   "category": "llm-app",
+   "confidence": 0.92,
+   "inputs_hash": "bf6d34e34f1690650f854767b90f3c40",
+   "readme_sha": "cb6edcfac84d8434"
+  },
+  {
+   "full_name": "VoltAgent/awesome-openclaw-skills",
+   "is_ai": true,
+   "category": "awesome-list",
+   "confidence": 0.92,
+   "inputs_hash": "8e4ffa8e236f8c257631cc1121819aa3",
+   "readme_sha": "c582a26ee4aa3fdd"
+  },
+  {
+   "full_name": "Wan-Video/Wan2.1",
+   "is_ai": true,
+   "category": "model-weights",
+   "confidence": 0.92,
+   "inputs_hash": "96f3ac5723e879e5a5c0d72ca0aa2afb",
+   "readme_sha": "9bd38a549accf5f9"
+  },
+  {
+   "full_name": "Z4nzu/hackingtool",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92,
+   "inputs_hash": "c423ece2a687e811bc00da77fd6a81b3",
+   "readme_sha": "e04ba257025076be"
+  },
+  {
+   "full_name": "a2ui-project/a2ui",
+   "is_ai": true,
+   "category": "agent-framework",
+   "confidence": 0.92,
+   "inputs_hash": "ef93c5c7030845358df7a6e052d2cf5e",
+   "readme_sha": "c419157567b8f5a0"
+  },
+  {
+   "full_name": "abetlen/llama-cpp-python",
+   "is_ai": true,
+   "category": "inference-serving",
+   "confidence": 0.92,
+   "inputs_hash": "3c554c56bdcaf6f167780298fa15fad3",
+   "readme_sha": "bb82a2efdbfc837d"
+  },
+  {
+   "full_name": "addyosmani/critical",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92,
+   "inputs_hash": "91b8d5bba2c8c8628305eef4792fac7a",
+   "readme_sha": "3edab7b88c894da3"
+  },
+  {
+   "full_name": "ageron/handson-ml2",
+   "is_ai": true,
+   "category": "classic-ml",
+   "confidence": 0.92,
+   "inputs_hash": "22fc03b27f90d5457c0be0d19eebf891",
+   "readme_sha": "2ea77564171045e6"
+  },
+  {
+   "full_name": "aidenybai/react-scan",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92,
+   "inputs_hash": "56f84b4948820dfcdac2292b6c007922",
+   "readme_sha": "3794f3b2873f24c3"
+  },
+  {
+   "full_name": "ajeetdsouza/zoxide",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92,
+   "inputs_hash": "4b371aebd69465e51e2b066566c7eaab",
+   "readme_sha": "fcac387abb52200e"
+  },
+  {
+   "full_name": "akka/akka-core",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92,
+   "inputs_hash": "1a0d4a15070b679d11771a441c575f98",
+   "readme_sha": "a171a97574451b59"
+  },
+  {
+   "full_name": "alchaincyf/zhangxuefeng-skill",
+   "is_ai": true,
+   "category": "ai-devtools",
+   "confidence": 0.92,
+   "inputs_hash": "3944096af83b7fd9f5005f602b607442",
+   "readme_sha": "34215106f04a3cd6"
+  },
+  {
+   "full_name": "amark/gun",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92,
+   "inputs_hash": "fd32332daed9b73e15eb04f0df6c4d6d",
+   "readme_sha": "af214ec6a7f9b50a"
+  },
+  {
+   "full_name": "amplication/amplication",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92,
+   "inputs_hash": "2ee3f8d787dc170178dc24eb53332374",
+   "readme_sha": "486e39663421d0ad"
+  },
+  {
+   "full_name": "ansible/ansible",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92,
+   "inputs_hash": "6c571cf312a3c6ba14f3985d4f07ab3e",
+   "readme_sha": "5a0fc22a722986ee"
+  },
+  {
+   "full_name": "ant-design/ant-design-pro",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92,
+   "inputs_hash": "4c14bc171851477373c0231936d4c8e0",
+   "readme_sha": "1de3d588f8f9f83c"
+  },
+  {
+   "full_name": "antonmedv/fx",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92,
+   "inputs_hash": "672233b5b4653f86474ed2b1bf5cb21e",
+   "readme_sha": "1c4e1934539fda93"
+  },
+  {
+   "full_name": "apollographql/apollo-client",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92,
+   "inputs_hash": "1a24a32cab042d292209ad43997e3996",
+   "readme_sha": "7c732e44c5a6a731"
+  },
+  {
+   "full_name": "ardanlabs/gotraining",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92,
+   "inputs_hash": "3646834cf50dc436490fee83cab59864",
+   "readme_sha": "b7498596834d18d4"
+  },
+  {
+   "full_name": "aristocratos/btop",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92,
+   "inputs_hash": "64ec527f7ab6b558f231a31a07167f4f",
+   "readme_sha": "9b0b417dd11f122c"
+  },
+  {
+   "full_name": "awesome-dsh-plugin/awesome-dsh-plugin",
+   "is_ai": true,
+   "category": "awesome-list",
+   "confidence": 0.92,
+   "inputs_hash": "30bf463dccb0a465e98c99d3bdb7bb2c",
+   "readme_sha": "7f00013431b31bd3"
+  },
+  {
+   "full_name": "binarywang/WxJava",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92,
+   "inputs_hash": "3730b67e10f0ee68ad683bfe42d5f09f",
+   "readme_sha": "2d45c05e0b8ff638"
+  },
+  {
+   "full_name": "binwiederhier/ntfy",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92,
+   "inputs_hash": "6de88fdafb3486b072e6fb1be54ffbd3",
+   "readme_sha": "94c054f40568da39"
+  },
+  {
+   "full_name": "birobirobiro/awesome-shadcn-ui",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92,
+   "inputs_hash": "15563d67f34ffc12e10f39fa350b9cbd",
+   "readme_sha": "1e7b56135fce19ab"
+  },
+  {
+   "full_name": "block/buzz",
+   "is_ai": true,
+   "category": "agent-framework",
+   "confidence": 0.92,
+   "inputs_hash": "9d3fda7bec64364bb52b3e5f4c73ce7f",
+   "readme_sha": "df9ccc74843207c4"
+  },
+  {
+   "full_name": "bmild/nerf",
+   "is_ai": true,
+   "category": "multimodal-vision",
+   "confidence": 0.92,
+   "inputs_hash": "38c7d18dadea718167a222ec16c55bf5",
+   "readme_sha": "6d174d7a14a41971"
+  },
+  {
+   "full_name": "borisdayma/dalle-mini",
+   "is_ai": true,
+   "category": "multimodal-vision",
+   "confidence": 0.92,
+   "inputs_hash": "6ed5b5634604098af294288369a8e39b",
+   "readme_sha": "3dbcd9b847acbe56"
+  },
+  {
+   "full_name": "caddyserver/caddy",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92,
+   "inputs_hash": "1ba3a4e9f9177cd2b0c9d4fc87365633",
+   "readme_sha": "f6f761b1aa30341f"
+  },
+  {
+   "full_name": "cat-milk/Anime-Girls-Holding-Programming-Books",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92,
+   "inputs_hash": "cdb75294f44cb6793e78f06fd053123f",
+   "readme_sha": "063bd3f01190f338"
+  },
+  {
+   "full_name": "chartdb/chartdb",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92,
+   "inputs_hash": "20f76cbf50ec35580a2c4923cc88fe8e",
+   "readme_sha": "89032d8b1e1781c7"
+  },
+  {
+   "full_name": "clash-verge-rev/clash-verge-rev",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92,
+   "inputs_hash": "776c2512befeb4b5a5e9c38c8e167141",
+   "readme_sha": "cd56022329e61945"
+  },
+  {
+   "full_name": "clauderic/dnd-kit",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92,
+   "inputs_hash": "1d98145eb0416922fe774f0d4208d367",
+   "readme_sha": "f89bec039ea53edd"
+  },
+  {
+   "full_name": "codecrafters-io/build-your-own-x",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92,
+   "inputs_hash": "0645d32eefd8177d1b21f35e6529fec1",
+   "readme_sha": "c24ecbbfedfc0b38"
+  },
+  {
+   "full_name": "coder/coder",
+   "is_ai": true,
+   "category": "ai-devtools",
+   "confidence": 0.92,
+   "inputs_hash": "e11761eb63f924dfb1bcb712342f6859",
+   "readme_sha": "a929c643bd28bd93"
+  },
+  {
+   "full_name": "colinhacks/zod",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92,
+   "inputs_hash": "66b1acc200a548dd0fd481f4e6395be3",
+   "readme_sha": "439c0c93c68f5dff"
+  },
+  {
+   "full_name": "conductor-oss/conductor",
+   "is_ai": true,
+   "category": "agent-framework",
+   "confidence": 0.92,
+   "inputs_hash": "5f1b531fda55cc429c981f9a5b731376",
+   "readme_sha": "fc1d1f22e137066d"
+  },
+  {
+   "full_name": "cs231n/cs231n.github.io",
+   "is_ai": true,
+   "category": "multimodal-vision",
+   "confidence": 0.92,
+   "inputs_hash": "20aeb5632a37028d1484234caac6d74b",
+   "readme_sha": "e3b0c44298fc1c14"
+  },
+  {
+   "full_name": "daijro/camoufox",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92,
+   "inputs_hash": "0b8edab4a45c7569ab20a4f089838f87",
+   "readme_sha": "726e61b6265ecbb5"
+  },
+  {
+   "full_name": "dataease/dataease",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92,
+   "inputs_hash": "ca987fdee96d9550693826b07b324c8d",
+   "readme_sha": "1deb1d8be5917179"
+  },
+  {
+   "full_name": "dcloudio/uni-app",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92,
+   "inputs_hash": "f36c9fb70d17a76a416cad7ac1d0ed3d",
+   "readme_sha": "902e39de2e8e0f23"
+  },
+  {
+   "full_name": "didi/LogicFlow",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92,
+   "inputs_hash": "79062ccd66821a268cae37a1f4a855c6",
+   "readme_sha": "d8ef46fc519b3f6b"
+  },
+  {
+   "full_name": "dragonflydb/dragonfly",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92,
+   "inputs_hash": "19421f73f5ea3e8d7d01a0b7f3dfee67",
+   "readme_sha": "0a6a75c1e2390019"
+  },
+  {
+   "full_name": "drduh/YubiKey-Guide",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92,
+   "inputs_hash": "29aa7fa8e40f91001e939113e69a37bc",
+   "readme_sha": "a87406123ae74f68"
+  },
+  {
+   "full_name": "dreamhunter2333/cloudflare_temp_email",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92,
+   "inputs_hash": "383ac14e7ec210fafbb46c388e63ca62",
+   "readme_sha": "18f85f1d5c76dcb8"
+  },
+  {
+   "full_name": "elastic/elasticsearch",
+   "is_ai": true,
+   "category": "rag-vectordb",
+   "confidence": 0.92,
+   "inputs_hash": "2a7acef75219d2a3195569a24435e5d0",
+   "readme_sha": "e3b0c44298fc1c14"
+  },
+  {
+   "full_name": "emmabostian/developer-portfolios",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92,
+   "inputs_hash": "cce97b013e530e9188b28b556fb17a9b",
+   "readme_sha": "563418dc9fe1ce51"
+  },
+  {
+   "full_name": "encoredev/encore",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92,
+   "inputs_hash": "790fda2437b3b52ddda70493d46f1088",
+   "readme_sha": "7d6d8b520cc66406"
+  },
+  {
+   "full_name": "end-4/dots-hyprland",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92,
+   "inputs_hash": "f33ca7b9a9ddb7133fc52b84b4fc6e76",
+   "readme_sha": "e3b0c44298fc1c14"
+  },
+  {
+   "full_name": "endograph/redux-persist",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92,
+   "inputs_hash": "109e9f996f68e1573785c31396f2ab77",
+   "readme_sha": "9db148053bc324b2"
+  },
+  {
+   "full_name": "facebook/astryx",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92,
+   "inputs_hash": "13ad98101f27bb366aefe9ddd1638f05",
+   "readme_sha": "a22b176799d1da6a"
+  },
+  {
+   "full_name": "fish2018/pansou",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92,
+   "inputs_hash": "8d9a0bcef84aaf540bcfebc746b8edae",
+   "readme_sha": "7afcfc8fa0385e86"
+  },
+  {
+   "full_name": "flet-dev/flet",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92,
+   "inputs_hash": "617856f0921c1a84f0a1f1f582c2fdf7",
+   "readme_sha": "459e8c3e2c7a52cb"
+  },
+  {
+   "full_name": "florinpop17/app-ideas",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92,
+   "inputs_hash": "9d2f26d364e13de0b8be2dcc7520bec8",
+   "readme_sha": "cdadce43c780e584"
+  },
+  {
+   "full_name": "forwardemail/supertest",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92,
+   "inputs_hash": "4fe7604cc442e7743625f15f03c02217",
+   "readme_sha": "62c04ed349de175e"
+  },
+  {
+   "full_name": "future-architect/vuls",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92,
+   "inputs_hash": "5a637045336bd7ec389ab2c5e5210477",
+   "readme_sha": "2457c19c2743d54f"
+  },
+  {
+   "full_name": "geekxh/hello-algorithm",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92,
+   "inputs_hash": "fdf7e77c089e186cc97df34c27c54770",
+   "readme_sha": "7b62af9ad2337ffe"
+  },
+  {
+   "full_name": "geldata/gel",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92,
+   "inputs_hash": "790bceb82726be79a45c3a34d1a85ed1",
+   "readme_sha": "95a16251cd82fe93"
+  },
+  {
+   "full_name": "get-convex/convex-backend",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92,
+   "inputs_hash": "22c82854581bd2eef4386b97878be9f5",
+   "readme_sha": "f94cb06f3b135e77"
+  },
+  {
+   "full_name": "gnachman/iTerm2",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92,
+   "inputs_hash": "28541dc5048f4c056965cf3df82d1fe4",
+   "readme_sha": "3b67f48e13dc1b5f"
+  },
+  {
+   "full_name": "google/deepdream",
+   "is_ai": true,
+   "category": "multimodal-vision",
+   "confidence": 0.92,
+   "inputs_hash": "d5f211929bfbae1ef22a85e4f256c62b",
+   "readme_sha": "a46496225fa50f0d"
+  },
+  {
+   "full_name": "hajimehoshi/ebiten",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92,
+   "inputs_hash": "9d1d40345623047471d07c60431e5e65",
+   "readme_sha": "2f1431a67dc8877e"
+  },
+  {
+   "full_name": "handsomestWei/patent-disclosure-skill",
+   "is_ai": true,
+   "category": "ai-devtools",
+   "confidence": 0.92,
+   "inputs_hash": "4d7654e23ce4c95f149c7b114a58ea29",
+   "readme_sha": "8dcab822f0bc3619"
+  },
+  {
+   "full_name": "harness/harness",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92,
+   "inputs_hash": "5d964b88fa95bebb74f493f8d0c8055b",
+   "readme_sha": "d355c8344d9e619a"
+  },
+  {
+   "full_name": "hemanth/functional-programming-jargon",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92,
+   "inputs_hash": "778b98be25daefbc702ccaac37634fc1",
+   "readme_sha": "0b3fe57769f5696a"
+  },
+  {
+   "full_name": "hpcaitech/Open-Sora",
+   "is_ai": true,
+   "category": "multimodal-vision",
+   "confidence": 0.92,
+   "inputs_hash": "b2127d3a4baed288540545b28f61bd61",
+   "readme_sha": "f068ca2e780a0a09"
+  },
+  {
+   "full_name": "hwdsl2/setup-ipsec-vpn",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92,
+   "inputs_hash": "d4995095498703627c57c3cd3b8983be",
+   "readme_sha": "e01b4fadfe27f9ab"
+  },
+  {
+   "full_name": "injetlee/Python",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92,
+   "inputs_hash": "8d416ac2b5f57f216a91d924d35fcf0b",
+   "readme_sha": "f2d91d47ddd18032"
+  },
+  {
+   "full_name": "jaywcjlove/linux-command",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92,
+   "inputs_hash": "383c783a0caa93a3285939813da1eb01",
+   "readme_sha": "87f528930656f6f0"
+  },
+  {
+   "full_name": "jbranchaud/til",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92,
+   "inputs_hash": "c524fddcd82353cd888afe7c0c598941",
+   "readme_sha": "819b3b6992b4d184"
+  },
+  {
+   "full_name": "jondot/awesome-react-native",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92,
+   "inputs_hash": "9599ef844bc046ee102566c3bd0c44a7",
+   "readme_sha": "722b303f0b2ed785"
+  },
+  {
+   "full_name": "jxxghp/MoviePilot",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92,
+   "inputs_hash": "ccb5ab9f963e01081be66b49bc3e910f",
+   "readme_sha": "e8e7664e9ce71398"
+  },
+  {
+   "full_name": "koodo-reader/koodo-reader",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92,
+   "inputs_hash": "0bf62f948f2b071466e72463f3ca30a6",
+   "readme_sha": "c499fba5d4b7cc25"
+  },
+  {
+   "full_name": "lfnovo/open-notebook",
+   "is_ai": true,
+   "category": "llm-app",
+   "confidence": 0.92,
+   "inputs_hash": "c6eb71a8f442f7ea3529ccb6d48ee8a8",
+   "readme_sha": "edcefa4b943d8c22"
+  },
+  {
+   "full_name": "liketrek/TREK",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92,
+   "inputs_hash": "487f65c557fd9809916e854ad74ab96c",
+   "readme_sha": "f4341c7928586a20"
+  },
+  {
+   "full_name": "lissy93/dashy",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92,
+   "inputs_hash": "6a7856da2f491e3583e1b708a67434f8",
+   "readme_sha": "c0c8bc44d6a02d49"
+  },
+  {
+   "full_name": "lissy93/web-check",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92,
+   "inputs_hash": "80060ba0d6c41fea70fee0ab4f647acd",
+   "readme_sha": "e3b0c44298fc1c14"
+  },
+  {
+   "full_name": "lsd-rs/lsd",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92,
+   "inputs_hash": "7f9518cec8468988d3c4b8f56b401673",
+   "readme_sha": "44bdd9a55bf0d039"
+  },
+  {
+   "full_name": "magenta/magenta",
+   "is_ai": true,
+   "category": "audio-speech",
+   "confidence": 0.92,
+   "inputs_hash": "c830b685e2f55c54309ce955ad2f2112",
+   "readme_sha": "dc12b53b57306646"
+  },
+  {
+   "full_name": "markets/awesome-ruby",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92,
+   "inputs_hash": "249cb04462573066048d10eab7927406",
+   "readme_sha": "82303f7e30f8e319"
+  },
+  {
+   "full_name": "medusajs/medusa",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92,
+   "inputs_hash": "e8aa30ce14bf01d43615afcbc5d76c0c",
+   "readme_sha": "cc30049d224974aa"
+  },
+  {
+   "full_name": "meilisearch/meilisearch",
+   "is_ai": true,
+   "category": "rag-vectordb",
+   "confidence": 0.92,
+   "inputs_hash": "24c4837391a6c422008c422522bcf5c5",
+   "readme_sha": "870cd0788f35952a"
+  },
+  {
+   "full_name": "metabase/metabase",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92,
+   "inputs_hash": "84b1dc2f2e6b4c01442b67a72c3682bf",
+   "readme_sha": "1bda84bdd63ec22d"
+  },
+  {
+   "full_name": "mikeroyal/Self-Hosting-Guide",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92,
+   "inputs_hash": "ed7d4a70d33e5753be42f536f7a2beb7",
+   "readme_sha": "3c32f21bd5ce1abe"
+  },
+  {
+   "full_name": "nagadomi/waifu2x",
+   "is_ai": true,
+   "category": "multimodal-vision",
+   "confidence": 0.92,
+   "inputs_hash": "292744e5672887e895d62009a6ba6a11",
+   "readme_sha": "0380ebf5d72fee75"
+  },
+  {
+   "full_name": "nearai/ironclaw",
+   "is_ai": true,
+   "category": "agent-framework",
+   "confidence": 0.92,
+   "inputs_hash": "8030ce14bcdf229d89767e4c2a5ff49b",
+   "readme_sha": "2227098e83e141e0"
+  },
+  {
+   "full_name": "nikopueringer/CorridorKey",
+   "is_ai": true,
+   "category": "multimodal-vision",
+   "confidence": 0.92,
+   "inputs_hash": "2d36f3bd68de0a9069d3ccdd4983d8ac",
+   "readme_sha": "4cd2c4ee1753b207"
+  },
+  {
+   "full_name": "norvig/pytudes",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92,
+   "inputs_hash": "2e20bb4045931f8146f75dd1c9692301",
+   "readme_sha": "40d9d35fdc987311"
+  },
+  {
+   "full_name": "omacom/omarchy",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92,
+   "inputs_hash": "932cb36bf381cfc482a6e6e72c737868",
+   "readme_sha": "5bf8370906b45cca"
+  },
+  {
+   "full_name": "open-policy-agent/opa",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92,
+   "inputs_hash": "d37bc1ba6947c47b8be33e7e213926ae",
+   "readme_sha": "d7fbc2b4862e97ae"
+  },
+  {
+   "full_name": "openobserve/openobserve",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92,
+   "inputs_hash": "5b1b0b01e53d47469e88c3ad9f43c179",
+   "readme_sha": "4574198f00b29056"
+  },
+  {
+   "full_name": "openspug/spug",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92,
+   "inputs_hash": "df48ca179c64da0f2b42a440c0c7d04e",
+   "readme_sha": "6585ff3bdb266cf3"
+  },
+  {
+   "full_name": "oramasearch/orama",
+   "is_ai": true,
+   "category": "rag-vectordb",
+   "confidence": 0.92,
+   "inputs_hash": "018312f81da14d7e984a17d60785fe7d",
+   "readme_sha": "09442063a2012bb0"
+  },
+  {
+   "full_name": "pathwaycom/arc-task-gen",
+   "is_ai": true,
+   "category": "prompt-eval-observability",
+   "confidence": 0.92,
+   "inputs_hash": "40336f01a9db32eaaaa33f34fb557d97",
+   "readme_sha": "7635b8678fec91c0"
+  },
+  {
+   "full_name": "pear-devs/pear-desktop",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92,
+   "inputs_hash": "34a97ba907cf9e2c207bd40e85761f76",
+   "readme_sha": "14b2f2a56948d50b"
+  },
+  {
+   "full_name": "pinchtab/pinchtab",
+   "is_ai": true,
+   "category": "ai-devtools",
+   "confidence": 0.92,
+   "inputs_hash": "b074bb6f540322f5c3713b15c3ee51ee",
+   "readme_sha": "c41f2a130ff5aa16"
+  },
+  {
+   "full_name": "pluja/awesome-privacy",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92,
+   "inputs_hash": "03fa559ea62bd07bb0208345a831d48a",
+   "readme_sha": "702a27b2acedf5e7"
+  },
+  {
+   "full_name": "postcss/postcss",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92,
+   "inputs_hash": "13946715ef8e7707330566875da3ca40",
+   "readme_sha": "5bdcc903d90d717f"
+  },
+  {
+   "full_name": "powerline/powerline",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92,
+   "inputs_hash": "6ad6e7e6bc26f330b6c03c916aa094b7",
+   "readme_sha": "f73c349469e953df"
+  },
+  {
+   "full_name": "prompt-toolkit/python-prompt-toolkit",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92,
+   "inputs_hash": "91c5ecbb8d89dfbb78915089c51ba725",
+   "readme_sha": "2d94c009d8591a3a"
+  },
+  {
+   "full_name": "prowler-cloud/prowler",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92,
+   "inputs_hash": "65818c7e3dff8b750257c0f594109925",
+   "readme_sha": "abece272181f53b1"
+  },
+  {
+   "full_name": "qier222/YesPlayMusic",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92,
+   "inputs_hash": "e18e8d420ce65b3a41d2353552ecd322",
+   "readme_sha": "7b6566c2c4b7aed6"
+  },
+  {
+   "full_name": "quasarframework/quasar",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92,
+   "inputs_hash": "34ff9124a5172efe30bffbb7361f8826",
+   "readme_sha": "d0d148f98083b9b2"
+  },
+  {
+   "full_name": "refactoringhq/tolaria",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92,
+   "inputs_hash": "3a8645f932e72c99f890bc4551c723f7",
+   "readme_sha": "c0d3514f37a27079"
+  },
+  {
+   "full_name": "refinedev/refine",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92,
+   "inputs_hash": "7675c8217dd2a7bec2754e5ff778e162",
+   "readme_sha": "af0c08d6f291aa75"
+  },
+  {
+   "full_name": "remix-run/remix",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92,
+   "inputs_hash": "d305bd82f37fb3582a8a15fff3bda4f3",
+   "readme_sha": "1be637ebc0c27617"
+  },
+  {
+   "full_name": "rothgar/awesome-tuis",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92,
+   "inputs_hash": "37dbbe43266a7bdad85a0841d6b29a94",
+   "readme_sha": "952206f4f5ba3e3e"
+  },
+  {
+   "full_name": "ruanyf/weekly",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92,
+   "inputs_hash": "b1d1f83450ee4ec5340d43f343b0a80d",
+   "readme_sha": "3d66a0669f9d2213"
+  },
+  {
+   "full_name": "samber/lo",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92,
+   "inputs_hash": "8460e8d850487ab2a9c3d967cefa5b89",
+   "readme_sha": "8d166b0da42bb1c8"
+  },
+  {
+   "full_name": "serbanghita/Mobile-Detect",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92,
+   "inputs_hash": "912437455f67e8adbcb0d040a3a20141",
+   "readme_sha": "bdb7fe673abeace7"
+  },
+  {
+   "full_name": "shoelace-style/shoelace",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92,
+   "inputs_hash": "4d5ce67e515ff70b5ceba15b95dda175",
+   "readme_sha": "96c75ddb197afd54"
+  },
+  {
+   "full_name": "sindresorhus/pure",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92,
+   "inputs_hash": "4cd33c28ff56c34b90848dbffdacf31a",
+   "readme_sha": "351efe5f748de8f3"
+  },
+  {
+   "full_name": "skills/introduction-to-github",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92,
+   "inputs_hash": "2a883b20ddcbf9a81d91519a776b159b",
+   "readme_sha": "89e30f4b29e3df4d"
+  },
+  {
+   "full_name": "slavingia/skills",
+   "is_ai": true,
+   "category": "ai-devtools",
+   "confidence": 0.92,
+   "inputs_hash": "81cba3205c68eed7211a8ad99c3d1b92",
+   "readme_sha": "f4ea38753653c18e"
+  },
+  {
+   "full_name": "spacedriveapp/spacedrive",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92,
+   "inputs_hash": "1f8ca6acfedf369a2e0970a676709669",
+   "readme_sha": "748d103d6baebccb"
+  },
+  {
+   "full_name": "spaceship-prompt/spaceship-prompt",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92,
+   "inputs_hash": "b2c5edb0010e88390db3330f07591b88",
+   "readme_sha": "56c2882d085eb98b"
+  },
+  {
+   "full_name": "starship/starship",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92,
+   "inputs_hash": "648d14774f5d18a808bd4e8d0ac0a1b4",
+   "readme_sha": "f7f5c8a642d200ce"
+  },
+  {
+   "full_name": "state-spaces/mamba",
+   "is_ai": true,
+   "category": "model-weights",
+   "confidence": 0.92,
+   "inputs_hash": "4411718a96b7227a053e4d7a4299e552",
+   "readme_sha": "4b4518cabea4fdc9"
+  },
+  {
+   "full_name": "sub-store-org/Sub-Store",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92,
+   "inputs_hash": "694398892233147e359f15468ed52b45",
+   "readme_sha": "8c8ef4e9bea0a948"
+  },
+  {
+   "full_name": "surrealdb/surrealdb",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92,
+   "inputs_hash": "5d2f942aa1b0942e3a1e33a36e9307e2",
+   "readme_sha": "402056c9b965954c"
+  },
+  {
+   "full_name": "sxyazi/yazi",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92,
+   "inputs_hash": "4e998c4025cf54cd49da9f25e46d931a",
+   "readme_sha": "7a2280c1f0187a2b"
+  },
+  {
+   "full_name": "tandpfun/skill-icons",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92,
+   "inputs_hash": "8a6edc2c3df32875712c1d8dc12158af",
+   "readme_sha": "f54b05e562b8c032"
+  },
+  {
+   "full_name": "teableio/teable",
+   "is_ai": true,
+   "category": "llm-app",
+   "confidence": 0.92,
+   "inputs_hash": "c251d09b137a15abdab02f70a9c1c9f0",
+   "readme_sha": "6c2766335b4402a7"
+  },
+  {
+   "full_name": "timschneeb/awesome-shizuku",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92,
+   "inputs_hash": "2798d071a44bbd6aea9007663b2ab0f9",
+   "readme_sha": "376ebf656729640a"
+  },
+  {
+   "full_name": "tinygrad/tinygrad",
+   "is_ai": true,
+   "category": "training-finetuning",
+   "confidence": 0.92,
+   "inputs_hash": "3249c76da649f8f8eb3128720295be08",
+   "readme_sha": "4d4befc6772bc463"
+  },
+  {
+   "full_name": "tldraw/tldraw",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92,
+   "inputs_hash": "dbc719589d1d2dc78087975edec0b782",
+   "readme_sha": "2acc198cd9187abd"
+  },
+  {
+   "full_name": "trimstray/test-your-sysadmin-skills",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92,
+   "inputs_hash": "98e04f269ac57764723bd8c2e09ae8be",
+   "readme_sha": "af7b9ca729f98bf4"
+  },
+  {
+   "full_name": "twitter/the-algorithm",
+   "is_ai": true,
+   "category": "classic-ml",
+   "confidence": 0.92,
+   "inputs_hash": "698df8acbebd39dbbd2a1dbc5f65b44f",
+   "readme_sha": "5c6a718774d8ecf9"
+  },
+  {
+   "full_name": "twitter/the-algorithm-ml",
+   "is_ai": true,
+   "category": "classic-ml",
+   "confidence": 0.92,
+   "inputs_hash": "cd6e17cfc5b0da5d7a834e682003e8df",
+   "readme_sha": "f939e205358b3f2b"
+  },
+  {
+   "full_name": "unopim/unopim",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92,
+   "inputs_hash": "f5005c78333927c4340d2e4971af20ec",
+   "readme_sha": "30c657f499e8a3e8"
+  },
+  {
+   "full_name": "vercel-labs/portless",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92,
+   "inputs_hash": "a72bc155d9863c97680065b68e2df006",
+   "readme_sha": "e827509f02b4878d"
+  },
+  {
+   "full_name": "vercel/satori",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92,
+   "inputs_hash": "5090cb6ff3a218c1fae9d81b037d6cb6",
+   "readme_sha": "47fcdac790763a23"
+  },
+  {
+   "full_name": "vercel/turborepo",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92,
+   "inputs_hash": "ff184ec7b964aac921834d05ade6c604",
+   "readme_sha": "ceec0b97c498612e"
+  },
+  {
+   "full_name": "viarotel-org/escrcpy",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92,
+   "inputs_hash": "deb4947c3e83097a0d9d9128e02ed84d",
+   "readme_sha": "91d4c4d4cc1615c3"
+  },
+  {
+   "full_name": "vitalysim/Awesome-Hacking-Resources",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92,
+   "inputs_hash": "2e68a908b028b8f66d2deee6613c7eb8",
+   "readme_sha": "f7ffb064b4a5df32"
+  },
+  {
+   "full_name": "vnpy/vnpy",
+   "is_ai": true,
+   "category": "classic-ml",
+   "confidence": 0.92,
+   "inputs_hash": "43fbd97f6aca42da915214e89a1891b3",
+   "readme_sha": "fd3f99718b1e5ebf"
+  },
+  {
+   "full_name": "walter201230/Python",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92,
+   "inputs_hash": "2f0267962b12f8e8bbcf7c8dbf62b6ad",
+   "readme_sha": "02217dfd53ba9d02"
+  },
+  {
+   "full_name": "wanglin2/mind-map",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92,
+   "inputs_hash": "8e8f262606a49a9354aa7b158b3a3052",
+   "readme_sha": "384adb6ee92e0b51"
+  },
+  {
+   "full_name": "wazuh/wazuh",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92,
+   "inputs_hash": "b8b5188793cbc77a78b629d1ef78a66b",
+   "readme_sha": "f6cb64d00817a317"
+  },
+  {
+   "full_name": "webadderallorg/Recordly",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92,
+   "inputs_hash": "baa25ccf059043326e1e7bc50e426590",
+   "readme_sha": "d468fa15301e5bb6"
+  },
+  {
+   "full_name": "wled/WLED",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92,
+   "inputs_hash": "17dba00e39254ce0ebcbd505333473d8",
+   "readme_sha": "c4c7a2f1b8bb5dbb"
+  },
+  {
+   "full_name": "x64dbg/x64dbg",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92,
+   "inputs_hash": "000b47e1bdc5432aef498a60b99a20e9",
+   "readme_sha": "8e6b71dff5c7d2df"
+  },
+  {
+   "full_name": "youngyangyang04/leetcode-master",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92,
+   "inputs_hash": "62446de9f45517cde20d4a6ca22aecf9",
+   "readme_sha": "b191da7b7af203e8"
+  },
+  {
+   "full_name": "zaidmukaddam/scira",
+   "is_ai": true,
+   "category": "llm-app",
+   "confidence": 0.92,
+   "inputs_hash": "038858f8f66b590ceeddbd845b643169",
+   "readme_sha": "c2db9622a40faa9e"
+  },
+  {
+   "full_name": "zhanymkanov/fastapi-best-practices",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92,
+   "inputs_hash": "fecac42980c129a7e75ead5c4447383d",
+   "readme_sha": "f46b9b8f8d9b5331"
+  },
+  {
+   "full_name": "zhiwehu/Python-programming-exercises",
+   "is_ai": false,
+   "category": null,
+   "confidence": 0.92,
+   "inputs_hash": "0a3d67d35f4ca10940bb07b58338e1cc",
+   "readme_sha": "deb1c0ade130e1c2"
+  }
+ ]
+}

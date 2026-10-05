@@ -35,6 +35,43 @@ _WHITESPACE = re.compile(r"[ \t]*\n[ \t]*")
 _BLANK_RUN = re.compile(r"\n{3,}")
 
 
+#: A README body that is nothing but a path to another README. Git stores a
+#: symbolic link as a blob holding its target, and raw.githubusercontent.com
+#: serves that blob verbatim — so fetching `colinhacks/zod`'s root README.md
+#: returns the 22 bytes `packages/zod/README.md`, with status 200 and no hint
+#: that anything is wrong. The API's `/repos/{repo}/readme` endpoint resolves
+#: the link properly; measured over the 55,534 stored excerpts, none is a
+#: symlink body. The raw path is the one that needs this, and it is the path
+#: the packet builders use because it needs no token.
+_SYMLINK_BODY = re.compile(
+    # The leading directory is optional: a root `README.md` symlinked to a
+    # sibling `readme.md` has a body with no slash in it at all.
+    r"^(?:[\w.\-/@]+/)?(?:readme|README)[\w.\-]*\.(?:md|rst|markdown)$",
+    re.I,
+)
+
+
+def symlink_target(body: str) -> str | None:
+    """The path this README points at, if it is a symlink rather than a README.
+
+    What it cost: three of the 1,324 repositories on the boards had a paragraph
+    written from 22 bytes of path instead of their README, `vercel/ai` among
+    them — the AI SDK, on an AI board, described from nothing. Three of the 200
+    repositories in the 2026-10-05 review slice had the same, and two of those
+    went back to the queue undecided because the reader could see there was no
+    text to read. That is the better failure of the two, and it is still a
+    wasted slot.
+
+    The check is deliberately narrow: a single line, under 200 characters, no
+    whitespace, ending in a README filename. A real README that is one line
+    long does not match, because a real README does not end in `.md`.
+    """
+    text = (body or "").strip()
+    if not text or "\n" in text or len(text) > 200:
+        return None
+    return text if _SYMLINK_BODY.match(text) else None
+
+
 def clean_readme(markdown: str, *, limit: int = DEFAULT_EXCERPT_CHARS) -> str:
     """Strip the noise that dominates the top of most READMEs.
 

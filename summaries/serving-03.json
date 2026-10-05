@@ -28,15 +28,6 @@
    "investment_note": null
   },
   {
-   "full_name": "vercel/ai",
-   "inputs_hash": "523f2bead8db6e705f2f15e5e82d2559",
-   "description_tr": "TypeScript ile yapay zeka uygulamaları ve ajanları yazmak için geliştirilen açık kaynak bir toolkit; Next.js ekibinden çıkıyor. Depo açıklaması ve konu etiketlerine göre OpenAI, Anthropic ve Gemini gibi sağlayıcıları ortak bir arayüz arkasında topluyor, React, Next.js, Svelte ve Vue tarafında dil modeli çağrıları ve generative UI için bileşenler sunuyor. Yaklaşık 26.9K yıldız, 2023 ortasında açılmış, ana dili TypeScript. Bu pakette README içeriği yer almıyor (yalnızca başka bir dosyaya işaret eden tek satır var), bu yüzden sürüm, bakım durumu ve özellik kapsamı buradaki metinden doğrulanamıyor. Lisans etiketi de standart bir SPDX kimliğine çözülmemiş durumda.",
-   "usage_tr": "Lyricdrop v2'nin admin paneli ve içerik üretim tarafında, şarkı başına çeldirici üretimi gibi model çağrılarını tek bir sağlayıcı arayüzü arkasına almak için kullanabilirsin; sağlayıcı değiştirmek istediğinde pipeline'ın tamamını değil model tanımını değiştirirsin. Panel zaten TypeScript ve Vercel tarafında olduğu için kurulumuna yeni bir dil veya çalışma zamanı getirmiyor. Aynı katman Folio'nun günlük içerik üretiminde de tekrar kullanılabilir. Uyarı: bu SDK API anahtarıyla çalışır, yani Max aboneliğinin dışında doğrudan token maliyeti demektir; katalog büyüdükçe şarkı başına maliyet hedefini bu katmanda ölçmen gerekir. Expo/React Native tarafındaki desteğin bu metinde belirtilmediğini de not et, mobil istemciye koymadan önce doğrula.",
-   "matched_project": "Lyricdrop",
-   "relevance": 6,
-   "investment_note": null
-  },
-  {
    "full_name": "mozilla-ai/llamafile",
    "inputs_hash": "655cc79f3318980e387211bdd6f9afa9",
    "description_tr": "Bir dil modelini ağırlıklarıyla birlikte tek bir çalıştırılabilir dosyaya paketleyip kurulum gerektirmeden çalıştırmayı sağlayan proje; llama.cpp ile Cosmopolitan Libc'i birleştiriyor. Aynı paketleme mantığıyla üretilen whisperfile, whisper.cpp üzerine kurulu tek dosyalık bir konuşma tanıma ve çeviri aracı olarak depoya dahil. macOS dahil çoğu işletim sistemi ve CPU mimarisinde çalışıyor, harici GGUF ağırlıklarıyla da kullanılabiliyor ve OpenAI uyumlu bir sunucu içeriyor. 0.10 sürümüyle yeni bir derleme sistemine geçildi; bu daha yeni modelleri destekliyor ama önceki sürümlerdeki bazı özellikler eksik olabiliyor. Mozilla Builders projesi olarak başladı, şimdi Mozilla.ai tarafından sürdürülüyor; Apache-2.0 lisans rozeti taşıyor ve yaklaşık 26K yıldızı var.",

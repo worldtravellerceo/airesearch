@@ -729,13 +729,6 @@
    "inputs_hash": "57ab328990d44ad4dc15eefb2c538c9c"
   },
   {
-   "full_name": "coder/coder",
-   "is_ai": false,
-   "category": null,
-   "confidence": 0.92,
-   "inputs_hash": "e11761eb63f924dfb1bcb712342f6859"
-  },
-  {
    "full_name": "pipecat-ai/pipecat",
    "is_ai": true,
    "category": "audio-speech",

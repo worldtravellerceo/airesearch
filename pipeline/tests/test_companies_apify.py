@@ -25,6 +25,15 @@ from airadar.db import company as company_db
 
 NOW = dt.datetime(2026, 9, 21, tzinfo=dt.UTC)
 
+#: A ledger row has to land in the *current* calendar month to count against
+#: the cap, because `run_actor` asks `budget_for` without a date and it reads
+#: the real clock. Two tests here seeded their spend at `NOW` instead, so they
+#: asserted a cap that bites only while the real month is September 2026 — and
+#: on 1 October both started failing, with nothing wrong in the code they
+#: cover. A test whose result depends on today's date is not a test of the
+#: ledger; it is a timer.
+SPENT_THIS_MONTH = dt.datetime.now(dt.UTC).replace(day=1, hour=12) + dt.timedelta(days=1)
+
 
 async def _no_sleep(_seconds):
     return None
@@ -78,7 +87,7 @@ async def test_a_run_that_would_break_the_month_is_not_started(conn):
     month; only the ledger can."""
     conn.execute(
         "INSERT INTO apify_run (actor, started_at, status, cost_usd) VALUES (?, ?, ?, ?)",
-        ("acme~actor", NOW, "SUCCEEDED", 24.0),
+        ("acme~actor", SPENT_THIS_MONTH, "SUCCEEDED", 24.0),
     )
     conn.commit()
     seen: list[httpx.Request] = []
@@ -268,7 +277,7 @@ async def test_a_refresh_with_no_budget_left_spends_nothing_and_says_so(conn):
     seed_company(conn, "openai.com", 90_000)
     conn.execute(
         "INSERT INTO apify_run (actor, started_at, status, cost_usd) VALUES (?, ?, ?, ?)",
-        ("x", NOW, "SUCCEEDED", 25.0),
+        ("x", SPENT_THIS_MONTH, "SUCCEEDED", 25.0),
     )
     conn.commit()
     seen: list[httpx.Request] = []

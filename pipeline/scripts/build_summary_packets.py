@@ -13,6 +13,7 @@ workflow's slice stands on its own.
 from __future__ import annotations
 
 import argparse
+import datetime as dt
 import json
 import sys
 from concurrent.futures import ThreadPoolExecutor
@@ -22,6 +23,7 @@ import httpx
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
+from airadar.gh.content import symlink_target  # noqa: E402
 from airadar.summarise import SummaryInput  # noqa: E402
 
 BASE = "https://worldtravellerceo.github.io/airesearch/data"
@@ -65,18 +67,32 @@ def fetch_readme(client: httpx.Client, full_name: str) -> str:
     A repository with no README goes forward with an empty string rather than
     being dropped: the agent can still write the first paragraph from the
     description, and is told to say so instead of inventing the rest.
+
+    A body that turns out to be a symbolic link is followed once. `symlink_target`
+    explains what that costs when it is not: `vercel/ai` had its board paragraph
+    written from the 22 bytes `packages/ai/README.md`.
     """
     for name in ("README.md", "readme.md", "README.rst", "README"):
-        try:
-            response = client.get(
-                f"https://raw.githubusercontent.com/{full_name}/HEAD/{name}",
-                timeout=30,
-            )
-        except Exception:
+        text = _get(client, full_name, name)
+        if not text:
             continue
-        if response.status_code == 200 and response.text.strip():
-            return response.text[:README_CHARS]
+        target = symlink_target(text)
+        if target:
+            text = _get(client, full_name, target)
+            if not text or symlink_target(text):
+                continue
+        return text[:README_CHARS]
     return ""
+
+
+def _get(client: httpx.Client, full_name: str, path: str) -> str:
+    try:
+        response = client.get(
+            f"https://raw.githubusercontent.com/{full_name}/HEAD/{path}", timeout=30
+        )
+    except Exception:
+        return ""
+    return response.text if response.status_code == 200 and response.text.strip() else ""
 
 
 def main() -> int:
@@ -88,6 +104,16 @@ def main() -> int:
         help="A file of full_names, one per line. Build packets for just these — "
         "the top-up path, for repos that entered the boards after the last sweep "
         "or whose metadata moved since their paragraph was written.",
+    )
+    parser.add_argument(
+        "--prefix",
+        help="Name the packets `<prefix>-NN.json` instead of `topup-NN.json`. "
+        "Required for a second top-up round, and the reason is measured: agents "
+        "write their output to `summaries/<packet name>`, so a second round that "
+        "reuses `topup-01` overwrites the first round's committed file. That "
+        "happened — the 2026-10-05 round clobbered 31 rows of the previous one, "
+        "`facebookresearch/faiss` and `exo-explore/exo` among them, and nothing "
+        "about either file looked wrong afterwards. Defaults to today's date.",
     )
     args = parser.parse_args()
 
@@ -176,8 +202,9 @@ def main() -> int:
     # one sequence instead, and numbered independently of the groups: numbering
     # per group and naming every file `topup-NN` had each group overwrite the
     # last, which left 6 of 40 repositories in a single file.
+    prefix = args.prefix or f"topup-{dt.date.today():%Y%m%d}"
     groups = (
-        {"topup": [row for rows in by_group.values() for row in rows]} if args.only else by_group
+        {prefix: [row for rows in by_group.values() for row in rows]} if args.only else by_group
     )
 
     manifest = []

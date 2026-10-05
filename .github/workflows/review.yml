@@ -1,0 +1,223 @@
+name: Review
+
+# The weekly reading of what the rule engine could not settle.
+#
+# 53,392 repositories above a thousand stars are not on any board and were not
+# decided: 52,674 scored zero, which the engine records as "not AI" and which
+# only means no evidence was found, and 1,938 sit in the escalation band, where
+# evidence exists and did not resolve. `anomalyco/opencode` sat in the first
+# group at 208,847 stars, described as "The open source coding agent".
+#
+# Teaching the engine new words fixes the words we already know are missing.
+# The 2026 agent vocabulary was invisible until somebody read the repositories,
+# so a slice gets read every week, and what the reading decides is committed to
+# `verdicts/` where it survives the database.
+#
+# This workflow does the part that needs no judgement: pull the database, draw
+# the slice, fetch the READMEs, and leave packets a reader can work through. The
+# reading itself is either paid for or done by hand, and the two paths are not
+# interchangeable — see `judge` below.
+
+on:
+  schedule:
+    # 06:47 UTC Monday. Off the hour because a schedule on minute 0 queues
+    # behind everyone else's; this run has waited five hours before now.
+    - cron: "47 6 * * 1"
+  workflow_dispatch:
+    inputs:
+      take:
+        description: "How many repos to prepare for reading"
+        default: "200"
+      min_confidence:
+        description: "Confidence floor. 0.5 is the highest-yield slice; 0 includes the zeroes"
+        default: "0.5"
+
+permissions:
+  contents: write
+
+# Not in the `airadar-pipeline` group. This workflow reads the database and
+# never publishes it, so it cannot erase a concurrent run's upload — and
+# putting it in that group would mean a Monday review blocks the daily run.
+concurrency:
+  group: airadar-review
+  cancel-in-progress: false
+
+jobs:
+  queue:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      GH_PAT: ${{ secrets.GH_PAT }}
+    steps:
+      - uses: actions/checkout@v5
+      - uses: ./.github/actions/pipeline
+        with:
+          token: ${{ github.token }}
+
+      - name: Draw the slice
+        run: |
+          airadar review-queue --out review-queue.json --limit 1200 --verdicts verdicts
+
+      - name: Build the packets
+        run: |
+          python pipeline/scripts/build_review_packets.py \
+            --queue review-queue.json \
+            --out review-packets \
+            --take "${{ inputs.take || '200' }}" \
+            --min-confidence "${{ inputs.min_confidence || '0.5' }}"
+
+      # The packets are what a reader needs and the only thing that is not
+      # reproducible without the database, which this job has and a judging
+      # session does not. 90 days is long enough that a slice is never lost to
+      # a week nobody read it.
+      - uses: actions/upload-artifact@v4
+        with:
+          name: review-packets
+          path: |
+            review-packets/
+            review-queue.json
+          retention-days: 90
+
+      - name: Summary
+        if: always()
+        run: |
+          python pipeline/scripts/review_slice_report.py \
+            --queue review-queue.json \
+            --packets review-packets >> "$GITHUB_STEP_SUMMARY"
+
+  # The paid path, and the only one that is actually automatic. `review-judge`
+  # reads *this slice* — not `classify --max-llm`, which sends the rule
+  # engine's escalation band and would cover 1,938 repositories while never
+  # touching the 52,674 that scored zero. Those zeroes are most of the queue
+  # and the whole reason the review exists, so a paid run over the band would
+  # report a cost and a count and leave the actual problem untouched.
+  #
+  # It writes a verdict file rather than database rows, and that file goes
+  # through the same `merge_verdicts.py` gates a hand round does — including
+  # the share gate, which is the failure a model is most likely to produce.
+  #
+  # Measured at $0.00033 a repository with batching: a 200-repo slice is $0.07
+  # and the whole 53,392-repo queue is about $17.40. Against that, 200 a week
+  # by hand is 267 weeks. That is the argument for the key.
+  #
+  # Without the key the step does nothing and says so. It does not fall back to
+  # the rule engine: a rules verdict in `verdicts/` would be a permanent record
+  # of the engine agreeing with itself, which is how `anomalyco/opencode` stayed
+  # hidden. No key means the packets wait for a reader, and the queue is
+  # unchanged — which is a worse outcome than reading them, and a much better
+  # one than recording a guess.
+  judge:
+    needs: queue
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    # This job publishes the database, so it belongs in the group every
+    # writing workflow shares: each one uploads the whole file, and two at
+    # once means one erases the other. The `queue` job only reads, which is
+    # why the workflow-level group is separate — a Monday review must not
+    # block the daily run while it is just drawing a slice.
+    concurrency:
+      group: airadar-pipeline
+      cancel-in-progress: false
+    permissions:
+      contents: write
+    env:
+      GH_PAT: ${{ secrets.GH_PAT }}
+      ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Is there a key?
+        id: key
+        run: |
+          if [ -n "$ANTHROPIC_API_KEY" ]; then
+            echo "have=yes" >> "$GITHUB_OUTPUT"
+          else
+            echo "have=no" >> "$GITHUB_OUTPUT"
+            echo "::notice::ANTHROPIC_API_KEY yok — dilim okunmadı, paketler artefaktta bekliyor."
+          fi
+
+      # The slice and its packets were built by the job before this one, on a
+      # different runner. `merge_verdicts` validates every judgement against
+      # the packet it came from, so without these the gates have nothing to
+      # check against.
+      - uses: actions/download-artifact@v4
+        if: steps.key.outputs.have == 'yes'
+        with:
+          name: review-packets
+
+      - uses: ./.github/actions/pipeline
+        if: steps.key.outputs.have == 'yes'
+        with:
+          token: ${{ github.token }}
+
+      # The slice the queue drew, not the engine's escalation band. The spend
+      # ceiling is checked against the estimate before any README is fetched:
+      # a ceiling tested after the expensive preparation has already let the
+      # work happen.
+      - name: Read the slice
+        if: steps.key.outputs.have == 'yes'
+        run: |
+          airadar review-judge \
+            --queue review-queue.json \
+            --out verdicts/pending/judge-llm.json \
+            --take "${{ inputs.take || '200' }}" \
+            --min-confidence "${{ inputs.min_confidence || '0.5' }}" \
+            --max-spend-usd 2
+
+      # Same gates as a hand round, and it refuses the whole file rather than
+      # the bad row. Nothing reaches `verdicts/` that has not passed this.
+      - name: Merge and check
+        if: steps.key.outputs.have == 'yes'
+        run: |
+          python pipeline/scripts/merge_verdicts.py \
+            --packets review-packets \
+            --pending verdicts/pending \
+            --out "verdicts/$(date -u +%F)-review.json" \
+            --verdicts verdicts
+
+      - name: Commit the verdicts
+        if: steps.key.outputs.have == 'yes'
+        run: |
+          rm -rf verdicts/pending
+          if git diff --quiet -- verdicts; then
+            echo "::notice::no new verdicts to commit"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add verdicts
+          git commit -m "Review slice of $(date -u +%F), judged by the batch classifier"
+          git push
+
+      # The verdicts are in the repository now, so the next classification run
+      # would pick them up anyway. Applying them here means the boards move
+      # today instead of tomorrow.
+      - name: Apply them
+        if: steps.key.outputs.have == 'yes'
+        run: |
+          airadar classify --import-verdicts verdicts
+          airadar score
+
+      - uses: ./.github/actions/publish-db
+        if: steps.key.outputs.have == 'yes'
+        with:
+          token: ${{ github.token }}
+
+      - name: Summary
+        if: always()
+        run: |
+          {
+            if [ "${{ steps.key.outputs.have }}" = "yes" ]; then
+              echo "### Dilim modelle okundu"
+              echo '```'
+              COLUMNS=140 airadar coverage || true
+              echo '```'
+            else
+              echo "### Dilim okunmadı"
+              echo ""
+              echo "\`ANTHROPIC_API_KEY\` tanımlı değil. Paketler \`review-packets\`"
+              echo "artefaktında; bir oturum \`verdicts/pending/\` altına yazıp"
+              echo "\`merge_verdicts.py\` ile birleştirebilir. Kuyruk olduğu gibi kaldı —"
+              echo "kural motorunun kendi kararı karar olarak kaydedilmedi."
+            fi
+          } >> "$GITHUB_STEP_SUMMARY"
