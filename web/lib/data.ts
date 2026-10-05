@@ -16,6 +16,7 @@ import type {
   CategoryRow,
   CompanyBoardFile,
   CompanyBoardSummary,
+  Digest,
   IndexEntry,
   Manifest,
   Overview,
@@ -90,4 +91,22 @@ export async function getCompanyBoards(): Promise<CompanyBoardSummary[]> {
 
 export function getCompanyBoard(slug: string): Promise<CompanyBoardFile | null> {
   return readJson<CompanyBoardFile | null>(`companies/${slug}.json`, null);
+}
+
+export const EMPTY_DIGEST: Digest = {
+  date: null,
+  new_projects: [],
+  newly_tracked: [],
+  movers: [],
+  counts: { arrivals_total: 0, arrivals_shown: 0, arrival_min_stars: 0 },
+};
+
+/** The morning digest: what arrived and what moved since yesterday.
+ *
+ *  Absent on a site built before the first digest export, which is why the
+ *  fallback is an empty one rather than a throw — the page then says the run
+ *  has not produced it yet, instead of the build failing.
+ */
+export function getDigest(): Promise<Digest> {
+  return readJson<Digest>("digest.json", EMPTY_DIGEST);
 }

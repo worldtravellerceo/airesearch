@@ -33,6 +33,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               <Link href="/" className="hover:text-ink">
                 Board&apos;lar
               </Link>
+              <Link href="/bugun/" className="hover:text-ink">
+                Bugün
+              </Link>
               <Link href="/companies/" className="hover:text-ink">
                 Şirketler
               </Link>

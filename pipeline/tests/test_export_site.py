@@ -480,3 +480,75 @@ def test_a_released_name_never_reaches_the_published_index(conn, tmp_path):
     assert not [slug for slug in read(out, "manifest.json")["repos"] if "@" in slug]
     # And it is not counted as something this index tracks.
     assert read(out, "overview.json")["counts"]["tracked"] == 3
+
+
+def test_the_digest_separates_a_new_project_from_a_newly_tracked_one(conn, tmp_path):
+    """ "What is new since I last looked" had no file.
+
+    `first_seen_at` was written for every repository from the first day and read
+    by nothing, so an arrival at 10,351 stars — `Vincentwei1021/video-shotcraft`,
+    first seen on 5 October — landed somewhere in the middle of a board with
+    nothing marking it as absent the day before.
+
+    The two kinds of arrival are different news and measured as such: of the 12
+    arrivals above the star floor on 5 October, 10 were genuinely young projects
+    and 2 were long-lived repos that had only now crossed the census threshold.
+    One list would bury the first kind.
+    """
+    seed(conn)
+    # Both first seen today; one is a fortnight old, the other predates us.
+    conn.execute(
+        "UPDATE repos SET first_seen_at = ? WHERE id IN (2, 1)",
+        (dt.datetime.combine(TODAY, dt.time(), dt.UTC),),
+    )
+    conn.commit()
+
+    export_site.export(conn, tmp_path / "site", date=TODAY)
+    digest = read(tmp_path / "site", "digest.json")
+
+    assert [row["full_name"] for row in digest["new_projects"]] == ["newcomer/agent-os"]
+    assert [row["full_name"] for row in digest["newly_tracked"]] == ["legacy/ml-toolkit"]
+    assert digest["date"] == TODAY.isoformat()
+
+
+def test_an_arrival_under_the_star_floor_is_counted_but_not_listed(conn, tmp_path):
+    """Negative control, and the reason the floor exists.
+
+    With no floor an ordinary day brings 51-522 new AI repositories, which
+    nobody reads; at 1,000 stars it is 2-3, which is not worth opening. The
+    count still reports the whole truth, so the page can say how much it is not
+    showing rather than implying the day was quiet.
+    """
+    seed(conn)
+    conn.execute(
+        "UPDATE repos SET first_seen_at = ?, stars = 40 WHERE id = 4",
+        (dt.datetime.combine(TODAY, dt.time(), dt.UTC),),
+    )
+    conn.commit()
+
+    export_site.export(conn, tmp_path / "site", date=TODAY)
+    digest = read(tmp_path / "site", "digest.json")
+
+    listed = [row["full_name"] for row in digest["new_projects"] + digest["newly_tracked"]]
+    assert "tiny/rag-helper" not in listed
+    assert digest["counts"]["arrivals_total"] == 1
+    assert digest["counts"]["arrivals_shown"] == 0
+
+
+def test_the_digest_reports_a_quiet_day_as_quiet(conn, tmp_path):
+    """An empty list is the honest answer when nothing arrived.
+
+    The same rule the company boards follow: a page with no rows says the
+    question has not been answered yet, which is better than a page padded with
+    yesterday's news.
+    """
+    seed(conn)
+    conn.execute("UPDATE repos SET first_seen_at = ?", ("2020-01-01T00:00:00+00:00",))
+    conn.commit()
+
+    export_site.export(conn, tmp_path / "site", date=TODAY)
+    digest = read(tmp_path / "site", "digest.json")
+
+    assert digest["new_projects"] == []
+    assert digest["newly_tracked"] == []
+    assert digest["counts"]["arrivals_total"] == 0

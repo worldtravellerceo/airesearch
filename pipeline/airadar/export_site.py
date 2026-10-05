@@ -79,6 +79,7 @@ def export(conn: sqlite3.Connection, out_dir: Path, *, date: dt.date | None = No
         report,
     )
     _write(out_dir / "index.json", {"repos": _search_index(conn)}, report)
+    _write(out_dir / "digest.json", _digest(conn, date), report)
 
     slugs = _boards(conn, out_dir, date, categories, report)
     detail_slugs = _details(conn, out_dir, date, report)
@@ -171,6 +172,97 @@ def _pools_by_board(pools: dict[tuple[str, str], int]) -> dict[str, dict[str, in
     for (board, category), eligible in pools.items():
         out.setdefault(board, {})[category] = eligible
     return out
+
+
+#: The star floor for the morning digest. Measured over 1-5 October: with no
+#: floor an ordinary day brings 51-522 new AI repositories, which nobody reads.
+#: At 1,000 stars it is 2-3 a day, which is too thin to be worth opening. At
+#: 100 it is 10-101, median around 23 — one screen, and the spike day is what
+#: the cap is for.
+ARRIVAL_MIN_STARS = 100
+ARRIVAL_LIMIT = 30
+#: A repository can be new to the index in two ways and they are not the same
+#: news. Measured on 5 October, of the 12 arrivals above the floor, 10 were
+#: genuinely young and 2 were long-lived projects that had just crossed the
+#: census threshold. Reporting them in one list would bury the first kind.
+NEW_PROJECT_MAX_AGE_DAYS = 90
+MOVER_LIMIT = 15
+
+
+def _digest(conn: sqlite3.Connection, date: dt.date) -> dict:
+    """What changed since yesterday — the thing you read in the morning.
+
+    The boards answer "what is big" and "what is moving". Neither answers "what
+    is new", and that question had no file: `first_seen_at` was recorded on
+    every repository from the first day and read by nothing. So an arrival at
+    10,351 stars — `Vincentwei1021/video-shotcraft`, an AI video skill, first
+    seen on 5 October — appeared somewhere in the middle of a board with no mark
+    on it saying it had not been there the day before.
+    """
+    arrivals = conn.execute(
+        """
+        SELECT r.full_name, r.stars, r.description, r.language, r.created_at,
+               c.category,
+               CAST(julianday(:date) - julianday(r.created_at) AS INTEGER) AS age_days,
+               s.description_tr, s.usage_tr, s.matched_project
+        FROM repos r
+        JOIN repo_classification c ON c.repo_id = r.id AND c.is_ai = 1
+        LEFT JOIN repo_summary s ON s.repo_id = r.id
+        WHERE date(r.first_seen_at) = :date
+          AND r.is_fork = 0
+          AND r.stars >= :floor
+        ORDER BY r.stars DESC
+        LIMIT :limit
+        """,
+        {"date": date, "floor": ARRIVAL_MIN_STARS, "limit": ARRIVAL_LIMIT},
+    ).fetchall()
+
+    # Yesterday's single-day gain, biggest first. The day row is the one number
+    # that says "this happened since you last looked"; `velocity_14d` averages
+    # it away, which is the right thing for a ranking and the wrong thing here.
+    movers = conn.execute(
+        """
+        SELECT r.full_name, r.stars, c.category, d.stars_gained,
+               s.matched_project
+        FROM repo_star_daily d
+        JOIN repos r ON r.id = d.repo_id
+        JOIN repo_classification c ON c.repo_id = r.id AND c.is_ai = 1
+        LEFT JOIN repo_summary s ON s.repo_id = r.id
+        WHERE d.date = :date AND d.stars_gained > 0 AND r.is_fork = 0
+        ORDER BY d.stars_gained DESC
+        LIMIT :limit
+        """,
+        {"date": date, "limit": MOVER_LIMIT},
+    ).fetchall()
+
+    total = conn.execute(
+        """
+        SELECT count(*) AS n FROM repos r
+        JOIN repo_classification c ON c.repo_id = r.id AND c.is_ai = 1
+        WHERE date(r.first_seen_at) = :date AND r.is_fork = 0
+        """,
+        {"date": date},
+    ).fetchone()["n"]
+
+    def split(rows, young: bool):
+        return [
+            row
+            for row in rows
+            if (row["age_days"] is not None and row["age_days"] <= NEW_PROJECT_MAX_AGE_DAYS)
+            is young
+        ]
+
+    return {
+        "date": date.isoformat(),
+        "new_projects": split(arrivals, True),
+        "newly_tracked": split(arrivals, False),
+        "movers": movers,
+        "counts": {
+            "arrivals_total": total,
+            "arrivals_shown": len(arrivals),
+            "arrival_min_stars": ARRIVAL_MIN_STARS,
+        },
+    }
 
 
 def _categories(conn: sqlite3.Connection, date: dt.date) -> list[dict]:

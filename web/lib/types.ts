@@ -273,3 +273,40 @@ export const COMPANY_BOARD_SLUGS = [
   "ai-traffic",
   "rated",
 ] as const;
+
+/** One row of the morning digest. */
+export type DigestArrival = {
+  full_name: string;
+  stars: number;
+  description: string | null;
+  language: string | null;
+  created_at: string | null;
+  category: string | null;
+  /** Days between the repo's creation and the digest date. */
+  age_days: number | null;
+  description_tr: string | null;
+  usage_tr: string | null;
+  matched_project: string | null;
+};
+
+export type DigestMover = {
+  full_name: string;
+  stars: number;
+  category: string | null;
+  stars_gained: number;
+  matched_project: string | null;
+};
+
+export type Digest = {
+  date: string | null;
+  /** Arrivals young enough to be new projects rather than new to us. */
+  new_projects: DigestArrival[];
+  /** Long-lived repos that only now crossed into the index. */
+  newly_tracked: DigestArrival[];
+  movers: DigestMover[];
+  counts: {
+    arrivals_total: number;
+    arrivals_shown: number;
+    arrival_min_stars: number;
+  };
+};
