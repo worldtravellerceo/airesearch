@@ -420,3 +420,52 @@ def test_one_batch_may_not_contain_two_rows_claiming_one_name(conn):
     rows = {r["id"]: r["full_name"] for r in conn.execute("SELECT id, full_name FROM repos")}
 
     assert rows == {222: "a/one"}
+
+
+def test_snapshots_get_a_shorter_horizon_than_the_scores_beside_them(conn):
+    """`prune_derived_tables` had no callers, so nothing was ever pruned.
+
+    That was survivable while `repo_snapshots` grew by the 2,956 repositories
+    `collect` reaches in a day. The census now writes one row per repository per
+    day for about 74,000 of them — 5 MB a day against a release asset every
+    workflow run downloads in full. Measured against `repo_star_daily`, which
+    costs 206 MB of table plus indexes for 2.99M rows, 90 days of snapshots
+    would be roughly 460 MB on a 645 MB database; 30 days is about 155 MB, and
+    30 is all the metrics read because the longest window is 28 days.
+
+    So the sweep has to run, and snapshots need their own horizon rather than
+    the one the score and board history use.
+    """
+    today = dt.date(2026, 10, 5)
+    db.upsert_repos(
+        conn, [db.RepoRecord(id=1, full_name="acme/one", owner="acme", name="one", stars=5000)]
+    )
+    for age in (5, 40, 100):
+        when = today - dt.timedelta(days=age)
+        db.record_snapshot(conn, 1, when, stars=1000 + age)
+        conn.execute(
+            "INSERT INTO repo_scores (repo_id, date, stars_total) VALUES (?, ?, ?)",
+            (1, when, 1000 + age),
+        )
+    conn.commit()
+
+    removed = db.prune_derived_tables(conn, today=today, keep_days=90, snapshot_keep_days=30)
+
+    assert removed["repo_snapshots"] == 2  # the 40- and 100-day-old rows
+    assert removed["repo_scores"] == 1  # only the 100-day-old one
+    kept = [r["date"] for r in conn.execute("SELECT date FROM repo_snapshots ORDER BY date")]
+    assert [str(d) for d in kept] == [str(today - dt.timedelta(days=5))]
+
+
+def test_without_a_snapshot_horizon_they_share_the_score_window(conn):
+    """The default stays backwards-compatible: one cutoff for all three."""
+    today = dt.date(2026, 10, 5)
+    db.upsert_repos(
+        conn, [db.RepoRecord(id=1, full_name="acme/one", owner="acme", name="one", stars=5000)]
+    )
+    db.record_snapshot(conn, 1, today - dt.timedelta(days=40), stars=1040)
+    conn.commit()
+
+    removed = db.prune_derived_tables(conn, today=today, keep_days=90)
+
+    assert removed["repo_snapshots"] == 0

@@ -744,18 +744,35 @@ def load_weekly_series(conn: sqlite3.Connection, repo_id: int) -> list[tuple[dt.
 
 
 def prune_derived_tables(
-    conn: sqlite3.Connection, *, today: dt.date, keep_days: int = 90
+    conn: sqlite3.Connection,
+    *,
+    today: dt.date,
+    keep_days: int = 90,
+    snapshot_keep_days: int | None = None,
 ) -> dict[str, int]:
     """Drop derived rows the site no longer shows.
 
     Scores and board snapshots accumulate a full set of rows every single day;
     left alone they would outgrow the star history they are derived from.
+
+    This function had no callers for its whole life, so none of these three
+    tables was ever pruned. That was survivable while `repo_snapshots` grew by
+    the 2,956 repositories `collect` reaches in a day. The census now writes one
+    row per repository per day for about 74,000 of them, which is 5 MB a day
+    against a release asset that is downloaded in full by every workflow run —
+    so the sweep has to actually run, and snapshots get their own, shorter
+    horizon than the scores and board history beside them.
     """
     cutoff = today - dt.timedelta(days=keep_days)
+    snapshot_cutoff = (
+        today - dt.timedelta(days=snapshot_keep_days) if snapshot_keep_days is not None else cutoff
+    )
     removed = {}
-    for table in ("repo_scores", "leaderboard_snapshots", "repo_snapshots"):
+    for table in ("repo_scores", "leaderboard_snapshots"):
         cursor = conn.execute(f"DELETE FROM {table} WHERE date < ?", (cutoff,))
         removed[table] = cursor.rowcount
+    cursor = conn.execute("DELETE FROM repo_snapshots WHERE date < ?", (snapshot_cutoff,))
+    removed["repo_snapshots"] = cursor.rowcount
     conn.commit()
     return removed
 

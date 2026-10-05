@@ -82,6 +82,17 @@ class Settings(BaseSettings):
     track_limit: int = Field(default=12000, alias="AIRADAR_TRACK_LIMIT")
     # Days of per-day detail retained; older rows fold into fresh_power_tail.
     retain_days: int = Field(default=120, alias="AIRADAR_RETAIN_DAYS")
+    #: How long a dated star snapshot is kept. The census writes one per repo
+    #: per day for ~74,000 repos, so this is the knob that decides how much of
+    #: the release asset they take. Measured against `repo_star_daily`, which
+    #: costs 206 MB of table plus indexes for 2.99M rows — about 69 bytes a row
+    #: all in. So 30 days is ~2.2M rows and ~155 MB on a 645 MB database, and
+    #: 90 days would be ~460 MB, which is most of another database.
+    #:
+    #: 30 because that is what the metrics actually read: the longest window is
+    #: 28 days. Keeping more would be storing history nothing queries, and the
+    #: per-repo endpoint already holds the long view for the tracked universe.
+    snapshot_retain_days: int = Field(default=30, alias="AIRADAR_SNAPSHOT_RETAIN_DAYS")
     user_agent: str = "airadar/0.1 (+https://github.com/worldtravellerceo/airesearch)"
     # How many requests are in flight at once. Every run so far was sequential:
     # one request, wait for the round trip, next request. At ~250ms that is four

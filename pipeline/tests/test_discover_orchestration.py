@@ -413,3 +413,83 @@ async def test_the_nursery_looks_below_the_census_floor_but_only_at_new_repos(co
     # Bounded by age rather than by a lower star floor.
     assert all("created:>=" in query for query in queries)
     assert any("stars:50.." in query for query in queries)
+
+
+async def test_a_search_hit_is_recorded_as_a_dated_snapshot(conn):
+    """The star count is already in hand; throwing the date away was the cost.
+
+    Momentum needs day-over-day deltas, and they came only from the per-repo
+    history endpoint — two requests a repository, which is why `track_limit`
+    capped the collected universe at 12,000 and everything below it had no
+    momentum at all. Measured on 2026-10-05, one census run spent 848 requests
+    and refreshed 74,358 repositories while `collect` spent 5,796 to reach
+    2,956: eighty-eight repositories a request against half a repository a
+    request. The dated row makes the cheap path usable and costs no request.
+    """
+
+    def handler(request: httpx.Request) -> httpx.Response:
+        if request.url.path == "/search/repositories":
+            payload = repo_json(7, "acme/rising", stars=4242)
+            payload["forks_count"] = 11
+            payload["open_issues_count"] = 3
+            payload["pushed_at"] = "2026-10-05T00:00:00Z"
+            return httpx.Response(200, json={"total_count": 1, "items": [payload]}, headers=HEADERS)
+        return httpx.Response(404, json={}, headers=HEADERS)
+
+    async with GitHubClient(
+        token="t", transport=httpx.MockTransport(handler), sleep=_no_sleep
+    ) as client:
+        await discover(
+            conn,
+            client,
+            census=False,
+            keywords=False,
+            awesome=False,
+            ecosystems=False,
+            huggingface=False,
+            snowball=False,
+            resolve=False,
+        )
+
+    row = conn.execute(
+        "SELECT date, stars, forks, open_issues FROM repo_snapshots WHERE repo_id = 7"
+    ).fetchone()
+    assert row is not None, "the census saw this repo's stars and kept no dated record of them"
+    assert str(row["date"]) == str(dt.date.today())
+    assert row["stars"] == 4242
+    assert row["forks"] == 11
+    assert row["open_issues"] == 3
+
+
+async def test_a_hit_below_the_star_floor_leaves_no_snapshot(conn):
+    """Negative control: the snapshot follows the same floor as the repo row.
+
+    Writing snapshots for repositories we do not track would grow the table by
+    the whole of GitHub rather than by the census universe.
+    """
+
+    def handler(request: httpx.Request) -> httpx.Response:
+        if request.url.path == "/search/repositories":
+            return httpx.Response(
+                200,
+                json={"total_count": 1, "items": [repo_json(8, "acme/tiny", stars=3)]},
+                headers=HEADERS,
+            )
+        return httpx.Response(404, json={}, headers=HEADERS)
+
+    async with GitHubClient(
+        token="t", transport=httpx.MockTransport(handler), sleep=_no_sleep
+    ) as client:
+        await discover(
+            conn,
+            client,
+            census=False,
+            keywords=False,
+            awesome=False,
+            ecosystems=False,
+            huggingface=False,
+            snowball=False,
+            resolve=False,
+        )
+
+    assert conn.execute("SELECT count(*) AS n FROM repo_snapshots").fetchone()["n"] == 0

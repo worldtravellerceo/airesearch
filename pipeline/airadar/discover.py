@@ -56,7 +56,20 @@ class DiscoverReport:
 
 
 def _make_sink(conn: sqlite3.Connection, report: DiscoverReport, min_stars: int):
-    """Persist search hits as they arrive, so an interrupted sweep keeps its work."""
+    """Persist search hits as they arrive, so an interrupted sweep keeps its work.
+
+    Each hit is also written as a dated snapshot, because the star count is
+    already in our hands and throwing the date away is what made the momentum
+    board narrow. Measured on 2026-10-05: one census run spent 848 requests and
+    refreshed 74,358 repositories, while `collect` spent 5,796 to reach 2,956 —
+    two requests per repository against one per eighty-eight. Momentum needs
+    day-over-day deltas, and for everything outside the 12,000 `track_limit`
+    repositories there was no way to get them at all. Now there is, for free.
+
+    It is not a replacement for the per-repo history endpoint, which gives exact
+    daily granularity and reaches backwards. This gives one point per repo per
+    day, forward only, for the whole census universe.
+    """
 
     def sink(items: list[dict], channel: str) -> None:
         records = [
@@ -64,8 +77,23 @@ def _make_sink(conn: sqlite3.Connection, report: DiscoverReport, min_stars: int)
             for item in items
             if item.get("stargazers_count", 0) >= min_stars and not item.get("fork")
         ]
-        if records:
-            report.repos_upserted += db.upsert_repos(conn, records)
+        if not records:
+            return
+        report.repos_upserted += db.upsert_repos(conn, records)
+        today = dt.date.today()
+        by_id = {item["id"]: item for item in items}
+        for record in records:
+            item = by_id.get(record.id, {})
+            db.record_snapshot(
+                conn,
+                record.id,
+                today,
+                stars=record.stars,
+                forks=item.get("forks_count"),
+                open_issues=item.get("open_issues_count"),
+                pushed_at=db.parse_ts(item.get("pushed_at")),
+            )
+        conn.commit()
 
     return sink
 

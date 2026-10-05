@@ -367,11 +367,22 @@ def score(conn: sqlite3.Connection, *, today: dt.date | None = None) -> tuple[in
         retain_days=settings.retain_days,
         half_life_days=settings.fresh_power_half_life_days,
     )
+    # Same ordering rule, and until now nothing called this at all: scores,
+    # board history and snapshots grew without a ceiling. It matters now that
+    # the census writes a snapshot per repo per day.
+    derived = db.prune_derived_tables(
+        conn,
+        today=today,
+        snapshot_keep_days=settings.snapshot_retain_days,
+    )
     log.info(
-        "score: %d repos scored, %d board rows, %d day-rows pruned",
+        "score: %d repos scored, %d board rows, %d day-rows pruned, "
+        "%d snapshots and %d score rows dropped",
         saved,
         len(entries),
         pruned,
+        derived["repo_snapshots"],
+        derived["repo_scores"],
     )
     return saved, len(entries)
 
