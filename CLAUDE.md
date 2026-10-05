@@ -145,6 +145,32 @@ was changed. The README hash each judgement was read from is now recorded
 alongside it, which costs 16 bytes a row and turns the question into a number a
 later round can read off instead of an argument.
 
+**Comparing your output with your own input is not verification.** The free
+summary path writes paragraphs from a packet and the import validates them
+against `inputs_hash`, which is built from full name, description, topics and
+language. The digest did not select topics, so the packet hashed an empty tuple
+— and 6 of 11 rows, precisely the ones that had topics, were skipped as stale
+on import. The 5 that landed were the repositories with no topics at all, so
+the page looked like it worked on exactly the rows where there was nothing to
+get wrong.
+
+Every check passed. Rows against the packet: 11 of 11. Hashes against the
+packet: identical. Row count, duplicate scan, match share, the lot — because
+all of it compared the packet with itself, and the packet was self-consistent
+and wrong. It took reading the published page to find six paragraphs that had
+been written, validated, imported and silently dropped. The check that works
+recomputes the hash from `repos` and `repo_topics` and compares it with the
+written row, which is now a test.
+
+**A fence described but never drawn is worse than no fence.** `CONTRACT.md`
+told every free-path agent that text inside the `<<<UNTRUSTED_README ... >>>`
+markers is third-party and never to be followed. The markers were never written
+into a packet. The paid path had been fenced the whole time through
+`summarise.render`; the free path, the one in use and the one with a shell, was
+not — so an agent told to look for a boundary and finding none had been
+informed, in effect, that none of the packet was somebody else's text. A
+contract may only promise a property the code actually provides.
+
 **A test whose result depends on today's date is a timer, not a test.** Two
 Apify budget tests seeded a ledger row at a fixed September timestamp while the
 code under test asks the real clock what month it is. They passed for as long
