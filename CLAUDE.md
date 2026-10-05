@@ -86,8 +86,20 @@ exactly like a session that checked and found everything fine. On 22 September
 the scheduled run died in the census and the watchdog, whose whole job was that
 case, missed it. Silence is a claim, and a monitor may only make it about a
 check it actually completed: being unable to verify is a result, and it gets
-reported. The check itself was also rebuilt on the public API, so losing a
-token now costs the ability to act, not the ability to see.
+reported.
+
+The first repair then made the opposite mistake. It moved the check onto the
+public GitHub API, verified from *this* session that the API answers without a
+token — and it does, here, because this session has the repository attached.
+The watchdog's sessions do not, and the proxy refuses GitHub API calls for a
+repository a session is not connected to whether or not it is public. So the
+watchdog spent ten days correctly reporting that it could not check, every
+morning, about an index that was in perfect health. A capability has to be
+tested from the environment that will use it, not from the one that happens to
+be convenient. The check now reads the published `overview.json` — plain HTTPS
+to the site, which that environment can reach — and `as_of` plus `last_run.ok`
+answer the whole question. The GitHub API is only needed to *act*, so it is
+mentioned only when something actually needs acting on.
 
 **Never buy recall with precision.** A soft ceiling set below the decision
 threshold stranded 17,849 repositories in permanent escalation. A README weight
