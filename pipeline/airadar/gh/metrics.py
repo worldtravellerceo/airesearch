@@ -33,18 +33,33 @@ class StarHistoryFormatError(ValueError):
     """The endpoint returned something we do not recognise."""
 
 
-def parse_star_history(payload: Any) -> list[DailyStars]:
+def parse_star_history(payload: Any, *, today: dt.date | None = None) -> list[DailyStars]:
     """Flatten the weekly API payload into ascending per-day star counts.
 
     Weeks with no stars legitimately contain zeros; they are kept so that gaps in
     the series mean "no data" rather than "no stars", which matters for the
     coverage checks in scoring.
+
+    The current week is the exception, and it is the one case where that reading
+    inverts. Every week arrives as a full seven-element array, so the week we
+    are in the middle of carries zeros for the days that have not happened yet —
+    and a day that has not happened has no data, not no stars. Written as rows
+    they were real: 15,165 of them across 3,033 repositories, dated up to five
+    days into the future, measured on 2026-10-05. The windowed metrics were
+    unharmed because `velocity_14d` and the rest count back from today rather
+    than from the end of the series, but `coverage_days` counted them and
+    reported up to six days of history that did not exist.
+
+    So days after `today` are dropped. `today` is a parameter rather than a
+    `now()` call inside the loop so that a test can pin it: a test whose result
+    depends on the real date is a timer, not a test.
     """
     if payload is None:
         return []
     if not isinstance(payload, list):
         raise StarHistoryFormatError(f"expected a list of weeks, got {type(payload).__name__}")
 
+    horizon = today or dt.datetime.now(dt.UTC).date()
     out: list[DailyStars] = []
     for week in payload:
         if not isinstance(week, dict) or "week" not in week or "days" not in week:
@@ -56,7 +71,10 @@ def parse_star_history(payload: Any) -> list[DailyStars]:
             )
         week_start = dt.datetime.fromtimestamp(int(week["week"]), tz=dt.UTC).date()
         for offset, count in enumerate(days):
-            out.append(DailyStars(week_start + dt.timedelta(days=offset), int(count)))
+            when = week_start + dt.timedelta(days=offset)
+            if when > horizon:
+                continue
+            out.append(DailyStars(when, int(count)))
 
     out.sort(key=lambda d: d.date)
     return out

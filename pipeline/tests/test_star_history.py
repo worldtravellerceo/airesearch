@@ -42,6 +42,47 @@ def test_zero_weeks_are_preserved_as_zero_not_dropped():
     assert total_from_history(days) == 0
 
 
+def test_the_unlived_part_of_this_week_is_not_written_as_zero_stars():
+    """A day that has not happened has no data, not no stars.
+
+    Every week arrives as a full seven-element array, so the week in progress
+    carries zeros for days still to come. Written straight through, those became
+    real rows: 15,165 of them across 3,033 repositories, dated up to five days
+    into the future, measured on 2026-10-05. `velocity_14d` and the other
+    windows count back from today rather than from the end of the series, so the
+    rankings were unharmed — but `coverage_days` counted them and claimed up to
+    six days of history that did not exist.
+
+    `today` is pinned here on purpose. A test that asked the real clock would
+    pass today and stop testing anything the moment the fixture dates aged.
+    """
+    payload = [_week(SUNDAY, [1, 2, 3, 0, 0, 0, 0])]  # week of Sun 6 Sep
+
+    days = parse_star_history(payload, today=dt.date(2026, 9, 8))  # Tuesday
+
+    assert [d.date for d in days] == [
+        dt.date(2026, 9, 6),
+        dt.date(2026, 9, 7),
+        dt.date(2026, 9, 8),
+    ]
+    assert total_from_history(days) == 6
+
+
+def test_a_finished_week_of_zeros_is_still_kept():
+    """The distinction is the date, not the value.
+
+    A past week really can have no stars, and dropping it would turn "no stars"
+    into "no data" — the opposite error, and the one the zero rows were there to
+    avoid in the first place.
+    """
+    payload = [_week(SUNDAY, [0] * 7)]
+
+    days = parse_star_history(payload, today=dt.date(2026, 9, 30))
+
+    assert len(days) == 7
+    assert total_from_history(days) == 0
+
+
 def test_empty_history_is_not_an_error():
     assert parse_star_history([]) == []
     assert parse_star_history(None) == []
