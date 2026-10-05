@@ -140,7 +140,12 @@ jobs:
             echo "have=yes" >> "$GITHUB_OUTPUT"
           else
             echo "have=no" >> "$GITHUB_OUTPUT"
-            echo "::notice::ANTHROPIC_API_KEY yok — dilim okunmadı, paketler artefaktta bekliyor."
+            # A warning rather than a notice, and the job still succeeds.
+            # Nothing is broken — but a green run with no annotation claims
+            # the review happened, and it did not. The watchdog taught this
+            # the long way: silence is a claim, and a run may only make it
+            # about work it actually did.
+            echo "::warning::ANTHROPIC_API_KEY yok — dilim okunmadı, paketler artefaktta bekliyor."
           fi
 
       # The slice and its packets were built by the job before this one, on a

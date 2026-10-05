@@ -54,6 +54,19 @@ def main() -> int:
         lines.append("paket üretilmedi — manifest.json yok.")
     else:
         lines.append(f"okunmaya hazır: {manifest['total']} repo, {len(manifest['packets'])} paket")
+        # The backlog in weeks, every run. Without it the queue is a number
+        # that barely moves and nobody has to look at what that means: at 200
+        # a week, 53,000 candidates is more than five years of Mondays. That
+        # figure is the whole argument for the paid path, and it belongs where
+        # it is read rather than in a design document.
+        remaining = (queue or {}).get("remaining_after_this_slice")
+        per_round = manifest["total"]
+        if isinstance(remaining, int) and per_round:
+            weeks = -(-remaining // per_round)
+            lines.append(
+                f"bu hızda kuyruğun bitmesi: {weeks:,} hafta "
+                f"(~{weeks / 52:.1f} yıl), haftada {per_round} repo"
+            )
 
     lines += [
         "```",
