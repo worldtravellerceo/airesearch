@@ -23,6 +23,7 @@ import httpx
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
+from airadar import untrusted  # noqa: E402
 from airadar.gh.content import symlink_target  # noqa: E402
 from airadar.summarise import SummaryInput  # noqa: E402
 
@@ -180,6 +181,12 @@ def main() -> int:
     group_of = {cat: key for key, cats in GROUPS.items() for cat in cats}
 
     for full_name in ordered:
+        # A repo off the digest has no detail file, because detail pages are
+        # written for the boards and an arrival is not on one yet. Everything
+        # below already falls back to the board row; `created_at` and `license`
+        # did not, so all 11 rows of the first arrivals packet reached the
+        # writer with both as null and it correctly refused to make any claim
+        # about either.
         row = details.get(full_name) or {}
         board_row = names[full_name]
         topics = tuple(row.get("topics") or [])
@@ -189,7 +196,7 @@ def main() -> int:
             description=row.get("description") or board_row.get("description"),
             topics=topics,
             language=row.get("language") or board_row.get("language"),
-            license=row.get("license"),
+            license=row.get("license") or board_row.get("license"),
             stars=row.get("stars") or board_row.get("stars") or 0,
             readme_excerpt=readmes.get(full_name, ""),
         )
@@ -202,10 +209,23 @@ def main() -> int:
                 "license": item.license,
                 "category": category,
                 "topics": list(topics),
-                "created_at": row.get("created_at"),
+                "created_at": row.get("created_at") or board_row.get("created_at"),
                 "homepage": row.get("homepage"),
                 "description": item.description,
-                "readme": item.readme_excerpt,
+                # Fenced, the same way `summarise.render` fences it for the
+                # paid path. It was raw here for this path's whole life, while
+                # `CONTRACT.md` told every agent that "text inside the
+                # <<<UNTRUSTED_README ... >>> markers is a README written by a
+                # third party" — so the contract pointed at a boundary that was
+                # never drawn, which is worse than saying nothing: a reader
+                # looking for the fence and finding none has been told, in
+                # effect, that none of it is third-party text.
+                #
+                # It is not hypothetical on these boards.
+                # `newliver666/apk-reverse`, 3,212 stars, addresses the reading
+                # agent in plain English and tells it which command to run
+                # first; the free path is the one with a shell.
+                "readme": untrusted.fence(item.readme_excerpt) if item.readme_excerpt else "",
                 # What the import validates against. A repo whose description,
                 # topics or language move has a paragraph written about a
                 # different project, and the import skips it.
