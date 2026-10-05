@@ -68,7 +68,7 @@
    "inputs_hash": "5b1e02b7908a8da6b0b50afa09a6cb87",
    "description_tr": "OpenShell, otonom ajanları çalıştırmak için NVIDIA'nın açık kaynak olarak yayınladığı bir izolasyon ve politika çalışma zamanı. Her ajan ayrı bir sandbox'ta koşuyor; dosya erişimi, sistem çağrıları ve ağ bağlantıları çekirdek seviyesinde tanımlı politikaya göre denetleniyor ve kimlik bilgileri ajana hiç verilmeden yalnızca onaylı uç noktalara giden isteklere ekleniyor. Politika değişiklikleri uygulanmadan önce formal doğrulama ile taranıyor; yeni ve riskli erişim açacak değişiklikler insan onayına bırakılıyor. Rust ile yazılmış, Apache-2.0 lisanslı; Linux, Apple Silicon üzerinde macOS ve deneysel olarak WSL2 destekliyor, Docker, Podman ya da host sanallaştırma gerektiriyor. Şubat 2026'da açılmış, ~15 bin yıldız; 0.1.x sürüm serisinde, yani henüz erken.",
    "usage_tr": "Asistan ve holding operasyon araçlarında tuttuğun 'erişim kapsamları izole olsun' ilkesinin doğrudan karşılığı bu: bir ajana e-posta, takvim ya da CRM işini devrederken ona token vermek yerine politikayı yazıp erişimi uç nokta seviyesinde sınırlayabilirsin. Aynı yapı, proje kurulumunu baştan sona otomatikleştirme isteğinde de işe yarar — secrets, veritabanı ve deploy adımlarını çalıştıran ajan gerçek anahtarları hiç görmez. Ofisteki M4 Pro Mac'te Docker ya da Podman ile yerel çalışıyor ve API maliyeti getirmiyor. Faydası, ajana geniş yetki vermek ile hiç yetki vermemek arasındaki ikilemi ortadan kaldırması. Uyarı: sürüm erken ve politika yazmak başlı başına bir iş; kazancı ancak gerçekten gözetimsiz çalışan ajanlar kurduğunda ortaya çıkar, günlük Claude Code kullanımında fazladan bir katman olarak kalır.",
-   "matched_project": "Asistan araçları",
+   "matched_project": "Asistan ve holding araçları",
    "relevance": 6,
    "investment_note": null
   },
@@ -95,7 +95,7 @@
    "inputs_hash": "780486cfeaeccb02854f1f1c6b89faf0",
    "description_tr": "Moli, AI ajanları için tasarlanmış, Rust ile yazılmış açık kaynak bir headless browser. Düzen ve render işini talep üzerine yaptığı için tam bir tarayıcı çalışma zamanını düşük kaynak tüketimiyle sunduğunu söylüyor; sayfayı Markdown olarak ya da modele uygun derli toplu bir semantik ağaç olarak dökebiliyor. CLI, CDP, WebDriver Classic ve WebDriver BiDi arayüzleri var; Linux, macOS ve Windows'ta çalışıyor ve hazır ikili dosyalarla kuruluyor. Apache-2.0 lisanslı, ~8,8 bin yıldız. Ağustos 2026'da açılmış, yani iki aylık bir proje ve uyumluluk iddiasının sınırları henüz dışarıdan doğrulanmış değil.",
    "usage_tr": "Araştırma ajanları tarafında sayfa indirip metne çevirme işini yapan katman olarak kullanabilirsin: CLI olarak Claude Code'a verip bir listedeki sayfaları Markdown'a çevirttiğinde ham HTML'i modele yüklemek zorunda kalmazsın. Arslan Holding için pazar ve rakip notları hazırlarken bu, bağlam tüketimini ve dolayısıyla okuma turunu kısaltır. Ofis Mac'inde yerel çalışıyor, API maliyeti yok ve tek ikili dosya olduğu için kendi pipeline'ına rahat girer. Uyarı: proje çok yeni ve JavaScript ağırlıklı karmaşık sitelerde davranışı tam Chrome değil; bot koruması olan kaynaklarda da işe yaramaz, onlar için ayrı bir araç gerekir.",
-   "matched_project": "Asistan araçları",
+   "matched_project": "Asistan ve holding araçları",
    "relevance": 4,
    "investment_note": null
   },

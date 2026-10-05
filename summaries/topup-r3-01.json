@@ -1,0 +1,175 @@
+{
+ "repos": [
+  {
+   "full_name": "pyenv/pyenv",
+   "inputs_hash": "c1579684ece456210b8b463f80ccc396",
+   "description_tr": "pyenv, bir makinede birden fazla Python sürümünü kurup aralarında geçiş yapmayı sağlayan bir sürüm yöneticisi. Tamamen shell script olarak yazılmış; Python'ın kendisine bağımlı değil ve PATH'e eklenen bir shim dizini üzerinden çalışıyor. Global, proje bazlı ve ortam değişkeniyle geçici sürüm seçimini destekliyor; CPython dışında PyPy, Jython gibi dağıtımları da kurabiliyor. macOS'ta Homebrew, Linux'ta kurulum betiği veya git checkout ile kuruluyor; virtualenv yönetimi kapsam dışı bırakılmış ve ayrı bir eklentiye devredilmiş. 2012'den beri sürdürülüyor, ~45.1K star ve MIT lisansı var; yapay zekayla ilgisi olmayan genel bir geliştirici aracı.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, Lyricdrop için denediğin yerel STT araçlarının Mac'te farklı Python sürümleri istemesi olabilir. Bu tek başına bir ihtiyaç sayılmaz: yerel model araçlarının çoğu artık kendi sanal ortamını kuruyor ve senin ana stack'in TypeScript tarafında duruyor. pyenv bir adımı hızlandırmaz, yalnızca bir kurulum ağrısını önler. Ofis Mac'inde Homebrew ile kurulur, API maliyeti getirmez, ama kendi uygulamalarına gömülecek bir bileşen değil. Kısacası bir sürüm çatışması yaşamadıkça ilgilenmeye değmez.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "pingdotgg/t3code",
+   "inputs_hash": "9a25ef8a9d590f197f820b7bb2b06c61",
+   "description_tr": "T3 Code, makinedeki kodlama ajanlarını tek bir arayüzden sürmek için yazılmış bir \"agent harness control surface\". iOS ve Android uygulaması, web arayüzü ve Electron tabanlı masaüstü uygulaması aynı yerel sunucuya bağlanıyor; Claude Code, Codex, Cursor, Grok Build, OpenCode ve Antigravity kurulu ve giriş yapılmışsa bunları kontrol ediyor. Kendi modelini veya aboneliğini satmıyor, mevcut abonelikler üzerinden çalışıyor; `t3 service install` ile arka plan servisi olarak kalabiliyor. İzin modları, klavye kısayolları, proje ayarları ve telefondan uzaktan erişim dokümante edilmiş, ama ayrı bir doküman sitesi henüz yok. TypeScript, MIT lisanslı, ~25.5K star; Şubat 2026'da açılmış ve depo kendini \"çok erken aşama, hata bekleyin\" diye tanımlayıp büyük özellik katkılarını şimdilik kabul etmiyor.",
+   "usage_tr": "Claude Code orkestrasyonu tarafındaki en somut adaylardan biri: iPhone'dan ofis Mac'ine bağlanırken yaşadığın kopma problemine alternatif bir yol açıyor, çünkü telefon doğrudan kendi makinendeki yerel sunucuyla konuşuyor. Claude Code ile ofiste kullandığın OpenCode'u aynı listeden sürebildiği için ikisini ayrı ayrı açıp kapatmaktan kurtulursun. MIT lisanslı ve TypeScript olduğu için fork'layıp kendi istemcisini yazma refleksine uygun; OpenCode için planladığın Expo/EAS iOS istemcisini sıfırdan yazmak yerine buradan başlamayı değerlendirebilirsin. Max aboneliğinle çalışır, ek API maliyeti getirmez, yerel sunucu Mac'te durur. Uyarı: proje kendi deyimiyle çok yeni ve büyük özellik PR'larını almıyor, yani eksik bir şey olursa çözüm kendi fork'unda kalır. İkinci uyarı: telefonu makineye açmak yeni bir erişim yüzeyi; Tailscale ağının dışına çıkarmadan denemek daha mantıklı.",
+   "matched_project": "Claude Code",
+   "relevance": 8,
+   "investment_note": null
+  },
+  {
+   "full_name": "op7418/Humanizer-zh",
+   "inputs_hash": "ac8c6ebe0c5cf67d9272e890049c8f57",
+   "description_tr": "Humanizer-zh, blader/humanizer projesinin Çince'ye uyarlanmış sürümü: AI üretimi Çince metinlerdeki boş ifadeleri, tekrarları ve kalıplaşmış anlatımı düzelten bir Claude Code skill'i. Girdi olarak bir metin ya da dosya alıp düzeltilmiş hali döndürüyor; olguları, kesinlik derecesini ve yazarın sesini korumayı açık bir kısıt sayıyor ve sorunsuz cümleleri değiştirmeden bırakmayı kabul ediyor. Otuz bir kontrol noktası A-F kategorilerinde listelenmiş, altısı Çince'ye özgü kalıplara (uzun niteleyiciler, \"進行+fiil\", dört heceli ikilemeler) ayrılmış. Depo sınırlarını da yazıyor: yazarlık kanıtlamıyor, herhangi bir AI dedektöründen geçmeyi garanti etmiyor ve testleri 18 kısa metin vakası ile bir Markdown örneğinden oluşuyor. MIT lisanslı, ~19.0K star; Ocak 2026'da açılmış ve Eylül 2026'da kurallarıyla örnekleri yeniden yazılmış.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; kural setinin tamamı Çince dilbilgisine ve Çince kalıplara bağlı, senin ürettiğin metinler ise Türkçe ve İngilizce. En yakın bağlam Folio'nun günlük içerik üretimi ile Arslan Holding'in marka ve website metinleri olabilir: oralarda AI kokusunu azaltan bir editör katmanı işe yarar, ama o katmanın Türkçe karşılığının yazılması gerekir. Bu depodan alınabilecek şey kuralların kendisi değil kurgusu — değiştirme koşulu, önce/sonra örneği ve koruma sınırı üçlüsüyle yazılmış bir skill, kalite süreçlerine verdiğin önemle uyumlu bir şablon. Mac'te skill olarak kurulur ve Max aboneliğiyle çalışır, ek API maliyeti yok. Bir ürün ya da yatırım fırsatı olarak da bir şey vaat etmiyor; en fazla bir yazım örneği.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "baptisteArno/typebot.io",
+   "inputs_hash": "cae15f9f7fe260ea9594e3b64a9affc8",
+   "description_tr": "Typebot, sohbet akışlarını görsel olarak kurup web ve mobil uygulamalara gömmeyi sağlayan, kendi sunucunda barındırılabilen bir chatbot ve form oluşturucu. Otuz dörtten fazla blok var: metin, görsel, video balonları; e-posta, telefon, buton, tarih ve Stripe ödeme girdileri; koşullu dallanma, JavaScript ve A/B testi gibi mantık blokları. Webhook/HTTP, OpenAI, Google Sheets, Google Analytics, Meta Pixel, Zapier ve Make.com entegrasyonları var; sonuçlar gerçek zamanlı toplanıp tamamlanma ve terk oranlarıyla raporlanıyor, CSV'ye aktarılabiliyor. Gömme için iframe kullanmayan kendi JS kütüphanesi bulunuyor ve Docker ile self-host dokümante edilmiş. TypeScript, ~10.5K star, 2021'den beri tek bir bakımcı tarafından düzenli geliştiriliyor; kod Fair Source (Functional Source License) altında, yani koşulsuz açık kaynak değil.",
+   "usage_tr": "Arslan Holding ve Golden One tarafındaki operasyonel talep toplama akışları için kullanabilirsin: yat kiralama ve planladığın holiday home yönetimi için gelen talepleri sohbet biçiminde niteleyen, tarih ve iletişim bilgisini toplayan bir akış kurup webhook ile HubSpot'a düşürebilirsin. AI araçlarıyla ürettiğin website'a kendi JS kütüphanesiyle, iframe'siz gömülüyor; barındırmayı DigitalOcean'da Docker ile kendin yaparsan hesaplar ve veri senin kontrolünde kalır. Editörü görsel olduğu için akışı güncellemeyi asistanına devredebilirsin, kod gerekmiyor. Fayda net: statik form yerine nitelenmiş talep ve CRM'e akan temiz kayıt. Uyarılar: lisans Fair Source, ticari self-host koşullarını okumadan bir ürünün içine koymamak gerekir; ayrıca bu gömülebilir bir bileşen değil, bakımı olan ayrı bir servis. Lyricdrop tarafında işi yok — oyun içi akışlar için fazla ağır.",
+   "matched_project": "Arslan Holding",
+   "relevance": 5,
+   "investment_note": null
+  },
+  {
+   "full_name": "neilsonnn/image-blaster",
+   "inputs_hash": "342de3c325203d935fc3fd206c8cd01b",
+   "description_tr": "image-blaster, tek bir görselden 3B ortam, mesh ve ses efekti üreten bir Claude skill seti. Dinamik nesneleri .glb/.obj modellere, statik ortamı Gaussian splat (.spz) dosyasına çeviriyor; ambiyans ve nesneye özgü efekt seslerini .mp3 olarak üretiyor. Zinciri World Labs Marble, nano-banana, gpt-image-2, FAL üzerinden Hunyuan 3D ve ElevenLabs SFX modelleri kuruyor, yani kullanıcı kendi World Labs ve FAL API anahtarlarını veriyor. Çıktıların Unity, Unreal, Godot, Blender veya Three.js/Electron uygulamalarının asset klasörüne konabileceği belirtiliyor; mesh için yüz sayısı, PBR ve low-poly parametreleri ayarlanabiliyor. TypeScript ve MIT lisanslı, ~9.4K star, Nisan 2026'da açılmış.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; ürettiği şey 3B sahne ve mesh, senin içerik ihtiyaçların ise 2B görsel, video ve ses tarafında. En yakın bağlam Folio'nun günlük içerik pipeline'ı olabilir, ama oradaki akış yazar temalı fotoğraf ve video üretimi; splat ve mesh o feed'de bir yere oturmuyor. Zincir tamamen ücretli dış API'lere bağlı, Mac'te yerel çalışmıyor ve her denemenin faturası var — maliyet nedeniyle ElevenLabs'tan çıkmışken ters yönde bir tercih olur. Hafta sonu merakı olarak eğlenceli, ama hiçbir projenin adımını hızlandırmıyor.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "pydantic/monty",
+   "inputs_hash": "67dbfa1b77795707289ab73aedb4d550",
+   "description_tr": "Monty, bir modelin yazdığı Python kodunu çalıştırmak için Rust'ta yazılmış bir sandbox. Konteyner tabanlı sandbox servislerine kıyasla başlatma süresini çok aşağı çekiyor: havuzdan yeni bir oturum 1 ms'nin altında, ticari sunucu sürümünde ~2 ms, karşılaştırdığı servislerde ~1500 ms olarak veriliyor. Sandbox içinde dosya sistemi, ortam değişkeni ve ağ yok; host'a yalnızca dışarıdan geçirilen fonksiyonlar ve mount'lar üzerinden erişiliyor. Python, JavaScript/TypeScript ve Rust paketi olarak kuruluyor; MIT lisanslı OSS sürümünün yanında aynı sandbox'ı WebSocket servisi olarak sunan ticari bir sunucu var. Pydantic ekibinin ürünü, Python 3.14'ün bir alt kümesini destekliyor, ~8.6K star ve Pydantic AI'ın Code Mode'unu çalıştırıyor.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; bu, kendi ajan altyapısını yazanlar için bir bileşen ve senin tarafta modelin yazdığı kodu koşturan bir servis yok. En yakın bağlam istediğin asistan/orkestratör ajan: o ajan bir gün Mac'te model tarafından yazılmış kodu veri veya dosya üzerinde çalıştıracaksa, konteyner kurmadan sınırlandırmanın yolu budur. Şimdilik n8n akışları ve Claude Code'un kendi izin mekanizması bu işi görüyor. Yerel çalışır ve API maliyeti getirmez, tek paketle kurulur; ama bir ürün değil kütüphane, faydası ancak üstüne bir şey yazarsan ortaya çıkar.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "tile-ai/tilelang",
+   "inputs_hash": "21c1d51d52ab706759f802dd799ef63a",
+   "description_tr": "TileLang, yüksek performanslı GPU/CPU/NPU çekirdekleri (GEMM, dequant GEMM, FlashAttention, linear attention) yazmak için tasarlanmış, Python'a benzer sözdizimine sahip bir alan-özel dil. Altında TVM tabanlı bir derleyici altyapısı var; CUDA, ROCm ve Metal dialect'leri, LLVM üzerinden bir CPU yolu ve Huawei Ascend 950 NPU arka ucu bulunuyor. Blackwell SM120 blok ölçekli MMA ve Apple M5 için cooperative-tensor GEMM gibi donanıma özgü yollar eklenmiş; derleyici geçişlerini inceleyen pass visualizer, IR diff ve ayrı bir LSP uygulaması da var. Eylül 2026'ya kadar süren sık sürüm ve PR akışıyla aktif geliştiriliyor, ~8.4K star. Lisans dosyası standart bir SPDX etiketiyle eşleşmiyor, dolayısıyla koşulların deponun kendisinden okunması gerekiyor.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; bu, çekirdek yazan kişilerin aracı ve senin Mac'te yerel model çalıştırma ihtiyacın llama.cpp ya da MLX gibi hazır çalıştırıcılarla karşılanıyor. En yakın bağlam Lyricdrop'un yerel STT tarafı, ama oradaki hız sorunu çekirdek yazmakla değil model ve çalıştırıcı seçimiyle çözülüyor. Metal arka ucunun yeni Apple yongaları için optimize edilmesi, Apple Silicon'da yerel çıkarımın hızlanacağına dair bir gösterge olarak izlenebilir. Pratikte kurulumu ve öğrenme eğrisi ağır; projelerinin hiçbir adımına oturmuyor.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "deepseek-ai/DeepGEMM",
+   "inputs_hash": "bef788c566aa18d22e14760ed01707f1",
+   "description_tr": "DeepGEMM, büyük dil modellerinin temel hesap çekirdeklerini tek bir CUDA kod tabanında toplayan bir tensor core kütüphanesi. FP8, FP4 ve BF16 GEMM'ler, haberleşmeyle örtüşen MoE çekirdekleri, lightning indexer için MQA skorlama ve HyperConnection gibi parçaları içeriyor; tüm çekirdekler DeepJIT ile çalışma anında derlendiği için kurulumda CUDA derlemesi gerekmiyor. CUTLASS ve CuTe'den fikir alıyor ama şablon ağırlıklı yapılarını kullanmıyor; az sayıda çekirdek fonksiyonuyla okunabilir kalmayı ve GPU optimizasyonu öğrenmek için kaynak olmayı hedefliyor. NVIDIA SM90/SM100 GPU, CUDA 12.9 ve üstü ile PyTorch 2.3 ve üstü gerekiyor; H800'de 1550 TFLOPS'a kadar ölçümler bildiriliyor ve Eylül 2026'da bir Ascend sürümü duyurulmuş. DeepSeek ekibinin ürünü, MIT lisanslı, ~8.4K star.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; kütüphane veri merkezi sınıfı NVIDIA GPU'ları istiyor, senin geliştirme ve içerik pipeline'ının merkezi ise Apple Silicon bir Mac. En yakın bağlam model eğitmek veya kendi çıkarım sunucunu kurmak olurdu; ikisi de projelerinde yok ve olması da gerekmiyor. Yerel çalışmıyor, kurulum ve bakım yükü senin çalışma şekline uymuyor, kendi uygulamana gömülecek bir parçası da yok. Yatırımcı şapkasıyla okunacak tek tarafı var: açık kaynak çekirdek kütüphanelerinin uzmanca ayarlanmış kapalı kütüphanelerle performans olarak başa çıkabildiğini gösteriyor.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "openai/tart",
+   "inputs_hash": "378980771d00227dfdebb85b76a81f3e",
+   "description_tr": "Tart, Apple Silicon üzerinde macOS ve Linux sanal makineleri oluşturup çalıştırmak için yazılmış bir araç seti. Apple'ın Virtualization.Framework'ünü kullandığı için performansı yerele yakın; VM imajlarını OCI uyumlu container registry'lerinden çekip itebiliyor ve Packer eklentisiyle imaj üretimi otomatikleştirilebiliyor. Temel kullanım `tart clone` ve `tart run` ile bir macOS imajını indirip çalıştırmak; araç CI sistemlerine entegre edilmek üzere tasarlanmış ve README'de Atlassian, Figma, Expo gibi kullanıcılar sayılıyor. Swift ile yazılmış, macOS 13 ve sonrasını gerektiriyor; ilk imaj indirmesi 25 GB civarında. ~7.3K star ve 2022'den beri sürdürülüyor; depo openai organizasyonu altında ve lisansı fair-source olarak etiketlenmiş, yani sınırsız açık kaynak değil.",
+   "usage_tr": "Claude Code orkestrasyonu tarafında işine yarayabilecek bir altyapı parçası: ajanların kurulum, paket indirme ve deneme işlerini ana makineni kirletmeden yapması için tek kullanımlık bir macOS VM'i açabilirsin. \"Erişim kapsamları izole olsun\" ilkesine en doğrudan karşılık gelen araç bu; evde 7/24 açık duran Mac mini'yi bu VM'leri barındıran küçük bir havuz gibi kullanmak mümkün. Tamamen yerel çalışır, API maliyeti yoktur ve imajlar registry'den çekilebildiği için kurulum tekrarlanabilir. Uyarı: bir macOS imajı 25 GB civarı ve VM'e ayrılacak RAM ofis Mac'ini zorlar, bu iş ev makinesine daha uygun. İkinci uyarı: lisans fair-source, holding içi kullanımda sorun çıkarmasa da koşulları okumak gerekir. Lyricdrop veya Folio gibi ürün adımlarına değmez; bu araç yalnızca çalışma düzenini korur.",
+   "matched_project": "Claude Code",
+   "relevance": 4,
+   "investment_note": null
+  },
+  {
+   "full_name": "shengjidaguai-china/goutoujunshi",
+   "inputs_hash": "f59b2eaa6abf6e0efc073f469b1b3f15",
+   "description_tr": "Goutoujunshi, ilişki ve flört konularında önce duyguyu karşılayıp sonra durumu analiz eden ve uygulanabilir bir sonraki adım öneren, Çince yazılmış bir Codex/Claude skill'i. İçinde ilişki psikolojisi, kişilik ve bağlanma, iletişim stratejileri, cinsellik, evlilik ve aile, Çin hukuku ve güvenlik, sosyoloji ve felsefe başlıklarında ayrı dosyalara bölünmüş bir bilgi tabanı ile 135 kalemlik bir kaynakça var. Sohbet ekran görüntüsü, dışa aktarılmış kayıt veya kullanıcının anlatımını girdi alıp olgu, çıkarım ve bilinmeyeni ayırıyor; açık onay sonrasında yerel, görüntülenebilir ve geri alınabilir kısa bir profil hafızası tutuyor. SKILL.md hafif bir yönlendirme çekirdeği olarak tutulmuş ve her soruda yalnızca bir ila üç referans dosyası yükleniyor; depoda bir bütünlük doğrulama betiği ve hafıza betiği bulunuyor. MIT lisanslı, Temmuz 2026'da açılmış, ~7.0K star; terapi, hukuki danışmanlık veya acil servis yerine geçmediğini açıkça yazıyor.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; alan tamamen kişisel ilişki danışmanlığı ve içeriğin tümü Çince. En yakın bağlam senin de ilgilendiğin skill yazım pratiği: bu depo bir skill'in nasıl kurgulanacağına iyi bir örnek — ince bir yönlendirme çekirdeği, ihtiyaç anında yüklenen referanslar, açık onaya bağlı yerel hafıza ve bir doğrulama betiği. Aynı desen kişisel bilgi tabanı projenin hafıza ve onay kurgusunda okunabilir; alınacak şey kod veya bilgi tabanı değil, yalnızca yapı. Araç olarak Mac'te skill şeklinde kurulur ve Max aboneliğiyle çalışır, ama karşıladığı bir ihtiyacın yok.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "firebase/firebase-ios-sdk",
+   "inputs_hash": "10dde0a8a912941d43aec45c617b0f0f",
+   "description_tr": "Bu depo, FirebaseAnalytics dışındaki tüm Apple platformu Firebase kütüphanelerinin kaynak kodunu içeriyor. Authentication, Cloud Firestore, Realtime Database, Cloud Functions, Cloud Messaging, Crashlytics, Performance Monitoring, Remote Config, Storage, App Check, App Distribution, In-App Messaging ve Gemini'ye bağlanan Firebase AI Logic modüllerini kapsıyor. Kurulum Swift Package Manager ile yapılıyor; CocoaPods'a Ekim 2026'dan sonra yeni sürüm yayınlanmayacağı duyurulmuş, mevcut sürümler çalışmaya devam ediyor. Apache-2.0 lisanslı; Analytics açık kaynak değil ama SPM ve CocoaPods kurulumlarında derlenmiş ikili olarak geliyor. Google tarafından sürdürülen, C++ ve Objective-C/Swift karışımı büyük bir kod tabanı; ~6.9K star.",
+   "usage_tr": "Lyricdrop'un mobil tarafında Supabase'in kapatmadığı boşluklar için kullanabilirsin: Crashlytics ile çökme raporu, Cloud Messaging ile push bildirimi, Remote Config ile zorluk ve paywall ayarlarını uygulama güncellemesi beklemeden değiştirme. Expo tarafında bu SDK'yı doğrudan değil react-native-firebase üzerinden, EAS build'de config plugin olarak kullanırsın; veritabanı ve auth Supabase'de kalmaya devam edebilir. Planladığın uygulama stüdyosu senaryosunda aynı parça her yeni uygulamada tekrar kullanılır: A/B testi ve uzaktan ayar, sıfırdan yazılmayacak bir altyapı. Fayda, lansman sonrası hata ve davranış görünürlüğü; kullandığın modüller için ek bir model veya çıkarım maliyeti yok. Uyarı: native bağımlılık eklemek Expo build süresini ve kırılma yüzeyini artırıyor, ayrıca veri Google tarafına geçiyor — hesapların kontrolde kalması ilkesini düşünerek yalnızca ihtiyacın olan modülleri açmak doğru olur.",
+   "matched_project": "Lyricdrop",
+   "relevance": 6,
+   "investment_note": null
+  },
+  {
+   "full_name": "yetone/magpie",
+   "inputs_hash": "a092626691cce0ba12701b1d05f761dc",
+   "description_tr": "magpie, birden fazla kodlama ajanını tek bir yerden model ve sağlayıcı seçimiyle yöneten yerel bir ağ geçidi ve menü çubuğu uygulaması. Otuz beşten fazla ajanı listeliyor; bir model seçildiğinde ilgili ajanın kendi config dosyasındaki tek anahtarı değiştiriyor, yorumları, sıralamayı ve biçimi koruyor. 127.0.0.1:3425'teki geçit OpenAI Chat, OpenAI Responses, Anthropic Messages ve Gemini protokolleri arasında çeviri yapıyor; streaming, tool call ve reasoning dahil. Routing grupları sayesinde bir model kota ya da rate limit'e takıldığında sıradaki yanıtlıyor ve ajan hatayı görmüyor; token, cache, maliyet ve kota pencereleri sağlayıcı ve hesap bazında izlenebiliyor. Model listesi models.dev'den geldiği için gömülü bir katalog yok; macOS, Windows, Linux, Docker ve Termux'ta çalışıyor, ayrıca TUI, web arayüzü ve CLI sunuyor. MIT lisanslı, Eylül 2026'da açılmış ve ~5.1K star'a ulaşmış.",
+   "usage_tr": "Claude Code orkestrasyonu tarafında doğrudan senin kurulumuna oturuyor: Claude Code ile ofiste kullandığın OpenCode'u aynı listeden yönetir, aboneliklerini sağlayıcı gibi gösterir ve biri tükendiğinde config dosyalarını elle düzenlemek yerine sıradakine geçer. Profiles ile \"ucuz\" ve \"ağır iş\" gibi iki kurulumu kaydedip tek hamleyle değiştirebilirsin; Lyricdrop v2 gibi uzun süren bir yeniden yazımda gün içinde kota yönetmek bunu tek başına haklı çıkarır. Yerel bir geçit olarak Mac'te çalışır, kendi API anahtarını zorunlu tutmaz ve maliyet takibi içinde gelir. MIT lisanslı ve Go ile yazılmış, yani kapalı bir istemciye güvenmek yerine okuyup fork'layabilirsin. Uyarılar: bir aboneliği kendi istemcisinin dışından geçirmek sağlayıcının kullanım koşullarına takılabilir, denemeden önce okumakta fayda var; ayrıca proje çok yeni ve tüm ajan trafiğini tek bir yerel geçide bağlamak yeni bir arıza noktası ekliyor.",
+   "matched_project": "Claude Code",
+   "relevance": 8,
+   "investment_note": null
+  },
+  {
+   "full_name": "newliver666/apk-reverse",
+   "inputs_hash": "5e3c92551bd9f98ec11ff365fde14e52",
+   "description_tr": "apk-reverse, Android APK'ları tersine mühendislikle incelemek, gereksiz bileşenlerinden arındırmak, reklam kaldırmak, dex seviyesinde yama yapıp yeniden paketlemek ve çalışma anı ile sunucu davranışını analiz etmek için yazılmış bir Agent Skill. Bir öğretici değil, ajanın iş sırasında yükleyeceği bir prosedür: kısa ve karar odaklı bir SKILL.md, gerektiğinde açılan referans dosyaları ve parametreli betikler. İçinde dört öncelikli kural, geçmiş hatalardan çıkarılmış bir belirti indeksi, geçiş ölçütü tanımlı dört geçit ve aynı biçimde iki kez başarısız olan hipotezi bırakmayı söyleyen iki-vuruş kuralı var; \"bitti\" tanımı altı maddeye bağlanmış. Kapsadığı vakalar arasında sunucu tarafında zorlanan bir paywall'ın istemciden çözülemeyeceğini erken görmek, imza anahtarını kendi sertifikasından üreten uygulamaların sessiz başarısızlığı ve paketlenmiş/sertleştirilmiş hedeflerin açılması sayılıyor. Python, MIT lisanslı, Eylül 2026'da açılmış, ~3.2K star; ortamı ölçen bir `doctor.py` betiğiyle başlamayı öneriyor.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; yaptığın iş kendi Android ve Android TV uygulamalarını yazmak, başkasının APK'sını yamamak değil — ayrıca üçüncü parti uygulamaları değiştirmek lisans ve hukuk tarafında ayrı bir mesele. En yakın bağlam Lyricdrop'un Android TV sürümünde cihazda gerçekten hangi mimarinin ve hangi kütüphanenin çalıştığını doğrulamak olabilir, ama bunun için bu skill'e ihtiyaç yok. Buradan alınacak şey yöntem: geçitler, belirti indeksi ve iki-vuruş kuralı, kalite süreçlerine önem verdiğin için kendi CLAUDE.md dosyalarına ve skill'lerine taşınabilecek bir kurgu. Araç olarak Mac'te yerel çalışır ve API maliyeti getirmez; yine de hiçbir projenin adımına oturmuyor.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "devdotfast/whiteboard",
+   "inputs_hash": "7fca801281f8c719df63a38e7443ea9d",
+   "description_tr": "Whiteboard, insanlarla kodlama ajanlarının aynı tuval üzerinde yazılım tasarlaması için yazılmış açık kaynak bir masaüstü uygulaması. Claude Code, Codex gibi mevcut ajanlara bağlanıyor ve ajana tuvale çizim yaptırabileceği bir SDK veriyor; sequence diagram, varlık-ilişki diyagramı veya ajanın trace'inden bir alıntıya tıklandığında ilgili koda atlanıyor. Rust ile yazılmış, AST farkında bir semantik diff görüntüleyicisi var: büyük eklenen fonksiyonlar sözde koda özetleniyor, test ve doküman değişiklikleri varsayılan olarak kapanıyor ve kurallar WASM eklentileriyle değiştirilebiliyor. Ajanın hangi kararları kendi başına verdiğini görmek için bir karar günlüğü tutuluyor; uygulama yerel checkout'lar üzerinde çalışıyor ve kod, diff, prompt ya da model çıktısı telemetriye girmiyor. Code OSS'in vendor edilmiş bir kopyası üzerine kurulu, MIT lisanslı, Ağustos 2026'da açılmış, ~2.8K star; dosya düzenleme henüz yok ve tek inceleme içinde çoklu repo desteği zayıf.",
+   "usage_tr": "Her değişikliği iki ayrı açıdan review etme isteğinin araç tarafı burada: Lyricdrop v2'nin yeniden yazımında Claude Code'un ürettiği bir dalı, ajanın kendi diyagramı ve karar günlüğüyle birlikte okuyabilirsin. Semantik diff, v1'i tek oturumda yazma refleksinin tersi yönde çalışıyor — testi ve dokümanı katlayıp gerçekten değişen mantığı öne alır, oyun mantığı incelemesinde zaman kazandırır. Mac'te yerel çalışır, yerel checkout'ları kullanır ve ajanı mevcut aboneliğinle sürdüğü için ek API maliyeti yok. MIT lisanslı bir masaüstü uygulaması; kendi uygulamalarına gömülecek bir bileşen değil, çalışma düzenine eklenen bir katman. Uyarılar: dosya düzenleme yok, çoklu repo zayıf, proje genç ve paylaşılan bir inceleme sonradan güncellenince karşı tarafta yenilenmiyor — yani ürün/eğitim mantığı incelemesini dışarıya devretmek için henüz uygun değil.",
+   "matched_project": "Claude Code",
+   "relevance": 7,
+   "investment_note": null
+  },
+  {
+   "full_name": "JohnHeibel/PDoomVideo",
+   "inputs_hash": "0972a7df386b20a1bc9887e18afc84b1",
+   "description_tr": "Bu depo, bir şarkı için üretilmiş bir müzik videosunun kaynak kodunu içeriyor. Video p5.js ve p5.brush ile tek bir HTML sayfasında kare kare boyanıyor; `render.mjs` headless Chrome'da kareleri üretip ffmpeg ile MP4'e çeviriyor ve render kaldığı yerden sürdürülebiliyor. Dokuz bölüm ayrı dosyalarda, karakterler, proplar, sözler ve zaman çizelgesi paylaşılan kodda duruyor; depodaki her şeyin model tarafından üretildiği, verilen tek yönlendirmenin karakter tasarımı ve her söze ilgi çekici görsel ile geçiş olduğu belirtiliyor. Depoda ayrıca aynı yaklaşımın daha genel ve tekrar kullanılabilir bir tabanına bağlantı veriliyor. JavaScript, ~1.8K star, Eylül 2026'da açılmış; depoda lisans dosyası yok, yani kodun yeniden kullanımı için verilmiş bir izin de yok.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; bu tek bir işin kaynak kodu, tekrar kullanılabilir bir araç değil. En yakın bağlam Folio'nun içerik üretimi ve Lyricdrop lansman kreatifleri olabilir: bir ajana p5.js sahnesi yazdırıp headless Chrome ve ffmpeg ile MP4 almak, video modeli çağırmadan Mac'te yerel ve sıfır API maliyetiyle çalışan bir yol sunuyor. Yöntem olarak bakmaya değer, ama başlangıç noktası bu depo değil; README'nin işaret ettiği genel animasyon tabanı daha uygun. Ayrıca lisans dosyası yok: kodu kendi projene kopyalamanın hukuki zemini açık değil.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "omnirush-ai/omnirush-gui",
+   "inputs_hash": "a29ae9594ed4812d4dee769beaacb0d0",
+   "description_tr": "omnirush.ai, kendi projelerinde çalışan bir kodlama ajanının masaüstü arayüzü; macOS (yalnızca Apple Silicon) ve Linux için dağıtılıyor. Varsayılan model GPT 6 Astra, hesabın kataloğundaki diğer modeller seçiciden geliyor; kullanıcı kendi OpenAI, Anthropic veya başka sağlayıcı anahtarlarını da ekleyebiliyor. Uygulama bir hesap bağlanmadan prompt çalıştırmıyor: tarayıcıda cihaz koduyla giriş yapılıyor ve oturum macOS'ta keychain'de, Linux'ta sistem anahtar kasasında tutuluyor. Skill ve MCP sunucuları ayarlardaki Library'den ekleniyor; git akışlarını (branch, worktree, commit, push, PR) ajan `gh` ile yürütüyor ve yazma komutları oturum başına bir kez, yıkıcı olanlar her seferinde onay istiyor. TypeScript, ~1.6K star, Eylül 2026'da açılmış; macOS derlemeleri henüz notarize edilmemiş ve lisans dosyası standart bir SPDX etiketiyle eşleşmiyor.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; Claude Code ve OpenCode ile kurduğun düzenin yerini alacak bir şey sunmuyor, model erişimi de sağlayıcının hesabına bağlı. \"Ücretsiz frontier model\" kısmı tam olarak güvenmediğin yapıya denk düşüyor: anahtarları ve kotayı başkası tutuyor, uygulama hesap bağlanmadan çalışmıyor ve lisans koşulları net değil. En yakın bağlam Claude Code orkestrasyonu başlığı altında alternatif bir masaüstü istemci arayışı; orada T3 Code ya da OpenCode fork'u daha uygun, çünkü ikisi de hesapları senin elinde bırakıyor. Merak edersen Mac'te yerel kurulur ve kendi anahtarlarını girebilirsin, ama notarize edilmemiş bir derlemeyi günlük iş makinesine kurmak gereksiz bir risk.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "feitangyuan/onetake",
+   "inputs_hash": "c50878b577b906856f2ef6353834208c",
+   "description_tr": "onetake, ürün lansman filmleri, teaser ve özellik demoları üreten bir Claude Agent Skill. İki sahne arasındaki sınırı tasarımın merkezine alıyor: her geçişte ekrandaki bir öğe hayatta kalıp sonraki sahneye dönüşüyor ve kamera hiç kesmeden konuyu takip ediyor. Süreklilik umut edilmiyor, ölçülüyor: `probe.py` her karede ekranda ne olduğunu kaydediyor, sınırları buluyor ve neyin taşındığını sorup bir taşıma puanı veriyor; aynı denetleyici tek düze ritmi, duruş olmamasını, kırpılmış sesi ve hareket bulanıklığı olmayan hızlı hareketleri de reddediyor. Ürün arayüzü ekran kaydı yerine ekran görüntülerinden HTML olarak yeniden kuruluyor, hareketler ölçülmüş hız eğrileri olan yaklaşık 38 fonksiyondan geliyor, 180 derece shutter boyunca alınan çoklu örneklerle gerçek motion blur üretiliyor ve ses filmin kendi olaylarından yerleştiriliyor. Taslaklar 1080p30, finaller 4K60; depoda on örnek film ve her birinin kırılma dökümü var. Python, Eylül 2026'da açılmış, ~1.6K star; lisans PolyForm Noncommercial 1.0.0 ve örnek filmlerin kaynak kodu paylaşılmıyor.",
+   "usage_tr": "Lyricdrop'un lansman tarafında en doğrudan kullanılabilecek üretim aracı bu: oyun ekranını (şarkı sözü, boşluklar, dört şık, telefon ve TV görünümü) HTML olarak yeniden kurup tek çekimlik 15-30 saniyelik bir tanıtım filmi çıkarabilirsin. Agent Skill olduğu için ofis Mac'inde Claude Code içinde çalışır, ek bir video modeli ya da API maliyeti getirmez ve çıktısı mağaza sayfası ile reklam kreatifi için gereken formatta. Planladığın uygulama stüdyosu senaryosunda aynı skill her yeni uygulamada tekrar kullanılabilir; render işini de tek komutla koşturduğun için asistanına devretmeye gerek kalmaz. Önemli uyarı: lisans PolyForm Noncommercial, yani ticari bir lansman filmi bu haliyle lisans kapsamı dışında kalır — kullanmak istiyorsan geliştiriciden ticari izin istemek gerekir. İkinci uyarı: 4K60 render Mac'te uzun sürer ve süreklilik denetleyicisi filmi reddedebilir, ilk denemede sonuç çıkmayabilir.",
+   "matched_project": "Lyricdrop",
+   "relevance": 5,
+   "investment_note": null
+  },
+  {
+   "full_name": "nanaism/yomiyasu",
+   "inputs_hash": "9262281e3dbb8b01842ee0524b17f467",
+   "description_tr": "yomiyasu, AI tarafından üretilmiş Japonca metinleri daha okunabilir hale getiren bir Agent Skill. Teknik yazı, tasarım ve şartname dokümanları, PR açıklamaları ve şirket içi raporlar gibi işe dönük metinler için tasarlanmış; Codex, Claude Code ve Cursor gibi ortamlara yüklenerek kullanılıyor. Yedi dönüşüm ilkesi var: özne-yüklem ve niteleyici ilişkilerini denetlemek, cümlenin işlevi ile üslubunu korumak, kişileştirmeyi düzeltmek, mecazları düz dile çevirmek, giriş cümlelerini yalnızca anlam değişmiyorsa atmak, metne bilgi eklememek ve cümle uzunluğu ile noktalama yoğunluğunu ayarlamak. Depo yasak kelime listesi yaklaşımını açıkça eleştiriyor, kuralların her metne tek tip uygulanmasının yapay sonuç verdiğini söylüyor ve anlamın kesinleşmediği yerde belirsizliği koruyan bir geçici cümle döndürmeyi şart koşuyor. MIT lisanslı, Eylül 2026'da açılmış, ~1.5K star; bir şirketin açık kaynak yan ürünü olarak sürdürülüyor ve değişiklikler karşılaştırmalı örneklerle belgelenmiş.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; kuralların tamamı Japonca cümle yapısına, karakter sayısına ve Japonca kalıplara bağlı. En yakın bağlam Türkçe ürettiğin metinler: Arslan Holding'in marka ve website içeriği ile Folio'nun günlük metinleri için benzer bir Türkçe skill yazılması gerekir ve bu depo onun iskeleti olarak okunabilir. Özellikle \"metne bilgi eklememe\" ve \"anlamı kesinleştiremediğin yeri belirsiz bırakıp sorduğunu yazma\" kuralları, kendi yazım sözleşmelerinde doğrudan karşılığı olan maddeler. Mac'te skill olarak kurulur, Max aboneliğiyle çalışır ve ek maliyet getirmez; ama Japonca dışında bir işi yok.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "ai-evals-course/evals-skills",
+   "inputs_hash": "52ee05d06c4f0765471b12c12d1ce356",
+   "description_tr": "evals-skills, kodlama ajanlarına ürüne özgü LLM değerlendirmeleri kurdurmak için yazılmış bir Agent Skill koleksiyonu; temel model benchmark'larıyla değil, kendi ürününün hata modlarıyla ilgileniyor. `evals-start` giriş noktası: mevcut bir eval hattı varsa `eval-audit`, elde trace var ama analiz edilmemişse `error-discovery` devreye giriyor. error-discovery bir JSONL/CSV/JSON dosyasını okuyup içerik türünü çıkarıyor, bağımlılığı olmayan tek dosyalık bir HTML inceleme arayüzü kurup Python stdlib sunucusuyla sunuyor, veriyi kümeleyip çeşitli bir ilk örneklem seçiyor ve serbest metin notlarını hata modlarına ayırarak kapsama boşluklarını kapatacak yeni örnekler öneriyor. Diğer skill'ler sentetik test girdisi üretme, nesnel hata modları için kod kontrolü yazma, LLM-as-Judge prompt'u tasarlama, yargıcı insan etiketlerine karşı TPR/TNR ile kalibre etme ve RAG hattını değerlendirmeyi kapsıyor. `npx skills add` ile kuruluyor, Apache-2.0 lisanslı, ~1.5K star; bir eval kursunun ekibi tarafından sürdürülüyor ve kaçınılabilir yaygın hataları önlemeyi amaçlıyor.",
+   "usage_tr": "Lyricdrop v2'nin asıl darboğazına oturuyor: 20-30 şarkıda söz ve ses hizalamasını sıfıra yakın hataya getirmek bir model seçimi değil bir ölçüm problemi, bu koleksiyon da tam olarak o ölçümü kurduruyor. error-discovery ile hizalama çıktılarını (kelime, zaman, güven) bir JSONL'den okutup kendi inceleme arayüzünü ürettirebilirsin; notlarını hata modlarına ayırır — nakarat tekrarı, İngilizce olmayan kelime, enstrümantal bölüm gibi — ve test setini o boşlukları kapatacak şarkılarla büyütür. Ardından nesnel kontrolleri (zaman kayması eşiği, boşluk sayısı, şık benzerliği) kod eval'i olarak, \"bu boşluk oynanabilir mi\" gibi öznel kriterleri kalibre edilmiş bir LLM yargıcı olarak yazdırabilirsin; yargıcı insan etiketine karşı doğrulama adımı, tarayıcı playtest gate'ini dışarıya devretmenin önkoşulu. Mac'te yerel Python ve tek dosyalık HTML olarak çalışır, mevcut admin panelinin yanında durur; yalnızca LLM yargıcı çağrıları API anahtarı ister ve orası Max aboneliğinin dışında ücretli bir kalem. Uyarı: bu bir araç değil yöntem seti, kazanç ancak gerçek bir örneklemi elle etiketlersen geliyor ve ilk turdaki o etiketleme senin yapman gereken iş — devredilmesi ikinci adım.",
+   "matched_project": "Lyricdrop",
+   "relevance": 8,
+   "investment_note": null
+  }
+ ]
+}

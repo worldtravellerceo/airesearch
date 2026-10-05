@@ -1,0 +1,175 @@
+{
+  "repos": [
+    {
+      "full_name": "RoboVerseOrg/RoboVerse",
+      "inputs_hash": "6697d36b12c08b180279d2b7e723ca69",
+      "description_tr": "RoboVerse, robot öğrenmesi için simülasyonu, veri kümelerini ve benchmark'ları tek çatı altında toplamayı amaçlayan açık kaynak bir platform. İki katmandan oluşuyor: MetaSim adlı simülasyon çekirdeği ve görev, robot, sahne içerikleriyle birlikte RL, imitation learning ve VLA eğitim kodlarını barındıran üst katman. Isaac Lab, Isaac Gym, MuJoCo, SAPIEN, PyBullet ve Genesis gibi simülatörleri aynı arayüzün arkasına alıyor; RLBench, ManiSkill, LIBERO, Meta-World ve CALVIN gibi mevcut benchmark verilerini de içeri aktarıyor. RSS 2025'te kabul edilen bir çalışmanın kod tarafı; Apache-2.0 lisanslı, yaklaşık 1,9K star, Sphinx tabanlı bir dokümantasyon sitesi ve açık bir tartışma alanı var. Kurulum seçilen simülatöre göre değişiyor ve pratikte CUDA destekli bir NVIDIA GPU gerektiriyor.",
+      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, Arslan Holding'in frontier teknoloji ilgisi altında robot öğrenmesi alanını uzaktan izlemek olabilir. Bu bir ürün bileşeni değil, akademik bir araştırma altyapısı: çıktısı eğitilmiş politikalar ve benchmark skorları, kendi uygulamalarına gömebileceğin bir kütüphane değil. Ofisteki Mac'te anlamlı biçimde çalışmaz; Isaac tabanlı simülatörler NVIDIA GPU istiyor, yani bulut GPU kirası demek. Asistanına devredilebilecek bir iş de değil. Robotik tarafında deal flow bakacaksan, hangi ekiplerin hangi simülatör ekosisteminde çalıştığını görmek için bir harita olarak kullanabilirsin; ötesi değil.",
+      "matched_project": null,
+      "relevance": 1,
+      "investment_note": null
+    },
+    {
+      "full_name": "AngelLM/Thor",
+      "inputs_hash": "93eed0facbc5ce1fba195f0e169097da",
+      "description_tr": "Thor, 3D yazıcıyla basılabilen 6 serbestlik dereceli açık kaynak bir robot kol tasarımı. Depo esas olarak FreeCAD kaynak dosyaları, STL ve STEP çıktıları ile değiştirilmiş parça modellerinden oluşuyor; kontrol yazılımı, ROS2 yapılandırması ve PCB dosyaları ayrı depolarda tutuluyor. Kol 625 mm boyunda, 750 grama kadar yük kaldırıyor ve 3D baskı dişliler, GT2 kasnak ve kayışlarla çalışıyor; hareket komutları 3D yazıcılarda olduğu gibi G-code üzerinden veriliyor. Donanım maliyeti 350 euronun altında tutulmuş ve proje açıkça eğitim ile maker kitlesini hedefliyor. 2015'ten beri sürüyor, yaklaşık 1,6K star, CC-BY-SA-4.0 lisanslı; forum ve Discord üzerinden yürüyen bir topluluğu var.",
+      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, donanım tarafına olan genel ilgin ve hobi düzeyinde bir maker projesi olabilir. İçeriği yazılım değil mekanik tasarım: baskı, montaj, kablolama ve firmware işi, yani Claude Code ile hızlandırılabilecek bir tarafı neredeyse yok. Giyilebilir cihaz ve biyosinyal tezine de bağlanmıyor; burada sensör veya veri yok, servo hareketi var. Yatırım merceğinden de bir şirket değil, lisanslı bir açık donanım tasarımı. Masa üstü bir robot kolu edinmek istersen referans olarak bakabilirsin, ama bir projene girmez.",
+      "matched_project": null,
+      "relevance": 0,
+      "investment_note": null
+    },
+    {
+      "full_name": "peteonrails/voxtype",
+      "inputs_hash": "feaaa871f5ba25214302e1110b2d957d",
+      "description_tr": "Voxtype, Linux masaüstünde bas-konuş (push-to-talk) yöntemiyle çalışan, Rust ile yazılmış yerel bir konuşmadan yazıya çevirme aracı. Bir kısayolu basılı tutup konuşuyorsun, bıraktığında metin imlecin olduğu yere yazılıyor; ses makineden çıkmıyor, telemetri ve abonelik yok. Dokuz farklı transkripsiyon motorunu arkasına alıyor (Whisper, Parakeet, Moonshine, SenseVoice, Paraformer, Dolphin, Omnilingual, Cohere Transcribe, OpenVINO Whisper) ve motorlar arasında tek satır yapılandırmayla geçiş yapılıyor; CPU'da gerçek zamanın 9-11 katı hız iddiası var. Sürekli transkripsiyon yapan bir toplantı modu, konuşmacı atfı ve Markdown, JSON, SRT, VTT çıktıları da bulunuyor. Entegrasyon tarafı tamamen Wayland ve X11 odaklı: Hyprland, Sway, River, GNOME, KDE kısayolları ve wtype ile yazma. MIT lisanslı, 2025 sonunda açılmış, yaklaşık 1,6K star; AUR, .deb, .rpm paketleri ve macOS için bir Homebrew formülü var.",
+      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, sesli not uygulaması için yerel STT tercihi ve Lyricdrop'ta karşılaştırmayı planladığın konuşma tanıma motorları olabilir. Ürünün kendisi bir Wayland masaüstü servisi: kısayol yakalama, imlece yazma ve kompozitör entegrasyonu macOS'ta karşılığı olmayan katmanlar, yani ofisteki Mac'te dikte aracı olarak yerini alamaz. İlgi çekici olan kısım kodun kendisi değil, tek çatı altında topladığı motor listesi ve SRT/VTT çıktısı; hangi yerel motorun hangi hızda ne kalitede çalıştığına dair hazır bir karşılaştırma olarak okunabilir. Ama Lyricdrop'un ihtiyacı kelime düzeyinde zamanlama ve bu araç bir hizalama kütüphanesi sunmuyor. Yerel dikteyi Mac'te istersen aynı motorları doğrudan kullanan kütüphanelere bakmak daha kısa yol.",
+      "matched_project": null,
+      "relevance": 2,
+      "investment_note": null
+    },
+    {
+      "full_name": "Improbable-AI/walk-these-ways",
+      "inputs_hash": "bc266f8326bbdb8d352ba7853859b297",
+      "description_tr": "Bu depo, Unitree Go1 dört ayaklı robotu için simülasyondan gerçeğe (sim-to-real) yürüme politikası eğitip sahaya indiren bir başlangıç kiti. 2022 CoRL'de yayımlanan 'Walk These Ways' çalışmasının referans uygulaması: PPO, Isaac Gym, domain randomization ve çoklu davranış (Multiplicity of Behavior) yaklaşımıyla tek politika üzerinden farklı yürüyüşler üretiliyor. Eğitim için en az 10-12 GB VRAM'li bir NVIDIA GPU, saha dağıtımı için Go1 Edu donanımı ve unitree_legged_sdk gerekiyor. Depo ETH Zürih'in legged_gym ve rsl_rl kod tabanları üzerine kurulu, hazır bir eğitilmiş politika da içeriyor. Yaklaşık 1,5K star; lisansı standart bir SPDX kalıbına oturmuyor, yeniden dağıtılan kod parçaları kendi lisanslarını koruyor.",
+      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, frontier teknoloji yatırım ilgisinde robotik politikalarının nasıl eğitildiğine dair somut bir örnek görmek olabilir. Kullanmak için hem NVIDIA GPU hem de belirli bir ticari robot gerekiyor; ikisi de senin kurulumunda yok. Kodun hiçbir parçası Expo, Supabase veya n8n tarafına gömülebilecek nitelikte değil. Asistanına devredilebilecek bir deneme de değil, uzmanlık isteyen bir araştırma işi. Bu alanda bir ekiple tanışacaksan teknik düzeyi ölçmek için bir okuma malzemesi olarak değer taşıyor.",
+      "matched_project": null,
+      "relevance": 0,
+      "investment_note": null
+    },
+    {
+      "full_name": "harry7557558/spirula-studio",
+      "inputs_hash": "1aa04b0d2f6a595c85e727097dd86690",
+      "description_tr": "Spirula Studio, fotoğraf veya videodan 3D Gaussian Splatting modeli, oradan da dokulu mesh üreten tek parça bir masaüstü uygulaması. Python, PyTorch ve ayrı bir COLMAP kurulumu gerektirmiyor; structure-from-motion, videodan kare çıkarma ve AI maskeleme gibi adımlar binary'nin içinde geliyor. Vulkan arka ucu sayesinde NVIDIA, AMD, Intel ve Apple GPU'larında çalışıyor; CUDA arka ucu NVIDIA için ayrı bir seçenek. Nicemlenmiş eğitimle 8 GB VRAM'de 10 milyona kadar Gaussian eğitebildiğini, fisheye ve 360 derece kameraları doğrudan desteklediğini belirtiyor. Ağustos 2026'da macOS/Apple Silicon desteği doğrulanmış, arayüz Türkçe dahil on üç dilde; GPL-3.0 lisanslı, yaklaşık 1,4K star ve düzenli sürüm notlarıyla aktif.",
+      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, Arslan Holding'in Dubai gayrimenkul ve holiday home tarafında mülklerin 3D sunumu olabilir, ama bu profilde tanımlı bir ihtiyaç değil. Folio'nun içerik pipeline'ı üretken görsel ve video istiyor; 3D rekonstrüksiyon o işin aracı değil. Olumlu tarafı, Apple Silicon'da çalıştığı için denemenin maliyeti bir indirme ve bir video; API ücreti yok. Denersen GPL-3.0'ı not et: çıktıları kullanmak serbest, ama kodunu kendi uygulamana gömmek lisans tarafında soru işareti yaratır. Generatif sanat ve veri görselleştirme ilgin tarafında bir hafta sonu denemesi olarak oturabilir, bir projenin adımı olarak değil.",
+      "matched_project": null,
+      "relevance": 1,
+      "investment_note": null
+    },
+    {
+      "full_name": "datalab-to/lift",
+      "inputs_hash": "fb95a6cb7e2036c84475c796388f509d",
+      "description_tr": "lift, PDF ve görüntülerden verdiğin JSON şemasına uyan yapılandırılmış veri çıkaran 9 milyar parametreli bir görsel dil modeli ve onun CLI'ı. Şema kısıtlı decoding kullandığı için çıktı her zaman geçerli JSON oluyor; çok sayfalı belgeleri tek geçişte işliyor ve sayfalar arasına yayılan değerleri de yakalamayı hedefliyor. İki çalışma modu var: yerel HuggingFace çıkarımı ve uzak bir vLLM sunucusu; şema hazırlayıp test etmek için Streamlit tabanlı bir Schema Studio geliyor. Geliştiricisinin 225 belgelik kendi benchmark'ında alan doğruluğu %90,2, tam belge doğruluğu %20,9 olarak raporlanıyor; aynı tabloda yönetilen Datalab API'si ve Gemini Flash 3.5 daha yüksek, Azure Content Understanding ve NuExtract3 daha düşük çıkıyor. Kod Apache-2.0, model ağırlıkları OpenRAIL-M; ticari self-hosting ayrı lisans gerektiriyor ve şirket aynı modeli doğrulama ve alıntı katmanıyla yönetilen bir servis olarak satıyor.",
+      "usage_tr": "Bu, Arslan Holding'in deal screening ve due diligence akışındaki en sıkıcı adıma oturuyor: gelen pitch deck'leri, teaser PDF'leri ve finansal modelleri aynı alanlara indirgemek. Bir kez şema tanımlayıp (şirket, sektör, aşama, talep edilen tur, değerleme, gelir, kurucular) klasöre düşen her belgeyi aynı tabloya çeviren bir adım kurabilirsin; n8n ile tetikleyip çıktıyı Supabase'e ya da HubSpot'a yazdırmak doğal devamı. Araştırma ve takip işini zaten asistanın yürüttüğü için bu adım devredilebilir: o belgeyi klasöre atar, pipeline alanları çıkarır, sen sadece tabloyu okursun. Maliyet tarafında dikkat: 9B'lik bir görsel model yerelde M4 Pro'yu zorlar, vLLM yolu pratikte CUDA ister, yönetilen API ise aylık ücretsiz kredinin ötesinde para demek — toplu işleri gece Mac mini'de koşturmak makul bir orta yol. İkinci uyarı: tam belge doğruluğu %21 civarında, yani alan bazında doğru ama belgenin tamamında neredeyse her zaman bir hata var; bir sayıya dayanıp karar vereceksen onu kaynakta doğrula. Ticari self-hosting lisansı gerektiğini de not et.",
+      "matched_project": "Arslan Holding",
+      "relevance": 6,
+      "investment_note": "Açık ağırlıkları yayıp doğruluk, alıntı ve doğrulama katmanını yönetilen API'de tutan Datalab, B2B yazılım tezine uygun net bir ticarileşme modeli gösteriyor; belge yoğun MENA ve Körfez operasyonları düşünüldüğünde izlemeye değer bir kategori."
+    },
+    {
+      "full_name": "Niko1221/Strata",
+      "inputs_hash": "b62f810aa85ab5fa2c409ebe0bddbe95",
+      "description_tr": "Strata, 125 milyar parametreli Qwen3.8-Flash-Next modelini sıradan bir oyun bilgisayarında çalıştırmayı hedefleyen bir çıkarım motoru ve tek tıklık kurulum paketi. Windows ve Linux üzerinde, en az 12 GB VRAM'li NVIDIA veya AMD ekran kartı, 32-64 GB RAM ve yaklaşık 80 GB disk istiyor; modeli birkaç nicemleme boyutunda indiriyor. Localhost'ta OpenAI ve Anthropic uyumlu bir API açıyor, böylece kodlama ajanları ve mevcut istemciler doğrudan bağlanabiliyor; görüntü girdisi opsiyonel. README ölçülen hızları iki gerçek makinede tablo halinde veriyor: RTX 5070'te nicemlemeye göre saniyede 53-94 token üretim. Çoklu GPU, eski kartlar ve Intel Arc için topluluk tarafından test edilmiş yollar belgelenmiş. MIT lisanslı; 24 Eylül 2026'da açılmış ve on bir günde 13 bin starın üzerine çıkmış.",
+      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, ücretli API yerine yerel model çalıştırma tercihin, ama bu proje senin donanımına uymuyor. Gereksinim listesi net biçimde NVIDIA veya AMD ekran kartı ve Windows/Linux; iki Mac ve bir Mac mini üzerine kurulu düzende çalıştıracak bir yer yok. Yerel bir OpenAI uyumlu endpoint'i n8n akışlarının ve sınıflandırma adımlarının arkasına koymak fikri doğru, ama Apple Silicon'da bunu MLX veya llama.cpp tabanlı motorlarla yapman gerekir. İleride ofise GPU'lu bir Linux kutusu koyarsan bu depo o kutuyu kurmanın en kısa yolu olarak geri gelir. Şimdilik kurulum denemesine bile girmeye değmez.",
+      "matched_project": null,
+      "relevance": 2,
+      "investment_note": "On bir günde 13 bin star, tek tıkla yerel büyük model çalıştırma talebinin ne kadar büyük olduğuna dair bir pazar sinyali; ürün olarak değil, bu katmana yatırım yapan ekipleri ararken bir gösterge olarak not edilmeye değer."
+    },
+    {
+      "full_name": "algorithmicsuperintelligence/openevolve",
+      "inputs_hash": "5733efb14ae143719185481e0a273c04",
+      "description_tr": "OpenEvolve, DeepMind'ın AlphaEvolve yaklaşımının açık kaynak uygulaması: bir başlangıç programı ve skor üreten bir değerlendirici veriyorsun, sistem LLM'lerle kodu tekrar tekrar değiştirip skoru yükseltmeye çalışıyor. Ada (island) tabanlı paralel evrim, çok amaçlı Pareto seçimi ve tekrar üretilebilir koşular sunduğunu belirtiyor. Python kütüphanesi ya da CLI olarak çalışıyor; OpenAI uyumlu her sağlayıcıyı kabul ediyor, örnek yapılandırma Gemini'nin ücretsiz katmanını kullanıyor. Örnek galerisinde MLX Metal çekirdeği optimizasyonu, circle packing, Rust'ta uyarlanabilir sıralama ve sinyal işleme filtresi tasarımı var. Apache-2.0 lisanslı, yaklaşık 7,5K star, PyPI'de yayınlanıyor; README'deki hızlanma ve 'state of the art' iddiaları projenin kendi ölçümleri.",
+      "usage_tr": "Bunun oturduğu yer Lyricdrop v2'nin kelime hizalama adımı, çünkü orada zaten ölçülebilir bir skor var: 20-30 şarkılık test setinde hizalama hatası. Lyrics DB metnini STT çıktısıyla eşleyen kodu başlangıç programı, test setindeki hata oranını da değerlendirici yapıp eşleştirme heuristiğini elle kurcalamak yerine arama koşturabilirsin. Değerlendiriciyi mevcut admin panelinin test tarafına bağlarsan koşu gece boyunca ilerler, sabah yalnızca kazanan varyantı okursun. Maliyet uyarısı net: bu yöntem on binlerce LLM çağrısı demek ve Max aboneliğiyle değil API anahtarıyla çalışır, o yüzden iterasyon sayısına ve bütçeye baştan tavan koy; alternatif olarak Mac'teki yerel OpenAI uyumlu bir endpoint'e bağlayıp yavaş ama bedava koşturabilirsin. İkinci uyarı daha önemli: değerlendirici zayıfsa sistem problemi çözmek yerine metriği kandıran kod üretir, yani asıl iş test seti ve skor fonksiyonunu dürüst kurmakta. Şarkı başına maliyeti düşürmeye çalışan prompt veya pipeline adımları için de aynı kalıp kullanılabilir.",
+      "matched_project": "Lyricdrop",
+      "relevance": 6,
+      "investment_note": null
+    },
+    {
+      "full_name": "adbar/trafilatura",
+      "inputs_hash": "02aa9c41d7b539d5e012d9ef66fa7c11",
+      "description_tr": "Trafilatura, web sayfalarından ana metni ve metadata'yı çıkarmak için yazılmış bir Python paketi ve komut satırı aracı. Sitemap ve RSS/Atom beslemelerinden URL keşfi, kibar indirme kuyruğu, tarama ve metin çıkarma adımlarını birlikte veriyor; başlık, yazar, tarih, site adı gibi alanları da ayrıştırıyor. Kendi kural tabanlı çıkarıcısının yanında jusText ve readability-lxml'i yedek olarak kullanıyor; header, footer ve tekrar eden bloklardan kaynaklanan gürültüyü ayıklamaya odaklanıyor. Çıktıyı TXT, Markdown, CSV, JSON, HTML, XML ve XML-TEI olarak verebiliyor ve veritabanı gerektirmiyor. 2019'dan beri geliştiriliyor, Apache-2.0 lisanslı, yaklaşık 6,9K star, akademik bir yayını ve HuggingFace, NVIDIA, Internet Archive gibi kullanıcıları var.",
+      "usage_tr": "Arslan Holding'in pazar ve rakip araştırması tarafında bunu bir alt katman olarak kullanabilirsin: haber, blog ve şirket sayfalarını gürültüsüz metne indirip LLM'e vermek, HTML temizliğiyle uğraşmayı tamamen ortadan kaldırır. MENA ve Türkiye AI haber akışını besleyen küçük bir servis kurup çıktıyı Supabase'e yazmak, deal sourcing için okunabilir bir akış üretir; n8n'de tek bir adım olarak da durabilir. Asistanın yaptığı tedarikçi ve rakip karşılaştırmalarının ilk adımı da aynı araçla yarı otomatikleşir: o linkleri verir, pipeline metinleri toplar. Tamamen yerel bir Python paketi; API maliyeti yok, M4 Pro'da hızlı çalışır ve kendi pipeline'ına doğrudan gömülür. Uyarı: çıkarma kalitesi siteye göre değişir, JavaScript ile render edilen sayfalarda boş dönebilir ve hangi siteyi ne sıklıkla çektiğinin sorumluluğu sende kalır.",
+      "matched_project": "Arslan Holding",
+      "relevance": 6,
+      "investment_note": null
+    },
+    {
+      "full_name": "kvcache-ai/Mooncake",
+      "inputs_hash": "2ef2a1c145235fd0bf90676a222543e2",
+      "description_tr": "Mooncake, Moonshot AI'ın Kimi servisini besleyen, KV cache merkezli ve ayrıştırılmış (disaggregated) bir LLM servis platformu. Prefill ve decode aşamalarını ayırıp KV cache'i makineler arasında RDMA üzerinden taşıyan bir transfer motoru sunuyor; gerçek yükte Kimi'nin SLO'ları korurken %75 daha fazla istek karşılamasını sağladığı belirtiliyor. vLLM, SGLang ve TensorRT-LLM ile entegre çalışıyor, ayrıca ayrıştırılmış RL eğitiminde rollout verisi taşımak için kullanılıyor. CUDA, ROCm, NPU, MUSA ve EFA gibi farklı donanımlar için ayrı PyPI paketleri yayınlanıyor. FAST'25'te yayımlanmış bir makalesi, gerçek izleme (trace) verileri ve Apache-2.0 lisansı var; yaklaşık 6,7K star ve haftalık commit akışıyla aktif.",
+      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, yerel model çalıştırma ilgin, ama bu proje onun tam tersi ucunda duruyor. Mooncake çok düğümlü, RDMA ağına sahip veri merkezi kurulumları için yazılmış; tek bir Mac'te ya da tek sunucuda çözdüğü bir problem yok. Lyricdrop ve diğer uygulamalarının çıkarım ihtiyacı tek makine ölçeğinde kalıyor, dolayısıyla buradan alınacak bir parça da yok. Asistanına ya da kendi pipeline'ına devredilebilir bir yüzü bulunmuyor. Çıkarım altyapısına yatırım bakacaksan alanın teknik sözlüğünü öğrenmek için makalesi iyi bir başlangıç.",
+      "matched_project": null,
+      "relevance": 1,
+      "investment_note": null
+    },
+    {
+      "full_name": "google-ai-edge/LiteRT-LM",
+      "inputs_hash": "83433523a3500a265c01bcfc30e89a4a",
+      "description_tr": "LiteRT-LM, Google'ın uç cihazlarda büyük dil modeli çalıştırmak için geliştirdiği LiteRT tabanlı çıkarım katmanı. Android, iOS, web, masaüstü ve Raspberry Pi gibi IoT hedeflerini destekliyor; GPU ve NPU hızlandırma, görüntü ve ses girdisi, fonksiyon çağırma (tool use) ve spekülatif kod çözme sunuyor. Gemma, Llama, Phi-4 ve Qwen gibi modellerle çalışıyor ve Hugging Face deposundan model çekebilen bir CLI'ı var. Son sürümlerde sürümlenmiş C API paketleri, CLI yapılandırması ve JavaScript API güncellemeleri eklendi; Chrome, Chromebook Plus ve Pixel Watch üzerindeki cihaz içi özellikleri bu katmanın beslediği belirtiliyor. Apache-2.0 lisanslı, yaklaşık 6,6K star ve sık sürüm çıkaran bir Google deposu.",
+      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, Expo ile yazdığın uygulamalarda cihaz içi bir modele ihtiyaç duyman olabilir. Sorun şu ki bağlama yüzeyi C, Kotlin, Swift ve web tarafında; React Native/Expo için hazır bir binding yok, yani kendi native modülünü yazmak zorunda kalırsın ve bu senin tek başına üstlenmek isteyeceğin bir iş değil. Masaüstü CLI'ı Mac'te çalışır ama orada zaten daha kolay yollar var. Aynı ihtiyaç için Expo binding'i hazır gelen cihaz içi motorlar sana çok daha kısa yol sunar. Google'ın uç cihaz yığınının nereye gittiğini izlemek istersen takip listesinde kalabilir.",
+      "matched_project": null,
+      "relevance": 2,
+      "investment_note": null
+    },
+    {
+      "full_name": "NVIDIA/Model-Optimizer",
+      "inputs_hash": "d0a5c78c1ce909bea87ac1c21088c069",
+      "description_tr": "NVIDIA Model Optimizer, derin öğrenme modellerini çıkarım için küçültüp hızlandıran teknikleri tek kütüphanede toplayan bir araç seti. Nicemleme (FP8, NVFP4 dahil), budama, bilgi damıtma, neural architecture search, spekülatif kod çözme ve seyreklik yöntemlerini Python API'leriyle birleştirilebilir şekilde sunuyor. Girdi olarak Hugging Face, PyTorch veya ONNX modeli alıyor; çıktısı TensorRT-LLM, TensorRT, vLLM ve SGLang gibi çıkarım çatılarına hazır nicemlenmiş kontrol noktaları. Megatron-Bridge, Megatron-LM ve Hugging Face Accelerate ile entegre çalışıyor, böylece eğitim gerektiren optimizasyonlar da yapılabiliyor. Duyuru notları 550B'lik Nemotron 3 Ultra gibi modellerde NVFP4 ile ciddi hız ve bellek kazanımları raporluyor. Apache-2.0 lisanslı, yaklaşık 5,2K star, düzenli yayınlanan sürümleri ve geniş dokümantasyonu var.",
+      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, yerel modelleri daha küçük ve hızlı çalıştırma isteğin, ama bu kütüphane o işi NVIDIA donanımı için yapıyor. Üretilen kontrol noktaları TensorRT ve vLLM gibi CUDA hedeflerine gidiyor; Apple Silicon'da MLX veya GGUF tarafında karşılığı yok. Kendi modelini eğitmediğin ve sunmadığın için nicemleme hattının kendisi senin problemin değil; hazır nicemlenmiş modelleri indirip kullanıyorsun. Asistana devredilebilir ya da uygulamaya gömülebilir bir tarafı da bulunmuyor. Yalnızca çıkarım maliyeti üzerine kurulu bir yatırım tezi değerlendirirken referans olarak işine yarar.",
+      "matched_project": null,
+      "relevance": 0,
+      "investment_note": null
+    },
+    {
+      "full_name": "skyzh/tiny-llm",
+      "inputs_hash": "f823c111ff9a317519a3b71aa4f696f9",
+      "description_tr": "tiny-llm, LLM çıkarım sistemlerini uçtan uca anlamak isteyen sistem mühendisleri için hazırlanmış, dört haftalık bir uygulamalı kurs. Qwen3 modelini doğrudan MLX dizi işlemleriyle kurmaktan başlıyor; attention, RoPE, GQA, RMSNorm, MLP ve örnekleme adımlarını hazır sinir ağı katmanları kullanmadan yazdırıyor. Sonraki haftalar KV cache, nicemlenmiş matris çarpımı, SIMD prefill, sürekli yığınlama (continuous batching) ve sayfalı KV ile küçük bir vLLM kurmaya, son hafta sınırlı bir kodlama ajanı yazmaya geçiyor. Apple Silicon'un tek paylaşımlı bellek alanı ve Metal çekirdeklerine doğrudan erişimi tercih gerekçesi olarak açıkça belirtiliyor; MLX hem doğruluk referansı hem performans tabanı olarak kullanılıyor. Apache-2.0 lisanslı, yaklaşık 4,8K star; kitap yayında ve bölümler tek tek gözden geçirilerek yayımlanıyor.",
+      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, yerel modelleri Mac'te çalıştırma tercihinin altındaki mekanizmayı öğrenmek olabilir. Bu bir kütüphane değil kurs: çıktısı anlayış, projene ekleyebileceğin bir bileşen değil. Üstelik işi devretme ve orkestrasyon tercihinle de ters yönde; dört haftalık bir alıştırma serisi, senin zaman ayırmak isteyeceğin bir kalem olmayabilir. Yine de kurgusu tam senin donanımına oturuyor: M4 Pro'da neden bir modelin belirli bir hızda çalıştığını, KV cache'in belleği nasıl yediğini kendi makinende görmek istersen bu malzeme en yakın eşleşme. Lyricdrop veya sesli not tarafında yerel model seçerken ölçüm okumayı kolaylaştırır, ama bir adım hızlandırmaz.",
+      "matched_project": null,
+      "relevance": 2,
+      "investment_note": null
+    },
+    {
+      "full_name": "oceanbase/seekdb",
+      "inputs_hash": "83f5180a2fbc5e93cdef2b2b46de2113",
+      "description_tr": "seekdb, vektör, tam metin, yapılandırılmış ve yarı yapılandırılmış veriyi tek motorda birleştiren, MySQL protokolüyle uyumlu bir arama veritabanı. Hem gömülü (embedded) hem sunucu olarak çalışıyor; pyseekdb paketiyle tek pip komutundan sonra kullanılabiliyor. HNSW indeksli vektör aramasını, tam metin aramayı ve skaler filtreleri aynı SQL sorgusunda birleştiriyor ve ACID garantisi veriyor. Ajanlar için copy-on-write FORK/MERGE sanal alanları sunuyor, böylece bir ajanın denemeleri ana veriye dokunmadan ayrıştırılabiliyor; LangChain, LlamaIndex ve Dify entegrasyonları var. Kendi ölçümünde akışlı yazma ve arama yükünde Milvus'un 10 katı, Elasticsearch'ün 3 katı QPS iddia ediyor ve ölçümün tekrar üretilebilir olduğunu söylüyor. OceanBase ekibinden çıkıyor, Apache-2.0 lisanslı, Ekim 2025'te açılmış ve yaklaşık 3,1K star toplamış.",
+      "usage_tr": "Kişisel bilgi tabanı projesinde, sesli notların tamamen yerelde kalmasını istiyorsan bu motor ilgini çekebilir: gömülü modda ev Mac mini'sinde çalışır, vektör ve tam metin aramayı tek sorguda verir, dışarıya hiçbir şey çıkmaz ve API maliyeti yoktur. MySQL protokolü ve pyseekdb sayesinde kendi Python servisine doğrudan gömülebilir, ayrı bir altyapı ekibi gerektirmez. Ama asıl uyarı şu: Supabase üzerindeki Postgres ve pgvector senin ölçeğinde bu işi zaten yapıyor, ikinci bir veritabanı motoru eklemek iki ayrı yığın bakmak demek. Dolayısıyla buna geçmenin tek makul gerekçesi notların hiçbir koşulda buluta çıkmaması kararıysa olur. Ajanlar için FORK/MERGE fikri hayat orkestrasyonu uygulamasında deneme senaryolarını ayırmak için ilginç, fakat proje hâlâ genç ve üretimde taşıyacağın bir bağımlılık olarak riskli.",
+      "matched_project": "Kişisel bilgi tabanı",
+      "relevance": 4,
+      "investment_note": null
+    },
+    {
+      "full_name": "dzhng/jevgrep",
+      "inputs_hash": "4ca68abedf6b0b26455ccf55f7236601",
+      "description_tr": "jevgrep, kod tabanına 'bu iş nerede yapılıyor' diye soru sorup ilgili dosyaları, okuma uçlarını ve birebir kaynak alıntılarını tek çıktıda döndüren bir komut satırı aracı. Kodlama ajanlarının yabancı bir depoda doğru dosyayı bulmak için harcadığı turu kısaltmayı hedefliyor; ilgililik kararını Jev modeli üzerinden klasör, dosya ve bildirim seviyelerinde veriyor. On görevlik bir SWE-bench karşılaştırmasında temel yaklaşımla aynı sekiz görevi daha düşük maliyetle tamamladığını raporluyor. Node.js 22+ ile çalışıyor, Python veya ripgrep kurulumu gerektirmiyor; Vercel AI Gateway, OpenRouter, OpenCode Zen gibi sağlayıcılardan birinin anahtarını istiyor. Ayrıca `jg skill` komutuyla Claude Code, Codex ve OpenCode gibi ajanlara kendi skill'ini kuruyor. MIT lisanslı, Eylül 2026'da açılmış ve yaklaşık 2,3K star almış.",
+      "usage_tr": "Lyricdrop v2'nin büyüyen kod tabanında Claude Code ve ofiste OpenCode ile çalışırken bunun yeri net: ajanın 'bu panelde şarkı onayı nerede yazılıyor' turunu grep ve dosya okuma yerine tek çağrıya indiriyor. Skill olarak kurulduğu için kurulum da senin alışkanlığına uyuyor; plugin, hook ve skill denemeye açık olduğun yere doğrudan oturur ve Kanarya ile Folio depolarında da aynı şekilde çalışır. Mac'te yerel çalışıyor, Node 22 dışında bağımlılığı yok, ama arama kararını bir uzak modele verdiği için Max aboneliğinin dışında ayrı bir sağlayıcı anahtarı ve token maliyeti getiriyor — küçük bir bütçeyle bir hafta deneyip ajanın toplam maliyetine etkisini ölçmek doğru yaklaşım. Maliyet iddiası projenin kendi on görevlik ölçümü; senin depolarında aynı sonucu vereceğinin garantisi yok. Bir uyarı daha: ilgililik kararı dışarıya kod parçaları gönderiyor, yani özel depolarda hangi sağlayıcıyı seçtiğin önemli.",
+      "matched_project": "Lyricdrop",
+      "relevance": 8,
+      "investment_note": null
+    },
+    {
+      "full_name": "NVIDIA-NeMo/Curator",
+      "inputs_hash": "8139afd9605822bb62965394cfddc708",
+      "description_tr": "NeMo Curator, büyük metin, görüntü, video ve ses veri kümelerini model eğitimi için yükleyen, süzen, tekilleştiren ve dönüştüren GPU hızlandırmalı bir veri hazırlama araç seti. Tüm modaliteler Ray tabanlı tek bir pipeline mimarisi üzerinde çalışıyor ve aynı pipeline hem tek makinede hem çok düğümlü bir Ray kümesinde koşabiliyor. Metin tarafında tekilleştirme, sınıflandırma, kalite süzme ve dil tespiti; ses tarafında ASR transkripsiyonu, kalite değerlendirmesi ve WER'e göre süzme; video tarafında sahne tespiti ve klip çıkarma gibi hazır bloklar var. Pipeline içinde OpenAI uyumlu bir çıkarım sunucusu ayağa kaldırıp sentetik veri üretimi ve sınıflandırma yapılabiliyor. Slurm üzerinde çok düğümlü dağıtım için ayrı bir kılavuzu bulunuyor. Apache-2.0 lisanslı, yaklaşık 1,8K star ve NVIDIA'nın NeMo yığınının parçası olarak düzenli sürüm çıkarıyor.",
+      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, Lyricdrop'un dil başına binlerce şarkıya çıkacak katalog küratörlüğü olabilir. Kavramsal olarak örtüşen bir yeri var — ses transkripsiyonu, WER'e göre süzme, tekilleştirme — ama araç model eğitimi için milyonlarca kayıt işleyen GPU kümeleri varsayıyor; senin ölçeğinde kurulum maliyeti faydadan büyük. Ray ve GPU bağımlılığı ofisteki Mac'te pratik bir yol bırakmıyor, bulut GPU kirası ise Lyricdrop'un şarkı başına maliyet hedefiyle çelişir. Kendi küratörlük adımlarını Supabase ve n8n üzerinde yazmak bu ölçekte daha hızlı kalır. WER eşiğiyle süzme fikrini kendi hattına ödünç almak yine de iyi bir hamle; kütüphaneyi kurman gerekmez.",
+      "matched_project": null,
+      "relevance": 2,
+      "investment_note": null
+    },
+    {
+      "full_name": "AtomicBot-ai/Atomic-Chat",
+      "inputs_hash": "585bfa3da7f43e35dfcba4673d714180",
+      "description_tr": "Atomic Chat, açık ağırlıklı dil modellerini tamamen çevrim dışı çalıştıran bir yerel yapay zeka uygulaması ve çıkarım motoru. Tauri ile yazılmış masaüstü sürümü macOS, Windows ve Linux'ta; ayrıca iOS ve Android uygulamaları var. Apple Silicon'da MLX, diğer platformlarda llama.cpp üzerinden çalışıyor; GGUF modelleri, spekülatif kod çözme, nicemlenmiş KV cache ve görüntü girdisi destekliyor. localhost:1337 üzerinde OpenAI uyumlu bir sunucu açıyor, böylece mevcut istemciler ve ajanlar base_url değiştirerek bağlanabiliyor; MCP desteği ve isteğe bağlı bulut sağlayıcıları da mevcut. Mart 2026'da açılmış, yaklaşık 1,7K star; lisans alanı standart bir SPDX kalıbına oturmuyor, yani kullanım koşullarını depodaki lisans dosyasından okumak gerekiyor.",
+      "usage_tr": "Kişisel bilgi tabanı projesinde sesli notların kategorisini çıkaran adım tam buraya oturuyor: ev Mac mini'si 7/24 açık, Atomic Chat'in localhost sunucusu orada durur ve n8n akışların OpenAI uyumlu bir uç nokta olarak ona bağlanır. Notlar makineden hiç çıkmaz, API maliyeti sıfır olur ve iş/asistan sistemiyle karışmaması kararına da uyar. İkinci aday Lyricdrop'un toplu metin işleri: şık üretme ve sözlerin ön işlenmesi gibi hacimli ama hata toleransı yüksek adımları yerel bir modele devredip şarkı başına maliyeti aşağı çekebilirsin — ama şık kalitesinin oyun mantığını doğrudan etkilediğini unutma, yerel küçük bir modelin ürettiği şıkları ölçmeden hatta almamak gerekir. Kurulumu bir dmg, yani asistanla paylaşılabilecek kadar basit. Uyarı: kapalı kaynak istemcilere güvenmeme tercihin burada lisans belirsizliğiyle karşılaşıyor; üretim akışına koymadan önce lisans dosyasını okuman ve kritik yol için doğrudan llama.cpp ya da MLX üzerine kendi küçük servisini yazmayı düşünmen makul.",
+      "matched_project": "Kişisel bilgi tabanı",
+      "relevance": 6,
+      "investment_note": null
+    },
+    {
+      "full_name": "nobodywho-ooo/nobodywho",
+      "inputs_hash": "6ff69c02eb1b9ac0d6e4df4b8582bf65",
+      "description_tr": "NobodyWho, dil modellerini cihaz üzerinde çalıştırmak için yazılmış, Rust çekirdekli bir çıkarım motoru. Çekirdek llama.cpp üzerine metin, görüntü, embedding ve yeniden sıralama; ONNX Runtime üzerine ise konuşmadan yazıya (Whisper), yazıdan sese (Kokoro, Pocket TTS, Supertonic) ve konuşma etkinliği tespiti (Silero) yetenekleri ekliyor. Kotlin, Swift, React Native/Expo, Flutter, Python ve Godot için ayrı binding'ler yayınlıyor; masaüstünde macOS Metal ile hızlanıyor, iOS, Android, visionOS ve watchOS hedefleri destekleniyor. Fonksiyon imzalarından otomatik gramer üretip tip güvenli araç çağırma yapıyor ve modelleri doğrudan Hugging Face'ten indirebiliyor. Web export'u yok, Windows ARM64 desteklenmiyor ve bellek ihtiyacı kabaca model dosyasının 1,5 katı olarak belirtiliyor. EUPL-1.2 lisanslı, 2024'ten beri geliştiriliyor, yaklaşık 1,5K star; kendi mağaza uygulamalarıyla motoru denemek mümkün.",
+      "usage_tr": "Sesli not uygulamasının tam ihtiyacı bu: tek dokunuşla kayıt, cihazda Whisper ile transkripsiyon, Silero ile ne zaman duracağını bilmek ve kategoriyi yine cihazdaki küçük bir modelle çıkarmak. React Native/Expo binding'i hazır geldiği için kendi standart yığınına native modül yazmadan girer ve not sunucuya hiç gitmediği için en mahrem veri grubu telefonda kalır; API maliyeti de yok. Aynı motor masaüstünde de çalıştığı için ofis Mac'inde prototipleyip sonra telefona taşıyabilirsin, bu da senin çalışma ritmine uyar. İki uyarı var: iPhone'da modelin bellek ayak izi gerçek bir sınır, o yüzden küçük bir model ve kısa bağlam ile başlamak gerekir; ikincisi lisans — EUPL-1.2 copyleft bir lisans ve yayınlamayı planladığın bir uygulamaya gömmeden önce bu tarafı netleştirmek lazım. Lyricdrop'un kelime hizalama ihtiyacına ise karşılık gelmiyor; buradaki STT transkript üretir, kelime düzeyinde zamanlama vaadi yok.",
+      "matched_project": "Kişisel bilgi tabanı",
+      "relevance": 7,
+      "investment_note": "Tek bir Rust çekirdeğini Kotlin, Swift, Expo, Flutter ve Godot'ya bağlayan küçük bir ekip; cihaz içi çıkarımın uygulama katmanına yatırım bakıyorsan tanışmaya değer bir profil."
+    },
+    {
+      "full_name": "NVIDIA-NeMo/labs-molt",
+      "inputs_hash": "66b343ccbb96a8090ca387e7df4a7041",
+      "description_tr": "Molt, ajan odaklı pekiştirmeli öğrenme araştırması için yazılmış, PyTorch ve HuggingFace yerlisi bir RL çatısı. Üç bileşen üzerine kurulu: yerleşim ve asenkron kuyruklar için Ray, rollout için vLLM, eğitim için NVIDIA AutoModel ve FSDP2. Ajanı program olarak ele alıyor; ödül, bir Env ya da ChatAgent içinde yazdığın herhangi bir Python kodu olabiliyor — grader, çok turlu araç kullanımı, görsel dil ortamları veya LLM-as-judge. Yaklaşık 9,2 bin satırlık RL koduyla tensor, expert ve context paralelliği üzerinden 1T sınıfı MoE modellerine ölçeklendiğini belirtiyor. Apache-2.0 lisanslı, Haziran 2026'da açılmış, yaklaşık 1,2K star; bir teknik raporu ve örnek RL tarifleri var.",
+      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, ajan davranışına ilgin olabilir, ama bu araç ajan kurmak için değil ajan eğitmek için. Kullanmak çok GPU'lu bir küme, Ray yerleşimi ve model eğitimi uzmanlığı gerektiriyor; sen hazır modelleri Claude Code üzerinden kullanıyorsun, kendi modelini eğitmiyorsun. Ofisteki Mac'te koşturulabilecek bir tarafı yok ve asistana devredilebilir bir iş de değil. Lyricdrop veya Folio'nun ihtiyaçları prompt ve pipeline seviyesinde çözülüyor, RL eğitimiyle değil. Yatırım tarafında ajan eğitimi altyapısına bakacaksan alanın hangi yığın üzerinde toplandığını görmek için okunabilir bir referans.",
+      "matched_project": null,
+      "relevance": 1,
+      "investment_note": null
+    }
+  ]
+}

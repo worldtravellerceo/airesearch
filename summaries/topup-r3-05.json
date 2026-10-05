@@ -1,0 +1,139 @@
+{
+ "repos": [
+  {
+   "full_name": "john-rocky/coreai-model-zoo",
+   "inputs_hash": "8759a18212d0e4a806ca9fd8df978096",
+   "description_tr": "CoreAI-Model-Zoo, Apple'ın iOS 27 ve macOS 27 ile gelen cihaz üstü çalışma zamanı Core AI için dönüştürülmüş model paketlerini (.aimodel) ve bu paketleri üreten dönüştürme tariflerini bir arada tutan bir katalog. Sohbet, görü, konuşma ve üretken model aileleri yer alıyor; her model için recipe.toml dosyası yayınlanıyor ve dönüştürmeyi zoo_convert.py ile yeniden çalıştırmak, çıkan paketi zoo_verify.py ile kaynak modele karşı doğrulamak mümkün. Her model kartı ölçümün hangi donanımda alındığını ve parite kanıtının ne kadar güçlü olduğunu ayrı ayrı yazıyor; iPhone ölçümleri cihaz üstünde alınanlarla, yalnızca Mac'te çalışan büyük modeller birbirinden açıkça ayrılmış. Modeller Swift tarafında CoreAIKit paketi üzerinden kullanılıyor, yanında bir ChatDemo uygulaması ve CLI ile indirilebilir bir Mac uygulaması var; ilk indirme model başına yüzlerce MB. Haziran 2026'da açılmış, 452 yıldız; lisans alanı standart bir SPDX kalıbına oturmuyor (NOASSERTION) ve kurulum Xcode 27 beta gerektiriyor.",
+   "usage_tr": "Lyricdrop v2'nin yerel model tarafında işine yarayabilir: maliyet planında ücretli servisleri bırakıp STT'yi ve içerik işlerini ofisteki Mac'te yerel çalıştırmaya karar verdin, bu katalog da aynı makinede hangi konuşma ve sohbet modellerinin gerçekten çalıştığını ölçüm kaydıyla birlikte veriyor. Karşılaştırmayı planladığın 2-3 STT sisteminden birini buradan seçip ölçüm kaydını kendi test setindeki sonuçla yan yana koyabilirsin. Çalışma tamamen cihaz üstünde olduğu için API maliyeti çıkarmaz ve Max aboneliğinle çakışmaz. Uyarı olarak iki nokta var: entegrasyon Swift ve CoreAIKit üzerinden, yani Expo/React Native uygulamasına native module yazmadan girmez, pipeline tarafında ise Python servislerin yanında ayrı bir Swift CLI anlamına gelir. İkincisi macOS 27 ve Xcode beta gerekliliği; 7/24 açık tuttuğun üretim makinesine beta işletim sistemi kurmak yerine ev Mac mini'sinde denemek daha az riskli. Bu iş asistana devredilebilir değil, Xcode ve cihaz testi gerektiriyor.",
+   "matched_project": "Lyricdrop",
+   "relevance": 6,
+   "investment_note": null
+  },
+  {
+   "full_name": "microsoft/onnxruntime",
+   "inputs_hash": "c33ddf07fb5abf658863fe957848e786",
+   "description_tr": "ONNX Runtime, ONNX formatındaki modelleri çalıştırmak için Microsoft'un geliştirdiği çapraz platform çıkarım ve eğitim hızlandırıcısı. PyTorch ve TensorFlow/Keras gibi derin öğrenme çerçevelerinden gelen modellerin yanında scikit-learn, LightGBM ve XGBoost gibi klasik kütüphanelerin modellerini de destekliyor. Graf optimizasyonları ve dönüşümlerle birlikte, bulunduğu donanımın hızlandırıcılarını kullanarak çalışıyor; farklı işletim sistemi, sürücü ve donanım kombinasyonlarını hedefliyor. Eğitim tarafında çok düğümlü NVIDIA GPU kurulumlarında transformer modellerinin eğitim süresini kısaltmak için mevcut PyTorch betiklerine tek satırla ekleniyor. Çekirdeği C++; MIT lisanslı, 22.021 yıldız, 2018'den beri sürümleniyor ve ayrı execution provider eklenti repoları ile birlikte bakımı yapılıyor.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, Mac'te yerel çalıştırmayı tercih ettiğin STT ve görüntü modellerinin altında zaten bu sınıftan bir çalışma zamanının bulunması. Yani ONNX Runtime'ı sen kurmazsın, kullandığın yerel araç onu içinde taşır. Kendi model dönüştürme ve optimizasyon katmanını yazmak, orkestra şefi rolüyle de prototip hızınla da uyuşmuyor; o katman seni çözmek istediğin kelime hizalama probleminden uzaklaştırır. Bir araç seçerken sadece \"Apple Silicon'da hangi çalışma zamanıyla ne hızda koşuyor\" sorusunu sormak yeterli.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "stas00/ml-engineering",
+   "inputs_hash": "d4b3e417243753ad673848d6565453b9",
+   "description_tr": "Machine Learning Engineering Open Book, büyük dil ve çok kipli modellerin eğitimi, ince ayarı ve çıkarımı sırasında karşılaşılan pratik problemleri derleyen açık bir teknik kitap. Yazarın BLOOM-176B ve IDEFICS-80B eğitimlerinden ve sonraki RAG çalışmalarından biriktirdiği notlara dayanıyor; hedef kitlesi LLM/VLM eğitimi yürüten mühendisler ve operatörler. Bölümler hızlandırıcı ve CPU bellek seçimi, dağıtık depolama, düğüm içi ve düğümler arası ağ, SLURM ile orkestrasyon, eğitim, çıkarım, hata ayıklama ve test yazımı başlıklarına ayrılmış; metin kopyala-çalıştır komutlar ve betikler içeriyor. GPU nesil yükseltmesinin ne zaman maliyetini karşıladığı gibi karar çerçeveleri gerçek H200-B200 ölçümleriyle işlenmiş. PDF ve EPUB sürümleri yayınlanıyor, ayrıca ajanlara verilmek üzere iki SKILL.md dosyası var (büyük ölçekli eğitim ve GPU kümesi kabul testi). CC-BY-SA-4.0, 19.178 yıldız, düzenli güncelleniyor.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, Arslan Holding tarafında AI altyapısı iddiasıyla gelen bir ekibin donanım ve maliyet varsayımlarını okumak gerektiğinde teknik sözlük olarak işe yaraması. Kendin model eğitmiyorsun, modelleri çağırıyorsun; kitabın ağırlık merkezi olan küme, SLURM ve çok düğümlü ağ konuları hiçbir projenin adımına oturmuyor. Elindeki tek makine 24 GB bellekli bir M4 Pro ve istediğin şey yerel çıkarım, eğitim değil. Pratik olarak sadece çıkarım bölümünün birkaç sayfası okunabilir, gerisi başka bir ölçek için yazılmış.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "bbfamily/abu",
+   "inputs_hash": "a82c4ad98f6c4d8772f456f04f2b1f14",
+   "description_tr": "abu, Python ile yazılmış açık kaynak bir kantitatif işlem ve yatırım çerçevesi; hisse senedi, opsiyon, vadeli işlem ve bitcoin piyasalarını kapsıyor. Çekirdek kütüphane abupy dizininde, yanında dersler (abupy_lecture), kod yazmadan kullanılan bir arayüz (abupy_ui) ve iki kitabın örnek kodları bulunuyor. numpy, pandas ve matplotlib üzerine kurulu; strateji geliştirme, geriye dönük test ve formasyon/dalga tabanlı sinyal üretimi üzerine modüller içeriyor. Proje sitesinde çeşitli endeks ve emtialar için otomatik üretilmiş piyasa raporları yayınlanıyor. Dokümantasyonun tamamı Çince; GPL-3.0 lisanslı, 2016'da açılmış ve 18.851 yıldıza ulaşmış.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam Arslan Holding'in FinTech ilgisi, ama orada bakılan şey erken aşama şirketler, kendi başına bir alım-satım stratejisi değil. Portföyünde borsa algoritması çalıştırma gibi bir iş kolu yok; yatırım tarafı erken aşama AI ve frontier tech, gayrimenkul ve enerji üzerine kurulu. Dokümantasyonun Çince olması ve GPL-3.0 lisansı, kendi ürünlerine bir parça gömme refleksinin de önünü kapatıyor. Piyasa verisi çekme ihtiyacı doğarsa tek bir veri katmanı aramak, bu büyüklükte bir çerçeveyi kurmaktan daha hızlı olur.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "AI4Finance-Foundation/FinRL",
+   "inputs_hash": "43baceb3203a8bfc016c109dc8875279",
+   "description_tr": "FinRL, finansal pekiştirmeli öğrenme için açılmış ilk açık kaynak çerçeve olarak tanımlanıyor; borsa, kripto ve çoklu varlık senaryolarında eğit-test-işlem hattını uçtan uca kuruyor. Gym tarzı piyasa ortamları FinRL-Meta'da, algoritma katmanı ElegantRL'de olmak üzere bir repo ailesinin parçası; bu repo eğitim, kıyaslama ve araştırma prototipi için korunuyor. README, üretim ve canlı işlem hedefleyenleri yeni nesil FinRL-X / FinRL-Trading deposuna yönlendiriyor, yani bu depo artık arşiv niteliğinde bir referans konumunda. İçerik ağırlıklı olarak Jupyter Notebook; MIT lisanslı, 16.556 yıldız, 2020'de açılmış. Derin pekiştirmeli öğrenme algoritmaları PyTorch ve TensorFlow 2 üzerinden sunuluyor.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, pekiştirmeli öğrenmenin Folio'nun öneri sistemi tarafında geçen bir kavram olması, ama oradaki ihtiyaç bandit düzeyinde bir beğeni/beğenmeme döngüsü, finansal piyasa ortamları değil. Bu depodaki ortam ve ödül yapıları fiyat serilerine göre tasarlanmış; feed sıralamasına taşımak yeniden yazmak anlamına gelir. Ayrıca README'nin kendisi aktif geliştirmeyi başka bir depoya taşıdığını söylüyor, yani bir şey denenecekse bu repo başlangıç noktası değil. Folio için çok daha küçük bir öneri kütüphanesi aramak doğru adım.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "polakowo/vectorbt",
+   "inputs_hash": "2e845303249a3c8ada489da0d8267666",
+   "description_tr": "VectorBT, işlem stratejilerini bar bar döngüyle değil vektörleştirilmiş olarak test eden bir backtesting motoru. Binlerce konfigürasyonu NumPy dizilerine paketleyip sıcak yolu Numba ve Rust ile hızlandırıyor, böylece saatler süren grid aramalarını tek seferde çalıştırmayı hedefliyor. Portföy performansını tek tek işlem düzeyine kadar inceleme ve sonuçları etkileşimli görselleştirme için hazır bileşenler içeriyor. Depo, ticari VectorBT PRO sürümünün topluluk edisyonu; paralelleştirme, portföy optimizasyonu, formasyon tanıma, limit emir ve kaldıraç gibi özellikler ücretli sürümde tutuluyor. Lisans standart bir açık kaynak lisansı değil, \"Fair Code\" olarak etiketlenmiş; 9.277 yıldız, 2017'de açılmış, PyPI ve Docker imajları yayınlanıyor.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam güneş enerjisi yatırımındaki finansal modelleme ihtiyacı, ama orada gereken şey proje finansmanı ve DCF, geçmiş fiyat serisi üzerinde strateji taraması değil. Yatırım tarafında da karar birimi tek tek şirketler, parametre ızgarası değil. Fair Code lisansı, bir parçasını kendi uygulamalarına gömme ihtimalini baştan sınırlıyor. Pratik bir kullanım çıkarsa bu teknik değil ticari tarafta olur.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": "Açık çekirdek modelinin temiz bir örneği: topluluk sürümü ücretsiz, paralelleştirme ve portföy optimizasyonu gibi özellikler ücretli PRO'da tutuluyor; bir açık kaynak projenin nasıl ticarileştiğine bakarken karşılaştırma noktası olarak işine yarar."
+  },
+  {
+   "full_name": "heilcheng/awesome-agent-skills",
+   "inputs_hash": "9d57f4c508174ba4742b8ca1e5e62802",
+   "description_tr": "Agent Skill Index, AI ajanlarına yeni yetenekler öğreten SKILL.md dosyalarını kategorilere ayırarak derleyen bir dizin. Claude Code, Codex, Gemini CLI, Cursor, GitHub Copilot ve Windsurf gibi istemcilerle uyumlu skill'leri listeliyor; resmi sağlayıcı dizinleri ile topluluk skill'lerini ayrı bölümlerde tutuyor. Kurulum üç adıma indirgenmiş: skill'i seç, ajanına yükle, ne istediğini düz dille söyle. Derleme, toplu üretilmiş skill repolarından ayrışmayı hedefliyor ve gerçek mühendislik ekiplerinin kullandığı skill'lere odaklandığını belirtiyor; bir kalite standardı bölümü ile skill yazma rehberleri de var. README altı dilde yayınlanıyor ve agent-skill.co üzerinde canlı bir dizin eşliği var. MIT lisanslı, 6.262 yıldız, Aralık 2025'te açılmış; depo dili TypeScript, yani dizinin kendi sitesi de burada.",
+   "usage_tr": "Lyricdrop v2'yi Superpowers plugin'i ile yazdığın Claude Code kurulumuna doğrudan oturuyor: review agent'ları, test ve dokümantasyon skill'leri aradığın yer tam burası, ve her değişikliğin iki ayrı açıdan review edilmesi isteğin de bu katmanda çözülüyor. Dizinden işine yarayan birkaç skill'i seçip projenin CLAUDE.md'si ile birlikte repoya koyabilirsin; Max aboneliğinin içinde kalır, ek API maliyeti getirmez ve kurulum tek komut olduğu için asistana da anlatılabilir. Araştırma ve karşılaştırma işleri yapan skill'ler, asistanın koç bulma veya tedarikçi kıyaslama gibi görevlerini de hızlandırabilir. Faydası, her projede sıfırdan prompt yazmak yerine tekrar eden işleri sabit bir metne bağlamak. Uyarı: topluluk skill'lerinin kalitesi değişken ve kurduğun her skill, üçüncü parti bir metni kendi ajanının talimat bağlamına sokuyor; okumadan kurmamak ve kodu olanları önce gözden geçirmek gerekiyor. Dizin olduğu için bakımı da başkasına ait: bir skill'i beğendiysen kendi reponda sabitlemek, her gün güncellenen bir listeye bağlı kalmaktan daha güvenli.",
+   "matched_project": "Lyricdrop",
+   "relevance": 7,
+   "investment_note": null
+  },
+  {
+   "full_name": "ebertti/awesome-telegram",
+   "inputs_hash": "193ff414aa6c28eef735242c1fe1c76d",
+   "description_tr": "Awesome Telegram, Telegram ekosistemindeki kaynakları tek listede toplayan uzun soluklu bir derleme. Hazır botlar, inline botlar, oyunlar, bot geliştirme rehberleri ve on dörtten fazla programlama dili için bot kütüphaneleri ayrı başlıklarda listeleniyor. Yanında araçlar, temalar, gruplar, kanallar, bot mağazaları ve bir güvenlik bölümü (AI güvenliği ve siber güvenlik alt başlıklarıyla) bulunuyor. Listeye son dönemde ajan çerçeveleri ve skill girdileri de eklenmiş. Bağlantılar GitHub Actions ile düzenli kontrol ediliyor ve derlemenin kendi Telegram grubu var. 2016'da açılmış, 5.956 yıldız; repoda bir lisans dosyası tanımlı değil.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, Instagram botları ve Beeper üzerinden mesaj toplayan pipeline'ınla kurduğun mesajlaşma otomasyonu deneyimi. Ne var ki kullandığın kanallar WhatsApp, Instagram ve e-posta; asistan tarafındaki yığında da TimelinesAI ve JustCall var, Telegram hiçbir yerde geçmiyor. Bir Telegram ihtiyacı doğmadan bu listenin açılacak bir yeri yok. Olursa da listenin doğru girdisi bot kütüphaneleri bölümü olur, botların kendisi değil.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "pageman/sutskever-30-implementations",
+   "inputs_hash": "08d320cd92bdbeab22e9da4503381198",
+   "description_tr": "Bu depo, Ilya Sutskever'ın derin öğrenmede \"önemli olanın yüzde 90'ını öğretir\" dediği 30 makalelik okuma listesinin her maddesi için eğitim amaçlı birer uygulama içeriyor. Uygulamalar yalnızca NumPy ile yazılmış, derin öğrenme çerçevesi kullanılmıyor; her not defteri sentetik veriyle hemen çalışacak şekilde hazırlanmış ve görselleştirmelerle açıklanmış. Kapsam karakter düzeyli RNN'lerden LSTM'e, pointer network'lerden ResNet, dilated convolution, graf sinir ağları ve transformer'a kadar uzanıyor; 30 makalenin tamamı tamamlanmış görünüyor. İçerik Jupyter Notebook biçiminde ve etkileşimli çalışmaya göre düzenlenmiş. Depoda lisans dosyası yok ve README, aynı kodun Google Colab sürümünü Gumroad üzerinden ücretli satışa bağlıyor; 5.188 yıldız, Aralık 2025'te açılmış. Ajanlar ve çoklu arka uç için ayrı depolara yönlendirme yapıyor.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam öğrenme merakın, ama orada hedefin Türkçe kaynaklardan psikoloji, sosyoloji ve felsefe, sinir ağı iç mekanizmaları değil. Kendi yaklaşımın modelleri çağırmak ve araçları birleştirmek; attention'ın türevini elle yazmanın hiçbir projenin bir adımını kısaltmıyor. Çalıştırılabilir bir bileşen de sunmuyor: NumPy ile yazılmış oyuncak uygulamalar üretimde kullanılmak için değil. Lisans dosyasının olmaması, bir parçasını kendi koduna almayı da belirsiz bırakıyor.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "raiyanyahya/how-to-train-your-gpt",
+   "inputs_hash": "6ba72f4e3bf375b66edbfd640431197f",
+   "description_tr": "How to Train Your GPT, modern bir dil modelini sıfırdan yazmayı anlatan 12 bölümlük etkileşimli bir ders kitabı. Okuyucu tokenizer'dan embedding'lere, attention'dan eğitim döngüsü ve çıkarım motoruna kadar her katmanı kendisi yazıyor; kodun tamamı satır satır \"ne yapıyor ve neden burada\" açıklamalarıyla yorumlanmış. Bölümlerin yanında RoPE, RMSNorm, SwiGLU, KV cache, AdamW ve mixed precision gibi 28 konu için bağımsız açıklayıcı dosyalar ve tek bir cümlenin modelin içinden geçişini izleyen iki anlatı var. Mimari LLaMA 3 tarzı; önkoşul olarak yalnızca temel Python isteniyor, lineer cebir veya kalkülüs gerekmiyor. İçerik Jupyter Notebook biçiminde ve bir Colab eğitim defteri ile birlikte geliyor. MIT lisanslı, 3.645 yıldız, Mayıs 2026'da açılmış; README kendisini açıkça öğrenme amaçlı olarak konumlandırıyor.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, yatırım tarafında model iddiasıyla gelen ekipleri dinlerken temel mimariyi tanımanın işe yaraması. Bunun için bile 7.500 satır kod yazmak gerekmiyor; 28 konu açıklayıcısından birkaçını okumak aynı işi görür. Kendi projelerinin hiçbirinde model eğitimi yok, hepsi hazır modelleri çağırıp etrafına ürün kuruyor. Depo çalıştırılabilir bir bileşen sunmuyor, dolayısıyla Lyricdrop veya Folio'ya gömülecek bir parçası da yok. İlgi duyarsan bu bir hafta sonu okuması olur, bir araç kararı değil.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "yihui-dev/awesome-opus5-5-videos",
+   "inputs_hash": "10deef7b7093cc2a8530f910041ae2c9",
+   "description_tr": "Awesome Opus 5.5 Videos, Claude Opus 5.5 ile üretilmiş videoları ve arkalarındaki prompt'ları bir araya getiren bir derleme. Buradaki videoların hepsi bir video modeliyle değil, animasyonun kod olarak yazdırılmasıyla üretiliyor: HTML, Canvas, SVG ve Three.js gibi tarayıcı teknolojileri. README 475 prompt'un prompts/ dizininde ve data/videos.json dosyasında tutulduğunu, 100 tanesinin listede öne çıkarıldığını söylüyor; kategoriler motion graphics, explainer, 3D sahne ve oyun/etkileşimli olarak ayrılmış. Her girdi üretenin orijinal paylaşımına bağlanıyor, böylece prompt'un kaynağı izlenebilir kalıyor. Bağlı bir site aynı videoları canlı yeniden üretimleriyle yan yana gösteriyor. MIT lisanslı, 2.074 yıldız, Eylül 2026'da açılmış ve düzenli güncelleniyor.",
+   "usage_tr": "Folio'nun günlük içerik pipeline'ında prompt kaynağı olarak kullanabilirsin: bir yazarın kitabını anlatan story ve post'lar için explainer ve motion graphics kategorileri doğrudan o işe bakıyor. Videonun kod olarak üretilmesi senin için iki şey demek: üretim Claude Code ile Max aboneliğinin içinde kalır, klip başına API maliyeti çıkmaz, ve çıktı HTML/Canvas olduğu için Expo tarafında WebView'da oynatılabilir veya kaydı alınıp Supabase ile DigitalOcean üzerinden feed'e konabilir. Lyricdrop lansmanının tanıtım kreatiflerini de aynı kaynaktan besleyebilirsin. Faydası, her gün sıfırdan prompt yazmak yerine çalıştığı görülmüş kalıplardan başlamak. Uyarı: üretilen şey foto-gerçekçi video değil, kodla çizilmiş hareketli grafik; Folio'nun Instagram görünümünde bu bir üslup kararı olur. İkinci uyarı, bunun bir arşiv olması: günlük üretim döngüsünü n8n tarafında yine kendin kurman gerekir.",
+   "matched_project": "Folio",
+   "relevance": 5,
+   "investment_note": null
+  },
+  {
+   "full_name": "coji/natural-japanese",
+   "inputs_hash": "1815e83cfc9c234d96382fa3812c6f57",
+   "description_tr": "natural-japanese, iş Japoncasını okunur ve anlaşılır biçimde yazmak ve düzeltmek için hazırlanmış bir Agent Skill. Tasarımı iki parçaya ayrılmış: metin yazılmadan önce başlık iskeleti sabitleniyor ve 12 maddelik bir üslup anayasası kısıt olarak uygulanıyor, sonradan düzeltmek yerine baştan engellemek hedefleniyor. Kalan kalıplar ise sudachipy ile morfolojik analiz yapan lint.py betiğiyle mekanik olarak tespit ediliyor; klişe ifadeler, monoton cümle ritmi ve İngilizceden birebir çeviri tonu kural tabanlı işaretleniyor. Neyin düzeltilip neyin bırakılacağına kararı insan veya ajan veriyor; ayrıca bir metnin doğallığını 0-100 arası ölçen bir tanı komutu var. Kurulum npx skills add, openskills veya Claude Code plugin'i olarak yapılabiliyor, betikler uv ile skill'den bağımsız da çalışıyor. MIT lisanslı, 1.875 yıldız, Temmuz 2026'da açılmış; dokümantasyon Japonca, README'de kısa bir İngilizce özet var.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, Türkçe yüz metinlerinde aynı \"AI kokusu\" probleminin yaşanması. Ne var ki araç dile kilitli: tespit katmanı sudachipy'nin Japonca morfolojik analizine dayanıyor, kural kataloğu da Japonca kalıplar üzerine kurulu, yani Türkçe bir metinde çalışmaz. İşine yarayan kısım aracın kendisi değil kurgusu: yazım öncesi iskelet, kural tabanlı mekanik tespit, kararı ajana bırakma ve bir rubrikle eşiğe kadar döngü. Bu yapıyı Türkçe için kendin kurarsan, ürün metinlerinde tekrar eden kalıpları gözle aramaktan kurtulursun; fakat o ayrı bir iş ve bu depo yalnızca referans olur.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "LearnPrompt/awesome-seedance",
+   "inputs_hash": "5bf6adbef1c0cb80c1419f10c0d23359",
+   "description_tr": "Awesome Seedance, Seedance 2.5 ve 2.0 metinden videoya modelleri için doğrulanmış bir prompt kütüphanesi. README'ye göre 760 vaka orijinal paylaşımlarına kadar izlenebiliyor, 367 çapraz model yeniden testi kamuya açık sonuçlarıyla veriliyor, 27 kopyalanmaya hazır şablon ve 76 kurulabilir AI-video skill'i bulunuyor. Vaka verisi goodcase.ai'den günlük olarak senkronlanıyor; şablonlar kategorilere ayrılmış ve kullanım için beş adımlık bir başlangıç akışı tanımlanmış. Çapraz model testleri, aynı prompt'un farklı video modellerinde ne verdiğini karşılaştırmayı amaçlıyor. README İngilizce, Çince ve Japonca sürümleriyle yayınlanıyor; kod MIT, derlemenin kendisi CC BY 4.0 lisanslı. 1.708 yıldız, Ağustos 2026'da açılmış; agent skill'i npm üzerinden de dağıtılıyor.",
+   "usage_tr": "Folio'nun günlük içerik üretiminde video tarafına bakıyor: bir yazarın kitabını anlatan story ve post'lar için şablonlardan başlayıp prompt yazma süresini kısaltabilirsin. Skill olarak kurulabildiği için üretimi Claude Code içinden çağırabilir, günlük döngüyü n8n ile tetikleyip asistanına devredebilirsin. Önemli uyarı maliyet tarafında: Seedance kapalı ve barındırılan bir model, her klip API faturası demek ve Mac'te yerel çalışmıyor; ElevenLabs ile Apify'ı maliyet nedeniyle bıraktığına göre önce günlük klip sayısı üzerinden birim maliyet hesabı yapmak doğru olur. Yalnızca kendi telefonunda duran bir uygulama için bu kalem hızla anlamsızlaşabilir, o yüzden Folio'yu düşük frekansla beslemek ya da hareketli grafik üreten ucuz yolu tercih etmek daha tutarlı. Lyricdrop lansmanının tanıtım kreatifleri gibi sayısı sınırlı ve getirisi ölçülebilir işlerde ise maliyet kendini savunabilir. Kütüphanenin değeri prompt'ların kaynağa bağlı olması: hangi kalıbın gerçekten çalıştığını deneyerek bulmak zorunda kalmıyorsun.",
+   "matched_project": "Folio",
+   "relevance": 6,
+   "investment_note": null
+  },
+  {
+   "full_name": "ChenlizheMe/Infernux",
+   "inputs_hash": "0538e8ed5c45df049553e83c00046f64",
+   "description_tr": "Infernux, oynanabilir dünyalar kurmak için Python'u ön plana alan açık kaynak bir oyun motoru. Oynanış bileşenleri, editör araçları ve render hattı Python'da yazılıyor; çalışma zamanı C++, yerel grafik Vulkan, tarayıcı hedefi WebGPU. PBR malzemeler, ışık ve gölgeler, post-processing, Forward/Forward+/Deferred render yolları, iskelet animasyonu, GPU parçacıkları ve Jolt rigid body fiziği destekleniyor; RenderStack Python'da tanımlanıp yerel RenderGraph tarafından yürütülüyor. CPU/GPU JIT ve Taichi entegrasyonu, proje betiklerinin sayısal yükleri çalıştırmasına ve sonuçları oynanışa bağlamasına izin veriyor. Projenin ilan ettiği hedef, modellerin bir dünyayı gözlemleyip simülasyonunu etkileyebildiği bir \"Neural Network-Native Engine\"; mevcut durum bu yola çıkmış bir oyun motoru. MIT lisanslı, editör Windows ve Linux'ta, oynatıcı Windows, Linux, Android ve Web'de; yayınlanan sürüm 0.4.1 ve geliştirme aktif, 1.535 yıldız.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam Lyricdrop'un oyun tarafı ve Android TV sürümü, ama platform listesi uymuyor: editör yalnızca Windows ve Linux'ta çalışıyor, iOS oynatıcısı yok. Lyricdrop zaten Expo/React Native üzerinde ve boşluk doldurma mekaniği 3D motor gerektirmiyor; ekranda oynayan şey bir YouTube videosu. Tek makinen bir Mac olduğu için motoru kurup denemek bile ayrı bir ortam demek. Frontier tech ilgi alanına giren bir tez taşıyor, fakat bu bir izleme konusu, kullanılacak bir araç değil.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "Anil-matcha/awesome-muse-connectors",
+   "inputs_hash": "da155b4be973d4fd3e4997d92186e970",
+   "description_tr": "Awesome Muse Connectors, Meta Muse için entegrasyonları ve topluluk connector skill'lerini listeleyen bir katalog. İçindeki 150 topluluk skill'i MIT lisanslı başka bir projeden kopyalanmış ve kendi lisanslarını koruyor; katalogda her girdi için yetenek, kimlik doğrulama, izin verilen host'lar, çalışma kuralları ve olgunluk etiketi notları tutuluyor. Meta'nın kendi yerleşik konnektörleri de kaynak bağlantılarıyla ayrıca özetleniyor ve bunların topluluk skill'lerinden farklı olduğu belirtiliyor. Depoda ayrıca 12 ajan iş akışı şablonu ve iyi bir bot brief'inin neye benzediğini anlatan bir bölüm var. README, derlemenin bağımsız olduğunu, Meta ile ilişkili veya onun tarafından onaylanmadığını açıkça yazıyor ve sağlayıcı API'lerinin değişebileceği uyarısını yapıyor. MIT lisanslı, 1.313 yıldız; aynı yazarın başka ürünler için aynı kalıpta tutulmuş benzer katalogları da listeye bağlanmış.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam asistan ve holding operasyon tarafındaki konnektör ihtiyacı (WhatsApp, e-posta, takvim, CRM) ile tüm projelerini bilen bir orkestratör ajan isteği. Ne var ki buradaki konnektörler kapalı bir ürüne bağlı; hesapların ve ilişkilerin daima kendi kontrolünde kalması ilkesiyle ve kapalı kaynak istemcilere güvenmeme tercihinle çelişiyor. Kataloğun kendisi de bir kopya derlemesi: skill'ler başka bir projeden alınmış, olgunluk etiketleri yazarın beyanı. İşine yarayabilecek tek kısım, girdilerin izin kapsamı ve host sınırı notlarını yazma biçimi; kendi ajan kurulumunda erişim kapsamlarını izole ederken bunu bir kontrol listesi kalıbı olarak örnek alabilirsin.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  }
+ ]
+}
