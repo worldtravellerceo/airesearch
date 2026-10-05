@@ -552,3 +552,79 @@ def test_the_digest_reports_a_quiet_day_as_quiet(conn, tmp_path):
     assert digest["new_projects"] == []
     assert digest["newly_tracked"] == []
     assert digest["counts"]["arrivals_total"] == 0
+
+
+def test_digest_rows_carry_the_topics_the_hash_is_built_from(conn, tmp_path):
+    """Without them a paragraph is written, validates, and does nothing.
+
+    `inputs_hash` is full name, description, topics and language, and the
+    summary import checks every written row against it. The first arrivals
+    round left topics out of the digest, so the packet hashed an empty tuple
+    and 6 of its 11 rows — precisely the ones that had topics, 4 to 12 each —
+    were skipped as stale on import. The 5 that matched were the repos with no
+    topics at all, which is the worst possible failure shape: it looks like it
+    works, on exactly the rows where there was nothing to get wrong.
+
+    A digest row has no detail file to fall back on, because detail pages are
+    written for the boards and an arrival is not on one. So the digest is the
+    only place the packet builder can read them from.
+    """
+    seed(conn)
+    conn.execute(
+        "UPDATE repos SET first_seen_at = ? WHERE id = 2",
+        (dt.datetime.combine(TODAY, dt.time(), dt.UTC),),
+    )
+    conn.commit()
+
+    export_site.export(conn, tmp_path / "site", date=TODAY)
+    row = read(tmp_path / "site", "digest.json")["new_projects"][0]
+
+    assert row["full_name"] == "newcomer/agent-os"
+    # `seed` gives every repo the topics ("llm", <category>).
+    assert row["topics"] == ["agent-framework", "llm"]
+
+
+def test_a_digest_hash_matches_what_the_import_will_check(conn, tmp_path):
+    """The end-to-end version of the above, against the real hash function.
+
+    This is the check that would have caught it: build the hash the way the
+    packet builder does, from the digest row alone, and compare it with the one
+    the database computes. They have to be equal or the paragraph is written
+    against a repository the index does not recognise.
+    """
+    from airadar.summarise import SummaryInput
+
+    seed(conn)
+    conn.execute(
+        "UPDATE repos SET first_seen_at = ? WHERE id = 2",
+        (dt.datetime.combine(TODAY, dt.time(), dt.UTC),),
+    )
+    conn.commit()
+
+    export_site.export(conn, tmp_path / "site", date=TODAY)
+    row = read(tmp_path / "site", "digest.json")["new_projects"][0]
+
+    from_digest = SummaryInput(
+        repo_id=0,
+        full_name=row["full_name"],
+        description=row["description"],
+        topics=tuple(row["topics"]),
+        language=row["language"],
+        license=None,
+        stars=0,
+        readme_excerpt="",
+    ).inputs_hash()
+
+    db_row = conn.execute("SELECT description, language FROM repos WHERE id = 2").fetchone()
+    from_db = SummaryInput(
+        repo_id=0,
+        full_name="newcomer/agent-os",
+        description=db_row["description"],
+        topics=tuple(sorted(db.repo_topics_map(conn, [2])[2])),
+        language=db_row["language"],
+        license=None,
+        stars=0,
+        readme_excerpt="",
+    ).inputs_hash()
+
+    assert from_digest == from_db

@@ -239,6 +239,26 @@ def _digest(conn: sqlite3.Connection, date: dt.date) -> dict:
         {"date": date, "limit": MOVER_LIMIT},
     ).fetchall()
 
+    # Topics, and they are not cosmetic: `inputs_hash` is built from full name,
+    # description, topics and language, and the summary import validates every
+    # written paragraph against it. The first arrivals round left them out, so
+    # the packet hashed an empty topic tuple and 6 of its 11 rows — every repo
+    # that actually had topics — were skipped as stale on import. The paragraphs
+    # existed, passed every check, and did nothing.
+    arrivals = [dict(row) for row in arrivals]
+    if arrivals:
+        names = [row["full_name"] for row in arrivals]
+        marks = ", ".join("?" * len(names))
+        ids_by_name = {
+            row["full_name"]: row["id"]
+            for row in conn.execute(
+                f"SELECT id, full_name FROM repos WHERE full_name IN ({marks})", names
+            )
+        }
+        topics = db.repo_topics_map(conn, list(ids_by_name.values()))
+        for row in arrivals:
+            row["topics"] = list(topics.get(ids_by_name.get(row["full_name"], -1), ()))
+
     total = conn.execute(
         """
         SELECT count(*) AS n FROM repos r

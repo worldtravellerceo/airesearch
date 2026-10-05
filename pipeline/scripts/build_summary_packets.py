@@ -189,7 +189,10 @@ def main() -> int:
         # about either.
         row = details.get(full_name) or {}
         board_row = names[full_name]
-        topics = tuple(row.get("topics") or [])
+        # The digest row carries these for an arrival, which has no detail
+        # file. Without the fallback the hash is computed over an empty topic
+        # tuple and the import skips the paragraph as stale.
+        topics = tuple(row.get("topics") or board_row.get("topics") or [])
         item = SummaryInput(
             repo_id=0,
             full_name=full_name,
