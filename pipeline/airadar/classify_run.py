@@ -376,85 +376,97 @@ class ReviewSpendCeilingExceeded(RuntimeError):
     """The slice would cost more than this run is allowed to spend."""
 
 
-async def judge_review_queue(
+#: What a packet README costs in tokens, over the 330 a description costs.
+#: `build_review_packets.py` carries 4,000 characters per repository, roughly
+#: three times the 1,200 the engine's own excerpt holds. That is deliberate:
+#: see `judge_review_packets`.
+PACKET_README_TOKENS = 1_000
+
+
+def judge_review_packets(
     conn: sqlite3.Connection,
-    client: GitHubClient,
-    queue_path: Path,
+    packets_dir: Path,
     out_path: Path,
     *,
     settings,
-    take: int,
-    min_confidence: float = 0.0,
     max_spend_usd: float = 1.0,
 ) -> ClassifyReport:
-    """Read a review-queue slice with the model instead of by hand.
+    """Judge a prepared review slice with the model instead of by hand.
 
-    The hand path and this one have to judge the *same* repositories or the
-    automation is not the automation of anything. `classify --max-llm` does not
-    do that: it sends whatever the rule engine escalated, which is the 1,930
-    repositories in the band and never the 52,475 that scored zero. Those
-    zeroes are most of the queue and the whole reason the review exists —
-    `anomalyco/opencode` was one of them at 208,847 stars. A paid run over the
-    band would report a cost and a count and leave the actual problem
-    untouched.
+    Two things make this not the same as `classify` with the LLM pass on.
 
-    So the slice comes from the queue file, which draws from both groups, and
-    the result is written where a hand round writes it: `verdicts/pending/`, in
-    the same shape, to be merged by the same `merge_verdicts.py` and held to
-    the same gates. One validation path for both, because the share gate — a
-    round that has stopped saying no — is exactly the failure a model is most
-    likely to produce.
+    It judges a different set. `classify` sends whatever the rule engine
+    escalated — 1,938 repositories in the band — and never the 52,674 that
+    scored zero. Those zeroes are most of the queue and the whole reason the
+    review exists: `anomalyco/opencode` was one of them at 208,847 stars. A
+    paid run over the band would report a cost and a count and leave the
+    actual problem untouched.
 
-    Nothing is written to the database here. A verdict file is replayed on
-    every classification run, so going through the file is what makes a paid
-    judgement survive the database rather than living in one release asset.
+    And it reads the packets rather than re-deriving the slice. The selection
+    (confidence floor, star order, how many) lives in
+    `build_review_packets.py`, and a second copy of it here would be a second
+    copy to drift. Reading the packets also means the model and a human reader
+    see byte-identical input, which is what makes the two comparable — the one
+    accidental double-read measured 94% agreement between two readings, and
+    that number only means something if the inputs were the same. It costs
+    more: the packet carries 4,000 characters of README against the engine's
+    1,200, so about $0.001 a repository rather than $0.00033. It also saves 200
+    API calls, because the READMEs are already in the file.
+
+    Nothing is written to the database. The result goes where a hand round's
+    does — `verdicts/pending/`, same shape — to be merged by the same
+    `merge_verdicts.py` under the same gates. One validation path for both,
+    because the share gate, a round that has stopped saying no, is exactly the
+    failure a model is most likely to produce. And a verdict file is replayed
+    on every later classification run, so going through the file is what makes
+    a paid judgement survive a lost release asset.
     """
     report = ClassifyReport()
-    queue = json.loads(queue_path.read_text(encoding="utf-8"))
-    rows = [
-        row for row in queue.get("repos", []) if (row.get("confidence") or 0.0) >= min_confidence
-    ]
-    rows.sort(key=lambda row: -(row.get("stars") or 0))
-    rows = rows[:take]
+    rows: list[dict] = []
+    for path in sorted(Path(packets_dir).glob("judge-*.json")):
+        rows.extend(json.loads(path.read_text(encoding="utf-8"))["repos"])
     report.considered = len(rows)
     if not rows:
-        log.info("review-judge: nothing in the slice")
+        log.info("review-judge: no packets in %s", packets_dir)
         return report
 
-    # Before the READMEs are fetched, not after: the estimate is cheap and the
-    # fetch is 200 API calls. A ceiling that is checked after the expensive
-    # preparation is a ceiling that has already let the work happen.
-    report.estimated_cost_usd = estimate_cost_usd(len(rows))
+    # Checked before anything is sent, and against the packet's real input
+    # size rather than the description-only default — an estimate that ignores
+    # the README would clear a ceiling the run then blows through.
+    report.estimated_cost_usd = estimate_cost_usd(
+        len(rows), input_tokens_per_repo=PACKET_README_TOKENS
+    )
     if report.estimated_cost_usd > max_spend_usd:
         raise ReviewSpendCeilingExceeded(
             f"{len(rows)} repos would cost about ${report.estimated_cost_usd:.2f}, "
             f"ceiling is ${max_spend_usd:.2f}"
         )
 
-    facts, _ = load_facts(conn)
-    by_name = {item.full_name: item for item in facts}
+    # The packet's hash is what `merge_verdicts.py` validates against, so it is
+    # copied through rather than recomputed. `content_hash` still comes off the
+    # database, because that is what the rule engine caches on.
+    all_facts, ids_by_name = load_facts(conn)
+    facts = {item.full_name: item for item in all_facts}
     inputs: list[LLMInput] = []
     hashes: dict[str, str] = {}
     for row in rows:
-        item = by_name.get(row["full_name"])
-        if item is None:
-            # The slice was drawn from an older database than this one.
-            report.unmatched.append(row["full_name"])
+        name = row["full_name"]
+        if name not in ids_by_name:
+            # The packets were built from a newer database than this one.
+            report.unmatched.append(name)
             continue
+        item = facts[name]
         inputs.append(
             LLMInput(
-                full_name=item.full_name,
-                description=item.description,
-                topics=item.topics,
-                language=item.language,
-                readme_excerpt=await fetch_readme_excerpt(client, item.full_name),
+                full_name=name,
+                description=row.get("description") or item.description,
+                topics=tuple(row.get("topics") or item.topics),
+                language=row.get("language") or item.language,
+                readme_excerpt=row.get("readme") or "",
                 content_hash=item.content_hash(),
             )
         )
-        # The verdict file validates on `inputs_hash`, not `content_hash`: a
-        # judgement made from a description does not expire because a phrase
-        # was added to a vocabulary list.
-        hashes[item.full_name] = item.inputs_hash()
+        hashes[name] = row["inputs_hash"]
 
     classifier = LLMClassifier(api_key=settings.anthropic_api_key, model=settings.classifier_model)
     verdicts, usage = classifier.classify(inputs)

@@ -78,12 +78,16 @@ jobs:
             review-queue.json
           retention-days: 90
 
+      # To stdout as well as the summary. A block redirected only into
+      # $GITHUB_STEP_SUMMARY never reaches the job log, so its numbers cannot
+      # be read back through the API afterwards — which is exactly what this
+      # run's first dispatch ran into.
       - name: Summary
         if: always()
         run: |
           python pipeline/scripts/review_slice_report.py \
             --queue review-queue.json \
-            --packets review-packets >> "$GITHUB_STEP_SUMMARY"
+            --packets review-packets | tee -a "$GITHUB_STEP_SUMMARY"
 
   # The paid path, and the only one that is actually automatic. `review-judge`
   # reads *this slice* — not `classify --max-llm`, which sends the rule
@@ -96,9 +100,12 @@ jobs:
   # through the same `merge_verdicts.py` gates a hand round does — including
   # the share gate, which is the failure a model is most likely to produce.
   #
-  # Measured at $0.00033 a repository with batching: a 200-repo slice is $0.07
-  # and the whole 53,392-repo queue is about $17.40. Against that, 200 a week
-  # by hand is 267 weeks. That is the argument for the key.
+  # Measured at about $0.001 a repository with batching, reading the packets'
+  # 4,000-character READMEs: a 200-repo slice is $0.20 and the whole
+  # 53,392-repo queue about $53. On the engine's own 1,200-character excerpt it
+  # would be a third of that, and worth less — the point of the packets is that
+  # the model and a reader see the same thing. Against either figure, 200 a
+  # week by hand is 267 weeks. That is the argument for the key.
   #
   # Without the key the step does nothing and says so. It does not fall back to
   # the rule engine: a rules verdict in `verdicts/` would be a permanent record
@@ -150,18 +157,18 @@ jobs:
         with:
           token: ${{ github.token }}
 
-      # The slice the queue drew, not the engine's escalation band. The spend
-      # ceiling is checked against the estimate before any README is fetched:
-      # a ceiling tested after the expensive preparation has already let the
-      # work happen.
+      # The packets the job before this one built — the same bytes a human
+      # reader would get, so the two are comparable. Not `classify --max-llm`,
+      # which sends the engine's escalation band and never the zeroes. The
+      # spend ceiling is checked against the packets' real input size before
+      # anything is sent; an estimate that ignored the READMEs would clear a
+      # ceiling the run then blows through.
       - name: Read the slice
         if: steps.key.outputs.have == 'yes'
         run: |
           airadar review-judge \
-            --queue review-queue.json \
+            --packets review-packets \
             --out verdicts/pending/judge-llm.json \
-            --take "${{ inputs.take || '200' }}" \
-            --min-confidence "${{ inputs.min_confidence || '0.5' }}" \
             --max-spend-usd 2
 
       # Same gates as a hand round, and it refuses the whole file rather than
@@ -220,4 +227,4 @@ jobs:
               echo "\`merge_verdicts.py\` ile birleştirebilir. Kuyruk olduğu gibi kaldı —"
               echo "kural motorunun kendi kararı karar olarak kaydedilmedi."
             fi
-          } >> "$GITHUB_STEP_SUMMARY"
+          } | tee -a "$GITHUB_STEP_SUMMARY"

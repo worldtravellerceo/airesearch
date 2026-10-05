@@ -911,30 +911,29 @@ def review_queue(
 
 @app.command("review-judge")
 def review_judge(
-    queue: str = typer.Option("review-queue.json", "--queue", help="A review-queue slice"),
+    packets: str = typer.Option(
+        "review-packets", "--packets", help="The packet directory a reader would read"
+    ),
     out: str = typer.Option(
         "verdicts/pending/judge-llm.json", "--out", help="Where to write the judgements"
-    ),
-    take: int = typer.Option(200, "--take", help="How many of the slice to judge"),
-    min_confidence: float = typer.Option(
-        0.0, "--min-confidence", help="Only repos the engine scored at least this high"
     ),
     max_spend_usd: float = typer.Option(
         1.0, "--max-spend-usd", help="Refuse the run if the estimate is above this"
     ),
 ) -> None:
-    """Judge a review-queue slice with the model instead of by hand.
+    """Judge a prepared review slice with the model instead of by hand.
 
     The automated half of the weekly review, and deliberately not the same
     thing as `classify` with the LLM pass on. That sends the rule engine's
-    escalation band; this sends the queue's slice, which is mostly the
+    escalation band; this sends the slice the queue drew, which is mostly the
     repositories that scored zero — where `anomalyco/opencode` sat at 208,847
     stars, and where the band's own vocabulary cannot reach.
 
-    Writes a verdict file rather than database rows, so the judgement is
-    replayed on every later run and survives the release asset. The file goes
-    through `merge_verdicts.py` like a hand round does: same gates, including
-    the one that rejects a round which has stopped saying no.
+    It reads the same packets a human reader would, so the two see identical
+    input and their verdicts are comparable. Writes a verdict file rather than
+    database rows, and that file goes through `merge_verdicts.py` like a hand
+    round does: same gates, including the one that rejects a round which has
+    stopped saying no.
     """
     settings = _require_database()
     if not settings.anthropic_api_key:
@@ -944,22 +943,15 @@ def review_judge(
         )
         raise typer.Exit(code=1)
 
-    async def _go():
-        async with GitHubClient(settings=settings) as client:
-            with db.connect(settings.db_path) as conn:
-                return await classify_run.judge_review_queue(
-                    conn,
-                    client,
-                    Path(queue),
-                    Path(out),
-                    settings=settings,
-                    take=take,
-                    min_confidence=min_confidence,
-                    max_spend_usd=max_spend_usd,
-                )
-
     try:
-        report = asyncio.run(_go())
+        with db.connect(settings.db_path) as conn:
+            report = classify_run.judge_review_packets(
+                conn,
+                Path(packets),
+                Path(out),
+                settings=settings,
+                max_spend_usd=max_spend_usd,
+            )
     except classify_run.ReviewSpendCeilingExceeded as exc:
         console.print(f"[red]review-judge[/red]: {exc}")
         raise typer.Exit(code=1) from exc
