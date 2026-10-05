@@ -38,6 +38,16 @@ jobs:
       - name: Apply reviewed verdicts
         run: airadar classify --import-verdicts verdicts
 
+      # The same free, replayed path as the verdicts above, and here for the
+      # same reason: text committed to the repository otherwise reaches the
+      # database only through the daily census, which is 37 minutes of work
+      # nobody needs in order to apply a paragraph that is already written.
+      # 113 rows sat in git waiting for tomorrow morning before this line
+      # existed. No key, no profile, no network — an already-written or
+      # stale-hashed row is skipped, so running it twice costs nothing.
+      - name: Apply written summaries
+        run: airadar summarise --import summaries
+
       - name: Score
         run: airadar score
 
