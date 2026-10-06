@@ -730,3 +730,80 @@ def test_the_first_ever_run_has_nothing_to_compare_against(conn, tmp_path):
 
     assert movement["compared"] == 0
     assert movement["since"] is None
+
+
+def test_the_feed_calls_a_finished_project_dormant_not_accelerating(conn, tmp_path):
+    """The order of the trend tests is the whole correctness of the field.
+
+    A ratio over a near-zero base is arithmetic, not a reading: a repository
+    that went from one star a week to three has tripled and is still over. If
+    `breakout` were tested before `dormant` it would be labelled a breakout,
+    and a consumer filtering on that word would be handed the deadest rows in
+    the index.
+
+    Measured on 2026-10-06 over the 11,811 AI repositories above a thousand
+    stars: 7,656 of them — 64.8% — take under one star a day. That is the band
+    this ordering protects.
+    """
+    seed(conn)
+    conn.execute(
+        """
+        UPDATE repo_scores
+           SET velocity_14d = 0.4, acceleration = 9.0,
+               acceleration_basis = 'measured', breakout = 1
+         WHERE repo_id = 1 AND date = ?
+        """,
+        (TODAY,),
+    )
+    conn.commit()
+
+    export_site.export(conn, tmp_path / "site", date=TODAY)
+    feed = read(tmp_path / "site", "feed.json")
+    row = next(r for r in feed["repos"] if r["full_name"] == "legacy/ml-toolkit")
+
+    assert row["trend"] == "dormant"
+
+
+def test_a_placeholder_acceleration_is_never_read_as_a_trend(conn, tmp_path):
+    """`no_baseline` hands out 30 and `too_young` hands out 1.0.
+
+    Neither is a measurement. Without the basis check the first would read as a
+    breakout and the second as steady, and both would be fiction presented in
+    the same field as real readings.
+    """
+    seed(conn)
+    conn.execute(
+        """
+        UPDATE repo_scores
+           SET velocity_14d = 50, acceleration = 30.0, acceleration_basis = 'no_baseline'
+         WHERE repo_id = 1 AND date = ?
+        """,
+        (TODAY,),
+    )
+    conn.commit()
+
+    export_site.export(conn, tmp_path / "site", date=TODAY)
+    feed = read(tmp_path / "site", "feed.json")
+    row = next(r for r in feed["repos"] if r["full_name"] == "legacy/ml-toolkit")
+
+    assert row["trend"] == "unknown"
+
+
+def test_the_stream_carries_repos_the_json_feed_leaves_out(conn, tmp_path):
+    """`feed.json`'s star floor is a convenience, not a verdict.
+
+    A consumer loading everything into its own store should not inherit a
+    threshold picked for a web page, so `feed.ndjson` has no floor at all.
+    """
+    seed(conn)
+    conn.execute("UPDATE repos SET stars = 40 WHERE id = 4")
+    conn.commit()
+
+    export_site.export(conn, tmp_path / "site", date=TODAY)
+    feed = read(tmp_path / "site", "feed.json")
+    lines = (tmp_path / "site" / "feed.ndjson").read_text(encoding="utf-8").splitlines()
+    streamed = {json.loads(line)["full_name"] for line in lines}
+
+    assert "tiny/rag-helper" not in {r["full_name"] for r in feed["repos"]}
+    assert "tiny/rag-helper" in streamed
+    assert all(json.loads(line) for line in lines), "every line must parse on its own"

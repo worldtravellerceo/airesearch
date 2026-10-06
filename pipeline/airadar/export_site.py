@@ -81,6 +81,33 @@ def export(conn: sqlite3.Connection, out_dir: Path, *, date: dt.date | None = No
     )
     _write(out_dir / "index.json", {"repos": _search_index(conn)}, report)
     _write(out_dir / "digest.json", _digest(conn, date), report)
+    feed = _feed(conn, date)
+    _write(out_dir / "feed.json", feed, report)
+    # Every classified repository, no floor, for a consumer that is building its
+    # own store rather than reading a page. The star floor on `feed.json` is a
+    # convenience for whoever wants a short file; it is not a judgement about
+    # which repositories are worth looking at, and this is the file that says so.
+    _write_ndjson(out_dir / "feed.ndjson", _feed(conn, date, min_stars=0)["repos"], report)
+    # And split by trend, because the whole file is 14.5 MB and two thirds of it
+    # is dormant repositories nobody is evaluating for adoption. An agent asking
+    # "what is rising" should not have to parse 7,656 finished projects to find
+    # the 227 that are not: `feed/rising.json` is a few hundred kilobytes.
+    # The whole file stays, for lookups by name and for anything that wants the
+    # population rather than a slice.
+    for name in feed["trend_meaning"]:
+        rows = [row for row in feed["repos"] if row["trend"] == name]
+        _write(
+            out_dir / "feed" / f"{name}.json",
+            {
+                "as_of": feed["as_of"],
+                "trend": name,
+                "meaning": feed["trend_meaning"][name],
+                "min_stars": feed["min_stars"],
+                "total": len(rows),
+                "repos": rows,
+            },
+            report,
+        )
 
     slugs = _boards(conn, out_dir, date, categories, report)
     detail_slugs = _details(conn, out_dir, date, report)
@@ -206,6 +233,152 @@ MOVER_LIMIT = 15
 WARMING_MIN_ACCELERATION = 1.5
 WARMING_MIN_VELOCITY = 10.0
 WARMING_LIMIT = 15
+
+
+#: The feed's star floor. Not a quality judgement — a volume one. The index
+#: holds 78,851 AI repositories and `index.json` already ships all of them at
+#: 20 MB with no trend signal on any row, which is the wrong file for a reader
+#: that has to decide whether to adopt something. Above a thousand stars there
+#: are 11,811, which is the population an adoption decision is actually drawn
+#: from, and every row can then carry what that decision needs.
+FEED_MIN_STARS = 1_000
+
+#: What "dying" means, and it is not a low star count. Measured on 2026-10-06
+#: across the 11,811 AI repositories above the floor: 7,656 (64.8%) take under
+#: one star a day, 1,105 (9.4%) are running below half their own recent pace,
+#: 1,456 (12.3%) below four fifths of it, 1,182 (10.0%) are holding, 227 (1.9%)
+#: are at 1.5-3x and 80 (0.7%) clear Breakout's 3x bar. So fewer than 3 in 100
+#: thousand-star AI projects are gaining speed, and three quarters are already
+#: over. That ratio is the single most useful thing in this file.
+FEED_DORMANT_VELOCITY = 1.0
+FEED_DYING_ACCELERATION = 0.5
+FEED_COOLING_ACCELERATION = 0.8
+FEED_RISING_ACCELERATION = 1.5
+
+
+def _trend(row: dict) -> str:
+    """One word for where a repository is in its life.
+
+    Order matters. `dormant` is tested before any ratio because a ratio over a
+    near-zero base is arithmetic, not a reading: a project that went from one
+    star a week to three has tripled and is still finished.
+    """
+    if row["acceleration_basis"] != "measured":
+        return "unknown"
+    if (row["velocity_14d"] or 0) < FEED_DORMANT_VELOCITY:
+        return "dormant"
+    if row["breakout"]:
+        return "breakout"
+    acceleration = row["acceleration"] or 0.0
+    if acceleration >= FEED_RISING_ACCELERATION:
+        return "rising"
+    if acceleration >= FEED_COOLING_ACCELERATION:
+        return "steady"
+    if acceleration >= FEED_DYING_ACCELERATION:
+        return "cooling"
+    return "dying"
+
+
+def _write_ndjson(path: Path, rows: list[dict], report: ExportReport) -> None:
+    """One JSON object per line, no enclosing array.
+
+    The JSON feed is a convenience and carries a star floor; this carries every
+    classified repository, because a consumer that loads the whole thing into
+    its own store should not inherit a threshold chosen for a web page. 78,852
+    rows do not belong in a single array — a reader would have to hold all of it
+    in memory to see the first record — whereas a line-delimited file streams,
+    and `duckdb read_json_auto` or `sqlite-utils insert --nl` ingest it directly.
+    """
+    path.parent.mkdir(parents=True, exist_ok=True)
+    written = 0
+    with path.open("w", encoding="utf-8") as handle:
+        for row in rows:
+            line = json.dumps(row, ensure_ascii=False, default=_encode) + "\n"
+            handle.write(line)
+            written += len(line.encode("utf-8"))
+    report.bytes_written += written
+
+
+def _feed(conn: sqlite3.Connection, date: dt.date, *, min_stars: int = FEED_MIN_STARS) -> dict:
+    """Every tracked AI repository above the floor, with its trend, for machines.
+
+    The site's other files are each shaped by a page. The boards carry the
+    signals but stop at 200 rows and leave out the licence and the age;
+    `index.json` has every repository and no signal at all. Neither answers
+    "what should we adopt", which needs both halves at once — so this is the
+    one file written for a reader that is not a browser.
+
+    Nothing here is private: it is the same public GitHub metadata the site
+    already shows, plus the derived scores. The Turkish paragraphs ride along
+    where they exist, and they are already published on the board rows.
+    """
+    rows = [
+        dict(row)
+        for row in conn.execute(
+            """
+            SELECT r.full_name, r.owner, r.name, r.description, r.homepage,
+                   r.language, r.license, r.archived, r.stars, r.created_at,
+                   r.days_to_1k, r.days_to_10k, r.days_to_50k,
+                   c.category,
+                   s.velocity_7d, s.velocity_14d, s.velocity_28d,
+                   s.acceleration, s.acceleration_basis, s.relative_growth_14d,
+                   s.fresh_power, s.momentum_score, s.breakout,
+                   s.peak_velocity, s.days_since_peak, s.coverage_days,
+                   m.description_tr, m.usage_tr,
+                   r.id AS repo_id
+            FROM repos r
+            JOIN repo_classification c ON c.repo_id = r.id AND c.is_ai = 1
+            LEFT JOIN repo_scores s ON s.repo_id = r.id AND s.date = :date
+            LEFT JOIN repo_summary m ON m.repo_id = r.id
+            WHERE r.is_fork = 0 AND r.stars >= :floor
+            ORDER BY r.stars DESC
+            """,
+            {"date": date, "floor": min_stars},
+        )
+    ]
+
+    topics = db.repo_topics_map(conn, [row["repo_id"] for row in rows])
+    ranks = _ranks_by_repo(conn, date)
+    today = date
+
+    out = []
+    for row in rows:
+        created = row.pop("created_at")
+        repo_id = row.pop("repo_id")
+        row["archived"] = bool(row["archived"])
+        row["breakout"] = bool(row["breakout"])
+        row["topics"] = list(topics.get(repo_id, ()))
+        row["url"] = f"https://github.com/{row['full_name']}"
+        row["created_at"] = created
+        row["age_days"] = (
+            (today - created.date()).days if isinstance(created, dt.datetime) else None
+        )
+        row["boards"] = ranks.get(repo_id, {})
+        row["trend"] = _trend(row)
+        out.append(row)
+
+    counts: dict[str, int] = {}
+    for row in out:
+        counts[row["trend"]] = counts.get(row["trend"], 0) + 1
+
+    return {
+        "as_of": date.isoformat(),
+        "min_stars": min_stars,
+        "total": len(out),
+        "by_trend": counts,
+        # Spelled out so a reader does not have to guess what a word means, and
+        # so the thresholds cannot drift away from their documentation.
+        "trend_meaning": {
+            "breakout": f"en az {int(BREAKOUT_ACCELERATION)}x kendi temposu, anlamlı hızda",
+            "rising": f"{FEED_RISING_ACCELERATION}x-{int(BREAKOUT_ACCELERATION)}x hızlanıyor",
+            "steady": f"{FEED_COOLING_ACCELERATION}x-{FEED_RISING_ACCELERATION}x, tempo koruyor",
+            "cooling": f"{FEED_DYING_ACCELERATION}x-{FEED_COOLING_ACCELERATION}x, yavaşlıyor",
+            "dying": f"{FEED_DYING_ACCELERATION}x altı, kendi temposunun yarısından az",
+            "dormant": f"günde {FEED_DORMANT_VELOCITY:.0f} yıldızın altı — oran hesaplanmaz",
+            "unknown": "ivme ölçülemedi (temel çizgi yok ya da çok genç)",
+        },
+        "repos": out,
+    }
 
 
 def _digest(conn: sqlite3.Connection, date: dt.date) -> dict:
