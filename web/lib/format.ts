@@ -29,6 +29,18 @@ export function multiple(value: number | null | undefined): string {
   return `${value.toFixed(1)}×`;
 }
 
+/** An acceleration ratio where closeness to a threshold is the point.
+ *
+ *  `multiple` rounds to one decimal, which is right on the boards and wrong in
+ *  the warming band: that table's own heading says "below Breakout's 3x bar",
+ *  and `rohitg00/ai-engineering-from-scratch` at 2.97 rendered as "3.0×" —
+ *  a row contradicting the sentence above it.
+ */
+export function ratio(value: number | null | undefined): string {
+  if (value === null || value === undefined) return "—";
+  return `${value.toFixed(2)}×`;
+}
+
 export function percent(value: number | null | undefined): string {
   if (value === null || value === undefined) return "—";
   return `%${(value * 100).toFixed(value < 0.1 ? 1 : 0)}`;

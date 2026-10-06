@@ -1,8 +1,8 @@
 import Link from "next/link";
 
 import { getDigest } from "@/lib/data";
-import { categoryLabel, count, shortDate } from "@/lib/format";
-import type { DigestArrival, DigestMover } from "@/lib/types";
+import { categoryLabel, count, rate, ratio, shortDate } from "@/lib/format";
+import type { DigestArrival, DigestMover, DigestWarming } from "@/lib/types";
 
 export const dynamic = "force-static";
 
@@ -21,8 +21,8 @@ export const metadata = {
  */
 export default async function TodayPage() {
   const digest = await getDigest();
-  const { new_projects: fresh, newly_tracked: crossed, movers, counts } = digest;
-  const nothing = !fresh.length && !crossed.length && !movers.length;
+  const { new_projects: fresh, newly_tracked: crossed, movers, warming, counts } = digest;
+  const nothing = !fresh.length && !crossed.length && !movers.length && !warming.length;
 
   return (
     <div className="space-y-8">
@@ -58,6 +58,8 @@ export default async function TodayPage() {
           rows={crossed}
         />
       ) : null}
+
+      {warming.length ? <Warming rows={warming} /> : null}
 
       {movers.length ? <Movers rows={movers} /> : null}
 
@@ -129,6 +131,56 @@ function Arrivals({
           </li>
         ))}
       </ul>
+    </section>
+  );
+}
+
+function Warming({ rows }: { rows: DigestWarming[] }) {
+  return (
+    <section className="space-y-3">
+      <div>
+        <h2 className="text-ink text-lg font-semibold tracking-tight">Isınanlar</h2>
+        <p className="text-ink-secondary mt-0.5 text-xs">
+          Kendi son temposunun 1,5–3 katına çıkmış ama Breakout&apos;un 3 kat eşiğini henüz
+          geçmemiş projeler. Hiçbir board bunları göstermiyor: Momentum mutlak hıza bakıyor, orada
+          hep aynı büyükler var; Breakout ise eşiğin üstünü. Aradaki bant burası.
+        </p>
+      </div>
+      <table className="w-full text-sm">
+        <thead className="text-ink-secondary border-b border-[--color-rule] text-left text-xs">
+          <tr>
+            <th className="py-2 font-medium">repo</th>
+            <th className="py-2 font-medium">kategori</th>
+            <th className="py-2 text-right font-medium">ivme</th>
+            <th className="py-2 text-right font-medium">hız</th>
+            <th className="py-2 text-right font-medium">yıldız</th>
+          </tr>
+        </thead>
+        <tbody>
+          {rows.map((row) => (
+            <tr key={row.full_name} className="border-b border-[--color-rule] last:border-0">
+              <td className="py-2">
+                <Link href={`/repos/${row.full_name}/`} className="text-ink hover:underline">
+                  {row.full_name}
+                </Link>
+                {row.matched_project ? (
+                  <span className="text-accent ml-2 text-xs">{row.matched_project}</span>
+                ) : null}
+              </td>
+              <td className="text-ink-secondary py-2">{categoryLabel(row.category)}</td>
+              <td className="text-ink py-2 text-right font-medium tabular-nums">
+                {ratio(row.acceleration)}
+              </td>
+              <td className="text-ink-secondary py-2 text-right tabular-nums">
+                {rate(row.velocity_14d)}
+              </td>
+              <td className="text-ink-secondary py-2 text-right tabular-nums">
+                {count(row.stars)}
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </section>
   );
 }

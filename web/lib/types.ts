@@ -297,6 +297,17 @@ export type DigestMover = {
   matched_project: string | null;
 };
 
+/** Accelerating against its own recent pace, but short of Breakout's 3x bar. */
+export type DigestWarming = {
+  full_name: string;
+  stars: number;
+  category: string | null;
+  acceleration: number;
+  velocity_14d: number;
+  relative_growth_14d: number | null;
+  matched_project: string | null;
+};
+
 export type Digest = {
   date: string | null;
   /** Arrivals young enough to be new projects rather than new to us. */
@@ -304,6 +315,7 @@ export type Digest = {
   /** Long-lived repos that only now crossed into the index. */
   newly_tracked: DigestArrival[];
   movers: DigestMover[];
+  warming: DigestWarming[];
   counts: {
     arrivals_total: number;
     arrivals_shown: number;

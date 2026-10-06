@@ -19,6 +19,7 @@ from pathlib import Path
 from airadar.companies import boards as company_boards
 from airadar.db import repo as db
 from airadar.scoring.leaderboards import ALL_CATEGORIES, BOARDS
+from airadar.scoring.metrics import BREAKOUT_ACCELERATION
 
 log = logging.getLogger(__name__)
 
@@ -192,6 +193,20 @@ ARRIVAL_LIMIT = db.DIGEST_ARRIVAL_LIMIT
 NEW_PROJECT_MAX_AGE_DAYS = db.DIGEST_NEW_PROJECT_MAX_AGE_DAYS
 MOVER_LIMIT = 15
 
+#: The band between "holding its pace" and Breakout's 3x bar. Measured on
+#: 2026-10-06 over the 1,097 AI repositories with a measured acceleration and at
+#: least 10 stars a day: 611 are slowing, 248 are steady, 68 sit at 1.2-1.5x,
+#: 41 at 1.5-2x, 49 at 2-3x and 80 clear 3x. So 90 repositories are accelerating
+#: meaningfully and appear on no board at all — `rohitg00/ai-engineering-from-
+#: scratch` among them, 65,135 stars at 2.97x.
+#:
+#: 1.5 rather than 1.2 because 1.2-1.5x is mostly noise on a fortnight's window.
+#: Breakout's own floor of 10 stars a day is reused: below that a ratio is
+#: arithmetic on a handful of stars.
+WARMING_MIN_ACCELERATION = 1.5
+WARMING_MIN_VELOCITY = 10.0
+WARMING_LIMIT = 15
+
 
 def _digest(conn: sqlite3.Connection, date: dt.date) -> dict:
     """What changed since yesterday — the thing you read in the morning.
@@ -259,6 +274,39 @@ def _digest(conn: sqlite3.Connection, date: dt.date) -> dict:
         for row in arrivals:
             row["topics"] = list(topics.get(ids_by_name.get(row["full_name"], -1), ()))
 
+    # Accelerating, but not yet a breakout. This is the only part of the digest
+    # that is not about today specifically, and it earns its place on churn:
+    # measured across 5-6 October, 17 of the top 40 changed overnight — more
+    # than any board. Fresh Power's top 50 changed by 0 in the same two days,
+    # which is correct for what it measures and the reason this is here instead.
+    warming = conn.execute(
+        """
+        SELECT r.full_name, r.stars, c.category,
+               s.acceleration, s.velocity_14d, s.relative_growth_14d,
+               m.matched_project
+        FROM repo_scores s
+        JOIN repos r ON r.id = s.repo_id
+        JOIN repo_classification c ON c.repo_id = r.id AND c.is_ai = 1
+        LEFT JOIN repo_summary m ON m.repo_id = r.id
+        WHERE s.date = :date
+          AND r.is_fork = 0
+          AND s.acceleration_basis = 'measured'
+          AND s.acceleration >= :floor
+          AND s.acceleration < :ceiling
+          AND s.velocity_14d >= :min_velocity
+        ORDER BY s.acceleration * s.velocity_14d DESC
+        LIMIT :limit
+        """,
+        {
+            "date": date,
+            "floor": WARMING_MIN_ACCELERATION,
+            # Everything at or above this is on the Breakout board already.
+            "ceiling": BREAKOUT_ACCELERATION,
+            "min_velocity": WARMING_MIN_VELOCITY,
+            "limit": WARMING_LIMIT,
+        },
+    ).fetchall()
+
     total = conn.execute(
         """
         SELECT count(*) AS n FROM repos r
@@ -281,6 +329,7 @@ def _digest(conn: sqlite3.Connection, date: dt.date) -> dict:
         "new_projects": split(arrivals, True),
         "newly_tracked": split(arrivals, False),
         "movers": movers,
+        "warming": warming,
         "counts": {
             "arrivals_total": total,
             "arrivals_shown": len(arrivals),

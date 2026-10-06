@@ -628,3 +628,67 @@ def test_a_digest_hash_matches_what_the_import_will_check(conn, tmp_path):
     ).inputs_hash()
 
     assert from_digest == from_db
+
+
+def test_the_warming_band_stops_where_breakout_starts(conn, tmp_path):
+    """The gap between "holding its pace" and a 3x breakout had no page.
+
+    Measured on 2026-10-06 over the 1,097 AI repositories with a measured
+    acceleration and at least 10 stars a day: 611 slowing, 248 steady, 68 at
+    1.2-1.5x, 41 at 1.5-2x, 49 at 2-3x, 80 clearing 3x. So 90 repositories were
+    accelerating meaningfully and appeared on no board —
+    `rohitg00/ai-engineering-from-scratch` among them at 65,135 stars and 2.97x.
+
+    The ceiling is Breakout's own constant rather than a second copy of 3.0, so
+    the two bands cannot drift apart and double-count a repository.
+    """
+    seed(conn)
+    conn.execute(
+        """
+        UPDATE repo_scores
+           SET acceleration = 2.0, acceleration_basis = 'measured', velocity_14d = 50
+         WHERE repo_id = 1 AND date = ?
+        """,
+        (TODAY,),
+    )
+    conn.execute(
+        """
+        UPDATE repo_scores
+           SET acceleration = 4.0, acceleration_basis = 'measured', velocity_14d = 50
+         WHERE repo_id = 2 AND date = ?
+        """,
+        (TODAY,),
+    )
+    conn.commit()
+
+    export_site.export(conn, tmp_path / "site", date=TODAY)
+    warming = read(tmp_path / "site", "digest.json")["warming"]
+    names = [row["full_name"] for row in warming]
+
+    assert "legacy/ml-toolkit" in names, "2x should be in the band"
+    assert "newcomer/agent-os" not in names, "4x belongs to Breakout, not here"
+
+
+def test_a_guessed_acceleration_never_reaches_the_warming_band(conn, tmp_path):
+    """Negative control, and the one that would flood it.
+
+    A repo with no baseline is handed `BREAKOUT_ACCELERATION * 10` with basis
+    `no_baseline`, and one too young to have a pace gets a flat 1.0 marked
+    `too_young`. Both are placeholders, not readings. Filtering on `measured`
+    is what keeps the band a list of repositories that actually sped up.
+    """
+    seed(conn)
+    conn.execute(
+        """
+        UPDATE repo_scores
+           SET acceleration = 2.0, acceleration_basis = 'no_baseline', velocity_14d = 50
+         WHERE repo_id = 1 AND date = ?
+        """,
+        (TODAY,),
+    )
+    conn.commit()
+
+    export_site.export(conn, tmp_path / "site", date=TODAY)
+    warming = read(tmp_path / "site", "digest.json")["warming"]
+
+    assert "legacy/ml-toolkit" not in [row["full_name"] for row in warming]

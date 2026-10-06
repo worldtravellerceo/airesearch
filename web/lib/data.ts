@@ -98,6 +98,7 @@ export const EMPTY_DIGEST: Digest = {
   new_projects: [],
   newly_tracked: [],
   movers: [],
+  warming: [],
   counts: { arrivals_total: 0, arrivals_shown: 0, arrival_min_stars: 0 },
 };
 
