@@ -83,6 +83,7 @@ export async function BoardShell({ board }: { board: Board }) {
           it, and hiding them strands a visitor on the one board that has
           nothing to show. */}
       <BoardView
+        movement={file?.movement ?? null}
         board={board}
         initialEntries={entries}
         categories={categories}

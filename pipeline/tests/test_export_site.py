@@ -692,3 +692,41 @@ def test_a_guessed_acceleration_never_reaches_the_warming_band(conn, tmp_path):
     warming = read(tmp_path / "site", "digest.json")["warming"]
 
     assert "legacy/ml-toolkit" not in [row["full_name"] for row in warming]
+
+
+def test_a_board_reports_how_far_it_moved_not_just_that_it_moved(conn, tmp_path):
+    """Counting rows that changed would call the stillest boards the busiest.
+
+    Measured on 2026-10-06 against the day before: Fresh Power nudged 72 of its
+    rows and Popular 154, more than Breakout's 52 — and not one of those changes
+    on either board was more than three places, against 103 rows moving five or
+    more on Momentum. "Rows that changed" is the wrong number; "rows that moved
+    far" is the one that separates news from shuffling.
+    """
+    seed(conn, scored_days=(TODAY - dt.timedelta(days=1), TODAY))
+
+    export_site.export(conn, tmp_path / "site", date=TODAY)
+    movement = read(tmp_path / "site", "boards", "momentum", "_all.json")["movement"]
+
+    assert movement["since"] == (TODAY - dt.timedelta(days=1)).isoformat()
+    assert movement["compared"] > 0
+    assert movement["moved_far"] == sum(
+        1
+        for row in read(tmp_path / "site", "boards", "momentum", "_all.json")["entries"]
+        if row["rank_delta"] is not None and abs(row["rank_delta"]) >= export_site.NOTABLE_RANK_MOVE
+    )
+
+
+def test_the_first_ever_run_has_nothing_to_compare_against(conn, tmp_path):
+    """Negative control: no previous snapshot must not read as "nothing moved".
+
+    `compared` is 0 then, and the page hides the strip rather than printing a
+    row of zeros that would claim a measurement nobody made.
+    """
+    seed(conn)
+
+    export_site.export(conn, tmp_path / "site", date=TODAY)
+    movement = read(tmp_path / "site", "boards", "momentum", "_all.json")["movement"]
+
+    assert movement["compared"] == 0
+    assert movement["since"] is None

@@ -1128,6 +1128,29 @@ def load_leaderboard(
     ).fetchall()
 
 
+def previous_board_date(
+    conn: sqlite3.Connection, *, before: dt.date, board: str, category: str = "_all"
+) -> dt.date | None:
+    """The date `previous_board_ranks` compares against.
+
+    A board's movement line has to say what it moved *since*. Yesterday is the
+    usual answer and not a safe assumption: a day the scheduled run failed
+    leaves a two-day gap, and reporting that as "since yesterday" would make a
+    two-day shift look like a one-day one.
+    """
+    row = conn.execute(
+        """
+        SELECT max(date) AS d FROM leaderboard_snapshots
+        WHERE date < :before AND board = :board AND category = :category
+        """,
+        {"before": before, "board": board, "category": category},
+    ).fetchone()
+    if not row or not row["d"]:
+        return None
+    value = row["d"]
+    return value if isinstance(value, dt.date) else dt.date.fromisoformat(str(value))
+
+
 def previous_board_ranks(
     conn: sqlite3.Connection, *, before: dt.date, board: str, category: str = "_all"
 ) -> dict[int, int]:

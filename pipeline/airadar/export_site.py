@@ -373,6 +373,50 @@ def _search_index(conn: sqlite3.Connection) -> list[dict]:
     ).fetchall()
 
 
+#: A rank change smaller than this is shuffling, not news. Measured on
+#: 2026-10-06 against the day before: Momentum moved 160 of its 200 rows and
+#: Breakout 52 of 81, but on Fresh Power and Popular *every* change was 3 places
+#: or fewer — 72 and 154 rows nudged, not one of them by 5. Counting "rows that
+#: changed" would report those two as the busiest boards on the site.
+NOTABLE_RANK_MOVE = 5
+
+
+def _movement(entries: list[dict], previous: dict[int, int], since: dt.date | None) -> dict:
+    """How much this board actually moved, as a number on the page.
+
+    The per-row arrows have been there all along, and they are not enough: a
+    repository climbing 118 places on Momentum is invisible until you happen to
+    scroll past its row. The aggregate is what says whether a board is worth
+    re-reading today.
+
+    It is also the honest way to handle the two boards that do not move. Fresh
+    Power integrates a lifetime at a 180-day half-life and Popular is a running
+    total, so neither is supposed to jump, and the biggest move either made in a
+    day was 3 places. Saying that in a line is better than leaving somebody to
+    conclude the site is broken — which is what a page full of "–" invites.
+    """
+    deltas = [e["rank_delta"] for e in entries if e["rank_delta"] is not None]
+    far = [
+        e
+        for e in entries
+        if e["rank_delta"] is not None and abs(e["rank_delta"]) >= NOTABLE_RANK_MOVE
+    ]
+    climber = max(far, key=lambda e: e["rank_delta"], default=None)
+    return {
+        "since": since.isoformat() if since else None,
+        "compared": len(previous),
+        "entered": sum(1 for e in entries if e["rank_delta"] is None),
+        "moved": sum(1 for d in deltas if d),
+        "moved_far": len(far),
+        "biggest_move": max((abs(d) for d in deltas), default=0),
+        "top_climber": (
+            {"full_name": climber["full_name"], "places": climber["rank_delta"]}
+            if climber and climber["rank_delta"] > 0
+            else None
+        ),
+    }
+
+
 def _boards(
     conn: sqlite3.Connection,
     out_dir: Path,
@@ -388,6 +432,7 @@ def _boards(
 
     for board, category, limit in wanted:
         previous = db.previous_board_ranks(conn, before=date, board=board, category=category)
+        since = db.previous_board_date(conn, before=date, board=board, category=category)
         entries = db.load_leaderboard(conn, date=date, board=board, category=category, limit=limit)
         for entry in entries:
             old = previous.get(entry["repo_id"])
@@ -404,7 +449,13 @@ def _boards(
         slug = f"{board}/{category}"
         _write(
             out_dir / "boards" / f"{slug}.json",
-            {"board": board, "category": category, "as_of": date, "entries": entries},
+            {
+                "board": board,
+                "category": category,
+                "as_of": date,
+                "movement": _movement(entries, previous, since),
+                "entries": entries,
+            },
             report,
         )
         slugs.append(slug)

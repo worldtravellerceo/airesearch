@@ -9,6 +9,7 @@ import {
   ALL_CATEGORIES,
   BOARDS,
   BOARD_COPY,
+  type BoardMovement,
   type Board,
   type BoardEntry,
   type CategoryRow,
@@ -22,6 +23,54 @@ import { categoryLabel, count } from "@/lib/format";
  *  static file — pre-rendering all sixty board/category combinations would bloat
  *  the build for pages most people never open.
  */
+/** What changed on this board since the last run.
+ *
+ *  Stillness is reported rather than hidden. Fresh Power integrates a lifetime
+ *  at a 180-day half-life and Popular is a running total, so neither is meant
+ *  to jump: measured on 2026-10-06, every single rank change on both was three
+ *  places or fewer, against 103 rows moving five or more on Momentum. A page
+ *  of "–" with no explanation invites the reader to conclude the site is
+ *  broken, which is the opposite of what those two boards are telling them.
+ */
+function Movement({ movement }: { movement?: BoardMovement | null }) {
+  if (!movement || !movement.compared) return null;
+
+  const { entered, moved_far: far, biggest_move: biggest, top_climber: climber } = movement;
+  // Stillness is "nothing moved far", not "nothing happened at all". Fresh
+  // Power took one new entry on 2026-10-06 and still had no row move more than
+  // three places; keying the explanation off `entered` as well would have
+  // swallowed it and left the board looking inexplicably frozen again.
+  const quiet = far === 0;
+
+  return (
+    <p className="text-ink-secondary mt-2 flex flex-wrap items-center gap-x-3 gap-y-1 text-xs">
+      <span className="text-ink-muted">
+        {movement.since ? `${movement.since} karşılaştırması:` : "önceki tura göre:"}
+      </span>
+      {entered ? <span className="text-ink font-medium">{entered} yeni giriş</span> : null}
+      {quiet ? (
+        <span>
+          sıralama yerinde — en büyük oynama {biggest} basamak. Bu board uzun vadeyi ölçüyor,
+          günlük değişim beklenmez.
+        </span>
+      ) : (
+        <>
+          {far ? <span>{far} repo 5+ basamak oynadı</span> : null}
+          {climber ? (
+            <span>
+              en çok yükselen{" "}
+              <Link href={`/repos/${climber.full_name}/`} className="text-ink hover:underline">
+                {climber.full_name}
+              </Link>{" "}
+              <span className="text-good font-medium">▲ {climber.places}</span>
+            </span>
+          ) : null}
+        </>
+      )}
+    </p>
+  );
+}
+
 export function BoardView({
   board,
   initialEntries,
@@ -29,10 +78,13 @@ export function BoardView({
   boardCounts,
   categoryPools = {},
   asOf = null,
+  movement = null,
 }: {
   board: Board;
   initialEntries: BoardEntry[];
   categories: CategoryRow[];
+  /** Churn since the previous snapshot; null before a second run exists. */
+  movement?: BoardMovement | null;
   /** Entry count per board, so an empty one can point at a populated one. */
   boardCounts: Record<string, number>;
   /** How many repositories *this* board can rank in each category. The chips
@@ -107,6 +159,7 @@ export function BoardView({
           })}
         </nav>
         <p className="text-ink-secondary mt-3 max-w-3xl text-sm">{BOARD_COPY[board].blurb}</p>
+        <Movement movement={movement} />
       </section>
 
       {/* Filtering an empty board narrows nothing, and the counts on the chips

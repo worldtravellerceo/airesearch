@@ -70,10 +70,28 @@ export type BoardEntry = {
   relevance: number | null;
 };
 
+/** How much a board actually moved since the previous snapshot.
+ *
+ *  The per-row arrows were always there and were never enough: a repository
+ *  climbing 118 places on Momentum is invisible until you scroll past its row.
+ */
+export type BoardMovement = {
+  /** The date compared against — not always yesterday, if a run was missed. */
+  since: string | null;
+  compared: number;
+  entered: number;
+  moved: number;
+  /** Rows that moved at least 5 places. Fewer places is shuffling, not news. */
+  moved_far: number;
+  biggest_move: number;
+  top_climber: { full_name: string; places: number } | null;
+};
+
 export type BoardFile = {
   board: Board;
   category: string;
   as_of: string | null;
+  movement?: BoardMovement;
   entries: BoardEntry[];
 };
 
