@@ -221,6 +221,44 @@ CREATE INDEX IF NOT EXISTS leaderboard_lookup_idx
 CREATE INDEX IF NOT EXISTS leaderboard_repo_idx
     ON leaderboard_snapshots (repo_id, board, date);
 
+-- The explosion boards: young repositories above an explosion level, AI or
+-- not, ranked from census snapshots. Their own table rather than rows in
+-- leaderboard_snapshots, because that table is deleted a whole date at a time
+-- by the AI scoring and is what every AI-only export reads. The velocity
+-- columns are nullable on purpose: no window yet is not a window of zero.
+CREATE TABLE IF NOT EXISTS explosion_board (
+    date         DATE NOT NULL,
+    board        TEXT NOT NULL,          -- young | resurgent
+    rank         INTEGER NOT NULL,
+    repo_id      INTEGER NOT NULL REFERENCES repos(id) ON DELETE CASCADE,
+    stars        INTEGER NOT NULL,
+    forks        INTEGER,
+    age_days     INTEGER,
+    window_days  INTEGER,
+    gain_window  INTEGER,
+    gain_1d      INTEGER,
+    score        REAL NOT NULL,
+    PRIMARY KEY (date, board, rank)
+);
+
+CREATE INDEX IF NOT EXISTS explosion_repo_idx ON explosion_board (repo_id, board, date);
+
+-- How a repository on the explosion boards relates to AI, read off the files
+-- it ships (airadar/evidence.py). Each column holds a short quote of what was
+-- found, or NULL for "looked, found nothing" — and a repository with no row
+-- here has not been looked at, which is a different thing again.
+CREATE TABLE IF NOT EXISTS repo_ai_evidence (
+    repo_id      INTEGER PRIMARY KEY REFERENCES repos(id) ON DELETE CASCADE,
+    checked_on   DATE NOT NULL,
+    status       TEXT NOT NULL,          -- ok | partial | unreachable
+    agent_file   TEXT,                   -- AGENTS.md / CLAUDE.md / both
+    built        TEXT,                   -- "Built with Claude"
+    agent_ready  TEXT,                   -- "its MCP server"
+    integrated   TEXT,                   -- "OPENAI_API_KEY"
+    mentions     TEXT,                   -- "Claude", with nothing stronger said
+    notes        TEXT
+);
+
 -- Repos known only by owner/name (curated lists, dependency graphs, the Hub).
 -- They carry no numeric id yet, and repos.id is that id, so they wait here
 -- until a resolve pass looks them up.

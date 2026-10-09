@@ -7,7 +7,7 @@ import { ThemeToggle } from "@/components/ThemeToggle";
 export const metadata: Metadata = {
   title: "AI Radar",
   description:
-    "GitHub'daki yapay zeka ekosistemi: mutlak popülerlik ve momentum ayrı ayrı sıralanmış.",
+    "GitHub'daki yapay zeka ekosistemi ve son üç ayın patlayan projeleri: mutlak popülerlik ve momentum ayrı ayrı sıralanmış.",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -29,12 +29,15 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <Link href="/" className="text-ink font-semibold tracking-tight">
               AI Radar
             </Link>
-            <nav className="text-ink-secondary flex gap-4 text-sm">
+            <nav className="text-ink-secondary flex flex-wrap gap-x-4 gap-y-1 text-sm">
               <Link href="/" className="hover:text-ink">
                 Board&apos;lar
               </Link>
               <Link href="/bugun/" className="hover:text-ink">
                 Bugün
+              </Link>
+              <Link href="/patlayanlar/" className="hover:text-ink">
+                Patlayanlar
               </Link>
               <Link href="/companies/" className="hover:text-ink">
                 Şirketler

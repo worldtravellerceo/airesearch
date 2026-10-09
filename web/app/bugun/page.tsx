@@ -1,8 +1,9 @@
 import Link from "next/link";
 
+import { AiTags } from "@/components/AiTags";
 import { getDigest } from "@/lib/data";
 import { categoryLabel, count, rate, ratio, shortDate } from "@/lib/format";
-import type { DigestArrival, DigestMover, DigestWarming } from "@/lib/types";
+import type { DigestArrival, DigestExplosions, DigestMover, DigestWarming } from "@/lib/types";
 
 export const dynamic = "force-static";
 
@@ -22,7 +23,13 @@ export const metadata = {
 export default async function TodayPage() {
   const digest = await getDigest();
   const { new_projects: fresh, newly_tracked: crossed, movers, warming, counts } = digest;
-  const nothing = !fresh.length && !crossed.length && !movers.length && !warming.length;
+  const exploded = digest.explosions;
+  const nothing =
+    !fresh.length &&
+    !crossed.length &&
+    !movers.length &&
+    !warming.length &&
+    !exploded?.entered.length;
 
   return (
     <div className="space-y-8">
@@ -42,6 +49,8 @@ export default async function TodayPage() {
             : "Veri bekleniyor. Günlük tur bu dosyayı yazdığında burası dolacak."}
         </p>
       ) : null}
+
+      {exploded?.entered.length ? <Explosions digest={exploded} /> : null}
 
       {fresh.length ? (
         <Arrivals
@@ -71,6 +80,63 @@ export default async function TodayPage() {
         </p>
       ) : null}
     </div>
+  );
+}
+
+/** Today's entries to the explosion list — every kind of project, AI or not.
+ *
+ *  First on the page because it is the only section here that is not gated on
+ *  the classifier: everything below it is the AI universe. */
+function Explosions({ digest }: { digest: DigestExplosions }) {
+  const total = digest.entered_total ?? digest.entered.length;
+  return (
+    <section className="space-y-3">
+      <div>
+        <h2 className="text-ink text-lg font-semibold tracking-tight">
+          Patlayanlar: bugün listeye girenler{" "}
+          <span className="text-ink-secondary font-normal">({count(total)})</span>
+        </h2>
+        <p className="text-ink-secondary mt-0.5 text-xs">
+          Son {digest.level.max_age_days} günde açılmış, patlama seviyesini{" "}
+          {digest.since ? `${shortDate(digest.since)} turundan bu yana` : "bu turda"} geçen projeler
+          — AI olsun olmasın. Listede toplam {count(digest.total)} proje var.{" "}
+          <Link href="/patlayanlar/bugun-girenler/" className="text-accent hover:underline">
+            Tamamı →
+          </Link>
+        </p>
+      </div>
+      <ul className="space-y-2">
+        {digest.entered.map((row) => (
+          <li key={row.full_name} className="rounded-lg border border-[--color-rule] p-3">
+            <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
+              {row.has_page ? (
+                <Link href={`/repos/${row.full_name}/`} className="text-ink font-medium hover:underline">
+                  {row.full_name}
+                </Link>
+              ) : (
+                <a
+                  href={`https://github.com/${row.full_name}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-ink font-medium hover:underline"
+                >
+                  {row.full_name}
+                </a>
+              )}
+              <div className="text-ink-secondary flex items-baseline gap-3 text-sm tabular-nums">
+                <span className="text-ink font-medium">{count(row.stars)}</span>
+                <span>{rate(row.velocity ?? row.lifetime_velocity)}</span>
+                {row.age_days === null ? null : <span>{count(row.age_days)} günlük</span>}
+              </div>
+            </div>
+            {row.description_tr || row.description ? (
+              <p className="text-ink-secondary mt-1 text-sm">{row.description_tr ?? row.description}</p>
+            ) : null}
+            <AiTags tags={row.ai_tags} evidence={null} category={row.category} />
+          </li>
+        ))}
+      </ul>
+    </section>
   );
 }
 

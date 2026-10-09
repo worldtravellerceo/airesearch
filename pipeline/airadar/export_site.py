@@ -18,6 +18,7 @@ from pathlib import Path
 
 from airadar.companies import boards as company_boards
 from airadar.db import repo as db
+from airadar.scoring import explosions as explosion_rules
 from airadar.scoring.leaderboards import ALL_CATEGORIES, BOARDS
 from airadar.scoring.metrics import BREAKOUT_ACCELERATION
 
@@ -63,7 +64,11 @@ def export(conn: sqlite3.Connection, out_dir: Path, *, date: dt.date | None = No
         _write(out_dir / "overview.json", _overview(conn, None), report)
         _write(out_dir / "categories.json", {"categories": [], "pools": {}}, report)
         _write(out_dir / "index.json", {"repos": []}, report)
-        _write(out_dir / "manifest.json", {"as_of": None, "boards": [], "repos": []}, report)
+        _write(
+            out_dir / "manifest.json",
+            {"as_of": None, "boards": [], "repos": [], "explosions": []},
+            report,
+        )
         log.warning("export: no leaderboard data yet, wrote an empty site")
         return report
 
@@ -80,7 +85,6 @@ def export(conn: sqlite3.Connection, out_dir: Path, *, date: dt.date | None = No
         report,
     )
     _write(out_dir / "index.json", {"repos": _search_index(conn)}, report)
-    _write(out_dir / "digest.json", _digest(conn, date), report)
     feed = _feed(conn, date)
     _write(out_dir / "feed.json", feed, report)
     # Every classified repository, no floor, for a consumer that is building its
@@ -110,8 +114,21 @@ def export(conn: sqlite3.Connection, out_dir: Path, *, date: dt.date | None = No
         )
 
     slugs = _boards(conn, out_dir, date, categories, report)
-    detail_slugs = _details(conn, out_dir, date, report)
+    digest = _digest(conn, date)
+    # Every repository the digest links to gets a page. /bugun links each of
+    # its rows to /repos/<name>/, and `_details` wrote pages for the top 1,200
+    # by stars and the board members only — a new arrival is neither, so 17 of
+    # 17 arrivals on 2026-10-09 (and 13 of 13 on 10-06) linked to a 404.
+    linked = {row["full_name"] for key in DIGEST_LINKED for row in digest[key]}
+    detail_slugs = _details(conn, out_dir, date, report, also=linked)
     company_slugs = _company_boards(conn, out_dir, date, report)
+    explosion_slugs, explosions_digest = _explosion_boards(
+        conn, out_dir, date, set(detail_slugs), report
+    )
+    # The digest's explosion section is the "new today" tab cut short — one
+    # computation, two places — so it is attached once the tabs exist.
+    digest["explosions"] = explosions_digest
+    _write(out_dir / "digest.json", digest, report)
 
     _write(
         out_dir / "manifest.json",
@@ -121,6 +138,7 @@ def export(conn: sqlite3.Connection, out_dir: Path, *, date: dt.date | None = No
             "categories": [c["category"] for c in categories],
             "repos": detail_slugs,
             "companies": company_slugs,
+            "explosions": explosion_slugs,
         },
         report,
     )
@@ -671,8 +689,17 @@ def _sparklines(conn: sqlite3.Connection, date: dt.date) -> dict[int, dict]:
     return out
 
 
+#: The digest sections whose rows link to a detail page.
+DIGEST_LINKED = ("new_projects", "newly_tracked", "movers", "warming")
+
+
 def _details(
-    conn: sqlite3.Connection, out_dir: Path, date: dt.date, report: ExportReport
+    conn: sqlite3.Connection,
+    out_dir: Path,
+    date: dt.date,
+    report: ExportReport,
+    *,
+    also: set[str] | frozenset[str] = frozenset(),
 ) -> list[str]:
     """Write a page for every repo the site can link to.
 
@@ -683,8 +710,11 @@ def _details(
     and Momentum lost 64 of 200. The two boards whose whole subject is
     rising interest were the two with the broken links.
 
-    So: the top N by stars, plus everyone on a board, whatever their rank.
+    So: the top N by stars, plus everyone on a board, whatever their rank,
+    plus whatever else the caller is about to link to (`also`).
     """
+    names = sorted(also)
+    linked = ", ".join("?" * len(names)) or "NULL"
     rows = conn.execute(
         """
         SELECT r.id, r.full_name, r.owner, r.name, r.description, r.homepage,
@@ -701,17 +731,20 @@ def _details(
         FROM repos r
         JOIN repo_classification c ON c.repo_id = r.id AND c.is_ai = 1
         LEFT JOIN repo_summary m ON m.repo_id = r.id
-        LEFT JOIN repo_scores s ON s.repo_id = r.id AND s.date = :date
+        LEFT JOIN repo_scores s ON s.repo_id = r.id AND s.date = ?
         WHERE """
         + db.CURRENT_NAME_SQL
         + """
           AND (r.id IN (
-                  SELECT id FROM repos WHERE is_fork = 0 ORDER BY stars DESC LIMIT :limit
+                  SELECT id FROM repos WHERE is_fork = 0 ORDER BY stars DESC LIMIT ?
                 )
-               OR r.id IN (SELECT repo_id FROM leaderboard_snapshots WHERE date = :date))
+               OR r.id IN (SELECT repo_id FROM leaderboard_snapshots WHERE date = ?)
+               OR r.full_name IN ("""
+        + linked
+        + """))
         ORDER BY r.stars DESC
         """,
-        {"date": date, "limit": DETAIL_LIMIT},
+        (date, DETAIL_LIMIT, date, *names),
     ).fetchall()
 
     topics = db.repo_topics_map(conn, [row["id"] for row in rows])
@@ -825,3 +858,230 @@ def _company_boards(
     if written:
         log.info("export: %d company boards", len(written))
     return written
+
+
+# --- explosions ------------------------------------------------------------
+
+#: The explosion section's tabs, in order. The slugs are Turkish because they
+#: are the URLs the reader shares.
+EXPLOSION_TABS: dict[str, tuple[str, str, str]] = {
+    "son-90-gun": (
+        explosion_rules.YOUNG,
+        "Son 90 gün",
+        "Son 90 günde açılmış ve patlama seviyesini geçmiş her proje — AI olsun olmasın. "
+        "Şu anki hızına göre sıralı.",
+    ),
+    "bugun-girenler": (
+        explosion_rules.YOUNG,
+        "Bugün girenler",
+        "Önceki tura göre listeye yeni giren projeler. Her gün değişen tek liste bu.",
+    ),
+    "yeniden-patlayanlar": (
+        explosion_rules.RESURGENT,
+        "Yeniden patlayanlar",
+        "90 günden eski ama son iki haftada yıldızını en az %10 ve 1.000 artıran projeler.",
+    ),
+}
+#: How many of today's entries the morning digest shows. The board has all.
+EXPLOSION_DIGEST_LIMIT = 12
+
+
+def _explosion_level() -> dict:
+    """The thresholds, published with the data so the page can say them."""
+    return {
+        "max_age_days": explosion_rules.MAX_AGE_DAYS,
+        "min_stars_outright": explosion_rules.MIN_STARS_OUTRIGHT,
+        "min_stars": explosion_rules.MIN_STARS,
+        "min_window_velocity": explosion_rules.MIN_WINDOW_VELOCITY,
+        "min_lifetime_velocity": explosion_rules.MIN_LIFETIME_VELOCITY,
+        "resurgent_min_gain": explosion_rules.RESURGENT_MIN_GAIN,
+        "resurgent_min_growth": explosion_rules.RESURGENT_MIN_GROWTH,
+        "window_days": explosion_rules.WINDOW_DAYS,
+    }
+
+
+def _ai_tags(row: dict) -> list[str]:
+    """How a row relates to AI, strongest first — never "not AI".
+
+    `none_found` is "looked and found nothing", `unchecked` is "has not been
+    looked at yet"; neither is a verdict, and is_ai=0 alone is not one either:
+    3 of 16 such rows in the 2026-10-09 slice were AI products by their own
+    README.
+    """
+    tags = []
+    if row["is_ai"] is True:
+        tags.append("ai_project")
+    if row["agent_file"]:
+        tags.append("agent_file")
+    if row["built"]:
+        tags.append("built_statement")
+    if row["agent_ready"]:
+        tags.append("agent_ready")
+    if row["integrated"] and row["is_ai"] is not True:
+        tags.append("uses_ai")
+    elif row["mentions"] and row["is_ai"] is not True and not tags:
+        # Only when nothing else was found: next to an agent file it adds
+        # nothing, and on its own it is the weakest thing there is to say.
+        tags.append("mentions_ai")
+    if row["is_ai"] is None:
+        tags.append("unsettled")
+    if not tags:
+        tags.append("none_found" if row["evidence_status"] == "ok" else "unchecked")
+    return tags
+
+
+def _explosion_row(row: dict, pages: set[str]) -> dict:
+    created = row["created_at"]
+    window, gain = row["window_days"], row["gain_window"]
+    return {
+        "rank": row["rank"],
+        "full_name": row["full_name"],
+        "description": row["description"],
+        "language": row["language"],
+        "license": row["license"],
+        "homepage": row["homepage"],
+        "stars": row["stars"],
+        "forks": row["forks"],
+        "created_at": created.date().isoformat() if created else None,
+        "age_days": row["age_days"],
+        "window_days": window,
+        "gain_window": gain,
+        "gain_1d": row["gain_1d"],
+        "velocity": round(gain / window, 1) if window and gain is not None else None,
+        "lifetime_velocity": (
+            round(row["stars"] / max(1, row["age_days"]), 1)
+            if row["age_days"] is not None
+            else None
+        ),
+        "is_ai": row["is_ai"],
+        "category": row["category"] if row["is_ai"] is True else None,
+        "ai_tags": _ai_tags(row),
+        # Short quotes from the repository's own files: third-party text,
+        # published as evidence and never as instructions.
+        "ai_evidence": (
+            {
+                "agent_file": row["agent_file"],
+                "built": row["built"],
+                "agent_ready": row["agent_ready"],
+                "uses_ai": row["integrated"] if row["is_ai"] is not True else None,
+                "mentions_ai": row["mentions"] if row["is_ai"] is not True else None,
+                "checked_on": row["evidence_checked_on"],
+            }
+            if row["evidence_status"]
+            else None
+        ),
+        "has_page": row["full_name"] in pages,
+        "description_tr": row["description_tr"],
+        "usage_tr": row["usage_tr"],
+        "matched_project": row["matched_project"],
+        "repo_id": row["repo_id"],
+    }
+
+
+def _explosion_boards(
+    conn: sqlite3.Connection,
+    out_dir: Path,
+    date: dt.date,
+    pages: set[str],
+    report: ExportReport,
+) -> tuple[list[dict], dict]:
+    """Write the explosion tabs and hand back the digest's slice of them.
+
+    Every row links to its own page when one exists and to GitHub otherwise:
+    a detail page is written for the AI universe only, and a link to a page
+    that was never written is the bug /bugun already shipped.
+    """
+    level = _explosion_level()
+    empty_digest = {"date": None, "since": None, "total": 0, "entered": [], "level": level}
+    try:
+        day = db.latest_explosion_date(conn, on_or_before=date)
+    except sqlite3.OperationalError as exc:
+        # An older database on the data branch has no explosion table yet.
+        log.warning("export: explosion boards unavailable (%s)", exc)
+        return [], empty_digest
+    if day is None:
+        return [], empty_digest
+
+    boards = {
+        name: [
+            _explosion_row(row, pages)
+            for row in db.load_explosion_board(conn, date=day, board=name)
+        ]
+        for name in explosion_rules.EXPLOSION_BOARDS
+    }
+    since = {
+        name: db.previous_explosion_date(conn, before=day, board=name)
+        for name in explosion_rules.EXPLOSION_BOARDS
+    }
+    previous = {
+        name: db.explosion_ranks(conn, date=since[name], board=name) if since[name] else {}
+        for name in explosion_rules.EXPLOSION_BOARDS
+    }
+    for name, rows in boards.items():
+        for row in rows:
+            before = previous[name].get(row["repo_id"])
+            row["rank_delta"] = before - row["rank"] if before is not None else None
+
+    # With nothing to compare against, every row would be "new", which is
+    # true of nothing — so on a first day the tab is simply not written.
+    young = boards[explosion_rules.YOUNG]
+    entered = (
+        [row for row in young if row["rank_delta"] is None] if since[explosion_rules.YOUNG] else []
+    )
+
+    written: list[dict] = []
+    for slug, (board, title, blurb) in EXPLOSION_TABS.items():
+        rows = entered if slug == "bugun-girenler" else boards[board]
+        if not rows:
+            continue
+        entries = [{k: v for k, v in row.items() if k != "repo_id"} for row in rows]
+        _write(
+            out_dir / "patlayanlar" / f"{slug}.json",
+            {
+                "slug": slug,
+                "title": title,
+                "blurb": blurb,
+                "as_of": day,
+                "since": since[board],
+                "level": level,
+                "movement": _movement(entries, previous[board], since[board]),
+                "total": len(entries),
+                "entries": entries,
+            },
+            report,
+        )
+        written.append({"slug": slug, "title": title, "blurb": blurb, "count": len(entries)})
+    if written:
+        log.info(
+            "export: %d explosion tabs (%s)", len(written), ", ".join(w["slug"] for w in written)
+        )
+
+    return written, {
+        "date": day,
+        "since": since[explosion_rules.YOUNG],
+        "total": len(young),
+        "entered_total": len(entered),
+        "entered": [
+            {
+                k: row[k]
+                for k in (
+                    "rank",
+                    "full_name",
+                    "description",
+                    "language",
+                    "stars",
+                    "age_days",
+                    "velocity",
+                    "lifetime_velocity",
+                    "gain_1d",
+                    "is_ai",
+                    "category",
+                    "ai_tags",
+                    "has_page",
+                    "description_tr",
+                )
+            }
+            for row in entered[:EXPLOSION_DIGEST_LIMIT]
+        ],
+        "level": level,
+    }

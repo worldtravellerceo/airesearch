@@ -17,6 +17,8 @@ import type {
   CompanyBoardFile,
   CompanyBoardSummary,
   Digest,
+  ExplosionBoardFile,
+  ExplosionBoardSummary,
   IndexEntry,
   Manifest,
   Overview,
@@ -91,6 +93,14 @@ export async function getCompanyBoards(): Promise<CompanyBoardSummary[]> {
 
 export function getCompanyBoard(slug: string): Promise<CompanyBoardFile | null> {
   return readJson<CompanyBoardFile | null>(`companies/${slug}.json`, null);
+}
+
+export async function getExplosionBoards(): Promise<ExplosionBoardSummary[]> {
+  return (await getManifest()).explosions ?? [];
+}
+
+export function getExplosionBoard(slug: string): Promise<ExplosionBoardFile | null> {
+  return readJson<ExplosionBoardFile | null>(`patlayanlar/${slug}.json`, null);
 }
 
 export const EMPTY_DIGEST: Digest = {

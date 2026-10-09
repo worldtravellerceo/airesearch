@@ -768,7 +768,7 @@ def prune_derived_tables(
         today - dt.timedelta(days=snapshot_keep_days) if snapshot_keep_days is not None else cutoff
     )
     removed = {}
-    for table in ("repo_scores", "leaderboard_snapshots"):
+    for table in ("repo_scores", "leaderboard_snapshots", "explosion_board"):
         cursor = conn.execute(f"DELETE FROM {table} WHERE date < ?", (cutoff,))
         removed[table] = cursor.rowcount
     cursor = conn.execute("DELETE FROM repo_snapshots WHERE date < ?", (snapshot_cutoff,))
@@ -1357,6 +1357,195 @@ def load_scoring_rows(
     for row in rows:
         row["carried_tail"] = _tail_at(row, today, decay)
     return rows
+
+
+def load_explosion_inputs(
+    conn: sqlite3.Connection, *, today: dt.date, lookback_days: int
+) -> list[dict]:
+    """Every repository captured today, with its captures since `lookback_days`.
+
+    No classification join: the explosion boards are the one place where AI is
+    a label and not a gate. Read as plain tuples — 14 days of census is about
+    1.1M rows, and building a dict per row is most of the cost.
+    """
+    since = today - dt.timedelta(days=lookback_days)
+    cursor = conn.cursor()
+    cursor.row_factory = None
+    points: dict[int, list[tuple[dt.date, int]]] = {}
+    forks: dict[int, int | None] = {}
+    for repo_id, date, stars, fork_count in cursor.execute(
+        "SELECT repo_id, date, stars, forks FROM repo_snapshots WHERE date >= ? AND date <= ?",
+        (since, today),
+    ):
+        points.setdefault(repo_id, []).append((date, stars))
+        if date == today:
+            forks[repo_id] = fork_count
+    out = []
+    for repo_id, created_at in cursor.execute(
+        "SELECT r.id, r.created_at FROM repos r WHERE r.is_fork = 0 AND r.archived = 0 AND "
+        + CURRENT_NAME_SQL
+    ):
+        if repo_id not in forks:
+            continue
+        out.append(
+            {
+                "repo_id": repo_id,
+                "created_at": created_at.date() if created_at else None,
+                "points": points[repo_id],
+                "forks": forks[repo_id],
+            }
+        )
+    return out
+
+
+def snapshot_count(conn: sqlite3.Connection, *, date: dt.date) -> int:
+    row = conn.execute(
+        "SELECT count(*) AS n FROM repo_snapshots WHERE date = ?", (date,)
+    ).fetchone()
+    return int(row["n"]) if row else 0
+
+
+def save_explosions(conn: sqlite3.Connection, date: dt.date, items: Sequence) -> int:
+    """Replace the day's explosion boards. `score` runs several times a day."""
+    conn.execute("DELETE FROM explosion_board WHERE date = ?", (date,))
+    conn.executemany(
+        """
+        INSERT INTO explosion_board (date, board, rank, repo_id, stars, forks, age_days,
+                                     window_days, gain_window, gain_1d, score)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+        """,
+        [
+            (
+                date,
+                e.board,
+                e.rank,
+                e.repo_id,
+                e.stars,
+                e.forks,
+                e.age_days,
+                e.window_days,
+                e.gain_window,
+                e.gain_1d,
+                e.score,
+            )
+            for e in items
+        ],
+    )
+    conn.commit()
+    return len(items)
+
+
+def latest_explosion_date(conn: sqlite3.Connection, *, on_or_before: dt.date) -> dt.date | None:
+    row = conn.execute(
+        "SELECT max(date) AS d FROM explosion_board WHERE date <= ?", (on_or_before,)
+    ).fetchone()
+    return _as_date(row["d"]) if row and row["d"] else None
+
+
+def previous_explosion_date(
+    conn: sqlite3.Connection, *, before: dt.date, board: str
+) -> dt.date | None:
+    """The day an explosion board's movement is measured against — not
+    "yesterday" by assumption, for the same reason as `previous_board_date`."""
+    row = conn.execute(
+        "SELECT max(date) AS d FROM explosion_board WHERE date < ? AND board = ?",
+        (before, board),
+    ).fetchone()
+    return _as_date(row["d"]) if row and row["d"] else None
+
+
+def explosion_ranks(conn: sqlite3.Connection, *, date: dt.date, board: str) -> dict[int, int]:
+    return {
+        row["repo_id"]: row["rank"]
+        for row in conn.execute(
+            "SELECT repo_id, rank FROM explosion_board WHERE date = ? AND board = ?",
+            (date, board),
+        )
+    }
+
+
+def load_explosion_board(conn: sqlite3.Connection, *, date: dt.date, board: str) -> list[dict]:
+    """One explosion board with everything a row shows, classification as a label.
+
+    `is_ai` keeps its three values apart: 1, 0 and NULL ("not settled") are
+    different statements, and the site must not print the last two alike.
+    """
+    return conn.execute(
+        """
+        SELECT e.rank, e.score, e.stars, e.forks, e.age_days, e.window_days,
+               e.gain_window, e.gain_1d,
+               r.id AS repo_id, r.full_name, r.description, r.language, r.license,
+               r.homepage, r.created_at, r.first_seen_at, r.discovered_via,
+               r.readme_excerpt,
+               c.is_ai, c.category, c.confidence,
+               m.description_tr, m.usage_tr, m.matched_project, m.relevance,
+               v.status AS evidence_status, v.checked_on AS evidence_checked_on,
+               v.agent_file, v.built, v.agent_ready, v.integrated, v.mentions
+        FROM explosion_board e
+        JOIN repos r ON r.id = e.repo_id
+        LEFT JOIN repo_classification c ON c.repo_id = e.repo_id
+        LEFT JOIN repo_summary m ON m.repo_id = e.repo_id
+        LEFT JOIN repo_ai_evidence v ON v.repo_id = e.repo_id
+        WHERE e.date = ? AND e.board = ?
+        ORDER BY e.rank
+        """,
+        (date, board),
+    ).fetchall()
+
+
+def explosion_evidence_targets(
+    conn: sqlite3.Connection, *, date: dt.date, stale_before: dt.date, limit: int | None = None
+) -> list[dict]:
+    """Explosion-board repositories whose AI evidence is missing, old, or was
+    not a clean read last time (a refusal is re-asked, not remembered)."""
+    return conn.execute(
+        """
+        SELECT r.id AS repo_id, r.full_name, r.description, r.readme_excerpt,
+               min(e.rank) AS best_rank
+        FROM explosion_board e
+        JOIN repos r ON r.id = e.repo_id
+        LEFT JOIN repo_ai_evidence v ON v.repo_id = e.repo_id
+        WHERE e.date = :date
+          AND (v.repo_id IS NULL OR v.checked_on < :stale OR v.status != 'ok')
+        GROUP BY r.id
+        ORDER BY best_rank, r.id
+        LIMIT :limit
+        """,
+        {"date": date, "stale": stale_before, "limit": -1 if limit is None else limit},
+    ).fetchall()
+
+
+def save_ai_evidence(
+    conn: sqlite3.Connection, repo_id: int, evidence, *, checked_on: dt.date
+) -> None:
+    conn.execute(
+        """
+        INSERT INTO repo_ai_evidence (repo_id, checked_on, status, agent_file, built,
+                                      agent_ready, integrated, mentions, notes)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
+        ON CONFLICT (repo_id) DO UPDATE SET
+            checked_on = excluded.checked_on, status = excluded.status,
+            agent_file = excluded.agent_file, built = excluded.built,
+            agent_ready = excluded.agent_ready, integrated = excluded.integrated,
+            mentions = excluded.mentions, notes = excluded.notes
+        """,
+        (
+            repo_id,
+            checked_on,
+            evidence.status,
+            evidence.agent_file,
+            evidence.built,
+            evidence.agent_ready,
+            evidence.integrated,
+            evidence.mentions,
+            "; ".join(evidence.notes) or None,
+        ),
+    )
+
+
+def _as_date(value) -> dt.date:
+    # An aggregate loses its declared type, so max(date) comes back as text.
+    return value if isinstance(value, dt.date) else dt.date.fromisoformat(str(value))
 
 
 def reset_history(conn: sqlite3.Connection, *, only_inflated: bool = True) -> int:

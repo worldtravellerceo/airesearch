@@ -203,6 +203,9 @@ export type Manifest = {
    *  until a source has actually run. Both mean the same thing to the reader:
    *  no company tabs. */
   companies?: CompanyBoardSummary[];
+  /** The explosion tabs that have rows. Absent on a site built before they
+   *  existed, which reads the same as none: no tabs offered. */
+  explosions?: ExplosionBoardSummary[];
 };
 
 /** One row of a company board.
@@ -326,6 +329,124 @@ export type DigestWarming = {
   matched_project: string | null;
 };
 
+/** How a row on the explosion boards relates to AI. Never "not AI": absence of
+ *  evidence is `none_found` (looked, found nothing) or `unchecked` (not looked
+ *  yet), and is_ai=0 from the classifier is not a verdict either. */
+export type AiTag =
+  | "ai_project"
+  | "agent_file"
+  | "built_statement"
+  | "agent_ready"
+  | "uses_ai"
+  | "mentions_ai"
+  | "unsettled"
+  | "none_found"
+  | "unchecked";
+
+/** Short quotes from the repository's own files — third-party text, shown as
+ *  evidence. */
+export type AiEvidence = {
+  agent_file: string | null;
+  built: string | null;
+  agent_ready: string | null;
+  uses_ai: string | null;
+  mentions_ai?: string | null;
+  checked_on: string | null;
+};
+
+export type ExplosionLevel = {
+  max_age_days: number;
+  min_stars_outright: number;
+  min_stars: number;
+  min_window_velocity: number;
+  min_lifetime_velocity: number;
+  resurgent_min_gain: number;
+  resurgent_min_growth: number;
+  window_days: number;
+};
+
+export type ExplosionEntry = {
+  rank: number;
+  rank_delta: number | null;
+  full_name: string;
+  description: string | null;
+  language: string | null;
+  license: string | null;
+  homepage: string | null;
+  stars: number;
+  forks: number | null;
+  created_at: string | null;
+  age_days: number | null;
+  /** Days the current speed is measured over; null when there is no earlier
+   *  capture to measure from, which is not a speed of zero. */
+  window_days: number | null;
+  gain_window: number | null;
+  gain_1d: number | null;
+  velocity: number | null;
+  lifetime_velocity: number | null;
+  is_ai: boolean | null;
+  category: string | null;
+  ai_tags: AiTag[];
+  ai_evidence: AiEvidence | null;
+  /** Whether this site wrote a page for the repo. Otherwise it links to GitHub. */
+  has_page: boolean;
+  description_tr: string | null;
+  usage_tr: string | null;
+  matched_project: string | null;
+};
+
+export type ExplosionBoardSummary = {
+  slug: string;
+  title: string;
+  blurb: string;
+  count: number;
+};
+
+export type ExplosionBoardFile = {
+  slug: string;
+  title: string;
+  blurb: string;
+  as_of: string | null;
+  since: string | null;
+  level: ExplosionLevel;
+  movement?: BoardMovement | null;
+  total: number;
+  entries: ExplosionEntry[];
+};
+
+/** Routes are built from this list, not from the manifest, so a bookmarked tab
+ *  keeps working on a day it happens to be empty (static export cannot build a
+ *  dynamic segment with nothing in it). The tabs shown still come from the
+ *  manifest. */
+export const EXPLOSION_SLUGS = ["son-90-gun", "bugun-girenler", "yeniden-patlayanlar"] as const;
+
+export type DigestExplosion = Pick<
+  ExplosionEntry,
+  | "rank"
+  | "full_name"
+  | "description"
+  | "language"
+  | "stars"
+  | "age_days"
+  | "velocity"
+  | "lifetime_velocity"
+  | "gain_1d"
+  | "is_ai"
+  | "category"
+  | "ai_tags"
+  | "has_page"
+  | "description_tr"
+>;
+
+export type DigestExplosions = {
+  date: string | null;
+  since: string | null;
+  total: number;
+  entered_total?: number;
+  entered: DigestExplosion[];
+  level: ExplosionLevel;
+};
+
 export type Digest = {
   date: string | null;
   /** Arrivals young enough to be new projects rather than new to us. */
@@ -334,6 +455,8 @@ export type Digest = {
   newly_tracked: DigestArrival[];
   movers: DigestMover[];
   warming: DigestWarming[];
+  /** Absent on a digest written before the explosion boards existed. */
+  explosions?: DigestExplosions;
   counts: {
     arrivals_total: number;
     arrivals_shown: number;

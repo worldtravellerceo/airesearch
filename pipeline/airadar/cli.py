@@ -459,6 +459,39 @@ def score(
     console.print(f"[green]score[/green]: {scored:,} repos scored, {rows:,} board rows")
 
 
+@app.command("explosion-evidence")
+def explosion_evidence(
+    date: str = typer.Option(None, "--date", help="Explosion board date (YYYY-MM-DD)"),
+    limit: int = typer.Option(None, "--limit", help="Probe at most this many repositories"),
+) -> None:
+    """Read how each repository on the explosion boards relates to AI.
+
+    Token-free: three raw.githubusercontent.com reads per repository (AGENTS.md,
+    CLAUDE.md, README.md), and only for rows not read in the last week.
+    """
+    from airadar import evidence
+
+    settings = _require_database()
+    today = _parse_date(date) or dt.date.today()
+    with db.connect(settings.db_path) as conn:
+        run_id = db.start_run(conn, "explosion-evidence")
+        try:
+            report = asyncio.run(evidence.collect_evidence(conn, today=today, limit=limit))
+        except Exception as exc:
+            db.finish_run(conn, run_id, ok=False, notes=str(exc)[:500])
+            raise
+        # Most of the reads refused is the source saying no, not saying
+        # nothing — so the step goes red rather than logging a clean finish.
+        refused = report.probed and report.partial > report.probed // 2
+        db.finish_run(conn, run_id, ok=not refused, notes=report.summary())
+    console.print(f"[green]explosion-evidence[/green]: {report.summary()}")
+    if refused:
+        console.print(
+            "[red]Most reads were refused or failed; nothing was concluded from them.[/red]"
+        )
+        raise typer.Exit(1)
+
+
 @app.command("export-site")
 def export_site_cmd(
     out: str = typer.Option("web/public/data", "--out", help="Where the site reads its JSON from"),

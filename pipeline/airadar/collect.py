@@ -26,6 +26,7 @@ from airadar.gh.metrics import (
     StarHistoryFormatError,
     parse_star_history,
 )
+from airadar.scoring import explosions
 from airadar.scoring.leaderboards import build_all, pool_sizes
 from airadar.scoring.metrics import (
     compute_repo_metrics,
@@ -358,6 +359,7 @@ def score(conn: sqlite3.Connection, *, today: dt.date | None = None) -> tuple[in
     entries = build_all(metrics)
     db.save_leaderboards(conn, today, entries)
     db.save_board_pools(conn, today, pool_sizes(metrics))
+    exploded = score_explosions(conn, today=today)
 
     # Pruning happens after scoring, not before: today's numbers are computed
     # from the full retained window, and only then does the window slide.
@@ -376,15 +378,75 @@ def score(conn: sqlite3.Connection, *, today: dt.date | None = None) -> tuple[in
         snapshot_keep_days=settings.snapshot_retain_days,
     )
     log.info(
-        "score: %d repos scored, %d board rows, %d day-rows pruned, "
+        "score: %d repos scored, %d board rows, %d explosion rows, %d day-rows pruned, "
         "%d snapshots and %d score rows dropped",
         saved,
         len(entries),
+        exploded,
         pruned,
         derived["repo_snapshots"],
         derived["repo_scores"],
     )
     return saved, len(entries)
+
+
+#: How many earlier days `score_explosions` fills in when they are missing. A
+#: board's "new today" list needs yesterday's board to compare with, and the
+#: first run after this shipped — or the first run after a failed day — has
+#: none. The snapshots those days were ranked from are still in the database.
+EXPLOSION_BACKFILL_DAYS = 3
+
+
+def score_explosions(conn: sqlite3.Connection, *, today: dt.date) -> int:
+    """Rank today's explosions — every young repository above the level, AI or not.
+
+    Its own cohort and its own table: nothing here touches the AI metrics, the
+    AI boards or their pools, so adding a non-AI repository can never move an
+    AI one. Runs before the prune because it reads the snapshots the prune
+    trims.
+    """
+    today_count = db.snapshot_count(conn, date=today)
+    for back in range(EXPLOSION_BACKFILL_DAYS, 0, -1):
+        day = today - dt.timedelta(days=back)
+        # Only a day the census actually covered. `collect` alone writes about
+        # 2,900 snapshots a day against the census's 78,000, and a board ranked
+        # from the tracked AI repos would be a different board.
+        if db.latest_explosion_date(conn, on_or_before=day) == day:
+            continue
+        if today_count and db.snapshot_count(conn, date=day) * 2 >= today_count:
+            _score_explosion_day(conn, day)
+    return _score_explosion_day(conn, today)
+
+
+def _score_explosion_day(conn: sqlite3.Connection, today: dt.date) -> int:
+    rows = db.load_explosion_inputs(conn, today=today, lookback_days=explosions.MAX_ANCHOR_DAYS)
+    measured = [
+        item
+        for row in rows
+        if (
+            item := explosions.measure(
+                row["repo_id"],
+                row["points"],
+                created_at=row["created_at"],
+                today=today,
+                forks=row["forks"],
+            )
+        )
+        is not None
+    ]
+    ranked = explosions.rank(measured)
+    db.save_explosions(conn, today, ranked)
+    log.info(
+        "explosions %s: %d repos captured, %d above the level (%s)",
+        today,
+        len(measured),
+        len(ranked),
+        ", ".join(
+            f"{board}={sum(1 for e in ranked if e.board == board)}"
+            for board in explosions.EXPLOSION_BOARDS
+        ),
+    )
+    return len(ranked)
 
 
 @dataclass

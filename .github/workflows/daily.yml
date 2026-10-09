@@ -78,8 +78,21 @@ jobs:
       - name: Collect
         run: airadar collect ${{ inputs.limit && format('--limit {0}', inputs.limit) || '' }}
 
+      # Score also ranks the explosion boards: every repository younger than 90
+      # days above the explosion level, AI or not, from the snapshots the census
+      # and nursery just wrote. No requests.
       - name: Score
         run: airadar score
+
+      # How each explosion row relates to AI — AGENTS.md / CLAUDE.md at the
+      # root, a README that says it was built with AI, an MCP server. Three
+      # token-free raw.githubusercontent.com reads per repository, and only for
+      # rows not read in the last week: ~800 on the first run (measured 2,750
+      # reads in 69 s), a few dozen a day after. Loud but not fatal: a refusal
+      # leaves the label at "henüz bakılmadı" rather than costing the site.
+      - name: Read how the explosion rows relate to AI
+        continue-on-error: true
+        run: airadar explosion-evidence
 
       # Everything below writes the two Turkish paragraphs the site shows under
       # each row, and it runs here because the boards are only decided by

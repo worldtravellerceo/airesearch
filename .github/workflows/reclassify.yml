@@ -51,6 +51,12 @@ jobs:
       - name: Score
         run: airadar score
 
+      # Token-free and incremental, as in the daily run; here so a re-score
+      # does not publish explosion rows whose AI relation was never read.
+      - name: Read how the explosion rows relate to AI
+        continue-on-error: true
+        run: airadar explosion-evidence
+
       - uses: ./.github/actions/publish-db
         if: always()
         with:

@@ -202,6 +202,24 @@ to the site, which that environment can reach — and `as_of` plus `last_run.ok`
 answer the whole question. The GitHub API is only needed to *act*, so it is
 mentioned only when something actually needs acting on.
 
+**A gate built for one question hides the answer to the next.** Every board
+was gated on is_ai=1, which is right for "what is happening in AI" and wrong
+for "what just exploded". `storytold/photocraft`, a Photoshop clone in Rust,
+went from 2,818 to 31,865 stars across three census days and appeared nowhere,
+because the rules read it — correctly — as an image editor. Discovery had found
+it six days earlier and the census had snapshotted it every day; nothing read
+the snapshots. The explosion boards (`scoring/explosions.py`) rank every young
+repository above a level with no classifier in them, and AI is a label on the
+row. When the reader asks a new question, look for the gate before the data:
+the data was usually collected already.
+
+**A floor that holds on three days can fail on the fourth.** The explosion
+level's star floor was 300 and looked clean on 10-07, 10-08 and 10-09. Replayed
+over 10-06 as well, that day's top 50 held 11 malware lures — Adobe-Acrobat-Pro,
+AnyDesk, Autodesk-Inventor, all at exactly 392 stars, a day old, deleted by
+GitHub the next morning. At 500 none of the four days had one. Replay a
+threshold over every day of history there is, not the day it was written on.
+
 **Never buy recall with precision.** A soft ceiling set below the decision
 threshold stranded 17,849 repositories in permanent escalation. A README weight
 set one tier too high put a release-notes CLI on an AI board. Every widening
