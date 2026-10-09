@@ -55,6 +55,8 @@ jobs:
       # does not publish explosion rows whose AI relation was never read.
       - name: Read how the explosion rows relate to AI
         continue-on-error: true
+        # continue-on-error does nothing for a step that hangs; this does.
+        timeout-minutes: 20
         run: airadar explosion-evidence
 
       - uses: ./.github/actions/publish-db

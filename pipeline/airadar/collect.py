@@ -438,22 +438,26 @@ def score_explosions(conn: sqlite3.Connection, *, today: dt.date) -> int:
     return _score_explosion_day(conn, today)
 
 
+#: How much of the reference day each channel must have captured. Measured over
+#: the census days 10-06 to 10-09: the census's own count moved by 0.15% and the
+#: nursery band by 6% (12,257 to 13,101), so these accept every real day and
+#: refuse a census cut short or a nursery that died half way.
+CENSUS_COVERAGE = 0.9
+NURSERY_COVERAGE = 0.8
+
+
 def _coverage(conn: sqlite3.Connection, day: dt.date, floor: int) -> tuple[int, int]:
-    """Snapshots on `day`: all of them, and the nursery's band under the floor."""
-    return db.snapshot_count(conn, date=day), db.snapshot_count(conn, date=day, below=floor)
+    """Snapshots on `day` at or above the census floor, and under it (nursery)."""
+    young = db.snapshot_count(conn, date=day, below=floor)
+    return db.snapshot_count(conn, date=day) - young, young
 
 
 def _covers(candidate: tuple[int, int], reference: tuple[int, int]) -> bool:
-    """At least half of the reference day in total and under the floor.
-
-    Half, because a census day is about 78,000 and `collect` alone writes about
-    2,900; nothing real lands in between.
-    """
-    total, young = candidate
-    ref_total, ref_young = reference
-    if not ref_total:
+    census, young = candidate
+    ref_census, ref_young = reference
+    if not ref_census:
         return False
-    return total * 2 >= ref_total and (not ref_young or young * 2 >= ref_young)
+    return census >= CENSUS_COVERAGE * ref_census and young >= NURSERY_COVERAGE * ref_young
 
 
 def _score_explosion_day(conn: sqlite3.Connection, today: dt.date) -> int:

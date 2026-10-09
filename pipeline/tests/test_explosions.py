@@ -166,9 +166,24 @@ def snapshots(conn, repo_id, counts: dict[int, int]):
     conn.commit()
 
 
+def background(conn, *, days=range(4)):
+    """What every real day has around the rows under test: a census of quiet
+    repositories above 1,000 stars and a nursery of quiet young ones below it.
+    A day's coverage is judged against these, as it is against the real 65,000
+    and 13,000."""
+    for i in range(20):
+        add_repo(conn, 500 + i, f"census/quiet{i}", age=400, is_ai=False)
+        add_repo(conn, 600 + i, f"nursery/quiet{i}", age=30, is_ai=False)
+        for back in days:
+            db.record_snapshot(conn, 500 + i, day(back), stars=5_000)
+            db.record_snapshot(conn, 600 + i, day(back), stars=100)
+    conn.commit()
+
+
 def seeded(conn):
     """photocraft (not AI), an unsettled one, an AI one, a slow one, a vanished
     one, plus a tracked AI repository with real star history for the AI boards."""
+    background(conn)
     add_repo(conn, 10, "storytold/photocraft", age=9, is_ai=False)
     snapshots(conn, 10, {3: 2_818, 2: 13_021, 1: 22_791, 0: 31_865})
     add_repo(conn, 11, "storytold/lightcraft", age=9, is_ai=None)
@@ -253,8 +268,7 @@ def test_a_day_the_census_did_not_cover_is_not_backfilled(conn):
     """2,900 tracked-repo snapshots are not a census, and a board ranked from
     them would be a different board."""
     seeded(conn)
-    for repo_id in (10, 11, 12, 13):
-        conn.execute("DELETE FROM repo_snapshots WHERE repo_id = ? AND date = ?", (repo_id, day(2)))
+    conn.execute("DELETE FROM repo_snapshots WHERE date = ? AND repo_id != 20", (day(2),))
     conn.commit()
     score_explosions(conn, today=TODAY)
     dates = {row["date"] for row in conn.execute("SELECT DISTINCT date FROM explosion_board")}
@@ -330,6 +344,7 @@ def test_new_today_compares_with_the_previous_board(conn, tmp_path):
 
 def test_on_a_first_day_there_is_no_new_today_tab(conn, tmp_path):
     """With nothing to compare against, every row would be "new" — true of nothing."""
+    background(conn, days=[0])
     add_repo(conn, 10, "storytold/photocraft", age=9, is_ai=False)
     snapshots(conn, 10, {0: 31_865})
     add_repo(conn, 20, "tracked/agent", age=400, is_ai=True, category="agent-framework")
@@ -426,3 +441,31 @@ def test_today_is_not_ranked_when_the_nursery_missed_it(conn):
     conn.commit()
     assert score_explosions(conn, today=TODAY) == 0
     assert db.latest_explosion_date(conn, on_or_before=TODAY) == day(1)
+
+
+def test_a_census_cut_short_is_not_backfilled(conn):
+    """A census that died after 60% of its pages passed the first coverage
+    check: half of a day's total is less than 60% of the census plus the
+    nursery. Each channel is now held to its own share."""
+    seeded(conn)
+    for repo_id in range(500, 508):  # 8 of 20 census repositories missing
+        conn.execute("DELETE FROM repo_snapshots WHERE repo_id = ? AND date = ?", (repo_id, day(1)))
+    conn.commit()
+    score_explosions(conn, today=TODAY)
+    dates = {row["date"] for row in conn.execute("SELECT DISTINCT date FROM explosion_board")}
+    assert day(1) not in dates
+
+
+def test_overview_last_run_is_the_pipeline_not_an_auxiliary_step(conn, tmp_path):
+    """explosion-evidence runs after score and may fail without the run having
+    failed; the watchdog reads overview.json's last_run.ok as "did the run work"."""
+    seeded(conn)
+    score(conn, today=TODAY)
+    run = db.start_run(conn, "score")
+    db.finish_run(conn, run, ok=True, notes="score")
+    aux = db.start_run(conn, "explosion-evidence")
+    db.finish_run(conn, aux, ok=False, notes="refused")
+    out = tmp_path / "site"
+    export_site.export(conn, out, date=TODAY)
+    last = read(out, "overview.json")["last_run"]
+    assert (last["command"], bool(last["ok"])) == ("score", True)

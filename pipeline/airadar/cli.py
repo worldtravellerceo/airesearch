@@ -472,8 +472,15 @@ def explosion_evidence(
     from airadar import evidence
 
     settings = _require_database()
-    today = _parse_date(date) or dt.date.today()
     with db.connect(settings.db_path) as conn:
+        # The newest board, not the wall clock: a run that crosses midnight UTC
+        # between score and this step would otherwise ask for tomorrow's board,
+        # find none, and report a clean zero.
+        today = (
+            _parse_date(date)
+            or db.latest_explosion_date(conn, on_or_before=dt.date.today())
+            or dt.date.today()
+        )
         run_id = db.start_run(conn, "explosion-evidence")
         try:
             report = asyncio.run(evidence.collect_evidence(conn, today=today, limit=limit))
@@ -482,7 +489,7 @@ def explosion_evidence(
             raise
         # Most of the reads refused is the source saying no, not saying
         # nothing — so the step goes red rather than logging a clean finish.
-        refused = report.probed and report.partial > report.probed // 2
+        refused = report.probed >= 5 and report.partial > report.probed // 2
         db.finish_run(conn, run_id, ok=not refused, notes=report.summary())
     console.print(f"[green]explosion-evidence[/green]: {report.summary()}")
     if refused:

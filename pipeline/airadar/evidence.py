@@ -54,12 +54,19 @@ AGENT_FILES = ("AGENTS.md", "CLAUDE.md")
 RECHECK_DAYS = 7
 #: The longest quote kept from third-party text.
 QUOTE_CHARS = 80
+#: The most of any one file that is read. The sentences this module looks for
+#: sit near the top, and raw.githubusercontent.com serves files up to 100 MB.
+MAX_BYTES = 256_000
 
 _I = re.I
+#: "Written by Devin Abbott", "Created by Claude Dupont": a bare tool name followed
+#: by a capitalised word is a person. Case-sensitive inside a case-blind pattern.
+_PERSON = r"(?!\s+(?-i:[A-Z][a-z]))"
 _AI_TOOLS = (
-    r"(?:(?:claude\s+)?(?:opus|sonnet|haiku)(?:\s*\d(?:\.\d)?)?|claude(?:\s*code|\s*\d(?:\.\d)?)?"
+    r"(?:(?:claude\s+)?(?:opus|sonnet|haiku)(?:\s*\d(?:\.\d)?)?"
+    r"|claude(?:\s*code|\s*\d(?:\.\d)?|" + _PERSON + r")"
     r"|codex(?:\s*cli)?|cursor|chat\s?gpt|gpt-?\s?\d(?:\.\d)?(?:-?codex)?|copilot|gemini(?:\s*cli)?"
-    r"|windsurf|aider|devin|opencode|an?\s+ai(?:\s+(?:agent|assistant))?"
+    r"|windsurf|aider|devin" + _PERSON + r"|opencode|an?\s+ai(?:\s+(?:agent|assistant))?"
     r"|ai(?:\s+(?:agents?|assistants?|coding\s+(?:agents?|assistants?|tools?)))?|llms?|coding\s+agents?)"
 )
 _VERBS = r"(?:built|made|written|developed|created|coded|generated|vibe[- ]?coded)"
@@ -146,9 +153,12 @@ INTEGRATED_TOPICS = re.compile(
     r"|deep-learning|computer-vision|whisper|stable-diffusion|text-to-speech|tts|speech-recognition)$"
 )
 
-_BADGE = re.compile(r"!\[[^\]]*\]\([^)]*\)")
+# Each bracket class excludes its own opener, so a scan stops at the next one.
+# The obvious `\[([^\]]*)\]` is quadratic on a README of unclosed brackets:
+# about an hour of event-loop time for one megabyte, measured in review.
+_BADGE = re.compile(r"!\[[^\[\]]*\]\([^()]*\)")
 _TAG = re.compile(r"<[^>]{1,300}>")
-_LINK = re.compile(r"\[([^\]]*)\]\([^)]*\)")
+_LINK = re.compile(r"\[([^\[\]]*)\]\([^()]*\)")
 _URL = re.compile(r"https?://\S+")
 _SPACE = re.compile(r"\s+")
 
@@ -262,13 +272,21 @@ class Fetched:
 
 async def _get(http: httpx.AsyncClient, full_name: str, path: str) -> Fetched:
     try:
-        response = await http.get(f"{RAW_ROOT}/{full_name}/HEAD/{path}")
+        async with http.stream("GET", f"{RAW_ROOT}/{full_name}/HEAD/{path}") as response:
+            if response.status_code != 200:
+                return Fetched(status=response.status_code)
+            chunks: list[bytes] = []
+            size = 0
+            async for chunk in response.aiter_bytes():
+                chunks.append(chunk)
+                size += len(chunk)
+                if size >= MAX_BYTES:
+                    break
     except httpx.HTTPError as exc:
         log.warning("evidence: %s/%s failed: %s", full_name, path, exc)
         return Fetched(status=None)
-    if response.status_code != 200:
-        return Fetched(status=response.status_code)
-    return Fetched(status=200, body=response.text)
+    body = b"".join(chunks)[:MAX_BYTES].decode("utf-8", errors="replace")
+    return Fetched(status=200, body=body)
 
 
 async def probe(
@@ -289,7 +307,24 @@ async def probe(
     paths = (*AGENT_FILES, "README.md")
     fetched = await asyncio.gather(*(_get(http, full_name, p) for p in paths))
     by_path = dict(zip(paths, fetched, strict=True))
-    statuses = [f.status for f in fetched]
+    readme_item = by_path["README.md"]
+    if readme_item.status == 404:
+        # Raw paths are case-sensitive and the API's /readme is not: a live
+        # repository whose README is readme.md answered 404 three times and
+        # was filed as unreachable, re-asked forever.
+        lower = await _get(http, full_name, "readme.md")
+        if lower.status != 404:
+            by_path["README.md"] = readme_item = lower
+    target = (
+        symlink_target(readme_item.body) if readme_item.status == 200 and readme_item.body else None
+    )
+    followed = None
+    if target and not target.startswith(("/", "..")):
+        # The zod case: the root README is a link to packages/zod/README.md.
+        linked = await _get(http, full_name, target)
+        if linked.status == 200 and linked.body and not symlink_target(linked.body):
+            followed = linked.body
+    statuses = [by_path[p].status for p in paths]
 
     def body(path: str) -> str | None:
         item = by_path[path]
@@ -303,7 +338,7 @@ async def probe(
             return None
         return item.body
 
-    readme = body("README.md") or stored_excerpt
+    readme = body("README.md") or followed or stored_excerpt
     evidence = read_evidence(
         agents_md=body("AGENTS.md"),
         claude_md=body("CLAUDE.md"),
@@ -311,8 +346,13 @@ async def probe(
         description=description,
         topics=topics,
     )
-    if all(s == 404 for s in statuses):
+    if all(s == 404 for s in statuses) and not stored_excerpt:
         evidence.status = "unreachable"
+    elif target and not readme:
+        # The link was served, not the README. "Read and found nothing" would
+        # be a claim about a file nobody read.
+        evidence.status = "partial"
+        evidence.notes.append(f"README.md -> {target} unread")
     elif any(s not in (200, 404) for s in statuses):
         evidence.status = "partial"
         evidence.notes.append(
@@ -386,7 +426,10 @@ async def collect_evidence(
                 )
             return row, found
 
-        for row, found in await asyncio.gather(*(one(t) for t in targets)):
+        # Saved as each one lands, not after the last: a run cut short keeps
+        # what it read.
+        for next_done in asyncio.as_completed([one(t) for t in targets]):
+            row, found = await next_done
             report.probed += 1
             if found.status == "unreachable":
                 report.unreachable += 1
@@ -395,5 +438,5 @@ async def collect_evidence(
             if found.agent_file or found.built or found.agent_ready or found.integrated:
                 report.found += 1
             db.save_ai_evidence(conn, row["repo_id"], found, checked_on=today)
-    conn.commit()
+            conn.commit()
     return report

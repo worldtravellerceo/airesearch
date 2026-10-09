@@ -24,6 +24,10 @@ from airadar.scoring.metrics import BREAKOUT_ACCELERATION
 
 log = logging.getLogger(__name__)
 
+#: Commands that may fail without the run having failed. Their run_log rows
+#: stay honest; they just do not answer for the whole run in overview.json.
+AUXILIARY_COMMANDS = ("explosion-evidence",)
+
 SPARKLINE_DAYS = 90
 BOARD_LIMIT = 200
 CATEGORY_LIMIT = 50
@@ -206,9 +210,16 @@ def _overview(conn: sqlite3.Connection, date: dt.date | None) -> dict:
         if date is not None
         else {}
     )
+    # The watchdog reads `last_run.ok` as "did the daily run work". An
+    # auxiliary step that is allowed to fail without stopping the run would
+    # otherwise speak for the whole of it: explosion-evidence runs after score,
+    # and a refusal from raw.githubusercontent.com is not a failed index.
+    marks = ", ".join("?" * len(AUXILIARY_COMMANDS))
     last_run = conn.execute(
         "SELECT command, finished_at, ok, api_calls, api_304s, llm_cost_usd, notes "
-        "FROM run_log WHERE finished_at IS NOT NULL ORDER BY finished_at DESC LIMIT 1"
+        f"FROM run_log WHERE finished_at IS NOT NULL AND command NOT IN ({marks}) "
+        "ORDER BY finished_at DESC LIMIT 1",
+        AUXILIARY_COMMANDS,
     ).fetchone()
     return {"as_of": date, "counts": counts, "last_run": last_run}
 

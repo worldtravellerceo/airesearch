@@ -230,3 +230,106 @@ async def test_collect_re_asks_after_a_refusal(conn):
     assert first.partial == 1
     second = await evidence.collect_evidence(conn, today=TODAY, transport=transport(refused))
     assert second.considered == 1
+
+
+async def test_a_refused_recheck_does_not_erase_a_clean_read(conn):
+    """Week 1 read AGENTS.md; on day 8 the re-check got a 429. The upsert wrote
+    every column, so the row went to agent_file=NULL and the site said
+    "henüz bakılmadı" about files that had been read and found."""
+    seed_board(conn)
+    ok = {"AGENTS.md": (200, "# Guide for AI agents"), "README.md": (200, "# x")}
+    await evidence.collect_evidence(conn, today=TODAY, transport=transport(ok))
+    later = TODAY + dt.timedelta(days=8)
+    db.record_snapshot(conn, 10, later, stars=40_000)
+    conn.commit()
+    score_explosions(conn, today=later)
+    refused = {"AGENTS.md": (429, ""), "README.md": (200, "# x")}
+    await evidence.collect_evidence(conn, today=later, transport=transport(refused))
+    row = conn.execute("SELECT * FROM repo_ai_evidence WHERE repo_id = 10").fetchone()
+    assert (row["status"], row["agent_file"], row["checked_on"]) == ("ok", "AGENTS.md", TODAY)
+
+
+async def test_a_symlinked_readme_is_followed_once():
+    found = await probe_with(
+        {
+            "README.md": (200, "packages/zod/README.md"),
+            "packages/zod/README.md": (200, "Built with Claude."),
+        }
+    )
+    assert (found.status, found.built) == ("ok", "Built with Claude")
+
+
+async def test_a_symlinked_readme_that_cannot_be_read_is_not_a_clean_read():
+    """Otherwise the tooltip says the README was read and nothing was found."""
+    found = await probe_with({"README.md": (200, "packages/zod/README.md")})
+    assert found.status == "partial"
+
+
+async def test_a_lowercase_readme_is_read():
+    """Raw paths are case-sensitive and the API's /readme is not: a live repo
+    whose README is readme.md answered 404 three times and was filed as
+    unreachable, re-asked forever."""
+    found = await probe_with({"readme.md": (200, "Built with Claude.")})
+    assert (found.status, found.built) == ("ok", "Built with Claude")
+
+
+async def test_a_repository_known_through_its_excerpt_is_not_unreachable():
+    found = await probe_with({}, stored_excerpt="# A photo editor")
+    assert found.status == "ok"
+
+
+async def test_a_huge_readme_is_capped():
+    big = "Built with Claude.\n" + "x" * (evidence.MAX_BYTES * 4)
+    async with httpx.AsyncClient(transport=transport({"README.md": (200, big)})) as http:
+        fetched = await evidence._get(http, "owner/repo", "README.md")
+    assert len(fetched.body) <= evidence.MAX_BYTES
+
+
+@pytest.mark.parametrize("text", ["Written by Devin Abbott", "Created by Claude Dupont"])
+def test_a_person_is_not_a_tool(text):
+    assert evidence.read_evidence(agents_md=None, claude_md=None, readme=text).built is None
+
+
+@pytest.mark.parametrize("text", ["Built with Devin.", "Written by Claude Opus 5"])
+def test_the_tool_still_is(text):
+    assert evidence.read_evidence(agents_md=None, claude_md=None, readme=text).built is not None
+
+
+@pytest.mark.parametrize("bad", ["[" * 1_000_000, "![" * 500_000, "[0, 1) " * 150_000])
+def test_unclosed_brackets_are_read_in_linear_time(bad):
+    """The first link pattern was quadratic on unclosed brackets: about an hour
+    of event-loop time for one megabyte, measured in review."""
+    import time
+
+    started = time.monotonic()
+    evidence.read_evidence(agents_md=None, claude_md=None, readme=bad)
+    assert time.monotonic() - started < 2.0
+
+
+def test_the_cli_reads_the_newest_board_not_the_clock(conn, db_path, monkeypatch):
+    """Across midnight UTC the step asked for tomorrow's board, found none, and
+    reported a clean zero while today's rows stayed unread."""
+    from typer.testing import CliRunner
+
+    from airadar import cli
+
+    seed_board(conn)
+    conn.commit()
+    asked = {}
+
+    async def fake_collect(conn, *, today, limit=None):
+        asked["today"] = today
+        return evidence.EvidenceReport()
+
+    monkeypatch.setattr(evidence, "collect_evidence", fake_collect)
+    monkeypatch.setattr(cli, "_require_database", lambda: type("S", (), {"db_path": db_path})())
+
+    class Tomorrow(dt.date):
+        @classmethod
+        def today(cls):
+            return TODAY + dt.timedelta(days=1)
+
+    monkeypatch.setattr(cli.dt, "date", Tomorrow)
+    result = CliRunner().invoke(cli.app, ["explosion-evidence"])
+    assert result.exit_code == 0, result.output
+    assert asked["today"] == TODAY

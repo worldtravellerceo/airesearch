@@ -1536,6 +1536,10 @@ def save_ai_evidence(
             agent_file = excluded.agent_file, built = excluded.built,
             agent_ready = excluded.agent_ready, integrated = excluded.integrated,
             mentions = excluded.mentions, notes = excluded.notes
+        -- A refused re-check is no answer, so it must not erase one: the clean
+        -- row keeps its values and its old date, which keeps it due for the
+        -- next run.
+        WHERE excluded.status = 'ok' OR repo_ai_evidence.status != 'ok'
         """,
         (
             repo_id,
