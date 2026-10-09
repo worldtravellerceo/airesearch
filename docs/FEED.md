@@ -88,9 +88,11 @@ başına sınır yok, küme kuralı yok, "AI değil" elemesi yok.
 `lifetime_velocity` `is_ai` `category` `ai_tags[]` `ai_evidence` `has_page`
 `description_tr` `usage_tr` `matched_project`
 
-- `velocity` = `gain_window / window_days`: günlük census sayımlarından, en fazla 7 gün
-  geriye. `window_days` kaç gün ölçüldüğünü söyler; `null` "ölçülemedi"dir, sıfır değil.
-  Census 6 Ekim'de başladı, yani 13 Ekim'e kadar pencereler 7 günden kısa.
+- `velocity` = `gain_window / window_days`: günlük census sayımlarından, 7 gün öncesine en
+  yakın ölçümden (en fazla 14 gün geriye). 7 günden genç bir repo açıldığı günden, sıfırdan
+  ölçülür. `window_days` kaç gün ölçüldüğünü söyler; `null` "ölçülemedi"dir, sıfır değil.
+  Tam census 6 Ekim'de başladı: 13 Ekim'e kadar pencereler, daha eski bir sweep yoksa 7 günden
+  kısa, varsa 7 günden uzun olabilir.
 - `is_ai` üç değerli: `true`, `false`, `null` (karara bağlanmadı). `false` bir hüküm
   değil — 9 Ekim örneğinde "AI değil" denen 16 satırın 3'ü kendi README'sine göre AI ürünüydü.
 - `ai_tags` güçlüden zayıfa: `ai_project` (sınıflandırıcı), `agent_file` (kökte AGENTS.md /

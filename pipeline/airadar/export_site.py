@@ -1077,6 +1077,7 @@ def _explosion_boards(
                     "is_ai",
                     "category",
                     "ai_tags",
+                    "ai_evidence",
                     "has_page",
                     "description_tr",
                 )

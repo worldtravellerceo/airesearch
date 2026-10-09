@@ -438,12 +438,17 @@ export type DigestExplosion = Pick<
   | "description_tr"
 >;
 
+export type DigestExplosionRow = DigestExplosion & {
+  /** Absent on a digest written before the quotes were carried here. */
+  ai_evidence?: AiEvidence | null;
+};
+
 export type DigestExplosions = {
   date: string | null;
   since: string | null;
   total: number;
   entered_total?: number;
-  entered: DigestExplosion[];
+  entered: DigestExplosionRow[];
   level: ExplosionLevel;
 };
 

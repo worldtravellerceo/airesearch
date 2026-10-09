@@ -404,18 +404,56 @@ def score_explosions(conn: sqlite3.Connection, *, today: dt.date) -> int:
     AI boards or their pools, so adding a non-AI repository can never move an
     AI one. Runs before the prune because it reads the snapshots the prune
     trims.
+
+    A day is only ranked if both channels covered it. The census alone is 65,000
+    of a full day's 78,500 snapshots, so a total-count check passes a day the
+    nursery never ran — and that board is missing every young repository under
+    1,000 stars. Compared against it, the next day's "new today" read 228
+    instead of 29: two hundred projects that had been on the list all along,
+    announced as arrivals. A day that fails the check is skipped, and the
+    boards keep the last day that passed, labelled with its date.
     """
-    today_count = db.snapshot_count(conn, date=today)
+    floor = get_settings().census_min_stars
+    reference = _coverage(conn, today, floor)
     for back in range(EXPLOSION_BACKFILL_DAYS, 0, -1):
         day = today - dt.timedelta(days=back)
-        # Only a day the census actually covered. `collect` alone writes about
-        # 2,900 snapshots a day against the census's 78,000, and a board ranked
-        # from the tracked AI repos would be a different board.
         if db.latest_explosion_date(conn, on_or_before=day) == day:
             continue
-        if today_count and db.snapshot_count(conn, date=day) * 2 >= today_count:
+        if _covers(_coverage(conn, day, floor), reference):
             _score_explosion_day(conn, day)
+
+    previous = db.latest_explosion_date(conn, on_or_before=today - dt.timedelta(days=1))
+    if previous is not None and not _covers(reference, _coverage(conn, previous, floor)):
+        log.warning(
+            "explosions %s: only %s snapshots (%s under %d stars) against %s on %s; "
+            "not ranking a day one channel missed",
+            today,
+            reference[0],
+            reference[1],
+            floor,
+            _coverage(conn, previous, floor),
+            previous,
+        )
+        return 0
     return _score_explosion_day(conn, today)
+
+
+def _coverage(conn: sqlite3.Connection, day: dt.date, floor: int) -> tuple[int, int]:
+    """Snapshots on `day`: all of them, and the nursery's band under the floor."""
+    return db.snapshot_count(conn, date=day), db.snapshot_count(conn, date=day, below=floor)
+
+
+def _covers(candidate: tuple[int, int], reference: tuple[int, int]) -> bool:
+    """At least half of the reference day in total and under the floor.
+
+    Half, because a census day is about 78,000 and `collect` alone writes about
+    2,900; nothing real lands in between.
+    """
+    total, young = candidate
+    ref_total, ref_young = reference
+    if not ref_total:
+        return False
+    return total * 2 >= ref_total and (not ref_young or young * 2 >= ref_young)
 
 
 def _score_explosion_day(conn: sqlite3.Connection, today: dt.date) -> int:

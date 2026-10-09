@@ -22,6 +22,12 @@ const COPY: Record<AiTag, { label: string; strong: boolean }> = {
   unchecked: { label: "henüz bakılmadı", strong: false },
 };
 
+/** The quote, only when there is one: an empty pair of quotation marks
+ *  attributed to a README claims the README said nothing. */
+function said(quote: string | null | undefined): string {
+  return quote ? ` README'de: “${quote}”` : "";
+}
+
 function title(tag: AiTag, evidence: AiEvidence | null, category: string | null): string {
   switch (tag) {
     case "ai_project":
@@ -29,13 +35,15 @@ function title(tag: AiTag, evidence: AiEvidence | null, category: string | null)
     case "agent_file":
       return `Kök dizinde ${evidence?.agent_file ?? "ajan talimat dosyası"} var — kodlama ajanlarına yazılmış talimatlar. Okunan 89 dosyanın 81'i tam olarak buydu.`;
     case "built_statement":
-      return `README'de: “${evidence?.built ?? ""}”`;
+      return `README, projenin AI ile yazıldığını söylüyor.${said(evidence?.built)}`;
     case "agent_ready":
-      return `Kendini ajanlara açıyor (MCP sunucusu, skill ya da eklenti). README'de: “${evidence?.agent_ready ?? ""}”`;
+      return `Kendini ajanlara açıyor (MCP sunucusu, skill ya da eklenti).${said(evidence?.agent_ready)}`;
     case "uses_ai":
-      return `Çalışırken bir model kullanıyor görünüyor. README'de: “${evidence?.uses_ai ?? ""}”`;
+      return `Çalışırken bir model kullanıyor görünüyor.${said(evidence?.uses_ai)}`;
     case "mentions_ai":
-      return `README bir model ya da sağlayıcı adı geçiriyor (“${evidence?.mentions_ai ?? ""}”), başka bir şey söylemiyor. Bu çoğu zaman "Claude ile yazdım" demek; uygulamanın AI kullandığı anlamına gelmeyebilir.`;
+      return `README bir model ya da sağlayıcı adı geçiriyor${
+        evidence?.mentions_ai ? ` (“${evidence.mentions_ai}”)` : ""
+      }, başka bir şey söylemiyor. Bu çoğu zaman "Claude ile yazdım" demek; uygulamanın AI kullandığı anlamına gelmeyebilir.`;
     case "unsettled":
       return "Kural motoru karar veremedi; inceleme kuyruğunda. Bu bir 'hayır' değil.";
     case "none_found":

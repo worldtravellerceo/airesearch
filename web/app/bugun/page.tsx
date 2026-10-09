@@ -43,7 +43,7 @@ export default async function TodayPage() {
       </section>
 
       {nothing ? (
-        <p className="text-ink-secondary rounded-lg border border-[--color-rule] p-4 text-sm">
+        <p className="text-ink-secondary rounded-lg border border-border p-4 text-sm">
           {digest.date
             ? "Bu tur eşiğin üstünde yeni bir giriş bulmadı. Boş bir liste, yanlış bir listeden iyidir."
             : "Veri bekleniyor. Günlük tur bu dosyayı yazdığında burası dolacak."}
@@ -107,7 +107,7 @@ function Explosions({ digest }: { digest: DigestExplosions }) {
       </div>
       <ul className="space-y-2">
         {digest.entered.map((row) => (
-          <li key={row.full_name} className="rounded-lg border border-[--color-rule] p-3">
+          <li key={row.full_name} className="rounded-lg border border-border p-3">
             <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
               {row.has_page ? (
                 <Link href={`/repos/${row.full_name}/`} className="text-ink font-medium hover:underline">
@@ -132,7 +132,7 @@ function Explosions({ digest }: { digest: DigestExplosions }) {
             {row.description_tr || row.description ? (
               <p className="text-ink-secondary mt-1 text-sm">{row.description_tr ?? row.description}</p>
             ) : null}
-            <AiTags tags={row.ai_tags} evidence={null} category={row.category} />
+            <AiTags tags={row.ai_tags} evidence={row.ai_evidence ?? null} category={row.category} />
           </li>
         ))}
       </ul>
@@ -161,7 +161,7 @@ function Arrivals({
         {rows.map((row) => (
           <li
             key={row.full_name}
-            className="rounded-lg border border-[--color-rule] p-4"
+            className="rounded-lg border border-border p-4"
           >
             <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
               <Link
@@ -213,7 +213,7 @@ function Warming({ rows }: { rows: DigestWarming[] }) {
         </p>
       </div>
       <table className="w-full text-sm">
-        <thead className="text-ink-secondary border-b border-[--color-rule] text-left text-xs">
+        <thead className="text-ink-secondary border-b border-border text-left text-xs">
           <tr>
             <th className="py-2 font-medium">repo</th>
             <th className="py-2 font-medium">kategori</th>
@@ -224,7 +224,7 @@ function Warming({ rows }: { rows: DigestWarming[] }) {
         </thead>
         <tbody>
           {rows.map((row) => (
-            <tr key={row.full_name} className="border-b border-[--color-rule] last:border-0">
+            <tr key={row.full_name} className="border-b border-border last:border-0">
               <td className="py-2">
                 <Link href={`/repos/${row.full_name}/`} className="text-ink hover:underline">
                   {row.full_name}
@@ -262,7 +262,7 @@ function Movers({ rows }: { rows: DigestMover[] }) {
         </p>
       </div>
       <table className="w-full text-sm">
-        <thead className="text-ink-secondary border-b border-[--color-rule] text-left text-xs">
+        <thead className="text-ink-secondary border-b border-border text-left text-xs">
           <tr>
             <th className="py-2 font-medium">repo</th>
             <th className="py-2 font-medium">kategori</th>
@@ -272,7 +272,7 @@ function Movers({ rows }: { rows: DigestMover[] }) {
         </thead>
         <tbody>
           {rows.map((row) => (
-            <tr key={row.full_name} className="border-b border-[--color-rule] last:border-0">
+            <tr key={row.full_name} className="border-b border-border last:border-0">
               <td className="py-2">
                 <Link href={`/repos/${row.full_name}/`} className="text-ink hover:underline">
                   {row.full_name}

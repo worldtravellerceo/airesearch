@@ -397,3 +397,32 @@ def test_every_repo_link_in_the_digest_has_a_page(conn, tmp_path):
     linked = {row["full_name"] for key in export_site.DIGEST_LINKED for row in digest[key]}
     assert "fresh/arrival" in linked
     assert linked <= pages
+
+
+def test_a_day_the_nursery_missed_is_not_backfilled(conn, tmp_path):
+    """The census alone is 65,000 of a full day's 78,500 snapshots, so a total
+    count passed a day the nursery never ran. Ranked anyway, that board lacked
+    every young repository under 1,000 stars, and the next day's "new today"
+    read 228 instead of 29 — two hundred projects announced as arrivals."""
+    seeded(conn)
+    conn.execute("DELETE FROM repo_snapshots WHERE date = ? AND stars < 1000", (day(1),))
+    conn.commit()
+    score(conn, today=TODAY)
+    dates = {row["date"] for row in conn.execute("SELECT DISTINCT date FROM explosion_board")}
+    assert day(1) not in dates
+
+    out = tmp_path / "site"
+    export_site.export(conn, out, date=TODAY)
+    entered = read(out, "patlayanlar", "bugun-girenler.json")
+    # Compared with the last day both channels covered, and labelled with it.
+    assert entered["since"] == day(2).isoformat()
+    assert "slow/project" not in [row["full_name"] for row in entered["entries"]]
+
+
+def test_today_is_not_ranked_when_the_nursery_missed_it(conn):
+    """Better the last good board, labelled with its date, than a wrong one."""
+    seeded(conn)
+    conn.execute("DELETE FROM repo_snapshots WHERE date = ? AND stars < 1000", (TODAY,))
+    conn.commit()
+    assert score_explosions(conn, today=TODAY) == 0
+    assert db.latest_explosion_date(conn, on_or_before=TODAY) == day(1)

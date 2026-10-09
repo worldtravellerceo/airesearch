@@ -12,10 +12,17 @@ import type { ExplosionBoardFile, ExplosionEntry } from "@/lib/types";
 
 type Filter = "all" | "ai" | "other" | "built";
 
-const FILTERS: { key: Filter; label: string }[] = [
+const FILTERS: { key: Filter; label: string; title?: string }[] = [
   { key: "all", label: "Hepsi" },
   { key: "ai", label: "AI projeleri" },
-  { key: "other", label: "AI dışı" },
+  // Not "AI dışı": the set holds the unsettled rows and the ones that use AI
+  // without being AI projects, and a label must not claim a verdict nobody made.
+  {
+    key: "other",
+    label: "AI projesi denmeyenler",
+    title:
+      "Sınıflandırıcının AI projesi demediği her şey, karara bağlanmamışlar dahil. Bu bir 'AI değil' kararı değil.",
+  },
   { key: "built", label: "AI ile geliştirilenler" },
 ];
 
@@ -65,7 +72,10 @@ export function ExplosionTable({
         return response.json() as Promise<ExplosionBoardFile>;
       })
       .then((file) => {
-        if (!cancelled) setAll(file.entries);
+        if (!cancelled) {
+          setAll(file.entries);
+          setFailed(false);
+        }
       })
       .catch(() => {
         if (!cancelled) setFailed(true);
@@ -82,10 +92,11 @@ export function ExplosionTable({
   return (
     <div className="space-y-3">
       <div className="flex flex-wrap gap-1.5" role="group" aria-label="AI ilişkisine göre süz">
-        {FILTERS.map(({ key, label }) => (
+        {FILTERS.map(({ key, label, title }) => (
           <button
             key={key}
             type="button"
+            title={title}
             onClick={() => setFilter(key)}
             aria-pressed={filter === key}
             className={`rounded-full border px-3 py-1 text-xs transition ${
@@ -102,7 +113,7 @@ export function ExplosionTable({
         ) : null}
       </div>
 
-      {failed ? (
+      {failed && !all ? (
         <p className="text-critical text-sm">
           Listenin tamamı yüklenemedi. Sayfayı yenilemeyi deneyin.
         </p>
@@ -125,7 +136,7 @@ export function ExplosionTable({
               </th>
               <th
                 className="py-2 pr-4 text-right font-medium"
-                title="Günde kazanılan yıldız, en fazla son 7 gün üzerinden. Ölçülen gün sayısı altında yazıyor."
+                title="Günde kazanılan yıldız: 7 gün öncesine en yakın ölçümden, en fazla 14 gün geriye. Ölçülen gün sayısı altında yazıyor."
               >
                 Şu anki hız
               </th>

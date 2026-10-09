@@ -1398,10 +1398,18 @@ def load_explosion_inputs(
     return out
 
 
-def snapshot_count(conn: sqlite3.Connection, *, date: dt.date) -> int:
-    row = conn.execute(
-        "SELECT count(*) AS n FROM repo_snapshots WHERE date = ?", (date,)
-    ).fetchone()
+def snapshot_count(conn: sqlite3.Connection, *, date: dt.date, below: int | None = None) -> int:
+    """Snapshots captured on `date`, optionally only those under `below` stars —
+    the band only the nursery covers, since the census floor is 1,000."""
+    if below is None:
+        row = conn.execute(
+            "SELECT count(*) AS n FROM repo_snapshots WHERE date = ?", (date,)
+        ).fetchone()
+    else:
+        row = conn.execute(
+            "SELECT count(*) AS n FROM repo_snapshots WHERE date = ? AND stars < ?",
+            (date, below),
+        ).fetchone()
     return int(row["n"]) if row else 0
 
 
