@@ -77,6 +77,28 @@ RESURGENT_MIN_GROWTH = 0.10
 YOUNG = "young"
 RESURGENT = "resurgent"
 EXPLOSION_BOARDS = (YOUNG, RESURGENT)
+#: Above the level, but shaped like a malware lure: kept out of the boards and
+#: published by name only, so that holding them back is visible.
+HELD_BACK = "held_back"
+
+
+def lure_shaped(*, forks: int | None, language: str | None, license: str | None) -> bool:
+    """No forks, no code GitHub can name, no licence.
+
+    The 500-star floor held for four days and failed on the fifth: on
+    2026-10-10 seven repositories created the day before entered "Bugün
+    girenler" at 503-614 stars — KMS-Pico, AnyUnlock, Total-Commander,
+    Discord-Server-Raider, the same "optimizes your professional desktop"
+    template as the 392-star wave of 10-06. All seven had 0 forks, no
+    language and no licence, as had all fourteen of the 10-06 wave. Across
+    every census day from 10-06 to 10-10, no young repository at 500 stars
+    or more had all three and was anything else; of the 1,226 young
+    repositories at 500+ on 10-10, eleven had 0 forks, and the three of those
+    with code (a language) were left alone. A project that real people star
+    gets forked.
+    """
+    # 0, not None: a capture with no fork count is unknown, not unforked.
+    return forks == 0 and not language and not license
 
 
 @dataclass
@@ -90,6 +112,7 @@ class Explosion:
     gain_window: int | None = None
     gain_1d: int | None = None
     forks: int | None = None
+    lure: bool = False
     board: str | None = None
     rank: int = 0
 
@@ -129,6 +152,8 @@ def measure(
     created_at: dt.date | None,
     today: dt.date,
     forks: int | None = None,
+    language: str | None = None,
+    license: str | None = None,
 ) -> Explosion | None:
     """Read one repository's window off its daily captures.
 
@@ -176,6 +201,7 @@ def measure(
         gain_window=gain_window,
         gain_1d=gain_1d,
         forks=forks,
+        lure=lure_shaped(forks=forks, language=language, license=license),
     )
 
 
@@ -203,11 +229,13 @@ def board_for(item: Explosion) -> str | None:
 
 def rank(items: Iterable[Explosion]) -> list[Explosion]:
     """Assign boards and ranks; drop everything below the explosion level."""
-    boards: dict[str, list[Explosion]] = {name: [] for name in EXPLOSION_BOARDS}
+    boards: dict[str, list[Explosion]] = {name: [] for name in (*EXPLOSION_BOARDS, HELD_BACK)}
     for item in items:
         board = board_for(item)
         if board is None:
             continue
+        if item.lure:
+            board = HELD_BACK
         item.board = board
         boards[board].append(item)
     ranked: list[Explosion] = []

@@ -220,6 +220,15 @@ AnyDesk, Autodesk-Inventor, all at exactly 392 stars, a day old, deleted by
 GitHub the next morning. At 500 none of the four days had one. Replay a
 threshold over every day of history there is, not the day it was written on.
 
+And a number is still only a number. The 500 floor failed on the fifth day:
+on 10-10 seven lures — KMS-Pico, AnyUnlock, Total-Commander — entered "Bugün
+girenler" at 503-614 stars. Star counts are what the attacker buys, so a floor
+on them is a price, not a wall. What the lures could not buy was the shape of a
+real project: every one of the 21 seen so far had 0 forks, no language and no
+licence, and no young repository above 500 stars with all three was anything
+else. Filter on what the attacker does not control, and publish what was held
+back by name, so the filter is visible.
+
 **Never buy recall with precision.** A soft ceiling set below the decision
 threshold stranded 17,849 repositories in permanent escalation. A README weight
 set one tier too high put a release-notes CLI on an AI board. Every widening

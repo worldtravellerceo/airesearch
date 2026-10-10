@@ -469,3 +469,59 @@ def test_overview_last_run_is_the_pipeline_not_an_auxiliary_step(conn, tmp_path)
     export_site.export(conn, out, date=TODAY)
     last = read(out, "overview.json")["last_run"]
     assert (last["command"], bool(last["ok"])) == ("score", True)
+
+
+def test_a_lure_shaped_repository_is_held_back_by_name(conn, tmp_path):
+    """The 500-star floor held for four days and failed on the fifth: on
+    2026-10-10 KMS-Pico, AnyUnlock, Total-Commander and four more entered
+    "Bugün girenler" at 503-614 stars, a day old — 0 forks, no language, no
+    licence, like every one of the 10-06 wave."""
+    seeded(conn)
+    add_repo(conn, 40, "KindStatesman/KMS-Pico", age=1, is_ai=False)
+    conn.execute("UPDATE repos SET language = NULL WHERE id = 40")
+    db.record_snapshot(conn, 40, TODAY, stars=614, forks=0)
+    add_repo(conn, 41, "gry/zero-forks-but-code", age=1, is_ai=False)
+    conn.execute("UPDATE repos SET language = 'Python' WHERE id = 41")
+    db.record_snapshot(conn, 41, TODAY, stars=1_088, forks=0)
+    conn.commit()
+    score(conn, today=TODAY)
+    out = tmp_path / "site"
+    export_site.export(conn, out, date=TODAY)
+
+    board = read(out, "patlayanlar", "son-90-gun.json")
+    names = [row["full_name"] for row in board["entries"]]
+    assert "KindStatesman/KMS-Pico" not in names
+    assert [row["full_name"] for row in board["held_back"]] == ["KindStatesman/KMS-Pico"]
+    # The negative control: no forks yet, but there is code.
+    assert "gry/zero-forks-but-code" in names
+    entered = [r["full_name"] for r in read(out, "patlayanlar", "bugun-girenler.json")["entries"]]
+    assert "KindStatesman/KMS-Pico" not in entered
+
+
+def test_an_unknown_fork_count_is_not_zero():
+    """A capture with no fork count says nothing about forks."""
+    assert not ex.lure_shaped(forks=None, language=None, license=None)
+    assert ex.lure_shaped(forks=0, language=None, license=None)
+    assert not ex.lure_shaped(forks=0, language=None, license="MIT")
+
+
+def test_the_ai_digest_skips_a_lure_too(conn, tmp_path):
+    """Discord-Server-Raider calls itself "an AI-driven solution", so the
+    classifier put it on the AI digest's "Yeni projeler" on 2026-10-10."""
+    seeded(conn)
+    add_repo(
+        conn, 42, "navyofficerpipe/Discord-Server-Raider", age=1, is_ai=True, category="llm-app"
+    )
+    conn.execute(
+        "UPDATE repos SET stars = 605, language = NULL, first_seen_at = ? WHERE id = 42",
+        (dt.datetime.combine(TODAY, dt.time(9), dt.UTC),),
+    )
+    db.record_snapshot(conn, 42, TODAY, stars=605, forks=0)
+    conn.commit()
+    score(conn, today=TODAY)
+    out = tmp_path / "site"
+    export_site.export(conn, out, date=TODAY)
+    digest = read(out, "digest.json")
+    listed = {row["full_name"] for key in export_site.DIGEST_LINKED for row in digest[key]}
+    assert "navyofficerpipe/Discord-Server-Raider" not in listed
+    assert 42 not in db.digest_arrival_ids(conn, date=TODAY)

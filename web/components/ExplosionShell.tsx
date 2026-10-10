@@ -3,7 +3,7 @@ import Link from "next/link";
 import { ExplosionTable } from "@/components/ExplosionTable";
 import { getExplosionBoard, getExplosionBoards } from "@/lib/data";
 import { count, percent, shortDate } from "@/lib/format";
-import type { BoardMovement, ExplosionLevel } from "@/lib/types";
+import type { BoardMovement, ExplosionBoardFile, ExplosionLevel } from "@/lib/types";
 
 /** How many rows the build inlines. The rest are fetched on request. */
 const INLINE_ROWS = 100;
@@ -59,6 +59,7 @@ export async function ExplosionShell({ slug }: { slug: string }) {
                 <p className="text-ink-secondary max-w-3xl text-sm">{file.blurb}</p>
                 <Level level={file.level} />
                 <Movement movement={file.movement} />
+                <HeldBack rows={file.held_back ?? []} />
               </div>
               <ExplosionTable
                 slug={slug}
@@ -98,6 +99,20 @@ function Level({ level }: { level: ExplosionLevel }) {
       {count(level.min_lifetime_velocity)}+ yıldız almış. Daha eskiler &quot;Yeniden
       patlayanlar&quot;da: iki haftada {count(level.resurgent_min_gain)}+ yıldız ve{" "}
       {percent(level.resurgent_min_growth)}+ büyüme.
+    </p>
+  );
+}
+
+/** The rows the lure rule kept off the list, by name and never as links. A
+ *  filter the reader cannot see is a claim that nothing was filtered. */
+function HeldBack({ rows }: { rows: NonNullable<ExplosionBoardFile["held_back"]> }) {
+  if (!rows.length) return null;
+  return (
+    <p className="text-ink-muted max-w-3xl text-xs">
+      Bu tur {rows.length} repo patlama seviyesini geçti ama listeye alınmadı: hiç fork&apos;u,
+      dili ve lisansı yok — zararlı yazılım yemlerinin şekli bu (ücretli bir programın
+      &quot;bedava&quot; sürümü, aktivasyon aracı, Discord hilesi). Bağlantı vermiyoruz:{" "}
+      {rows.map((row) => `${row.full_name} (${count(row.stars)}★)`).join(", ")}.
     </p>
   );
 }

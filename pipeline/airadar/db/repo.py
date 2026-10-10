@@ -899,6 +899,14 @@ DIGEST_ARRIVAL_LIMIT = 30
 DIGEST_NEW_PROJECT_MAX_AGE_DAYS = 90
 
 
+#: The lure shape (`scoring.explosions.lure_shaped`) in SQL, for queries that
+#: join the day's snapshot as `ls`. The AI digest listed one of the 2026-10-10
+#: wave too — Discord-Server-Raider calls itself "an AI-driven solution".
+NOT_LURE_SQL = (
+    "NOT (ls.forks IS NOT NULL AND ls.forks = 0 AND r.language IS NULL AND r.license IS NULL)"
+)
+
+
 def digest_arrival_ids(conn: sqlite3.Connection, *, date) -> list[int]:
     """The repos the morning digest lists, biggest first."""
     rows = conn.execute(
@@ -906,8 +914,12 @@ def digest_arrival_ids(conn: sqlite3.Connection, *, date) -> list[int]:
         SELECT r.id
         FROM repos r
         JOIN repo_classification c ON c.repo_id = r.id AND c.is_ai = 1
+        LEFT JOIN repo_snapshots ls ON ls.repo_id = r.id AND ls.date = :date
         WHERE date(r.first_seen_at) = :date
           AND r.is_fork = 0
+          AND """
+        + NOT_LURE_SQL
+        + """
           AND r.stars >= :floor
         ORDER BY r.stars DESC
         LIMIT :limit
@@ -1381,9 +1393,9 @@ def load_explosion_inputs(
         if date == today:
             forks[repo_id] = fork_count
     out = []
-    for repo_id, created_at in cursor.execute(
-        "SELECT r.id, r.created_at FROM repos r WHERE r.is_fork = 0 AND r.archived = 0 AND "
-        + CURRENT_NAME_SQL
+    for repo_id, created_at, language, licence in cursor.execute(
+        "SELECT r.id, r.created_at, r.language, r.license FROM repos r "
+        "WHERE r.is_fork = 0 AND r.archived = 0 AND " + CURRENT_NAME_SQL
     ):
         if repo_id not in forks:
             continue
@@ -1393,6 +1405,8 @@ def load_explosion_inputs(
                 "created_at": created_at.date() if created_at else None,
                 "points": points[repo_id],
                 "forks": forks[repo_id],
+                "language": language,
+                "license": licence,
             }
         )
     return out

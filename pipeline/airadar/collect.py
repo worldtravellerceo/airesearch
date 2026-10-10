@@ -472,6 +472,8 @@ def _score_explosion_day(conn: sqlite3.Connection, today: dt.date) -> int:
                 created_at=row["created_at"],
                 today=today,
                 forks=row["forks"],
+                language=row["language"],
+                license=row["license"],
             )
         )
         is not None
@@ -485,7 +487,7 @@ def _score_explosion_day(conn: sqlite3.Connection, today: dt.date) -> int:
         len(ranked),
         ", ".join(
             f"{board}={sum(1 for e in ranked if e.board == board)}"
-            for board in explosions.EXPLOSION_BOARDS
+            for board in (*explosions.EXPLOSION_BOARDS, explosions.HELD_BACK)
         ),
     )
     return len(ranked)

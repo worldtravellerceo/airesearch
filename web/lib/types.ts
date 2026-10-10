@@ -412,6 +412,9 @@ export type ExplosionBoardFile = {
   movement?: BoardMovement | null;
   total: number;
   entries: ExplosionEntry[];
+  /** Above the level but shaped like a malware lure (no forks, no language,
+   *  no licence): named, never linked. Absent on older files. */
+  held_back?: { full_name: string; stars: number; age_days: number | null; description: string | null }[];
 };
 
 /** Routes are built from this list, not from the manifest, so a bookmarked tab

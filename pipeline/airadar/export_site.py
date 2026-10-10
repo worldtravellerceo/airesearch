@@ -429,8 +429,12 @@ def _digest(conn: sqlite3.Connection, date: dt.date) -> dict:
         FROM repos r
         JOIN repo_classification c ON c.repo_id = r.id AND c.is_ai = 1
         LEFT JOIN repo_summary s ON s.repo_id = r.id
+        LEFT JOIN repo_snapshots ls ON ls.repo_id = r.id AND ls.date = :date
         WHERE date(r.first_seen_at) = :date
           AND r.is_fork = 0
+          AND """
+        + db.NOT_LURE_SQL
+        + """
           AND r.stars >= :floor
         ORDER BY r.stars DESC
         LIMIT :limit
@@ -1040,6 +1044,19 @@ def _explosion_boards(
         [row for row in young if row["rank_delta"] is None] if since[explosion_rules.YOUNG] else []
     )
 
+    # Above the level and shaped like a malware lure. Published by name, never
+    # as a link, so that keeping them off the list is something the page says
+    # rather than something it hides.
+    held_back = [
+        {
+            "full_name": row["full_name"],
+            "stars": row["stars"],
+            "age_days": row["age_days"],
+            "description": row["description"],
+        }
+        for row in db.load_explosion_board(conn, date=day, board=explosion_rules.HELD_BACK)
+    ]
+
     written: list[dict] = []
     for slug, (board, title, blurb) in EXPLOSION_TABS.items():
         rows = entered if slug == "bugun-girenler" else boards[board]
@@ -1058,6 +1075,7 @@ def _explosion_boards(
                 "movement": _movement(entries, previous[board], since[board]),
                 "total": len(entries),
                 "entries": entries,
+                "held_back": held_back if board == explosion_rules.YOUNG else [],
             },
             report,
         )
@@ -1072,6 +1090,7 @@ def _explosion_boards(
         "since": since[explosion_rules.YOUNG],
         "total": len(young),
         "entered_total": len(entered),
+        "held_back": len(held_back),
         "entered": [
             {
                 k: row[k]
