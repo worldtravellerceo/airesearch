@@ -48,7 +48,32 @@ jobs:
     timeout-minutes: 45
     env:
       GH_PAT: ${{ secrets.GH_PAT }}
+      ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+    outputs:
+      have_key: ${{ steps.key.outputs.have }}
     steps:
+      # Decided here, in the job that holds no lock, so that `judge` can stay
+      # out of the pipeline group entirely when it has nothing to do. On
+      # 2026-10-19 it did not: with no key, `judge` still queued in
+      # `airadar-pipeline` behind the weekly Companies run, and a group holds
+      # one pending run — so it cancelled the Daily that was waiting there, to
+      # then skip every step. That Monday has no census, no boards and no
+      # explosion snapshot.
+      - name: Is there a key?
+        id: key
+        run: |
+          if [ -n "$ANTHROPIC_API_KEY" ]; then
+            echo "have=yes" >> "$GITHUB_OUTPUT"
+          else
+            echo "have=no" >> "$GITHUB_OUTPUT"
+            # A warning rather than a notice, and the job still succeeds.
+            # Nothing is broken — but a green run with no annotation claims
+            # the review happened, and it did not. The watchdog taught this
+            # the long way: silence is a claim, and a run may only make it
+            # about work it actually did.
+            echo "::warning::ANTHROPIC_API_KEY yok — dilim okunmadı, paketler artefaktta bekliyor."
+          fi
+
       - uses: actions/checkout@v5
       - uses: ./.github/actions/pipeline
         with:
@@ -89,6 +114,18 @@ jobs:
             --queue review-queue.json \
             --packets review-packets | tee -a "$GITHUB_STEP_SUMMARY"
 
+      - name: Say that the slice waits for a reader
+        if: steps.key.outputs.have != 'yes'
+        run: |
+          {
+            echo "### Dilim okunmadı"
+            echo ""
+            echo "\`ANTHROPIC_API_KEY\` tanımlı değil. Paketler \`review-packets\`"
+            echo "artefaktında; bir oturum \`verdicts/pending/\` altına yazıp"
+            echo "\`merge_verdicts.py\` ile birleştirebilir. Kuyruk olduğu gibi kaldı —"
+            echo "kural motorunun kendi kararı karar olarak kaydedilmedi."
+          } | tee -a "$GITHUB_STEP_SUMMARY"
+
   # The paid path, and the only one that is actually automatic. `review-judge`
   # reads *this slice* — not `classify --max-llm`, which sends the rule
   # engine's escalation band and would cover 1,938 repositories while never
@@ -107,14 +144,15 @@ jobs:
   # the model and a reader see the same thing. Against either figure, 200 a
   # week by hand is 267 weeks. That is the argument for the key.
   #
-  # Without the key the step does nothing and says so. It does not fall back to
-  # the rule engine: a rules verdict in `verdicts/` would be a permanent record
-  # of the engine agreeing with itself, which is how `anomalyco/opencode` stayed
-  # hidden. No key means the packets wait for a reader, and the queue is
-  # unchanged — which is a worse outcome than reading them, and a much better
-  # one than recording a guess.
+  # Without the key this job does not run at all, and `queue` says so. It does
+  # not fall back to the rule engine: a rules verdict in `verdicts/` would be a
+  # permanent record of the engine agreeing with itself, which is how
+  # `anomalyco/opencode` stayed hidden. No key means the packets wait for a
+  # reader, and the queue is unchanged — which is a worse outcome than reading
+  # them, and a much better one than recording a guess.
   judge:
     needs: queue
+    if: needs.queue.outputs.have_key == 'yes'
     runs-on: ubuntu-latest
     timeout-minutes: 90
     # This job publishes the database, so it belongs in the group every
@@ -122,8 +160,14 @@ jobs:
     # once means one erases the other. The `queue` job only reads, which is
     # why the workflow-level group is separate — a Monday review must not
     # block the daily run while it is just drawing a slice.
+    #
+    # The group is the shared one only when there is a key. The `if` above
+    # already skips the job without one; the expression makes sure a skipped
+    # job cannot sit in the pipeline group either, since a group holds a single
+    # pending run and a newcomer cancels the one already waiting — which is how
+    # the Daily of 2026-10-19 was lost to a job that then did nothing.
     concurrency:
-      group: airadar-pipeline
+      group: ${{ needs.queue.outputs.have_key == 'yes' && 'airadar-pipeline' || format('airadar-review-idle-{0}', github.run_id) }}
       cancel-in-progress: false
     permissions:
       contents: write
@@ -133,32 +177,15 @@ jobs:
     steps:
       - uses: actions/checkout@v5
 
-      - name: Is there a key?
-        id: key
-        run: |
-          if [ -n "$ANTHROPIC_API_KEY" ]; then
-            echo "have=yes" >> "$GITHUB_OUTPUT"
-          else
-            echo "have=no" >> "$GITHUB_OUTPUT"
-            # A warning rather than a notice, and the job still succeeds.
-            # Nothing is broken — but a green run with no annotation claims
-            # the review happened, and it did not. The watchdog taught this
-            # the long way: silence is a claim, and a run may only make it
-            # about work it actually did.
-            echo "::warning::ANTHROPIC_API_KEY yok — dilim okunmadı, paketler artefaktta bekliyor."
-          fi
-
       # The slice and its packets were built by the job before this one, on a
       # different runner. `merge_verdicts` validates every judgement against
       # the packet it came from, so without these the gates have nothing to
       # check against.
       - uses: actions/download-artifact@v4
-        if: steps.key.outputs.have == 'yes'
         with:
           name: review-packets
 
       - uses: ./.github/actions/pipeline
-        if: steps.key.outputs.have == 'yes'
         with:
           token: ${{ github.token }}
 
@@ -169,7 +196,6 @@ jobs:
       # anything is sent; an estimate that ignored the READMEs would clear a
       # ceiling the run then blows through.
       - name: Read the slice
-        if: steps.key.outputs.have == 'yes'
         run: |
           airadar review-judge \
             --packets review-packets \
@@ -179,7 +205,6 @@ jobs:
       # Same gates as a hand round, and it refuses the whole file rather than
       # the bad row. Nothing reaches `verdicts/` that has not passed this.
       - name: Merge and check
-        if: steps.key.outputs.have == 'yes'
         run: |
           python pipeline/scripts/merge_verdicts.py \
             --packets review-packets \
@@ -188,7 +213,6 @@ jobs:
             --verdicts verdicts
 
       - name: Commit the verdicts
-        if: steps.key.outputs.have == 'yes'
         run: |
           rm -rf verdicts/pending
           if git diff --quiet -- verdicts; then
@@ -205,13 +229,11 @@ jobs:
       # would pick them up anyway. Applying them here means the boards move
       # today instead of tomorrow.
       - name: Apply them
-        if: steps.key.outputs.have == 'yes'
         run: |
           airadar classify --import-verdicts verdicts
           airadar score
 
       - uses: ./.github/actions/publish-db
-        if: steps.key.outputs.have == 'yes'
         with:
           token: ${{ github.token }}
 
@@ -219,17 +241,8 @@ jobs:
         if: always()
         run: |
           {
-            if [ "${{ steps.key.outputs.have }}" = "yes" ]; then
-              echo "### Dilim modelle okundu"
-              echo '```'
-              COLUMNS=140 airadar coverage || true
-              echo '```'
-            else
-              echo "### Dilim okunmadı"
-              echo ""
-              echo "\`ANTHROPIC_API_KEY\` tanımlı değil. Paketler \`review-packets\`"
-              echo "artefaktında; bir oturum \`verdicts/pending/\` altına yazıp"
-              echo "\`merge_verdicts.py\` ile birleştirebilir. Kuyruk olduğu gibi kaldı —"
-              echo "kural motorunun kendi kararı karar olarak kaydedilmedi."
-            fi
+            echo "### Dilim modelle okundu"
+            echo '```'
+            COLUMNS=140 airadar coverage || true
+            echo '```'
           } | tee -a "$GITHUB_STEP_SUMMARY"

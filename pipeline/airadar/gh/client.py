@@ -182,6 +182,8 @@ class GitHubClient:
             )
             for index, value in enumerate(tokens)
         ]
+        #: Lanes whose token was rejected: out of rotation, closed at shutdown.
+        self._dropped: list[_Lane] = []
 
     @property
     def lanes(self) -> int:
@@ -203,9 +205,7 @@ class GitHubClient:
         for lane in list(self._lanes):
             response = await lane.client.get("/rate_limit")
             if response.status_code == 401:
-                log.error("%s was rejected (401) and is being dropped", lane.name)
-                self._lanes.remove(lane)
-                await lane.client.aclose()
+                self._drop_lane(lane)
                 report.append({"lane": lane.name, "ok": False})
                 continue
             if response.status_code >= 300:
@@ -284,8 +284,27 @@ class GitHubClient:
         await self.aclose()
 
     async def aclose(self) -> None:
-        for lane in self._lanes:
+        for lane in [*self._lanes, *self._dropped]:
             await lane.client.aclose()
+
+    def _drop_lane(self, lane: _Lane) -> None:
+        """Stop issuing requests on a lane whose token GitHub rejected.
+
+        Idempotent, because rejections arrive concurrently: on 2026-10-22 an
+        expired GH_PAT_2 answered two census requests at once, and the second
+        removal raised `list.remove(x): x not in list` and ended the run. The
+        client is closed at shutdown rather than here, since another request
+        may already hold this lane and be about to send on it.
+        """
+        if lane not in self._lanes:
+            return
+        self._lanes.remove(lane)
+        self._dropped.append(lane)
+        log.error(
+            "%s was rejected (401) and is being dropped; %d lane(s) left",
+            lane.name,
+            len(self._lanes),
+        )
 
     # -- rate limiting ------------------------------------------------------
 
@@ -416,17 +435,13 @@ class GitHubClient:
                     response.headers.get("link"),
                 )
 
-            if response.status_code == 401 and len(self._lanes) > 1:
+            if response.status_code == 401 and (lane not in self._lanes or len(self._lanes) > 1):
                 # A revoked or expired extra token would otherwise fail a third
                 # of every run's repos, quietly and forever. Drop the lane and
-                # carry on with the tokens that work.
-                log.error(
-                    "%s was rejected (401) and is being dropped; %d lane(s) left",
-                    lane.name,
-                    len(self._lanes) - 1,
-                )
-                self._lanes.remove(lane)
-                await lane.client.aclose()
+                # carry on with the tokens that work. Requests run concurrently,
+                # so a sibling may have dropped this lane while our request was
+                # in flight; then there is nothing to drop, only to retry.
+                self._drop_lane(lane)
                 continue
 
             if self._is_throttled(response) or response.status_code >= 500:

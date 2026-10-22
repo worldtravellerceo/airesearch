@@ -390,3 +390,39 @@ async def test_tokens_from_different_accounts_are_reported_as_separate(recorded_
         report = await client.check_lanes()
 
     assert not any(lane["shared_quota"] for lane in report)
+
+
+async def test_a_token_rejected_twice_at_once_is_dropped_once(recorded_sleeps):
+    """Cost the Daily of 2026-10-22: GH_PAT_2 expired, two concurrent census
+    requests came back 401 on its lane, the first dropped the lane and the
+    second tried to drop it again — `list.remove(x): x not in list` ended the
+    collect job before a single repository was refreshed, so the boards and
+    the explosion snapshot for that day were never written."""
+    import asyncio
+
+    _, fake_sleep = recorded_sleeps
+    seen: list[str] = []
+
+    async def handler(request: httpx.Request) -> httpx.Response:
+        token = request.headers["authorization"]
+        seen.append(token)
+        # Yield so every request is in flight before any answer lands — the
+        # interleaving that a real network produced.
+        await asyncio.sleep(0)
+        if token == "Bearer two":
+            return httpx.Response(401, json={"message": "Bad credentials"})
+        return httpx.Response(200, json={"ok": True}, headers=_headers())
+
+    async with GitHubClient(
+        tokens=["one", "two", "three"],
+        transport=httpx.MockTransport(handler),
+        sleep=fake_sleep,
+    ) as client:
+        results = await asyncio.gather(*(client.get(f"/repos/a/b{i}") for i in range(9)))
+        assert client.lanes == 2
+        # Nothing that went out after the drop was sent on the dead token.
+        await client.get("/repos/a/after")
+
+    assert all(r.status == 200 for r in results)
+    assert seen.count("Bearer two") >= 2
+    assert seen[-1] != "Bearer two"
