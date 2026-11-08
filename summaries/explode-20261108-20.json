@@ -1,0 +1,403 @@
+{
+ "repos": [
+  {
+   "full_name": "Mapika/decider",
+   "inputs_hash": "2452249a185820b41ceeec061df120ca",
+   "description_tr": "Metin üretmeyen bir model ailesi: Qwen3.5 üzerinden ince ayarlanmış, bir durum ve tipli sorular alıp tek forward pass'te her soru için olasılık dağılımı döndürüyor. Soru tipleri Choice, Score ve Noul (evet olasılığı). `pip install decider-ai` ile kuruluyor, ağırlıklar Hugging Face'te, Apache-2.0 lisanslı.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "Tencent/WeVisOne-VL",
+   "inputs_hash": "3f94299a7def68e39c08a5345d12b4df",
+   "description_tr": "Tencent WeChat Vision ekibinin 2B ve 4B boyutlu görsel dil modeli. Nokta ve kutudan maskeye, alfa matte'e kadar tespit, referring segmentation, sayma, OCR ve matting işlerini tek modelde topluyor; 9.6M parametreli hafif bir piksel decoder kullanıyor ve olmayan hedefe `None` dönüyor. Lisans alanı NOASSERTION.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "Observal/Axl",
+   "inputs_hash": "8e9c848f02b3ecfbfb8ed6d15cf93da2",
+   "description_tr": "Yerel çalışan bir ajan harness'ı: tek bir daemon model döngüsünü, araçları, politikayı ve olay geçmişini yönetiyor; terminal, tarayıcı ve SDK istemcileri aynı oturumu gösteriyor. Komutlar Bubblewrap, Landlock veya OCI konteyner içinde çalışıyor, izolasyon yoksa çalışmayı reddediyor. Oturumlar JSONL günlüğünden devam ettirilebiliyor.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "lonewolf0622/HelixSR",
+   "inputs_hash": "85773f2a1bda9de0781e57b0c350c703",
+   "description_tr": "Direct3D 12 compute shader'ları ile NVIDIA'nın DLSS Model E ağını ve AMD FSR 4 ağını çalıştıran, FSR 3.1 yerine konabilen bir upscaler. Tensor Core, NVIDIA sürücüsü, CUDA ya da ROCm gerektirmiyor; odağı eski AMD RDNA 1/2 kartları. Windows ve Linux/Proton için, lisans NOASSERTION, NVIDIA ile bağlantısı yok.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "open-wxa/wxa-runner",
+   "inputs_hash": "7881987d2d579a0287b5950118742299",
+   "description_tr": "WeChat mini program derlemelerini resmi temel kütüphaneyle sıradan bir tarayıcıda çalıştıran araç. Chrome DevTools ile hata ayıklama ve Playwright ile başsız E2E test destekliyor; native, uni-app ve Taro çıktılarıyla çalışıyor. `npx wxa-runner dev` ile başlıyor, geliştirici aracının yerini almıyor. MIT, TypeScript.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "receptron/laya",
+   "inputs_hash": "897b0d8c5e9379a354eb56dc3b51292a",
+   "description_tr": "Convai Innovations'ın Jev uyumlu System-1 karar modeli Laya'yı Node.js ve TypeScript'ten ONNX Runtime ile çalıştıran paket. Bir durum ve tipli sorular (choice, score, noul) verilince tek forward pass'te kalibre olasılıklar dönüyor; çalışma zamanında Python ya da PyTorch gerekmiyor. Node 20+, MIT; ONNX ağırlıkları ayrıca indiriliyor.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "kelai141/dsh-mobile-apk",
+   "inputs_hash": "08c5277cba8d93463008de65f37001d6",
+   "description_tr": "DeepSeek Harness (dsh) için Android kabuğu: WebView arayüzü ve gömülü Termux çalışma zamanı sayesinde AI ajanı telefonda root'suz bash komutları çalıştırabiliyor. Tarayıcı ve sanal ekran üzerinden uygulamaları da yönetebiliyor; bazı özellikler deneysel ve Shizuku gerektiriyor. APK yaklaşık 150-160 MB, Android 8+, MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "LSPosed/ZygiskNext",
+   "inputs_hash": "099c0f05f7d31dcc40bef05a7cf64781",
+   "description_tr": "KernelSU için Zygisk API desteği sağlayan ve Magisk'in yerleşik Zygisk'inin yerine geçen bağımsız bir uygulama. Magisk'te yerleşik Zygisk kapalı olmalı ve birden fazla root çözümü kurulu olmamalı. Sürüm v4-0.9.2'den beri GPL-3.0 değil, tüm hakları saklı lisansla dağıtılıyor. AI projesi değil, Android root aracı.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "nuglifeleoji/Sentry",
+   "inputs_hash": "1ee0a3f26d6a975a0d86ddf1c8e929d7",
+   "description_tr": "LLM ajanlarının yanında çalışan harici bir hata yönetim katmanı: geçersiz eylemleri, döngüye girmeyi ve görevden sapmayı tespit edip toparlanmayı yönlendiriyor, doğrulanmış toparlanmalardan yeniden kullanılabilir dersler çıkarıyor. Makale WebShop, AppWorld, SWE-bench Lite ve Mind2Web'de en güçlü baseline'a göre ortalama %37 iyileşme bildiriyor. MIT, Python.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "block/berd",
+   "inputs_hash": "1c8f745a27b7bbb89806e72b458d7c1f",
+   "description_tr": "Goose ajanının ACP WebSocket'ine `goose serve` sidecar'ı üzerinden bağlanan, Tauri 2 ve React 19 ile yazılmış açık kaynak masaüstü uygulaması. Kurulum `just setup` ve `just dev` ile, Goose arka ucu kilit dosyasındaki commit'e sabitlenmiş. Kurumlar yönetilen sağlayıcı ayarlarıyla kendi dağıtımını çıkarabiliyor. Apache-2.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "czg86389-hub/muse2api",
+   "inputs_hash": "08d9b982830bab21f3aa1d4df448d035",
+   "description_tr": "Muse (muse.ai) web arayüzünü tersine mühendislikle OpenAI uyumlu bir REST API'ye çeviren proxy: sohbet, görsel üretimi, görselden düzenleme, metinden ve ilk kareden video. Başsız tarayıcı CDP'si, çoklu hesap havuzu ve 48 saatlik oturum yenilemesi kullanıyor. Resmi bir API değil; servisin kullanım şartlarıyla çelişebilir. MIT, Python.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "AgriciDaniel/compass",
+   "inputs_hash": "3ca2b5af4485957ae0cebe7148ff8a80",
+   "description_tr": "Mike Schmitz'in Obsidian yaşam sistemini uygulayan hazır vault şablonu: gece soruları, üç aylık retreat'ler, planlama, alışkanlık ve görev takibi, DataviewJS panosu. Yeni sürümde `AGENTS.md` okuyan ve onay isteyen komut kütüphanesiyle çalışan bir AI asistanı var. README bu sürümün henüz kabul edilmiş genel sürüm olmadığını belirtiyor. MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "feimacode/open-design-agent-kit",
+   "inputs_hash": "e47ca5bf53482c17b75eb648d21dcbd6",
+   "description_tr": "Open Design'ın tasarım içeriğini (181 skill, 114 şablon, 198 marka tasarım sistemi) Copilot Chat, Claude Code, Codex, Cursor gibi MCP destekli ajanlara taşıyan kit. Afiş, sunum, landing page ve prototip ajanın kendi modeliyle üretiliyor; ayrı uygulama, daemon ya da API anahtarı gerekmiyor. PDF, PNG ve PowerPoint dışa aktarımı var. MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "KillaBoi/StealMyBitcoin-PoC",
+   "inputs_hash": "e652b30d8714e47f14e7217b405809a1",
+   "description_tr": "Bir CTF yarışmasına ait tek dosyalık Python betiği ve açıklaması; yalnızca standart kütüphane kullanıyor, WTFPL lisanslı. Yapay zeka ile doğrudan bir ilgisi görünmüyor ve README'den daha fazla ayrıntı çıkarılmadı.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "loysger/Antigravity",
+   "inputs_hash": "e4c786bd194cb4991465867c242551c0",
+   "description_tr": "Google Antigravity'yi Rusya'dan VPN olmadan kullanmayı vaat eden bir indirme sayfası; Windows, macOS ve Linux istemcileri, hesap engeli ve 400 hatası çözümleri anlatılıyor. README'de kaynak kod ya da teknik içerik yok, daha çok dağıtım ve Telegram destek yönlendirmesi. İndirilen ikililer doğrulanamıyor, dikkatli yaklaşmak gerekir. MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "feder-cr/git-ai",
+   "inputs_hash": "3475bb91fc609d8198d3a82cfbb8121b",
+   "description_tr": "Anthropic'in Scion'ı ve OpenAI'ın Pando'sundan esinlenen, yüzlerce ajanın aynı anda kod okuyup yazıp birleştirdiği durumlar için sunucu merkezli bir sürüm kontrol sistemi (gitai). Sunucu hiçbir dil modeli çağırmıyor, AI özellikleri istenen sağlayıcıyla ya da hiçbiriyle çalışıyor. Bağımsız bir uygulama, Anthropic veya OpenAI ile bağlantısı yok. Go.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "ManfredCh/Lyapunov",
+   "inputs_hash": "e9ae93380385c3e54f9c1df0a64d2440",
+   "description_tr": "Vorynel Co., Ltd.'nin robotik ve simülasyon için geliştirdiği LLM öncelikli, 3D yerel masaüstü çalışma alanı: sohbet, kod, dosyalar, 3D görüntüleyici ve fizik tek ortamda. Sahne kurma, robot hazırlama ve kamera verisi üretmeyi hedefliyor. Linux x64, Apple Silicon macOS ve Windows/WSL2 destekli, Apache-2.0, TypeScript.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "lingxuanqjc-alt/note-bridge-desktop",
+   "inputs_hash": "0afecedbff7c1ca6810c9b1a738d5e1e",
+   "description_tr": "Xiaomi, OPPO, vivo, Huawei, Honor, Meizu ve WPS bulut notlarını TXT, Markdown, HTML ve DOCX olarak dışa aktaran ya da platformlar arasında taşıyan Windows aracı. Kaynak notları korur, biçim farklarını ve belirsiz yazmaları raporlar. Windows 10/11 x64 ve WebView2 gerektirir, 1.0.0 sürümünde, MIT. AI ile ilgisi yok.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "heqiangdiao-wq/AI-Cross-Border-Ecommerce-Agent-Toolkit",
+   "inputs_hash": "a9f1c82203dd801a555e69cc332c8ada",
+   "description_tr": "Çin merkezli sınır ötesi e-ticaret operasyonunu yedi yeniden kullanılabilir AI ajan iş akışına bölen araç seti: pazar analizi, ürün stratejisi, içerik, görsel planı, kısa video, reklam optimizasyonu ve yorum analizi. Prompt, şablon ve hesap betikleri içeriyor; uyumlu olmayan uygulamalar dışarıda bırakılmış. MIT, Python.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "chuiziyao/maimen-certification",
+   "inputs_hash": "5800fe7ea9dc9bb2100e5d38a75dcdd0",
+   "description_tr": "Yüklenen görseli 10 kademeli bir 'Maimen' kimliğine göre değerlendirip sertifika kartı, menü önerisi ve kupon akışı üreten eğlence projesi; McDonald's Çin resmi MCP arayüzlerini kullanıyor. Bir McDonald's geliştirici yarışmasına katılan Python uygulaması. Lisans belirtilmemiş.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "0xpili/simplified-technical-english",
+   "inputs_hash": "c4daadbe70860161673d6bb3692a38ea",
+   "description_tr": "LLM'in ASD-STE100 Simplified Technical English ile yazmasını sağlayan bir Agent Skill. 53 yazım kuralı, 869 onaylı kelime, yaygın uygunsuz kelimeler için karşılıklar ve kurallara uyumu denetleyen bir Python betiği içeriyor. Claude skills klasörüne klonlanarak kuruluyor. Lisans NOASSERTION.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "arcanite24/pinyon-shift",
+   "inputs_hash": "6574de3d818b484553480e439ac03e8a",
+   "description_tr": "Xbox 360 sürümü Forza Horizon'un PowerPC kodunu önceden C++'a çeviren statik yeniden derleme projesi; emülatör değil. Oyun, kullanıcının kendi diskinden kendi bilgisayarında derleniyor ve Vulkan renderer ile çalışıyor; Windows, Linux, Steam Deck, Apple silicon ve Android alfa hedefleniyor. Depo oyunu içermiyor, oynanabilir önizleme aşamasında. BSD-3-Clause.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "maanHimself/OpenDLSS-NR",
+   "inputs_hash": "0cb18a0cdb030addd05bf57f41ef2138",
+   "description_tr": "NVIDIA'nın DLSS 5 Neural Rendering ağının orijinaliyle bit düzeyinde uyumlu olduğu belirtilen bir Vulkan yeniden uygulaması. README'deki ölçüme göre RTX 4070 SUPER üzerinde ağ 1080p'de 7.8 ms, 4K'da 29.3 ms sürüyor. Parity ve verify komutları sabit fixture'lara karşı doğrulama yapıyor. MIT, NVIDIA ile bağlantısı belirtilmemiş.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "MiniMax-AI/MiniMax-Music3",
+   "inputs_hash": "f5d5f56164e039244b8f60bef7e183ea",
+   "description_tr": "MiniMax'in beş dakikaya kadar tam şarkı üreten müzik modeli: şarkı sözü ve ayrıntılı müzik tanımından 32 kHz, 16-bit stereo WAV çıkarıyor. 8B Global LLM yapıyı, 0.6B Local LLM akustik ayrıntıyı üstleniyor; sentez Flow Matching ve Flow-VAE tabanlı. Kısa tanımları yapılandırılmış açıklamaya genişleten bir skill de var. Lisans belirtilmemiş.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "javranking/javranking-extension",
+   "inputs_hash": "150515d9a33977fe8ce5b71f97b5acb9",
+   "description_tr": "Kullanıcı araç çubuğu simgesine tıkladığında sayfadaki film kodunu tanıyıp JavRanking sıralama verisini gösteren Chrome, Edge ve Firefox eklentisi. Sayfa içeriği yüklenmediğini, yalnızca kullanıcının işaretlediği kayıtların API'ye senkronlandığını söylüyor. Yetişkin içerik sitelerine yönelik; AI ile ilgisi yok. MIT, TypeScript.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "edgcpp/compiler",
+   "inputs_hash": "3ef7a1ad1280c3e7d60618aa822c92b6",
+   "description_tr": "Edison Design Group'un C ve C++ ön uç derleyicisinin açık kaynak projesi; C++98'den C++23'e standartları kapsıyor. README yalnızca derleme ve katkı yönergelerini veriyor, `--filter=blob:none` ile kısmi klon öneriyor. İnsanlar ve AI ajanları için ek ipuçları dokümanı var. Lisans NOASSERTION, C.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "leolobato/playden-ps5",
+   "inputs_hash": "6ebe103dd8912bb9a3d7029238e68f96",
+   "description_tr": "Jailbreak yapılmış PS5'te Steam kütüphanesindeki Windows oyunlarını Wine'ın PS5 portu üzerinden çalıştıran launcher. QR kod ya da hesap adıyla Steam girişi yapıyor, oyunları indirip her birini ayrı bir Windows ortamında ve Home ekranında ayrı karo olarak açıyor. Alfa aşamasında; gerçek Steam hesabına ve bulut kayıtlarına erişiyor. GPL-3.0, C++.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "Tiger3807861189/GLM-5.3-Flash-J-Space-Capability-Realization-Report",
+   "inputs_hash": "14f67c6eaa71b65c620ae4b95d129bb5",
+   "description_tr": "GLM-5.3-Flash ile J-Space Cognition Suite birlikte çalıştığında elde edilen sonuçları sunan bir benchmark raporu; depo yazılım değil sunum ağırlıklı. README ayrıca J-Space skill paketinin kurulumunu ve bütünlük kontrolünü anlatıyor. DeepSeek Harness eklenti ekosistemine bağlı. Lisans NOASSERTION; ölçümlerin bağımsız doğrulaması yok.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "Likely7/Veyra-NRVideo",
+   "inputs_hash": "f22f92ad8de55e7d8eb017df71d8659b",
+   "description_tr": "Windows için gerçek zamanlı GPU video iyileştirme aracı: süper çözünürlük, gürültü azaltma, HDR ve kare üretimi; yerel video, yakalama kartı ve PS5/Xbox/PC akışı üzerinde çalışıyor. DirectX 12 tabanlı, NVIDIA ve AMD destekli. README 38 bin üzerinde sürüm indirmesi bildiriyor. Windows 11, C++, GPL-3.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "browser-use/macos-harness",
+   "inputs_hash": "7bfa40bc66f87abc57f69b4b4fe42f29",
+   "description_tr": "Herhangi bir kodlama ajanına Mac uygulamalarını kontrol ettiren ince bir harness: tek shell komutu bir adım (`get_app_state`, `click` vb.), pencere numaralı metin olarak dönüyor. Arka planda çalıştığı için imleç oynamıyor ve ön plandaki uygulama değişmiyor. uv ile Python 3.12 üzerinde kuruluyor, macOS gerektirir. MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "Harvil1/codeAgent",
+   "inputs_hash": "14c2089e03061c7a13f4d9e31f7bf2ea",
+   "description_tr": "Terminalde çalışan, Claude Code'dan esinlenmiş açık kaynak bir kodlama ajanı: depoyu okuyor, değişiklik planlıyor, dosya düzenliyor, komut ve test çalıştırıyor. Konuşma izlerinden yeniden kullanılabilir beceriler çıkarıyor; OpenAI uyumlu (varsayılan DeepSeek) ve Anthropic protokollerini destekliyor, MCP var. Yorumlar Çince, Windows öncelikli. MIT, Python.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "Zyrexnn/Cybermes",
+   "inputs_hash": "dec26ff70aa18927eec457d2f4b7ce1d",
+   "description_tr": "Yetkili güvenlik çalışmaları için Hermes Agent üzerine kurulu, ajan tabanlı bir güvenlik otomasyon çerçevesi. Go performans araçları ve modüler playbook'lar içeriyor, kendi MCP sunucusuyla Claude Code, Codex ve Cursor'a bağlanabiliyor. Python 3.11+ ve Go 1.22+ gerekir, Apache-2.0.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam Hermes Agent'ı öğrenirken gerçek bir iş yükünü görmek olabilir. Araçlar yalnızca sahibi olduğun ya da yazılı izin aldığın sistemlerde çalıştırılmalı; çok modelli LLM çağrıları ayrıca API maliyeti getirir.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "Noniv/web-ocean",
+   "inputs_hash": "77284284a2ea2394ae2a83dace30caf8",
+   "description_tr": "Hiçbir motor kullanmadan sıfırdan yazılmış gerçek zamanlı WebGPU okyanus renderer'ı: FFT dalgaları, köpük, güneş parıltısı ve fiziksel tabanlı gün batımı gökyüzü, serbest kamera. Tek bir 61 KB HTML dosyası Chrome'da doğrudan açılıyor; yetenekli bir GPU gerektiriyor. Açıklamaya göre Claude Code ile geliştirilmiş. MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "nthnclrk/CleanFrame",
+   "inputs_hash": "4be67ece04b5262fc0ecd6056f48d345",
+   "description_tr": "Samsung The Frame televizyonu için kişisel bir ana ekran uygulaması; çatallayıp kendi TV'ne uyarlaman için bir başlangıç noktası olarak sunuluyor. Uzaktan kumanda gezintisi, kayıtlı tercihler ve ES5 çalışma zamanını koruyor. README, TV kurulumu için ajan komut istemleri veriyor; yerel bilgisayar erişimi gerekiyor. MIT, JavaScript.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "cloudflare/cf",
+   "inputs_hash": "0781ff44c8908438e232d496d70bfc70",
+   "description_tr": "Cloudflare API'sinin tamamı için ajan odaklı komut satırı aracı: ajanlar özel arama ile doğru komutu bulabiliyor, çıktı varsayılan olarak JSON. Workers ile başlayan yeni bir `cloudflare.config.ts` yapılandırma biçimi ve Vite tabanlı yerel geliştirme sunucusu getiriyor. `npm i -g cf` ile kurulan açık beta. Apache-2.0, TypeScript.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "jackotom/hongguo-drama",
+   "inputs_hash": "ae313c44620fb5a74a8cb8e75a33c483",
+   "description_tr": "Hongguo kısa dizi platformu için Electron masaüstü uygulaması: üç kaynaktan arama, oynatma, indirme, dizi takibi ve birleştirip dışa aktarma. Apple silicon ve Intel Mac ile Windows ve Linux için paketleniyor; sürüm 6.2, Mac sürümü imzalı, Windows EXE imzasız. GPL-3.0, AI ile ilgisi yok; telifli içeriğin indirilmesi hukuki risk taşır.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "neuregex/freefield",
+   "inputs_hash": "fbab2cab3348a227be1aef790fd2c865",
+   "description_tr": "Higgsfield'in yaratıcı uygulamalarını (görsel, video, VFX, ses) ComfyUI ve Comfy SDK üzerinde yeniden kuran proje. Her uygulama, `app.json` manifesti ve API biçiminde bir ComfyUI iş akışından oluşan bir klasör; web arayüzü, çalıştırıcı, model indirmeleri ve VRAM haritası bu manifestlerden türetiliyor. Videoda 46 uygulama listeleniyor. MIT, Python.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "blendi-remade/agentcraft",
+   "inputs_hash": "17f23b3960333f3b2d210cc3babee47a",
+   "description_tr": "Claude ajanlarından oluşan bir ekibi Minecraft içinde yürüyebildiğin bir stüdyo olarak sunan çoklu ajan arayüzü. Lider ajan planı duvara asıyor, işçiler ayrı git worktree'lerinde kod yazıyor; sen gerçek diff'i inceleyip Merge'e basana kadar dalına hiçbir şey girmiyor, hiçbir şey push edilmiyor. Fabric modu, Java, Claude Agent SDK, MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "rockmatrix-ai/EdgeRock",
+   "inputs_hash": "94460cef6bae171f68c9671c33f07d6c",
+   "description_tr": "Rock Matrix'in sabit bellekli model ailesi; ilk açık sürüm EdgeRock-4B metin ve görsel anlıyor, metin üretiyor. Özyinelemeli durum, yerel dikkat ve Rock Memory Anchors ile geçmiş belleği büyümeyen bir KV cache yerine sabit kalıyor. README ortalama AIME pass@1 için %82.9 bildiriyor; bunlar kendi ölçümleri. Apache-2.0, Python.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "Xanerix/guoapp",
+   "inputs_hash": "f74eee20edac9328f925ba6e2b52098c",
+   "description_tr": "Hongguo kısa dizi ve film uygulamasından uyarlanmış Flutter istemcisi; telefon, tablet, bilgisayar ve TV için ayrı arayüz modları sunuyor. İki sürüm var: yalnızca Hongguo kaynaklı ve tüm kaynakları içeren. Keşfet, arama, seçmeli bölüm listesi ve oynatma kısayolları bulunuyor. GPL-3.0, Dart; AI ile ilgisi yok.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  }
+ ]
+}

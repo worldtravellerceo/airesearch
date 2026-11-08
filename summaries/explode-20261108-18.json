@@ -1,0 +1,401 @@
+{
+ "repos": [
+  {
+   "full_name": "cloudflare/forge",
+   "inputs_hash": "8d2b384a89fdada7df342c1c32fed5aa",
+   "description_tr": "Forge, OpenAPI 3.x şemalarından tipli SDK, CLI, runtime yardımcıları ve dokümantasyon üreten, eklenti tabanlı bir kod üretim çerçevesi. JSONPath tabanlı overlay'lerle şemayı düzenleyebiliyor. İlk çıktısı Cloudflare'in cf CLI'ı; TypeScript, Go, Python ve Terraform hedefleri sonra gelecek, proje erken aşamada. Apache-2.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "JourniOne-ai/JourniOne-Planning-Skills",
+   "inputs_hash": "83a953db3b87cd64f7792e51c19fe077",
+   "description_tr": "JourniOne, bir seyahat fikrinden gün gün rota çıkaran, ardından haritalı ve paylaşılabilir bir \"Travel Journal\" üreten ajan skill'i. İstenirse rotaya uyan otel ve uçuş arayışına da bağlanıyor. Claude Code gibi ajanlara kurulan bir skill paketi; ürün journione.ai sitesiyle birlikte çalışıyor, depoda lisans belirtilmemiş.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "Dpro-at/Tel-Agent",
+   "inputs_hash": "afe42113aede7e6e3a406055e1bcbd5e",
+   "description_tr": "Tel-Agent, telefon hattı ile AI ajanı arasında duran, kendi sunucunda çalışan açık kaynaklı bir geçit. SIP çağrısını yönlendirme kurallarına göre insana aktarıyor, engelliyor ya da ajana veriyor; ajan gerçek zamanlı konuşup çağrı aktarma, mesaj alma ve HTTP çağırma araçlarını kullanıyor. 24 kanalda yanıt verir, 3CX ve Asterisk yanına bağlanır. Python, AGPL-3.0, alfa.",
+   "usage_tr": "Telefon hattını bir AI ajanına bağlayan, kendi sunucunda çalışan bir geçit olarak JustCall hattının ve TimelinesAI WhatsApp trafiğinin ilk temas katmanını Arslan Holding operasyonunda tek ajana bağlayabilirsin. Depo alfa durumunda; önce ikincil bir numarada dene. AGPL lisansı, ürüne gömüp dağıtırsan aynı lisansı gerektirir.",
+   "matched_project": "Arslan Holding",
+   "relevance": 4,
+   "investment_note": "Telefon ve mesajlaşma kanallarını tek bir kendi sunucunda ajanla birleştiren B2B katman; KVKK/GDPR duyarlı kurumlarda ve MENA-Türkiye koridorunda yerelleştirilmiş sesli ajan boşluğu için izlenmeye değer."
+  },
+  {
+   "full_name": "domsvoboda/xodus-nexus",
+   "inputs_hash": "b3a925a705ffa15b4a71e79e67f4d9cc",
+   "description_tr": "Nexus Launcher, Microsoft Store'daki PC oyunlarını Linux'ta çalıştırmayı hedefleyen Xbox esintili bir masaüstü başlatıcı. Xodus üzerine kurulu, kendi yamalı backend'i ve runtime'ı var; Xbox girişi ve desteklenen oyunlarda bulut kaydı sunuyor. Xodus geliştiricilerinin resmi projesi değil, bağımsız bir türev. TypeScript, MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "OpenWAM-Official/OpenWAM",
+   "inputs_hash": "b46625b23ba214649a6de24d91069ada",
+   "description_tr": "OpenWAM, dünya-eylem modellerini (World-Action Model) sistematik geliştirmek için açık bir araştırma yığını: modüler altyapı, kontrollü tasarım deneyleri ve yaklaşık 6.400 saatlik insan ve robot verisiyle eğitilmiş açık model OpenWAM-α. Hydra konfigürasyonları ve RoboTwin, LIBERO gibi değerlendirme paketleri var. Apache-2.0.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; robotik ya da bedenlenmiş ajan tarafın yok. Akademik bir araştırma yığını ve eğitimi çok GPU'lu küme gerektiriyor. Okumak istersen değeri, alanın hangi bileşenlerinin standartlaştığını tek yerde görmek.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "vercel-labs/eve-software-factory-template",
+   "inputs_hash": "08d844d526bf38e99b9c929553320150",
+   "description_tr": "Foreman, GitHub ve Linear'daki görevleri dört istasyondan geçirip depona gözden geçirilmiş bir taslak pull request olarak teslim eden, Vercel'in eve altyapısı üzerinde bir \"yazılım fabrikası\" şablonu. İnsan yalnızca inceleyip birleştiriyor; kırmızı CI'daki hatayı da ajan teşhis ediyor. Vercel'e tek tıkla dağıtılabiliyor, MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "marmottajr/habblaud",
+   "inputs_hash": "580ff45b3dfa468747db431b7d70e4c7",
+   "description_tr": "Habblaud, Claude Code (ve Codex) ajanlarını sanal bir ofis olarak gösteren yerel bir arayüz: her proje bir oda, her ajan piksel-art bir karakter ve ne yaptığını anlık gösteriyor. Ajan senden bir şey beklediğinde el kaldırıyor. Claude'un yazdığı dosyaları okuyor, dışarıya çağrı yapmıyor. Node 22.12+, TypeScript, sıfır çalışma zamanı bağımlılığı, MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "reladraw/reladraw",
+   "inputs_hash": "8aab325182331539c13e81776605d4f7",
+   "description_tr": "reladraw, diyagramları \"şu şeyin altında, bunun solunda\" gibi göreli konum ifadeleriyle tarif ettiğin bir metin dili ve SVG çıktısı veren araç. Amaç, draw.io'da elle çizmenin verimsizliği olmadan yerleşime kendin karar vermek. Tarayıcıda playground'u ve npm paketi var; sözdizimi sık değişiyor. TypeScript, Apache-2.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "zhihui-hu/one-ip",
+   "inputs_hash": "c4739d9842bfee92d3b4863b90a4a429",
+   "description_tr": "One IP, IP sorgusu ve ağ tanılama için bir araç kutusu: IP'nin konumu, ASN'si, itibarı ve risk puanı; ağ çıkışı, DNS/CDN, tarayıcı parmak izi ve WebRTC sızıntı testleri, ayrıca AI servislerinin durumu. React, Vite ve TypeScript ile yazılmış, Cloudflare Workers üzerinde çalışıyor. AGPL-3.0; arayüz Çince.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "ruc-datalab/EvoOntology",
+   "inputs_hash": "5a36767026b0d2a576548d5cd887561f",
+   "description_tr": "EvoOntology, Claude Code ve Codex gibi veri ajanlarına bir ontoloji katmanı kuran ve bu katmanı kullanımla geliştiren bir eklenti. MCP uyumlu; her iki ajan için ayrı eklenti paketleri var. Arkasında bir arXiv makalesi bulunuyor, veri analizi ve veri bilimi iş akışlarını hedefliyor. Python, MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "StayLameBro/backburner",
+   "inputs_hash": "af361333c1816bee77a4e5e570522318",
+   "description_tr": "Backburner, MacBook'a 10 Gb/s USB-C ile bağlanan bir iPhone'u Qwen3.8-27B'nin yerel çıkarımına ortak ediyor: prompt okuma (prefill) katmanları Mac ile iPhone arasında bölünüyor, iPhone ayrıca eski bağlamı tutarak bağlamı büyütüyor. 16k-48k'da prefill %29-44 hızlanıyor, çıktı aynı kalıyor. llama.cpp çatalı; M4 Pro 24 GB'ta denenmiş. MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "hanzohanzhe/Grandet",
+   "inputs_hash": "0b4ba8f2cf758a48f25db4a6c7ed662c",
+   "description_tr": "Grandet, bir modelin API'sini resmi sağlayıcılardan, inference sağlayıcılarından ve relay sitelerinden listelenen fiyatlarla karşılaştırıp en ucuzunu ajanına bağlayan bir skill ve anonim MCP sunucusu. grandet.ai'daki 1.800'den fazla sağlayıcının fiyat verisine dayanıyor; kayıt ya da API anahtarı gerekmiyor. JavaScript, lisans belirtilmemiş (NOASSERTION).",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "jlrouzies-fr/DLSS5-Feeder",
+   "inputs_hash": "6f2e195a1fee6477c0c5e29df606eadf",
+   "description_tr": "DLSS5-Feeder, DLSS içermeyen D3D11/D12/Vulkan oyunlarına DLSS 5 sinirsel render uygulamak için ReShade'den aldığı derinlik ve hareket vektörlerinden sentetik bir DLAA girdisi üretip DLSS 5 eklentisine özel bir D3D12 aygıtı üzerinden veriyor. Windows tarafı, C++; sürücü ve NGX sürümüne duyarlı. README, sahte ZIP indirme sitelerine karşı uyarıyor.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "lxf746/outlook-auto-register",
+   "inputs_hash": "5d9526b46a1c0c89342d790e49ed6b0d",
+   "description_tr": "Outlook Auto Register, Microsoft Outlook hesaplarını tarayıcı olmadan, doğrudan HTTP protokolüyle toplu açan bir araç; PerimeterX doğrulamasını captcha servisleriyle aşıyor, proxy havuzu, hesap havuzu ve hesap sağlığı kontrolü içeren bir web konsolu sunuyor. Toplu sahte hesap üretimi yaptığı için servis şartlarıyla çelişiyor. Python, lisans belirtilmemiş.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "inclusionAI/Choruz",
+   "inputs_hash": "9e5cd3b9480374c87cc7921a3d9248f7",
+   "description_tr": "Choruz, Codex, Claude Code ve Muse için bir ajan çalışma alanı: kullanıcı etkileşim izlerinden arka planda kişisel benchmark'lar üretip harness'i uyarlıyor, tekrarlayan hataları azaltıyor ve uygun görevlerde yapılandırdığın daha küçük modellere geçişi test ediyor. Model ağırlıklarına dokunmuyor. Yerel öğrenme şimdilik Codex ve Claude Code'da. Rust, Apache-2.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "Roboparty/RP1",
+   "inputs_hash": "8cb186bfde921f31daf850bb8630c522",
+   "description_tr": "RP1, RoboParty'nin açık kaynak insansı robot platformu: mekanik CAD, şematikler, PCB ve Gerber dosyaları, BOM ve montaj belgeleri ile Linux BSP, firmware, robot modelleri, yürüme eğitimi ve hareket taklidi projeleri tek yığında. Gerçek bir robotu kurmak ya da tek bir alt sistemi incelemek için. GPL-3.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "shanliuling/dsh-image-gen",
+   "inputs_hash": "825da3e47d51352ce22e9617980fc85a",
+   "description_tr": "dsh-image-gen, DeepSeek Harness için bir görsel üretim eklentisi: ajan sohbet içinde toplu görsel üretiyor, çizim ve işaretlemelerden düzenleme yapıyor, 500'den fazla hazır prompt arasından seçim yapabiliyor. Gemini, OpenAI uyumlu servisler, Seedream, DashScope, Grok Imagine, GLM-Image ve yerel ComfyUI destekleniyor. Arayüz Çince. TypeScript, Apache-2.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "bas3line/ascii",
+   "inputs_hash": "882b1a929b0629d9a1efd59061b416ad",
+   "description_tr": "ascii, React, Next.js, Astro ya da tek bir HTML etiketiyle web sayfalarına eklenen 241 animasyonlu ASCII parçası sunan bir TypeScript kütüphanesi: sahneler, yükleme göstergeleri, grafikler, dil logoları, dönen şekiller. Parçalar ascii.rest sitesinde önizlenebiliyor, npm'den kurulur. MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "usamahz/cpu-performance-engineering",
+   "inputs_hash": "f214667ce7dfa0986796089741bfcecf",
+   "description_tr": "CPU performans mühendisliği için tek bir komuttan üretim çıkarımına uzanan bir okuma yolu: yalnızca birincil kaynaklar, 304 kayıt ve 14 bölümün her biri için çalıştırılabilir C benchmark'ı. Ayrıca bu listeyi AI istemcilerine bağlayan bir MCP sunucusu içeriyor. Bir yazılım değil, düzenlenmiş bir kaynak listesi. Python, MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "eagle-hq/EAGLE-4",
+   "inputs_hash": "875e2d014f59dceffa81b0710e6377a9",
+   "description_tr": "EAGLE-4, spekülatif çözümleme ile LLM çıkarımını hızlandıran resmi çıkarım kodu: tek bir draft modeli, batch boyutuna ve donanıma göre ne kadar spekülasyon yapılacağını ölçülen maliyetlerden belirleyen eagle-harness ile çalışıyor. Çıktı hedef modelinkiyle aynı kalıyor. SGLang ve vLLM ile kullanılıyor, Qwen3.8-27B draft'ı var. Python, lisans NOASSERTION.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "furkankly/zoetrope",
+   "inputs_hash": "9029708b51132068b877486048a0efee",
+   "description_tr": "zoetrope, Claude Code ve Codex oturumlarının transcript dosyalarını okuyup oturumu ana ajan, alt ajanlar ve araçlarıyla bir akış grafiği olarak çizen terminal uygulaması. Biten oturumu yeniden oynatıyor, süreni canlı izliyor. Salt okunur, veri makineden çıkmıyor; WASM ile tarayıcıda da çalışıyor. Rust, MIT.",
+   "usage_tr": "Lyricdrop v2'yi Superpowers ile yazarken alt ajanların ne yaptığını, uzun oturumun hangi adımda dağıldığını grafik üzerinde görmek için kullanabilirsin. Ofis Mac'inde yerel ve salt okunur çalışır, API maliyeti yoktur, ek kurulum istemez. Yalnızca izleme sağlar; kopan bağlantıyı onarmaz, komut gönderemezsin.",
+   "matched_project": "Lyricdrop",
+   "relevance": 6,
+   "investment_note": null
+  },
+  {
+   "full_name": "pauljoda/Crest",
+   "inputs_hash": "5df8cf0cb9fa64677fd46a8709a282ab",
+   "description_tr": "Crest, Mac, iPhone ve iPad için SwiftUI ile yazılmış açık kaynaklı bir tarayıcı; Mac'te Chromium ve WebKit motorlarını çalıştırıyor. Her \"Space\" kendi çerezlerine, geçmişine, sekmelerine, kimlik bilgilerine ve senkron kimliğine sahip, yani iş, ev ve gizli oturumlar birbirinden yalıtılıyor. Stable, Nightly ve Development kanalları var. MPL-2.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "SunnyMaria/csapp-zh-markdown",
+   "inputs_hash": "576a4a1a86d086e90ee24afc975a7db4",
+   "description_tr": "CSAPP'in (Deep Understanding of Computer Systems, 3. baskı) tüm bölümlerinin Çince Markdown çevirisi: alıştırma cevapları, sekiz laboratuvarın Çince açıklamaları ve resmi self-study lab paketleri. Çevrimiçi okuma sitesinde bölüm gezinmesi, tam metin arama ve koyu mod var. Yazılım değil, ders materyali. Lisans belirtilmemiş.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "yifanzhang-pro/recurrent-looped-tranformer",
+   "inputs_hash": "010d751618d0177702a6d9e0b7468d67",
+   "description_tr": "Recurrent Looped Transformer (RLT), bir önceki token'ın son decoder durumunu geçitli bir birleştirmeyle mevcut token'ın girdisine geri besleyen bir mimari; böylece token başına maliyet sabit kalırken hesaplama yolu dizi uzunluğuyla büyüyor. Paralel nedensel bir encoder temsil ve global KV belleği sağlıyor. Bu depo makalenin (arXiv 2610.07591) proje sayfası. Apache-2.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "QAQLeonard/a7c2-tools",
+   "inputs_hash": "d0d343412258acaec6c45ec86d868b79",
+   "description_tr": "A7C II Tools, Sony A7C II (ILCE-7CM2) 2.01 firmware'i için bir masaüstü aracı: FL2/FL3 kurulumu, özel Creative Look (LUT/DCP), elektronik deklanşör sesi, dikey ekran ve fabrika ayarına dönüş. Windows ve macOS'ta çalışıyor. Sony ile bağlantısız, resmi olmayan bir araştırma aracı; ücretli kullanımı yasaklıyor. Python, lisans NOASSERTION.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "fif7y/dimble",
+   "inputs_hash": "2e21d466fe3055ef0652958ce487992c",
+   "description_tr": "Dimble, menü çubuğunda ihtiyacın olmayan simgeleri gizleyip fareyle üzerine gelince, tıklayınca ya da kısayolla geri getiren yerel bir macOS uygulaması (Bartender ve Ice alternatifi). Üç bölüm var: Visible, Hidden ve Always Hidden; sürükle-bırak düzenleyici ile yerleşim ayarlanıyor. Hesap ve analitik yok. Swift, GPL-3.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "Soulmate-Halo/heterogeneous-gpu-pd-lab",
+   "inputs_hash": "7c2ea2e122e634fc67572ad6a19e1703",
+   "description_tr": "Yoğun işlem gücü olan ekran kartlarıyla seyrek ama büyük bellekli ana makineleri (AI Max+ 395, M3 512G, DGX Spark) hızlandırmaya dair bir laboratuvar: prefill ve decode'u farklı donanıma bölen llama.cpp tabanlı kurulumlar ve MoE modelleriyle üç gerçek donanım benchmark'ı. Sonuçlar ayarsız ham sayılar. C++, lisans belirtilmemiş.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "deepfounder-ai/desigma",
+   "inputs_hash": "e85e92d6076f3d0514b0f57fd6d46170",
+   "description_tr": "Desigma, Figma'ya yerel ve ücretsiz bir alternatif olarak tamamen Rust ile yazılmış masaüstü tasarım aracı: frame, auto layout, bileşen ve varyantlar, prototipleme, canlı iş birliği, keyframe hareketi, vektör düzenleme ve gerçek Figma dosyası içe aktarma. CPU tabanlı deterministik bir renderer kullanıyor, çevrimdışı çalışıyor. Apache-2.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "kuratlielia/arc-library",
+   "inputs_hash": "f8e3ca73fce16c6ecac22c31840d955f",
+   "description_tr": "Arc, hareketi yerleşik gelen React bileşen kitaplığı: 121 bileşen ve 22 blok, CSS modülleri, Motion ile animasyon, klavye desteği ve her animasyon için azaltılmış hareket yolu. Kod senin olacak şekilde shadcn CLI ile kurulabiliyor ya da elle kopyalanıyor; Next.js ve Vite'ta çalışıyor. Bazı öğeler ücretli Arc Pro'da. TypeScript, MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "mistralai/timestral",
+   "inputs_hash": "286533e1beaddcf8bc06b9c8877d15a1",
+   "description_tr": "Timestral, Mistral AI'ın çok değişkenli olasılıksal tahmin yapan zaman serisi foundation model ailesi; geçmiş-yalnız ve bilinen-gelecek kovaryatları destekliyor. Depo yalnızca PyTorch, NumPy, safetensors ve huggingface_hub ile CPU ya da GPU'da bağımsız çıkarım sağlıyor. Timestral-209M, GIFT-Eval'da önceden eğitilmiş modeller arasında birinci. Kod Apache-2.0, ağırlıklar Modified MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "xinxuxin/keystone-bench",
+   "inputs_hash": "7d5b32a6255f20f557d11d8bfde80963",
+   "description_tr": "Keystone-bench, bir sohbet asistanının klinik cevabının dayandığı tek kanıtı çıkarıp, değiştirip ya da çürüterek eylemin kanıtla birlikte değişip değişmediğini ölçen bir klinik karar-kanıt benchmark'ı. HealthBench üzerine kurulu; hem asistanları hem de onları puanlayan rubrikleri değerlendiriyor. Veri kartı, protokol ve sonuç belgeleri depoda. Python, lisans NOASSERTION.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "openai/mcp-extensions",
+   "inputs_hash": "de342133b3157d55080f95c93ef2c7b0",
+   "description_tr": "OpenAI MCP Extensions, MCP'ye ChatGPT'ye özgü yetenekler ekleyerek geliştiricilerin ChatGPT içinde yerel hissettiren eklentiler yazmasını sağlıyor: kenar çubuğu giriş noktaları, dosya uzantısı işleyicileri, composer'da @ ile bahsetme ve genişletilmiş formlar. Depoda şartname ve bir demo eklenti (Bits & Bolts) var. TypeScript, Apache-2.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "Gen-Verse/RSI-Anything",
+   "inputs_hash": "4871f9e6bcdbf17b426cf6edc577d8f8",
+   "description_tr": "RSI-Anything, dünya modeli tahminlerini ve etkileşim geri bildirimini özyinelemeli kendini geliştirmeye çeviren, alandan bağımsız bir çerçeve: aday üretimi, tahmine dayalı seçim, dış değerlendirme ve öğrenme tek döngüde. JEPA-Anything üzerine kurulu; makale kod onarımı, GUI etkileşimi, laboratuvar planlama, reaksiyon optimizasyonu ve immün bilimde uyguluyor. Apache-2.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "NarYuki/Dextop",
+   "inputs_hash": "0f8e1159041b189fa00b9f74e681a5f1",
+   "description_tr": "Dextop, yalnızca bir telefonla sanal ekran açıp masaüstü benzeri bir çalışma alanı sunan, Samsung DeX'in gizli masaüstü yeteneklerini açan Android uygulaması. 1.5.0'dan itibaren ayrıcalıklı bir erişim runtime'ı ile uygulama başlatma, pencere yerleşimi ve dokunma girdisini kontrol ediyor. Çözünürlük ve yoğunluk ayarlanabiliyor. Kotlin, GPL-3.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "Edwardxlai/easyread",
+   "inputs_hash": "f94f73f0d7f030a8fb0deb5f63e873b8",
+   "description_tr": "EasyRead, İngilizce PDF makaleleri sayfa sayfa Çince'ye çeviren, formülleri KaTeX ile, tabloları üç çizgili tablo olarak düzenleyen yerel bir okuma uygulaması. Orijinalle yan yana karşılaştırma, çizgi ve not, atıf takibi ve kenarda \"AI'ya sor\" paneli var; Claude, GPT, DeepSeek, Qwen ve yerel Ollama seçilebiliyor. Kitaplık bilgisayarda kalıyor. Electron, Python, MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "deepopen-com/deepopen-3d-webs",
+   "inputs_hash": "9652a86ce2fac791f985d4467c939f6d",
+   "description_tr": "DeepOpen-3d-webs, tek bir referans görüntü ve prompt'tan kamera yörüngesi boyunca önizlenebilir, yeniden oynatılabilir 3B sahneler üreten bir sistem. Renk ve derinlik animasyonları ile Gaussian point cloud çıktısı veriyor, tarayıcıda gösterip SuperSplat veya MeshLab için indirilebiliyor. Docker imajı olarak geliyor (port 8090); GPU yoksa demo modunda çalışıyor. Python.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "jeremyipark/vision-demos",
+   "inputs_hash": "e11b80dc940c579efdcb5814e01a01ab",
+   "description_tr": "Gerçek dünyadan bilgisayarlı görü demoları: dans eşleştirme, barfiks, şınav, kaya tırmanışı, basketbol, koşu ve deadlift hareketlerinin görüntüden analizi. Her proje kendi README'sinde kurulum ve kullanım anlatıyor, YouTube videoları var. Python, Apache-2.0. README ayrıntılı teknik bilgi vermiyor.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "HeyChengC/vibe-knowledge-film",
+   "inputs_hash": "072a461378dcc4d932e3b8838949d042",
+   "description_tr": "vibe-knowledge-film, Douyin'deki popüler bilgi kısa filmlerini çözümleyip görsel stilini taklit eden, yönetmen storyboard tablosu hazırlayıp ses efektlerini otomatik ekleyen ve filmi tek komutla üreten bir Claude Code/Codex skill'i. Render motoru Python ile, \"C\" ve \"B\" dünya stilleri var. Motor MIT; örnek filmlerin telifi özgün yazarlarda. Arayüz Çince.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "jaredrhod/barehands",
+   "inputs_hash": "d2e0863fc2b86d14b01a4a88852dd39b",
+   "description_tr": "barehands, web kamerasını elle takip edilen bir arayüze çeviriyor: notlar, görseller ve 3B modeller kamera görüntüsü üzerinde cam kartlar olarak süzülüyor; tutup fırlatabiliyor, uzatabiliyorsun. Kulaklık ve kontrolcü gerekmiyor, Chrome ve kamera yeterli. Dosya yazan ya da localhost'a istek atan herhangi bir yapay zeka \"beyin\" olarak bağlanabiliyor. MediaPipe, Three.js, AGPL-3.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "HayatoG/iss_pc",
+   "inputs_hash": "f269c34feaa035fc7dc74757a539034b",
+   "description_tr": "inFAMOUS Second Son'ın (PS4, CUSA00223) Linux ve Windows için yerel PC portu: oyunun orijinal kodu işlemcide doğrudan çalışıyor, PS4 sistemi yeniden yazılmış, GPU Vulkan'a çevriliyor. Oyun dosyası verilmiyor, kendi PS4 dökümün gerekiyor. Oynanabilir ama kararsız: RTX 2060'ta tipik 20-30 FPS ve bilinen grafik hataları. C++.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  }
+ ]
+}

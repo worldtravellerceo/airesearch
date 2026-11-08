@@ -1,0 +1,388 @@
+{
+ "repos": [
+  {
+   "full_name": "deepseek-ai/deepseek-harness",
+   "inputs_hash": "1cf9d0d55aa0009c94417a263cb051c8",
+   "description_tr": "DeepSeek AI'nin açık kaynak ajan harness'ı (dsh); her şeyin eklenti olduğu bir mimari üzerine kurulu ve altında Cordis runtime'ı çalışıyor. `npx` ile tek komutta yerel web arayüzü açılıyor. Depo geliştirici önizlemesinde ve uyumluluğu bozan değişiklikler bekleniyor; TypeScript, MIT.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam Claude Code ve OpenCode yanında üçüncü bir ajan harness'ı denemek olurdu. Geliştirici önizlemesinde olması ve kırıcı değişiklik uyarısı nedeniyle şimdilik izleme listesinde tutmak yeterli.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "storytold/photocraft",
+   "inputs_hash": "1c9e15ee2757249a66ebd6c40f41ebe6",
+   "description_tr": "Photoshop'un clean-room yeniden yazımı olduğunu söyleyen, saf Rust ile yazılmış açık kaynak fotoğraf düzenleyici. Katman, maske, ayar katmanı, vektör, fırça ve gerçek PSD dosyası desteği var; wgpu tabanlı GPU compositor ile Metal, Vulkan ve DX12 üzerinde yerel çalışıyor. Apache-2.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "eternity4719/HowToLiveBetter",
+   "inputs_hash": "7f422b59cb8a1fe2fea23ac15da19d64",
+   "description_tr": "Çince yazılmış, 772 maddelik bir yaşam rehberi: sağlık, para, hukuk, işsizlik ve sosyal sigorta, evlilik, girişimcilik gibi konularda her madde maliyet, kazanç ve kanıt düzeyiyle veriliyor. Kaynak olarak yalnızca hakem denetimli makale ve resmi belge gösteriyor; hukuk kısmı Çin anakarası kurallarına göre. Kod değil içerik deposu; CC-BY-4.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "Ebony-Vinyl/dsh-our-free-model",
+   "inputs_hash": "6baad61b9ff9dfb3e0d4a65b855828d0",
+   "description_tr": "dsh (DeepSeek Harness) için bir eklenti; hesap, kayıt ya da API anahtarı olmadan DeepSeek V4.1 Flash ve Kimi K3 gibi modelleri sunuyor. Model listesi her yenilemede yukarı akıştan çekiliyor, yanında yerel OpenAI uyumlu bir yönlendirme portu ve yerel kullanım panosu var. Modeller üçüncü tarafın ücretsiz ağ geçidinden geliyor, süreklilik garantisi yok. JavaScript, MIT.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; eklenti OpenCode'a değil dsh host'una takılıyor ve modelleri sözleşmesiz, ücretsiz bir ağ geçidinden geçiriyor. Lyricdrop gibi maliyeti planlı bir pipeline'ı böyle bir geçide bağlamak, geçit kapandığında üretimi durdurur.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "cloudflare/security-audit-skill",
+   "inputs_hash": "892a7829f4839def27288498c6eb0d98",
+   "description_tr": "Cloudflare'in bir kod ajanını yapılandırılmış güvenlik denetçisine çeviren skill'i. Denetim altı fazda ilerliyor: keşif, kapsam defteriyle avcı ajanlar, bulguları çürütmeye çalışan doğrulayıcılar, şemalı çıktı, ikinci doğrulama ve rapor. Doğrulanmamış bulgular `needs_validation` olarak ayrı kalıyor. JavaScript, MIT.",
+   "usage_tr": "Lyricdrop v2'yi herkese açmadan önce Supabase şemasını, RLS politikalarını ve admin uç noktalarını bu skill'le tarayabilirsin; Claude Code içinde çalıştığı için Max aboneliğinin dışına çıkmaz. Çok ajanlı ve uzun bir akış, önce küçük bir servis üzerinde süresini ölç; çıktı sızma testinin yerini tutmaz.",
+   "matched_project": "Claude Code",
+   "relevance": 6,
+   "investment_note": null
+  },
+  {
+   "full_name": "Gathin23/cleanyourtv",
+   "inputs_hash": "5af650c06e6c50090c01e419269a8357",
+   "description_tr": "Android TV ve Google TV'lerdeki gereksiz uygulamaları Wi-Fi üzerinden ADB ile devre dışı bırakıp reklamlı ana ekranın yerine Apple TV tarzı sade bir launcher kuran araç. Kök yetkisi ya da kablo gerekmiyor, tek satırla geri alınabiliyor; işi bir kodlama asistanı yönlendiriyor. Samsung, LG ve Roku'da çalışmıyor. Python, lisans belirtilmemiş.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "pingdotgg/t3code",
+   "inputs_hash": "9a25ef8a9d590f197f820b7bb2b06c61",
+   "description_tr": "T3 Code, makinedeki kodlama ajanlarını (Claude Code, Codex, Cursor, OpenCode ve diğerleri) tek arayüzden süren bir \"agent harness control surface\". iOS, Android, web ve Electron istemcileri aynı yerel sunucuya bağlanıyor; kendi abonelik satmıyor, mevcut abonelikler üzerinden çalışıyor. Erken aşama; büyük özellik katkıları şimdilik kabul edilmiyor. TypeScript, MIT.",
+   "usage_tr": "Telefondan ofis Mac'indeki Claude Code ve OpenCode'u tek listeden sürmek için en somut adaylardan; OpenCode için planladığın iOS istemciyi sıfırdan yazmadan önce buradan başlamayı değerlendirebilirsin. Max aboneliğiyle çalışır, ek API maliyeti yok. Telefonu makineye açmak yeni erişim yüzeyi, Tailscale dışına çıkarmadan dene.",
+   "matched_project": "Claude Code",
+   "relevance": 8,
+   "investment_note": null
+  },
+  {
+   "full_name": "Nutlope/hallmark",
+   "inputs_hash": "ecbdd50483cfafb87e4e6492199c1a74",
+   "description_tr": "Claude Code, Codex, Cursor ve OpenCode için tasarım skill'i; üretilen sayfaların yapay zekâ işi gibi görünmesini engellemeyi hedefliyor. Elli temalık bir katalogdan üç tema seçip sayfayı ziyaretçinin amacına göre kuruyor, sonucu gerçek tarayıcıda lint edip bağımsız bir gözden geçirici ajana kontrol ettiriyor. Together AI yapımı; CSS, MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "Niko1221/Strata",
+   "inputs_hash": "b62f810aa85ab5fa2c409ebe0bddbe95",
+   "description_tr": "125 milyar parametreli Qwen3.8-Flash-Next modelini oyun bilgisayarında çalıştırmayı hedefleyen çıkarım motoru ve tek tıklık kurulum paketi. Windows ve Linux'ta en az 12 GB VRAM'li NVIDIA veya AMD kart ile 32-64 GB RAM istiyor; localhost'ta OpenAI ve Anthropic uyumlu API açıyor. RTX 5070'te saniyede 53-94 token ölçülmüş. C++, MIT.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; yerel model fikri doğru ama proje NVIDIA veya AMD ekran kartı ve Windows/Linux istiyor, Mac'lerde çalışmaz. Apple Silicon'da aynı ihtiyaç için MLX veya llama.cpp tabanlı motorlar daha gerçekçi.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": "On bir günde 13 bin star, tek tıkla yerel büyük model çalıştırma talebinin ne kadar büyük olduğuna dair bir pazar sinyali; ürün olarak değil, bu katmana yatırım yapan ekipleri ararken bir gösterge olarak not edilmeye değer."
+  },
+  {
+   "full_name": "Donchitos/Claude-Code-Game-Studios",
+   "inputs_hash": "7243acaeef4f96c56068a5434b1de290",
+   "description_tr": "Tek bir Claude Code oturumunu oyun stüdyosuna çeviren yapılandırma: 49 ajan, 74 skill, 15 hook ve 14 kural, stüdyo hiyerarşisine göre düzenlenmiş. Yönetmenler vizyonu, bölüm liderleri alanlarını, uzmanlar işi üstleniyor; sihirli sayı ve tasarım dokümanı atlama gibi hatalara kalite kapıları koyuyor. Godot, Unity ve Unreal için. Shell, MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "anywhere-labs/dsh-desktop",
+   "inputs_hash": "3273230052c282009f0e74f23c3f7da5",
+   "description_tr": "Topluluk tarafından geliştirilen, DeepSeek Harness için açık kaynak masaüstü istemci (Windows, macOS). Yerel web arayüzünü, host servisini ve plugin sistemini yerel uygulamaya alıyor; 2.0.9'dan itibaren iOS ve Android'den uzaktan kontrol var. Üst akışla resmi bağı yok, belgeler ağırlıkla Çince. TypeScript, MIT.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; motoru DeepSeek Harness olduğu için kurmak sana bir şey kazandırmaz. Telefon ile masaüstü arasında oturumun nasıl tutulduğu, OpenCode için planladığın istemciyi tasarlarken referans olarak okunabilir; bağımlılık olarak değil.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "NandhaKishorM/laya",
+   "inputs_hash": "0865375691af0dca488e894a606f1a13",
+   "description_tr": "Metin üzerinde seçim, puan ve evet/hayır kararlarını tek ileri geçişte (yaklaşık 33 ms) üreten, otoregresif olmayan bir karar motoru. ModernBERT tabanlı; bir router dile göre İngilizce ya da 100'den fazla dili kapsayan checkpoint'e yönlendiriyor. Hazır checkpoint kendi testinde 0,362 doğrulukta, ince ayarlıysa 0,766. Python, Apache-2.0.",
+   "usage_tr": "Sesli not transkriptinden kategori, aciliyet ve iş/kişisel ayrımını yerelde, API maliyeti olmadan çıkarmak için kişisel bilgi tabanında kullanabilirsin. Hazır checkpoint'in doğruluğu düşük; birkaç yüz etiketli örnekle ince ayar gerekir. Varsayılan 1.024 token sınırı uzun notları sessizce keser.",
+   "matched_project": "Kişisel bilgi tabanı",
+   "relevance": 8,
+   "investment_note": null
+  },
+  {
+   "full_name": "yetone/magpie",
+   "inputs_hash": "a092626691cce0ba12701b1d05f761dc",
+   "description_tr": "Birden fazla kodlama ajanının modelini ve sağlayıcısını tek yerden seçtiren yerel ağ geçidi ve menü çubuğu uygulaması. 127.0.0.1:3425'teki geçit OpenAI, Anthropic ve Gemini protokolleri arasında çeviri yapıyor; kota dolunca sıradaki hesaba geçiyor ve token ile maliyeti izliyor. macOS, Windows, Linux ve Docker'da çalışıyor. Go, MIT.",
+   "usage_tr": "Claude Code ve OpenCode'u aynı listeden yönetir, biri tükendiğinde config dosyalarını elle düzenlemeden sıradakine geçersin; Lyricdrop v2 gibi uzun bir yeniden yazımda kota yönetimi için işe yarar. Aboneliği istemci dışından geçirmek sağlayıcı koşullarına takılabilir ve tek yerel geçit yeni bir arıza noktası ekler.",
+   "matched_project": "Claude Code",
+   "relevance": 8,
+   "investment_note": null
+  },
+  {
+   "full_name": "floci-io/floci",
+   "inputs_hash": "45e0828a182a0ef2c11a3b7458d3ad29",
+   "description_tr": "LocalStack'e alternatif, ücretsiz ve açık kaynak yerel AWS emülatörü. Hesap, auth token ya da özellik kısıtı olmadan `docker compose up` ile ayağa kalkıyor; AWS SDK, CLI, Terraform, CDK ve test paketleri `localhost:4566`'ya yönlendirilerek kullanılıyor. Azure, GCP ve OCI için kardeş emülatörleri var. Java, MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "guillaumemeyer/watermarks-remover",
+   "inputs_hash": "daff713910177537e33ae8020377145c",
+   "description_tr": "Sahibi olduğun içerikten yapay zekâ kaynaklı köken izlerini temizleyen araç. Metindeki görünmez Unicode karakterleri deterministik script'lerle, PNG, PDF, DOCX, MP4 gibi dosyalardaki C2PA, EXIF ve XMP verisini yerel bir HTTP servisiyle kaldırıyor. Bir ajan skill'i ve bağımlılıksız Python 3.10+ servisinden oluşuyor. MIT.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; Folio ve Lyricdrop içerik hattında ihtiyaç metadata temizliği değil, üretim ve onay hızı. Köken işaretlerini kaldırmak yayınlanan içerikte platform kurallarıyla da çakışabilir.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "wheresryan22/anatomy",
+   "inputs_hash": "e5ef62c48ecba08a97b42325b5718c77",
+   "description_tr": "Bir fikri çalışan, etkileşimli bir nesne olarak izometrik SVG'ye çeviren Claude skill'i (Antigravity, OpenCode ve Codex'te de çalışıyor). Örneğin bir cache anahtarını, tüm pimler eşleşince dönen bir kilide dönüştürüp onlarca küçük parçadan kuruyor; WebGL shader ve 3D efektleri isteğe bağlı. JavaScript, MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "deepseek-ai/DeepInfer",
+   "inputs_hash": "b28c348398a866edb5cae8c3213a3905",
+   "description_tr": "DeepSeek modelleri için yüksek performanslı, büyük ölçekli çıkarım framework'ü. Özel kernel'ler, taslak token ile hızlandırılmış kod çözme, asenkron zamanlama, batch'ten bağımsız (batch-invariant) çıkarım ve deterministik örnekleme sunuyor; ayarlar `DEEPINFER_*` ortam değişkenleriyle yapılıyor. Batch-invariant mod yalnızca NVIDIA'da. Python, Apache-2.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "browser-use/jev-ultrafast",
+   "inputs_hash": "1bdea7ee4661162b5cc48b6c8b630fea",
+   "description_tr": "browser-use ekibinin hız ve maliyet odaklı web ajanı. Her gözlemde sayfadan indekslenmiş bir eleman tablosu çıkarıyor, model yalnızca geçerli işlem ve hedefi seçiyor; metin sadece yazma gerektiğinde küçük bir modelle üretiliyor. README, Google Flights'ta uçtan uca 7,1 saniye veriyor. İki API anahtarı gerekiyor. Python, MIT.",
+   "usage_tr": "Tedarikçi karşılaştırma, form doldurma ve panelden veri toplama gibi tarayıcı adımlarını ajana devretmek için asistan ve holding tarafında gerçek bir aday; inspector her adımı önce gösterebiliyor. Mac'te tamamen yerel ve maliyetsiz değil, adım başına maliyeti küçük bir işte ölç; girişli oturumları ayrı tarayıcı profilinde tut.",
+   "matched_project": "Asistan ve holding araçları",
+   "relevance": 6,
+   "investment_note": null
+  },
+  {
+   "full_name": "awesome-dsh-plugin/awesome-dsh-plugin",
+   "inputs_hash": "cffa7912585f33a1607fc7fd7c43fc19",
+   "description_tr": "DeepSeek Harness (dsh) için `dsh plugin add` ile kurulabilen topluluk eklentilerinin derlenmiş listesi. Aynı liste, dsh 0.2.1+ içinde Plugins > Discover altından eklenebilen bir eklenti pazarı dizini olarak da sunuluyor. JavaScript, CC0-1.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "KnifeLemon/Filee",
+   "inputs_hash": "a4984316eac58c69337cef164c0e0574",
+   "description_tr": "Dosya dönüştürücü; Ctrl veya Option tuşuyla dosyaları sürükleyip imlecin açtığı daireden biçim seçiyorsun. Görsel, PDF, Word, Excel, PowerPoint, HWP, video, ses, e-kitap ve arşiv dahil yaklaşık 270 biçimi çevrimdışı, Office kurmadan dönüştürüyor. Windows, macOS ve CLI. C#, MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "google-research/harness2",
+   "inputs_hash": "37c76e8cc116a42ce4e7f9be5431bfdc",
+   "description_tr": "Google Research'ün \"özyinelemeli ajan harnessing\" çerçevesi: görev düzeyinde öneri, deneme ve birleştirme adımıyla yürütme harness'ını model ağırlıklarına dokunmadan iyileştiriyor. Sistem istemi, guardrail, bellek, alt ajan, skill ve plugin gibi sekiz bileşeni düzenliyor. Yazarlar GLM-5 ve Gemini 3.5 Flash'ta kazanç raporluyor. Linux ve Python 3.12 istiyor; Apache-2.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "lexmount/moli",
+   "inputs_hash": "4884774551b25bcaa5c9834ee530dcfa",
+   "description_tr": "AI ajanları için Rust ile yazılmış açık kaynak headless browser. Düzen ve render işini talep üzerine yaparak düşük kaynak tüketiyor; sayfayı Markdown ya da semantik ağaç olarak verebiliyor. CLI, CDP, WebDriver Classic ve BiDi arayüzleri var; Linux, macOS ve Windows'ta çalışıyor. Apache-2.0.",
+   "usage_tr": "Sayfaları Markdown'a çeviren katman olarak Claude Code'a CLI üzerinden verebilirsin; Arslan Holding için pazar ve rakip notlarında ham HTML yüklemek yerine bağlamı kısaltır. Ofis Mac'inde yerel çalışır, API maliyeti yok. Proje çok yeni, JavaScript ağırlıklı sitelerde tam Chrome değil ve bot korumalı kaynaklarda işe yaramaz.",
+   "matched_project": "Asistan ve holding araçları",
+   "relevance": 4,
+   "investment_note": null
+  },
+  {
+   "full_name": "deepseek-ai/dsh-superagent-prototype",
+   "inputs_hash": "1c669150d5915e7be1a433103eac4178",
+   "description_tr": "DeepSeek'in tek bir GitHub deposu için proaktif çalışan kodlama ajanı prototipi; dsh için paket olarak geliyor. GitHub'ı ve isteğe bağlı Feishu'yu dinliyor, yetkili biri iş istediğinde ayrı oturum ve dizinde çalışıp pull request gibi bir çıktıyla cevap veriyor. Resmi ürün değil, referans amaçlı araştırma kodu. TypeScript, MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "HunYiSage/dsh-purge",
+   "inputs_hash": "5997c8a2e866d1fbc43ae913a969c8a2",
+   "description_tr": "DeepSeek Harness için, modellerin güvenlik kısıtlarını aşmayı (jailbreak) amaçlayan bir eklenti; modele göre farklı istem kullanılabiliyor, varsayılanı bir Çin modeline yönelik. README paketlenmemiş olduğundan ayrıntı yalnızca depo açıklaması ve konu etiketlerinden okunabildi. JavaScript, Apache-2.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "DuarteSantos8/openGym",
+   "inputs_hash": "94f22f6c332b76a23678bb307edec4fc",
+   "description_tr": "Kendi sunucunda barındırılabilen, açık kaynak spor salonu ve vücut ağırlığı takip uygulaması; App Store'da (iPhone ve Apple Watch) ve Android APK olarak da var. 5.600'den fazla egzersiz, haftalık rutinler, kas haritası ve Strong, Hevy, FitNotes'tan içe aktarma sunuyor; `docker compose up` ile çalışıyor. Hesap, abonelik ve telemetri yok. JavaScript, AGPL-3.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "storytold/pdfcraft",
+   "inputs_hash": "c3e6b4ec6baacca3ca120dddda69fceb",
+   "description_tr": "Acrobat alternatifi olduğunu söyleyen, saf Rust ile yazılmış açık kaynak PDF okuyucu ve düzenleyici. PDF'leri okuma, düzenleme, birleştirme, bölme ve koruma, form ve yorum desteği sunuyor; macOS, Windows, Linux, FreeBSD ve tarayıcıda çalışıyor. ArtCraft ekibinin uygulama ailesinden; Apache-2.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "storytold/craft-anything",
+   "inputs_hash": "fb26d4bf55f16d02b696839a2783e4d5",
+   "description_tr": "Hedef bir web sitesi, uygulama ya da oyunun nasıl çalıştığını inceleme araçlarıyla çıkarıp bir kodlama ajanına kendi sürümünü yazdıran, saf Rust ile yazılmış clean-room motor. Sonucu orijinalle karşılaştırıp iyileştiriyor; kural dışı adımlar onayına sunuluyor. ArtCraft ekibinden; Apache-2.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "robbietilton/Compositor",
+   "inputs_hash": "aa729a46e56eff8bb46d5ccc813b21bd",
+   "description_tr": "Mac için Photoshop alternatifi bir görüntü düzenleyici. Katman ve klasörler, Photoshop'un blend mod sıralaması, boyanabilir katman maskeleri ve kırpma maskeleri sunuyor. Xcode projesi olarak indirilip değiştirilebiliyor; GitHub Releases ya da Homebrew cask ile kuruluyor. Swift, MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "vercel-labs/agent-desktop",
+   "inputs_hash": "cecdabc35bcf37fd181730cafe3dd4eb",
+   "description_tr": "Masaüstü uygulamalarını ajanlara kullandırmak için Rust CLI'ı; ekran görüntüsü yerine işletim sisteminin accessibility ağacını okuyup eleman referanslarıyla JSON veriyor. 54 komut, Chromium için CDP köprüsü ve Python, Swift, Go, Node'dan çağrılabilen bir C kütüphanesi var. macOS 13+ ve Accessibility izni gerekiyor. Apache-2.0.",
+   "usage_tr": "Lyricdrop v2'nin admin panelini ve 20-30 şarkılık onay turunu CDP portuyla ajana gezdirip manuel test adımını devredebilirsin; Claude Code'a araç olarak takılır, ayrı model faturası çıkmaz. Accessibility izni makine genelinde geniş yetki verir, onay kapısı koymadan canlı Supabase paneline ya da ödeme hesaplarına bağlama.",
+   "matched_project": "Lyricdrop",
+   "relevance": 7,
+   "investment_note": "Bilgisayar kullanımı ajanlarının altına oturacak ince bir OS erişim katmanı; bu katmanın standartlaşması frontier tech izleme listesinde takip edilmeye değer."
+  },
+  {
+   "full_name": "Droid-Deck/DroidDeck",
+   "inputs_hash": "0229a1bde94f089ec61b626bf720556c",
+   "description_tr": "SteamOS deneyimini Android'e getirmeyi hedefleyen uygulama: Steam Gaming Mode, tam Linux masaüstü, GOG, Epic ve Xbox entegrasyonu, Steam VR. Android 9+ ve Adreno 730 veya üzeri GPU istiyor, kök yetkisi gerekmiyor. Reklam ve telemetri yok, web sitesi yok, yalnızca depodan indirilmeli. Kotlin, GPL-3.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "Usagi-org/ai-goofish-monitor",
+   "inputs_hash": "390fdf02f254db1e0619252b059bdd02",
+   "description_tr": "Goofish'te (Xianyu) çoklu görevli, anlık ve zamanlanmış ilan takibi yapan, Playwright ve yapay zekâ tabanlı sistem; yönetim arayüzü var. Görevler AI ya da anahtar kelime kurallarıyla tanımlanıyor; OpenAI uyumlu, görsel girdi destekleyen bir model API'si gerektiriyor. README Çince. Python, MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "Zagitta/gpu-unlock",
+   "inputs_hash": "714e872352cef2fef5119593c4be3b41",
+   "description_tr": "GeForce RTX 20, 30 ve 40 serisinde FP32 birikimli FP16, BF16 ve TF32 tensor çekirdeklerinin yarı hıza sınırlanmasını sürücü yüklenmeden önce, açılışta kaldıran Linux aracı. Yamalı sürücü ya da VBIOS flash gerekmiyor. README prefill'de %25-55 hızlanma iddia ediyor; bağımsız doğrulanmamış. C, GPL-2.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "storytold/filmcraft",
+   "inputs_hash": "08785b28a648ac2aa66c2b28d3161a7f",
+   "description_tr": "Saf Rust ile yazılmış açık kaynak, profesyonel doğrusal olmayan video düzenleyici. Renk, ses, efekt, başlık ve dışa aktarma sunuyor; H.264 ve HEVC çözme, kompozisyon ve renk işlemini kendi kodu yapıyor. macOS, Windows, Linux ve WebAssembly ile tarayıcıda çalışıyor. ArtCraft ekibinden; Apache-2.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "Vincentwei1021/video-shotcraft",
+   "inputs_hash": "a6d1616093b95cd49d948cee31d86cb9",
+   "description_tr": "Claude Code ve Codex için, Remotion ile kod üzerinden ürün tanıtım videosu üreten skill. 152 çekim reçete kartı, 214 stil ve hareket önizlemesi, gerçek sayfa yakalamaları, ritme senkron kesimler ve ses efektleri içeriyor. Apache-2.0.",
+   "usage_tr": "Lyricdrop lansmanında mağaza videosu ve sosyal kreatifleri üretmek için kullanabilirsin; çıktı Remotion kodu olduğundan dil ve şarkı başına varyant üretmek tekrarlanabilir olur. Claude Code ile çalıştığı için ek API maliyeti yok. Reçeteler SaaS anlatımına göre kurulu, müzik oyunu ekranı için bir kısmını yeniden yazman gerekir.",
+   "matched_project": "Lyricdrop",
+   "relevance": 6,
+   "investment_note": null
+  },
+  {
+   "full_name": "dataelement/dsh-desktop",
+   "inputs_hash": "ceba41cb7d01f5a3dc2f3d9901954080",
+   "description_tr": "Dataelem'in DeepSeek Harness'ı kurulabilir masaüstü uygulamasına çeviren yerel öncelikli istemcisi (macOS, Windows). Harness'ı otomatik başlatıyor; profil, eklenti ve oturumları uygulama dizininin dışında tutuyor, telefondan devam etmeyi ve kaynak metinden düzenlenebilir PPTX üretmeyi destekliyor. Erken önizleme; MIT.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; uygulama DeepSeek Harness'a bağlı, senin zincirin ise Claude Code ve OpenCode üzerine kurulu. Oturum taşıma ve profil izolasyonu OpenCode için planladığın istemciyi tasarlarken referans olarak okunabilir.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "storytold/wordcraft",
+   "inputs_hash": "69d7aa0ca4145881634e758cd22f71b5",
+   "description_tr": "Microsoft Word'ün clean-room yeniden yazımı olduğunu söyleyen, saf Rust ile yazılmış açık kaynak kelime işlemci. Şerit arayüz, stiller, tablolar, değişiklik izleme, kaynakça ve mail merge sunuyor; .docx okuyup yazıyor. macOS, Windows, Linux, BSD ve WebAssembly ile tarayıcıda çalışıyor. ArtCraft ekibinden; Apache-2.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "openai/math",
+   "inputs_hash": "08c864b052947ff374e79cd7d28c51a0",
+   "description_tr": "OpenAI'nin adı açıklanmayan bir iç modelinin ürettiği matematik el yazmaları ve kanıt çıktıları: 373 aile içinde 721 makale. Bazılarının Lean ile biçimsel kanıtı var, diğerlerinde hata olabileceği belirtiliyor; depo bunları cilalı makale değil ham araştırma verisi olarak sunuyor. Lean, Apache-2.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "google/artemis",
+   "inputs_hash": "4cfad4ea4c6d0ee4db76988be276df40",
+   "description_tr": "Google'ın doğal dil talimatlarını gerçek Android cihazlarda otomasyona çeviren Python projesi. Uygulamalar arası akışları çalıştırıyor, Logcat ve ekran görüntüsü topluyor; MCP sunucusuyla Claude Code, Antigravity ve Windsurf'e bağlanıyor. AndroidWorld'de %99 üzeri tamamlama bildiriyor. Python 3.12+, Apache-2.0.",
+   "usage_tr": "Lyricdrop'ta Android cihazda tekrarlanan manuel test adımlarını (şarkıyı aç, boşlukları doldur, ekran görüntüsü al) MCP üzerinden Claude Code'a devredebilirsin; koşum yerel kalır. Yalnızca Android'i kapsar. Çok modlu model çağrıları Max aboneliğinin dışında API maliyeti doğurur, adım sayısını sınırla.",
+   "matched_project": "Lyricdrop",
+   "relevance": 7,
+   "investment_note": null
+  },
+  {
+   "full_name": "FlashML-org/FreeToken",
+   "inputs_hash": "ac02c66aaceb4fb837f5e52c5798ad01",
+   "description_tr": "Büyük açık ağırlıklı MoE modellerini tüketici donanımında çalıştırmak için edge odaklı serving motoru. GPU, CPU ve bellek tek havuz sayılıyor; DeepSeek-V4-Flash, Qwen3.6-35B-A3B ve GLM-5.2 destekleniyor, Anthropic ve OpenAI uyumlu API sunuyor. NVIDIA RTX 30/40/50 serisi, Windows ve Linux gerekiyor. Python, Apache-2.0.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; Anthropic uyumlu endpoint Claude Code ve OpenCode'u yerel modele bağlama fikrine uyuyor, ama destek NVIDIA RTX kartlarıyla sınırlı. Ofisteki M4 Pro Mac ve Mac mini listede yok; şimdilik izlemek yeterli.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": "Edge tarafında MoE serving'i ticarileştiren, iki ay içinde 13 binden fazla star toplayan ve arkasında bir ürün sitesiyle ekip bulunan yeni bir altyapı projesi; erken aşama AI altyapısı tezine uyan bir izleme adayı."
+  },
+  {
+   "full_name": "Renhuai123/ziwei-doushu",
+   "inputs_hash": "b408504a85f3c8a4ccc4164ebe21f18c",
+   "description_tr": "Ni Haixia'nın \"Tianji\" sistemine dayanan, Çin astrolojisi Zi Wei Dou Shu için açık kaynak natal harita motoru. Harita hesaplama algoritması, dönüşüm (sihua) sistemi, desen bilgi tabanı ve klasik metin verisi içeriyor; 674.976 hazır harita yorumundan oluşan 56,6 GB'lık bir veri kümesi de yayımlanmış. README Çince. TypeScript, MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  }
+ ]
+}

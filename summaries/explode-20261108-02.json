@@ -1,0 +1,391 @@
+{
+ "repos": [
+  {
+   "full_name": "milind-soni/OpenMausBot",
+   "inputs_hash": "785b1357ec4c6e4deb2ed0fc095a56a1",
+   "description_tr": "OpenMausBot, Grok Bot'a açık kaynaklı alternatif olarak konumlanan bir sohbet uygulaması: kenar çubuğundaki her bot yerelde çalışan bir Claude veya Codex ajanı; kendi kişiliği, modeli, bulut bilgisayarı ve bağlı uygulamaları var. Electron ile macOS, Windows ve Ubuntu'ya geliyor. TypeScript, Apache-2.0; README bir kripto token ile bağı olmadığını belirtiyor.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "storytold/lightcraft",
+   "inputs_hash": "52a1f3fef67d858955c5ae82ac4c9dff",
+   "description_tr": "LightCraft, saf Rust ile sıfırdan yazılmış, yıkıcı olmayan bir fotoğraf kitaplığı ve RAW geliştirme uygulaması. macOS, Windows ve Linux'ta yerel, WebAssembly ile tarayıcıda çalışıyor; 32-bit float, geniş gamutlu bir işleme hattı kullanıyor ve MCP üzerinden AI ajanlarının sürmesine izin veriyor. Apache-2.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "The-PR-Agent/pr-agent",
+   "inputs_hash": "eca206aa5287b033184a18857c32b41e",
+   "description_tr": "PR-Agent, Qodo'nun topluluk tarafından sürdürülen eski açık kaynak kod inceleme ajanı; pull request'lere AI ile inceleme ve öneri üretiyor. GitHub, GitLab, Bitbucket ve Azure DevOps ile çalışıyor, OpenAI, Anthropic ve Ollama modelleri kullanılabiliyor. README bunun Qodo'nun ücretsiz sunumu olmadığını vurguluyor. Python, MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "togg53192-cmd/jailbreaks",
+   "inputs_hash": "86063e00d6269173d89641fa8a996e7f",
+   "description_tr": "Frontier ve açık ağırlıklı 26'dan fazla model için 32 sistem prompt'u, persona tanımı, AGENTS.md ve Ollama Modelfile içeren bir koleksiyon. Depo adı ve açıklaması jailbreak amaçlı; README talimat hiyerarşisini ve politika geçersiz kılmayı belgeleyen araştırma amacı olduğunu söylüyor. Kod yok, lisans ve konu etiketi belirtilmemiş.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "jub0t/Concat",
+   "inputs_hash": "bb4c37a744d5c33143e7500afc3393b2",
+   "description_tr": "Concat, CapCut'a alternatif olmayı hedefleyen açık kaynak, yerel öncelikli bir video editörü; macOS, Windows, Linux ve Android'de Rust çekirdeği ve GPU compositor ile çalışıyor. Otomatik altyazı, metinden sese, arka plan kaldırma ve 4K export var; modeller bir kez indirilince çevrimdışı çalışıyor. JSON-RPC, MCP ve CLI ile ajanlar da sürebiliyor. AGPL-3.0, beta.",
+   "usage_tr": "Folio'nun günlük içerik pipeline'ında render ve altyazı adımını MCP veya CLI üzerinden buna devredebilirsin; yerel Whisper ile altyazılayıp story formatında dışa aktarır, Mac'te yerel çalıştığı için API maliyeti çıkmaz. Lyricdrop'ta yalnızca pazarlama kreatifleri için işe yarar. Uyarı: AGPL-3.0 ve beta; export çıktısını her koşuda kontrol et.",
+   "matched_project": "Folio",
+   "relevance": 5,
+   "investment_note": null
+  },
+  {
+   "full_name": "elayadesign/ai-design-skills",
+   "inputs_hash": "66d21a295116f34863328057f1243617",
+   "description_tr": "Tasarım odaklı agent skill'leri (ör. landing-page-design) toplayan bir depo; `npx skills add` ile Claude Code, Cursor, Codex gibi ajanlara kuruluyor. README ağırlıklı olarak kurulum adımlarını anlatıyor, skill'lerin içeriğini ayrıntılandırmıyor. MIT lisanslı.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "peach-mitao/peach",
+   "inputs_hash": "753b5486cea2a27633402085a5edaea7",
+   "description_tr": "Peach, video meta verisi kazıyan ve medya kütüphanesi yöneten yerel öncelikli, kendi sunucunda barındırılan bir uygulama: video kodlarını tanıyıp NFO okuyor, başlık, oyuncu, stüdyo ve kapak bilgisini birden çok kaynaktan dolduruyor. Yerel diskleri, SMB'yi, bulut depolamayı ve PikPak'ı birlikte listeliyor. Python ve React, AGPL-3.0; konu etiketleri yetişkin içerik kütüphanelerine işaret ediyor.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "tangency-labs/solidcraft",
+   "inputs_hash": "260ce14608cbd00ee2af6d66d3880ca3",
+   "description_tr": "SolidCraft, saf Rust ile yazılmış açık kaynak parametrik 3D CAD uygulaması: eskiz, kısıt ve özellik zaman çizelgesiyle katı model kuruluyor, ölçü değişince model yeniden hesaplanıyor. Masaüstü ve tarayıcıda çalışıyor, yerleşik MCP sunucusuyla AI ajanları da modelleme yapabiliyor. STEP desteği var; Apache-2.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "cdyforever/how-to-live-better",
+   "inputs_hash": "875e79bddef3800566e839923e025147",
+   "description_tr": "《高性价比人生指南》adlı, 528 maddelik Çince bir kitabın tek sayfalık çevrimiçi okuma sürümü: telefonda okunabilir, aranabilir, bağımlılıksız ve çevrimdışı çalışıyor. HTML ile yazılmış, lisans belirtilmemiş. README'de içerik yok; bilgi yalnızca depo açıklamasına dayanıyor ve AI ile doğrudan bağı görünmüyor.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "yihui-dev/awesome-opus5-5-videos",
+   "inputs_hash": "10deef7b7093cc2a8530f910041ae2c9",
+   "description_tr": "Claude Opus 5.5'e animasyonu kod olarak (HTML, Canvas, SVG, Three.js) yazdırarak üretilmiş viral videoların ve arkasındaki prompt'ların derlemesi. Yüzlerce prompt motion graphics, explainer ve 3D sahne gibi kategorilere ayrılmış; her girdi yaratıcının orijinal paylaşımına bağlanıyor. MIT lisanslı.",
+   "usage_tr": "Folio'nun günlük içerik pipeline'ında explainer ve motion graphics kategorileri prompt kaynağı olabilir; çıktı kodla çizildiği için Claude Code ile Max aboneliği içinde üretilir. Uyarı: foto-gerçekçi video değil, bu bir üslup kararı; günlük döngüyü yine n8n tarafında kendin kurarsın.",
+   "matched_project": "Folio",
+   "relevance": 5,
+   "investment_note": null
+  },
+  {
+   "full_name": "ccch1mneyyy/dsh-Go",
+   "inputs_hash": "2cb12124a7d3e944d3aebde68356595e",
+   "description_tr": "dsh-go, DeepSeek Harness'ın Android istemcisi: telefonda root ve Termux gerekmeden yerleşik bir Linux ortamıyla yerel çalışıyor, ayrıca bilgisayardaki DSH'yi uzaktan sürebiliyor. Mesaj kuyruğu, paylaşım kartları, uçtan uca şifreli konuşma bağlantıları ve tablet düzeni var. Dart, AGPL-3.0; iOS sürümü henüz yok.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "shihabal3amri/DiPlay",
+   "inputs_hash": "7f6bcb0380a8e84644cbc8ab20600a58",
+   "description_tr": "DiPlay, uyumlu Android head unit'lerde çalışan bağımsız bir CarPlay alıcısı; kablolu ve kablosuz (Wi-Fi Direct, araç hotspot'u veya aynı LAN) modları genel önizlemede. Arabaya kurulur; jailbreak, dongle veya hesap istemiyor. Kapsam BYD araçlarına odaklı, diğer markalar desteklenmiyor. Kotlin, GPL-3.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "google/elephant-goldfish-model",
+   "inputs_hash": "31f713e41f43f4ccb415c4b5dcc62104",
+   "description_tr": "Elephant-Goldfish Model (EGM), kodlama ajanları için açık kaynak bir eklenti: 'Elephant' proje bağlamını tutup spesifikasyonu yazıyor, 'Goldfish' gözden geçirenler önceki konuşmayı görmeden taslağı inceliyor; mimari kararları ve onayı sen veriyorsun. Codex, Claude Code ve Antigravity gibi ajanlara kuruluyor. Python, Apache-2.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "lemomo-ai/lemo-opuscar",
+   "inputs_hash": "8f8db72bc77d15c84b6a8c8af8eea0af",
+   "description_tr": "Claude Code için 66 hazır film stili ve kendi stilini çıkarma imkânı sunan bir araç seti. Her stil bir stil prompt'u ve Claude Opus 5.5'in tamamen kodla ürettiği bir demo filmden oluşuyor; video modeli kullanılmıyor. README stillerin Opus 5.5 için ayarlandığını, diğer modellerde tutmayabileceğini söylüyor. JavaScript, MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "seedds/nxnative",
+   "inputs_hash": "d3eba7efa9860069f9c07053c11b0abf",
+   "description_tr": "Switch oyunlarını iPhone, iPad ve Mac'te yerel çalıştırmayı hedefleyen bir proje: bir NSP klasörünü imzasız IPA'ya çeviriyor (NSO yeniden yazıcı, Horizon HLE host, NVN'den Metal'e). README içeriği alınamadı, bilgi yalnızca depo açıklamasına dayanıyor. Python, MIT; AI ile doğrudan bağı görünmüyor.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "Thysrael/Horizon",
+   "inputs_hash": "2da5bc7e90e64f642f30f81ca3a65dc3",
+   "description_tr": "Horizon, çeşitli kaynaklardan haber toplayıp LLM ile eleyen ve İngilizce ile Çince günlük bülten üreten kişisel bir haber radarı. MCP ve Feishu bot entegrasyonu var, uv ile Python'da kuruluyor. MIT lisanslı.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "chthollyphile/folia-major",
+   "inputs_hash": "6b873ea43acb5f8f03f17ff306efb539",
+   "description_tr": "Folia, tam ekran animasyonlu şarkı sözlerini merkeze alan bir müzik oynatıcı: yerel dosyalar, Navidrome ve NetEase, QQ Müzik gibi çevrimiçi servisleri destekliyor; akıllı söz eşleştirme ve AI ile renk teması üretimi var. Electron ile Windows, macOS, Linux, ayrıca Node.js web sürümü. TypeScript, AGPL-3.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "max-sixty/worktrunk",
+   "inputs_hash": "36f920947f769acf91468f525df84717",
+   "description_tr": "Worktrunk, git worktree yönetimini paralel AI ajan akışları için birkaç komuta indiren bir Rust CLI'ı: her ajana ayrı bir çalışma ağacı açılıyor. crates.io üzerinden kuruluyor; CI, kapsam ölçümü ve ayrı bir doküman sitesi var.",
+   "usage_tr": "Lyricdrop v2'de aynı depoda birkaç Claude Code oturumunu ayrı worktree'lerde (hizalama servisi, admin panel, mobil) paralel çalıştırmak için doğrudan uygun. Ofisteki M4 Pro Mac'te yerel, ek API maliyeti yok. Uyarı: paralel ajan sayısı Max aboneliğinin oturum limitlerini daha hızlı tüketir.",
+   "matched_project": "Lyricdrop",
+   "relevance": 6,
+   "investment_note": null
+  },
+  {
+   "full_name": "AhmadHassan-BTed/Turnitout-Humanizer",
+   "inputs_hash": "d28273e773dd7398da1b61d7bc94951b",
+   "description_tr": "Turnitin, GPTZero, CopyLeaks gibi intihal ve AI yazı denetleyicilerini atlatmayı vaat eden bir araç: görünmez Unicode karakterlerini ve C2PA meta verisini temizlediğini, üretken AI kullanmadığını söylüyor; LaTeX, DOCX ve kaynak kodu destekliyor. Amacı akademik denetimi aşmak; iddialar doğrulanmış değil. HTML, lisans belirsiz.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "storytold/vectorcraft",
+   "inputs_hash": "c8d23a404c9ff5109cbec55e0098f3c5",
+   "description_tr": "VectorCraft, saf Rust ile yazılmış açık kaynak vektör çizim uygulaması: Bézier kalem aracı, Pathfinder, canlı blend, katmanlar, clipping mask ve dış parıltı gibi efektler var. macOS, Windows, Linux ve FreeBSD'de yerel, WebAssembly ile tarayıcıda çalışıyor. ArtCraft ekibinden, Apache-2.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "jakubkrehel/skills",
+   "inputs_hash": "afae03034c5ed2969a2d0d7024a6a734",
+   "description_tr": "Arayüz tasarımı için bir agent skill koleksiyonu: erişilebilirlik, yerleşim, tipografi, renk sistemi, köşe yarıçapı, gölge ve animasyon konularında inceleme ve cila yapan skill'ler var; biri bir ekranı inceleyip sıralı tek rapor döndürüyor. skills.sh üzerinden kuruluyor, MIT lisanslı.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "dsh-market/dsh-market",
+   "inputs_hash": "d2a083f830bf28a1b4e2f52bd9158c34",
+   "description_tr": "dsh-market, DeepSeek Harness içindeki eklenti pazarı: dsh 0.2.1+ sürümünde Plugins sayfasında bir sekme olarak tarama, arama ve tek tıkla kurulum sunuyor. Aynı katalog npm üzerinden servis edilen bir dizin olarak da eklenebiliyor; temalar yeniden başlatmadan değişiyor. TypeScript, MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "FareedKhan-dev/kimi-k3-in-c",
+   "inputs_hash": "13452d6ce45096805cfdedcb293cbef2",
+   "description_tr": "2,78 trilyon parametreli Kimi K3 modelini tek CPU'da, ölçülen 8,24 GB tepe belleğiyle çalıştıran taşınabilir C99 çıkarım motoru; BLAS, framework ve GPU yok. MoE uzmanlarını her token için diskten akıtıyor; 8 GB RAM'de token başına yaklaşık 26,5 saniye, 128 GB üstünde 5,6 saniye. Hedef Linux x86-64 ve AVX2; Apache-2.0.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam yerel model altyapısı. Depo Linux x86-64 ve AVX2 hedefliyor, Apple Silicon yolu yok; token başına saniyeler de üretim akışlarına uymuyor. Değeri eğitici: uzmanları diskten akıtma fikrini okumak.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "heydamir/unslop",
+   "inputs_hash": "e4819c270a78f8279ef15f3823b40086",
+   "description_tr": "unslop, 'vibecoded' görünen yapay zeka arayüzlerini tasarlanmış bir arayüze dönüştürmeyi amaçlayan bir Claude skill'i. README içeriği alınamadı; bilgi yalnızca depo açıklamasına dayanıyor. JavaScript olarak etiketli, CC-BY-4.0 lisanslı.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "pengchujin/aerial-tv",
+   "inputs_hash": "a31dd8549ccd0e1794bd6cfa423c1573",
+   "description_tr": "Aerial, Xiaomi, TCL, Skyworth gibi Çin pazarı televizyonları için tvOS'tan esinlenmiş, reklamsız ve öneri akışsız açık kaynak bir Android TV ana ekranı. Apple TV'nin 114 hava çekimi ekran koruyucusu, Bing günlük duvar kağıdı ve telefondan QR ile düzenleme var; kurulum ADB üzerinden, root gerekmiyor. Kotlin, MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "CopilotKit/OpenBot",
+   "inputs_hash": "96b6f0ccf0eacc45b78814e456bd8336",
+   "description_tr": "OpenBot, kendi altyapında çalışan bir ajan platformu: her ajan kendi konteyneri, Chromium tarayıcısı ve dosyalarıyla çalışıyor; AG-UI protokolünü konuşan herhangi bir ajan bağlanabiliyor. Her eylem önce karar veren, sonra kayıt yazan bir gateway'den geçiyor. Docker Compose ve PostgreSQL gerekiyor; MIT, alpha, klonlanıp uyarlanacak bir şablon.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam manuel test ve araştırma işlerini ajanlara devretmek. Alpha aşamasında; Docker, PostgreSQL, ayrı bir Intelligence lisansı ve model anahtarı istiyor, yani kurulum ve sürekli API maliyeti demek. Birkaç sürüm sonra tekrar bakmak daha doğru.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": "CopilotKit'in AG-UI protokolü etrafında kurduğu yönetişim katmanı ve kurumun sahip olduğu asistan konumlandırması, kurumsal AI alımlarında net bir boşluğa oturuyor; şirket olarak izlemeye değer."
+  },
+  {
+   "full_name": "zhu1090093659/dsh-web",
+   "inputs_hash": "163f6e3526300806b0301fd578093666",
+   "description_tr": "dsh-web, DeepSeek Harness'ın web arayüzüne resmi profile mekanizmasıyla eklenen bir eklenti ekosistemi: görev otomasyon panosu, ajan takımları, canlı tarayıcı görünümü, telefondan uzaktan erişim, Web SSH ve token maliyet istatistiği sunuyor. Temalar ayrı kuruluyor; hepsini birlikte kuran bir paket var. TypeScript, Apache-2.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "lnkiai/m3e-canvas",
+   "inputs_hash": "8e8c2fa5e2a627c20a76253744385704",
+   "description_tr": "M3E Canvas, tarayıcıda Material 3 Expressive ekranlarını sürükle-bırak ile çizip birbirine bağlamayı, önizlemede gezmeyi ve tasarımı Claude Code, Codex veya Gemini CLI'a yapıştırılacak bir prompt'a çevirmeyi sağlayan araç. Hesap ve sunucu gerekmiyor. Next.js, MIT.",
+   "usage_tr": "Dubai uygulama stüdyosu fikrinde bir uygulama fikrini hızla ekran akışına çevirip Claude Code'a devretmek için kullanılabilir; Lyricdrop'un Android tarafında da hızlı eskiz işine yarar. Uyarı: çıktı Material 3 Expressive dilinde; iPhone öncelikli Expo işlerinde ve Folio'nun Instagram görünümünde bu dil uymaz.",
+   "matched_project": "Dubai uygulama stüdyosu",
+   "relevance": 4,
+   "investment_note": null
+  },
+  {
+   "full_name": "jaredpalmer/kev",
+   "inputs_hash": "7159376061c52e1b435e57dc8a40a2d0",
+   "description_tr": "Kev, Qwen3.5 ve Qwen3.8 üzerine kurulu küçük karar modelleri ailesi: evet/hayır, çoktan seçmeli ve puanlama sorularını tek istekte, kalibre olasılıklarla yanıtlıyor. API'si TypeSafe'in Jev'iyle uyumlu, onların Python SDK'sı yerel sunucuya bağlanabiliyor. 0.8B'den 27B'ye dört boyut; CUDA ve Apple Silicon (MLX). Apache-2.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "LAMDA-NeSy/Research-Starter-Kit",
+   "inputs_hash": "16ac290482f412df1b8bc39151cae05f",
+   "description_tr": "Nanjing Üniversitesi'nden bir öğretim üyesinin yürüttüğü, araştırmaya yeni başlayanlar için Çince rehber: makale bulma ve okuma, fikir üretme, sunum ve abstract'tan rebuttal'a makale yazımı. Metinler depoda değil, Feishu wiki bağlantılarının arkasında; depo içindekiler listesi gibi. Lisans belirtilmemiş.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam araştırma işleri için bir yöntem çerçevesi aramak. Rehber akademik yayın süreci için yazılmış, tamamı Çince ve harici wiki'lerin arkasında; kod veya şablon yok, bir pipeline'a takılacak yanı da yok.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "crmne/spotifast",
+   "inputs_hash": "5559044a4bd59497dbafe6b6053308a4",
+   "description_tr": "Spotifast, Rust ve egui ile yazılmış, tarayıcı motoru içermeyen hafif bir Spotify istemcisi: kütüphane, yerel çalma ve Spotify Connect, Linux, macOS ve Windows'ta. Çalmak için Spotify Premium gerekiyor; ücretsiz hesaplar yalnızca gezip arayabiliyor. MIT lisanslı.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "KKKKhazix/AIHOT",
+   "inputs_hash": "99a881d19a021bca80f8dcb801260b99",
+   "description_tr": "AIHOT, kendi sektörel haber sitenizi kurmak için açık kaynak bir çatı: RSS, web listeleri, X ve WeChat gibi kaynaklardan içerik toplayıp LLM ile eliyor, iki kez bağımsız puanlıyor, aynı olayı kümeleyip Çince başlık, özet ve günlük bülten üretiyor. Prompt'lar ve eşikler depoda açık; TypeScript, PostgreSQL, Docker Compose, MIT.",
+   "usage_tr": "Arslan Holding'in deal flow ve pazar araştırmasında hazır iskelet olarak kullanabilirsin: kaynak listesini MENA-Türkiye AI ve girişim sermayesi kaynaklarıyla değiştirince her sabah tek bir bülten çıkar. Docker Compose ve PostgreSQL DigitalOcean altyapına oturur. Uyarı: prompt'lar Çince yazılmış, uyarlaman gerekir.",
+   "matched_project": "Arslan Holding",
+   "relevance": 6,
+   "investment_note": null
+  },
+  {
+   "full_name": "NVIDIA/auto-ontology",
+   "inputs_hash": "ba4d220249c636e601987a13903a67a0",
+   "description_tr": "NVIDIA Auto Ontology, kurumsal meta veriden anlamsal ve grafik tabanlı bir bağlam katmanı kuran Python kütüphanesi: sistemler arasındaki tanımları uzlaştırıyor ve ajanlara MCP, CLI ve API ile verinin anlamını sunuyor. Amaç deterministik sorgu üretimi ve daha açıklanabilir sonuç. Apache-2.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "rehan-remade/universal-modder",
+   "inputs_hash": "c77d89e974c5edb1b89405cff0682b70",
+   "description_tr": "Universal Modder, bir kodlama ajanının PC oyunlarını modlamasını sağlayan skill, araç ve ortak bilgi tabanı paketi: ajan oyunun motorunu çözüyor, modu yazıyor, fal ile görsel, 3D ve ses üretiyor, çalışan oyunda test ediyor. Claude Code, Codex, Gemini CLI ve diğerleri için geliyor; `um` adlı Python CLI var. Varlık üretimi fal anahtarı istiyor. MIT.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; oyun modlama aktif işlerinden birine denk gelmiyor. En yakın bağlam biçimi: aynı skill setini birden çok ajan için paketleyen ve ortak bilgi tabanı tutan bir Claude Code plugin örneği olarak okunabilir. Kurmaya gerek yok; fal anahtarı API maliyeti getirir.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "hoochanlon/fq-book",
+   "inputs_hash": "5e51e1a999295ac3d22adcc06a7f83b9",
+   "description_tr": "GFW'nin adres ve port engelleme, DNS önbellek zehirleme ve SSL kesme gibi yöntemlerini; proxy, tünel ve VPN'in çalışma ilkelerini anlatan Çince bir kitap. Yazılım yapılandırma adımları ve erişim yöntemleri de içeriyor. Shell olarak etiketli, lisans belirtilmemiş; AI ile doğrudan bağı yok.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "Edge0-AI/Edge0",
+   "inputs_hash": "a2c32344ea7567b784813595bdff4bb2",
+   "description_tr": "edge0, seyrek MoE modelleri uç cihazlarda çalıştıran açık kaynak çıkarım çatısı: uzman ağırlıklarını SSD'den akıtıyor, kaybı Recover-LoRA ile telafi ediyor ve sonraki adımda gerekecek uzmanları bir prerouter ile tahmin ediyor. 35B-A3B ve 8B-A1B modelleri yaklaşık 2,9 GB ve 1,0 GB bellek kullanıyor. Mevcut arka uç MLX (Apple Silicon); Apache-2.0.",
+   "usage_tr": "'Mümkün olduğunca Mac'te yerel model' tercihinin doğrudan karşılığı: 35B sınıfı bir modeli ofisteki Mac'te belleği doldurmadan çalıştırabilirsin. Lyricdrop'ta şarkı başına toplu üretim işlerini ve sesli not uygulamasındaki kategori çıkarımını `edge0 serve` ile aynı yerel sunucuya bağlayabilirsin. Uyarı: yayımlanan modeller önizleme sürümünde.",
+   "matched_project": "Lyricdrop",
+   "relevance": 8,
+   "investment_note": "Uç cihazda MoE çıkarımı, model sağlayıcısına bağımlılığı azaltmak isteyen uygulama şirketleri için gerçek bir boşluğa denk geliyor; altyapı tarafında erken aşama bakıyorsan takip listesine girebilecek bir ekip."
+  },
+  {
+   "full_name": "Orkas-AI/Orkas",
+   "inputs_hash": "fb0ed68981368b163865de1b158f5ba2",
+   "description_tr": "Orkas, masaüstünde yerel çalışan açık kaynak bir AI ekibi: bir Commander hedefi yapılacaklara bölüp 16 yerleşik uzman ajanı (DeepResearcher, ContentWriter, PptMaker vb.) ile Claude Code, Codex, OpenCode gibi ajanları koordine ediyor. Projeler, zamanlanmış otomasyonlar ve bağlayıcılar var. macOS ve Windows; yerleşik modeller veya kendi anahtarlar. MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "Ryze-AI-Adgent/open-seo-mcp-skills",
+   "inputs_hash": "517fac61c84e15ff72c780d05af388a6",
+   "description_tr": "Claude için MIT lisanslı SEO ve GEO skill seti ve onları besleyen barındırılan Ryze MCP connector'ünün kurulum katmanı. Skill'ler anahtar kelime araştırması, sıra takibi, site denetimi, backlink ve AI görünürlüğü işlerini kullanıcının Search Console, GA4 ve Ads verisi üzerinde yapıyor. Skill'ler açık kaynak, connector satıcının kapalı servisi.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam Arslan Holding'in yeni sitesi ile Lyricdrop'un lansman sayfası. Skill'ler birikmiş Search Console ve GA4 geçmişi istiyor, böyle bir içerik sitesi henüz yok. Değerin çoğu, hesaplarını bağlayacağın barındırılan connector'da; bunu ayrıca değerlendirmelisin.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "Albert-Weasker/niubigeo",
+   "inputs_hash": "d75ebd9507063dc3345b04778a537268",
+   "description_tr": "NiubiGEO, bir markanın yapay zeka yanıtlarında nasıl göründüğünü ölçen açık kaynak araç: alan adı giriliyor, modellerin ürünü nasıl tanımladığı, hangi rakipleri andığı ve hangi kaynakları gösterdiği karşılaştırılıyor; ham yanıtlar saklanıyor. Node.js 22+ veya Docker ile çalışıyor, kendi OpenRouter anahtarını istiyor. Apache-2.0; arkasında aynı alanda ücretli hizmet var.",
+   "usage_tr": "Lyricdrop lansmanından önce 'şarkılarla İngilizce öğreten uygulama' gibi sorularda modellerin hangi uygulamaları saydığını ölçmek ve ASO rakip analizini beslemek için kullanabilirsin; aynı testi Arslan Holding'in alan adıyla da çalıştırabilirsin. Uyarı: her test OpenRouter üzerinden model çağrısı, yani düzenli bir API maliyeti.",
+   "matched_project": "Lyricdrop",
+   "relevance": 5,
+   "investment_note": null
+  },
+  {
+   "full_name": "zai-org/ZCode",
+   "inputs_hash": "eb6ddafb8ce41a604c9c9eb8f25b38e2",
+   "description_tr": "ZCode, Z.ai'nin kod ajanı çalışma tezgahı: aynı depoda Electron masaüstü uygulaması, tarayıcı arayüzü ve terminalde TUI olarak çalışan Agent CLI var; üçü aynı ajan çalışma zamanını paylaşıyor. SSH/WSL ile uzak proje desteği var. TypeScript, Apache-2.0; dokümantasyon ağırlıklı Çince.",
+   "usage_tr": "İlgi çekici kısmı mimari: aynı ajan çalışma zamanının masaüstü, web ve terminal arayüzleriyle nasıl paylaşıldığı; iPhone'dan ofis Mac'ine bağlanırken kopma sorununa karşı kendi web istemcini yazarken veya OpenCode için planladığın Expo/EAS istemcisi için okunacak örneklerden biri. Claude Code'un yerini almasını beklemem: model erişimi Z.ai'ya bağlı, ayrı maliyet getirir.",
+   "matched_project": "Claude Code",
+   "relevance": 4,
+   "investment_note": null
+  }
+ ]
+}

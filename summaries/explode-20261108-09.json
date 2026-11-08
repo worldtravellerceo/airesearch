@@ -1,0 +1,399 @@
+{
+ "repos": [
+  {
+   "full_name": "liandu2024/Open-Box",
+   "inputs_hash": "a911698a1acdf6d965e887d9b98aba7a",
+   "description_tr": "Open-Box, OpenWrt, Debian/Ubuntu ve Docker üzerinde çalışan, sing-box çekirdeğini içeren bir şeffaf proxy; abonelik, node, yönlendirme, DNS ve güvenlik duvarı ayarları tarayıcıdan yapılıyor. Android, macOS, Windows ve Linux istemcileri evdeki router ile eşleşiyor. Kendi kodu kapalı kaynak ve özel lisanslı, açık kaynak değil.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "TianyuCodings/NanoJev",
+   "inputs_hash": "b4e7b762b5f2621f4eb9146d260ed667",
+   "description_tr": "NanoJev, TypeSafe AI'ın Jev modelinin küçük bir kopyası: paralel kararlar, dinamik adaylar ve uçtan uca bir eğitim hattı sunuyor. README, ViZDoom, Maze ve Snake görevlerinde tek checkpoint ile ölçülen sonuçları ve ilgili benchmark ile veri setini listeliyor. Python, MIT lisanslı; ağırlıklar Hugging Face'te.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "SonicloudTech/sonicloud_opensdk",
+   "inputs_hash": "f511fb46a9345b2239fb8726a3b3994e",
+   "description_tr": "SoniCloud Recorder, BLE kayıt cihazlarını Android, iOS, HarmonyOS, Flutter, Windows ve macOS'a bağlamak için açık kaynak bir referans SDK. Kayıt kontrolü, canlı ses, dosya aktarımı, çevrimdışı transkripsiyon ve üretici uyarlama katmanı örnekleriyle geliyor. Donanım üreticileri ve entegratörler için; C++, MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "yibie/awesome-jev",
+   "inputs_hash": "b7888a2330e1c0cc3602d3eef92aab9f",
+   "description_tr": "Jev tabanlı kamuya açık projeleri derleyen bir awesome listesi. Jev, TypeSafe AI'ın sohbet üretmeyen, yapılandırılmamış girdi ve tipli bir soruyla güven skorlu seçim, puan veya boolean döndüren modeli. README, listeye alınmanın onay anlamına gelmediğini ve aynı gün toplu gönderilen depolara temkinli yaklaşılmasını söylüyor.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, sesli notun kategorisini çıkaran adımı tipli karar olarak modellemek. Ama depo kütüphane değil, barındırılan bir modelin bağlantı listesi; Mac'te yerel çalışmıyor ve her çağrı API maliyeti demek. Birkaç günlük, o yüzden şimdilik izleme listesi yeterli.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "ithtelab/workbuddy-manager",
+   "inputs_hash": "193b211a6823051680febeddba5003f2",
+   "description_tr": "WorkBuddy Manager, Tencent CodeBuddy hesap havuzunu yöneten bir web konsolu ve OpenAI uyumlu ters proxy ağ geçidi. QR ile toplu hesap ekleme, otomatik giriş ve keep-alive, anahtar grupları, IP ve model beyaz listesi, kullanım istatistikleri sunuyor. FastAPI ve Next.js ile yazılmış; lisans alanı belirsiz, README MIT diyor.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "elvarofficial/teardown",
+   "inputs_hash": "cd411d8f0f6761a2a5c7896e5b480051",
+   "description_tr": "teardown, herhangi bir makineyi parçalarına ayırabileceğin 3D simülatöre çeviren bir Claude Code skill'i. İstenen makine için three.js tabanlı tek HTML dosyası üretiyor, istenirse kayıt turunu videoya alıyor. V8 motor, Cessna ve Strandbeest örnekleri hazır geliyor. JavaScript, MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "shaongitbd/doory",
+   "inputs_hash": "72a19090dcb2d089751cb9d531fd81e6",
+   "description_tr": "Doory, tarayıcıda çalışan, Canva alternatifi açık kaynak bir tasarım editörü: poster, sosyal medya gönderisi, slayt, özgeçmiş ve kartvizit; PNG, SVG, PDF, MP4 ve GIF dışa aktarımı var. Hesap ve ücretli plan gerekmiyor, Docker ile kendi sunucunda çalışıyor. Proje genç ve şablon kütüphanesi küçük, yalnızca on şablon.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "alchaincyf/huashu-motion",
+   "inputs_hash": "99cb4f6a61bb47d39542bec8784283be",
+   "description_tr": "huashu-motion, Claude Code ve Codex gibi ajanlara ürün tanıtım filmi yaptıran bir skill. Ajan ürünü okuyup üç yön öneriyor, filmi yazıp müziği besteliyor, tarayıcıdaki editörde kareye tıklayarak istenen yeri değiştirtiyor. npx skills ile kurulur; JavaScript, MIT, README Çince ağırlıklı.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "LearnPrompt/awesome-seedance",
+   "inputs_hash": "ee01a393f107e887cc9ddb9ac4da443e",
+   "description_tr": "Awesome Seedance, Seedance 2.5 ve 2.0 metinden videoya modelleri için orijinal paylaşımlarına kadar izlenebilen bir prompt kütüphanesi. README'ye göre vaka çapraz model olarak yeniden test edilmiş, 27 kopyalanabilir şablon ve kurulabilir AI-video skill'leri var. Veri goodcase.ai'den günlük senkronlanıyor; kod MIT, derleme CC BY 4.0.",
+   "usage_tr": "Folio'nun günlük içerik üretiminde video tarafında şablonlardan başlayıp prompt yazma süresini kısaltabilirsin; skill olarak Claude Code içinden de çağrılabilir. Uyarı: Seedance kapalı ve barındırılan bir model, her klip API maliyeti demek ve Mac'te yerel çalışmıyor. Önce klip başına birim maliyeti hesaplamak doğru olur.",
+   "matched_project": "Folio",
+   "relevance": 6,
+   "investment_note": null
+  },
+  {
+   "full_name": "N4darae/shrt",
+   "inputs_hash": "ab5fb6b63c3d7dd89a04f3c74587e1af",
+   "description_tr": "shrt, API çağrı zincirlerini YAML olarak tanımlayıp bir insanın onayladığı baseline'a karşı her sürümde yeniden oynatan bir regresyon aracı; bir alan değiştiğinde adımı, alanı ve şüpheli yazmayı adıyla bildiriyor. Connect protokolü konuşan Go servislerini hedefliyor; Go 1.26 ve buf gerekiyor. Kodlama ajanı için tasarlanmış, elle de çalışıyor.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "NotProtonNot/NotProton",
+   "inputs_hash": "dabe0038496b99d3ebeaffbcf1efa1c9",
+   "description_tr": "NotProton, macOS Steam istemcisindeki devre dışı Steam Play'i açıp Proton'un bazı bileşenlerini macOS'a taşıyor; böylece Windows oyunları CrossOver üzerinden çalışıyor. Belirli Steam ve CrossOver sürümleriyle uyumlu, FEX ve Rosetta seçenekleri var. README Tuxera NTFS'in veri bozduğu konusunda uyarıyor. Scala, GPL-3.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "larashero3-dotcom/lieflat-gongwen",
+   "inputs_hash": "45d51730fa2b076831d9f4814e146ebb",
+   "description_tr": "Çince resmi yazı (gongwen) yazımı için bir skill: 102 bin kelimelik bir derlemeden cümle uzunluğu, tasnif işaretleri ve başlık sayısı gibi ölçülebilir üslup parametreleri çıkarılmış. Çıktı bu aralıklara göre doğrulanıyor; doğrulanamayan sayılar uydurulmuyor, yer tutucu bırakılıyor. Python, lisans belirsiz.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "LoreanXavier/pt-pc",
+   "inputs_hash": "9ae00b998e5990d6d522e66997d52aa7",
+   "description_tr": "P.T.'nin (Kojima Productions, 2014 PS4 teaser'ı) Windows, Linux ve macOS için yerel PC portu; emülatör değil, oyun mantığı C++ ile yeniden yazılmış ve Vulkan ile DirectX 12 çiziciler içeriyor. Varlıklar çalışma anında senin kendi PS4 dosyalarından okunuyor. Tek kişi geliştiriyor, issue'lar kapalı, hata bildirimi Discord'dan.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "opengeos/RustGIS",
+   "inputs_hash": "c42927d2a0afb24ccc7b54a97766e6bf",
+   "description_tr": "RustGIS, saf Rust ile yazılmış açık kaynak bir CBS; Windows, macOS ve Linux'ta yerel, WebAssembly ile tarayıcıda da çalışıyor. GPU ile çizim yapıyor, dosyalar makinende kalıyor, her işlem betiklenebilir bir komut. İstenirse seçtiğin bir AI modeline soru gönderebiliyor. Apache-2.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "Ebony-Vinyl/EAC-Desktop",
+   "inputs_hash": "2170bdab05b6fbf6a1d2255678c735d2",
+   "description_tr": "EAC-Desktop (Embracing All Creation), DeepSeek Harness (DSH) için yüzlerce eklentiyi bir arada çalıştırmayı hedefleyen Electron/Tauri masaüstü uygulaması. Windows'ta çalışıyor, README Çince ve İngilizce. JavaScript, MIT. README'den eklenti mimarisi ayrıntıları çıkarılamadı.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "amontlabs/lcu",
+   "inputs_hash": "63057e876c2f10c1d38dba736136423b",
+   "description_tr": "LCU, Codex'in computer-use çalışma zamanını Codex uygulamasından ayırıp başka ajan harness'lerinde kullanılabilir hale getiriyor; Codex kimlik doğrulaması gerekmiyor ama yerelde resmi ChatGPT masaüstü uygulaması kurulu olmalı. Claude Code için eklenti yöneticisiyle kurulum var. macOS ve Linux, MCP/skill olarak çalışıyor. JavaScript, MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "ahwootech/BRUTAL",
+   "inputs_hash": "2c9092b4265315f704f4fe3f8df48eb2",
+   "description_tr": "BRUTAL, C# ile oyun veya kendi oyun motorunu yazmak için açık kaynak bir framework: yerel API'lere ve Vulkan'a doğrudan erişim, matematik, bellek, koleksiyon, iş zamanlama ve GLFW, Dear ImGui, FMOD, Jolt, Box2D bağlamaları sunuyor. Kitten Space Agency ile RimWorld'ün Waylith motoru bunun üzerine kurulu. Lisans alanı belirsiz.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "Player-YN/BrowserKitten",
+   "inputs_hash": "d582bc40f5df416d5f44ef98d25df21e",
+   "description_tr": "Browser Kitten, oturum açtığın tarayıcıda çalışan Chrome MV3 yan panel ajanı: sayfaları okuyor, işlem yapıyor, dosya üretiyor ve yerel takip görevleri çalıştırıyor. Konuşmalar ve çalışma dosyaları bilgisayarında kalıyor, modeller kendi getirdiğin sağlayıcılardan geliyor. Derleme gerektirmeden unpacked yüklenir; MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "EthanArbuckle/fairplay-decrypt",
+   "inputs_hash": "6a46f572193f31dac1ae8b97393de236",
+   "description_tr": "fairplay-decrypt, App Store IPA dosyalarının FairPlay şifresini, hesaba ait 16 baytlık bir kimlik bilgisiyle çevrimdışı çözen saf Python aracı; macOS ve Linux'ta çalışıyor. Kimlik bilgisi jailbreak'li bir cihazdan ayrı bir araçla alınıyor. Telif korumasını aşma amaçlı kullanılabilir, GPL-3.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "coldteadotai/pr-lens",
+   "inputs_hash": "bd0e8e14336a63376065e864a9652525",
+   "description_tr": "PR Lens, her pull request'i animasyonlu mimari ve veri akışı diyagramlarına çevirip yorum olarak PR'ın içine ekliyor. GitHub App, GitHub Action, CLI veya kodlama ajanları için skill olarak kullanılıyor; GitLab ve Bitbucket'ta da çalışıyor. Özel bir çizim motoru kullanıyor, açık kaynak projeler için ücretsiz. TypeScript, MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "EchoMusicApp/Echo-Music",
+   "inputs_hash": "8e9b5aea06f0d8f1136fc4075d807ef6",
+   "description_tr": "Echo Music, YouTube Music kütüphanesini kullanan Android müzik istemcisi: reklamsız akış, senkron şarkı sözleri, çevrimdışı indirme ve ortam sesinden şarkı tanıma. Uygulama içi güncelleme kaldırılmış, güncelleme siteden elle yapılıyor. YouTube Music'in resmi olmayan bir istemcisi; Kotlin, GPL-3.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "Mantitup-Org/vista",
+   "inputs_hash": "530d7f50258a78932ac8335969080376",
+   "description_tr": "Vista.js, Next.js'in zihinsel modelini izleyen bir React 19 çatısı: app/ altında dosya tabanlı rotalar, varsayılan React Server Components ve tek bir CLI. Uçtan uca tipli API katmanı ve LLM sohbeti, araç çağrısı ile RAG için hazır yollar var. GitHub açıklaması ve lisansı yok; depo bu ay açılmış.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam Lyricdrop'un Supabase ve CDN ile duran admin paneli. O panel zaten çalışıyor, birkaç haftalık ve lisansı belirsiz bir çatıya geçmek ölçülebilir kazanç getirmeden risk ekler. Denemek istersen atılabilir bir prototiple sınırla.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "ERRRC/xingcezhenti",
+   "inputs_hash": "904f57d061cf9500c3989a2892034903",
+   "description_tr": "2016-2026 arası Çin kamu görevlileri sınavlarının (ulusal ve il düzeyi) 515 deneme, 58.890 soruluk gerçek akıl yürütme (xingce) soru arşivi; soru, seçenek, cevap ve resmi çözümler markdown olarak modüllere ayrılmış, görseller yerel. Obsidian ile açılması öneriliyor. Kod yok, veri deposu; lisans belirtilmemiş.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "soumatheusgomes/vibe-coding-toolkit",
+   "inputs_hash": "4d761e8bfdecc2549aafa062ca978966",
+   "description_tr": "Claude Code etrafında kurulu AI destekli geliştirme akışını belge, prompt ve yapılandırma olarak paketliyor: eklenti seçimleri, paralel subagent orkestrasyonu, ESLint/Biome kalite kapıları, kopyalanabilir prompt'lar. Yazar yöntemin NDA altındaki bir fintech üretim projesinden çıkarıldığını, bu yüzden commit geçmişinin kısa olduğunu yazıyor. Belgeler Portekizce. MIT.",
+   "usage_tr": "Denediğin Superpowers eklentisinin etrafına bir akış kurduğu için Claude Code tarafındaki kalite süreçleri arayışına oturuyor. Subagent orkestrasyonu protokolünün dosya çakışmasını yapısal olarak önleyen kısmını kendi CLAUDE.md'ine taşıyabilirsin. Kod değil belge olduğundan kurulum ve API maliyeti yok; ama tek kişinin akışı, parçaları tek tek denemek daha doğru.",
+   "matched_project": "Claude Code",
+   "relevance": 7,
+   "investment_note": null
+  },
+  {
+   "full_name": "paipiange/nvzhuang",
+   "inputs_hash": "1a3ec2fe27c6f1da77f19d28065c8f1e",
+   "description_tr": "nvzhuang, 1.407 gerçekçi ve 1.320 anime kadın kıyafeti görseli ile 1.499 AI model yüzünden oluşan bir galeri ve sanal deneme sitesi. Arama Çince ve İngilizce, deneme için OpenAI Images, Gemini, Doubao veya özel Base URL ile API anahtarı kullanılabiliyor. Tek sayfa HTML, MIT; çevrimiçi önizlemesi var.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "bespokelabsai/nimble",
+   "inputs_hash": "eb1486e0f04d740aae978200b69f98f4",
+   "description_tr": "Nimble, metin ve şemadan yerelde tipli karar üreten, veri küratörlüğü ve model değerlendirmesi de yapan bir araç. Qwen3.5-9B üzerine LoRA ile eğitilmiş Bespoke-Nimble-9B, 324 örnekte referans etiketlerin %90,1'ini yakalıyor; taban model %66,4, Jev 1.13.0 %93,2. Python, lisans belirtilmemiş.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "xoreaxeaxeax/skitter-creek-bath-salts",
+   "inputs_hash": "15bad9a9a04c505b7e934f7b2bea30db",
+   "description_tr": "skitter-creek-bath-salts, DRAM adres çevirisini bozarak işlemcinin korumalı bellek bölgelerini (PSP, SMM, C6, microcode) açığa çıkaran bir güvenlik araştırması aracı. Çekirdeğin bile göremediği ayrılmış bellek alanlarına erişim sağlıyor. Düşük seviye C kodu, MIT; yalnızca donanım güvenliği araştırması için.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "fxgl/steamac",
+   "inputs_hash": "25885d122bb8533b12ad83b245ff8f55",
+   "description_tr": "steamac, Apple Silicon üzerinde Valve'ın ARM64 SteamOS'unu libkrun, Venus ve MoltenVK ile hafif bir sanal makinede çalıştırıyor; kontrolcü ve CoreAudio desteği var. README'ye göre ilk shader derlemesinde 50-100 ms takılma oluyor, Metal önbelleği sonraki açılışlarda bunu kaldırıyor. Swift, Apache-2.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "benjitaylor/skills",
+   "inputs_hash": "f18aabf9268de921c2b43cf7bf79f869",
+   "description_tr": "benjitaylor/skills, yapay zeka kodlama ajanları için skill koleksiyonu olarak tanımlanıyor. README boş geldi, bu yüzden içerik veya skill listesi hakkında bir şey söylenemiyor. TypeScript, lisans belirtilmemiş.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "angusdevgo/IDM_Pro_Tool",
+   "inputs_hash": "05a6c8716103996b9bb95deb7313a99a",
+   "description_tr": "IDM Pro Tool, Internet Download Manager için etkinleştirme ve yaşam döngüsü durumunu değiştiren bir Windows aracı; csc.exe ile milisaniyede derlenen yaklaşık 240 KB'lık WPF arayüzü var. Lisanslı yazılımın etkinleştirmesini atlatmaya yönelik olduğundan yasal ve güvenlik riski taşıyor. C#, GPL-3.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "herdrdev/herdr-app",
+   "inputs_hash": "6366a3fe74a9564b975347c16297d52e",
+   "description_tr": "herdr-app, herdr'in masaüstü uygulaması. README boş geldi ve açıklama tek satır; projenin ne yaptığı bu metinden anlaşılmıyor, adı ve çevresi bir ajan yönetim arayüzüne işaret etse de bu doğrulanamadı. Rust, Apache-2.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "dream-num/univer-workspace",
+   "inputs_hash": "adf2b05f8384fd351680397184ef4ba2",
+   "description_tr": "Univer Workspace, Univer Office SDK üzerine kurulu, kendi sunucunda çalışan bir ofis çalışma alanı: Sheets, Docs, Slides, ilişkisel tablolar ve canvas'lar tek yerde. Ajanlar izole Worktree'lerde çalışıp değişikliği insan onayına bırakıyor. Tarayıcı, Workspace Agent ve CLI ortak bir sunucuya bağlanıyor. TypeScript, Apache-2.0.",
+   "usage_tr": "Arslan Holding tarafındaki finansal model ve pitch deck incelemesinde kullanabilirsin: modeli Workspace'e alıp ajana hücre hücre okutmak, değişiklikleri Worktree'de bırakıp onayla işlemek review alışkanlığınla örtüşüyor. Uyarı: ayrı bir sunucu ve tarayıcı uygulaması işletmek gerekiyor, depo yeni ve mevcut akış Google Drive ile Notion'da; önce tek bir modelle dene.",
+   "matched_project": "Arslan Holding",
+   "relevance": 5,
+   "investment_note": null
+  },
+  {
+   "full_name": "sourcepro5/WeChatAgent",
+   "inputs_hash": "9b90f7c807c4f88f4fdee61154cd2ad1",
+   "description_tr": "WeChatAgent, WeChat'i DeepSeek Harness (DSH) ile bağlayan bir Windows 10/11 uygulaması: arkadaş ve gruplara persona atanıyor, her sohbet ayrı bağlam tutuyor, yetkilendirilmiş görevler WeChat'ten uzaktan verilebiliyor. Belirli bir WeChat sürümü ve DSH kurulumu gerekiyor, model çağrıları ücretli olabilir. JavaScript, lisans belirsiz.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "vvxw/deploy-vercel",
+   "inputs_hash": "d31866fbe7e2aab13f79127e3e012adf",
+   "description_tr": "vvxw/deploy-vercel için GitHub açıklaması yalnızca 'Install Command：npm install' ve README boş geldi; projenin ne yaptığı belirlenemiyor. Adı bir Vercel dağıtım şablonuna işaret ediyor ama bu doğrulanamadı. JavaScript, lisans belirtilmemiş.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "ooolabdev/ooosplat",
+   "inputs_hash": "e03c8ec2b89531675f61b8771fe949dd",
+   "description_tr": "OOOSplat, video veya görüntü dizisinden tek tıkla 3D Gaussian Splat üreten yerel masaüstü uygulaması. FFmpeg, COLMAP ve Brush ile kamera çözümü ve eğitimi tamamen kendi CPU/GPU'nda yapıyor, veri buluta gitmiyor. Windows ve Apple Silicon macOS Alpha, Linux Ubuntu 24.04 Alpha; Tauri ve Rust, Apache-2.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "Ansub/tv-detox",
+   "inputs_hash": "59b02de6bc2ff4a4f2fcec13d6acbbad",
+   "description_tr": "TV Detox, yavaşlamış bir Android TV'yi Claude Code veya Codex ile temizletmek için küçük, reklamsız bir ana ekran ve ajana verilecek prompt'u içeriyor. Kullanıcıya yalnızca kumandada OK'a basmak kalıyor. The Verge'de yer almış; Java, MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "Supermedo/uncharted_pc",
+   "inputs_hash": "4bd2e805533f33e520279549cba3dfb6",
+   "description_tr": "uncharted_pc, Uncharted: The Nathan Drake Collection'ı Windows'ta yerel çalıştırıyor; üç oyun tek başlatıcıda, 60 veya 120 FPS, 1080p üstü çözünürlük, TAA, FSR 3.1/4, DLSS ve kare üretimi seçenekleriyle. Oyun dosyaları yok, kendi çözülmüş PS4 dökümün gerekiyor. Sony ve Naughty Dog ile ilişkisi yok. C++, GPL-2.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "noahdunnagan/fsearch",
+   "inputs_hash": "6f2d64f41a7536beb62af8460f5be5af",
+   "description_tr": "fsearch, macOS için tüm diski kapsayan dosya arama aracı: bulanık dosya adı, yazım hatası toleransı ve indekslenmiş içerik grep'i. README'ye göre M4 Mac mini'de Linux ve Chromium kaynak ağaçlarında ad araması yaklaşık 0,05-0,12 ms sürüyor; iki yazım hatalı sorguda doğru dosyayı ilk sırada bulma oranı %74 ve %93. Rust, MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "unreallabsai/unreal-agent",
+   "inputs_hash": "c668532240a1a50b24016005384a7297",
+   "description_tr": "unreal-agent, 'async-first agent harness' olarak tanımlanıyor. README boş geldi, bu yüzden mimarisi, desteklediği modeller ve kullanım şekli bu metinden anlaşılmıyor. Go, MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "govijr/terminal-mac",
+   "inputs_hash": "dc906735151eec70256fe3094d37df45",
+   "description_tr": "terminal-mac, Apple Virtualization ile gerçek bir macOS misafiri çalıştırıp ekranını Kitty veya iTerm2 grafikleriyle terminalde gösteriyor; computer-use ajanları fiziksel Mac'in imlecine ve panosuna dokunmadan ayrı bir masaüstünde çalışıyor. Misafir ayrı hesaplara sahip, ana makinenin CPU, bellek ve diskini tüketir. Apple Silicon, Swift, MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  }
+ ]
+}

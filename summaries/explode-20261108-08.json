@@ -1,0 +1,401 @@
+{
+ "repos": [
+  {
+   "full_name": "yangbin1322/hongguo-player",
+   "inputs_hash": "70a0e876afdebee48226ba068baa69b2",
+   "description_tr": "Çin'deki Hongguo kısa drama uygulaması için Windows ve macOS masaüstü istemcisi. Golang ve Vue3 üzerine Wails ile yazılmış; otomatik sonraki bölüm, dikey mod, yorum ve takip özellikleri sunuyor. Resmî bir ürün değil, üçüncü taraf bir istemci; lisans belirtilmemiş.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "oil-oil/oil-ui",
+   "inputs_hash": "9d7993e935dbea275742f42e4ee0848c",
+   "description_tr": "Claude Code, Codex gibi ajanlara arayüz tasarımı yaptıran bir skill. Tek bir yön önerip gerçek ekran görüntüleriyle rafine ediyor; istenirse birkaç farklı yönü yan yana karşılaştırıyor. Web, uygulama ve dashboard işleri için; MIT lisanslı, Python ile yazılmış.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "xzf-thu/VoiceMem",
+   "inputs_hash": "550fda09693517447b780fc9310ff2a3",
+   "description_tr": "Sesli ajanlar için bellek altyapısı. Bilgiyi ve duyguyu ayrı iki bellekte (sol ve sağ beyin) tutuyor ve akışlı mimariyle gecikmeyi düşürmeyi hedefliyor. Teknik rapor, Hugging Face modelleri ve 400 bin örnekli bir sohbet-bellek veri seti yayımlanmış; Apache-2.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "nanaism/yomiyasu",
+   "inputs_hash": "9262281e3dbb8b01842ee0524b17f467",
+   "description_tr": "yomiyasu, yapay zekanın ürettiği Japonca metni daha okunur hale getiren bir Agent Skill. Teknik yazı, tasarım dokümanı ve PR açıklaması gibi iş metinlerini hedefliyor; Claude Code, Codex ve Cursor'a yüklenerek kullanılıyor. Kurallar Japonca cümle yapısına bağlı. MIT lisanslı.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; kurallar Japonca cümle yapısına bağlı. Metne bilgi ekleme ve belirsizliği koruma ilkeleri, Türkçe metin üreten Arslan Holding ve Folio için benzer bir skill yazarken referans olabilir.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "typesafe-ai/skills",
+   "inputs_hash": "450b48a550c21b8c3c5cf47bb458c331",
+   "description_tr": "TypeSafe'in System One API'siyle entegrasyon kurmak için ajan skill'leri. Skill, tipli karar ve olasılık çıktıları üreten modellere istek kurmayı ve canlı deneme yapmayı anlatıyor. Claude Code plugin'i ya da skills.sh ile kuruluyor; README dışında ayrıntı sınırlı. MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "chengyi-ai/native-subtitle-quote-image",
+   "inputs_hash": "9f997e132a557b4cc9ddc19512f744ac",
+   "description_tr": "Videodaki gömülü altyazıyı yeniden çizmeden, doğru kareleri seçip 3:4 oranlı sosyal medya uzun görseli üreten bir Agent Skill. Gömülü altyazı ve senaryodan çizilen altyazı için iki ayrı mod var. Python, MIT; Codex ve Claude skill dizinlerine kopyalanarak kuruluyor.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "JohnHeibel/PDoomVideo",
+   "inputs_hash": "0972a7df386b20a1bc9887e18afc84b1",
+   "description_tr": "Bir şarkının müzik videosunun kaynak kodu. Video p5.js ve p5.brush ile kare kare çiziliyor, render betiği headless Chrome ve ffmpeg ile MP4 üretiyor. README'ye göre kodun tamamı bir model tarafından yazılmış. Lisans dosyası yok.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; tek bir işin kaynak kodu. Folio veya Lyricdrop kreatifleri için p5.js ve ffmpeg ile yerel video yöntemi ilginç, ama genel taban olan ClaudeAnimationBase daha uygun. Lisans yok, kopyalamak riskli.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "jiwoochris/artex-global",
+   "inputs_hash": "270bae44a794816e124a340d14bfc82b",
+   "description_tr": "LLM çoklu ajanlarıyla çalışan otonom sızma testi sistemi ARTEX'in uluslararasılaştırılmış sürümü. Go backend ve Next.js arayüzü var; dil İngilizce, Korece, Çince, İspanyolca ve Japonca arasında değiştirilebiliyor. Yetkili, savunma ve tespit amaçlı kullanım için belirtilmiş; AGPL-3.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "Verlintas/NOIR",
+   "inputs_hash": "3bd5d837a11018cb54b89de373ee0e91",
+   "description_tr": "adb üzerinden Android uygulamalarının izinlerini, veri gönderdiği uç noktaları ve veri akışını tarayan bir gizlilik denetim aracı. Bulgular için geri alınabilir müdahale öneriyor. Kotlin ile yazılmış, macOS, Windows ve Linux masaüstünde çalışıyor; MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "PAICNI/CFNext",
+   "inputs_hash": "07cfe3495b94b795393adf00f7cecb13",
+   "description_tr": "Cloudflare Workers veya Pages üzerinde çalışan, VLESS/Trojan/XHTTP protokollü bir proxy abonelik yönetim paneli. Düğüm seçici, bölge ve operatör filtreleri ile KV tabanlı ayar sunuyor. Lisans yok; README reklam bağlantıları içeriyor.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "thtbee/nectarlink",
+   "inputs_hash": "96a035a6ee4be8998af1d9e61e4ac04c",
+   "description_tr": "Android telefonu Windows veya Linux bilgisayara bağlayan bir uygulama: bildirim, mesaj, arama, pano, dosya ve ekran yansıtma. Yerel çalışıyor, uçtan uca şifreli, hesap ya da bulut gerektirmiyor. Rust ve Kotlin ile yazılmış; lisans NOASSERTION.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "wesbos/3d-model-anything",
+   "inputs_hash": "ceac67b73c43fe8096fccc192dd5c52b",
+   "description_tr": "iPhone ile bir odanın LiDAR ve fotoğraf verisini toplayıp, bir kodlama ajanıyla düzenlenebilir Three.js sahnesine çeviren iş akışı. Swift iOS uygulaması, Three.js görüntüleyici ve scan-to-threejs ajan skill'ini içeriyor. Tek tıkla model üretmiyor; odalara ve iç mekanlara odaklı.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "driceroland/Search",
+   "inputs_hash": "021c09add383176def3f86b27a0e030f",
+   "description_tr": "macOS için WebKit tabanlı küçük bir tarayıcı. Araç çubuğu, başlangıç sayfası ve hesap yok; yalnızca sekmeler (üstte ya da solda) ve tek bir adres alanı var. Yaklaşık 9 MB, macOS 14 ve üzeri, Swift ile yazılmış, MIT; Homebrew cask ile kuruluyor.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "FlashML-org/FreeVideo",
+   "inputs_hash": "5fb885edbc62a2af6b369492fc6dc12c",
+   "description_tr": "MiniMax H3 video modelini 8 GB VRAM ve 16 GB RAM ile çalıştırmayı hedefleyen yerel video üretim uygulaması. Donanıma göre hızlandırma yolunu seçiyor; Windows, macOS ve Linux paketleri var. v0.4.0 ile ajan kullanımı, dakikayı aşan videolar ve zaman çizelgesi düzenleme eklendi. Apache-2.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "shaobeichen/dsh-pocket",
+   "inputs_hash": "c2f6d740f766fe58ae50cd15a29a2b8b",
+   "description_tr": "DeepSeek Harness'ı telefondan kullanmak için araç: bilgisayarda dsh web çalışıyor, telefon QR kod okutarak yerel ağ ya da internet üzerinden aynı oturuma bağlanıyor. Ekran gerçek zamanlı eşleniyor. JavaScript, npm paketi olarak dağıtılıyor; GPL-2.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "duty1g/x64dbg-mcp-server",
+   "inputs_hash": "0d84455951b949957acff49042e5ef09",
+   "description_tr": "x64dbg hata ayıklayıcısı için yerel bir MCP sunucusu eklentisi. MCP uyumlu bir yapay zeka asistanı HTTP üzerinden breakpoint koyabiliyor, kodda adım atabiliyor, bellek ve register okuyabiliyor. Zig ile yazılmış, bağımlılıksız tek binary; tersine mühendislik için. MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "deepseek-ai/deepseek-recipe",
+   "inputs_hash": "4c5767bddcc7cdadcdac60f124088899",
+   "description_tr": "DeepSeek modelleri için Rust kütüphaneleri ve Python bağlayıcıları. Farklı API formatlarındaki istekleri ortak bir Conversation biçimine çeviriyor, konuşmayı prompt'a ve token ID'lerine dönüştürüyor, model çıktısını ilgili formata geri çeviriyor. Çıkarım ve HTTP katmanını çağıran taraf sağlıyor. MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "babygoton/WorkDaddy",
+   "inputs_hash": "56291b33bfd5b503cc60e7f988e89e78",
+   "description_tr": "WorkBuddy ve CodeBuddy masaüstü istemcileri için Chrome DevTools Protocol üzerinden çalışan bir geliştirme aracı. Çoklu hesap yedeği ve geçişi, hesaplar arası oturum taşıma, izin penceresi olmadan uzun görev çalıştırma ve kesilen oturumu sürdürme sunuyor. Resmî paketi değiştirmiyor; lisans NOASSERTION.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "Rion-Wu-tech/wechat-intelligence-hub",
+   "inputs_hash": "db1fd4320bec2a0bdb62b2ab527cbd5d",
+   "description_tr": "Yerel WeChat sohbet geçmişini aranabilir hale getiren, günlük özet, cevap bekleyenler, taahhütler ve fırsat takibi çıkaran bir araç seti. Salt okunur bir CLI ve Codex skill'leri içeriyor. Tam veri tabanı kipi kullanıcının kendi yetkili yerel verisini gerektiriyor; ön sürüm, AGPL-3.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "gvzdv/claudish-to-english",
+   "inputs_hash": "3a7c51de54b321ad0505de6f0fd6388d",
+   "description_tr": "Claude Code için bir plugin: asistanın yoğun, jargonlu mesajlarının sade İngilizce bir yeniden yazımını gösteriyor. Yeniden yazımı yerel ollama, codex CLI, Anthropic API ya da OpenAI uyumlu bir API üretiyor. Yalnızca ekranda gösteriyor, transkripti değiştirmiyor. Shell, MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "NanmiCoder/dsh-agent-teams",
+   "inputs_hash": "111ab48c9d686bd738d1ffedde58041e",
+   "description_tr": "DeepSeek Harness için çoklu ajan eklentisi: birden fazla ajan ekip kurup görev dağıtıyor, paralel çalışıyor ve birbirleriyle haberleşiyor. JavaScript ile yazılmış, MIT lisanslı. Eklenti pazarı dshfind üzerinde listeleniyor.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "punkpeye/awesome-remote-mcp-servers",
+   "inputs_hash": "1bc02a7aef8cd379ffbbaa6f3898bc17",
+   "description_tr": "URL üzerinden bağlanılan, kurulum ve yerel süreç gerektirmeyen uzak MCP sunucularının derlenmiş listesi. Yerel çalışan sunucular için aynı yazarın ayrı bir listesine yönlendiriyor. Kod değil bağlantı koleksiyonu; MIT. README'de reklam bloğu var.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "modelflare-ai/AnyModelBot",
+   "inputs_hash": "7a51ba94cd19500e06807394901ee950",
+   "description_tr": "Kendi bilgisayarında çalışan, herhangi bir modele bağlanabilen yapay zeka bot uygulaması. GPT, Claude, Gemini, DeepSeek dahil 70'ten fazla modele tek bir Modelflare anahtarıyla erişiyor, kullandıkça ödeme var. Botlar uygulamadan, WeChat'ten veya Feishu'dan kullanılıyor. Python, MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "goodnight000/api-anything",
+   "inputs_hash": "1bb0058dac0ef28ac6f68084fa2eb4d8",
+   "description_tr": "API'si olmayan siteleri ajanlar için çağrılabilir API'ye çeviren bir araç. Sitenin kendi ön yüz isteklerinden API'yi öğreniyor, düz HTTP ile çağırıyor ve site değişince kendini onarıyor. Bir ajanın öğrendiği API ortak bir kataloğa giriyor. TypeScript, npm paketi, MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "tobi/walgit",
+   "inputs_hash": "c88c6d4cb5d9f71f51c858a1b78d7fcc",
+   "description_tr": "Tek binary olarak çalışan, S3 veya GCS kovasını depo olarak kullanan bir git sunucusu. Veritabanı ve lider düğüm yok; smart HTTP, Git LFS, web arayüzü, JSON API ve webhook'lar var. Makineye sığmayan büyüklükte depoları da barındırabildiği belirtiliyor. Rust, MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "OpenMOSS/MOSS-Image",
+   "inputs_hash": "cadc57db803248c7a4563a890e4376ee",
+   "description_tr": "5 milyar parametreli DiT tabanlı bir görüntü üretim modeli. Görsel içinde metin işleme ve yerleşim üretimini öne çıkarıyor, verimli ince ayar destekliyor. Hugging Face ve ComfyUI için ağırlıklar yayımlanmış. Python, Apache-2.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "Ephemeral-AI-Lab/layerfs",
+   "inputs_hash": "915ee41a8914e181430667a947b7ba95",
+   "description_tr": "Ajanlara paylaşılan commit geçmişi üzerinde tam yazılabilir, geçici çalışma alanları veren bir dosya sistemi. Ajanlar paralel çalışıp değişiklikleri tekilleştirilmiş checkpoint olarak commit ediyor; dallanma, geri sarma ve birleştirme var. Tabanı kopyalamıyor. Rust, MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "JohnHeibel/ClaudeAnimationBase",
+   "inputs_hash": "4c81791b7f4009c3227f02e6e1054f22",
+   "description_tr": "Claude ile elle boyanmış çizgi film animasyonu yapmak için başlangıç kiti: p5.js ve p5.brush kodu, Clawd karakteri, 31 duygu animasyonu ve modele yönelik bir kılavuz. PDoomVideo müzik videosundaki koda dayanıyor. JavaScript, MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "ntfargo/Relapse-Exploit",
+   "inputs_hash": "f663a629c6ef5b0c78d6ebed12ecc0bd",
+   "description_tr": "Oyun konsolu güvenlik araştırması kategorisinde bir depo. Bu özet için teknik ayrıntı yazılmadı; README kısa ve kullanım amacı yalnızca araştırma olarak belirtilmiş. MIT lisanslı, JavaScript.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "qybaihe/bla",
+   "inputs_hash": "2bda394f8207adca1ccad23c5bdd9d7e",
+   "description_tr": "Yapay zeka tabanlı tersine mühendislik ajanlarına karşı ikili dosyaları, Electron uygulamalarını, JS paketlerini ve WebAssembly'yi koruyan bir savunma aracı. Analiz eden ajanı yanıltıcı yollara ve kaynak sınırlarına çekmeyi amaçlıyor. CLI ve MCP arayüzü var; TypeScript, MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "facebookincubator/muse-gadget-sdk",
+   "inputs_hash": "c3e6e19fa3e572c8e5e46415a40e6af0",
+   "description_tr": "Meta'nın Muse gadget'ları için açık kaynak SDK ve firmware: ESP32 kartları ve Raspberry Pi gibi Linux cihazlar Muse'a bağlanıyor, ekran, ses ve sensör ekleniyor. Eşleştirme için SDK token'ı gerekiyor. C, Apache-2.0; her dizinde kodlama ajanları için AGENTS.md var.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "ctresb/leis",
+   "inputs_hash": "b93908bebde10211214420d444378ccf",
+   "description_tr": "Brezilya mevzuatının, Anayasa'dan federal, eyalet ve belediye normlarına kadar, resmî kaynaklardan Markdown'a çevrilmiş arşivi. Her metinde yapılandırılmış başlık ve kaynak bağlantısı var; yaklaşık 324 bin norm. Depo bağış toplama çağrısı içeriyor; lisans NOASSERTION.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "mw00/project-maya",
+   "inputs_hash": "a308a43a1e3f31f37596ebba78e67da2",
+   "description_tr": "GLM-5.3-Flash, DeepSeek-V4.1-Flash ve MiniMax-M3.1-Flash gibi çok büyük modelleri kendi GPU'larında çalıştıran bir motor. Tek NVIDIA GPU'dan 16'ya kadar destekliyor; tarayıcıda sohbet ve izleme paneli, OpenAI ve Anthropic uyumlu API sunuyor. Cuda, MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "Jakeschincariol/founder-skill",
+   "inputs_hash": "d4a5bb505d3cf51b425efeaad7040e10",
+   "description_tr": "Bir işi başlatmadan test eden on bir Claude skill'i: yönetim kurulu, pazarlama direktörü, CFO ve 100 alıcı ajanından oluşan tüketici paneli gibi roller. Fiyatlama, rakip ve operasyon analizleri de var. Kurulum için repo bağlantısı Claude'a yapıştırılıyor. Python, MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "xevrion/hatchzip",
+   "inputs_hash": "13fb2019fb6d44b2243b395680a9ee18",
+   "description_tr": "ZIP, 7z, RAR, tar ve bölünmüş arşivleri yerinde açan masaüstü uygulaması ve CLI. Arşiv açıldıkça küçüldüğü için yalnızca çıktı kadar boş alan yetiyor. Windows, macOS ve Linux'ta çalışıyor, çökme sonrası güvenli devam özelliği var. Rust, Apache-2.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "syv-ai/HyperQwen",
+   "inputs_hash": "ce62a81a27c59caace4702b099514748",
+   "description_tr": "Büyük Qwen modellerini tek bir 24 GB tüketici GPU'sunda vLLM ile servis eden depo: vLLM yamaları, yeniden kuantize edilmiş head'ler ve prompt'tan spekülasyon yapan decoding. RTX 3090'da tek kullanıcıda 127 tok/s bildiriliyor; OpenAI uyumlu uç nokta ve Docker profilleri var. Apache-2.0.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; depo NVIDIA CUDA ve tüketici GPU'su varsayıyor, Mac'lerde çalışmaz. Ölçüm disiplini okunmaya değer; şimdilik izleme listesinde kalması yeterli.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "oosexgang/hakios-xnu-kernel",
+   "inputs_hash": "470e577833c2c13fe195852bed8c6032",
+   "description_tr": "Apple'ın açık kaynak XNU çekirdeğini Android telefonlara taşıyan bir araştırma tezgahı: kendi yükleyicisi ve sürücüleri var, Adreno üzerinde Metal çiziyor. Varsayılan olarak RAM'den çalışıyor, yeniden başlatınca telefon Android'e dönüyor. C, lisans NOASSERTION.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "software-mansion-labs/goldie",
+   "inputs_hash": "f7317ae355292dd8974ea02ad5314da9",
+   "description_tr": "Mobil uygulamalar için App Store ve Google Play ekran görüntülerini ve App Store önizleme videolarını üreten, kodlama ajanlarına yönelik bir araç. argent ile simülatör ya da emülatör akışlarını kaydedip cihaz çerçevesi ve başlıkla birleştiriyor, mağaza kurallarını denetliyor. TypeScript.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "vAPI-Network/vapi-network",
+   "inputs_hash": "d0781ccca93cc53a3c34113746b8557b",
+   "description_tr": "AI ajanlarının Base ağında USDC ile x402 API ödemesi yapması için kullanıcı kontrollü, emanetsiz TypeScript istemcisi. Terminal, MCP istemcisi veya kod içinden çağrılıyor; anahtarlar cihazda şifreli tutuluyor ve ödeme öncesi harcama politikası uygulanıyor. Apache-2.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "academa-labs/manimgx",
+   "inputs_hash": "b15d313dfa23d078cea4b00e99d3399d",
+   "description_tr": "Manim CE API'siyle uyumlu, Rust ve wgpu çekirdekli bir matematik ve 3D animasyon motoru; ajanlara yönelik pazarlanıyor. Python API'si, pip ve npm paketi var ve tarayıcıda çalışabiliyor. Python, MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  }
+ ]
+}

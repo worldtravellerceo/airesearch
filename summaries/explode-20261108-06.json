@@ -1,0 +1,398 @@
+{
+ "repos": [
+  {
+   "full_name": "yetone/cumora",
+   "inputs_hash": "6da655e8f873bb6c71f6ee08caf4a084",
+   "description_tr": "Cumora, yapay zeka ajanlarının insanlarla aynı kadroda, aynı DM ve grup sohbetlerinde yer aldığı bir ekip sohbet uygulaması. Ajanlar persona ve hafıza taşıyor, iş üstleniyor, e-posta gönderip alıyor; Cumora'nın bulutunda ya da kendi makinende (Claude Code / Codex) çalışabiliyor. Web, masaüstü ve iOS beta var; MIT lisanslı.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "TNTcraftHIM/Piik",
+   "inputs_hash": "8a2fe0de340346213beffa0dc3927ee7",
+   "description_tr": "Piik, 20 arkadaşa kadar özel ekran paylaşımı yapan açık kaynak bir araç: oyun yayını, birlikte film izleme gibi kullanımlar için. İzleyiciler tarayıcıdan katılıyor, medya öncelikle P2P (WebRTC) akıyor; istersen kendi sunucunda barındırabilirsin. TypeScript, MIT lisanslı.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "Leonxlnx/earshot",
+   "inputs_hash": "c3fe929171551faf6e2e3eb32670fa30",
+   "description_tr": "earshot, kodlama ajanlarına ses duyma yeteneği veriyor: bir dosyanın sesini sözle tarif ediyor, video için saniye saniye dinleme dökümü ve puan kartı çıkarıyor. Kodla ses efekti üretip dinleyerek iyileştiren `earshot forge` ile bir kaydı koda çeviren `earshot fit` de var. CPU'da yerel çalışır; CLI, Python API ve MCP sunucusu olarak kullanılır.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "amosblomqvist/learn",
+   "inputs_hash": "207c25b6cf4640ee0bef52b7ee2dbd3f",
+   "description_tr": "learn, Pi kodlama ajanı için hazırlanmış kişisel bir öğrenme sistemi: öğretim yaklaşımını anlatan bir skill, diyagram ekleyen bir görselleştirme skill'i, soru-sınav uzantıları ve araştırmacı ile SVG/Mermaid alt ajanları. Depo bir `.pi` dizini olarak klonlanıyor; yazar 'olduğu gibi paylaşılmış' kişisel kurulum olduğunu belirtiyor.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "aicodeking/leanrea",
+   "inputs_hash": "7dae3047398a1307065f6f769330a458",
+   "description_tr": "leanrea, REA (Reverse Engineer Anything) MCP sunucusunun yerine geçen 8 KB'lık tek bir skill dosyası. Ajana hangi hedef için hangi komut satırı aracının (asar, otool, jadx, Ghidra, tshark vb.) hızlı olduğunu söylüyor, MCP kurulumu gerektirmiyor. Kendi ölçümüne göre dört tersine mühendislik görevinde REA'ya göre %38 daha hızlı ve %35 daha ucuz; benchmark yazarın kendi çalışması.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "vladelaina/BongoCat",
+   "inputs_hash": "c81b27f71b3518ae217ad0addec105cf",
+   "description_tr": "BongoCat, C, SDL3 ve OpenGL ile yazılmış bir masaüstü bongo cat uygulaması; klavye ve fare girdisine tepki veren bir kedi maskotu gösteriyor. README çok dilli ve Discord topluluğuna yönlendiriyor; yapay zekayla bir bağı yok, eğlence amaçlı bir proje.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "tobi/disktree",
+   "inputs_hash": "67b2bb634de2b4a432c99ab1bed19d95",
+   "description_tr": "disktree, Omarchy masaüstü için Rust ve GPUI ile yazılmış bir disk kullanım treemap'i. Yerel ya da SSH kaynağındaki dizinleri gerçek disk maliyetine göre mozaik olarak çizip silinecekleri işaretlemeye izin veriyor; tarama onay olmadan başlamıyor, silme listesi gözden geçirilmeden uygulanmıyor. Linux için x86_64 ve aarch64 paketleri var. Yapay zekayla ilgisi yok.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "AhmadHassan-BTed/.github",
+   "inputs_hash": "29319cba03e56f2357475fffa05a2a16",
+   "description_tr": "Depo bir README'den ibaret: KodeArrow adlı bir klavye gezinme yöntemini (Alt + IJKL ile yön tuşları) 3D bir el simülasyonuyla karşılaştıran, tek dosyalık Three.js sayfası. Geleneksel yön tuşu kümesine uzanmakla ana sıradan çıkmamayı el hareketi ve bilek baskısı göstergeleriyle kıyaslıyor. Yapay zekayla bir bağı yok.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "Minglink/dsh-infinite-gen-5",
+   "inputs_hash": "cb63d1823a140658b7f209d79f2fde94",
+   "description_tr": "dsh-infinite-gen-5 (IG5), DeepSeek Harness için tersine mühendislik eklentisi ve çalışma tezgahı: statik analiz, yerel hata ayıklama, trafik yakalama ve alt ajan iş birliğini tek akışta topluyor. Windows x64 için Ghidra ve x64dbg'yi içeren paket veriyor; değiştirici işlemler onay istiyor. Lisansı CC BY-NC-SA 4.0 olduğu için ticari kullanıma kapalı; yalnızca yetkili hedefler için.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "deadinside28/bloodborne_pc",
+   "inputs_hash": "1d9b5cfadb97ae40cf3a3eecfd799bff",
+   "description_tr": "bbport, PlayStation 4 oyunu Bloodborne'u (1.09) Linux ve Windows'ta yerel çalıştıran bir port: oyunun x86-64 kodu doğrudan çalışıyor, grafikler kendi çeviricisiyle Vulkan'a aktarılıyor; FSR 4, DLSS ve ortak oyun desteği var. Oyun dosyası içermiyor, kendi dökümünü getirmen gerekiyor. Yapay zekayla ilgisi yok.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "feitangyuan/onetake",
+   "inputs_hash": "4de0798899b650ef0b577b2b236654e1",
+   "description_tr": "onetake, ürün lansman filmleri ve özellik demoları üreten bir Claude Agent Skill. Sahneler arası kesme yok; her an bir öncekinden büyüyor ve `probe.py` her sınırda sürekliliği ölçüp puanlıyor. Arayüz ekran görüntülerinden HTML olarak yeniden kuruluyor; taslak 1080p30, final 4K60. Lisans PolyForm Noncommercial, ticari kullanım için ücretli Pro var.",
+   "usage_tr": "Lyricdrop'un lansman filminde ekranı (şarkı sözü, dört şık, telefon ve TV görünümü) HTML olarak kurup tek çekimlik bir tanıtım çıkarabilirsin; Claude Code içinde Mac'te çalışır, API maliyeti yok. Uyarı: lisans ticari olmayan kullanımla sınırlı, ticari lansman için izin ya da Pro gerekir; 4K60 render Mac'te uzun sürer.",
+   "matched_project": "Lyricdrop",
+   "relevance": 5,
+   "investment_note": null
+  },
+  {
+   "full_name": "KKKKhazix/agent-autoloop",
+   "inputs_hash": "2a07bd1b224c1768b4074f14ebf94bb9",
+   "description_tr": "agent-autoloop, Claude Code ve Codex gibi komut satırı ajanlarını arka planda iş alıp sonuna kadar takip edecek şekilde çalıştıran bir otomasyon çekirdeği. Olay kaynağı, ajan ve bildirim kanalı eklenti olarak değiştirilebiliyor; ajan emin olmadığında Feishu, Slack, Discord gibi kanallara onay kartı gönderiyor. Node 24 ister, Windows/macOS/Linux'ta yerelde çalışır.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "mexicat/pdoom-video",
+   "inputs_hash": "0481a2b2f9cf4b132db1ee5d352f6467",
+   "description_tr": "Bu depo, 'I'm Upping My P(doom)' şarkısı için kodla üretilen bir müzik videosu. Kelime senkronlu karaoke tipografisi her kareyi şarkı zamanının belirleyici bir fonksiyonu olarak çiziyor; tarayıcı önizlemesi ile 1080p60 veya 4K60 çıktı aynı. Yazara göre tamamı Claude Code ile yapıldı; şarkı projeye ait değil.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "vercel-labs/fx",
+   "inputs_hash": "87d671b1fb16e16c49a7be91ab96cc8a",
+   "description_tr": "fx, Zig ile yazılmış tek bir yerel ikili dosya olarak gelen küçük bir kodlama ajanı CLI'ı. Çıktısı terminal geçmişine akıyor; betiklerden `fx ask`, editörlerden ACP ve JavaScript'ten libfx ile gömülebiliyor. Skills, MCP ve AGENTS.md destekleniyor; varsayılan modda riskli eylemleri bir model denetliyor. Vercel Labs deneysel olarak işaretlemiş.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "Folkbench/folkbench",
+   "inputs_hash": "f9673a2ce0204470397fd25425e4f560",
+   "description_tr": "Folkbench, AI API aktarım (relay) sitelerinin kullanılabilirlik, gecikme ve fiyatını ölçüp sıralayan bir değerlendirme platformunun masaüstü istemcisi. Folkbench Switch, seçilen hattı Claude Code ve Codex gibi araçların yapılandırmasına yazıyor. README'de sponsor aktarım siteleri tanıtılıyor; Tauri ile yazılmış, lisans belirtilmemiş (NOASSERTION).",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "kuafuai/andee",
+   "inputs_hash": "cdfe7294c6c54e2775a6551d639db5a7",
+   "description_tr": "Andee, Android telefonda ya da Mac'te çalışıp uygulamaları bir kullanıcı gibi, erişilebilirlik izniyle yöneten kişisel bir ajan. Entegrasyon, root ya da özel ROM istemiyor; herhangi bir OpenAI uyumlu model kullanılabiliyor ve hafıza ile parolaların cihazdan çıkmadığı söyleniyor. Kotlin; lisansı NOASSERTION. Kolay kurulum yolu ücretli bir üçüncü taraf derleme servisi.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "JoasASantos/REA-Prompts",
+   "inputs_hash": "2a4cc7dc516c535a4379645db93c628e",
+   "description_tr": "REA-Prompts, REA (Reverse Engineer Anything) aracını daha iyi kullanmak için hazırlanmış bir komut istemi kütüphanesi: kurulumdan Go ve Rust ikili dosyalarından kaynak kurtarmaya kadar 26 skill paketi içeriyor. `setup.sh` bunları Claude Code, Codex, Hermes veya Antigravity'nin skills klasörüne kopyalıyor; tek parça `system_prompt.md` de var. MIT lisanslı.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "xiaobright/dsh-anchored-standard",
+   "inputs_hash": "a6d32ef7bb1a4cc577f61689866cafe8",
+   "description_tr": "dsh-anchored-standard, DeepSeek Harness için deneysel bir ön ayar: oturumu önce Minimal araç şemasıyla başlatıp, oturum kalıcı olunca daha ağır Standard araçları açıyor. Proje 2026-09-10'da dondurulmuş; ölçüldüğü V4 Pro modeli emekliye ayrıldığı için yeni sürüm V4.1 Flash üzerinde ölçülmedi. Topluluk projesi, DeepSeek'e bağlı değil.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "lennney/stop-that-shit",
+   "inputs_hash": "ea7fefeec9c1ed4580bfd31254109882",
+   "description_tr": "Stop That Shit, kodlama ajanlarının istenmeyen işlerini durduran bir Skill ve Hook paketi: kapsam genişlemesi, kullanılmayan checksum'lar, salt okunur incelemede dosya değiştirme ve aynı kontrolü tekrarlama. Guard, desteklenen araç çağrılarından önce sınırı denetliyor. Claude Code, Codex, OpenCode, Hermes ve Pi'a kurulur; Node.js 18+, yerel, MIT.",
+   "usage_tr": "Lyricdrop v2'yi Superpowers ile yeniden yazarken ajanın tek düzeltmede yan modüle dokunmasını durdurmak için kullanabilirsin; Claude Code'da Mac'te yerel çalışır, ek maliyeti yok. `review` modu incelemede dosya yazmayı kapatır, `files=` dosya kümesini kilitler. Uyarı: kuralların çoğu model uyumuna bağlı, Guard her taşkınlığı yakalamaz.",
+   "matched_project": "Lyricdrop",
+   "relevance": 7,
+   "investment_note": null
+  },
+  {
+   "full_name": "hardbeat920/monocode",
+   "inputs_hash": "6748c5d77a106436bd9e538dacd402b6",
+   "description_tr": "Monocode, Claude Code, Codex, Cursor, OpenCode gibi kurulu ve oturumu açık kodlama ajanlarını tek arayüzde sekmeler halinde çalıştıran bir GUI. Token satmıyor, mevcut aboneliklerini kullanıyor. Tauri sürümü ve Rust + GPUI ile yazılmış deneysel Native önizlemesi var; macOS, Linux ve Windows'ta çalışır, MIT lisanslı.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "InukaAsith/TwinDesk",
+   "inputs_hash": "9d982a122cdff758b8909342dd52983f",
+   "description_tr": "TwinDesk, Mac, Windows, Linux ve Android cihazları tek masa gibi kullandıran açık kaynak bir araç: ortak fare ve klavye, pano, dosya sürükleme, uygulama pencereleri, arama ve mesajlar. Hesap ve bulut gerektirmiyor, ortak ağ da şart değil. Electron tabanlı, GPL-3.0; Synergy ve KDE Connect'e alternatif olarak konumlanıyor.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "Nanako0129/sepia",
+   "inputs_hash": "ccc4acf20a956da22153c40f43bd34c1",
+   "description_tr": "sepia, AI yazısını ele veren katmanları onaran taşınabilir bir agent skill. Kurguda önce anlatı mimarisini düzeltiyor; sürüm notu, PR yanıtı gibi profesyonel metinlerde türe özel kurallar uyguluyor. Dört işlemi var: write, review (yalnızca teşhis), refactor ve recreate. Cümle ritmi kalibrasyonu İngilizce ve Çince için yapılmış; MIT.",
+   "usage_tr": "Folio'nun günlük içerik pipeline'ında üretim adımından sonra review modunu teşhis kapısı yapıp yalnızca eşiği geçemeyen metinleri refactor'a göndermek tüm metni yeniden yazdırmaktan ucuz olur. Claude Code'da skill olarak Mac'te çalışır. Uyarı: kurallar Türkçede sınanmamış, kurgu önerileri kısa postlara tam oturmaz.",
+   "matched_project": "Folio",
+   "relevance": 4,
+   "investment_note": null
+  },
+  {
+   "full_name": "SoMarkAI/OXR",
+   "inputs_hash": "405644a8c6d0af82f86054d40a90da36",
+   "description_tr": "OXR, SoMark ekibinin 1.3 milyar parametreli açık kaynak belge ayrıştırma modeli: PDF ve belge görsellerini yerleşim koordinatlarıyla Markdown ya da JSON'a çeviriyor. Yerleşim analizi ayrı ve değiştirilebilir bir modül. README, olmOCR-Bench ve OmniDocBench'te birinci olduğunu söylüyor; bunlar proje içi iddialar, makale henüz yok. Ücretsiz API ve demo var.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "ardeyouxipianyi/workbuddy2api-hub",
+   "inputs_hash": "9903dea7d2d4bca5f03d118148f99914",
+   "description_tr": "workbuddy2api-hub, Tencent'in WorkBuddy hizmetinin birden fazla hesabını standart OpenAI uyumlu API'ye çeviren bir ters vekil ağ geçidi; Codex, Claude Code ve DSH ile kullanılabiliyor. Resmi olmayan istemci olduğundan hesap yasağı riski var; README, 2026-10-23'ten beri üst akışın engellemeyi sıkılaştırdığını ve bakımın yavaş olabileceğini söylüyor. Python, MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "NVlabs/SoL-Pi",
+   "inputs_hash": "b326695586e95e898d6e4e8c6bf168df",
+   "description_tr": "SoL-Pi, NVlabs'ın Pi kodlama ajanı harness'i için yazdığı bağımsız verimlilik eklentisi. Düzenlemenin ardından doğrulama komutunu aynı adımda çalıştırma, bağlam tekrarını azaltma, büyük araç çıktılarını kısaltma ve uzun log okumayı engelleme mekanizmalarını içeriyor; hepsi varsayılan olarak kapalı. Pi'a bağlı, Claude Code ve Codex için ayrı bir skill örneği var. TypeScript, MIT.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam Claude Code ve OpenCode kurulumunun bağlam yönetimi. Kod Pi'a bağlı, taşınabilir bir plugin değil. Alınacak şey fikir: doğrulamayı düzenlemeyle birleştirmek ve biten alt görevleri bağlamdan çıkarmak. Şimdilik okuyup not almak kurmaktan mantıklı.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "yanliudesign/mono-color-skill",
+   "inputs_hash": "0615a674a89583062bff8ab08e28c1ba",
+   "description_tr": "Monochrome Editorial Print, tek mürekkepli (kontrollü iki mürekkepli) editoryal baskı görselleri üreten bir agent skill; poster, zine, ambalaj ve portre için. Sıcak kâğıt zemin, halftone fotoğraf ve geniş negatif alan kullanıyor; referansı kopyalamak yerine her kompozisyonu konuya göre kuruyor. Claude Code ile çalışır, MIT, CI doğrulaması var.",
+   "usage_tr": "Folio'nun post ve story görsellerine jenerik AI görseli yerine tutarlı bir baskı estetiği vermek için kullanabilirsin; Claude Code'da skill olarak Mac'te çalışır. Arslan Holding marka görselleri ikinci bağlam olabilir. Uyarı: görseli üreten modelin maliyeti ayrıdır ve örnekler poster oranlarında, dikey feed için format denemesi gerekir.",
+   "matched_project": "Folio",
+   "relevance": 5,
+   "investment_note": null
+  },
+  {
+   "full_name": "wy51ai/floorplan-3d",
+   "inputs_hash": "39e697d4b04852ef35c9af887aa13d36",
+   "description_tr": "floorplan-3d, tek HTML dosyasından çalışan bir daire planı aracı: 2D planı SVG ile, 3D sahneyi Three.js ile gösteriyor. Mobilya kütüphanesi, ölçüm, duvar sökme/yıkma, zemin malzemesi birim fiyatları ve WASD ile gezinti var; veri localStorage'da. Çerçeve ya da derleme adımı yok, MIT lisanslı. Yapay zekayla ilgisi yok.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "Derpyu520/qq-bridge",
+   "inputs_hash": "b86975bf7e345fa6c52f666f32fdcdff",
+   "description_tr": "qq-bridge, QQ'yu (SnowLuma OneBot v11 üzerinden) DeepSeek Harness ajanlarına bağlayan bir köprü: grup ve özel sohbet başına oturum, sohbet ve 'grup arkadaşı' simülasyon modları, yönetici için tam araçlı asistan modu. Windows ve Node.js 22.13+ gerektirir; SnowLuma ve DSH ayrı kurulur. Üçüncü taraf bir proje; lisansı NOASSERTION.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "wang2122/sprix-sage-router",
+   "inputs_hash": "e37490bbbf571c0ac79d54e30f1c09b2",
+   "description_tr": "Sprix SAGE Router, A2A ajan ağlarında çalışmakta olan bir görevin devam mı edeceğini, iş birlikçi mi çağıracağını yoksa devredilip devredilmeyeceğini karar veren bir yönlendirme katmanı. Tamamlanan DAG düğümleri, yeniden kullanılabilir çıktılar, kalite, bütçe ve süre tek bir hedefte değerlendiriliyor. Python, MIT; Sprix AI'ın araştırma çıktısı, benchmark'ı README'de.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "dsh-tauri/deepseek-harness-desktop",
+   "inputs_hash": "aed5cf37ee290049eb211b0db3041f42",
+   "description_tr": "DSH Tauri masaüstü sürümü, DeepSeek Harness'i Node.js, pnpm veya Docker kurmadan masaüstünde çalıştırıyor. 12 yerleşik eklenti, eklenti ve profil yönetimi, `dsh` komut satırı sarmalayıcısı ve Android/iOS'tan QR ile uzaktan bağlantı sunuyor. Tauri 2 ve React 19, Windows, macOS ve Linux; MIT lisanslı.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "lucasmarkes/hairline",
+   "inputs_hash": "a4af8c3cf8ca0eeab897b646e707565c",
+   "description_tr": "hairline, işaretçiye tepki veren izometrik çizgi figürleri çizen bir kütüphane: örneğin sekiz kartlık bir tepsi ya da imlecin çevresinde yükselen 81 sütun. React bileşenleri ve DOM'a bağlanan düz bir `terrain()` işlevi olarak kullanılıyor; yoğunluk ayarı ve klavye desteği var. TypeScript, MIT, bir animasyon bileşeni.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "scenario-labs/skills",
+   "inputs_hash": "47d5fd3895ee5c48bc9a8294d0fa930a",
+   "description_tr": "Scenario Agent Skills, Claude Code, Cursor, Codex gibi ajanlara Scenario MCP sunucusuyla görsel, video, ses ve 3D içerik üretmeyi öğreten skill'ler topluyor; fiyatı önceden gösterme ve karakter tutarlılığı gibi akışlar içeriyor. Ayrıca Blender, Maya, ZBrush, Unreal ve Unity'yi yerel kurulumdan süren uzman skill takımları var. MIT; Scenario hesabı gerekir.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "JuneYaooo/rea-video",
+   "inputs_hash": "630230351190182cd82e2ca7f6dc260a",
+   "description_tr": "rea-video, herhangi bir videoyu çekim çekim çözümleyip her planın gerçek çekim mi, yapay zeka üretimi mi, kodla yapılmış mı olduğunu söyleyen ve yeniden yapım planı çıkaran bir skill. Altyazı, kesim ve ses yapımını da açıklıyor. Claude Code ve Codex içinde ffmpeg ve VLM ile çalışır; raporlar Çince veya İngilizce. Python, Apache-2.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "devdotfast/whiteboard",
+   "inputs_hash": "7fca801281f8c719df63a38e7443ea9d",
+   "description_tr": "Whiteboard, insanlarla kodlama ajanlarının aynı tuvalde yazılım tasarladığı açık kaynak bir masaüstü uygulaması. Claude Code, Codex gibi ajanlara tuvale çizim yaptıran bir SDK veriyor; Rust ile yazılmış AST farkında semantik diff görüntüleyicisi ve ajan kararlarının günlüğü var. Yerel checkout'larda çalışır, telemetriye kod girmez. MIT; dosya düzenleme yok.",
+   "usage_tr": "Lyricdrop v2'nin yeniden yazımında Claude Code'un ürettiği dalı ajanın diyagramı ve karar günlüğüyle okumak için kullanabilirsin; semantik diff test ve dokümanı katlayıp değişen mantığı öne alır. Mac'te yerel çalışır, ek API maliyeti yok. Uyarı: dosya düzenleme yok, çoklu repo zayıf, proje genç.",
+   "matched_project": "Claude Code",
+   "relevance": 7,
+   "investment_note": null
+  },
+  {
+   "full_name": "liseami/CCBaga",
+   "inputs_hash": "6a8ce81baa798f5c51d8dcffa2b96164",
+   "description_tr": "CCBaga, macOS, Linux ve Windows için Claude kimliklerini, tarayıcı parmak izlerini ve sistem ayarlarını yönetmek için bir masaüstü araç takımı; izole bir Fingerprint Chromium profili ve ağ çıkışı karşılaştırması içeriyor. README, kullanımın Anthropic hizmet şartlarına aykırı olmaması gerektiğini söylüyor. Rust, MIT; amacı bölge ve kimlik maskeleme olduğundan dikkatle değerlendirilmeli.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "danielblnc/DLSS-NR-on-AMD",
+   "inputs_hash": "d9f91d74a35834c286769e3eb292a7e7",
+   "description_tr": "Depo, DLSS 5 Neural Rendering'i AMD Radeon RX 6000, 7000 ve 9000 kartlarında çalıştırdığını iddia eden bir mod yöneticisi (NeuralHub). Kullanıcının NVIDIA'nın kapalı `nvngx_dlssnr.dll` dosyasını kendisinin sağlaması ve oyunlara mod yükleyici kurması gerekiyor. Kaynak dili belirtilmemiş, lisans NOASSERTION; DirectX 12 oyunları için, doğrulanabilir bir kanıt sunmuyor.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "anthropics/commerce-agents",
+   "inputs_hash": "9504918e1f4f2c3c7292c86f2624d8b7",
+   "description_tr": "commerce-agents, Anthropic'in Claude ile alışveriş ve satıcı ajanları kurmak için yayımladığı bir referans planı. Perakende, seyahat, telekom ve eğlence dikeylerinde sahte ACME şirketiyle örnekler içeriyor; ödeme almıyor, satıcı yazmaları insan onayına kadar bekletiliyor. Python 3.11+ ve Node 22, ANTHROPIC_API_KEY gerektirir; Apache-2.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "Revivedx/SavageWindRecomp",
+   "inputs_hash": "9a40e36bd5582462b4b18cb107daf499",
+   "description_tr": "Savage Wind Recomp, The Legend of Zelda: Breath of the Wild'ın (Switch, 1.9.0) Windows ve Linux için statik rekompilasyonu; devam eden bir çalışma. Açılış bölümü ve Great Plateau 60 fps çalışıyor, bir oyuncu ilk Divine Beast'i bitirmiş, geri kalanı doğrulanmadı. Oyun dosyası yok, kendi dökümünü getirmen gerekir. README, kodun neredeyse tamamının Claude Code ile yazıldığını söylüyor.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "tidain/YunX-Desktop",
+   "inputs_hash": "d8bc154518215f536716fac0955be611",
+   "description_tr": "YunX Desktop, paylaşım bağlantısını yapıştırarak Quark, Baidu, Xunlei gibi Çin bulut depolamalarından ve Bilibili, Douyin gibi video sitelerinden hızlı indirme yapan Windows masaüstü uygulaması; magnet, BT ve ed2k de destekleniyor. Parçalı eşzamanlı indirme ve devam ettirme var. Kotlin, AGPL-3.0. Yapay zekayla ilgisi yok.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "xmanrui/dsh-im",
+   "inputs_hash": "8eb4c1bcb296d154092c3fdb01f11028",
+   "description_tr": "dsh-im, DeepSeek Harness'e Feishu, WeChat, DingTalk, WeCom, QQ, Slack, Telegram, Discord ve WhatsApp bot kanallarını QR kod ya da bot kimlik bilgisiyle bağlayan bir eklenti. README görsel ağırlıklı ve kurulum bilgisi pakette kesik; yalnızca kanal listesi ve konumlandırma görülebiliyor. JavaScript, MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  }
+ ]
+}

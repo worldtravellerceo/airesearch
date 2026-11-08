@@ -1,0 +1,404 @@
+{
+ "repos": [
+  {
+   "full_name": "aicodeking/pandacode",
+   "inputs_hash": "6ac6526b2b718b61a7731fa54dcfceeb",
+   "description_tr": "Tauri 2 ve Rust ile yazılmış masaüstü uygulama; Claude Code, Codex, OpenCode, Copilot CLI gibi kodlama ajanı CLI'larını tek pencerede, projeler, Git, terminal ve tarayıcıyla yan yana çalıştırır. Hesap ve telemetri yok; lisans, fork'larda atıf şartı koyan MIT türevi.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "Barty-Bart/motion-graphics",
+   "inputs_hash": "a9362befdeefc14b8426cd15566b454f",
+   "description_tr": "Claude Code ve Codex için hareketli grafik skill'leri koleksiyonu: B-roll, açıklayıcı video, nesne ayırma ve ses efekti skill'leri `npx skills add` ile kurulur. Kod MIT lisanslı; yazı tipleri ve ses efektleri ayrı lisanslarla geliyor.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "gufo-org/gufo",
+   "inputs_hash": "d12b86248b815f3da39c58e2bd22f3c5",
+   "description_tr": "AMD Strix Halo donanımı (Ryzen AI MAX+ 395, gfx1151) için yazılmış C++ yerel LLM çıkarım motoru; Linux ve Windows'ta çalışır. Qwen3.8 modellerinde Q4 kuantizasyonla yaklaşık 650 tok/s prompt işleme ve 70 tok/s üretim hızı raporluyor. MIT lisanslı.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "ovobrowsersupport/ovobrowser",
+   "inputs_hash": "d192e4e1d910e0b735abc67dca4f60ff",
+   "description_tr": "Chromium'u kaynak seviyesinde değiştiren bir tarayıcı parmak izi çekirdeği; Canvas, WebGL, Audio ve Client Hints gibi değerleri C++ tarafında yönetir ve bot tespit sitelerinde normal Chrome gibi görünmeyi hedefler. Şimdilik yalnızca Windows x64; README Çince ve İngilizce. MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "byJoey/warp-masque-actions",
+   "inputs_hash": "a3bdec0e61cacd2edcc85cb27c7081c7",
+   "description_tr": "GitHub Actions üzerinde Cloudflare WARP (MASQUE) anahtarı üretip mihomo uyumlu yapılandırma dosyası çıkaran bir workflow; çıktı artifact olarak saklanır. Clash Verge, ClashMi, FlClash gibi istemcilerde mihomo Alpha çekirdeği gerekir. README Çince.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "mikroverk/esp32sim",
+   "inputs_hash": "3def1c133fb0cff4a1fff5341dea1e4a",
+   "description_tr": "Rust ile yazılmış açık kaynaklı ESP32 emülatörü; gerçek firmware'i mask ROM ve bootloader dahil bilgisayarda ya da tarayıcıda donanımsız çalıştırır. ESP32-S3 olgun, diğer çipler taslak ya da erken aşamada; ekran, dokunmatik, WiFi ve kamera modelleniyor. MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "ADWMC/helm-d",
+   "inputs_hash": "231f746bb5e63edf7cda8f2cf4964fd5",
+   "description_tr": "DeepSeek Harness için güvenlik analizi eklentisi: Android, Web, Native ve protokol analizi için 49 araç ve 353 referans metin sunar, bulguları kanıt zincirine bağlar. Eklenti ayrıca model kısıtlarını gevşeten modlar içeriyor. README yalnızca yetkili değerlendirmeler için olduğunu söylüyor. AGPL-3.0, Node 22.1+.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "livliv-dev/player",
+   "inputs_hash": "53f77669e49ea9b1fb7709151e9c0ae1",
+   "description_tr": "Web için hafif bir 2.5D karakter oynatıcı: WebGL2, bağımlılık yok, çekirdek yaklaşık 30 KB gzip. Mikrofon, ses ya da videodan dudak senkronu ve kamerayla yüz takibi sunar; LivLiv, VRM ve PNGTuber karakterlerini tek API'yle oynatır, 21 hazır karakter var. Apache-2.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "supermemoryai/company-brain",
+   "inputs_hash": "4b4b26dc0dc8ac66650b46a368577807",
+   "description_tr": "Slack'te çalışan, ekibin konuşmalarını hatırlayan ve issue açma, PR okuma gibi işleri yapabilen bir ekip asistanı. Supermemory'nin kapattığı ücretli ürünün açık kaynak hali; kendi Cloudflare hesabında çalışacak şekilde yeniden kurulmuş. TypeScript, Apache-2.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "jamro/tiny-engineer",
+   "inputs_hash": "b743ea22344587f43678b49705e4fd5e",
+   "description_tr": "ESP32, servo, OLED ve hoparlörle yapılan küçük bir masaüstü robot; kodlama ajanı dosya okurken etrafına bakar, kod yazarken yazı yazar, iş bitince zil çalar. Claude Code, Cursor ve Antigravity ile `npx tiny-engineer setup`, diğerleriyle HTTP API üzerinden bağlanır. Gövde 3D yazıcıyla basılır.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "davatron5000/microlighter",
+   "inputs_hash": "36023b9f2c135577c347327e7285e524",
+   "description_tr": "CSS Highlights API'sini kullanan, bağımlılığı olmayan sözdizimi vurgulayıcı; sıkıştırılmış yaklaşık 2 KiB. 37 dil isteğe bağlı yüklenir, 10 tema gelir ve token için ek HTML etiketi eklemediğinden DOM temiz kalır. JavaScript, MIT lisanslı.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "thisisgm/flea",
+   "inputs_hash": "8345a9a342401db5c7ae90ea5ab9ed56",
+   "description_tr": "Omarchy (Hyprland tabanlı Linux dağıtımı) için Rust ve QML ile yazılmış GUI dosya yöneticisi: liste, sütun, ızgara ve çift panel görünümü, Quick Look önizleme, etiketler, SMB/SFTP/WebDAV bağlantıları ve ISO'yu USB'ye yazma. Yalnızca Omarchy paket deposundan kurulur. MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "eliasstravik/shepherdr",
+   "inputs_hash": "09ebae02e971dd4fce5d5858b8463ea8",
+   "description_tr": "Herdr uygulaması için bir eklenti: her çalışma alanında bir Asistan görevleri alır, her görev ayrı git worktree'de bir herdr-core ajanı olarak çalışır ve birleştirmeden önce ayrı bir ajan inceleyebilir. Telefon, tablet ya da masaüstünden çok sayıda kodlama ajanını yönetmek için. MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "z91772524-ai/pojia-next",
+   "inputs_hash": "e7934403863d8f53b578c833137c1ca1",
+   "description_tr": "Dört AI istemcisinin (DSH, WorkBuddy, ZCode, Codex) yerleşik istemlerini kullanıcının kendi metniyle değiştiren bir Windows aracı; yedek alır ve geri yükler. README, istemci kullanım şartlarının gri alanında olduğunu ve hesap riskinin kullanıcıda olduğunu belirtiyor. Yalnızca exe dağıtılıyor, aktivasyon kodu gerekiyor.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "RikiyaT/lm_understand-logs",
+   "inputs_hash": "549163cc3f6f3a54330429397165c4fc",
+   "description_tr": "'LLM'ler sinir ağı ağırlıklarını anlayıp yazabilir' başlıklı blog yazısındaki deneylerin tam kayıtları: modele gönderilenler, cevaplar, çalıştırılan kod, değerlendirmeler ve ağlar. Deneyler Codex ile araçsız yürütülmüş ve 1.125 turun tamamı denetlenmiş. Araç değil, tekrarlanabilirlik arşivi.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "DenisSergeevitch/desktop-fly",
+   "inputs_hash": "f75bd564eb666fd076270d1f8ab4fffd",
+   "description_tr": "macOS masaüstünde yaşayan 3D bir meyve sineği: FlyWire beyin bağlantı haritası ve MaleCNS bacak ağına dayanan canlı bir spiking simülasyonu bacakları ve davranışı sürüyor. Beyin penceresinde 23.210 nöron konumu görülüyor ve bölgeler uyarılabiliyor. Swift ile yazılmış.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "User0332/rewards-farmer",
+   "inputs_hash": "587251a2277fdeec33e3091ad5892d13",
+   "description_tr": "Microsoft Rewards görevlerini otomatikleştiren Python betiği; arama sorguları ve profil kurulumu README'de anlatılıyor, bir YouTube videosuna dayanıyor. Windows masaüstü uygulaması ayrı bir depoda. Bu tür otomasyon hizmet şartlarına aykırı olabilir. MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "Bibapcs/BibaYanji",
+   "inputs_hash": "13a2d84f3d5e92ea229c72a9f71f79e4",
+   "description_tr": "Windows'ta ikinci el ya da yeni bilgisayarı teslim alırken donanımı doğrulayan araç: CPU, ekran kartı, bellek, disk ve pil bilgisini toplar; klavye, ölü piksel, kamera ve mikrofon testleri yapar. Prime95 ve FurMark ile ısınma, CrystalDiskMark ile disk hızı ölçer. Modüller eklenti, arayüz Çince.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "ViceVerse-cz/Serein",
+   "inputs_hash": "a64d46f087ba1756c8e439ff06f6da47",
+   "description_tr": "egui ve wgpu ile Rust'ta yazılmış hafif, yerel bir Discord masaüstü istemcisi; macOS, Linux ve Windows için derlenmiş sürümler var. README, normal hesapları resmî API dışında kullanmanın Discord şartlarına aykırı olduğunu ve hesap kapatma riski taşıdığını uyarıyor. Apache-2.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "ComputerUseAgent/AutoCua",
+   "inputs_hash": "b86dcf37a8ab77c66e60a2be69a09cbf",
+   "description_tr": "macOS, Windows, Linux, tarayıcı, iOS ve Android'de ekranı görüp tıklayan, yazan ve gezinen bir computer-use ajanı; PyPI paketi olarak gelir, tarayıcı tarafı Rust ve Chrome eklentisinden oluşur. Gerçek donanım girdi olayları kullanır. Python 3.10+, MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "dagoSte/squadra",
+   "inputs_hash": "23d160eb80202711366d0c4cbf8441f7",
+   "description_tr": "Claude Code, Codex ve Cursor pencerelerini ortak görevler, ön kontroller, paralel testler ve bağımsız incelemeyle koordine eden ajan orkestrasyon aracı; ilerleme ve kanıtlar yerel, iki dilli bir panoda izlenir. MCP eklentileri var. Python 3.12+, macOS ve POSIX, MIT, hesap gerektirmez.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "emanuele-em/kanzo",
+   "inputs_hash": "b6285817578cd84493ffcf53b0ba1dad",
+   "description_tr": "Tek 4,7 MB'lık Rust programında hem tarayıcıda açılan kanban panosu hem MCP sunucusu: sen panoyu, kodlama ajanların MCP üzerinden aynı kartları kullanır. Hesap ve kurulum gerekmez; tek bilgisayarda ya da ortak panoda çalışır. AGPL-3.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "threerocks/sweety-handdraw-video",
+   "inputs_hash": "b689a0d0810f32e4bea1a07b6c878c5d",
+   "description_tr": "Bir konudan ya da makaleden, çizgileri bölüm bölüm çizen, yazıyı harf harf yazan ve sesli anlatım ekleyen el çizimi anlatım videosu üreten araç. Önce çizgi taslağı, sonra marker ile renklendirme yapılır; video veriyle tanımlanır. Sürüm 3.0.2, MIT, belgeler Çince.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "smontlouis/bible-strong-avatar-lab",
+   "inputs_hash": "041d84de2b1941550d07f96a18bc6802",
+   "description_tr": "Tarayıcıda çalışan prosedürel 2D avatar tasarım stüdyosu: SVG ile çizilen karakteri kurar, nötr görünümünü tanımlar, ifadeler ve yeniden kullanılabilir animasyonlar oluşturur ve stüdyo arayüzünden bağımsız dışa aktarır. Projeler yerelde tutulur. TypeScript, AGPL-3.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "BoardUI/boardui",
+   "inputs_hash": "590151efa016fb55899888953922e7eb",
+   "description_tr": "Ajan arayüzleri için React tasarım sistemi: bileşenler kaynak dosya olarak projeye kopyalanır ve hem AI ürünlerinin hem panellerin ihtiyaç duyduğu parçaları kapsar. Depo ücretsiz katmanın tamamı; ana sayfa kendi model anahtarınla çalışan bir AI sohbet uygulaması. MIT, Next.js.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "kyky2347/ALTA",
+   "inputs_hash": "be9b6bfb8f9c8a4bfe257113b4c63b97",
+   "description_tr": "Kanıt odaklı araştırma, gölge (Shadow) simülasyonu ve açıkça yetkilendirilmiş aracı kurum emirleri sunan çok ajanlı bir ticaret araştırma platformu; yerelde çalışır, denetlenebilir konsolu var. Altı bağlayıcı var ama canlı hesap doğrulaması yok; README deneysel olduğunu belirtiyor. Python, Apache-2.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "Mastershort/neonplan3d",
+   "inputs_hash": "ef85f3bcca39974fec3a3c0da886051f",
+   "description_tr": "Home Assistant için 3D kat planı: evi yerleşik editörde çizersin, ışıklar, perdeler, klima, medya, sensörler ve kameralar neon 3D görünümde canlı izlenip kontrol edilir. Panel ve pano kartı olarak çalışır, eski duvar tabletlerinde de açılır, bulut gerekmez. HACS ile kurulur, MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "p2r3/ha.mr",
+   "inputs_hash": "f6d9f305c8e870fe508feb47889de712",
+   "description_tr": "Bağlantıları ve QR kodlarını tamamen tarayıcıda sıkıştıran statik bir araç: protokol, alan adı ve yol kısımlarını Huffman kodlu sözlükle bitlere indirir, böylece daha küçük QR kodu çıkar. Arka uç veya veritabanı yok. JavaScript, MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "Fei2411/real-api-pricing",
+   "inputs_hash": "a557078dfe1ba16f43acde1332d3af28",
+   "description_tr": "Abonelik ücretini gerçekte kullanılabilir token miktarına bölerek API fiyatlarını karşılaştıran veri ve grafik deposu; 344 plan-model noktası, kota ve birim fiyat grafikleri var. Fiyat ve plan sorgulayan bir TypeScript CLI de içeriyor (Node 22.12+). MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "eness/php2shell-CVE-2026-109618-CVE-2026-109619-PoC",
+   "inputs_hash": "42a12972a292c5240e08bce575a8ec24",
+   "description_tr": "Bir PHP açığına (CVE-2026-109618 / 109619) ait kavram kanıtı (PoC) deposu; README açığın nedenini, etkilenen sürümleri, tespit göstergelerini ve WAF, Apache, Lighttpd için azaltma yapılandırmalarını anlatıyor. Güvenlik araştırması amacıyla yayımlanmış; lisans belirtilmemiş. Yetkisiz sistemlerde kullanılmamalı.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "Superior-Trade/trading-terminal",
+   "inputs_hash": "a5f6c99f19ca7667d1bcb2b6f88c9910",
+   "description_tr": "Hyperliquid için kendi sunucunda çalışan AI ticaret terminali: grafik üzerine çizilen görüşü giriş, stop ve hedefli bir kuruluma çevirir, doğrulanmış bir Freqtrade/Nautilus-Trader stratejisi yazar ve canlıya alır. Barındırılan sürümü de var. TypeScript, Next.js, Apache-2.0. Gerçek para riski taşır.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "openqodex/openqodex",
+   "inputs_hash": "520218c201abefe0de27540e907122ff",
+   "description_tr": "Kodlama ajanlarının yazdığı değişiklikleri push öncesinde ayrı bir inceleyicinin kontrol ettiği açık kaynak kod inceleme aracı; ayrıca ajana kod tabanının haritasını veren bir kod grafiği sunar. Claude Code, Codex, Cursor ve Cline'da çalışır, `npx openqodex init` ile kurulur. Apache-2.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "mmdoctor/google-pro-helper",
+   "inputs_hash": "760030dcd7dc99e45219f3d3befd0360",
+   "description_tr": "Chrome eklentisi olarak yüklenen bir betik; README'ye göre Google One abonelik sayfasında ücretsiz ya da indirimli deneme adımlarını yönlendiriyor ve ödeme yöntemi bağlamayı gerektiriyor. README Çince, lisans ve açıklama yok. Hizmet şartlarına aykırı olabilir ve ödeme riski taşır.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "Leonxlnx/cinetic",
+   "inputs_hash": "0e85b7b1a47e75e0cca7f65f76ce5c12",
+   "description_tr": "Remotion ile kodlama ajanının yönettiği sinematik ürün lansman ve güncelleme videoları üreten bir agent skill. Önce kısa ve net bir metin yazdırır, `copy-check.py` ile belirsiz ifadeleri eler, her satıra ayrı bir metin animasyonu atar. Claude Code ile çalışır. TypeScript, MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "MaxGramser/homeassistant_espscreen",
+   "inputs_hash": "58f3ecc45b3657b1738d15ce05f87008",
+   "description_tr": "Home Assistant için ESP32 tabanlı 2,8 ile 10,1 inç dokunmatik ekran sistemi (eski adı ESP Screens): sürükle-bırak editör, YAML ve MQTT gerektirmez. CYD, Guition ve Waveshare panelleri destekler; add-on olarak kurulur. Yazar proje için bağış arıyor. Python, AGPL-3.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "ERRRC/kaogongzhentizhengliu",
+   "inputs_hash": "5366a7f3b119915aca102c76eae9f3bf",
+   "description_tr": "2016-2026 yıllarının Çin devlet memurluğu sınavı (国考/省考) çıkmış sorularını, mantıksal muhakeme ve veri analizi bölümleri için konu bazında yeniden düzenlenmiş Obsidian notları. Yaklaşık 22 bin not ve 21 bin görsel içerir, çevrimdışı okunur. Notlar kısmen programla üretilmiş; görsel hakları üçüncü taraflara ait.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "anishfn/shapeshift",
+   "inputs_hash": "c5d2ed32e4f8db9a6360f98f5f648f5b",
+   "description_tr": "Tek bir metin kutusunun yazdıkça uygun arayüze dönüştüğü bir bileşen: 'cuma 8de zoom' etkinlik kartına, alışveriş listesi kontrol listesine, bölüşme hesabı sonuca çevrilir. Niyet sınıflandırması TypeSafe Jev modeliyle yapılır; anahtar yoksa anahtar sözcüklü çevrimdışı sınıflandırıcıyla çalışır. Bun, TypeScript, MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "ShyVortex/dlss-unlocked",
+   "inputs_hash": "0cc3b7ee0bdc8f831c3c514bc451704f",
+   "description_tr": "NVIDIA RTX kartlarında DLSS yükseltme ve kare üretimi özelliklerini, bunları desteklemeyen kartlarda da DirectX 12 oyunlarına açmayı amaçlayan bir Windows aracı; DLSS Enabler ve OptiScaler gibi projelere dayanıyor. Üçüncü taraf yazılımlarla uyumluluk ve çevrimiçi oyunlarda risk olabilir. MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "viettranx/3dviz-pro-max",
+   "inputs_hash": "4bee6cd6a5197b4f1186ec1a9e7e94bb",
+   "description_tr": "Three.js ve Blender ile yaratıcı 3D görselleştirme için bir agent skill (Claude Code ve Codex eklentisi): on adımlı iş akışı, 223 tarif, 440 bilgi kaydı, 22 hazır kit ve ajanın render ettiği kareleri inceleyen yakalama aracı sunar. 'Köy kur' gibi tek cümlelik istekle başlar. JavaScript, MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "heyjunpenn/awesome-jev",
+   "inputs_hash": "cdd0530dee1dc99b2f7dfbff6eef9963",
+   "description_tr": "Jev (TypeSafe AI'nin yazılım içi tipli karar modeli) ile yapılmış 992 açık kaynak projenin topluluk tarafından derlenen, doğrulanmış kataloğu; her girdi Jev'in verdiği somut kararı ve kanıtı belirtir. Kategoriler SDK, ajan araçları, tarayıcı ve uygulamalar. TypeSafe AI ile bağlantılı değil. Astro, MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  }
+ ]
+}

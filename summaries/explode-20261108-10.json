@@ -1,0 +1,396 @@
+{
+ "repos": [
+  {
+   "full_name": "852wa/JIZURA",
+   "inputs_hash": "19ad207f371cf924c4ef80abc27cc90f",
+   "description_tr": "JIZURA, şarkı sözlerinden otomatik olarak lirik hareketli yazı videosu (文字PV) kurgulayan, tarayıcıda çalışan bir uygulama. 860 küçük bileşen ve 27 stilden her seferinde farklı bir kompozisyon üretiyor, müziğin vuruşlarına göre kesim yapıyor. MP4 ve PNG dizisi çıkarıyor, After Effects paneli var; veriler sunucuya gitmiyor, MIT lisanslı.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "sheprd-labs/sheprd",
+   "inputs_hash": "ff1aa79baa516a7cbc0a153128d32925",
+   "description_tr": "Sheprd, Herdr arka plan servisine bağlanan; Rust ve GPUI ile yazılmış yerel masaüstü istemcisi. Terminal oturumlarını, çalışma alanlarını, Git worktree'lerini ve ajan etkinliğini macOS, Linux ve Windows'ta tek pencerede gösteriyor. Uygulama kapanınca oturumlar çalışmaya devam ediyor; Herdr ile bağlantısı yok, bağımsız bir proje. Apache-2.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "amirh00sain/SpiderPanel",
+   "inputs_hash": "5f4adce3710d13079e5cba88d80a3b7f",
+   "description_tr": "SpiderPanel, FastAPI tabanlı bir yönetim paneli; proxy hizmeti için kullanıcı, abonelik, bağlantı ve QR kodu, düğümler, tarayıcılar ve Telegram otomasyonunu tek yerden yönetiyor. VPS, Railway veya Docker ile kurulabiliyor, panel 8080 portunda çalışıyor. Lisans belirtilmemiş; README'deki harita animasyonu süs, canlı veri göstermiyor.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "peiikai/LASRecomp",
+   "inputs_hash": "c41e9218626c628899c194357ee003b9",
+   "description_tr": "LAS Recomp, The Legend of Zelda: Link's Awakening (Switch) oyununu statik yeniden derleme ile macOS, Windows ve Linux için yerel uygulamaya çeviriyor. Kodun neredeyse tamamı Claude Code ile yazılmış; yazar bunu README'de açıkça belirtiyor. macOS tarafı yalnızca Apple Silicon (Metal), Windows x86-64; çalışması için kullanıcının kendi oyun dosyaları gerekiyor.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "gauthierpiarrette/highball",
+   "inputs_hash": "70e17b4c7c02117125db25ffb07c5f40",
+   "description_tr": "Highball, Windows oyunlarını Apple Silicon Mac'lerde çalıştıran, Swift ile yazılmış ücretsiz bir uygulama. Tek bir Wine sürümüne bağlı kalmıyor; D3DMetal, DXMT, DXVK ve FEX gibi katmanlar arasında geçiş yapılabiliyor ve hangi oyunun gerçekten çalıştığını gösteren açık bir uyumluluk veritabanı tutuyor. GPL-3.0 lisanslı.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "QwenLM/Qwen-Image-2.1",
+   "inputs_hash": "299da33b6c49a72f40a4a98500272689",
+   "description_tr": "Qwen-Image-2.1, metinden görsel üretimi ile görsel düzenlemeyi tek modelde birleştiren açık ağırlıklı bir model; görsel bileşeni 7B parametreli, 32 katmanlı tek akışlı DiT. Doğrudan RGBA üretebiliyor, on referans görsele kadar kimlik koruyarak düzenleyebiliyor. Ağırlıklar HuggingFace ve ModelScope'ta, diffusers ve ComfyUI destekli; lisans standart açık kaynak olarak etiketlenmemiş.",
+   "usage_tr": "Folio'nun içerik üretiminde on referans görselle kimlik koruma, post ve story'lerde aynı yüzü tutarlı tutmak için işe yarar; RGBA çıktısı ayrı arka plan temizleme adımını da gereksiz kılar. Lisans standart açık kaynak değil, ticari kullanımdan önce şartlara bakmak gerekir. 7B DiT 24 GB bellekli Mac'te yavaş olabilir; günlük üretime bağlamadan önce tek görselin süresini ölç.",
+   "matched_project": "Folio",
+   "relevance": 7,
+   "investment_note": null
+  },
+  {
+   "full_name": "Vincentwei1021/video-talkcraft",
+   "inputs_hash": "1d920208337b30eecfcd9c94c2ad146e",
+   "description_tr": "video-talkcraft, Claude Code veya Codex'i seslendirmeli anlatım videosu üreten bir motion design tezgâhına çeviren agent skill'i. Hazır bir seslendirmenin kelime düzeyindeki zaman damgalarını yerelde hizalıyor, SHOTBOOK planı yazıyor ve Remotion ile dinamik yazı kartları ve kamera hareketli final videoyu render ediyor. Yüzü aşkın animasyon kartı var; belgeler ağırlıklı Çince, lisans PolyForm Noncommercial.",
+   "usage_tr": "Lyricdrop'un lansman videolarında, elindeki seslendirmeyle kelime senkronlu kart animasyonları üretmek için kullanılabilir; Remotion yerelde render ediyor, API maliyeti yok. Lisans ticari kullanımı kısıtlıyor, gelir hedefli üründe pazarlama videosundan önce metni oku. Hizalama yaklaşımı Lyricdrop v2'deki söz-ses hizalama problemine de fikir verebilir.",
+   "matched_project": "Lyricdrop",
+   "relevance": 6,
+   "investment_note": null
+  },
+  {
+   "full_name": "glanderness/BeefTV",
+   "inputs_hash": "c3e702d918be9565cfb58a9c321c03d9",
+   "description_tr": "BeefTV, TypeScript ile yazılmış, hafif bir masaüstü video üretim çalışma alanı. Sonsuz bir tuvalde fikirleri, modelleri ve materyalleri birbirine bağlıyorsun; yerleşik Agent, Skills ve yeniden kullanılabilir iş akışlarıyla storyboard'dan final videoya kadar ilerleniyor. Arayüz ve belgeler ağırlıklı olarak Çince, lisans NOASSERTION.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "liguobao/ds-harness-remote",
+   "inputs_hash": "4c9e00ffdc5bd93808c1605b454bb090",
+   "description_tr": "DeepSeek Harness eklentisi üzerine kurulu uzaktan erişim çözümü: uçtan uca şifreli, düşük gecikmeli P2P ağ üzerinden bilgisayardan, mobilden veya web'den yerel makinedeki DSH, Codex, Cursor ve Claude Code çalışma alanlarına bağlanıyorsun. Web ve Android istemcisi var, iOS henüz hazır değil. Belgeler İngilizce, Çince ve Japonca; lisans belirtilmemiş.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "chenglou/handwired",
+   "inputs_hash": "83e4a3ce0a82a6874041969623e66c9e",
+   "description_tr": "Handwired, sıradan JavaScript kodunu eğitim gerektirmeden, tam doğrulukla ve türevlenebilir kalacak biçimde bir sinir ağına çeviriyor. if-else, döngü ve durumu matris çarpımı ile ReLU/ReGLU işlemlerine dönüştürüyor; sonuç JS'te ya da WebGPU'da çalıştırılabiliyor. Daha çok bir araştırma deneyi; MIT lisanslı.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "zhuyansen/new-term-radar",
+   "inputs_hash": "0fdd61032e7810c0f20c16f88b4f94f0",
+   "description_tr": "new-term-radar, X, Hugging Face, GitHub ve site haritalarını tarayarak yeni AI model, ürün ve repo adlarını anahtar kelime araçları listelemeden önce yakalayan günlük bir radar. Python paketi olarak PyPI'dan kuruluyor, Claude Code skill'i olarak da kullanılabiliyor. MIT lisanslı.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "mromidev/claude-animated-shorts",
+   "inputs_hash": "150bb3af888522633fa55856452aee30",
+   "description_tr": "Claude için ücretsiz bir skill: 55-70 saniyelik dikey animasyonlu hikaye videoları üretiyor; 3B bir dünyada 2B karakterler, mürekkep konturu ve kamera hareketleriyle. Render, three.js ve Remotion ile kendi bilgisayarında yapılıyor, yapay zekâ video üreticisi gerekmiyor. Depoda örnek kısa filmin tam kaynağı, ses ve QA betikleri var. MIT lisanslı.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "openai/NavierStokesAndEuler",
+   "inputs_hash": "06f073ecb0ffe0089c2c4577e356f0f5",
+   "description_tr": "OpenAI'ın Navier-Stokes ve Euler denklemlerinde sonlu zamanda patlama sonuçlarını Lean 4 ile biçimsel olarak doğrulayan sertifikalar. Navier-Stokes için R³ ve periyodik torus üzerinde, her pozitif viskozitede, küresel düzgün çözüm bulunmayan düzgün başlangıç verisi ve zorlama varlığı kanıtlanıyor. Yazı ve blog bağlantıları README'de; Apache-2.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "incoai/splash",
+   "inputs_hash": "7e628e9593e14d75f2e32b3f3d5c54e6",
+   "description_tr": "Splash, Apple Silicon için yazılmış yerel bir çıkarım motoru; kernel'leri, draft modeli ve bellek planı servis ettiği her modele göre özelleştirilmiş. OpenAI Chat Completions, Responses ve Anthropic Messages uçlarını konuşuyor; `splash claude`, `splash codex` gibi komutlarla kodlama ajanlarını kendi sunucusuna bağlıyor. M3+, macOS 26.4+ ve en az 36 GB bellek gerekiyor; Apache-2.0.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; motor en az 36 GB birleşik bellek istiyor, ofisteki M4 Pro'da ise 24 GB var, bugün denenebilecek bir aday değil. En yakın bağlam kodlama ajanlarını yerel modelle beslemek; RAM eşiği düşerse veya daha küçük paket eklenirse depoya yeniden bakmak mantıklı.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": "Küme değil tek Mac hedefleyen, doğrudan kodlama ajanlarına servis veren ve bir yerel model istemcisiyle entegrasyonu olan bir motor; on-device çıkarımın ticarileşme tarafında tanışmaya değer bir ekip olabilir."
+  },
+  {
+   "full_name": "wuyoscar/AISafetyHot",
+   "inputs_hash": "75cc0f90f933fd92731cbabc6e43b64c",
+   "description_tr": "AI Safety HOT, jailbreak, prompt injection, ajan güvenliği, savunma, hizalama ve yönetişim konularındaki haber, makale ve olayları izleyen bir gözlemevi sitesinin (aisafetyhot.com) deposu. Açık makale listesini, günlük bültenleri ve bir Agent skill'ini barındırıyor. Çince ve İngilizce okunabiliyor; lisans NOASSERTION.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "dashdogy/MFG-Unlocker",
+   "inputs_hash": "c486238907e806e7da1fea467f4d67ad",
+   "description_tr": "Tek bir DLL ile Windows x64 oyunlarına DLSS Multi Frame Generation kontrolü getiriyor; RTX 20, 30, 40 ve 50 serisinde 6 katına kadar sabit çarpan ve desteklenen yerde Dinamik MFG sunuyor, OptiScaler ile birlikte de kullanılabiliyor. Deneysel bir araç, oyun uyumluluğu ayrı bir belgede listeleniyor. MIT lisanslı, C++.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "ZSvirt/zsvirt",
+   "inputs_hash": "a1440f0d0679d6b1b593e4fa5fd4ed02",
+   "description_tr": "ZSvirt, ZStack'in kurumsal sanallaştırma motorunu açık kaynağa getiren IaaS çekirdeği. Yönetim düğümü kurup KVM tabanlı sunucuları bağlıyorsun; VM, küme, depolama ve ağları web arayüzü, REST API (Terraform ve Go/Python/Java SDK) veya CLI ile yönetiyorsun. VMware'den çevrimiçi geçiş ve OVF içe aktarma var. Java, GPL-3.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "leemysw/yovoice",
+   "inputs_hash": "3089f0c5a31ab9995619cb100ce88666",
+   "description_tr": "yovoice, metinden konuşma, sıfırdan ses klonlama, sözlü şarkı üretimi ve çok kanallı müzik düzenlemesini tamamen yerelde yapan açık kaynak ses ve müzik stüdyosu. Bulut API'si ve karakter başı ücret yok; macOS ve Windows masaüstü uygulaması, CLI, Agent skill ve MCP/API dağıtımı var. Apache-2.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "DenisSergeevitch/ex-ussr-kinship-research",
+   "inputs_hash": "5b145be404be3605d2f97b4313b056a6",
+   "description_tr": "Eski SSCB topraklarındaki kilise kayıtları, sivil, askeri, sürgün ve baskı arşivlerinde kanıt öncelikli soy araştırması yapan, Codex ve Claude Code için bir agent skill'i. Kullanıcının diliyle yanıt veriyor, FamilySearch gibi kaynaklara yöneliyor. README'si çok dilli; MIT lisanslı, Python.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "UniXNU/UniXNU",
+   "inputs_hash": "afccad178bf725287cfca6e28580666b",
+   "description_tr": "UniXNU, iOS ve macOS'u Apple dışı ARM64 donanımda UEFI üzerinden başlatmayı hedefleyen bağımsız bir proje. OpenCore gibi genel bir UEFI ortamı ve sürücü yükleme sistemi; SoC ve cihaz depoları ortak derleme araçları ile yeniden kullanılabilir bileşenlere dayanıyor. A740/SM8550 için GPU hızlandırma sürücüsü duyurulmuş. Lisans NOASSERTION.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "adtexterry-lgtm/unigit-ecosystem",
+   "inputs_hash": "5f1785d7827d90a448040e11e4b3b2e3",
+   "description_tr": "Depo, UNIGIT adlı AI çalışma tezgâhının herkese açık marka ve ekosistem merkezi. Ürün kapalı kaynak; depoda yalnızca vizyon metinleri, marka malzemeleri, sentetik örnekler ve MCP sunucusu, skill, şablon önerileri için issue şablonları var. Ürün erken erişim aşamasında, açık materyaller MIT lisanslı.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor. Depoda çalıştırılabilir kod olmadığı için ne yerelde denenebilir ne de uygulamana gömülebilir; anlatılan iddialar bu depodan doğrulanamıyor. Yıldız sayısının içerikle orantısız olması da bir uyarı işareti.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "angusdevgo/Seep-Reverse-Lab",
+   "inputs_hash": "f3499c25e2d8ec54661162c8d8f432c4",
+   "description_tr": "Seep Reverse Lab, çoklu platform tersine mühendislik ve istemci tarafı yetkilendirme (CWE-602) denetimi için MCP tabanlı, ajan odaklı bir çalışma tezgâhı. Mobil ve Windows PE analizi yöntemlerini başka açık projelerden uyarlıyor, bunları README'de kaynak olarak veriyor. Lua, GPL-3.0; kullanım yetkili ortamlarla sınırlı olmalı.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "perplexityai/SPACE",
+   "inputs_hash": "24f0efc603d9c867a5ce26badad3fdac",
+   "description_tr": "SPACE (Sandboxed Platform for Agentic Code Execution), ajan ve kullanıcı kodunu yalıtılmış ortamlarda çalıştıran, takılabilir runtime'lı sandbox platformu. Sandbox oluşturma, komut oturumu açma, çıktı okuma, duraklatma ve silme API üzerinden yapılıyor; kurulum yerel Kind kümesinde Kubernetes ile anlatılıyor, Kubernetes'siz çalışma da mümkün. Rust, Apache-2.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "HelixDB/helix-foundry",
+   "inputs_hash": "203fafb4256391f4ea4365e11a64c04e",
+   "description_tr": "Helix Foundry, şirketin veritabanı, araç ve belgelerini bağlayıp bir ajana ontoloji taslağı çıkartıyor ve sonucu HelixDB'ye tek bir graf olarak yüklüyor. Her değer kaynak satıra ya da alıntıya kadar izlenebiliyor, sorulara kaynaklı yanıt veriliyor. foundry.helix-db.com'da barındırılıyor ya da tek komutla yerelde çalışıyor. Go, Apache-2.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "N4darae/anti-mage",
+   "inputs_hash": "b42624c6b1ee1aa314fa09fca580b165",
+   "description_tr": "anti-mage, anti-detect tarayıcıları ve sahte profilleri çalışma zamanı tutarlılık analiziyle tespit eden bir araç. Her okuma beş sonuçtan birini veriyor (tutarlı, çelişki, enstrümante, sonuçsuz, doğrulanmamış) ve bir özelliği desteklemedi diye tarayıcıyı cezalandırmıyor; bulgular sayılmıyor, sınıfına göre ağırlıklandırılıyor. Go, MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "EverettFish/holo-card-studio",
+   "inputs_hash": "625bf3c9b9009a494e2c5591e6f5f748",
+   "description_tr": "Codex için bir skill: tarif edilen ya da yüklenen görselden düzenlenebilir bir Blender sahnesi ve bakış açısına göre parlayan 3B holografik kartı gösteren Three.js sayfası üretiyor. Dört katman çiziyor (özne, arka plan, çizgi, yazı), çıktı olarak web bağlantısı, card.blend ve render veriyor. README Çince; lisans NOASSERTION.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "maxrave-dev/kotlin-footguns",
+   "inputs_hash": "f8f6c54e752576148d5919965a0333d8",
+   "description_tr": "kotlin-footguns, Kotlin, Compose Multiplatform ve masaüstü JVM geliştirmenin tuzaklarını anlatan 224 agent skill'inden oluşan bir derleme. Her biri tek bir SKILL.md; içerik dokümantasyondan değil, üretimdeki SimpMusic müzik istemcisinden çıkarılmış ve her iddia doğrulama komutuyla geliyor. GPL-3.0 lisanslı, Claude Code dahil skill okuyan ajanlarla kullanılabiliyor.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; kaynak uygulama bir müzik istemcisi olsa da senin stack'in Expo / React Native ve TypeScript, buradaki dersler Kotlin ve Compose'a özgü. Alınabilecek şey yöntem: üretimden çıkarılmış, doğrulama komutlu skill formatı. GPL-3.0 lisansı dağıtımda kısıt olabilir.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "xqy2006/ModelTrace",
+   "inputs_hash": "db985ce416c5844bc557ae099118c972",
+   "description_tr": "ModelTrace, üç uzun sayı üretme sınamasının çıktısından parmak izi çıkararak bir modelin hangi aileden ve sürümden olduğunu tahmin eden yerel araç. API ile otomatik ya da elle kopyala-yapıştır testi destekliyor; parmak izi kütüphanesinde iki ailede 18 model var. Codex için görev içi izleme eklentisi de bulunuyor. JavaScript, MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "freestylefly/WeChatBridge",
+   "inputs_hash": "5ea757d449424625f261cefe2697e41c",
+   "description_tr": "WeChatBridge, WeChat'te seçilen sohbet kayıtlarını \"başka uygulamaya ilet\" menüsü üzerinden Codex, Claude, Doubao, Qwen gibi AI ajanlarına ya da Obsidian'a gönderen yerel bir macOS aracı. Veritabanını okumuyor ve WeChat'e kod enjekte etmiyor; her grup için kayıtlı bir prompt seçilebiliyor. macOS WeChat 4.1.13+ gerekir; Swift, MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "oscar-soirey/Raven",
+   "inputs_hash": "45120d2f0e43999ae686111ff0697154",
+   "description_tr": "Raven, editör ve araç yazmak için C ile yazılmış, hafif ve çok iş parçacıklı bir GUI kütüphanesi. Rust, C++, C#, Java, Python, Zig, Lua, Go gibi dillere bağlayıcıları var. Geliştirme aktif olduğundan genel API değişebiliyor; README en yeni özellikler için sürüm yerine kaynaktan derlemeyi öneriyor. Apache-2.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "indexable-inc/blaze",
+   "inputs_hash": "52fbbf6fd4039202905c98e4122063a9",
+   "description_tr": "blaze, cargo yerine yazılan bir Rust derleyici sarmalayıcısı; artımlı derlemeleri cargo/rustc'ye göre 92 kata kadar hızlı, milisaniyeler içinde yapmayı hedefliyor (Cranelift, sıcak yeniden yükleme). Apple Silicon macOS ve Linux'ta kendi Rust toolchain'ini indirerek çalışıyor, kurulum bir curl betiğiyle. Rust, Apache-2.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "88lin/workbuddy-auto-signin",
+   "inputs_hash": "6f1207d5148ab246da399a5629844ce9",
+   "description_tr": "WorkBuddy günlük giriş puanlarını ve Qoder CN'in günlük 100 kredisini, ayrıca büyüme merkezindeki ödülleri otomatik toplayan küçük bir Python betiği. Ek bağımlılık gerektirmiyor, Windows, macOS ve Linux'ta zamanlanmış görev olarak sessizce çalışıyor. Yalnızca Çin'deki bu iki hizmet için; MIT lisanslı.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "deeplethe/solid-glass",
+   "inputs_hash": "ae166b9e611db646cd0ef828ef743255",
+   "description_tr": "Solid Glass, AI uygulamaları için tasarlanmış, shadcn/ui üzerine kurulu bir tasarım sistemi; malzeme, fiziksel ve dokunsal bir görünüm hedefliyor. Sohbet ve ajan arayüzlerine yönelik bileşenler içeriyor (örneğin durum glifi). TypeScript, MIT lisanslı; belgeler GitHub Pages üzerinde.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "HanyuanWang/LiveStream-Agent-Studio",
+   "inputs_hash": "35d03dcd7c3abc487af7c5223de45c21",
+   "description_tr": "LiveStream Agent Studio, Çin'deki canlı yayın e-ticaret ekipleri için Windows'ta yerel öncelikli çalışan bir AI ajan tezgâhı. Yayıncı bulma, yayın kaydını zaman damgalı transkripte çevirme, transkripti trafik verisiyle hizalayan değerlendirme raporu ve referans videolardan çekim senaryosu üretmeyi tek arayüzde topluyor. Transkripsiyon için Alibaba Cloud DashScope ve OSS hesabı gerekiyor; MIT, v0.2.0-beta.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor. Uygulama Windows'a bağlı, Mac'te çalışmıyor; Douyin gibi Çin'e özgü platformlara göre kurgulanmış ve transkripsiyon bulut hesabı istiyor, yani yerel çalışma tercihinin tersi. Araç olarak kullanılacak bir şey değil.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "Mak5er/AirCard-iOS",
+   "inputs_hash": "86c83302c9bbf36a01db9927711a3058",
+   "description_tr": "AirCard-iOS, jailbreak gerektirmeden iOS 18.0-27.2 beta 2 üzerinde Apple Wallet kart görsellerini, kilit ekranı şifre tuşlarını ve PosterBoard duvar kâğıtlarını özelleştiriyor. Cihaz içi sistem servisleriyle LocalDevVPN'in yerel tüneli üzerinden konuşuyor, dosya işlemleri Rust kütüphanesi AirliftFFI ile yapılıyor. Swift, MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "caru-ini/stack-diagram",
+   "inputs_hash": "fabdc7f25ffa6a5f85f576e951d47a23",
+   "description_tr": "stack-diagram, tek cümleyle tarif edilen teknoloji yığınından resmi logolu mimari diyagram çizen bir agent skill'i. Claude Code, Codex, Cursor gibi skill destekleyen ajanlarda `npx skills add` ile kuruluyor; Claude uygulamasında zip olarak yüklenebiliyor. Bulut, geliştirme araçları ve AWS ikonlu diyagramlar destekleniyor. TypeScript, MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "pallavi-shekhar/ai-engineering-interview-questions-company-wise",
+   "inputs_hash": "109f2cab0d7ff0dabb9257c0c9ded226",
+   "description_tr": "35 şirketin AI mühendisliği mülakatlarında sorulduğu bildirilen soruları şirket şirket derleyen, cevapları bağlanmış bir Markdown deposu. Konular LLM iç yapısı, serving ve GPU performansı, RAG, ajanlar, fine-tuning, değerlendirme, güvenlik ve sistem tasarımını kapsıyor. Sorular kamuya açık mülakat deneyimlerinden toplanmış; Apache-2.0.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; bu bir çalışma listesi ve iş arayan mühendisler için hazırlanmış. En yakın bağlam, ileride bir mühendisi değerlendirirken başlıkları ön eleme sorusu olarak kullanmak. Kurulum, maliyet ya da entegrasyon kararı gerektiren bir tarafı yok.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "3641397194-wq/gpt6-Astra",
+   "inputs_hash": "0c735b0962e72523cf2a64ad24d0d67a",
+   "description_tr": "Çince bir masaüstü çalışma tezgâhı: görev şablonları, yerel görev sözleşmesi, oturum sürümü karşılaştırma ve çıktıda JSON, kod bloğu ve zorunlu kelime kontrolleri sunuyor. Asıl konumlandırması model kısıtlarını aşmaya yönelik prompt paketleri ve bunları uygulayan, kullanım başına ücretli bir OpenAI uyumlu ara sunucuya giriş noktası olması. README gerçek model üzerinde etkiyi doğrulamadığını belirtiyor.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor. Merkezde ücretli bir ara sunucu var; model trafiğini üçüncü bir tarafın üzerinden geçiriyor ve sağlayıcı kullanım şartlarını aşmayı hedefliyor, bu da hesap riski demek. Arayüz ve belgeler Çince.",
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "NVIDIA-Omniverse/usd-brep",
+   "inputs_hash": "be5ec4666bc72e59155d84838f4e91ee",
+   "description_tr": "USD BRep, OpenUSD için NURBS tabanlı sınır temsilli (BRep) katı modelleme yapan bağımsız C++ ve Python kütüphanesi. BRep'leri `BrepArray` prim'leri olarak USD'ye yazıp okuyor; şema, doğrulayıcı, onarım ve tessellator araçları ile görüntüleyiciler içeriyor. Düzlem, silindir, koni, küre ve torus yüzeyleri analitik yazılıyor. Apache-2.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "physicsdolphin/nv-uefi-unlocker",
+   "inputs_hash": "c6e10556bfcd734d0c88a3faed6ea134",
+   "description_tr": "NVIDIA GPU'ların kilitli özelliklerini işletim sistemi açılmadan, UEFI ön sürücüsü olarak açan Rust aracı; Windows, Linux ve Hackintosh'ta EFI ile açılabilen sistemlerde çalışıyor. README'ye göre RTX 20, 30 ve 40 serisinde doğrulanmış; kullanıcı raporlarında FP16/FP32 GEMM verimi %30-70 artmış. Düşük seviye ve riskli bir araç; GPL-2.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  }
+ ]
+}

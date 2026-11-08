@@ -1,0 +1,404 @@
+{
+ "repos": [
+  {
+   "full_name": "alexgreensh/anidoodle",
+   "inputs_hash": "658fb321a3c364345915bba493533242",
+   "description_tr": "Claude Code, Codex ve benzeri ajanlarda çalışan bir skill; illüstrasyon, çizim zaman atlaması, kısa film ve etkileşimli web sanatını kodla üretir. 32 çizim stili var ve aynı kaynak her makinede, her boyutta aynı görüntüyü verir. Apache-2.0, TypeScript.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "jasonxu114514/opencode2api",
+   "inputs_hash": "7cbd67620012b89001bbb7b5e9c47474",
+   "description_tr": "OpenCode Zen ve Zen Go servislerini OpenAI ve Anthropic uyumlu API olarak sunan Go tabanlı bir proxy. Anahtar ve proxy havuzu, otomatik yönlendirme ve bir WebUI içerir; Go 1.24 ile derlenir, GPL-3.0. README'nin başında bir residential proxy hizmetinin reklamı yer alıyor.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "nanocle/Charakuru",
+   "inputs_hash": "fc35aac3ebd02a49720653a85d56ddc0",
+   "description_tr": "Tek bir karakter illüstrasyonunu VRM avatara çeviren, bir AI ajanla birlikte yürütülen bir araç seti. Tripo'nun Smart Mesh modeline dayanıyor ve Blender bilgisi gerektirmeden iş akışını paketlemeyi hedefliyor. Lisansı NOASSERTION; indirme Releases sayfasından.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "alchaincyf/deepseek-harness-orange-book",
+   "inputs_hash": "e410563912d9af1ab5275da74510bc17",
+   "description_tr": "DeepSeek'in açık kaynak agent framework'ü Harness'ı kurup denemiş bir kullanıcının Çince saha notları: sistem prompt'u, başlangıç listesi ve ham oturum günlükleri. PDF, EPUB ve slayt olarak indirilebiliyor; kod değil kitap deposu, 0.2.1-rc.2 sürümüne göre güncellenmiş.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "PSRben/VisionHOPE",
+   "inputs_hash": "20b82add5a97bc96a0e9de2be9f0b104",
+   "description_tr": "Kendi kendini değiştiren öğrenme (SRNL) fikrine dayanan bir görsel backbone'un resmi PyTorch uygulaması. ImageNet sınıflandırma, COCO tespit ve segmentasyon ile ADE20K eğitim/değerlendirme betikleri ve önceden eğitilmiş ağırlıklar var. MIT lisanslı, araştırma kodu.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "panel-zeus/Z-E-U-S",
+   "inputs_hash": "43a7e2d2abe01fa9692d4e3ee51d6495",
+   "description_tr": "Cloudflare Workers üzerinde çalışan, VLESS ve Trojan protokollerini WebSocket üzerinden sunan bir proxy yapılandırma paneli. Temiz IP tarayıcı ve SOCKS5 röle rehberi içeriyor; README İngilizce ve Farsça. Lisans belirsiz (NOASSERTION), kullanım yerel ağ kısıtlarını aşmaya yönelik.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "bryllim/workout-guide",
+   "inputs_hash": "0cd67302a2e475332caffc782db445b1",
+   "description_tr": "302 egzersiz için her biri üç kareli açık illüstrasyon kütüphanesi, framework'ten bağımsız tipli bir npm paketi ve aranabilir statik galeri. Çizimler Everkinetic'in CC BY-SA 4.0 çalışmasına dayanıyor; React Native ve Expo ile kullanılabilir. MIT, Astro.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "BeckyGlobal/PaidToStudyAbroad",
+   "inputs_hash": "bfb8d658df28c5a2dfa6d7d5978cc044",
+   "description_tr": "Çinli okuyucular için burs, harçsız eğitim ve ücretli doktora yollarını 71 maddede toplayan Çince bir rehber; yalnızca resmi kaynak gösteriyor. Web sürümü artık güncellenmiyor, daha yeni 141 maddelik sürüm bir üyelik grubunda dağıtılıyor. Yazılım değil, içerik deposu.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "ahujasid/camera-to-blender",
+   "inputs_hash": "7563026947c750bcab4791c48badda54",
+   "description_tr": "Telefonla çekilen bir nesne fotoğrafını arka planı silinmiş 3B modele çevirip açık Blender sahnesine otomatik aktaran araç; bir dakikadan kısa sürüyor. Bilgisayarda yerel sunucu çalışır, telefon web arayüzünü açar. Tripo3D API anahtarı zorunlu (ücretli), Gemini isteğe bağlı. Python 3.10+, Blender 3.0+, MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "Pika-Labs/Pika-H3-Flex",
+   "inputs_hash": "dabcb46a7fdb16b8fd32d2e85a2d3ff7",
+   "description_tr": "Pika'nın video ve ses üreten H3 Flex modeli için çıkarım kodu ve ağırlık bağlantıları. Altı örnekleme adımında senkron sesli video üretir, 12 referans girdiyi destekler; yerel açık ağırlıklı sürüm 480p/768p, 1080p ve 4K yalnızca barındırılan Pika API'sinde. Python, lisans NOASSERTION.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "JenkinWoo/sheeridVerify",
+   "inputs_hash": "9cb86d3e5539f2d56a5d898521186aa1",
+   "description_tr": "SheerID öğrenci doğrulama akışı için Node.js tabanlı bir web çalışma tezgahı: görev kuyruğu, tarayıcı otomasyonu, PNG/PDF yükleme ve erişim parolası. README öğretim amaçlı olduğunu söylüyor, ancak amaç indirimli öğrenci avantajı doğrulamasını otomatikleştirmek. Node 22.15+, ISC.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "mikehasa/golive-skill",
+   "inputs_hash": "85cf916b97b6fad54c8c240f34c0e6e5",
+   "description_tr": "Ajanla yapılmış bir ürünü kendi hesaplarınızda yayına almak için Agent Skill ve bağımlılıksız Node CLI: hosting, veritabanı, DNS, e-posta ve ödeme. Akış tespit, plan, onay, uygulama, doğrulama; onaylanmış plan olmadan yazma yapmaz. Erken alfa (0.1.0-alpha.9), MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "nevertoday/xiaoxiaodong-vps",
+   "inputs_hash": "06df10f38e4a928a0eca0c4634091165",
+   "description_tr": "Yurt dışı bir VPS'e Codex ile uzaktan 3x-ui, Xray ve CLIProxyAPI kurduran, Çince adım adım bir dağıtım rehberi. Ana ve yedek düğüm, otomatik sertifika ve güncelleme, günlük yapılandırma yedeği sağlıyor. README'de satın alma bağlantıları (affiliate) var; MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "snuri00/ps2-web-recomp",
+   "inputs_hash": "113bb46c7a03f869ab168cb13ea5b170",
+   "description_tr": "PS2 oyunlarını statik yeniden derleme ile WebAssembly'ye çevirip tarayıcıda çalıştıran, yerel bir runtime ile birlikte gelen C++ projesi. İlk hedef Gran Turismo 4; God of War II de aynı betiklerle açılıyor. Chrome ve tümleşik GPU'da yarış tam hızda anlatılıyor. MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "Tejashmakwana/motionmaxxing",
+   "inputs_hash": "7bda49aa7b14d8aa0d03ab54404bde66",
+   "description_tr": "Yapay zekâ ile üretilmiş videoları motion tasarımcı işi gibi görünen filmlere çevirmeyi hedefleyen bir agent skill. Anahtar kareleri ölçen bir kontrol adımı, GSAP ve HyperFrames ile çalışan bir çalışma zamanı içerir. Dili esprili; Apache-2.0, JavaScript.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "nullmoth/1401",
+   "inputs_hash": "53e1cbe00b5c4eb9b95bda497e61f5a6",
+   "description_tr": "Windows üzerinden, sahip olunan bir PC için OpenCore kurulumu hazırlayıp macOS kurulum USB'si yazan bir araç; Boot Camp'in tersi. Donanımı denetler, BIOS adımlarını gösterir. README, az sayıda PC'de uçtan uca denendiğini söylüyor; Python, lisans belirtilmemiş.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "Hinln/ARTEX",
+   "inputs_hash": "02f4e9ee2ded285e2d2253f06f85d549",
+   "description_tr": "Autumn-27/ARTEX v0.3.15'in kaynak yedeği: LLM ajanlarının keşif yaptığı otonom bir sızma testi sistemi (Go arka uç, Next.js ön yüz). Varlık haritası, onay kayıtları ve ScopeSentry eşitlemesi var; PostgreSQL ve Anthropic/OpenAI anahtarı gerekir. AGPL-3.0, yetkili testler için.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "storytold/artcraft-services",
+   "inputs_hash": "cd4a38ad003343060c9ec0e1395a876d",
+   "description_tr": "ArtCraft masaüstü uygulamasının arka ucu: Rust (Actix Web) HTTP API'si, arka plan işçileri ve web ön yüzleri. Üretim istekleri kredi hesaplanıp sağlayıcılara yönlendiriliyor, sonuçlar webhook veya polling ile nesne depolamaya iniyor. MySQL kullanır; lisans NOASSERTION.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "amap-cvlab/ABot-Recon",
+   "inputs_hash": "7203263f68791dc1a72bd3a4dba2cee7",
+   "description_tr": "Yalnızca videodan akışlı 3B yeniden yapılandırma yapan bir model; sabit 12 karelik yerel bağlamla geometriyi ve göreli kamera pozlarını birleştiriyor, uzun vadeli öğrenilmiş bellek kullanmıyor. Ağırlıklar Hugging Face'te, nokta bulutu görselleştirme betikleri var. Apache-2.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "jimmgreen/pulse",
+   "inputs_hash": "5d7d7775ee2229fdbf51fa059c43733d",
+   "description_tr": "Windows için çok sekmeli ve çok bölmeli bir dosya yöneticisi; tüm disk dizinleme, pinyin arama, boşlukla hızlı önizleme ve özelleştirilebilir görünüm sunuyor. Windows 10/11 ve 8.1 için kurulum paketi var, arayüz Çince ve İngilizce. C++, Apache-2.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "chenwei810/Semiconductor_Manufacturing_Introduction",
+   "inputs_hash": "e6a4df5edce1911aaf99f4baeef64727",
+   "description_tr": "Bir silikon waferin kumdan işlenmiş çipe kadar yolunu izleyen, fizik yükü az, süreç akışı ve fab terimlerine odaklanan açık bir kitap. Her bölümde terim ve pratik bilgi kutuları var; İngilizce, Çince, Japonca ve Korece sürümleri mevcut. Yazılım değil, içerik; lisans NOASSERTION.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "Miaotofu01/Study-Mate",
+   "inputs_hash": "2420baccecc59e8e8f872caa4c156bbc",
+   "description_tr": "DeepSeek Harness için bir eklenti: matematik ve bilgisayar bilimleri çalışırken yol haritası çıkaran, konu anlatan ve proje yaptıran bir öğrenme asistanı. Çalışma alanı varsayılan olarak ~/StudyMate; dsh plugin ile kurulur. Yazar, kodun yeniden gözden geçirildiğini belirtiyor. MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "zcbacxc/mcd-party-planner",
+   "inputs_hash": "1129c90094bb67d0ba8952f5827792eb",
+   "description_tr": "McDonald's Çin'in MCP sunucusunu kullanarak şehir, kişi sayısı ve bütçeden gerçek fiyatlı grup yemeği planları çıkaran Python CLI/Skill. Yakındaki şubeleri ve etkinlik takvimini de sorgular; open.mcd.cn'den MCP token'ı gerekir. Yarışma projesi, MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "DozenTwelve/Papermorph",
+   "inputs_hash": "6cae1e80f35e186bfc046d3d0ed185ab",
+   "description_tr": "Ders kitaplarını seslendirilmiş etkileşimli web derslerine, hikâyeleri kâğıt kuklalı filmlere çeviren bir agent skill. Çıktı sunucusuz, hesapsız statik web sayfası; cebir ve fizik örnek kitapları yayında. MIT, JavaScript.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "ZiChuanLan/agent-purge",
+   "inputs_hash": "227a534914778208c6878c2e135d2fa1",
+   "description_tr": "Codex, Claude Code, OpenCode ve pi gibi coding agent'lara tek bir persona tanımını uygulayan yerel CLI ve web konsolu; sistem prompt'unu değiştirir veya ekler. Yönetilen yazımları kaydedip geri alabiliyor. README'de uyum ve sorumluluk uyarısı var; MIT, JavaScript.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "GoogleCloudPlatform/open-knowledge-format",
+   "inputs_hash": "24fee78304f9806a44558afe0d4ba846",
+   "description_tr": "Bilgiyi YAML frontmatter'lı düz markdown dosyaları olarak temsil eden, satıcıdan bağımsız Open Knowledge Format (OKF) belirtimi. Depoda OKF paketi üreten örnek bir ajan ve bir graf görselleştirici de var, ancak asıl katkı format. Apache-2.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "RuoJi6/ARTEX",
+   "inputs_hash": "3af2d1ff22c7be57488a0474f5fc8feb",
+   "description_tr": "Autumn-27/ARTEX'in ayrı sürdürülen bir kopyası: LLM ajanlarının çalıştığı otonom sızma testi platformu (Go ve Next.js), orijinal commit geçmişi ve AGPL-3.0 korunmuş. Docker imajı ve sürüm paketleri bu depodan yayınlanıyor. Yalnızca yetkili güvenlik testleri için.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "HRuiCcc/RuiC-PoseAtlas",
+   "inputs_hash": "70f61ef8f864d57858fad053b04097ea",
+   "description_tr": "Çizim referansı için üç galeri: 288 poz, 1.407 kıyafet ve 1.499 yapay zekâ portresi; Çince, İngilizce ve Japonca, sıfır bağımlılıklı statik site. Büyük paketler Quark Drive'dan iniyor. README'ye göre bazı içerik yetişkinlere yönelik. Lisans NOASSERTION.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "Vodiwalker/vodiwalker_panel",
+   "inputs_hash": "34d019c44514862f4f51268bce857da7",
+   "description_tr": "Farsça duyuruyla tanıtılan, xhttp, TCP ve WS protokollerini destekleyen ücretsiz bir servis ve yapılandırma yönetim paneli; yönetici botu ve mini uygulaması var. README kurulum videosuna yönlendiriyor, teknik ayrıntı çok az. Python, lisans yok.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "vinnylarouge/jevlike",
+   "inputs_hash": "bdb701869653efbd2ad11ac1750be275",
+   "description_tr": "Değişken sayıda metin seçeneği arasından tek geçişte olasılık veren küçük bir model eğitme başlangıcı; TypeSafe'in ticari Jev modeline benzer girdi/çıktıyı bağımsız olarak uyguluyor. Doom ve satranç örnekleri ile hazır kontrol noktaları var. Python, MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "BookracyFOS/bookracy",
+   "inputs_hash": "dcc0101da0dfc1c9de102f7ac3a12ced",
+   "description_tr": "Ücretsiz, açık kaynak bir kitap arama, okuma ve kütüphane uygulaması (TypeScript). README boş olduğundan işleyiş, kaynaklar ve hukuki durum hakkında depodan bir şey söylenemiyor; yalnızca açıklama cümlesi var. Lisans belirtilmemiş.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "echris6/motion-video-kit",
+   "inputs_hash": "03dbf6d6eb2972f90814f831f4fea399",
+   "description_tr": "İş amaçlı AI destekli videolar için bir Claude Code skill kiti: bağımsız eleştirmen döngüsü, 28 lansman filminden hareket ilkeleri, kalite çıtası, ses tasarımı ve Three.js desenleri. ffmpeg betikleri içerir ve en iyi HyperFrames ile çalışır. Python, MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "RadishXN/run-abroad",
+   "inputs_hash": "5167c50b607ae028a3e73622438ebdee",
+   "description_tr": "10 temel bilgiyi girince 71 vize ve göç yolundan uygun olanları süzen, eksikleri gösteren statik Çince bir web aracı. Çalışma tatili, iş vizesi, Mavi Kart ve dijital göçebe yolları var; her sonuç resmi sayfaya bağlanıyor. Hukuki görüş değil, ön eleme. MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "z7786/wenxi",
+   "inputs_hash": "675b2a3e4fae18ed30808fa8665f4ee5",
+   "description_tr": "Android, Windows, iOS ve macOS için 17 bulut depolama hizmetinde paylaşım bağlantısı çözen, dosya yöneten ve oynatan Flutter uygulaması (Dart). HTTP, magnet, BT ve ED2K indirme, LAN aktarımı ve DLNA desteği var. AGPL-3.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "saawant12/orbit-store-ps5",
+   "inputs_hash": "9e4d26893b778c71cbe1e5bf1a9e20a1",
+   "description_tr": "Jailbreak yapılmış PS5 için oyun indirme yöneticisi: TV uygulaması, telefon kumandası ve Mac, Windows, Linux için masaüstü bileşeni. Kaynak, biçim ve tür filtreleri ile favoriler sunuyor. Konsol modifikasyonu gerektirir ve korsan oyun dağıtımına yakın bir bağlamda; lisans yok.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "ZeldaWWHDRecomp/ZeldaWWHDRecomp",
+   "inputs_hash": "bfcf0ddccc47c4d8cd5ce6fd8f66e137",
+   "description_tr": "Zelda: Wind Waker HD'nin yeniden derlenmiş PC sürümü; Windows, Linux (x86-64 ve arm64) ve Android'de Vulkan 1.3 ile çalışıyor, AppImage seçeneği var. Oyun dosyaları kullanıcıdan beklenir. C++, MPL-2.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "stanuwu/Sunrise",
+   "inputs_hash": "4e6a54304fa3fdcac1115f30e9fa0bf5",
+   "description_tr": "Destiny 2'nin eski bir sürümüne kurularak çevrim dışı oynamayı sağlayan koruma modu: istenen bölgeye girme, görev betikleme, uçma ve noclip. Çok oyunculu ve ilerleme henüz yok, proje yarım kalmış durumda. Insert ile açılan bir overlay var. C++, GPL-3.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "voxivoid/recipe-lab-sony-pmca",
+   "inputs_hash": "3ff3da5e8a03d6c5f32c0c3e5bec7f08",
+   "description_tr": "PlayMemories Camera Apps destekleyen Sony fotoğraf makinelerinin içine film simülasyonu ve renk görünümü tarifleri yükleyen bir Android/Java uygulaması. Özel tarif oluşturma, paylaşma ve telefona aktarma var. Tek kişilik proje, yalnızca Sony a6000'de denenmiş. GPL-3.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "blixvip/NullMotion",
+   "inputs_hash": "7be06a9f4ff81c45be19532b08a20e95",
+   "description_tr": "Bitmiş bir hareketli grafik reklamı, çıktığı kaba taslaklarla senkron oynatan ve dökümü MP4 olarak dışa aktaran HTML aracı. Kare doğrulukta çalışıyor, ffmpeg kullanıyor. README boş olduğundan ayrıntı yalnızca açıklama ve etiketlerden alınabildi. MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "brayonpi/hexstellar",
+   "inputs_hash": "6fe0cd138dd986ce9f7c92f9e1ae938c",
+   "description_tr": "AI ajanlarının zor optimizasyon ve karar problemlerini gönderebileceği bir hesaplama servisi için Python CLI ve API istemcisi; sonuçlar kesinlik etiketi ve doğrulama makbuzuyla dönüyor. Sunucu tarafı kapalı, ücretsiz sandbox var. Pazarlama dili ağır; PyPI sürümü henüz etkin değil.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  }
+ ]
+}

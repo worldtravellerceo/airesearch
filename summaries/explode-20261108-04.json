@@ -1,0 +1,396 @@
+{
+ "repos": [
+  {
+   "full_name": "ARahim3/DigUp",
+   "inputs_hash": "c8a3f3b287deddda0342d7dd269b752e",
+   "description_tr": "Mac, Windows ve Linux'ta dosyalarını içeriğe göre arayan yerel uygulama: fotoğraf, PDF, belge, ses ve video için doğal dille sorgu yazılıyor. Google DeepMind'ın çok kipli EmbeddingGemma 2 modeliyle çalışıyor ve her şey cihazda kalıyor. Swift ile yazılmış, MIT lisanslı; Windows ve Linux sürümleri beta.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "CopilotKit/openmuse",
+   "inputs_hash": "800dca25a1688e883ac3d12f153de317",
+   "description_tr": "CopilotKit ve AG-UI ile yapılmış kişisel ajan uygulaması: tarayıcı, terminal ve dosya erişimi var, iş arka planda sürüyor. React Native ile iOS, Android ve web için çıkıyor; herhangi bir ajan harness'iyle uyumlu olduğu söyleniyor. README'ye göre klonlanıp özelleştirilecek bir şablon, MIT lisanslı.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "amagine-ai/Amagine3D",
+   "inputs_hash": "7ebc680959345099893845b36faeff5e",
+   "description_tr": "Amagine3D, doğal dilde ürün tarifi, referans görsel ve ölçülerden düzenlenebilir 3D donanım tasarımları üreten açık kaynak katman. Önce iç bileşenleri yerleştirip muhafazayı tasarlıyor; çıktı build123d Python kaynağı olarak kalıyor ve STEP, STL, GLB ile 3MF olarak dışa aktarılıyor. Apache-2.0 lisanslı.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; yazılım hattında (Expo, Supabase, DigitalOcean) bu aracın gireceği bir adım yok. Bir gün prototip muhafazası gerekirse hatırlanacak bir isim, bugün kurulacak bir araç değil.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": "Doğal dilden üretilebilir donanım geometrisi üreten katman, Arslan Holding'in frontier tech merceğinden izlenmeye değer bir alt alan; ekibin ve ticarileşme yolunun takip listesine alınması makul."
+  },
+  {
+   "full_name": "Hisn00w/ASu-skills",
+   "inputs_hash": "a80b9a413564c70dc45305ee16c09423",
+   "description_tr": "Çin'deki iş arayanlar için dokuz ayrı skill'den oluşan bir eklenti paketi: açık kaynak katkısı, özgeçmiş hazırlama ve iyileştirme, ilan eşleştirme, başvuru formu doldurma, mülakat hazırlığı ve kampüs işe alım takibi. Arayüz ve belgeler Çince, MIT lisanslı. Diğer ülkelerdeki iş piyasası için değil.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "AhmadHassan-BTed/Jantt",
+   "inputs_hash": "83fdb754ca9cfec9ad3fb7f440e34f65",
+   "description_tr": "JSON belgesinden etkileşimli, sürüklenebilir Gantt grafiği çizen TypeScript motoru. Çalışma zamanı bağımlılığı yok; React, düz HTML ve Node CLI ile kullanılıyor, topolojik DAG çözücü ve resmi JSON şeması içeriyor. LLM'lerin zaman çizelgesini JSX yerine kısa JSON olarak üretmesi hedefleniyor. MIT lisanslı.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "kaankiziltug/logo-design-skill",
+   "inputs_hash": "bc8d9d297d5c61a188d3a94908b61a53",
+   "description_tr": "Claude ve diğer ajanlar için logo tasarım skill'i: brief'ten 8-12 konsept üretip üçünü SVG olarak kuruyor, kontrol noktasında durup öneri sunuyor. 1.400'den fazla gerçek SVG logoluk aranabilir referans kütüphanesi ve bağımlılıksız Python denetim, test sayfası ve favicon/ikon dışa aktarım araçları var. MIT lisanslı.",
+   "usage_tr": "Arslan Holding ve Golden One kimliğini ajans harcaması olmadan AI araçlarıyla üretme işine oturuyor: brief'ten konsept sayfasını alıp seçtiğin yön için renk, lockup ve kılavuzu çıkarabilirsin. Claude Code içinde yerel çalışıyor, ek API maliyeti çıkmıyor. Uyarı: referans kütüphanesi başkalarının logoları, marka tescili skill dışında kalıyor.",
+   "matched_project": "Arslan Holding",
+   "relevance": 7,
+   "investment_note": null
+  },
+  {
+   "full_name": "nightly-labs/openbot",
+   "inputs_hash": "98d23e492669a99f13789c038cb53a46",
+   "description_tr": "Codex, Claude, Grok ve başka ajanları kalıcı çalışma alanları, görev kuyrukları ve tarayıcı kontrolüyle yöneten yerel öncelikli masaüstü uygulaması (Electron, Bun). Ajanlar ilk onaydan sonra danger-full-access ve approvalPolicy: never ile çalışıyor, yani eylem başına onay istemiyor; README bu konuda uyarıyor. Lisans NOASSERTION.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "monid-ai/monid",
+   "inputs_hash": "7c54b64721553560208ef193b5b9e8cb",
+   "description_tr": "Monid, ajan araçları için tek base URL ve anahtar arkasında 72'den fazla sağlayıcıdan 2.000'den fazla ucu sunan yönlendirme servisi: web arama, zenginleştirme, piyasa verisi, medya üretimi. Bu depo bildirimsel TypeScript connector katmanı; yönlendirme ve ölçüm barındırılan serviste. MIT lisanslı.",
+   "usage_tr": "Arslan Holding'in deal taraması ve ön incelemesinde şirket ve kişi zenginleştirme ile pazar verisini tek uçtan Claude Code'dan çağırabilirsin. Uyarı: ücret çağrı başına ve anahtar tek bir yerde duruyor; kendi tarafında harcama tavanı koymazsan faturayı sonradan görürsün. Açık kaynak olan yalnızca connector katmanı.",
+   "matched_project": "Arslan Holding",
+   "relevance": 5,
+   "investment_note": null
+  },
+  {
+   "full_name": "Fei2411/DS-Bot",
+   "inputs_hash": "b8888c6e5e545a08ec4bd078d204bdb5",
+   "description_tr": "DeepSeek Harness için uzun ömürlü bot ekipleri kuran masaüstü uygulaması: ana botlar, botlar arası mesajlar ve grup sohbetleri var. Windows 10/11 kurulum dosyası (yaklaşık 212 MB) hazır, macOS ve Linux için ayrı kurulum yolu var. DeepSeek hesabı ya da API anahtarı gerekiyor ve kullanım ücretli. Resmi DeepSeek ürünü değil.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "kushagrasinghx/BitChord",
+   "inputs_hash": "2191e805cb0d7f3576ad943a10d02c59",
+   "description_tr": "YouTube Music için Apple Music'ten esinlenmiş Android istemcisi (Kotlin). Aralıksız çalma, ayarlanabilir crossfade, otomatik miks ve yapılandırılmış bir kaynaktan FLAC/ALAC desteği sunuyor. YouTube ya da Google ile bağlantısı yok, README bunu açıkça belirtiyor. GPL-3.0 lisanslı.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "simbasjungles/free-my-tv",
+   "inputs_hash": "bbdc63bad906780e37411daedcbd0b4f",
+   "description_tr": "Google TV, LG webOS ve Samsung Tizen için reklamsız bir ana ekran. Kullanıcının kendi uygulamalarını öne çıkarıyor, saatlik trend önerileri ve hava durumu gösteriyor; tek tuşla eski haline dönülüyor. Java ile yazılmış, MIT lisanslı ve README'ye göre Claude Code ile geliştirilmiş.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "dmmulroy/anti-slop",
+   "inputs_hash": "3b824954b61b086ccca403f3214dcfe5",
+   "description_tr": "TypeScript ve JavaScript'te kanıtsız, düşük sinyalli kalıpları reddeden görüşlü Oxlint kuralları. Yazar bunu evrensel bir standart değil kendi tercihleri olarak sunuyor ve resmi npm paketi yok; kuralların depoya kopyalanıp uyarlanması öneriliyor. Agent skill olarak da listelenmiş, MIT lisanslı.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "amosblomqvist/learnharness",
+   "inputs_hash": "6ed9393e12992363cf0c5543b6e697c2",
+   "description_tr": "Zor konuları öğretmek için ajan kullanan masaüstü uygulaması. Önce kullanıcının neyi bildiğini ölçüyor, hedefe giden bağımlılık haritasını çıkarıyor, adım adım anlatıp alıştırma yaptırıyor ve oturumlar arası kalıcı bir bilgi grafiği tutuyor. TypeScript, AGPL-3.0 lisanslı.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "QingYunA/answer-me-with-html",
+   "inputs_hash": "bcba466bf410f8c10666ad9debccc201",
+   "description_tr": "Answer me with HTML, karmaşık soruları uzun metin yerine tek sayfalık okunabilir HTML ile yanıtlayan bir agent skill. Model kısa bir Markdown taslağı yazıyor, sayfayı skill'in CLI'ı üretiyor; proje çıktı token'ını yaklaşık altıda bire indirdiğini söylüyor, ağır bağlamlı kurulumlarda maliyetin %20 artabildiğini de belirtiyor. Node.js 20+, MIT.",
+   "usage_tr": "Arslan Holding'in pazar ve rakip özetlerini okunabilir tek sayfaya çevirmek için kullanabilirsin; Node.js dışında bağımlılığı yok ve Mac'te yerel çalışır. Uyarı: bu bir sunum katmanı, araştırmanın doğruluğunu göstermez; ağır bağlamlı kurulumda maliyeti artırabilir.",
+   "matched_project": "Arslan Holding",
+   "relevance": 5,
+   "investment_note": null
+  },
+  {
+   "full_name": "omlahore/RemoveMacAI",
+   "inputs_hash": "7a111a6fdae351b97a41f5b863d1ea8d",
+   "description_tr": "Mac'te Apple Intelligence'ı kapatıp modellerini silen yerel uygulama ve CLI (Swift). İsteğe bağlı olarak analitik, reklam ve açılır pencereleri de kısıyor, arka plan güncelleyicilerini kapatıp disk alanı kazandırıyor. Her değişiklik önceden gösteriliyor ve geri alınabiliyor. 4evy'nin pared aracının üzerine kurulu, MIT lisanslı.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "Jakeschincariol/day-trader-skill",
+   "inputs_hash": "19519e5b172434004dc0174c7171b76b",
+   "description_tr": "Gün içi alım satım için 11 Claude skill'i: grafik tarama, haber takibi, giriş ve çıkış zamanlaması ve sonuçları geriye dönük oynatma. Python ile yazılmış, MIT lisanslı; Claude Code eklentisi ya da klasör kopyalama ile kuruluyor. Yatırım tavsiyesi değil, kod ve istem paketi.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "shader-effects-inc/shaders",
+   "inputs_hash": "5c190645639f00c2432a203e53c1a487",
+   "description_tr": "React, Vue, Svelte, Solid ve düz JavaScript için 200'den fazla WebGPU efektini bileşen olarak sunan kütüphane: gradyan, gürültü, cam, bozulma, geçiş. Görsel tasarım aracı, CLI ve AI ile kullanım için MCP desteği var; ücretli bir Pro katmanı da bulunuyor. TypeScript, MIT lisanslı.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "PC2005-cloud/dsh-pet",
+   "inputs_hash": "ed0ae5d232e3f5de109382e7f3a556bb",
+   "description_tr": "DeepSeek Harness için masaüstü evcil hayvan eklentisi: yüz kadar saydam animasyon, oturum olaylarına göre durum değişimi, bakiye bildirimleri, çoklu pencere. AI videodan kendi evcil hayvanını üretmek için prompt ve materyal hattını da içeriyor. Belgeler Çince, TypeScript, MIT lisanslı.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "patch-gg/pixelfx",
+   "inputs_hash": "ebf6f947cd5d2701aca0bc606adf53de",
+   "description_tr": "244 piksel sanat efekti ve animasyonu (ateş, patlama, büyü, hava durumu, arayüz), her biri küçük bir kod parçası. Tarayıcıda oynatılıyor, yeniden renklendirilebiliyor, oyuna gömülebiliyor ve sprite sheet olarak dışa aktarılabiliyor. Yeni efekt üreten bir Claude Code skill'i de var. JavaScript, MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "elysia395/dsh-wallpaper-engine",
+   "inputs_hash": "c38d27d584407fd442d6b36d5b64ce88",
+   "description_tr": "Yerel Wallpaper Engine duvar kağıtlarını (Scene, Web, video) DeepSeek Harness web arayüzüne taşıyan eklenti. Sahne duvar kağıtları WebGL ile çiziliyor, başarısız olursa MP4'e düşülüyor; ayarlar ajana araç ya da token eklemiyor. Windows, macOS, Linux. Belgeler Çince, MIT lisanslı.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "anomalyco/hex",
+   "inputs_hash": "504a5cd688914bee6fd9c21ef2ab0e3b",
+   "description_tr": "Mac, Windows ve Linux için yerel sesle yazdırma uygulaması (Rust): tuşa basılı tutup konuşuyorsun, bırakınca metin açık uygulamaya yapıştırılıyor. Çözümleme cihazda yapılıyor; ilk çalıştırmada konuşma modeli indiriliyor, sonrasında veri makineden çıkmıyor. Kararlı ve dev kanalları var, MIT lisanslı.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "anmolkapil/plexo",
+   "inputs_hash": "e3e5df1c2977ca6860ad3750ed9b3c2a",
+   "description_tr": "Wi-Fi, Ethernet ve mobil bağlantıları aynı anda kullanarak dosya ve torrent indirmelerini hızlandıran masaüstü indirme yöneticisi. Dosya parçalarını ağlar arasında paralel indiriyor; ağlar indirme sırasında açılıp kapatılabiliyor. TypeScript, MIT lisanslı.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "valentderah/totk-pc-recomp",
+   "inputs_hash": "0650501441246c900284b1e08e631e2d",
+   "description_tr": "The Legend of Zelda: Tears of the Kingdom'ın Windows ve Linux x86-64 için statik olarak yeniden derlenmiş yerel sürümü, Vulkan renderer ile. Oyun dosyaları dahil değil; kullanıcının kendi konsolundan çıkarılmış kopyası gerekiyor. Erken geliştirme aşamasında, hata ve çökme bekleniyor. C, MIT lisanslı.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "waligoraamodio288-rgb/hongguo-desktop-releases",
+   "inputs_hash": "7501d9f79dd05a79d4a5507643f58961",
+   "description_tr": "Çince kısa dizi platformu Hongguo için üçüncü taraf istemci: Windows sürümü kararlı, Mac M serisi ve Android TV ARM sürümleri beta. Dizi arama, favoriler, kaldığı yerden devam ve TV kumandası destekleniyor. Depo yalnızca sürüm dosyalarını barındırıyor, lisans belirtilmemiş ve kaynak kodu yok.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "sapientinc/PRAXIST",
+   "inputs_hash": "af36e997fcf430120a258c8217c915cd",
+   "description_tr": "Ölçülebilir, bilgisayarda çalıştırılabilir araştırma için otonom sistem: paralel araştırma ajanlarını, görev bazlı değerlendirmeyi ve kalıcı kanıtı koordine ediyor, nesilden nesile sentez yapıyor. Hedefi ölçülebilen ama en iyi yolu bilinmeyen projelere göre. Python, pip ile kuruluyor; Codex ve başka ajanlarla entegre. Lisans NOASSERTION.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "T-Auto/dsh-ops",
+   "inputs_hash": "cf88517da0a738042ac761588bd4c6b3",
+   "description_tr": "DeepSeek Harness için token tüketimini ve görev süresini azaltmayı hedefleyen araç eklentisi. Satır numaralı kompakt çıktı veren ops araçları ekliyor, bazı resmi araçları gizliyor; PTC modu için 18 API'lik bir SDK ve dinamik araç yükleme içeriyor. Belgeler Çince ve İngilizce, JavaScript, MIT lisanslı.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "deeplethe/sandstorm",
+   "inputs_hash": "cde4fcd6ec34c38004b068d7f053b92e",
+   "description_tr": "Binlerce ajan sandbox'ını tek ucuz makinede tutmak için yazılmış Rust çalışma zamanı: boştaki sandbox'ları duraklatıp diske snapshot alıyor, istek gelince geri yüklüyor. gVisor konteynerleri ve Firecracker mikro VM'leri destekleniyor. Apache-2.0 lisanslı.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "wide-trace/open-higgsfield",
+   "inputs_hash": "e3402217c8dfffd7e0fa6adda256c77e",
+   "description_tr": "OpenHiggsfield, görsel ve video üretim modellerini tek prompt çubuğu ve ortak galeriyle sunan açık kaynak stüdyo; katalogda 8 görsel ve 30 video modeli var, her biri kendi ayarlarını bildiriyor. Next.js 16 ve React 19; geçmiş tarayıcıda 60 kayıtla sınırlı, üretim kullanıcının kendi platform anahtarıyla yapılıyor. Depoda lisans belirtilmemiş.",
+   "usage_tr": "Folio'nun günlük içerik üretiminde foto ve video post'larını model başına ayrı panel açmadan tek yerden üretip galeriden seçebilirsin. Lyricdrop'un lansman kreatiflerinde de kullanılabilir. Uyarı: üretim dış platformda ücretli çağrılarla yapılıyor, önce günlük hacmin maliyetini ölç; beğendiğin çıktıları hemen kendi depolamana indir.",
+   "matched_project": "Folio",
+   "relevance": 7,
+   "investment_note": null
+  },
+  {
+   "full_name": "ApodexAI/FrontierAgent",
+   "inputs_hash": "eb1f8b469b75ae460925d7179442da13",
+   "description_tr": "FrontierAgent, uzun soluklu araştırma ve dosya işleri için açık kaynak ajan çalışma zamanı ve terminal ürünü. TUI'da tek ajanlı ReAct ve görev panolu, paralel alt ajanlı Agent Team akışları var; işler sandbox'ta yürüyor, değişiklikler onay ve checkpoint ile geri alınabiliyor. Docker zorunlu değil, OpenAI uyumlu uç nokta bekliyor. Apache-2.0.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; Claude Code ve OpenCode hattının üçüncü bir alternatifi ve kendi model uç noktanı, dolayısıyla API maliyetini gerektiriyor. Agent Team akışıyla yapılan paralel araştırmayı Claude Code'un alt ajanlarıyla Max aboneliği içinde de yapabiliyorsun.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "Adkid-Zephyr/anti-defensive-writing-Skill",
+   "inputs_hash": "06f53444ff3044dcb8966db778a65635",
+   "description_tr": "Akademik makalelerde savunmacı yazımı engellemek için Çince ve İngilizce bir skill ile istem paketi. Fikir: makale bir proje özeti değil bir lansman; yalnızca en güçlü avantaj öne çıkarılıyor, kazanılamayan karşılaştırmalar yarışa sokulmuyor. İstem herhangi bir yapay zekaya yapıştırılabiliyor. Python, MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "Jakeschincariol/instagram-agent-skill",
+   "inputs_hash": "2ee9817785e457604ba4098fb31ff580",
+   "description_tr": "Bir Instagram hesabını yönetmeye yönelik 13 Claude skill'i: 26 puanlanmış hook biçiminden Reel yazımı, viral araştırma, başlık denetleyicisi ve metni doğallaştıran bir araç. Python betikleri hook'u puanlıyor ve süre çizelgesi çıkarıyor. Ücretsiz, MIT lisanslı.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "jhaizhou-ops/d2r-mobile",
+   "inputs_hash": "bcef7009c04b2f45b93f7f5c2f1be346",
+   "description_tr": "Diablo II: Resurrected'ın Reign of the Warlock genişlemesi için açık kaynak uyumluluk katmanı: kullanıcının kendi Switch kopyasındaki oyun programını iPhone, iPad, Mac, Android ve HarmonyOS'ta emülasyon olmadan çalıştırıyor. Oyun dosyaları dahil değil. C, MIT lisanslı; çalıştırmak için telif hakkı konusunda dikkat gerekir.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "openfilm/openfilm",
+   "inputs_hash": "6854e5fe13440d44d2824dc59596850b",
+   "description_tr": "Kodlama ajanını (Codex, Claude Code vb.) video üreten bir ajana çeviren açık kaynak araç. Video tek bir film.html dosyası olarak yazılıyor, her çekim frame(t) fonksiyonuyla çizilen bir web sayfası; tarayıcıda çalışan yerel Studio editörü sonucu elle ya da komutla düzenletiyor. TypeScript, MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "storytold/designcraft",
+   "inputs_hash": "466936ea8b818b7485f6d36c1c9c534a",
+   "description_tr": "Saf Rust ile sıfırdan yazılmış açık kaynak sayfa düzeni ve masaüstü yayıncılık editörü. macOS, Windows ve Linux'ta yerel, tarayıcıda WebAssembly ile çalışıyor; paragraf dizgisi kendi motoruyla yapılıyor. ArtCraft topluluğunun Craft uygulama setinin parçası. Apache-2.0 lisanslı.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "totec448-spec/chat-on-steroids",
+   "inputs_hash": "b28c15ea404aeb8c53c490decc3f16a7",
+   "description_tr": "Chat On Steroids, ChatGPT konuşmasını yerel dosya, terminal ve tarayıcıda çalıştıran Electron masaüstü çalışma alanı. İşleri paralel worker'lara bölüyor, Goal, Loop ve Compact & Resume ile uzun işleri taşıyor; MCP ve Chrome eklentisiyle yerelde koşuyor. README bağımsız beta olduğunu ve sağlayıcı kurallarına uyulmasını vurguluyor. MIT.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; ürün ChatGPT aboneliğine bağlı, senin hattın ise Claude Code ve OpenCode. Depo ayrıca sağlayıcı kuralları konusunda açık bir uyarı taşıyor.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "egoist/mygo",
+   "inputs_hash": "7342a4006180318ca0f40b4a373d27fb",
+   "description_tr": "Go ile masaüstü uygulaması geliştirme çerçevesi. Pencereler ya işletim sisteminin webview'ında (WKWebView, WebKitGTK, WebView2) web arayüzü ya da GPU üzerinde çizilen, webview'suz saf Go yerel arayüz gösteriyor; ikisi karıştırılabiliyor. Çıktı birkaç megabaytlık tek bir Go ikilisi. MIT lisanslı.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "sdli1995/dlssg_for_sm86",
+   "inputs_hash": "d7927ffe26f944eafbc84ad29c500718",
+   "description_tr": "RTX 30 serisi (SM86) ekran kartları için DLSS Frame Generation uyumluluk katmanı: oyun klasörüne proxy DLL ve INI konuyor. 0.4.x sürümü isteğe bağlı XeSS-FG motoru ve çoklu kare üretimi ekliyor; 0.3.x'ten yükseltmek için eski dosyaların silinmesi gerekiyor. Belgeler Çince, lisans yok.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "storytold/craft-launcher",
+   "inputs_hash": "b9519b6309ec3e67ef1a85506b900c53",
+   "description_tr": "ArtCraft Craft uygulama setindeki tüm uygulamaları (PhotoCraft, DesignCraft, VectorCraft vb.) kuran, güncelleyen ve açan başlatıcı, saf Rust ile yeniden yazılmış. Her bilgisayar için uygun sürümü seçiyor. Apache-2.0 lisanslı.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "Djihads80/Eglantine",
+   "inputs_hash": "6ffb70265845c8b9440768aebc653ef9",
+   "description_tr": "Nintendo Switch 2 için çok deneysel, açık kaynak emülatör (C++), Eden, Yuzu ve Sudachi'den türetilmiş. README Mario Kart World'ün iyi hızda, Splatoon Raiders'ın değişken performansla çalıştığını söylüyor; oyun listesi henüz yok. Windows, Linux ve macOS. GPL-3.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "Appllama/appllama-skills",
+   "inputs_hash": "2b09fd0ab88e867f1a5b5f744093e672",
+   "description_tr": "Appllama skills, mobil uygulama geliştirmek için iki agent skill'i: en çok kazanan uygulamaların ekran ve akışlarını MCP kütüphanesinden araştırmayı, ve Apple HIG'e uygun Expo / React Native ekranları yapmayı öğretiyor. Doğrulama simülatörde kaydedilen akışların kare kare izlenmesiyle yapılıyor. `npx skills add` ile kurulur, MIT.",
+   "usage_tr": "Lyricdrop v2'nin mobil aşamasında Expo + React Native ekranlarını \"çalışıyor\"dan \"yerel hissediyor\" seviyesine çıkarmak için kullanabilirsin; Folio'nun Instagram benzeri ekranlarında da aynı yapım kuralları işe yarar. Simülatörde akışı kare kare denetleyen döngü devredilebilir bir kabul kriteri veriyor. Uyarı: araştırma yarısı satıcının MCP kütüphanesi için hesap istiyor.",
+   "matched_project": "Lyricdrop",
+   "relevance": 7,
+   "investment_note": null
+  }
+ ]
+}

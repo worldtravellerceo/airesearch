@@ -1,0 +1,403 @@
+{
+ "repos": [
+  {
+   "full_name": "Jarvis322/macos-sysdata",
+   "inputs_hash": "5b0e74238cbde9027a7038dcf05bb1f7",
+   "description_tr": "macOS'taki \"System Data\" alanının içinde ne olduğunu kategori kategori gösteren ve öğeleri tek tek silmeye izin veren bir menü çubuğu uygulaması. Her silmeden önce çalışacak komutu gösteriyor. Swift/SwiftUI ile yazılmış, macOS 14+ ister; lisansı özel (proprietary).",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "Tencent-Hunyuan/Hy-Memory",
+   "inputs_hash": "a309eb28f85c9a1fe1ff6cd491cfcc79",
+   "description_tr": "Tencent Hunyuan'ın LLM ajanları için geliştirdiği bellek sistemi: sohbet, çalışma ve kodlama senaryoları için ayrı bellek hatları sunuyor. Hy-Memory-30B-A3B modeli (FP8 ve GGUF sürümleriyle) Hugging Face'te; MemHub ise Claude Code, Cursor ve Codex geçmişini yerel dizinde toplayan masaüstü/CLI ürünü.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "workersio/breakscale",
+   "inputs_hash": "4e98763fdec25bd456f89fb48cd150c4",
+   "description_tr": "Sistem tasarımı öğrenmek için bir simülatör: bir mimari kuruyor, yük bindirip nerede ve neden bozulduğunu izliyorsun. Sayıların kuyruk teorisine dayalı ölçümlerden geldiği belirtiliyor. TypeScript ve React ile yazılmış; tarayıcı sürümü, VS Code eklentisi ve MCP sunucusu var.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "aimod-cc/Agent2API",
+   "inputs_hash": "1567c3479e339ace0ca4a2c6431d8113",
+   "description_tr": "Elindeki 50'den fazla AI istemcisinin oturumlarını yeniden kullanıp tek bir base_url arkasında OpenAI, Anthropic ve görsel API'leri olarak sunan yerel yönlendirme geçidi. Çoklu hesap seçimi, bakiye ve istek raporları var. Rust, AGPL-3.0; istemci oturumlarını böyle kullanmak hizmet şartlarına aykırı olabilir.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "jtydhr88/screenwriting-skills",
+   "inputs_hash": "f31c0ee9ec36073b8b33dafc13757383",
+   "description_tr": "Senaryo ve dizi yazımı için 26 ajan becerisi (skill) paketi; 47 zanaat kitabından ve yayımlanmış metinlerden damıtıldığı belirtiliyor. Claude Code ve OpenAI Codex'te ortak agentskills.io biçimiyle çalışıyor. Beceri metinleri Çince, ama istediğin dilde soru sorabiliyorsun.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "krishhgg/Insomnia",
+   "inputs_hash": "98e3c89e32c393cc3038edc9f92f3fa0",
+   "description_tr": "MacBook kapağı kapalıyken uyanık kalmasını sağlayan, süre sınırlı oturumlar için bir macOS menü çubuğu uygulaması; uzun ajan oturumları hedefleniyor. Geri alınamayan bir durum olursa bunu gösteriyor ve kurtarma mekanizması içeriyor. Swift, MIT; macOS 26+ ister, kaynaktan derleme deneysel.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "CopilotKit/OpenDuet",
+   "inputs_hash": "de52d7e675527cf524fcb257bdeada24",
+   "description_tr": "CopilotKit'in OpenBot üzerine kurduğu açık kaynaklı proaktif ajan şablonu: her ajanın kendi bilgisayarı var; web, mobil, Slack ve Teams üzerinden kullanılıyor. Kendin barındırıp model seçebiliyorsun, ama konuşma dizileri ve bellek için ücretsiz bir CopilotKit Intelligence projesi gerekiyor. TypeScript, MIT; erken aşamada.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "humblemuzzu/dumbtv",
+   "inputs_hash": "18dfd0995401583b13677fd3b79b5c3f",
+   "description_tr": "Fire TV'den reklamları, izlemeyi ve gereksiz uygulamaları root gerektirmeden ADB ile temizleyen bir araç. Her adım geri alınabiliyor; kendi açık kaynaklı ana ekran uygulamasıyla geliyor. Uygulamalar ve HDMI girişleri yerinde kalıyor. Java ile yazılmış.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "longbridge/nsh",
+   "inputs_hash": "8fc52dc0303ba523b02d7c347d5394b3",
+   "description_tr": "Rust ile yazılmış, iOS, Android, macOS, Windows, Linux ve web için tek kod tabanından yerel arayüz üreten UI çatısı. Uygulamayı tamamen Rust'ta ya da ekranları TSX'te yazabiliyorsun; TSX modülleri imzalı paketler olarak çalışma anında korumalı alanda yüklenebiliyor. Görsel tasarım uygulamaya ait.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "FireRedTeam/FireRedAudio",
+   "inputs_hash": "bbe80aa92c428eee53ec40025ba9f47e",
+   "description_tr": "FireRedAudio, dinleme ve konuşma üretimini tek bir 9B parametreli dil modelinde birleştiren ses-dil modeli. ASR, ses anlama, talimatla yönlendirilen TTS, konuşma düzenleme ve bir saate kadar kayıtlarda zaman-içerik hizalaması sunuyor. PyTorch tabanlı, Apache-2.0; kurulum CUDA 12.8 ve ffmpeg istiyor.",
+   "usage_tr": "Lyricdrop v2'nin kelime zamanlama adımında karşılaştıracağın STT adaylarından biri olabilir; uzun kayıtlarda zaman-içerik hizalaması tam bu probleme denk geliyor. Çıkarım CUDA istiyor, yani Mac'te yerel çalışmaz ve kiralık GPU gerekir; model konuşma üzerine, şarkı sesinde zayıf kalabilir. Mevcut yerel STT'ne göre hizalama hatasını belirgin düşürmüyorsa elemek doğru olur.",
+   "matched_project": "Lyricdrop",
+   "relevance": 7,
+   "investment_note": null
+  },
+  {
+   "full_name": "windows-GPU-UNLOCK/Windows-GPU-UNLOCK",
+   "inputs_hash": "35cce0ed354c283b8ba8730bdc2f9cb7",
+   "description_tr": "Windows'ta RTX 3090 için UEFI tabanlı bir GPU açma ve doğrudan Windows'a devretme çalışması; deneysel ve topluluk katkılarıyla genişliyor. Başarı raporları belirli kart ve anakart kombinasyonlarına bağlı (RTX 3060 yalnızca başsız USB ile). C, GPL-2.0; yanlış kullanım donanıma zarar verebilir.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "bilibili/Index-Translate",
+   "inputs_hash": "b6caa82cb6c2abdadabb254b2887c306",
+   "description_tr": "Bilibili'nin çok dilli ve çok modlu çeviri model ailesi: metin, görsel ve ses çevirisi, kontrollü dublaj ve uzun belge çevirisi yapıyor. Omni sürümü 2B, 9B ve 35BA3B boyutlarında; ağırlıklar Hugging Face ve ModelScope'ta. GPU kurmadan denemek için ücretsiz çevrimiçi API var.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "Minireel/HGhub",
+   "inputs_hash": "ec2c3951b0ce57e5d900f602a0616cd6",
+   "description_tr": "Bir kısa drama uygulamasının üçüncü taraf istemcisi: Rust ve Tauri 2 ile Windows, macOS ve Android'de dikey ekran oynatma sunuyor. İçerik barındırmıyor, tamamı üçüncü taraf sitelerden geliyor. Lisans PolyForm Noncommercial, ticari kullanım yasak; telif konusu belirsiz.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "SMNETSTUDIO/WeChat-AI",
+   "inputs_hash": "0fbe8c6a459e811f7667992d9647853d",
+   "description_tr": "Tencent iLink'e bağlanıp WeChat üzerinde rol yapma sohbet botları çalıştıran, kendin barındırdığın servis. Girişler LINUX DO OAuth ile, veriler uzak bir Redis'te tutuluyor. Yönetim paneli, token kullanım raporu ve çıkartma moderasyonu içeriyor. TypeScript; README Çince ve İngilizce.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "nateherkai/roast-room",
+   "inputs_hash": "b378e6346eb44a1237656e5c13ca55fc",
+   "description_tr": "Claude Code içinde çalışan bir karar tartışma aracı: yedi AI danışman (Bezos, Paul Graham, Hormozi, Buffett ve diğerleri) iş kararını masa etrafında tartışıyor. Karar, seçenekler ve rakamları veriyorsun; sonuç verdict.md dosyasına yazılıyor. Danışmanlar gerçek kişilerin kurgusal canlandırması.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "billion-token-one-task/Deepgraph",
+   "inputs_hash": "8072a4df0491535db96452c2e09dca9b",
+   "description_tr": "JouleBeat'in otomatik araştırma ajanı: literatürü okuyor, açık soruları buluyor, deneyleri çalıştırıp sonuçları bir bilgi grafiğine ekliyor. Amaç, sonucu yeniden çalıştırılabilir kodla doğrulanan hesaplamalı araştırma görevleri üretmek. Python; sonuçlar ve mimari README'de bağlantılı.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "lixiaoxiao9888-create/manju-laoli-skill",
+   "inputs_hash": "9ef543f1d3dd92dc3af3eebf8a5fcf89",
+   "description_tr": "Çince AI kısa drama (manju) üretimi için ajan becerisi paketi: proje kurulumu, senaryo, varlık kilitleme, storyboard ve Seedance/MiniMax gibi video modellerine verilecek istemler ile otomatik kalite denetimlerini kapsıyor. Slim sürümde iki rota çıkarılmış. README Çince; çoğu sponsor ve sürüm notu.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "ikow/php2shell-poc",
+   "inputs_hash": "356028d309350023951620e846210946",
+   "description_tr": "CVE-2026-109618 ve 109619 numaralı PHP güvenlik açıkları üzerine bir araştırma deposu; kavram kanıtı kodu ile Suricata, Sigma ve ModSecurity tespit kuralları içeriyor. Savunma tarafı için tespit kuralları kullanışlı olabilir, kavram kanıtı kodu yalnızca izole laboratuvarda ele alınmalı. Python.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "UnderleveledBuilder/awesome-short-drama-skills",
+   "inputs_hash": "b0707dc1f6bf7670d4cab26beffdbf8a",
+   "description_tr": "AI ile kısa drama ve dikey dizi üretimi için ajan becerilerinin derlenmiş listesi: senaryo, uyarlama, storyboard ve Seedance, Kling, MiniMax istemleri. 83 skill ve 16 platform kayıtlı; senaryo skill'leri için bir karşılaştırma testi sonuçları var. Claude Code, Codex ve OpenClaw gibi ajanlarda kullanılabilir. HTML site.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "jeremy-prt/bloub",
+   "inputs_hash": "1ff18cfa68b36818a98a7cbf1d2f9140",
+   "description_tr": "x.ai bot avatarının SVG ile yeniden çizimi: tek bir şekil 14 durum arasında dönüşüyor, ölçümler referans videodan kare kare alınmış. Vue bileşeni olarak sunuluyor (size, shape, color, expression gibi prop'larla). TypeScript, MIT; x.ai ile bağlantısı yok, tasarım hakları sahibine ait.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "rorygallagher2024/glasshouse",
+   "inputs_hash": "9eeddeb596f9f78673cdc1e799b3da50",
+   "description_tr": "Jailbreak edilmiş (root) LG webOS TV'lerin kendi üzerinde çalışan sunucu: canlı panel, gizlilik denetimi, reklam ve telemetri engelleme, yeni ana ekran ve ekran koruyucular sunuyor. İsteğe bağlı MQTT köprüsüyle Home Assistant'a bağlanıyor. Bulut gerektirmiyor. JavaScript.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "timoncool/YuE2-Studio",
+   "inputs_hash": "ae58d8b4b711ba8059dc5cabce24d4c5",
+   "description_tr": "YuE2 şarkı modeli için masaüstü stüdyo: stil ve söz giriyorsun, model önce nota yazıyor, sonra vokalli tam şarkıyı üretiyor; notayı düzenleyip aynı bestelemeyi yeniden çalabiliyorsun. Windows'ta Python'suz tek çalıştırılabilir dosya, 6 GB+ VRAM'li NVIDIA kart ister. Rust/Tauri ve React; MCP sunucusu da var.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "lyramakesmusic/neuron-explorer",
+   "inputs_hash": "8dd205952e1e60acd6f3e4d046b685d7",
+   "description_tr": "Qwen3.5-4B için yönlendirme (steering) odaklı nöron gezgini: her MLP nöronunu itip tüm üretimleri saklıyor ve sonuçları tarayıcıda gezdirmeni sağlıyor. Mekanik yorumlanabilirlik araştırması için; sıralama, derinlik raporu ve HF/vLLM denklik kontrolü betikleri içeriyor. Python.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "devswha/ovis",
+   "inputs_hash": "c597ce8f55f6d30105256aab381981ca",
+   "description_tr": "Eski adıyla herdr web arayüzü olan Ovis: herdr için masaüstü, telefon ve tarayıcı istemcisi. Claude Code, Codex ve diğer ajan panelleriyle sohbet ve canlı terminal sunuyor, SSH ile uzak bilgisayarlara bağlanıyor, web push bildirimi veriyor. Mac, Windows ve Linux uygulamaları var. TypeScript, Bun.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "cranebeaker/coop-anything",
+   "inputs_hash": "82637660563f281b718a69ccd7f97bf3",
+   "description_tr": "Tek oyunculu oyunları arkadaşlarla co-op oynanır hale getirmesi için AI ajanına yöneltilen bir MCP sunucusu ve rehber: ajan oyunu tersine mühendislikle inceliyor, co-op'u kuruyor, oyun içinde botlarla test ediyor ve Steam üzerinden paketliyor. Deus Ex gibi örnekler var. Python.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "MaxLiu22/Motion2MixamoRig",
+   "inputs_hash": "0bd14f401dde047654519a03cf19b6d9",
+   "description_tr": "Videodaki ya da fotoğraftaki bir insanın hareketini Mixamo rig'li 3D karaktere aktaran araç; önizleme videoları ve Blender/Unity'ye atılabilir skinned .glb dosyası üretiyor. Tek kişilik videolar için, komut satırı ve Blender 4.2+ eklentisi var. Deneysel (0.1.8). Python.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "kkk-bot/HowToGetAlong",
+   "inputs_hash": "eefb9149e74d78cd01897cdfb18ae25d",
+   "description_tr": "Üniversite öğrencileri ve işe yeni başlayanlar için iş birliği, yardım isteme, reddetme, para, görgü ve çatışma gibi durumlarda ne yapılacağını ve nasıl söylenebileceğini anlatan Çince bir rehber. PDF, HTML ve Markdown sürümleri ile bir AI skill'i var. Kişisel tecrübeye dayanıyor, yazarı da bunu belirtiyor.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "cookiy-ai/sell-sessions-skill",
+   "inputs_hash": "7abb41f13f89570723403a751930d7c3",
+   "description_tr": "Claude Code ve Codex oturum geçmişini satmanı sağlayan açık kaynaklı bir skill ve yerel yükleyici. Hangi oturumların lisanslanacağını sen seçiyorsun; sırlar ve kişisel veriler makinende temizleniyor, satıştan pay alıyorsun. Kod geçmişin içindeki özel bilgilerin sızma riski ciddi bir dikkat konusu.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "morluto/awesome-reverse-engineering",
+   "inputs_hash": "38c2261f381e8631282cfc6b6f021af3",
+   "description_tr": "Tersine mühendislik için derlenmiş araç ve öğrenme kaynağı listesi: ikili dosyalar, uygulamalar, firmware, dosya biçimleri ve protokoller. Girişler göreve göre (kimlik tespiti, yerel analiz, hata ayıklayıcılar, dinamik izleme) gruplanmış; ticari araçlar işaretli. Ayrıca ajan odaklı REA aracını öne çıkarıyor.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "enesozturk/dimensional-drawing",
+   "inputs_hash": "578ca46f028f696e1505cb68555ae2ce",
+   "description_tr": "Bir UI bileşenini verince Apple'ın boyutlu çizimleri tarzında tek sayfalık teknik çizim üreten ajan becerisi: dolgu, boşluk, köşe yarıçapı, katmanlar ve ekrandaki yerleşim ölçülüp etiketleniyor. Metin içeriği bilerek dışarıda bırakılmış. Kart ve diyalog örnekleri tek HTML dosyası.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "AgnesAI-Labs/agnes-harness",
+   "inputs_hash": "78c17710b76b7977c5e341707333cd89",
+   "description_tr": "Forward Deployed Engineering için eklentilerle genişletilebilir bir ajan altyapısı: her müşteri dağıtımını tekrar kullanılabilir eklentiye çeviriyor. Onay veren insanları ve sahaya özgü sistemleri hesaba katan bir iş ajanı çerçevesi. TypeScript, Apache-2.0; pre-alpha geliştirici önizlemesi, eski sürümden veri taşıması yok.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "shinshin86/mesh-avatar-studio",
+   "inputs_hash": "cbd37c397184f9b4c580adfbf3504888",
+   "description_tr": "Tek bir illüstrasyondan, kodlama ajanı ve yerel editörle animasyonlu 2D mesh avatar üreten araç: ajan rig'i yerleştiriyor, resmi katmanlara kesiyor, sabit pozlarda inceliyor. Claude Code veya Codex ile çalışıyor; en iyi sonuç şeffaf arka planlı, önden bakan PNG. WebGL, TypeScript.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "darrenprx/lolPing",
+   "inputs_hash": "6ce7ae283a6df1ce881624cdb6c69392",
+   "description_tr": "League of Legends ping tekerleğini masaüstüne taşıyan oyuncak: Alt basılı tutup sürüklediğinde herhangi bir uygulamanın üstünde animasyon ve ses çıkıyor, emote tekerleği de var. Oyunu okumuyor ya da değiştirmiyor. İsteğe bağlı AI takım arkadaşı ile ping noktasında modele soru sorulabiliyor. Windows, macOS, deneysel Linux/X11. Electron, TypeScript.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "D3voz/openjutsu",
+   "inputs_hash": "4cfd9bd0af726ffc1cc417d4421e00ac",
+   "description_tr": "Higgsfield Genjutsu'ya açık kaynaklı yerel alternatif: videoda ana kişiyi karakter fotoğrafınla değiştiriyor, saç, kıyafet ya da nesneyi de değiştirebiliyor; kamera, kesimler ve ses korunuyor. MiniMax H3, SAM 3.1 ve Qwen3-VL ile kendi GPU'nda ComfyUI iş akışı olarak çalışıyor. Next.js arayüz, MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "kargulstudio/sales-crm",
+   "inputs_hash": "d4e504dcdf48efe8fb8ccce169ef2bac",
+   "description_tr": "Next.js 16, React 19 ve Tailwind CSS 4 tabanlı bir web projesi başlangıç şablonu (adı Kargul Starter); depoda tüm bileşen kurallarını anlatan bir CONVENTIONS.md var. SEO, sitemap ve llms.txt ayarları tek dosyadan türüyor. Açıklama alanı boş; adı \"sales-crm\" ama README bir CRM'den söz etmiyor. MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "sganggs/Stronghold-Protocol",
+   "inputs_hash": "39c2f794661cee8f14c2b41a4efed30d",
+   "description_tr": "Arknights'ın \"Garrison Protocol: Covenant\" modunun tarayıcıda çalışan, resmi olmayan hayran yapımı kopyası: oto-satranç tarzı kule savunması, tek kişilik ya da 1-4 kişi çevrimiçi co-op. Node.js ve WebSocket. Kod GPL-3.0; oyun varlıkları hak sahiplerine ait ve lisans kapsamında değil. Ticari kullanım yasak.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "andyhuo520/digital-human-koubo",
+   "inputs_hash": "97dd997768ba43b93d4a0477470c7194",
+   "description_tr": "Tek fotoğraf ve tek cümleden konuşan dijital insan (talking-head) videosu üreten ajan becerisi: senaryo, dudak senkronlu sunucu, ses temizliği, altyazı ve paketleme otomatik. Renoise MCP ile üretiyor (kredi harcanıyor; örnek reklam 482 kredi), 5 kurgu stili ve 48 paketleme bileşeni var. Claude Code ve Codex için. TypeScript.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "Git-Agni/prod-FARM-IOS-Core",
+   "inputs_hash": "87d529333547bba4e7ecde0a959e46a0",
+   "description_tr": "Gerçek iPhone'lardan oluşan bir cihaz çiftliğini Mac'ten yöneten açık kaynaklı iOS otomasyonu: canlı kontrol, Postgres destekli zamanlayıcı, eklenti sistemi ve TikTok iş akışları. Appium ve WebDriverAgent kullanıyor; kendin barındırıyorsun. Apache-2.0. TikTok otomasyonu platform kurallarına aykırı olabilir.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "Murea-Labs/InWorld",
+   "inputs_hash": "8a6d4699bf26ec74c6af6b65037a6e58",
+   "description_tr": "Metinden ve referans görsellerden eşzamanlı sesli video üreten açık kaynaklı model ve eylemlerinden süren, filme alınmış bir hikaye kuran ajan (Murea-InWorld). Murea-Fast ağırlıkları Hugging Face'te; LTX-2.5 temel bileşenleriyle kurulum rehberi var. Python.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "lexifina/global-law",
+   "inputs_hash": "d55143ee35212274def6f6f37f23f142",
+   "description_tr": "Dünya hukukunu git içinde tutan depo: her commit yürürlüğe giren bir yasayı temsil ediyor, korpuslar ülke/yargı bölgesi bazında alt modül. Araçlar her commit'in yürürlük tarihini okuyarak herhangi bir ülkenin herhangi bir tarihteki hukukunu veriyor. MCP desteği var. Tüm ülkeler birkaç GB tutuyor.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  }
+ ]
+}

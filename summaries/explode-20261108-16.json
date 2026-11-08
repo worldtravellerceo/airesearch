@@ -1,0 +1,401 @@
+{
+ "repos": [
+  {
+   "full_name": "showheyohtaki/motion-prompt",
+   "inputs_hash": "726e243e588900bb040ddf92c48ea5ce",
+   "description_tr": "Yapay zekâya yaptırılacak işler için isim kütüphanesi: hareket grafikleri, kamera hareketleri, arayüz bileşenleri, açılış sayfası efektleri ve fotoğraf stilleri dahil sekiz sette 192 isim. Her ismin hareketli örneği, kısa anlamı ve nasıl istenebileceğine dair örneği var. Listeler beş dilde, galeri İngilizce ve Japonca; kendi alanın için aynı kütüphaneyi üretecek promptlar da veriliyor.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "patchzyy/Wiicompiled",
+   "inputs_hash": "9fef460b5b6bb31503a1df15c56b30b8",
+   "description_tr": "Mario Kart Wii'nin statik yeniden derleme ile yapılmış yerel PC portu; çalışma anında emülatör, yorumlayıcı ya da PowerPC kodu yok. Kare enterpolasyonu (deneysel) ve serbest en-boy oranı sunuyor. Nintendo kodu içermiyor, kendi oyun imajını kullanman gerekiyor. Windows, Linux ve macOS (Apple Silicon) için, GPL-3.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "NiazMorshed2007/reanimate",
+   "inputs_hash": "48cad98e7367314c8285e504d300ff5d",
+   "description_tr": "Bir sitedeki, ekran kaydındaki, mp4/gif ya da Lottie dosyasındaki animasyonu kare kare ölçüp kendi kodunda yeniden kuran bir Claude Code skill'i. Kopyayı aynı şekilde kaydedip orijinalle sayısal olarak karşılaştırıyor ve fark kalmayana kadar turlara devam ediyor. Bun üzerinde çalışıyor, npx skills ile kuruluyor, MIT lisanslı.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "Star-Pie/StarPie",
+   "inputs_hash": "1251d76e8a4bd837fd7a0f595c78ec24",
+   "description_tr": "Windows 10/11 için C# WPF ile yazılmış hafif bir fare tekerleği (pie menü) ve hareket tabanlı kısayol aracı. Sağ/orta tuşla 4, 8 veya 12 yönlü menü açıyor; uygulama bazlı profiller, tema stüdyosu ve program, komut, pencere yönetimi, ekran OCR'ı sağlayan eklenti sistemi var. Çevrimdışı çalışır, MIT, arayüz Çince ağırlıklı.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "bangtutorial/bang-motion",
+   "inputs_hash": "49d9b41ca0f889f2f9115af13f3a787f",
+   "description_tr": "HTML tabanlı hareketli grafik üreten bir agent skill'i: açılışlar, tanıtım videoları, kinetik tipografi ve beş açıklayıcı video stili tek bir index.html olarak üretiliyor. Görünüm marka bilgisinden türetiliyor ve ajanın kendi kodunda denetleyebileceği kurallar içeriyor. Claude Code, Codex, Gemini CLI ve Cursor ile çalışıyor, MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "dmoshehun-prog/learn-from-materials",
+   "inputs_hash": "762a89b0466f2d55e043bcd5ffb9249b",
+   "description_tr": "PDF, kitap, slayt, Word belgesi ve web sayfalarını kaynağa izlenebilir bilgi tabanına ve etkileşimli öğrenme sayfasına çeviren bir agent skill'i. Malzeme bilgisi ile modelin eklediği içeriği ayırıyor, çevrimdışı çalışıyor. Dosya okuyup Python çalıştırabilen ajan ortamı gerektiriyor (Claude Code, Codex, WorkBuddy). Python 3.10+, MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "2akouwu/reverify",
+   "inputs_hash": "8c61786d9640fde85069b4ecbbce9047",
+   "description_tr": "Yapay zekânın iddialarını deterministik araçlarla gerçek veriye karşı doğrulayan MCP sunucusu ve CLI: her iddia kanıtla birlikte VERIFIED ya da REFUTED döner. En güçlü kullanımı ikili dosya tersine mühendisliği. Ayrıca oturumu dosyaya devredip temiz başlatan bir bağlam aktarımı var. Claude Code, Codex, Gemini CLI ve OpenCode ile çalışır; Python, MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "hujjun/mcd-saver-strategist",
+   "inputs_hash": "cbfb2be7f906bb354377b2879d41fde3",
+   "description_tr": "McDonald's Çin MCP'si üzerinden menüyü ve kuponları çekip en ucuz geçerli kombinasyonu algoritmayla hesaplayan bir agent skill'i; örnekte 47 yuan'lık menü 21,9 yuan'a düşüyor. Çok hedefli optimizasyon, kupon analizi ve çok kişilik sipariş de var. Bağımlılıksız Python, MIT; resmi bir McDonald's ürünü değil, README Çince.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "Sam-Hui-dot/mcd-budget-meal",
+   "inputs_hash": "2cf47d8462c0cda1a8a064db93006789",
+   "description_tr": "McDonald's Çin MCP'sine bağlanıp bütçeye göre en fazla üç menüyü resmi fiyat sorgusuyla karşılaştıran bir agent skill'i; menü değişimlerinde tüm siparişi yeniden fiyatlıyor. Token gerektirmeyen çevrimdışı önizleme ve etkileşimli HTML rapor sunuyor. Python 3.10+, bağımlılıksız, lisans NOASSERTION; README Çince.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "0xsline/awesome-deepseek-harness",
+   "inputs_hash": "9844b8684f0f556e4b8185ac1f8ec3ba",
+   "description_tr": "DeepSeek Harness (DSH) ekosistemi için eklenti, araç ve altyapı listesi; ajanlar, bellek, arayüz, IDE istemcileri, güvenlik gibi kategorilere ayrılmış. Kaynak olarak dsh-external/hub kataloğu ve herkese açık dsh-plugin etiketi kullanılıyor; bazı bağlantılar org erişimi gerektirebilir. CC0-1.0 lisanslı, İngilizce ve Çince.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; DSH, Claude Code ve OpenCode kurgundan ayrı bir harness ve hesap demek. Bellek, bağlam ve oturum panoları gibi kategorileri Claude Code tarafındaki boşlukları görmek için kontrol listesi olarak okuyabilirsin. Listenin bir kısmı org erişimi gerektiriyor, her girdi dışarıdan doğrulanamaz.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "saragordic/window-sweaters",
+   "inputs_hash": "8adeeb7ff046d8b2aa0bffe696e3da60",
+   "description_tr": "Pencerelerin etrafına örgü (kazak) desenli kenarlıklar çizen bir macOS menü çubuğu uygulaması. Stil, desen, kenarlık genişliği ve dikiş boyutu menüden ayarlanıyor; uygulama bazında kapatılabiliyor. Homebrew cask ya da ZIP ile kurulur, Apple tarafından noter onaylı değil. C ile yazılmış, GPL-3.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "MengMengCode/VoCat",
+   "inputs_hash": "1f2d4135a8ade66d04b06a68664d0e7e",
+   "description_tr": "Quectel EC20/EC25 ve ML307 serisi hücresel modemler için web kontrol paneli: cihaz keşfi, canlı radyo durumu, AT/USSD terminali, SMS, WiFi Calling, eSIM yönetimi, ağ seçimi ve proxy yönlendirme. Backend Go, arayüz React/TypeScript; her şey tek çalıştırılabilir dosyada, durum SQLite'ta. Lisans NOASSERTION.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "air-embodied-brain/Zetta-Embodiment",
+   "inputs_hash": "f20a0b3856790ff9800e517f6f7c6ceb",
+   "description_tr": "Taban politikayı dondurup çalışma anında kod tabanlı eleştirmen ve kurtarma becerilerini çevrimiçi evrimleştiren, robotik için kapalı döngü bir harness. LIBERO-Pro'da %90,8, RoboCasa'da %93,6 başarı ve 11,1 kat çıkarım hızlanması bildiriyor. Pi0.5 için FP8 FlashRT arka ucu ve BEHAVIOR ortamı desteği var. Python, Apache-2.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "kerpopule/hermes-jev-skills",
+   "inputs_hash": "b40349134868d511ff741062687f8714",
+   "description_tr": "Hermes ajanları için (Claude Code ve Codex ile de) küçük kararları, yani hangi modelin cevaplayacağını, hangi skill'in yükleneceğini, hangi turların özetten sağ çıkacağını TypeSafe'in Jev karar modeline devreden bir bağlayıcı. Jev metin üretmez, kalibre güven skoru döner. Model yönlendirme panosu var; Python, MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "Jakeschincariol/arena-skill",
+   "inputs_hash": "91d529de430335594d344a3105b5be9e",
+   "description_tr": "Claude Code için /arena skill'i: aynı görevi 100 alt ajana farklı strateji kartlarıyla verip eşleşmeli turnuvada birbirlerine saldırtıyor, bir yargıç puanlıyor ve geriye tek çözüm kalıyor. Dosyalarına dokunmuyor, .arena/ içinde çalışıyor. Skill ücretsiz ama 100 ajan için 595 alt ajan çağrısı kadar token harcanıyor. MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "justxor/Linux-",
+   "inputs_hash": "9754750ad8be6b23c958310d1c73343b",
+   "description_tr": "Linux komutları, izinler, süreçler, ağ, SSH, systemd, grep/sed/awk ve Vim için Rusça bir kopya kâğıdı; ileri düzeyde LVM, RAID, güvenlik ve konteyner konuları ile mülakat soruları ve uygulamalı senaryolar da içeriyor. Kod değil içerik deposu; lisans belirtilmemiş. Yapay zekâ tarafı yalnızca bir kanal tanıtımı.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "MMFoundation/WallpaperMachine",
+   "inputs_hash": "07437ee38215e9b3c4da1f40dbe0bb37",
+   "description_tr": "Steam Workshop'taki Wallpaper Engine sahne, video ve web duvar kağıtlarını macOS masaüstünde oynatan ücretsiz, açık kaynaklı Swift uygulaması. Apple Silicon (M1+) ve macOS 15 Sequoia ya da üstünü gerektiriyor; kilit ekranı desteği var. Dört dilde README, GPL-3.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "ja7ad/hydra",
+   "inputs_hash": "3981d2fc7915c744c26007fd98e05573",
+   "description_tr": "Windows, macOS ve Linux için Rust ile yazılmış hızlı, çok kaynaklı indirme yöneticisi ve hızlandırıcı. Aynı motor üzerinde CLI, iced tabanlı masaüstü arayüzü ve tarayıcı eklentisi sunuyor. Homebrew, Winget, AppImage, PPA/COPR/AUR dahil birçok kurulum yolu var; taşınabilir profil destekli, GPL-3.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "c1overzz/dsh-bili-scroll",
+   "inputs_hash": "ffd595f172ca06ad2c0c1bd0236de567",
+   "description_tr": "DeepSeek Harness için bir eklenti: her gün B站'da anahtar kelimelerle video arıyor, altyazı metnini okuyarak değerli olanları seçiyor ve günlük rapor yazıyor; çok değerli bulduğunu yorumla işaretliyor. dsh 0.1.7-rc.1 ve üstü gerekiyor, yerel Whisper dökümü ile yaklaşık 1 GB yer tutuyor. JavaScript, MIT, README Çince.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "SaladDay/pi-from-scratch",
+   "inputs_hash": "b32e35a23e6a303d2220325092b98af6",
+   "description_tr": "Yaklaşık 600 satır TypeScript ile dosya okuyan, kod değiştiren ve komut çalıştıran küçük bir kodlama ajanı (nano-pi) yazmayı anlatan Çince öğretici. Araç çağrısı döngüsü adım adım kuruluyor; ön üretilmiş trace ile akış izlenebiliyor. Çalıştırmak için Node.js 22 ve OpenAI uyumlu API gerekiyor. MIT.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam orkestratör ajan yazma isteğin. Depo bir bileşen değil ders: araç çağrısı döngüsü fikrini öğretiyor. Anlatı Çince ve çalıştırmak için küçük maliyetli bir OpenAI uyumlu anahtar gerekiyor; sadece okumak için siteyi gezmek yeterli ve ücretsiz.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "volotat/mini-AGI",
+   "inputs_hash": "2361f1c58ee5d07f85d71525a9a8bbaa",
+   "description_tr": "8 GB VRAM'li bir dizüstünde, batch-1 veri akışıyla sıfırdan eğitilen sürekli öğrenen bir dil modeli. Karakter düzeyinde çalışıyor; 8.037M karakterlik hedefin yaklaşık %54'üne gelmiş, en düşük held-out kaybı 0,5630 nat. Örnek çıktılar ve eğitim kayıtları depoda tutuluyor. Python, MIT; araştırma deneyi.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "missuo/kumone",
+   "inputs_hash": "47c841f5c2072600a708fd1b57da3694",
+   "description_tr": "NetEase Cloud Music hesabıyla çalışan, SwiftUI ile yazılmış macOS ve iOS için yerel müzik çalar; QR kodla giriş, günlük öneriler, kişisel FM, çalma listeleri ve keşif sayfaları var. Üçüncü taraf sunucu kullanmıyor, Sparkle ile güncelleniyor. Depo NetEase ile bağlantılı olmadığını belirtiyor. LGPL-3.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "anthropics/fermats-last-theorem",
+   "inputs_hash": "f3db38f05840af9857ea04999698bce3",
+   "description_tr": "Fermat'nın Son Teoremi'nin Lean 4 ve Mathlib üzerinde makine tarafından doğrulanmış tam ispatı; Frey, Serre, Ribet, Wiles ve Taylor-Wiles argümanını izliyor. Derleme yalnızca üç standart aksiyoma dayanılmazsa başarısız oluyor; 60.475 modül derlenmiş. Çevrimdışı gezilebilir HTML sunumu var. Bakımı yapılmayan bir araştırma çıktısı, Apache-2.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "dipa-studio/ios-sweet",
+   "inputs_hash": "5134d8e61038330ac01aa4bdc54476ca",
+   "description_tr": "Redmi Note 10 Pro'ya (sweet, SM7150) iOS 16 kullanıcı alanını ve XNU çekirdeğini taşıyan deneysel çalışma. Önyükleme fastboot ile, kendi UFS sürücüsü ve yazılım render'ı var; 8 çekirdekten 6'sı çalışıyor. Kullanılabilir bir telefon işletim sistemi değil, userdata bölümüne kurulduğu için Android verilerini siliyor. Python, MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "awlevin/typesafe-computer-use",
+   "inputs_hash": "897039cfebb1802b57f4a147cf3c9c0c",
+   "description_tr": "Mac'i düz İngilizce hedefe göre süren bilgisayar kullanımı aracı: ekranı OCR ile okuyup bir sınıflandırıcıyla sıradaki eylemi seçiyor ve tıklıyor; yalnızca serbest metin gerektiğinde yazan model çağrılıyor. Adım başına yaklaşık 0,0002 dolar maliyet iddia ediyor. Python, macOS, beta aşamasında, MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "sqzw-x/amane",
+   "inputs_hash": "1245f9967a9ec2f82652b75f2f46c144",
+   "description_tr": "Film meta verisi için kendi sunucuna kurulan bir servis: 25 siteden çok kaynaklı veri çekip alan bazında en iyisini seçiyor, NFO ve görselleri videonun yanına yazarak Emby/Jellyfin'e tamamlayıcı oluyor. Yerleşik ajanla doğal dilde arama, SQLite'ta yerel veri; masaüstü, Docker ve Android sürümü var. Python, GPL-3.0, Çince; yetişkin içerik odaklı.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "mizorewww/x_gift_bot",
+   "inputs_hash": "d80e320a46d28a403679c6b7dcccbfc9",
+   "description_tr": "X Premium hediye kodlarını yöneten bir Go uygulaması: yönetici kod üretiyor, kullanıcı kodu ve X kullanıcı adını girince sistem sipariş ve ödemeyi otomatik yapıyor. Çalışması için X oturum çerezleri, banka kartı bilgileri ve Stripe anahtarı veriliyor; bunlar sunucuda şifreli tutuluyor. Platform kuralları açısından riskli görünüyor. MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "panxunying/ai-coding-welfare",
+   "inputs_hash": "9044a857f9c92c92e05e9d1b72fa229e",
+   "description_tr": "Claude Code ve Codex'i ücretsiz ya da düşük maliyetle kullandıran üçüncü taraf ara istasyon ve kamu API sitelerinin listesi; kota, protokol ve model bilgileri betikle güncelleniyor. Kayıt bağlantılarının çoğu davet kodlu ve issue bölümü tanıtım kanalı olarak kullanılıyor. İçerik yazılım değil, değişen bir liste. MIT, Çince.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam Claude Code'u hangi kota üzerinden koşturduğun kararı. İstekleri kimin işlettiği belirsiz bir ara istasyona yönlendirmek, kod gizliliği ve üçüncü taraf istemcilere güvenmeme ilkenle çelişiyor. Max aboneliğin ihtiyacı zaten karşılıyor; API anahtarını oraya yazmak prompt ve kodu açığa çıkarır.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "faisalkindi/DLSS5oneclick",
+   "inputs_hash": "7308067481b08cdb42c5c8756d002f99",
+   "description_tr": "Sızdırıldığı belirtilen DLSS 5 sinirsel render yapısını, DLSS'i olan ya da olmayan DX11/DX12 oyunlarına tek tıkla kuran Windows aracı. ReShade ve RenoDX eklentisi ya da OptiScaler motoru kuruyor; RTX 20-50 kartlar hedefleniyor. Rust, tek exe. Sızdırılmış NVIDIA bileşenleri hukuki risk taşıyor. MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "ELY-Open-Source/ElyOffice",
+   "inputs_hash": "3c0461ebfe348882d2dccdad7cdd2a57",
+   "description_tr": "Rust ve GPUI ile yazılmış çevrimdışı çalışan masaüstü ofis uygulamaları: ElyDoc, ElyTable, ElyShow (LibreOfficeKit ile), ElyPDF, ElyMail, ElyTree (Git), ElyMark. Hesap ve bulut yok, dosyalar yerelde kalıyor. Windows, macOS ve Linux paketleri var; ElyTable'da deneysel R makroları bulunuyor. MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "reacher-z/Awesome-REA",
+   "inputs_hash": "0b1ddbb44a9670a361da10ddb3b7c67e",
+   "description_tr": "Web siteleri, oyunlar, uygulamalar, ikili dosyalar, yazılımlar (firmware) ve protokollerin tersine mühendisliği için araçları, vaka çalışmalarını ve makaleleri toplayan, kaynak incelemesinden geçmiş bir liste. Arama sitesi, İngilizce ve Çince sürüm ile ajan becerisi var. Python, MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "chasmlol/SkyCraft",
+   "inputs_hash": "5c4b5be3b82ad5f073b5b5e036c057bf",
+   "description_tr": "Skyrim'i Minecraft oyuncusu gibi oynatan fan projesi: Minecraft hareketi, envanteri, blok koyma/kırma ve dövüşü Skyrim dünyasına SKSE eklentisi ve Fabric modu ile taşınıyor. Bloklar Skyrim'in ışığı ve gölgesiyle çiziliyor. Erken ve deneysel; iki oyunun da sahip olunması ve kayıt yedeği gerekiyor. C++, MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "kharmanskyi/open-steps",
+   "inputs_hash": "d4fea2862eefc9dd8190e185eedf62d0",
+   "description_tr": "Claude Code, Codex, Cursor ve Gemini CLI için, oturum raporlarını teknik jargon yerine açık dille yazdıran agent skill paketi: tamamlandı mı, senden bir şey gerekiyor mu, yeni borç var mı gibi satırlar içeren düz bir özet üretiyor. Kabuk betikleri ve markdown tabanlı, MIT lisanslı.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "dingminhua/dsh-connect-workbuddy",
+   "inputs_hash": "9a7d0fcfaa03a2606ecf3115ebd8b382",
+   "description_tr": "DeepSeek Harness için bir eklenti: bilgisayarda oturum açılmış WorkBuddy modellerini (Çin ve uluslararası sürüm) DSH model seçicisine bağlıyor. Model başına kredi çarpanı, görsel girdi anahtarı, çoklu hesap havuzu, günlük giriş ve salt okunur kredi göstergesi var. Resmi olmayan istemci olduğu için WorkBuddy kısıtlayabilir. TypeScript, MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "kvmem/kvmem",
+   "inputs_hash": "16837c0b2e1dc33a2a1d01ed24233461",
+   "description_tr": "Uzun bağlamlı yerel yapay zekâyı sınırlı GPU belleğinde çalıştırmak için KV belleğini sistem RAM'ine (isteğe bağlı SSD katmanına) taşıyan C++ katmanı; GPU'da yalnızca geçerli istek için gereken geçmiş tutuluyor. NInfer, llama.cpp, PolyStrata ve Radiance arka uçlarıyla, yerel web arayüzü ve OpenAI uyumlu API ile çalışıyor. Lisans belirtilmemiş.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "tcchen2026/VibeOffice",
+   "inputs_hash": "38e1ee6d602907572540c5561e7bab95",
+   "description_tr": "Tarayıcıda çalışan, 2000'ler Office 2003 görünümlü ücretsiz ofis paketi: kelime işlemci, hesap tablosu ve sunum editörü. Gerçek .docx, .xlsx ve .pptx dosyalarını açıp kaydediyor, dokunmadığın kısımları kaybetmiyor. Sunucu, hesap ve yükleme yok; dosyalar bilgisayarında kalıyor. Chrome ve Edge'de kurulabilir. JavaScript, Apache-2.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "chrisgreg/boop",
+   "inputs_hash": "c62ccb8a7abae92cb2714e085262d163",
+   "description_tr": "Geliştiriciler için kendi sunucuna kurulan küçük bildirim kutusu: uygulaman API anahtarıyla bir olay POST ediyor, sunucu SQLite'a kaydedip doğrudan Apple APNs üzerinden telefona itiyor. Tek Go ikilisi, tek SQLite dosyası ve Docker konteyneri; barındırılan röle, hesap ve telemetri yok. Push yalnızca başlık, metin ve olay kimliğini taşıyor. MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "alexgaoth/awesome-reverse-engineered",
+   "inputs_hash": "c08f81439936f92778a254ffe64d57e3",
+   "description_tr": "Kapalı uygulamaların, API'lerin, cihazların, protokollerin ve oyunların tersine mühendisliğiyle ortaya çıkmış 17.000'den fazla açık kaynak aracın dizini; aynı işi iki kez yapmamak için önce aramayı öneriyor. Arama sitesi, ajan skill'i ve MCP sunucusu var, geceleri yenileniyor. Python, MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "realZachi/pg-jev",
+   "inputs_hash": "5b674fcf27718137420424ea328bfd65",
+   "description_tr": "Postgres için düz dille koşul yazdıran bir eklenti: jev(tablo, 'müşteri kızgın') gibi çağrılarla satırlar TypeSafe'in Jev modeliyle filtreleniyor, sıralanıyor ya da sınıflandırılıyor. Jev metin üretmiyor, kalibre olasılık dönüyor; indeks ya da gömme vektörü gerekmiyor. Satırlar harici modele gittiği için gizlilik değerlendirilmeli. Kabuk, lisans NOASSERTION.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "perseval-BLR/NeuralScreen",
+   "inputs_hash": "32382a3d91d41ce60c989d356254f180",
+   "description_tr": "Windows masaüstünün tamamına gerçek zamanlı DLSS 5 NR uygulayan bir bindirme aracı; Boost, kare üretimi, kullanıcı ön ayarları, sesli kayıt ve tek pencere modu var. NVIDIA RTX 30/40/50 kartı gerektiriyor. NVIDIA'nın çalışma zamanı dosyalarını araştırma amaçlı olarak dağıtıyor ve NVIDIA ile bağlantısı yok. Python, lisans NOASSERTION.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  }
+ ]
+}

@@ -1,0 +1,401 @@
+{
+ "repos": [
+  {
+   "full_name": "sebbbi/NoGraphicsAPI",
+   "inputs_hash": "5879ca8ae85ecdcc8dea092278a7123d",
+   "description_tr": "Sebastian Aaltonen'in \"No Graphics API\" yazısındaki fikirleri uygulayan C++20 grafik kütüphanesi: GPU işaretçileri, descriptor heap'ler ve ortak Slang shader'ları üzerine kurulu. Metal 4 ve Vulkan 1.4 (VK_EXT_descriptor_heap ve mesh shader gerekir) arka uçlarını tek API ile sunuyor; Linux'ta şimdilik yalnızca headless çalışıyor. MIT lisanslı.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "man15h/tellyscope",
+   "inputs_hash": "e76fd96fc7f1bb6af2657664a80ee90f",
+   "description_tr": "Android TV'yi telefondan yönetmeye yarayan 3 MB'lık Kotlin uygulaması: gereksiz uygulamaları kaldırıyor, uygulama yüklüyor, TV'deki dosyalara göz atıp aktarım yapıyor. Root ve bilgisayar gerektirmiyor, izleme yok. GPL-3.0 lisanslı; imzalı APK GitHub, Obtainium veya Orion Store'dan indirilebiliyor.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "TokenRhythm/NeoHorse",
+   "inputs_hash": "faab2c6e93b1bb2535f6022360d2d2ab",
+   "description_tr": "TokenRhythm'in ajan iş akışları için çıkardığı açık ağırlıklı model ailesi; NeoHorse-1 4B ve 9B boyutlarında, Apache 2.0 lisanslı. Ayrıca NeoHorse-Jev-4B, uygulama durumunu Choice, Noul ve Score soruları üzerinden olasılıklı kararlara çeviriyor (yalnızca prefill ile çıkarım). Kendi karşılaştırmasında dört açık ağırlıklı karar modeli arasında en yüksek skoru bildiriyor.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "zhuyansen/awesome-claude-video-skills",
+   "inputs_hash": "b425242036bbd02b95f39f169e0f360f",
+   "description_tr": "Claude Code, Codex ve benzeri kodlama ajanlarına video ürettiren açık kaynak skill ve araçların derlemesi: HyperFrames, Remotion, motion graphics, kurgu, anlatım videosu, avatar. Listedeki repolar türe göre ayrılmış ve Agent Skills Hub tarafından güvenlik notu almış; 16 aracı uçtan uca denemiş, hız ve sonuca göre seçim önerileri veriyor. İngilizce ve Çince.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "wesbos/photo-frame-dashboard",
+   "inputs_hash": "4a75a1010d32273e6d27ecffd7f74fe7",
+   "description_tr": "Ucuz Android dijital fotoğraf çerçevelerinde (Skylight Calendar, BIUFRAME ve Frameo tabanlı modeller) kilidi açma, ADB ve root erişimi, yedekleme ve üretici uygulamasının yerine kendi web sayfanı tam ekran çalıştırma adımlarını anlatıyor. Amaç çerçeveyi aile panosuna çevirmek; repo bir ajana verilip kurulumun yaptırılması düşünülerek yazılmış. MIT lisanslı, Python betikleri içeriyor.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "diudiu-tech/delivery-harness",
+   "inputs_hash": "7d8ef108a31800a561530eb9614d2d6d",
+   "description_tr": "Anlık teslimat operasyonları için Java 17 ve Spring Boot 3.5 üzerinde yazılmış bir AI harness referans uygulaması: anormal sipariş analizi ve tazminat önerisi akışları, sentetik verili dört yerel araç. Tazminat tutarını modelin değil kural motorunun belirlemesi ayrı bir karar olarak belgelenmiş. README bunun eğitim amaçlı bir MVP olduğunu, kimlik doğrulaması içermediğini belirtiyor. MIT.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; teslimat ve tazminat alanı Lyricdrop'a ya da holding tarafına oturmuyor, Java ve Spring yığını da Expo, Supabase, n8n düzeninin dışında. Değerli kısmı kod değil iki karar: tutarı kuralların belirlemesi ve ölçülmemiş vakayı \"ölçülmedi\" diye raporlama.",
+   "matched_project": null,
+   "relevance": 1,
+   "investment_note": null
+  },
+  {
+   "full_name": "boyang-hu/website-rebuild-skill",
+   "inputs_hash": "68312d3a8fd13b5b6b6a04489df3784e",
+   "description_tr": "Bir web sitesini ajanla yeniden kurmaya yarayan Agent Skill: siteyi salt okunur yansı olarak çekiyor, sıkıştırılmış koddan mantığı satır satır çıkarıyor ve kopyayı piksel düzeyindeki karşılaştırmalar dahil otomatik kontrollerle doğruluyor. Agent Skills belirtimine uyuyor, Claude Code ve Codex'te çalıştırıldığı belirtiliyor. Node 22 ve üzeri gerekir, MIT lisanslı.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "sixtysevenlf/dsh-blender-plugin",
+   "inputs_hash": "79e3b58ad2fc81be524d08a60a917cd9",
+   "description_tr": "DeepSeek Harness'i Blender'a bağlayan eklenti: ajan açık bir Blender oturumunda sahneyi inceliyor, Python çalıştırıyor, görünüm karesi alıp 3D sahne kuruyor ve dışa aktarıyor. GUI yoksa kalıcı bir headless worker devreye giriyor. 15 araç ve 228 işlemlik bir sözleşme katmanı var; npm ile kuruluyor, WSL, Windows ve macOS destekleniyor. BSD-3-Clause lisanslı.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "StartLuxLabs/StartLux-Decision",
+   "inputs_hash": "ff4f0604050e56950df2a05015bffb63",
+   "description_tr": "0.8B ile 27B arasında açık karar modelleri: bir durum ve tipli sorular verildiğinde her seçenek için kalibre olasılığı tek geçişte döndürüyor, yalnızca emin olmadığında kısa bir düşünce üretiyor. vLLM, llama.cpp ve MLX için motor içeriyor; Apache-2.0 lisanslı. v1.1 27B Instant, Decision Index 0.3.2 sıralamasında ilk sırada olduğunu kendi duyurusunda belirtiyor.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "smithjohn78390/tongjiang-lab",
+   "inputs_hash": "2f70e528b9632205787ea4d50128ab81",
+   "description_tr": "Lise düzeyinde fizik, kimya, biyoloji ve coğrafya için 50 etkileşimli 3D ders; her biri yaklaşık 1 MB'lık tek bir HTML dosyası olduğundan çevrimdışı, projektör veya akıllı tahtada çalışıyor. Her derste yönlendirici soru ve adım adım izlenecek yol var; NGSS ve OpenStax eşleştirmeleri listelenmiş. Arayüz şu an Çince, lisans standart bir SPDX kimliği değil.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "datalab-to/indra",
+   "inputs_hash": "41e49ba9acf8e02aab068b6c359c39da",
+   "description_tr": "1 milyon parametreli, CPU'da çalışan bir OCR modeli; PDF ve görselleri markdown'a çeviriyor. Tesseract'tan 15 kat hızlı olduğunu ve doğrulukta 1B+ parametreli modellere yaklaştığını söylüyor. Kod Apache-2.0, model ağırlıkları OpenRAIL-M lisanslı; ONNX tabanlı, Datalab'ın doküman zekası ürün ailesinin parçası.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "daveebbelaar/bama",
+   "inputs_hash": "1f67ca9dd5024f3b1eacda4698181165",
+   "description_tr": "Swift ve SwiftUI ile yerel macOS uygulaması araştırmak, kopyalamak, tasarlamak, derlemek ve test etmek için 21 agent skill'lik bir paket; Claude Code ve Codex eklentisi olarak kuruluyor. Veri yerelde tutuluyor ve Xcode arayüzü gerekmiyor. macOS 26 ve Swift 6.2 ister, MIT lisanslı. Windows karşılığı ayrı bir repo (BAWA).",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "marclou/mailcheap",
+   "inputs_hash": "ef3de6d0087b3c11912494145dec6bc0",
+   "description_tr": "Bülten uygulaması: ücreti uykudaki abone sayısına göre değil gönderilen e-postaya göre alıyor ve beehiiv, Mailchimp, Substack gibi araçlara ucuz alternatif olarak konumlanıyor. Next.js, MongoDB ve Amazon SES üzerine kurulu; MCP sunucusuyla AI ajanından da kullanılabiliyor. Kendi sunucunda barındırabilir ya da mailcheap.ai bulutunu kullanabilirsin. AGPL-3.0 lisanslı.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "Swordpdf/PS5SX2",
+   "inputs_hash": "8d6bd468d1e8f40b51b3b9c20b9a1c32",
+   "description_tr": "PCSX2 PS2 emülatörünün jailbreak yapılmış PS5 üzerinde yerel çalışan bir portu. PCSX2'nin recompiler'ları PS5 CPU'sunda çalışıyor, görüntü Vulkan ile ps5vk (PS5_Vulkan sürücüsünün değiştirilmiş hali) üzerinden çiziliyor. Oyun seçimi kapak akışlı bir rafla, ayarlar telefondan yapılıyor. Yazar bunu boş zamanda yapılmış bir hobi projesi olarak tanımlıyor; GPL-3.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "reason-machines/reason-network",
+   "inputs_hash": "386985a68724ea6a1588182cdbf7f550",
+   "description_tr": "Takımın kodlama ajanlarının birbiriyle konuşmasını sağlayan Rust daemon'u. Her bilgisayarda bir daemon çalışıyor; açık oturumlara mesaj doğrudan düşüyor, uçtan uca şifreli ve eşler arası olduğundan hiçbir sunucu içeriği okuyamıyor. Claude Code, Codex, Cursor, Gemini CLI ve opencode dahil birçok ajanı destekliyor. README ajanlara kurulum talimatı veriyor; Apache-2.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "pch/rawmakase",
+   "inputs_hash": "e3cc48add9acc88248c9633e45250b89",
+   "description_tr": "Linux, macOS ve Windows için Rust ile yazılmış hızlı, tahribatsız RAW fotoğraf editörü. RAW, JPEG, PNG, TIFF, WebP, AVIF, HEIF ve JPEG XL açıyor, JPEG, 16 bit TIFF veya PNG olarak dışa aktarıyor. Lightroom Classic kataloğunu orijinaline yazmadan içe aktarabiliyor; ajanlar için yerleşik MCP sunucusu var. Sigma Foveon ve GoPro GPR desteklenmiyor. MIT lisanslı.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "mizorewww/laya-coreml",
+   "inputs_hash": "4a72b38edb9156eeadaafb51df138adb",
+   "description_tr": "Laya karar modelinin ağırlıklarını Apple Silicon'da Core ML programı olarak CPU, GPU veya Neural Engine üzerinde çalıştıran Python paketi. Token üretmeden, tek geçişte seçenek, rubrik puanı ve doğru/yanlış kararlarını kalibre olasılıkla döndürüyor; M3 Max'te kısa bir karar için 4,98 ms ve MLX'ten 2,78 kat az enerji bildiriyor. macOS 15 ve üzeri gerekir; Apache-2.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "Alain00/blobatar",
+   "inputs_hash": "79e278cbb2fff37b6845b365379830a1",
+   "description_tr": "Herhangi bir metinden (kullanıcı adı, e-posta, kimlik) deterministik geometrik avatar üreten, bağımlılığı olmayan, sıkıştırılmış yaklaşık 4,4 KB'lık TypeScript kütüphanesi. Aynı metin her zaman aynı avatarı veriyor. React, Vue, Svelte, Solid ve Preact için ayrı adaptörleri var. MIT lisanslı.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "pingdotgg/ts-rust",
+   "inputs_hash": "a05e641e0d0e204ec2829b1e00ca3daf",
+   "description_tr": "TypeScript 7 derleyicisinin (tsc), tip denetleyicisinin ve language server'ın Rust'a deneysel portu; LLM'lerle yapılmış, yazarı koda tek satır okumadığını söylüyor. Maliyetin 420.000 doları aştığını açıklıyor. T3 Code ölçümünde tsc 7'den 2,98 kat (--fast ile 4,35 kat) hızlı; Effect tanılamaları yerleşik. Erken sürüm, MIT lisanslı.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "cth9191/animate",
+   "inputs_hash": "3e3c27fbd785f25e9ef4fd5e0174ab17",
+   "description_tr": "Claude Code için prosedürel animasyon skill'i: birkaç soruyla konu ve görünümü belirliyor, hikaye, stil ve storyboard için onay alıp tek dosyalık canvas videosu üretiyor; çıktı headless tarayıcı ve ffmpeg ile MP4'e dönüyor. Yedi hazır stil var ya da referanslarından yeni biri çıkarılıyor; kendi müziğin ve ürün ekran görüntülerin kullanılabiliyor. MIT lisanslı.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "BaaRai/ARTEX",
+   "inputs_hash": "03b3780f46bb042dbf98e5f4eada8099",
+   "description_tr": "Otonom sızma testi yapan yapay zeka sistemi: Go arka ucu ve Next.js arayüzü var, keşif grafiği, bulgular, varlık haritası, trafik kaydı ve insanın onay verdiği müdahale adımları sunuyor. PostgreSQL ve bir LLM anahtarı (Anthropic veya OpenAI) gerekiyor. Autumn-27'nin Çince projesinin İngilizce çevirisi olan bir fork; AGPL-3.0 lisanslı.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "MrTangLuyao/Bilibili-thread-ripper",
+   "inputs_hash": "d28025adc99d1ce2933c81222a24d32f",
+   "description_tr": "Yurt dışındaki kullanıcıların Bilibili'de yaşadığı takılmayı azaltmak için yazılmış userscript: çok iş parçacıklı eşzamanlı yükleme ve zamanlayıcı iyileştirmeleriyle 8K ve Dolby Vision oynatmayı akıcı hale getirmeyi hedefliyor. README üyelik, bölge, DRM ve imza kısıtlarını aşmadığını belirtiyor; Çin anakarasındakiler için kazancı sınırlı. MIT lisanslı, resmi olmayan bir proje.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "archestra-ai/OpenAPPA",
+   "inputs_hash": "c7e3f54f8a89cd5c7561b9a0ee54e8ea",
+   "description_tr": "Ajan ile araçları arasına girip her araç çağrısından önce verinin o hedefe gidip gidemeyeceğini kontrol eden Rust guardrail katmanı. Karar yalnızca olay kaydından, ağ ya da dosya çağrısı olmadan veriliyor; böylece aynı kayıt hep aynı sonucu veriyor. Politika TOML ile yazılıyor; kütüphane ya da sidecar olarak çalışıyor. Proje kendini önizleme olarak tanımlıyor; MIT.",
+   "usage_tr": "Claude Code seviyesinde, hassas bir dosyadan okunan içeriğin dışa açık bir araca (yorum, commit, e-posta) gitmesini politikayla kesebilirsin; Arslan Holding tarafındaki erişim kapsamı izolasyonuna uyuyor. Yerelde çalışıyor, ek API maliyeti yok. Uyarı: proje kendini önizleme olarak tanımlıyor ve yapılandırma biçimi haber vermeden değişebilir.",
+   "matched_project": "Arslan Holding",
+   "relevance": 6,
+   "investment_note": null
+  },
+  {
+   "full_name": "hydra-db/open-glean",
+   "inputs_hash": "57ab731eb9e4fb8b17b84a69e76453cc",
+   "description_tr": "Hydra DB üzerinde çalışan açık kaynak bilgi çalışması platformu: bağlı uygulamalardan, dosyalardan ve notlardan bağlam çekip kaynak göstererek cevap yazıyor; çok adımlı Deep Research ve bilgi grafiği görünümü var. OpenAI uyumlu herhangi bir model uç noktasıyla çalışıyor, anahtarlar sunucu tarafında tutuluyor. Next.js tabanlı, Apache-2.0 lisanslı; kendi Hydra DB anahtarın gerekir.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "YOURSJEYO/claude-switcher",
+   "inputs_hash": "699263f1ab1572474f54dcc5e79505fc",
+   "description_tr": "Birden çok Claude hesabının yerel ortamını yöneten bir araç: uygulama başlamadan önce 14 ortam denetimi yapıyor (proxy, saat dilimi, DNS, WebRTC sızıntısı vb.), zorunlu bir denetim başarısız olursa uygulamayı açmıyor. Yazar yalnızca desteklenen bölgedeki kullanıcılar için olduğunu, hesap satışı ve bölge kısıtı aşmanın yasak olduğunu belirtiyor. Windows ve Linux sürümleri var; AGPL-3.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "Awakenchan/LanternEngine",
+   "inputs_hash": "67b4f6edbf0054879718cb157ba09cc1",
+   "description_tr": "Bloodborne'u kendi PS4 dökümünle Windows ve Linux'ta çalıştıran launcher ve motor; bbport ve shadPS4 üzerine kurulu, performans için yeniden işlenmiş. Oyun kodu CPU'da yerel çalışıyor, grafikler Vulkan'a çevriliyor. Oyun dosyaları dahil değil; CUSA03173 güncelleme 1.09 gerekiyor. RTX kartlarda DLSS destekleniyor, Linux sürümü beta. GPL-3.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "wquguru/cicada",
+   "inputs_hash": "52f6d906427b82690d924155626c234d",
+   "description_tr": "Toplantı ve canlı yayınlar için gerçek zamanlı çift dilli altyazı, eşzamanlı çeviri ve yapay zeka toplantı notları çıkaran, Swift ile yazılmış açık kaynak uygulama. Sistem sesini okuduğu için toplantıya bot eklenmiyor. Mac, Windows, Linux ve Android'de çalışıyor; Apple Silicon'da tanıma yerelde yapılıyor, diğer platformlar bir AI servisi anahtarı istiyor. Apache-2.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "fanhao375/microduck-replica",
+   "inputs_hash": "e698d180370e79c147e926e6eb961ec6",
+   "description_tr": "Microduck adlı küçük bir yürüyen robotun topluluk yapımı kopyası: Feetech HD-1910 servolu ve Radxa Zero 3W'li sürüm gerçek donanımda doğrulanmış (ayakta durma, yürüme, takla sonrası kalkma). Repoda yansı imaj, web tabanlı Studio kontrol paneli, CAD, malzeme listesi, montaj eğitimleri ve devre bilgisi var; Dynamixel XL330 sürümü için yalnızca CAD ve montaj verisi sunuluyor. Çince, lisans belirtilmemiş.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "AhmadHassan-BTed/RainGeneratorPy",
+   "inputs_hash": "9d42b2504ebeb49c73bc61697e72b777",
+   "description_tr": "Python, Pygame, NumPy ve SciPy ile yazılmış yağmur ve fırtına simülatörü: paralaks yağmur katmanları, damla sıçramaları, dallanan fraktal şimşek ve gerçek zamanlı prosedürel ses sentezi (yağmur, rüzgar, gök gürültüsü) içeriyor. Beş hava ön ayarı ve ses karıştırıcısı var. MIT lisanslı, küçük bir hobi projesi.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "nokia-applied-research/AnyJev",
+   "inputs_hash": "f747438094fc4ccbddee795f0602a41f",
+   "description_tr": "Herhangi bir LLM'i eğitim gerektirmeden Jev tarzı bir karar modeline çeviren Python kütüphanesi: tipli kararları gerçek olasılıklarla veriyor. Eğitimsiz Decider, Gemma-4-31B ile Decision Index 0.3'te 60,22 puana ulaştığını bildiriyor; ayrıca 1,7B-9B boyutlarında Tacit modelleri var. transformers ve vLLM üzerinde çalışıyor, PyPI'de yayımlı; Apache-2.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "kota-zo/myspoti",
+   "inputs_hash": "035419c702165486db687069aabf2f5b",
+   "description_tr": "Jetpack Compose ile yazılmış yerel Android Spotify istemcisi. Spotify'ın kendi oynatıcısındaki reklam aralarını kapatıyor, böylece ücretsiz hesapta reklamsız ve sınırsız atlamalı dinleme vaat ediyor. İndirme için kendi kaynağı yok; bir eklenti gerekiyor. Spotify'ın şartlarıyla uyumluluğu konusunda risk taşıyor; GPL-3.0 lisanslı.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "firelex/jeff",
+   "inputs_hash": "01c132f3eb6b20f2724e9f20a0958920",
+   "description_tr": "Kararları sıradan fonksiyon çağrısına çeviren kütüphane: 0.8B açık bir \"System 1\" modeli üzerinde değiştirilebilir LoRA adaptörleri, tipli bir Decision ve kalibre güven döndürüyor, güven düşükse çekimser kalıyor. Kendi makinende (Apple silicon, NVIDIA) ya da jeffhub.ai API'siyle milisaniyeler içinde çalışıyor. Python, Node, Rust, C# ve Java SDK'leri var; MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "Tencent-Hunyuan/AuK",
+   "inputs_hash": "3e47ab998e16d38d92cac63553b7723f",
+   "description_tr": "Konuşma üretimi ve düzenlemesi için 1,5B parametreli açık kaynak temel model: sıfır-atış TTS, içerik ve akustik düzenleme, konuşma iyileştirme ve kaynak ayrıştırma görevlerini tek bir doğal dil talimat arayüzünden yürütüyor. Dört adımda çalışan damıtılmış AuK-Flash sürümü var. CLI, Python API, Gradio ve ComfyUI destekleniyor; MLX dalı ve CUDA CPU offload mevcut. Lisans standart bir SPDX kimliği değil.",
+   "usage_tr": "Lyricdrop v2'nin kelime zamanlama hattında kaynak ayrıştırmayla vokali ayırıp STT'ye temiz giriş verebilirsin; aynı STT'yi ham karışım ve ayrıştırılmış vokal üzerinde koşturup hizalama hatasını karşılaştırmak kolay. Uyarı: model konuşma verisiyle eğitilmiş, müzikte ayrıştırma kalitesi ilan edilmiş bir yetenek değil; lisans metni de standart değil.",
+   "matched_project": "Lyricdrop",
+   "relevance": 8,
+   "investment_note": null
+  },
+  {
+   "full_name": "Arjun-Ingole/hop",
+   "inputs_hash": "334409fc9b8d36f1b4137dfbd278b58a",
+   "description_tr": "Windows'a yan yana Linux kurmayı USB bellek olmadan yapan tek bir Windows uygulaması: dağıtımı seçiyorsun, sürücü ve ayrılacak alanı belirliyorsun, kurulum başlıyor. ISO'yu resmi kaynaktan indirip varsa sağlama toplamını doğruluyor; disk değişmeden önce bilgisayarı denetliyor, Windows'un taşıyamadığı dosyalar yüzünden küçülmeyen sürücüler için alan açma aracı sunuyor. PowerShell, MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "shilapi/xcertplay",
+   "inputs_hash": "db661026055945713bf8f66acd7147f8",
+   "description_tr": "Android head unit için CarPlay alıcısı: MFi çipine CH341 I2C köprüsü ya da kartın yerel I2C denetleyicisi üzerinden bağlanıyor, kablolu ve kablosuz CarPlay'i destekliyor. Ses kanallarını Android'e eşliyor, ana ve gösterge ekranları için web sayfaları sunuyor; Android 9 ve Android Automotive OS'te çalışıyor. CarPlay Ultra protokolü eksik. Kotlin, GPL-3.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "youngyangyang04/llm-master",
+   "inputs_hash": "69e642b5952994be51d198172e76af03",
+   "description_tr": "Programcılar için Çince LLM öğrenme yol haritası ve eğitim deposu: API çağrısından Prompt Engineering, RAG, AI Agent, MCP, ince ayar, model dağıtımı, Transformer ve mülakat hazırlığına kadar kademeli konular. Her aşamada teslim edilecek proje ve tamamlama ölçütü var. Kod değil içerik deposu; MIT lisanslı.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "zhengkid/Dream-RSI",
+   "inputs_hash": "f912039e32b7b05cf5658938602bd832",
+   "description_tr": "\"Dream-RSI: Evolving Worlds Aracılığıyla Özyinelemeli Kendini Geliştirme\" makalesinin resmi deposu (Google, Google DeepMind ve Maryland Üniversitesi yazarları). Tamamlanmış keşif geçmişlerini yeniden oynatma simülatörüne çevirip aday politikaları bu havuzda \"rüya görerek\" değerlendiriyor; ajanı değiştirmeyen hafif bir orkestrasyon katmanı kullanıyor. Kod Ekim 2026'da yayımlandı; lisans belirtilmemiş.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "Pomerado/pomerado",
+   "inputs_hash": "b9c28e5bc2f00f40ee9cc7760f53a557",
+   "description_tr": "Herhangi bir web sitesini yalnızca doğal dil açıklamasıyla MCP entegrasyonuna çeviren TypeScript aracı; siteyi keşfediyor, örnek görevi tamamlıyor, genelleştiriyor ve ajanın çağıracağı deterministik bir entegrasyon üretiyor. Giriş ve iki aşamalı doğrulama arkasındaki siteler de çalışıyor. Node 24 ve OpenAI API anahtarı gerekiyor; açık kaynak çekirdek MIT, YC F26 şirketi bulut sürümü de sunuyor.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "n0de-sudo/Perfect-Rules",
+   "inputs_hash": "cd4cb7f0f540296eb89aa56c45a52cd2",
+   "description_tr": "V2rayN, Clash/Mihomo, Clash Mi, FlClash ve Shadowrocket için hazır proxy trafik yönlendirme (split) kural dosyaları ve DNS sızıntı önleme ayarları; indirip doğrudan içe aktarılıyor, her istemci için ayrı yapılandırma ve video anlatım var. README'nin başında bir proxy servisinin referans ve indirim bağlantısı bulunuyor. Çince, lisans belirtilmemiş.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "breezeblue-ai/breeze-tts",
+   "inputs_hash": "6ee84616d9ce61cf0d176e23a63f6d17",
+   "description_tr": "Breeze TTS 2 için resmi PyTorch çıkarım kodu: gerçek zamanlı etkileşim için tasarlanmış açık ağırlıklı, İngilizce ve Çince konuşan bir TTS modeli. Ses klonlama, doğal dil tarifiyle ses tasarımı ve ses yönlendirme sunuyor; H100'de 40 ms altı ilk ses gecikmesi bildiriyor. Linux ve CUDA'lı NVIDIA GPU (en az 12 GB) gerekir. Kod Apache 2.0; ağırlıklar yalnızca araştırma ve ticari olmayan kullanım için.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  }
+ ]
+}

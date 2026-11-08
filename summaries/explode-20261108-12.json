@@ -1,0 +1,400 @@
+{
+ "repos": [
+  {
+   "full_name": "ppmpreetham/BUI",
+   "inputs_hash": "b87222d5639c648254f46a125925a0a3",
+   "description_tr": "BUI, Blender'ın arayüz katmanını çekirdekten ayırıp Python, Rust, JavaScript (React, Svelte), C, C++ ve Dear ImGui'den kullanılabilen bir GPU hızlandırmalı UI kütüphanesine çeviriyor. Kendi uygulama arayüzünü Blender'ın bileşenleriyle kurmak isteyen geliştiriciler için. GPL-3.0 lisanslı; PyPI, crates.io ve npm paketleri var.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "joshuaswarren/omarchy-apple-dev",
+   "inputs_hash": "24b695143c995d66accb8034234786ee",
+   "description_tr": "Omarchy Linux üzerinde, Xcode olmadan iOS SwiftUI uygulaması derleyip cihaza kurmayı hedefleyen bir Python araç seti. x86_64 ve Apple Silicon'da çalıştığı söyleniyor. Mac'siz iOS geliştirmek isteyenler için; MIT lisanslı. Ayrıntılı bir README'si çekilemediği için kapsamı açıklamadan daha dar anlaşılıyor.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "gr8rstudio/gr8r-studio",
+   "inputs_hash": "9593f5105f5e3f83df4a15ef49dd8335",
+   "description_tr": "Gr8r Studio, Vite ve düz ES modülleriyle yazılmış, sade ve yapılandırılmış bir proje yönetimi çalışma alanı. Kendi tasarım sistemi menüleri ve yalnızca kullanılan ikonları paketleyen bir Vite eklentisi var; CI'da lint, biçim denetimi ve build çalışıyor, Vercel'e dağıtılıyor. Lisans belirtilmemiş.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "DhvanilPatel/swarm-cursors",
+   "inputs_hash": "30d5347cc7d8dd3bba0c24e318b71bb5",
+   "description_tr": "swarm-cursors, bir web sayfasını tarayıcı içinde yeniden inşa eden imleç ajanları sunan bir JavaScript projesi. Sayfa elemanlarını dikdörtgen, medya, çizgi gibi görevlere ayırıyor; tekrar eden öğeleri tek master ve kopyalara indirip metni kılavuz çizgilerine hizalıyor. Lisans belirtilmemiş, açıklaması boş.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "TecnaGamer/BeamNG.Earth",
+   "inputs_hash": "a2d7b01da16b3afd729bd9dcacbe0aef",
+   "description_tr": "BeamNG.Earth, BeamNG.drive için gezegeni 1:1 ölçekte akıtan bir mod. Yükseklik verisi ulusal lidar ve Copernicus 30 m'den, kaplama açık ortofotolardan geliyor; oyunun yanında ayrı bir yardımcı sunucu çalışıyor. Python, MIT lisanslı; BeamMP ile çok oyunculu kullanımda sorunlar için BeamMP ekibine değil proje ekibine başvurulması isteniyor.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "DUNHKpcc/Claude-Guardian",
+   "inputs_hash": "38a2184b27521f920443a7a542944b34",
+   "description_tr": "Claude-Guardian, Claude hesabı açma ve kullanma sürecini (ağ çıkışı, yerel makine, VM veya VPS seçimi, ödeme yöntemi) ajanla birlikte planlamayı amaçlayan bir skill ve betik koleksiyonu. Hesap engellenme riskini azaltmaya yönelik pratik rehber ağırlıklı; Çince yazılmış, GPL-3.0 lisanslı. Hizmet sağlayıcı ve reklam bağlantıları içeriyor.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "LuwuDynamics/xgoduck_hardware",
+   "inputs_hash": "33e486595c614519b82b9c1f2e3e822b",
+   "description_tr": "XGO-Duck, Pollen Robotics'in Microduck tasarımından uyarlanmış, 3D baskı ile yapılan iki ayaklı bir robot ördek; 15 Feetech servo ve Arduino UNO Q kullanıyor. Depo donanım tarafını içeriyor: mekanik modeller, PCB tasarımları, malzeme listesi ve montaj kılavuzu. Çalışma zamanı ve pekiştirmeli öğrenme araçları ayrı depolarda.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "achimala/dream-loop",
+   "inputs_hash": "c13113491efae492eba781c35d71e565",
+   "description_tr": "dream-loop, Blender, görsel üretimi ve bir eleştirmen alt ajanı ile etkileyici 3D görseller ürettiren bir ajan skill'i. README'deki örnek, Three.js ile tarayıcıda çalışan bir izometrik oyun demosunun tek komutla ve bir saatlik sınırla istendiği bir istem. Katkılar için örnek çıktı bekleniyor; MIT lisanslı.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "kgoedecke/doop",
+   "inputs_hash": "e4323ff18f6b7ad81647cf0630f0b3fc",
+   "description_tr": "Doop, Paper.design'a açık kaynaklı bir alternatif olarak sunulan çok oyunculu bir tasarım tuvali. Tuvaldeki çerçeveler sandbox'lı iframe'lerde gerçek HTML çiziyor; insanlar tarayıcıdan, ajanlar yerleşik MCP sunucusu üzerinden canlı düzenliyor. Claude Code, Codex ve Cursor gibi istemciler bağlanabiliyor; TypeScript, AGPL-3.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "Tencent/WeMM-Embedding",
+   "inputs_hash": "18181d8af60819ca86b9aab50bc210df",
+   "description_tr": "WeMM-Embedding, Tencent WeChat Vision ekibinin çok modlu gömme modelleri ailesi; metin, görsel, video, görsel doküman ve karışık girdileri tek temsil uzayında üretiyor, ses desteklenmiyor. 2B, 4B ve 9B boyutlarında; Matryoshka ile 64'ten 4096'ya kadar vektör boyutu seçilebiliyor. transformers, vLLM ve SGLang ile kullanılıyor.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam Folio'nun öneri tarafı olabilir. Ama katalog küçük olduğu için basit bir skor bu gömme modelini ayakta tutmaktan daha ucuz. Apple Silicon için hazır bir yol da yok.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "aschmelyun/print-my-profile-pic",
+   "inputs_hash": "1627c8ce14eb787f2fc91183efa3d1db",
+   "description_tr": "print-my-profile-pic, depoya yıldız veren kişinin profil fotoğrafını bir Raspberry Pi'ye bağlı Epson termal fiş yazıcısından basan eğlence amaçlı bir proje. GitHub webhook'u bir PHP betiğini tetikliyor; betik avatarı çerçeve içine yerleştirip yazıcı kütüphanesiyle gönderiyor. Gerçek bir araç değil, bir yaratıcı gösteri.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "DigitalShieldOfficial/USDT-Payment-Gateway",
+   "inputs_hash": "c2cb442fb3809ee298a9aeee4bd1d730",
+   "description_tr": "DigitalShield-Pay, USDT/USDC kabul eden satıcılar için emanetsiz (non-custodial) bir zincir üstü ödeme geçidi. HTTP API ile sipariş oluşturuyor, zincirdeki işlemi eşleştirip ödeme durumunu webhook'larla bildiriyor; fon ödeyenin cüzdanından doğrudan satıcı adresine gidiyor. README, kripto kabulünün hukuki durumunu önceden kontrol etmeyi hatırlatıyor.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "dofastted/vm2api",
+   "inputs_hash": "bea7d4b74b815f2b6d4a83032ddc6254",
+   "description_tr": "vm2api, Claude ve ChatGPT/Codex aboneliklerini standart bir API'ye çeviren bir ağ geçidi. Her slot için ayrı sanal makine veya konteyner, gerçek istemci süreci ve ayrı bir ağ çıkışı kullanarak donanım parmak izini taklit ediyor. Bu, sağlayıcıların abonelik kullanım koşullarını delmeye yöneliyor ve hesap riski taşıyor; README sponsorlu bir proxy reklamı içeriyor.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "edenfunf/reelmimic",
+   "inputs_hash": "d50f20672dbdffd3ff6dc4660afff77e",
+   "description_tr": "ReelMimic, referans videonun üslubunu (kesim ritmi, plan süreleri, geçişler, renk) çıkarıp aynı üslupta yeni bir 2D video üretiyor; planı onaylatıyor, işi altıya kadar ajana bölüyor ve her planı başka bir ajana inceletiyor. Kendi Claude Code veya Codex hesabınla yerelde çalışıyor; yedi çizim motoru var. MIT, JavaScript.",
+   "usage_tr": "Folio'da story ve reel için denenebilir: beğendiğin bir referansın üslubunda anlatım videoları üretebilirsin ve iş kendi Claude Code hesabından geçtiği için ek API maliyeti çıkmıyor. Uyarı: 30-60 saniyelik video 1-3,5 saat sürüyor, günlük akış için değil haftalık öne çıkan parçalar için uygun.",
+   "matched_project": "Folio",
+   "relevance": 6,
+   "investment_note": null
+  },
+  {
+   "full_name": "yeqv111/mccarbon",
+   "inputs_hash": "b00d93edd9506c1036e9262ea0f07099",
+   "description_tr": "mccarbon, McDonald's resmi MCP'si ile geçmiş siparişleri çekip kişisel yemek karbon ayak izini hesaplayan bir Python aracı. Yemek, ambalaj ve teslimat olmak üzere üç katmanlı bir model kullanıyor; sonuç tek dosyalık bir HTML defterde A-E karbon sınıfı ve azaltım simülatörüyle sunuluyor. --mock ile örnek veriden çevrimdışı çalışıyor; Çince, MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "flectar/mail",
+   "inputs_hash": "812d5759f370c409f5faa970eadbffd5",
+   "description_tr": "Flectar Mail, Rust ile yazılmış, e-posta, takvim ve kişileri tek yerde toplayan hafif bir yerel istemci. Boşta yaklaşık 20 MB özel bellek kullandığını ve aynı posta kutusunda Thunderbird'ün onda biri kadar bellek harcadığını söylüyor. CalDAV destekli; masaüstü ve Android sürümleri var, AGPL-3.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "Merserk/dlss5-visual-enhancer",
+   "inputs_hash": "2570251aec3527cb30cea75795a51f55",
+   "description_tr": "dlss5-visual-enhancer, görüntü ve videolara sinirsel işleme, kare üretimi, RTX Video Super Resolution, HDR ve renk derecelendirme uygulayan bir Windows masaüstü uygulaması (C++). Yapay zekâ modelleri ayrıca indiriliyor ve yerelde çalışıyor. Adındaki DLSS 5 iddiasına dair README'de doğrulanabilir bir NVIDIA bağı görünmüyor; lisans NOASSERTION.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "changexbc/workbuddy-switch",
+   "inputs_hash": "03496f86967e91d95032900d416018b5",
+   "description_tr": "workbuddy-switch, WorkBuddy ve CodeBuddy için çoklu hesap arasında tek tıkla geçiş sağlayan bir Tauri masaüstü uygulaması (Rust, MIT). Oturumu yeni kimlikle hedef hesaba kopyalıyor, hesaplar arası ilişkiyi izliyor; kredi bitiş takibi, token istatistiği ve ajan durumu için yüzen pencere sunuyor. macOS, Windows ve Linux paketleri var.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "Motionsites-AI/claude-skill",
+   "inputs_hash": "1edaf46ceb84e2a78c76cf48d9c4c731",
+   "description_tr": "MotionSites'ın Claude için hazırladığı ücretsiz skill, sinematik açılış sayfaları üretmeyi hedefliyor. İçinde 40 örnek istem, 50'den fazla hero videosu ve görsellerden oluşan bir medya rafı, çalışan kodlu 55'ten fazla teknik tarif ve ölçüler içeren tasarım kuralları var. Python, lisans NOASSERTION.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "udhaykumarbala/cleanyourtv-app",
+   "inputs_hash": "cf3a5394012c8b58cfef11364956f55b",
+   "description_tr": "Clean Your TV için topluluk yapımı bir Android uygulaması: aynı Wi-Fi'deki Android TV, Google TV veya Fire TV'yi telefondan temizliyor. Önce TV'de ağ hata ayıklamasını açıp ADB ile bağlanıyor, planı gösteriyor, bir geri yükleme noktası alıp gereksiz uygulamaları kaldırıyor. Android 9+ gerekiyor; Kotlin, MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "AjncSystem/ShadowOfTheColossus-PC",
+   "inputs_hash": "0f99f5c035de123df0a77eeab48c2835",
+   "description_tr": "Shadow of the Colossus'un PS4 sürümü için PC'ye yerel Windows portu (C++, GPL-2.0). Oyun dosyası dağıtılmıyor; kullanıcının kendi oyun dökümü ve ses için konsolundan iki modül gerekiyor. Sürüm 0.60.3 ile oyun baştan sona bitirilebiliyor; SSD önerilir. Sony ile bağlantısı yok ve telifli içeriğe dayandığı için hukuki risk taşıyor.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "Ikaleio/lm-detector",
+   "inputs_hash": "cfc5e01fc39cf9e3ee6cfe2808390665",
+   "description_tr": "lm-detector, bir API'nin arkasındaki dil modelini tanımak için modelden yaklaşık 300 tamsayı yazmasını isteyip sayı dağılımını bir referans kütüphanesiyle karşılaştırıyor. Aracı kurumların iddia ettiği modelden farklısını sunup sunmadığını denetlemeye yarıyor. Web arayüzü, Bun CLI ve dört dilde SDK var; OpenAI ve Anthropic protokollerini destekliyor, MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "Chuloo/mural",
+   "inputs_hash": "a907c136654efd66e1dac770ab1045f0",
+   "description_tr": "Mural, konuşma yoluyla dil öğreten yerel bir iPhone uygulaması (SwiftUI) ve Android istemcisi; on bir dil modülü ve öğrenme kayıtları cihazda tutuluyor. OpenAI'a kullanıcının kendi API anahtarıyla bağlanıyor, hesap gerektirmiyor; internet şart. README'de bir ajana uygulamayı kurdurmak için hazır istem metni de bulunuyor. MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "shadany7824/playgta5",
+   "inputs_hash": "b8df38c547eb9d7c0d3d64f7456718d0",
+   "description_tr": "playgta5, playgta5.com sitesinin kaynak kodu; oyunun tarayıcıda WASM ile çalışması için gereken dosyalar yaklaşık 19,7 GB'lık yerel bir .mirror klasöründen sunuluyor. Python 3.11 betikleri ve Windows başlatıcısı içeriyor. Lisans yok; Rockstar'ın telifli içeriğine dayandığı izlenimi veriyor, bu yüzden hukuki risk taşıyor.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "Niiiiikiiiiii/McLife-Desk",
+   "inputs_hash": "d59322cd62e5a53fe6ba11c5f7fa5b1f",
+   "description_tr": "McLife Desk, McDonald's MCP'sine bağlanıp gerçek siparişlerden aylık bir kayıt çıkaran tek sayfalık bir kişisel panel: sipariş takvimi, harcama, kalori, bu ayın seviyesi ve eğlenceli bir tüketim kişiliği testi. Bütçe ve tercihleri de hesaba katıyor. Çince, HTML; lisans belirtilmemiş.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "Devin-AXIS/deepseek-design",
+   "inputs_hash": "6633076505322c999e7033bac46ad333",
+   "description_tr": "DeepSeek Design, DeepSeek Harness için eklenti olarak çalışan görsel bir tasarım sistemi. Sohbette tarif edilen web sitesi, poster veya sunum üretiliyor; tuvalde seçilen tek bir nesneyi yapay zekâya düzelttirmek ya da yazı tipi, renk ve boşluğu elle ayarlamak mümkün. Çıktı çalışma alanında düzenlenebilir dosya olarak kalıyor. JavaScript, NOASSERTION.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "morganlinton/BeautifulRust",
+   "inputs_hash": "ef0bcaeaf7666dc7921db665d6d9dda1",
+   "description_tr": "BeautifulRust, kodlama ajanlarına deyimsel Rust yazmayı öğreten üç skill ile bir clippy yapılandırması sunuyor: rust-best-practices yazarken, rust-review incelemede, rust-port ise C, C++, Python, Go veya JavaScript kodunu önce testleri taşıyarak Rust'a çevirirken devreye giriyor. Claude Code, Codex, Copilot, Cursor ve Gemini CLI ile çalışıyor; MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "donvito/codex-astra-luna-orchestrator",
+   "inputs_hash": "dbfb6757f6cfefdcdfd8b3c16dbdce01",
+   "description_tr": "codex-astra-luna-orchestrator, Codex'te Astra veya Sol'u yönetici, Luna'yı alt ajan olarak kullanan bir profil ve skill paketi. Kurulum, profil dosyalarını hedef depoda .codex ve .agents altına kopyalıyor, kök AGENTS.md'yi ekliyor. Keşif, uygulama, test ve inceleme rollerini ayrı ajanlara dağıtıyor; Python, Apache-2.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "CAPCOM-TD-OSS/REDox",
+   "inputs_hash": "383f4fcf8236270afa8768db85b975d1",
+   "description_tr": "REDox, .NET için token tabanlı, yüksek performanslı bir yapılandırılmış veri motoru; CAPCOM'un REX oyun motorunun bileşeni olarak tanıtılıyor. Değiştirilebilir token DOM'u, yorum gibi ayrıntıları koruyan JSON5 düzenlemesi ve System.Text.Json, Newtonsoft.Json uyumluluk katmanları var. C#, Apache-2.0, NuGet paketi mevcut.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "anthropics/oss-scanner",
+   "inputs_hash": "f9315f6e7c7067c1f2aeb378bd6620f3",
+   "description_tr": "anthropics/oss-scanner, açık kaynak projelerin güvenlik taramasına katılması için yapılandırma deposu. Proje sahibi project.yaml, derleme için bir Dockerfile ve isteğe bağlı threat_model.md veriyor; tarayıcı projeyi yalıtılmış bir VM'de derleyip internetsiz analiz ediyor ve bulguları e-postayla gönderiyor. Raporlar model üretimi, insan gözden geçirmesi yok.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "shadcn-ui/cn",
+   "inputs_hash": "e2bc5fdc05ee071c472b11d6896c0234",
+   "description_tr": "cn, Tailwind sınıf birleştirme ve çakışma çözme için tailwind-merge ile clsx'in yerine geçmesi hedeflenen yeni bir motor; aynı API ve tam uyumluluk, 30 kat hızlı olduğu söyleniyor. shadcn/ui'ye npx shadcn migrate cn komutuyla ya da lib/utils.ts içindeki sarmalayıcıyı değiştirerek geçilebiliyor. TypeScript, MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "datawhalechina/zero-to-sglang",
+   "inputs_hash": "5572e35dd7bec35c83dd28c4d9aab58c",
+   "description_tr": "zero-to-sglang, LLM çıkarımını anlatan ve sıfırdan küçük bir çıkarım motoru yazdıran bir kurs deposu; KV Cache, prefill/decode, continuous batching, paged KV cache ve RadixAttention'ı kodluyor, sonra gerçek SGLang kaynağına geçip ilk PR'a götürüyor. Datawhale ve SGLang ekibi yürütüyor; Part 0 ve I İngilizce hazır, kalanı geliştiriliyor.",
+   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam yerel model altyapısına ilgin olabilir. Bu bir kütüphane değil, çıkarım motoru yazmayı öğreten bir kurs ve CUDA GPU varsayıyor. Yatırım bakışı için yalnızca giriş bölümlerini okumak yeterli.",
+   "matched_project": null,
+   "relevance": 2,
+   "investment_note": null
+  },
+  {
+   "full_name": "google-research/rrsi",
+   "inputs_hash": "80416f2f1bbb7f0700b13c4a1567159c",
+   "description_tr": "RRSI, bir LLM ajanının çevresindeki istemler, kontrol akışı, araçlar ve bellek gibi harness'ın sabit bir değerlendirme kümesine karşı evrimleştirilmesinde görülen aşırı uyumu azaltmayı amaçlayan Google Research kodu. Aynı anda paketlenebilecek düzenleme sayısını sınırlıyor, yanlışlanmış hipotezlerin yeniden önerilmesini önlüyor. Python, Apache-2.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "ninjahawk/livenerf",
+   "inputs_hash": "917d4e309359831af4d79ab579d1a547",
+   "description_tr": "livenerf, bir öncü modelin yayınlandıktan sonra sessizce kötüleşip kötüleşmediğini izlemek için tasarlanmış, eklemeli ve olabildiğince deterministik bir kıyaslama. Gün sıfırı referansı toplayıp sonraki ölçümleri onunla karşılaştırıyor; kuantizasyon, daha küçük model veya yönlendirme değişikliklerini algılamayı hedefliyor. İlk hedef Claude Opus 5.5; Python, MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "WhiteTowerAI/ohmygame",
+   "inputs_hash": "9e25f36201b3230752793c02bfc5bbb2",
+   "description_tr": "OhMyGame, yapay zekâ ile oyun yapmak için açık kaynaklı, tek kişilik stüdyo gibi çalışan bir masaüstü uygulaması: oyun tuvali, görsel ve hikâye araçları, kendi API anahtarını getir modeli. Claude Code, Codex veya OpenCode ajanı olarak bağlanabiliyor. Beta 5 etkileşimli hikâye desteği ekledi; TypeScript, Apache-2.0, kaba kenarlar bekleniyor.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "AI-FanGe/Microduck-build-tutorial",
+   "inputs_hash": "a12ff4712d3cf3800bf8db72f97a8589",
+   "description_tr": "Microduck-build-tutorial, küçük bir pekiştirmeli öğrenmeli iki ayaklı robot için kurulum rehberi: donanım, kablolama, hazır Raspberry Pi imajının yazılması, Wi-Fi ve SSH ayarı, ONNX yürüme politikasının çalıştırılması. Pi Zero 2 W üzerinde IMU, Dynamixel servo ve oyun kolu desteği var; eğitim MuJoCo/MjLab ile yapılıyor. Çince, MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "Caho1/open-claude-ui",
+   "inputs_hash": "a81ea68216d5026b4bf3b348c21338d1",
+   "description_tr": "open-claude-ui, Claude masaüstü uygulamasının arayüzünü tersine mühendislikle çözüp 30 bağımsız React bileşeni ve 8 hareket fiziği algoritması olarak yeniden yazan bir proje; 3.000 satırı aşan bir analiz kılavuzu da var. Bir ticari ürünün tasarımının kopyası olduğu için marka ve telif konusunda risk taşıyor. TypeScript, MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "FireRedTeam/FireRedTTS3",
+   "inputs_hash": "803c17032ef44b4efa2a377ad518862e",
+   "description_tr": "FireRedTTS3, konuşma üretimi ve düzenlemeyi tek modelde birleştiren açık kaynak bir PyTorch projesi. Base sürümü 24 dilde ve 21 Çince ağzında zero-shot ses klonlıyor; Instruct sürümü doğal dil tarifiyle yeni ses tasarlıyor ve üretilmiş konuşmada ekleme, silme, değiştirme yapıyor. Türkçe destekli, Apache-2.0; Apple Silicon notu yok.",
+   "usage_tr": "Folio'nun içerik pipeline'ında seslendirme katmanı olarak kullanabilirsin: Instruct sürümüyle her yazar profili için sabit bir anlatıcı sesi tasarlayıp story ve post videolarına aynı tınıyla konuşma ekleyebilirsin. Uyarı: Apple Silicon yolu belgelenmemiş, M4 Pro'da MPS ile çalışıp çalışmadığını önce ölçmen gerekir; ses klonlama kısıtlarını da kontrol et.",
+   "matched_project": "Folio",
+   "relevance": 5,
+   "investment_note": null
+  },
+  {
+   "full_name": "zhoufuweigg/guoapp",
+   "inputs_hash": "df26a6190dd78dd05b34ef32b5caec39",
+   "description_tr": "guoapp, kısa dizi ve film izleme için Flutter ile yazılmış çok platformlu bir istemci; kaynak arama, ayrıştırma, indirme ve oynatma cihazda yapılıyor. Sahibi kodu başka birinden alıp paketlediğini, çalışma garantisi vermediğini ve deponun silinebileceğini söylüyor. Telifli içerik kaynaklarına bağlandığı ve doğrulanmadığı için dikkatli yaklaşmak gerek.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "lingyired/status-trio",
+   "inputs_hash": "c0c4d96b2e1c1325f04ac071674c41ef",
+   "description_tr": "Status Trio, Wi-Fi, pil ve ses düzeyini tek bir yapılandırılabilir ikonda birleştiren yerel bir macOS uygulaması (Swift, Apache-2.0); menü çubuğunda, Dock'ta ya da ikisinde görünüyor. Açılır pencerede yakındaki ağlar, Bluetooth cihazları, pil ayrıntıları ve ses aygıtları var. Tasarım iPhone Duo'nun birleşik durum çubuğundan esinlenmiş.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  }
+ ]
+}
