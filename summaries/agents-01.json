@@ -28,15 +28,6 @@
    "investment_note": "Ücretsiz açık kaynak çekirdeğin üstüne GitHub App ve kişi başı abonelik koymuş, tek bir geliştiricinin yürüttüğü bir ajan aracı; ajan tooling tarafında ticarileşme deneyi olarak izlenmeye değer."
   },
   {
-   "full_name": "deepseek-ai/deepseek-harness",
-   "inputs_hash": "1cf9d0d55aa0009c94417a263cb051c8",
-   "description_tr": "DeepSeek Harness (dsh), DeepSeek AI tarafından geliştirilen açık kaynak bir ajan harness'ı. Her şeyin eklenti olduğu bir mimari üzerine kurulu ve altında Cordis adlı bir kompozisyon runtime'ı çalışıyor. npx ile tek komutta yerel bir web arayüzü açıyor, kaynaktan pnpm ile de derlenebiliyor. TypeScript ile yazılmış ve MIT lisanslı; depo geliştirici önizlemesinde olduğunu, uyumluluğu bozan değişiklikler geleceğini ve çalıştırmadan önce güvenlik notunun okunması gerektiğini açıkça belirtiyor. Ağustos 2026'da açılmış ve ~233 bin star toplamış, yani yaşına göre çok hızlı büyümüş bir depo.",
-   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın olası bağlam, Claude Code ve OpenCode yanında üçüncü bir ajan harness'ı denemek olurdu. Model tarafı sağlayıcı API'sine bağlı çalışacağı için mevcut aboneliğinin dışında ayrı bir kullanım maliyeti doğurur. Geliştirici önizlemesinde olması ve kırıcı değişiklik uyarısı, üretimdeki Lyricdrop işine sokmayı şimdilik anlamsız kılıyor. Eklenti mimarisi ilgini çekiyorsa izleme listesine alıp ilk kararlı sürümde tekrar bakmak yeterli.",
-   "matched_project": null,
-   "relevance": 2,
-   "investment_note": null
-  },
-  {
    "full_name": "Significant-Gravitas/AutoGPT",
    "inputs_hash": "83fe2cf1d0d9ef6b42a26ed975f3669c",
    "description_tr": "AutoGPT, tarif edilen bir işi uçtan uca yürütecek ajanlar kurmak için geliştirilen açık kaynak bir platform. Düz metinle ajan tarifleyen bir sohbet katmanı, adım adım kurgulanabilen görsel bir akış tasarımcısı, zamanlanmış veya tetikleyiciye bağlı çalıştırma ve hazır ajan kütüphanesi sunuyor. Çekirdek Python ile yazılmış; barındırılan bir bulut sürümü ile kendi sunucunda çalıştırma seçeneği birlikte veriliyor. Lisansı standart bir açık kaynak lisansı değil, depoya özgü koşullar içeriyor. 2023 başında açılmış ve ~187 bin star ile kategorinin en tanınmış depolarından biri.",

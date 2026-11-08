@@ -46,24 +46,6 @@
    "investment_note": "Şubat 2026'da açılmış bir reponun dokuz bin yıldızı aşması ve açık çekirdek + barındırılan bulut modeliyle gelmesi ticarileşme tarafından bakıldığında dikkat çekici; bir tez kurmadan önce büyümenin ve kullanım iddialarının bağımsız olarak doğrulanması gerekir."
   },
   {
-   "full_name": "Vincentwei1021/video-shotcraft",
-   "inputs_hash": "9372c0caad50aec593441b56c393397c",
-   "description_tr": "video-shotcraft, Claude Code ve Codex için yazılmış bir agent skill; ürün tanıtım videolarını Remotion ile kod üzerinden üretiyor. Depoda 152 çekim reçete kartı, 214 stil ve hareket önizlemesi ile üretime hazır bir şablon bulunuyor; gerçek sayfa yakalamaları, 2.5D kamera hareketleri, ritme senkron kesmeler ve ses efektleri destekleniyor. Ajan ürüne yönlendirildiğinde storyboard, animasyon ve ses tasarımını sırayla üretiyor. Apache-2.0 lisanslı, Temmuz 2026'da açılmış ve 9.224 yıldıza ulaşmış; canlı bir önizleme galerisi ile İngilizce, Çince ve Japonca dokümantasyonu var. Aynı serinin video-talkcraft adlı kardeş projesi anlatım videoları için kelime düzeyinde yerel hizalama yaptığını belirtiyor.",
-   "usage_tr": "Lyricdrop lansmanında mağaza videosu, tanıtım klibi ve sosyal kreatifleri üretme adımında kullanabilirsin; çıktı Remotion kodu olduğu için aynı şablondan dil ve şarkı başına varyant üretmek tekrar edilebilir bir işe dönüşür. Zaten Claude Code ile çalıştığın için ek bir API maliyeti getirmez ve render ofisteki M4 Pro Mac'te yerel biter. Uygulama stüdyosu fikrinde de her uygulama için aynı reçete setinden kreatif çıkarmak, tek tek tasarım yaptırmaktan ucuza gelir. Şablonlar bir kez tanımlandıktan sonra tekrar üretimi asistanına devredebilirsin; onay sende kalır. Uyarı: reçete kartları SaaS ve ürün ekranı anlatımına göre kurulmuş, müzik üstüne kurulu bir oyun ekranı için bir kısmını yeniden yazman gerekir. Uzun videolarda render Mac'i uzun süre meşgul eder, bu işleri gece koşumlarına almak mantıklı.",
-   "matched_project": "Lyricdrop",
-   "relevance": 6,
-   "investment_note": null
-  },
-  {
-   "full_name": "google/artemis",
-   "inputs_hash": "4cfad4ea4c6d0ee4db76988be276df40",
-   "description_tr": "ARTEMIS, doğal dildeki talimatları gerçek Android cihazlarda yürütülen otomasyona çeviren, Google tarafından yayımlanmış bir Python projesi. Uygulamalar arası akışları çalıştırıyor, Logcat çıktısı ve ekran görüntüsü topluyor; öğe indeksleri yoksa koordinat ve görsel hedeflemeye düşüyor. MCP sunucusu olarak Claude Code, Antigravity ve Windsurf gibi araçlara bağlanıyor; adım başına tipik 3-5 saniyelik bir gözlemle-uygula döngüsü ve uzun soluklu kararlılık testleri için ayrı bir keşif modu var. Gemini, Claude, GPT-4o ve Qwen-VL gibi çok modlu modellerle çalışıyor; AndroidWorld kıyaslamasında %99'un üzerinde tamamlama bildiriliyor. Apache-2.0 lisanslı, Ağustos 2026'da açılmış, 9.132 yıldız; Python 3.12 ve üzeri gerekiyor.",
-   "usage_tr": "Lyricdrop'ta kendin yapmak istemediğin manuel testi devretmek için en somut adaylardan biri: 'şu şarkıyı aç, üç boşluğu doğru cevapla, highlight kaymasını ekran görüntüsüyle kaydet' gibi talimatları Android cihazda tekrar tekrar koşturabilirsin. MCP üzerinden Claude Code'a bağlandığı için mevcut zincirine oturur; cihaz ofisteki Mac'e bağlı kalır ve koşum yerel olur. Admin panelinde duran tarayıcı playtest gate'inin mobil karşılığını burada kurup regresyonları gece çalıştırabilirsin. İki sınırı var: yalnızca Android, yani iPhone tarafı kapsam dışı; ve çok modlu model çağrıları Max aboneliğinin dışında API maliyeti doğurur, bu yüzden adım sayısını sınırlı tutmak gerekir. Android TV sürümü için bir vaat yok; leanback arayüzünde uzaktan kumanda odak akışını ayrıca denemelisin. Sonuçların Logcat ve ekran görüntüsüyle gelmesi, hataları asistanının takip edebileceği biçimde biriktirmeni sağlar.",
-   "matched_project": "Lyricdrop",
-   "relevance": 7,
-   "investment_note": null
-  },
-  {
    "full_name": "trailhq/Graft",
    "inputs_hash": "0ace3ddea815ff47992aa55ed0b52c92",
    "description_tr": "Graft, kodlama ajanlarının büyük kod tabanlarını daha az token harcayarak anlaması için tree-sitter ile bir kod grafiği çıkaran bir bağlam katmanı. Claude Code, Cursor, Codex ve Gemini gibi araçlara CLI ve MCP sunucusu olarak bağlanıyor; her görevden öğrenip güncellenen bir skill dosyası tutuyor. Depodaki karşılaştırma tablosu soğuk Claude Code'a kıyasla %46 daha az araç çağrısı, %42 token ve %60 süre tasarrufu ile doğrulukta %54'ten %66'ya artış bildiriyor; bunlar projenin kendi ölçümleri. MIT lisanslı, Temmuz 2026'da açılmış, 8.997 yıldız; npm üzerinden dağıtılıyor ve anonim, kapatılabilir telemetri içeriyor. Ayrıca aynı ekibin barındırılan bir servisi de tanıtılıyor.",
@@ -79,24 +61,6 @@
    "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, stand-up özelini çok modlu veriyle analiz ettiğin çalışmanın altyazı ayağı ve psikoloji/sosyoloji içeriklerini Türkçe YouTube kaynaklarından takip etme alışkanlığın. Lyricdrop'un kaynak materyali şarkı; kesilecek uzun oturum kaydı ya da podcast yok, dolayısıyla ürün hattına girecek bir adım bulunmuyor. Mac'te Apple Silicon paketi olduğu için video işleme yerel kalır, ama analiz için bağladığın model ayrı bir maliyet kalemidir. Kendi uygulamana gömmek için uygun bir bileşen değil; CLI/MCP arayüzü sayesinde en fazla Claude Code'dan tetiklenen yardımcı bir araç olur. İleride uzun formatlı içerik üretmeye başlarsan sosyal klip üretimi için yeniden bakılabilir.",
    "matched_project": null,
    "relevance": 2,
-   "investment_note": null
-  },
-  {
-   "full_name": "dataelement/dsh-desktop",
-   "inputs_hash": "eddf6b141323eafcaacef44501b7e2ea",
-   "description_tr": "DSH Desktop, DeepSeek Harness'ı kurulabilir bir masaüstü uygulaması olarak paketleyen, yerel öncelikli bir istemci. Harness'ı otomatik başlatıyor; profil, eklenti, workspace, model ayarı ve oturumları uygulama dizininin dışında tutuyor. Resmi DeepSeek modellerinin yanında yaygın üçüncü parti sağlayıcıları, taşınabilir agent preset'lerini, telefondan oturuma devam etmeyi ve kaynak metinden düzenlenebilir PPTX üretmeyi destekliyor. macOS (Apple Silicon ve Intel) ve Windows x64 için imzalı kurulumlar sunuluyor; MIT lisanslı, Ağustos 2026'da açılmış, 8.417 yıldız. Proje kendini erken önizleme olarak tanımlıyor ve hızla değişen bir harness sürümünün üzerine kurulu olduğunu belirtiyor.",
-   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, iPhone'dan ofis Mac'ine bağlanırken yaşadığın oturum kopmaları ve açık kaynak bir istemciyi fork'layıp kendi sürümünü yazma alışkanlığın. Telefondan oturuma devam etme yaklaşımı desen olarak okunmaya değer, ama uygulama DeepSeek Harness'a bağlı; senin zincirin Claude Code ve OpenCode üzerine kurulu olduğu için doğrudan bir karşılığı yok. Yeni bir model sağlayıcı eklemek Max aboneliğinin dışında ayrı bir maliyet açar. Erken önizleme etiketi ve hızla değişen bağımlılık, üretim işine sokmayı şimdilik riskli kılıyor. OpenCode için planladığın istemciyi tasarlarken oturum taşıma ve profil/veri izolasyonu tarafında referans olarak açabilirsin.",
-   "matched_project": null,
-   "relevance": 2,
-   "investment_note": null
-  },
-  {
-   "full_name": "max-sixty/worktrunk",
-   "inputs_hash": "36f920947f769acf91468f525df84717",
-   "description_tr": "Worktrunk, git worktree yönetimini komut satırından yapan ve paralel AI ajan akışları için tasarlanmış bir Rust CLI'ı. Her ajana ayrı bir çalışma ağacı açıp dal, dizin ve durum takibini birkaç komuta indirgemeyi hedefliyor. MIT veya Apache-2.0 lisansı altında dağıtılıyor, crates.io üzerinden kuruluyor; CI, kod kapsamı ölçümü ve ayrı bir dokümantasyon sitesi var. Ekim 2025'te açılmış ve 8.333 yıldıza ulaşmış. Tek bir işi yapan, bağımlılığı az bir araç olduğu için benimseme ve geri çıkma maliyeti düşük.",
-   "usage_tr": "Lyricdrop v2'yi yazarken aynı depoda birden fazla Claude Code oturumunu paralel çalıştırmak için doğrudan bunun için tasarlanmış: hizalama servisi, admin panel ve mobil taraf ayrı worktree'lerde, birbirlerinin dosyalarını bozmadan ilerler. Ofisteki M4 Pro Mac'te yerel çalışır, ek API maliyeti yoktur ve tek binary olduğu için mevcut kurulumunu değiştirmez. İstediğin 'iki ayrı açıdan review' kurgusunu da kolaylaştırır: inceleme ayrı bir ağaçta yapılırken geliştirme devam eder. Terminal tarafında bir araç, GUI tercihine uymaz; ama günlük kullanımı birkaç komuttan ibaret kalır. Uyarı: paralel ajan sayısını artırmak Max aboneliğinin oturum limitlerini daha hızlı tüketir, kazancı ölçerek artır.",
-   "matched_project": "Lyricdrop",
-   "relevance": 6,
    "investment_note": null
   },
   {

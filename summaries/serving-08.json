@@ -10,15 +10,6 @@
    "investment_note": null
   },
   {
-   "full_name": "FareedKhan-dev/kimi-k3-in-c",
-   "inputs_hash": "13452d6ce45096805cfdedcb293cbef2",
-   "description_tr": "2,78 trilyon parametreli Kimi K3 modelini tek bir CPU üzerinde, ölçülen 8,24 GB tepe bellek kullanımıyla çalıştıran, taşınabilir C99 ile yazılmış bir çıkarım motoru. BLAS, framework ve GPU kullanmıyor; motorun tamamı 176 KB ve MoE uzmanlarını her token için diskten akıtarak bellek ihtiyacını düşürüyor. Çıktı makineden makineye bayt düzeyinde aynı kalıyor, değişen tek şey hız: 8 GB RAM'de token başına yaklaşık 26,5 saniye, 128 GB üstünde 5,6 saniye. MXFP4 quantization ve AVX2 SIMD kullanıyor, hedef platform Linux x86-64. Apache-2.0, 8,2K yıldız; 2026 Ağustos'unda açılmış, tek yazarlı ve ölçüm kayıtlarıyla birlikte yayınlanmış bir çalışma.",
-   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın olası bağlam yerel model altyapısına olan ilgin. Ancak depo Linux x86-64 ve AVX2 hedefliyor, Apple Silicon yolu yok; ofisteki Mac'te ya da evdeki Mac mini'de çalıştıramazsın. Token başına saniyelerle ölçülen hız da Lyricdrop'un şarkı başına içerik üretimi dahil hiçbir üretim akışına uymuyor. Değeri pratik değil eğitici: uzmanları diskten akıtarak bellek ihtiyacını nasıl düşürdüğünü okumak, aynı fikrin Mac tarafındaki uygulamalarını değerlendirirken işine yarar.",
-   "matched_project": null,
-   "relevance": 2,
-   "investment_note": null
-  },
-  {
    "full_name": "ai-dynamo/dynamo",
    "inputs_hash": "d1cbe5fb24b65850652b839aec23a70a",
    "description_tr": "Dynamo, NVIDIA'nın veri merkezi ölçeğinde dağıtık LLM çıkarımı için yazdığı orkestrasyon katmanı. vLLM, SGLang veya TensorRT-LLM'in yerini almaya çalışmıyor; bu motorları çok düğümlü, koordine tek bir sisteme dönüştürüyor. Disaggregated serving, KV-cache farkındalığıyla yönlendirme, çok katmanlı KV önbellek ve otomatik ölçekleme başlıca bileşenleri; LLM'in yanı sıra çok kipli ve video üretim yükleri de hedefleniyor. Çekirdek performans için Rust, genişletilebilirlik için Python kullanılıyor ve dağıtım ağırlıklı olarak Kubernetes üzerinden yapılıyor. 160'ın üzerinde katkıcı, 8,1K yıldız; aktif geliştirilen, kurumsal destekli bir proje.",

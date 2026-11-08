@@ -1,0 +1,404 @@
+{
+ "repos": [
+  {
+   "full_name": "KardDev/dsh-plugins",
+   "inputs_hash": "16b41105951a66fb1dbd542eb71e9550",
+   "description_tr": "DeepSeek Harness (DSH) için üç eklentilik bir koleksiyon: İngilizceleştirilmiş hareket arayüzü ve yerel MP4 üretimi (dsh-motion-ui-en), oturum başına API maliyet takibi (dsh-cost-usage) ve karar analizi (dsh-decision-lab, önizleme). DSH 0.2.1-rc.5 ve Node 22.19+ gerekir.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "songjianyang/xss-audit",
+   "inputs_hash": "6e0527611f58c8420ed37c5d0f6cd69b",
+   "description_tr": "React, TypeScript ve JavaScript kod tabanları için 14 katmanlı statik XSS denetimi yapan bir agent skill'i. SVG, MathML, markdown boru hatları, sanitizer atlatma ve Trusted Types gibi alanları tarar, sonucu xss-audit-report.md dosyasına yazar. Yalnızca statik analizdir; bir eşleşme doğrulanmış açık değildir. Lisans MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "Mieksido/surfcore",
+   "inputs_hash": "2b477151342f8a588b685cbdfc0ebde2",
+   "description_tr": "DeepSeek Harness (DSH) ajanına QQ ve Bilibili üzerinden bir kimlik, zamanla silinen hafıza, günlük rutin ve masaüstü maskotu veren eklenti. Windows'a bağlıdır; üçüncü taraf SnowLuma çalışma zamanı repoyla dağıtılmaz. DSH 0.2.1-rc.2 ve üstü hedeflenir.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "MarkBlah/smsofdeath",
+   "inputs_hash": "4e3dcf1de71cec8772f3e81b4447cbbf",
+   "description_tr": "Android telefon yazılımındaki bir hatayı göstermek için hazırlanmış güvenlik araştırması kanıt uygulaması (PoC), Java ile yazılmış. Ayrıntılar projenin kendi yazısına bağlanıyor. README yetkili test ve araştırma dışında kullanılmamasını söylüyor. Apache-2.0 lisanslı.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "Alejandros17487/ai-jailbreaks",
+   "inputs_hash": "dc25c4256e42abe8cbd2381d0ff52005",
+   "description_tr": "Çeşitli yapay zekâ modelleri için hazır yapıştırılabilir sistem istemleri, AGENTS.md dosyaları ve Ollama Modelfile'ları derleyen bir koleksiyon; güvenlik ve red-team testi için sunuluyor. README'de bir üçüncü taraf API hizmetinin reklamı da var. Kod yok, yalnızca metin dosyaları; lisans belirtilmemiş.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "joeaelkhoury/SwarmLab",
+   "inputs_hash": "c4ae0bb9cbb23fbbb23ccd9252ac7cac",
+   "description_tr": "VS Code içinde sohbet, tek ajanlı görev, ajan takımları, iş akışları ve yerel GPU deneyleri sunan bir yapay zekâ kodlama asistanı. Adımlar görünür, düzenlemeler gözden geçirilebilir, komutlar onay ister. Repo eklentinin kaynak kodunu değil belgeleri, ekran görüntülerini ve Python istemcisini içerir; lisans kaynağı açık ama kısıtlı.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "patch-gg/anymove",
+   "inputs_hash": "71858994214d90b250d1aca15f095194",
+   "description_tr": "Tek bir yapay zekâ videosundan, rig'li herhangi bir yaratık için hareket yakalama animasyonu üretir: iki kamera açısı tek karede çekilir, DINOv2 tabanlı bir eklem okuyucu iki görüntüde eklemleri bulur ve rig karelere oturtularak GLB çıkarılır. Blender ve Claude Code için skill'ler içerir; kullanılabilir bir hareket yaklaşık 3 dolar tutuyor.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "5hyuns/maya-workflow-kit-for-blender",
+   "inputs_hash": "7950f0635f3a032384422a85a1920534",
+   "description_tr": "Maya'dan gelen kullanıcılar için Blender uzantısı: hotbox, marking menu, Channel Box, Attribute Editor, menü setleri ve Maya tarzı gezinme ile seçimi Blender'ın kendi araçları üzerine kurar. Maya'ya geçiş tek tıkla geri alınabilir. Blender 5.2 LTS hedeflenir, GPL-3.0 lisanslı.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "MiniMax-AI/mcode-stack",
+   "inputs_hash": "ce085c223b19bc8d252d39cee7cc9535",
+   "description_tr": "MiniMax Code ekibinin kendi geliştirmesinde kullandığı iş akışları ve skill'ler: yapay zekâ yazımı kodda kalite çıtası, görevin alt ajana verilip verilmeyeceği, uzun komutlarda bekleme ve bağlam yönetimi gibi konular. Her biri bir SKILL.md ya da kontrol listesi olarak MiniMax Code'a kurulur. MIT lisanslı.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "arcships/dim",
+   "inputs_hash": "68fb5677487ed33ab9547baa66141826",
+   "description_tr": "Olay güdümlü bir zaman çizelgesi ve tamamen eklentilerden oluşan bir çalışma zamanı üzerine kurulu genel amaçlı ajan çerçevesi, Rust ile yazılmış (alfa, dimcode-alpha paketi, dima komutu). Rust, TypeScript veya Python eklentileri ajana yeni yetenek ekler; ajan kendine TypeScript aracı yazıp aynı oturumda yeniden yükleyebilir. MIT lisanslı.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "GustavoReset/ResetExplode",
+   "inputs_hash": "7bf89c99d28309e1af9b0894adf5b9ea",
+   "description_tr": "Windows için WPF (.NET 8) tabanlı bir sistem bilgisi ve bakım aracı, Portekizce arayüzlü. WMI ile donanım bilgisini gösterir; başlangıç programlarını yönetme, winget ile toplu uygulama kurma, COM port ve seri sürücü araçları ve oyun üstü overlay içerir. Yönetici olarak çalışır; pull request kabul etmiyor. MIT lisanslı.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "inclusionAI/Ming-3.0-tts",
+   "inputs_hash": "d7564a3b0c601c31573650dfcc5a13c5",
+   "description_tr": "Ant Group'un açık kaynak çok dilli konuşma sentezi (TTS) model ailesi: 0.5B yoğun model ve 7,9B toplam/1,3B aktif parametreli MoE model. Ses klonlama, ses tasarımı ve doğal dille kontrol destekliyor; Artificial Analysis sıralamasında açık ağırlıklı modeller arasında üst sıralarda. Python, MIT lisanslı.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "WoYun520/dsh-purge",
+   "inputs_hash": "17fd65c628c9ea42ebc867d8b2e92433",
+   "description_tr": "DeepSeek Harness için, modellerin güvenlik kısıtlarını aşmaya yönelik istemler sunan bir eklentinin yansısı (mirror); tüm dallar, etiketler ve commit geçmişi korunmuş. Asıl yazara atıf istiyor. Güvenlik araştırması çerçevesinde sunuluyor; JavaScript, MIT lisanslı.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "setube/github-chinese",
+   "inputs_hash": "93e058afe13f827aeab4a3704f00bfc9",
+   "description_tr": "GitHub arayüzünü Basitleştirilmiş ve Geleneksel Çince'ye çeviren tarayıcı eklentisi (Chrome, Edge, Firefox, Safari); kurumsal GitHub sitelerini destekler. İndirme hızlandırma, arama temizleme, otomatik yükleme ve resim önizleme gibi ek özellikler içerir. TypeScript, Vue ve WXT ile yazılmış, Manifest V3, MIT lisanslı.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "reacher-z/Awesome-CUA",
+   "inputs_hash": "9b6ca35d7c5607e160fb5eebc4bb7b69",
+   "description_tr": "Bilgisayar kullanan ajanlara (computer-use agents) dair makaleler, GUI modelleri, veri kümeleri, benchmark'lar ve araçlardan oluşan kaynak destekli bir katalog. Girdiler birinci taraf kaynağa karşı gözden geçirilmiş; veri JSONL ve SQLite olarak yeniden kullanılabilir, bir de arama sitesi var. Python, lisans NOASSERTION.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "OpenSenseNova/SenseNova-6.8-Code2Video",
+   "inputs_hash": "837e4203a1ad5a4b93e37d753a968cf1",
+   "description_tr": "SenseNova 6.8 Code2Video, çalıştırılabilir kod üreterek video oluşturan küçük bir açık model; şimdilik tamamen kodla yapılmış kısa videolara odaklanıyor. Hareket tasarımında iyi kompozisyon ve koreografi gösterdiği söyleniyor, README bunu ön sonuç olarak sunuyor. Python; lisans belirtilmemiş, ağırlıklar Hugging Face'te.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "harkhowalia-1/MacSubsystemForAndroid",
+   "inputs_hash": "6088de2b20a5d2feab98e3fcb2bcec6e",
+   "description_tr": "Apple silikonlu Mac'lerde Android uygulamalarını Mac uygulaması gibi çalıştırır: her uygulama kendi penceresi ve Dock simgesiyle açılır, bildirim, oyun kumandası ve gizlilik denetimleri desteklenir. LineageOS (Google uygulamasız) Apple Hypervisor üzerinde çalışır; QEMU ve scrcpy kullanır. Swift, GPL-3.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "stubbi/asm",
+   "inputs_hash": "2960d1bd0e9082fc0749fca210021119",
+   "description_tr": "Assembly projeleri için paket kayıt defteri ve komut satırı aracı. `asm new`, `asm build`, `asm run` ve `asm test` ile proje oluşturur, derler ve test eder; asm.toml kullanır. Linux'ta GNU Binutils, macOS'ta Xcode komut satırı araçları gerekir; x86-64, AArch64 ve RISC-V hedefler. AGPL-3.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "sola1039/HAST-SEC",
+   "inputs_hash": "b434bebef1568b1e064fc205dff72f2c",
+   "description_tr": "Wuhan merkezli bir şirketin yayımladığı, yerel Çince sohbet ve sürekli karakter hareketi gösteren erken aşama araştırma demosu: yaklaşık 0,8B metin modeli ve küçük hareket modeli, VRM karakterleri destekler. Eğitim hattı içermez, ticari olmayan lisanslı; README ortaklık ve yatırım arıyor. JavaScript.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "realskyrin/ns-game-apple-arm-port",
+   "inputs_hash": "90686ce81289922a83e62538e5315b33",
+   "description_tr": "Nintendo Switch oyunlarını Apple Silicon macOS, iPadOS ve iOS'a Rust ve Metal ile taşımaya yönelik bir agent skill'i: sürüm tespiti, AArch64 yeniden yazımı, Horizon servisleri, NVN'den Metal'e grafik çevirisi ve doğrulama adımlarını anlatır. Oyun, anahtar veya uyumluluk katmanı kodu içermez; yalnızca yöntem ve rehber. MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "PS5Dev/Byepervisor-Reborn",
+   "inputs_hash": "1b353548595d827cf3ce1280edf16214",
+   "description_tr": "PlayStation 5 için bir hypervisor istismarının geliştirici amaçlı temel (base) çalışması; README normal kullanıcılar için işe yaramadığını ve geliştiricilere yönelik olduğunu belirtiyor. Yama içermez, kendi yamalarını getirme senaryosu var. C ile yazılmış, lisans belirtilmemiş. Konsol güvenliği araştırması alanında.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "blendi-remade/prompt2rig",
+   "inputs_hash": "6b1d74141aa3dcf8711f3b3df9a086ae",
+   "description_tr": "Bir metin istemiyle video modeline hareket oynatıp, GVHMR ve WiLoR ile vücut ve parmak hareketini kendi GPU'nda çıkaran, sonucu tarayıcıda Mixamo karakterine canlı aktaran araç; Blender veya Unity'ye dışa aktarılır. Video fal üzerinde üretilir (ücretli API). JavaScript, Apache-2.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "cauliflowermossgrape/idrive7-apps",
+   "inputs_hash": "571bb33f333497d913e077eb04272df0",
+   "description_tr": "BMW iDrive 7 ekranı için özel uygulamalar ve kendi uygulamanı yazmak için bir SDK: vites ışıkları, sanal dyno, fren ve drag zamanlayıcıları, G-metre ve arıza kodu tarayıcısı. Aracın kendi uygulama platformunda çalışır. BMW ile ilişkisiz hobi projesi; kurulum aracı değiştirir. JavaScript, MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "kevintngo/looseleaf",
+   "inputs_hash": "8e29600000b305550a3c55bfb1e415a2",
+   "description_tr": "shadcn/ui'ın elle çizilmiş görünümlü sürümü: kâğıt üzerine çizilmiş gibi duran 123 erişilebilir React bileşeni ve bir shadcn registry'si. Bileşenler bağımlılık olarak değil kaynak kod olarak projeye kopyalanır; çizimler tohumlu, deterministik SVG üretir. TypeScript, MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "anthropics/single-agent-loop-kit",
+   "inputs_hash": "ab58dc18d946db1a12fb5d3007b5c398",
+   "description_tr": "Anthropic'in, router ve uzman alt ajanlardan oluşan çok ajanlı bir sistemi, beceri ve araçları isteğe bağlı yükleyen tek bir ajan döngüsüne taşımak için başlangıç kiti. Her değişikliği önce ve sonra aynı eval ile ölçer; alt ajan ancak yerine geçen çözüm sayıları tutturursa kaldırılır. Referans uygulama, bakımı yok. Python, Apache-2.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "miao-org/awesome-supermimic",
+   "inputs_hash": "d61ae80b3063326f90335edbda83b5d4",
+   "description_tr": "SuperMimic'in (insansı robot hareket takibi) uygulamaları, uzantıları, demoları ve kaynaklarının derlendiği topluluk listesi; 41 topluluk projesi yeniden üretimler, yöntemler ve eğitim çerçeveleri gibi başlıklara ayrılmış. Kod değil bağlantı listesi. CC0-1.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "J3n5en/voicekey",
+   "inputs_hash": "05f6fa6f36ba182a03472bf6a4e5f9cd",
+   "description_tr": "macOS'ta bas-konuş veya dokun-konuş yöntemiyle çalışan dikte uygulaması; Doubao, WeType, Qwen, Baidu ve iFlytek gibi birden çok Çince tanıma kanalını yan yana gösterip seçtirir, bazıları tamamen yerel çalışır. Windows, iOS (Çince klavye) ve Android sürümleri de var. Swift; lisans belirtilmemiş.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "actionow-ai/vvv",
+   "inputs_hash": "ee531631370c85bfa975d9fde9439f57",
+   "description_tr": "Bir video şablonunu bir kez kurup Claude Code, Codex gibi 25'ten fazla ajanla yeniden kullanmaya yarayan açık, düzenlenebilir düğün videosu şablonları ve Agent Skill'i. Fotoğraf ve metin değiştirilerek yeni bir film üretilir, referans video yapısı çıkarılabilir. Python, MIT. Müzik ve fotoğraf hakları kullanıcıya ait.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "changhaoting1998-star/manufacturing-wechat-miniapp-starter",
+   "inputs_hash": "e9796d2dcf695f85ae7ab4d82446895e",
+   "description_tr": "Üretim yapan küçük ve orta ölçekli işletmeler için WeChat Mini Program başlangıç şablonu: çalışan self-servisi ve denetlenebilir MES entegrasyonu hedefler. Yapay veriyle çalışır, gizlilik öncelikli; MES kayıt sistemi kalır, Mini Program saha verisini toplayan arayüz katmanıdır. JavaScript, MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "MemTensor/MemT-1.0",
+   "inputs_hash": "cb34c7e0ae9802e301ea339a5f746c3c",
+   "description_tr": "MemT-1.0, kalıcı ve dinamik hafızayı model hesabının parçası yapan bir hafıza temel modeli. Yerel dinamik hafıza ile eğitilebilir hiper hafızayı birleştirir; durum boyutu sabit kalır ve 128K geçmişte tam bağlam KV cache'e göre yaklaşık 66 kat az depolama kullanır. Python, lisans NOASSERTION.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "sarpstar/cinecode",
+   "inputs_hash": "91c744a3b9945ce044636192e088f870",
+   "description_tr": "Bir yapay zekâ kodlama ajanının senaryo yazıp her kareyi kodla kurarak, sesi tasarlayıp bitmiş MP4 verdiği film üretim iş akışı: kısa film, YouTube videosu, reklam ve müzik videosu. Claude Code veya Cursor'da yerel çalışır; dış ses için isteğe bağlı Gemini veya ElevenLabs anahtarı gerekir. Python, MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "AIshihzong/awesome-reverse-engineer-anything",
+   "inputs_hash": "153a46e5e73867b20469091dc05afdb8",
+   "description_tr": "Yapay zekâ ajanlarının tersine mühendislikle yeniden inşa ettiği projelerin ve bunların gerçekten REA aracını kullanıp kullanmadığının doğrulanmış, iki dilli listesi. Resmî değil. En çok paylaşılan altı vakadan yalnızca birinin kendi reposunda REA kullandığını belirttiğini söylüyor. Python, CC0-1.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "storytold/texturecraft",
+   "inputs_hash": "472942a3dca77458f976211b958902e7",
+   "description_tr": "Saf Rust ile sıfırdan yazılmış açık kaynak 3B doku boyama uygulaması: modelin üzerine PBR malzemeleri katman ve maskelerle boyar, mesh haritaları pişirir, akıllı malzemeler ve her motora doku dışa aktarımı sunar. macOS, Windows, Linux, FreeBSD ve WebAssembly ile tarayıcıda çalışır. Apache-2.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "nfzerox/VirtualIntelMacOnAppleSilicon",
+   "inputs_hash": "9c19242d65339f4e15d410be91228b45",
+   "description_tr": "Apple silikonlu Mac'te Mac OS X Tiger 10.4'ten macOS Big Sur 11'e kadar tüm Intel macOS sürümlerini grafik hızlandırmayla sanal makinede çalıştırır; eski 32 ve 64 bit Intel ve PowerPC uygulamaları için. Metal ve OpenGL, USB ve ses aktarımı, ağ paylaşımı destekler. UTM veya Apple ile ilişkisiz. C, MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "Tencent-Hunyuan/Hy-Nomas",
+   "inputs_hash": "9d70cb1369892d1f704d69737204d6f5",
+   "description_tr": "Tencent Hunyuan'ın, çok turlu metin ve kamera girdisiyle kontrol edilen serbest biçimli etkileşimli dünya üretim modeli. Tek RTX 4090 üzerinde düşük bellekli çıkarım yapar, LoRA ince ayarı destekler ve etkileşimli web demosu içerir. Python, lisans NOASSERTION.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "coollabsio/orbit",
+   "inputs_hash": "290256038f894c1669fd5d4b49abd95e",
+   "description_tr": "Görevleri, belgeleri, sohbeti ve postayı kendi sunucunda tek uygulamada toplayan kendi kendine barındırılan ekip çalışma alanı; Linear, Notion ve Slack'e alternatif. Tek Rust ikilisi, gömülü React arayüzü, SQLite veya Postgres kullanır; yapay zekâ istemcileri OAuth'lu MCP sunucusuyla bağlanır. Posta modülü henüz sahte veriyle. TypeScript, Apache-2.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "mileson/chaojifeng-video-design",
+   "inputs_hash": "5964ca13eea6b537ccd00dd7d80fbd5a",
+   "description_tr": "Yapay zekâ ajanları için video tasarım metodolojisi skill'i: video ana çizgisi, storyboard, ses-görüntü ritmi, üretim ve teslim doğrulaması. Müzik videosu, rap tarzı bilgi anlatımı ve ürün tanıtımı gibi türler için örnek istemler verir. HTML, MIT; README Çince.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "NotRexed/SkyboundTotk",
+   "inputs_hash": "3d1401a50cd20ad39c622381f79fd2f1",
+   "description_tr": "The Legend of Zelda: Tears of the Kingdom 1.0.0 için deneysel yerel statik yeniden derleme projesi: oyunun AArch64 kodu C'ye çevrilip yerelde derlenir, grafikler WebGPU'ya aktarılır. Oyun dosyalarını kullanıcı kendi getirir, repoda oyun verisi yok. Windows x64 ve Linux; C++, MIT, Nintendo ile ilişkisiz.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "sarsonj/rodokmen-skill",
+   "inputs_hash": "062ecda6324ab5cce08201c389dc6f18",
+   "description_tr": "Çek kilise sicillerinden (matrika) soy ağacı çıkarmaya yardım eden bir agent skill'i: kurrent yazı, Latince ve kısaltmalar üzerinde çalışır, her bilgi için kaynak ve özgün kayıt kesiti tutar, belirsiz yerleri işaretler. README profesyonel genealogun yerini almadığını ve doğruluğun kullanıcıda olduğunu vurguluyor. Python, NOASSERTION.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "smarkyie/NSP-Box",
+   "inputs_hash": "f5b205185def1b48289d4728937b56e1",
+   "description_tr": "Switch 2 oyun paketleri (NSP) hazırlayan deneysel Windows aracı; yasal yollarla edinilmiş oyun görüntüleri ve çıkarılmış DLC için, emülatöre geri alınabilir yama seçeneğiyle. README bellek ayarı uyarısı veriyor ve doğrulamanın yalnızca paket bütünlüğünü kapsadığını, açılış veya oynanışı kapsamadığını belirtiyor. Python, MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  }
+ ]
+}

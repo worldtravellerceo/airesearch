@@ -1,15 +1,6 @@
 {
  "repos": [
   {
-   "full_name": "jarrodwatts/jev-trader",
-   "inputs_hash": "f9eefb0070592f9355fadf09b778c3ce",
-   "description_tr": "jev-trader, Monad zincirinde her blokta bir alım-satım kararı üreten açık kaynak bir bot. Kuru borsasındaki MON-USDC emir defterini okuyup yaklaşık 300 ms'de al ya da sat cevabı veriyor, her blokta touch'ın bir tick içine post-only limit emri koyuyor ve bir önceki emri iptal ediyor; böylece spread'i ödemek yerine kazanmayı hedefliyor. PRIVATE_KEY verilmediğinde gerçek emir defteri ve gerçek kararlarla ama simüle dolumlarla dry-run çalışıyor; karar modeli olarak Jev (TypeSafe AI) ya da yerleşik momentum tabanlı bir mock model kullanılabiliyor. Bun üzerinde çalışan TypeScript kodu, sıcak yolu iki RPC turuna indiren ölçülmüş bir gecikme bütçesi ve SSE ile blok başına olay yayınlayan küçük bir sunucu içeriyor. MIT lisanslı, yaklaşık 2.000 star; Eylül 2026'da açılmış çok yeni bir repo.",
-   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam Arslan Holding'in FinTech ilgisi, ama bu bir ürün değil tek bir DEX üzerinde çalışan kişisel bir deney. Lyricdrop, Folio ya da kişisel bilgi tabanı tarafında karşılığı yok; zincir üstü piyasa yapıcılığı senin ele aldığın problemlerin hiçbirine değmiyor. Tek aktarılabilir yanı yöntemi: projenin README'si karar döngüsünü bir gecikme bütçesine oturtup sıcak yoldan her şeyi ölçerek çıkarıyor. Aynı disiplin Lyricdrop'un kelime hizalama adımında da işe yarar; oradaki adımların p50 sürelerini yazıp neyin sıcak yolda kalacağına böyle karar verebilirsin. Bunun dışında kurup denemek için bir sebep yok.",
-   "matched_project": null,
-   "relevance": 1,
-   "investment_note": null
-  },
-  {
    "full_name": "YuJunZhiXue/dsh-purge",
    "inputs_hash": "32f3c0686ca94f1789300b3efa3bd2d1",
    "description_tr": "dsh-purge, yerel kurulu DeepSeek Harness (dsh) üzerinde güvenlik ve reddetme politikasını değiştiren bir plugin; kendisini kontrollü bir red-team / güvenlik değerlendirme aracı olarak tanımlıyor. Kurulu resmi @deepseek-ai paketlerine geri alınabilir yamalar uyguluyor ve model başına farklı sistem promptu takılmasına izin veriyor; varsayılan prompt Çince modellere göre ayarlanmış. Node.js 22 ve üzeri isteniyor, kurulumdan sonra uygulama ve yeniden başlatma gerekiyor. README'nin önemli bir kısmı hukuki uyarı, sorumluluk reddi ve bağış adreslerinden oluşuyor; teknik belgelendirme Wiki'ye bırakılmış. JavaScript, MIT lisanslı, yaklaşık 1.860 star, Ağustos 2026'da açılmış.",

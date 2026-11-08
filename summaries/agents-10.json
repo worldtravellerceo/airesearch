@@ -82,15 +82,6 @@
    "investment_note": null
   },
   {
-   "full_name": "Mantitup-Org/vista",
-   "inputs_hash": "530d7f50258a78932ac8335969080376",
-   "description_tr": "Vista.js, Next.js'in zihinsel modelini birebir izleyen bir React 19 çatısı: `app/` altında dosya tabanlı rotalar, varsayılan olarak React Server Components ve `dev`/`build`/`start` için tek bir CLI. Dosya tabanlı API route'ların yanında uçtan uca tipli bir API katmanı (`vista/stack`) sunuyor, isteğe bağlı olarak Rust tabanlı bir derleme motoruyla kurulabiliyor. LLM sohbeti, araç çağrısı, akışlı arayüz ve kendi dokümanların üzerinde RAG için hazır yollar dokümante edilmiş. Depoda GitHub açıklaması yok ve lisans alanı tanımlanamamış görünüyor. TypeScript, ~2,4K star; depo bu ay açılmış, yani olgunluğu hakkında konuşmak için henüz erken.",
-   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam Lyricdrop'un Supabase ve CDN ile canlı duran admin/test paneli. Ama o panel zaten çalışıyor ve web tarafında Vercel ile kurduğun yol tanıdık; birkaç haftalık, lisansı belirsiz bir çatıya geçmek sana ölçülebilir bir şey kazandırmadan risk ekler. Yerleşik RAG ve LLM yolları ilk bakışta ikinci beyin fikrine yakın duruyor, fakat oradaki asıl iş arayüz çatısı değil ses, sınıflandırma ve arama katmanı. Yeni bir proje başlatırken denemek istersen bunu atılabilir bir prototiple sınırlamak doğru olur.",
-   "matched_project": null,
-   "relevance": 2,
-   "investment_note": null
-  },
-  {
    "full_name": "redhat-et/ripwire",
    "inputs_hash": "aa760f916f5f0bd937c7edafa844644f",
    "description_tr": "ripwire, kodlama ajanlarının depoyu baştan sona okumadan iş görmesi için sıralı ve deterministik bir çağrı grafiği üreten, çalışma zamanı bağımlılığı olmayan bir C++23 CLI'ı ve MCP sunucusu. Düzenleme öncesinde neye dokunulacağını, neyin kırılacağını ve hangi testlerin koşturulması gerektiğini; düzenleme sonrasında etki alanını, kötüleşen kalite ölçütlerini, unutulmuş eş-değişiklikleri ve birden fazla anlama gelen isimleri raporluyor. tree-sitter üzerine kurulu ve TypeScript, Python, Rust, Swift, C++ gibi dilleri hedefliyor; imzaların gövdelere göre %74,7 daha az bayt tuttuğunu ölçerek bağlam tasarrufunu sayıyla veriyor. Depo, dayandığı 71 makale ve 49 depoyu satır satır listeleyen bir köken belgesi ve hiçbir şey katmayan 237 aracın etiketli dökümünü de yayımlıyor. Apache-2.0, ~2,3K star, Red Hat'in Emerging Technologies grubu altında geliştiriliyor.",
@@ -98,15 +89,6 @@
    "matched_project": "Lyricdrop",
    "relevance": 7,
    "investment_note": null
-  },
-  {
-   "full_name": "HarnessRouter/harnessrouter",
-   "inputs_hash": "2372ca5f306968b77d89cfc2fc2c420b",
-   "description_tr": "HarnessRouter, Codex, Claude Code, Hermes ve PI gibi ajan koşum takımlarını tek bir API'nin arkasına alan, kendi altyapında çalıştırılan bir ara katman. Kalıcı oturumlar, akışlı ilerleme, dosya ve artefakt taşıma, iptal ve yapılandırılmış hata dönüşlerini standart biçimde sunuyor; API'si OpenAI Responses ile uyumlu. Arkasında Unified Harness Protocol (UHP) adında açık bir protokol ve buna eşlik eden bir uygunluk test takımı var, böylece koşum takımı değiştirmek istemci kodunu değiştirmeden yapılabiliyor. Community Edition Apache-2.0 lisanslı ve Docker imajı olarak dağıtılıyor; anahtarlar ve altyapı kullanıcıda kalıyor. Python, ~2,1K star; depo 2026 Ağustos'unda açılmış.",
-   "usage_tr": "OpenCode için Expo/EAS ile kendi iOS istemcini yazma planında en büyük yük koşum takımına özel bağlantı işleri; bu proje tam o katmanı tek API'ye indiriyor ve istemcini tek bir entegrasyonla yazmana izin veriyor. Ofisteki Mac'te ya da Mac mini'de Tailscale arkasında self-host edilebilir, anahtarlar sende kalır — kapalı üçüncü parti istemcilere güvenmeme ilkene uyan tarafı bu. Oturum, iptal ve yapılandırılmış hata dönüşleri olması, Remote Control bağlantısı koptuğunda işin nerede kaldığını kaybetmemek açısından pratik bir fark yaratabilir. Öğrenmeyi planladığın Hermes'in de desteklenen koşum takımları arasında sayılması, tek bir arayüzden karşılaştırma yapmanı kolaylaştırır. Uyarı: Claude Code'u bir yönlendiricinin arkasından çalıştırmak kimlik doğrulama ve abonelik koşullarını kendiliğinden çözmez; Max aboneliğinin resmi istemciye bağlı olduğunu hesaba katıp maliyet varsayımını kurmadan önce doğrula.",
-   "matched_project": "Asistan ve holding araçları",
-   "relevance": 6,
-   "investment_note": "Koşum takımları arasında taşınabilirlik sağlayan açık bir protokol tanımlayıp uygunluk testiyle birlikte yayımlamak, ajan altyapısı katmanında savunulabilir bir konum; erken aşama AI altyapı tezine uyan bir izleme adayı."
   },
   {
    "full_name": "appeeky/aso-skills",
@@ -124,24 +106,6 @@
    "usage_tr": "Lyricdrop lansmanı için ayrılan pazarlama bütçesi harcanmaya başladığında rapor ve denetim işi tekrar eden bir yük olur; bu sunucu kampanya verisini Claude Code'a taşıyıp haftalık denetimi tek komuta indirir. n8n zaten yığınında olduğu için raporu zamanlanmış bir akışa bağlayıp çıktısını asistanınla paylaşman mümkün. Uyarı önemli: varsayılan yol, reklam hesaplarına OAuth ile bağlanan, satıcı tarafından barındırılan uzak bir MCP sunucusu — hesapların ve verinin daima kendi kontrolünde kalması ilkenle çelişir. MIT lisanslı olduğu için depoyu kendi altyapında çalıştırmak tercih edilecek yol; barındırılan uç noktayı kullanacaksan en azından ayrı ve dar yetkili bir hesapla bağlan. Reklam harcaması başlamadan kurmanın anlamı yok, lansman takvimine göre sıraya al.",
    "matched_project": "Lyricdrop",
    "relevance": 5,
-   "investment_note": null
-  },
-  {
-   "full_name": "Vincentwei1021/anything2explainer",
-   "inputs_hash": "442ab4b6b31b293164c68c01aa08a4d8",
-   "description_tr": "anything2explainer, bir konuyu seslendirilmiş motion-graphics anlatım videosuna çeviren bir Claude Code / Codex skill'i. Her kare Remotion ile React ve TypeScript kodunda çiziliyor; stok görüntü ya da üretken video modeli kullanılmıyor. Çıktı 1280x720 H.264 bir MP4: senkron seslendirme, kelime sınırına hizalanmış altyazı, bölüm kartları ve ilerleme çubuğu; yanında araştırma dokümanı, anlatım metni, storyboard, sahne kaynak kodları ve QC raporları teslim ediliyor. Seslendirme için yerel kokoro-82m modeli ya da kendi TTS'ini getirme yolu var; dil olarak Çince ve İngilizce destekleniyor. Ajan sahneleri paralel alt-ajanlarla kuruyor, video başına kabaca 1-3 saat sürüyor ve dört noktada kullanıcı onayı alıyor. TypeScript, PolyForm Noncommercial lisanslı, ~2,0K star; depo iki hafta önce açılmış.",
-   "usage_tr": "Folio'nun günlük içerik pipeline'ında sevdiğin yazarların kitaplarını anlatan video story'ler üretmek gerekiyor; bu skill tam olarak konu girip anlatımlı video almak üzerine kurulu ve çıktısı kodla çizildiği için şablonu bir kez oturtunca tekrar edilebilir. kokoro seslendirmesi Mac'te yerel çalıştığı için API maliyeti getirmiyor, Claude Code içinden yürüdüğü için de mevcut kurulumuna ek bir şey gerekmiyor. Lisans burada belirleyici: PolyForm Noncommercial olduğu için yalnızca kendi telefonunda duracak ve yayımlanmayacak Folio için uygun, Lyricdrop'un ticari tanıtım içeriği için değil. Türkçe kaynaklardan psikoloji ve felsefe öğrenme isteğine de yakın duruyor, ancak desteklenen diller Çince ve İngilizce — Türkçe anlatım için TTS tarafını kendin bağlaman gerekir. Uyarı: video başına 1-3 saat ve dört onay noktası, günlük besleme temposuna olduğu gibi oturmaz; önce tek bir bölüm üretip şablonu sabitlemek, sonra onay adımlarını azaltmak gerekir.",
-   "matched_project": "Folio",
-   "relevance": 6,
-   "investment_note": null
-  },
-  {
-   "full_name": "Appllama/appllama-skills",
-   "inputs_hash": "2b09fd0ab88e867f1a5b5f744093e672",
-   "description_tr": "Appllama skills, mobil uygulama geliştirmeyi hedefleyen iki agent skill'inden oluşuyor. Birincisi, en çok kazanan uygulamaların gerçek ekranlarını, akışlarını ve arayüz kalıplarını gelir ve indirme bağlamıyla birlikte tutan bir MCP kütüphanesi üzerinde araştırma yapmayı öğretiyor. İkincisi yapım çıtasını tanımlıyor: Apple HIG'e sadık, yerel hissettiren Expo / React Native ekranları, semantik renkler, yerel kontroller, push ile replace ayrımını doğru kuran navigasyon, JS thread'ini meşgul etmeyen katı bir hareket kuralı ve üretilmiş görsel varlıklar. Doğrulama ekran görüntüsüyle değil, simülatörde kaydedilip kare kare izlenen tam akışlarla yapılıyor. Kurulum `npx skills add` ile Claude Code, Cursor, Codex ve diğer uyumlu ajanlarda tek komutta. MIT lisanslı, ~2,0K star.",
-   "usage_tr": "Lyricdrop v2'de panel bittikten sonra sıra mobile geliyor ve yığının zaten Expo + React Native; bu paket \"çalışıyor\" ile \"yerel hissediyor\" arasındaki farkı kapatmak için yazılmış, ki AI ile üretilen RN ekranlarının en çok döküldüğü yer tam olarak orası. Folio'nun Instagram ekranlarını birebir taklit eden tasarımı için de aynı yapım kuralları işe yarar: dikey feed, story şeridi ve geçiş animasyonlarının gerçekten yerel görünmesi gerekiyor. Simülatörde akışı kaydedip kare kare denetleyen döngü, görsel kontrolü kendin yapmaktan kurtulma isteğinle doğrudan örtüşüyor ve asistanına ya da dışarıya devredilebilir bir kabul kriteri üretiyor. Skill'ler Claude Code içinde çalıştığı için ek model maliyeti yok; araştırma yarısı satıcının MCP kütüphanesine bağlı olduğundan orada bir hesap gerekiyor. Uyarı: doğrulama döngüsü iOS simülatörü üzerine kurulu, Android TV yüzeyin bu kapsamın dışında kalıyor.",
-   "matched_project": "Lyricdrop",
-   "relevance": 7,
    "investment_note": null
   },
   {

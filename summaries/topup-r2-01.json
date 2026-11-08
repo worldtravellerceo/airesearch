@@ -10,15 +10,6 @@
    "investment_note": null
   },
   {
-   "full_name": "feder-cr/invisible_playwright_mcp",
-   "inputs_hash": "20578fa9885786a8b2e173e1d6dffecb",
-   "description_tr": "Playwright tabanlı, anti-bot ve captcha sistemlerine yakalanmamaya göre ayarlanmış bir stealth Firefox üzerinde çalışan bir MCP sunucusu. İki kullanım biçimi var: MCP olarak Claude Code, Codex ya da Gemini CLI'ya takılıyor; ya da OpenRouter anahtarıyla kendi web arayüzünde tek başına çalışıyor. Sayfayı bir insanın süreceği gibi sürüyor (imleç hareketi, tuş vuruşu) ve proxy, tarayıcı profili ile model seçimi komut satırı bayraklarıyla ayarlanıyor. Python ile yazılmış, uv/uvx ile kuruluyor, MIT lisanslı, ~31,8 bin yıldız, Ağustos 2024'te açılmış. Odağı tespit edilmemek olduğundan hedef sitelerin kullanım şartları tamamen kullanıcının sorumluluğunda kalıyor.",
-   "usage_tr": "Arslan Holding'in deal sourcing ve pazar araştırması adımında, API'si olmayan ya da bot trafiğini kesen kaynaklardan (şirket siteleri, girişim veri tabanları, etkinlik listeleri) veri toplamak için kullanabilirsin. MCP olarak Claude Code'a taktığında model tarafı Max aboneliğinden gider, ayrı API maliyeti doğmaz; standalone web arayüzü ise OpenRouter anahtarı istiyor. Ofis Mac'inde yerel çalışıyor ve toplama işini asistanına devredebileceğin bir forma sokulabilir: görevi tarifle, çıktıyı HubSpot ya da Trello tarafına yazdır. Faydası, tek tek sayfa açıp okumakla geçen araştırma saatlerini kısaltması. Uyarı: LinkedIn gibi platformlarda tespit önleyici otomasyon hesap kapanmasına ve kullanım şartları ihlaline yol açıyor; networking kanalın oraya bağlı olduğu için bu riski almaya değip değmeyeceğine baştan karar ver.",
-   "matched_project": "Arslan Holding",
-   "relevance": 6,
-   "investment_note": null
-  },
-  {
    "full_name": "kestra-io/kestra",
    "inputs_hash": "c2329b5ca49c07a3cc11d3fade68f9f7",
    "description_tr": "Kestra, veri, AI ve altyapı iş akışlarını YAML ile tanımlayıp hem zamanlanmış hem olay tetiklemeli olarak çalıştıran açık kaynak bir orkestrasyon platformu. Aynı akış YAML editöründen, no-code editörden ve dahili bir AI copilot'tan düzenlenebiliyor; Git versiyonlama entegrasyonu, yüzlerce eklenti, AI agent ve RAG görev tipleri ile akışları ajanlara araç olarak açan bir MCP sunucusu var. Java ile yazılmış, Apache-2.0 lisanslı ve yüksek erişilebilirlik ile milyonlarca akış hedefleyen kurumsal bir mimariye sahip. 2019'da açılmış, ~29,2 bin yıldız; 2.0 sürümüyle aktif geliştiriliyor. Kurumsal özellikler için ayrıca ticari bir sürüm sunuluyor.",
@@ -91,15 +82,6 @@
    "investment_note": "Kurumsal tarafta ajan harcamasının ölçülmesi ve model yönlendirmesi yeni ama hızla bütçe açılan bir kalem; kategori olarak erken aşama B2B yazılım tezine oturuyor."
   },
   {
-   "full_name": "lexmount/moli",
-   "inputs_hash": "780486cfeaeccb02854f1f1c6b89faf0",
-   "description_tr": "Moli, AI ajanları için tasarlanmış, Rust ile yazılmış açık kaynak bir headless browser. Düzen ve render işini talep üzerine yaptığı için tam bir tarayıcı çalışma zamanını düşük kaynak tüketimiyle sunduğunu söylüyor; sayfayı Markdown olarak ya da modele uygun derli toplu bir semantik ağaç olarak dökebiliyor. CLI, CDP, WebDriver Classic ve WebDriver BiDi arayüzleri var; Linux, macOS ve Windows'ta çalışıyor ve hazır ikili dosyalarla kuruluyor. Apache-2.0 lisanslı, ~8,8 bin yıldız. Ağustos 2026'da açılmış, yani iki aylık bir proje ve uyumluluk iddiasının sınırları henüz dışarıdan doğrulanmış değil.",
-   "usage_tr": "Araştırma ajanları tarafında sayfa indirip metne çevirme işini yapan katman olarak kullanabilirsin: CLI olarak Claude Code'a verip bir listedeki sayfaları Markdown'a çevirttiğinde ham HTML'i modele yüklemek zorunda kalmazsın. Arslan Holding için pazar ve rakip notları hazırlarken bu, bağlam tüketimini ve dolayısıyla okuma turunu kısaltır. Ofis Mac'inde yerel çalışıyor, API maliyeti yok ve tek ikili dosya olduğu için kendi pipeline'ına rahat girer. Uyarı: proje çok yeni ve JavaScript ağırlıklı karmaşık sitelerde davranışı tam Chrome değil; bot koruması olan kaynaklarda da işe yaramaz, onlar için ayrı bir araç gerekir.",
-   "matched_project": "Asistan ve holding araçları",
-   "relevance": 4,
-   "investment_note": null
-  },
-  {
    "full_name": "mobile-next/mobile-mcp",
    "inputs_hash": "5da0b0832ed98306b3db302d67a95b74",
    "description_tr": "Mobile MCP, iOS ve Android uygulamalarını bir MCP sunucusu üzerinden ajanlara açan bir otomasyon katmanı. Simülatör, emülatör ve gerçek cihazlarda aynı araç setiyle çalışıyor; uygulamayı öncelikle native erişilebilirlik ağacından sürüyor, gerektiğinde ekran görüntüsü ve koordinat tabanlı dokunmaya düşüyor. Dokunma, kaydırma ve jestlerin yanında uygulama kurma/başlatma/kapatma, ekran kaydı, donanım tuşları, deep link ve ekran yönü gibi cihaz kontrollerini kapsıyor; XCUITest ya da Espresso bilgisi gerektirmiyor. TypeScript ile yazılmış, Apache-2.0 lisanslı, ~8,7 bin yıldız, Mart 2025'te açılmış. Yanında aynı araçları bulut cihazlarda sunan ticari bir hizmet de var.",
@@ -124,15 +106,6 @@
    "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; araç yalnızca Windows'ta çalışıyor, senin tüm geliştirme ve içerik pipeline'ın ise iki Mac üzerinde duruyor. En yakın bağlam, yalnızca Windows'ta çalışan eski bir masaüstü yazılımını otomatikleştirme ihtiyacı doğarsa bunu bir sanal makinede koşturmak olurdu. macOS tarafındaki muadilleri için ayrı araçlara bakmak gerekir. Bu satırı atlayabilirsin.",
    "matched_project": null,
    "relevance": 0,
-   "investment_note": null
-  },
-  {
-   "full_name": "KKKKhazix/AIHOT",
-   "inputs_hash": "99a881d19a021bca80f8dcb801260b99",
-   "description_tr": "AIHOT, kendi sektörel gündem sitesini kurmak için yayınlanmış açık kaynak bir çatı. RSS, web listeleri, JSON API, X hesapları, WeChat hesapları ve kendi betiklerinden gelen içerikleri topluyor, tekrarı ayıklıyor, ön eleme yapıyor, aynı ölçütle iki kez bağımsız puanlıyor ve eşiği geçenler için başlık ve özet yazıyor. Aynı olayı anlatan farklı kaynakları tek bir olaya kümeliyor; sıcaklığı makale değil olay başına, 48 saatlik pencerede her bağımsız kaynağı bir kez sayarak hesaplıyor ve günlük, haftalık, aylık bülten üretiyor. Tüm prompt'lar ve eşikler depoda açık metin olarak duruyor, her adımda ayrı model seçilebiliyor, ücretli servisler için bütçe sigortası var; içerik RSS, açık API, MCP ve llms.txt ile ajanlara da açılıyor. TypeScript ve PostgreSQL, Docker Compose ile kuruluyor, MIT lisanslı; Eylül 2026 sonunda açılmış ve kısa sürede ~6 bin yıldıza ulaşmış. Prompt'lar ve çıktı Çince yazılmış; geliştiricisi kodun profesyonel bir çatı olarak değil, çalışan bir sitenin motorundan çıkarılarak paylaşıldığını belirtiyor.",
-   "usage_tr": "Arslan Holding'in deal flow ve pazar araştırması tarafında hazır bir iskelet olarak işine yarar: kaynak listesini MENA-Türkiye AI ve girişim sermayesi kaynaklarıyla, seçim ölçütünü de kendi yatırım merceğinle değiştirdiğinde her sabah tek bir bülten çıkar. Kurulum Docker Compose ve PostgreSQL ile olduğu için DigitalOcean tarafındaki mevcut altyapına oturur; MCP ve API çıkışı sayesinde aynı içeriği Claude Code'a da verebilirsin. İşletmesini asistanına devredebilirsin, çünkü kaynak ekleme, hatalı eşleşmeyi düzeltme ve yayın saatini değiştirme panelden yapılıyor. Faydası, 'hangi haber gerçekten önemli' kararını prompt ve eşik olarak yazıya dökmesi; bu kararı sonradan ölçüp kalibre edebiliyorsun. Uyarı: prompt'lar ve çıktı Çince, Türkçe ya da İngilizce bülten için hepsini çevirmen gerekir; ayrıca her içerik için model çağrısı yapıldığından maliyet kaynak sayısıyla doğru orantılı artar, bütçe sigortasını baştan düşük tut.",
-   "matched_project": "Arslan Holding",
-   "relevance": 6,
    "investment_note": null
   },
   {

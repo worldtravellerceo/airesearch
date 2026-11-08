@@ -28,15 +28,6 @@
    "investment_note": null
   },
   {
-   "full_name": "3641397194-wq/gpt6-Astra",
-   "inputs_hash": "6ade2d002abcfea74d289ab1f142fcef",
-   "description_tr": "Çince bir masaüstü \"çalışma tezgâhı\" uygulaması: altı model koltuğu tanımlayan görev şablonları, yerel görev sözleşmesi kurma, oturum sürümlerini karşılaştırma ve çıktı üzerinde JSON, kod bloğu ve zorunlu kelime kontrolleri yapma gibi işlevler sunuyor. Asıl konumlandırması model kısıtlarını aşmaya yönelik prompt paketleri (\"break/open\") ve bunları otomatik uygulayan, kullanım başına ücretlendirilen bir OpenAI uyumlu ara sunucu hizmetine giriş noktası olması. Deponun kendisi sürümü 3.1.0-preview olarak işaretliyor ve README açıkça gerçek model üzerinde etkinin doğrulanmadığını, metin kontrollerinden geçmenin model kısıtının aşıldığı anlamına gelmediğini yazıyor. Dosya dağıtımında SHA-256 karşılaştırma ve yazma öncesi yedekleme gibi ayrıntılar var. Lisans standart bir açık kaynak lisansı olarak tanınmıyor (NOASSERTION); 693 yıldız, Ağustos 2026.",
-   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam prompt dayanıklılığı konusuna genel ilgi olabilir, o da bu depoda araç biçiminde değil. Ürünün merkezinde ücretli bir ara sunucu var; yani hem yerel çalışma tercihinin hem de mevcut abonelik düzeninin dışına çıkıyor ve model trafiğini üçüncü bir tarafın üzerinden geçiriyor. Sağlayıcı kullanım şartlarını aşmayı hedefleyen bir katmanı yayına giren bir ürüne yaklaştırmak ayrıca hesap riski demek. Arayüz ve belgeler tamamen Çince; asistanına devredilebilecek bir tarafı da yok.",
-   "matched_project": null,
-   "relevance": 0,
-   "investment_note": null
-  },
-  {
    "full_name": "myccarl/ai-shortVideo-pipeline",
    "inputs_hash": "04b90e2247ba47b9fac146201df83e54",
    "description_tr": "Konu bulmadan yayına kadar kısa video üretimini uçtan uca otomatikleştiren açık kaynak bir pipeline. Yedi katmana ayrılmış: konu, kreatif, görsel, ses, post prodüksiyon, dağıtım ve optimizasyon; katmanlar birbirinden bağımsız değiştirilebiliyor. Orkestrasyon FastAPI, asyncio, SQLAlchemy ve ARQ ile Python tarafında; önünde JWT, yönlendirme, Resilience4j devre kesici, ölçümleme ve Prometheus taşıyan bir Spring Boot ağ geçidi var; veri katmanı PostgreSQL, Redis ve MinIO, gözlemlenebilirlik Langfuse. Kalite kapıları projenin ayırt edici yanı: karakter görünümünü sahneler arasında sabitleyen prompt çıpalama, prompt'a uymayan kare anahtarlarını erkenden eleyen CLIP tutarlılık kontrolü ve dört kademeli ses-görüntü senkron kurtarma. Model tarafında DeepSeek, GLM-4V, Kling v2.5, MiniMax/Volcengine TTS ve faster-whisper kullanılıyor; Docker Compose ile kuruluyor, MIT lisanslı, 656 yıldız, Haziran 2026.",

@@ -1,15 +1,6 @@
 {
  "repos": [
   {
-   "full_name": "peonist-ai/halogen-flash-server",
-   "inputs_hash": "16b180fe79773eb208e8384f817c2d65",
-   "description_tr": "halogen-flash-server, Qwen3.8-Flash-Next modelini AMD Strix Halo (gfx1151) yongası üzerinde çalıştırmak için yazılmış özel bir çıkarım sunucusu. Kernel'lerin tamamı tek bir GPU ve tek bir model ailesi için yazılmış; genel amaçlı bir çalışma zamanı, taşınabilirlik katmanı veya yedek yol yok. 32K promptlu bir ölçümde prefill ve decode sürelerini, rakip çalışma zamanlarının yayımlanmış sayılarıyla yan yana veriyor ve bit/ağırlık değerini checkpoint'in kendi tensor tablosundan hesaplayıp belgeliyor. Speculative decoding sıcaklık 0'da seri greedy decode ile bayt düzeyinde aynı çıktıyı verecek şekilde kurulmuş, yani hız optimizasyonu kalite takası olarak sunulmuyor; 0.7.0'dan beri mevcut llama.cpp GGUF dosyaları da doğrudan açılabiliyor. OpenAI uyumlu API ve ajan harness'larından kullanım belgelenmiş. ~646 star; lisans alanı standart bir OSI lisansı olarak işaretlenmemiş.",
-   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; motor yalnızca AMD Strix Halo (gfx1151) donanımında çalışıyor, senin tarafındaki iki makine ise ofisteki M4 Pro MacBook ve evdeki Mac mini. En yakın bağlam, ücretli API yerine yerel model çalıştırma tercihin: aynı ihtiyacı Apple Silicon tarafında Metal tabanlı çalışma zamanları karşılıyor, bu depo o listeye giremiyor. Tek değeri ölçüm disiplini olabilir; prefill ve decode'u ayrı ayrı raporlama ve bit/ağırlık değerini checkpoint'ten hesaplama biçimi, kendi STT ve model karşılaştırmalarında örnek alınabilecek bir raporlama şablonu. Donanım almadan denenecek bir tarafı yok, o yüzden kurulum maliyetine girmeden geçebilirsin.",
-   "matched_project": null,
-   "relevance": 1,
-   "investment_note": null
-  },
-  {
    "full_name": "leonickson1/Swiftlet",
    "inputs_hash": "1b72548d9b2ffbbb3b0af41ccbb2ae3b",
    "description_tr": "Swiftlet, Qwen3-Next ve Qwen3.5/3.6 MoE ailesini Apple cihazlarında çalıştıran Swift ve Metal tabanlı bir çalışma zamanı. Modelin küçük yoğun çekirdeğini bellekte tutup yönlendirilen expert ağırlıklarını depolamadan akıtıyor; böylece 4-bit 35B model diskte 18 GB yer kaplarken tepe RAM kullanımı 2.6 GB'ta, 4-bit 80B ise 4.3 GB'ta kalıyor. Yayımlanan ölçümlerde M5 Mac'te 4-bit 35B 7-11 tok/s, M4 Max'te ~19.5 tok/s, iPhone 17'de ~1 tok/s; decode hızı model boyutundan çok aktif parametre sayısına bağlı. macOS 14+ ve iOS 17+ hedefleniyor, lisans Apache-2.0, ~644 star ve geliştirme şu an kernel hızına odaklanmış durumda. Depo dürüst bir sınır da koyuyor: token başına yalnızca ~3B parametre aktif olduğu için bu modeller büyük model gibi yazıyor ama küçük model gibi olgu hatırlıyor.",
@@ -35,24 +26,6 @@
    "matched_project": null,
    "relevance": 1,
    "investment_note": null
-  },
-  {
-   "full_name": "pallavi-shekhar/ai-engineering-interview-questions-company-wise",
-   "inputs_hash": "109f2cab0d7ff0dabb9257c0c9ded226",
-   "description_tr": "35 şirketin AI mühendisliği mülakatlarında sorulduğu bildirilen soruları şirket şirket derleyen, cevapları olduğu yerde bağlanmış bir Markdown deposu. Ortak başlıklar arasında LLM iç yapısı, çıkarım/serving ve GPU performansı, RAG, ajanlar ve tool use, fine-tuning ve hizalama, değerlendirme ve gözlemlenebilirlik, güvenlik, çok modluluk ve AI sistem tasarımı var. Frontier laboratuvarlar, büyük teknoloji şirketleri, altyapı şirketleri ve AI-native ürün şirketleri ayrı bölümlere ayrılmış. Sorular kamuya açık mülakat deneyimlerinden derlendiği, gizli bilgi içermediği ve sürekli güncelleneceği belirtiliyor. Bir eğitim şirketi tarafından bakılıyor; Apache-2.0, ~621 star ve depo Eylül 2026'da açılmış.",
-   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; bu bir çalışma listesi ve iş arayan mühendisler için hazırlanmış. En yakın bağlam, ileride bir AI mühendisi ya da freelance geliştirici değerlendirirken buradaki başlıkları ön eleme sorusu olarak kullanman olabilir. Yazılımı sen Claude Code ile ürettiğin için bu soruların cevaplarını ezberlemenin karşılığı yok. Kurulum, maliyet veya entegrasyon kararı gerektiren bir tarafı da yok; ihtiyaç doğarsa asistanına 'şu başlıktan beş soru çıkar' diye verilebilecek bir kaynak.",
-   "matched_project": null,
-   "relevance": 2,
-   "investment_note": null
-  },
-  {
-   "full_name": "incoai/splash",
-   "inputs_hash": "245a3640dab5e92a54f9f4a248b9f45a",
-   "description_tr": "Splash, Apple Silicon için yazılmış yerel bir çıkarım motoru; kernel'leri, draft modeli ve bellek planı servis ettiği her model için ayrı ayrı özelleştirilmiş, bu yüzden yapılandırma dosyası yok. OpenAI Chat Completions, OpenAI Responses ve Anthropic Messages uçlarını streaming, tool call, JSON Schema çıktısı, görsel ve satır içi PDF desteğiyle konuşuyor; ayrıca üretim yapmadan puanlama veren /v1/judgments ucu var. Homebrew ile kuruluyor ve `splash opencode`, `splash claude`, `splash codex` gibi komutlarla kurulu kodlama ajanlarını kendi sunucusuna bağlıyor. Gereksinimler net: M3 veya üstü, macOS 26.4+, en az 36 GB birleşik bellek (48 GB öneriliyor); şu an iki paket servis ediliyor, Qwen3.8-27B ve Qwen3.6-35B-A3B. Apache-2.0, ~603 star, CI ve LM Studio entegrasyonu belgelenmiş.",
-   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; motor en az 36 GB birleşik bellek istiyor, ofisteki M4 Pro'da ise 24 GB var, yani bugün kurulup denenebilecek bir aday değil. En yakın bağlam, kodlama ajanlarını yerel modelle besleme fikrin: OpenCode ve Claude Code'u tek komutla kendi sunucusuna bağlıyor olması, makineyi yenilediğin gün bu depoya tekrar bakmayı mantıklı kılar. Kodlamanın ana yolu zaten Max aboneliğin olduğu için buradan çıkacak kazanç maliyet değil, internet bağımsızlığı ve gizlilik olurdu. Şimdilik yapılacak tek şey depoyu izlemeye almak; RAM eşiği düşerse veya daha küçük bir paket eklenirse durum değişir.",
-   "matched_project": null,
-   "relevance": 2,
-   "investment_note": "Küme değil tek Mac hedefleyen, doğrudan kodlama ajanlarına servis veren ve bir yerel model istemcisiyle entegrasyonu olan bir motor; on-device çıkarımın ticarileşme tarafında tanışmaya değer bir ekip olabilir."
   },
   {
    "full_name": "microsoft/mattersim",

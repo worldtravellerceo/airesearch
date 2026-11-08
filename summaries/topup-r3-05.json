@@ -91,30 +91,12 @@
    "investment_note": null
   },
   {
-   "full_name": "yihui-dev/awesome-opus5-5-videos",
-   "inputs_hash": "10deef7b7093cc2a8530f910041ae2c9",
-   "description_tr": "Awesome Opus 5.5 Videos, Claude Opus 5.5 ile üretilmiş videoları ve arkalarındaki prompt'ları bir araya getiren bir derleme. Buradaki videoların hepsi bir video modeliyle değil, animasyonun kod olarak yazdırılmasıyla üretiliyor: HTML, Canvas, SVG ve Three.js gibi tarayıcı teknolojileri. README 475 prompt'un prompts/ dizininde ve data/videos.json dosyasında tutulduğunu, 100 tanesinin listede öne çıkarıldığını söylüyor; kategoriler motion graphics, explainer, 3D sahne ve oyun/etkileşimli olarak ayrılmış. Her girdi üretenin orijinal paylaşımına bağlanıyor, böylece prompt'un kaynağı izlenebilir kalıyor. Bağlı bir site aynı videoları canlı yeniden üretimleriyle yan yana gösteriyor. MIT lisanslı, 2.074 yıldız, Eylül 2026'da açılmış ve düzenli güncelleniyor.",
-   "usage_tr": "Folio'nun günlük içerik pipeline'ında prompt kaynağı olarak kullanabilirsin: bir yazarın kitabını anlatan story ve post'lar için explainer ve motion graphics kategorileri doğrudan o işe bakıyor. Videonun kod olarak üretilmesi senin için iki şey demek: üretim Claude Code ile Max aboneliğinin içinde kalır, klip başına API maliyeti çıkmaz, ve çıktı HTML/Canvas olduğu için Expo tarafında WebView'da oynatılabilir veya kaydı alınıp Supabase ile DigitalOcean üzerinden feed'e konabilir. Lyricdrop lansmanının tanıtım kreatiflerini de aynı kaynaktan besleyebilirsin. Faydası, her gün sıfırdan prompt yazmak yerine çalıştığı görülmüş kalıplardan başlamak. Uyarı: üretilen şey foto-gerçekçi video değil, kodla çizilmiş hareketli grafik; Folio'nun Instagram görünümünde bu bir üslup kararı olur. İkinci uyarı, bunun bir arşiv olması: günlük üretim döngüsünü n8n tarafında yine kendin kurman gerekir.",
-   "matched_project": "Folio",
-   "relevance": 5,
-   "investment_note": null
-  },
-  {
    "full_name": "coji/natural-japanese",
    "inputs_hash": "1815e83cfc9c234d96382fa3812c6f57",
    "description_tr": "natural-japanese, iş Japoncasını okunur ve anlaşılır biçimde yazmak ve düzeltmek için hazırlanmış bir Agent Skill. Tasarımı iki parçaya ayrılmış: metin yazılmadan önce başlık iskeleti sabitleniyor ve 12 maddelik bir üslup anayasası kısıt olarak uygulanıyor, sonradan düzeltmek yerine baştan engellemek hedefleniyor. Kalan kalıplar ise sudachipy ile morfolojik analiz yapan lint.py betiğiyle mekanik olarak tespit ediliyor; klişe ifadeler, monoton cümle ritmi ve İngilizceden birebir çeviri tonu kural tabanlı işaretleniyor. Neyin düzeltilip neyin bırakılacağına kararı insan veya ajan veriyor; ayrıca bir metnin doğallığını 0-100 arası ölçen bir tanı komutu var. Kurulum npx skills add, openskills veya Claude Code plugin'i olarak yapılabiliyor, betikler uv ile skill'den bağımsız da çalışıyor. MIT lisanslı, 1.875 yıldız, Temmuz 2026'da açılmış; dokümantasyon Japonca, README'de kısa bir İngilizce özet var.",
    "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, Türkçe yüz metinlerinde aynı \"AI kokusu\" probleminin yaşanması. Ne var ki araç dile kilitli: tespit katmanı sudachipy'nin Japonca morfolojik analizine dayanıyor, kural kataloğu da Japonca kalıplar üzerine kurulu, yani Türkçe bir metinde çalışmaz. İşine yarayan kısım aracın kendisi değil kurgusu: yazım öncesi iskelet, kural tabanlı mekanik tespit, kararı ajana bırakma ve bir rubrikle eşiğe kadar döngü. Bu yapıyı Türkçe için kendin kurarsan, ürün metinlerinde tekrar eden kalıpları gözle aramaktan kurtulursun; fakat o ayrı bir iş ve bu depo yalnızca referans olur.",
    "matched_project": null,
    "relevance": 2,
-   "investment_note": null
-  },
-  {
-   "full_name": "LearnPrompt/awesome-seedance",
-   "inputs_hash": "5bf6adbef1c0cb80c1419f10c0d23359",
-   "description_tr": "Awesome Seedance, Seedance 2.5 ve 2.0 metinden videoya modelleri için doğrulanmış bir prompt kütüphanesi. README'ye göre 760 vaka orijinal paylaşımlarına kadar izlenebiliyor, 367 çapraz model yeniden testi kamuya açık sonuçlarıyla veriliyor, 27 kopyalanmaya hazır şablon ve 76 kurulabilir AI-video skill'i bulunuyor. Vaka verisi goodcase.ai'den günlük olarak senkronlanıyor; şablonlar kategorilere ayrılmış ve kullanım için beş adımlık bir başlangıç akışı tanımlanmış. Çapraz model testleri, aynı prompt'un farklı video modellerinde ne verdiğini karşılaştırmayı amaçlıyor. README İngilizce, Çince ve Japonca sürümleriyle yayınlanıyor; kod MIT, derlemenin kendisi CC BY 4.0 lisanslı. 1.708 yıldız, Ağustos 2026'da açılmış; agent skill'i npm üzerinden de dağıtılıyor.",
-   "usage_tr": "Folio'nun günlük içerik üretiminde video tarafına bakıyor: bir yazarın kitabını anlatan story ve post'lar için şablonlardan başlayıp prompt yazma süresini kısaltabilirsin. Skill olarak kurulabildiği için üretimi Claude Code içinden çağırabilir, günlük döngüyü n8n ile tetikleyip asistanına devredebilirsin. Önemli uyarı maliyet tarafında: Seedance kapalı ve barındırılan bir model, her klip API faturası demek ve Mac'te yerel çalışmıyor; ElevenLabs ile Apify'ı maliyet nedeniyle bıraktığına göre önce günlük klip sayısı üzerinden birim maliyet hesabı yapmak doğru olur. Yalnızca kendi telefonunda duran bir uygulama için bu kalem hızla anlamsızlaşabilir, o yüzden Folio'yu düşük frekansla beslemek ya da hareketli grafik üreten ucuz yolu tercih etmek daha tutarlı. Lyricdrop lansmanının tanıtım kreatifleri gibi sayısı sınırlı ve getirisi ölçülebilir işlerde ise maliyet kendini savunabilir. Kütüphanenin değeri prompt'ların kaynağa bağlı olması: hangi kalıbın gerçekten çalıştığını deneyerek bulmak zorunda kalmıyorsun.",
-   "matched_project": "Folio",
-   "relevance": 6,
    "investment_note": null
   },
   {

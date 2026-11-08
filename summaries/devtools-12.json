@@ -73,24 +73,6 @@
    "investment_note": null
   },
   {
-   "full_name": "Spielewoy/autoprompt-skill",
-   "inputs_hash": "2fb40cba2ffc0491e892343e28097b33",
-   "description_tr": "Autoprompt, kodlama ajanının kendi işini gözden geçirip düzeltmesini ve yeniden kontrol etmesini sağlayan bir skill ve iş akışı. Claude Code, Codex, OpenCode, VS Code, Hermes Agent ve Grok Build dahil on bir ajan için kurulum yapan bir npm CLI'ı ile geliyor; doctor komutu mevcut kurulumları denetliyor, uninstall ile geri alınıyor. Yayınlanan ölçüm Terminal-Bench 2.1 üzerinde OpenCode ile yapılmış: 89 görevde 60 çözümden 73'e çıkış, yani %45 daha az başarısızlık. Aynı depo bunun karşılığının yaklaşık 3 kat süre ve 2 kat token olduğunu, ancak bu iki rakamın ölçülmediğini ve kullanıcı bildirimlerine dayalı tahmin olduğunu yazıyor. Node 20+, Python 3.11+ ve Bash gerektiriyor; MIT lisanslı, yaklaşık 1.250 yıldız, sürüm 2.0.0 ama yayımlanan benchmark'lar hâlâ v1'e ait.",
-   "usage_tr": "Lyricdrop v2'yi Superpowers ile yazdığın akışta doğrudan denenecek türden bir şey: ajanın ürettiği değişikliği ikinci bir geçişte gözden geçirip düzeltmesi, her değişikliğin iki ayrı açıdan review edilmesi isteğinin ucuz bir sürümü. Kurulumu ofis Mac'inde tamamen yerel, ek servis yok ve hem Claude Code'u hem OpenCode'u desteklediği için mevcut kurulumunu değiştirmeden yanına giriyor. Maliyet API faturası olarak değil Max aboneliğindeki kullanım limiti olarak geri döner: iki katı token ve üç katı süre, uzun oturumlarda limite daha hızlı çarparsın. Öğrenmeyi planladığın Hermes Agent da destekleniyor, o tarafa geçersen alışkanlığı taşıyabilirsin. Önce Lyricdrop admin panelinde dar ve iyi tanımlı bir görevde açıp aynı görevi skill'siz haliyle karşılaştır; benchmark başka bir ajan ve başka bir modelle alınmış, seninkine birebir taşınmaz. Küçük işlerde üç katı sürenin karşılığını vermeyebileceğini depo da söylüyor, kapatmayı kolay tut.",
-   "matched_project": "Lyricdrop",
-   "relevance": 8,
-   "investment_note": null
-  },
-  {
-   "full_name": "SaladDay/pi-from-scratch",
-   "inputs_hash": "b32e35a23e6a303d2220325092b98af6",
-   "description_tr": "pi-from-scratch, yaklaşık 600 satır TypeScript ile dosya okuyan, kod değiştiren ve komut çalıştıran küçük bir kodlama ajanı (nano-pi) yazmayı anlatan bir öğretici. pi adlı ajanın veri akışını sadeleştirerek yeniden kuruyor; araç çağrısı döngüsü, mesaj geçmişi ve araç tanımları adım adım ekleniyor. Yanındaki web sitesinde makale ilerledikçe sağdaki editörde kod tamamlanıyor, ayrıca önceden üretilmiş bir trace üzerinde çalışma akışı satır satır izlenebiliyor. Ajanı çalıştırmak için Node.js 22 ve OpenAI uyumlu bir API ucu gerekiyor; siteyi gezmek model çağrısı yapmıyor. Metnin tamamı Çince, MIT lisanslı, yaklaşık 1.230 yıldız.",
-   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, tüm projelerini bilen bir orkestratör ajan yazma isteğin olabilir. Bu depo bir bileşen değil bir ders: bitirdiğinde elinde üretime koyacağın bir parça değil, araç çağrısı döngüsünün nasıl kurulduğuna dair bir zihin haritası olur. TypeScript zaten günlük dilin olduğu için kod tarafı yorucu değil, ama anlatı Çince ve çeviriyle ilerlemek gerekir. Denemek istersen OpenAI uyumlu bir anahtar istiyor, yani Max aboneliğinin dışında küçük bir maliyet; sadece okumak için siteyi gezmek yeterli ve bedava. Aynı zamanı Claude Code üzerinde gerçek bir alt ajan kurgusu denemeye ayırmak muhtemelen daha çok şey öğretir.",
-   "matched_project": null,
-   "relevance": 2,
-   "investment_note": null
-  },
-  {
    "full_name": "CopilotKit/OpenTag",
    "inputs_hash": "bcd579f1644e295a6ef95867d5cace37",
    "description_tr": "OpenTag, Slack ve Microsoft Teams içinde çalışan, kendi altyapında barındırılabilen bir AI ajan başlangıç uygulaması. Channels SDK üzerine kurulu; ajan tarafı Python ve LangGraph, çalışma zamanı Node, arayüz AG-UI ile Slack'in kendi bileşenlerine çiziliyor — yüklenen bir CSV thread içinde grafik ve kısa bir yorum olarak geri dönüyor. Linear ve Notion gibi yazma işlemleri onay düğmesinin arkasında duruyor, onay verildiğinde LangGraph akışı kaldığı yerden devam ediyor; web araştırması kaynak listesiyle yanıtlanıyor. Railway üzerinde iki servis ya da AWS'de tek bir ECS Fargate görevi olarak dağıtım örnekleri ve yayımlanmış konteyner imajları var. Kanal bağlantısı ya CopilotKit'in yönettiği bir Channel ile ya da açık kaynak Channels SDK ile kendi çalıştırdığın bir runner ile kuruluyor. MIT lisanslı, yaklaşık 1.190 yıldız.",
@@ -136,15 +118,6 @@
    "investment_note": null
   },
   {
-   "full_name": "furkankly/zoetrope",
-   "inputs_hash": "9029708b51132068b877486048a0efee",
-   "description_tr": "zoetrope, Claude Code ve Codex oturumlarının yazdığı transcript dosyalarını okuyup oturumu bir akış grafiği olarak çizen bir terminal uygulaması. Ana ajanı, onun başlattığı alt ajanları ve her birinin çalıştırdığı araçları bir zaman çizelgesi üzerinde gösteriyor; biten bir oturumu kendi zaman damgalarına göre yeniden oynatıyor, süren bir oturumu ise canlı takip ediyor. Salt okunur çalışıyor ve verinin makineden çıkmadığı belirtiliyor. Rust ile ratatui üzerine yazılmış; aynı ikili WASM'a derlenip tarayıcıda da çalışıyor. Oturumu dosya yolundan ya da kimliğinden bulabiliyor ve iki ajanın formatını içeriğe bakarak ayırt ediyor. MIT lisanslı, yaklaşık 920 yıldız, crates.io üzerinde yayımlanıyor.",
-   "usage_tr": "Lyricdrop v2'yi Superpowers ile yazarken alt ajanların ne yaptığını sonradan anlamak için doğrudan kullanışlı: uzun bir oturumun hangi adımda dağıldığını metin loglarında aramak yerine grafik üzerinde görürsün. Ofis Mac'inde yerel çalışır, salt okunurdur ve API maliyeti getirmez; ~/.claude/projects altındaki dosyaları okuduğu için ek kurulum ya da enstrümantasyon istemiyor. Tarayıcıda çalışan WASM sürümü sayesinde ofis Mac'indeki bir oturumu Tailscale üzerinden başka bir makineden de izleyebilirsin. Bu, Remote Control bağlantısı koptuğunda oturumun ilerleyip ilerlemediğini görmenin ucuz bir yolu — ama yalnızca izleme; kopan bağlantıyı onarmaz, komut gönderemezsin. Hangi adımın zamanı yediğini ölçmek istiyorsan önce tek bir uzun oturumu yeniden oynatıp bak, sonra kurguyu buna göre böl.",
-   "matched_project": "Lyricdrop",
-   "relevance": 6,
-   "investment_note": null
-  },
-  {
    "full_name": "github/codespaces-jupyter",
    "inputs_hash": "9ccde31e0fcac8ac76088b747519d7d4",
    "description_tr": "github/codespaces-jupyter, GitHub Codespaces içinde hazır bir Jupyter Notebook ortamı açmak için kullanılan resmî bir şablon depo. Amacı, makine öğrenmesi ve veri bilimi denemelerine yerel kurulum yapmadan başlamak; depo kopyalanıp bir codespace açıldığında Python ve defter ortamı çalışır halde geliyor. README yalnızca birkaç paragraf ve tamamen Codespaces'in ilk açılış deneyimini anlatıyor; hangi kütüphanelerin kurulu geldiği, bakım durumu ve kapsam hakkında karar vermeye yetecek kadar açık metin yok. MIT lisanslı, 2022'de açılmış ve yaklaşık 900 yıldızı var. Bir kütüphane değil, kopyalanarak kullanılan bir başlangıç şablonu.",
@@ -160,15 +133,6 @@
    "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam Lyricdrop v2'de Claude Code'un yazdığı commit ve PR metinleri olabilir. Tek kişilik depolarda commit mesajının uzun tartışmayı yansıtması can yakan bir sorun değil; kural asıl olarak birden çok kişinin okuduğu teslim yüzeylerinde karşılığını buluyor. Denemesi yine de ucuz: kurulum yerel, ek maliyet yok ve Claude Code Agent Skills formatını okuyor. Buradaki aktarılabilir fikir, çıktının 'oturumu hiç görmemiş bir okuyucu'ya göre yeniden üretilmesi; aynı cümleyi kendi CLAUDE.md dosyana tek satır olarak eklemek faydanın çoğunu verir.",
    "matched_project": null,
    "relevance": 2,
-   "investment_note": null
-  },
-  {
-   "full_name": "Zyrexnn/Cybermes",
-   "inputs_hash": "dec26ff70aa18927eec457d2f4b7ce1d",
-   "description_tr": "Cybermes, yetkili bug bounty ve sızma testi çalışmaları için tasarlanmış, ajan tabanlı bir saldırgan güvenlik otomasyon çerçevesi. Go ile yazılmış performans araçları, iki yüzü aşkın modüler playbook ve nuclei, sqlmap, Playwright gibi bilinen araçların etrafında bir orkestrasyon katmanı sunuyor; keşif, zafiyet araştırması, doğrulama ve CVSS v3'e göre raporlama adımlarını kapsıyor. Hermes Agent üzerine kurulu ve çok modelli LLM orkestrasyonu kullanıyor. Kendi Go tabanlı MCP sunucusu sayesinde Claude Code, Codex, Cursor, OpenCode gibi ortamlara araç olarak bağlanabiliyor; ayrıca bağımsız CLI, Docker ve CI/CD kullanımı destekleniyor. Python 3.11+ ve Go 1.22+ gerektiriyor, Apache-2.0 lisanslı, yaklaşık 870 yıldız ve v3.3.0 sürümünde.",
-   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, öğrenmeyi planladığın Hermes Agent'ın gerçek bir iş yükü üzerinde nasıl kurgulandığını görmek olabilir. Kendi yığınında (Supabase, DigitalOcean, Vercel) bir güvenlik gözden geçirmesi gerekirse bu çerçeve fazlasıyla ağır kalır; orada hedefli ve küçük kontroller daha doğru sonuç verir. Araçların çoğu yalnızca sahibi olduğun ya da yazılı izin aldığın sistemlere karşı çalıştırılabilir, aksi halde hukuki sorumluluk doğar. Çalıştırmak ayrıca çok modelli LLM çağrıları üzerinden API maliyeti getirir ve Max aboneliğinin kapsamı dışında kalır.",
-   "matched_project": null,
-   "relevance": 1,
    "investment_note": null
   }
  ]

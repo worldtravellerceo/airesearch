@@ -1,15 +1,6 @@
 {
  "repos": [
   {
-   "full_name": "FlashML-org/FreeToken",
-   "inputs_hash": "ac02c66aaceb4fb837f5e52c5798ad01",
-   "description_tr": "FreeToken, frontier ölçeğindeki açık ağırlıklı MoE modellerini tüketici donanımında çalıştırmak için yazılmış edge-native bir serving motoru. GPU, CPU, host belleği ve ara bağlantıları tek bir esnek çıkarım havuzu gibi ele alıyor; bant genişliğine uyarlanan CPU-GPU ortak yürütme, çift tamponlu prefill akışı, global LRU expert cache ve FTW ağırlık formatı temel bileşenleri. Semantic anchor checkpoint'leri sayesinde araç çağrısı veya düşünme bloğu gibi bağlam düzenlemelerinden sonra KV cache'in baştan hesaplanması azalıyor. DeepSeek-V4-Flash, Qwen3.6-35B-A3B ve GLM-5.2 gibi modelleri MXFP4, NVFP4, FP8 ve BF16 formatlarında destekliyor; Anthropic ve OpenAI uyumlu API sunduğu için Claude Code, Codex ve OpenCode gibi istemcilere bağlanabiliyor. Doğrudan desteklenen donanım NVIDIA RTX 30, 40 ve 50 serisi; Windows ve Linux için kurulumu üstlenen bir masaüstü uygulaması var. Apache-2.0 lisanslı, Temmuz 2026'da açılmış ve 13.500'ü aşkın star toplamış.",
-   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, Claude Code ve OpenCode'u ücretli API yerine yerel bir modele bağlama isteğin olurdu. Anthropic uyumlu endpoint verdiği için bu senaryo kağıt üzerinde tam oturuyor, ancak desteklenen donanım NVIDIA RTX kartları ve dağıtım Windows/Linux masaüstü üzerinden yapılıyor. Ofisteki M4 Pro Mac ve evdeki Mac mini bu listede yok, dolayısıyla bugün kuracak bir makinen yok. Apple Silicon tarafında MLX veya llama.cpp tabanlı motorlar aynı ihtiyaç için daha gerçekçi bir yol. Donanım tarafın değişirse — ayrı bir RTX makinesi ya da kiralık bir masaüstü — tekrar bakmaya değer; şimdilik izlemek yeterli.",
-   "matched_project": null,
-   "relevance": 2,
-   "investment_note": "Edge tarafında MoE serving'i ticarileştiren, iki ay içinde 13 binden fazla star toplayan ve arkasında bir ürün sitesiyle ekip bulunan yeni bir altyapı projesi; erken aşama AI altyapısı tezine uyan bir izleme adayı."
-  },
-  {
    "full_name": "semantica-agi/semantica",
    "inputs_hash": "7137bebd9846857935b8429ed8cdfe38",
    "description_tr": "Semantica, kurumsal veriyi bağlam grafiği ve bilgi grafiğine (knowledge graph) dönüştürüp üzerinde graph analitiği ve nedensel akıl yürütme çalıştırmayı hedefleyen Python tabanlı bir altyapı. Ontoloji yönetimi, deterministik akıl yürütme, karar zinciri için uçtan uca izlenebilirlik ve köken (provenance) kaydı çekirdek özellikleri arasında. RDF ve LPG modellerini birlikte destekliyor, W3C standartlarına yaslanıyor ve çoklu graph deposuyla çalışabiliyor; hedef kitle olarak düzenlemeye tabi, yüksek riskli alanları işaret ediyor. Kendini pahalı kurumsal platformlara geliştirici odaklı bir alternatif olarak konumlandırıyor. MIT lisanslı, Python 3.10+ gerektiriyor, Haziran 2025'te açılmış ve 13.300'ü aşkın star toplamış.",

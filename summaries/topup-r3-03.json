@@ -28,30 +28,12 @@
    "investment_note": "Prompt'tan uygulamaya üreten kategorinin açık kaynak motoru olması, yanında yönetilen bulut sürümü sunması ve çekirdeğin tek bir Go programı kadar küçük kalması, open-core ticarileşme yolu net bir B2B altyapı örneği; ekibini erken aşamada izlemeye değer."
   },
   {
-   "full_name": "panxunying/ai-coding-welfare",
-   "inputs_hash": "9044a857f9c92c92e05e9d1b72fa229e",
-   "description_tr": "Bu depo, Claude Code ve Codex'i ücretsiz ya da çok düşük maliyetle kullanmaya yarayan üçüncü parti \"ara istasyon\" ve kamu yararı API sitelerini listeleyen bir yönlendirme sayfası. Tabloda her sitenin kayıt bonusu, günlük kotası, desteklediği protokol (Anthropic/OpenAI uyumlu) ve erişilebilir modelleri yer alıyor; bir betik sitelerin açık uçlarını tarayıp durum, model ve fiyat alanlarını otomatik güncelliyor. Kayıt bağlantılarının çoğu davet/affiliate kodu taşıyor ve issue bölümü açıkça tanıtım kanalı olarak kullanılıyor. Ayrıca Claude Code ortam değişkenlerini seçilen siteye göre yazan tek komutluk bir kurulum betiği sunuyor. Metin ağırlıklı olarak Çince, birkaç dile çevirisi var; MIT lisanslı, Ağustos 2026'da açılmış ve 900 civarı yıldızı var. İçerik bir yazılım değil, sürekli değişen bir liste.",
-   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, Claude Code'u hangi hesap ve kota üzerinden koşturduğun kararı. Buradaki yol, isteklerini kimin işlettiği belirsiz bir ara istasyona yönlendirmek anlamına geliyor; kapalı kaynak üçüncü parti istemcilere güvenmeme ilkenle ve kod tabanlarının gizliliğiyle açıkça çelişiyor. Max aboneliği kota tarafındaki ihtiyacını zaten karşıladığı için kazanç da sınırlı. Listenin tek işe yarar yanı, model erişiminin başlı başına bir ürün hâline geldiği aracı katmanın ne kadar büyüdüğünü göstermesi. Uyarı: kayıt bağlantıları davet kodlu, siteler kısa ömürlü ve API anahtarını oraya yazmak prompt ile kod içeriğini üçüncü tarafa açar.",
-   "matched_project": null,
-   "relevance": 1,
-   "investment_note": null
-  },
-  {
    "full_name": "rafal-qa/slopo",
    "inputs_hash": "cf18a4877bbfbe5bda75e3ab4dd1c993",
    "description_tr": "Slopo, kaynak kod üzerinde çalışan embedding modellerini kullanarak aynı işi farklı biçimde yapan kod tekrarlarını bulan bir CLI aracı. Birebir kopyala-yapıştırı değil, aynı problemin ikinci kez farklı yazılmış hâlini hedefliyor; bunu hem son git değişiklikleriyle kod tabanının geri kalanı arasında, hem de tüm kod tabanını tarayarak yapıyor. Python, TypeScript, TSX, JavaScript, Java, Kotlin, C, C++, C#, Go, Rust, PHP, Elixir, Ruby ve Swift destekliyor. Yazarı hangi embedding modelinin bu işte ne kadar iyi olduğunu ölçen ayrı bir karşılaştırma yayınlamış ve örnek yapılandırma o ölçüme dayanıyor. Çıktısı kodlama ajanlarının ne yapacağını bilecek şekilde raporlanıyor; embedding çağrıları ajan modellerine kıyasla neredeyse maliyetsiz kalıyor. AGPL-3.0 lisanslı ve 800 civarı yıldızı var.",
    "usage_tr": "Lyricdrop v2'yi sıfırdan yazarken en çok işine yarayacağı yer, Claude Code'un farklı oturumlarda aynı yardımcı fonksiyonu ikinci kez yazdığı durumları yakalamak: admin panel ve hizalama servisi büyüdükçe bu sessizce birikiyor. Superpowers ile kurduğun plan-önce akışının yanına commit öncesi bir kapı olarak koyabilirsin; rapor doğrudan Claude Code'a verilip \"şu kümeyi birleştir\" talimatıyla eşleştirilebilir. İstediğin iki açılı review'ın geliştirici doğruluğu tarafında somut bir sayı üretir: kaç küme çıktı, kaçı gerçekten eylemlenebilir. Embedding maliyeti ajan maliyetinin yanında ihmal edilebilir, ama bir embedding sağlayıcısı gerekiyor; Mac'te yerel bir embedding modeliyle koşturmayı denemeden bunu küçük bir kalem olarak kabul et. Uyarı: AGPL-3.0 bir CLI aracı olarak kullanımda sorun değil, fakat kodunu kendi servisine gömmeyi düşünürsen lisans koşullarını okuman gerekir.",
    "matched_project": "Lyricdrop",
    "relevance": 6,
-   "investment_note": null
-  },
-  {
-   "full_name": "soumatheusgomes/vibe-coding-toolkit",
-   "inputs_hash": "4d761e8bfdecc2549aafa062ca978966",
-   "description_tr": "Bu depo, Claude Code (kısmen Codex) etrafında kurulmuş bir AI destekli geliştirme akışını belge, prompt ve yapılandırma olarak paketliyor. İçinde eklenti seçimleri, paralel dalgalar hâlinde subagent orkestrasyonu protokolü, ESLint/Biome tabanlı kalite kapıları ve kopyalanmaya hazır prompt'lar var. Yazar, yöntemin NDA altındaki gerçek bir fintech üretim projesinden çıkarıldığını, bu yüzden deponun kendi commit geçmişinin kısa olduğunu açıkça yazıyor. En çok öne çıkardığı tek parça Superpowers eklentisi; subagent orkestrasyonu bölümü dosya çakışması ve commit yarışını disiplinle değil yapıyla çözdüğünü iddia ediyor. Belgelerin ana dili Portekizce ve teknik terimler ilk geçtikleri yerde açıklanıyor. MIT lisanslı, Ağustos 2026'da açılmış ve 760 civarı yıldızı var.",
-   "usage_tr": "Zaten denediğin Superpowers eklentisinin etrafına bir akış kuruyor, dolayısıyla Claude Code tarafındaki kalite süreçleri arayışına doğrudan oturuyor. Lyricdrop v2'nin admin panel ve hizalama servisi gibi paralel ilerleyen parçalarında subagent orkestrasyonu protokolünü okuyup dosya çakışmasını yapısal olarak engelleyen kısmını kendi CLAUDE.md'ine taşıyabilirsin. ESLint/Biome kalite kapıları bölümü, \"uyarıyı hataya yükselt\" yaklaşımıyla Expo/TypeScript projelerinde biriken lint borcunu izlenebilir bir göçe çeviriyor. Kod değil belge olduğu için kurulum yükü ve API maliyeti yok, her şey yerelde kalıyor. Uyarı: bu tek bir kişinin akışı, ölçülmüş bir karşılaştırma değil; parçaları toptan almak yerine birini alıp bir hafta ölçüp tutmaya karar vermek daha doğru olur. Belgelerin Portekizce olması okuma hızını düşürebilir.",
-   "matched_project": "Claude Code",
-   "relevance": 7,
    "investment_note": null
   },
   {

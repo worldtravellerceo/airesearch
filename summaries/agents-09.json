@@ -19,15 +19,6 @@
    "investment_note": null
   },
   {
-   "full_name": "XiaoDuoYa/codex-with-chatgpt",
-   "inputs_hash": "609c756bd64b0d0ef331315a2510b3be",
-   "description_tr": "Codex with ChatGPT, planlama ve review işini ChatGPT'nin web arayüzüne, yürütmeyi Codex'e bırakan bir köprü. Depo karşıya yüklenmiyor; ChatGPT, OAuth korumalı ve salt okunur bir MCP bağlantısı üzerinden çalışma alanındaki yalnızca ihtiyaç duyduğu satırları okuyor. Kurulum bir Codex skill'i olarak geliyor, cloudflared ile geçici bir tünel açıyor, isteğe bağlı olarak Cloudflare hesabıyla kalıcı bir hostname kurulabiliyor; kimlik bilgileri proje dizininde değil işletim sisteminin uygulama durumu dizininde tutuluyor. Amacı, atıl duran ChatGPT abonelik kotasını kullanıp API ve Codex token tüketimini düşürmek. MIT lisanslı, Ağustos 2026'da açılmış ve ~5,9K yıldıza ulaşmış; skill kendini günlük olarak güncelliyor.",
-   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; araç tamamen ChatGPT ve Codex ikilisine bağlı, senin günlük hattın ise Claude Code ve OpenCode. En yakın bağlam, API yerine zaten ödenen aboneliği kullanma ilkesinin nasıl uygulandığı; aynı sonucu Claude tarafında Max aboneliğiyle zaten elde ediyorsun.",
-   "matched_project": null,
-   "relevance": 2,
-   "investment_note": null
-  },
-  {
    "full_name": "oomol-lab/open-connector",
    "inputs_hash": "91260dc26ac6f47aeaf7c04f28eee2bd",
    "description_tr": "OpenConnector, AI ajanlarının kullanıcı hesaplarına erişimini tek yerden yöneten açık kaynak bir bağlayıcı ağ geçidi; Pipedream ve Composio'ya alternatif olarak konumlanıyor. GitHub, Gmail, Notion, Slack, Supabase, Airtable ve BigQuery gibi binden fazla sağlayıcıyı ve hazır Action'ları ortak bir katalogda sunuyor. API anahtarı, OAuth2 ve özel kimlik bilgileri ajan sürecine verilmeden, denetlenebilir bir çalışma zamanında tutuluyor; scope'lar, izin ve engel politikaları, geçici dosya transferi ve maskelenmiş çalışma kayıtları aynı yerde toplanıyor. SDK, CLI, MCP, HTTP/OpenAPI ve web konsolu üzerinden kullanılabiliyor. Docker veya Node.js ile SQLite/PostgreSQL durum deposu üzerinde kendi sunucunda, Cloudflare ve Fly.io gibi platformlarda ya da sağlayıcının barındırdığı çalışma zamanında koşuyor. Apache-2.0 lisanslı, Haziran 2026'da açılmış, ~5,9K yıldız.",
@@ -35,15 +26,6 @@
    "matched_project": "Asistan ve holding araçları",
    "relevance": 6,
    "investment_note": "Composio ve Pipedream'in açık kaynak alternatifi olarak konumlanan, self-host ve barındırılan sürümü aynı sözleşmeleri paylaşan bir altyapı; ajan ekosisteminde ticarileşmesi net bir katman ve B2B yazılım tezi için izlemeye değer."
-  },
-  {
-   "full_name": "CopilotKit/OpenBot",
-   "inputs_hash": "96b6f0ccf0eacc45b78814e456bd8336",
-   "description_tr": "OpenBot, kendi altyapında çalışan bir ajan platformu; ChatGPT benzeri bir arayüzün arkasında her ajan kendi konteynerini, kendi Chromium tarayıcısını, dosyalarını ve oturumlarını alıyor. Bir ajan, AG-UI protokolünü konuşan herhangi bir uç nokta olabildiği için LangGraph, Mastra, CrewAI, Pydantic AI ya da elle yazılmış ajanlar aynı şekilde bağlanıyor. Ajanın dosyaya, tarayıcıya, MCP sunucusuna veya bileşene dokunan her eylemi; kararı önce veren, sonra denetim kaydı yazan tek bir gateway'den geçiyor. Docker Compose ile ayağa kalkıyor, veriler kendi PostgreSQL'inde duruyor, model anahtarını yönetici sağlıyor; ayrıca bir CopilotKit Intelligence projesi ve lisansı gerekiyor. MIT lisanslı ve alpha olarak işaretli, ~5,3K yıldız; depo bunun bir ürün değil klonlanıp kendine uyarlanacak bir şablon olduğunu açıkça söylüyor.",
-   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor. En yakın bağlam, manuel test ve araştırma gibi işleri ajanlara devretme isteğin: her ajanın kendi tarayıcısı ve kendi oturumlarıyla çalışması, denetim kaydının eylemden önce ve sonra tutulması bu devir için doğru şekil. Bugünkü hali ise alpha; Docker, PostgreSQL ve Bun kurulumunun yanında ayrı bir Intelligence lisansı ve bir model anahtarı istiyor, yani hem kurulum hem sürekli API maliyeti demek. Tek kişilik bir kurulumda kazandırdığından fazlasını götürür; birkaç sürüm sonra tekrar bakmak daha doğru.",
-   "matched_project": null,
-   "relevance": 2,
-   "investment_note": "CopilotKit'in AG-UI protokolü etrafında kurduğu yönetişim katmanı ve kurumun sahip olduğu asistan konumlandırması, kurumsal AI alımlarında net bir boşluğa oturuyor; şirket olarak izlemeye değer."
   },
   {
    "full_name": "spinabot/brigade",
@@ -73,15 +55,6 @@
    "investment_note": null
   },
   {
-   "full_name": "ApodexAI/FrontierAgent",
-   "inputs_hash": "eb1f8b469b75ae460925d7179442da13",
-   "description_tr": "FrontierAgent, uzun soluklu araştırma ve dosya tabanlı işler için açık kaynak bir ajan çalışma zamanı, terminal ürünü ve değerlendirme paketi. TUI iki akış sunuyor: tek durumlu bir ajanın araştırıp dosya yazdığı ReAct ve bir koordinatörün görev panosu tutup işi paralel alt ajanlara dağıttığı Agent Team. Dosya işleri görev kapsamlı bir sandbox'ta yürüyor; /inputs salt okunur, /workspace çalışma alanı, /outputs kalıcı çıktı. Değiştiren işlemler diff gösterip onay istiyor, oturumlar checkpoint'leniyor, /revert ile geri alınıyor ve --resume ile sürdürülebiliyor; ajan çalışırken yazılan yeni talimat güvenli bir tur sınırında akışa ekleniyor. macOS ve Linux'ta tek komutla kuruluyor ve Docker zorunlu değil, ancak model tarafında OpenAI uyumlu bir uç nokta bekleniyor ve README sağlayıcının kendi API'sini öne çıkarıyor. Apache-2.0 lisanslı, ~4,4K yıldız.",
-   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; bu, Claude Code ve OpenCode ile kurduğun hattın üçüncü bir alternatifi ve kendi model uç noktasını, dolayısıyla API maliyetini gerektiriyor. En yakın bağlam Arslan Holding tarafındaki paralel araştırma işleri olabilir — Agent Team akışı bir konuyu alt ajanlara bölüp raporları topluyor — ama aynı işi Max aboneliğinin içinde kalarak Claude Code'un alt ajanlarıyla yapabiliyorsun.",
-   "matched_project": null,
-   "relevance": 2,
-   "investment_note": null
-  },
-  {
    "full_name": "microsoft/AI-Engineering-Coach",
    "inputs_hash": "7cede2b0975d1e0662bb3c8cb0712693",
    "description_tr": "AI Engineer Coach, Microsoft tarafından yayımlanan bir VS Code eklentisi; yerel AI kodlama oturum kayıtlarını okuyup tek bir panoda özetliyor ve veri makineden çıkmıyor. Prompt kalitesi, oturum hijyeni, kod review, araç ustalığı ve bağlam yönetimi başlıklarında 45 kural üzerinden anti-pattern tespiti yapıyor; pratik skorları, haftalık eğilimler ve günlük aktivite grafikleri üretiyor. Dile, workspace'e, modele ve harness'a göre üretilen kod hacmini ölçüyor, tekrar eden prompt'ları bulup yeniden kullanılabilir skill önerisine çeviriyor. Ayrıca talimat dosyalarını denetleyen ve workspace bağlam haritası çıkaran bir bağlam sağlığı skoru var; aynı pano GitHub Copilot uygulaması içinde de çalışabiliyor. MIT lisanslı ve VS Code 1.115+ istiyor; markete yayımlanmadığı için .vsix'i kendin derleyip kuruyorsun. ~4,3K yıldız.",
@@ -97,24 +70,6 @@
    "usage_tr": "Lyricdrop v2'nin şarkı hattı — YouTube indirme, yerel STT, hizalama, kontrol ve CDN'e yükleme — tam olarak bunun tarif ettiği iş: birbirine bağlı adımlar, yeniden deneme ve hangi şarkıda ne olduğunu gösteren bir çalışma geçmişi. Bugün n8n'de duran zincirin ağır ve uzun süren parçalarını ofis Mac'inde ya da Mac mini'de Dagu'ya taşıyıp n8n'i olay ve bildirim tarafında bırakabilirsin. Tek ikili dosya olması ve veritabanı istememesi kurulum maliyetini sıfıra yakın tutuyor; kendisi model çağırmadığı için ek API gideri yok ve insan onayı adımı, şarkı onay kapısını akışın içine almanı sağlar. Folio'nun günlük içerik üretimi de aynı zamanlayıcıya oturabilir. Uyarı: GPL-3.0 olduğu için bunu yanında çalışan bir altyapı servisi gibi kullan, dağıttığın uygulamanın içine gömmeyi planlama; ayrıca tek düğümde çalıştığı için Mac'in uyku ve yeniden başlatma davranışını önce test et.",
    "matched_project": "Lyricdrop",
    "relevance": 7,
-   "investment_note": null
-  },
-  {
-   "full_name": "Human-Agent-Society/reef",
-   "inputs_hash": "d4476b3759a4456f07cfb3b10c86547f",
-   "description_tr": "Reef, kendini geliştiren ajanlar için sürekli öğrenme altyapısı olarak konumlanan açık kaynak bir Python projesi. Ajanın çıkarımını, geri bildirimi, öğrenmeyi ve sürümlenmiş dağıtımı tek bir döngüde birleştiriyor: istekleri servis ediyor ve etkileşimleri kaydediyor, geri bildirimi bu kayıtlarla eşleştiriyor, uygun kayıtlardan bir güncelleme üretiyor ve kabul edilen güncellemeyi sürüm geçmişine işliyor. İki öğrenme yolu sunuluyor: Slime ve SGLang ile model ağırlığı eğitimi, ya da GPU gerektirmeden prompt, kural ve skill'lerden oluşan harness'ın optimizasyonu. Servisin güncellemeler sırasında ayakta kalması ve sürüm yönetimi, çıkarım motorlarının ve RL çerçevelerinin kapsamadığı boşluk olarak anlatılıyor. Python 3.12+, Apache-2.0 lisanslı, Ağustos 2026'da açılmış ve ~4K yıldıza ulaşmış.",
-   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; ağırlık eğitimi yolu bir GPU yığını istiyor, harness optimizasyonu yolu bile düzenli bir değerlendirici ve temsil gücü olan bir görev kümesi kurmayı gerektiriyor. En yakın bağlam Folio'nun beğeni ve beğenmeme sinyallerinden öğrenen öneri tarafı olabilir; ama orada ihtiyacın bir bandit ya da öneri katmanı, bu proje ise LLM ajanlarının kendini güncellemesi için kurulmuş, aynı problem değil.",
-   "matched_project": null,
-   "relevance": 1,
-   "investment_note": "Ağustos 2026'da açılıp kısa sürede 4K yıldıza ulaşan proje, ajan altyapısında henüz kimsenin sahiplenmediği sürümleme ve sürekli öğrenme katmanını hedefliyor; erken aşama AI altyapısı tezinde ekibiyle tanışmaya değer bir isim."
-  },
-  {
-   "full_name": "totec448-spec/chat-on-steroids",
-   "inputs_hash": "b28c15ea404aeb8c53c490decc3f16a7",
-   "description_tr": "Chat On Steroids, ChatGPT konuşmasını yerel dosyalar, terminal ve tarayıcı üzerinde çalıştıran Electron tabanlı bir masaüstü çalışma alanı. Codex'i doğrudan çağırmak yerine ChatGPT oturumunu kullanıyor; dosya okuma ve yazma, test çalıştırma ve açık terminaller araç sonuçları akarken izlenebiliyor. Bağımsız işleri paralel worker'lara bölüp sonuçları geri topluyor, worker'lar kendi bağlamını koruyor; Goal, Loop ve Compact & Resume ile uzun işler yeni bir sohbete taşınabiliyor. Windows, macOS (Apple Silicon) ve Linux için kurulum paketleri var; MCP ve Chrome eklentisiyle çalışıyor ve tamamen yerelde koşuyor. MIT lisanslı; README bunun bağımsız bir beta olduğunu ve kullanım sınırlarını aşmak için kullanılmaması gerektiğini ayrıca vurguluyor. Ağustos 2026'da açılmış, ~3,8K yıldız.",
-   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; ürün tamamen ChatGPT aboneliğine bağlı, senin hattın ise Claude Code ve OpenCode. En yakın bağlam, kapalı üçüncü parti istemciler yerine açık kaynak bir masaüstü istemci kullanma refleksin; ancak bu istemcinin bağlandığı sağlayıcı sende yok ve depo, sağlayıcı kuralları konusunda açık bir uyarı taşıyor.",
-   "matched_project": null,
-   "relevance": 2,
    "investment_note": null
   },
   {

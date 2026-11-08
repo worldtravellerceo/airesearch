@@ -46,15 +46,6 @@
    "investment_note": null
   },
   {
-   "full_name": "adtexterry-lgtm/unigit-ecosystem",
-   "inputs_hash": "5f1785d7827d90a448040e11e4b3b2e3",
-   "description_tr": "Bu depo, UNIGIT adlı bir AI çalışma tezgahının kamuya açık marka ve ekosistem merkezi olarak tanımlanıyor. Ürünün kendisi kapalı kaynak: depoda yönlendirme, faturalama, sunucu, masaüstü çalıştırma veya araç uygulamaları yok; yalnızca vizyon metinleri, marka malzemeleri ve sentetik örnekler bulunuyor. Anlatılan ürün, model seçimi, araçlar, dosyalar ve proje bağlamını tek bir ortamda birleştirmeyi, akıllı yönlendirme ve sağlayıcı yedeklemesiyle gerçek çıktı üretmeyi hedefliyor. Depo ayrıca MCP sunucusu, skill, şablon ve bilgi kaynağı önerileri toplamak için yapılandırılmış issue şablonları sunuyor. Kamuya açık materyaller MIT lisanslı, ürün erken erişim aşamasında; yaklaşık 1.3K yıldız, depo Eylül 2026'da açılmış.",
-   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın olası bağlam, kapalı kaynak bir istemciye güvenmek yerine kendi araç setini kurma tercihinin tam karşısında duran bir ürünü uzaktan izlemek olabilir. Depoda çalıştırılabilir kod olmadığı için ne Mac'te yerel denenebilir ne de kendi uygulamana gömülebilir. Kurulan iddiaların hiçbiri bu depodan doğrulanamıyor; değerlendirme yapacaksan ürünün kendisini indirip denemen gerekir. Yıldız sayısının depodaki içerikle orantısız olması da tek başına bir uyarı işareti.",
-   "matched_project": null,
-   "relevance": 1,
-   "investment_note": null
-  },
-  {
    "full_name": "victordibia/designing-multiagent-systems",
    "inputs_hash": "f34c96a8e5a3dd1b9636c561c083229c",
    "description_tr": "Bu depo, çok ajanlı sistem tasarımı üzerine yazılmış bir kitabın resmi kod deposudur. İçinde, öğretme amacıyla sıfırdan yazılmış PicoAgents adlı tam bir çok ajanlı çerçeve bulunuyor; ajan döngüsü, araç kullanımı, bellek, ara katman, yapılandırılmış çıktı, gözlemlenebilirlik ve insan onayı gibi bileşenlerin her biri ayrı ayrı uygulanmış. Bölümler teoriden üretime doğru ilerliyor ve her kavramın karşısında çalışan, test edilmiş kod ile Colab defterleri veriliyor. Yaklaşım çerçeve bağımsız: belirli bir kütüphaneye kilitlenmek yerine kalıpların kendisi anlatılıyor; bilgisayar kullanımı ajanları gibi konular da kapsanıyor. Apache-2.0 lisanslı, 2024'te açılmış ve yaklaşık 1.3K yıldıza ulaşmış; kitabın kendisi ücretli olarak satılıyor.",
@@ -80,15 +71,6 @@
    "matched_project": null,
    "relevance": 1,
    "investment_note": null
-  },
-  {
-   "full_name": "ZJU-REAL/Easel",
-   "inputs_hash": "7010e9cef69b6dbd4557cd74cbaa9d16",
-   "description_tr": "Easel, sosyal medya içeriği üreten ve yayınlayan açık kaynaklı bir ajan çalışma tezgahıdır. Beş aşamalı bir akış kuruyor: gündem ve fırsat keşfi, konu ve takvim planlaması, metin ile görsel-işitsel üretim, platforma uyarlanmış yayın ve sonuçların hesap profiline geri işlendiği değerlendirme. Her hesabın konumlandırma, üslup, kitle ve geçmiş performans bilgisini taşıyan ayrı bir profili var; üretilen dosyalar proje klasörlerine yazılıyor ve sohbet geçmişinde kaybolmuyor. Yetenek kataloğunda kart ve poster üretimi, bilgi grafiği, seslendirme ve ses klonlama, altyazı, video kurgu, uzun videodan kesit çıkarma ve yatay-dikey dönüştürme gibi çalıştırılabilir betikler yer alıyor. Yayın tarafı Xiaohongshu, Douyin, Kuaishou, Zhihu, Bilibili ve iki WeChat kanalı ile sınırlı; Python 3.10+ ile çalışıyor, OpenClaw ajanı üzerine kurulu ve Apache-2.0 lisanslı. Zhejiang ve Peking üniversitesi laboratuvarlarından çıkmış, yaklaşık 1.3K yıldız.",
-   "usage_tr": "Folio'nun günlük içerik pipeline'ında işine yarayacak kısım yayın değil üretim katmanı: her yazar profili için ayrı bir hesap profili tanımlayıp kart, poster, seslendirme ve kısa video üretimini tek akışta zincirleyebilirsin. Profil-güdümlü mantık, beğeni ve beğenmeme sinyallerinden öğrenen feed fikrinle aynı yöne bakıyor; üretilen materyali Supabase ve DigitalOcean tarafına kendi şemanla yazman gerekir. Yayın modülleri yalnızca Çin platformlarını tanıdığı için senin için doğrudan ölü kod; Folio zaten yayınlanmayacak bir uygulama olduğundan bu bir kayıp sayılmaz. Görsel, ses ve video üretimi model çağrılarına dayandığı için günlük hacimde ciddi bir API maliyeti doğurur; önce tek bir profil ve günde birkaç gönderiyle maliyeti ölçmek doğru sıra olur. Betikler Python olduğu için ofisteki Mac'te yerel çalıştırıp yalnızca üretim adımlarını n8n akışından tetikleyebilirsin.",
-   "matched_project": "Folio",
-   "relevance": 5,
-   "investment_note": "Bir üniversite laboratuvarının araştırma çıktısını ürüne çevirme denemesi; içerik ajanları kategorisinde Çin platformlarına kilitli olması, aynı yapının başka pazarlar için kurulmasında boşluk bırakıyor."
   },
   {
    "full_name": "ChesterRa/cccc",
@@ -123,24 +105,6 @@
    "description_tr": "Bu depo, Claude Code, Cursor ve Codex için yazılmış bir skill koleksiyonu ve beraberinde gelen bir AGENTS.md çalışma şablonudur. Ana hat şöyle: her yeni iş ayrı bir Git worktree'sinde izole ediliyor, kod eylemler ve yeniden kullanılabilir bir servis katmanı olarak ikiye ayrılıyor, değişiklik kanıtla doğrulanıyor ve incelemeden geçene kadar döngüye giriliyor. evidence-driven-testing skill'i ajan uygulamayı canlı kullanırken ekranı kaydediyor, her adımı zaman damgalı not olarak videoya gömüyor ve sonuçta rapor, manifest ve video üretiyor; başsız ortamlarda yerine Playwright ekran görüntüleri geçiyor. before-and-after skill'i UI değişikliği için öncesi-sonrası karşılaştırma tablosu çıkarıyor, greploop ise bir PR'ı dış bir inceleme servisi temiz rapor verene kadar düzeltme döngüsünde tutuyor. unslop adlı skill, insanın okuyacağı metinlerden yapay zeka izlerini temizlemek için 31 kalıp sayıyor. Python ve kabuk betikleri kullanıyor, kayıt için ffmpeg gerekiyor, depoda genel bir lisans beyanı yok ve vendor edilen parçalar kendi lisanslarını taşıyor; yaklaşık 1.1K yıldıza ulaşmış.",
    "usage_tr": "Lyricdrop v2'yi kalite süreçleriyle yeniden yazdığın için buradaki kanıt zorunluluğu doğrudan işine yarar: playtest turunu ajan yaparken ekran kaydı, zaman damgalı notlar ve bir rapor çıkıyor, yani 'test edildi' cümlesi yerine izlenebilir bir dosya kalıyor. Her değişikliğin hem geliştirici doğruluğu hem ürün mantığı açısından ayrı incelenmesi isteğine, worktree izolasyonu ve inceleme döngüsü skill'leri iyi bir iskelet veriyor. Skill'ler Markdown talimat olduğu için Mac'te yerel çalışıyor ve Superpowers kurulumunun yanına ek maliyetsiz eklenebiliyor. İki uyarı var: inceleme döngüsü ücretli bir dış servise bağlı, kayıt betiği ise ffmpeg ve macOS'ta Screen Recording izni istiyor. Hepsini birden almak yerine önce evidence-driven-testing ve worktree skill'lerini alıp Lyricdrop'un mevcut test panelinde denemek doğru sıralama olur.",
    "matched_project": "Lyricdrop",
-   "relevance": 7,
-   "investment_note": null
-  },
-  {
-   "full_name": "Dpro-at/Tel-Agent",
-   "inputs_hash": "afe42113aede7e6e3a406055e1bcbd5e",
-   "description_tr": "Tel-Agent, bir telefon hattı ile bir AI ajanı arasında duran, kendi donanımında çalıştırılan açık kaynaklı bir geçittir. SIP üzerinden gelen çağrıyı yönlendirme kurallarına göre bir insana aktarıyor, engelliyor ya da ajana veriyor; ajan gerçek zamanlı konuşuyor, çağrıyı aktarma, mesaj alma, takvim kontrolü veya herhangi bir HTTP uç noktasını çağırma gibi araçları kullanabiliyor. Her çağrı kaydediliyor, yazıya dökülüyor ve aranabilir hale geliyor; aynı ajan web sohbeti, SMS, e-posta, WhatsApp, Telegram, Slack ve daha fazlası dahil 24 kanalda yanıt verebiliyor. Mevcut santralin yerine geçmiyor, 3CX, Asterisk veya FreePBX gibi kurulumların yanına bağlanıyor; model tarafında kendi anahtarlarınla OpenAI, Claude, Gemini, Ollama ve diğerleri seçilebiliyor. Python ile yazılmış, AGPL-3.0 lisanslı, Viyana merkezli bir şirket tarafından sürdürülüyor ve deposunda durumu alfa olarak işaretli; yaklaşık 1.0K yıldız.",
-   "usage_tr": "Asistan ve holding operasyon tarafında somut bir karşılığı var: JustCall ile kurduğun VoIP hattının ve TimelinesAI üzerinden yürüyen WhatsApp trafiğinin ilk temas katmanını, mesai dışında bile çalışan tek bir ajana bağlayabilirsin. Gelen taleple çalışan operasyonlarda çağrının kaydı ve yazıya dökümü asistana devredilebilir bir özet üretir; kayıtların ve hesapların holding kontrolünde kalması ilkenle de uyumlu, çünkü tamamen kendi sunucunda çalışıyor. Modeli kendin seçtiğin için yerel bir modelle maliyeti kısabilirsin, ama gerçek zamanlı konuşmada gecikme hedefini M4 Pro'da ölçmeden karar vermemek gerekir. Depo alfa olarak işaretli ve SIP tarafı kurulum bilgisi isteyen bir alan; önce gerçek müşteri hattına değil ikincil bir numaraya bağlayıp denemek doğru sıra. AGPL lisansı da not edilmeli: kendi ürününe gömüp dağıtmayı düşünürsen aynı lisansı taşımak zorunda kalırsın.",
-   "matched_project": "Arslan Holding",
-   "relevance": 4,
-   "investment_note": "Telefon ve mesajlaşma kanallarını tek bir kendi sunucunda ajanla birleştiren B2B katman; KVKK/GDPR duyarlı kurumlarda ve MENA-Türkiye koridorunda yerelleştirilmiş sesli ajan boşluğu için izlenmeye değer."
-  },
-  {
-   "full_name": "tigerless-labs/agent-memory",
-   "inputs_hash": "4a72afd4f4840058a8d68fdb7c6934bf",
-   "description_tr": "agent-memory, ajanlara oturumlar arası kalıcı bellek veren bir çalışma zamanıdır. Tek doğruluk kaynağı düz Markdown dosyaları; yanındaki SQLite indeksi istendiği zaman silinip yeniden kurulabilen bir önbellek olarak tanımlanıyor ve bu bir testle güvence altına alınmış. Geri çağırma yerel ve sıralı çalışıyor, bağlama metin yapıştırmak yerine tek satırlık özet, dosya yolu ve skor içeren bir liste veriyor; ajan istediği derinlikte açıyor. Yazma işi ajanın hatırlamasına bırakılmıyor, konuşma sınırlarında tetikleniyor; ayrı bir uyku zamanı katmanı birikimi sadeleştiriyor, silme ise yalnızca onaylanacak bir öneri olarak geliyor. Kütüphanenin içinde LLM istemcisi yok, yargı gereken yerde barındıran ajanın kendi CLI'ı kullanılıyor, dolayısıyla API anahtarı gerekmiyor; Claude Code ve Codex CLI aynı depoyu paylaşıyor. Python 3.12+ ile çalışıyor, MIT lisanslı, sürüm 0.1.0 ve depo Eylül 2026'da açılmış; yaklaşık 1.0K yıldız.",
-   "usage_tr": "Kişisel bilgi tabanı projende aradığın geri getirme katmanının karşılığı bu olabilir: sesli notun metne döküldükten sonra Markdown dosyası olarak depoya düşer, sıralı arama günlük ve haftalık raporlar için doğru dosyaları önce yol olarak verir. Dosyaların düz Markdown kalması, ileride başka bir sisteme geçmek istediğinde veriyi rehin bırakmaman demek; ev Mac mini'sinde tutup Tailscale ile ofis makinesinden erişebilirsin. Hiçbir yerde API anahtarı istemediği için Max aboneliğinin dışına çıkmıyor ve tamamen yerel çalışıyor, bu da senin 'önce yerel' kuralına uyuyor. İkinci kullanım, Claude Code oturumlarının Lyricdrop ve Kanarya arasında geçerken kararları unutmaması; aynı depo iki ajan tarafından paylaşılabiliyor. Uyarı: sürüm 0.1.0 ve depo birkaç haftalık, yani şema ve komut isimleri değişebilir; iş akışını buna bağlamadan önce küçük bir alt kümede denemek gerekir.",
-   "matched_project": "Kişisel bilgi tabanı",
    "relevance": 7,
    "investment_note": null
   },

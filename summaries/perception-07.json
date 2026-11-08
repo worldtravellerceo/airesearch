@@ -136,15 +136,6 @@
    "investment_note": null
   },
   {
-   "full_name": "s1dashu/ip-as-logo-skill",
-   "inputs_hash": "753ae6cddfee9d0caffacd5a71bd15d8",
-   "description_tr": "Sade, yuvarlak hatlı ve hafif neo-skeuomorfik IP maskot logoları üreten küçük bir agent skill'i. Yaklaşık dört ila yedi büyük temel şekilden oluşan tek baskın siluet, iki ana renk artı bir arka plan rengi ve kompozisyonun alt köşede toplanması gibi katı kurallar koyuyor. Önce üç yön öneriyor, onay sonrası altı bağımsız aday üretiyor ve dönen tüm görselleri filtrelemeden veriyor; varsayılan konu olarak tanıdık hayvanları seçiyor. Açık Agent Skills formatını izliyor ve belirli bir ajan ürününe bağlı değil; Codex, Coze, Doubao, Manus ve Replit Agent gibi ortamlarda çalışıyor. MIT lisanslı ve 5.4K yıldızlı; çalışması için GPT Image 2 veya benzeri üst seviye bir görsel modeline erişim gerekiyor, SVG'ye geri düşmüyor.",
-   "usage_tr": "Lyricdrop'un uygulama ikonu ve mağaza görselleri için kullanabileceğin dar ama somut bir araç. Şarkıyla dil öğreten bir uygulamada tanınabilir bir maskot, ASO tarafında ikon tıklama oranını etkileyen bir unsur; bu skill altı aday üretip aralarından seçmeni sağlıyor ve kararı asistanına ön eleme olarak devredebilirsin. Claude Code veya Codex içinden çağrılıyor, yani ayrı bir tasarım aracı kurmuyorsun; ancak üretim üst seviye bir görsel modeline gittiği için API maliyeti oluşur. İleride birden fazla uygulama çıkaran bir stüdyo kurgusuna geçersen aynı skill her uygulamanın ikonunu aynı görsel disiplinle üretir. Uyarı: ürettiği sevimli maskot dili, Arslan Holding'in sessiz ve gösterişsiz kurumsal kimliğine uymaz; bunu yalnızca tüketici uygulamalarında kullan. İkinci uyarı: ihtiyaç tek seferlik olduğu için bunu bir iş akışı değil, bir gün lazım olacak hazır bir tarif olarak not et.",
-   "matched_project": "Lyricdrop",
-   "relevance": 4,
-   "investment_note": null
-  },
-  {
    "full_name": "PetoiCamp/OpenCat-Quadruped-Robot",
    "inputs_hash": "4a25fa5faffea32caca0c21707742e31",
    "description_tr": "OpenCat, Arduino ve Raspberry Pi tabanlı dört ayaklı robotlar kurmak ve programlamak için açık kaynak bir çerçeve. Yürüyüş koordinasyonu, servo kontrolü ve IMU entegrasyonu gibi zor kısımları üstleniyor; Petoi'nin Bittle ve Nybble robot kitlerinin arkasındaki yazılım. Eğitim, IoT, pekiştirmeli öğrenme ve sim2real çalışmaları için kullanılıyor, blok tabanlı programlama desteği de var. MIT lisanslı ve 5.4K yıldızlı, 2021'den beri açık. Bu depo eski NyBoard donanımını kapsıyor; güncel donanım ve aktif geliştirme ayrı bir ESP32 deposuna taşınmış durumda, README ayrıca yeni bir kit için kitle fonlama kampanyası duyuruyor.",

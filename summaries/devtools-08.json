@@ -145,15 +145,6 @@
    "investment_note": null
   },
   {
-   "full_name": "FailproofAI/failproofai",
-   "inputs_hash": "9f1a3bfda3112fb2aeca49f5ad03e4c0",
-   "description_tr": "Failproof, kodlama ajanlarının çalıştığı harness'lar için gözlemlenebilirlik ve kural uygulama katmanı. On iki harness'a bağlanıyor — Claude Code ve Codex gibi kodlama CLI'ları, Hermes ve OpenClaw gibi sohbet/asistan geçitleri — her çalıştırmayı kaydediyor ve tehlikeli araç çağrılarını çalışmadan önce engelleyebiliyor. Kırk civarında hazır politika ile geliyor; bir aracı çalışmadan durdurma on iki harness'ta, tur sonu kontrolleri sekizinde doğrulanmış durumda ve hangi olayın nerede desteklendiği bir matris olarak belgelenmiş. Bu listede olmayan ajanlar Python SDK üzerinden izleme, oturum ve denetim kaydı gönderebiliyor; kural uygulaması için kendi hook'unu yazmak gerekiyor. npm paketi olarak dağıtılıyor, yerel çalışıyor ve MIT + Commons Clause lisansıyla veriliyor; ~5.1K star ve on dörtten fazla dile çevrilmiş dokümantasyonu var.",
-   "usage_tr": "Lyricdrop v2'de ajanların canlı Supabase paneline ve CDN'deki içeriğe dokunduğu noktalarda işine yarar: yıkıcı araç çağrılarını çalıştırmadan durduran bir politika katmanı, \"bir daha yaz\" turlarında yanlışlıkla silinen veri riskini kapatır. Kayıt tarafı da işe yarıyor — her ajan çalıştırmasının izi tutulduğu için bir işi asistanına veya dışarıya devrettiğinde ne yapıldığını sonradan gösterebilirsin. Yerel çalışıyor ve hook tabanlı olduğu için Claude Code kurulumunu değiştirmene gerek kalmıyor, API maliyeti getirmiyor. Profilinde öğrenmeyi planladığın Hermes de desteklenen geçitler arasında; ajan tarafını genişletirken tek bir politika ve oturum geçmişi üzerinden ilerleyebilirsin. Uyarı: lisans MIT + Commons Clause, yani ticari olarak yeniden paketlemek serbest değil; kendi uygulamana gömmeyi düşünüyorsan lisans metnini önce okuman gerekir.",
-   "matched_project": "Lyricdrop",
-   "relevance": 6,
-   "investment_note": "Ajan harness'larında politika uygulama ve denetim kaydı, kurumsal AI kullanımının zorunlu katmanına dönüşme ihtimali taşıyan bir alan; ekibi ve lisans modeli Arslan Holding'in erken aşama B2B yazılım tezine yakın duruyor."
-  },
-  {
    "full_name": "javascriptdata/danfojs",
    "inputs_hash": "75c5baa24be0eefa096e72e0501b5340",
    "description_tr": "Danfo.js, JavaScript için pandas'tan esinlenmiş bir veri analizi kütüphanesi. DataFrame ve Series yapıları, gruplama, birleştirme, dilimleme, eksik veri yönetimi ve etiket tabanlı indeksleme gibi pandas'a yakın bir API sunuyor; pandas bilen birinin hızlıca geçebilmesi hedeflenmiş. CSV, JSON ve Excel gibi düz dosyalardan veri okuyabiliyor, grafik çizim yardımcıları içeriyor ve veri yapılarını TensorFlow.js tensörlerine çevirebiliyor. Hem tarayıcıda hem Node.js tarafında çalışıyor, MIT lisanslı ve ~5.1K star toplamış. Olgun bir kütüphane olsa da JavaScript ekosisteminde veri analizi kullanımının Python'a göre daha dar olduğu bir alanda duruyor.",

@@ -10,15 +10,6 @@
    "investment_note": null
   },
   {
-   "full_name": "syv-ai/HyperQwen",
-   "inputs_hash": "ce62a81a27c59caace4702b099514748",
-   "description_tr": "HyperQwen, büyük Qwen modellerini tek bir 24 GB tüketici GPU'sunda vLLM ile servis etmeye odaklanan bir depo. Servis kurulumunun altında aslında pinlenmiş bir vLLM sürümüne uygulanan yama serisi, yeniden kuantize edilmiş head'ler, kalibre edilmiş bir draft sözlüğü ve prompt'un kendisinden spekülasyon yapan decoding var. RTX 3090 üzerinde 250 W'ta tek kullanıcı modunda 127 tok/s, 64 eşzamanlı istekte ~1.035 tok/s toplam decode ve 150k-262k bağlam ölçümleri bildiriliyor. Docker compose ile iki hazır profil (single ve batch), API anahtarı doğrulamalı OpenAI uyumlu bir uç nokta ve ilk açılışta çalışan bir requantize adımı sunuluyor. Apache-2.0 lisanslı, ~1,6K star; CI'da imaj derlemesi ve yama bütünlüğü ayrı ayrı kontrol ediliyor.",
-   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, ücretli API yerine model çalıştırmayı kendi donanımında tutma tercihin olabilir. Ancak depo baştan sona NVIDIA CUDA ve tüketici GPU'su varsayıyor: ne ofisteki Mac'te ne de evdeki Mac mini'de çalışır, Mac tarafındaki karşılığı MLX veya llama.cpp tabanlı yığınlar. Donanım değiştirmeden faydalanmanın tek yolu kiralık bir GPU sunucusu olurdu, o da \"yerelde çalışsın, sabit maliyet olmasın\" kuralını bozar. Okumaya değer tarafı ölçüm disiplini: aynı kart ve aynı prompt'larla stok vLLM karşılaştırması yapılıp sonuçlar yayınlanmış. Şimdilik izleme listesinde kalması yeterli.",
-   "matched_project": null,
-   "relevance": 1,
-   "investment_note": null
-  },
-  {
    "full_name": "WeiboAI/VibeThinker",
    "inputs_hash": "d5ecedbb6a970de641310b139316214d",
    "description_tr": "VibeThinker, küçük ölçekte doğrulanabilir akıl yürütmenin sınırlarını araştıran bir model serisi; 1,5B ve 3B yoğun (dense) sürümleri yayınlanmış. 3B sürüm Qwen2.5-Coder-3B üzerine kuruluyor ve müfredat tabanlı denetimli ince ayar, çok alanlı pekiştirmeli öğrenme, çevrimdışı öz-damıtma ve talimat odaklı RL'den oluşan bir \"Spectrum-to-Signal\" hattıyla sonradan eğitiliyor. Hedef alanlar matematik, yarışma programlama, STEM akıl yürütmesi ve açık kısıtlı talimat takibi gibi doğrulama sinyali güvenilir olan görevler; teknik raporda AIME, HMMT ve LiveCodeBench sonuçları paylaşılıyor. Ağırlıklar Hugging Face ve ModelScope üzerinden dağıtılıyor, lisans MIT, depo ~1,6K star. Yayınlar 2025 sonundan 2026 ortasına kadar düzenli aralıklarla sürmüş.",
@@ -97,15 +88,6 @@
    "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, modellerin bilgisini güncel tutma probleminin genel olarak ilgini çekebilecek olması. Pratikte senin kurgunda bu problem başka bir katmanda çözülüyor: kişisel bilgi tabanında ve ajan belleğinde bilgi modelin ağırlıklarında değil, senin kontrolündeki bir veritabanında duruyor ve oradan bağlama enjekte ediliyor. Bu yaklaşım hem daha denetlenebilir hem de model değiştirdiğinde taşınabilir. Makale listesi bir araç değil, kendi modelini eğiten ekipler için bir literatür haritası. Okuma listesine eklemek dışında bir işlevi olmaz.",
    "matched_project": null,
    "relevance": 1,
-   "investment_note": null
-  },
-  {
-   "full_name": "datawhalechina/zero-to-sglang",
-   "inputs_hash": "5572e35dd7bec35c83dd28c4d9aab58c",
-   "description_tr": "zero-to-sglang, LLM çıkarımını temelden anlatan ve okuyucuya sıfırdan küçük bir çıkarım motoru yazdıran bir kurs deposu. İlk bölüm KV Cache'in neden var olduğu, prefill ile decode farkı, compute-bound ve memory-bound kavramları gibi temelleri ele alıyor; orta bölümde forward pass, üretim, KV Cache, HTTP servisi, continuous batching, paged KV cache ve RadixAttention adım adım kodlanıyor. Son bölüm gerçek SGLang kaynak koduna dönüp optimizasyonların nasıl uygulandığını inceliyor ve projeye ilk PR'ı göndermeye kadar götürüyor. Datawhale ile SGLang ekibinin kurduğu şirket tarafından ortak yürütülüyor; İngilizce ve Çince yayınlanıyor. ~1,2K star; Part 0 ve Part I İngilizce hazır, II-IV bölümleri geliştirme aşamasında.",
-   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, yerel model altyapısına duyduğun ilgi olabilir. Ama bu bir kütüphane değil, çıkarım motoru yazmayı öğreten bir kurs; sen model servis eden değil, model kullanan taraftasın ve SGLang senin Mac merkezli kurgunda sunucu tarafı bir bileşen olarak da görünmüyor. Kurs ayrıca CUDA ve GPU kümesi varsayımıyla ilerliyor. Yatırımcı tarafında tek değeri, çıkarım maliyeti ve gecikmenin neden asıl darboğaz olduğunu anlatan giriş bölümlerinin, bu alandaki şirketleri değerlendirirken okunaklı bir çerçeve vermesi. Gerekirse sadece o ilk bölümü okumak yeterli.",
-   "matched_project": null,
-   "relevance": 2,
    "investment_note": null
   },
   {

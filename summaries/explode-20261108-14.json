@@ -1,0 +1,402 @@
+{
+  "repos": [
+    {
+      "full_name": "lgse/strata",
+      "inputs_hash": "2129119d02083f87cde05875dea91300",
+      "description_tr": "GTK4 tabanlı, klavye odaklı bir Linux dosya yöneticisi; Miller-sütun gezinme, Simge ve Liste görünümleri, anlık bulanık dosya adı arama ve native masaüstü entegrasyonu sunuyor. Omarchy için tasarlanmış, uyumlu GTK4 Linux ortamlarında çalışıyor. Rust ile yazılmış, MIT lisanslı, Ağustos 2026'da açılmış bir depo.",
+      "usage_tr": null,
+      "usage_pending": true,
+      "matched_project": null,
+      "relevance": 0,
+      "investment_note": null
+    },
+    {
+      "full_name": "kevinraymond/florilegium",
+      "inputs_hash": "69a258949be4cff7a086c518c74bf422",
+      "description_tr": "LuaLaTeX için, genomlardan örneklenen bitki ve ziyaretçilerle Delft mavisi, usulca üretilen çiçekli sayfa kenarları çizen bir LaTeX paketi; aynı çizimi pdfLaTeX altında yapan bir TikZ kütüphanesi de içeriyor. Kenar boşluğu dolana kadar en büyük boş daireyi bulup oraya dal büyüten açgözlü bir yerleştirme algoritması kullanıyor. MIT lisanslı, prosedürel üretim/tipografi deposu.",
+      "usage_tr": null,
+      "usage_pending": true,
+      "matched_project": null,
+      "relevance": 0,
+      "investment_note": null
+    },
+    {
+      "full_name": "9bie/php2shell-bypass-aslr-exp",
+      "inputs_hash": "26cf9c10f0fa25eae6ebc73c30f68dd3",
+      "description_tr": "Resmi php-fpm prefork imajı ve ayarları değiştirilmeden, yalnızca HTTP üzerinden uzaktan kod çalıştırma elde eden bir PHP güvenlik açığı istismar aracı; worker havuzunu doldurarak belleğe sızma ve ASLR atlatma adımlarını otomatikleştiriyor. Python ile yazılmış, lisans belirtilmemiş; güvenlik araştırması/saldırı aracı kategorisinde bir depo.",
+      "usage_tr": null,
+      "usage_pending": true,
+      "matched_project": null,
+      "relevance": 0,
+      "investment_note": null
+    },
+    {
+      "full_name": "KJGX66F/usque-custom-pro",
+      "inputs_hash": "77fc631702ad667886f0995733dd8f27",
+      "description_tr": "Cloudflare WARP/MASQUE için tarayıcı üzerinden kayıt, yapılandırma üretimi ve çok istemcili dönüştürme sunan bir araç; Clash/Mihomo, Shadowrocket, sing-box ve yerel VLESS köprüsü formatlarına çıkış üretiyor, isteğe bağlı ücretsiz çıkış kaynağı birleştirme ve QR ile abonelik içeriyor. Cloudflare Pages + Workers üzerinde barındırılıyor; lisans belirtilmemiş, sık güncellenen bir JavaScript projesi.",
+      "usage_tr": null,
+      "usage_pending": true,
+      "matched_project": null,
+      "relevance": 0,
+      "investment_note": null
+    },
+    {
+      "full_name": "rushiranpise/Shizuku-Next",
+      "inputs_hash": "8793157f173b5d0f01ba8f16644d89bd",
+      "description_tr": "Uygulamaların ADB veya root üzerinden sistem API'lerine erişmesini sağlayan Shizuku'nun; paket adı ve API'si aynı kalan, kurulum, güvenilirlik ve arayüzü geliştirilmiş bir çatallanmış sürümü. Farklı bir imzalama anahtarı kullandığından resmi Shizuku ile yan yana kurulamıyor. Kotlin, Apache-2.0 lisanslı.",
+      "usage_tr": null,
+      "usage_pending": true,
+      "matched_project": null,
+      "relevance": 0,
+      "investment_note": null
+    },
+    {
+      "full_name": "HexRaysSA/ida-mcp",
+      "inputs_hash": "49465eec5371600171a3d74ca7d27909",
+      "description_tr": "Hex-Rays'in resmi IDA Pro MCP sunucusu; MCP uyumlu ajanların IDA'nın tersine mühendislik işlevlerine (çözümleme, betikleme) erişmesini sağlıyor. Eklenti kurulmadan başsız (headless) çalışabiliyor, eklenti kuruluysa `idat` içinde IDA'nın kendi Python ortamıyla çalışıp IDA eklentilerini de kullanabiliyor ve isteğe bağlı GUI açabiliyor. Python, MIT lisanslı.",
+      "usage_tr": null,
+      "usage_pending": true,
+      "matched_project": null,
+      "relevance": 0,
+      "investment_note": null
+    },
+    {
+      "full_name": "iAmCorey/Wake",
+      "inputs_hash": "098afcc51fb4df6d27768512586e4e7a",
+      "description_tr": "Farklı AI ajan oturumlarını (Claude Code, Codex vb.) tek bir yerden tarama, arama ve devam ettirme imkanı veren bir masaüstü uygulaması. Rust ve GPUI ile yazılmış, MIT lisanslı; geliştirici araçları kategorisinde bir proje.",
+      "usage_tr": null,
+      "usage_pending": true,
+      "matched_project": null,
+      "relevance": 0,
+      "investment_note": null
+    },
+    {
+      "full_name": "fyzugx/DEsk",
+      "inputs_hash": "33aac080efbc244f5611c95b441bb116",
+      "description_tr": "iOS 6 dönemi skeuomorfizmini andıran, her şeyin gerçek nesne gibi çizildiği bir Wayland Linux masaüstü ortamı; pencereler ceviz bir masadaki kağıtlar, dock bir çekmece, bildirimler posta kutusu olarak tasarlanmış ve sahne ray-traced render ediliyor. Önceki adı DeskWM; ayarlar ve veriler otomatik taşınıyor. Beta aşamasında, C ile yazılmış, MIT lisanslı.",
+      "usage_tr": null,
+      "usage_pending": true,
+      "matched_project": null,
+      "relevance": 0,
+      "investment_note": null
+    },
+    {
+      "full_name": "anonnerdfrenzy/survival-llm",
+      "inputs_hash": "a789868eb250d79f78f80f0d6cae7939",
+      "description_tr": "İnternet bağlantısı gerektirmeden tamamen yerelde çalışan, cevaplarının kaynağını gösteren ücretsiz bir AI asistanı ve hayatta kalma bilgi kütüphanesi; Mac'te dahili, Windows'ta Ollama üzerinden bir model indirip çalıştırıyor. Kütüphane 8,8 GB'lık tam sürüm veya 1,3 GB'lık özet sürüm olarak seçilebiliyor. Python, lisans metni eksik/belirsiz (NOASSERTION).",
+      "usage_tr": null,
+      "usage_pending": true,
+      "matched_project": null,
+      "relevance": 0,
+      "investment_note": null
+    },
+    {
+      "full_name": "colinhacks/reylo",
+      "inputs_hash": "b8e8f161e358901a16bb83529b0a09df",
+      "description_tr": "TypeScript 7.1'in yeni statik dosya tipi tanımlama özelliğini kullanarak `.sql` dosyalarını doğrudan TypeScript'e, tam tip çıkarımıyla ve kod üretimi (codegen) olmadan içe aktarmayı sağlıyor; sorgudaki sütunlar derleme zamanında veritabanına göre denetleniyor. Rust ile yazılmış (derleyici tarafı), MIT lisanslı bir geliştirici aracı.",
+      "usage_tr": null,
+      "usage_pending": true,
+      "matched_project": null,
+      "relevance": 0,
+      "investment_note": null
+    },
+    {
+      "full_name": "Ptero-ai/Ptero",
+      "inputs_hash": "f35948e5d654e7940e9e4b3aec9cd3fc",
+      "description_tr": "Ptero, kayıt olmadan birden çok dil modeline (DeepSeek, Llama, Qwen, MiniMax, Mistral) tek arayüzden erişim veren ücretsiz bir sohbet platformu; proje bazlı organizasyon ve dosya yükleme sunuyor. Kod PHP/JavaScript, asıl dağıtım bir WordPress eklentisi; lisans bilgisi tutarsız (depo Apache-2.0, README GPL v2 diyor). Yaklaşık 1.530 yıldız, Ağustos 2026'da açılmış.",
+      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam Arslan Holding sitesine gömülebilecek bir sohbet arayüzü olabilir, ama site WordPress üzerinde değil. Model erişimi tarafında Claude Code ve Max aboneliğin zaten daha iyi bir yerde duruyor. Kapalı üçüncü parti istemcilere veri emanet etmeme refleksinle de çelişiyor.",
+      "matched_project": null,
+      "relevance": 1,
+      "investment_note": null
+    },
+    {
+      "full_name": "yksr-melt/Meltype",
+      "inputs_hash": "4dcfd26b08a2e2a8bb010177b1df7c55",
+      "description_tr": "Roma harfleriyle yazarken yarım/tam genişlik tuşuna basmadan Japonca ve İngilizceyi otomatik ayırt edip anda geçiş yapan bir Windows IME aracı; VS Code ve terminalde varsayılan olarak Latin alfabesini koruyor, yazım hatalarını ve emoji dönüşümünü de destekliyor. Windows 10/11 için stabil, Mac/Linux için önizleme sürümü var. C#, GPL-3.0 lisanslı.",
+      "usage_tr": null,
+      "usage_pending": true,
+      "matched_project": null,
+      "relevance": 0,
+      "investment_note": null
+    },
+    {
+      "full_name": "Dingo-Shenanigans/ReSkate",
+      "inputs_hash": "ee82a59235708249f5200aeb60c778a8",
+      "description_tr": "EA'nın \"skate.\" oyununun resmi olmayan, hayran yapımı bir yeniden uygulaması; EA sunucuları olmadan çevrimdışı oynanabiliyor, kendi çok oyunculu Steam lobisi/özel sunucu desteği, parkur editörü ve eklenti sistemiyle geliyor. Oyunu oynamak için orijinal \"skate.\" kopyasının Steam'de bulunması gerekiyor. C++, GPL-3.0 lisanslı.",
+      "usage_tr": null,
+      "usage_pending": true,
+      "matched_project": null,
+      "relevance": 0,
+      "investment_note": null
+    },
+    {
+      "full_name": "N1nEmAn/sapper-v2",
+      "inputs_hash": "6f4fde298c5e500b5e3ab075aa2ee6bb",
+      "description_tr": "Herhangi bir ajan CLI'sını (Claude Code, Codex vb.) ve modeli takılabilir roller altında yöneten, sızma testi yarışmaları için tasarlanmış çok ajanlı bir orkestrasyon çatısı; 3. Tencent Bulut Akıllı Saldırı-Savunma yarışmasını ve GeekCon 2026'yı kazanmış. Yalnızca yetkili güvenlik testi için kullanılması belirtiliyor. Python, MIT lisanslı.",
+      "usage_tr": null,
+      "usage_pending": true,
+      "matched_project": null,
+      "relevance": 0,
+      "investment_note": null
+    },
+    {
+      "full_name": "Tencent-Hunyuan/Prism",
+      "inputs_hash": "de0534c6a93ddf9d25a908200077a067",
+      "description_tr": "Video ve sesi 2K çözünürlükte birlikte üretecek modelleri native olarak eğitmek için dinamik seyrek dikkat (sparse attention) mekanizması öneren bir Tencent Hunyuan/akademik araştırma deposu; çözünürlük arttıkça tam dikkatin ikinci dereceden maliyetini ve bilgi sulanmasını azaltmayı hedefliyor. Python, NOASSERTION lisans; SIGGRAPH benzeri bir yayına eşlik ediyor.",
+      "usage_tr": null,
+      "usage_pending": true,
+      "matched_project": null,
+      "relevance": 0,
+      "investment_note": null
+    },
+    {
+      "full_name": "NODIX-TECH/DLSS-5-MANAGER",
+      "inputs_hash": "facd7f325d18634a2cccc2f494eb1781",
+      "description_tr": "DLSS 5, ReShade, OptiScaler ve Live Flow için tek tıkla mod kurulumu yapan bir Windows yöneticisi; oyun uyumluluğu test donanımı için bağış talep ediyor. F# ile yazılmış, açık kaynak; lisans belirtilmemiş (NOASSERTION).",
+      "usage_tr": null,
+      "usage_pending": true,
+      "matched_project": null,
+      "relevance": 0,
+      "investment_note": null
+    },
+    {
+      "full_name": "undefined-ui/second-brain-os",
+      "inputs_hash": "071ebe925f76edd6c4695d7f0ee2e8ac",
+      "description_tr": "AI mühendisleri için bir eğitim paketi: bir ajan kursu, beş el kitabı, Claude Code'a kopyalanacak bir \"ikinci beyin\" şablonu (vault, skill'ler, komutlar, ajanlar, betikler) ve seçilmiş bir okuma listesi. Kurulum, şablon klasörünü `~/.claude` altına kopyalamayı ve dokuz sayfalık kılavuzu sırayla takip etmeyi gerektiriyor. HTML/Markdown, MIT lisanslı.",
+      "usage_tr": null,
+      "usage_pending": true,
+      "matched_project": null,
+      "relevance": 0,
+      "investment_note": null
+    },
+    {
+      "full_name": "flizzywine/dsh-tavern",
+      "inputs_hash": "631c1ce3e1fd53e40de0947a91bf95fe",
+      "description_tr": "DeepSeek Harness üzerine kurulu, SillyTavern ekosistemiyle uyumlu bir \"ajan tavernası\"; karakter kartları doğrudan içe aktarılabiliyor, arka planda ayrı bir model değişken/durum güncellemesini üstlenirken ön plandaki model yalnızca metni yazıyor. Masaüstü ve mobil (telefonla uzaktan QR ile bağlanma) destekleniyor. JavaScript, AGPL-3.0 lisanslı.",
+      "usage_tr": null,
+      "usage_pending": true,
+      "matched_project": null,
+      "relevance": 0,
+      "investment_note": null
+    },
+    {
+      "full_name": "filippocalippo/StykAnimate-App",
+      "inputs_hash": "7a450a9cd9da8c2936ff34effc442401",
+      "description_tr": "Pivot ve Stick Nodes proje dosyalarını açabilen, ücretsiz ve açık kaynak bir çubuk-figür animasyon uygulaması; sabit uzunluklu eklemler, IK, esnek düğümler ve 3B derinlikli figürler, Basit ve Gelişmiş olmak üzere iki zaman çizelgesi sunuyor. Windows, Linux ve tarayıcıda çalışıyor, veriler cihazda tutuluyor. Electron/JavaScript, GPL-3.0 lisanslı.",
+      "usage_tr": null,
+      "usage_pending": true,
+      "matched_project": null,
+      "relevance": 0,
+      "investment_note": null
+    },
+    {
+      "full_name": "HazyResearch/ncm",
+      "inputs_hash": "2eed74650cd93e57804e655094db0fb8",
+      "description_tr": "Stanford Hazy Research'ten \"Next-Concept Modeling\" (NCM): kaba-ya-ince (coarse-to-fine) metin üretimini hızlı ve paralel hale getirmeyi hedefleyen bir araştırma yöntemi; bir makale, Hugging Face koleksiyonu ve blog yazısına eşlik ediyor. Python, MIT lisanslı; akademik araştırma kodu.",
+      "usage_tr": null,
+      "usage_pending": true,
+      "matched_project": null,
+      "relevance": 0,
+      "investment_note": null
+    },
+    {
+      "full_name": "Jakeschincariol/trader-skill",
+      "inputs_hash": "5a2a8cf0bad649edd888945c2d32ce98",
+      "description_tr": "Takip edilen yatırımcıları (13F dosyalarından), haberleri ve Kongre işlemlerini izleyip bütçeye göre pozisyon büyüklüğü hesaplayan, ama her emri kullanıcının onayına bırakan 11 Claude skill'inden oluşan bir borsa aracı seti; örnek olarak Berkshire Hathaway'in son 13F-HR'ını okuyup kopyalamayı gösteriyor. Python, MIT lisanslı.",
+      "usage_tr": null,
+      "usage_pending": true,
+      "matched_project": null,
+      "relevance": 0,
+      "investment_note": null
+    },
+    {
+      "full_name": "davidondrej/cloudroom",
+      "inputs_hash": "afa9850d239fba3ba9c3cfcb669b4ec8",
+      "description_tr": "Claude Code, Codex, Pi ve OpenCode gibi kodlama ajan CLI'larını her birini kendi git dalına sahip izole bir sandbox'ta çalıştıran ve çalışan bir oturumu yerel makine ile bulut arasında taşıyabilen bir Rust servisi; ajan kendi döngüsünü, araçlarını ve girişini korurken sandbox/kuyruk/senkronizasyonu Cloudroom üstleniyor. TypeScript/Rust, Apache-2.0 lisanslı.",
+      "usage_tr": null,
+      "usage_pending": true,
+      "matched_project": null,
+      "relevance": 0,
+      "investment_note": null
+    },
+    {
+      "full_name": "ant-research/4DAnyone",
+      "inputs_hash": "7b43775d6b31b7ea91d2a62d40ab1ff0",
+      "description_tr": "4DAnyone, tek kameradan çekilmiş bir videoyu görüş açıları tutarlı onlarca videoya çeviren ve 4D Gaussian Splatting yeniden yapılandırmasında kullanılan bir üretim modeli; kamera parametresi gerektirmiyor. Tepe GPU belleğini 22 GB'a indirip RTX 4090'da çalışabiliyor, damıtılmış Turbo sürümü dört adımlı denoising ile hızlanma sağlıyor. SIGGRAPH Asia 2026 makalesine eşlik eden Apache-2.0 depo.",
+      "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam Folio'nun görsel üretim tarafı olabilir, ama oradaki ihtiyaç çok kameralı 4D yeniden yapılandırma değil, düz görsel/kısa video. CUDA gerektiriyor, Apple Silicon yolu yok; ofisteki Mac'te çalışmaz, kiralık GPU maliyeti getirir.",
+      "matched_project": null,
+      "relevance": 1,
+      "investment_note": null
+    },
+    {
+      "full_name": "Lumid-Off/AirCard-Windows",
+      "inputs_hash": "b7dc997df4daadca2d7823e79c4d2d28",
+      "description_tr": "Jailbreak gerektirmeden, \"airlift\" adlı bir AirTraffic senkronizasyon açığından yararlanarak iOS 18'den itibaren Apple Wallet kart görünümlerini ve kilit ekranı şifre temasını değiştiren bir Windows istemcisi; Apple bu açığı iOS 27.2 beta 3'te kapatmış, o sürümden sonrasında çalışmıyor. Rust, MIT lisanslı.",
+      "usage_tr": null,
+      "usage_pending": true,
+      "matched_project": null,
+      "relevance": 0,
+      "investment_note": null
+    },
+    {
+      "full_name": "pgrundev/pgbot",
+      "inputs_hash": "8c4e9e1fce6755a3a48bb7c7c675b5b9",
+      "description_tr": "PostgreSQL'in kendi istatistik görünümlerini salt okunur okuyup bulgu öncelikli bir sağlık raporu ve son kontrolden beri değişenleri yazdıran, tek parça statik bir Go ikili dosyası; yazma yetkisi veya harici servis gerektirmiyor, MCP entegrasyonu ve sürümlenmiş bir `--json` sözleşmesi sunuyor. Beta aşamasında, NOASSERTION lisans.",
+      "usage_tr": null,
+      "usage_pending": true,
+      "matched_project": null,
+      "relevance": 0,
+      "investment_note": null
+    },
+    {
+      "full_name": "unstablebuild/rune",
+      "inputs_hash": "6e5e5aa8916f43265ff4dd8e99118694",
+      "description_tr": "Hem elle hem ajanla (otomatik) programlama için tasarlanmış, GPU hızlandırmalı bir IDE ve terminal çoklayıcı; kendi uçtan uca şifreli eşler ağı üzerinden farklı makinelerdeki Rune örnekleri arasında bağlanmayı sağlıyor. Go, GPL-3.0 lisanslı.",
+      "usage_tr": null,
+      "usage_pending": true,
+      "matched_project": null,
+      "relevance": 0,
+      "investment_note": null
+    },
+    {
+      "full_name": "qwdwqfwq/topconf-paper-figure-gallery",
+      "inputs_hash": "fb9ca1364254df854760603cc2b2b7b1",
+      "description_tr": "ICLR, ICML, NeurIPS, CVPR, ACL, AAAI gibi konferanslardan (2023-2026) 3.516 seçilmiş Figür-1/teaser görselini seviye etiketleriyle derleyen bir galeri; ayrıca RAG tabanlı bir figür taslaklama aracı olan FigureForge'u içeriyor. Finansal sponsorluk ve GPU/bulut kaynağı desteği arıyor. JavaScript, NOASSERTION lisans.",
+      "usage_tr": null,
+      "usage_pending": true,
+      "matched_project": null,
+      "relevance": 0,
+      "investment_note": null
+    },
+    {
+      "full_name": "kunchenguid/backpass",
+      "inputs_hash": "bf894fcd542edd1083082843b1daa62c",
+      "description_tr": "Yedi farklı ajan harness'ının (yerelde veya SSH üzerinden) işlem kayıtlarını diskten okuyup gerçekten çalışmış oturumlardaki kanıtlara dayanarak AGENTS.md/CLAUDE.md ve skill'lere kanıt destekli, bir token bütçesi altında ve kullanıcı onayına bağlı düzenlemeler öneren yerel-öncelikli bir araç; veriler API'ye veya buluta yüklenmiyor. JavaScript, MIT lisanslı.",
+      "usage_tr": null,
+      "usage_pending": true,
+      "matched_project": null,
+      "relevance": 0,
+      "investment_note": null
+    },
+    {
+      "full_name": "siknet/FreePEP",
+      "inputs_hash": "57c66a8dcb70c942bfabad03d5e9456f",
+      "description_tr": "Çin'deki PEP yayınevinin elektronik ders kitaplarını otomatik şifre çözme ve Alibaba Cloud WAF kaydırmalı doğrulamasını aşma mekanizmasıyla toplu indiren, yüksek çözünürlüklü PDF'e birleştiren bir araç; 780'den fazla kitabı kapsıyor, WebUI ve etkileşimli komut satırı sunuyor. Python, MIT lisanslı.",
+      "usage_tr": null,
+      "usage_pending": true,
+      "matched_project": null,
+      "relevance": 0,
+      "investment_note": null
+    },
+    {
+      "full_name": "carnot-tech/jinba-consulting-pptx-skill",
+      "inputs_hash": "63e77873a7ff5e06d88ec91ac560643e",
+      "description_tr": "Sunum odası kalitesinde PPTX hazırlamak için bir Claude Code/Codex skill'i; bir slayt tasarım kural kitabı, otomatik kural denetleyici, 65 parçalık bir HTML slayt kütüphanesi (16:9, Chrome ile PDF'e basılıyor) ve bir görsel katalog PDF'i içeriyor. Haftalık gerçek teklif/rapor üretiminde kullanılan iç aracın açık sürümü. Python, MIT lisanslı.",
+      "usage_tr": null,
+      "usage_pending": true,
+      "matched_project": null,
+      "relevance": 0,
+      "investment_note": null
+    },
+    {
+      "full_name": "stackedlol/ascii-sharks",
+      "inputs_hash": "ad0102a511b9ea164c9737304cbb856b",
+      "description_tr": "Tuvale ASCII sanatıyla çizilmiş balık ve köpekbalığı animasyonları sunan, bağımlılığı olmayan küçük bir TypeScript bileşen paketi. MIT lisanslı.",
+      "usage_tr": null,
+      "usage_pending": true,
+      "matched_project": null,
+      "relevance": 0,
+      "investment_note": null
+    },
+    {
+      "full_name": "openai/php2shell-checker",
+      "inputs_hash": "89c0be0cd08fd9350148dfe0b14b1485",
+      "description_tr": "Bir web sitesinin veya yerel kurulumun PHP sürümünü HTTP başlıklarından ya da yerelden okuyup, bilinen \"php2shell\" tipi RCE açıklarının etkilediği sürüm aralığına girip girmediğini bildiren bir sürüm denetleyicisi; sonucu `OK`/`POTENTIALLY VULNERABLE`/`UNKNOWN` olarak ve JSON çıktısıyla veriyor. Codex skill'leri ve bağımsız bir Node betiği olarak sunuluyor. JavaScript, Apache-2.0 lisanslı.",
+      "usage_tr": null,
+      "usage_pending": true,
+      "matched_project": null,
+      "relevance": 0,
+      "investment_note": null
+    },
+    {
+      "full_name": "jacke-pp/open-yoki",
+      "inputs_hash": "a4c97b2f50613b37a9b1b3bfab9f5b6d",
+      "description_tr": "Tek bir sunucuda çalışan; ses, yüz, sohbet, hafıza ve gönderi üretimini birleştiren bir AI canlı yayın sunucusu sistemi; yayın odasına yorum, izleyici sayısı ve hediye/takip gibi olayları simüle eden bir HTTP alım (ingest) API'si sunuyor. JavaScript, MIT lisanslı.",
+      "usage_tr": null,
+      "usage_pending": true,
+      "matched_project": null,
+      "relevance": 0,
+      "investment_note": null
+    },
+    {
+      "full_name": "Akshayykadam/PixelBoard",
+      "inputs_hash": "45390a3def77d6ba492279c38b130f35",
+      "description_tr": "Root gerektirmeden, herhangi bir Android telefonda Google Pixel 11'in Gemini \"Rambler\" doğal sesli yazdırma ve AI yazma araçlarını açan bir Gboard modu; yan yükleme için imzalanmış hazır APK veya elle yama (patch) seçeneği sunuyor. Java, GPL-3.0 lisanslı.",
+      "usage_tr": null,
+      "usage_pending": true,
+      "matched_project": null,
+      "relevance": 0,
+      "investment_note": null
+    },
+    {
+      "full_name": "sirioberati/Genjustsu-Open-Source-Workflow",
+      "inputs_hash": "47b034084bf7657c4042e83f5c48edea",
+      "description_tr": "Derinlik haritaları, SAM segmentasyonu ve yüz örgüleriyle videodaki karakter/nesneleri Seedance (Enhancor API üzerinden) ile değiştiren, yerel bir web arayüzü ve ajan destekli iş akışı; önce taslak üretip onay sonrası 1080p'ye çıkıyor, dışa aktarımda orijinal ses tamamen korunuyor. Python, MIT lisanslı.",
+      "usage_tr": null,
+      "usage_pending": true,
+      "matched_project": null,
+      "relevance": 0,
+      "investment_note": null
+    },
+    {
+      "full_name": "rociiu/talorys",
+      "inputs_hash": "502df518e6ff2203e53a26baced156df",
+      "description_tr": "`npx create-talorys@latest` ile tek komutla kullanıcının kendi Cloudflare hesabına dağıtılan, kişisel bir AI ajanı; Cloudflare Workers AI ve Durable Objects üzerinde sohbet, hafıza, görevler, notlar ve zamanlanmış hatırlatmalar sunuyor. Tek kullanıcılı, telemetri yok, Cloudflare ücretsiz katmanıyla uyumlu. TypeScript/React, MIT lisanslı.",
+      "usage_tr": null,
+      "usage_pending": true,
+      "matched_project": null,
+      "relevance": 0,
+      "investment_note": null
+    },
+    {
+      "full_name": "ollaya-dev/ollaya",
+      "inputs_hash": "543cbd9c2f429e0342583dcadd81fc6e",
+      "description_tr": "LLM çağrısı yapmadan, milisaniyeler içinde kalibre edilmiş olasılık döndüren küçük \"karar modellerini\" (yönlendirme, korkuluk, triyaj, araç onayı gibi işler için) Ollama'nın LLM'leri sunduğu gibi yerel donanımda sunan bir sunucu; Ollama API'siyle uyumlu, CLI, masaüstü uygulaması, Docker ve MCP sunucusu olarak geliyor. Rust, Apache-2.0 lisanslı.",
+      "usage_tr": null,
+      "usage_pending": true,
+      "matched_project": null,
+      "relevance": 0,
+      "investment_note": null
+    },
+    {
+      "full_name": "dgreenheck/tidewater",
+      "inputs_hash": "90ed28a522cdc4e43d8a84fff6e2f08a",
+      "description_tr": "WebGPU ve WGSL ile yazılmış kendi render motoruna sahip, tarayıcı tabanlı bir ada balıkçılığı oyunu; iskeleden, kıyıdan veya kendi teknenden olta sallayıp balığı satıp dükkandan ekipman alabiliyorsun, gerçek zamanlı tropik ada ve okyanus ortamında yüzüp tekneyle açılabiliyorsun. Güçlü bir GPU ve WebGPU destekleyen bir tarayıcı gerekiyor. JavaScript, MIT lisanslı.",
+      "usage_tr": null,
+      "usage_pending": true,
+      "matched_project": null,
+      "relevance": 0,
+      "investment_note": null
+    },
+    {
+      "full_name": "MaryCache/imozuru",
+      "inputs_hash": "825ce6760e2deec782a6d587b045e2e1",
+      "description_tr": "Bilinmeyen bir konuyu, bilgi bilimi alanındaki arama davranışı modellerinden (Bates, Ellis, Kuhlthau) esinlenerek kaynak metinlere ulaşılana kadar derinlemesine kazan bir Claude Code skill'i; terimleri ve kilit kaynakları önce belirleyip oradan atıf ve bağlantı zinciriyle ilerliyor, özetlemeden metinleri dosya/satır referanslı olarak saklıyor. Japonca dokümantasyon, Python, MIT lisanslı.",
+      "usage_tr": null,
+      "usage_pending": true,
+      "matched_project": null,
+      "relevance": 0,
+      "investment_note": null
+    },
+    {
+      "full_name": "Inginnng/EditHere",
+      "inputs_hash": "bb672147c7c9568152bbc23de99af164",
+      "description_tr": "Ekran görüntüsü alıp üzerine not yazarak veya öğeyi sürükleyerek değişiklik isteğini orijinal görsel + piksel koordinatı + yerleşim farkı olarak JSON'a paketleyen, herhangi bir çok-modlu AI araca (Codex, Claude Code vb.) veren bir görsel not alma aracı; web, masaüstü/oyun arayüzü, AI görsel üretimi ve video için çalışıyor, belirli bir modele veya DOM'a bağlı değil. C++, NOASSERTION lisans.",
+      "usage_tr": null,
+      "usage_pending": true,
+      "matched_project": null,
+      "relevance": 0,
+      "investment_note": null
+    }
+  ]
+}

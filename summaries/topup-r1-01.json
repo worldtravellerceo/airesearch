@@ -28,15 +28,6 @@
    "investment_note": null
   },
   {
-   "full_name": "LAMDA-NeSy/Research-Starter-Kit",
-   "inputs_hash": "16ac290482f412df1b8bc39151cae05f",
-   "description_tr": "Akademik araştırmaya yeni başlayanlar için hazırlanmış Çince bir rehber deposu; Nanjing Üniversitesi'nden bir öğretim üyesi ve çalışma grubu tarafından yürütülüyor. İçerik iki bölümde toplanmış: makale bulma, makale okuma, fikir üretme, akademik sunum ve toplantı yürütme başlıklarıyla 'nasıl araştırma yapılır'; abstract, giriş, ilgili çalışmalar, yöntem, deneyler, kaynakça ve rebuttal başlıklarıyla 'nasıl makale yazılır'. Metinlerin kendisi depoda değil, Feishu wiki sayfalarına verilen bağlantıların arkasında; depo esas olarak bir içindekiler listesi işlevi görüyor. Konferans katılımı, başvurulabilecek burslar ve yapay zeka destekli araştırma ipuçları gibi ek başlıklar da var. Lisans belirtilmemiş, ~1.400 yıldızlı; README projenin hâlâ erken aşamada olduğunu ve güncellenmeye devam edeceğini söylüyor.",
-   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın olası bağlam asistanın yürüttüğü araştırma işlerine bir yöntem çerçevesi aramak olabilir, ama bu rehber akademik yayın süreci için yazılmış ve tedarikçi karşılaştırma ya da yatırım araştırması gibi işlere karşılık gelmiyor. İçeriğin tamamı Çince ve harici wiki bağlantılarının arkasında; İngilizce veya Türkçe bir sürümü yok, yani devretmek istediğin bir işe olduğu gibi girdi olmaz. Depoda kod, şablon veya çalıştırılabilir bir araç bulunmadığı için bir pipeline'a takılacak bir yanı da yok. Arslan Holding'in deal screening akışı için kaynak tarama ve not alma disiplini arıyorsan, doğrudan o amaca yazılmış araştırma ajanlarına bakmak daha isabetli olur.",
-   "matched_project": null,
-   "relevance": 1,
-   "investment_note": null
-  },
-  {
    "full_name": "LC044/WeChatMsg",
    "inputs_hash": "0594e4ea3416f942a49b685e9595f78d",
    "description_tr": "WeChatMsg, WeChat masaüstü istemcisinin yerel sohbet veritabanını dışa aktarıp okunabilir hale getiren bir araç. Sohbetleri HTML, CSV ve metin olarak çıkarıyor, kişi bazlı yıllık rapor sayfaları üretiyor ve verinin yapay zeka ile işlenebilmesini hedefliyor; arayüz PyQt ile yazılmış. README'nin başında projenin uzun süredir güncellenmediği ve güncellenmeyeceği açıkça yazıyor; yazar şimdi TrailSnap adlı bir yapay zeka albüm projesinde çalışıyor. Deponun yazdığı ana fikir, kişinin kendi konuşma geçmişinin kendisine ait olması ve kendi yapay zekasını beslemesi. 42 binin üzerinde yıldızı var, README'de MIT lisansı belirtiliyor ama depo meta verisinde lisans alanı boş. Araç belirli WeChat sürümlerine ve Windows'a bağlı olduğu için taşınabilirliği sınırlı.",
@@ -55,39 +46,12 @@
    "investment_note": null
   },
   {
-   "full_name": "NandhaKishorM/laya",
-   "inputs_hash": "0865375691af0dca488e894a606f1a13",
-   "description_tr": "Laya, metin üzerinde tipli karar üreten, otoregresif olmayan bir sınıflandırma motoru: tek bir ileri geçişte seçim (choice), puan (score) ve evet/hayır sorularını birlikte yanıtlıyor ve istek başına yaklaşık 33 ms süre raporluyor. ModernBERT sınıfı checkpoint'ler üzerine kurulu; bir router gelen metnin dilini ve yazı sistemini tespit edip İngilizce ya da 100'den fazla dili kapsayan çok dilli checkpoint'e yönlendiriyor. pip ile kuruluyor ve HTTP sunucusu, MCP sunucusu, LangChain/LangGraph ile ONNX Runtime için ayrı ek paketleri var; çok dilli checkpoint 8.192 token'a kadar metin okuyabiliyor ama varsayılan 1.024 token sınırı uzun belgeleri sessizce kesiyor. Deponun kendi kıyaslamasında hazır İngilizce checkpoint 2.000 kararlık test kümesinde 0,362 doğrulukta kalırken alana göre ince ayarlanmış checkpoint 0,766'ya çıkıyor; uzun belge doğruluğu da metin uzadıkça değişkenleşiyor. Apache-2.0 lisanslı; Eylül 2026'da açılmış ve çok kısa sürede ~22.000 yıldıza ulaşmış, yani olgunluk yıldız sayısından okunmamalı.",
-   "usage_tr": "Kişisel bilgi tabanının tam ortasındaki soruna oturuyor: sesli notun transkriptini verip kategoriyi, aciliyeti ve iş/kişisel ayrımını form doldurtmadan çıkarabilirsin — projenin 'kategoriyi AI çıkarsın' ilkesi bu. Tek ileri geçişte çalıştığı için ofisteki M4 Pro'da yerel kalır, API maliyeti getirmez ve Python servisi olarak n8n akışının içine ya da Supabase'e yazan işleyicinin önüne konabilir. Mesaj akışlarını skorlayan mevcut pipeline'ında da aynı kalıp işe yarar: her mesaj için birkaç tipli soru, tek çağrı, sabit gecikme. Uyarı bu sefer ciddi: kendi ölçümlerinde hazır checkpoint'in doğruluğu düşük ve kabul edilebilir sonuç ancak kendi kararlarınla ince ayar yaptıktan sonra geliyor, yani önce birkaç yüz etiketli örnek biriktirmen gerekir. Uzun notlarda varsayılan token sınırını elle yükseltmeyi de unutma, yoksa metnin sonu hiç okunmadan kesilir. Karar verirken deponun yaşına göre olağandışı yüksek yıldız sayısına değil, kendi test kümendeki doğruluğa bak.",
-   "matched_project": "Kişisel bilgi tabanı",
-   "relevance": 8,
-   "investment_note": null
-  },
-  {
    "full_name": "Q00/ouroboros",
    "inputs_hash": "199650997d7b0cc8d0a72ca73029455e",
    "description_tr": "Ouroboros, AI kodlama ajanlarının çalışmasını tekrar oynatılabilir ve denetlenebilir bir sözleşmeye bağlamayı amaçlayan, kendini 'Agent OS' olarak tanımlayan yerel bir çalışma katmanı. Akış beş adımdan oluşuyor: belirsizliği ölçen bir görüşme (interview), bu görüşmeden çıkan yapılandırılmış şartname, yürütme, kademeli değerlendirme ve bütçesi sınırlı bir evrim döngüsü. Ayırt edici tarafı, not verme komutunun ve beklenen sonucun ajana verilen başarı sözleşmesine hiç konulmaması; ajan çalışıyor, kalıyor ve her kuşakta puanına göre düzeliyor. MCP sunucusu olarak çalışıyor ve Claude Code, Codex CLI, Gemini CLI, OpenCode, Copilot, Kiro dahil on dörde yakın ortamda aynı motoru kullanabiliyor; terminal için ayrı bir kabuk istemcisi de var. Python ile yazılmış, pip/uv üzerinden ya da tek satırlık kurulum betiğiyle kuruluyor, MIT lisanslı ve Ocak 2026'da açılmasına rağmen 6 bin yıldızı geçmiş.",
    "usage_tr": "Bu, Claude Code kurulumunun tam ortasına oturuyor ve senin en somut ihtiyacına, v1'i tek seferde yazıp sonra pişman olma probleminin karşısına, bir şartname adımı koyuyor. Lyricdrop v2'de admin panel ve test paneli gibi kapsamı net olmayan işleri başlatırken görüşme adımını kullanıp belirsizlik skorunu düşürebilir, ancak ondan sonra Claude Code'u koşturabilirsin. Hem Claude Code hem OpenCode'u aynı motorla desteklediği için ofiste ve evde farklı istemci kullanman sorun olmuyor; Superpowers'ın yanında çakışmadan durabilir, çünkü o prompt kalitesine, bu görev sözleşmesine bakıyor. Kademeli değerlendirme, her değişikliğin ayrı açılardan review edilmesi isteğinle aynı yöne bakıyor: geçme ölçütünü ajana göstermeden ölçmek, geliştirici doğruluğu ile ürün mantığını ayırmanın işe yarar bir yolu. Uyarı: evrim döngüsü aynı işi birkaç kez koşturmak demek, yani Max aboneliğinde bu fatura değil rate limit olarak geri döner; ayrıca proje çok yeni, komut yüzeyi değişebilir, bu yüzden önce küçük ve atılabilir bir işte dene.",
    "matched_project": "Claude Code",
    "relevance": 9,
-   "investment_note": null
-  },
-  {
-   "full_name": "QwenLM/Qwen-Image-2.1",
-   "inputs_hash": "299da33b6c49a72f40a4a98500272689",
-   "description_tr": "Qwen-Image-2.1, metinden görsel üretimi ile görsel düzenlemeyi tek modelde birleştiren açık ağırlıklı bir model. Görsel üretim bileşeni 7 milyar parametre ve 32 tek akışlı DiT katmanından oluşuyor; karışık granülerlikte dikkat ve ön ek KV önbelleği yeniden kullanımıyla hesaplama maliyetini düşürmeyi hedefliyor. Şeffaflığı yerel olarak destekliyor: doğrudan RGBA görsel üretebiliyor, şeffaf katmanları düzenleyebiliyor ve fotoğraftan özne çıkarabiliyor. Düzenleme tarafında on adede kadar referans görsel alabiliyor, daire veya boyama ile işaretlenmiş bölgesel düzeltme kabul ediyor ve kişi ile ürünlerde kimlik korumayı önceliklendiriyor. Ağırlıklar HuggingFace ve ModelScope üzerinde yayınlanmış, diffusers ve ComfyUI ilk günden destekliyor. Eylül 2026'da yayınlandı, 1.400 civarı yıldızda ve lisansı standart bir açık kaynak lisansı olarak etiketlenmemiş durumda.",
-   "usage_tr": "Folio'nun içerik üretim adımına doğrudan oturuyor: her profil tek bir yazara ait olduğu için post ve story'ler boyunca aynı yüzün tutarlı kalması gerekiyor ve on referans görselle kimlik koruma tam bu problemi hedefliyor. RGBA çıktısı, Instagram düzenindeki story katmanları ve kapak görselleri için ayrı bir arka plan temizleme adımını ortadan kaldırıyor. İkincil kullanım Lyricdrop'un mağaza görselleri ve Arslan Holding'in marka görselleri olabilir; ikisinde de bölgesel düzeltme, görseli sıfırdan üretmeye göre daha az deneme yakıyor. Lisansı standart bir açık kaynak lisansı olmadığı için ticari kullanımdan önce şartlara bakmak gerekiyor — Folio yayınlanmayacağı için orada bu bir engel değil, ama mağaza görsellerinde olabilir. Uyarı: 7 milyar parametrelik DiT ve metin kodlayıcı, 24 GB birleşik bellekte ComfyUI ile sıkışık çalışır ve MPS üzerinde bir görsel dakikalar sürer; günlük içerik üretimini buna bağlamadan önce Mac'te tek bir görselin gerçek süresini ölçmek gerekir. Ölçüm iyi çıkarsa bu, Folio'nun içerik maliyetini sıfır API maliyetine indiren parça olur.",
-   "matched_project": "Folio",
-   "relevance": 7,
-   "investment_note": null
-  },
-  {
-   "full_name": "Taichu-AI/ZDTaichu5.0-9B",
-   "inputs_hash": "d1865b7b6e0f21e628d763e62757714b",
-   "description_tr": "ZDTaichu5.0-9B, genel görsel anlama, uzamsal akıl yürütme, ajan aracı kullanımı ve bedenlenmiş yapay zeka araştırması için yayımlanmış çok kipli bir temel model. Qwen3.5-9B dil omurgasıyla C-RADIOv4-H görü kodlayıcısını birleştiriyor; metin, birden çok görsel ve videoyu herhangi bir çözünürlükte girdi alıyor. Belge, grafik, diyagram ve OCR anlama, görsel matematik, 3B sahne anlama, çok adımlı araç kullanımı ve robotik/VLA uyarlaması için hedeflenmiş. FP8 ve NVFP4 gibi nicelenmiş varyantları Hugging Face ve ModelScope üzerinden dağıtılıyor; zor tokenlara gizli uzayda ek yineleme adımı veren bir akıl yürütme mekanizması tanıtılıyor. Apache-2.0 lisanslı, ~1.8K yıldız; depo ağırlıklı olarak benchmark tabloları ve blog bağlantılarından oluşuyor, dağıtım ve servis araçları sınırlı.",
-   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor. En yakın bağlam, yerel çalışan bir görsel modele ihtiyaç duyan işler olabilir: model ajansı fikrindeki portföy görseli değerlendirmesi ya da bir panelin ekran görüntüsü üzerinden kontrolü gibi. Ancak modelin ayırt edici tarafı — uzamsal akıl yürütme, affordance ve bedenlenmiş görevler — senin çalıştığın alanların dışında kalıyor; o işleri daha yerleşik, araç ve kütüphane desteği güçlü görsel modeller de yapıyor. 9B boyutu nicelenmiş halde ofis Mac'inde çalışabilir ve API maliyeti getirmez, ama şu an bunu üretimde deneyecek somut bir adımın yok.",
-   "matched_project": null,
-   "relevance": 2,
    "investment_note": null
   },
   {
@@ -214,15 +178,6 @@
    "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın olası bağlam kişisel öğrenme merakın olurdu, ama ortada henüz okunacak bir içerik yok. Model içlerini sıfırdan yazmak çalışma şeklinle de örtüşmüyor: projelerde hazır modelleri tüketip zamanı ürün ve dağıtım tarafına ayırıyorsun. Depoyu izlemeye alıp kurs yayımlandığında haberdar olmak dışında yapılacak bir şey yok; bu da asistanına devredilebilecek bir takip işi. Kayda değer bir not olarak kalsın: burada yıldız sayısı içeriği değil beklentiyi ölçüyor, listelerde yıldıza bakarken akılda tutulması gereken bir örnek.",
    "matched_project": null,
    "relevance": 1,
-   "investment_note": null
-  },
-  {
-   "full_name": "larashero3-dotcom/lieflat-less-ai-tone",
-   "inputs_hash": "eb2ddd04dab2de84ac7938995e35fac2",
-   "description_tr": "Çince metinlerdeki 'AI tadı'nı ölçmeye ve gidermeye çalışan, dilbilimsel bir korpus çalışmasına dayalı bir skill. Çalışma 629 makaleden (2,83 milyon karakter) oluşan bir karşılaştırmalı korpus kuruyor: 300'ü beş farklı modelin kontrollü koşullarda ürettiği, 329'u insan yazarların metinleri. Kamuoyunda 'AI üslubu' sayılan 26 aday özellik tek tek test edilmiş; 11'i ayırt edici çıkmış, 15'i çıkmamış ve bir kısmı yaygın kanının tersi yönde sonuç vermiş — örneğin mecaz kullanımı insan metinlerinde 2,4 kat, metin içi retorik soru 17 kat daha sık. En güçlü ayırt edici özellik paragraf başında gönderimi belirsiz yorum cümlesi kullanımı; ayrıca modeller arasında ciddi fark olduğu, tek bir 'AI üslubu' bulunmadığı raporlanıyor. Özellikler düzenli ifadelerle uygulanmış ve yazar, ölçüm operatörlerindeki altı hatayı ve düzeltme sürecini metnin sonunda açıkça yazmış. MIT lisanslı, Ağustos 2026'da açılmış ve kısa sürede 2 bine yakın yıldız toplamış.",
-   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; çalışmanın tüm operatörleri Çince sözdizimi üzerine kurulu ve Türkçe ya da İngilizce metne olduğu gibi taşınmıyor. En yakın olası bağlam Folio'nun içerik üretimi ve Arslan Holding için yazdığın LinkedIn metinleri olabilir; ikisinde de üretilen metnin model kokmaması önemli, ama burada kullanılabilecek olan yöntem, kodun kendisi değil. Metodoloji tarafı okumaya değer: bir üslup sezgisini ölçülebilir bir orana çevirip hangi maddelerin gerçekten ayırt edici olduğunu, hangilerinin efsane olduğunu ayırıyor — aynı yaklaşımı kendi Türkçe içerik kontrolün için kurabilirsin. Hiçbir API maliyeti yok, yerel çalışıyor; ama Türkçe bir karşılığını kurmak korpus toplamayı gerektirir, yani ucuz bir iş değil.",
-   "matched_project": null,
-   "relevance": 2,
    "investment_note": null
   },
   {

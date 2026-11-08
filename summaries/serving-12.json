@@ -1,15 +1,6 @@
 {
  "repos": [
   {
-   "full_name": "NVlabs/SoL-Pi",
-   "inputs_hash": "b326695586e95e898d6e4e8c6bf168df",
-   "description_tr": "SoL-Pi, NVlabs tarafından yayımlanan ve Pi adlı kodlama ajanı harness'inin üzerine takılan bağımsız bir verimlilik eklentisi. Ölçeklenmiş otomatik araştırma döngülerinde bulunan dört mekanizmayı paketliyor: bir düzenleme veya yazma işleminin ardından gelen doğrulama komutunu aynı adımda çalıştıran Action Fusion, bağlam tekrarını azaltma, aşırı büyük araç çıktılarını kısaltma ve uzun logların gereksiz yere okunmasını engelleme. Amaç, ajanın işi erken bırakmasına veya kanıtı gizlemesine yol açmadan model turu, token trafiği ve çıkarım yükünü düşürmek. Değiştirilmemiş bir Pi sürümünün üzerine kuruluyor, Pi'nin genel eklenti API'lerini kullanıyor ve her mekanizma varsayılan olarak kapalı. TypeScript, MIT lisanslı; Eylül 2026'da açılmış, ~2.9K yıldıza ulaşmış ve bir arXiv makalesi eşlik ediyor.",
-   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, Claude Code ve OpenCode ile çalıştığın kodlama ajanı kurulumunun maliyet ve bağlam yönetimi tarafı olabilir. Ancak SoL-Pi'nin kodu Pi'nin eklenti API'lerine bağlı; Claude Code veya OpenCode'a taşınabilir bir plugin değil, harness'i değiştirmen gerekir. Buradan alınabilecek şey kod değil fikir: doğrulama komutunu düzenlemeyle birleştirmek ve tamamlanmış alt görevleri aktif bağlamdan çıkarmak, kendi CLAUDE.md ve hook düzeninde de karşılığı olan pratikler. Max aboneliğiyle çalıştığın için token tasarrufunun sana doğrudan bir fatura karşılığı da yok; kazanç yalnızca hız ve bağlam temizliği tarafında olur. Şimdilik okuyup not almak, kurmaktan daha mantıklı.",
-   "matched_project": null,
-   "relevance": 2,
-   "investment_note": null
-  },
-  {
    "full_name": "physical-superintelligence-lab/Psi0",
    "inputs_hash": "8ec25326bc0ff36aa0693e0bc3ac4e97",
    "description_tr": "Ψ₀ (Psi-Zero), insansı robotlarda hareket ve manipülasyonu birlikte ele alan açık bir vision-language-action (VLA) temel modeli. Model önce büyük ölçekli birinci şahıs insan videolarından görev semantiği ve görsel temsil öğreniyor, ardından daha küçük miktarda gerçek teleoperasyon verisiyle post-training yapılıyor. Mimari, Qwen3-VL-2B-Instruct tabanlı bir dil-görü omurgası ile yaklaşık 500M parametreli akış tabanlı difüzyon transformer aksiyon uzmanından oluşuyor; en altta RL ile eğitilmiş bir takip kontrolcüsü alt gövdeyi sürüyor. Yaklaşık 80 trajektorilik ince ayarla yeni uzun ufuklu beceriler kazanabildiği bildiriliyor; model ve veri Hugging Face üzerinde yayınlanmış. RSS'26 kabulü olan akademik bir çalışma; depo lisansı standart bir lisansa eşlenmemiş.",
@@ -52,15 +43,6 @@
    "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam, yerel modelleri Mac'te çalıştırma ilgin olabilir, ama bu proje çok GPU'lu sunucu kümeleri için yazılmış. Lyricdrop ve Kanarya tarafında model sunumunu sen yapmıyorsun; hazır API'ler ve Mac'teki yerel motorlar üzerinden gidiyorsun, dolayısıyla TTFT ve KV önbelleği optimizasyonu senin kontrol ettiğin bir katman değil. Apple Silicon desteği de gündeminde görünmüyor. Bir gün kendi modelini kendi sunucunda ölçekli biçimde sunarsan anlamlı olurdu; bugünkü mimarinde böyle bir adım yok. Geçmek doğru.",
    "matched_project": null,
    "relevance": 1,
-   "investment_note": null
-  },
-  {
-   "full_name": "antirez/h3.c",
-   "inputs_hash": "3eb455c7c4282c85c6b35639bad961fe",
-   "description_tr": "h3.c, MiniMax-H3 modelini Apple Silicon üzerinde yerel çalıştıran, C ve Metal ile yazılmış bağımsız bir çıkarım motoru. Prompt'tan video ve ses üretimi, ilk/son kare koşullama ve sıralı referans görsellerle (Ref2VA) yönlendirme uçtan uca çalışıyor; ayrıca modeli bellekte tutan etkileşimli bir oturum modu sunuyor, böylece aynı prompt'u başka bir tohumla tekrarlamak yeniden yükleme maliyeti ödemiyor. DiT bloklarının yalnızca ikisini bellekte tutup sonrakini SSD'den okuyarak bellek ayak izini düşürüyor; denoising adım sayısı, katman sayısı ve hız/kalite dengesi komut satırından ayarlanabiliyor. Ölçümler M5 Max üzerinde veriliyor: 512 kare boyutunda 22 karelik bir video için dört adımlı üretim yaklaşık 3.5 saniye, 29 adımlık referansa karşı 0.55 civarı SSIM. MIT lisanslı, FFmpeg gerektiriyor; Ağustos 2026'da açılmış ve aktif olarak H3'e özgü Metal performans çalışması sürüyor.",
-   "usage_tr": "Folio'nun günlük içerik pipeline'ında story ve kısa video üretimi için kullanabilirsin; ilk/son kare koşullama, aynı yazar profilinin görsel kimliğini klipler arasında sabit tutmanın pratik yolu. Ev veya ofisteki Mac'te yerel çalıştığı için üretim başına API maliyeti yok — bu, her gün yeni içerik üreten bir feed için tek tek çağrı ücreti ödemekten yapısal olarak farklı. Çıktıyı doğrudan DigitalOcean'a yazıp Supabase'de kuyruklarsan, günlük üretimi n8n'den tetikleyip kendi elini hiç sokmadan döndürebilirsin. Uyarı: yayınlanan ölçümler M3 Max ve M5 Max üzerinde ve önizleme modu tek başına birkaç GiB ek bellek istiyor; 24 GB'lık M4 Pro'da önce tek bir kısa klibi ölçüp kare başına süreyi görmeden gece planı kurma. İkinci uyarı: üretilen klipler saniye mertebesinde, yani story'ye uygun ama uzun video için birleştirme katmanını sen yazarsın.",
-   "matched_project": "Folio",
-   "relevance": 6,
    "investment_note": null
   },
   {

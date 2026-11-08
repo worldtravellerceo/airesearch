@@ -73,15 +73,6 @@
    "investment_note": null
   },
   {
-   "full_name": "OpenWAM-Official/OpenWAM",
-   "inputs_hash": "b46625b23ba214649a6de24d91069ada",
-   "description_tr": "OpenWAM, dünya-eylem modellerini (World-Action Model) sistematik biçimde geliştirmek için kurulmuş açık bir araştırma yığını. Üç parçadan oluşuyor: bileşenleri karşılaştırmalı kurmayı sağlayan modüler altyapı, tasarım tercihlerini kontrollü deneylerle ölçen çalışmalar ve bu ilkelerle ölçekte eğitilmiş açık bir model olan OpenWAM-α. Model yaklaşık 6.400 saatlik egosantrik insan ve robot verisi üzerinde eğitilmiş; video, eylem ve VLM omurgaları ayrı soyutlamalar olarak değiştirilebiliyor. Depoda Hydra konfigürasyonları, eğitim ve dağıtım betikleri ile RoboTwin, LIBERO, RoboCasa ve VLABench gibi yedi kadar değerlendirme paketine istemciler bulunuyor. Apache-2.0 lisanslı; Eylül 2026'da açılmış, yaklaşık 848 yıldız ve ağırlıklar HuggingFace'te yayımlanıyor.",
-   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; robotik ya da bedenlenmiş bir ajan tarafın yok. En yakın bağlam frontier teknolojiye duyduğun yatırım ilgisi, ama bu bir şirket değil akademik bir araştırma yığını ve çalıştırmak çok GPU'lu bir kümeye bağlı. Lyricdrop, Folio veya asistan tarafındaki hiçbir adıma bağlanmıyor. Okumak istersen değeri, alanın hangi bileşenlerinin standartlaştığını tek bir yerde görebilmek.",
-   "matched_project": null,
-   "relevance": 1,
-   "investment_note": null
-  },
-  {
    "full_name": "HazyResearch/hyena-dna",
    "inputs_hash": "d25c93ccf3f3a48e229301e6bddf7d0c",
    "description_tr": "HyenaDNA, tek nükleotid çözünürlüğünde ve bir milyon token'a kadar bağlamla ön eğitilmiş genomik bir temel model. Attention yerine Hyena operatörünü kullanarak uzun dizileri daha ucuz işlemeyi hedefliyor; ağırlıklar 1k'dan 1M'a kadar farklı dizi uzunlukları için ayrı ayrı yayımlanmış. Depo hem ön eğitim hem de makaledeki alt görevler için kod içeriyor; HuggingFace entegre bir Colab defteri en kolay giriş noktası olarak sunuluyor. Kodun büyük kısmı S4 ve Safari depolarından türetilmiş, kurulum için Docker öneriliyor ve model boyutuna göre GPU gereksinimleri ayrıca listeleniyor. Apache-2.0 lisanslı, yaklaşık 808 yıldız; depo yazarların kendi ifadesiyle hâlâ gelişim aşamasında.",

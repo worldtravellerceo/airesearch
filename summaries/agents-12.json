@@ -10,15 +10,6 @@
    "investment_note": null
   },
   {
-   "full_name": "maxrave-dev/kotlin-footguns",
-   "inputs_hash": "6e270b8f8dba9a0b7664d9d139626263",
-   "description_tr": "kotlin-footguns, Kotlin, Compose Multiplatform ve masaüstü JVM geliştirmenin tuzaklarını haritalayan 224 agent skill'inden oluşan bir derleme. Her skill açık agent-skills formatında tek bir SKILL.md dosyası; toplam 27.000 satırın üzerinde ve çoğunda en büyük bölüm, bir tekniğin pratikte nasıl bozulduğunu anlatan Traps kısmı. İçerik dokümantasyondan değil, Nisan 2023'ten beri üretimde olan SimpMusic adlı çok platformlu müzik istemcisinden çıkarılmış; native medya motoru, Room veritabanı, masaüstü paketleme ve imzalama, Compose arayüz gibi alanları kapsıyor. Her iddia, kendi ağacında çalıştırılabilecek doğrulama komutlarıyla birlikte veriliyor ve dosyalar 60-140 satır arasında tutulmuş. GPL-3.0 lisanslı, yaklaşık 652 yıldız; Claude Code dahil formatı okuyan her kod ajanı tarafından kullanılabiliyor.",
-   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam Lyricdrop, çünkü kaynak aldığı uygulama da bir müzik istemcisi. Ancak senin standart stack'in Expo / React Native ve TypeScript; buradaki dersler Kotlin ve Compose'un kendi hata modlarına bağlı ve büyük kısmı o dünyanın dışına taşınmıyor. Tek gerçek kesişim, kelime zamanlamalı şarkı sözü ve romanizasyon konularını kapsayan son batch; orada anlatılan tuzaklar bile Compose arayüzüne özgü, senin karşılaştığın hizalama problemine değil oynatıcı tarafına bakıyor. Buradan alınabilecek asıl şey teknik değil yöntem: üretimdeki bir kod tabanından çıkarılmış, her maddesi doğrulama komutuyla gelen bir skill derlemesi, Lyricdrop v2'de kendi CLAUDE.md ve skill setini yazarken taklit edilebilecek bir format. Lisansın GPL-3.0 olduğunu da not et; metinleri kendi deponla birlikte dağıtmayı düşünürsen bu bir kısıt.",
-   "matched_project": null,
-   "relevance": 2,
-   "investment_note": null
-  },
-  {
    "full_name": "teng-lin/weread-omni",
    "inputs_hash": "be91f3263ee494a84130516ccac82076",
    "description_tr": "weread-omni, WeChat Read (微信读书) için resmi olmayan bir SDK, CLI ve agent skill paketi. Platformun e-ink istemci API'si üzerine kurulu; 40 okuma-yazma işlemi sunuyor ve resmi skill'in altı salt-okunur yeteneğinin ötesine geçerek kendi altını çizdiklerini düzenleme, EPUB/PDF/MOBI/TXT/AZW3 kitap içe aktarma ve tek tek WeChat makalelerini okuma gibi işleri de kapsıyor. Aynı uygulamanın üç girişi var: her komutu JSON üretebilen bir CLI, tipleri tam bir TypeScript SDK ve depoyla gelen agent skill. Kitap bilgisi ve indirilen makaleler SQLite tabanlı yerel bir kütüphanede saklanıyor; önbellekten gelen içerik yeni çekilmiş gibi gösterilmiyor ve okunamayan içerik hata olarak dönüyor. MIT lisanslı, yaklaşık 625 yıldız, Node 22.13 ve üstünü istiyor; kullanmak için WeChat Read hesabı gerekiyor.",

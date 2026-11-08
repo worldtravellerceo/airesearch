@@ -55,30 +55,12 @@
    "investment_note": null
   },
   {
-   "full_name": "mizorewww/laya-mlx",
-   "inputs_hash": "410612d3bd97878de7aecaf66b3254fa",
-   "description_tr": "Laya-MLX, \"tipli karar\" modellerini Apple Silicon üzerinde MLX ile çalıştıran bir çıkarım kütüphanesi. Metin üretmiyor; bir duruma ve bir soru şemasına bakıp seçenekler üzerinde olasılık, rubrik puanı ya da bir önermenin doğruluk olasılığını tek bir çift yönlü geçişte döndürüyor. Ölçülen gecikme M3 Max üzerinde kısa bir soru için 13.4 ms, çok dilli kontrol noktasıyla 7.4 ms; PyTorch, Transformers çalışma zamanı veya bulut API'si gerekmiyor. pip ile kuruluyor, macOS 14+ ve Python 3.11+ istiyor, ağırlıklar Hugging Face'ten iniyor. Apache-2.0 lisanslı; deponun kendisi birkaç günlük ve yukarı akış Convai Innovations ağırlıklarının resmi olmayan bağımsız bir portu olduğunu açıkça belirtiyor.",
-   "usage_tr": "Sesli not uygulaması için düşündüğün \"kategoriyi AI çıkarsın, form doldurma olmasın\" adımına doğrudan oturuyor: transkripti duruma, kategori listesini de choice tipi bir soruya çevirip milisaniyeler içinde sınıflandırma alırsın. Aynı kalıp Folio'nun beğen/beğenme sinyallerini puanlamakta da işe yarar, çünkü score tipi bir rubrik zaten olasılık döndürüyor. En güçlü tarafı senin kriterlerine uyması: Mac'te yerel çalışır, üretim token'ı olmadığı için API maliyeti getirmez ve küçük bir Python servisi olarak n8n akışının içine girer. Uyarı: depo çok yeni ve resmi olmayan bir port, yıldız sayısı olgunluk göstergesi değil; üretime bağlamadan önce kendi kategori setinde doğruluğunu ölçmen ve ağırlıkların lisans durumunu yukarı akıştan teyit etmen gerekir. Metin üretmediği için özetleme veya rapor yazma adımlarında bir işe yaramaz; sadece sınıflandırma ve puanlama katmanı.",
-   "matched_project": "Kişisel bilgi tabanı",
-   "relevance": 6,
-   "investment_note": "Üretken olmayan, sabit gecikmeli \"tipli karar\" modelleri erken aşama AI merceğin için izlenmeye değer bir alt kategori: aynı işi bugün pahalı üretken modellerle yapan ürünlerde maliyet tarafında açık bir boşluk var."
-  },
-  {
    "full_name": "Plachtaa/VITS-fast-fine-tuning",
    "inputs_hash": "a7db617f2199c17202683d73a79e0e0f",
    "description_tr": "VITS-fast-fine-tuning, mevcut bir VITS tabanlı TTS modeline yeni konuşmacı sesleri eklemek için hazırlanmış bir fine-tuning hattı. On kısa kayıt, uzun bir ses dosyası ya da bir video bağlantısından bir sesi öğrenip hem metinden konuşma hem de konuşmacılar arası ses dönüştürme yapabiliyor; İngilizce, Japonca ve Çince destekleniyor. Eğitim Google Colab üzerinde ya da yerel olarak yapılabiliyor ve tipik olarak 20 dakika ile 2 saat arasında sürüyor. Apache-2.0 lisanslı, ~5K star; hazır çıkarım paketi yalnızca Windows için sunuluyor. Depo 2023 başından kalma ve o günden bu yana ses sentezi tarafı belirgin biçimde ilerledi, bu yüzden güncel bir temel olarak değil tarihsel bir referans olarak okunmalı.",
    "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın olası bağlam, Folio'nun günlük içerik pipeline'ına ileride bir seslendirme katmanı eklemek isteyebilmen. Lyricdrop'un ihtiyacı bunun tersi yönde — sesten metne ve kelime zamanlaması — dolayısıyla bu depo o probleme hiçbir şey katmıyor. Fine-tuning adımı GPU istiyor, hazır çıkarım paketi ise Windows'a bağlı; Mac merkezli akışına sürtünmesiz oturmuyor. Seslendirme gerçekten gündeme gelirse 2023 mimarisi yerine güncel açık kaynak TTS seçeneklerine bakmak daha verimli olur. Ayrıca başkasının sesini klonlama senaryosu, yayınlamayacağın kişisel bir uygulamada bile hak tarafında dikkat ister.",
    "matched_project": null,
    "relevance": 2,
-   "investment_note": null
-  },
-  {
-   "full_name": "bojieli/ai-infra-book",
-   "inputs_hash": "286802f8498d1851c6857ca68663b026",
-   "description_tr": "Bu depo, LLM çıkarım ve eğitim sistemlerinin tasarımını donanım kısıtlarından ve model mimarisinden yola çıkarak niceliksel olarak ele alan Çince bir kitabın açık kaynak yazımı. Konu başlıkları arasında hızlandırıcı mimarileri, veri merkezi ağı, KV cache yönetimi, mixture-of-experts, dağıtık eğitim ve çıkarım servis tasarımı yer alıyor. Depo kitabın tam metnini, PDF çıktısını ve hesaplamaları yeniden üretmek için Python araçlarını birlikte veriyor. Apache-2.0 lisanslı, ~5K star ve yeni açılmış bir depo. Metin Çince; teknik seviyesi sistem mühendisliğine yönelik ve okuyucudan GPU/dağıtık sistem arka planı bekliyor.",
-   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın olası bağlam, Arslan Holding tarafında AI altyapısı yatırımlarını değerlendirirken maliyet ve performans iddialarını okuyabilmek. Ama bu bir araç değil bir kitap; hiçbir pipeline'a gömülmez, asistanına devredilecek bir iş de üretmez. Senin çalıştığın katman hazır modelleri Mac'te koşturmak; buradaki tartışmalar kendi GPU kümeni tasarlamakla ilgili ve o soruların hiçbiri gündeminde değil. Metnin Çince olması da hızlı taramayı zorlaştırıyor. Bir due diligence sorusu çıkarsa ilgili bölümü çevirtip okumak makul bir kullanım, düzenli bir kaynak olarak değil.",
-   "matched_project": null,
-   "relevance": 1,
    "investment_note": null
   },
   {

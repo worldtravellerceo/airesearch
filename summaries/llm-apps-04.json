@@ -154,15 +154,6 @@
    "investment_note": null
   },
   {
-   "full_name": "anywhere-labs/dsh-desktop",
-   "inputs_hash": "3273230052c282009f0e74f23c3f7da5",
-   "description_tr": "DSH Desktop, DeepSeek Harness için topluluk tarafından geliştirilen açık kaynak bir masaüstü istemci (Windows ve macOS). Üst akış projenin yerel web arayüzünü, host servisini ve plugin sistemini yerel bir uygulamanın içine alıyor; servisi kendisi başlatıp yönetiyor, sistem tepsisi, terminal, güncelleme ve profil yapılandırması sunuyor, böylece Node.js kurulumu ya da komut satırı gerekmiyor. 2.0.9 sürümünden itibaren iOS ve Android üzerinden uzaktan kontrol dahili geliyor: telefondan görev başlatma, ajanın ilerleyişini izleme ve gerektiğinde devam ettirme. Dahili bir plugin pazarı ve \"her şey plugin, masaüstünün kendisi de plugin\" mimarisi var. MIT lisanslı, TypeScript ile yazılmış, Ağustos 2026'da açılmış ve 28 binin üzerinde yıldızı var; proje üst akış sağlayıcıyla bağının olmadığını açıkça belirtiyor ve belgeler ağırlıkla Çince.",
-   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor; en yakın bağlam telefondan ofis Mac'ine bağlanma ihtiyacın ve açık kaynak bir istemciyi fork'layıp Expo/EAS ile kendi iOS istemcini yazma planın olabilir. Bu proje tam olarak o şeklin çalışan bir örneği: yerel bir ajan servisini yöneten masaüstü uygulaması ve ona bağlanan bir telefon istemcisi. Okumaya değen yer, oturumun telefon ile masaüstü arasında nasıl tutulduğu ve bağlantı koptuğunda nasıl devam ettirildiği — bağlantı düşmesi senin tekrar eden acı noktan. Motor tarafı DeepSeek Harness ve onun plugin'leri, yani kurmanın kendisi sana bir şey kazandırmıyor. Uyarı: topluluk fork'u, üst akışla resmi bir ilişkisi yok ve belgeler Çince; referans uygulama olarak bak, bağımlılık olarak değil.",
-   "matched_project": null,
-   "relevance": 2,
-   "investment_note": null
-  },
-  {
    "full_name": "tashfeenahmed/freellmapi",
    "inputs_hash": "88693644d23103c1ce490af63f07face",
    "description_tr": "FreeLLMAPI, 34 sağlayıcının ücretsiz katmanını — 474 model ailesinde 635 uç nokta — tek bir OpenAI uyumlu /v1 arkasında topluyor. Bir yönlendirici her istek için uygun modeli seçiyor, bir sağlayıcı hız sınırına takıldığında sıradakine geçiyor, anahtar başına kullanımı ücretsiz katman tavanlarına karşı takip ediyor ve anahtarları şifrelenmiş saklıyor. macOS ve Windows için masaüstü uygulamaları, mobil uygulamalar ve Docker ile self-host yolu var; model kataloğu imzalı bir akıştan kendini güncelliyor, canlı akış yıllık ücretli bir katmanın arkasında, ücretsiz kurulumlar aylık anlık görüntü alıyor. TypeScript ile yazılmış, MIT lisanslı, Nisan 2026'da açılmış ve 28 binin üzerinde yıldızı var. Reponun kendi tanımı kapsamı açıkça kişisel deneyle sınırlıyor.",

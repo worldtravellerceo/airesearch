@@ -28,15 +28,6 @@
    "investment_note": null
   },
   {
-   "full_name": "guillaumemeyer/watermarks-remover",
-   "inputs_hash": "daff713910177537e33ae8020377145c",
-   "description_tr": "watermarks-remover, sahibi olduğun içerikten yapay zeka kaynaklı köken (provenance) izlerini temizlemeyi amaçlayan bir araç. İki katman sunuyor: metindeki görünmez Unicode karakterler, egzotik boşluklar ve bidi işaretleri için deterministik Python script'leri; istatistiksel token örneklemesine dayanan metin filigranları için de ajan destekli yeniden yazma. Dosya tarafında PNG, JPEG, WebP, PDF, DOCX, XLSX, PPTX, EPUB, MP4 ve ses formatlarından C2PA, EXIF, XMP ve doküman özelliklerini kaldırıyor. Mimari olarak bir ajan skill'i artı bağımlılıksız (Python 3.10+ stdlib) yerel HTTP servisi; skill kod taşımıyor, işi servise devrediyor. MIT lisanslı, Ağustos 2026'da açılmış ve 22 bin yıldız toplamış.",
-   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor. En yakın bağlam Folio'nun ve Lyricdrop pazarlama içeriğinin AI üretimi görsel/video hattı olurdu; orada da ihtiyacın metadata temizliği değil, üretim ve onay hızı. Dosya metadata'sı temizleme kısmı bir gün lansman görsellerinde işine yarayabilir, ama bunun için bu depoya değil basit bir EXIF adımına ihtiyacın olur. Ayrıca köken işaretlerini kaldırmanın yayınlanan içerikte platform kurallarıyla çakışma ihtimali var; yatırım şapkanla da temiz durmayan bir alan.",
-   "matched_project": null,
-   "relevance": 1,
-   "investment_note": null
-  },
-  {
    "full_name": "bendlang/bend",
    "inputs_hash": "be48a83d9a82c144bf6a0eab51aa46cd",
    "description_tr": "Bend, yapay zekanın yazdığı kodun doğruluğunu mekanik olarak kanıtlamayı hedefleyen bir programlama dili. Merkezinde `LAWS.bend` dosyası var: uygulamanın ihlal etmemesi gereken kurallar burada tanımlanıyor ve derleyici, kod her değiştiğinde bu kuralların hâlâ geçerli olduğuna dair matematiksel kanıt istiyor. Dil güçlü tipler, saflık ve doğrusallık üzerine kurulu; tek çekirdekte C'ye yakın, çok çekirdekte ve GPU'da (CUDA/Metal) paralel çalışacak şekilde derlenmeyi hedefliyor ve iş bölümü için thread/kilit yazmayı gerektirmiyor. Aynı derleyici ispat denetleyicisi olarak da kullanılıyor ve hız iddiası bu tarafta da tekrarlanıyor. Apache-2.0 lisanslı, depo 2023'te açılmış ve 22 bin yıldıza ulaşmış.",
@@ -61,24 +52,6 @@
    "usage_tr": "Kişisel bilgi tabanı (\"ikinci beyin\") fikrinin okuma-araştırma yarısı için doğrudan aday: kitap özetlerin, araştırma PDF'lerin ve kaydettiğin web kupürleri tek bir yerde birbirine bağlanır, her gün sıfırdan sorgulamak yerine birikmiş bir yapı kalır. OpenAI uyumlu uç nokta kabul ettiği için ofis Mac'inde yerel bir model sunucusuna yönlendirip API maliyetini sıfıra yakın tutabilirsin; MinerU'nun yerel PDF yolu da aynı tercihi destekliyor. Arslan Holding tarafında ikinci bir kopyayı deal materyalleri ve pazar raporları için ayrı bir proje olarak kurabilirsin — Deep Research çıktılarının wiki'ye geri yazılması, asistanın topladığı malzemenin dağılmasını engeller. Uyarı: bu kapalı bir kutu değil ama hazır bir masaüstü uygulaması; senin refleksin bileşeni kendi uygulamana gömmek ve burada gömülecek bir kütüphane yok. Ayrıca lisans alanı net bir SPDX kimliği vermiyor, kurumsal tarafta kullanmadan önce LICENSE dosyasını okumak gerekir.",
    "matched_project": "Kişisel bilgi tabanı",
    "relevance": 7,
-   "investment_note": null
-  },
-  {
-   "full_name": "cloudflare/security-audit-skill",
-   "inputs_hash": "892a7829f4839def27288498c6eb0d98",
-   "description_tr": "security-audit-skill, bir kod ajanını yapılandırılmış güvenlik denetçisine çeviren bir skill. Denetimi altı faza bölüyor: mimari ve girdi yüzeylerinin çıkarılması, kapsam defterinden (coverage ledger) beslenen izole avcı ajanlar, her bulguyu çürütmeye çalışan bağımsız doğrulayıcılar, şemaya uygun makine okunur çıktı, kaynak iddialarının ikinci kez doğrulanması ve rapor üretimi. Bulgular `confirmed`, `needs_validation` ve `rejected` olarak ayrılıyor; doğrulanmamış olan severity almıyor, yani \"emin değilim\" sessizliğe dönüşmüyor. Defter ve bulgu dosyaları `validate-coverage-ledger.cjs` ve `validate-findings.cjs` ile şemaya karşı doğrulanıyor, aynı repo üzerinde tekrar çalıştırmalar birikimli ilerliyor. Cloudflare'in açık kaynağa çıkardığı bu skill 19 bin yıldızlı ve MIT lisanslı.",
-   "usage_tr": "Lyricdrop v2'yi çok kullanıcılı ve herkese açık hale getirmeden önce Supabase şemasını, RLS politikalarını ve admin panelinin uç noktalarını bu skill'le taratabilirsin — şu an istediğin iki eksenli review'a (geliştirici doğruluğu ve ürün mantığı) üçüncü bir eksen ekler. Claude Code içinde çalıştığı için Max aboneliğinin dışına çıkmaz, ofis Mac'inde yereldir ve ek API maliyeti getirmez; yalnızca uzun bir oturum bütçesi ister. Kanarya gibi sağlık verisi tutan tarafta da aynı denetimi çalıştırmak mantıklı. En değerli kısmı bulguların ayrıştırılma biçimi: doğrulanmamış bulgular ayrı dosyada kalıyor, yani gerçek bir açık ile şüpheyi karıştırmıyorsun. Uyarı: çok ajanlı ve uzun süren bir akış, ilk denemeyi küçük bir servis üzerinde yapıp süresini ölç; ayrıca çıktı bir sızma testinin yerini tutmaz.",
-   "matched_project": "Claude Code",
-   "relevance": 6,
-   "investment_note": null
-  },
-  {
-   "full_name": "browser-use/jev-ultrafast",
-   "inputs_hash": "1bdea7ee4661162b5cc48b6c8b630fea",
-   "description_tr": "Jev Ultrafast, browser-use ekibinin hız ve maliyet odaklı web ajanı. Klasik yaklaşımdan farkı, her gözlemde sayfadan indekslenmiş bir eleman tablosu üretip modele yalnızca geçerli işlem ve hedefleri sunması; işlemler CLICK, TYPE_TEXT, SELECT, SCROLL, WAIT, DONE ve BLOCKED ile sınırlı. İşlem ve hedef kararı tek bir ağ turunda alınıyor, metin üretimi ise yalnızca yazma gerektiğinde küçük bir modele düşüyor; README'de Google Flights üzerinde uçtan uca 7,1 saniyelik bir örnek veriliyor. Yerel bir inspector arayüzü işlem ve hedef olasılıklarını gösteriyor, \"choose next\" ile her adım önce durdurulabiliyor. Python ile yazılmış, MIT lisanslı ve Eylül 2026'da açılmasına rağmen 17 bin yıldız toplamış; çalışması için TypeSafe ve metin modeli API anahtarları gerekiyor.",
-   "usage_tr": "Asistan ve holding operasyon tarafındaki tarayıcı işleri için gerçek bir aday: tedarikçi karşılaştırma, form doldurma, panel üzerinden veri toplama gibi adımları ajanın yapmasını istediğin yer tam burası. \"Proje kurulumunun uçtan uca otomasyonu\" isteğinin tarayıcıda kalan kısmı (hesap açma, ayar sayfalarında gezinme) da aynı kategoriye giriyor. İnceleme arayüzünün her adımı önce göstermesi, bu tür otomasyonları gözü kapalı bırakmadan devretmeni sağlar. Uyarı: çalışması için iki ayrı API anahtarı gerekiyor, yani Mac'te tamamen yerel ve maliyetsiz bir çözüm değil — önce küçük, tekrar eden bir işte deneyip adım başına maliyeti ölç. İkinci uyarı: giriş yapılmış oturumlarda çalıştıracaksan kimlik bilgilerini ayrı bir tarayıcı profilinde tut, holding hesaplarını aynı profile koyma.",
-   "matched_project": "Asistan ve holding araçları",
-   "relevance": 6,
    "investment_note": null
   },
   {
@@ -109,15 +82,6 @@
    "investment_note": null
   },
   {
-   "full_name": "lnkiai/m3e-canvas",
-   "inputs_hash": "8e8c2fa5e2a627c20a76253744385704",
-   "description_tr": "M3E Canvas, tarayıcıda Material 3 Expressive ekranları çizip bunları bir kod ajanına verilecek prompt'a çeviren bir tasarım aracı. Buton, app bar, navigation bar, kart, liste, dialog, form elemanı gibi parçaları sürükle-bırak yerleştiriyor; telefon (412×892) ve masaüstü (1280×800) ekranları destekliyor ve aynı ekranı iki genişlikte tanımlamaya izin veriyor. Ekranlar birbirine bağlanıp geçiş animasyonlarıyla önizlemede tıklanarak gezilebiliyor, kaydırmayla geçiş ve katman/grup yönetimi de var. Çıktı, Claude Code, Codex veya Gemini CLI gibi prompt alan herhangi bir araca yapıştırılabilen bir metin. Next.js/React ile yazılmış, MIT lisanslı, tarayıcıda çalışıyor ve Eylül 2026'da açılmasından bu yana 8 bin yıldız almış.",
-   "usage_tr": "Dubai'de kurmayı araştırdığın AI uygulama stüdyosu fikrinde, bir uygulama fikrini yarım saatte ekran akışına çevirip Claude Code'a devretmek için kullanılabilir; ekran görüntüsünden tasarım çıkarmaya kıyasla akış ve geçişleri de birlikte tarif etmesi avantaj. Lyricdrop'un Android ve Android TV tarafında da Material diline yakın ekranları hızlıca denemek için işine yarayabilir. Tarayıcıda çalıştığı için Mac'te yerel, ücretsiz ve kurulum gerektirmiyor; çıktı düz prompt olduğu için Max aboneliğinin dışına çıkmıyor. Uyarı, eşleşmenin sınırını belirliyor: üretilen ekranlar Material 3 Expressive diliyle tarif ediliyor, senin iPhone öncelikli Expo işlerinde ve Folio'nun birebir Instagram görünümünde bu dil yanlış yere düşer. Yani tasarım kaynağın olarak değil, fikirleri hızlı çizip akışı anlatmak için bir eskiz defteri olarak bak.",
-   "matched_project": "Dubai uygulama stüdyosu",
-   "relevance": 4,
-   "investment_note": null
-  },
-  {
    "full_name": "tbphp/gpt-load",
    "inputs_hash": "5b5021028ece0108c115cd3d5ce2d009",
    "description_tr": "GPT-Load, çok kanallı ve çok kimlikli model erişimini tek giriş noktasının arkasına alan self-host bir AI gateway. API anahtarları ve abonelik hesaplarını havuz olarak yönetiyor, trafiği dağıtıyor, hata durumunda devreye alma (failover) yapıyor, istek loglarını ve kullanım muhasebesini tutuyor. OpenAI uyumlu uç noktaların yanında Anthropic ve Gemini arayüzlerini de karşılıyor. Go ile yazılmış, Docker imajı ve hazır sürümleri var; MIT lisanslı, Haziran 2025'te açılmış ve 7 bin yıldıza ulaşmış. README'nin önemli bir kısmı sponsor listelerinden oluşuyor, bu da projenin ticari API satıcıları ekosistemine yakın durduğunu gösteriyor.",
@@ -143,33 +107,6 @@
    "matched_project": "Kişisel bilgi tabanı",
    "relevance": 4,
    "investment_note": null
-  },
-  {
-   "full_name": "tamaratran/fast-jev-compaction",
-   "inputs_hash": "cc4d19875250b1873cfb4c6f689dbb15",
-   "description_tr": "fast-jev-compaction, Claude Code'un bağlam sıkıştırma adımını özetleme yerine seçmeli silme ile yapan bir plugin ve npm kütüphanesi. Her tool çağrısı ve sonucu tek bir hızlı istekte puanlanıyor; gereksiz görülenler atılıyor veya kısaltılıyor, tutulan her şey birebir korunuyor ve kullanıcı ile asistan metinleri hiç yeniden yazılmıyor. Amacı klasik özetlemenin kaybettiği dosya yolu, tam hata metni, kısıt veya komut gibi ayrıntıların silinmesini önlemek. İlk mesajdaki ve en yeni mesajlardaki çağrılar sabitleniyor, gönderilen durum kademeli kısaltmalarla token bütçesine sığdırılıyor ve sığmazsa hata veriyor — sessizce bozulmuyor. TypeScript ile yazılmış, MIT lisanslı, Eylül 2026'da açılmış ve kısa sürede 6 bin yıldız toplamış; puanlama için ayrı bir model servisine istek atıyor.",
-   "usage_tr": "Lyricdrop v2'yi Superpowers ile yazarken karşılaştığın en pahalı kayıp, uzun oturumların ortasında sıkıştırmanın kritik ayrıntıyı (hangi STT denendi, hangi dosya yolu, hangi hata) silmesi; bu plugin tam oraya oturuyor. Kurulumu Claude Code plugin'i olarak yerel, ofis Mac'inde çalışıyor ve mevcut plugin setinin yanına ekleniyor. Kütüphane olarak da kullanılabildiği için, ileride kendi ajan akışlarında aynı mantığı kullanabilirsin. Uyarı: puanlama için ayrı bir model servisine istek gidiyor, yani Max aboneliğinin dışında küçük ama sıfır olmayan bir maliyet ve ek bir anahtar demek. Değerlendirmenin doğru yolu ölçmek: bir hafta açık, bir hafta kapalı çalışıp sıkıştırma sonrası kaç kez bağlamı yeniden anlatmak zorunda kaldığını say.",
-   "matched_project": "Claude Code",
-   "relevance": 7,
-   "investment_note": null
-  },
-  {
-   "full_name": "zai-org/ZCode",
-   "inputs_hash": "eb6ddafb8ce41a604c9c9eb8f25b38e2",
-   "description_tr": "ZCode, Z.ai'nin kod ajanı çalışma tezgahı; aynı depoda Electron masaüstü uygulaması, tarayıcı arayüzü ve terminalde çalışan bir Agent CLI bulunuyor. Masaüstü, web ve TUI aynı ajan çalışma zamanını paylaşıyor; komut satırı dağıtımı parametresiz açıldığında TUI'ye, `--web` ile tarayıcı arayüzüne giriyor. SSH/WSL üzerinden uzak proje desteği var ve geliştirme kurulumu Node 24 ile pnpm sürümlerine sabitlenmiş. TypeScript ile yazılmış, Apache-2.0 lisanslı; depo Eylül 2026'da açılmış ve kısa sürede 6 bin yıldıza ulaşmış. Dokümantasyon ağırlıklı olarak Çince ve kurulum adımları depo kökündeki pnpm komutları üzerinden anlatılıyor.",
-   "usage_tr": "Senin için ilgi çekici kısmı modeli değil mimarisi: aynı ajan çalışma zamanının masaüstü, web ve terminal arayüzleriyle nasıl paylaşıldığını açık kaynak olarak gösteriyor. iPhone'dan ofis Mac'ine bağlanırken yaşadığın kopma sorununa karşı kendi web istemcini yazmayı düşünüyorsan, okunacak doğru örneklerden biri; OpenCode için planladığın Expo/EAS istemci fikrine de aynı şekilde kaynaklık edebilir. Günlük kullanımda Claude Code'un yerini almasını beklemem: model erişimi Z.ai tarafına bağlı, yani Max aboneliğinin dışında ayrı bir maliyet ve depo çok yeni. Denersen ofis Mac'inde ayrı bir çalışma dizininde kurup yalnızca web arayüzünün uzaktan ne kadar dayanıklı olduğunu ölç. Kurulumun pnpm ve Node sürümlerine sabitlenmiş olması, hızlı bir deneme için fazladan zaman isteyeceği anlamına geliyor.",
-   "matched_project": "Claude Code",
-   "relevance": 4,
-   "investment_note": null
-  },
-  {
-   "full_name": "amagine-ai/Amagine3D",
-   "inputs_hash": "180e654b6fb80d1b6848d6c3632c544b",
-   "description_tr": "Amagine3D, donanım gereksinimlerinden düzenlenebilir 3D tasarımlar üreten açık kaynak bir katman. Doğal dille verilen ürün tarifi, referans görseller ve ölçülerden yola çıkıp önce iç bileşenlerin yerleşimini, ardından muhafazayı, kontrol yüzeylerini ve ısı yönetimi yapılarını tasarlıyor; çok parçalı tasarımlarda kapak, menteşe ve kilitleri montaj toleranslarıyla birlikte ele alıyor. Üretilen geometri düzenlenebilir Python/build123d kaynağı olarak kalıyor ve STEP, STL, GLB ile renk bölgeli 3MF çıktıları veriliyor. Ajan, et kalınlığı, baskı yönü, tabla uyumu ve parça çakışması gibi kontrolleri yapıp sonucu kabul etmeden önce render'ı yeniden okuyor. Python ile yazılmış, Apache-2.0 lisanslı, Ağustos 2026'da açılmış ve 6 bin yıldıza ulaşmış.",
-   "usage_tr": "Mevcut projelerinde doğrudan bir kullanım alanı görünmüyor. En yakın bağlam giyilebilir cihaz ve neuroteknoloji ilgin olurdu, ama orada cihaz üreten değil cihaz değerlendiren taraftasın; yazılım hattında (Expo, Supabase, DigitalOcean) bu aracın gireceği bir adım yok. Bir gün bir prototip muhafazası gerekirse hatırlanacak bir isim, bugün kurulacak bir araç değil. Şimdilik yapılacak tek şey, 3D tarafını gerektiren bir fikir çıkarsa bu deponun adını not etmek.",
-   "matched_project": null,
-   "relevance": 1,
-   "investment_note": "Doğal dilden üretilebilir donanım geometrisi üreten katman, Arslan Holding'in frontier tech merceğinden izlenmeye değer bir alt alan; ekibin ve ticarileşme yolunun takip listesine alınması makul."
   }
  ]
 }
