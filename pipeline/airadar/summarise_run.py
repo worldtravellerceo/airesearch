@@ -201,13 +201,16 @@ class ImportReport:
     skipped_stale: list[str] = field(default_factory=list)
     unknown: list[str] = field(default_factory=list)
     no_match: int = 0
+    #: Imported with the first paragraph only, the second still to be written.
+    usage_pending: int = 0
 
     def summary(self) -> str:
         stale = f", {len(self.skipped_stale)} stale" if self.skipped_stale else ""
         unknown = f", {len(self.unknown)} not tracked" if self.unknown else ""
+        pending = f", {self.usage_pending} awaiting usage" if self.usage_pending else ""
         return (
             f"{self.considered} read, {self.imported} imported "
-            f"({self.no_match} with no match){stale}{unknown}"
+            f"({self.no_match} with no match){pending}{stale}{unknown}"
         )
 
 
@@ -233,6 +236,7 @@ def import_summaries(conn, path, *, profile_hash: str | None = None) -> ImportRe
             total.considered += part.considered
             total.imported += part.imported
             total.no_match += part.no_match
+            total.usage_pending += part.usage_pending
             total.skipped_stale.extend(part.skipped_stale)
             total.unknown.extend(part.unknown)
         return total
@@ -284,7 +288,12 @@ def import_summaries(conn, path, *, profile_hash: str | None = None) -> ImportRe
 
         description_tr = (entry.get("description_tr") or "").strip()
         usage_tr = (entry.get("usage_tr") or "").strip()
-        if not description_tr or not usage_tr:
+        # The second paragraph is written from the reader profile, and a
+        # session can lack the profile while still being able to write the
+        # first from the README. Such a row says so explicitly; a blank second
+        # paragraph without the flag is still an accident and still refused.
+        pending = bool(entry.get("usage_pending")) and not usage_tr
+        if not description_tr or not (usage_tr or pending):
             report.skipped_stale.append(full_name)
             continue
 
@@ -299,10 +308,16 @@ def import_summaries(conn, path, *, profile_hash: str | None = None) -> ImportRe
             relevance=_clamp_relevance(entry.get("relevance")),
             investment_note=(entry.get("investment_note") or None),
             model=entry.get("model") or "claude-code-session",
-            content_hash=item.content_hash(profile_hash),
+            # A row still waiting for its usage paragraph is stored under a
+            # hash no paid run will ever compute, so it counts as unwritten.
+            content_hash=f"pending-{item.inputs_hash()[:8]}"
+            if pending
+            else item.content_hash(profile_hash),
         )
         report.imported += 1
-        if not matched:
+        if pending:
+            report.usage_pending += 1
+        elif not matched:
             report.no_match += 1
 
     conn.commit()

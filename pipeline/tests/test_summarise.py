@@ -637,3 +637,29 @@ def test_the_classifier_fences_readmes_too():
     rendered = llm.LLMInput(full_name="a/one", readme_excerpt="text").render(0)
     assert untrusted.BEGIN in rendered
     assert untrusted.BEGIN in llm.SYSTEM_PROMPT
+
+
+def test_a_row_waiting_for_its_profile_paragraph_is_kept_and_marked(conn, tmp_path):
+    """A session without the reader profile can still write the first paragraph
+    from the README. It says so with `usage_pending`; the row is stored with no
+    second paragraph and under a hash no paid run computes, so it still counts
+    as unwritten. A blank second paragraph without the flag stays refused."""
+    seed_visible_repo(conn, 1, "acme/one", stars=5000)
+    packet = write_packet(
+        tmp_path,
+        import_row(
+            "acme/one",
+            inputs_hash_of(conn, "acme/one"),
+            usage_tr=None,
+            usage_pending=True,
+            matched_project=None,
+        ),
+    )
+
+    report = summarise_run.import_summaries(conn, packet)
+
+    assert report.imported == 1
+    assert report.usage_pending == 1
+    stored = conn.execute("SELECT usage_tr, content_hash FROM repo_summary").fetchone()
+    assert stored["usage_tr"] == ""
+    assert stored["content_hash"].startswith("pending-")

@@ -78,3 +78,93 @@ def test_an_empty_readme_is_not_fenced_into_looking_like_content():
     assert result.returncode == 0
     source = SCRIPT.read_text(encoding="utf-8")
     assert 'if item.readme_excerpt else ""' in source
+
+
+def _load_script():
+    import importlib.util
+
+    spec = importlib.util.spec_from_file_location("build_summary_packets", SCRIPT)
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return module
+
+
+def test_an_explosion_packet_hashes_what_the_import_will_check(conn, tmp_path):
+    """What it cost before, on another path: a packet hashed over an empty
+    topic tuple had 6 of 11 arrival paragraphs written, validated against the
+    packet, imported — and silently skipped as stale, exactly the ones that had
+    topics. The explosion rows on the site carry no topics either, so this mode
+    reads them from the database, and the check here is the import itself.
+    """
+    from airadar import summarise_run
+    from airadar.db import repo as db
+
+    db.upsert_repos(
+        conn,
+        [
+            db.RepoRecord(
+                id=1,
+                full_name="storytold/photocraft",
+                owner="storytold",
+                name="photocraft",
+                stars=70991,
+                description="A photo editor written from scratch in pure Rust",
+                language="Rust",
+            )
+        ],
+    )
+    conn.executemany(
+        "INSERT INTO repo_topics (repo_id, topic) VALUES (1, ?)", [("rust",), ("photo-editor",)]
+    )
+    conn.execute(
+        "INSERT INTO explosion_board (date, board, rank, repo_id, stars, score) "
+        "VALUES ('2026-11-07', 'young', 1, 1, 70991, 1.0)"
+    )
+    conn.commit()
+
+    rows = _load_script().explosion_rows(conn)
+    assert [r["full_name"] for r in rows] == ["storytold/photocraft"]
+    assert rows[0]["topics"] == ["photo-editor", "rust"]
+
+    written = tmp_path / "explode-test-01.json"
+    written.write_text(
+        json.dumps(
+            {
+                "repos": [
+                    {
+                        "full_name": "storytold/photocraft",
+                        "inputs_hash": rows[0]["inputs_hash"],
+                        "description_tr": "Rust ile sıfırdan yazılmış bir fotoğraf düzenleyici.",
+                        "usage_tr": None,
+                        "usage_pending": True,
+                        "matched_project": None,
+                        "relevance": 0,
+                    }
+                ]
+            },
+            ensure_ascii=False,
+        ),
+        encoding="utf-8",
+    )
+    report = summarise_run.import_summaries(conn, written, profile_hash="p")
+
+    assert report.imported == 1, report.summary()
+    assert report.skipped_stale == []
+    assert report.usage_pending == 1
+
+
+def test_a_held_back_lure_gets_no_packet(conn):
+    """Lures are published by name only; there is no row to write under."""
+    from airadar.db import repo as db
+
+    db.upsert_repos(
+        conn,
+        [db.RepoRecord(id=2, full_name="x/KMS-Pico", owner="x", name="KMS-Pico", stars=600)],
+    )
+    conn.execute(
+        "INSERT INTO explosion_board (date, board, rank, repo_id, stars, score) "
+        "VALUES ('2026-11-07', 'held_back', 1, 2, 600, 1.0)"
+    )
+    conn.commit()
+
+    assert _load_script().explosion_rows(conn) == []

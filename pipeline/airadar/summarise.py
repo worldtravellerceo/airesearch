@@ -67,22 +67,29 @@ BATCH_DISCOUNT = 0.5
 # Bumped when the instructions below change in a way that should rewrite text
 # already on the site. The profile's own hash is mixed into the content hash
 # separately, so editing the profile re-runs the second paragraph by itself.
-SUMMARY_VERSION = "1"
+#
+# "2" (2026-11-08): both paragraphs halved, at the reader's request. The first
+# round's text had a median of 706 and 685 characters, and on a list of a
+# thousand rows that is a wall nobody reads to the end.
+SUMMARY_VERSION = "2"
 
 INSTRUCTIONS = f"""Yukarıdaki profil, yazdığın metinleri okuyacak kişiyi tanıtıyor.
 Sana bir grup GitHub reposu verilecek. Her biri için iki Türkçe paragraf yaz.
 
-**description_tr — projenin tanıtımı (4-6 cümle).** Ne yapar, kim için, hangi
-problemi çözer; öne çıkan teknik özellikler (stack, desteklediği modeller,
-yerel çalışabilirlik, lisans); olgunluk (yıldız sayısı, bakım durumu). Nesnel
-ve reklam dilinden uzak. **Bu paragrafta okuyucudan hiç bahsetme.**
+**Kısa tut.** Her paragraf 2-3 cümle, yaklaşık 250-350 karakter. Okuyucu bin
+satırlık bir listeyi tarıyor; her cümle bir bilgi taşımalı, tekrar ve giriş
+cümlesi yok.
 
-**usage_tr — "senin için nerede ve nasıl" (4-7 cümle).** Profilin 4. ve 5.
-bölümlerinden en güçlü bir veya iki eşleşmeyi seç ve **proje adıyla** belirt.
-Somut ol: hangi adımda, mevcut hangi araçla birlikte. Okuyucunun kriterlerini
-değerlendir: Mac'te yerel çalışır mı, API maliyeti getirir mi, kendi
-uygulamasına gömülebilir mi, asistanına devredilebilir mi. Kısa bir fayda ve
-uyarı ekle. Okuyucuya doğrudan hitap et ("...için kullanabilirsin").
+**description_tr — projenin tanıtımı (2-3 cümle).** Ne yapar ve kim için; en
+önemli bir-iki teknik özellik (stack, yerel çalışabilirlik, lisans) ancak
+karar için gerekiyorsa. Nesnel ve reklam dilinden uzak. **Bu paragrafta
+okuyucudan hiç bahsetme.**
+
+**usage_tr — "senin için nerede ve nasıl" (2-3 cümle).** Profilin 4. ve 5.
+bölümlerinden en güçlü tek eşleşmeyi seç ve **proje adıyla** belirt. Somut ol:
+hangi adımda, hangi araçla birlikte. Önemliyse tek bir uyarı ekle (Mac'te
+yerel çalışmıyor, API maliyeti var). Okuyucuya doğrudan hitap et
+("...için kullanabilirsin").
 
 **Dürüstlük kuralı — en önemlisi.** Gerçek bir eşleşme yoksa zorlama.
 `matched_project` alanını `null` bırak ve `usage_tr` içinde açıkça şöyle yaz:

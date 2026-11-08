@@ -15,6 +15,7 @@ from __future__ import annotations
 import argparse
 import datetime as dt
 import json
+import sqlite3
 import sys
 from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
@@ -96,6 +97,100 @@ def _get(client: httpx.Client, full_name: str, path: str) -> str:
     return response.text if response.status_code == 200 and response.text.strip() else ""
 
 
+def explosion_rows(conn) -> list[dict]:
+    """Every repository on the latest explosion boards, with what a packet needs.
+
+    Read from the database the import validates against, so `inputs_hash` is
+    computed from exactly the `repos` and `repo_topics` rows the import will
+    recompute it from. Held-back lures are left out: they are published by
+    name only, with no row to put a paragraph under.
+    """
+    conn.row_factory = sqlite3.Row
+    latest = conn.execute("SELECT MAX(date) FROM explosion_board").fetchone()[0]
+    rows = conn.execute(
+        """
+        SELECT DISTINCT r.id, r.full_name, r.description, r.language, r.license, r.stars,
+               r.created_at, r.homepage,
+               s.description_tr, s.usage_tr, s.matched_project, s.relevance,
+               s.investment_note
+        FROM explosion_board e
+        JOIN repos r ON r.id = e.repo_id
+        LEFT JOIN repo_summary s ON s.repo_id = r.id
+        WHERE e.date = ? AND e.board != 'held_back'
+        ORDER BY r.stars DESC, r.id
+        """,
+        (latest,),
+    ).fetchall()
+    topics: dict[int, list[str]] = {}
+    for repo_id, topic in conn.execute(
+        "SELECT repo_id, topic FROM repo_topics WHERE repo_id IN "
+        "(SELECT repo_id FROM explosion_board WHERE date = ?)",
+        (latest,),
+    ):
+        topics.setdefault(repo_id, []).append(topic)
+    out = []
+    for row in rows:
+        item = SummaryInput(
+            repo_id=row["id"],
+            full_name=row["full_name"],
+            description=row["description"],
+            topics=tuple(topics.get(row["id"], [])),
+            language=row["language"],
+        )
+        entry = {
+            "full_name": row["full_name"],
+            "stars": row["stars"],
+            "language": row["language"],
+            "license": row["license"],
+            "topics": sorted(topics.get(row["id"], [])),
+            "created_at": row["created_at"],
+            "homepage": row["homepage"],
+            "description": row["description"],
+            "inputs_hash": item.inputs_hash(),
+        }
+        if row["description_tr"]:
+            # Written in an earlier round at the old length. The second
+            # paragraph was written from the reader profile, so a session
+            # without the profile may shorten it but not replace it.
+            entry["existing"] = {
+                "description_tr": row["description_tr"],
+                "usage_tr": row["usage_tr"],
+                "matched_project": row["matched_project"],
+                "relevance": row["relevance"],
+                "investment_note": row["investment_note"],
+            }
+        out.append(entry)
+    return out
+
+
+def explosion_packets(db_path: Path, out: Path, args) -> int:
+    with sqlite3.connect(db_path) as conn:
+        rows = explosion_rows(conn)
+    print(f"{len(rows)} repos on the latest explosion boards", flush=True)
+    with httpx.Client(follow_redirects=True) as client, ThreadPoolExecutor(16) as pool:
+        readmes = list(pool.map(lambda r: fetch_readme(client, r["full_name"]), rows))
+    print(f"{sum(1 for r in readmes if r)} readmes fetched", flush=True)
+    for row, readme in zip(rows, readmes, strict=True):
+        row["readme"] = untrusted.fence(readme) if readme else ""
+
+    prefix = args.prefix or f"explode-{dt.date.today():%Y%m%d}"
+    manifest = []
+    for index in range(0, len(rows), args.per_agent):
+        chunk = rows[index : index + args.per_agent]
+        path = out / f"{prefix}-{index // args.per_agent + 1:02d}.json"
+        path.write_text(
+            json.dumps({"group": prefix, "repos": chunk}, ensure_ascii=False, indent=1),
+            encoding="utf-8",
+        )
+        manifest.append({"group": prefix, "packet": path.name, "repos": len(chunk)})
+    (out / "manifest.json").write_text(
+        json.dumps({"total": len(rows), "packets": manifest}, indent=1), encoding="utf-8"
+    )
+    existing = sum(1 for r in rows if "existing" in r)
+    print(f"total {len(rows)} repos ({existing} to shorten), {len(manifest)} packets")
+    return 0
+
+
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--out", required=True)
@@ -125,10 +220,20 @@ def main() -> int:
         "`facebookresearch/faiss` and `exo-explore/exo` among them, and nothing "
         "about either file looked wrong afterwards. Defaults to today's date.",
     )
+    parser.add_argument(
+        "--explosions-db",
+        help="Build packets for every row on the latest explosion boards, reading "
+        "them and every field the hash covers from this database file rather than "
+        "the published site. The explosion rows carry no topics, and a hash taken "
+        "over an empty topic tuple is skipped as stale on import — the failure that "
+        "once dropped 6 of 11 arrival paragraphs while every check passed.",
+    )
     args = parser.parse_args()
 
     out = Path(args.out)
     out.mkdir(parents=True, exist_ok=True)
+    if args.explosions_db:
+        return explosion_packets(Path(args.explosions_db), out, args)
 
     with httpx.Client(follow_redirects=True) as client:
         categories = get_json(client, f"{BASE}/categories.json") or {}
