@@ -1,0 +1,403 @@
+{
+ "repos": [
+  {
+   "full_name": "simplexai-labs/PolyStrata",
+   "inputs_hash": "3c7a376cf39a32f479eb732d39ccd17c",
+   "description_tr": "Büyük dil modellerini kendi bilgisayarında çalıştıran motor: Qwen3.6, GLM 5.3 Flash, DeepSeek V4 Flash ve Gemma 4 gibi modeller için C++ ile yazılmış iki ayrı motor kullanıyor. Windows ve Linux'ta tek tıkla kurulur, localhost'ta OpenAI ve Anthropic uyumlu API sunar. MIT lisanslı.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "Valen-Team/Valen",
+   "inputs_hash": "a8dd3c04fa622e7708636c7319a99af8",
+   "description_tr": "Metin, görüntü ve videoyu girdi alıp yapılandırılmış karar olasılıkları üreten açık ve hafif çok kipli karar modelleri (0.8B, 2B, 4B). Ağırlıklar ve VisualDecisionBench veri seti Hugging Face'te yayımlanmış; eğitim ve çalıştırma kodu Python ile, Apache-2.0 lisanslı.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "aston314/hongguo-tv-releases",
+   "inputs_hash": "20ce1a1940471fe0ad184fd57933fa30",
+   "description_tr": "Kısa dizi platformu Hongguo'nun (红果短剧) Android TV, webOS, macOS, Windows ve Linux istemcileri için kurulum paketlerini, sürüm bilgisini ve güncelleme notlarını dağıtan bir sürüm deposu. Android TV için standart, MPV ve Android 5 uyumlu üç APK var. Çince yazılmış, AI ile doğrudan ilgisi görünmüyor.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "ThariqS/ai-newtab",
+   "inputs_hash": "c543caeeae54e69e5caa023ac6fd10ff",
+   "description_tr": "Chrome'un yeni sekme sayfasını, tarama geçmişine bakıp takip ettiğin sayfaları açan ve her seferinde yeniden yazılan bir ana sayfayla değiştiren uzantı. Kendi Anthropic API anahtarınla çalışır; geçmiş özeti ve en fazla 8 sayfanın temizlenmiş HTML'i API'ye gönderildiği için gizlilik açısından dikkat ister. TypeScript, MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "mirkobrombin/raven",
+   "inputs_hash": "65f908fece6aa7114cb1ccab08cab68b",
+   "description_tr": "Windows uygulamalarını Linux'ta sanal makine ya da Wine olmadan çalıştıran uyumluluk katmanı: program kodu doğrudan CPU'da, Linux'a erişemeyen bir sandbox içinde koşar, Windows çekirdeğinin rolünü Raven üstlenir. Grafik için Wayland, Vulkan, DXVK ve vkd3d-proton kullanılıyor. x86_64 Linux, CMake ve C++20 gerekir.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "Paradigm-Study/claude-share",
+   "inputs_hash": "4109c2564d04b3cb7e6d7a2978d07518",
+   "description_tr": "Claude Code oturumunu bağlantıyla paylaşıp bir ekip arkadaşının kendi Claude Code'undan canlı katılmasını sağlayan eklenti. Katılan kişi istemleri ve araç sonuçlarını izler, aynı kodda Claude'a istem verir; istemler paylaşanın makinesinde çalışır ve varsayılan olarak her düzenleme ya da komut için onay sorar. Kendi sunucuna kurulabilir, MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "YeonwooSung/my-claude-code-mods",
+   "inputs_hash": "c54859389dadebbd7fb4a6b9139bb588",
+   "description_tr": "Claude Code Mods için yazılmış bir mod koleksiyonu: agent-profiler (süre dökümü, OTLP trace), context-inspector (bağlam israfı analizi), time-machine (araç çağrılarının dallanan zaman çizelgesi ve shadow-git anlık görüntüleri), loop-detective, pin-memo ve başkaları. Yazarın kendi ihtiyaçlarına göre yazılmış; TypeScript, Apache-2.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "Aryanutkarsh/SeeCode",
+   "inputs_hash": "19430317aeade0724f32a85de0391ae4",
+   "description_tr": "Kısa bir JSON belirtiminden animasyonlu, gezilebilir tek HTML dosyası diyagram üreten bir ajan becerisi. 42 diyagram türü ve tema desteği var; SVG, PNG, GIF veya MP4 olarak dışa aktarılır. Claude ve diğer kodlama ajanlarıyla çalışır. JavaScript, MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "TGP482/BLACK-XBERecomp",
+   "inputs_hash": "07bc06f69c57b0568d5d96323ae8988c",
+   "description_tr": "Black (2006) oyununun orijinal Xbox sürümünün, statik yeniden derleme ile üretilmiş gayriresmî yerel PC portu. Klavye-fare desteği ile ekran ve render çözünürlüğü seçenekleri ekler. Oyun dosyaları içermez, kendi yasal kopyandan sağlaman gerekir. AI ile ilgisi yok.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "blendi-remade/dioramas",
+   "inputs_hash": "423c70eaac051eb6841526f25f0440db",
+   "description_tr": "Yapay zekâyla üretilmiş 3D nesnelerle sinematik, etkileşimli web siteleri kurmak için ücretsiz çerçeve: görseli Nano Banana 2, 3D modeli Meshy 7.1 üretiyor (fal üzerinden), sonra optimize edilip three.js sahnesine giriyor. 20 örnek site var; README'ye göre dokulu bir model yaklaşık 1,20 dolara çıkıyor. MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "Nicovic17/vanish_webcam",
+   "inputs_hash": "3c69a2fe2fa43f022853e244d02c0b88",
+   "description_tr": "Web kamerası görüntüsüne Naruto, Goku, Itachi ve parçacık gibi kaybolma efektleri ekleyen Python uygulaması; görüntü bilgisayarda işlenir, sanal kamera olarak sunulur. Paketlenmiş Windows EXE'leri Firebase üzerinden e-posta lisansı ve internet ister, Python kaynağı yerelde lisanssız çalışır. Lisans NOASSERTION.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "raymondchins/Bridgeplay",
+   "inputs_hash": "ff84c8b641e8d8654e161f100eb624da",
+   "description_tr": "Windows'a özel Steam oyunlarını Apple Silicon Mac'lerde, mevcut Mac Steam istemcisinin içinden çalıştıran ücretsiz bir NotProton çatalı. CodeWeavers'ın Wine'ını ve Apple'ın Game Porting Toolkit'ini kullanır; M1 ve üstü ile macOS 26+ gerekir. GPL-3.0. AI ile ilgisi yok.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "sahenjp/RustXNG",
+   "inputs_hash": "21f8c13b15451299b341e5ca5ba0c706",
+   "description_tr": "SearXNG tabanlı, Rust ile yazılmış, kendi sunucunda çalışan metaarama motoru. Dış arama sağlayıcılarının sonuçlarını birleştirir, JSON API ya da MCP üzerinden yapay zekâ ajanları için sayfa metni getirebilir. Kendi web ölçeğinde dizini yok; seçili siteler için yerel dizin eklenebilir. AGPL-3.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "kitlangton/scrawl",
+   "inputs_hash": "d9caa925dc5198aeaa4ebfdf8045b05d",
+   "description_tr": "Sorunu ajana anlatmak yerine göstermek için ekran kaydı aracı: kısayola basınca ekranı, sesini ve çizdiğin işaretleri kaydeder, annotasyonlu anahtar kareler, zaman hizalı transkript ve manifest içeren bir paket üretir. Claude Code, OpenCode ve Codex için beceri var. Rust, MIT; Apple silicon Mac (macOS 15+), Windows sürümü önizleme.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "AgentSystemLabs/agent-office",
+   "inputs_hash": "a69ab90f2fd2fb86fca05c733e69caab",
+   "description_tr": "Claude Code, Codex, OpenCode ve Cursor gibi kodlama ajanlarını 3D çizgi film ofisinde masalara oturtan; her birinin terminalini canlı izleyip birlikte girebildiğin arayüz. Her GitHub deposu binanın bir katı. Yazar tek kişilik iş akışı için yazdığını ve sürümler arası kırılma beklenmesi gerektiğini söylüyor. TypeScript, MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "whaleyxbt/claude-motion",
+   "inputs_hash": "1533dbff4d3469bf8da3485f87d83899",
+   "description_tr": "Kodlama ajanları için hareket tasarımı araç seti; Claude tek istemle video üretebiliyor. İkinci bir hat, three.js ile tek HTML sayfasında yazılan simülasyonları headless Chromium ve ffmpeg ile kare kare yakalayıp 60 fps videoya çeviriyor. JavaScript, MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "elstongun/leviathan",
+   "inputs_hash": "076443be42790642e5322c513323175d",
+   "description_tr": "Tablo, dışa aktarım ve log kayıtlarını (JSONL, JSON, CSV/TSV, SQLite) tek statik ikili ile sıralı tam metin dizinine çeviren, ajanlar için bellek aracı. Ajan kısa, kaynak gösteren sonuç kartları alır; README, 1 milyon kayıtta soru başına medyan 436 token ölçtüğünü söylüyor (yazarın sentetik veri seti). Rust, Apache-2.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "0xProbabillity/house-control",
+   "inputs_hash": "389f4d016571d2821cdb9317389a10fd",
+   "description_tr": "Evin planını Mac menü çubuğunda, çentik çevresinde ve iPhone'da canlı 3D model olarak gösteren; ışık ve klimaları Smart Life, Home Assistant, Philips Hue ve Apple Home üzerinden kontrol eden uygulama. Oda planı tek bir JSON dosyasından kuruluyor. Swift, MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "CoolkHz/gptibo",
+   "inputs_hash": "52657d5391ddc7a552cffbb7f757c7dc",
+   "description_tr": "Kendi sunucuna kurulabilen dijital ürün mağazası: kullanıcı vitrini, yönetim paneli ve bayi çalışma alanı içeriyor. Ön yüz React 19 ve TypeScript; arka uç Go + PostgreSQL ya da Cloudflare Workers + D1. Orijinal site kapanmış, kaynak MIT ile açılmış; tedarikçi sistemi dahil değil. AI ile ilgisi görünmüyor.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "serein-morii/DiPlay-CN",
+   "inputs_hash": "5ac497e359ba234ec0959db29d9d581d",
+   "description_tr": "BYD Android multimedya cihazları için kablolu ve kablosuz CarPlay uygulaması; DiPlay v0.2.22 tabanlı, ayrı paket adıyla resmî DiPlay yanında kurulur. Yalnızca 2025 BYD Han DM-i (DiLink 5.0) üzerinde test edilmiş. README, imzalama anahtarının herkese açık olduğunu, yalnızca bağlantılı sürüm sayfalarının kullanılması gerektiğini uyarıyor. Kotlin, GPL-3.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "speridlabs/idol-sdk",
+   "inputs_hash": "06cc79a26e8c0c5c99074f3066fba8ad",
+   "description_tr": "Tek bir görselden 3D Gaussian'lar (standart 3DGS .ply) üreten model için çıkarım SDK'sı ve demo. 370M parametreli DiT ve 288M'lik decoder kullanıyor, arka plan temizliği için BiRefNet var. Ağırlıklar ilk kullanımda Hugging Face'ten iner ve erişim izni gerektirir. Python 3.10+, PyTorch 2.5+, Apache-2.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "feder-cr/invisible_playwright_mcp",
+   "inputs_hash": "f603406871460038217b331c2303186d",
+   "description_tr": "Playwright tabanlı MCP sunucusu ve web ajanı; C++ seviyesinde yamalanmış gerçek bir Firefox motoru kullanır, sayfanın görebileceği WebDriver bayrağı ya da otomasyon global'i bırakmaz. `--seed` kimliği tekrarlanabilir kılar, `--profile-dir` oturumu korur. Ajan olarak OpenRouter ile, MCP sunucusu olarak Claude Code ve Codex'e bağlanarak çalışır. Python, MIT.",
+   "usage_tr": "Lyricdrop'ta Apify'ı bıraktıktan sonra kalan boşluğu bu tarayıcı kapatabilir; bloklanan söz ve şarkı sayfası istekleri bu motorla geçebilir. MCP sunucusu olarak Claude Code'a bağlarsan karar veren model Max aboneliğinden gider. Uyarı: anti-bot önlemlerini aşmak kullanım şartları ve hukuki risk taşıyor, bu yüzden kalıcı altyapı değil geçici çözüm olarak tut.",
+   "matched_project": "Lyricdrop",
+   "relevance": 6,
+   "investment_note": null
+  },
+  {
+   "full_name": "dualface/ste-zh",
+   "inputs_hash": "47c0a1323c9d565f1dc4b149314f17e1",
+   "description_tr": "Ajanın kullanıcıya sonuç bildirirken ASD-STE100 (Simplified Technical English) ilkelerini Çince'ye uyarlayarak yazmasını sağlayan beceri: sonuç ve durum önce gelir, kanıt dosya:satır olarak verilir, doğrulanan ile doğrulanmayan ayrılır. Yalnızca ajanın iletişim biçimini etkiler; kod, yorum ve commit mesajlarına dokunmaz. MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "cutetailbud/ff-ruyijs",
+   "inputs_hash": "2ee551c10f4132a7abe00996dd991a49",
+   "description_tr": "Python'dan çağrılan, penceresiz ve render motorsuz hafif tarayıcı; gerçek Firefox JavaScript motoru ve ağ yığınını kullanır. Codex ya da Claude Code gibi ajanların tarayıcı otomasyonu, JS tersine mühendislik ve veri toplama işleri için tasarlanmış, bot kontrollerini aşmayı hedefliyor. C++, AGPL-3.0, PyPI paketi var.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "sno-ai/sno-station-skills",
+   "inputs_hash": "051ca23ac3bc28f25be9597361a030f4",
+   "description_tr": "Claude Code ve Codex'i birlikte çalışan bir ekibe çeviren beceri koleksiyonu: farklı sağlayıcıdan çapraz kod incelemesi, kota dolunca otomatik devir, tek sayfalık sabah özeti, kanıtlı iş emirleri ve oturumlardan öğrenen gece döngüsü. `sno setup` ile kurulur. Shell, Apache-2.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "justrach/nanoui",
+   "inputs_hash": "6763d1081afdaf86e0d7862861130bf2",
+   "description_tr": "Zig ile masaüstü uygulaması kurma çerçevesi: arayüz ya GPU'da (macOS'ta Metal) çizilen yerel UI ya da sistem webview'ında bir web ön yüzü olabilir. Flexbox yerleşimi, animasyon ve pencere gerektirmeyen test desteği var; macOS, Windows ve Linux hedefleniyor. Üzerine nanoterm ve nanomon yazılmış. MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "hyz317/HairDeck",
+   "inputs_hash": "0721e4130cf5d3fbb22222013778948a",
+   "description_tr": "Tek bir görselden animasyona hazır stilize saç kartları üreten araştırma kodu (Tsinghua, CMU, CUHK). GLB ve VRM dışa aktarımı var; son güncellemelerle renkli saç kartları, Windows ve Apple silicon (MPS) desteği geldi. Python, Apache-2.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "jackwener/DSH-Android",
+   "inputs_hash": "758bbd79b55c13758f42a2b9e38f7297",
+   "description_tr": "Root ve Termux gerektirmeden tek APK ile Android telefonda DeepSeek Harness çalıştıran telefon ajanı: erişilebilirlik servisiyle ekranı okuyup uygulamaları kullanır, sistem ayarlarını değiştirir, zamanlanmış otomasyon yapar. İsteğe bağlı Shizuku ile sanal ekranda çalışır. Arm64, Android 10+; Kotlin, Apache-2.0. README Çince.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "kargulstudio/calender-app-design",
+   "inputs_hash": "1006c7edd8e41ed5875a2d15489adf65",
+   "description_tr": "Figma'daki 'Dashboard – calendar' tasarımından yapılmış, insan kaynaklarına yönelik Kargul Workspace'in tasarım prototipi: takvim (hafta, gün, ay), izin talebi ve bakiye hesabı, ⌘K arama. Arka ucu yok, veri localStorage'da duruyor. Next.js 16, React 19, Tailwind v4; MIT. AI ile ilgisi yok.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "bbylw/rea-cn",
+   "inputs_hash": "d9ae9d3730d0b928fdd22b00b9d16633",
+   "description_tr": "Ajanların ikili dosyaları, JavaScript ve Electron uygulamalarını, .NET derlemelerini ve web sitelerini bir MCP hizmeti üzerinden tersine incelemesini sağlayan REA'nın Çince sürümü. Analiz yerelde çalışır, bulgular kanıtla gelir; Hopper veya Ghidra kullanılabilir. Kurulum `npx rea-agents setup`. Depo dili Astro, lisans belirtilmemiş.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "TG-Twilight/c001apk",
+   "inputs_hash": "e4cc859b8cec694ccf7564f82d403641",
+   "description_tr": "Çince, hafif, gayriresmî bir Coolapk (酷安) istemcisi; Android ve Windows hedefleniyor. HDR ve Live fotoğraf görüntüleme, sıvı cam arayüzü, yerel içerik filtresi, gönderi kaydetme (Markdown/HTML) ve geniş ekran okuma modu ekliyor. Dart, AGPL-3.0. AI ile ilgisi yok.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "rauchg/gdp-ts",
+   "inputs_hash": "b8af89bd75e0c6485d2329ee5cdc8d90",
+   "description_tr": "TypeScript için GDP adlı doğrulama sisteminin küçük bir uygulaması: yetkilendirme ve hak kontrolü hatalarını derleme zamanında yakalar, çalışma zamanı maliyeti ihmal edilebilir. Kademeli benimsenebilir, insanların ve kodlama ajanlarının bu hataları yazmasını zorlaştırır; ajanlar için beceri de var. TypeScript 5.4+, MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "AgentMemoryRepo/agentmemoryrepo",
+   "inputs_hash": "499797410b37b253a2b65191c6cbe4eb",
+   "description_tr": "Ajanların oturumlar arası hatırlaması için spesifikasyon: bellek ayrı bir git deposunda, birbirine bağlı girdiler olarak durur; ajan klonlar, grep ile arar, günceller ve her düzenlemeden sonra push eder. Periyodik çalışan 'Dreaming' ajanı yinelenenleri birleştirir, yeni örüntüleri kaydeder. Devin, Claude Code ve Cursor için beceri kurulumu var. MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "ythx-101/live-panel-skill",
+   "inputs_hash": "dd8f7492822c0016d36c1b3f7e6dc8d9",
+   "description_tr": "Tek bir JSON yapılandırmasından çalışıyormuş gibi hareket eden mimari diyagram üreten ajan becerisi ve renderlayıcı: paketler hatlardan akar, log kayar, sayaçlar işler. Terminal tarzı panel ya da açık temalı infografik olarak H.264 mp4 veya web sayfası çıkarır; X ve Xiaohongshu oranlarına uyar. JavaScript, MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "rootscripts/riff",
+   "inputs_hash": "21def737b916df104417f1d3b93640ce",
+   "description_tr": "YouTube Music, SoundCloud ve yerel dosyaları çalan, Material Design 3 arayüzlü ücretsiz açık kaynak masaüstü müzik çalar. WebGL shader görselleri ve ses efektleri içerir, hesap gerektirmez, izleme yapmaz. Dışarıdan pull request kabul edilmiyor. JavaScript, MIT. AI ile ilgisi yok.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "zita-ch/supermimic_vibed",
+   "inputs_hash": "30672bbb4cce373d00f2982723323a28",
+   "description_tr": "Tek bir hareket takip politikasıyla LAFAN1'in 40 klibinin hepsini, tek RTX PRO 6000'de yaklaşık 1,5 GPU saatte eğiterek 0,829 değerlendirme getirisiyle ve başarısız klip olmadan geçen robot denemesi. Isaac Lab ve MuJoCo-Warp kullanıyor. Yazar kodun bir saatte AI yardımıyla yazıldığını ve gözden geçirilmediğini belirtiyor. Python, MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "OpenBMB/MiniCPM-OCR",
+   "inputs_hash": "6ed4b6c3ce83817268a8d94b2dca3589",
+   "description_tr": "OpenBMB'nin belge çözümleme ve metin tanıma model ailesi: MiniCPM-OCR 1.0 Çince ve İngilizce belge ve PDF'leri (tarama, fotoğraf, eğri sayfa dahil) ayrıştırıyor; Jev ise sonuçları bölge düzeyinde değerlendirip güvenilmeyen kısımları ayırıyor. Ağırlıklar, ücretsiz API, beceri ve yerel dağıtım seçenekleri var. Apache-2.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "franzenzenhofer/big-arrow-on-the-screen",
+   "inputs_hash": "14f13453919939d87069c02a402740ec",
+   "description_tr": "Ajanın kullanıcıdan bir düğmeye tıklamasını istemesi gerektiğinde ekrana büyük ok, kutu ve metin çizen macOS komut satırı aracı. Tek şeffaf, tıklamayı geçiren pencere tüm ekran ve Space'lerde görünür, kendiliğinden kaybolur; çizim için macOS izni gerekmez. Tek Swift ikilisi, içinde AI yok. Claude Code ve Codex için beceri var. MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "Gamer92000/echo-dot-assist",
+   "inputs_hash": "e240f412dd7ba6e82f9e0e36cb708a1d",
+   "description_tr": "Amazon Echo Dot 3, Echo Dot 2 ve Echo 2 cihazlarını yerel Home Assistant ses uydularına çeviriyor: Amazon'un uyandırma sözcüğü motoru kalır, Alexa yerine ESPHome ya da Wyoming konuşan küçük bir C servisi gelir. Kurulum bootloader'ı açıp sistem bölümüne yazar ve cihazı bozabilir; yazar kodun AI ile yazıldığını ve denetlenmediğini belirtiyor. MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "rerun-build/rerun",
+   "inputs_hash": "24b75491548e22f3938a18c3de938f1d",
+   "description_tr": "Ekibin araçlarını kullanan, zamanlanmış çalışan ve önemli işlerden önce onay isteyen 'AI çalışma arkadaşları' platformu. Foreman adlı ajan ihtiyacı sorup ekibi kurar; her çalışanın kendi belleği, becerileri ve bilgisayarı var. Model olarak API anahtarı, Claude/ChatGPT aboneliği ya da Ollama gibi yerel sunucu seçilebilir. Kendi sunucuna kurulur, AGPL-3.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  }
+ ]
+}
