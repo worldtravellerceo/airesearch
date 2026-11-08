@@ -1,0 +1,144 @@
+{
+ "repos": [
+  {
+   "full_name": "Graphicle-AI/graphicle",
+   "inputs_hash": "7f4d58892fe238761b0e412edb4829e8",
+   "description_tr": "Graphicle, kod deposunu bir code graph'a çevirip projenin dokümanlarını, kararlarını ve geçmiş ajan oturumlarını hatırlayan tek bir Rust programıdır. Claude Code, Cursor, Codex ve diğer MCP istemcilerine dosya ve satır atıflı alıntılar verir. Yerelde çalışır; API anahtarı, hesap ya da telemetri gerektirmez. Apache-2.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "liuhaisi2026212-maker/taishang-laojun",
+   "inputs_hash": "dc1aac2aeb07470dfbe65787bf4ed063",
+   "description_tr": "Douyin ve Xiaohongshu için kısa video üretimine yönelik bir agent skill: hedef hesap analizi, konu seçimi, seri planı, konuşma metni, başlık ve geri bakış adımlarını kapsar. Claude Code ve Codex'e npx ile kurulur; sohbet ajanları için ayrı bir Bot sürümü var. Çıktı, hazır kalıp yerine kullanıcının kendi deneyimine dayanan öneriler hedefler. Lisans belirtilmemiş.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "FrigadeHQ/hob",
+   "inputs_hash": "cef77579b4f97e2a91270ebc770b07ff",
+   "description_tr": "Hob, Gemma ve gpt-oss gibi açık ağırlıklı modelleri Mac, Windows ve Linux'ta yerelde çalıştıran masaüstü bir yapay zekâ uygulamasıdır. Bilgisayara uygun modeli seçip kurulumu kendisi yapar; PDF doldurma ve belge üzerinde çalışma gibi işleri çevrimdışı yürütür. Electron ve TypeScript tabanlı, MIT lisanslı.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "liangdabiao/whiteboard-teacher-video",
+   "inputs_hash": "06bfddfdec2a4c86f6206c885b1da7f2",
+   "description_tr": "Anlatım metnini 'elle çizilen, hareketli' görsellerle açıklama videosuna çeviren bir skill. Şekiller rough.js ile kodla çizilir, metin harf harf yazılır; render yerel Chrome'da yapılır ve görsel üretim API'si gerekmez, yalnızca TTS ücretlidir. Beş stil sunar; değişiklikte yalnızca etkilenen kısım yeniden render edilir. Lisans belirtilmemiş.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "gothamor/gta-vcs-recomp",
+   "inputs_hash": "2a14bdca6a9dbf05b42ea62d744f209a",
+   "description_tr": "PS2 sürümü Grand Theft Auto: Vice City Stories'in çalıştırılabilir dosyasını C++'a yeniden derleyerek Windows ve Linux için yerel bir port üretir. Oyun dosyaları depoda yok; kullanıcı kendi ABD diskinin ISO'sunu vermeli. Windows'ta bir başlatıcı Microsoft C++ araçlarıyla derlemeyi yönetir ve ilk derleme 20-60 dakika sürer. GPL-3.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "JaceThings/DiaTweaks",
+   "inputs_hash": "395f27590feb928d55d08744d369ef02",
+   "description_tr": "DiaTweaks, Dia tarayıcısının değiştirilmemiş bir kopyasını saklayıp küçük bir eklenti yükleyen ikinci bir kopya üretir; böylece ince ayarlar Dia güncellemelerinde de korunur. macOS'ta kaynaktan derlenir ve kullanıcı tarafından imzalanır. Veri göndermez, yalnızca güncelleme denetimi için ağa çıkar. Objective-C; lisans belirtilmemiş.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "schematrix/HAS_Prepper_Disk",
+   "inputs_hash": "e2e411a63f75b7d68d8587d3e01e899b",
+   "description_tr": "Raspberry Pi 5 üzerinde kendi Wi-Fi ağından Wikipedia, haritalar ve hayatta kalma kaynaklarını sunan çevrimdışı bilgi arşivi. Internet-in-a-Box tabanlıdır ve internet gerektirmez. Türkçe içerik (Vikikitap, Vikisözlük, PhET, iFixit) ile SHA-256 doğrulamalı indirme betiği içerir. MIT lisanslı, Türkçe ve İngilizce belgelenmiş.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "alexander-stack1/ciencia-de-dados-cibele-russo",
+   "inputs_hash": "657b4d9de85b98820080119e58fa7707",
+   "description_tr": "Prof. Cibele Russo'nun (ICMC/USP) Veri Bilimi derslerinden Google NotebookLM ile üretilmiş, konulara göre düzenlenmiş çalışma yolları. Markdown ve LaTeX formüllerinden oluşur, Portekizce yazılmıştır ve yanlışlar içerebileceği belirtilmiştir. Yazılım değil ders materyalidir; içerik sahibinden yayın izni alındığı ifade ediliyor. Lisans belirtilmemiş.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "CzJam/gjgjxweb",
+   "inputs_hash": "872b4152494ab053cdfe6593642c59af",
+   "description_tr": "Çin'de yaygın 'Gaoji Toolbox' ADB aracının, WebUSB ile Chromium tabanlı tarayıcıda çalışan web sürümü. Kurulum gerektirmeden uygulama yönetimi, APK kurulumu, dosya aktarımı, ekran ayarları, pil bilgisi ve etkileşimli ADB terminali sağlar. USB ile bağlanır; Fastboot ile flaşlama yoktur. HTML ve JavaScript, GPL-3.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "wanghao-SunSky/cs329z-chinese",
+   "inputs_hash": "dbe6f12df9cfd63786f550adbcf2c0e4",
+   "description_tr": "Stanford CS329Z 'Engineering AI Agents' dersinin gayriresmî Çince çalışma notları: 19 ders ve 4 uygulama, LLM, RAG, araç çağırma, bellek, çok ajanlı sistemler, değerlendirme ve güvenliği kapsar. Markdown, HTML ve tek dosyalık çevrimdışı sürümle gelir; Python bilen geliştiricilere yöneliktir. Resmî çeviri değildir; lisans belirtilmemiş.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "sostenesfreitas/ocarina-recomp",
+   "inputs_hash": "9c7e8ce5eb447cdc85defd937b08b59f",
+   "description_tr": "Ocarina of Time'ı emülatörsüz, Windows'ta yerel çalıştıran bir yeniden derleme projesi. Oyun dosyası içermez; kullanıcı kendi kopyasından derler. Deneyseldir: yalnızca tek bir PC'de, oyunun başlangıç bölgesinde denenmiş; AMD ve Intel ekran kartları test edilmemiş. Yaklaşık 51-59 fps raporlanıyor. C, GPL-3.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "heydeer/slimdeer",
+   "inputs_hash": "75ac2af335184b66cf76ef9c254d8fc3",
+   "description_tr": "slimdeer, PNG dosyalarını otomatik kalite ayarıyla daha küçük PNG ya da WebP'ye sıkıştıran bir Rust komut satırı aracı; tarayıcı sürümü de var. Geliştiricisi, ortanca görselde çıktının TinyPNG'den eşit kalitede %8-12 küçük olduğunu söylüyor; bu ölçüm bağımsız doğrulanmadı. MIT lisanslı.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "PiggyBackBayonet/MiAuto",
+   "inputs_hash": "39bfc4f58827d814f91b6c8cd620723f",
+   "description_tr": "Xiaomi CarWith, OPPO Car+ ve vivo Jovi InCar'ın ortak konuştuğu ICCOA CarLink protokolüyle telefon ekranını araç ünitesine kablosuz yansıtan Android alıcısı. Adaptör kutusu ya da root gerekmez. Başka bir açık kaynak projenin fork zincirine dayanır; BYD gösterge/HUD çıktıları vardır. Kotlin, AGPL-3.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "Jestions-dev/BlueFatFish",
+   "inputs_hash": "74f5c52670eaeb8eb2cf3e3968140497",
+   "description_tr": "Mavi Büyük Şişko Balık temalı, Chrome ve Edge için yeni sekme sayfası eklentisi: zıplayan, sürüklenebilen balıklar, özel duvar kağıdı (resim, GIF, video) ve kısayol etiketleri. Veriler yerelde tutulur, yalnızca site simgesi çekilirken ağa çıkılır. Edge mağazasında yayında. JavaScript, MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  }
+ ]
+}

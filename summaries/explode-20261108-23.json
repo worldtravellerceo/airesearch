@@ -1,0 +1,404 @@
+{
+ "repos": [
+  {
+   "full_name": "aixisstudio/Snitch",
+   "inputs_hash": "b6433eaef379ea619a2d9fbd9114a702",
+   "description_tr": "Gerçek zamanlı ağ izleyici ve giden bağlantıları engelleyen güvenlik duvarı: bilgisayarın kurduğu her bağlantıyı, hedefini ve sorumlu uygulamayı gösterir. Python/FastAPI ve Rust filo ajanı, SIEM dışa aktarımı ve 8 dil arayüzü var; AGPL-3.0, tamamen yerel çalışır.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "lochie/skullet",
+   "inputs_hash": "7c0a189ccff300004adde596bfe27a13",
+   "description_tr": "React, Vue, Svelte ve düz JavaScript için skeleton yükleme durumu kütüphanesi. İçeriği ölçüp yüklenen verinin kaplayacağı yerin aynısını iskelet olarak çizer, böylece veri gelince düzen kaymaz. pnpm ile kurulur, MIT lisanslı.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "toyxyz/toyxyz_RGBMocap",
+   "inputs_hash": "1161e9d6f3eb9972c407be0aaaf0c9ae",
+   "description_tr": "Videoyu düzenlenebilir insan animasyonuna çeviren yerel Windows uygulaması. ExMR, FlowHMR ve GVHMR modelleriyle hareket yakalama, temas düzeltme ve karakter retargeting yapar; FBX ve VMD olarak dışa aktarır. Lisansı NOASSERTION, kurulum Git for Windows gerektirir.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "surendrapandar/minilytics",
+   "inputs_hash": "2216515715eab91c32d14df62975d441",
+   "description_tr": "Cloudflare'in ücretsiz planında çalışan, gelir odaklı web analitiği aracı. Ziyaretçinin hangi tweet, makale, Google sayfası ya da AI asistanından geldiğini ve hangi kaynağın gelir getirdiğini gösterir. Kendi sitelerini izlemek isteyen bağımsız geliştiriciler için; MIT lisanslı.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "cobanov/PS5LM",
+   "inputs_hash": "2cb83893a86466674c4016e96952de68",
+   "description_tr": "Jailbreak'li PS5'te llama.cpp çalıştırarak GGUF modellerini doğrudan konsol GPU'sunda koşturur, ilk olarak Qwen ile. Ağdaki cihazlara OpenAI ve Anthropic uyumlu API sunar ve TV için arayüzü vardır. Çalışması için jailbreak'li bir PS5 gerekir; GPL-3.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "ItsAlphaNeon/Lemon-Studio",
+   "inputs_hash": "e232c17372a7ac2e978f79690cbe9d92",
+   "description_tr": "Rust ile yazılmış, ücretsiz ve açık kaynaklı dijital ses iş istasyonu (DAW). Tanıdık bir DAW arayüzü hedefler; GPL-3.0 lisanslıdır. README kısa teknik ayrıntı veriyor, olgunluk düzeyi metinden anlaşılmıyor.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "yaojingang/GEOInflow",
+   "inputs_hash": "a85d21086a11cfd00584270cd9aa841a",
+   "description_tr": "Üretken motor optimizasyonu (GEO) için kendi sunucunda çalışan web ve AI tarayıcı analitiği. Ziyaretçileri, AI arama yönlendirmelerini ve tarama günlüklerini birleştirir; hangi AI botunun hangi sayfaları istediğini ve hangi önemli sayfaların hiç taranmadığını gösterir. TypeScript, PostgreSQL, MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "kuraeow/ultratears",
+   "inputs_hash": "703f1e890aae0c3a146144a3143034d1",
+   "description_tr": "The Legend of Zelda: Tears of the Kingdom 1.4.3 için resmi olmayan, statik yeniden derlemeyle yapılmış yerel PC ve Steam Deck portu. Emülatör değildir; oyun kodu önceden yerel koda çevrilir. Oyun dosyası içermez, kullanıcının kendi konsol dökümü gerekir; GPL-3.0, C.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "motiontemplates/all",
+   "inputs_hash": "4070b150ba1271fb974fd46c82cbdee1",
+   "description_tr": "MotionGit video şablonlarının .motion proje formatını tanıtan şablon galerisi. Bir .motion paketi görsel stili, animasyon bileşenlerini, ses tasarımını ve AI asistanlarının çalıştıracağı yönergeleri içerir. Repo ağırlıklı olarak Çince dokümantasyon ve demo içeriğidir, lisans belirtilmemiş.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "chadyi/StudyOnTV",
+   "inputs_hash": "91f4288c33db72da3e622c8f1df194ab",
+   "description_tr": "Çocukların soruları yanıtlayarak ekran süresi kazandığı açık kaynaklı Android TV, tablet ve telefon uygulaması. Sunucu ve hesap gerektirmez; ebeveyn QR kodla yerel ağdan soruları yönetir. Kotlin; arayüz ve README Çince, lisansı NOASSERTION.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "CluvexStudio/ZedSecure",
+   "inputs_hash": "ca0086915c0610b562ea753eda8d0fff",
+   "description_tr": "Android ve masaüstü için çok çekirdekli VPN istemcisi: Xray, sing-box, Psiphon, Tor, DNS tünelleri, WireGuard/AmneziaWG, OpenConnect ve IKEv2 protokollerini tek uygulamada toplar. Kotlin ile yazılmış, Google Play'de de var; AGPL-3.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "ramenvr/autopilot",
+   "inputs_hash": "1114e256fb584b7d46bd5b4c4a5ea554",
+   "description_tr": "Oyun oynayıp test eden, oynadıkça öğrenen gerçek zamanlı genel amaçlı oyun test sistemi. Oyununuzu öğrenir, seviyeleri keşfeder ve her denemede gelişir. Autopilot eklentisi ve Claude Code ile Codex üzerinden MCP olarak kullanılabilir; Python, Apache-2.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "genex-games/genex-desktop",
+   "inputs_hash": "916e2747b92dab4b4d03714044db972f",
+   "description_tr": "Unreal Engine, Unity, Godot veya tarayıcıda oyun geliştirmek için masaüstü uygulaması. İçindeki ajan motoru kurar, oyunu yazar ve kendi başına oynayarak test eder. Claude Code ve Codex ile çalışır, yerel LLM desteği var; TypeScript, MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "ctoldigital/axuse",
+   "inputs_hash": "6a16ab8bd1366e6991f45bfeef59c703",
+   "description_tr": "Codex, Claude Code, OpenCode gibi ajan ortamlarına tek MCP sunucusu olarak bağlanan tarayıcı ve bilgisayar kullanımı aracı. Ekran görüntüsü döngüsü yerine CDP üzerinden DOM ve erişilebilirlik ağacını kullanır: farklı anlık görüntüler, sabit eleman referansları. Bağımlılıksız, Node 22+; lisans NOASSERTION.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "FengZhenfei/carrel",
+   "inputs_hash": "428f8c0e696b12c477c7705170d54b53",
+   "description_tr": "AI ajanları için ontoloji destekli üretim (Ontology-Augmented Generation) yapan, kendi sunucunda çalışan bilgi tabanı. Belgeleri MinerU ile ayrıştırır, indeksler ve isteğe bağlı bilgi grafiği kurar; ajan API üzerinden kaynak pasajları alır. Standart sürüm Qdrant, OpenSearch, Neo4j; hafif sürüm LanceDB ve DuckDB kullanır. MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "droogie/bbhost",
+   "inputs_hash": "0e05bdb868047cbca4cbd1e06357ea4a",
+   "description_tr": "Bloodborne'un PC'de çalışması için yapılmış bir proje; açıklaması 'Definitive Bloodborne PC Experience'. C++, GPL-3.0. README içeriği pakette boş olduğundan teknik ayrıntı doğrulanamadı.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "c22dev/muguet",
+   "inputs_hash": "5dfe99a5be2896dc4d5596c5b9817f0d",
+   "description_tr": "GTA V'in WebAssembly derlemesini wasmtime ve Metal üzerindeki wgpu ile yerel Mach-O uygulaması olarak çalıştıran macOS/iOS portu, çok oyunculu destekle. Apple Silicon Mac, macOS 14+ ve Xcode 26 gerekir; iOS için geliştirici hesabı ve 8 GB RAM önerilir. Rust, GPL-3.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "konlu/story-studio",
+   "inputs_hash": "abeb5b67a3171348d7e6538061f5f6f9",
+   "description_tr": "Kısa video üretimini konu seçiminden CapCut (Jianying) taslağına kadar yürüten bir Agent Skill: metin, seslendirme, görsel üretimi ve taslak. Claude Code, Codex, Cursor gibi skill destekli ajanlarda kullanılır; adımlar tek tek de çalıştırılabilir. Python, Çince README, lisans NOASSERTION.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "TannerMidd/pi-pocket",
+   "inputs_hash": "3560347e7b7f0cd505413ff5f9e16857",
+   "description_tr": "Pi kodlama ajanları için kalıcı, çok kullanıcılı ve mobil öncelikli web uygulaması; Pi Durable üzerine kuruludur. Her model ve araç çağrısı kaydedilir, böylece sunucu yeniden başlasa da oturum devam eder. Kendi makinenizde ya da doğrudan telefonda çalışır, bulut VM gerekmez. TypeScript, MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "Cyletix/CyIME",
+   "inputs_hash": "1e117ffb7ae5880390bf274cd148982c",
+   "description_tr": "Rime motoruna dayanan Android Çince girdi yöntemi. Pinyin, çift pinyin, Wubi, el yazısı, çevrimdışı ses tanıma ve işitme engelliler için canlı altyazı yerel cihazda çalışır; dokuz tuş için kendi eğittiği model var. Kotlin, GPL-3.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "ChiefGyk3D/Clouds-Against-Humanity",
+   "inputs_hash": "8dbd0f99cadaeea9c7980da2d4f0311a",
+   "description_tr": "Bulut güvenliğini ev laboratuvarı kurarak öğreten açık kaynaklı eğitim projesi: Zero Trust, DevSecOps, IaC ve bulut mimarisi. Asıl içerik wiki'de; dersler, alıştırmalar ve kararlar orada, repo ise derslerin kullandığı ortamdır. Python, Apache-2.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "mizorewww/gdirect",
+   "inputs_hash": "5e9337a6ad6f2a25ff168ac475805c6c",
+   "description_tr": "Aria2 kütüphanesini sabitleyerek Google Drive'dan doğrudan indirme yapan Rust aracı. Açıklaması tek satır; README paketteki metinde boş olduğundan özellikler doğrulanamadı. GPL-2.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "AssassinCreator/steam-stash-value-report-card",
+   "inputs_hash": "4fa9be73bbd6b921a67c50b1fa8fe1cc",
+   "description_tr": "Steam hesabını ve envanterlerini (CS2, Dota 2, TF2, Rust) terminalden değerleyen, sonucu paylaşılabilir PNG kart olarak basan araç. Fiyatları Steam ve büyük nakit pazarlardan alır; her sayı kaynağını ve zaman penceresini belirtir. Hesap gerektirmez, Windows portable sürüm var. Python, MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "cyber-xiaoya/cyber-xiaoya-live",
+   "inputs_hash": "969035ec34caad5e69b03143cc71607e",
+   "description_tr": "Canlı yayın için bileşen tabanlı dijital insan (Vidu s2) sistemi: sahne sayfası, yerel köprü, canlı yorum, şarkı listesi ve kayıt akışı. Hazır ürün değildir; yazarın karakter görseli ve ses klonu pakete dahil değil. Python, AGPL-3.0, Çince dokümantasyon.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "richiemcilroy/Tov",
+   "inputs_hash": "842e6c1537253d3a7babddfd1976dc8a",
+   "description_tr": "Kodlama ajanları için tasarlanmış, TypeScript benzeri sözdizimli bir dil; küçük ve hızlı yerel ikililere derlenir. Rust ile yazılmış, MIT lisanslı. README paketteki metinde boş, dil özellikleri doğrulanamadı.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "NVIDIA/spark-local-inference",
+   "inputs_hash": "4120fc9cdf8aac3b17af506a09ef1d5a",
+   "description_tr": "NVIDIA SM120/SM121 GPU'lar için yerel çıkarım sunucusu (Flare): uzun konuşmalar, kodlama ajanları ve tekrarlanan araç çağrıları için tasarlandı; DGX Spark gibi sistemlerde belleği verimli kullanmayı hedefler. Derleme PyTorch ekosistemiyle, sunum Rust'tan yapılır. Araştırma prototipi, Apache-2.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "soumatheusgomes/editonny",
+   "inputs_hash": "41a45433324db2ff9747d501b8f5a5ab",
+   "description_tr": "Claude Code ve Codex için yerel video düzenleme skill'i: sessizlikleri ve hataları keser, altyazı ekler, sesi düzeltir, kadrajı yeniden düzenler ve konuşmadan hareketli sahneler üretir. Transkripsiyon ve render bilgisayarda yapılır. Python, MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "joeblau/subvox",
+   "inputs_hash": "04907cf595b038a7a2bec2e070fbfdce",
+   "description_tr": "AirPods Pro kafa hareketi verisinin (CMHeadphoneMotionManager) sessizce söylenen kelimeleri metne çevirmeye yetip yetmediğini sınayan macOS prototipi. Dil modeli kullanmaz; küçük sözlüklü şablon tanıyıcı ve sinyalin gerçek olup olmadığını ölçen istatistik testi içerir. Swift, MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "playportdev/playport",
+   "inputs_hash": "5f0db2e38c79604c3d6e03b2d94b38b6",
+   "description_tr": "Windows oyunlarını (64 ve 32 bit) jailbreak'siz iPhone'da yerel olarak, PC veya bulut akışı olmadan çalıştırır; oyun telefonun kendi CPU ve GPU'sunda koşar. Kontrolcü desteği ve uyumluluk listesi var. Swift, GPL-3.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "Hugo-Dz/spritefusion-sprite-normals",
+   "inputs_hash": "79ad98c0e7ef26f99bed36dbac69d97c",
+   "description_tr": "2D sprite ve sprite sheet'lerden normal map üreten araç; dinamik ışıklandırmalı 2D ve 2.5D oyunlar içindir. Orijinal piksel çözünürlüğünü ve saydamlığı korur, animasyonları yerelde işler. Rust CLI (1.85+) ve tarayıcı tabanlı kullanım var; MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "FortoGraphy/prism-download-manager",
+   "inputs_hash": "2038ada10474e5ce4f8c22acd8260943",
+   "description_tr": "Windows, macOS ve Linux için açık kaynaklı indirme yöneticisi: 32 paralel bağlantı, çökme ve uyku sonrası devam, tarayıcı entegrasyonu, MP4 ve MP3 video indirme. Rust, MIT lisanslı.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "outcrawlai/scout",
+   "inputs_hash": "bdccaf57d5e79ab75b9976359c09981d",
+   "description_tr": "Gerçek bir tarayıcıyı kullanarak görevi tamamlayan açık kaynaklı tarayıcı ajanı: sayfayı okur, tıklar, yazar, kaydırır ve sonucu döndürür. Bitiremezse eksik olanı bildirir. En iyi Outcrawl bulutunda çalışır (captcha çözümü dahil). TypeScript, CDP tabanlı, Apache-2.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "Fractal-Compute-Orchestrations/.github",
+   "inputs_hash": "ffb50b1c7a21044974157720ba6f44f5",
+   "description_tr": "Fractal-Compute-Orchestrations organizasyonunun profil deposu (.github); README ve proje açıklaması boş. Metinden ne yaptığı anlaşılamıyor, yayımlanacak bir ayrıntı yok.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "caldoai/skills",
+   "inputs_hash": "d9398c7f2f7d62a3bfd82d5aefbb8eb8",
+   "description_tr": "Caldo'nun Claude Code, Cursor, Codex ve diğer ajanlarda kullanılan skill koleksiyonu; npx skills add ile tek tek ya da toplu kurulur ve Claude Code plugin marketplace'i olarak da eklenebilir. Örnek skill: untangle-codebase. MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "bc160201983/Uncharted-The-Nathan-Drake-Collection-PC-port",
+   "inputs_hash": "d985bada91ac44fdbd95b96de3717741",
+   "description_tr": "Uncharted: The Nathan Drake Collection'ın PC portu; oyun dosyası içermez, kullanıcının kendi dökümü (CUSA02344) gerekir. Üç oyun da oynanabilir durumda; RTX 5080'de 4K'da 99 FPS'e varan değerler bildirilmiş. C++, lisans belirtilmemiş.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "overdriveps5/overdrive-releases",
+   "inputs_hash": "e52d681bdde995ef886b5c132464a015",
+   "description_tr": "Jailbreak'li PS5 için Overdrive sürümlerini dağıtan depo. Açıklama ve README ayrıntı vermiyor; kaynak kod değil sürüm dosyaları barındırıyor görünüyor. Lisans belirtilmemiş.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "whyever77/dafeiyu-astrbot",
+   "inputs_hash": "6fad6f8e68839c9e2024f1041016eda9",
+   "description_tr": "QQ botu için AstrBot, NapCat, DeepSeek ve Alibaba Bailian üzerine kurulu 'büyük balık' kişiliği: görebilir, duyabilir, konuşabilir, hafızası var ve kullanıcıya kendiliğinden yazar. AstrBot eklentisi, kişilik ve kurulum notlarını içerir. Python, MIT, Çince.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "Vibha-Ramprakash/claude-video-effects",
+   "inputs_hash": "1a63a89eba9cb336d312784c56f68d47",
+   "description_tr": "Claude Code için 51 video efektli skill: konuşan kafa klibini sürükleyin ve /effects orbit gibi komutlarla yüz takibi, kafanın arkasına katman gibi efektler uygulayın. İlk kullanımda ffmpeg ve Python'u kendisi kurar. Python, lisans NOASSERTION.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "isod89/sloop-fm1",
+   "inputs_hash": "d0d7dd9b42d8074fd3a6bca82c9ee39b",
+   "description_tr": "M-VAVE FM-1 cihazı için canlı groove box yazılımı (firmware): üç sentezleyici ve bir davul makinesi, 12 sentez motoru, 153 ses, 37 davul seti, kendi örnekleriniz, USB ses, MIDI giriş ve clock. Tarayıcıdan yüklenir. C, GPL-3.0; Felucca tabanlı.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "EL4CTEO/blender-skills",
+   "inputs_hash": "be2590363fa64343a71da97f08e33476",
+   "description_tr": "Claude Code, Codex, OpenCode, Gemini CLI, Copilot ve Cursor için Blender 5.2 LTS+ iş akışlarını içeren 28 Agent Skill: modelleme, UV, doku, baking, rigging, animasyon, dışa aktarma ve QA. Betiklerin gerçek Blender'da test edildiği belirtilir. Python, MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  }
+ ]
+}
