@@ -1,0 +1,404 @@
+{
+ "repos": [
+  {
+   "full_name": "NousResearch/hermes-official-plugins",
+   "inputs_hash": "07e6ec9e29e1e075858ed2a6339df4e3",
+   "description_tr": "Nous Research'ün Hermes Agent için resmi eklentilerini tek depoda toplar: Home Assistant, Spotify ve Claude abonelik SDK'sı gibi. Eklentiler Hermes eklenti kataloğundan tek satırla kurulur; çekirdek ajan ise ayrı tutulur. Python, MIT lisanslı.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "yalongwastaken/git-koi",
+   "inputs_hash": "99c047c06940ccfe432ba321ba2e86f1",
+   "description_tr": "GitHub hesabının herkese açık etkinliğinden piksel sanat bir koi balığı çizer ve profil README'si için döngüye giren bir GIF üretir. GitHub Action, komut satırı aracı ve Rust kütüphanesi olarak kullanılabilir. MIT lisanslı.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "lesnolie/Tigris",
+   "inputs_hash": "200c147a9ab0383482ad923dcf6282e0",
+   "description_tr": "Android TV ana ekranını tvOS tarzına çeviren bir launcher: alt Dock, Top Shelf benzeri üst içerik, bulanık cam Denetim Merkezi ve fotoğraflı ekran koruyucu. Standart ve Guard olmak üzere iki APK sunuyor; bazı Sony BRAVIA firmware'lerinde HOME tuşu sorunu var. README Çince.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "StreamEval/StreamEval",
+   "inputs_hash": "eacc78d51763d10268a1851f4c02bb31",
+   "description_tr": "Etkileşimli akışlı video üretim modellerini 15-300 saniyelik oturumlarda ölçen bir benchmark. Dijital insan diyaloğu, dünya üretimi ve video düzenlemeyi kapsayan beş görev ve on metrik içeriyor; veri, değerlendirme kodu ve puanlama açık, sıralama aylık güncelleniyor.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "crsolver/claude-pxl",
+   "inputs_hash": "e5763a64284b5aba624fe6efd9736e9f",
+   "description_tr": "Piksel sanat sprite'larını JavaScript dosyalarından (.px.js) üreten bir araç. Paletle tanımlanan yarım sprite aynalanıp çerçevelenir, sheet ve TexturePacker uyumlu JSON çıkar. Dosya kaydedildikçe yenilenen yerel bir canlı önizleyici de var. MIT lisanslı.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "misshexa66/OunceCake",
+   "inputs_hash": "c7439ce2bc6b5fbb381754817e4212d0",
+   "description_tr": "Switch 2 oyunlarının şifresiz romFS ve exeFS verisini dışarı alan bir araç. Çıktıyı konsolun yerel ağındaki FTP sunucusu üzerinden indirirsiniz; --tar seçeneği klasör yerine tar dosyası sunarak indirmeyi hızlandırır. JavaScript, GPL-2.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "zhanghao123vip/ai-manju-skills",
+   "inputs_hash": "31706442c6ec05940a10e9c5ac2aa24c",
+   "description_tr": "Yapay zekâ ile 'manju' (Çince animasyon dizisi) üretmek için 21 türlü Skill paketi: tek bir fikirden proje planı, görsel istemleri, bölüm senaryoları, storyboard ve video istemleri çıkarır. Claude Code, WorkBuddy ve DeepSeek ile kullanılabilir. MIT lisanslı.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "arpanjot-coding/AVault",
+   "inputs_hash": "29933dec109f480a16af70640a1d819a",
+   "description_tr": "Android 12-16 için root gerektirmeyen çağrı kaydedici ve şifreli ses kasası. Sistem erişimi için Shizuku kullanır, kayıtları AES-256-GCM ve biyometrik kilitle saklar, otomatik temizlik yapar. Kayıt desteği telefona ve arama uygulamasına göre değişir; lisans NOASSERTION.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "spideymooon/McOracle",
+   "inputs_hash": "2515afd482a17ffafea6f42e7407361c",
+   "description_tr": "Çin McDonald's resmi MCP'sini bir 'oracle' oyunuyla birleştiren Skill: 104 özgün cevaptan rastgele birini seçer, MCP ile gerçek restoran, menü ve fiyatı sorgular, bir kader kartı PNG'si üretir. Sipariş ancak açık onaydan sonra oluşturulur. Python.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "WoYun520/gif-factory",
+   "inputs_hash": "701f29d18700daa9cf1bd29e4a54d5b9",
+   "description_tr": "Piksel, insan ve evcil hayvan, kil maskot, ışıklı kart ve hareketli poster gibi stillerde GIF üreten bir Skill. Her stilin kendi STYLE.md yöntem dosyası var ve toplam 56 hareketli örnek sunuluyor. Python, MIT lisanslı; README Çince.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "kanaworksai-hue/audio-studio-mcp",
+   "inputs_hash": "012752580a944501101cbf68f03e81c7",
+   "description_tr": "Claude Code, Claude Desktop ve Cursor gibi MCP istemcilerine yerel müzik ve ses efekti üretimi ekler. Stable Audio 3'ü Apple Silicon'da (MLX) ve NVIDIA'lı Windows'ta (PyTorch) çalıştırır; döngüleme, ses seviyesi normalizasyonu ve oyun motoruna dışa aktarma sunar. Bulut ve API anahtarı gerekmez.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "Leviidev/Henge",
+   "inputs_hash": "89cc7de82975faa22d79fc50d9a8616d",
+   "description_tr": "iPhone ve iPad üzerinde macOS çalıştıran bir emülatör. iOS'ta hypervisor olmadığından Mac'in arm64 kodunu kendi JIT'iyle çalıştırır, Apple'ın restore imajını cihazda kurar ve sanal GPU komutlarını Metal ile oynatır. QEMU kullanmaz; C, GPL-2.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "liuda30201/AI-Coding",
+   "inputs_hash": "4dc03e131165c085c47730cd806c2a9a",
+   "description_tr": "Claude Code, Codex ve Cursor için API aktarım (relay) sitelerini derleyen bir liste: ücretsiz kota, kayıt bonusu ve check-in kampanyaları, bir panel ve Python veri toplama aracıyla. Puanlar editör tercihidir, performans testi değildir; bağlantılar referans kodu içeriyor.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "AirsupHQ/machine-skill",
+   "inputs_hash": "c210c8bb79c7da512c29bb515fbe5ced",
+   "description_tr": "Tek satırlık tarifle bir makinenin (örneğin turbofan motor) fizik tabanlı, etkileşimli 3D simülasyonunu tek HTML dosyasında kuran bir Claude Code Skill'i. three.js kullanır, değerler çözücüden hesaplanır; repodaki betikle simülasyondan paylaşılabilir bir video da üretir. MIT lisanslı.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "OpenSmash-Ultimate/ssbu-recomp",
+   "inputs_hash": "3bd015fdc657304f0e386c24ea988169",
+   "description_tr": "Super Smash Bros. Ultimate'ın statik olarak yeniden derlenmiş (emülasyonsuz) Windows sürümü için araç ve çalışma zamanı; oyun dosyası içermez, kendi dökümünüzü getirirsiniz. Proje artık OpenSmash-Ultimate ile birleşti ve bu depo yalnızca geçmiş için duruyor. GPL-3.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "mrsarac/ff-tracking",
+   "inputs_hash": "56c96130890227fce66b641d9b57d51c",
+   "description_tr": "Rust ve fframes ile yapılmış altı saniyelik üretken bir video: sanal kamera bir yapay zekâ ajanının ekranını filme alırken izleyici her harfe kilitlenir. Görüntü ve ses tamamen koddan gelir, bir SkSL shader'ı kullanılır. Araç değil, bir örnek iş; MIT lisanslı.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "Tongyi-MAI/OpenGCUA",
+   "inputs_hash": "1c0278b651e406503e23dc13a2942e46",
+   "description_tr": "Alibaba Tongyi grubundan, kod çalıştırma, GUI etkileşimi ve cihazlar arası kontrolü birleştiren genel amaçlı bilgisayar kullanan ajanlar için açık kaynak yığın. SDK, hızlı başlangıç, sonuçlar ve yörünge örnekleri içeriyor; Apache-2.0. Kıyaslamalar projenin kendi iddiasıdır.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "Sorihiko/DangoMusic",
+   "inputs_hash": "8cc398390a66475199f0d79c98b2fdee",
+   "description_tr": "Minecraft için bir mod: NetEase Cloud Music, QQ Music ve Kugou'yu oyuna getirir. Oyun içi QR girişi, dünyada süzülen 3D şarkı sözleri, şarkı kartı ve arkadaşlarla eşzamanlı 'birlikte dinle' odası sunar. Fabric ve Forge'u destekler; Kotlin, GPL-3.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "mochiiwuff/capri-desktop",
+   "inputs_hash": "2a98d8417a0bd591282076b47dbb0eb7",
+   "description_tr": "Claude Code'un ne yaptığını masaüstünde anlatan bir maskot uygulaması: Cyberpunk: Edgerunners 2'deki Capri karakteri. README'nin ilk bölümü pakette eksik, bu yüzden ayrıntı sınırlı. JavaScript; lisans NOASSERTION.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "langchain-ai/design-agent",
+   "inputs_hash": "75355592a9542ed256f4e0e1500c0ef3",
+   "description_tr": "LangChain'in kendi kullandığı tasarım ajanı: sohbetten marka uyumlu görseller, sunumlar, diyagramlar, grafikler ve hareketli grafikler üretir. Deep Agents üzerine kurulu, Slack'e Managed Deep Agents ile dağıtılabilir; anahtar olmadan yerelde denenebilir. Apache-2.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "MusicTribeOpenSource/0700-AAM",
+   "inputs_hash": "bf3a086b76557dc1a8648808bab61244",
+   "description_tr": "Behringer KICK (BE 0700-AAM) müzik prodüksiyon cihazının kaynak kodu: 7 inç dokunmatik ekran, sampler, step sequencer, looper, 16 RGB pad ve 300'den fazla efekt. Jest kontrolü için yapay zekâ kamerası da var. C++, AGPL-3.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "egoist/mygo-music",
+   "inputs_hash": "fa94b7ad4240fc6bc2575dadb03f4c41",
+   "description_tr": "Eklentilerle genişletilen yerel bir müzik çalar. Eklenti, plugin.json ve tek bir JavaScript/TypeScript dosyasından oluşan bir klasördür; ayarlardan GitHub'dan, klasörden ya da zip'ten kurulur. README sherpa-onnx sürüm paketlemesini de anlatıyor. Go, AGPL-3.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "Teraflopping/xrevive",
+   "inputs_hash": "59888c01931ee0493b16d1e3765eeff0",
+   "description_tr": "Xrecomp ile yeniden derlenen Xbox oyunları için masaüstü başlatıcı; xb.live çevrimiçi hizmetlerini kullanır. Disk imajından başlık ve sürüm bilgisi okur, shader önbelleğini oyunla tutar, 10 dil sunar. Oyun dosyası içermez; lisans belirtilmemiş.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "op7418/dsh-guizang-design",
+   "inputs_hash": "8dae597f953c64ae0e41b88710c06c96",
+   "description_tr": "DeepSeek Harness için bir eklenti: web tabanlı PPT, görsel kart, sayfa dizgisi ve 'yapay zekâ tadını giderme' olmak üzere dört skill ve ortak bir tasarım sistemi. Eser kitaplığı ve ton profilini yerelde tutar; modele iki araç sunar. HTML, AGPL-3.0; README Çince.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "robertnisipeanu/mgu-store",
+   "inputs_hash": "d606d235b9e26efe16ac9c101aa1c9ad",
+   "description_tr": "BMW iDrive 7 ve 8 multimedya üniteleri için uygulama mağazası: uygulamalar GitHub depolarından, URL'lerden veya USB bellekten kurulur ve güncellenir. Üniteye SSH ile root olarak bağlanır; bu yüzden araç yazılımına müdahale riski taşır. JavaScript, GPL-3.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "AAA-EE/mcd-budget-planner",
+   "inputs_hash": "4f0c2b78022a1a7e251d307dbf068727",
+   "description_tr": "McDonald's Çin MCP'sini kullanarak bütçe ve sodyum sınırına göre en ucuz siparişi bulan planlayıcı: cüzdandaki kuponların o an o şubede geçerli olup olmadığını doğrular, 158 ürünün besin verisiyle kısıtlı çözüm yapar. Python, MIT; README Çince.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "rayytor/desktop_gifs",
+   "inputs_hash": "8f8c32d4d9fd31a6a2a50ae53daf1d74",
+   "description_tr": "YouTube yorum ve yanıtlarına masaüstü tarayıcıdan GIF atmayı sağlayan Chrome ve Firefox eklentisi. Uyarı: 14 Ekim 2026'dan beri YouTube masaüstünden gönderilen GIF yorumlarını reddediyor, gönderme çoğu kişi için çalışmıyor; arama ve seçici çalışıyor. GPL-3.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "Blapples/SekaiPop",
+   "inputs_hash": "70f3525cc4d1f72d003d17f8946258c3",
+   "description_tr": "Project Sekai'den esinlenen bir quickshell masaüstü teması: saat, hava durumu, takvim, yapılacaklar ve benzeri bileşenler. Yazar, kodun çoğunu Claude'un yazdığını ve kaba kenarlar beklenmesi gerektiğini belirtiyor. QML, GPL-3.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "shinyobjectz/raea",
+   "inputs_hash": "477e2b56c9700d353eb67ee40d007e34",
+   "description_tr": "Yapay zekânın yazdığı React ve TypeScript koduyla video, hareketli grafik, 3D ve oyun üreten, kendi GPU'nuzda render eden bir motor. Rust ve Bevy ile yazıldı; macOS, Linux ve Windows'ta çalışır. 'Canary' aşamasında ve sık sık bozucu değişiklik alıyor; lisans NOASSERTION.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "ABING1111/BiliDesk",
+   "inputs_hash": "9b49e3ccf817f9994783ca1b2bae157b",
+   "description_tr": "Bilibili için üçüncü taraf Windows masaüstü istemcisi (WPF, .NET 10, LibVLC). 4K'ya kadar DASH oynatma, 0,25x-4x hız, dinleme modu ve kısa videoları yerelde birleştirme sunar. Resmi değildir; GPL-3.0, README Çince.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "oinkvm/oink",
+   "inputs_hash": "fcb8ba6de8aa1733996b8d0d1c519a9e",
+   "description_tr": "Windows ve Mac bilgisayarlar arasında klavye, fare, dokunmatik yüzey, pano, sürükle-bırak ve ses paylaşımı yapan, cihazları yerel ağda otomatik bulan eşler arası yazılım. Barrier ve Synergy'ye alternatif; Rust, GPL-3.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "jyjblrd/single-propeller-drone",
+   "inputs_hash": "2c2a7c770d6fe6dcba05705487e41754",
+   "description_tr": "Tek motorlu, eksik tahrikli bir drone'un donanım tasarımı: gövde, pervane plakası ve iki pervane sürümü için Fusion 360 ve STEP dosyaları. Üretici yazılım olarak ArduPilot ve moteus çatallarını kullanıyor. Lisans yok, README kısa.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "anothaDev/luci-theme-vantage",
+   "inputs_hash": "384216e347afd430d0109daee80aba1c",
+   "description_tr": "OpenWrt 25.12 ve 24.10 için sıfırdan yazılmış bir LuCI teması ve canlı panel. Girişte kimlerin bağlı olduğunu, bağlantının ne kadar yoğun olduğunu ve neyin düzeltilmesi gerektiğini gösterir. Tema ve panel ayrı paketlerdir, birbirinden bağımsız kurulabilir. GPL-3.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "K0NL/B2recomp",
+   "inputs_hash": "71fe526c16a3cbbf133310b359a7707d",
+   "description_tr": "Bayonetta 2'nin (Switch) Windows için resmi olmayan statik yeniden derlemesi. Oyunu kendi yasal dökümünüzden PC'nizde derler; oyun kodu, varlık, anahtar ya da SDK içermez. C, GPL-3.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "Timon2306/mimic-discord",
+   "inputs_hash": "06fe38ac48c1a3e36cf31a13f1608bc9",
+   "description_tr": "Discord'da oyun etkinliğini taklit ederek 'Universal' ve 'Oyun Zamanı' profil rozetlerini şişiren bir masaüstü uygulaması, Windows ve Linux için. Discord'un kullanım şartlarına aykırı olabilir ve hesap riski taşır. TypeScript, MIT; README Rusça.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "Lee-xeo/Claude-Cage",
+   "inputs_hash": "287165469cc422103808ad356e6314bc",
+   "description_tr": "Claude için özelleştirilmiş, ağ sızıntısını engellemeyi hedefleyen hafif bir sanal makine. Çoklu hesap yönetimi, uzaktan dağıtım ve mobilden kontrol sunar; çoklu platform. Go, MIT lisanslı. README Çince ve ağırlıklı olarak anlatıma dayanıyor.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "xenophobentx/takedawn",
+   "inputs_hash": "e1bb6220d69802c900f915e4191b6057",
+   "description_tr": "Burnout 3: Takedown'ın orijinal Xbox sürümünün resmi olmayan statik yeniden derlemesi: Mac, Windows, Linux, Steam Deck ve Android el konsollarında yerel çalışır. Oyun verisi kendi diskinizden gelir, depo veri içermez. C, MIT lisanslı.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "Apolinario-coder/SkyRecomp",
+   "inputs_hash": "890fe7bdafcae9d2773bcfe560372eb2",
+   "description_tr": "The Legend of Zelda: Skyward Sword HD'nin PC için statik C yeniden derlemesi. Deneysel aşamada; çökme, menü donması ve render farkları var. Oyun dosyası içermez, kendi yasal kopyanız gerekir. C, lisans NOASSERTION.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "andyhuo520/vibe-knowledge",
+   "inputs_hash": "b3e6dcaa4f3a88e0d44862655cbbaedf",
+   "description_tr": "Bir bilgi noktasından, anlatımlı ve her cümlesi kaynaklı kısa bir bilgi videosu üreten Claude Code skill'i: konu seçimi, doğrulama, senaryo, seslendirme, kodla çizim, 1080p60 çıktı ve kalite kontrol. 44 stil içerir; bazı sahneler Renoise'a bağlıdır. MIT, README Çince.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "HayatoG/tlg_pc",
+   "inputs_hash": "c55df4e2df8f61330f3ccffc347a21fa",
+   "description_tr": "The Last Guardian'ın (PS4) Linux ve Windows için yerel PC portu; kendi oyun dökümünüzü çalıştırır, oyun ya da firmware dosyası içermez. CPU emülasyonu yok, GPU çağrıları Vulkan'a çevrilir. 30 FPS kararlı, 60 FPS deneysel. C++, lisans yok.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  }
+ ]
+}
