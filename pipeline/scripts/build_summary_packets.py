@@ -167,6 +167,11 @@ def explosion_packets(db_path: Path, out: Path, args) -> int:
     with sqlite3.connect(db_path) as conn:
         rows = explosion_rows(conn)
     print(f"{len(rows)} repos on the latest explosion boards", flush=True)
+    if args.missing_only:
+        # The daily top-up: every day 20-40 repositories enter the boards
+        # with no paragraph, and only those need a packet.
+        rows = [row for row in rows if "existing" not in row]
+        print(f"{len(rows)} of them have no paragraph yet", flush=True)
     with httpx.Client(follow_redirects=True) as client, ThreadPoolExecutor(16) as pool:
         readmes = list(pool.map(lambda r: fetch_readme(client, r["full_name"]), rows))
     print(f"{sum(1 for r in readmes if r)} readmes fetched", flush=True)
@@ -227,6 +232,11 @@ def main() -> int:
         "the published site. The explosion rows carry no topics, and a hash taken "
         "over an empty topic tuple is skipped as stale on import — the failure that "
         "once dropped 6 of 11 arrival paragraphs while every check passed.",
+    )
+    parser.add_argument(
+        "--missing-only",
+        action="store_true",
+        help="With --explosions-db: only the rows that have no paragraph at all.",
     )
     args = parser.parse_args()
 
