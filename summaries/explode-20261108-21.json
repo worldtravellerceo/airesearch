@@ -1,0 +1,404 @@
+{
+ "repos": [
+  {
+   "full_name": "flybrainlabs/node",
+   "inputs_hash": "52925263ca073639697dd719ae912c64",
+   "description_tr": "Flybrainlabs ekosisteminin otorite ve servis API'lerini içeren Rust ağırlıklı depo: hedef yarışması, commit/reveal işleme, simülasyon replay'i, müşteri bileti ve muhasebe uçları. Marketplace kataloğu geliştirme aşamasında, üretim ödemeleri kapalı; derlemek için ayrı bir infra deposundan çalışma alanı kurmak gerekiyor.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "assetnote/php2shell-scanner",
+   "inputs_hash": "3a3c2960d19d25d0298e3fb42c841e1e",
+   "description_tr": "Assetnote'un PHP için iki CVE'sini (CVE-2026-109618 ve CVE-2026-109619) tespit eden komut satırı tarayıcısı. İç içe 62 seviyeli multipart anahtarlarla 1-20 MiB'lık problar gönderip bellek tükenmesi ya da PHP-FPM çökmesi arar; mod_php ve FPM için ayrı karar kuralları var. Python 3.9+ ve MIT lisanslı; yalnızca yetkili olduğunuz hedeflerde kullanılmalı.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "sno-ai/sno-station",
+   "inputs_hash": "4efe72811a3028b93f36c7003c08ec57",
+   "description_tr": "Codex, Claude Code, Cursor, Hermes Agent ve OpenClaw'ı ortak bir hafıza üzerinde çalıştıran yerel TypeScript aracı. Biri kullanım limitine takılınca iş diğerine devredilebiliyor, ajanlar birbirinin kodunu istenince gözden geçiriyor. Bilgisayarınızda çalışır, Apache-2.0; kurulum tek satırlık bir betikle yapılıyor.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "th0mk/nfsu2-web",
+   "inputs_hash": "65144d0c092e2a7bc71c83071d00f3e4",
+   "description_tr": "Need for Speed: Underground 2'yi (2004) tarayıcıda çalıştıran hayran projesi: x86 kodu önceden C'ye, oradan WebAssembly'ye çevriliyor, Direct3D 9 WebGPU üzerinde çalışıyor. Oyun dosyaları depoda yok, v1.2 (Kuzey Amerika) kopyanız gerekir; derleme için Apple Silicon Mac veya Linux, Rust ve wasi-sdk lazım. NFSU2Recomp'tan türetilmiştir.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "NotRexed/Hookshot",
+   "inputs_hash": "34c6d15f835bced8ffc3904832a39424",
+   "description_tr": "The Legend of Zelda: Ocarina of Time'ın Switch 2 sürümünü emülatörsüz, Windows ve Linux'ta yerel çalıştıran C++ statik rekompilasyon projesi. Oyunun kodu C'ye çevrilip derleniyor, sistem yazılımı yeniden yazılıyor, grafikler Vulkan'a taşınıyor. Depoda oyun, anahtar veya çalıştırılabilir dosya yok; kendi kopyanız gerekir.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "vincentsch/explainroo",
+   "inputs_hash": "058fa48c0e592ecf178f4d1621510933",
+   "description_tr": "Bir AI ajanının senaryodan seslendirmeli MP4 açıklayıcı video üretmesini sağlayan JavaScript aracı. Ses için yerel Kokoro, kelime zamanlaması için Whisper, görüntü için canvas oluşturucu kullanıyor; hepsi bilgisayarda çalışır. Claude Code ve Codex ile kullanılacak şekilde tasarlanmış, MIT lisanslı; birden fazla dil destekliyor.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "jwuthri-cloud/Tracely-ai",
+   "inputs_hash": "bc50d9839b346b4c2fe9d069b58edf97",
+   "description_tr": "AI ajanları için iz tabanlı CI/CD aracı: üretimdeki ajan izlerini puanlar, hataları kümeleyip tekrar oynatılabilir regresyon testlerine çevirir ve gerileme getiren PR'ları engeller. Python, MIT lisanslı; API, worker, UI, Postgres, ClickHouse, Redis ve MinIO ile kendi sunucunuzda çalıştırılabiliyor. MCP desteği var.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "TonF1917/claude-desktop-multiple-windows-different-api",
+   "inputs_hash": "57bde59d58e9ee02d26ebad73fff0fd7",
+   "description_tr": "Windows'ta birden fazla Claude Desktop penceresini aynı anda, her biri farklı bir API ile çalıştıran Python aracı. Resmi abonelik bir pencerede kalırken diğerleri cc-switch üzerinden üçüncü taraf API'lere bağlanıyor; her pencerenin kendi verisi ve renkli ikonu var. Windows'ta test edilmiş, macOS deneysel; resmi olmayan bir topluluk aracı.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "IPedrax/BIMCraft",
+   "inputs_hash": "46aa5fb38ed1ddef044e528c96dc0f78",
+   "description_tr": "Autodesk Revit iş akışının temiz oda (clean-room) yeniden yazımı olan açık kaynak Rust BIM uygulaması: seviyeler, duvarlar, kapılar, döşemeler, odalar, merdivenler ve çatılarla plan, kesit, görünüş ve 3B görünüm üretir, IFC2x3/IFC4 okur ve yazar. Her eylem bir komut olduğu için ajanlar da sürebiliyor. Apache-2.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "xiaomi-research/Xiaomi-OCR-0",
+   "inputs_hash": "7cc27d94523437b689ef3179db0b97c3",
+   "description_tr": "Qwen3.5-0.8B tabanlı, 0,8 milyar parametreli birleşik bir belge ayrıştırma ve OCR modeli. Yaklaşık 170 milyon örnekle eğitilmiş; Real5-OmniDocBench'te 95,24 ile karşılaştırmalarında birinci, OmniDocBench v1.6'da 96,83 ile ikinci olduğunu bildiriyor. Formül, tablo ve el yazısı tanımayı da kapsıyor; ağırlıklar Hugging Face'te, Apache-2.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "Zfinix/eleven",
+   "inputs_hash": "01ffdc1a97592df86c038968669d6fb5",
+   "description_tr": "Ghidra ya da Rizin ile yerel kodu okuyan, ajan merkezli bir tersine mühendislik uygulaması (macOS, Windows, Linux). Agent Client Protocol konuşan herhangi bir ajan ikili dosya, Android APK, GPU çekirdeği veya shader'ı okuyup fonksiyonları yeniden adlandırabiliyor ve yama önerebiliyor; onayı siz veriyorsunuz. TypeScript, Apache-2.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "kividbio/kividb",
+   "inputs_hash": "316c2adb16062483adf493e7ab97a8d8",
+   "description_tr": "Rust ile yazılmış, çok iş parçacıklı Redis ve Valkey alternatifi; RESP2/RESP3 konuşur, mevcut istemciler değişmeden çalışır, tam metin ve vektör arama yerleşiktir. 32 çekirdekte 21 milyon pipeline'lı GET/sn ve Redis 8'den yaklaşık 9 kat hız bildiriyor (kendi kıyaslaması). 6380 portunda dinler, AGPL-3.0, Docker ile başlıyor.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "CNCKitchen/ScanRuler",
+   "inputs_hash": "82a761a0fd13bc5534f7615c785b1c80",
+   "description_tr": "3B tarama sonuçlarını CAD parçasıyla karşılaştırmak için tarayıcıda çalışan TypeScript aracı: küre, silindir ve düzlem uydurma, ölçüm, sapma haritası, duvar kalınlığı analizi ve taramayı STEP gövdeye çevirme. Dosyalar yerelde işlenir, kurulum gerekmez. AGPL-3.0; kapalı kaynak kullanım için ticari lisans sunuluyor.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "joeseesun/opus-video-prompts",
+   "inputs_hash": "c03df4f785d2a8aeae4e655f7a3c46b2",
+   "description_tr": "Claude Opus 5.5'in kodla video üretmesi için 18 hazır prompt ve 54 herkese açık örnekten oluşan Çince derleme (Canvas, p5.js, Three.js, Remotion, Manim, Blender). İş akışı: model kareleri kodla çizer, başsız tarayıcı ekran görüntüsü alır, FFmpeg MP4'e birleştirir. Yazılım değil, kaynak bağlantılı bir prompt koleksiyonu; lisans belirtilmemiş.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "athemeroy/awesome-claude-5-5-videos",
+   "inputs_hash": "7dd860e8d9f98c1226997972ebbc6529",
+   "description_tr": "Claude 5.5 ile yapılmış video ve animasyonların kaynak bağlantılı derlemesi: 2026-10-11 itibarıyla 424 ayrı gönderi, Opus, Sonnet, Haiku ve Fable ayrı etiketlenmiş. İş akışları, prompt'lar ve araçlar için yöntem notları ile veri bakım dosyaları da var. Kod değil, düzenlenmiş bir liste; CC-BY-4.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "DrWhax/unfairplay",
+   "inputs_hash": "8c69bb8331c4b8746418a1514b4f0e6a",
+   "description_tr": "Eşleştirilmiş bir Mac'ten FairPlay modelini kurtarıp kişiselleştirilmiş iOS IPA dosyalarının şifresini çözen bağımsız Go programı. Apple'a giriş yapmaz ve uygulama indirmez; indirme için ipatool gibi araçlar gerekir. README yalnızca yasal yoldan edinilmiş uygulamalar ve kendi cihazlarınız için kullanım diyor. MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "flybrainlabs/miner",
+   "inputs_hash": "02c47bd9d8fa86c007b8aa7ef4232c1b",
+   "description_tr": "Flybrainlabs'in yerel ve WebAssembly simülasyon motorları ile tarayıcıda çalışan 'mining' iş akışını içeren depo: deterministik tamsayı LIF simülasyonu, tarayıcı worker'ları, kalıcı model/sonuç depolama, üç aşamalı işleme ve iptal/kurtarma. Rust ve JavaScript; derleme için ayrı bir infra deposundan çalışma alanı kurulur. Apache-2.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "Rizzo-AI-Academy/rizzo-flow",
+   "inputs_hash": "b9467ba3ecc09009e76356945af181ec",
+   "description_tr": "TypeSafe'in kapalı Jev modelinin açık, yerel karşılığı: yapılandırılmamış durumu alıp metin üretmeden olasılıklı, tipli kararlar (evet/hayır, seçim, rubrik puanı, sayı) döndürür. Bir fonksiyon çağrısı gibi kullanılıyor, kendi makinenizde çalışır. Python, Apache-2.0; Rizzo AI Academy projesi, İtalyanca belgeler de var.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "Alterssss/dsh-bili-whale",
+   "inputs_hash": "400fc3e8e1ed313d0948f36524f9581b",
+   "description_tr": "DSH (DeepSeek Harness) için Bilibili'de kendi günlük düzeniyle gezinen, videoları gerçekten izleyip iki günlük yazan ve değer bulduklarında sizi etiketleyen JavaScript eklentisi. Varsayılanlar hesap yasaklanmasını önlemek için muhafazakar: yorum dinleme kapalı, istekler 1500 ms arayla, günde en fazla üç etiket. Sürüm 0.4.6, Çince, MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "misakano7545/workbuddy2api-panel",
+   "inputs_hash": "c93739344028fb7543024e9067748c28",
+   "description_tr": "Tencent WorkBuddy/CodeBuddy hesaplarını OpenAI uyumlu bir API'ye çeviren çok hesaplı Go ağ geçidi; hesap havuzu döndürme, devre kesici, oturum yapışkanlığı ve web yönetim paneli var. Upstream depo silinmiş, zincirdeki her fork resmi desteksiz; hesap kimlik bilgilerini üçüncü taraf bir araca vermek ayrıca risk taşıyor. MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "namannn04/Veronica",
+   "inputs_hash": "4e4161aebac9baba9b83b4cf892226df",
+   "description_tr": "Ubuntu 24.04+ (GNOME Shell 46-50) için Rust ve Tauri ile yazılmış masaüstü kontrol merkezi: ajan kullanım/limit takibi, panoya geçmiş, emoji, medya ve sistem araçları tek uygulamada. macOS'taki Edith'in Linux portu; kullanım toplayıcısı aynı kod. Hesap ya da ücretli katman yok, GPL-3.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "thesysdev/open-intelligent-ui",
+   "inputs_hash": "675a926050c694b36cd0bf244639f68c",
+   "description_tr": "ChatGPT'nin 'Intelligent UI' deneyimini OpenUI üzerinde yeniden kuran açık kaynak TypeScript demosu: cevaplar metin yerine harita, fotoğraf, düzenlenebilir gezi planı ve çalışan araçlar gibi etkileşimli arayüz olarak akıyor. Kendi uygulamanıza gömülebilecek şekilde tasarlandı. OpenAI ile bağlantısı yok; MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "OverkillLabs3/driveclub-recomp",
+   "inputs_hash": "8002e240445869cd710ce3409ecd73f2",
+   "description_tr": "PS4 oyunu DriveClub'ı (sürüm 1.28) Windows ve Linux'ta yerel çalıştıran C++ rekompilasyon projesi; derlemeler Releases sayfasında. Kendi oyun dökümünüzü getirmeniz gerekiyor. Sonraki sürüm için DLSS/FSR kare üretimi ve herkese açık çevrimiçi lobi planlanıyor. GPL-2.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "anthropics/FlashProve",
+   "inputs_hash": "2dbd36ae47d295b2c9124844292b97e3",
+   "description_tr": "Anthropic'in, bir AI sağlayıcısının hangi modelin cevap verdiğini ağırlıkları açıklamadan sıfır bilgi ispatıyla kanıtlamasını sağlayan Lean araştırma prototipi. Sağlayıcı ağırlıklara bağlı bir taahhüt yayınlar, GPU her cevap için ispat üretir, herkes bunu CPU'da saniyeler içinde cp_verify ile doğrular. Bakımı yapılmıyor, katkı kabul etmiyor; Apache-2.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "mode-io/vllm-jev",
+   "inputs_hash": "7e764fcd10f7b15055b53a8556d0fed2",
+   "description_tr": "Jev karar modelleri için yerel vLLM sunumu: yapılandırılmış kararları Linux, Apple Silicon ve deneysel Windows CPU üzerinde hızlı sunar. Jev aday dalları prefill ile puanladığı için ortak ön ek önbelleğini yeniden kullanan RadixFlow deneysel olarak ekleniyor. Python, Apache-2.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "chasmlol/2010-rust-rewrite-mashup",
+   "inputs_hash": "3e102cdd5e88c6595f9f2a77b12d262c",
+   "description_tr": "MW2'nin sıfırdan Rust yeniden yazımı IW4L üzerinde Modern Warfare 2, Skate 3 modu (J tuşu) ve MinecraftOSS'in ürettiği gerçek bir Minecraft dünya haritasını birleştiren oyun. Kumanda desteği ve tuş atamaları var. Hayran yapımı karışım projesi; Apache-2.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "chenxiachan/textfold",
+   "inputs_hash": "b1cb1df5fed811944624fff791dbeec8",
+   "description_tr": "Makaleleri, web sayfalarını, dosyaları ve AI cevaplarını beş ayrıntı düzeyine katlayan, yakınlaştırdıkça özetten orijinal metne inen okuma aracı. arXiv, PubMed Central, Wikipedia, PDF, Word, EPUB gibi girdileri alır; Chromium tarayıcı eklentisi, Zotero, Obsidian ve Claude Code ile çalışır. Python, yerel öncelikli, Apache-2.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "Sandflow-ai/sand3d",
+   "inputs_hash": "24eecc23454a3119f60ba823c8b85f53",
+   "description_tr": "Blender'ın bpy'si üzerinde 3B nesneleri kısa Python programları olarak yazmaya yarayan, LLM'ler için tasarlanmış kütüphane: profiller, katılar, düzenlemeler, eklemler ve montajlar. Bir parça Blender Python, CadQuery veya FeatureScript'e göre 2-6 kat az token tutuyor; tüm API yaklaşık 3.600 token ile prompt'a sığıyor. Apache-2.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "yzlin286-wq/Deepscient",
+   "inputs_hash": "d8f5de63f4e280b24a1f4c609d9e9450",
+   "description_tr": "DeepSeek Harness üzerinde çalışan bir araştırma tezgahı: konu seçiminden hakem yanıtına 12 aşama, 55 karar kapısı, 36 araç ve 98 skill. Her sonuç yeniden çalıştırılabilir deneye bağlanıyor, kaydedilen ortam ve tohumlarla tekrar üretilebiliyor. Windows masaüstü paketi (~635 MB) var; Çince, MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "kalkman-code/beamer",
+   "inputs_hash": "aa95e0fe6099c4af329c2164e2f2c1b9",
+   "description_tr": "Aynı ağdaki Mac, Windows ve Linux makineler için tek klavye ve fare paylaşımı: imleç ekran kenarından diğer makineye geçer, pano da taşınır. Yazılanlar yerel ağdan çıkmaz. Python, GPL-3.0; Mac ve Windows indirmeleri hesapsız ve ücretsiz, Linux deneysel ve Flatpak ile geliyor.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "FeSens/openTPU",
+   "inputs_hash": "890d463c754e0ad71ed4800aa74c848d",
+   "description_tr": "Yapay zekayla geliştirilen açık kaynak bir AI hızlandırıcı: RTL (SystemVerilog), komut seti, bit-exact simülatör, çekirdek dili, derleyici ve profiler tek depoda. Kintex-7 PCIe FPGA kartında Qwen3, LFM2.5 ve Qwen3.5 çalıştırdığını söylüyor. Aynı zamanda öğrenme projesi olarak tasarlanmış; Apache-2.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "shx2005/codex-account-switcher",
+   "inputs_hash": "1662662061f027332d124a41222a9b3d",
+   "description_tr": "Birden fazla Codex hesabını adlandırıp tek komutla değiştiren Python CLI'ı: kota görüntüleme, ChatGPT OAuth veya API key girişlerini kaydetme, cihazlar arası dışa/içe aktarma. Girişi resmi codex CLI yapar, hesaplar yerelde kalır, e-postalar varsayılan olarak maskelenir. Çince arayüz, MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "shirai91/nx2android",
+   "inputs_hash": "1861e489b96e325fed443222faa6bae8",
+   "description_tr": "Nintendo Switch oyunlarını Android'e taşıyan uyumluluk katmanı: oyunun arm64 kodu cihazda yerel çalışır, Switch sistem servisleri bir ana bilgisayar katmanıyla taklit edilir, NVN grafikleri Vulkan'a aktarılır. Oyun klasörünü seçip APK üretiliyor; kendi dosya ve anahtarlarınız gerekir. Lenovo Legion Y700'de test edilmiş; C, lisans belirtilmemiş.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "huaxialucaicaizi/ai-startup-skills",
+   "inputs_hash": "d67ef610ba8d81b39e9c418aa259764c",
+   "description_tr": "Yapay zeka ürünü yapan tek kişilik girişimler için fikir doğrulama, iş planı, teşvik başvurusu, sunum, müşteri bulma, fiyatlandırma ve şirket kaydı adımlarını kapsayan 7 Agent Skill paketi ve bir giriş skill'i. Claude Code, Codex ve Cursor'da kurulur; içerik Çin pazarına yönelik, Çince ve İngilizce. Lisans NOASSERTION.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "h0m3us3r/w1700k-sdr",
+   "inputs_hash": "588773ee38e1130036cded2f915fb89e",
+   "description_tr": "Gemtek W1700K Wi-Fi 7 yönlendiricisini geniş bantlı yazılım tanımlı alıcıya çeviren proje: MediaTek MT7996 radyosu 320 Msps'e kadar ham 14-bit IQ yakalar, 10 GbE ile Linux ana bilgisayara akıtır, tarayıcıda canlı spektrum ve waterfall gösterilir. Yönlendiricide kendi firmware'i (ROM yaması) çalışıyor. C, lisans belirtilmemiş.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "cskwork/scopeweaver",
+   "inputs_hash": "a3167f786deed15a49320563124e62f4",
+   "description_tr": "Autumn-27/ARTEX'in İngilizce ve Korece yerelleştirilmiş, yeniden markalanmış türevi: LLM çoklu ajanlı otonom sızma testi sistemi (Go arka uç, Next.js ön yüz). AGPL-3.0 atıfı korunuyor; kaynak commit 160fe13, değişiklik tarihi 2026-10-02, sürüm etiketi yok. Saldırı amaçlı bir araç; yalnızca yetkili testlerde kullanılmalı.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "mdpsec/bug-bounty-hunting-prompts",
+   "inputs_hash": "f8cffb24d9d7235964cb6c7de737aa9c",
+   "description_tr": "Yapılandırılmış, kanıt öncelikli bir web bug bounty iş akışı için yeniden kullanılabilir prompt dosyaları. Yazarın özel iş akışından uyarlanmış; yardımcı araçlar, tarayıcı filosu ve kimlik bilgileri depoda yok, bu yüzden prompt'lar kendi ortamınıza uyarlanmadan çalışmaz. Kod içermiyor, MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "Marker284/yandex-station-extended",
+   "inputs_hash": "3654e84d00b10fd72b578d1def88bb44",
+   "description_tr": "Yandex Station akıllı hoparlörleri için topluluk vikisi: parçalama yapmadan root erişimi, erişimi kalıcılaştırma, güncellemeleri kapatma, USB çevre birimi ve AirPlay kurulumu, hatta Alisa yerine kendi LLM'inizi bağlama. 17 model ve 17 tarif ayrıntılı; adımlar sitede tutuluyor. Rusça, CC-BY-4.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "VITASID57/bluntcore-intimacy-lab",
+   "inputs_hash": "d92597c0c5e931a3b9f6fc7ec3a5c2d9",
+   "description_tr": "Çince bir depo: yazarın insan-AI yakınlık deneyleri, yetişkin (18+) içerikli prompt'lar, jailbreak notları, model testleri ve uzun vadeli hafıza denemeleri. Kod değil, kişisel kayıt ve prompt koleksiyonu; yazar eski kayıtların geçersizleşebileceğini belirtiyor. Lisans belirtilmemiş.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "LingCore/WinShun",
+   "inputs_hash": "28d39c0cb9947c7a7ed79267a925b135",
+   "description_tr": "Windows için ücretsiz, açık kaynak C++ arama ve başlatıcı: Ctrl'ye iki kez basınca NTFS MFT'den kurulan dizinle birkaç milyon dosyada pinyin destekli anlık arama, Word/Excel/PDF içinde tam metin arama, Win+V yerine pano geçmişi, eklentiler ve MCP sunucusu. Veri bilgisayardan çıkmaz; Everything/Listary alternatifi. MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  }
+ ]
+}

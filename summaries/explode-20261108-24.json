@@ -1,0 +1,404 @@
+{
+ "repos": [
+  {
+   "full_name": "MostafaXS1/artcraft-android",
+   "inputs_hash": "24909aca5c6435ce1ec825e35edd1bd3",
+   "description_tr": "ArtCraft PC uygulamalarının Android'e taşınmış hali. PC sürümüyle aynı kaynak kodu kullanıyor; Storage Access Framework ile dosya açma/kaydetme, dokunmatik giriş, klavye ve fare desteği ekleniyor. Telefon ve tabletler için; kurulum GitHub releases üzerinden.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "Ka1-S/LYNX-SHARE",
+   "inputs_hash": "6a159c3fca35289c17742a7045f76acb",
+   "description_tr": "C++20 ve JUCE 8 ile yazılmış hafif, açık kaynaklı bir DAW; FL Studio'nun Channel Rack, Piano Roll, Playlist ve Mixer akışını izliyor, .flp dosyası içe aktarabiliyor. CLAP eklentilerini barındırıyor. Windows, macOS ve Linux'ta çalışıyor; AGPL-3.0, sürüm 0.1.24 alpha.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "mihirgupta0900/tv-home",
+   "inputs_hash": "2eca13f5b3aa91a791ce599eb24151dd",
+   "description_tr": "Yavaş ve reklamlı bir Android TV'yi Wi-Fi üzerinden ADB ile temizleyip Apple TV tarzı sade bir ana ekran kuruyor. Yazar, 2 GB'lık bir TCL Google TV'de 25 uygulamayı devre dışı bıraktığını ve ana ekran bellek kullanımının 192 MB'den 83 MB'ye indiğini söylüyor. Paketler silinmiyor, yalnızca devre dışı bırakılıyor. Claude Code'a tek prompt olarak verilebilir ya da betiklerle elle uygulanabilir.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "XiaoyeCodes/code-animation-prompts",
+   "inputs_hash": "608662579c9e5b9f813b73cabe5759a7",
+   "description_tr": "Kod animasyonu için 341 stil promptu ve 196 referans görsel içeren, Claude Code ve Codex'e skill olarak kurulan bir koleksiyon. Çevrimdışı bir stil seçici ve HTML'den video render akışı var. README Çince; lisans NOASSERTION olarak görünüyor.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "arjaythedev/twelve-dollar-server-challenge",
+   "inputs_hash": "6e91184609657fb5e96316035a20b084",
+   "description_tr": "Aynı küçük SQLite API'sini (5 uç nokta, sabit şema) istediğin dilde yazıp 1 vCPU, 2 GB'lık 12 dolarlık bir sunucuda benchmark ettirdiğin bir yarışma deposu. Yazar sekiz dilde temel sürümleri ölçüp bir liderlik tablosu yayınlıyor. Yapay zekayla ilgili değil; dil ve performans karşılaştırması için.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "torrentplayer/torrentplayer",
+   "inputs_hash": "f625151a4748ea2cbf970f873f00f406",
+   "description_tr": "Torrent'teki video ve sesi indirmeyi beklemeden akış olarak oynatan, Rust ile yazılmış masaüstü uygulaması; README'ye göre bir saniye civarında belirli bir ana atlayabiliyor. Windows, macOS ve Linux'ta çalışıyor; sunucu, hesap ve telemetri yok. Apache-2.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "opensec-git/Pi-Bolt",
+   "inputs_hash": "23ffdb8c5ebf35450e763f05a01d1d9a",
+   "description_tr": "Pi kodlama ajanını Node.js veya Bun gerektirmeden tek bir yerel çalıştırılabilir dosyaya derleyen bir proje. README, Node üzerindeki Pi'ye göre 10 kat hızlı başlangıç, 7 kat az CPU ve 4,5 kat az bellek iddia ediyor. Linux, macOS (Apple silicon), Windows ve Android (Termux) için; ölçümler yazarın kendi beyanı.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "phone-harness/mcp",
+   "inputs_hash": "29582a9bcb75b6662eebc8f174bb1f49",
+   "description_tr": "Bir MCP istemcisine (Claude, Cursor, ChatGPT, Codex) gerçek bir iPhone ya da bulutta Android emülatörü bağlayan, barındırılan bir MCP sunucusu. Ajan ekranı görüp dokunabiliyor, yazabiliyor, kaydırıp uygulama açabiliyor. OAuth veya API anahtarı gerekiyor; cihazlar bulutta olduğu için hizmete bağımlı.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "jesdga95/basalt",
+   "inputs_hash": "754e9ae064e9530f9edd98a0addfccb4",
+   "description_tr": "Qwen3.8-Flash-Next ve DeepSeek-V4.1-Flash gibi mixture-of-experts modelleri için yerel çıkarım motoru; NVIDIA Blackwell (sm_120) GPU gerektiriyor ve Linux ile Windows x64'te çalışıyor. VRAM'e sığmayan uzmanlar sistem RAM'inde tutuluyor. Sunucu OpenAI ve Anthropic API biçimlerini konuşuyor, bir web arayüzü var.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "rossark0/rossark-motion-skill",
+   "inputs_hash": "cf53c1faa191c75e1e5b477907f452d7",
+   "description_tr": "Herhangi bir SVG'yi 60 fps'e kadar canlandırmak için ajana yöntem veren bir Claude Code skill'i: yüz, tüm vücut hareketi ve sahneler. Çıktı hedefleri React Native ve SwiftUI. Yazar, yöntemi kendi uygulamasındaki illüstrasyonları canlandırmak için geliştirdiğini söylüyor. MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "hongye007/open-pose-costume",
+   "inputs_hash": "39abe82ae059099e94bf1af1f400811a",
+   "description_tr": "Poz, kostüm ve karakter referansları için Çince-İngilizce bir çalışma masası: 343 poz grubu, 2.821 kostüm, 1.538 karakter ve toplam 6.073 görsel. Karakter tasarımı, çizim pratiği ve yapay zeka ile görsel üretimi için referans arıyorsan; ayrı bir karakter üretim skill'i de var. TypeScript, lisans NOASSERTION.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "Minglink/dsh-jailbreak-workflow",
+   "inputs_hash": "7d848f5c74f377f365f54780c4ff62ff",
+   "description_tr": "DeepSeek Harness için bir iş akışı eklentisi: akışı bir tuval üzerinde tasarlıyorsun, eklenti bunu tek bir plan promptuna derliyor ve modele uygulattırıyor. Bağlantılar koşul taşıyabiliyor; döngü, paralel çalışma ve geri dönüş destekleniyor. Yürütme motoru yok, her şeyi oturumdaki model yapıyor. Adı ve README'si modelin güvenlik reddini aşan prompt üretimini hedefliyor; deneysel.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "zgx949/ai-pojia",
+   "inputs_hash": "32859277f4aacb697d649d523ee05c23",
+   "description_tr": "Codex için prompt yapılandırması ve skill kuran bir Python aracı; amaç modelin izin verilen görevlerde reddetmeden çalışmaya devam etmesi. Yazar, genel bir ret kaldırma ya da tüm modellerle uyum konusunda ölçülmüş sonuç olmadığını açıkça belirtiyor. Adı ve açıklaması model güvenlik davranışını aşmaya yönelik.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "pullboard-dev/pullboard",
+   "inputs_hash": "705b7a73c533f66f33afd19c3d020c99",
+   "description_tr": "Spec'ten başlayıp ajanların ürün geliştirdiği, bir ajanın işi doğrulamadan hiçbir şeyin merge edilmediği bir otonom geliştirme sistemi. Git deposunun içinde yaşıyor, bağımlılığı yok, JavaScript ile yazılmış. Claude Code gibi ajanları kurallar ve onay adımlarıyla yönetmek isteyenlere yönelik.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "ZiChuanLan/pi-purge",
+   "inputs_hash": "7ffe1f6238acbf532e796083f2ad9b73",
+   "description_tr": "pi kodlama ajanı için bir eklenti: /purge komutuyla oturumun sistem promptunu stok hâli, kırpılmış hâli ya da yalnızca kendi persona promptun olarak değiştiriyorsun. README amacı olarak prompt mühendisliği deneylerini, talimat uyumunu ve prompt injection dayanıklılığı çalışmalarını veriyor. Kapalıyken hiçbir şeyi değiştirmiyor.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "sleepy-zone/ai-ref-library-cn",
+   "inputs_hash": "57bf11bf17449de05ec830b02d34eb49",
+   "description_tr": "Yüz, poz ve kıyafet referans görsellerinden oluşan AI görsel üretimi malzeme kütüphanesinin Çince arayüzlü sitesi; etiketler Türkçe değil Çince, aramalar Çince-İngilizce. Rastgele yüz/kıyafet/poz kombinasyonundan hazır prompt üretiyor. Orijinal malzeme başka bir yazara ait; JavaScript, lisans belirtilmemiş.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "NVIDIAGameWorks/rtx-remix-minecraft",
+   "inputs_hash": "f73451cebd703db1466d3f885dddb3dd",
+   "description_tr": "NVIDIA RTX Remix üzerinden Minecraft Java 1.21.1'e gerçek zamanlı path tracing ekleyen bir Fabric modu; GeForce RTX GPU gerektiriyor. Beta aşamasında ve yalnızca bir gösteri dünyasına göre ayarlanmış, bilinen sorunlar var. Resmi NVIDIAGameWorks deposu, Apache-2.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "orkunisitmak/nashi-app",
+   "inputs_hash": "5dbeafaee9b4ad3989c375e57598ece5",
+   "description_tr": "Tangerine'den esinlenen bağımsız bir macOS dosya dönüştürme ve düzenleme uygulaması (Swift). Genel web medyası indirme, QR kod okuma, kırpma/not ekleme ve klavyeyle medya işleme gibi eklentileri var. Arayüz ve belgeler İngilizce ve Türkçe; lisans NOASSERTION.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "npwitk/Macintosh-Skeletal-Filled",
+   "inputs_hash": "753c5a3c33a3d88d45c289b764c23544",
+   "description_tr": "Apple'ın yeni cihaz kurulumundaki \"hello\" el yazısının fontu olan Macintosh Skeletal'i, yalnızca çizgi merkezini taşıyan hâlinden normal dolgulu fontlara dönüştüren bir proje. Apple'ın çizicisinin kalınlaştırma ve harf birleştirme davranışını izliyor; değişken (wght) OTF dosyası içeriyor. Lisans NOASSERTION, Apple'ın fontundan türetildiği için kullanım hakkını kontrol etmek gerekir.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "GetLostIn/CTR-NitroFueled-PC",
+   "inputs_hash": "586f1f451efc02b430a573c9bf540abc",
+   "description_tr": "Crash Team Racing: Nitro-Fueled'ın (PS4) Windows 10/11'de yerel çalışan bir sürümü; SacredFire adlı Linux portunun Windows fork'u ve shadPS4'ten türeyen bir Vulkan çizicisi kullanıyor. Oyun dosyaları dahil değil. GPL-2.0, C++.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "mxhm11cr/LinuxRunner",
+   "inputs_hash": "996027acaa4ddd8df7be551ec6add7a5",
+   "description_tr": "ARM64 Linux kullanıcı alanı uygulamalarını ve masaüstü ortamlarını iPhone ve iPad üzerinde çalıştıran bir iOS uygulaması; harici ekranda çalışma alanı da sunuyor. Sürüm 1.1.0, C ile yazılmış. Lisans durumu karışık: uygulama GPL-3.0 kapsamında, depo NOASSERTION görünüyor.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "GortexAI/franco",
+   "inputs_hash": "037192dfad3550deeb8a7c1e7fd74bba",
+   "description_tr": "Kendi Claude Code veya Codex aboneliğin üzerinden yerel çalışan bir giden satış e-postası ajanı. Hesap listesini işliyor, her biri için yazma gerekçesi buluyor, kendi posta kutundan kısa bir e-posta dizisi gönderiyor ve yanıtları okuyup ele alıyor. Her e-posta gönderilmeden önce onayına sunuluyor; otopilot isteğe bağlı. Python, MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "leag1234/ElixirOffice",
+   "inputs_hash": "1188aba11a87dc702b91b5e7fbeba37f",
+   "description_tr": "Word, Excel ve PowerPoint (ve OpenDocument) dosyalarını Microsoft Office benzeri arayüzle düzenleyen açık kaynak ofis paketi. Çevrimdışı masaüstü uygulaması olarak ya da kendi sunucunda tarayıcıdan çalışıyor. Beta aşamasında, AGPL-3.0, JavaScript.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "D3ATHLY/blackbox",
+   "inputs_hash": "1ecdb5d843fd0ad6cde5726b931f6ca1",
+   "description_tr": "PS5 için paket yükleyici; homebrew mağazası ve indirme yöneticisi olarak tanıtılıyor, mağaza PS5 13.60 ve altında oyun indiriyor. Konsol güvenlik açıklarına dayanan bir araç; yapay zeka ile ilgisi yok. Lisans belirtilmemiş, README'de bağış rozetleri var.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "c22dev/mush8",
+   "inputs_hash": "b14e27bdd14577ef4fa199c7dae52443",
+   "description_tr": "Mario Kart 8 Deluxe'ün arm64 kodunu Switch'e özgü talimatları nxpatch ile yeniden yazarak iOS/macOS'ta yerel çalıştıran Rust projesi. nxhost, Horizon işletim sistemi servislerini taklit ediyor ve NVN grafik API'sini Metal'e çeviriyor. LAN, çevrimiçi ve kablosuz çok oyunculu destekli; GPL-3.0. Telifli bir oyunu taşıdığı için hukuki risk taşıyor.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "armanlife/arman-vpn-client",
+   "inputs_hash": "eda676a04540bacc39dde28b303d93db",
+   "description_tr": "Mozilla hesabınla çalışan, resmi olmayan bir VPN istemcisi; Android, Windows, macOS ve Linux için Go ile yazılmış. README Mozilla ile bağlantısı olmadığını vurguluyor. GPL-3.0; yapay zekayla ilgisi yok, kullanım koşulları açısından Mozilla hizmetine bağımlı.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "VallierDev/uu-remote-linux",
+   "inputs_hash": "0c85f7569ae695bffff6a6e5589f80d7",
+   "description_tr": "NetEase UU Remote için resmi olmayan bir Linux ana makine (kontrol edilen taraf) uygulaması; kurunca resmi Mac, Windows ve mobil istemcilerle Linux bilgisayarı uzaktan yönetebiliyorsun. Deneysel bir Linux kontrol istemcisi (uuremote-viewer) ve Synology/NAS için Docker imajı da var. Rust, GPL-3.0; yazar Claude ve Codex ile geliştirdiğini söylüyor.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "z3xox/Tenkaichi3Decomp",
+   "inputs_hash": "b4a71c26089dd235406f0bbeb1a231ba",
+   "description_tr": "Dragon Ball Z: Budokai Tenkaichi 3'ün (PS2, ABD sürümü) BT3-Decompiled çıkarımından derlenmiş yerel PC portu; yeni çizici, ses ve girdi katmanı var, emülatör değil. Oyun verisi içermiyor, kendi disk imajını gerektiriyor. C, AGPL-3.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "converge-ai-labs/agent-foundation",
+   "inputs_hash": "63ab2b4cd0981f94e8ae9954f6a0fd02",
+   "description_tr": "Ajanları kendi altyapında kurup çalıştırmak ve yönetmek için açık kaynak bir çerçeve (a13n): yerleşik ajan harness'i, dayanıklı yürütme (durable execution), çoklu sağlayıcı desteği ve bir yönetim konsolu içeriyor. Python 3.13+ gerekiyor, Apache-2.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "looplj/reveric",
+   "inputs_hash": "d991c25d2a6236499688e0b077fcd226",
+   "description_tr": "Roman yazımından kısa drama videosuna kadar uzanan, ajan destekli bir masaüstü yaratım çalışma alanı (Flutter/Dart); sonsuz tuval ve MiniMax, Seedance gibi modellere destek var. Arayüz ve README Çince, İngilizce sürüm de mevcut. AGPL-3.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "miuuyy/Octopus-SI-OS",
+   "inputs_hash": "e02409340867be12ff342d2bfebfef3a",
+   "description_tr": "Rust çekirdekli, kendi kendini geliştirdiği iddia edilen bir \"ajan işletim sistemi\": ajan yürütmesini işletim sistemi ilkeleriyle kuruyor ve ajanların ortamlarını yeniden şekillendirmesine izin veriyor. Araştırma önizlemesi, macOS 14+ gerekiyor. \"Süper zekaya giden yol\" gibi iddialar yazarın beyanı; MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "Domainsun/awesome-chinese-secondhand-slang",
+   "inputs_hash": "04221503327ad922f481685d0be7d669",
+   "description_tr": "Xianyu, Zhuanzhuan ve Xiaohongshu'daki ikinci el ilanlarında kullanılan kodlu ifadeleri ve satıcı jargonunu derleyen Çince bir liste; alıcılar için dolandırıcılık ve ürün kontrol rehberi içeriyor. Kod ya da yapay zeka içermiyor, yalnızca içerik. MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "divagr18/qwenputer",
+   "inputs_hash": "e15f264d63f100d14309e5bb96fbbc1a",
+   "description_tr": "Qwen3.5-4B'nin ağırlıklarına derlenmiş bir CPU: Gated DeltaNet durumu RAM gibi kullanılıyor ve README'ye göre hesaplama tam doğrulukla modelin içinde yürüyor. Dosya sistemi ve NPU için ayrı modeller Hugging Face ve ModelScope'ta. Yorumlanabilirlik ve ağırlığa derleme araştırması; lisans NOASSERTION.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "dominikmartn/harp",
+   "inputs_hash": "1019419b4ae2d1a21e0a538dd207c47a",
+   "description_tr": "Birçok Claude Code ve Codex ajanını tek kenar çubuğunda yan yana çalıştıran, hangisinin sana ihtiyacı olduğunu gösteren bir terminal uygulaması; Warp'ın resmi olmayan bir fork'u. Rust, AGPL-3.0, macOS için.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "wzc520pyfm/gen-ai-pose-image",
+   "inputs_hash": "04c063f0aee399a33ae945543bae446f",
+   "description_tr": "Poz çizimleri ve kıyafet setlerinden bir topluluk karakteri \"Dafeiyu\" için görsel üreten bir DeepSeek Harness eklentisi; bağımsız bir poz stüdyosu olarak da açılıyor. İsteğe bağlı olarak tarayıcıdan yerel veya uzak ComfyUI'ye bağlanabiliyor. Çince ağırlıklı, lisans NOASSERTION; belirli bir topluluk karakterine özgü olduğu için kapsamı dar.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "t8y2/motty",
+   "inputs_hash": "e727acf9efb159787ddfb4ced3e7a79c",
+   "description_tr": "SSH, SFTP, port yönlendirme, VNC/RDP, bir yapay zeka asistanı ve MCP desteğini tek bir yerel pencerede toplayan Go masaüstü istemcisi; Viva üzerine kurulu ve webview kullanmıyor. Apache-2.0, İngilizce, Çince ve Japonca belgeleri var.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "alchaincyf/huashu-bird-sticker",
+   "inputs_hash": "9300a3f3c33cf1ba048e9bc8813f4b9d",
+   "description_tr": "Dünyadaki 11 binden fazla yaşayan kuş türü için her biri bir çıkartma görseli, 43 dilde isim ve dağılım, morfoloji, koruma durumu gibi yapılandırılmış veri sunan bir koleksiyon. Görseller yapay zeka ile üretilmiş. Veri AviList sınıflandırmasına göre düzenlenmiş; kod yok, lisans NOASSERTION.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "LordixDemon/apple_watch_connector",
+   "inputs_hash": "db1f0f26aa1c6710b38dcd187b7e58a8",
+   "description_tr": "Apple Watch'ı Android, macOS, Linux ve Windows ile eşleştirmeyi deneyen, tersine mühendislikle elde edilmiş bir Companion projesi (Bluetooth, eşleştirme, IDS, Flutter, Java, Rust). Yalnızca watchOS 26.2'de test edildiği belirtiliyor; README başlıca İngilizce ve Rusça. Açıklaması ve lisansı yok, resmi olmayan bir yaklaşım.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "yeyuxin777/baoyan-agent-benchmark",
+   "inputs_hash": "146d675238559aa024421896521f37e4",
+   "description_tr": "Lisans üstü kabul (Baoyan) danışmanlığı ve başvuru planlaması yapan yapay zeka ajanlarını değerlendiren bir benchmark: 70 Çince görev, 23 vaka ve 83 cevap aşaması, her görev için rubrik. Şu an sekiz ajan yapılandırması ölçülmüş. Puanlama materyalleri değerlendirilen ajanlardan saklanmalı; MIT, Python.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "x18n-dev/x18n",
+   "inputs_hash": "0620ccfe8f72171f824514917e8f2ce3",
+   "description_tr": "Herhangi bir framework için i18n dosyalarını denetleyen, görüntüleyen ve yöneten araç seti; i18n-ally'nin halefi olarak tanıtılıyor. Vue, React, Angular, Svelte, Next.js, Flutter, Laravel gibi 45'ten fazla ön ayarı sıfır yapılandırmayla algılıyor, LSP ve MCP sunucusu sağlıyor. TypeScript, MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  }
+ ]
+}

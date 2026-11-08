@@ -1,0 +1,404 @@
+{
+ "repos": [
+  {
+   "full_name": "zeusinsight/FinderSearch",
+   "inputs_hash": "8564796ce13b6176feaf4c224ada4c6d",
+   "description_tr": "macOS 15+ için Swift, SwiftUI ve AppKit ile yazılmış yerel dosya tarayıcısı. fsearch tabanlı bulanık dosya adı araması, ext:pdf gibi filtreler, Quick Look önizleme, toplu yeniden adlandırma ve ZIP araçları sunar. Arama yerelde çalışır; uygulama henüz imzalı ve notarize edilmemiş.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "pgrundev/pgx",
+   "inputs_hash": "74bbd48bdbd4002913a2252acf3ad76d",
+   "description_tr": "Rust ile yazılmış hafif bir Postgres çalışma zamanı; tek süreçte binlerce yalıtılmış veritabanı açarak her AI ajanına kendi Postgres'ini vermeyi hedefler. Postgres 18.6 tabanlı ve resmi regresyon testlerinin 231'inden 219'unu byte düzeyinde geçtiği belirtiliyor. v0.1 aşamasında, AGPL-3.0 lisanslı.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "zgsfsec/Full-Chain-Sentinel-System",
+   "inputs_hash": "29cf410071a8467035e69ec3be9c13b2",
+   "description_tr": "Yetkili sızma testleri için Web, mobil uygulama ve mini program güvenlik testlerini birleştiren bir güvenlik ajanı; Docker üzerinde çalışan, Çince ve İngilizce web konsolu var. Onay ve kanıt yönetimi içerir. Otomatik mod keyfi komut çalıştırabildiği için yalnızca yazılı izinli hedeflerde kullanılmalı.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "Supra-3D/SUPRA-Tex",
+   "inputs_hash": "0ba232e7eafbec884088d89e9d5f5f82",
+   "description_tr": "Tek bir görüntüden dokulu 3D varlık üretmeye odaklanan bir araştırma kodu; dokunun geometriyle hizalanmasını ve PBR çıktısını hedefler. Python ile yazılmış, arXiv makalesi, Hugging Face demosu ve model ağırlıkları var. MIT lisanslı.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "GTKottman/mortiflix-oss",
+   "inputs_hash": "114ff26c59e2372275254ffcd68aaf9d",
+   "description_tr": "Kendi makinende çalışan bir hareketli grafik (motion design) stüdyosu: Claude, Remotion ile videoyu adım adım üretir ve her aşamayı sen onaylarsın. Kendi Claude Code'unu ya da API anahtarını getirirsin. AGPL-3.0; yayın için artık Postiz yerine başka bir servise bağlanıyor.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "Leonxlnx/athenaion",
+   "inputs_hash": "0112632d13f8199a7b17f66a62d565f9",
+   "description_tr": "Three.js ile tamamen kodla üretilmiş büyük bir antik Yunan dünyası; mesh, doku, gölgelendirici ve heykellerin hiçbiri harici varlık kullanmıyor. Claude Code ile yaklaşık iki günde, dokuz referans görüntüye göre yapılmış. Gösterim ve deney niteliğinde; MIT lisanslı.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "agharsallah/esp-labs-web",
+   "inputs_hash": "90526ce41b03ee8df45c1445fab907d1",
+   "description_tr": "ESP32-S3 öğrenmek için React ile yazılmış etkileşimli rehber: canlı pinout, simülatörlü 32 uygulamalı ders ve gömülü yazılımı satır satır açıklayan bir kod okuyucu. 11 dilde, TypeScript ve Vite ile yapılmış. Eğitim amaçlı ve MIT lisanslı.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "eyalgolan/statecraft-israel",
+   "inputs_hash": "7c8cc6028e264b6fda4bfb90f59d4d62",
+   "description_tr": "Unity ve deterministik C# simülasyonuyla yazılmış, 15 Mayıs 1948'den İsrail'i yönetmeye dayanan Civilization tarzı sıra tabanlı strateji oyunu. Tanıtım videosu yapay zeka araçlarıyla üretilmiş. Lisans standart bir SPDX türü değil; LICENSING.md ayrıca okunmalı.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "lucannez64/darling-lol",
+   "inputs_hash": "bbc15b18368f9a0d21070fc26e97bb25",
+   "description_tr": "Darling ile macOS League of Legends istemcisini Linux'ta çalıştırmayı deneyen deneysel çalışma zamanı yamaları ve araçlar. Yazar bakım yapamayacağını belirtiyor ve oyunda kalıcı yasak riski olduğunu açıkça söylüyor. Python, GPL-3.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "hi3d-official/Hi3Dv1.0",
+   "inputs_hash": "623441e88269e8a47aa262192e71ea15",
+   "description_tr": "Sparc3D üzerine kurulu, kaba bir mesh'i referans görüntü eşliğinde yüksek çözünürlüklü geometriye dönüştüren 3D iyileştirme modeli. Yaklaşık iki milyon 3D varlıkla eğitilmiş, 1536³'e kadar seyrek çıkarım ızgarası kullanıyor. Çıkarım kodu ve ağırlıklar açık; lisans özel (NOASSERTION).",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "N-tongxue/norman-skill",
+   "inputs_hash": "6d921c6b124772232d6706ff03c36324",
+   "description_tr": "Bilimsel çizim, makale görsellerini işleme, PPT hazırlama ve yapay zeka destekli araştırma iş akışları için bir Skill koleksiyonu. Tsinghua'da doktora öğrencisi olan yazar kendi günlük yöntemlerini derlemiş. Açıklama ve lisans yok; iki dilli README.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "chris124567/cfsolve",
+   "inputs_hash": "d48e66998543ebe841888924a4b39949",
+   "description_tr": "Cloudflare Turnstile widget'larını ve challenge sayfalarını tarayıcı açmadan, istek tabanlı çözen Rust aracı; protokol tersine mühendislikle çıkarılmış. Safari ve Chrome profil dosyaları ister, proxy ve sitekey seçenekleri var. Bot korumasını aşmak için kullanılabileceğinden kötüye kullanım riski taşır. MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "nace-ai/kapitsa",
+   "inputs_hash": "4e3af9767230424fce8fbd1c1d0960ff",
+   "description_tr": "Apple Silicon için C++ ile yazılmış yerel çıkarım motoru; Qwen, Nemotron ve Flint modellerini çalıştırıp OpenAI ve Anthropic uyumlu API sunar. opencode, Claude Code, Codex veya pi'yi yerel modelle başlatabilir. Yalnızca M1 ve üzeri Mac'lerde, macOS 14+ ile çalışır. Apache-2.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "NB-Corp/gpt-with-taste",
+   "inputs_hash": "238e42308b193eee1913dc86bc9f4e98",
+   "description_tr": "Codex ve diğer kodlama ortamları için GPT modellerine yönelik sistem talimatı ve olay yönlendirme seti; modelin sıradan kararları kendisinin vermesini ve işi mühendislik ve görsel özenle teslim etmesini hedefler. Tek bir davranış tarifinden her ortam için yerel talimat üretiyor. Lisans NOASSERTION.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "SaarthurR/atticus-mac",
+   "inputs_hash": "251b2615e0898ae162ab29f2c1490d90",
+   "description_tr": "Mac için menü çubuğu sesli asistanı: ⌃⌥Space'e basılı tutup konuşursun, pencereleri taşır, dosya bulur, ekranı okur. API anahtarı istemez; Claude Pro/Max planındaki Claude Code, Devin, Pi veya yerel model üzerinden çalışır. macOS 26 gerektirir. Python, MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "hevnsnt/CVEngine",
+   "inputs_hash": "c2dd9d0dc5971f05fae77ab4801dffb5",
+   "description_tr": "Alan adını girince dışa açık varlıkları bulan, hangi güncel istismar edilen CVE'lerin gerçekten etkili olduğunu kanıtla doğrulayan, kendi sunucunda çalışan açık kaynak saldırı yüzeyi değerlendirme aracı. Sürekli keşif yapar ve geliştirici ajanlar için MCP arayüzü sunar. Python, GPL-3.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "tang1693/KIKUmap",
+   "inputs_hash": "759903da25a190675bbfe55d7904c4ef",
+   "description_tr": "Claude ve ChatGPT sohbetlerini macOS menü çubuğunda zihin haritası olarak gösteren Swift uygulaması. Çalışan, biten ve onay bekleyen sohbetleri ve Claude Code oturumlarını tek yerde izlemeni sağlar. İsteğe bağlı sesli bildirim var. MIT lisanslı.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "VictorTaelin/uniichat",
+   "inputs_hash": "91c89da9a5e6f9a1fdaac83ecd582ab7",
+   "description_tr": "TypeScript ve Bun ile yazılmış, sunucu sahibi bir sohbet ajanı; geçmiş mesajlar ikili ağaçta özetlenerek bağlam bozulmadan korunuyor ve ajan istediği satırı açıp orijinal mesaja inebiliyor. Özetleri daha ucuz bir model yazar. Claude ve OpenAI API'lerini destekler; Apache-2.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "fudan-generative-vision/Remory",
+   "inputs_hash": "90e3fccb8bd8684d5cc0ea55a57fa1a8",
+   "description_tr": "Ajan bağlam sıkıştırmasında, özet metnine geçmişten öğrenilmiş yumuşak bir 'artık bellek' ekleyen araştırma kodu; dondurulmuş modelin sıkıştırmalar arasında işe devam etmesine yardım eder. 1,9B'lik küçük model Qwen3.8-27B ile ASI-Bench'te 29,33 puan raporluyor. Python, MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "quanhoangindex/ascii-reveal",
+   "inputs_hash": "8d73c6f6057f4f8cc2d6a84a0e76e1ec",
+   "description_tr": "React için yükleme efekti: metin, görsel ve kartlar karakter ızgarası üzerinden çözülerek yerine oturur. İçerik DOM'da gerçek konumunda kaldığı için yerleşim kayması olmaz; loading durumuna bağlanabilir. TypeScript, MIT lisanslı.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "OutThisLife/azeroth-survivors-re",
+   "inputs_hash": "c4567e5d0f477b7a005bb7d6982a99a4",
+   "description_tr": "Sıfırdan yazılmış WoW 1.12.1 istemci motoru (Rust ve Bevy) üzerinde çalışan bir hayatta kalma roguelike'ı. Orijinali Aethus'un hayran yapımı oyunu; bu depo yerel derleme. Kaynak Blizzard içeriğine dayandığından telif konusu belirsiz. Apache-2.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "wangrongding/tv-fresh",
+   "inputs_hash": "a12fce76f06d6fd40636266845604263",
+   "description_tr": "Xiaomi TV'lerde (MIUI TV) ADB ile reklam ve ön yüklü uygulamaları kaldırmak, masaüstünü değiştirmek ve proxy kurmak için Agent Skill ve kabuk betikleri. Root gerektirmez, her adımın geri alma komutu var; Android 9'lu bir modelde denenmiş. MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "libracoder/kiri",
+   "inputs_hash": "595c281931d33ed085eaf6f03a85dccb",
+   "description_tr": "Rust ile yazılmış, macOS, Windows ve Linux'ta çalışan küçük bir konteyner çalışma zamanı; Docker Engine API'sini konuşur, böylece docker CLI, Compose ve buildx olduğu gibi çalışır. Docker Desktop ve OrbStack'e hafif alternatif olarak sunuluyor; konteyner başlatma süresi yaklaşık 2,5 ms. Apache-2.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "voyager-so/vork",
+   "inputs_hash": "57d4849495c16e664b7b5fa8ed735f03",
+   "description_tr": "Ajanlar için tasarlanmış başsız (headless) 3D ve VFX motoru; Metal ve GPU ışın izleme etiketli; ajanın sahneyi komutlarla kurup render çıktısını incelemesi için tasarlanmış. Araştırma önizlemesi aşamasında, lisans özel (NOASSERTION).",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "SakanaAI/AI-Scientist-v3",
+   "inputs_hash": "2a2a3da0423d1218ed6275e727a65567",
+   "description_tr": "Sakana AI'ın kodlama ajanlarını bilim insanı gibi yöneten sistemi: task.md'den fikir üretir, deney ve ablasyon çalıştırır, nihai değerlendirmeyi yapıp makale yazar. Her aşama tek bir çalıştırma dizininde tutulur. Python, Apache-2.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "Nutlope/bygga",
+   "inputs_hash": "cc9f6ff36021ff0171a4acbfdf86096f",
+   "description_tr": "IKEA kutusundaki ürün adı veya numarasıyla kâğıt kılavuz tarzında animasyonlu 3D montaj adımları gösteren Next.js uygulaması; 1.171 ürünü çevrimdışı çizer, sesli anlatım içerir. Kağıt kılavuz taraması için Together AI kullanır. TypeScript, MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "zeabur-oss/zeabur",
+   "inputs_hash": "208413283084da4c15d5f7e7ede0edca",
+   "description_tr": "Kendi Kubernetes kümende barındırılan açık kaynak PaaS: kümeyi proje ve servis olarak gösterir, sorunları sade dille açıklar. Kendi veritabanı veya özel kaynak tanımı tutmaz, sahip olduğundan fazla yetkiyle işlem yapmaz. Rust, Apache-2.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "jiuyang5354/bilibili-margin",
+   "inputs_hash": "65e3cb24e2703e0555c9a5561087f627",
+   "description_tr": "Bilibili ana sayfası, arama, video ve okuma sayfalarını sıvı cam kontrolleri ve hareketli arka planlarla yeniden tasarlayan Chrome, Edge ve Firefox eklentisi. Yerel oynatıcıyı korur; öneri filtreleri ve yerel etkinlik ısı haritası ekler. TypeScript, MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "dev-null-sh/dev-null.sh",
+   "inputs_hash": "f97e44783f59e1640ce89cc2c4753994",
+   "description_tr": "Geliştiriciler için sosyal ağ: GitHub ile giriş, geliştirici takibi ve commit paylaşımı. Yayında canlı başlatılmış, topluluk tarafından geliştiriliyor. PHP 8.5+, Bun ve pgvector ile PostgreSQL 17 gerektirir. Depoda lisans belirtilmemiş.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "Humpalumps/Ultra-Water",
+   "inputs_hash": "8084fe283880b683978b7ba13eba1067",
+   "description_tr": "Three.js için WebGL2 gerçek zamanlı FFT okyanus oluşturucu: kıyı dalgaları, köpük, kostik ve su altı render ile şamandıra fiziği. RTX 3060'ta 1440p eşdeğerinde 170-300 fps ölçülmüş; adalı demo sahnesi var. JavaScript, MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "Generated-Computers/Locals",
+   "inputs_hash": "20525b1f8988f1ae24cd526aeaffc901",
+   "description_tr": "Mac'te birden çok AI ajanını aynı anda çalıştırmak için yerel çıkarım sunucusu; araç çağrıları ve uzun konuşmalar için tasarlanmış, düz sohbete göre 3 kata kadar hızlı olduğu söyleniyor. OpenCode, Cline, Aider, Claude Code ile OpenAI, Anthropic ve Ollama API uyumlu. Apple Silicon, Python, Apache-2.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "Gezine/CivSwitch",
+   "inputs_hash": "699e1ff0709bedcff332cd0600deddd9",
+   "description_tr": "Civilization 7 oyun kartuşundaki bir açıktan yararlanarak Nintendo Switch'te kullanıcı alanı kod çalıştırma sağlayan JavaScript araçları: yükleyici oluşturucu ve uzaktan JS yükleyici. PicoSwitch donanımı gerektirir. Konsol modifikasyonu ve garanti ile çevrimiçi yasak riski içerir. MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "mamcjr/BOTWRecompAndroid",
+   "inputs_hash": "9b88737df910970a42b78f209739d881",
+   "description_tr": "The Legend of Zelda: Breath of the Wild'ın Switch sürümlerinin Android için statik olarak yeniden derlenmiş (recomp) hali; oyun dosyası içermez. Beta aşamasında, esas olarak POCO F7 Ultra'da test edilmiş, oynanabilir. C ile yazılmış; lisans NOASSERTION, telifli oyun varlığı gerektirir.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "blakeandersonw/ai-app-playbook",
+   "inputs_hash": "86ba1842b70cf6e52b500dd1f56b8f71",
+   "description_tr": "Ajanlara 'AGENTS.md'yi oku' denerek kullanılan, 2026'da kazançlı uygulama geliştirme rehberi: problem seçiminden ilk kârlı aya kadar önerilen yığın ve örnekler. Yazar 5 uygulamayı 100 bin dolar üzeri MRR'ye çıkardığını söylüyor; bu iddia doğrulanamaz. TypeScript, MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "XiangpengHao/bbtree",
+   "inputs_hash": "14d16ad0cfdb4fb0e95350e0676dc009",
+   "description_tr": "Rust'ta eşzamanlı sıralı harita (ordered map); tek iş parçacığında std BTreeMap'ten 5 kat, 96 iş parçacığında crossbeam-skiplist'ten 12 kat hızlı olduğu iddia ediliyor. no_std uyumlu, sıfır bağımlılık, BTreeMap yerine doğrudan kullanılabilen unsync sürümü var. Lisans NOASSERTION.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "sqlpxc/airhand",
+   "inputs_hash": "9c19e0d550493fedda973eb024b5277f",
+   "description_tr": "QUIC üzerinden yüksek performanslı uzak masaüstü: aynı program hem host hem controller olur. Windows, macOS 13+ ve Linux (X11) destekler; sinyalleşme için Docker Compose ile kurulan küçük bir relay sunucusu ve tarayıcıdan kullanılan web konsolu var. Rust, Tauri, React; MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "assafkip/claudemy",
+   "inputs_hash": "3262cdfd52d12b261dd1638eff283233",
+   "description_tr": "Claude Code için bir skill: bir konu verince web'de araştırıp kaynaklı, iki dakikalık sesli derslerden oluşan bir kurs hazırlar. Her ders üç satırlık fikir, kaynak uyumu ve denenecek küçük bir adım içerir. Udemy ve Coursera'ya açık kaynak alternatif olarak sunuluyor. Python, MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "jyotipmahes/ML-Interview-Prep",
+   "inputs_hash": "12093abd1fe285a644a472cc24502178",
+   "description_tr": "Makine öğrenmesi mühendisliği mülakatları için sıfırdan uygulamalar içeren Jupyter defterleri: lineer ve lojistik regresyon, K-Means, KNN, MLP, LayerNorm, çok başlı dikkat, LoRA ve BPE. Matematiksel formüller ve doğrulama testleri var. Eğitim amaçlı; lisans belirtilmemiş.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "HeyChengC/wallstreet-explainer",
+   "inputs_hash": "9cc6c37c1d1a1551104bb10da244d108",
+   "description_tr": "Finans ve teknoloji gündemini 'Wall Street tarzı' kısa videolara çeviren bir ajan skill'i: metin yazma, malzeme bulma, ekran görüntüsü, seslendirme, render ve miksaj araçlarını içerir. Claude Code ve Codex'e kurulur; ffmpeg, Playwright ve ayrı indirilen yazı tipleri gerekir. Lisans NOASSERTION.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "islandmed/SculptForge",
+   "inputs_hash": "45c9ee9b3882ac3e2e4dd20b01efedf6",
+   "description_tr": "Linux, macOS ve Windows için ücretsiz açık kaynak 3D heykel uygulaması: yoğun mesh'ler, yeniden ağ oluşturma, boyama, görüntü veya metinden 3D yapay zeka, Unreal'e gönderme, LOD üretimi, Gaussian splat ve OpenUSD desteği. C++ ve Dear ImGui, GPL-3.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  }
+ ]
+}
