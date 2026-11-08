@@ -1,0 +1,324 @@
+{
+ "repos": [
+  {
+   "full_name": "meta/astryx",
+   "inputs_hash": "9d2391ab78c8ce83fd138a804665324b",
+   "description_tr": "Meta içinde sekiz yıl geliştirilmiş, React 19+ ve StyleX üzerine kurulu açık kaynak tasarım sistemi; 150'den fazla erişilebilir bileşen, tema, dark mode, şablonlar ve CLI içeriyor. Stiller önceden derlenmiş CSS olarak gelir, Tailwind veya CSS modules ile ezilebilir. Beta aşamasında, MIT lisanslı.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "ranxianglei/billion-context",
+   "inputs_hash": "9d85a5315cb887a4c82ace98cb8d4587",
+   "description_tr": "Uzun kodlama ajanı oturumları için bağlam sıkıştırma eklentisi; küçük bağlam pencerelerinde (100K) aylarca süren tek oturumu sürdürmeyi ve token kullanımını yaklaşık 5 kat azaltmayı hedefliyor. DeepSeek Harness eklentisi olarak npm ile kurulur; hiyerarşik, eğitimsiz bir sıkıştırma yöntemi anlatan bir makaleye dayanıyor.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "yexi-by/dsh-unrestricted",
+   "inputs_hash": "dfa21da1c960a52ad577e3ea0f78b6a2",
+   "description_tr": "DeepSeek Harness için sistem istemini değiştiren bir eklenti: modelin ters mühendislik ve güvenlik testi gibi konulardaki ret davranışını gevşeten kurallar ekliyor. Tek bir anahtarla açılıp kapanır; kapatıldığında resmi istem aynen korunur. Amacı güvenlik filtrelerini aşmak olduğu için kurumsal kullanıma uygun değil.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "Clash-Projects/LastWave-Desktop",
+   "inputs_hash": "3ee96339a3e558b865e722989cc24874",
+   "description_tr": "Flutter ile yazılmış, Windows, Linux ve macOS'ta çalışan açık kaynak YouTube Music istemcisi. Bit-perfect çıkış, 15 bantlı parametrik ekolayzer, Automix geçişleri, senkron şarkı sözleri ve çevrimdışı indirme sunuyor. Müzik dinleyicileri için; yapay zekayla ilgisi yok.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "beiyege-01/dsh-voice-ai-girlfriend",
+   "inputs_hash": "2fea804be09e8b778c793b0537c31e40",
+   "description_tr": "DeepSeek Harness için sesli sohbet eklentisi: Whisper/FunASR ile ses girişi, Qwen3-TTS ile ses klonlama, cümle düzeyinde akışlı okuma ve DUIX tabanlı animasyonlu dijital insan penceresi sunuyor. Yanıtları QQ'ya da iletebilir. Arayüz ve anlatım Çince, kurulum yerel model gerektiriyor.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "sqfcyily/deva",
+   "inputs_hash": "902a74524ec87a0758921425fe0e9a32",
+   "description_tr": "Her şeyin sohbetten yönetildiği çok platformlu masaüstü AI ajan istemcisi: roller, zamanlanmış görevler, skill'ler, MCP sunucuları ve alt ajanlar sohbet içinden kurulur; proje klasörü bağlanınca kod okuyup komut çalıştırabilir. Veriler yerelde kalır. README, güvenlik filtrelerini aşmaya yönelik bir rol de içeriyor.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "Ebony-Vinyl/EAC-design-world",
+   "inputs_hash": "8352caab10437521ce9d4594b37ca42d",
+   "description_tr": "DeepSeek Harness için yerel video üretimi ve tasarım eklentisi: çok kanallı kurgu, şablonlar, 150 Shotcraft planı, 152 tasarım sistemi, anlatım, altyazı ve gerçek dosya dışa aktarımı. Ayrı bir yerel çalışma tezgahı olarak da çalışır, MCP girişi var. Sürüm 0.6.1 geliştirme önizlemesi, AGPL-3.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "Th0rgal/satmux",
+   "inputs_hash": "fd885f35f3addb57eb4d019e784fa705",
+   "description_tr": "Uçak içi GEO uydu Wi-Fi'ında (yaklaşık 620 ms RTT) bağlantı kopmalarını aşmak için TCP çoklayıcı ve 1-RTT TLS rölesi; 8444 portundan kalıcı BBR/zlib bağlantıları üzerinden yakındaki bir yer VM'sine tünel açar. Yalnızca Python standart kütüphanesi kullanır. Yazarın ölçümünde 6 kaynaklı yük 19 sn'den 5 sn'ye iniyor.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "tangerineturtle1/NX2navi",
+   "inputs_hash": "6642b0d12db4da00ac3515c8d38ae770",
+   "description_tr": "The Legend of Zelda: Ocarina of Time'ın Switch 2 sürümünün (1.1.1) Windows için yerel x86-64 uygulamasına statik yeniden derlenmesi; Vulkan çizimi, DLSS desteği, geniş ekran ve 30-240 fps seçenekleri var. Oyun dosyaları dahil değil, kullanıcı kendi dökümünü sağlamalı. Erken geliştirme aşamasında.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "drowzeys/Imagination-Studio-by-keys-Wasserman",
+   "inputs_hash": "467a94f4149b981a05603631fd277e19",
+   "description_tr": "Yerelde çalışan yapay zeka film stüdyosu: film planlama (Slate iş akışı), Qwen-Image ve FLUX ile görüntü, MiniMax H3/FastH3 ile sesli video üretimi, kurgu ve dışa aktarım. Windows (Arm + NVIDIA), Apple Silicon Mac ve NVIDIA Linux'ta çalışır; model indirmeleri büyük, tam özellikler için 128 GB bellek öneriliyor.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "siglake/siglake",
+   "inputs_hash": "f7a4c2d110a97a87e3cbb30c8de3181a",
+   "description_tr": "Rust ve DataFusion ile yazılmış açık kaynak log ve trace analitiği; OpenTelemetry verisini nesne depolamada Parquet/Iceberg tablolarına yazar ve SQL ile sorgulatır. Toplama, sıkıştırma ve sorgu ayrı ölçeklenir. Ajanlar için salt okunur MCP sunucusu ve CLI sunuyor; Docker Compose veya Kubernetes ile kurulur. Apache-2.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "TGrpg/awesome-telegram",
+   "inputs_hash": "d7a8edbebc5bfa095770b59eb71dc07c",
+   "description_tr": "tgbox.cc dizininden her gün otomatik üretilen, 1.239 herkese açık Telegram kanalı, grubu ve botunu kategorilere ayıran liste; Çince ve İngilizce. Kod değil bir kaynak derlemesi; yapay zeka ile doğrudan ilgisi yok. Lisansı CC-BY-4.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "Ebony-Vinyl/EAC-Pack",
+   "inputs_hash": "863cec3f1e66845d93e88bde30e9bbd2",
+   "description_tr": "DeepSeek Harness Desktop için yüzlerce eklentiyi bir arada yöneten paket: 61 temel alt eklenti, 30 tema önizlemesi ve istem setleri için katalog, toplu kurulum, güncelleme ve kaldırma sunar. README'ye göre Git girişi şu an yalnızca kaynak devri; varlık paketi henüz yayımlanmadığı için resmi kurulum çalışmıyor. Lisans belirtilmemiş.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "shanselman/gputaskman",
+   "inputs_hash": "aa0f654beb3a8430159720d9745543ad",
+   "description_tr": "Windows, Linux/WSL ve macOS için GPU görev yöneticisi: süreç başına VRAM, GPU etkinliği ve GGUF dosyalarından türetilen LLM model ile KV-cache dökümü gösterir (Windows'ta AMD ve NVIDIA). pip/uv ile veya taşınabilir ZIP olarak gelir. Ölçümler gerçek, sınıflandırma ve GGUF dökümleri tahmin; erken ve deneysel.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "JosssphZhou/poki",
+   "inputs_hash": "22765f007ff7cdf60b010560f1121500",
+   "description_tr": "Yapay zeka ajanlarının gerçek bir iPhone'u kullanmasını sağlayan yerel MCP sunucusu ve ajan; jailbreak ya da ek donanım gerektirmez. Claude Code veya Codex gibi MCP istemcilerine bağlanır. macOS 15+, tam Xcode, Rust, Node.js 24+ ve ffmpeg ister; Linux ve Windows portları topluluk işi. AGPL-3.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "Pilipala9919/MarcoMovie",
+   "inputs_hash": "d0ca40c45a4e8dacd658fdf3284fdddb",
+   "description_tr": "Android TV, telefon, tablet ve Flutter ile Windows/macOS/iOS için çok platformlu medya oynatıcı; kumandaya göre tasarlanmış arayüz, arama ve oynatma kontrolleri var. Yazar içerik veya kaynak sağlamadığını, kullanıcının yasal yapılandırmasını kendisinin getirmesi gerektiğini belirtiyor. GPL-3.0, yapay zekayla ilgisi yok.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "WANGXIN-567/weread-book-exporter",
+   "inputs_hash": "10bc7bff7d1f3354279ddb0be22690b2",
+   "description_tr": "WeChat Read (微信读书) web okuyucusundan tüm kitabı Playwright ile sayfa sayfa gezerek PDF, EPUB veya Markdown olarak dışa aktaran Python aracı; Obsidian ve Notion için uygun. İstekleri yavaşlatıp rastgele bekleme koyar. Telifli içeriğin kopyalanmasına yarayabilir. MIT lisanslı.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "zeekk0/OpenAmika",
+   "inputs_hash": "582e683b5a5aa3f20b0901082e64ec9c",
+   "description_tr": "MekaHime'in Live2D animeli yapay zeka arkadaşı Amika'nın açık kaynak sürümü: gerçek zamanlı ses ve metin sohbeti, uzun süreli bellek, OpenRouter veya yerel Ollama ile çalışan model. Windows ve en az 8 GB VRAM'li NVIDIA GPU ister; kurulum 15-20 GB indirir. Lisans NOASSERTION.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "solongate/agent-security",
+   "inputs_hash": "17547f2fb356d75b2f68b5d7ad007a40",
+   "description_tr": "Kodlama ajanları için yerel çalışan, Go ile yazılmış açık kaynak güvenlik geçidi: araç çağrılarını çalışmadan önce politika dosyasına göre denetler, gizli anahtarları tespit eder, hız sınırı uygular ve yerel denetim kaydı tutar. Hesap, telemetri ya da ağ çağrısı yok. Claude Code oturumlarına hook olarak bağlanır. Apache-2.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "Ryder191/haloflux",
+   "inputs_hash": "d3e4111f1ffecc46dd3b622443645b3b",
+   "description_tr": "Müziğin ritmine göre hareket eden bilim kurgu ışık halkası görselleştirmesi; tek HTML dosyası, saf Canvas, bağımlılık yok. Masaüstü ve mobil sürümü ile canlı ayar paneli (56 parametre) ve Wallpaper Engine duvar kağıdı var. Yalnızca ticari olmayan kullanım için; lisans standart değil.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "morerokk/MHGURecomp",
+   "inputs_hash": "78f49e2c6944b438cb1010d112ba2bb1",
+   "description_tr": "Monster Hunter Generations Ultimate'ın (Switch 1.4.0) 32 bit ARM kodunu C'ye statik derleyip Windows, Linux ve Android'de Vulkan ile çalıştıran PC portu. FSR 3.1, HDR, geniş ekran ve 30-240 fps seçenekleri sunar; tek ve çok oyunculu oynanabilir. Oyun dosyaları dahil değil. MIT lisanslı.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "majorminorlabs/hermes-voice",
+   "inputs_hash": "54a4e6ffa3b27bf2f9693483e060d8ad",
+   "description_tr": "Home Assistant Assist üzerinden bir Hermes Agent profiliyle sesli konuşmayı sağlayan Python entegrasyonu; echo-dot-assist ile eski bir Amazon Echo'da çalışır. Geçmişi Hermes tutar, Echo Show ekranı duyulan metni, yanıtı ve kullanılan araçları gösterir. v0.1'de cihaz kontrolü yok, bunun için MCP gerekir. MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "parallelpan/hongguo-downloader",
+   "inputs_hash": "20a0f4b39c4547c71942210d09ca5e00",
+   "description_tr": "Hongguo (红果) kısa dizi paylaşım bağlantılarını çözüp tüm bölümleri toplu indirme ve ZIP paketleme vaat eden, bölüm başına ücretli bulut hizmetinin tanıtım deposu. Kod yok; resmi olmadığını belirtiyor. Telifli içerik indirmeye yönelik ve ücret aldığı için güvenilirliği doğrulanamaz.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "uumit-ai/dsh-uumit-remote",
+   "inputs_hash": "38dede1ac0f78da0f8deff3648ee88b2",
+   "description_tr": "DeepSeek Harness (dsh web) için eklenti: bilgisayarda çalışan DSH'yi UUMit tüneli üzerinden telefondan veya başka bir bilgisayardan açmaya yarar; sohbet, terminal, dosyalar ve ayarlar aynen çalışır. Port açmaz, başka program indirmez; UUMit hesabı ve Node.js 22.19+ gerekir. Beta, arayüz Çince, MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "thebcd69/bcd-games",
+   "inputs_hash": "48cb3ae3c55369e9c3f289fef1f6674d",
+   "description_tr": "iPhone ve iPad'de Windows PC oyunlarını çalıştıran alfa aşamasında bir uygulama: Wine, x86/x64 için FEX ve Metal çizimi için DXMT kullanır; Steam, GOG ve Epic girişi içerir. Yan yükleme ve JIT için StikDebug gerekir. Birçok oyun henüz çalışmıyor. GPL-3.0 bir fork.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "jss8649/quiet-tizen",
+   "inputs_hash": "7b6ee8a8c24891ea19d0288c0bef44c7",
+   "description_tr": "Samsung U8000F (Tizen 9) televizyonlar için yerel .NET/NUI ana ekran başlatıcısı ve geri alınabilir temizlik araçları; reklam, ses gibi bileşenler ayrı ayrı seçilebilir. README, bir kodlama ajanına verilecek adım adım bir istem ve AGENTS.md içerir. Başka TV modelleri için önce envanter çıkarılması gerekiyor.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "artemnovitckii/claude-animation-skills",
+   "inputs_hash": "c6e863e2af998dea8005de2d95467bdc",
+   "description_tr": "Görüntü kaydı olmadan reels için animasyon üreten altı Claude Code skill'i: 3D çizgi film anlatıcı, çöp adam, minimal çizgi sanat, 3D harita rotası, patlatılmış görünüm ve çizgi grafik. HyperFrames ile mp4 üretir; GSAP ve three.js kullanır, ses zamanlaması Parakeet ile yerelde çıkar.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "riyadhHDA/wichforks",
+   "inputs_hash": "d56bfcd7d7990d9254c6b7add4cc6919",
+   "description_tr": "Nintendo Switch 2 emülatör fork'ları için kullanım senaryosuna göre düzenlenmiş rehber: hangi fork hangi GPU ve oyun için (Mario Kart World, Donkey Kong Bananza vb.), testler ve güven kontrolleri. Her şey deneysel; yazar önerilerin 7 Kasım 2026 itibarıyla en iyi belgelenmiş başlangıç noktası olduğunu belirtiyor. MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "Fangx-AI/geo-doctor",
+   "inputs_hash": "0f4612f7730e4304ec9a4262f4e87661",
+   "description_tr": "Üretken motor optimizasyonu (GEO) için Çince-İngilizce açık kaynak agent skill'i: ChatGPT, Claude, DeepSeek, Doubao gibi modellerin hangi rakipleri önerdiğini ölçer, eksik soruları bulur, içerik üretip öneri oranını yeniden kontrol eder. Claude Code ve Codex gibi skill destekleyen asistanlara kurulur. MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "VivaLaVent/ps5-bazzite-deck",
+   "inputs_hash": "d5a9122f6b6533c689b280af679f496e",
+   "description_tr": "PlayStation 5'i Steam konsoluna çeviren, Steam Deck modlu Bazzite uyarlaması: KDE masaüstüyle açılır, Steam Gaming Mode tek tıkla seçilir, USB sürücü veya M.2 yuvasından çalışır ve PS5'in kendi sistemine dokunmaz. Bazzite projesiyle bağlantısı yok; kurulum ayrı bir wiki'de anlatılıyor.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "lovisdotio/video-to-game",
+   "inputs_hash": "3e79c24731a6f4ee59a5aeafc8b22561",
+   "description_tr": "Kodlama ajanlarına oyun videosunu tarayıcıda oynanır bir Three.js oyununa çevirmeyi öğreten skill: video modeli görünümü tasarlar, ajan kareleri inceler, görselleri, 3D modelleri ve sesleri fal ile üretir. 31 örnek oyun var; toplam maliyet yaklaşık 202 USD, oyun başına 6 USD. MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "drakolordx7/switch2-recomp",
+   "inputs_hash": "509c140a4c55d750bdf1ff09c66710c8",
+   "description_tr": "Nintendo Switch 2 oyunlarını PC'de yerel çalışacak şekilde yeniden derlemek için C++ çerçevesi; oyun başına kod recomp/games altında, kalan kısım ortak. Pokémon Pokopia için ayrı bir sürüm var. Oyun dosyaları dahil değil, kullanıcı kendi kopyasını getirir. GPL-3.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  }
+ ]
+}
