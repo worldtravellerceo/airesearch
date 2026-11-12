@@ -482,7 +482,7 @@ def test_a_lure_shaped_repository_is_held_back_by_name(conn, tmp_path):
     db.record_snapshot(conn, 40, TODAY, stars=614, forks=0)
     add_repo(conn, 41, "gry/zero-forks-but-code", age=1, is_ai=False)
     conn.execute("UPDATE repos SET language = 'Python' WHERE id = 41")
-    db.record_snapshot(conn, 41, TODAY, stars=1_088, forks=0)
+    db.record_snapshot(conn, 41, TODAY, stars=988, forks=0)
     conn.commit()
     score(conn, today=TODAY)
     out = tmp_path / "site"
@@ -500,9 +500,50 @@ def test_a_lure_shaped_repository_is_held_back_by_name(conn, tmp_path):
 
 def test_an_unknown_fork_count_is_not_zero():
     """A capture with no fork count says nothing about forks."""
-    assert not ex.lure_shaped(forks=None, language=None, license=None)
-    assert ex.lure_shaped(forks=0, language=None, license=None)
-    assert not ex.lure_shaped(forks=0, language=None, license="MIT")
+    assert not ex.lure_shaped(forks=None, stars=5_000, language=None, license=None)
+    assert ex.lure_shaped(forks=0, stars=600, language=None, license=None)
+    assert not ex.lure_shaped(forks=0, stars=600, language=None, license="MIT")
+
+
+def test_a_lure_that_bought_a_language_and_a_licence_is_still_held(conn, tmp_path):
+    """On 2026-11-06 some 70 repositories were created from one template —
+    Archicad, Melodyne, DxO PhotoLab, a PowerShell install button — at
+    1,060-1,212 stars, with HTML as a language and MIT as a licence. The first
+    rule read language and licence and let all of them through: 72 rows of
+    "Son 90 gün" by 11-12. They still had no forks."""
+    seeded(conn)
+    add_repo(conn, 43, "daiphu2708-crypto/melodyne-5-desktop-setup", age=6, is_ai=False)
+    conn.execute("UPDATE repos SET language = 'HTML', license = 'MIT' WHERE id = 43")
+    db.record_snapshot(conn, 43, TODAY, stars=1_103, forks=0)
+    add_repo(conn, 44, "Paulinho182/hitfilm-desktop-installer", age=6, is_ai=False)
+    conn.execute("UPDATE repos SET language = 'TypeScript', license = 'MIT' WHERE id = 44")
+    db.record_snapshot(conn, 44, TODAY, stars=1_097, forks=1)
+    # Negative control: two forks at the same height is a project in use.
+    add_repo(conn, 45, "real/two-forks", age=6, is_ai=False)
+    conn.execute("UPDATE repos SET language = 'Python', license = 'MIT' WHERE id = 45")
+    db.record_snapshot(conn, 45, TODAY, stars=1_103, forks=2)
+    conn.commit()
+    score(conn, today=TODAY)
+    out = tmp_path / "site"
+    export_site.export(conn, out, date=TODAY)
+
+    board = read(out, "patlayanlar", "son-90-gun.json")
+    names = [row["full_name"] for row in board["entries"]]
+    held = [row["full_name"] for row in board["held_back"]]
+    assert "daiphu2708-crypto/melodyne-5-desktop-setup" in held
+    assert "Paulinho182/hitfilm-desktop-installer" in held
+    assert "real/two-forks" in names
+
+
+def test_a_first_day_project_with_no_forks_is_not_a_lure():
+    """Below 1,000 stars the ratio means "no forks at all". Run over the AI
+    digest's first-day arrivals at 100+ stars it would have held 301 of
+    1,812, TencentARC and a university lab among them."""
+    assert not ex.lure_shaped(forks=0, stars=274, language="Python", license="MIT")
+    assert not ex.lure_shaped(forks=0, stars=999, language="HTML", license="MIT")
+    assert ex.lure_shaped(forks=0, stars=1_000, language="HTML", license="MIT")
+    assert ex.lure_shaped(forks=4, stars=5_978, language=None, license="MIT")
+    assert not ex.lure_shaped(forks=6, stars=5_978, language=None, license="MIT")
 
 
 def test_the_ai_digest_skips_a_lure_too(conn, tmp_path):

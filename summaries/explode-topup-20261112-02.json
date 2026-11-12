@@ -1,0 +1,404 @@
+{
+ "repos": [
+  {
+   "full_name": "kcgeekedup-hash/delta-force-trainer-tool",
+   "inputs_hash": "eed5aeecae79bb35456efb6e0500e513",
+   "description_tr": "Delta Force oyunu için \"trainer\" adıyla sunulan, PowerShell ile kurulan bir paket; kaynak kodu yok, yalnızca pazarlama metni var. Oyun hilesi/korsan yazılım yemlerinin bilinen kalıbına uyuyor ve kötü amaçlı yazılım dağıtımı riski taşıyor.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "JasonCharb/directory-opus",
+   "inputs_hash": "1d8253b7bb0542ed07db7b927e70cf0e",
+   "description_tr": "Directory Opus dosya yöneticisinin \"tüm özellikleri açık\" bir sürümünü PowerShell düğmesiyle dağıttığını iddia eden depo. Konu etiketleri \"crack\" ve \"free\" aramalarına göre doldurulmuş; gerçek kod içermeyen bir korsan yazılım yemine benziyor.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "ShayanAbbas1/dbdelve",
+   "inputs_hash": "cc409d1ee325f57a2d1394c347efe860",
+   "description_tr": "Rust ve GPUI ile yazılmış, Electron ve JVM kullanmayan çapraz platform bir veritabanı istemcisi. Postgres, MySQL, SQLite, DuckDB, MongoDB, Redis ve ClickHouse gibi birçok motoru destekliyor, ODBC köprüsüyle diğerlerine de bağlanıyor; DBeaver ve TablePlus bağlantılarını içe aktarabiliyor. GPL-3.0 lisanslı.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "Elegantic/designcenter-nx-desktop",
+   "inputs_hash": "240cbd0a1665de7360cfbabc79c8a050",
+   "description_tr": "Siemens NX/Designcenter için \"önceden etkinleştirilmiş\" Windows kurulumu sunduğunu söyleyen depo. PowerShell düğmesi ve çevrimdışı dağıtım vaadi dışında içerik yok; korsan CAD yazılımı yemi ve kötü amaçlı yazılım riski taşıyan bir örüntü.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "Vesuvio1/display-fusion",
+   "inputs_hash": "e67af2fce76784df0b03d1c184b50246",
+   "description_tr": "DisplayFusion çoklu monitör yazılımının tam etkinleştirilmiş 2026 sürümünü PowerShell ile kurduğunu iddia eden depo. Konu etiketleri arama yakalamak için şişirilmiş; gerçek kaynak kodu yok, korsan yazılım yemi olma ihtimali yüksek.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "Sanidhya0510/dvd-creator-game-enhancement",
+   "inputs_hash": "94839c0fec92a9ec8f840fdb45cf86db",
+   "description_tr": "DVD Creator için \"tüm özellikler açık\" bir Windows kurulumu vaat eden depo. Konu listesinde alakasız ürün adları (Aiseesoft, Acer Nitro, AOSP) var; PowerShell düğmesi dışında kod yok ve korsan yazılım/kötü amaçlı yazılım yemine benziyor.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "strands-labs/strands-decider",
+   "inputs_hash": "7607264b4daf5bafee0fb5d47ae8fa55",
+   "description_tr": "Agent iş akışlarındaki seçimleri LLM'den daha hızlı yapmak için tasarlanmış küçük bir \"karar modeli\": seçenekler arasından seçim yapar, ölçek üzerinde puanlar ve her karara kalibre edilmiş bir güven değeri verir. pip ile kurulan bir CLI ve HTTP sunucusu var; 2B Qwen3.5 tabanlı model Apple Silicon'da MLX ile de çalışıyor. Strands Agents ekosistemine ait.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "RyoTheOne/dxo-photolab-10-config",
+   "inputs_hash": "79d30fa15bf443119a68b26a8ffc6dec",
+   "description_tr": "DxO PhotoLab 10'un lisanssız, tüm özellikleri açık bir kurulumunu sunduğunu iddia eden depo. README \"yapılandırma denetlenebilir\" diyor ama içerik PowerShell düğmesinden ibaret; korsan yazılım yemi olarak okunmalı.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "Luk177Master/easy-worship-desktop",
+   "inputs_hash": "763b1da0ef5b97b7c241eb73b68c2309",
+   "description_tr": "EasyWorship kilise sunum yazılımının \"tam etkin\" bir Windows 11 sürümünü dağıttığını söyleyen depo. Şişirilmiş indirme ve puan rozetleri, PowerShell düğmesi ve gerçek kodun yokluğu korsan yazılım yemi örüntüsüne işaret ediyor.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "RolandoV3/metatrader-5-bot",
+   "inputs_hash": "bd0417d2d1787c0d738e0d9e639b5be3",
+   "description_tr": "MetaTrader 5 için Discord ve Telegram botu olarak sunulan, her şeyi \"önceden etkinleştirilmiş\" diye vaat eden depo. Dil etiketleri birbiriyle tutarsız ve içerik PowerShell kurulum düğmesine dayanıyor; ticari yazılım yemi ve kötü amaçlı yazılım riski var.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "Zleap-AI/SAG-Wiki",
+   "inputs_hash": "351dbce5b47fdefa84f049c6de47a30c",
+   "description_tr": "Yerel dosyaları ve notları LLM çağrısı ya da embedding olmadan indeksleyen, Rust ve Tauri ile yazılmış masaüstü bilgi tabanı. Kaynaklı soru-cevap, terminalden arama ve kodlama agent'larına verilen bir Skill/CLI sunuyor; MIT lisanslı. Retrieval yöntemi (SAG2) kendi makalesine dayanıyor, bağımsız doğrulama yok.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "ayanprob/coreldraw-desktop-installer",
+   "inputs_hash": "1d0db2e5bd9a9cd9a9a5c21fd4d78288",
+   "description_tr": "CorelDRAW 2026'yı \"kurulum paketi\" olarak dağıttığını iddia eden depo. Konu etiketleri \"crack\" ve CrashPlan gibi alakasız ürünlerle dolu; PowerShell düğmesi dışında kod yok. Korsan yazılım yemi ve kötü amaçlı yazılım riski taşıyor.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "leanislizarzado/ibm-spss-desktop-suite",
+   "inputs_hash": "35cd97360b06c66b229b794c9d66fae6",
+   "description_tr": "IBM SPSS Statistics 2026'nın tam özellikli bir Windows kurulumunu sunduğunu söyleyen depo. Lisans rozeti ve etiketler tutarsız, PowerShell düğmesi dışında kaynak yok; korsan istatistik yazılımı yemi olarak okunmalı.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "dikshantghimire321-droid/kontakt-8-config",
+   "inputs_hash": "704d2f5c540c78cd7558428b954a1268",
+   "description_tr": "Native Instruments Kontakt 8 için \"dotfiles\" kılığında önceden etkinleştirilmiş bir kurulum sunduğunu iddia eden depo. Konu etiketleri tam kütüphane indirmesi aramalarına göre şişirilmiş; PowerShell düğmesi dışında içerik yok, korsan yazılım yemi.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "janitoff0/ninjatrader-bot",
+   "inputs_hash": "450cc6b53d2673ed3b590b90a52d3963",
+   "description_tr": "NinjaTrader için Discord ve Telegram botu diye sunulan, tüm özellikleri açık bir Windows kurulumu vaat eden depo. Dil HTML görünüyor, gerçek bot kodu yok; PowerShell düğmesi ve topluluk söylemi ticari yazılım yemi örüntüsünü gösteriyor.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "SirBonney/scrcpy-mirror-control",
+   "inputs_hash": "e79ebdd800d415ea7680a90aa934229d",
+   "description_tr": "Android ekranını masaüstüne yansıtıp kontrol eden bir iş akışı olarak sunuluyor ve scrcpy alternatifi diye etiketlenmiş. Gerçek bir uygulama kodu yok; README PowerShell düğmesine yönlendiriyor, aygıta küçük bir ajan yüklediğini anlatıyor. Aynı kalıptaki yem depolarla ortak bir yapı taşıyor, güvenilmemeli.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "bipro45/actual-multi-display-configurator",
+   "inputs_hash": "11bb602466838d216fb74290209b6ca8",
+   "description_tr": "Actual Multiple Monitors yazılımının crack'li sürümünü aradığı belli olan konu etiketleriyle dolu bir Windows kurucusu. README PowerShell düğmesi ve çevrimdışı dağıtım vaadi sunuyor; kaynak kodu yok, korsan yazılım yemi.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "App-MonicaWEB/auslogics-audio-studio-desktop",
+   "inputs_hash": "dcd086f538faccf04fe6f5da2db61709",
+   "description_tr": "Auslogics Audio Studio 2026'nın \"önceden etkinleştirilmiş\" sürümünü dağıttığını iddia eden depo. Konu etiketleri Auslogics ürünlerinin crack aramalarıyla dolu; PowerShell düğmesi dışında içerik yok. Korsan yazılım yemi ve kötü amaçlı yazılım riski.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "Leno27-Adr/autodesk-revit-2026-standalone",
+   "inputs_hash": "bed49978c8b534ba0a99d943cf20aa6d",
+   "description_tr": "Autodesk Revit 2026'yı tam etkinleştirilmiş olarak kurduğunu iddia eden depo. Ticari BIM yazılımı için lisanssız dağıtım vaadi, PowerShell düğmesi ve kod yokluğu korsan yazılım yemi örüntüsüne uyuyor.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "theonlyoneexocctical-beep/cellebrite-ufed-setup",
+   "inputs_hash": "90a375085c3f90cda88fcdc1a65c7e6f",
+   "description_tr": "Cellebrite UFED adlı adli bilişim aracının \"önceden etkinleştirilmiş\" bir kurulumunu sunduğunu iddia eden depo. Etiketler crack aramalarına göre doldurulmuş, PowerShell düğmesi dışında içerik yok; kötü amaçlı yazılım dağıtımı riski yüksek bir yem.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "angelonyn/chimera-desktop-suite",
+   "inputs_hash": "877203df6e55a9179ce6a43424203fe8",
+   "description_tr": "Chimera adlı bir araç takımını \"önceden yapılandırılmış\" tek kurulum olarak dağıttığını söyleyen depo. Etiketler alakasız Chimera projelerinden derlenmiş; PowerShell düğmesi dışında kod yok, kötü amaçlı yazılım yemi örüntüsü taşıyor.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "woo20080623-cell/cinebench-desktop",
+   "inputs_hash": "adc69583a87d4cb3450dd488392f654b",
+   "description_tr": "Cinebench 2026 benchmark paketini \"önceden etkinleştirilmiş\" dağıttığını iddia eden depo. Cinebench ücretsiz bir uygulama olduğundan crack vaadi anlamsız; konu etiketleri ve PowerShell düğmesiyle bir yem örüntüsü, gerçek kod yok.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "farhodzodatojiddin5-cpu/exitlag-optimizer",
+   "inputs_hash": "d7e5687acc98857a7699f7ecef37e0dc",
+   "description_tr": "ExitLag oyun ağ optimizasyon hizmetinin lisanssız kurulumunu sunduğunu iddia eden depo. Etiketlerde \"bypass\" ve \"exploit\" ifadeleri var; PowerShell düğmesi dışında kod yok. Korsan yazılım yemi ve kötü amaçlı yazılım riski.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "Gacktadactle/fortnite-skin-swapper-enhancement",
+   "inputs_hash": "614e8609a2a508070461d89cd9ad5b3c",
+   "description_tr": "Fortnite için \"skin swapper\" adıyla sunulan, PowerShell ile kurulan bir paket. Kaynak kodu yok, README yalnızca pazarlama dili içeriyor; oyun hilesi yemi örüntüsü, kötü amaçlı yazılım riski taşıyor.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "robertsjunior/fonetrans-desktop-setup",
+   "inputs_hash": "aeea021f37d5bb6e1f35a47f04a971d3",
+   "description_tr": "FoneTrans iPhone dosya aktarım yazılımının önceden etkinleştirilmiş sürümünü dağıttığını söyleyen depo. README teknisyenlere yönelik bir kurulum paketi gibi yazılmış ama PowerShell düğmesi dışında içerik yok; korsan yazılım yemi.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "shayannazar84-hero/honkai-star-rail-companion-suite",
+   "inputs_hash": "9a4838ef990b64ac2aece62f101c34e8",
+   "description_tr": "Honkai: Star Rail için \"trainer\" adıyla sunulan, PowerShell ile kurulan bir paket. Depoda oyun kodu ya da kaynak yok, yalnızca pazarlama metni var; oyun hilesi yemi örüntüsü ve kötü amaçlı yazılım riski.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "hayfa1234/honkai-star-rail-enhancement-suite",
+   "inputs_hash": "7ead2fb277a2652cfcffcf160f61f0e4",
+   "description_tr": "Honkai: Star Rail 2026'nın önceden etkinleştirilmiş masaüstü sürümü diye sunulan, PowerShell ile kurulan bir paket. Gerçek kod yok, ayrıca ücretsiz oyun için \"lisans\" vaadi anlamsız; oyun hilesi/yem örüntüsü ve kötü amaçlı yazılım riski.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "daiphu2708-crypto/melodyne-5-desktop-setup",
+   "inputs_hash": "7662b409389bdc2029babc3d822fcb00",
+   "description_tr": "Melodyne 5 ses düzenleyicisinin tüm özellikleri açık bir Windows 11 kurulumunu sunduğunu iddia eden depo. Lisans sunucusuz çalışma vaadi ve PowerShell düğmesi dışında içerik yok; korsan ses yazılımı yemi.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "ilsa99/microsoft-365-desktop",
+   "inputs_hash": "c61da3cc5f43914a230af05c9ca25462",
+   "description_tr": "Microsoft 365 2024'ün \"önceden yapılandırılmış\" bağımsız kurulumunu sunduğunu iddia eden depo. Etiketlerde ürün anahtarı aramaları var; PowerShell düğmesi dışında içerik yok. Korsan Office yemi ve kötü amaçlı yazılım riski.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "pastebin2019/multiaccountmanager-enhancement",
+   "inputs_hash": "eebc7118557cf238edb5694ca054b2fd",
+   "description_tr": "Çoklu hesap yönetim aracını oyuncular için \"önceden etkinleştirilmiş\" diye sunan, PowerShell ile kurulan bir paket. Kaynak kodu yok, yalnızca pazarlama metni; oyun hilesi yemi örüntüsüne uyuyor.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "blockacc12345/music-maker-unlimited",
+   "inputs_hash": "ae32a1327c100b3cdb6a77da21a8dcc4",
+   "description_tr": "MusicMakerUnlimited müzik yapım yazılımının kilitleri açık bir Windows 11 kurulumunu sunduğunu iddia eden depo. PowerShell düğmesi dışında kod yok; aynı içeriğin ikinci kopyası aşağıda da görülüyor, korsan yazılım yemi.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "ethangangasingh-crypto/musicmakerunlimited",
+   "inputs_hash": "95c55ab5c4eb1c5a4ad7314576f83444",
+   "description_tr": "MusicMakerUnlimited 2026'nın tam özellikli Windows kurulumunu sunduğunu iddia eden depo; başka bir hesaptaki aynı README'nin kopyası. Dil TypeScript görünse de kod yok, PowerShell düğmesi var; korsan yazılım yemi örüntüsü.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "Eriazeri/on1-photo-raw-max-config",
+   "inputs_hash": "67b75e0a4a384830f0fd745c492b8249",
+   "description_tr": "On1 Photo RAW Max 2026'nın önceden etkinleştirilmiş sürümünü \"yapılandırma ve dotfiles\" kılığında sunduğunu iddia eden depo. README betiğin internetten indirileceğini söylüyor; kod yok, korsan yazılım yemi ve kötü amaçlı yazılım riski.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "vishnu05-codes/ozone-12-advanced",
+   "inputs_hash": "ba6ad3de0be565c9e9afc94c45f76fcf",
+   "description_tr": "iZotope Ozone 12 ses mastering yazılımının \"gelişmiş yapılandırma\" adıyla önceden etkinleştirilmiş kurulumunu sunduğunu iddia eden depo. PowerShell düğmesi dışında içerik yok; korsan yazılım yemi.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "shahnawaz0786/payday-3-enhancement-toolkit",
+   "inputs_hash": "67585a1c772b1d427b30f002bcaac0bc",
+   "description_tr": "Payday 3 için \"trainer\" adıyla sunulan, tam etkinleştirilmiş bir Windows paketi. Etiketlerde \"bypass\" geçiyor, depoda oyun kodu yok; PowerShell düğmesi ve oyun hilesi yemi örüntüsü, kötü amaçlı yazılım riski taşıyor.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "SnehalSukale27/power-director",
+   "inputs_hash": "03c2d086ef99b356567634f29fc78b88",
+   "description_tr": "CyberLink PowerDirector video düzenleyicisinin önceden yapılandırılmış kurulumunu sunduğunu iddia eden depo. PowerShell düğmesi ve çevrimdışı dağıtım vaadi dışında içerik yok; korsan yazılım yemi örüntüsü.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "tianjanahary05-source/reason-14-installer",
+   "inputs_hash": "ed6d85f7db52b7d484678bc5d49cbef0",
+   "description_tr": "Reason 14 müzik yazılımının profesyonel kurulum paketi olduğunu iddia eden depo. Lisanssız çalışma vaadi, PowerShell düğmesi ve kaynak kodu yokluğu korsan DAW yazılımı yemi örüntüsüne işaret ediyor.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "xavier442/pump-fun-desktop",
+   "inputs_hash": "e7f48cf70a5cdd73ad53de0ed0c5ab42",
+   "description_tr": "Pump.fun adlı kripto platformu için \"önceden etkinleştirilmiş\" masaüstü aracı sunduğunu iddia eden depo. Etkinleştirilecek bir lisans yok; PowerShell düğmesi dışında içerik bulunmuyor, kripto cüzdanı hedefleyen kötü amaçlı yazılım riski taşıyan bir yem.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "rdeepak-wq121/quicken-deluxe-installer",
+   "inputs_hash": "5c743d49f0c3669b26745f78c0fd95bb",
+   "description_tr": "Quicken Deluxe kişisel finans yazılımının tam özellikli kurulumunu sunduğunu iddia eden depo. Etiketlerde ücretsiz indirme aramaları var; PowerShell düğmesi dışında içerik yok. Finans verisi hedefleyen kötü amaçlı yazılım riski olan korsan yazılım yemi.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "Marcian15350/mt5-tradeprotocol",
+   "inputs_hash": "f5a12358e323b7c8116b47d4d6d46e05",
+   "description_tr": "MetaTrader 5 için \"PowerShell Activator\" adıyla tek komutla kurulum ve lisans etkinleştirme vaat eden araç. README bir lisans aşımı betiğine benziyor; Forex ve kripto etiketleri arama için eklenmiş. Hesap bilgilerini hedefleyen kötü amaçlı yazılım riski yüksek, güvenilmemeli.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  }
+ ]
+}

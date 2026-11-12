@@ -1,0 +1,404 @@
+{
+ "repos": [
+  {
+   "full_name": "SAOS-3624/dsh-see-now",
+   "inputs_hash": "78688fb41f1a2e3cb978997d41c2905a",
+   "description_tr": "DSH (DeepSeek Harness) için bir gerçek zamanlı görü eklentisi: ekranı, kamerayı veya video dosyasını kare değişimine göre süzer ve seçilen kareleri tek bir görselde birleştirir. Durağan ekranda neredeyse hiç token harcamaz. Apache-2.0 lisanslı.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "lucas-martinic/polyfork-catalog",
+   "inputs_hash": "1db9f0ade34b10cf52a4842f2495ec3b",
+   "description_tr": "three.js ve web için 3.289 düşük poligonlu GLB modeli ile 32 temalı kit içeren ücretsiz katalog; hesap ya da anahtar gerektirmez. Modeller GLB dosyası veya ES modülü olarak alınır ve CC BY 4.0 ile yayımlanır, yani atıf gerekir. Oyun ve web demoları geliştirenler için hazır varlık kaynağı.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "mengangs/ipadn",
+   "inputs_hash": "104820f2e87b990c91a3b3d89a781622",
+   "description_tr": "iPhone ve iPad'de sahip olunan uygulamaları aramak, indirmek ve kurmak için bir Swift uygulaması. Eski sürümleri, bölgeye göre fiyat karşılaştırmasını ve yerel kurulumu destekler; 11 dil sunar. GPL-2.0 lisanslı, yan yükleme (sideloading) kullananlara yöneliktir.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "Symbolia-Assurance/assure-action",
+   "inputs_hash": "ec44f6dcace9fd7dde50ffb39da23e7e",
+   "description_tr": "Pull request'lerde çalışan bir GitHub Action: PostgreSQL sunucusunu veya sitenin HTTP yanıtlarını okuyup her yükümlülük için neyin sağlandığını, neyin çürütüldüğünü ve neyin belirlenemediğini raporlar. Bağlantı bilgisi runner'da kalır; tablo içeriği okunmaz. Ücretli planları da var.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "YusufCeng1z/ding",
+   "inputs_hash": "7194493d6e336e5d2548d68c52a31bb9",
+   "description_tr": "React, Svelte, Vue ve düz DOM için bağımlılıksız bir toast kütüphanesi. Yeni çağrı ekrandaki toast'ı yenisini üst üste koymadan yerinde dönüştürür; boyut ve metin yay (spring) fiziğiyle hareket eder. Stil JavaScript'ten enjekte edilir, açık/koyu tema ve altı konum destekler. MIT lisanslı.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "AntiFox-AI/antifox",
+   "inputs_hash": "670483789424d01e5ac3f5f7cd994522",
+   "description_tr": "Çok ajanlı bir yapay zekâ sızma testi platformu; yetkili hedeflerde keşiften rapora kadar süreci otomatikleştirmeyi ve bulguları kanıtlı rapor olarak sunmayı amaçlar. Go ile yazılmış, AGPL-3.0 lisanslı; güvenlik ekiplerine yöneliktir.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "devvmhq/devvm",
+   "inputs_hash": "6d10ae5ab778c84002c8c9aa95e91c7a",
+   "description_tr": "Her proje için, projenin araç zincirini içeren yalıtılmış bir Lima sanal makinesi kurar; kodlama ajanı bu ortamda güvenle çalışabilir. macOS'ta Homebrew, Linux'ta kurulum betiğiyle gelir ve `devvm doctor` ön kontrol yapar. Go ile yazılmış, MIT lisanslı.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "forcequitOS/worse_query",
+   "inputs_hash": "2b3ef045d342acbc1858dfe187de5801",
+   "description_tr": "iOS 26 ve 27 sürümlerinde sandbox kaçışı gösteren bir kavram kanıtı (PoC). Geliştiricilere yöneliktir ve README'ye göre tek başına işe yarar bir araç değildir; jailbreak ile ilgisi yoktur. Önceki bad_query projesinin halefi, GPL-3.0 lisanslı.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "CityPulso/PulsoIcon",
+   "inputs_hash": "f2619105f2b18f903212e1aefec784a3",
+   "description_tr": "React, Vue, Svelte, Jetpack Compose ve SwiftUI için, her biri kendi hareketine sahip 9.955 animasyonlu ikon. Tüm Lucide ikonlarını ek ikon ve marka logolarıyla birlikte sunar; React'te lucide-react yerine tek satırla geçer ve Motion üzerine kuruludur.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "8rank/iKnow",
+   "inputs_hash": "c2833157ff4b56c24c08d847929ff36a",
+   "description_tr": "Mac'in kullanıcı hakkında kurduğu bilgi grafiğini, yani kişi ilişkilerini ve yazışma sıklığını, kullanıcının kendi makinesinde gösteren küçük bir web uygulaması. Apple'ın az belgelediği bu verinin neyi sakladığını ve ne çıkarım yaptığını görünür kılar. JavaScript, Apache-2.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "1337isnot1337/DOPPLERGEIST",
+   "inputs_hash": "6b07d18ef15424eb05619ccac1bc10f9",
+   "description_tr": "Uçak sesindeki Doppler kaymasını geçmiş ADS-B uçuş verisiyle eşleştirerek ses kaydının konumunu tahmin eden bir Python aracı; CLI ve yerel tarayıcı arayüzü var. Ses adli analizi ve açık kaynak istihbaratı (OSINT) ile ilgilenenlere yöneliktir. Kaynağı açık ama lisansı standart değil.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "Zaneris/passenger",
+   "inputs_hash": "931efc346030e32e872fb5eea3ea458c",
+   "description_tr": "Avalonia ile yazılmış, C# ve .NET için açık kaynaklı IDE: Roslyn tabanlı editör, Hot Reload'lu kendi hata ayıklayıcısı, CPU ve bellek profilleyicisi ile Avalonia/WPF için XAML araçları. Kodlama ajanları için MCP sunucusu da içerir. Windows, macOS ve Linux'ta çalışır; MIT lisanslı.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "vibe-motion/sound",
+   "inputs_hash": "93367e319d87a2f14923cf1083ee2ca5",
+   "description_tr": "Video projeleri için ses efekti seçen bir Claude Code Skill'i. Freesound'da arama yapar; indirme sayısı, puan, süre ve lisansa göre aday önerir ve seçileni indirir. Betikler yalnızca Python standart kütüphanesini kullanır; süre analizi için FFmpeg gerekir. Lisans belirtilmemiş.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "jxy333967/jianxunyun",
+   "inputs_hash": "cf232f32a32fa32a6265715cd97d8418",
+   "description_tr": "Bir VPN servisinin tanıtım sayfası: README yalnızca hizmetin erişim adreslerini ve yedek alan adlarını listeliyor. Kod ya da teknik içerik yok; bir yazılım projesinden çok reklam niteliğinde.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "lachydotmcg/capri-desktop",
+   "inputs_hash": "1b9d2be52a831a81c2f9e70e2df8be96",
+   "description_tr": "Windows masaüstünde pencerelerin üstünde duran, konuşan ve oyun oynayan resmî olmayan bir hayran projesi (Capri masaüstü arkadaşı). C# ile yazılmış, telemetri yok. Tamamen eğlence amaçlı; yapımcıların onayı ya da bağlantısı yok.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "JDhruv14/line-art-animation",
+   "inputs_hash": "95ff8576fd2b89a894df4684b6dd28f4",
+   "description_tr": "Animasyonlu çizgi-sanat SVG bileşenleri için bir Claude skill'i ve küçük bir TypeScript kütüphanesi. Yürüyen ve tepki veren mürekkep figürleri ile gece-gündüz döngülü sahneleri canlı SVG olarak çizer; adım hareketini animasyon yerine çözümleyerek hesaplar. MIT lisanslı.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "codepawl/67.js",
+   "inputs_hash": "47eaedf1595f61df1c65af698e95aa21",
+   "description_tr": "Yapay zekâ ajanlarının MCP üzerinden sürdüğü bir 3D motoru. Sahne düz veriden oluşur; ajan sahneyi kurar, PNG önizlemelere bakar, hareketsiz kare veya MP4 üretir. WebGL2 rasterizer ile CPU, WebGL2 ve Vulkan'da çalışan path tracer içerir. JavaScript, MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "prototux/AARE",
+   "inputs_hash": "8f56e581e5b282d86f49680b5cb0a04d",
+   "description_tr": "Android Auto'nun telefon tarafını açık kaynak olarak yeniden uygulayan bir kavram kanıtı. Protokol, TLS ve H.264 video gibi parçalar çalışıyor; iki gerçek araçta kablolu ve kablosuz denenmiş, ancak README sürüş sırasında buna güvenilmemesini söylüyor. Kotlin, GPL-3.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "phuryn/product-engineering",
+   "inputs_hash": "629c1d5607c6d793ba9d64128251b8f9",
+   "description_tr": "Üç gerçek ürünü yayına alırken ortaya çıkan 44 ajan skill'i: ne yapılacağına karar verme, Claude Code veya Codex ile geliştirme, ikinci bir modele inceletme ve yayınlama. Claude Code eklenti pazarı olarak kurulur. Python, MIT lisanslı.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "Banan1cee/whale_girl",
+   "inputs_hash": "2ba9299b91bb338864e9dfa172758a82",
+   "description_tr": "DeepSeek'i WeChat hesabı üzerinden sohbet botu olarak çalıştıran Windows masaüstü uygulaması (WPF başlatıcı). Gruplarda anıldığında yanıt verir, özel sohbetlerden bilgi hatırlar ve yanıtı kısa baloncuklara böler. Qwen de desteklenir. AGPL-3.0 lisanslı.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "beluga-labs/beluga",
+   "inputs_hash": "3baf7fba74aa5cf606ea256640c5ae4b",
+   "description_tr": "Her görev için ayrı worktree, dal ve ajan açan, ajanları yan yana çalıştıran bir masaüstü IDE. Ajanınız başka kullanıcıların ajanlarıyla bilgisayardan bilgisayara konuşabilir. macOS, Linux ve Windows için; Tauri tabanlı, TypeScript, MIT lisanslı.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "fourzkw/dsh-drawai",
+   "inputs_hash": "0e907e079cb6c48c224f12d078d223f0",
+   "description_tr": "DSH (DeepSeek Harness) yan çubuğunda düzenlenebilir bir drawio canvas'ı sunar ve modele diyagramı doğrudan değiştirmesi için iki araç ekler. SVG/PNG dışa aktarma ve video araçları da var. npm'de yayımlanmış bir eklenti; lisansı standart dışı.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "SAOS-3624/dsh-video-storyboard",
+   "inputs_hash": "b5a1b9b1c255ad6e740ac7e09accf232",
+   "description_tr": "DeepSeek Harness için sahne duyarlı bir video storyboard eklentisi: videoyu zaman damgalı kareler, transkript ve ses zarfıyla tek bir görsele (384 token) sığdırır. video_storyboard ve video_zoom araçlarını içerir. 0.6.0'da API değişti; Apache-2.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "Pluviobyte/saas-growth-agents",
+   "inputs_hash": "2f3aa7855379a2fcbccc419786dfe92b",
+   "description_tr": "SaaS büyüme işlerini (yeni arama terimi takibi, rakip backlink kontrolü, dizin başvuruları, Douyin yorum analizi) tekrarlı adımlara bölüp ajana devreden bir skill koleksiyonu. Grok Bot, Claude Code ve Codex gibi ajanlarla çalışır. Python, MIT lisanslı.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "C4rohan/Lampline",
+   "inputs_hash": "5224e4c993e9ec9e9229ef02bfb765b6",
+   "description_tr": "Telefon ajanlarını kendi bilgisayarında kurup her değişikliği yapay zekâ arayıcıyla test etmeye yarayan açık kaynaklı araç. API anahtarı olmadan ücretsiz, kendi anahtarınızla çağrı başına birkaç sent maliyetle çalışır; Dialogflow CX ajanlarını içe aktarabilir. Python, Apache-2.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "alexsergivan/kwant",
+   "inputs_hash": "80a34155331febf86e303320d9d373d4",
+   "description_tr": "Kendi sunucunda çalışan, Rust ve React ile yazılmış açık kaynaklı bir çoklu ajan platformu: botlar ortak sohbetlerde @mention ile iş devreder, onay ve rutin tanımlanabilir. Tek ikili dosya olarak gelir; Grok Bot ve benzerlerine kendi barındırdığınız alternatif. AGPL-3.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "benderandrew069/deepseek-api-pricing-2026",
+   "inputs_hash": "ac8a1b47ebcf65d368752a5d2c8f0ee6",
+   "description_tr": "DeepSeek API fiyatlarını, önbellek isabeti ve yoğun saat farklarıyla karşılaştıran bir fiyat rehberi. Rehberi, kendisi de bir API aracısı olan Moduck hazırlamış; yani tarafsız bir kaynak değil ve fiyatlar 2 Kasım 2026 itibarıyla. Kod yok, yalnızca belge.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "ZSeven-W/dsh-game-studio",
+   "inputs_hash": "dfa351d6bf806515ae6221a73409b0dd",
+   "description_tr": "DeepSeek Harness yan çubuğunda, tek cümlelik tarifle küçük bir oyun üretip oynatan eklenti. Yapay zekâ görselleri ekler (maliyet kontrolü önce yapılır) ve tek tıkla GitHub Pages veya Cloudflare'e yayımlar. 2D ve 3D voxel şablonları var. TypeScript, MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "piermark/omarchytv",
+   "inputs_hash": "b17c7057e5f8bd2e3a93548887944c1b",
+   "description_tr": "Android TV, Google TV, LG webOS ve Samsung Tizen için Omarchy tarzı bir ana ekran ve başlatıcı ekosistemi: ekran koruyucu, telefonun gamepad olduğu bir arcade ve 32 tema. TV'leri root'lamaz ve hiçbir şeyi silmez. JavaScript; lisansı standart dışı.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "alexeyw/lot-map",
+   "inputs_hash": "b30194cc22841bcdf019eec4aae4473f",
+   "description_tr": "Claude Code oturumunun yanında canlı bir harita gösteren bir mod: araç çağrıları, model adımları, hook'lar, skill'ler ve alt ajanlar çalışırken ilgili istasyona darbe gönderir. Yalnızca yerelde çalışır, 7 dil destekler. TypeScript, MIT; `/plugin install` ile kurulur.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "0kzh/glisse",
+   "inputs_hash": "eb350554816a3b8558bbccdee48f50c7",
+   "description_tr": "iOS 26 Liquid Glass görünümünün web için sadık bir uygulaması: Button, Switch gibi bileşenleri npm paketi olarak sunar, stiller pakete dahildir. React ile kullanılır, belgeler ve canlı örnekler sitesindedir. TypeScript, MIT lisanslı.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "Lanqiao-Luca/ai-video-marker",
+   "inputs_hash": "f746ed475ced8bb513e1dcd54c4f02b8",
+   "description_tr": "AIGC ile video üretim akışı için bir depo: fikirden storyboard'a, varlıklardan animasyona ve müziğe adımlar; çalıştırılabilir Python piksel animasyon örnekleri, bir yapay zekâ çizgi roman örneği ve Blender/Jianying yöntemleri içerir. Varsayılan örnek 36 saniyelik bir kısa film; API anahtarı gerekmez. MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "wingedpanther/cleanmytv",
+   "inputs_hash": "144d72758d9c40e4ea26dc27722fd8df",
+   "description_tr": "Android TV ve Google TV'deki hazır reklam ve gereksiz uygulamaları Wi-Fi üzerinden kapatan, reklamsız bir ana ekran (CleanMyTV Home) kuran ücretsiz Mac ve Windows uygulaması. Python, Java veya adb kurmak gerekmez; yükleyiciler imzasızdır. TypeScript, MIT lisanslı.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "yetone/alma-relay",
+   "inputs_hash": "bf23414ce3ae963f0fcf2e6bacc9a2b9",
+   "description_tr": "Alma Remote Access için kendi sunucunuzda çalıştırılan röle: masaüstündeki Alma'yı telefondan, port yönlendirmesi veya VPN olmadan kontrol etmeyi sağlar. Docker (otomatik HTTPS) ya da Cloudflare Workers ile kurulur. JavaScript, MIT lisanslı.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "typecraft-dev/oma-cast",
+   "inputs_hash": "1e48f4547925a7532f0a994316f4a89e",
+   "description_tr": "Omarchy için Raycast benzeri bir başlatıcı: kullanım alışkanlıklarını öğrenir, uygulamalarda ve Omarchy eylemlerinde tek aramayla bulur ve temaya uyum sağlar. Sonuç sıralaması Raycast'in kök arama algoritmasına, frecency ve öğrenilmiş terimlere dayanır. JavaScript, MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "anomalyco/browse",
+   "inputs_hash": "8d8aaf496afc23c892d2d3f9ea480f23",
+   "description_tr": "Yapay zekâ ajanlarının gerçek tarayıcınızı kullanmasını sağlayan bir MCP sunucusu ve Chromium eklentisi. Ajan, Playwright ile arka plan sekmelerini sürer, ekran görüntüsü ve ağ trafiği yakalar; giriş veya 2FA gibi adımlarda sekmeyi size devreder. Chrome, Edge, Brave dahil birçok tarayıcıyla çalışır. TypeScript, MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "DEEIX-AI/Winc",
+   "inputs_hash": "6850bfbd7906ab5c01f099bc790a58ea",
+   "description_tr": "Rust ve kendi render motoruyla yazılmış hafif bir masaüstü editör. README'ye göre macOS'ta 119 ms'de açılır, 100.000 satırlık dosyada 52 MB bellek kullanır; çoklu imleç, bul-değiştir ve yan yana diff içerir. Apache-2.0 lisanslı.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "undrgrnd-labs/hunch",
+   "inputs_hash": "157ef751f9f20a3d626ccc759647dc4d",
+   "description_tr": "Soruları (ör. bir araç çağrısı başarısız mı, çıktıda prompt injection var mı) CPU üzerinde milisaniyeler içinde yanıtlayan bir \"System One\" sunucusu. Yavaş ve pahalı bir öğretmen modelden öğrenip ona bağımlılığı azaltır; çok adımlı akıl yürütme gerektiren sorulara uygun değildir. Python, Apache-2.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "mrdoob/slop-newyork",
+   "inputs_hash": "c68ee714a41fa292d15ea0930e2ebbb3",
+   "description_tr": "three.js, WebGPURenderer ve TSL ile yapılmış bir New York simülasyonu: Manhattan yaya, araba, bisiklet veya helikopterle gezilir. Kodu MIT lisanslı; başka şehre uyarlamak için PORTING.md var, coğrafi veri NYC Open Data'dan gelir. mrdoob'un projesi.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "aa1143/NamiAgent",
+   "inputs_hash": "98deba2118397d639ffe7fbafce65b40",
+   "description_tr": "Sıfırdan AI Agent yazmayı öğreten bir ders serisi ve aynı zamanda yerelde çalışan bir ajan: dosya okuma/yazma, komut çalıştırma, MCP, uzun süreli bellek ve web arayüzü. 100 satırlık döngüden başlayıp 11 ders ilerler, yalnızca `openai` paketine dayanır, varsayılan model DeepSeek. Python, MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  }
+ ]
+}

@@ -229,6 +229,18 @@ licence, and no young repository above 500 stars with all three was anything
 else. Filter on what the attacker does not control, and publish what was held
 back by name, so the filter is visible.
 
+Then the attacker bought two of the three. The 11-06 wave — some 70
+"Professional Desktop Suite" installers at 1,060-1,212 stars — came with HTML
+as a language and MIT as a licence, and sat in "Son 90 gün" for six days, 72
+rows of it, until the agents writing its paragraphs reported what they were
+reading. A language and a licence are a file extension and a dropdown; what
+still cost them was forks. From 1,000 stars, fewer than one fork per thousand
+is held back too: over every board day it caught 110 more, all lures or star
+farms. Lowered to the AI digest's 100 stars the same ratio held 301 of 1,812
+first-day arrivals, real labs among them, because a project on its first day
+is often unforked — so the floor is part of the rule, not a detail of it. The
+filter is still a price: the next wave will buy forks.
+
 **Never buy recall with precision.** A soft ceiling set below the decision
 threshold stranded 17,849 repositories in permanent escalation. A README weight
 set one tier too high put a release-notes CLI on an AI board. Every widening

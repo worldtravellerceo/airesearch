@@ -1,0 +1,404 @@
+{
+ "repos": [
+  {
+   "full_name": "sherlock-project/sherlock",
+   "inputs_hash": "fee90cbd1fa72815ab9fe3965b21304e",
+   "description_tr": "Kullanıcı adına göre yüzlerce sosyal ağda hesap arayan Python komut satırı aracı. OSINT ve siber istihbarat çalışmalarında kullanılır; MIT lisanslı. README paketle gelmediği için ayrıntı yalnızca açıklama ve topic'lerden çıkarıldı.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "experientiallabs/experiential",
+   "inputs_hash": "213f8d7f41440f397d698b365061aed9",
+   "description_tr": "Agent iş akışları için açık kaynak, OpenAI uyumlu bir gateway ve router. Barındırılan, BYOK ve yerel modelleri tek API'de toplar; kullanıcı ve agent bazında model erişimi ile harcama sınırı tanımlar, trafikten maliyet/kalite için özel router ya da model üretmeyi hedefler. Python, Apache-2.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "open-jarvis/OpenJarvis",
+   "inputs_hash": "f5cfc89bc21ce2c1f14285b7f51d4e98",
+   "description_tr": "Yapay zekâ asistanını bulutta değil kişisel cihazlarda çalıştırmayı hedefleyen Python çerçevesi; Stanford kaynaklı bir araştırmaya (arXiv makalesi, liderlik tablosu) dayanıyor. Fikir, kişisel agent'ların zekâsını bulut API'lerine bağımlı bırakmamak. Apache-2.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "we-promise/sure",
+   "inputs_hash": "83394ade2a357d420979627df130d7c0",
+   "description_tr": "Rails ile yazılmış, kendi sunucunda çalıştırılabilen açık kaynak kişisel finans uygulaması. Nakit akışı, net değer ve harcama panolarının yanında verilerle ilgili soru yanıtlayan bir AI asistanı içeriyor. AGPL-3.0 lisanslı.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "shadcn/improve",
+   "inputs_hash": "3e9c1bd7e43bf4fc4ce443e3e6049cb5",
+   "description_tr": "Kod tabanını en güçlü modelle denetleyip diğer agent'ların uygulayacağı bağımsız plan dosyaları (plans/001-...md) yazan bir agent skill'i. Skill kendisi kod yazmaz; pahalı model yalnızca analiz ve spesifikasyonu, ucuz model uygulamayı yapar. `npx skills add` ile kurulur, Agent Skills biçimini destekleyen her agent'ta çalışır.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "FluentRead/FluentRead",
+   "inputs_hash": "73c631fcf5a03fd90297a3e883d183c1",
+   "description_tr": "Web sayfalarını orijinal metnin yanında çeviren açık kaynak tarayıcı eklentisi (TypeScript). Seçili metin, görsel ve belge çevirisi ile yapay zekâ destekli okuma yardımcısı sunuyor. GPL-3.0; Çince ve İngilizce arayüz belgeleri var.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "homeassistant-ai/ha-mcp",
+   "inputs_hash": "92d987e052516f5a480e5cb8955769ef",
+   "description_tr": "Home Assistant'ı Claude, ChatGPT gibi yapay zekâ asistanlarından yönetmeyi sağlayan MCP sunucusu; README'ye göre 87 araç sunuyor. Cihaz, otomasyon ve yapılandırma işlemleri doğal dille yapılır. Python, MIT; HACS ile kurulabiliyor, bazı yapılandırma araçları beta aşamasında.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "anefzaoui/misterdownloadmanager",
+   "inputs_hash": "1956301bd318562425584f2868f00b1f",
+   "description_tr": "Sıfırdan, temiz-oda yaklaşımıyla Rust'ta yazılmış indirme yöneticisi; Windows, Mac ve Linux'ta çalışıyor. BitTorrent, debrid desteği ve tarayıcı eklentisi içeriyor, arayüz egui ile yapılmış. Kendini IDM'den hızlı ve ücretsiz olarak konumluyor (bu hız iddiası README'nin kendi beyanı). GPL-3.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "CYQawa/YunX",
+   "inputs_hash": "b8020845d140d6b8103026d1712cb638",
+   "description_tr": "Quark, Baidu, Xunlei, Lanzou gibi Çin bulut depolama paylaşım bağlantılarını ve Douyin, Xiaohongshu, Bilibili gibi platformların video/görsellerini çözümleyip indiren Android uygulaması (Kotlin). Parçalı eşzamanlı indirme, devam ettirme ve uygulama içi önizleme var. AGPL-3.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "janestreet/agent_skills",
+   "inputs_hash": "78e7472055efd95baf00bcada782ac58",
+   "description_tr": "Jane Street'in yayımladığı agent skill koleksiyonu; her skill bir SKILL.md içeren dizin. Şu an tek skill var: sokratik yöntemle seçilen konuyu öğreten sıkı bir öğretmen (tanı testi, 0-5 seviyeli beceri haritası, aralıklı tekrar). Düz sohbet botlarında SKILL.md içeriği yapıştırılarak da kullanılabilir.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "huamidev/GestaltX",
+   "inputs_hash": "0fe08f3dbbd1e146d7cd0ea2f2723362",
+   "description_tr": "iOS 27.x için MobileGestalt düzenleyicisi; iPhone ve iPad'de bölge kodu ayarları, cihaz ön ayarları ve yedekleme sunan SwiftUI uygulaması. Sistem yapılandırmasını değiştirdiği için cihaz kararlılığı riski taşır. GPL-3.0; README Çince ve Japonca da mevcut.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "GoogleChrome/modern-web-guidance",
+   "inputs_hash": "ca974b71c80aebc4c978d9b736c6f89c",
+   "description_tr": "Chrome, Edge, Firefox ve MDN ekiplerinin gözetiminde, kodlama agent'larını eski kalıplardan uzaklaştırıp güncel web platformu özelliklerine yönlendiren skill seti. Tarayıcı uyumluluk verisini agent bağlamına taşır. Apache-2.0; içeriğin üretildiği kaynak depo ayrı tutuluyor.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "kepano/kepano-obsidian",
+   "inputs_hash": "938cb0d723dcb32adda69bc79ff27461",
+   "description_tr": "Obsidian'ın geliştiricilerinden Stephan Ango'nun (kepano) kişisel Obsidian vault şablonu; ilgi duyulan konuları aşağıdan yukarıya düzenleyen bir not alma yapısı sunuyor. Kod değil şablon dosyaları içeriyor; MIT. README boş geldiği için ayrıntı yalnızca açıklamadan alındı.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "AIScientists-Dev/academic-humanizer",
+   "inputs_hash": "df95058d3f058796b0a29b1cb2427a53",
+   "description_tr": "Makale ve hibe önerilerindeki (NSF/NIH) yapay zekâ yazım izlerini temizlerken akademik üslubu ve kanıta bağlı iddiaları koruyan bir skill. Claude Code, Codex ve MorphMind ile çalışıyor; SKILL.md artı örneklerden oluşuyor. Lisans alanı belirsiz (NOASSERTION), rozet MIT diyor.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "aws/aws-emulator",
+   "inputs_hash": "b35282ed43c6b0ea185edd5ee5a70fc8",
+   "description_tr": "AWS API'lerinin yerel bir emülatörü; hesap olmadan yazılımı kendi makinede, geliştirme sunucusunda veya CI'da test etmeyi sağlar. Arayüzü yok: bir AWS uç noktası sunar, AWS CLI/SDK ortam değişkenleriyle ona yönlendirilir. Rust, CC0-1.0; ek servis ücreti yok.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "expo/exact",
+   "inputs_hash": "68f4f4e6d13abd48e3a76d518a40d542",
+   "description_tr": "Uygulamayı bir kez yazıp web, macOS, iOS ve Linux'ta yerel çalıştırmayı, bir AI agent'ın da bunları derleyip çalıştırıp görüntü alarak test etmesini hedefleyen Rust tabanlı çerçeve. Kurulum bun ve Xcode gerektiriyor; README'ye göre başlangıç belgesi tek zorunlu okuma. MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "jhaizhou-ops/S2Arm",
+   "inputs_hash": "1dcf00711b7b40555e2e59e7de70b258",
+   "description_tr": "Switch oyunlarını kullanıcının kendi oyun ve anahtarlarıyla iPhone, iPad ve Mac'te yerel çalıştırmayı hedefleyen C# projesi: oyun kodu ARM64'e çevriliyor, grafikler doğrudan Metal'e gidiyor. Bağış kabul etmediğini belirtiyor. Apache-2.0. Konsol emülasyonu hukuki açıdan gri bölgedir.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "poco-ai/Agentero",
+   "inputs_hash": "133cb70ab36581ae0915baaa0277240d",
+   "description_tr": "Araştırmacılar ve agent'lar için masaüstü çalışma alanı: atıflı PDF soru-cevap, literatür taraması, yazım ve yerel bilgi bankası (Vault). Zotero sonrası insan-agent bağlam kopukluğunu gidermeyi amaçlıyor; modele yapılandırılmış temiz bağlam verir. TypeScript, MIT; arayüz Çince ve İngilizce.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "GoogleChrome/modern-web-guidance-src",
+   "inputs_hash": "08703255fcb8008945ee6199ee7bb640",
+   "description_tr": "GoogleChrome/modern-web-guidance skill setinin kaynak deposu: içeriği yazma, kalibre etme ve değerlendirme kodu ile belgelerini barındırıyor. Asıl kullanılacak paket ayrı depoda; bu, katkı verenler ve içeriğin nasıl test edildiğini merak edenler için. TypeScript, Apache-2.0. GitHub açıklaması boş.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "jamesondh/chimera-vocal-synth",
+   "inputs_hash": "152512c0a4ff492af54a422b5b4864d7",
+   "description_tr": "Tarayıcıda çalışan, fiziksel modelleme tabanlı ses sentezleyici: örnek yok, akciğer, ses telleri, ses yolu ve dudaklar simüle ediliyor. Motor Rust, AudioWorklet için WebAssembly'ye derleniyor; CLI ve CLAP/VST3/AU eklentisi de var. Konuşma, şarkı ve beatbox üretir. MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "IainKay/ram-altman",
+   "inputs_hash": "f9b6fb9007d2eb2411f7c321187c4164",
+   "description_tr": "Günde bir kez RAM kullanımını ölçüp boşta kalan kapasiteyi Sam Altman'a e-posta ile bildiren, mizah amaçlı bir Bash betiği. Cron ile çalışır; örnek e-postalar ram-altman.lol sitesinde kurulum yapmadan görülebilir. Unlicense; ciddi bir araç değil, esprili bir proje.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "DIYgod/pinky",
+   "inputs_hash": "c8ce9472e89c4081ca192efff344b85e",
+   "description_tr": "Yapay zekâ agent'larının kullanıcının denetimiyle iPhone veya Android telefonu kullanmasını sağlayan Go aracı; macOS, Windows ve Linux'tan çalışır. Örnekte Claude Code, Mesajlar uygulamasında yanıt yazıyor. Kullanıcı süreçte onay veren taraf olarak kalır. Apache-2.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "Kianuni/Erosion-CN",
+   "inputs_hash": "5fdfa4e86d49ea273f47c744e57c42b8",
+   "description_tr": "iOS / iPadOS 27.0-27.3 beta ve kısmen 26.x için MobileGestalt tabanlı sistem yapılandırma araştırma aracı (Swift); worse_query projesinden türetilmiş, 'beyaz elma' riskine karşı sertleştirilmiş Çince sürüm. Sistem değerlerini değiştirdiği için cihaz riski taşır. GPL-3.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "RunanywhereAI/trnrt",
+   "inputs_hash": "09e3c08b099ecd46803959c57146fca8",
+   "description_tr": "AWS Trainium için açık LLM çıkarım motoru: NKI megakernel'leri, 1M token bağlam ve OpenAI uyumlu API sunuyor. Python, Apache-2.0; RunAnywhere geliştiriyor. Yalnızca Trainium donanımı kullananlar için anlamlı, GPU tabanlı kurulumlarda işe yaramaz.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "Ray-lea/Argus",
+   "inputs_hash": "e6eb7daa18608e606d25965a74fcb5c4",
+   "description_tr": "Rust ve GPUI Kit ile yazılmış, Windows için modern görev yöneticisi; süreç yönetimi ve sistem izleme sunuyor, arayüzde Tauri/SolidJS izleri var. Sekiz dilde belgesi var ve tarayıcıda deneme sürümü sunuyor. AGPL-3.0; yalnızca Windows.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "0sec-labs/0",
+   "inputs_hash": "e153d070b54aaa9ed43a023724a06d8c",
+   "description_tr": "Kod analizi, sızma testi, zafiyet araştırması, tersine mühendislik, doğrulama ve düzeltme için web arayüzlü açık kaynak AI güvenlik altyapısı; agent'lar için CLI ve MCP de sunuyor. Y Combinator destekli 0security yapıyor. TypeScript; lisans alanı belirsiz (NOASSERTION).",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "HybridRobotics/supermimic",
+   "inputs_hash": "02c931a722e117382c74126b3dd754a7",
+   "description_tr": "Humanoid robotun tüm vücut hareketini tek bir türevlenebilir dünya modeliyle takip etmeyi öğreten araştırma kodu; mjlab üzerine kurulu, makalesi ve proje sayfası var. Kurulum uv ve iki ayrı depo gerektiriyor. Görev kimlikleri Unitree G1 için. Python, Apache-2.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "tylertms/Stela",
+   "inputs_hash": "450931db2e9e733f7c0130d593a6030e",
+   "description_tr": "x86-64 PC'lerde macOS çalıştırmayı hedefleyen UEFI önyükleyici: arm64'ten x86-64'e çevirici, NVIDIA GPU için Metal sürücüsü ve Apple silikon donanım modeli içeriyor (M2 Mac mini gibi görünür). Yazar yavaş olduğunu ve önyüklemenin başarısız olabileceğini belirtiyor. Rust, GPL-2.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "mahmoudtawfik1998/secure-pdf-document-processor",
+   "inputs_hash": "a35ce4f17141b0625a45413cc4a825c7",
+   "description_tr": "Adobe Acrobat Pro adıyla sunulan, 'önceden etkinleştirilmiş' kurulumu PowerShell komutuyla indirttiren HTML deposu; gerçek bir uygulama kodu içermiyor gibi görünüyor. Aynı kalıptaki kırık yazılım yemi olabileceği için kurulum komutu çalıştırılmamalı. Yıldız sayısı muhtemelen yapay.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "abdulmannanmalik13-wq/adobe-substance-3d-studio",
+   "inputs_hash": "27266635469a9fd2fd74e9b49b4acf8e",
+   "description_tr": "Adobe Substance 3D'yi 'güvenli varlık hattı' olarak sunan, PowerShell ile kurulum düğmesi olan HTML deposu. Yaygın kırık yazılım yemi kalıbına uyuyor: 2026 sürümü, önceden etkinleştirme iddiası, komutla indirme. Kurulum betiği çalıştırılmamalı. Yıldız sayısı muhtemelen yapay.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "hembramneeraj3-create/aida-64-extreme",
+   "inputs_hash": "05af997d6bdacdbf515fc85005ddd9d0",
+   "description_tr": "AIDA64 Extreme'i 'tam özellikli' kurulum olarak sunan, PowerShell yükleyicisi bulunan HTML deposu. Topic listesi arama etiketleriyle dolu; bu, kırık yazılım yemi kalıbıdır. Gerçek kod içermiyor görünüyor ve betik çalıştırılmamalı. Yıldız sayısı muhtemelen yapay.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "woniuniuniu/dsh-media-desk",
+   "inputs_hash": "b479778b5f42fe2c8855406222a6f201",
+   "description_tr": "DeepSeek Harness için bir plugin: tek cümlelik fikirden senaryo, kapak, görsel ve storyboard üreten sosyal medya içerik masası. Xiaohongshu'da yayın yapan bir teknoloji blogcusunun kendi iş akışı için geliştirdiği bir araç. JavaScript, MIT; README Çince ve İngilizce.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "AleRibeiro44/archicad-desktop-setup",
+   "inputs_hash": "e091a9fc703cc4024c79703fd8462343",
+   "description_tr": "Archicad 2026'yı 'önceden etkinleştirilmiş' kurulum olarak sunan, PowerShell ile hızlı kurulum düğmesi olan HTML deposu. Lisanssız ticari yazılım vaadi ve komutla indirme, yaygın kötü amaçlı yem kalıbıdır. Betik çalıştırılmamalı. Yıldız sayısı muhtemelen yapay.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "PHISHER420/autodesk-inventor-desktop-config",
+   "inputs_hash": "2e037c674ad17dfbf7f2a5eb84849312",
+   "description_tr": "Autodesk Inventor 2026 Professional'ı önceden yapılandırılmış kurulum olarak sunan, PowerShell yükleyicili HTML deposu. Sahte rozetler (indirme sayısı, build geçti) ve lisanssız yazılım vaadi kötü amaçlı yem kalıbına uyuyor. Betik çalıştırılmamalı; yıldız sayısı muhtemelen yapay.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "CodeSouvik/clion-standalone-enhancement",
+   "inputs_hash": "ee6525d5ce117938ffd7ba5ace0000e7",
+   "description_tr": "CLion'u 'tüm özellikleri etkin' tam kurulum olarak sunan, PowerShell komut düğmeli HTML deposu. Rozet ve beğeni sayıları uydurma görünüyor; lisanssız ticari yazılım vaadi yaygın kötü amaçlı yem kalıbıdır. Betik çalıştırılmamalı, yıldız sayısı muhtemelen yapay.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "sajawal-12/cubase-studio-desktop",
+   "inputs_hash": "d998cbec5069a1e3c1c773a3695b6855",
+   "description_tr": "Cubase Studio 2026'yı tam eklenti paketiyle sunan, PowerShell yükleyicili HTML deposu. Rozetler sahte görünüyor ve lisanssız ticari yazılım vaadi var; kötü amaçlı yem kalıbına uyuyor. Betik çalıştırılmamalı. Yıldız sayısı muhtemelen yapay.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "Arda313131882/aion-2-trainer-tool",
+   "inputs_hash": "5621efdfb7392f9bbd920aff53ee9ba7",
+   "description_tr": "Aion 2 oyunu için 'trainer' ve 'AI prompt mühendisliği araç seti' diye sunulan PowerShell kurulumlu HTML deposu. Oyun hilesi ile yapay zekâ etiketlerinin karışımı, arama trafiği çekmeye yönelik kötü amaçlı yem kalıbı gibi duruyor. Betik çalıştırılmamalı. Yıldız sayısı muhtemelen yapay.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "ebtsamalhakmy-sketch/desktop-backup-suite",
+   "inputs_hash": "08057a808ba3f5370a4de513a55ff3cc",
+   "description_tr": "AOMEI Backupper 2026'yı tüm özellikleri etkin tek yükleyici olarak sunan, komutla indirme yapan TypeScript/HTML deposu. Lisanssız ticari yazılım vaadi ve uydurma rozetler kötü amaçlı yem kalıbına uyuyor. Betik çalıştırılmamalı; yıldız sayısı muhtemelen yapay.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "IsaiaR09/daemon-pro-desktop",
+   "inputs_hash": "d9e0ebd99d4ce9fe9265d4386de2715b",
+   "description_tr": "Daemon Tools Pro'yu 'tüm özellikler etkin' bağımsız kurulum olarak sunan, PowerShell düğmeli HTML deposu. Sahte durum rozetleri ve lisanssız ticari yazılım vaadi yaygın kötü amaçlı yem kalıbıdır. Betik çalıştırılmamalı. Yıldız sayısı muhtemelen yapay.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "tss878/delta-executor-toolkit",
+   "inputs_hash": "b7d566bbfaad1c1f323ee04c24e09bfa",
+   "description_tr": "Delta Executor (Roblox hile çalıştırıcısı) için 'tam çalışan yükleyici' diye sunulan, PowerShell ile betik çeken depo. Hile aracı ve 'önceden etkin' vaadi, kötü amaçlı yazılım dağıtımında sık görülen kalıptır. Betik çalıştırılmamalı; yıldız sayısı muhtemelen yapay.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  }
+ ]
+}

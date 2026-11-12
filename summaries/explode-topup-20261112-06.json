@@ -1,0 +1,84 @@
+{
+ "repos": [
+  {
+   "full_name": "DominikScholz/open-bot-avatar",
+   "inputs_hash": "d0ea94d1a3ae330a6045f4df5f5666c1",
+   "description_tr": "Etkileşimli ajan avatarları için JSON şeması ve bağımlılıksız bir TypeScript renderer'ı. Bir avatar tek bir SVG yolu ile göz konumundan oluşuyor; hacim dış çizgiden çıkarılıp canvas'ta çiziliyor. Ruh hali ve imleci takip etme gibi seçenekler var, tarayıcıda editörle avatar üretilebiliyor. MIT lisanslı.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "elripalda/RecompLauncher",
+   "inputs_hash": "7ddce6072bbc11860e03c328dbf981fe",
+   "description_tr": "Konsol oyunlarının geliştiricilerce yapılmış yerel PC sürümlerini (recomp) tek yerden bulup kuran, güncelleyen ve başlatan Rust tabanlı bir launcher. Oyunun kendi kopyası kullanıcıdan alınıyor; indirmeler GitHub release'inden geliyor ve sağlama toplamıyla doğrulanıyor. Kayıt yedekleme ve tam ekran mod var. GPL-3.0, şu an beta.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "Roland0511/dsh-marktext",
+   "inputs_hash": "2417ff08279a170cd3bcbc5fd22be0be",
+   "description_tr": "MarkText'in muya editör çekirdeğini DeepSeek Harness'ın sağ kenar çubuğuna getiren bir eklenti. .md dosyası kaynak yerine biçimlenmiş belge olarak açılıyor; seçilen metin alıntı olarak sohbet taslağına eklenebiliyor ve belge PDF'e aktarılabiliyor. Her şey yerelde çalışıyor, npm paketi olarak dağıtılıyor, MIT.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "dawgyg/AppleResearch",
+   "inputs_hash": "af03aa9c4f24c63a7cc4dec8f83b5d0b",
+   "description_tr": "macOS üzerine yapılmış güvenlik araştırmalarının ham bir dökümü, C kodu içeriyor. Yazar bulguların çoğunu ödül sınırını geçmediği için Apple'a bildirmediğini söylüyor ve bir kısmının yamalanması gerektiğini belirtiyor. README çok kısa; içerik hakkında kesin bir şey söylemek için yetersiz. Lisans belirtilmemiş.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "EricJujianZou/rederive",
+   "inputs_hash": "60bf30d8942c32e57cf76324c694d19d",
+   "description_tr": "Bir kod tabanını anlatmak yerine sorular sorarak, tasarım kararlarını sıfırdan kendin türetmeni sağlayan bir kodlama ajanı skill'i. Claude Code, Codex, Cursor ve benzeri ajanlarda npx ile ya da eklenti olarak kuruluyor; git, bash ve python3 gerektiriyor. Öğrenme amaçlı, kod üretmiyor. MIT lisanslı.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "0xS4N4TG/kinetograph",
+   "inputs_hash": "3a1b2b16cd0be73a55bd9162184821e5",
+   "description_tr": "Videoyu Remotion API'siyle TypeScript'te ya da düz HTML sayfası olarak yazıp tarayıcısız render eden bir video motoru. Node kodu çalıştırıyor, kareleri bir Rust GPU compositor'ı çiziyor; CSS, SVG, Canvas, WebGL ve 3D destekleniyor. Mevcut Remotion ve HyperFrames projeleri çalışıyor. Beta (0.3.0), Apache-2.0.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "wquguru/shisei",
+   "inputs_hash": "751b7ced99ddebcfb8572cf7115447cf",
+   "description_tr": "Yapay zeka görsel araçları için CC0 lisanslı manken poz referans kütüphanesi: dört seride 280 poz, her biri beş açıdan çizgi sanat olarak, çoğu için kil, derinlik ve normal haritalarıyla. İsimler Japonca, Çince, İngilizce ve Korece. Bazı seriler yetişkinlere yönelik imalı pozlar içeriyor ve varsayılan olarak bulanık gösteriliyor.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "ashayas/icloud-s3",
+   "inputs_hash": "76c11883960411d8e892215866488770",
+   "description_tr": "iCloud Paylaşılan Albümleri'ni yedek depo olarak kullanan, S3 protokolünü konuşan bir Rust sunucusu; nesneler kayıpsız PNG piksellerine gömülüyor. README projenin bir şaka olduğunu, üretimde ya da hassas veride kullanılmaması gerektiğini açıkça söylüyor. aws cli, boto3 ve rclone ile denenebiliyor; lisans belirtilmemiş.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  }
+ ]
+}

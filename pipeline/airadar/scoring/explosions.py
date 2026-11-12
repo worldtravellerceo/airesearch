@@ -82,8 +82,17 @@ EXPLOSION_BOARDS = (YOUNG, RESURGENT)
 HELD_BACK = "held_back"
 
 
-def lure_shaped(*, forks: int | None, language: str | None, license: str | None) -> bool:
-    """No forks, no code GitHub can name, no licence.
+#: From here up, a repository with fewer than one fork per thousand stars is
+#: held back whatever its language and licence. Below it the ratio means
+#: "no forks at all", which is ordinary for a project on its first day.
+LURE_RATIO_MIN_STARS = 1000
+
+
+def lure_shaped(
+    *, forks: int | None, stars: int, language: str | None, license: str | None
+) -> bool:
+    """No forks, no code GitHub can name, no licence — or, from 1,000 stars,
+    fewer than one fork per thousand.
 
     The 500-star floor held for four days and failed on the fifth: on
     2026-10-10 seven repositories created the day before entered "Bugün
@@ -92,13 +101,34 @@ def lure_shaped(*, forks: int | None, language: str | None, license: str | None)
     template as the 392-star wave of 10-06. All seven had 0 forks, no
     language and no licence, as had all fourteen of the 10-06 wave. Across
     every census day from 10-06 to 10-10, no young repository at 500 stars
-    or more had all three and was anything else; of the 1,226 young
-    repositories at 500+ on 10-10, eleven had 0 forks, and the three of those
-    with code (a language) were left alone. A project that real people star
-    gets forked.
+    or more had all three and was anything else. A project that real people
+    star gets forked.
+
+    The next wave bought the two things the attacker controls. On 2026-11-06
+    some 70 repositories were created from one template — Archicad, Cubase,
+    Melodyne, DxO PhotoLab, "Professional Desktop Suite with Full Feature
+    Set", a PowerShell install button — at 1,060-1,212 stars, now with HTML
+    or TypeScript as a language and half of them MIT-licensed. By 11-12
+    they were 72 rows of "Son 90 gün". What they still lacked was forks: 0,
+    or 1 for a few.
+
+    Replayed over every board day from 10-06 to 11-12, the ratio from 1,000
+    stars holds back 110 repositories beyond the first rule, and every one is
+    that template or a star farm behind it: one account with 26 repositories
+    at 1,600-6,000 stars and 0-4 forks each, an empty
+    `byted-technologies/.github` at 4,008, a "software internship homework"
+    at 1,080. Taken down to 500 it adds nine, and four of those are real
+    (`NPMscan/npmscan-action` at 516 stars, 0 forks). Taken down to the AI
+    digest's 100 it holds 301 of 1,812 first-day arrivals, TencentARC and a
+    university lab among them: on its first day a real project is often
+    unforked. Hence the floor.
     """
-    # 0, not None: a capture with no fork count is unknown, not unforked.
-    return forks == 0 and not language and not license
+    # None, not 0: a capture with no fork count is unknown, not unforked.
+    if forks is None:
+        return False
+    if forks == 0 and not language and not license:
+        return True
+    return stars >= LURE_RATIO_MIN_STARS and forks * 1000 < stars
 
 
 @dataclass
@@ -201,7 +231,7 @@ def measure(
         gain_window=gain_window,
         gain_1d=gain_1d,
         forks=forks,
-        lure=lure_shaped(forks=forks, language=language, license=license),
+        lure=lure_shaped(forks=forks, stars=stars, language=language, license=license),
     )
 
 

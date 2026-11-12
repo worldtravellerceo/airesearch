@@ -24,6 +24,7 @@ from dataclasses import dataclass
 from pathlib import Path
 
 from airadar.gh.metrics import DailyStars
+from airadar.scoring.explosions import LURE_RATIO_MIN_STARS
 from airadar.scoring.leaderboards import Entry
 from airadar.scoring.metrics import RepoMetrics
 
@@ -903,7 +904,9 @@ DIGEST_NEW_PROJECT_MAX_AGE_DAYS = 90
 #: join the day's snapshot as `ls`. The AI digest listed one of the 2026-10-10
 #: wave too — Discord-Server-Raider calls itself "an AI-driven solution".
 NOT_LURE_SQL = (
-    "NOT (ls.forks IS NOT NULL AND ls.forks = 0 AND r.language IS NULL AND r.license IS NULL)"
+    "NOT (ls.forks IS NOT NULL AND ("
+    "(ls.forks = 0 AND r.language IS NULL AND r.license IS NULL)"
+    f" OR (ls.stars >= {LURE_RATIO_MIN_STARS} AND ls.forks * 1000 < ls.stars)))"
 )
 
 

@@ -1,0 +1,404 @@
+{
+ "repos": [
+  {
+   "full_name": "agentes-chat/agentes-chat",
+   "inputs_hash": "1e4eaffbbadb5c72b6a3403db357ffca",
+   "description_tr": "Self-hosted, AGPL-3.0 lisanslı bir Slack alternatifi: ekip üyeleri ve yapay zeka ajanları aynı kanal ve DM'lerde çalışır. Ajanlar Claude, ChatGPT/Codex, Gemini, Grok veya OpenRouter modelleriyle çalışır; MCP araçları, kendi bilgisayarı ve tarayıcısı vardır, hassas işlemlerde onay ister. Kurulum Docker Compose ve Postgres ile yapılır.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "HolyArrs/HolyArrs",
+   "inputs_hash": "a29459193e3f5a867bbad3ee3fd439df",
+   "description_tr": "Dizi, film ve müzik kütüphanesini tek uygulamada toplayan, Go ile yazılmış self-hosted bir medya yöneticisi (AGPL-3.0). Jellyfin ve Plex kullanan homelab kullanıcılarına yöneliktir; aria2 indirici olarak kullanılabilir. Arayüz 44 dile çevrilmiş. Poster ve puan verileri geliştiricinin kendi sunucusundan gelir.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "Goblinmine/homelab-diagram",
+   "inputs_hash": "09584d91e2e05e491127adb7b5ba7859",
+   "description_tr": "YAML envanter dosyasından r/homelab tarzı bir ağ diyagramı üreten Python betiği; çıktı SVG veya PNG. Düzen, yani kutuların ve kabloların yeri, build.py içinde yazarın kendi ağına göre elle yerleştirilmiş; başka ağ için koordinatları kodda değiştirmek gerekir. Kod Claude Code ile yazılmış, genel amaçlı bir araç değil.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "Soniavasseur/Wallet-Risk-Scanner",
+   "inputs_hash": "1ac34095338e221f11cb8bdfa18fd6f0",
+   "description_tr": "Kripto cüzdan adreslerini 0-100 arası risk puanıyla tarayan bir AML/KYT tarama aracı (Python, MIT). Yaptırım listeleri, riskli kontratlar ve fon izleme için altı istihbarat sağlayıcısını yedekli kullanır, 15'ten fazla zinciri destekler. Toplu tarama ile TXT, JSON, CSV, HTML ve PDF rapor çıktısı verir.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "sghnnnn01212-cmyk/data-grip-desktop",
+   "inputs_hash": "53d528145d839fef0483b6fda5f34be6",
+   "description_tr": "Windows için indirilebilir bir veri yönetimi aracı gibi sunuluyor, ama README \"önceden etkinleştirilmiş\" kurulum ve bir PowerShell kurulum düğmesi vaat ediyor. Bu, korsan yazılım yemi kalıbına benziyor. Konu listesi alakasız etiketlerle dolu; GitHub Pages'e giden kurulum betiği güvenilir görünmüyor, çalıştırılmamalı.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "sassiestrhihno/boxshelf-beta",
+   "inputs_hash": "25ec3823170289c5ab27afa8597baa03",
+   "description_tr": "Emülatörleri, Steam oyunlarını ve medya uygulamalarını TV tarzı 3D kutu kapağı rafında gösteren bir oyun başlatıcı arayüzü (Electron). Windows, Android (çift ekranlı AYN Thor dahil) ve deneysel Linux/Steam Deck sürümleri var. Oyun veya BIOS içermez; bu repo yalnızca beta sürümleri dağıtır, GPL-3.0 kaynak kodu ayrı repoda.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "Lucas-blip-png/dkb-pc-recomp",
+   "inputs_hash": "2a767d8b9df6d888cf9677ac46488665",
+   "description_tr": "Donkey Kong Bananza (Switch 2) oyununu statik yeniden derleme ile Vulkan kullanan yerel bir Windows uygulamasına çeviren GPL-3.0 projesi (C). Oyun başlangıç ekranından ilk bölüme kadar çalışıyor ama henüz oynanabilir değil, çökebiliyor ve birçok efekt eksik. Oyun dosyası içermez, kullanıcı kendi dökümünü getirmeli.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "helloHub1212/dsh-windows-mcp",
+   "inputs_hash": "5835bcf11b11b4edd3034ac319c7f73e",
+   "description_tr": "DeepSeek Harness Desktop için Windows masaüstü otomasyonu sağlayan bir eklenti (JavaScript, MIT). Yerleşik MCP istemci köprüsünü CursorTouch/Windows-MCP sunucusuna bağlar ve 18 araç sunar. Computer Use anahtarı varsayılan olarak kapalıdır; bağımlılıkları uygulama içinden kurar, uv gerektirir.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "since2006/shell-rs",
+   "inputs_hash": "1cfcd66b8dda864f25e676953c47f80f",
+   "description_tr": "Rust ve GPUI (Zed editörünün GPU arayüz kütüphanesi) ile yazılmış, çapraz platform bir SSH istemcisi (GPL-3.0). Xshell tarzı sunucu yönetimi, sekmeli terminal, WinSCP tarzı çift panelli SFTP ve port yönlendirmeyi tek pencerede toplar. Veriler yerel SQLite'ta, parolalar sistem anahtarlığında tutulur; Electron kullanmaz.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "BenchUp3D/editor",
+   "inputs_hash": "c52d7f8812684767d076b189d3f4ed33",
+   "description_tr": "SketchUp alternatifi olarak sunulan, ücretsiz ve açık kaynaklı 3D ahşap işçiliği ve modelleme editörü (Rust, MIT). WebAssembly ve WebGPU ile hem tarayıcıda hem masaüstünde çalışır. Geliştirici kodun tamamen \"vibe-coded\" olduğunu belirtiyor. README'nin yalnızca ilk kısmı elimizde, ayrıntı sınırlı.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "Mistercat12/dvd-creator-setup",
+   "inputs_hash": "99a456fd3497bd1021b2214cab2c69e2",
+   "description_tr": "Windows için DVD yazma aracı gibi sunuluyor, ama README \"tüm özellikler önceden etkinleştirilmiş\" kurulum ve PowerShell kurulum düğmesi vaat ediyor; konu etiketleri alakasız ürün adlarıyla dolu. Bu, korsan yazılım yemi kalıbıdır. Gerçek bir açık kaynak proje olarak değerlendirilemez, kurulum betiği çalıştırılmamalı.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "FrigadeHQ/yogurt",
+   "inputs_hash": "23b1fc6133e2ab629519b9cde76f3232",
+   "description_tr": "Toplantılara bot eklemeden çağrıları kaydeden, canlı transkript ve özet çıkaran açık kaynaklı toplantı notu uygulaması (Electron, MIT). Ses, transkript ve yapay zeka işleme yerel makinede kalır; llama.cpp ile çalışır, hesap gerekmez. Mac, Windows ve Linux sürümleri var; konuşmacı ayrımı yalnızca Mac'te.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "jailbreakdotparty/Erosion",
+   "inputs_hash": "c3596a24f926b8519bde88199827c681",
+   "description_tr": "iOS 26 ve 27 sürümlerinde \"worse_query\" sandbox kaçışını kullanan, jailbreak gerektirmeyen bir özelleştirme araç seti (Swift, GPL-3.0). Cihazın sandbox sınırını aşan bir açığa dayandığı için yalnızca belirli iOS sürümlerinde çalışır. README yedek almayı öneriyor ve veri kaybı riskini belirtiyor.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "kubai087/kubai-icons",
+   "inputs_hash": "e89c7871e730fe39c42c598adb341152",
+   "description_tr": "Claude Code, Codex ve benzeri kodlama ajanlarına tutarlı bir stilde animasyonlu ikon çizdiren bir ajan becerisi (skill); yanında 2.800'den fazla MIT lisanslı hazır ikon var. İkonlar React, Vue, düz JavaScript ve statik SVG olarak kullanılır; ikonları gezmek, yeniden renklendirmek ve indirmek için bir web sitesi de bulunur.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "AtomIllusionistDwell/watson-username-footprint-finder",
+   "inputs_hash": "f6e63b71bdd9deca0715774c7909de56",
+   "description_tr": "Kullanıcı adı, e-posta, telefon veya site girdisini 3.100'den fazla herkese açık sayfada arayıp tek bir rapor çıkaran, Windows için ücretsiz bir kişi arama masaüstü uygulaması (Electron, MIT). Dijital ayak izi ve kullanıcı adı sorgusu yapar. Başkaları hakkında profil çıkarmaya elverişli olduğundan gizlilik riski taşır.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "dabingfy-dot/solo-to-team-skills",
+   "inputs_hash": "0dfe3fe0e3375bc4936eb7de28bc36e8",
+   "description_tr": "İnsanın yönettiği yapay zeka ekipleri için dört beceri ve bir şablondan oluşan Çince bir paket: iş dağıtma, kanıtla doğrulama, adım adım açıklama ve deneyim kaydı. Codex, Cursor, DeepSeek Harness ve diğer ajan araçlarında denendiği belirtiliyor; Claude Code desteği henüz tamamlanmamış. Belge v0.9 taslak aşamasında.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "duyunzhoudyz/dyz-gongwen-skills",
+   "inputs_hash": "fc69bb529b197592ccc849ebc6c84cd1",
+   "description_tr": "Çince resmi yazışma (gongwen) hazırlamak için 22 ajan becerisinden oluşan bir paket (Python). Uydurma bilgiyi ve gizli bilgi sızmasını önlemeye çalışır, GB/T 9704 standardına göre otomatik sayfa düzeni yapar. Claude Code, Codex ve Cursor ile çalışır. Lisansı PolyForm NC; ticari kullanım kısıtlı.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "Kohei-Wada/houritsu",
+   "inputs_hash": "803ad0ea32325d5c4dca43beb59502a3",
+   "description_tr": "Japonya yasalarını git geçmişi olarak sunan bir veri deposu: e-Gov hukuk API'sinden üretilir, her değişiklik tek bir commit'tir ve commit tarihi yürürlük tarihidir. Yasalar Markdown dosyaları olarak tutulur. Geçmiş her güncellemede yeniden kurulup force-push edildiği için commit SHA'ları kalıcı değildir.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "n8n-io/nod",
+   "inputs_hash": "e61acb3faac81489679cf66a5c5b5233",
+   "description_tr": "n8n'in geliştirdiği, kullanıcının makinesinde çalışan açık kaynaklı kişisel ajan (Apache-2.0). Gmail, Takvim, Slack, Notion ve web üzerinde fatura takibi, görüşme hazırlığı ve deneme aboneliği iptali gibi işleri yapar, işlem öncesi onay ister. Model seçilebilir; macOS sürümü kararlı, Windows ve Linux önizlemede.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "Seagey/couch-tv",
+   "inputs_hash": "00ddff56ae4ccea796d77830661e66cb",
+   "description_tr": "Android TV / Google TV için kendi ana ekranınızı ve telefon uzaktan kumandasını sağlayan Python tabanlı bir proje (MIT). İsteğe bağlı olarak Claude veya diğer modellerle çalışan bir asistan (Ask) içerir. Kurulum AI ajanına yaptırılacak şekilde tasarlanmış; TV uygulamaları Releases sayfasından gelir. Sürüm 0.12.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "kolbicz/WQFiles",
+   "inputs_hash": "2a9ee440c7fb6a0c82b6e92c171041a8",
+   "description_tr": "iOS 27 için jailbreak gerektirmeden dosya gezgini, uygulama verisi yöneticisi ve önbellek temizleyici sunan Objective-C uygulaması (GPL-3.0). \"worse_query\" sandbox tekniğiyle diğer uygulamaların ve sistemin kapsayıcılarına erişir. Yalnızca belirli iOS sürümlerinde çalışır; README'nin yalnızca ilk kısmı elimizde.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "opentrap/opentrap",
+   "inputs_hash": "c2c332247fd59a1bc80ccbf42b6ace2f",
+   "description_tr": "OWASP ZAP motoru üzerine kurulu, Burp Suite alternatifi olarak sunulan açık kaynaklı bir ara proxy ve web uygulama güvenlik test paketi (Java, AGPL-3.0). Repeater, Intruder ve Collaborator benzeri araçlar ile yerleşik tarayıcı içerir. Linux AppImage olarak tek komutla indirilip çalıştırılır.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "FJNB5/fujiang-pojia",
+   "inputs_hash": "239d13122a3e8bf55eb9c0359c48ce20",
+   "description_tr": "DeepSeek Harness için Çince bir eklenti; \"破甲\" (zırh kırma) adıyla anılıyor ve sızma testi otomasyonu, zafiyet bilgi tabanı, PoC kullanımı ve beceri kütüphanesi vaat ediyor. README boş, yalnızca depo açıklaması var. Yetkisiz sızma amacıyla kullanılabilecek bir araç olduğu için ayrıntı doğrulanamıyor.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "Renly1994/xiaotang-daozai",
+   "inputs_hash": "9732aecce734ae79982f058a65bf7f9a",
+   "description_tr": "Windows masaüstünün üstünde \"dinamik ada\" gibi açılan bir bilgi aracı (Rust, egui, MIT). Müzik şarkı sözleri, e-posta doğrulama kodları, takvim hatırlatıcıları, yapılacaklar, hava durumu ve yapay zeka kota bilgisini gösterir. Konum üst, sol veya sağ olabilir; Windows 10 ve 11'de çalışır.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "Dittobyte/Recompia",
+   "inputs_hash": "0501ddbe1281d2c54e754ac54cd38f40",
+   "description_tr": "Nintendo Switch 2 oyunu Pokémon Pokopia'yı statik yeniden derleme ile Windows'ta yerel çalışacak hale getiren GPL-3.0 projesi (C++). Çok oyunculu mod, modlama ve Linux/handheld desteği ekler. Oyun dosyası içermez, kullanıcı kendi 2.0.1a sürümü dökümünü getirmeli. Yapay zeka destekli, insan denetiminde yazıldığı belirtiliyor.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "andrew-babo/muse4ai",
+   "inputs_hash": "073a7d51a93575b165b444e8ac96e96e",
+   "description_tr": "Windows'ta çalışan, Muse oturumunu ChatGPT, Claude, Cursor, Codex veya n8n gibi araçlara REST, MCP ve OAuth üzerinden açan yerel bir köprü (TypeScript, MIT). Bulut aracısı yoktur; anahtar ve sonuçlar yerel makinede kalır. Ajanın görsel ve video üretmesine, sohbet yürütmesine izin verir.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "Gloridust/WowType",
+   "inputs_hash": "3cb58293faf773deaec6ccbad23c4cee",
+   "description_tr": "Linux için fcitx5 tabanlı bir Çince pinyin giriş yöntemi (Rust, MIT / Apache-2.0). Uzun cümleyi tek seferde yazma, yanlış tuş düzeltme, tamamen çevrimdışı ses girişi ve gerçek zamanlı çeviri sunar, kullanıldıkça kullanıcının alışkanlıklarını öğrenir. fcitx5 5.1 ve üstü gerekir.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "artcraft-android/procraft",
+   "inputs_hash": "124833eb7165ee1777cfe6f2a76dc322",
+   "description_tr": "Android tabletler, Windows ve Linux için açık kaynaklı bir çizim uygulaması (Rust, Apache-2.0). Basınca duyarlı fırçalar, blend modlu katmanlar, ayarlamalar, animasyon ve 3D boyama sunar; kendi Rust motoru ve GPU işleyicisi var. Android'de Kotlin/Jetpack Compose, masaüstünde egui arayüzü kullanır.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "nilbuild/tinyhand",
+   "inputs_hash": "362742e63816f425f0ed6aa8123e0f9a",
+   "description_tr": "Mac ekranında bir şeyi göstermek için küçük bir el imleci çizen macOS uygulaması (Swift, MIT). Ekran paylaşımı veya anlatım sırasında işaret aracı olarak kullanılır. macOS 13 veya üstü gerekir; DMG olarak dağıtılır. README kısa, ayrıntılı özellik listesi yok.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "declarative-dragging/dragology",
+   "inputs_hash": "062adbadfef869161bcc57f7524b6d15",
+   "description_tr": "SVG için bildirimsel sürükle-bırak etkileşimleri tanımlayan bir TypeScript kütüphanesi (MIT, React ile kullanılır). Sürükleme davranışı hareketin fiziksel sürecini yazmak yerine bildirimsel olarak tarif edilir. Yazarlar LLM'ler için ayrı bir AGENTS.md hazırlamış; README yalnızca başlangıç kılavuzu veriyor.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "mofan6/Moect",
+   "inputs_hash": "24134b56d80e19e45d604bbcff919387",
+   "description_tr": "Windows 4.x WeChat sohbet geçmişini dışa aktarma, yedekleme ve çevrimdışı arşivleme aracı (Python, GPL-3.0). Kişi ve grup sohbetleri, görseller, GIF, ses ve video, dosyalar ve alıntılar HTML, JSON, JSONL, TXT, CSV veya Markdown olarak dışa aktarılır; arama ve zaman filtresi vardır. Geliştirici güncellemeleri 23 Aralık'a kadar durdurdu.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "herdrdev/herdr-core",
+   "inputs_hash": "44968f78258391d9b93ba1371bfd6c83",
+   "description_tr": "Terminalde kodlama ajanlarını ve programları, oturumdan çıkılsa bile açık kalacak şekilde çalıştıran bir çekirdek (Rust, Apache-2.0). Ajanlar birbirini başlatıp iş gönderebilir, kullanıcı herhangi bir terminale bağlanıp devralabilir. Çekirdek arayüz çizmez; kabuktan, bir ajandan veya kendi uygulamanızdan kullanılır.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "Goldoire/fefw-recomp",
+   "inputs_hash": "068707b3e5dc325cd85a84e606353033",
+   "description_tr": "Fire Emblem: Fortune's Weave oyununu statik yeniden derleme ile yerel bir Windows uygulamasına çeviren GPL-3.0 projesi (C++). 60/120 FPS, her çözünürlük, ultrawide desteği ve oyun içi ayar paneli sunar. Oyun dosyası içermez, kullanıcı kendi dökümünü getirmeli. Nintendo ile bağlantısı yoktur.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "yt1988/who-are-you",
+   "inputs_hash": "55c121c892b8e54d0006c45eb982afe3",
+   "description_tr": "Bir sitenin sizi nasıl gördüğünü gösteren gizlilik kontrol sayfası (HTML, MIT, Cloudflare Workers). Tarayıcı parmak izi, DNS ve WebRTC sızıntısı gibi sorguları çalıştırır, VPN veya proxy'yi ele veren çelişkileri listeler. Aynı geliştiricinin IP ve ağ araçları ailesinin bir parçasıdır.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "apex-compute/ANR",
+   "inputs_hash": "e6957ece5940bf6cc15ba50fc19ae5ff",
+   "description_tr": "Apex Compute'un nöral render teknolojisi: kare üretimi (ANR FG, beta), süper çözünürlük ve ışın yeniden yapılandırma (henüz yok). Oyunlara OptiScaler ile veya OptiScaler'sız paket olarak eklenir. Depo kaynak kodu içermiyor, yalnızca sürümler ve DLSS-G/FSR/XeSS ile karşılaştırma için nr-record aracı var.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "pan8664716/HGTV",
+   "inputs_hash": "7fb7b70d26fb064fd1a982a0fb1ea47c",
+   "description_tr": "Android TV, telefon ve tablet için kısa dizi (短剧) izleme istemcisi (Kotlin, ExoPlayer). Göz atma, öneri, arama, favoriler, izleme geçmişi ve çözünürlük seçimi sunar; giriş yapmadan da izlenebilir. Üçüncü taraf bir servisin istemcisi olduğu için içerik hakları ve sürdürülebilirlik belirsiz.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "lxe/phoneuse",
+   "inputs_hash": "1078f8e58592b34bf9f802f1ac13be48",
+   "description_tr": "Bir Linux bilgisayardan, değiştirilmemiş bir iPhone'u görmeyi ve kullanmayı sağlar: AirPlay ile ekran yansıtma, Bluetooth HID ile fare ve klavye girişi. Claude Code ve Codex gibi ajanlar için CLI ve skill sunar (Python, MIT). Jailbreak veya kablo gerekmez; alfa aşamasında. Mac için de bir uygulama var.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "wici-ai/inferssd",
+   "inputs_hash": "4f54e014672f0bc86ffc97a6fb184b50",
+   "description_tr": "llama.cpp üzerine kurulu, RAM veya VRAM'den büyük MoE modellerini uzmanları SSD'den akıtarak çalıştıran bir çıkarım motoru (C++, Apache-2.0). Standart GGUF dosyalarıyla çalışır, tarayıcı sohbeti ve OpenAI uyumlu API sunar. macOS/Metal ve Linux/CUDA desteklenir; Windows yapım aşamasında.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "harshsinghsv/swiftdl",
+   "inputs_hash": "32b155a4df09705e55a8d56f56dadc13",
+   "description_tr": "Windows, macOS ve Linux için açık kaynaklı indirme yöneticisi (Rust, Tauri, MIT). Dosya başına çok bağlantı, kesintiden anında devam etme, IDM tarzı indirme pencereleri ve bir tarayıcı eklentisi sunar. Tarayıcıdan indirmeleri devralarak hızlandırmayı hedefler.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "aureth-labs/dsh-aurabot-qq",
+   "inputs_hash": "d5382d0d2a9bd022c92397c87eff50ba",
+   "description_tr": "DeepSeek Harness için bir eklenti: yapay zekayı QQ içinde \"大肥鱼\" adlı bir karakter olarak çalıştırır. Sohbet, resim görme, ses ve emoji gönderme, şarkı söyleme, QQ alanına yazma ve Bilibili gezme gibi özellikler modül olarak açılıp kapatılır (SnowLuma / OneBot v11, MIT). Modül marketi vardır.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  }
+ ]
+}

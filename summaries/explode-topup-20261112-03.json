@@ -1,0 +1,404 @@
+{
+ "repos": [
+  {
+   "full_name": "21041979/rufus-usb-formatter",
+   "inputs_hash": "74633051f2e5d29ba1415ca48411f5b0",
+   "description_tr": "Rufus adını taşıyan, 'USB biçimlendirme ve önyüklenebilir sürücü aracı' diyen bir Windows paketi. README, kurulumu GitHub Pages üzerindeki bir PowerShell düğmesiyle internetten çekilen betiğe bağlıyor; orijinal Rufus projesiyle bağı görünmüyor. Bir gün önce açılmış bir depoda bu kalıp tipik bir zararlı yazılım yemidir.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "SK-Dev666/rust-external-trainer-tool",
+   "inputs_hash": "1903c10f7be98094d02431ade8468581",
+   "description_tr": "'Rust External 2026' adlı oyun hilesi (trainer) paketi; README 'önceden etkinleştirilmiş' tek paket kurulum vaat ediyor. Kurulum GitHub Pages üzerindeki bir PowerShell düğmesinden betik indirmeye dayanıyor. Dil ve konular tutarsız, depo bir günlük; kötü amaçlı yazılım dağıtımı kalıbına uyuyor.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "farhatullah0006-art/rx-11-audio-editor-config",
+   "inputs_hash": "37e64564fa158cf681cb8caab3941eca",
+   "description_tr": "Bir ses düzenleme programı için 'dotfiles' diyen ama aslında PowerShell düğmesiyle internetten betik indiren bir kurulum sayfası. README gerçek bir yapılandırma içeriği göstermiyor, depo bir günlük. Telif haklı yazılımı çevreleyen bu kalıp zararlı yazılım dağıtımına işaret eder.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "Malik-825/sketchup-pro-desktop",
+   "inputs_hash": "5acd4d2bf0230bd549f47a65a3caaeef",
+   "description_tr": "SketchUp Pro 2026'nın 'tüm özellikleri önceden etkinleştirilmiş' sürümünü vaat eden bir kurulum deposu; yani lisans atlatma iddiası. İndirme, GitHub Pages üzerindeki PowerShell düğmesi üzerinden yapılıyor ve depo bir günlük. Bu kalıp lisanssız yazılım yemi olarak zararlı yazılım yayar.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "manjushree-iyer/soundpad-audio-suite",
+   "inputs_hash": "f1266530c09d91c2688eba97cd24bd37",
+   "description_tr": "Soundpad adlı ses aracı için 'DAW iş akışı' diyen bir kurulum sayfası. README özellik anlatır gibi görünse de asıl işlev PowerShell düğmesiyle internetten betik çekmek; kaynak kod ya da gerçek bir proje içeriği yok. Bir günlük depo ve bu kalıp zararlı yazılım yemine benziyor.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "muddinenilakshmilalithaksh-create/sp-flash-tool",
+   "inputs_hash": "84a863058c4b0b017dd1c1cdb373c498",
+   "description_tr": "MediaTek cihazlar için SP Flash Tool'u 'sürücüler ve araçlarla tek pakette' sunduğunu söyleyen bir kurulum deposu. İndirme, GitHub Pages'teki PowerShell düğmesine bağlı; resmi aracın kaynağıyla bağı gösterilmiyor. Bir günlük depo ve tekrarlı etiketler, zararlı yazılım dağıtım kalıbına uyuyor.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "RafliAbdulHaliim/sylenth-1-enhancement-suite",
+   "inputs_hash": "0272e379a5968734b6e9ce68c15e714d",
+   "description_tr": "Sylenth1 sentezleyicisi için 'önceden etkinleştirilmiş' kurulum paketi vaat eden bir depo; README oyun hilesi başlığıyla karışık. İndirme PowerShell düğmesiyle internetten betik çekmeye dayanıyor. Tutarsız içerik, bir günlük yaş ve lisans atlatma iddiası zararlı yazılım yemi izlenimi veriyor.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "Forgavin/ultra-iso-desktop-setup",
+   "inputs_hash": "d99082f76dd86fa5ec8339b2fc8a45cf",
+   "description_tr": "Ultra ISO 2026'yı 'tüm özellikleri önceden etkinleştirilmiş' sunduğunu söyleyen bir kurulum deposu. Kurulum, GitHub Pages'teki PowerShell düğmesinden betik indirmeyle yapılıyor; gerçek bir kaynak kod yok. Bir günlük depo ve lisans atlatma iması bu kalıbı zararlı yazılım yemi olarak işaretliyor.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "arthurrossetocampos1-crypto/uttorent-desktop",
+   "inputs_hash": "571892151876f0fc8d34f0c23014d339",
+   "description_tr": "Torrent istemcisi 'Uttorent 2026' için Windows kurulumu sunan bir depo. README, PowerShell düğmesiyle internetten betik indirmeyi yönlendiriyor; konu etiketleri VPN reklamı gibi alakasız terimlerle dolu. Bir günlük yaş ve bu kalıp zararlı yazılım dağıtımına işaret ediyor.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "parthkshirsagar2456-blip/voicemod-desktop-edition",
+   "inputs_hash": "179a0e7b319224589ae3ed8db7612128",
+   "description_tr": "Voicemod için 'önceden etkinleştirilmiş' sürüm vaat eden bir kurulum deposu; gerçek zamanlı ses değiştirme ve sanal mikrofon yönlendirmesi anlatılıyor. Kurulum PowerShell düğmesiyle internetten betik çekmeye dayanıyor. Bir günlük depo ve lisans atlatma iddiası zararlı yazılım yemi izlenimi veriyor.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "marorateb/burning-studio-desktop",
+   "inputs_hash": "ec2676135b5ccd559e4d2495e1eafd6e",
+   "description_tr": "Ashampoo Burning Studio için 'önceden etkinleştirilmiş' kurulum vaat eden bir depo; konular arasında 'crack' ve 'download' gibi terimler var. İndirme GitHub Pages'teki PowerShell düğmesine bağlı. Bir günlük yaş ve kırık yazılım kalıbı zararlı yazılım dağıtımına işaret ediyor.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "uchihamx999-beep/imei-repair-toolkit",
+   "inputs_hash": "9f11b0817fedec4ce61eeb3e50aa7cda",
+   "description_tr": "IMEI onarımı ve cihaz kilidi açma aracı olarak sunulan bir Windows kurulum deposu. README çevrimdışı kurulum diyor, ama dağıtım PowerShell düğmesiyle internetten betik çekmeye bağlı. Bir günlük depo ve bu kalıp zararlı yazılım yemine benziyor; ayrıca IMEI değişikliği çoğu ülkede yasaktır.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "pravinpote1985/serato-dj-pro-2026",
+   "inputs_hash": "adec83586bb6822afeda21e3cd38b9f4",
+   "description_tr": "Serato DJ Pro 2026'yı 'kilitleri açılmış, tüm özellikler etkin' sunan bir kurulum deposu; yani lisans atlatma iddiası. Kurulum PowerShell düğmesiyle internetten betik indirmeye dayanıyor. Bir günlük depo ve bu kalıp zararlı yazılım dağıtımına işaret ediyor.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "FarhanNaem/startall-back",
+   "inputs_hash": "1691c4f7dac41212a5667dcbf318547f",
+   "description_tr": "StartAllBack adlı Windows başlat menüsü aracı için 'tam kurulum' sunan bir depo. README yalnızca genel kurulum dili kullanıyor, kaynak kod göstermiyor; indirme GitHub Pages'teki PowerShell düğmesine bağlı. Bir günlük yaş ve lisanslı yazılımın yeniden dağıtımı zararlı yazılım yemi kalıbına uyuyor.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "braazo/systemcare-pro",
+   "inputs_hash": "145c45bda27d9934d1ea1afdbccebcb7",
+   "description_tr": "Systemcare Pro adlı temizlik yazılımını 'tüm özellikler hazır' diye sunan bir kurulum deposu. Yazılımın kaynağı ya da resmi bağı gösterilmiyor; indirme PowerShell düğmesiyle internetten betik çekmeye dayanıyor. Bir günlük depo ve bu kalıp zararlı yazılım yemine işaret ediyor.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "shivsupratik/windows-optimizer",
+   "inputs_hash": "10a1d8b45855826710f9db1a918e3bc6",
+   "description_tr": "Windows sistem ayarları ve FPS artırma vaadiyle sunulan 'Windows Optimizer' kurulumu. README kayıt defteri ve servis ayarlarını tek pakette değiştirdiğini söylüyor; indirme PowerShell düğmesiyle internetten betik çekmeye bağlı. Bir günlük depo ve bu kalıp zararlı yazılım yemi izlenimi veriyor.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "thiagoaureliomartins-programador/chief-architect-premier",
+   "inputs_hash": "7a65b252b958f877688968640b520a96",
+   "description_tr": "Chief Architect Premier 2026 mimari tasarım yazılımını 'tüm özellikler etkin' sunduğunu söyleyen bir kurulum deposu; depo dili Rust görünüyor ama kaynak içermiyor. Dağıtım PowerShell düğmesine bağlı. Bir günlük yaş ve lisans atlatma iddiası zararlı yazılım yemine işaret ediyor.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "Paulinho182/hitfilm-desktop-installer",
+   "inputs_hash": "8fc441ae273aa54f504a50a533a93c76",
+   "description_tr": "HitFilm video düzenleme ve görsel efekt yazılımını 'tam özellikli masaüstü kurulumu' diye sunan bir depo. İndirme GitHub Pages'teki PowerShell düğmesine bağlı; gerçek bir proje kaynağı yok. Bir günlük yaş ve ticari yazılımın bu şekilde dağıtılması zararlı yazılım yemi kalıbına uyuyor.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "DDDMUC/dsh-free-search",
+   "inputs_hash": "7ccd58a777c6a4490d29c23d1b1e01ef",
+   "description_tr": "DeepSeek Harness (dsh) için web arama sağlayıcısı eklentisi; API anahtarı gerektirmeden DuckDuckGo, Bing, SearXNG gibi çok sayıda motor arasında otomatik geri dönüşle arama yapar. Ayar sayfasından motor seçilip test edilebilir. Dsh'nin varsayılan aramasının resmi anahtara bağımlılığını gidermek için yazılmış; README Çince ve İngilizce.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "Sakshimodi14/fonepaw-unlocker-setup",
+   "inputs_hash": "ae6841b09d7e713173d55791d7548122",
+   "description_tr": "FonePaw Unlocker'ı 'tam özellikli bağımsız kurulum' diye sunan bir depo. Kaynak kod ya da resmi yazılımla bağ gösterilmiyor; indirme PowerShell düğmesiyle internetten betik çekmeye dayanıyor. Bir günlük yaş ve cihaz kilidi açma teması zararlı yazılım yemi kalıbına uyuyor.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "tsunehimatoi/psd2live",
+   "inputs_hash": "71c8373f31c0d657d9a894efbc159da5",
+   "description_tr": "Katmanlı PSD dosyasından düzenlenebilir Live2D modeli üreten açık kaynak 2D karakter rigging editörü (Kotlin, GPL-3.0). Mesh, deformer, fizik ve animasyonu otomatik oluşturur; .cmo3 ve .moc3 dışa aktarır. Yerel MCP sunucusu sayesinde Claude Code gibi ajanlar projeyi okuyup değiştirebilir.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "Pereira001/dlss5-manager",
+   "inputs_hash": "22b883f1331b9a05016b84d9b5b027cb",
+   "description_tr": "DLSS 5 Manager adlı oyun modu yükleyicisi; ReShade ve OptiScaler kurulumunu tek tıkla yapar, Steam, Epic ve GOG oyunlarını tarar. Kurulum PowerShell komutuyla yapılıyor ve konular arasında aim assist gibi hile terimleri var. Bir yıldan genç, kaynağı doğrulanmamış depo; çalıştırmadan önce dikkatli olunmalı.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "ThinkWatchProject/ThinkWatch-Lite",
+   "inputs_hash": "ac8bb8cb30b72eeb577d76400195ab69",
+   "description_tr": "Claude Code, Codex ve diğer AI istemcileri için yerel ağ geçidi (macOS, Windows, Linux, TypeScript, MIT). İstemci ayarlarına dokunmadan upstream ve model değiştirir, her isteğin maliyetini ve rotasını kaydeder. API anahtarlarını aracı servislerden gizleyebilir ve rölenin cevaba yerleştirdiği tehlikeli araç çağrılarını keser.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "synchopate/llama-modchip",
+   "inputs_hash": "b04a88e331e26de1b4d900c46c3e7a4b",
+   "description_tr": "CPU üzerinde 284B DeepSeek-V4-Flash ve 30B MoE modellerini çıkarım için çalıştıran llama.cpp türevi (Python, Apache-2.0). 3 bit civarı vektör nicemleme kullanır; README 64 GB RAM ile GPU'suz saniyede 9 token'a kadar hız ve PPL/KLD kalite ölçümleri bildiriyor. Linux, macOS Metal ve Windows 11 desteklenir.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "Kablex/ComfyUI-Ref2VA-VSA",
+   "inputs_hash": "e87ad945bf893be9c0e9409018bdacb5",
+   "description_tr": "MiniMax H3 modeliyle referans görüntüden video üreten bir ComfyUI düğümü (Python). README RTX 4090'da 5 saniyelik 24 fps videoyu sıcak çalışmada yaklaşık 72 saniyede ürettiğini, seyrek dikkat ve 4 adımlı örnekleme kullandığını söylüyor. Ölçümler kendi bildirimi; lisans NOASSERTION.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "haolpku/Omni-Edu",
+   "inputs_hash": "f10a0f64d53660e85bc304288faefe6b",
+   "description_tr": "K-12 ders çözme, müfredata bağlama, kavram yanılgısı teşhisi ve öğretim eylemi üzerine eğitilmiş açık eğitim temel modelleri (Python, Apache-2.0). Üç ölçekte BF16 ve FP8 checkpoint'leri paylaşılıyor; FP8 indirmeleri yüzde 37-44 daha küçük. Pekin Üniversitesi bağlantılı; makale arXiv'de.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "vnaurudo/php-storm-desktop-setup",
+   "inputs_hash": "6a89997fd258d2be5c1b8fcf32970244",
+   "description_tr": "PhpStorm 2026'yı 'tüm özellikler önceden yapılandırılmış' diye sunan bir kurulum deposu. JetBrains ürününün kaynağı ya da resmi bağı yok; indirme PowerShell düğmesiyle internetten betik çekmeye dayanıyor. Bir günlük yaş ve bu kalıp zararlı yazılım yemine işaret ediyor.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "sodiumsun/agenttrail",
+   "inputs_hash": "3f14c7d2641e3a13a6f15500208f213e",
+   "description_tr": "Claude Code ve Codex gibi kodlama ajanlarının yerel günlüklerini okuyup projeyi canlı bir harita olarak gösteren yerel gözlemlenebilirlik aracı (JavaScript, MIT). `npx agenttrail` ile depoda çalışır, tarayıcıda localhost:5330'da açılır. Ajan çalıştırmaz, yalnızca dosya ve günlüklerden kanıt gösterir.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "MelisaPeteRs2006/Silent-Crypto-Miner",
+   "inputs_hash": "ab574aaff771b26fea584e45e194cd68",
+   "description_tr": "Gizli kripto madenciliği istemcisi üreten bir araç; README süreç adı gizleme ve kayıt defterine otomatik başlatma ekleme gibi 'stealth' özelliklerini sayıyor. RandomX, Kaspa, Ravencoin gibi algoritmalar desteklenir. Bu özellikler başkasının makinesinde izinsiz madencilik için kullanılan kötü amaçlı yazılım kalıbıdır.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "dlsandy/Transub-Player",
+   "inputs_hash": "7b887df4fa023331dd17bce6d2d956d4",
+   "description_tr": "Windows için video oynatıcı; konuşma tanımayla canlı altyazı üretir ve çeviri, kaynak veya çift dilli gösterim arasında geçiş yapar. Çince, Japonca, Korece ve İngilizce destekler; ağ akışlarını açıp yerel olarak kaydedebilir. C# ile yazılmış, lisansı belirtilmemiş; kurulum veya taşınabilir zip olarak dağıtılıyor.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "GUFRAN7998/passfab-unlocker-desktop",
+   "inputs_hash": "e6ef9577da12b65d93f4927bab1d2044",
+   "description_tr": "PassFab Unlocker adıyla 'çevrimdışı parola kurtarma' sunan bir kurulum deposu. Resmi yazılımla bağ ya da kaynak kod gösterilmiyor; indirme PowerShell düğmesiyle internetten betik çekmeye dayanıyor. Bir günlük yaş ve bu kalıp zararlı yazılım yemi izlenimi veriyor.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "leopard627/fire-your-seo-agency",
+   "inputs_hash": "d6fc8e892ff4efc3d2081fdb4a646025",
+   "description_tr": "SEO, AEO, GEO, LLMO ve Naver arama optimizasyonu için siteyi denetleyip sorunları düzelten ve sonuçları ölçen bir Claude Code skill'i (Python, MIT). Aylık ajans ücretlerinin yerine genel standartlara ve kontrol listelerine dayanan bir iş akışı sunar. Kanıt olarak tek bir sitenin kendi bildirdiği arama gösterimi rakamlarını veriyor.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "utkarshryanite25-a11y/sony-vegas-pro-desktop",
+   "inputs_hash": "77ecdd1a7c89216f309c18f5d8a8fffb",
+   "description_tr": "Sony Vegas Pro 2026'yı 'önceden kurulmuş profesyonel video düzenleme ve VFX araçlarıyla' sunan bir kurulum deposu. Ticari yazılımın kaynağı ya da resmi bağı yok; dağıtım PowerShell düğmesine dayanıyor. Bir günlük yaş ve bu kalıp zararlı yazılım yemine işaret ediyor.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "zihenghe04/AIBro",
+   "inputs_hash": "ec59f68ba7cc7c1140fce5950d92a469",
+   "description_tr": "Mac için yerel öncelikli AI öğrenme ve araştırma asistanı: ders slaytları ve makaleleri okuyup kaynak bağlantılı, düzenlenebilir notlar çıkarır, görev ve takvim planlar. Model seçilebilir, açık kaynak (AGPL-3.0). Geliştirme önizlemesi Apple Silicon ve macOS 14 gerektirir, noter onaylı değil; Android APK ayrı sürümde.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "NYLLON-SOFTWARE/ember-cloudflare",
+   "inputs_hash": "53237b3cac68080547a9760122cb0307",
+   "description_tr": "Cloudflare üzerinde tamamen çalışan, Slack ve Campfire'dan esinlenmiş gerçek zamanlı sohbet uygulaması (TypeScript, MIT). Odalar, thread'ler, DM, dosya, arama, bot ve push bildirimi içerir; mesajlar Durable Objects'te, dosyalar R2'de tutulur. Tek tıkla kendi Cloudflare hesabına kurulur; README ücreti hesap başına aylık 5 dolar diyor.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "harikumar35626-hash/wondshare-recoverit",
+   "inputs_hash": "9ab56d06da305c17d9cdb1987880192b",
+   "description_tr": "Wondershare Recoverit veri kurtarma yazılımını 'tam özellikli masaüstü kurulumu' diye sunan bir depo. Resmi ürünle bağ ya da kaynak kod gösterilmiyor; indirme PowerShell düğmesiyle internetten betik çekmeye dayanıyor. Bir günlük yaş ve bu kalıp zararlı yazılım yemine işaret ediyor.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "abhijot11/fabfilter-total",
+   "inputs_hash": "93af9209133cbc1c3e5e562b70efb693",
+   "description_tr": "FabFilter Total 2026 ses eklentisi paketini 'güvenlik değerlendirme araç seti' gibi sunan bir kurulum deposu; açıklama ile içerik tutarsız. Kaynak kod yok, dağıtım PowerShell düğmesine bağlı ve depo bir günlük. Ticari eklentinin bu şekilde dağıtılması zararlı yazılım yemi kalıbına uyuyor.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "vigilantediurno2-del/microstation-2026-setup",
+   "inputs_hash": "4bf5a61d4e3a496560b80125fd680902",
+   "description_tr": "Bentley MicroStation 2026'yı 'profesyonel masaüstü kurulum aracı' diye sunan bir depo. Ticari ürünün kaynağı ya da resmi bağı gösterilmiyor; indirme GitHub Pages'teki PowerShell düğmesine dayanıyor. Bir günlük yaş ve bu kalıp zararlı yazılım yemine işaret ediyor.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "yappologistic/CUI",
+   "inputs_hash": "c8dcaf0a90cb4c123afe36d35defd183",
+   "description_tr": "C99 ile yazılmış, kendi bileşenlerini çizen anlık modlu (immediate-mode) UI kütüphanesi (MIT). Yaklaşık 210 bileşen içerir: düğme, metin alanı, veri tablosu, grafik, kod editörü, docking panelleri. Bağımlılıksız; OpenGL veya yazılım render'ı ile Windows, macOS, Linux ve WebAssembly'de çalışır, örnek uygulama yaklaşık 250 KB.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  },
+  {
+   "full_name": "Danuse84/Exodus-Fake-Balance",
+   "inputs_hash": "8080d753f46f8a6500d7683acebe7da7",
+   "description_tr": "Exodus kripto cüzdanında görünen bakiyeyi istenen değere değiştiren 'sahte bakiye' aracı; README ekran görüntüsü için demo diyor. Bu tür araçlar genellikle sahte ödeme kanıtıyla dolandırıcılıkta kullanılır ve yaygın olarak zararlı yazılım yemidir. Gerçek blokzincir bakiyesini etkilemez; kullanımı önerilmez.",
+   "usage_tr": null,
+   "usage_pending": true,
+   "matched_project": null,
+   "relevance": 0,
+   "investment_note": null
+  }
+ ]
+}
